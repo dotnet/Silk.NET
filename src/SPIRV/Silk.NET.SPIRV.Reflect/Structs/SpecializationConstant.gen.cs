@@ -23,7 +23,10 @@ namespace Silk.NET.SPIRV.Reflect
         (
             uint? spirvId = null,
             uint? constantId = null,
-            byte* name = null
+            byte* name = null,
+            TypeDescription* typeDescription = null,
+            uint? defaultValueSize = null,
+            void* defaultValue = null
         ) : this()
         {
             if (spirvId is not null)
@@ -39,6 +42,21 @@ namespace Silk.NET.SPIRV.Reflect
             if (name is not null)
             {
                 Name = name;
+            }
+
+            if (typeDescription is not null)
+            {
+                TypeDescription = typeDescription;
+            }
+
+            if (defaultValueSize is not null)
+            {
+                DefaultValueSize = defaultValueSize.Value;
+            }
+
+            if (defaultValue is not null)
+            {
+                DefaultValue = defaultValue;
             }
         }
 
@@ -57,5 +75,20 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Type.Name", "const char *")]
         [NativeName("Name", "name")]
         public byte* Name;
+
+        [NativeName("Type", "SpvReflectTypeDescription *")]
+        [NativeName("Type.Name", "SpvReflectTypeDescription *")]
+        [NativeName("Name", "type_description")]
+        public TypeDescription* TypeDescription;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "default_value_size")]
+        public uint DefaultValueSize;
+
+        [NativeName("Type", "void *")]
+        [NativeName("Type.Name", "void *")]
+        [NativeName("Name", "default_value")]
+        public void* DefaultValue;
     }
 }

@@ -30,24 +30,44 @@ namespace Silk.NET.SPIRV
         PeelCountShift = 0x7,
         [NativeName("Name", "SpvLoopControlPartialCountShift")]
         PartialCountShift = 0x8,
+        [NativeName("Name", "SpvLoopControlInitiationIntervalALTERAShift")]
+        InitiationIntervalAlteraShift = 0x10,
         [NativeName("Name", "SpvLoopControlInitiationIntervalINTELShift")]
         InitiationIntervalIntelShift = 0x10,
+        [NativeName("Name", "SpvLoopControlMaxConcurrencyALTERAShift")]
+        MaxConcurrencyAlteraShift = 0x11,
         [NativeName("Name", "SpvLoopControlMaxConcurrencyINTELShift")]
         MaxConcurrencyIntelShift = 0x11,
+        [NativeName("Name", "SpvLoopControlDependencyArrayALTERAShift")]
+        DependencyArrayAlteraShift = 0x12,
         [NativeName("Name", "SpvLoopControlDependencyArrayINTELShift")]
         DependencyArrayIntelShift = 0x12,
+        [NativeName("Name", "SpvLoopControlPipelineEnableALTERAShift")]
+        PipelineEnableAlteraShift = 0x13,
         [NativeName("Name", "SpvLoopControlPipelineEnableINTELShift")]
         PipelineEnableIntelShift = 0x13,
+        [NativeName("Name", "SpvLoopControlLoopCoalesceALTERAShift")]
+        LoopCoalesceAlteraShift = 0x14,
         [NativeName("Name", "SpvLoopControlLoopCoalesceINTELShift")]
         LoopCoalesceIntelShift = 0x14,
+        [NativeName("Name", "SpvLoopControlMaxInterleavingALTERAShift")]
+        MaxInterleavingAlteraShift = 0x15,
         [NativeName("Name", "SpvLoopControlMaxInterleavingINTELShift")]
         MaxInterleavingIntelShift = 0x15,
+        [NativeName("Name", "SpvLoopControlSpeculatedIterationsALTERAShift")]
+        SpeculatedIterationsAlteraShift = 0x16,
         [NativeName("Name", "SpvLoopControlSpeculatedIterationsINTELShift")]
         SpeculatedIterationsIntelShift = 0x16,
+        [NativeName("Name", "SpvLoopControlNoFusionALTERAShift")]
+        NoFusionAlteraShift = 0x17,
         [NativeName("Name", "SpvLoopControlNoFusionINTELShift")]
         NoFusionIntelShift = 0x17,
+        [NativeName("Name", "SpvLoopControlLoopCountALTERAShift")]
+        LoopCountAlteraShift = 0x18,
         [NativeName("Name", "SpvLoopControlLoopCountINTELShift")]
         LoopCountIntelShift = 0x18,
+        [NativeName("Name", "SpvLoopControlMaxReinvocationDelayALTERAShift")]
+        MaxReinvocationDelayAlteraShift = 0x19,
         [NativeName("Name", "SpvLoopControlMaxReinvocationDelayINTELShift")]
         MaxReinvocationDelayIntelShift = 0x19,
         [NativeName("Name", "SpvLoopControlMax")]

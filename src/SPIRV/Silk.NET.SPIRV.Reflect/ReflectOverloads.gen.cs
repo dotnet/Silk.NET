@@ -17,7 +17,7 @@ namespace Silk.NET.SPIRV.Reflect
     public static class ReflectOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 636, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 656, Column 18 in spirv_reflect.h")]
         public static unsafe Result CreateShaderModule(this Reflect thisApi, nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* p_code, Span<ReflectShaderModule> p_module)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 636, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 656, Column 18 in spirv_reflect.h")]
         public static unsafe Result CreateShaderModule<T0>(this Reflect thisApi, nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> p_code, ReflectShaderModule* p_module) where T0 : unmanaged
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 636, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 656, Column 18 in spirv_reflect.h")]
         public static unsafe Result CreateShaderModule<T0>(this Reflect thisApi, nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> p_code, Span<ReflectShaderModule> p_module) where T0 : unmanaged
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 651, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 671, Column 18 in spirv_reflect.h")]
         public static unsafe Result CreateShaderModule2(this Reflect thisApi, uint flags, nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* p_code, Span<ReflectShaderModule> p_module)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 651, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 671, Column 18 in spirv_reflect.h")]
         public static unsafe Result CreateShaderModule2<T0>(this Reflect thisApi, uint flags, nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> p_code, ReflectShaderModule* p_module) where T0 : unmanaged
         {
             // SpanOverloader
@@ -57,7 +57,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 651, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 671, Column 18 in spirv_reflect.h")]
         public static unsafe Result CreateShaderModule2<T0>(this Reflect thisApi, uint flags, nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> p_code, Span<ReflectShaderModule> p_module) where T0 : unmanaged
         {
             // SpanOverloader
@@ -65,7 +65,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 659, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 679, Column 18 in spirv_reflect.h")]
         public static unsafe Result GetShaderModule(this Reflect thisApi, nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* p_code, Span<ReflectShaderModule> p_module)
         {
             // SpanOverloader
@@ -73,7 +73,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 659, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 679, Column 18 in spirv_reflect.h")]
         public static unsafe Result GetShaderModule<T0>(this Reflect thisApi, nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> p_code, ReflectShaderModule* p_module) where T0 : unmanaged
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 659, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 679, Column 18 in spirv_reflect.h")]
         public static unsafe Result GetShaderModule<T0>(this Reflect thisApi, nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> p_code, Span<ReflectShaderModule> p_module) where T0 : unmanaged
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 671, Column 6 in spirv_reflect.h")]
+        [NativeName("Src", "Line 691, Column 6 in spirv_reflect.h")]
         public static unsafe void DestroyShaderModule(this Reflect thisApi, Span<ReflectShaderModule> p_module)
         {
             // SpanOverloader
@@ -97,7 +97,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 680, Column 10 in spirv_reflect.h")]
+        [NativeName("Src", "Line 700, Column 10 in spirv_reflect.h")]
         public static unsafe uint GetCodeSize(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module)
         {
             // SpanOverloader
@@ -105,7 +105,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 689, Column 17 in spirv_reflect.h")]
+        [NativeName("Src", "Line 709, Column 17 in spirv_reflect.h")]
         public static unsafe uint* GetCode(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module)
         {
             // SpanOverloader
@@ -113,7 +113,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 698, Column 29 in spirv_reflect.h")]
+        [NativeName("Src", "Line 718, Column 29 in spirv_reflect.h")]
         public static unsafe EntryPoint* GetEntryPoint(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point)
         {
             // SpanOverloader
@@ -121,7 +121,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 698, Column 29 in spirv_reflect.h")]
+        [NativeName("Src", "Line 718, Column 29 in spirv_reflect.h")]
         public static unsafe EntryPoint* GetEntryPoint(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point)
         {
             // SpanOverloader
@@ -129,7 +129,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 698, Column 29 in spirv_reflect.h")]
+        [NativeName("Src", "Line 718, Column 29 in spirv_reflect.h")]
         public static unsafe EntryPoint* GetEntryPoint(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point)
         {
             // SpanOverloader
@@ -137,7 +137,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 698, Column 29 in spirv_reflect.h")]
+        [NativeName("Src", "Line 718, Column 29 in spirv_reflect.h")]
         public static unsafe EntryPoint* GetEntryPoint(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point)
         {
             // SpanOverloader
@@ -145,7 +145,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 721, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 741, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -153,7 +153,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 721, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 741, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -161,7 +161,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 721, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 741, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -169,7 +169,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 721, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 741, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -177,7 +177,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 721, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 741, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -185,7 +185,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 721, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 741, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -193,7 +193,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -201,7 +201,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -209,7 +209,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -217,7 +217,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -225,7 +225,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -233,7 +233,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -241,7 +241,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -249,7 +249,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -257,7 +257,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -265,7 +265,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -273,7 +273,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -281,7 +281,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -289,7 +289,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -297,7 +297,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -305,7 +305,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -313,7 +313,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -321,7 +321,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -329,7 +329,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -337,7 +337,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, DescriptorBinding** pp_bindings)
         {
             // SpanOverloader
@@ -345,7 +345,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 747, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 767, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorBindings(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref DescriptorBinding* pp_bindings)
         {
             // SpanOverloader
@@ -353,7 +353,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 772, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 792, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -361,7 +361,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 772, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 792, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -369,7 +369,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 772, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 792, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -377,7 +377,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 772, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 792, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -385,7 +385,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 772, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 792, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -393,7 +393,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 772, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 792, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -401,7 +401,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -409,7 +409,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -417,7 +417,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -425,7 +425,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -433,7 +433,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -441,7 +441,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -449,7 +449,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -457,7 +457,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -465,7 +465,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -473,7 +473,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -481,7 +481,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -489,7 +489,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -497,7 +497,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -505,7 +505,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -513,7 +513,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -521,7 +521,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -529,7 +529,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -537,7 +537,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -545,7 +545,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ReflectDescriptorSet** pp_sets)
         {
             // SpanOverloader
@@ -553,7 +553,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 798, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 818, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointDescriptorSets(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref ReflectDescriptorSet* pp_sets)
         {
             // SpanOverloader
@@ -561,7 +561,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 825, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 845, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -569,7 +569,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 825, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 845, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -577,7 +577,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 825, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 845, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -585,7 +585,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 825, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 845, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -593,7 +593,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 825, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 845, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -601,7 +601,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 825, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 845, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -609,7 +609,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -617,7 +617,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -625,7 +625,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -633,7 +633,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -641,7 +641,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -649,7 +649,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -657,7 +657,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -665,7 +665,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -673,7 +673,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -681,7 +681,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -689,7 +689,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -697,7 +697,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -705,7 +705,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -713,7 +713,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -721,7 +721,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -729,7 +729,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -737,7 +737,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -745,7 +745,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -753,7 +753,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -761,7 +761,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 850, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 870, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInterfaceVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -769,7 +769,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 877, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 897, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -777,7 +777,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 877, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 897, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -785,7 +785,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 877, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 897, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -793,7 +793,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 877, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 897, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -801,7 +801,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 877, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 897, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -809,7 +809,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 877, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 897, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -817,7 +817,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -825,7 +825,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -833,7 +833,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -841,7 +841,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -849,7 +849,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -857,7 +857,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -865,7 +865,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -873,7 +873,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -881,7 +881,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -889,7 +889,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -897,7 +897,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -905,7 +905,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -913,7 +913,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -921,7 +921,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -929,7 +929,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -937,7 +937,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -945,7 +945,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -953,7 +953,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -961,7 +961,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -969,7 +969,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 902, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 922, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointInputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -977,7 +977,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 929, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 949, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -985,7 +985,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 929, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 949, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -993,7 +993,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 929, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 949, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1001,7 +1001,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 929, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 949, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1009,7 +1009,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 929, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 949, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1017,7 +1017,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 929, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 949, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1025,7 +1025,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1033,7 +1033,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1041,7 +1041,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1049,7 +1049,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1057,7 +1057,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1065,7 +1065,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1073,7 +1073,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1081,7 +1081,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1089,7 +1089,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1097,7 +1097,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1105,7 +1105,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1113,7 +1113,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1121,7 +1121,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1129,7 +1129,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1137,7 +1137,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1145,7 +1145,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1153,7 +1153,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1161,7 +1161,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1169,7 +1169,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, InterfaceVariable** pp_variables)
         {
             // SpanOverloader
@@ -1177,7 +1177,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 954, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 974, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointOutputVariables(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref InterfaceVariable* pp_variables)
         {
             // SpanOverloader
@@ -1185,7 +1185,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 982, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1002, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1193,7 +1193,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 982, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1002, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1201,7 +1201,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 982, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1002, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1209,7 +1209,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 982, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1002, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1217,7 +1217,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 982, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1002, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1225,7 +1225,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 982, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1002, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1233,7 +1233,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 988, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1008, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1241,7 +1241,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 988, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1008, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1249,7 +1249,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 988, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1008, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1257,7 +1257,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 988, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1008, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1265,7 +1265,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 988, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1008, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1273,7 +1273,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 988, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1008, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumeratePushConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1281,7 +1281,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1289,7 +1289,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1297,7 +1297,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1305,7 +1305,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1313,7 +1313,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1321,7 +1321,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1329,7 +1329,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1337,7 +1337,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1345,7 +1345,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1353,7 +1353,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint* p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1361,7 +1361,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1369,7 +1369,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<uint> p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1377,7 +1377,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1385,7 +1385,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint* p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1393,7 +1393,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1401,7 +1401,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<uint> p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1409,7 +1409,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1417,7 +1417,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint* p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1425,7 +1425,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, BlockVariable** pp_blocks)
         {
             // SpanOverloader
@@ -1433,7 +1433,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1014, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1034, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateEntryPointPushConstantBlocks(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<uint> p_count, ref BlockVariable* pp_blocks)
         {
             // SpanOverloader
@@ -1441,7 +1441,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1035, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1055, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateSpecializationConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, SpecializationConstant** pp_constants)
         {
             // SpanOverloader
@@ -1449,7 +1449,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1035, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1055, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateSpecializationConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, Span<uint> p_count, ref SpecializationConstant* pp_constants)
         {
             // SpanOverloader
@@ -1457,7 +1457,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1035, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1055, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateSpecializationConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, SpecializationConstant** pp_constants)
         {
             // SpanOverloader
@@ -1465,7 +1465,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1035, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1055, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateSpecializationConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint* p_count, ref SpecializationConstant* pp_constants)
         {
             // SpanOverloader
@@ -1473,7 +1473,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1035, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1055, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateSpecializationConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, SpecializationConstant** pp_constants)
         {
             // SpanOverloader
@@ -1481,7 +1481,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1035, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1055, Column 18 in spirv_reflect.h")]
         public static unsafe Result EnumerateSpecializationConstants(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, Span<uint> p_count, ref SpecializationConstant* pp_constants)
         {
             // SpanOverloader
@@ -1489,7 +1489,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1063, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1083, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, uint binding_number, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1497,7 +1497,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1063, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1083, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint binding_number, uint set_number, Result* p_result)
         {
             // SpanOverloader
@@ -1505,7 +1505,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1063, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1083, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint binding_number, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1513,7 +1513,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1095, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1115, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetEntryPointDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint binding_number, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1521,7 +1521,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1095, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1115, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetEntryPointDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint binding_number, uint set_number, Result* p_result)
         {
             // SpanOverloader
@@ -1529,7 +1529,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1095, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1115, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetEntryPointDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint binding_number, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1537,7 +1537,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1095, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1115, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetEntryPointDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint binding_number, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1545,7 +1545,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1095, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1115, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetEntryPointDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint binding_number, uint set_number, Result* p_result)
         {
             // SpanOverloader
@@ -1553,7 +1553,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1095, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1115, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetEntryPointDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint binding_number, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1561,7 +1561,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1095, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1115, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetEntryPointDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint binding_number, uint set_number, Result* p_result)
         {
             // SpanOverloader
@@ -1569,7 +1569,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1095, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1115, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetEntryPointDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint binding_number, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1577,7 +1577,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1095, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1115, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetEntryPointDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint binding_number, uint set_number, Result* p_result)
         {
             // SpanOverloader
@@ -1585,7 +1585,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1095, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1115, Column 36 in spirv_reflect.h")]
         public static unsafe DescriptorBinding* GetEntryPointDescriptorBinding(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint binding_number, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1593,7 +1593,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1120, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1140, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1601,7 +1601,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1120, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1140, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint set_number, Result* p_result)
         {
             // SpanOverloader
@@ -1609,7 +1609,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1120, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1140, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1617,7 +1617,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1163, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetEntryPointDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1625,7 +1625,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1163, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetEntryPointDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint set_number, Result* p_result)
         {
             // SpanOverloader
@@ -1633,7 +1633,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1163, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetEntryPointDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1641,7 +1641,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1163, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetEntryPointDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1649,7 +1649,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1163, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetEntryPointDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint set_number, Result* p_result)
         {
             // SpanOverloader
@@ -1657,7 +1657,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1163, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetEntryPointDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1665,7 +1665,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1163, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetEntryPointDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint set_number, Result* p_result)
         {
             // SpanOverloader
@@ -1673,7 +1673,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1163, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetEntryPointDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1681,7 +1681,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1163, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetEntryPointDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint set_number, Result* p_result)
         {
             // SpanOverloader
@@ -1689,7 +1689,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1143, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1163, Column 32 in spirv_reflect.h")]
         public static unsafe ReflectDescriptorSet* GetEntryPointDescriptorSet(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint set_number, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1697,7 +1697,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1171, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1191, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1705,7 +1705,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1171, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1191, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -1713,7 +1713,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1171, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1191, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1721,7 +1721,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1177, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1197, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariable(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1729,7 +1729,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1177, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1197, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariable(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -1737,7 +1737,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1177, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1197, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariable(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1745,7 +1745,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1204, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1224, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1753,7 +1753,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1204, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1224, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -1761,7 +1761,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1204, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1224, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1769,7 +1769,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1204, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1224, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1777,7 +1777,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1204, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1224, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -1785,7 +1785,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1204, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1224, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1793,7 +1793,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1204, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1224, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -1801,7 +1801,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1204, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1224, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1809,7 +1809,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1204, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1224, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -1817,7 +1817,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1204, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1224, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1825,7 +1825,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1232, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1252, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1833,7 +1833,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1232, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1252, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -1841,7 +1841,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1232, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1252, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1849,7 +1849,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1232, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1252, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1857,7 +1857,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1232, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1252, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Result* p_result)
         {
             // SpanOverloader
@@ -1865,7 +1865,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1232, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1252, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1873,7 +1873,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1232, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1252, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -1881,7 +1881,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1232, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1252, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1889,7 +1889,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1232, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1252, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Result* p_result)
         {
             // SpanOverloader
@@ -1897,7 +1897,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1232, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1252, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1905,7 +1905,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1913,7 +1913,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -1921,7 +1921,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1929,7 +1929,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1937,7 +1937,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Result* p_result)
         {
             // SpanOverloader
@@ -1945,7 +1945,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1953,7 +1953,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -1961,7 +1961,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1969,7 +1969,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Result* p_result)
         {
             // SpanOverloader
@@ -1977,7 +1977,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1985,7 +1985,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -1993,7 +1993,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2001,7 +2001,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2009,7 +2009,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2017,7 +2017,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2025,7 +2025,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2033,7 +2033,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2041,7 +2041,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2049,7 +2049,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2057,7 +2057,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2065,7 +2065,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2073,7 +2073,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2081,7 +2081,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2089,7 +2089,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2097,7 +2097,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2105,7 +2105,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2113,7 +2113,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2121,7 +2121,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2129,7 +2129,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2137,7 +2137,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2145,7 +2145,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2153,7 +2153,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1260, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1280, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointInputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2161,7 +2161,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1287, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1307, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2169,7 +2169,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1287, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1307, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -2177,7 +2177,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1287, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1307, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2185,7 +2185,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1293, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1313, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariable(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2193,7 +2193,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1293, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1313, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariable(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -2201,7 +2201,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1293, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1313, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariable(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2209,7 +2209,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1320, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1340, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2217,7 +2217,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1320, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1340, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -2225,7 +2225,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1320, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1340, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2233,7 +2233,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1320, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1340, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2241,7 +2241,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1320, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1340, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -2249,7 +2249,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1320, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1340, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2257,7 +2257,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1320, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1340, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -2265,7 +2265,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1320, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1340, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2273,7 +2273,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1320, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1340, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint location, Result* p_result)
         {
             // SpanOverloader
@@ -2281,7 +2281,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1320, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1340, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableByLocation(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, uint location, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2289,7 +2289,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1348, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1368, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2297,7 +2297,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1348, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1368, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2305,7 +2305,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1348, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1368, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2313,7 +2313,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1348, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1368, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2321,7 +2321,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1348, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1368, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2329,7 +2329,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1348, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1368, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2337,7 +2337,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1348, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1368, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2345,7 +2345,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1348, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1368, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2353,7 +2353,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1348, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1368, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2361,7 +2361,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1348, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1368, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2369,7 +2369,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2377,7 +2377,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2385,7 +2385,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2393,7 +2393,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2401,7 +2401,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2409,7 +2409,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2417,7 +2417,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2425,7 +2425,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2433,7 +2433,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2441,7 +2441,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2449,7 +2449,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2457,7 +2457,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2465,7 +2465,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2473,7 +2473,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2481,7 +2481,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2489,7 +2489,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2497,7 +2497,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2505,7 +2505,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2513,7 +2513,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2521,7 +2521,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2529,7 +2529,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2537,7 +2537,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2545,7 +2545,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2553,7 +2553,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2561,7 +2561,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2569,7 +2569,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2577,7 +2577,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2585,7 +2585,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2593,7 +2593,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2601,7 +2601,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2609,7 +2609,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Result* p_result)
         {
             // SpanOverloader
@@ -2617,7 +2617,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1376, Column 36 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1396, Column 36 in spirv_reflect.h")]
         public static unsafe InterfaceVariable* GetEntryPointOutputVariableBySemantic(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string semantic, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2625,7 +2625,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1400, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1420, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, uint index, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2633,7 +2633,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1400, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1420, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint index, Result* p_result)
         {
             // SpanOverloader
@@ -2641,7 +2641,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1400, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1420, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint index, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2649,7 +2649,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1406, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1426, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetPushConstant(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, uint index, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2657,7 +2657,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1406, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1426, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetPushConstant(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint index, Result* p_result)
         {
             // SpanOverloader
@@ -2665,7 +2665,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1406, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1426, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetPushConstant(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, uint index, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2673,7 +2673,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1431, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1451, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetEntryPointPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2681,7 +2681,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1431, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1451, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetEntryPointPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Result* p_result)
         {
             // SpanOverloader
@@ -2689,7 +2689,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1431, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1451, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetEntryPointPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2697,7 +2697,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1431, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1451, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetEntryPointPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2705,7 +2705,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1431, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1451, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetEntryPointPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Result* p_result)
         {
             // SpanOverloader
@@ -2713,7 +2713,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1431, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1451, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetEntryPointPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* entry_point, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2721,7 +2721,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1431, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1451, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetEntryPointPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Result* p_result)
         {
             // SpanOverloader
@@ -2729,7 +2729,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1431, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1451, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetEntryPointPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> entry_point, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2737,7 +2737,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1431, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1451, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetEntryPointPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Result* p_result)
         {
             // SpanOverloader
@@ -2745,7 +2745,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1431, Column 32 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1451, Column 32 in spirv_reflect.h")]
         public static unsafe BlockVariable* GetEntryPointPushConstantBlock(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string entry_point, Span<Result> p_result)
         {
             // SpanOverloader
@@ -2753,7 +2753,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1481, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeDescriptorBindingNumbers(this Reflect thisApi, ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorBinding> p_binding, uint new_binding_number, uint new_set_number)
         {
             // SpanOverloader
@@ -2761,7 +2761,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1481, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeDescriptorBindingNumbers(this Reflect thisApi, Span<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorBinding* p_binding, uint new_binding_number, uint new_set_number)
         {
             // SpanOverloader
@@ -2769,7 +2769,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1461, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1481, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeDescriptorBindingNumbers(this Reflect thisApi, Span<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorBinding> p_binding, uint new_binding_number, uint new_set_number)
         {
             // SpanOverloader
@@ -2777,7 +2777,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1468, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1488, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeDescriptorBindingNumber(this Reflect thisApi, ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorBinding> p_descriptor_binding, uint new_binding_number, uint optional_new_set_number)
         {
             // SpanOverloader
@@ -2785,7 +2785,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1468, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1488, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeDescriptorBindingNumber(this Reflect thisApi, Span<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorBinding* p_descriptor_binding, uint new_binding_number, uint optional_new_set_number)
         {
             // SpanOverloader
@@ -2793,7 +2793,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1468, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1488, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeDescriptorBindingNumber(this Reflect thisApi, Span<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorBinding> p_descriptor_binding, uint new_binding_number, uint optional_new_set_number)
         {
             // SpanOverloader
@@ -2801,7 +2801,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1497, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1517, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeDescriptorSetNumber(this Reflect thisApi, ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectDescriptorSet> p_set, uint new_set_number)
         {
             // SpanOverloader
@@ -2809,7 +2809,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1497, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1517, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeDescriptorSetNumber(this Reflect thisApi, Span<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReflectDescriptorSet* p_set, uint new_set_number)
         {
             // SpanOverloader
@@ -2817,7 +2817,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1497, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1517, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeDescriptorSetNumber(this Reflect thisApi, Span<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ReflectDescriptorSet> p_set, uint new_set_number)
         {
             // SpanOverloader
@@ -2825,7 +2825,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1520, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1540, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeInputVariableLocation(this Reflect thisApi, ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InterfaceVariable> p_input_variable, uint new_location)
         {
             // SpanOverloader
@@ -2833,7 +2833,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1520, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1540, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeInputVariableLocation(this Reflect thisApi, Span<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InterfaceVariable* p_input_variable, uint new_location)
         {
             // SpanOverloader
@@ -2841,7 +2841,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1520, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1540, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeInputVariableLocation(this Reflect thisApi, Span<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InterfaceVariable> p_input_variable, uint new_location)
         {
             // SpanOverloader
@@ -2849,7 +2849,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1544, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1564, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeOutputVariableLocation(this Reflect thisApi, ReflectShaderModule* p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InterfaceVariable> p_output_variable, uint new_location)
         {
             // SpanOverloader
@@ -2857,7 +2857,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1544, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1564, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeOutputVariableLocation(this Reflect thisApi, Span<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InterfaceVariable* p_output_variable, uint new_location)
         {
             // SpanOverloader
@@ -2865,7 +2865,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1544, Column 18 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1564, Column 18 in spirv_reflect.h")]
         public static unsafe Result ChangeOutputVariableLocation(this Reflect thisApi, Span<ReflectShaderModule> p_module, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InterfaceVariable> p_output_variable, uint new_location)
         {
             // SpanOverloader
@@ -2873,7 +2873,7 @@ namespace Silk.NET.SPIRV.Reflect
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1565, Column 13 in spirv_reflect.h")]
+        [NativeName("Src", "Line 1585, Column 13 in spirv_reflect.h")]
         public static unsafe byte* BlockVariableTypeName(this Reflect thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BlockVariable> p_var)
         {
             // SpanOverloader

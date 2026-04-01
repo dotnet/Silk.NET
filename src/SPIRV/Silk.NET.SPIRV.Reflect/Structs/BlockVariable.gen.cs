@@ -174,8 +174,8 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Name", "type_description")]
         public TypeDescription* TypeDescription;
 
-        [NativeName("Type", "struct (unnamed struct at spirv_reflect.h:473:3)")]
-        [NativeName("Type.Name", "struct (unnamed struct at spirv_reflect.h:473:3)")]
+        [NativeName("Type", "struct (unnamed struct at spirv_reflect.h:478:3)")]
+        [NativeName("Type.Name", "struct (unnamed struct at spirv_reflect.h:478:3)")]
         [NativeName("Name", "word_offset")]
         public BlockVariableWordOffset WordOffset;
     }

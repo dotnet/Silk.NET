@@ -40,10 +40,10 @@ namespace Silk.NET.SPIRV
         StorageBuffer = 0xC,
         [NativeName("Name", "SpvStorageClassTileImageEXT")]
         TileImageExt = 0x104C,
+        [NativeName("Name", "SpvStorageClassTileAttachmentQCOM")]
+        TileAttachmentQCom = 0x118B,
         [NativeName("Name", "SpvStorageClassNodePayloadAMDX")]
         NodePayloadAmdx = 0x13CC,
-        [NativeName("Name", "SpvStorageClassNodeOutputPayloadAMDX")]
-        NodeOutputPayloadAmdx = 0x13D4,
         [NativeName("Name", "SpvStorageClassCallableDataKHR")]
         CallableDataKhr = 0x14D0,
         [NativeName("Name", "SpvStorageClassCallableDataNV")]
@@ -76,10 +76,16 @@ namespace Silk.NET.SPIRV
         HitObjectAttributeNV = 0x1509,
         [NativeName("Name", "SpvStorageClassTaskPayloadWorkgroupEXT")]
         TaskPayloadWorkgroupExt = 0x151A,
+        [NativeName("Name", "SpvStorageClassHitObjectAttributeEXT")]
+        HitObjectAttributeExt = 0x1523,
         [NativeName("Name", "SpvStorageClassCodeSectionINTEL")]
         CodeSectionIntel = 0x15E5,
+        [NativeName("Name", "SpvStorageClassDeviceOnlyALTERA")]
+        DeviceOnlyAltera = 0x1730,
         [NativeName("Name", "SpvStorageClassDeviceOnlyINTEL")]
         DeviceOnlyIntel = 0x1730,
+        [NativeName("Name", "SpvStorageClassHostOnlyALTERA")]
+        HostOnlyAltera = 0x1731,
         [NativeName("Name", "SpvStorageClassHostOnlyINTEL")]
         HostOnlyIntel = 0x1731,
         [NativeName("Name", "SpvStorageClassMax")]

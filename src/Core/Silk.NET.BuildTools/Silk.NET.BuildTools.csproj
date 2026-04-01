@@ -9,7 +9,7 @@
         <SilkPublicApiExempt>true</SilkPublicApiExempt>
 
         <!-- Workaround for issue https://github.com/microsoft/ClangSharp/issues/129 -->
-        <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' AND '$(PackAsTool)' != 'true'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+        <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' AND '$(PackAsTool)' != 'true' AND '$(SilkNukeBuild)' != 'true'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
     </PropertyGroup>
 
     <ItemGroup>

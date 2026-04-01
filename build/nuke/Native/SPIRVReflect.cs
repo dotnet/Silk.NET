@@ -25,7 +25,8 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
 using static Nuke.Common.Tools.GitHub.GitHubTasks;
 
-partial class Build {
+partial class Build
+{
     AbsolutePath SPIRVReflectPath => RootDirectory / "build" / "submodules" / "SPIRV-Reflect";
 
     //This is the build script for the SPIRV-Reflect shared library
@@ -36,21 +37,29 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
-    const shared_lib_options: std.Build.SharedLibraryOptions = .{
-        .name = ""spirv-reflect"",
+    const lib_mod = b.createModule(.{
         .target = target,
         .optimize = optimize,
-    };
+        .link_libc = true,
+    });
 
-    const lib: *std.Build.Step.Compile = b.addSharedLibrary(shared_lib_options);
-    lib.linkLibC();
+    const lib = b.addLibrary(.{
+        .name = ""spirv-reflect"",
+        .root_module = lib_mod,
+        .use_llvm = true,
+        .linkage = .dynamic,
+    });
 
-    if(optimize != .Debug)
-        lib.root_module.strip = true;
+    if (optimize != .Debug)
+        lib_mod.strip = true;
 
-    lib.addCSourceFiles(.{ .files = &.{""spirv_reflect.c""}, .flags = &.{ ""-std=c99"", ""-fPIC"" } });
+    lib_mod.addCSourceFiles(.{
+        .files = &.{""spirv_reflect.c""},
+        .flags = &.{ ""-std=c99"", ""-fPIC"" },
+    });
     b.installArtifact(lib);
-}";
+}
+";
 
     Target SPIRVReflect => CommonTarget
         (
