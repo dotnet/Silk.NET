@@ -17,6 +17,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// These are identified as [NameAffix] attributes that
 /// <see cref="PrettifyNames"/> and other mods can then process further.
 /// </summary>
+[ModConfiguration<Configuration>]
 public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Configuration> config)
     : Mod
 {
