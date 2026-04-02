@@ -257,7 +257,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                 }
 
                 // Output prefix to results
-                results.Add(originalName, unaffixedName[..unaffixedNameI]);
+                results[originalName] = unaffixedName[..unaffixedNameI];
                 break;
             }
         }
