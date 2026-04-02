@@ -61,6 +61,19 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             visitor.Visit(await doc.GetSyntaxRootAsync(ct));
         }
 
+        // Dictionary<Scope, Dictionary<Member, MemberPrefix>>
+        var results = new Dictionary<string, Dictionary<string, string>>();
+        foreach (var (scope, members) in visitor.Scopes)
+        {
+            var prefixes = IdentifyPrefixes(scope, members, visitor.NonDeterminant, configuration);
+            if (prefixes == null)
+            {
+                continue;
+            }
+
+            results.Add(scope, prefixes);
+        }
+
         // TODO
         Console.WriteLine();
     }
@@ -192,7 +205,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
                 var originalNameI = 0;
                 var isPrefixTooLong = false;
-                for (var candidateI = 0; candidateI < candidatePrefix.Length; candidateI++)
+                foreach (var c in candidatePrefix)
                 {
                     if (originalNameI >= originalName.Length)
                     {
@@ -200,16 +213,13 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                         break;
                     }
 
-                    if (
-                        char.ToLower(candidatePrefix[candidateI])
-                        == char.ToLower(originalName[originalNameI])
-                    )
+                    if (char.ToLower(c) == char.ToLower(originalName[originalNameI]))
                     {
                         originalNameI++;
                         continue;
                     }
 
-                    if (candidatePrefix[candidateI] == '_')
+                    if (c == '_')
                     {
                         originalNameI++;
                     }
@@ -335,7 +345,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                 // Common case - Find the prefix based on the scope's members
                 prefix = NameUtils.FindCommonPrefix(
                     localNames
-                        .Where(x => !(nonDeterminant?.Contains(x.OriginalName) ?? false))
+                        .Where(x => !(nonDeterminant?.Contains(x.UnaffixedName) ?? false))
                         .Select(x => x.TrimmingName)
                         .ToList(),
                     // If naive mode is on and we're trimming type names, allow full matches (method class is
@@ -351,7 +361,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         if (
             localNames.Any(x =>
                 x.TrimmingName.Length <= prefix.Length
-                && !(nonDeterminant?.Contains(x.OriginalName) ?? false)
+                && !(nonDeterminant?.Contains(x.UnaffixedName) ?? false)
             ) && !string.IsNullOrWhiteSpace(scopeTrimmingName)
         )
         {
@@ -366,7 +376,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             );
         }
 
-        // Iterate through all of the forbidden trimmings,
+        // Iterate through the forbidden trimmings,
         foreach (var word in _forbiddenTrimmings)
         {
             // If the prefix starts with a forbidden trimming,
@@ -424,14 +434,12 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
     /// <summary>
     /// Similar to <see cref="CandidateNames"/>, but with some additional information.
     /// </summary>
-    /// <param name="OriginalName">The original, unmodified name.</param>
-    /// <param name="TrimmingName">The name used for trimming purposes.</param>
-    private readonly record struct TrimmingNames(string OriginalName, string TrimmingName)
+    /// <param name="UnaffixedName">The unaffixed version of the name.</param>
+    /// <param name="TrimmingName">The trimming version of the name.</param>
+    private readonly record struct TrimmingNames(string UnaffixedName, string TrimmingName)
     {
-        /// <summary>
-        /// Formats this instance as a string.
-        /// </summary>
-        public override string ToString() => $"(Original={OriginalName}, Trimming={TrimmingName})";
+        public override string ToString() =>
+            $"(Unaffixed={UnaffixedName}, Trimming={TrimmingName})";
     }
 
     // TODO: Need to also store affixes
@@ -452,7 +460,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         /// </remarks>
         public HashSet<string> NonDeterminant { get; } = [];
 
-        private BaseTypeDeclarationSyntax? scope = null;
+        private BaseTypeDeclarationSyntax? _scope = null;
 
         private void ReportName(SyntaxToken scope, SyntaxToken member)
         {
@@ -483,12 +491,12 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             ReportName(default, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
-            scope = node;
+            _scope = node;
             foreach (var member in node.Members)
             {
                 Visit(member);
             }
-            scope = null;
+            _scope = null;
         }
 
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
@@ -496,12 +504,12 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             ReportName(default, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
-            scope = node;
+            _scope = node;
             foreach (var member in node.Members)
             {
                 Visit(member);
             }
-            scope = null;
+            _scope = null;
         }
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
@@ -509,12 +517,12 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             ReportName(default, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
-            scope = node;
+            _scope = node;
             foreach (var member in node.Members)
             {
                 Visit(member);
             }
-            scope = null;
+            _scope = null;
         }
 
         public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) { }
@@ -523,7 +531,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
         {
-            ReportName(scope!.Identifier, node.Identifier);
+            ReportName(_scope!.Identifier, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
 
@@ -541,7 +549,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
             foreach (var variable in node.Declaration.Variables)
             {
-                ReportName(scope!.Identifier, variable.Identifier);
+                ReportName(_scope!.Identifier, variable.Identifier);
                 TryReportNonDeterminant(node.AttributeLists, variable.Identifier);
             }
         }
@@ -550,12 +558,12 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         {
             // Struct methods are introduced by the generator so we skip them
             // Otherwise, it's likely a C function
-            if (scope.IsKind(SyntaxKind.StructDeclaration))
+            if (_scope.IsKind(SyntaxKind.StructDeclaration))
             {
                 return;
             }
 
-            ReportName(scope!.Identifier, node.Identifier);
+            ReportName(_scope!.Identifier, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
 
@@ -574,7 +582,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                 return;
             }
 
-            ReportName(scope!.Identifier, node.Identifier);
+            ReportName(_scope!.Identifier, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
     }
