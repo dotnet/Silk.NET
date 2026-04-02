@@ -1,7 +1,9 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -48,7 +50,125 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         var hints = cfg.GlobalPrefixHints.ToList();
         hints.Sort((x, y) => -x.Length.CompareTo(y.Length));
         cfg = cfg with { GlobalPrefixHints = hints };
+
+        // Gather all the names
+        var visitor = new Visitor();
+        foreach (var doc in ctx.SourceProject.Documents)
+        {
+            visitor.Visit(await doc.GetSyntaxRootAsync(ct));
+        }
     }
 
-    private class Visitor : CSharpSyntaxRewriter { }
+    private class Visitor : CSharpSyntaxWalker
+    {
+        /// <summary>
+        /// A mapping from scope names to their member names.
+        /// These only represent names that need to have their prefixes determined.
+        /// </summary>
+        public Dictionary<string, List<string>> Scopes { get; } = new();
+
+        /// <summary>
+        /// A set of type names marked with the [Transformed] attribute.
+        /// </summary>
+        /// <remarks>
+        /// These are not used for prefix determination since they can contain identifiers that
+        /// are not part of the original source code.
+        /// </remarks>
+        public HashSet<string> NonDeterminant { get; } = [];
+
+        private BaseTypeDeclarationSyntax? scope = null;
+
+        private void ReportName(string scope, SyntaxToken member)
+        {
+            if (!Scopes.TryGetValue(scope, out var members))
+            {
+                Scopes[scope] = members = [];
+            }
+
+            members.Add(member.ToString());
+        }
+
+        private void TryReportNonDeterminant(
+            SyntaxList<AttributeListSyntax> attributeLists,
+            SyntaxToken identifier
+        )
+        {
+            if (attributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
+            {
+                NonDeterminant.Add(identifier.ToString());
+            }
+        }
+
+        // ----- Types -----
+
+        public override void VisitClassDeclaration(ClassDeclarationSyntax node)
+        {
+            ReportName("", node.Identifier);
+            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
+
+            scope = node;
+            foreach (var member in node.Members)
+            {
+                Visit(member);
+            }
+            scope = null;
+        }
+
+        public override void VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            ReportName("", node.Identifier);
+            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
+
+            scope = node;
+            foreach (var member in node.Members)
+            {
+                Visit(member);
+            }
+            scope = null;
+        }
+
+        public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            ReportName("", node.Identifier);
+            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
+
+            scope = node;
+            foreach (var member in node.Members)
+            {
+                Visit(member);
+            }
+            scope = null;
+        }
+
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) { }
+
+        // ----- Members -----
+
+        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+        {
+            ReportName("", node.Identifier);
+            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
+        }
+
+        public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            foreach (var variable in node.Declaration.Variables)
+            {
+                ReportName("", variable.Identifier);
+                TryReportNonDeterminant(node.AttributeLists, variable.Identifier);
+            }
+        }
+
+        public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
+        {
+            ReportName("", node.Identifier);
+            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
+        }
+
+        public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
+        {
+            ReportName("", node.Identifier);
+            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
+        }
+    }
 }
