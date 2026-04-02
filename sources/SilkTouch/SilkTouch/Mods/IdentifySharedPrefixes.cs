@@ -156,6 +156,16 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
+            // If the node is not a constant, skip it
+            // Otherwise, it's likely a C constant
+            if (
+                !node.Modifiers.Any(SyntaxKind.ConstKeyword)
+                && !node.Modifiers.Any(SyntaxKind.StaticKeyword)
+            )
+            {
+                return;
+            }
+
             foreach (var variable in node.Declaration.Variables)
             {
                 ReportName(scope!.Identifier, variable.Identifier);
@@ -165,12 +175,32 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
+            // Struct methods are introduced by the generator so we skip them
+            // Otherwise, it's likely a C function
+            if (scope.IsKind(SyntaxKind.StructDeclaration))
+            {
+                return;
+            }
+
             ReportName(scope!.Identifier, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
 
         public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
         {
+            // If the node is not a constant, skip it
+            // Otherwise, it's likely a C constant (often strings)
+            var hasSetter =
+                node.AccessorList?.Accessors.Any(a =>
+                    a.IsKind(SyntaxKind.SetAccessorDeclaration)
+                    || a.IsKind(SyntaxKind.InitAccessorDeclaration)
+                ) ?? false;
+
+            if (hasSetter)
+            {
+                return;
+            }
+
             ReportName(scope!.Identifier, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
