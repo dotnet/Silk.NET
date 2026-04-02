@@ -207,7 +207,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         var results = new Dictionary<string, string>();
 
         identifiedPrefix = identifiedPrefix?.Trim('_');
-        foreach (var (unaffixedName, trimmingName) in localNames!)
+        foreach (var (originalName, unaffixedName, trimmingName) in localNames!)
         {
             ReadOnlySpan<string> candidatePrefixes = !string.IsNullOrWhiteSpace(identifiedPrefix)
                 ? [identifiedPrefix] // Otherwise we fall back to the hints
@@ -257,7 +257,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                 }
 
                 // Output prefix to results
-                results.Add(unaffixedName, unaffixedName[..unaffixedNameI]);
+                results.Add(originalName, unaffixedName[..unaffixedNameI]);
                 break;
             }
         }
@@ -319,6 +319,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         var localNames = members
             .Select(member => new TrimmingNames(
+                member.OriginalName,
                 member.UnaffixedName,
                 useTrimmingName
                     ? GetTrimmingName(prefixOverrides, member.UnaffixedName, hint)
@@ -466,9 +467,14 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
     /// <param name="UnaffixedName">The original name with affixes stripped.</param>
     private readonly record struct MemberName(string OriginalName, string UnaffixedName);
 
+    /// <param name="OriginalName">The version of the name as it exists in source code.</param>
     /// <param name="UnaffixedName">The original name with affixes stripped.</param>
     /// <param name="TrimmingName">The unaffixed name as a trimming name. See <see cref="GetTrimmingName"/>.</param>
-    private readonly record struct TrimmingNames(string UnaffixedName, string TrimmingName)
+    private readonly record struct TrimmingNames(
+        string OriginalName,
+        string UnaffixedName,
+        string TrimmingName
+    )
     {
         public override string ToString() =>
             $"(Unaffixed={UnaffixedName}, Trimming={TrimmingName})";
