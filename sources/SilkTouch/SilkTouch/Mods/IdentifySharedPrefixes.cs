@@ -512,7 +512,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             }
 
             var nameAffixes = memberAttributeLists.GetNameAffixes();
-            var unaffixedMemberName = NameAffixer.ApplyAffixes(memberName, nameAffixes);
+            var unaffixedMemberName = NameAffixer.StripAffixes(memberName, nameAffixes);
             members.Add(new MemberName(memberName, unaffixedMemberName));
         }
 
