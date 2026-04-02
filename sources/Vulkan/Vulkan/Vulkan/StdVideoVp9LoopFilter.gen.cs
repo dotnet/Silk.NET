@@ -17,32 +17,26 @@ public partial struct StdVideoVp9LoopFilter
     public StdVideoVp9LoopFilterFlags Flags;
 
     [NativeName("loop_filter_level")]
-    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte LoopFilterLevel;
 
     [NativeName("loop_filter_sharpness")]
-    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte LoopFilterSharpness;
 
     [NativeName("update_ref_delta")]
-    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte UpdateRefDelta;
 
     [NativeName("loop_filter_ref_deltas")]
-    [NativeTypeName("int8_t[4]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVp9LoopFilterLoopFilterRefDeltas LoopFilterRefDeltas;
 
     [NativeName("update_mode_delta")]
-    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte UpdateModeDelta;
 
     [NativeName("loop_filter_mode_deltas")]
-    [NativeTypeName("int8_t[2]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVp9LoopFilterLoopFilterModeDeltas LoopFilterModeDeltas;
 }

@@ -16,22 +16,18 @@ public partial struct StdVideoVp9Segmentation
     public StdVideoVp9SegmentationFlags Flags;
 
     [NativeName("segmentation_tree_probs")]
-    [NativeTypeName("uint8_t[7]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVp9SegmentationSegmentationTreeProbs SegmentationTreeProbs;
 
     [NativeName("segmentation_pred_prob")]
-    [NativeTypeName("uint8_t[3]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVp9SegmentationSegmentationPredProb SegmentationPredProb;
 
     [NativeName("FeatureEnabled")]
-    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVp9SegmentationFeatureEnabled FeatureEnabled;
 
     [NativeName("FeatureData")]
-    [NativeTypeName("int16_t[8][4]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVp9SegmentationFeatureData FeatureData;
 }

@@ -21,12 +21,10 @@ public partial struct StdVideoEncodeH265ReferenceInfo
     public StdVideoH265PictureType PicType;
 
     [NativeName("PicOrderCntVal")]
-    [NativeTypeName("int32_t")]
     [SupportedApiProfile("vulkan")]
     public int PicOrderCntVal;
 
     [NativeName("TemporalId")]
-    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte TemporalId;
 }

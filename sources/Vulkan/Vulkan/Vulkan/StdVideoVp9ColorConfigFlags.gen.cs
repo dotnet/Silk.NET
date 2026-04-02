@@ -15,7 +15,6 @@ public partial struct StdVideoVp9ColorConfigFlags
     public uint Bitfield;
 
     [NativeName("color_range")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ColorRange
     {
@@ -26,7 +25,6 @@ public partial struct StdVideoVp9ColorConfigFlags
     }
 
     [NativeName("reserved")]
-    [NativeTypeName("uint32_t : 31")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

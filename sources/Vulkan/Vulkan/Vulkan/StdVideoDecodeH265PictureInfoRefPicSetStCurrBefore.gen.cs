@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_RefPicSetStCurrBefore_e__FixedBuffer")]
 [InlineArray(8)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoDecodeH265PictureInfo))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeH265PictureInfoRefPicSetStCurrBefore
 {

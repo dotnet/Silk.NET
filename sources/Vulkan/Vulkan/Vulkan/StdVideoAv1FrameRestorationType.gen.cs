@@ -8,31 +8,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1FrameRestorationType")]
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoAv1FrameRestorationType : uint
 {
     [NativeName("STD_VIDEO_AV1_FRAME_RESTORATION_TYPE_NONE")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1FrameRestorationTypeNone = 0,
+    None = 0,
 
     [NativeName("STD_VIDEO_AV1_FRAME_RESTORATION_TYPE_WIENER")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1FrameRestorationTypeWiener = 1,
+    Wiener = 1,
 
     [NativeName("STD_VIDEO_AV1_FRAME_RESTORATION_TYPE_SGRPROJ")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1FrameRestorationTypeSgrproj = 2,
+    Sgrproj = 2,
 
     [NativeName("STD_VIDEO_AV1_FRAME_RESTORATION_TYPE_SWITCHABLE")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1FrameRestorationTypeSwitchable = 3,
-
-    [NativeName("STD_VIDEO_AV1_FRAME_RESTORATION_TYPE_INVALID")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoAv1FrameRestorationTypeInvalid = 0x7FFFFFFF,
-
-    [NativeName("STD_VIDEO_AV1_FRAME_RESTORATION_TYPE_MAX_ENUM")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoAv1FrameRestorationTypeMaxEnum = 0x7FFFFFFF,
+    Switchable = 3,
 }

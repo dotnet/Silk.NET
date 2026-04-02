@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_ar_coeffs_cr_plus_128_e__FixedBuffer")]
 [InlineArray(25)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoAv1FilmGrain))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1FilmGrainArCoeffsCrPlus128
 {

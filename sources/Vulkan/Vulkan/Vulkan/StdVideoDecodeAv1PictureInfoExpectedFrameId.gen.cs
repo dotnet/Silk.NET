@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_expectedFrameId_e__FixedBuffer")]
 [InlineArray(8)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoDecodeAv1PictureInfo))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeAv1PictureInfoExpectedFrameId
 {

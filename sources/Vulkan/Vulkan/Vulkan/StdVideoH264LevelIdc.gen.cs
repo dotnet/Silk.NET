@@ -9,91 +9,82 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH264LevelIdc")]
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH264LevelIdc : uint
 {
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_1_0")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc1x0 = 0,
+    Idc1x0 = 0,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_1_1")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc1x1 = 1,
+    Idc1x1 = 1,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_1_2")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc1x2 = 2,
+    Idc1x2 = 2,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_1_3")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc1x3 = 3,
+    Idc1x3 = 3,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_2_0")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc2x0 = 4,
+    Idc2x0 = 4,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_2_1")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc2x1 = 5,
+    Idc2x1 = 5,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_2_2")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc2x2 = 6,
+    Idc2x2 = 6,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_3_0")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc3x0 = 7,
+    Idc3x0 = 7,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_3_1")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc3x1 = 8,
+    Idc3x1 = 8,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_3_2")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc3x2 = 9,
+    Idc3x2 = 9,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_4_0")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc4x0 = 10,
+    Idc4x0 = 10,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_4_1")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc4x1 = 11,
+    Idc4x1 = 11,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_4_2")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc4x2 = 12,
+    Idc4x2 = 12,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_5_0")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc5x0 = 13,
+    Idc5x0 = 13,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_5_1")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc5x1 = 14,
+    Idc5x1 = 14,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_5_2")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc5x2 = 15,
+    Idc5x2 = 15,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_6_0")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc6x0 = 16,
+    Idc6x0 = 16,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_6_1")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc6x1 = 17,
+    Idc6x1 = 17,
 
     [NativeName("STD_VIDEO_H264_LEVEL_IDC_6_2")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdc6x2 = 18,
-
-    [NativeName("STD_VIDEO_H264_LEVEL_IDC_INVALID")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdcInvalid = 0x7FFFFFFF,
-
-    [NativeName("STD_VIDEO_H264_LEVEL_IDC_MAX_ENUM")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoH264LevelIdcMaxEnum = 0x7FFFFFFF,
+    Idc6x2 = 18,
 }

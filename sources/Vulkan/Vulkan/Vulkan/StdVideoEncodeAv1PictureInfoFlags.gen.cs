@@ -17,7 +17,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     public uint Bitfield;
 
     [NativeName("error_resilient_mode")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ErrorResilientMode
     {
@@ -28,7 +27,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("disable_cdf_update")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DisableCdfUpdate
     {
@@ -39,7 +37,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("use_superres")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UseSuperres
     {
@@ -50,7 +47,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("render_and_frame_size_different")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint RenderAndFrameSizeDifferent
     {
@@ -61,7 +57,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("allow_screen_content_tools")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint AllowScreenContentTools
     {
@@ -72,7 +67,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("is_filter_switchable")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IsFilterSwitchable
     {
@@ -83,7 +77,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("force_integer_mv")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ForceIntegerMv
     {
@@ -94,7 +87,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("frame_size_override_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FrameSizeOverrideFlag
     {
@@ -105,7 +97,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("buffer_removal_time_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint BufferRemovalTimePresentFlag
     {
@@ -116,7 +107,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("allow_intrabc")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint AllowIntrabc
     {
@@ -127,7 +117,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("frame_refs_short_signaling")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FrameRefsShortSignaling
     {
@@ -138,7 +127,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("allow_high_precision_mv")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint AllowHighPrecisionMv
     {
@@ -149,7 +137,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("is_motion_mode_switchable")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IsMotionModeSwitchable
     {
@@ -160,7 +147,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("use_ref_frame_mvs")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UseRefFrameMvs
     {
@@ -171,7 +157,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("disable_frame_end_update_cdf")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DisableFrameEndUpdateCdf
     {
@@ -182,7 +167,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("allow_warped_motion")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint AllowWarpedMotion
     {
@@ -193,7 +177,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("reduced_tx_set")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ReducedTxSet
     {
@@ -204,7 +187,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("skip_mode_present")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SkipModePresent
     {
@@ -215,7 +197,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("delta_q_present")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DeltaQPresent
     {
@@ -226,7 +207,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("delta_lf_present")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DeltaLfPresent
     {
@@ -237,7 +217,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("delta_lf_multi")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DeltaLfMulti
     {
@@ -248,7 +227,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("segmentation_enabled")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SegmentationEnabled
     {
@@ -259,7 +237,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("segmentation_update_map")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SegmentationUpdateMap
     {
@@ -270,7 +247,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("segmentation_temporal_update")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SegmentationTemporalUpdate
     {
@@ -281,7 +257,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("segmentation_update_data")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SegmentationUpdateData
     {
@@ -292,7 +267,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("UsesLr")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UsesLr
     {
@@ -303,7 +277,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("usesChromaLr")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UsesChromaLr
     {
@@ -314,7 +287,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("show_frame")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ShowFrame
     {
@@ -325,7 +297,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("showable_frame")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ShowableFrame
     {
@@ -336,7 +307,6 @@ public partial struct StdVideoEncodeAv1PictureInfoFlags
     }
 
     [NativeName("reserved")]
-    [NativeTypeName("uint32_t : 3")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

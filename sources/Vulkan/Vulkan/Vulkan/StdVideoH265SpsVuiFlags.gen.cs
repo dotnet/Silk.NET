@@ -16,7 +16,6 @@ public partial struct StdVideoH265SpsVuiFlags
     public uint Bitfield;
 
     [NativeName("aspect_ratio_info_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint AspectRatioInfoPresentFlag
     {
@@ -27,7 +26,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("overscan_info_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint OverscanInfoPresentFlag
     {
@@ -38,7 +36,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("overscan_appropriate_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint OverscanAppropriateFlag
     {
@@ -49,7 +46,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("video_signal_type_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VideoSignalTypePresentFlag
     {
@@ -60,7 +56,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("video_full_range_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VideoFullRangeFlag
     {
@@ -71,7 +66,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("colour_description_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ColourDescriptionPresentFlag
     {
@@ -82,7 +76,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("chroma_loc_info_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ChromaLocInfoPresentFlag
     {
@@ -93,7 +86,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("neutral_chroma_indication_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint NeutralChromaIndicationFlag
     {
@@ -104,7 +96,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("field_seq_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FieldSeqFlag
     {
@@ -115,7 +106,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("frame_field_info_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FrameFieldInfoPresentFlag
     {
@@ -126,7 +116,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("default_display_window_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DefaultDisplayWindowFlag
     {
@@ -137,7 +126,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("vui_timing_info_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VuiTimingInfoPresentFlag
     {
@@ -148,7 +136,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("vui_poc_proportional_to_timing_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VuiPocProportionalToTimingFlag
     {
@@ -159,7 +146,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("vui_hrd_parameters_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VuiHrdParametersPresentFlag
     {
@@ -170,7 +156,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("bitstream_restriction_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint BitstreamRestrictionFlag
     {
@@ -181,7 +166,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("tiles_fixed_structure_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint TilesFixedStructureFlag
     {
@@ -192,7 +176,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("motion_vectors_over_pic_boundaries_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint MotionVectorsOverPicBoundariesFlag
     {
@@ -203,7 +186,6 @@ public partial struct StdVideoH265SpsVuiFlags
     }
 
     [NativeName("restricted_ref_pic_lists_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint RestrictedRefPicListsFlag
     {

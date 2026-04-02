@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_ref_frame_idx_e__FixedBuffer")]
 [InlineArray(7)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoEncodeAv1PictureInfo))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeAv1PictureInfoRefFrameIdx
 {

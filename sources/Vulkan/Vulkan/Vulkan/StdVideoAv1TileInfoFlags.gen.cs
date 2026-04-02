@@ -17,7 +17,6 @@ public partial struct StdVideoAv1TileInfoFlags
     public uint Bitfield;
 
     [NativeName("uniform_tile_spacing_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UniformTileSpacingFlag
     {
@@ -28,7 +27,6 @@ public partial struct StdVideoAv1TileInfoFlags
     }
 
     [NativeName("reserved")]
-    [NativeTypeName("uint32_t : 31")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

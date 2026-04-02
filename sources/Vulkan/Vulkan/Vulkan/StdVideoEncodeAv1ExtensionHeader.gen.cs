@@ -13,12 +13,10 @@ namespace Silk.NET.Vulkan;
 public partial struct StdVideoEncodeAv1ExtensionHeader
 {
     [NativeName("temporal_id")]
-    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte TemporalId;
 
     [NativeName("spatial_id")]
-    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte SpatialId;
 }

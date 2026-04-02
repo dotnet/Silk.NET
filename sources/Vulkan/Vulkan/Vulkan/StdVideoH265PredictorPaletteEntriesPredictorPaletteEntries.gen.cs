@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_PredictorPaletteEntries_e__FixedBuffer")]
 [InlineArray(3 * 128)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH265PredictorPaletteEntries))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265PredictorPaletteEntriesPredictorPaletteEntries
 {

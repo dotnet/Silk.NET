@@ -21,27 +21,22 @@ public partial struct StdVideoEncodeH264ReferenceInfo
     public StdVideoH264PictureType PrimaryPicType;
 
     [NativeName("FrameNum")]
-    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan")]
     public uint FrameNum;
 
     [NativeName("PicOrderCnt")]
-    [NativeTypeName("int32_t")]
     [SupportedApiProfile("vulkan")]
     public int PicOrderCnt;
 
     [NativeName("long_term_pic_num")]
-    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort LongTermPicNum;
 
     [NativeName("long_term_frame_idx")]
-    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort LongTermFrameIdx;
 
     [NativeName("temporal_id")]
-    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte TemporalId;
 }

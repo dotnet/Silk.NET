@@ -17,7 +17,6 @@ public partial struct StdVideoH265ProfileTierLevelFlags
     public uint Bitfield;
 
     [NativeName("general_tier_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint GeneralTierFlag
     {
@@ -28,7 +27,6 @@ public partial struct StdVideoH265ProfileTierLevelFlags
     }
 
     [NativeName("general_progressive_source_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint GeneralProgressiveSourceFlag
     {
@@ -39,7 +37,6 @@ public partial struct StdVideoH265ProfileTierLevelFlags
     }
 
     [NativeName("general_interlaced_source_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint GeneralInterlacedSourceFlag
     {
@@ -50,7 +47,6 @@ public partial struct StdVideoH265ProfileTierLevelFlags
     }
 
     [NativeName("general_non_packed_constraint_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint GeneralNonPackedConstraintFlag
     {
@@ -61,7 +57,6 @@ public partial struct StdVideoH265ProfileTierLevelFlags
     }
 
     [NativeName("general_frame_only_constraint_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint GeneralFrameOnlyConstraintFlag
     {

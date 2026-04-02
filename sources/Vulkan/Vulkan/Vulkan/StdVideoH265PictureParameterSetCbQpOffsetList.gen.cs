@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_cb_qp_offset_list_e__FixedBuffer")]
 [InlineArray(6)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH265PictureParameterSet))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265PictureParameterSetCbQpOffsetList
 {

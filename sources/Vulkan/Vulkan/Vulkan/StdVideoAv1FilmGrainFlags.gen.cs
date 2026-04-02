@@ -17,7 +17,6 @@ public partial struct StdVideoAv1FilmGrainFlags
     public uint Bitfield;
 
     [NativeName("chroma_scaling_from_luma")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ChromaScalingFromLuma
     {
@@ -28,7 +27,6 @@ public partial struct StdVideoAv1FilmGrainFlags
     }
 
     [NativeName("overlap_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint OverlapFlag
     {
@@ -39,7 +37,6 @@ public partial struct StdVideoAv1FilmGrainFlags
     }
 
     [NativeName("clip_to_restricted_range")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ClipToRestrictedRange
     {
@@ -50,7 +47,6 @@ public partial struct StdVideoAv1FilmGrainFlags
     }
 
     [NativeName("update_grain")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UpdateGrain
     {
@@ -61,7 +57,6 @@ public partial struct StdVideoAv1FilmGrainFlags
     }
 
     [NativeName("reserved")]
-    [NativeTypeName("uint32_t : 28")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

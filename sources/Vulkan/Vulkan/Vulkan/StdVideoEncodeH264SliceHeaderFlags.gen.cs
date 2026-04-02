@@ -16,7 +16,6 @@ public partial struct StdVideoEncodeH264SliceHeaderFlags
     public uint Bitfield;
 
     [NativeName("direct_spatial_mv_pred_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DirectSpatialMvPredFlag
     {
@@ -27,7 +26,6 @@ public partial struct StdVideoEncodeH264SliceHeaderFlags
     }
 
     [NativeName("num_ref_idx_active_override_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint NumRefIdxActiveOverrideFlag
     {
@@ -38,7 +36,6 @@ public partial struct StdVideoEncodeH264SliceHeaderFlags
     }
 
     [NativeName("reserved")]
-    [NativeTypeName("uint32_t : 30")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

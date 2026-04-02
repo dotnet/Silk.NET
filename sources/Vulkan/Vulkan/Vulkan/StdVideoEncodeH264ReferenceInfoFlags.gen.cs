@@ -17,7 +17,6 @@ public partial struct StdVideoEncodeH264ReferenceInfoFlags
     public uint Bitfield;
 
     [NativeName("used_for_long_term_reference")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UsedForLongTermReference
     {
@@ -28,7 +27,6 @@ public partial struct StdVideoEncodeH264ReferenceInfoFlags
     }
 
     [NativeName("reserved")]
-    [NativeTypeName("uint32_t : 31")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

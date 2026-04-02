@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_cpb_size_value_minus1_e__FixedBuffer")]
 [InlineArray(32)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH265SubLayerHrdParameters))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265SubLayerHrdParametersCpbSizeValueMinus1
 {

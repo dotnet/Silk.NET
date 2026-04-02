@@ -16,7 +16,6 @@ public partial struct StdVideoH265HrdFlags
     public uint Bitfield;
 
     [NativeName("nal_hrd_parameters_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint NalHrdParametersPresentFlag
     {
@@ -27,7 +26,6 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("vcl_hrd_parameters_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VclHrdParametersPresentFlag
     {
@@ -38,7 +36,6 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("sub_pic_hrd_params_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SubPicHrdParamsPresentFlag
     {
@@ -49,7 +46,6 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("sub_pic_cpb_params_in_pic_timing_sei_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SubPicCpbParamsInPicTimingSeiFlag
     {
@@ -60,7 +56,6 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("fixed_pic_rate_general_flag")]
-    [NativeTypeName("uint32_t : 8")]
     [SupportedApiProfile("vulkan")]
     public uint FixedPicRateGeneralFlag
     {
@@ -71,7 +66,6 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("fixed_pic_rate_within_cvs_flag")]
-    [NativeTypeName("uint32_t : 8")]
     [SupportedApiProfile("vulkan")]
     public uint FixedPicRateWithinCvsFlag
     {
@@ -82,7 +76,6 @@ public partial struct StdVideoH265HrdFlags
     }
 
     [NativeName("low_delay_hrd_flag")]
-    [NativeTypeName("uint32_t : 8")]
     [SupportedApiProfile("vulkan")]
     public uint LowDelayHrdFlag
     {

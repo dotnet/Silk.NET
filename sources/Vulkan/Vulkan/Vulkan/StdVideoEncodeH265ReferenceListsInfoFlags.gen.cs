@@ -17,7 +17,6 @@ public partial struct StdVideoEncodeH265ReferenceListsInfoFlags
     public uint Bitfield;
 
     [NativeName("ref_pic_list_modification_flag_l0")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint RefPicListModificationFlagL0
     {
@@ -28,7 +27,6 @@ public partial struct StdVideoEncodeH265ReferenceListsInfoFlags
     }
 
     [NativeName("ref_pic_list_modification_flag_l1")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint RefPicListModificationFlagL1
     {
@@ -39,7 +37,6 @@ public partial struct StdVideoEncodeH265ReferenceListsInfoFlags
     }
 
     [NativeName("reserved")]
-    [NativeTypeName("uint32_t : 30")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

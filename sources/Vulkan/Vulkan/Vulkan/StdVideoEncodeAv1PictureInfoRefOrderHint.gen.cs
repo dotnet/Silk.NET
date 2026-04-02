@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_ref_order_hint_e__FixedBuffer")]
 [InlineArray(8)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoEncodeAv1PictureInfo))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeAv1PictureInfoRefOrderHint
 {

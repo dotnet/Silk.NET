@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_point_cr_value_e__FixedBuffer")]
 [InlineArray(10)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoAv1FilmGrain))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1FilmGrainPointCrValue
 {

@@ -17,7 +17,6 @@ public unsafe partial struct StdVideoEncodeH264SliceHeader
     public StdVideoEncodeH264SliceHeaderFlags Flags;
 
     [NativeName("first_mb_in_slice")]
-    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan")]
     public uint FirstMbInSlice;
 
@@ -26,22 +25,18 @@ public unsafe partial struct StdVideoEncodeH264SliceHeader
     public StdVideoH264SliceType SliceType;
 
     [NativeName("slice_alpha_c0_offset_div2")]
-    [NativeTypeName("int8_t")]
     [SupportedApiProfile("vulkan")]
     public sbyte SliceAlphaC0OffsetDiv2;
 
     [NativeName("slice_beta_offset_div2")]
-    [NativeTypeName("int8_t")]
     [SupportedApiProfile("vulkan")]
     public sbyte SliceBetaOffsetDiv2;
 
     [NativeName("slice_qp_delta")]
-    [NativeTypeName("int8_t")]
     [SupportedApiProfile("vulkan")]
     public sbyte SliceQpDelta;
 
     [NativeName("reserved1")]
-    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved1;
 
@@ -54,7 +49,6 @@ public unsafe partial struct StdVideoEncodeH264SliceHeader
     public StdVideoH264DisableDeblockingFilterIdc DisableDeblockingFilterIdc;
 
     [NativeName("pWeightTable")]
-    [NativeTypeName("const StdVideoEncodeH264WeightTable *")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH264WeightTable* PWeightTable;
 }

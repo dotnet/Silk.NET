@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_FeatureData_e__FixedBuffer")]
 [InlineArray(8 * 4)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoVp9Segmentation))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoVp9SegmentationFeatureData
 {

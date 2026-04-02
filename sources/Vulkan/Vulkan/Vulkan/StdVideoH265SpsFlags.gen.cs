@@ -17,7 +17,6 @@ public partial struct StdVideoH265SpsFlags
     public uint Bitfield;
 
     [NativeName("sps_temporal_id_nesting_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SpsTemporalIdNestingFlag
     {
@@ -28,7 +27,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("separate_colour_plane_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SeparateColourPlaneFlag
     {
@@ -39,7 +37,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("conformance_window_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ConformanceWindowFlag
     {
@@ -50,7 +47,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("sps_sub_layer_ordering_info_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SpsSubLayerOrderingInfoPresentFlag
     {
@@ -61,7 +57,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("scaling_list_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ScalingListEnabledFlag
     {
@@ -72,7 +67,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("sps_scaling_list_data_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SpsScalingListDataPresentFlag
     {
@@ -83,7 +77,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("amp_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint AmpEnabledFlag
     {
@@ -94,7 +87,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("sample_adaptive_offset_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SampleAdaptiveOffsetEnabledFlag
     {
@@ -105,7 +97,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("pcm_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PcmEnabledFlag
     {
@@ -116,7 +107,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("pcm_loop_filter_disabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PcmLoopFilterDisabledFlag
     {
@@ -127,7 +117,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("long_term_ref_pics_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint LongTermRefPicsPresentFlag
     {
@@ -138,7 +127,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("sps_temporal_mvp_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SpsTemporalMvpEnabledFlag
     {
@@ -149,7 +137,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("strong_intra_smoothing_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint StrongIntraSmoothingEnabledFlag
     {
@@ -160,7 +147,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("vui_parameters_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VuiParametersPresentFlag
     {
@@ -171,7 +157,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("sps_extension_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SpsExtensionPresentFlag
     {
@@ -182,7 +167,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("sps_range_extension_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SpsRangeExtensionFlag
     {
@@ -193,7 +177,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("transform_skip_rotation_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint TransformSkipRotationEnabledFlag
     {
@@ -204,7 +187,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("transform_skip_context_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint TransformSkipContextEnabledFlag
     {
@@ -215,7 +197,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("implicit_rdpcm_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ImplicitRdpcmEnabledFlag
     {
@@ -226,7 +207,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("explicit_rdpcm_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ExplicitRdpcmEnabledFlag
     {
@@ -237,7 +217,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("extended_precision_processing_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ExtendedPrecisionProcessingFlag
     {
@@ -248,7 +227,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("intra_smoothing_disabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IntraSmoothingDisabledFlag
     {
@@ -259,7 +237,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("high_precision_offsets_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint HighPrecisionOffsetsEnabledFlag
     {
@@ -270,7 +247,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("persistent_rice_adaptation_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PersistentRiceAdaptationEnabledFlag
     {
@@ -281,7 +257,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("cabac_bypass_alignment_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint CabacBypassAlignmentEnabledFlag
     {
@@ -292,7 +267,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("sps_scc_extension_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SpsSccExtensionFlag
     {
@@ -303,7 +277,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("sps_curr_pic_ref_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SpsCurrPicRefEnabledFlag
     {
@@ -314,7 +287,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("palette_mode_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PaletteModeEnabledFlag
     {
@@ -325,7 +297,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("sps_palette_predictor_initializers_present_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SpsPalettePredictorInitializersPresentFlag
     {
@@ -336,7 +307,6 @@ public partial struct StdVideoH265SpsFlags
     }
 
     [NativeName("intra_boundary_filtering_disabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IntraBoundaryFilteringDisabledFlag
     {

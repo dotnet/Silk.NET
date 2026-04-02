@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_FrameRestorationType_e__FixedBuffer")]
 [InlineArray(3)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoAv1LoopRestoration))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1LoopRestorationFrameRestorationType
 {

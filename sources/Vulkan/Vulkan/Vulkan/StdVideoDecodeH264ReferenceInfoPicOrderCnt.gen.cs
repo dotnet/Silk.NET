@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_PicOrderCnt_e__FixedBuffer")]
 [InlineArray(2)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoDecodeH264ReferenceInfo))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeH264ReferenceInfoPicOrderCnt
 {

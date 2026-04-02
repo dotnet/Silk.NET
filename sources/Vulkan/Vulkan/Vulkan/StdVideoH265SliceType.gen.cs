@@ -8,27 +8,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH265SliceType")]
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH265SliceType : uint
 {
     [NativeName("STD_VIDEO_H265_SLICE_TYPE_B")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH265SliceTypeB = 0,
+    B = 0,
 
     [NativeName("STD_VIDEO_H265_SLICE_TYPE_P")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH265SliceTypeP = 1,
+    P = 1,
 
     [NativeName("STD_VIDEO_H265_SLICE_TYPE_I")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH265SliceTypeI = 2,
-
-    [NativeName("STD_VIDEO_H265_SLICE_TYPE_INVALID")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoH265SliceTypeInvalid = 0x7FFFFFFF,
-
-    [NativeName("STD_VIDEO_H265_SLICE_TYPE_MAX_ENUM")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoH265SliceTypeMaxEnum = 0x7FFFFFFF,
+    I = 2,
 }

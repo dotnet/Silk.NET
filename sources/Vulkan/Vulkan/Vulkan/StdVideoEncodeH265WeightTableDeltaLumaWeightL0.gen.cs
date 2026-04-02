@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_delta_luma_weight_l0_e__FixedBuffer")]
 [InlineArray(15)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoEncodeH265WeightTable))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265WeightTableDeltaLumaWeightL0
 {

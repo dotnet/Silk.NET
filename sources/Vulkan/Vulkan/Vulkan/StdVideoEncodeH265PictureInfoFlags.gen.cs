@@ -16,7 +16,6 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     public uint Bitfield;
 
     [NativeName("is_reference")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IsReference
     {
@@ -27,7 +26,6 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("IrapPicFlag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IrapPicFlag
     {
@@ -38,7 +36,6 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("used_for_long_term_reference")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UsedForLongTermReference
     {
@@ -49,7 +46,6 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("discardable_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DiscardableFlag
     {
@@ -60,7 +56,6 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("cross_layer_bla_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint CrossLayerBlaFlag
     {
@@ -71,7 +66,6 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("pic_output_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PicOutputFlag
     {
@@ -82,7 +76,6 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("no_output_of_prior_pics_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint NoOutputOfPriorPicsFlag
     {
@@ -93,7 +86,6 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("short_term_ref_pic_set_sps_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ShortTermRefPicSetSpsFlag
     {
@@ -104,7 +96,6 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("slice_temporal_mvp_enabled_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SliceTemporalMvpEnabledFlag
     {
@@ -115,7 +106,6 @@ public partial struct StdVideoEncodeH265PictureInfoFlags
     }
 
     [NativeName("reserved")]
-    [NativeTypeName("uint32_t : 23")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_ScalingListDCCoef32x32_e__FixedBuffer")]
 [InlineArray(2)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH265ScalingLists))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265ScalingListsScalingListDCCoef32x32
 {

@@ -8,47 +8,38 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1ReferenceName")]
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoAv1ReferenceName : uint
 {
     [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_INTRA_FRAME")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ReferenceNameIntraFrame = 0,
+    IntraFrame = 0,
 
     [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_LAST_FRAME")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ReferenceNameLastFrame = 1,
+    LastFrame = 1,
 
     [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_LAST2_FRAME")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ReferenceNameLast2Frame = 2,
+    Last2Frame = 2,
 
     [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_LAST3_FRAME")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ReferenceNameLast3Frame = 3,
+    Last3Frame = 3,
 
     [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_GOLDEN_FRAME")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ReferenceNameGoldenFrame = 4,
+    GoldenFrame = 4,
 
     [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_BWDREF_FRAME")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ReferenceNameBwdrefFrame = 5,
+    BwdrefFrame = 5,
 
     [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_ALTREF2_FRAME")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ReferenceNameAltref2Frame = 6,
+    Altref2Frame = 6,
 
     [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_ALTREF_FRAME")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ReferenceNameAltrefFrame = 7,
-
-    [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_INVALID")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoAv1ReferenceNameInvalid = 0x7FFFFFFF,
-
-    [NativeName("STD_VIDEO_AV1_REFERENCE_NAME_MAX_ENUM")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoAv1ReferenceNameMaxEnum = 0x7FFFFFFF,
+    AltrefFrame = 7,
 }

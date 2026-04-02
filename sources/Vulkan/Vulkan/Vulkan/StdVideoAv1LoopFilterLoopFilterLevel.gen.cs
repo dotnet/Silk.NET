@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_loop_filter_level_e__FixedBuffer")]
 [InlineArray(4)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoAv1LoopFilter))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1LoopFilterLoopFilterLevel
 {

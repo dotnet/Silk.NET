@@ -16,7 +16,6 @@ public partial struct StdVideoH265ShortTermRefPicSetFlags
     public uint Bitfield;
 
     [NativeName("inter_ref_pic_set_prediction_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint InterRefPicSetPredictionFlag
     {
@@ -27,7 +26,6 @@ public partial struct StdVideoH265ShortTermRefPicSetFlags
     }
 
     [NativeName("delta_rps_sign")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DeltaRpsSign
     {

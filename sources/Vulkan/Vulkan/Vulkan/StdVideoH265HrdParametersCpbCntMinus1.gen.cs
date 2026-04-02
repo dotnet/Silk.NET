@@ -10,7 +10,6 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_cpb_cnt_minus1_e__FixedBuffer")]
 [InlineArray(7)]
-[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH265HrdParameters))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265HrdParametersCpbCntMinus1
 {

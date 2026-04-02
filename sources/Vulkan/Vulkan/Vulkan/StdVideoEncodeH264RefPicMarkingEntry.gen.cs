@@ -17,22 +17,18 @@ public partial struct StdVideoEncodeH264RefPicMarkingEntry
     public StdVideoH264MemMgmtControlOp MemoryManagementControlOperation;
 
     [NativeName("difference_of_pic_nums_minus1")]
-    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort DifferenceOfPicNumsMinus1;
 
     [NativeName("long_term_pic_num")]
-    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort LongTermPicNum;
 
     [NativeName("long_term_frame_idx")]
-    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort LongTermFrameIdx;
 
     [NativeName("max_long_term_frame_idx_plus1")]
-    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort MaxLongTermFrameIdxPlus1;
 }

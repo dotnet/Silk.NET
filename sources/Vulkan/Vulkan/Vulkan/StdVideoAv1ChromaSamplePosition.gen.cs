@@ -9,31 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1ChromaSamplePosition")]
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoAv1ChromaSamplePosition : uint
 {
     [NativeName("STD_VIDEO_AV1_CHROMA_SAMPLE_POSITION_UNKNOWN")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ChromaSamplePositionUnknown = 0,
+    Unknown = 0,
 
     [NativeName("STD_VIDEO_AV1_CHROMA_SAMPLE_POSITION_VERTICAL")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ChromaSamplePositionVertical = 1,
+    Vertical = 1,
 
     [NativeName("STD_VIDEO_AV1_CHROMA_SAMPLE_POSITION_COLOCATED")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ChromaSamplePositionColocated = 2,
+    Colocated = 2,
 
     [NativeName("STD_VIDEO_AV1_CHROMA_SAMPLE_POSITION_RESERVED")]
     [SupportedApiProfile("vulkan")]
-    StdVideoAv1ChromaSamplePositionReserved = 3,
-
-    [NativeName("STD_VIDEO_AV1_CHROMA_SAMPLE_POSITION_INVALID")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoAv1ChromaSamplePositionInvalid = 0x7FFFFFFF,
-
-    [NativeName("STD_VIDEO_AV1_CHROMA_SAMPLE_POSITION_MAX_ENUM")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoAv1ChromaSamplePositionMaxEnum = 0x7FFFFFFF,
+    Reserved = 3,
 }

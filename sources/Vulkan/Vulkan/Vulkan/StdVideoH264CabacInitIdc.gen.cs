@@ -9,27 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH264CabacInitIdc")]
-[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH264CabacInitIdc : uint
 {
     [NativeName("STD_VIDEO_H264_CABAC_INIT_IDC_0")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264CabacInitIdc0 = 0,
+    Idc0 = 0,
 
     [NativeName("STD_VIDEO_H264_CABAC_INIT_IDC_1")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264CabacInitIdc1 = 1,
+    Idc1 = 1,
 
     [NativeName("STD_VIDEO_H264_CABAC_INIT_IDC_2")]
     [SupportedApiProfile("vulkan")]
-    StdVideoH264CabacInitIdc2 = 2,
-
-    [NativeName("STD_VIDEO_H264_CABAC_INIT_IDC_INVALID")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoH264CabacInitIdcInvalid = 0x7FFFFFFF,
-
-    [NativeName("STD_VIDEO_H264_CABAC_INIT_IDC_MAX_ENUM")]
-    [SupportedApiProfile("vulkan")]
-    StdVideoH264CabacInitIdcMaxEnum = 0x7FFFFFFF,
+    Idc2 = 2,
 }

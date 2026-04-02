@@ -17,17 +17,14 @@ public partial struct StdVideoDecodeH264ReferenceInfo
     public StdVideoDecodeH264ReferenceInfoFlags Flags;
 
     [NativeName("FrameNum")]
-    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort FrameNum;
 
     [NativeName("reserved")]
-    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort Reserved;
 
     [NativeName("PicOrderCnt")]
-    [NativeTypeName("int32_t[2]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH264ReferenceInfoPicOrderCnt PicOrderCnt;
 }

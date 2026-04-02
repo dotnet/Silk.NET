@@ -13,32 +13,26 @@ namespace Silk.NET.Vulkan;
 public partial struct StdVideoH265ScalingLists
 {
     [NativeName("ScalingList4x4")]
-    [NativeTypeName("uint8_t[6][16]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ScalingListsScalingList4x4 ScalingList4x4;
 
     [NativeName("ScalingList8x8")]
-    [NativeTypeName("uint8_t[6][64]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ScalingListsScalingList8x8 ScalingList8x8;
 
     [NativeName("ScalingList16x16")]
-    [NativeTypeName("uint8_t[6][64]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ScalingListsScalingList16x16 ScalingList16x16;
 
     [NativeName("ScalingList32x32")]
-    [NativeTypeName("uint8_t[2][64]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ScalingListsScalingList32x32 ScalingList32x32;
 
     [NativeName("ScalingListDCCoef16x16")]
-    [NativeTypeName("uint8_t[6]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ScalingListsScalingListDCCoef16x16 ScalingListDCCoef16x16;
 
     [NativeName("ScalingListDCCoef32x32")]
-    [NativeTypeName("uint8_t[2]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ScalingListsScalingListDCCoef32x32 ScalingListDCCoef32x32;
 }

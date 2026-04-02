@@ -16,7 +16,6 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     public uint Bitfield;
 
     [NativeName("IdrPicFlag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IdrPicFlag
     {
@@ -27,7 +26,6 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     }
 
     [NativeName("is_reference")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IsReference
     {
@@ -38,7 +36,6 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     }
 
     [NativeName("no_output_of_prior_pics_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint NoOutputOfPriorPicsFlag
     {
@@ -49,7 +46,6 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     }
 
     [NativeName("long_term_reference_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint LongTermReferenceFlag
     {
@@ -60,7 +56,6 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     }
 
     [NativeName("adaptive_ref_pic_marking_mode_flag")]
-    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint AdaptiveRefPicMarkingModeFlag
     {
@@ -71,7 +66,6 @@ public partial struct StdVideoEncodeH264PictureInfoFlags
     }
 
     [NativeName("reserved")]
-    [NativeTypeName("uint32_t : 27")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {
