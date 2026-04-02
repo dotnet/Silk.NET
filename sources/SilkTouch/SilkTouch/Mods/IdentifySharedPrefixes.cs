@@ -43,7 +43,8 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var configuration = config.Get(ctx.JobKey);
-        if (ctx.SourceProject is null)
+        var project = ctx.SourceProject;
+        if (project is null)
         {
             return;
         }
@@ -56,12 +57,12 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         // Gather all the names
         var visitor = new Visitor();
-        foreach (var doc in ctx.SourceProject.Documents)
+        foreach (var doc in project.Documents)
         {
             visitor.Visit(await doc.GetSyntaxRootAsync(ct));
         }
 
-        // Dictionary<Scope, Dictionary<Member, MemberPrefix>>
+        // Identify shared prefixes
         var results = new Dictionary<string, Dictionary<string, string>>();
         foreach (var (scope, members) in visitor.Scopes)
         {
@@ -74,8 +75,26 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             results.Add(scope, prefixes);
         }
 
-        // TODO
-        Console.WriteLine();
+        // Output results as NameAffix attributes
+        var rewriter = new Rewriter(results);
+        foreach (var documentId in project.DocumentIds)
+        {
+            var document = project.GetDocument(documentId);
+            if (document == null)
+            {
+                continue;
+            }
+
+            var syntaxRoot = await document.GetSyntaxRootAsync(ct);
+            if (syntaxRoot == null)
+            {
+                continue;
+            }
+
+            project = document.WithSyntaxRoot(rewriter.Visit(syntaxRoot)).Project;
+        }
+
+        ctx.SourceProject = project;
     }
 
     /// <summary>
@@ -474,12 +493,11 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         private BaseTypeDeclarationSyntax? _scope = null;
 
         private void ReportName(
-            SyntaxToken scopeIdentifier,
             SyntaxList<AttributeListSyntax> memberAttributeLists,
             SyntaxToken memberIdentifier
         )
         {
-            var scopeName = scopeIdentifier.ToString();
+            var scopeName = _scope?.Identifier.ToString() ?? "";
             if (!Scopes.TryGetValue(scopeName, out var members))
             {
                 Scopes[scopeName] = members = [];
@@ -506,53 +524,61 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            ReportName(default, node.AttributeLists, node.Identifier);
+            ReportName(node.AttributeLists, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
+            var previousScope = _scope;
             _scope = node;
             foreach (var member in node.Members)
             {
                 Visit(member);
             }
-            _scope = null;
+            _scope = previousScope;
         }
 
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            ReportName(default, node.AttributeLists, node.Identifier);
+            ReportName(node.AttributeLists, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
+            var previousScope = _scope;
             _scope = node;
             foreach (var member in node.Members)
             {
                 Visit(member);
             }
-            _scope = null;
+            _scope = previousScope;
         }
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            ReportName(default, node.AttributeLists, node.Identifier);
+            ReportName(node.AttributeLists, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
+            var previousScope = _scope;
             _scope = node;
             foreach (var member in node.Members)
             {
                 Visit(member);
             }
-            _scope = null;
+            _scope = previousScope;
         }
 
-        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) { }
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+        {
+            ReportName(node.AttributeLists, node.Identifier);
+            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
+        }
 
         // ----- Members -----
 
         public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
         {
-            ReportName(_scope!.Identifier, node.AttributeLists, node.Identifier);
+            ReportName(node.AttributeLists, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
 
+        // Only supports single variable fields
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
             // If the node is not a constant, skip it
@@ -565,11 +591,9 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                 return;
             }
 
-            foreach (var variable in node.Declaration.Variables)
-            {
-                ReportName(_scope!.Identifier, node.AttributeLists, variable.Identifier);
-                TryReportNonDeterminant(node.AttributeLists, variable.Identifier);
-            }
+            var firstVariable = node.Declaration.Variables.First();
+            ReportName(node.AttributeLists, firstVariable.Identifier);
+            TryReportNonDeterminant(node.AttributeLists, firstVariable.Identifier);
         }
 
         public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
@@ -581,7 +605,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                 return;
             }
 
-            ReportName(_scope!.Identifier, node.AttributeLists, node.Identifier);
+            ReportName(node.AttributeLists, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
 
@@ -600,8 +624,103 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                 return;
             }
 
-            ReportName(_scope!.Identifier, node.AttributeLists, node.Identifier);
+            ReportName(node.AttributeLists, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
+    }
+
+    /// <param name="results">Scope -> (Member -> MemberPrefix)</param>
+    private class Rewriter(Dictionary<string, Dictionary<string, string>> results)
+        : CSharpSyntaxRewriter
+    {
+        private BaseTypeDeclarationSyntax? _scope = null;
+
+        private SyntaxList<AttributeListSyntax> RewriteAttributes(
+            SyntaxToken memberIdentifier,
+            SyntaxList<AttributeListSyntax> memberAttributeLists
+        )
+        {
+            var scopeName = _scope?.Identifier.ToString() ?? "";
+            if (!results.TryGetValue(scopeName, out var scopePrefixes))
+            {
+                return memberAttributeLists;
+            }
+
+            if (!scopePrefixes.TryGetValue(memberIdentifier.ToString(), out var prefix))
+            {
+                return memberAttributeLists;
+            }
+
+            return memberAttributeLists.AddNameAffix(
+                NameAffixType.Prefix,
+                "SharedPrefix",
+                prefix,
+                true
+            );
+        }
+
+        // ----- Types -----
+
+        public override SyntaxNode VisitClassDeclaration(ClassDeclarationSyntax node)
+        {
+            var previousScope = _scope;
+            _scope = node;
+            foreach (var member in node.Members)
+            {
+                Visit(member);
+            }
+            _scope = previousScope;
+
+            return node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+        }
+
+        public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            var previousScope = _scope;
+            _scope = node;
+            foreach (var member in node.Members)
+            {
+                Visit(member);
+            }
+            _scope = previousScope;
+
+            return node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+        }
+
+        public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            var previousScope = _scope;
+            _scope = node;
+            foreach (var member in node.Members)
+            {
+                Visit(member);
+            }
+            _scope = previousScope;
+
+            return node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+        }
+
+        public override SyntaxNode VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
+            node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+
+        // ----- Members -----
+
+        public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
+            node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+
+        // Only supports single variable fields
+        public override SyntaxNode VisitFieldDeclaration(FieldDeclarationSyntax node) =>
+            node.WithAttributeLists(
+                RewriteAttributes(
+                    node.Declaration.Variables.First().Identifier,
+                    node.AttributeLists
+                )
+            );
+
+        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
+            node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+
+        public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
+            node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
     }
 }
