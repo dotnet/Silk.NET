@@ -57,6 +57,9 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         {
             visitor.Visit(await doc.GetSyntaxRootAsync(ct));
         }
+
+        // TODO
+        Console.WriteLine();
     }
 
     private class Visitor : CSharpSyntaxWalker
@@ -78,11 +81,12 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         private BaseTypeDeclarationSyntax? scope = null;
 
-        private void ReportName(string scope, SyntaxToken member)
+        private void ReportName(SyntaxToken scope, SyntaxToken member)
         {
-            if (!Scopes.TryGetValue(scope, out var members))
+            var scopeName = scope.ToString();
+            if (!Scopes.TryGetValue(scopeName, out var members))
             {
-                Scopes[scope] = members = [];
+                Scopes[scopeName] = members = [];
             }
 
             members.Add(member.ToString());
@@ -103,7 +107,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            ReportName("", node.Identifier);
+            ReportName(default, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
             scope = node;
@@ -116,7 +120,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            ReportName("", node.Identifier);
+            ReportName(default, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
             scope = node;
@@ -129,7 +133,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            ReportName("", node.Identifier);
+            ReportName(default, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
             scope = node;
@@ -146,7 +150,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
         {
-            ReportName("", node.Identifier);
+            ReportName(scope!.Identifier, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
 
@@ -154,20 +158,20 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         {
             foreach (var variable in node.Declaration.Variables)
             {
-                ReportName("", variable.Identifier);
+                ReportName(scope!.Identifier, variable.Identifier);
                 TryReportNonDeterminant(node.AttributeLists, variable.Identifier);
             }
         }
 
         public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
-            ReportName("", node.Identifier);
+            ReportName(scope!.Identifier, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
 
         public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
         {
-            ReportName("", node.Identifier);
+            ReportName(scope!.Identifier, node.Identifier);
             TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
     }
