@@ -498,12 +498,18 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         )
         {
             var scopeName = _scope?.Identifier.ToString() ?? "";
+            var memberName = memberIdentifier.ToString();
+
+            if (memberAttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
+            {
+                NonDeterminant.Add(memberName);
+            }
+
             if (!Scopes.TryGetValue(scopeName, out var members))
             {
                 Scopes[scopeName] = members = [];
             }
 
-            var memberName = memberIdentifier.ToString();
             var nameAffixes = memberAttributeLists.GetNameAffixes();
             var unaffixedMemberName = NameAffixer.ApplyAffixes(memberName, nameAffixes);
             members.Add(new MemberName(memberName, unaffixedMemberName));
@@ -512,20 +518,13 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         private void TryReportNonDeterminant(
             SyntaxList<AttributeListSyntax> memberAttributeLists,
             SyntaxToken memberIdentifier
-        )
-        {
-            if (memberAttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
-            {
-                NonDeterminant.Add(memberIdentifier.ToString());
-            }
-        }
+        ) { }
 
         // ----- Types -----
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             ReportName(node.AttributeLists, node.Identifier);
-            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
             var previousScope = _scope;
             _scope = node;
@@ -539,7 +538,6 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
             ReportName(node.AttributeLists, node.Identifier);
-            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
             var previousScope = _scope;
             _scope = node;
@@ -553,7 +551,6 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             ReportName(node.AttributeLists, node.Identifier);
-            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
 
             var previousScope = _scope;
             _scope = node;
@@ -564,19 +561,13 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             _scope = previousScope;
         }
 
-        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
-        {
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
             ReportName(node.AttributeLists, node.Identifier);
-            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
-        }
 
         // ----- Members -----
 
-        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
-        {
+        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
             ReportName(node.AttributeLists, node.Identifier);
-            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
-        }
 
         // Only supports single variable fields
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
@@ -606,7 +597,6 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             }
 
             ReportName(node.AttributeLists, node.Identifier);
-            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
 
         public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
@@ -625,7 +615,6 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             }
 
             ReportName(node.AttributeLists, node.Identifier);
-            TryReportNonDeterminant(node.AttributeLists, node.Identifier);
         }
     }
 
