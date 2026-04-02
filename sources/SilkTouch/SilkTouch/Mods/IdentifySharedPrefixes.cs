@@ -663,41 +663,44 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override SyntaxNode VisitClassDeclaration(ClassDeclarationSyntax node)
         {
+            node = node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+
             var previousScope = _scope;
             _scope = node;
-            foreach (var member in node.Members)
-            {
-                Visit(member);
-            }
+            node = node.WithMembers(
+                [.. node.Members.Select(member => (MemberDeclarationSyntax)Visit(member))]
+            );
             _scope = previousScope;
 
-            return node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+            return node;
         }
 
         public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
+            node = node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+
             var previousScope = _scope;
             _scope = node;
-            foreach (var member in node.Members)
-            {
-                Visit(member);
-            }
+            node = node.WithMembers(
+                [.. node.Members.Select(member => (MemberDeclarationSyntax)Visit(member))]
+            );
             _scope = previousScope;
 
-            return node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+            return node;
         }
 
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
+            node = node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+
             var previousScope = _scope;
             _scope = node;
-            foreach (var member in node.Members)
-            {
-                Visit(member);
-            }
+            node = node.WithMembers(
+                [.. node.Members.Select(member => (EnumMemberDeclarationSyntax)Visit(member))]
+            );
             _scope = previousScope;
 
-            return node.WithAttributeLists(RewriteAttributes(node.Identifier, node.AttributeLists));
+            return node;
         }
 
         public override SyntaxNode VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
