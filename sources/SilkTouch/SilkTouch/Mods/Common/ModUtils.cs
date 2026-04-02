@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using ClangSharp;
 using Microsoft.CodeAnalysis;
@@ -13,6 +14,11 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 public static class ModUtils
 {
+    /// <summary>
+    /// Returns the specified list as a span.
+    /// </summary>
+    public static Span<T> AsSpan<T>(this List<T> list) => CollectionsMarshal.AsSpan(list);
+
     /// <summary>
     /// Converts a namespace string into an <see cref="NameSyntax"/>.
     /// </summary>
