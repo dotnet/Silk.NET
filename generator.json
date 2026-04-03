@@ -47,6 +47,7 @@
         "TransformHandles",
         "TransformFunctions",
         "TransformProperties",
+        "IdentifySharedPrefixes",
         "PrettifyNames",
         "TransformEnums",
         "AddVTables",
@@ -67,8 +68,15 @@
           "SDL_bool": null
         }
       },
-      "PrettifyNames": {
+      "IdentifySharedPrefixes": {
         "GlobalPrefixHints": ["SDL"]
+      },
+      "PrettifyNames": {
+        "Affixes": {
+          "SharedPrefix": {
+            "Remove": true
+          }
+        }
       },
       "TransformEnums": {
         "AddNoneMemberToFlags": true,
@@ -95,6 +103,7 @@
         "MixKhronosData",
         "AddOpaqueStructs",
         "TransformFunctions",
+        "IdentifySharedPrefixes",
         "PrettifyNames",
         "TransformEnums",
         "AddVTables",
@@ -171,14 +180,16 @@
           }
         ]
       },
-      "PrettifyNames": {
+      "IdentifySharedPrefixes": {
         "GlobalPrefixHints": ["gl"],
         "PrefixOverrides": {
           "SyncObjectMask": "GL_SYNC",
           "OcclusionQueryParameterNameNV": "GL",
           "TexStorageAttribs": "GL",
           "ContainerType": "GL"
-        },
+        }
+      },
+      "PrettifyNames": {
         "Affixes": {
           "HandleType": {
             "Order": 1
@@ -196,6 +207,9 @@
             "Remove": true
           },
           "KhronosNonExclusiveVendor": {
+            "Remove": true
+          },
+          "SharedPrefix": {
             "Remove": true
           }
         }
@@ -233,6 +247,7 @@
         "TransformHandles",
         "InterceptNativeFunctions",
         "TransformFunctions",
+        "IdentifySharedPrefixes",
         "PrettifyNames",
         "TransformEnums",
         "AddVTables",
@@ -295,8 +310,10 @@
           }
         ]
       },
+      "IdentifySharedPrefixes": {
+        "GlobalPrefixHints": ["alc", "al"]
+      },
       "PrettifyNames": {
-        "GlobalPrefixHints": ["alc", "al"],
         "NameOverrides": {
           "ALContext": "ALContext",
           "EFXEAXREVERBPROPERTIES": "EfxEaxReverbProperties",
@@ -332,6 +349,9 @@
             "Remove": true
           },
           "KhronosNonExclusiveVendor": {
+            "Remove": true
+          },
+          "SharedPrefix": {
             "Remove": true
           }
         }
