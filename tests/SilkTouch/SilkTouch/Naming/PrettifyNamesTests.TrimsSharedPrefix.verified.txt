@@ -1,5 +1,0 @@
-﻿public enum OcclusionQueryParameterNameNV
-{
-    Nv = 34918,
-    AvailableNv = 34919,
-}

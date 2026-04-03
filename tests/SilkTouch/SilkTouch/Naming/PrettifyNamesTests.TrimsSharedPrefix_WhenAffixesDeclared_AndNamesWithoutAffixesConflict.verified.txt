@@ -1,8 +1,0 @@
-﻿[NameAffix("Suffix", "KhronosVendor", "KHR")]
-public enum VkPresentModeKHR
-{
-    [NameAffix("Suffix", "KhronosVendor", "KHR")]
-    ReadyKHR = 1000361000,
-    [NameAffix("Suffix", "KhronosVendor", "EXT")]
-    ReadyEXT = ReadyKHR,
-}

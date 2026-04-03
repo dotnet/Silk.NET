@@ -1,7 +1,0 @@
-﻿public enum ModeKhr
-{
-}
-
-public enum IdKhr
-{
-}

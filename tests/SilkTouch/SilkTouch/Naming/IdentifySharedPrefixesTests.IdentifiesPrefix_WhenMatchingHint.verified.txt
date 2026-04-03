@@ -1,0 +1,4 @@
+﻿[NameAffix("Prefix", "SharedPrefix", "Vk")]
+public enum VkPresentModeKHR
+{
+}

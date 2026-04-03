@@ -1,0 +1,9 @@
+﻿public enum VocalMorpherPhoneme
+{
+    [NameAffix("Prefix", "SharedPrefix", "AL_VOCAL_MORPHER_PHONEME")]
+    AL_VOCAL_MORPHER_PHONEME_A = 0,
+    [NameAffix("Prefix", "SharedPrefix", "AL_VOCAL_MORPHER_PHONEME")]
+    AL_VOCAL_MORPHER_PHONEME_E = 1,
+    [NameAffix("Prefix", "SharedPrefix", "AL_VOCAL_MORPHER_PHONEME")]
+    AL_VOCAL_MORPHER_PHONEME_I = 2
+}
