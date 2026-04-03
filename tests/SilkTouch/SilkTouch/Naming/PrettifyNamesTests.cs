@@ -27,9 +27,11 @@ public class PrettifyNamesTests
                 """
                 public enum InternalFormat
                 {
+                    [NameAffix("Prefix", "SharedPrefix", "GL")]
                     [NameAffix("Suffix", "KhronosVendor", "ARB")]
                     GL_RGBA32F_ARB = 34836,
 
+                    [NameAffix("Prefix", "SharedPrefix", "GL")]
                     [NameAffix("Suffix", "KhronosVendor", "ARB")]
                     GL_RGB32F_ARB = 34837,
                 }
@@ -42,7 +44,17 @@ public class PrettifyNamesTests
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
             new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration() { LongAcronymThreshold = 3 }
+                new PrettifyNames.Configuration()
+                {
+                    LongAcronymThreshold = 3,
+                    Affixes =
+                    {
+                        {
+                            "SharedPrefix",
+                            new PrettifyNames.NameAffixConfiguration() { Remove = true }
+                        },
+                    },
+                }
             )
         );
 
@@ -68,18 +80,22 @@ public class PrettifyNamesTests
                 """
                 public enum GLEnum
                 {
+                    [NameAffix("Prefix", "SharedPrefix", "GL")]
                     [NameAffix("Suffix", "KhronosVendor", "EXT")]
                     GL_RGB16_EXT = 32852,
 
+                    [NameAffix("Prefix", "SharedPrefix", "GL")]
                     [NameAffix("Suffix", "KhronosVendor", "EXT")]
                     GL_RGB16F_EXT = 34843,
                 }
 
                 public enum ALEnum
                 {
+                    [NameAffix("Prefix", "SharedPrefix", "AL")]
                     [NameAffix("Suffix", "KhronosVendor", "SOFT")]
                     AL_MONO16_SOFT = 4353,
 
+                    [NameAffix("Prefix", "SharedPrefix", "AL")]
                     [NameAffix("Suffix", "KhronosVendor", "SOFT")]
                     AL_MONO32F_SOFT = 65552,
                 }
@@ -92,7 +108,17 @@ public class PrettifyNamesTests
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
             new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration() { LongAcronymThreshold = 4 }
+                new PrettifyNames.Configuration()
+                {
+                    LongAcronymThreshold = 4,
+                    Affixes =
+                    {
+                        {
+                            "SharedPrefix",
+                            new PrettifyNames.NameAffixConfiguration() { Remove = true }
+                        },
+                    },
+                }
             )
         );
 
@@ -117,18 +143,16 @@ public class PrettifyNamesTests
                 """
                 public class AL
                 {
+                    [NameAffix("Prefix", "SharedPrefix", "al")]
                     [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
                     [NameAffix("Suffix", "KhronosVendor", "SOFT")]
                     public void alGetBufferPtrDirectSOFT() { }
 
+                    [NameAffix("Prefix", "SharedPrefix", "al")]
                     [NameAffix("Suffix", "KhronosFunctionDataType", "v")]
                     [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
                     [NameAffix("Suffix", "KhronosVendor", "SOFT")]
                     public void alGetBufferPtrvDirectSOFT() { }
-
-                    // This is to ensure that prefix identification doesn't trim too much
-                    [NameAffix("Suffix", "KhronosFunctionDataType", "i")]
-                    public void alFilteri() { }
                 }
                 """
             )
@@ -142,12 +166,23 @@ public class PrettifyNamesTests
                 new PrettifyNames.Configuration()
                 {
                     LongAcronymThreshold = 4,
-                    GlobalPrefixHints = ["al"],
                     Affixes =
                     {
                         {
+                            "SharedPrefix",
+                            new PrettifyNames.NameAffixConfiguration()
+                            {
+                                DiscriminatorPriority = 0,
+                                IsDiscriminator = true,
+                            }
+                        },
+                        {
                             "KhronosFunctionDataType",
-                            new PrettifyNames.NameAffixConfiguration() { IsDiscriminator = true }
+                            new PrettifyNames.NameAffixConfiguration()
+                            {
+                                DiscriminatorPriority = 1,
+                                IsDiscriminator = true,
+                            }
                         },
                     },
                 }

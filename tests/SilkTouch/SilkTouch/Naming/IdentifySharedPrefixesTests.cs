@@ -159,10 +159,10 @@ public class IdentifySharedPrefixesTests
                 """
                 public enum OcclusionQueryParameterNameNV
                 {
-                    [NameAffix("Prefix", "TestPrefix", "GL_")]
+                    [NameAffix("Prefix", "TestPrefix", "GL")]
                     GL_PIXEL_COUNT_NV = 34918,
 
-                    [NameAffix("Prefix", "TestPrefix", "GL_")]
+                    [NameAffix("Prefix", "TestPrefix", "GL")]
                     GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
                 }
                 """
