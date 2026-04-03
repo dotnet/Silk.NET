@@ -50,6 +50,7 @@ public class NameSplitterTests
     {
         using (Assert.EnterMultipleScope())
         {
+            Assert.That(NameSplitter.SplitIntoWords("Image2D"), Is.EqualTo(["Image", "2", "D"]));
             Assert.That(NameSplitter.SplitIntoWords("123"), Is.EqualTo(["123"]));
             Assert.That(NameSplitter.SplitIntoWords("A123A"), Is.EqualTo(["A", "123", "A"]));
             Assert.That(NameSplitter.SplitIntoWords("a123a"), Is.EqualTo(["a", "123", "a"]));
