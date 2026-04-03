@@ -186,7 +186,8 @@
           "SyncObjectMask": "GL_SYNC",
           "OcclusionQueryParameterNameNV": "GL",
           "TexStorageAttribs": "GL",
-          "ContainerType": "GL"
+          "ContainerType": "GL",
+          "SeparableTargetEXT": "GL"
         }
       },
       "PrettifyNames": {
