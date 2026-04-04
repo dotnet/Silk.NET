@@ -470,11 +470,11 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         return NameSplitter.Underscore(name);
     }
 
-    /// <param name="OriginalName">The version of the name as it exists in source code.</param>
+    /// <param name="OriginalName">The name as it exists in source code.</param>
     /// <param name="UnaffixedName">The original name with affixes stripped.</param>
     private readonly record struct MemberName(string OriginalName, string UnaffixedName);
 
-    /// <param name="OriginalName">The version of the name as it exists in source code.</param>
+    /// <param name="OriginalName">The name as it exists in source code.</param>
     /// <param name="UnaffixedName">The original name with affixes stripped.</param>
     /// <param name="TrimmingName">The unaffixed name as a trimming name. See <see cref="GetTrimmingName"/>.</param>
     private readonly record struct TrimmingNames(
@@ -626,7 +626,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         }
     }
 
-    /// <param name="results">Scope -> (Member -> MemberPrefix)</param>
+    /// <param name="results">ScopeName -> (MemberName -> MemberPrefix)</param>
     private class Rewriter(Dictionary<string, Dictionary<string, string>> results)
         : CSharpSyntaxRewriter
     {
