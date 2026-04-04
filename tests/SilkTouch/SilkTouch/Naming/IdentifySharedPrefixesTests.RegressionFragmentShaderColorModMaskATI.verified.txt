@@ -1,0 +1,11 @@
+﻿public enum FragmentShaderDestModMask
+{
+    [NameAffix("Prefix", "SharedPrefix", "GL")]
+    GL_2X_BIT_ATI,
+    [NameAffix("Prefix", "SharedPrefix", "GL")]
+    GL_COMP_BIT_ATI,
+    [NameAffix("Prefix", "SharedPrefix", "GL")]
+    GL_NEGATE_BIT_ATI,
+    [NameAffix("Prefix", "SharedPrefix", "GL")]
+    GL_BIAS_BIT_ATI
+}

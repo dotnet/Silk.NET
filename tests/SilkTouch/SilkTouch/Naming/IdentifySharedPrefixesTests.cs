@@ -84,6 +84,49 @@ public class IdentifySharedPrefixesTests
     }
 
     [Test]
+    [TestCase(null)]
+    [TestCase("glfw")]
+    public async Task IdentifiesSharedPrefixGlfw(string? hint)
+    {
+        // This is ported from the old NameTrimmerTests
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "VocalMorpherPhoneme.gen.cs",
+                """
+                public struct Glfw;
+                public struct GLFWallocator;
+                public struct GLFWcursor;
+                public struct GLFWgamepadstate;
+                public struct GLFWgammaramp;
+                public struct GLFWimage;
+                public struct GLFWmonitor;
+                public struct GLFWvidmode;
+                public struct GLFWwindow;
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var identifySharedPrefixes = new IdentifySharedPrefixes(
+            new DummyOptions<IdentifySharedPrefixes.Configuration>(
+                new IdentifySharedPrefixes.Configuration()
+                {
+                    GlobalPrefixHints = hint is null ? [] : [hint],
+                }
+            )
+        );
+
+        await identifySharedPrefixes.ExecuteAsync(context);
+
+        // The hint should not affect the output because the shared prefix is shared by most of the names
+        // Glfw should not have a prefix
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
     public async Task IdentifiesSharedPrefix_ForTypes()
     {
         var project = TestUtils
@@ -465,6 +508,138 @@ public class IdentifySharedPrefixesTests
 
         // The presence of the NameAffix attribute should prevent the GL- prefix of GLEnum from being identified as a shared prefix
         // This is because IdentifySharedPrefixes should only use the unaffixed name for prefix identification
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task RegressionFragmentShaderColorModMaskATI()
+    {
+        // This is ported from the old NameTrimmerTests
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "FragmentShaderDestModMask.gen.cs",
+                """
+                public enum FragmentShaderDestModMask
+                {
+                    GL_2X_BIT_ATI,
+                    GL_COMP_BIT_ATI,
+                    GL_NEGATE_BIT_ATI,
+                    GL_BIAS_BIT_ATI,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var identifySharedPrefixes = new IdentifySharedPrefixes(
+            new DummyOptions<IdentifySharedPrefixes.Configuration>(
+                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
+            )
+        );
+
+        await identifySharedPrefixes.ExecuteAsync(context);
+
+        // The identified prefix should be "GL"
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task RegressionEvalTargetNV()
+    {
+        // This is ported from the old NameTrimmerTests
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "EvalTargetNV.gen.cs",
+                """
+                public enum EvalTargetNV
+                {
+                    GL_EVAL_2D_NV,
+                    GL_EVAL_TRIANGULAR_2D_NV,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var identifySharedPrefixes = new IdentifySharedPrefixes(
+            new DummyOptions<IdentifySharedPrefixes.Configuration>(
+                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
+            )
+        );
+
+        await identifySharedPrefixes.ExecuteAsync(context);
+
+        // The identified prefix should be "GL"
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task RegressionSingleMemberEnumUsesGlobalPrefixHint()
+    {
+        // This is ported from the old NameTrimmerTests
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "EvalMapsModeNV.gen.cs",
+                """
+                public enum EvalMapsModeNV
+                {
+                    GL_FILL_NV,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var identifySharedPrefixes = new IdentifySharedPrefixes(
+            new DummyOptions<IdentifySharedPrefixes.Configuration>(
+                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
+            )
+        );
+
+        await identifySharedPrefixes.ExecuteAsync(context);
+
+        // The identified prefix should be "GL"
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task MultipleGlobalPrefixHints()
+    {
+        // This is ported from the old NameTrimmerTests
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "ContextFlagsEXT.gen.cs",
+                """
+                public enum ContextFlagsEXT
+                {
+                    ALC_CONTEXT_DEBUG_BIT_EXT,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var identifySharedPrefixes = new IdentifySharedPrefixes(
+            new DummyOptions<IdentifySharedPrefixes.Configuration>(
+                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["alc", "al"] }
+            )
+        );
+
+        await identifySharedPrefixes.ExecuteAsync(context);
+
+        // The identified prefix should be "ALC"
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
