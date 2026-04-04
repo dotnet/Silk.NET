@@ -703,8 +703,8 @@ public class PrettifyNames(
         /// This stores name affix data for types and their members.
         /// </summary>
         /// <remarks>
-        /// This is used at the start of trimming to remove declared affixes and at the end to restore declared affixes.
-        /// Declared affixes are defined by the [NamePrefix] and [NameSuffix] attributes and don't contribute towards the usual trimming processes.
+        /// This is used at the start of name processing to remove declared affixes and at the end to restore declared affixes.
+        /// Declared affixes are defined by [NameAffix] attributes and should be ignored by name processors designed for unaffixed names.
         /// </remarks>
         public Dictionary<string, Dictionary<string, NameAffix[]>> AffixData { get; } = new();
 
