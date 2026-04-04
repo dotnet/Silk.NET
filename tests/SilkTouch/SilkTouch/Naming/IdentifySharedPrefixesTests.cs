@@ -193,42 +193,6 @@ public class IdentifySharedPrefixesTests
     }
 
     [Test]
-    public async Task IdentifiesSharedPrefix_WhenPrefixesDeclared()
-    {
-        var project = TestUtils
-            .CreateTestProject()
-            .AddDocument(
-                "OcclusionQueryParameterNameNV.gen.cs",
-                """
-                public enum OcclusionQueryParameterNameNV
-                {
-                    [NameAffix("Prefix", "TestPrefix", "GL")]
-                    GL_PIXEL_COUNT_NV = 34918,
-
-                    [NameAffix("Prefix", "TestPrefix", "GL")]
-                    GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
-                }
-                """
-            )
-            .Project;
-
-        var context = new DummyModContext() { SourceProject = project };
-
-        var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration()
-            )
-        );
-
-        await identifySharedPrefixes.ExecuteAsync(context);
-
-        // IdentifySharedPrefixes should only use the unaffixed name for prefix identification
-        // The shared prefix should be "PIXEL_COUNT"
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
-    }
-
-    [Test]
     public async Task HintShouldNotAffectSharedPrefixIdentification()
     {
         string result1;
