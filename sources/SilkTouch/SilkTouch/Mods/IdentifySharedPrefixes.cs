@@ -507,8 +507,8 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         private BaseTypeDeclarationSyntax? _scope = null;
 
         private void ReportName(
-            SyntaxList<AttributeListSyntax> memberAttributeLists,
-            SyntaxToken memberIdentifier
+            SyntaxToken memberIdentifier,
+            SyntaxList<AttributeListSyntax> memberAttributeLists
         )
         {
             var scopeName = _scope?.Identifier.ToString() ?? "";
@@ -533,7 +533,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            ReportName(node.AttributeLists, node.Identifier);
+            ReportName(node.Identifier, node.AttributeLists);
 
             var previousScope = _scope;
             _scope = node;
@@ -546,7 +546,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            ReportName(node.AttributeLists, node.Identifier);
+            ReportName(node.Identifier, node.AttributeLists);
 
             var previousScope = _scope;
             _scope = node;
@@ -559,7 +559,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            ReportName(node.AttributeLists, node.Identifier);
+            ReportName(node.Identifier, node.AttributeLists);
 
             var previousScope = _scope;
             _scope = node;
@@ -571,12 +571,12 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         }
 
         public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            ReportName(node.AttributeLists, node.Identifier);
+            ReportName(node.Identifier, node.AttributeLists);
 
         // ----- Members -----
 
         public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
-            ReportName(node.AttributeLists, node.Identifier);
+            ReportName(node.Identifier, node.AttributeLists);
 
         // Only supports single variable fields
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
@@ -592,7 +592,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             }
 
             var firstVariable = node.Declaration.Variables.First();
-            ReportName(node.AttributeLists, firstVariable.Identifier);
+            ReportName(firstVariable.Identifier, node.AttributeLists);
         }
 
         public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
@@ -604,7 +604,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                 return;
             }
 
-            ReportName(node.AttributeLists, node.Identifier);
+            ReportName(node.Identifier, node.AttributeLists);
         }
 
         public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
@@ -622,7 +622,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                 return;
             }
 
-            ReportName(node.AttributeLists, node.Identifier);
+            ReportName(node.Identifier, node.AttributeLists);
         }
     }
 
