@@ -105,7 +105,7 @@ public class PrettifyNames(
 
         // Process the names
         {
-            var nameAffixer = new PrettifyNamesAffixer(visitor.AffixTypes, cfg.Affixes);
+            var nameAffixer = new PrettifyNamesAffixer(visitor.AffixData, cfg.Affixes);
             var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
 
             // Define name processors
@@ -690,11 +690,6 @@ public class PrettifyNames(
 
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
 
-    private record struct TypeAffixData(
-        NameAffix[] TypeAffixes,
-        Dictionary<string, NameAffix[]>? MemberAffixes
-    );
-
     private class Visitor : CSharpSyntaxWalker
     {
         /// <summary>
@@ -704,11 +699,14 @@ public class PrettifyNames(
         public Dictionary<string, TypeData> TrimmableTypes { get; } = new();
 
         /// <summary>
-        /// A mapping from type names to the type's affix data, which contains mappings from member names to each member's affix data.
+        /// Represents a mapping: Scope -> (Member -> MemberAffixes).
+        /// This stores name affix data for types and their members.
+        /// </summary>
+        /// <remarks>
         /// This is used at the start of trimming to remove declared affixes and at the end to restore declared affixes.
         /// Declared affixes are defined by the [NamePrefix] and [NameSuffix] attributes and don't contribute towards the usual trimming processes.
-        /// </summary>
-        public Dictionary<string, TypeAffixData> AffixTypes { get; } = new();
+        /// </remarks>
+        public Dictionary<string, Dictionary<string, NameAffix[]>> AffixData { get; } = new();
 
         /// <summary>
         /// Tracks the type that we currently are visiting.
@@ -734,49 +732,28 @@ public class PrettifyNames(
         /// </remarks>
         private bool IsCurrentlyInType(SyntaxNode node) => _typeInProgress is not null;
 
-        private void ReportTypeAffixData(
-            string typeIdentifier,
-            SyntaxList<AttributeListSyntax> attributeLists
+        private void ReportNameAffixes(
+            SyntaxToken memberIdentifier,
+            SyntaxList<AttributeListSyntax> memberAttributeLists
         )
         {
-            var affixes = attributeLists.GetNameAffixes();
+            var affixes = memberAttributeLists.GetNameAffixes();
             if (affixes.Length == 0)
             {
                 return;
             }
 
-            if (!AffixTypes.TryGetValue(typeIdentifier, out var typeAffixData))
+            var scopeName = _typeInProgress?.Type.Identifier.ToString() ?? "";
+            var memberName = memberIdentifier.ToString();
+
+            if (!AffixData.TryGetValue(scopeName, out var members))
             {
-                typeAffixData = new TypeAffixData([], null);
+                AffixData[scopeName] = members = [];
             }
 
-            AffixTypes[typeIdentifier] = typeAffixData with
-            {
-                TypeAffixes = [.. typeAffixData.TypeAffixes, .. affixes],
-            };
-        }
-
-        private void ReportMemberAffixData(
-            string typeIdentifier,
-            string memberIdentifier,
-            SyntaxList<AttributeListSyntax> attributeLists
-        )
-        {
-            var affixes = attributeLists.GetNameAffixes();
-            if (affixes.Length == 0)
-            {
-                return;
-            }
-
-            if (!AffixTypes.TryGetValue(typeIdentifier, out var typeAffixData))
-            {
-                typeAffixData = new TypeAffixData([], null);
-            }
-
-            // Note that TryAdd will lead to affixes for later members being silently dropped.
+            // Note that this will lead to affixes for earlier members being silently dropped.
             // This is to handle methods which have the same name and affixes. It is fine to drop the affixes in this case.
-            (typeAffixData.MemberAffixes ??= []).TryAdd(memberIdentifier, affixes);
-            AffixTypes[typeIdentifier] = typeAffixData;
+            members[memberName] = affixes;
         }
 
         // ----- Types -----
@@ -789,7 +766,7 @@ public class PrettifyNames(
             }
 
             var identifier = node.Identifier.ToString();
-            ReportTypeAffixData(identifier, node.AttributeLists);
+            ReportNameAffixes(node.Identifier, node.AttributeLists);
 
             // Recurse into members.
             _typeInProgress = new TypeInProgress(node, [], []);
@@ -820,7 +797,7 @@ public class PrettifyNames(
             }
 
             var identifier = node.Identifier.ToString();
-            ReportTypeAffixData(identifier, node.AttributeLists);
+            ReportNameAffixes(node.Identifier, node.AttributeLists);
 
             // Recurse into members
             _typeInProgress = new TypeInProgress(node, [], []);
@@ -851,7 +828,7 @@ public class PrettifyNames(
             }
 
             var identifier = node.Identifier.ToString();
-            ReportTypeAffixData(identifier, node.AttributeLists);
+            ReportNameAffixes(node.Identifier, node.AttributeLists);
 
             // Recurse into members
             _typeInProgress = new TypeInProgress(node, [], []);
@@ -881,7 +858,7 @@ public class PrettifyNames(
                 return;
             }
 
-            ReportTypeAffixData(identifier, node.AttributeLists);
+            ReportNameAffixes(node.Identifier, node.AttributeLists);
             TrimmableTypes.Add(identifier, new TypeData([], []));
         }
 
@@ -893,7 +870,7 @@ public class PrettifyNames(
             {
                 var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
                 var memberIdentifier = node.Identifier.ToString();
-                ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+                ReportNameAffixes(node.Identifier, node.AttributeLists);
 
                 _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
             }
@@ -903,13 +880,12 @@ public class PrettifyNames(
         {
             if (node.Parent == _typeInProgress?.Type)
             {
-                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
                 foreach (var variable in node.Declaration.Variables)
                 {
                     var memberIdentifier = variable.Identifier.ToString();
-                    ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+                    ReportNameAffixes(variable.Identifier, node.AttributeLists);
 
-                    _typeInProgress.Value.NonFunctions.Add(memberIdentifier);
+                    _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
                 }
             }
         }
@@ -918,10 +894,9 @@ public class PrettifyNames(
         {
             if (node.Parent == _typeInProgress?.Type)
             {
-                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
                 var memberIdentifier = node.Identifier.ToString();
 
-                ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+                ReportNameAffixes(node.Identifier, node.AttributeLists);
                 _typeInProgress!.Value.Functions.Add(new FunctionData(memberIdentifier, node));
             }
         }
@@ -930,9 +905,8 @@ public class PrettifyNames(
         {
             if (node.Parent == _typeInProgress?.Type)
             {
-                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
                 var memberIdentifier = node.Identifier.ToString();
-                ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+                ReportNameAffixes(node.Identifier, node.AttributeLists);
 
                 _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
             }
@@ -947,10 +921,10 @@ public class PrettifyNames(
             ).WithRenameSafeAttributeLists();
     }
 
-    /// <param name="affixTypes">The affix data retrieved by the <see cref="Visitor"/>.</param>
+    /// <param name="affixData">The affix data retrieved by the <see cref="Visitor"/>.</param>
     /// <param name="config">The configuration from <see cref="Configuration.Affixes"/>.</param>
     private class PrettifyNamesAffixer(
-        Dictionary<string, TypeAffixData> affixTypes,
+        Dictionary<string, Dictionary<string, NameAffix[]>> affixData,
         Dictionary<string, NameAffixConfiguration> config
     )
     {
@@ -1135,24 +1109,11 @@ public class PrettifyNames(
         /// <returns>The name affixes for the specified identifier.</returns>
         public NameAffix[] GetAffixes(string scope, string originalName)
         {
-            TypeAffixData typeAffixData;
-            if (scope == "") // TODO: Simplify this
+            if (affixData.TryGetValue(scope, out var members))
             {
-                if (!affixTypes.TryGetValue(originalName, out typeAffixData))
+                if (members.TryGetValue(originalName, out var memberAffixes))
                 {
-                    return [];
-                }
-
-                return typeAffixData.TypeAffixes;
-            }
-
-            if (affixTypes.TryGetValue(scope, out typeAffixData))
-            {
-                if (
-                    typeAffixData.MemberAffixes?.TryGetValue(originalName, out var affixes) ?? false
-                )
-                {
-                    return affixes;
+                    return memberAffixes;
                 }
             }
 
