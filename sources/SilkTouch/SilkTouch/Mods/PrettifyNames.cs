@@ -1237,6 +1237,8 @@ public class PrettifyNames(
         public void ProcessNames(NameProcessorContext context)
         {
             // Calculate processing order using topological sort
+            // Name affixes can reference other names
+            // We want names that don't reference other names to be processed first
             var processingOrderByKey = new List<string>();
             {
                 var ready = new Queue<string>();
