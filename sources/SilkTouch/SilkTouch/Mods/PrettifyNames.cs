@@ -715,42 +715,24 @@ public class PrettifyNames(
         /// </summary>
         private TypeInProgress? _typeInProgress;
 
-        /// <summary>
-        /// Tracks the enum that we currently are visiting.
-        /// </summary>
-        private EnumInProgress? _enumInProgress;
-
-        /// <summary>
-        /// While this is called a "type" in progress, this represents either a class or a struct.
-        /// </summary>
         /// <param name="Type">The class or struct's declaration syntax node.</param>
         /// <param name="NonFunctions">The names of the non-function members directly contained by the type.</param>
         /// <param name="Functions">The names of the function members directly contained by the type.</param>
         private record struct TypeInProgress(
-            TypeDeclarationSyntax Type,
+            BaseTypeDeclarationSyntax Type,
             List<string> NonFunctions,
             List<FunctionData> Functions
         );
 
         /// <summary>
-        /// Represents an enum.
-        /// </summary>
-        /// <param name="Enum">The enum's declaration syntax node.</param>
-        /// <param name="EnumMembers">The names of the members directly contained by the enum.</param>
-        private record struct EnumInProgress(EnumDeclarationSyntax Enum, List<string> EnumMembers);
-
-        /// <summary>
-        /// Returns whether we are currently inside of a type.
+        /// Returns whether we are currently inside a type.
         /// </summary>
         /// <remarks>
         /// Note that we currently do not handle nested types.
         /// If we encounter a type while we are already in a type, we ignore that type.
         /// If we encounter a non-type (i.e., a type member), we add the member to the type we are already in.
         /// </remarks>
-        private bool IsCurrentlyInType(SyntaxNode node) =>
-            _typeInProgress is not null
-            || _enumInProgress is not null
-            || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
+        private bool IsCurrentlyInType(SyntaxNode node) => _typeInProgress is not null;
 
         private void ReportTypeAffixData(
             string typeIdentifier,
@@ -872,7 +854,7 @@ public class PrettifyNames(
             ReportTypeAffixData(identifier, node.AttributeLists);
 
             // Recurse into members
-            _enumInProgress = new EnumInProgress(node, []);
+            _typeInProgress = new TypeInProgress(node, [], []);
             base.VisitEnumDeclaration(node);
 
             // Merge with existing data in case of partials
@@ -882,8 +864,8 @@ public class PrettifyNames(
                 TrimmableTypes.Add(identifier, typeData);
             }
 
-            typeData.NonFunctions.AddRange(_enumInProgress.Value.EnumMembers);
-            _enumInProgress = null;
+            typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions);
+            _typeInProgress = null;
         }
 
         public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
@@ -907,13 +889,13 @@ public class PrettifyNames(
 
         public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
         {
-            if (node.Parent == _enumInProgress?.Enum)
+            if (node.Parent == _typeInProgress?.Type)
             {
-                var typeIdentifier = _enumInProgress!.Value.Enum.Identifier.ToString();
+                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
                 var memberIdentifier = node.Identifier.ToString();
                 ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
 
-                _enumInProgress!.Value.EnumMembers.Add(memberIdentifier);
+                _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
             }
         }
 
