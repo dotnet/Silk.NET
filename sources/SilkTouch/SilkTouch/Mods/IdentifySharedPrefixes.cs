@@ -21,8 +21,6 @@ namespace Silk.NET.SilkTouch.Mods;
 public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Configuration> config)
     : Mod
 {
-    private static readonly HashSet<string> _forbiddenTrimmings = new() { "unsigned", "per" };
-
     /// <summary>
     /// This was from the original NameTrimmer code
     /// Quoting from the original documentation:
@@ -33,6 +31,11 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
     /// This documentation should be expanded to explain the reasoning for each pass.
     /// </remarks>
     private const int _passCount = 3;
+
+    /// <summary>
+    /// Strings that are not allowed to be part of the final prefix.
+    /// </summary>
+    private static readonly HashSet<string> _forbiddenPrefixes = new() { "unsigned", "per" };
 
     /// <summary>
     /// The configuration for the <see cref="IdentifySharedPrefixes"/> mod.
@@ -415,24 +418,24 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             );
         }
 
-        // Iterate through the forbidden trimmings,
-        foreach (var word in _forbiddenTrimmings)
+        // Prevent certain strings from being part of the final prefix
+        foreach (var word in _forbiddenPrefixes)
         {
-            // If the prefix starts with a forbidden trimming,
+            // If the prefix starts with a forbidden prefix
             if (prefix.StartsWith($"{word}_"))
             {
                 // Clear the prefix
                 prefix = string.Empty;
             }
 
-            // If the prefix contains the forbidden trimming surrounded by underscores,
+            // If the prefix contains the forbidden trimming surrounded by underscores
             var idx = prefix.IndexOf($"_{word}_", StringComparison.OrdinalIgnoreCase);
             if (idx != -1)
             {
-                // Trim the end of the prefix to the start of the forbidden trimming
+                // Trim the end of the prefix to the start of the forbidden prefix
                 // ex:
                 //     input prefix = THIS_GL_
-                //     forbidden trimming = GL
+                //     forbidden prefix = GL
                 //
                 //     resulting prefix = THIS
                 prefix = prefix[..idx];
