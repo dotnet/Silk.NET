@@ -24,6 +24,17 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
     private static readonly HashSet<string> _forbiddenTrimmings = new() { "unsigned", "per" };
 
     /// <summary>
+    /// This was from the original NameTrimmer code
+    /// Quoting from the original documentation:
+    /// The second pass does not use <see cref="GetTrimmingName"/>.
+    /// The third pass uses naive prefix detection for <see cref="GetPrefix"/>.
+    /// </summary>
+    /// <remarks>
+    /// This documentation should be expanded to explain the reasoning for each pass.
+    /// </remarks>
+    private const int _passCount = 3;
+
+    /// <summary>
     /// The configuration for the <see cref="IdentifySharedPrefixes"/> mod.
     /// </summary>
     public record Configuration
@@ -108,15 +119,11 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         Configuration configuration
     )
     {
-        // This was from the original NameTrimmer code
-        // TODO: Document what each pass does
-        const int nPasses = 3;
-
         List<TrimmingNames>? localNames = null;
         string? identifiedPrefix = null;
         var naive = false;
         {
-            for (var i = 0; i < nPasses; i++) // try with both trimming name and non trimming name
+            for (var i = 0; i < _passCount; i++) // try with both trimming name and non trimming name
             {
                 // Attempt to identify the hint being used.
                 string? hint = null;
