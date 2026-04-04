@@ -1,9 +1,0 @@
-﻿public enum OcclusionQueryParameterNameNV
-{
-    [NameAffix("Prefix", "SharedPrefix", "PIXEL_COUNT")]
-    [NameAffix("Prefix", "TestPrefix", "GL_")]
-    GL_PIXEL_COUNT_NV = 34918,
-    [NameAffix("Prefix", "SharedPrefix", "PIXEL_COUNT")]
-    [NameAffix("Prefix", "TestPrefix", "GL_")]
-    GL_PIXEL_COUNT_AVAILABLE_NV = 34919
-}
