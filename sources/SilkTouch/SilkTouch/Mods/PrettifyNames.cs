@@ -349,14 +349,14 @@ public class PrettifyNames(
                 }
 
                 // Check whether the override is for this type.
-                var span = nativeName.AsSpan();
-                var containerSpan = span[..span.IndexOf('.')];
+                var nativeNameSpan = nativeName.AsSpan();
+                var scopeSpan = nativeNameSpan[..nativeNameSpan.IndexOf('.')];
                 if (
-                    containerSpan.Equals("*", StringComparison.Ordinal)
-                    || containerSpan.Equals(context.Scope, StringComparison.Ordinal)
+                    scopeSpan.Equals("*", StringComparison.Ordinal)
+                    || scopeSpan.Equals(context.Scope, StringComparison.Ordinal)
                 )
                 {
-                    nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
+                    nameToAdd = nativeNameSpan[(nativeNameSpan.IndexOf('.') + 1)..].ToString();
                 }
                 else
                 {
@@ -981,18 +981,18 @@ public class PrettifyNames(
         /// Designed to be used by <see cref="StripAffixesProcessor"/>.
         /// </remarks>
         /// <param name="primary">The current primary name.</param>
-        /// <param name="container">The container name. Either null or the containing type.</param>
+        /// <param name="scope">The scope name or an empty string for the global scope.</param>
         /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
         /// <param name="secondary">The list of secondary names.</param>
         /// <returns>The new primary name.</returns>
         public string RemoveAffixes(
             string primary,
-            string? container,
+            string scope,
             string originalName,
             List<string> secondary
         )
         {
-            var affixes = GetAffixes(container, originalName);
+            var affixes = GetAffixes(scope, originalName);
             if (affixes.Length == 0)
             {
                 return primary;
@@ -1014,20 +1014,20 @@ public class PrettifyNames(
         /// Designed to be used by <see cref="ReapplyAffixesProcessor"/>.
         /// </remarks>
         /// <param name="primary">The current primary name.</param>
-        /// <param name="container">The container name. Either null or the containing type.</param>
+        /// <param name="scope">The scope name or an empty string for the global scope.</param>
         /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
         /// <param name="secondary">The list of secondary names.</param>
-        /// <param name="context">The context containing the current names for the current container.</param>
+        /// <param name="context">The context containing the current names for the current scope.</param>
         /// <returns>The new primary name.</returns>
         public string ApplyAffixes(
             string primary,
-            string? container,
+            string scope,
             string originalName,
             List<string> secondary,
             NameProcessorContext? context // TODO: Handle this better. Exposing the entire context is excessive.
         )
         {
-            var affixes = GetAffixes(container, originalName);
+            var affixes = GetAffixes(scope, originalName);
             if (affixes.Length == 0)
             {
                 return primary;
@@ -1146,15 +1146,15 @@ public class PrettifyNames(
         }
 
         /// <summary>
-        /// Gets affix data for the specified container and original name of the identifier.
+        /// Gets affix data for the specified scope and original name of the identifier.
         /// </summary>
-        /// <param name="container">The container name. Either null or the containing type.</param>
+        /// <param name="scope">The scope name or an empty string for the global scope.</param>
         /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
         /// <returns>The name affixes for the specified identifier.</returns>
-        public NameAffix[] GetAffixes(string? container, string originalName)
+        public NameAffix[] GetAffixes(string scope, string originalName)
         {
             TypeAffixData typeAffixData;
-            if (container == null)
+            if (scope == null)
             {
                 if (!affixTypes.TryGetValue(originalName, out typeAffixData))
                 {
@@ -1164,7 +1164,7 @@ public class PrettifyNames(
                 return typeAffixData.TypeAffixes;
             }
 
-            if (affixTypes.TryGetValue(container, out typeAffixData))
+            if (affixTypes.TryGetValue(scope, out typeAffixData))
             {
                 if (
                     typeAffixData.MemberAffixes?.TryGetValue(originalName, out var affixes) ?? false
@@ -1316,8 +1316,8 @@ public class PrettifyNames(
                             // This is because we currently can only resolve names that are given by the NameProcessorContext
                             // Please update this message if this limitation changes
                             throw new InvalidOperationException(
-                                $"A name affix for '{key}' references a name that does not exist or is part of a different name container. "
-                                    + $"Referencing names from other containers is currently not supported"
+                                $"A name affix for '{key}' references a name that does not exist or is part of a different scope. "
+                                    + $"Referencing names from other scopes is currently not supported"
                             );
                         }
                     }
@@ -1372,7 +1372,7 @@ public class PrettifyNames(
     private interface INameProcessor
     {
         /// <summary>
-        /// Process and transform the names within the given container.
+        /// Process and transform the names within the given scope.
         /// </summary>
         public void ProcessNames(NameProcessorContext context);
     }
@@ -1383,7 +1383,7 @@ public class PrettifyNames(
     private readonly struct NameProcessorContext
     {
         /// <summary>
-        /// Gets the name of the "container" (e.g. a type name) of the APIs in <see cref="Names"/>.
+        /// The name of the current "scope" (a type name or an empty string for the global scope).
         /// </summary>
         public string Scope { get; init; }
 
