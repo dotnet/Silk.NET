@@ -24,11 +24,6 @@ public class PrettifyNames(
     public record Configuration
     {
         /// <summary>
-        /// Manually renamed native names.
-        /// </summary>
-        public Dictionary<string, string> NameOverrides { get; init; } = [];
-
-        /// <summary>
         /// The maximum length of an all capitals string to be treated as a single acronym, rather than as an all
         /// capitals word.
         /// </summary>
@@ -37,6 +32,11 @@ public class PrettifyNames(
         /// https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions
         /// </remarks>
         public int LongAcronymThreshold { get; init; } = 2;
+
+        /// <summary>
+        /// Manually renamed native names.
+        /// </summary>
+        public Dictionary<string, string> NameOverrides { get; init; } = [];
 
         /// <summary>
         /// The configuration for each category of name affixes.
