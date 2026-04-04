@@ -347,7 +347,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         // a case like this is simple to add a special case for in the generator to handle sRGB specially,
         // but see ImageChannelOrder from spirv.h for a more problematic occurrence.
         string prefix;
-        if (scope is not null && prefixOverrides.TryGetValue(scope, out var @override))
+        if (prefixOverrides.TryGetValue(scope, out var @override))
         {
             // Use the override
             prefix = @override;
@@ -389,7 +389,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                         .ToList(),
                     // If naive mode is on and we're trimming type names, allow full matches (method class is
                     // probably the prefix)
-                    naive && scope is null,
+                    naive && scope == "",
                     false,
                     naive
                 );
@@ -409,7 +409,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
                 localNames.Select(x => x.TrimmingName).Append(scopeTrimmingName).ToList(),
                 // If naive mode is on and we're trimming type names, allow full matches (method class is probably the
                 // prefix)
-                naive && scope is null,
+                naive && scope == "",
                 false,
                 naive
             );
@@ -529,11 +529,6 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             members.Add(new MemberName(memberName, unaffixedMemberName));
         }
 
-        private void TryReportNonDeterminant(
-            SyntaxList<AttributeListSyntax> memberAttributeLists,
-            SyntaxToken memberIdentifier
-        ) { }
-
         // ----- Types -----
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
@@ -598,7 +593,6 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
             var firstVariable = node.Declaration.Variables.First();
             ReportName(node.AttributeLists, firstVariable.Identifier);
-            TryReportNonDeterminant(node.AttributeLists, firstVariable.Identifier);
         }
 
         public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
