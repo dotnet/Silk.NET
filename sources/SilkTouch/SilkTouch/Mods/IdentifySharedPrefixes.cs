@@ -301,7 +301,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
     /// This is the list of names to be used for the remainder of the trimming process.
     /// </returns>
     private (string Prefix, List<TrimmingNames>)? GetPrefix(
-        string? scope,
+        string scope,
         List<MemberName> members,
         Dictionary<string, string> prefixOverrides,
         HashSet<string>? nonDeterminant,
@@ -317,15 +317,12 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
             return null;
         }
 
-        if (string.IsNullOrWhiteSpace(scope))
-        {
-            scope = null;
-        }
-
         // Get the trimming names
+        var rawScopeTrimmingName =
+            (string.IsNullOrWhiteSpace(scope) ? null : scope) ?? hint ?? string.Empty;
         var scopeTrimmingName = useTrimmingName
-            ? GetTrimmingName(prefixOverrides, scope ?? hint ?? string.Empty, hint)
-            : scope ?? hint ?? string.Empty;
+            ? GetTrimmingName(prefixOverrides, rawScopeTrimmingName, hint)
+            : rawScopeTrimmingName;
 
         var localNames = members
             .Select(member => new TrimmingNames(
