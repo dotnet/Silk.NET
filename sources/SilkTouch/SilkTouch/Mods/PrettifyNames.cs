@@ -1154,7 +1154,7 @@ public class PrettifyNames(
         public NameAffix[] GetAffixes(string scope, string originalName)
         {
             TypeAffixData typeAffixData;
-            if (scope == null)
+            if (scope == "") // TODO: Simplify this
             {
                 if (!affixTypes.TryGetValue(originalName, out typeAffixData))
                 {
@@ -1212,7 +1212,7 @@ public class PrettifyNames(
         public void ProcessNames(NameProcessorContext context)
         {
             // Be lenient about caps for type names (e.g. GL)
-            var allowAllCaps = context.Scope == null;
+            var allowAllCaps = context.Scope == "";
 
             foreach (var (original, (primary, secondary)) in context.Names)
             {
