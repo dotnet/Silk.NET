@@ -124,15 +124,9 @@ public class PrettifyNames(
             );
 
             ProcessNames(
-                new NameProcessorContext
-                {
-                    Container = null,
-                    Names = typeNames,
-                    Configuration = cfg,
-                    JobKey = ctx.JobKey,
-                    NonDeterminant = [],
-                },
-                nameProcessors
+                new NameProcessorContext { Scope = "", Names = typeNames },
+                nameProcessors,
+                cfg.NameOverrides
             );
             // Now rename everything within each type.
             foreach (var (typeName, (newTypeName, _)) in typeNames)
@@ -145,15 +139,9 @@ public class PrettifyNames(
 
                 // Trim the constants.
                 ProcessNames(
-                    new NameProcessorContext
-                    {
-                        Container = typeName,
-                        Names = constNames,
-                        Configuration = cfg,
-                        JobKey = ctx.JobKey,
-                        NonDeterminant = [],
-                    },
-                    nameProcessors
+                    new NameProcessorContext { Scope = typeName, Names = constNames },
+                    nameProcessors,
+                    cfg.NameOverrides
                 );
 
                 // Rename the functions. More often that not functions have different nomenclature to constants, so we
@@ -170,15 +158,9 @@ public class PrettifyNames(
 
                 // Trim the functions.
                 ProcessNames(
-                    new NameProcessorContext
-                    {
-                        Container = typeName,
-                        Names = functionNames,
-                        Configuration = cfg,
-                        JobKey = ctx.JobKey,
-                        NonDeterminant = [],
-                    },
+                    new NameProcessorContext { Scope = typeName, Names = functionNames },
                     nameProcessors,
+                    cfg.NameOverrides,
                     functionSyntax
                 );
 
@@ -348,19 +330,20 @@ public class PrettifyNames(
     private void ProcessNames(
         NameProcessorContext context,
         IEnumerable<INameProcessor> nameProcessors,
+        Dictionary<string, string> nameOverrides, // TODO: Move to a separate name processor
         Dictionary<string, IEnumerable<MethodDeclarationSyntax>>? functionSyntax = null
     )
     {
         // Ensure the trimmers don't see names that have been manually overridden, as we don't want them to influence
         // automatic prefix determination for example
         var namesToProcess = context.Names;
-        foreach (var (nativeName, overriddenName) in context.Configuration.NameOverrides)
+        foreach (var (nativeName, overriddenName) in nameOverrides)
         {
             var nameToAdd = nativeName;
             if (nativeName.Contains('.'))
             {
                 // We're processing a type dictionary, so don't add a member thing.
-                if (context.Container is null)
+                if (context.Scope is null)
                 {
                     continue;
                 }
@@ -370,7 +353,7 @@ public class PrettifyNames(
                 var containerSpan = span[..span.IndexOf('.')];
                 if (
                     containerSpan.Equals("*", StringComparison.Ordinal)
-                    || containerSpan.Equals(context.Container, StringComparison.Ordinal)
+                    || containerSpan.Equals(context.Scope, StringComparison.Ordinal)
                 )
                 {
                     nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
@@ -1214,7 +1197,7 @@ public class PrettifyNames(
                 var secondaries = secondary;
                 var newPrimary = affixer.RemoveAffixes(
                     primary,
-                    context.Container,
+                    context.Scope,
                     original,
                     secondaries
                 );
@@ -1229,7 +1212,7 @@ public class PrettifyNames(
         public void ProcessNames(NameProcessorContext context)
         {
             // Be lenient about caps for type names (e.g. GL)
-            var allowAllCaps = context.Container == null;
+            var allowAllCaps = context.Scope == null;
 
             foreach (var (original, (primary, secondary)) in context.Names)
             {
@@ -1265,7 +1248,7 @@ public class PrettifyNames(
                 {
                     var dependencyCount = 0;
 
-                    var affixes = affixer.GetAffixes(context.Container, key);
+                    var affixes = affixer.GetAffixes(context.Scope, key);
                     foreach (var affix in affixes)
                     {
                         if (!affix.IsReference)
@@ -1351,7 +1334,7 @@ public class PrettifyNames(
                 var secondaries = secondary;
                 var newPrimary = affixer.ApplyAffixes(
                     primary,
-                    context.Container,
+                    context.Scope,
                     original,
                     secondaries,
                     context
@@ -1379,5 +1362,34 @@ public class PrettifyNames(
                 );
             }
         }
+    }
+
+    /// <summary>
+    /// Represents a name processor.
+    /// </summary>
+    private interface INameProcessor
+    {
+        /// <summary>
+        /// Process and transform the names within the given container.
+        /// </summary>
+        public void ProcessNames(NameProcessorContext context);
+    }
+
+    /// <summary>
+    /// State made available to <see cref="INameProcessor"/> implementations.
+    /// </summary>
+    private readonly struct NameProcessorContext
+    {
+        /// <summary>
+        /// Gets the name of the "container" (e.g. a type name) of the APIs in <see cref="Names"/>.
+        /// </summary>
+        public string Scope { get; init; }
+
+        /// <summary>
+        /// Gets a dictionary mapping the original API name to a primary candidate name to rename that API to. The previous
+        /// names or other names that are otherwise less preferred to the primary name are listed in the optional secondary
+        /// list (in order of preference).
+        /// </summary>
+        public required Dictionary<string, CandidateNames> Names { get; init; }
     }
 }
