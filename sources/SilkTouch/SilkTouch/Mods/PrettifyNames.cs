@@ -105,7 +105,7 @@ public class PrettifyNames(
 
         // Process the names
         {
-            var nameAffixer = new PrettifyNamesAffixer(visitor.AffixData, cfg.Affixes);
+            var nameAffixer = new PrettifyNamesAffixer(visitor.Scopes, cfg.Affixes);
             var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
 
             // Define name processors
@@ -686,55 +686,32 @@ public class PrettifyNames(
         Dictionary<string, string> Functions
     );
 
-    private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
-
-    private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
+    /// <summary>
+    /// Stores additional data for each scope member.
+    /// </summary>
+    /// <param name="Name">The name as it exists in source code.</param>
+    /// <param name="Affixes">The affixes declared for the name.</param>
+    /// <param name="MethodDeclarations">The method declarations, if the name represents a method.</param>
+    private record struct MemberData(
+        string Name,
+        NameAffix[] Affixes,
+        List<MethodDeclarationSyntax>? MethodDeclarations
+    );
 
     private class Visitor : CSharpSyntaxWalker
     {
         /// <summary>
-        /// A mapping from type names to their member names (along with some additional info).
-        /// These names are first trimmed, then prettified.
+        /// Represents a mapping: ScopeName -> (MemberName -> MemberData).
+        /// This data is used later by name processors to transform and prettify the names.
         /// </summary>
-        public Dictionary<string, TypeData> TrimmableTypes { get; } = new();
+        public Dictionary<string, Dictionary<string, MemberData>> Scopes { get; } = [];
 
-        /// <summary>
-        /// Represents a mapping: Scope -> (Member -> MemberAffixes).
-        /// This stores name affix data for types and their members.
-        /// </summary>
-        /// <remarks>
-        /// This is used at the start of name processing to remove declared affixes and at the end to restore declared affixes.
-        /// Declared affixes are defined by [NameAffix] attributes and should be ignored by name processors designed for unaffixed names.
-        /// </remarks>
-        public Dictionary<string, Dictionary<string, NameAffix[]>> AffixData { get; } = new();
+        private BaseTypeDeclarationSyntax? _scope;
 
-        /// <summary>
-        /// Tracks the type that we currently are visiting.
-        /// </summary>
-        private TypeInProgress? _typeInProgress;
-
-        /// <param name="Type">The class or struct's declaration syntax node.</param>
-        /// <param name="NonFunctions">The names of the non-function members directly contained by the type.</param>
-        /// <param name="Functions">The names of the function members directly contained by the type.</param>
-        private record struct TypeInProgress(
-            BaseTypeDeclarationSyntax Type,
-            List<string> NonFunctions,
-            List<FunctionData> Functions
-        );
-
-        /// <summary>
-        /// Returns whether we are currently inside a type.
-        /// </summary>
-        /// <remarks>
-        /// Note that we currently do not handle nested types.
-        /// If we encounter a type while we are already in a type, we ignore that type.
-        /// If we encounter a non-type (i.e., a type member), we add the member to the type we are already in.
-        /// </remarks>
-        private bool IsCurrentlyInType(SyntaxNode node) => _typeInProgress is not null;
-
-        private void ReportNameAffixes(
+        private void ReportName(
             SyntaxToken memberIdentifier,
-            SyntaxList<AttributeListSyntax> memberAttributeLists
+            SyntaxList<AttributeListSyntax> memberAttributeLists,
+            MethodDeclarationSyntax? memberMethodDeclaration = null
         )
         {
             var affixes = memberAttributeLists.GetNameAffixes();
@@ -743,174 +720,92 @@ public class PrettifyNames(
                 return;
             }
 
-            var scopeName = _typeInProgress?.Type.Identifier.ToString() ?? "";
+            var scopeName = _scope?.Identifier.ToString() ?? "";
             var memberName = memberIdentifier.ToString();
 
-            if (!AffixData.TryGetValue(scopeName, out var members))
+            if (!Scopes.TryGetValue(scopeName, out var members))
             {
-                AffixData[scopeName] = members = [];
+                Scopes[scopeName] = members = [];
             }
 
-            // Note that this will lead to affixes for earlier members being silently dropped.
-            // This is to handle methods which have the same name and affixes. It is fine to drop the affixes in this case.
-            members[memberName] = affixes;
+            if (!members.TryGetValue(memberName, out var memberData))
+            {
+                // Note that we only store affix data for the first encountered version of the name
+                // This is fine because if two members have the same name, they should have the same affixes
+                memberData = new MemberData(memberName, affixes, null);
+            }
+
+            if (memberMethodDeclaration != null)
+            {
+                // Store method declarations so that we have information on each overload
+                // This is used later for overload conflict resolution
+                memberData.MethodDeclarations ??= [];
+                memberData.MethodDeclarations.Add(memberMethodDeclaration);
+            }
+
+            members[memberName] = memberData;
         }
 
         // ----- Types -----
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            if (IsCurrentlyInType(node))
+            ReportName(node.Identifier, node.AttributeLists);
+
+            var previousScope = _scope;
+            _scope = node;
+            foreach (var member in node.Members)
             {
-                return;
+                Visit(member);
             }
-
-            var identifier = node.Identifier.ToString();
-            ReportNameAffixes(node.Identifier, node.AttributeLists);
-
-            // Recurse into members.
-            _typeInProgress = new TypeInProgress(node, [], []);
-            base.VisitClassDeclaration(node);
-
-            // Merge with existing data in case of partials
-            if (!TrimmableTypes.TryGetValue(identifier, out var typeData))
-            {
-                typeData = new TypeData([], []);
-                TrimmableTypes.Add(identifier, typeData);
-            }
-
-            typeData.NonFunctions.AddRange(
-                _typeInProgress.Value.NonFunctions.Where(nonFunction =>
-                    !typeData.NonFunctions.Contains(nonFunction)
-                )
-            );
-            typeData.Functions.AddRange(_typeInProgress.Value.Functions);
-
-            _typeInProgress = null;
+            _scope = previousScope;
         }
 
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            if (IsCurrentlyInType(node))
+            ReportName(node.Identifier, node.AttributeLists);
+
+            var previousScope = _scope;
+            _scope = node;
+            foreach (var member in node.Members)
             {
-                return;
+                Visit(member);
             }
-
-            var identifier = node.Identifier.ToString();
-            ReportNameAffixes(node.Identifier, node.AttributeLists);
-
-            // Recurse into members
-            _typeInProgress = new TypeInProgress(node, [], []);
-            base.VisitStructDeclaration(node);
-
-            // Merge with existing data in case of partials
-            if (!TrimmableTypes.TryGetValue(identifier, out var typeData))
-            {
-                typeData = new TypeData([], []);
-                TrimmableTypes.Add(identifier, typeData);
-            }
-
-            typeData.NonFunctions.AddRange(
-                _typeInProgress.Value.NonFunctions.Where(nonFunction =>
-                    !typeData.NonFunctions.Contains(nonFunction)
-                )
-            );
-            typeData.Functions.AddRange(_typeInProgress.Value.Functions);
-
-            _typeInProgress = null;
+            _scope = previousScope;
         }
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            if (IsCurrentlyInType(node))
+            ReportName(node.Identifier, node.AttributeLists);
+
+            var previousScope = _scope;
+            _scope = node;
+            foreach (var member in node.Members)
             {
-                return;
+                Visit(member);
             }
-
-            var identifier = node.Identifier.ToString();
-            ReportNameAffixes(node.Identifier, node.AttributeLists);
-
-            // Recurse into members
-            _typeInProgress = new TypeInProgress(node, [], []);
-            base.VisitEnumDeclaration(node);
-
-            // Merge with existing data in case of partials
-            if (!TrimmableTypes.TryGetValue(identifier, out var typeData))
-            {
-                typeData = new TypeData([], []);
-                TrimmableTypes.Add(identifier, typeData);
-            }
-
-            typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions);
-            _typeInProgress = null;
+            _scope = previousScope;
         }
 
-        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
-        {
-            var identifier = node.Identifier.ToString();
-            if (IsCurrentlyInType(node))
-            {
-                if (node.Parent == _typeInProgress?.Type)
-                {
-                    _typeInProgress!.Value.NonFunctions.Add(identifier);
-                }
-
-                return;
-            }
-
-            ReportNameAffixes(node.Identifier, node.AttributeLists);
-            TrimmableTypes.Add(identifier, new TypeData([], []));
-        }
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
+            ReportName(node.Identifier, node.AttributeLists);
 
         // ----- Members -----
 
-        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
-        {
-            if (node.Parent == _typeInProgress?.Type)
-            {
-                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
-                var memberIdentifier = node.Identifier.ToString();
-                ReportNameAffixes(node.Identifier, node.AttributeLists);
-
-                _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
-            }
-        }
+        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
+            ReportName(node.Identifier, node.AttributeLists);
 
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
-            if (node.Parent == _typeInProgress?.Type)
-            {
-                foreach (var variable in node.Declaration.Variables)
-                {
-                    var memberIdentifier = variable.Identifier.ToString();
-                    ReportNameAffixes(variable.Identifier, node.AttributeLists);
-
-                    _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
-                }
-            }
+            var firstVariable = node.Declaration.Variables.First();
+            ReportName(firstVariable.Identifier, node.AttributeLists);
         }
 
-        public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
-        {
-            if (node.Parent == _typeInProgress?.Type)
-            {
-                var memberIdentifier = node.Identifier.ToString();
+        public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
+            ReportName(node.Identifier, node.AttributeLists);
 
-                ReportNameAffixes(node.Identifier, node.AttributeLists);
-                _typeInProgress!.Value.Functions.Add(new FunctionData(memberIdentifier, node));
-            }
-        }
-
-        public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
-        {
-            if (node.Parent == _typeInProgress?.Type)
-            {
-                var memberIdentifier = node.Identifier.ToString();
-                ReportNameAffixes(node.Identifier, node.AttributeLists);
-
-                _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
-            }
-        }
+        public override void VisitMethodDeclaration(MethodDeclarationSyntax node) =>
+            ReportName(node.Identifier, node.AttributeLists);
     }
 
     private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
@@ -1325,6 +1220,7 @@ public class PrettifyNames(
     /// </summary>
     private readonly struct NameProcessorContext
     {
+        // TODO: Change this
         /// <summary>
         /// The name of the current "scope" (a type name or an empty string for the global scope).
         /// </summary>
