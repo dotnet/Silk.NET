@@ -132,8 +132,9 @@ public class PrettifyNames(
 
             foreach (var candidateScope in candidateScopes)
             {
-                // TODO: This is a temporary shim. Consider removing
+                // TODO: This is a temporary shim. Consider removing/moving
                 // TODO: Currently this combines both methods and non-methods. This doesn't matter *here* anymore, but IdentifiedSharedPrefixes should consider splitting scopes by methods and non-methods
+                // TODO: Also, when moving this code ensure that this is done per scope instead of globally for all scopes
                 var methods = visitor
                     .Scopes[candidateScope.Key]
                     .Where(y => y.Value.MethodDeclarations != null)
