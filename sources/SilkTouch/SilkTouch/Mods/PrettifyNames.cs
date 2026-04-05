@@ -100,10 +100,9 @@ public class PrettifyNames(
             visitor.Visit(await doc.GetSyntaxRootAsync(ct));
         }
 
-        // The dictionary containing mappings from the original type names to the new names of the type and its members
-        var newNames = new Dictionary<string, RenamedType>();
-
         // Process the names
+        var nameProcessorContext = new NameProcessorContext(visitor);
+        var newNames = nameProcessorContext.FinalNames;
         {
             var nameAffixer = new PrettifyNamesAffixer(visitor.Scopes, cfg.Affixes);
             var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
@@ -117,65 +116,44 @@ public class PrettifyNames(
                 new PrefixIfStartsWithNumberProcessor(),
             };
 
-            // Create working set of candidate names
-            var candidateScopes = visitor.Scopes.ToDictionary(
-                // Scope
-                x => x.Key,
-                x =>
-                    x.Value.ToDictionary(
-                        // Member name
-                        y => y.Key,
-                        // Member candidate names
-                        y => new CandidateNames(y.Key, [])
-                    )
-            );
-
-            foreach (var candidateScope in candidateScopes)
+            foreach (var nameProcessor in nameProcessors)
             {
-                // TODO: This is a temporary shim. Consider removing/moving
-                // TODO: Currently this combines both methods and non-methods. This doesn't matter *here* anymore, but IdentifiedSharedPrefixes should consider splitting scopes by methods and non-methods
-                // TODO: Also, when moving this code ensure that this is done per scope instead of globally for all scopes
-                var methods = visitor
-                    .Scopes[candidateScope.Key]
-                    .Where(y => y.Value.MethodDeclarations != null)
-                    .ToDictionary(
-                        // Method name
-                        y => y.Key,
-                        // Method declarations
-                        IEnumerable<MethodDeclarationSyntax> (y) => y.Value.MethodDeclarations!
-                    );
-
-                if (methods.Count == 0)
-                {
-                    methods = null;
-                }
-
-                ProcessNames(
-                    new NameProcessorContext()
-                    {
-                        Scope = candidateScope.Key,
-                        Names = candidateScope.Value,
-                    },
-                    nameProcessors,
-                    cfg.NameOverrides,
-                    methods
-                );
+                nameProcessor.ProcessNames(nameProcessorContext);
             }
+
+            // foreach (var candidateScope in candidateScopes)
+            // {
+            //     // TODO: This is a temporary shim. Consider removing/moving
+            //     // TODO: Currently this combines both methods and non-methods. This doesn't matter *here* anymore, but IdentifiedSharedPrefixes should consider splitting scopes by methods and non-methods
+            //     // TODO: Also, when moving this code ensure that this is done per scope instead of globally for all scopes
+            //     var methods = visitor
+            //         .Scopes[candidateScope.Key]
+            //         .Where(y => y.Value.MethodDeclarations != null)
+            //         .ToDictionary(
+            //             // Method name
+            //             y => y.Key,
+            //             // Method declarations
+            //             IEnumerable<MethodDeclarationSyntax> (y) => y.Value.MethodDeclarations!
+            //         );
+            //
+            //     if (methods.Count == 0)
+            //     {
+            //         methods = null;
+            //     }
+            //
+            //     ProcessNames(context, nameProcessors, cfg.NameOverrides, methods);
+            // }
         }
 
         if (logger.IsEnabled(LogLevel.Debug))
         {
-            foreach (var (name, (newName, nonFunctions, functions)) in newNames)
+            logger.LogDebug("Prettified names by scope:");
+            foreach (var (scope, members) in newNames)
             {
-                logger.LogDebug("{} = {}", name, newName);
-                foreach (var (old, @new) in nonFunctions)
+                logger.LogDebug("Scope: {}", scope);
+                foreach (var (oldMemberName, newMemberName) in members)
                 {
-                    logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
-                }
-
-                foreach (var (old, @new) in functions)
-                {
-                    logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
+                    logger.LogDebug("    {} = {}", oldMemberName, newMemberName);
                 }
             }
         }
@@ -263,16 +241,21 @@ public class PrettifyNames(
 
         // Change the filenames where appropriate.
         proj = ctx.SourceProject;
+        var typeNames = newNames.GetValueOrDefault("", []);
+        var typeNamesLongestFirst = typeNames.OrderByDescending(x => x.Key.Length).ToArray();
+
         foreach (var docId in proj.DocumentIds)
         {
             var doc = proj.GetDocument(docId);
-            if (
-                doc is not { FilePath: not null }
-                || newNames
-                    .OrderByDescending(x => x.Key.Length)
-                    .FirstOrDefault(x => doc.FilePath.Contains(x.Key) || doc.Name.Contains(x.Key))
-                    is not { Key: { } oldName, Value.NewName: { } newName }
-            )
+            if (doc?.FilePath == null)
+            {
+                continue;
+            }
+
+            var firstMatch = typeNamesLongestFirst.FirstOrDefault(x =>
+                doc.FilePath.Contains(x.Key) || doc.Name.Contains(x.Key)
+            );
+            if (firstMatch is not { Key: { } oldName, Value: { } newName })
             {
                 continue;
             }
@@ -1234,24 +1217,33 @@ public class PrettifyNames(
     /// </summary>
     private class NameProcessorContext
     {
-        // TODO: Change this
         /// <summary>
-        /// The name of the current "scope" (a type name or an empty string for the global scope).
+        /// Represents a mapping: ScopeName -> (MemberName -> MemberCandidateNames).
+        /// This stores the candidates for the final prettified name for each name organized by scope.
         /// </summary>
-        public required string Scope { get; init; }
-
-        /// <summary>
-        /// Gets a dictionary mapping the original API name to a primary candidate name to rename that API to. The previous
-        /// names or other names that are otherwise less preferred to the primary name are listed in the optional secondary
-        /// list (in order of preference).
-        /// </summary>
-        public required Dictionary<string, CandidateNames> Names { get; init; }
+        public Dictionary<string, Dictionary<string, CandidateNames>> Scopes { get; init; }
 
         /// <summary>
         /// Represents a mapping: ScopeName -> (MemberName -> NewMemberName).
         /// This stores the final names for each member.
         /// </summary>
         public Dictionary<string, Dictionary<string, string>> FinalNames { get; } = [];
+
+        /// <summary>
+        /// Creates a new context from the scraped visitor data.
+        /// </summary>
+        public NameProcessorContext(Visitor visitor) =>
+            Scopes = visitor.Scopes.ToDictionary(
+                // Scope
+                x => x.Key,
+                x =>
+                    x.Value.ToDictionary(
+                        // Member name
+                        y => y.Key,
+                        // Member candidate names
+                        y => new CandidateNames(y.Key, [])
+                    )
+            );
     }
 
     /// <summary>
