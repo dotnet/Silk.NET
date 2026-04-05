@@ -98,7 +98,7 @@ public class BakeSourceSets(
         public override SyntaxNode? VisitIndexerDeclaration(IndexerDeclarationSyntax node) =>
             Visit(
                 node,
-                $"this[{string.Join(", ", node.ParameterList.Parameters.Select(ModUtils.DiscrimStr))}]",
+                $"this[{string.Join(", ", node.ParameterList.Parameters.Select(ModUtils.GetMethodDiscriminator))}]",
                 base.VisitIndexerDeclaration
             );
 
@@ -122,7 +122,13 @@ public class BakeSourceSets(
         ) =>
             Visit(
                 node,
-                ModUtils.DiscrimStr(node.Modifiers, null, string.Empty, node.ParameterList, null),
+                ModUtils.GetMethodDiscriminator(
+                    node.Modifiers,
+                    null,
+                    string.Empty,
+                    node.ParameterList,
+                    null
+                ),
                 base.VisitConstructorDeclaration
             );
 
@@ -132,7 +138,7 @@ public class BakeSourceSets(
         public override SyntaxNode? VisitOperatorDeclaration(OperatorDeclarationSyntax node) =>
             Visit(
                 node,
-                ModUtils.DiscrimStr(
+                ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
                     null,
                     $"op_{node.OperatorToken.Kind()}",
@@ -147,7 +153,7 @@ public class BakeSourceSets(
         ) =>
             Visit(
                 node,
-                ModUtils.DiscrimStr(
+                ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
                     null,
                     $"op_{node.ImplicitOrExplicitKeyword.Kind()}",
@@ -160,7 +166,7 @@ public class BakeSourceSets(
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             Visit(
                 node,
-                ModUtils.DiscrimStr(
+                ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
                     node.TypeParameterList,
                     node.Identifier.ToString(),

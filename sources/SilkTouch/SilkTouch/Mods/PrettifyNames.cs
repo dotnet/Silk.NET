@@ -468,7 +468,7 @@ public class PrettifyNames(
                 {
                     foreach (var meth in methods[originalNameToEval])
                     {
-                        var discrim = ModUtils.DiscrimStr(
+                        var discrim = ModUtils.GetMethodDiscriminator(
                             meth.Modifiers,
                             meth.TypeParameterList,
                             primary,

@@ -56,14 +56,14 @@ public class FunctionTransformer(
                 // to null as overloads that differ only by return type aren't acceptable. However, we do need a
                 // discriminator that does include the return type so we can determine whether the function has gone
                 // through the transformation pipeline completely unmodified.
-                var discrim = ModUtils.DiscrimStr(
+                var discrim = ModUtils.GetMethodDiscriminator(
                     meth.Modifiers,
                     meth.TypeParameterList,
                     meth.Identifier.ToString(),
                     meth.ParameterList,
                     returnType: null
                 );
-                var discrimWithRet = ModUtils.DiscrimStr(
+                var discrimWithRet = ModUtils.GetMethodDiscriminator(
                     meth.Modifiers,
                     meth.TypeParameterList,
                     meth.Identifier.ToString(),
@@ -127,14 +127,14 @@ public class FunctionTransformer(
             // to null as overloads that differ only by return type aren't acceptable. However, we do need a
             // discriminator that does include the return type so we can determine whether the function has gone
             // through the transformation pipeline completely unmodified.
-            var discrim = ModUtils.DiscrimStr(
+            var discrim = ModUtils.GetMethodDiscriminator(
                 function.Modifiers,
                 function.TypeParameterList,
                 function.Identifier.ToString(),
                 function.ParameterList,
                 returnType: null
             );
-            var discrimWithRet = ModUtils.DiscrimStr(
+            var discrimWithRet = ModUtils.GetMethodDiscriminator(
                 function.Modifiers,
                 function.TypeParameterList,
                 function.Identifier.ToString(),
@@ -190,7 +190,7 @@ public class FunctionTransformer(
                         )
                     );
 
-                    discrim = ModUtils.DiscrimStr(
+                    discrim = ModUtils.GetMethodDiscriminator(
                         function.Modifiers,
                         function.TypeParameterList,
                         newIden,

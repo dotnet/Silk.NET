@@ -107,7 +107,7 @@ public static class ModUtils
     /// <param name="toks">Tokens e.g. ref, in, out.</param>
     /// <param name="type">The type syntax.</param>
     /// <returns>The discriminator string.</returns>
-    public static string DiscrimStr(SyntaxTokenList? toks, TypeSyntax? type) =>
+    public static string GetMethodDiscriminator(SyntaxTokenList? toks, TypeSyntax? type) =>
         toks?.Any(x =>
             x.Kind() is SyntaxKind.RefKeyword or SyntaxKind.InKeyword or SyntaxKind.OutKeyword
         ) ?? false
@@ -123,7 +123,7 @@ public static class ModUtils
     /// <param name="params">The parameters of the function.</param>
     /// <param name="returnType">The return type of the function.</param>
     /// <returns>The discriminator string.</returns>
-    public static string DiscrimStr(
+    public static string GetMethodDiscriminator(
         SyntaxTokenList? modifiers,
         TypeParameterListSyntax? tParams,
         ReadOnlySpan<char> identifier,
@@ -131,8 +131,8 @@ public static class ModUtils
         TypeSyntax? returnType
     ) =>
         (modifiers?.Any(SyntaxKind.StaticKeyword) ?? false ? "static " : string.Empty)
-        + $"{DiscrimStr(modifiers, returnType)} {identifier}{tParams}"
-        + $"({string.Join(", ", @params?.Select(DiscrimStr) ?? [])})";
+        + $"{GetMethodDiscriminator(modifiers, returnType)} {identifier}{tParams}"
+        + $"({string.Join(", ", @params?.Select(GetMethodDiscriminator) ?? [])})";
 
     /// <summary>
     /// Gets a string that can be used to discriminate a function-like element for baking purposes.
@@ -143,21 +143,21 @@ public static class ModUtils
     /// <param name="params">The parameters of the function.</param>
     /// <param name="returnType">The return type of the function.</param>
     /// <returns>The discriminator string.</returns>
-    public static string DiscrimStr(
+    public static string GetMethodDiscriminator(
         SyntaxTokenList? modifiers,
         TypeParameterListSyntax? tParams,
         ReadOnlySpan<char> identifier,
         BaseParameterListSyntax? @params,
         TypeSyntax? returnType
-    ) => DiscrimStr(modifiers, tParams, identifier, @params?.Parameters, returnType);
+    ) => GetMethodDiscriminator(modifiers, tParams, identifier, @params?.Parameters, returnType);
 
     /// <summary>
     /// Gets a string that can be used to discriminate a single parameter.
     /// </summary>
     /// <param name="param">The parameter.</param>
     /// <returns>The discriminator string.</returns>
-    public static string DiscrimStr(BaseParameterSyntax param) =>
-        DiscrimStr(param.Modifiers, param.Type);
+    public static string GetMethodDiscriminator(BaseParameterSyntax param) =>
+        GetMethodDiscriminator(param.Modifiers, param.Type);
 
     /// <summary>
     /// Gets the relative path for this document.
