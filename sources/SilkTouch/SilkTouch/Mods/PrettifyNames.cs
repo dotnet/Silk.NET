@@ -428,7 +428,7 @@ public class PrettifyNames(
         // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
         // renamed. We keep track of the first original name so that we can add it to conflictingOriginalNames when we
         // do discover a conflict (along with the original name of the actual conflict).
-        var methodDisciminators =
+        var methodDiscriminators =
             new Dictionary<
                 string,
                 (string? FirstOriginalName, List<MethodDeclarationSyntax> Methods)
@@ -441,7 +441,7 @@ public class PrettifyNames(
 
             // First, let's check whether we have any conflicting discriminators.
             // If we don't, we can mark this as all good right away.
-            methodDisciminators.Clear();
+            methodDiscriminators.Clear();
             conflictingOriginalNames.Clear();
             var originalNamesForOldPrimary = primaries[primary];
 
@@ -476,9 +476,9 @@ public class PrettifyNames(
                             returnType: null
                         );
                         var (firstOriginalName, discriminatorMatches) =
-                            methodDisciminators.TryGetValue(discrim, out var dte)
+                            methodDiscriminators.TryGetValue(discrim, out var dte)
                                 ? dte
-                                : methodDisciminators[discrim] = (
+                                : methodDiscriminators[discrim] = (
                                     FirstOriginalName: originalNameToEval,
                                     []
                                 );
@@ -511,7 +511,7 @@ public class PrettifyNames(
 
             // If we're checking methods for conflicts and in our travels we've discovered that there are in fact
             // no conflicts, we can bail out early here.
-            if (nMethods > 0 && (methodDisciminators.Count == 0 || nMethodConflicts == 0))
+            if (nMethods > 0 && (methodDiscriminators.Count == 0 || nMethodConflicts == 0))
             {
                 namesToEval.Remove(primary);
                 continue;
