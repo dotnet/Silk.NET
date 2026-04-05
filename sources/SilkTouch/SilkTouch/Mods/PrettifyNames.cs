@@ -111,7 +111,7 @@ public class PrettifyNames(
                 new HandleOverridesProcessor(cfg.NameOverrides),
                 new StripAffixesProcessor(visitor.NameData),
                 new PrettifyProcessor(namePrettifier),
-                new ReapplyAffixesProcessor(visitor.NameData),
+                new ReapplyAffixesProcessor(visitor.NameData, cfg.Affixes),
                 new PrefixIfStartsWithNumberProcessor(),
                 new ResolveConflictsProcessor(visitor.NameData, logger),
                 new OutputFinalNamesProcessor(),
@@ -632,7 +632,10 @@ public class PrettifyNames(
     /// <summary>
     /// Reapplies and transforms identified affixes based on <see cref="NameAffixConfiguration"/>.
     /// </summary>
-    private class ReapplyAffixesProcessor(ScrapedNameData nameData) : INameProcessor
+    private class ReapplyAffixesProcessor(
+        ScrapedNameData nameData,
+        Dictionary<string, NameAffixConfiguration> affixConfig
+    ) : INameProcessor
     {
         private static readonly NameAffixConfiguration _defaultConfig = new();
 
