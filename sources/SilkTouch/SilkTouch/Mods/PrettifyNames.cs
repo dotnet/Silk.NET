@@ -402,19 +402,23 @@ public class PrettifyNames(
             secondary.Sort((a, b) => -a.Length.CompareTo(b.Length));
         }
 
-        // TODO: Update terminology since we don't trim here anymore
-        // Create a map from primaries to trimming names to account for multiple overloads
-        // with the same primary and same trimming name (i.e. it is a generated/transformed overload)
-        // but differing discriminators
+        // Create a mapping: Primary name -> Original name
+        // Primary name refers to the primary candidate name
+        // Original name refers to the original name of the member as seen in source code
+        //
+        // This is to account for method overloads that have the
+        // same primary candidate name and original name, but different discriminators
+        //
+        // This usually happens with generated/transformed overloads
         var primaries = new Dictionary<string, HashSet<string>>();
         foreach (var (originalName, (primary, _)) in context.Names)
         {
-            if (!primaries.TryGetValue(primary, out var trimmingNamesForPrimary))
+            if (!primaries.TryGetValue(primary, out var originalNamesForPrimary))
             {
-                primaries[primary] = trimmingNamesForPrimary = [];
+                primaries[primary] = originalNamesForPrimary = [];
             }
 
-            trimmingNamesForPrimary.Add(originalName);
+            originalNamesForPrimary.Add(originalName);
         }
 
         // Unwind some names back to their secondary names if the primaries would duplicate
@@ -422,46 +426,47 @@ public class PrettifyNames(
         var namesToEval = primaries.Keys.ToHashSet();
 
         // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
-        // renamed. We keep track of the first trimming name so that we can add it to conflictingTrimmingNames when we
-        // do discover a conflict (along with the trimming name of the actual conflict).
-        var methDiscrims =
+        // renamed. We keep track of the first original name so that we can add it to conflictingOriginalNames when we
+        // do discover a conflict (along with the original name of the actual conflict).
+        var methodDisciminators =
             new Dictionary<
                 string,
-                (string? FirstTrimmingName, List<MethodDeclarationSyntax> Methods)
+                (string? FirstOriginalName, List<MethodDeclarationSyntax> Methods)
             >();
-        var conflictingTrimmingNames = new HashSet<string>();
+        var conflictingOriginalNames = new HashSet<string>();
         while (namesToEval.GetEnumerator() is var e && e.MoveNext() && e.Current is var primary)
         {
             // ^-- We can't use a foreach loop because we're mutating below.
             // We're also using GetEnumerator instead of First to avoid allocations.
 
-            // First, let's check whether we have any conflicting discriminators. If we don't, we can mark this as all
-            // good right away.
-            methDiscrims.Clear();
-            conflictingTrimmingNames.Clear();
-            var trimmingNamesForOldPrimary = primaries[primary];
+            // First, let's check whether we have any conflicting discriminators.
+            // If we don't, we can mark this as all good right away.
+            methodDisciminators.Clear();
+            conflictingOriginalNames.Clear();
+            var originalNamesForOldPrimary = primaries[primary];
 
-            // Function-specific logic where some conflicts are okay, so we have to evaluate each signature to see if
-            // we can discriminate each one such that there are no conflicts.
+            // Function-specific logic where some conflicts are okay,
+            // so we have to evaluate each signature to see
+            // if we can discriminate each one such that there are no conflicts.
             //
             // An example of where this is the case is e.g. alGetBufferf/alGetBufferfv - signatures are identical.
-            var nMethConflicts = 0;
+            var nMethodConflicts = 0;
             var nMethods = 0;
             var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts
-            string? noSecondaryTrimmingName = null;
+            string? noSecondaryOriginalName = null;
             // TODO: Rewrite this logic to account for the fact that non-methods are also mixed in here now
-            foreach (var trimmingNameToEval in trimmingNamesForOldPrimary)
+            foreach (var originalNameToEval in originalNamesForOldPrimary)
             {
                 // Do we even have a secondary to fall back on if there is a conflict?
-                if (context.Names[trimmingNameToEval].Secondary.Count == 0)
+                if (context.Names[originalNameToEval].Secondary.Count == 0)
                 {
-                    noSecondaryTrimmingName ??= trimmingNameToEval;
+                    noSecondaryOriginalName ??= originalNameToEval;
                     nNoSecondaries++;
                 }
 
                 if (methods is not null)
                 {
-                    foreach (var meth in methods[trimmingNameToEval])
+                    foreach (var meth in methods[originalNameToEval])
                     {
                         var discrim = ModUtils.DiscrimStr(
                             meth.Modifiers,
@@ -470,34 +475,35 @@ public class PrettifyNames(
                             meth.ParameterList,
                             returnType: null
                         );
-                        var (ogTrimmingName, discrimMatches) = methDiscrims.TryGetValue(
-                            discrim,
-                            out var dte
-                        )
-                            ? dte
-                            : methDiscrims[discrim] = (trimmingNameToEval, []);
-                        discrimMatches.Add(meth);
+                        var (firstOriginalName, discriminatorMatches) =
+                            methodDisciminators.TryGetValue(discrim, out var dte)
+                                ? dte
+                                : methodDisciminators[discrim] = (
+                                    FirstOriginalName: originalNameToEval,
+                                    []
+                                );
+                        discriminatorMatches.Add(meth);
                         nMethods++;
 
                         // NOTE: The number of conflicts influences how we go about conflict resolution. See the
                         // logic below all of these loops just in case this comment is out of date, but at time of
                         // writing if 50% or more of the methods with this primary name are conflicting then we
                         // rename all of them, otherwise we rename only the conflicting overloads.
-                        nMethConflicts += discrimMatches.Count switch
+                        nMethodConflicts += discriminatorMatches.Count switch
                         {
                             2 => 2, // The original needs to be counted as a conflict in addition to this conflict
                             > 2 => 1, // Just mark this conflict, original is already counted.
                             _ => 0, // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
                         };
 
-                        if (discrimMatches.Count == 2 && ogTrimmingName is not null)
+                        if (discriminatorMatches.Count == 2 && firstOriginalName is not null)
                         {
-                            conflictingTrimmingNames.Add(ogTrimmingName);
+                            conflictingOriginalNames.Add(firstOriginalName);
                         }
 
-                        if (discrimMatches.Count > 1)
+                        if (discriminatorMatches.Count > 1)
                         {
-                            conflictingTrimmingNames.Add(trimmingNameToEval);
+                            conflictingOriginalNames.Add(originalNameToEval);
                         }
                     }
                 }
@@ -505,7 +511,7 @@ public class PrettifyNames(
 
             // If we're checking methods for conflicts and in our travels we've discovered that there are in fact
             // no conflicts, we can bail out early here.
-            if (nMethods > 0 && (methDiscrims.Count == 0 || nMethConflicts == 0))
+            if (nMethods > 0 && (methodDisciminators.Count == 0 || nMethodConflicts == 0))
             {
                 namesToEval.Remove(primary);
                 continue;
@@ -524,35 +530,35 @@ public class PrettifyNames(
                 continue;
             }
 
-            var renameOnlyConflicts = nMethConflicts <= nMethods / 2.0;
+            var renameOnlyConflicts = nMethodConflicts <= nMethods / 2.0;
 
             // We can afford to leave one API alone. If that place isn't already filled by a method without a secondary
-            // name then we should fill it with whatever has the shortest trimming name. The logic being that the more
+            // name then we should fill it with whatever has the shortest original name. The logic being that the more
             // characters (i.e. longer suffix) a name has, the more discriminatory/important that name is ergo the
             // reverse (the shorter the name, the less discriminatory/important it is) is also true.
             string? first = null;
-            var primaryClaimed = noSecondaryTrimmingName is not null;
+            var primaryClaimed = noSecondaryOriginalName is not null;
             namesToEval.Remove(primary); // <-- just in case the below loop somehow produces the same primary again.
             foreach (
-                var conflictingTrimmingName in (
-                    renameOnlyConflicts ? conflictingTrimmingNames : primaries[primary]
+                var conflictingOriginalName in (
+                    renameOnlyConflicts ? conflictingOriginalNames : primaries[primary]
                 ).OrderBy(x => x.Length)
             )
             {
-                // Do not rename if this is the trimming name that does not have a secondary.
-                if (noSecondaryTrimmingName == conflictingTrimmingName)
+                // Do not rename if this is the original name that does not have a secondary.
+                if (noSecondaryOriginalName == conflictingOriginalName)
                 {
                     continue;
                 }
 
-                // If the current primary hasn't been "claimed" by a trimming name without a secondary, we only want
+                // If the current primary hasn't been "claimed" by a original name without a secondary, we only want
                 // to let the shortest name claim it (per the logic described in the last comment) if it is actually
-                // the absolute shortest name and not joint-1st for that title. Therefore, the first trimming name
+                // the absolute shortest name and not joint-1st for that title. Therefore, the first original name
                 // is saved for the second iteration where we'll make that judgement call and handle both at the
                 // same time.
                 if (first is null)
                 {
-                    first = conflictingTrimmingName;
+                    first = conflictingOriginalName;
                     if (!primaryClaimed)
                     {
                         continue;
@@ -564,28 +570,28 @@ public class PrettifyNames(
                 // demoted to use their secondary name.
                 if (!primaryClaimed)
                 {
-                    if (first.Length == conflictingTrimmingName.Length)
+                    if (first.Length == conflictingOriginalName.Length)
                     {
                         // Update the output name.
                         var firstSecondary =
                             context.Names[first].Secondary
                             ?? throw new InvalidOperationException(
-                                "More than one trimming name without secondary names."
+                                "More than one original member name without secondary names."
                             );
                         var firstNextPrimary = firstSecondary[^1];
                         firstSecondary.RemoveAt(firstSecondary.Count - 1);
                         context.Names[first] = new CandidateNames(firstNextPrimary, firstSecondary);
 
-                        // Update our primary to trimming name map
-                        var trimmingNamesForFirst = primaries.TryGetValue(
+                        // Update our primary to original name map
+                        var originalNamesForFirst = primaries.TryGetValue(
                             firstNextPrimary,
                             out var tnff
                         )
                             ? tnff
                             : primaries[firstNextPrimary] = [];
-                        trimmingNamesForFirst.Add(first);
-                        trimmingNamesForOldPrimary.Remove(first);
-                        if (trimmingNamesForOldPrimary.Count == 0)
+                        originalNamesForFirst.Add(first);
+                        originalNamesForOldPrimary.Remove(first);
+                        if (originalNamesForOldPrimary.Count == 0)
                         {
                             primaries.Remove(primary);
                         }
@@ -610,21 +616,21 @@ public class PrettifyNames(
 
                 // Conflict resolution! Update the output name.
                 var secondary =
-                    context.Names[conflictingTrimmingName].Secondary
+                    context.Names[conflictingOriginalName].Secondary
                     ?? throw new InvalidOperationException(
-                        "More than one trimming name without secondary names."
+                        "More than one original member name without secondary names."
                     );
                 var nextPrimary = secondary[^1];
                 secondary.RemoveAt(secondary.Count - 1);
-                context.Names[conflictingTrimmingName] = new CandidateNames(nextPrimary, secondary);
+                context.Names[conflictingOriginalName] = new CandidateNames(nextPrimary, secondary);
 
-                // Update our primary to trimming name map
-                var trimmingNamesForNewPrimary = primaries.TryGetValue(nextPrimary, out var tnfp)
+                // Update our primary to original name map
+                var originalNamesForNewPrimary = primaries.TryGetValue(nextPrimary, out var tnfp)
                     ? tnfp
                     : primaries[nextPrimary] = [];
-                trimmingNamesForNewPrimary.Add(conflictingTrimmingName);
-                trimmingNamesForOldPrimary.Remove(conflictingTrimmingName);
-                if (trimmingNamesForOldPrimary.Count == 0)
+                originalNamesForNewPrimary.Add(conflictingOriginalName);
+                originalNamesForOldPrimary.Remove(conflictingOriginalName);
+                if (originalNamesForOldPrimary.Count == 0)
                 {
                     primaries.Remove(primary);
                 }
@@ -635,7 +641,7 @@ public class PrettifyNames(
                 {
                     logger.LogTrace(
                         "{}: {} -> {} (remaining secondaries: {})",
-                        conflictingTrimmingName,
+                        conflictingOriginalName,
                         primary,
                         nextPrimary,
                         string.Join(", ", secondary)
