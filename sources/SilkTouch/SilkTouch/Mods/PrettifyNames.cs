@@ -475,13 +475,22 @@ public class PrettifyNames(
                             method.ParameterList,
                             returnType: null
                         );
-                        var (firstOriginalName, discriminatorMatches) =
-                            methodDiscriminators.TryGetValue(discriminator, out var dte)
-                                ? dte
-                                : methodDiscriminators[discriminator] = (
-                                    FirstOriginalName: originalNameToEval,
-                                    []
-                                );
+
+                        if (
+                            !methodDiscriminators.TryGetValue(
+                                discriminator,
+                                out var methodDiscriminator
+                            )
+                        )
+                        {
+                            methodDiscriminators[discriminator] = methodDiscriminator = (
+                                originalNameToEval,
+                                []
+                            );
+                        }
+
+                        var (firstOriginalName, discriminatorMatches) = methodDiscriminator;
+
                         discriminatorMatches.Add(method);
                         nMethods++;
 
@@ -583,12 +592,11 @@ public class PrettifyNames(
                         context.Names[first] = new CandidateNames(firstNextPrimary, firstSecondary);
 
                         // Update our primary to original name map
-                        var originalNamesForFirst = primaries.TryGetValue(
-                            firstNextPrimary,
-                            out var tnff
-                        )
-                            ? tnff
-                            : primaries[firstNextPrimary] = [];
+                        if (!primaries.TryGetValue(firstNextPrimary, out var originalNamesForFirst))
+                        {
+                            primaries[firstNextPrimary] = originalNamesForFirst = [];
+                        }
+
                         originalNamesForFirst.Add(first);
                         originalNamesForOldPrimary.Remove(first);
                         if (originalNamesForOldPrimary.Count == 0)
@@ -625,9 +633,11 @@ public class PrettifyNames(
                 context.Names[conflictingOriginalName] = new CandidateNames(nextPrimary, secondary);
 
                 // Update our primary to original name map
-                var originalNamesForNewPrimary = primaries.TryGetValue(nextPrimary, out var tnfp)
-                    ? tnfp
-                    : primaries[nextPrimary] = [];
+                if (!primaries.TryGetValue(nextPrimary, out var originalNamesForNewPrimary))
+                {
+                    primaries[nextPrimary] = originalNamesForNewPrimary = [];
+                }
+
                 originalNamesForNewPrimary.Add(conflictingOriginalName);
                 originalNamesForOldPrimary.Remove(conflictingOriginalName);
                 if (originalNamesForOldPrimary.Count == 0)
