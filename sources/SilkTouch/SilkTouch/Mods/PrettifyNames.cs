@@ -117,58 +117,47 @@ public class PrettifyNames(
                 new PrefixIfStartsWithNumberProcessor(),
             };
 
-            // Create a type name dictionary to trim the type names.
-            var typeNames = visitor.TrimmableTypes.ToDictionary(
+            // Create working set of candidate names
+            var candidateScopes = visitor.Scopes.ToDictionary(
+                // Scope
                 x => x.Key,
-                x => new CandidateNames(x.Key, [])
+                x =>
+                    x.Value.ToDictionary(
+                        // Member name
+                        y => y.Key,
+                        // Member candidate names
+                        y => new CandidateNames(y.Key, [])
+                    )
             );
 
-            ProcessNames(
-                new NameProcessorContext { Scope = "", Names = typeNames },
-                nameProcessors,
-                cfg.NameOverrides
-            );
-            // Now rename everything within each type.
-            foreach (var (typeName, (newTypeName, _)) in typeNames)
+            foreach (var candidateScope in candidateScopes)
             {
-                var (_, (consts, functions)) = visitor.TrimmableTypes.First(x => x.Key == typeName);
+                // TODO: This is a temporary shim. Consider removing
+                // TODO: Currently this combines both methods and non-methods. This doesn't matter *here* anymore, but IdentifiedSharedPrefixes should consider splitting scopes by methods and non-methods
+                var methods = visitor
+                    .Scopes[candidateScope.Key]
+                    .Where(y => y.Value.MethodDeclarations != null)
+                    .ToDictionary(
+                        // Method name
+                        y => y.Key,
+                        // Method declarations
+                        IEnumerable<MethodDeclarationSyntax> (y) => y.Value.MethodDeclarations!
+                    );
 
-                // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
-                // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
-                var constNames = consts.ToDictionary(x => x, x => new CandidateNames(x, []));
+                if (methods.Count == 0)
+                {
+                    methods = null;
+                }
 
-                // Trim the constants.
                 ProcessNames(
-                    new NameProcessorContext { Scope = typeName, Names = constNames },
-                    nameProcessors,
-                    cfg.NameOverrides
-                );
-
-                // Rename the functions. More often that not functions have different nomenclature to constants, so we
-                // treat them separately.
-                var functionNames = functions
-                    .DistinctBy(x => x.Name)
-                    .ToDictionary(x => x.Name, x => new CandidateNames(x.Name, []));
-
-                // Collect the syntax as this is used for conflict resolution in the Trim function.
-                var functionSyntax = functionNames.Keys.ToDictionary(
-                    x => x,
-                    x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
-                );
-
-                // Trim the functions.
-                ProcessNames(
-                    new NameProcessorContext { Scope = typeName, Names = functionNames },
+                    new NameProcessorContext()
+                    {
+                        Scope = candidateScope.Key,
+                        Names = candidateScope.Value,
+                    },
                     nameProcessors,
                     cfg.NameOverrides,
-                    functionSyntax
-                );
-
-                // Add it to the rewriter's list of names to... rewrite...
-                newNames[typeName] = new RenamedType(
-                    newTypeName,
-                    constNames.ToDictionary(x => x.Key, x => x.Value.Primary),
-                    functionNames.ToDictionary(x => x.Key, x => x.Value.Primary)
+                    methods
                 );
             }
         }
@@ -221,6 +210,8 @@ public class PrettifyNames(
                 "Failed to obtain compilation for source project!"
             );
 
+        // TODO: Replace this with another visitor. I really don't like LINQ blobs and a visitor might be faster.
+        // TODO: Also consider using a symbol visitor instead of a syntax one. It might be faster since we only care about declarations
         await NameUtils.RenameAllAsync(
             ctx,
             newNames.SelectMany(x =>
@@ -331,7 +322,7 @@ public class PrettifyNames(
         NameProcessorContext context,
         IEnumerable<INameProcessor> nameProcessors,
         Dictionary<string, string> nameOverrides, // TODO: Move to a separate name processor
-        Dictionary<string, IEnumerable<MethodDeclarationSyntax>>? functionSyntax = null
+        Dictionary<string, IEnumerable<MethodDeclarationSyntax>>? methods = null
     )
     {
         // Ensure the trimmers don't see names that have been manually overridden, as we don't want them to influence
@@ -420,7 +411,7 @@ public class PrettifyNames(
         }
 
         // Unwind some names back to their secondary names if the primaries would duplicate
-        // We'll use a hash set to determine whether or not we need to check a primary for conflicts.
+        // We'll use a hash set to determine whether we need to check a primary for conflicts.
         var namesToEval = primaries.Keys.ToHashSet();
 
         // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
@@ -460,9 +451,9 @@ public class PrettifyNames(
                     nNoSecondaries++;
                 }
 
-                if (functionSyntax is not null)
+                if (methods is not null)
                 {
-                    foreach (var meth in functionSyntax[trimmingNameToEval])
+                    foreach (var meth in methods[trimmingNameToEval])
                     {
                         var discrim = ModUtils.DiscrimStr(
                             meth.Modifiers,
@@ -816,10 +807,10 @@ public class PrettifyNames(
             ).WithRenameSafeAttributeLists();
     }
 
-    /// <param name="affixData">The affix data retrieved by the <see cref="Visitor"/>.</param>
+    /// <param name="nameData">The name data retrieved by the <see cref="Visitor"/>.</param>
     /// <param name="config">The configuration from <see cref="Configuration.Affixes"/>.</param>
     private class PrettifyNamesAffixer(
-        Dictionary<string, Dictionary<string, NameAffix[]>> affixData,
+        Dictionary<string, Dictionary<string, MemberData>> nameData,
         Dictionary<string, NameAffixConfiguration> config
     )
     {
@@ -1004,11 +995,11 @@ public class PrettifyNames(
         /// <returns>The name affixes for the specified identifier.</returns>
         public NameAffix[] GetAffixes(string scope, string originalName)
         {
-            if (affixData.TryGetValue(scope, out var members))
+            if (nameData.TryGetValue(scope, out var members))
             {
-                if (members.TryGetValue(originalName, out var memberAffixes))
+                if (members.TryGetValue(originalName, out var memberData))
                 {
-                    return memberAffixes;
+                    return memberData.Affixes;
                 }
             }
 
