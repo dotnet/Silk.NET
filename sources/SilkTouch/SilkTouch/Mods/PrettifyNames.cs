@@ -466,23 +466,23 @@ public class PrettifyNames(
 
                 if (methods is not null)
                 {
-                    foreach (var meth in methods[originalNameToEval])
+                    foreach (var method in methods[originalNameToEval])
                     {
-                        var discrim = ModUtils.GetMethodDiscriminator(
-                            meth.Modifiers,
-                            meth.TypeParameterList,
+                        var discriminator = ModUtils.GetMethodDiscriminator(
+                            method.Modifiers,
+                            method.TypeParameterList,
                             primary,
-                            meth.ParameterList,
+                            method.ParameterList,
                             returnType: null
                         );
                         var (firstOriginalName, discriminatorMatches) =
-                            methodDiscriminators.TryGetValue(discrim, out var dte)
+                            methodDiscriminators.TryGetValue(discriminator, out var dte)
                                 ? dte
-                                : methodDiscriminators[discrim] = (
+                                : methodDiscriminators[discriminator] = (
                                     FirstOriginalName: originalNameToEval,
                                     []
                                 );
-                        discriminatorMatches.Add(meth);
+                        discriminatorMatches.Add(method);
                         nMethods++;
 
                         // NOTE: The number of conflicts influences how we go about conflict resolution. See the
@@ -551,7 +551,7 @@ public class PrettifyNames(
                     continue;
                 }
 
-                // If the current primary hasn't been "claimed" by a original name without a secondary, we only want
+                // If the current primary hasn't been "claimed" by an original name without a secondary, we only want
                 // to let the shortest name claim it (per the logic described in the last comment) if it is actually
                 // the absolute shortest name and not joint-1st for that title. Therefore, the first original name
                 // is saved for the second iteration where we'll make that judgement call and handle both at the
