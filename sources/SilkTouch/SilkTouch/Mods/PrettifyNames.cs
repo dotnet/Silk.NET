@@ -705,14 +705,9 @@ public class PrettifyNames(
             MethodDeclarationSyntax? memberMethodDeclaration = null
         )
         {
-            var affixes = memberAttributeLists.GetNameAffixes();
-            if (affixes.Length == 0)
-            {
-                return;
-            }
-
             var scopeName = _scope?.Identifier.ToString() ?? "";
             var memberName = memberIdentifier.ToString();
+            var affixes = memberAttributeLists.GetNameAffixes();
 
             if (!Scopes.TryGetValue(scopeName, out var members))
             {
