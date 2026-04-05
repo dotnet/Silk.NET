@@ -103,18 +103,17 @@ public class PrettifyNames(
         // Process the names
         var nameProcessorContext = new NameProcessorContext(visitor);
         {
-            var nameAffixer = new PrettifyNamesAffixer(visitor.Scopes, cfg.Affixes);
             var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
 
             // Define name processors
             var nameProcessors = new INameProcessor[]
             {
-                new HandleOverridesProcessor(),
-                new StripAffixesProcessor(nameAffixer),
+                new HandleOverridesProcessor(cfg.NameOverrides),
+                new StripAffixesProcessor(visitor.NameData),
                 new PrettifyProcessor(namePrettifier),
-                new ReapplyAffixesProcessor(nameAffixer),
+                new ReapplyAffixesProcessor(visitor.NameData),
                 new PrefixIfStartsWithNumberProcessor(),
-                new ResolveConflictsProcessor(),
+                new ResolveConflictsProcessor(visitor.NameData, logger),
                 new OutputFinalNamesProcessor(),
             };
 
@@ -489,7 +488,8 @@ public class PrettifyNames(
         }
     }
 
-    private class HandleOverridesProcessor : INameProcessor
+    private class HandleOverridesProcessor(Dictionary<string, string> nameOverrides)
+        : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
         {
@@ -555,7 +555,7 @@ public class PrettifyNames(
     /// Removes identified affixes so that other name processors can process the base name separately.
     /// These affixes should be reapplied by <see cref="ReapplyAffixesProcessor"/>.
     /// </summary>
-    private class StripAffixesProcessor(PrettifyNamesAffixer affixer) : INameProcessor
+    private class StripAffixesProcessor(ScrapedNameData nameData) : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
         {
@@ -632,7 +632,7 @@ public class PrettifyNames(
     /// <summary>
     /// Reapplies and transforms identified affixes based on <see cref="NameAffixConfiguration"/>.
     /// </summary>
-    private class ReapplyAffixesProcessor(PrettifyNamesAffixer affixer) : INameProcessor
+    private class ReapplyAffixesProcessor(ScrapedNameData nameData) : INameProcessor
     {
         private static readonly NameAffixConfiguration _defaultConfig = new();
 
@@ -908,7 +908,8 @@ public class PrettifyNames(
         }
     }
 
-    private class ResolveConflictsProcessor : INameProcessor
+    private class ResolveConflictsProcessor(ScrapedNameData nameData, ILogger logger)
+        : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
         {
@@ -1260,7 +1261,7 @@ public class PrettifyNames(
         /// Creates a new context from the scraped visitor data.
         /// </summary>
         public NameProcessorContext(Visitor visitor) =>
-            Scopes = visitor.Scopes.ToDictionary(
+            Scopes = visitor.NameData.Scopes.ToDictionary(
                 // Scope
                 x => x.Key,
                 x =>
