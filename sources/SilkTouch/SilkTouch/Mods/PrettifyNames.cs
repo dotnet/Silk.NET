@@ -325,15 +325,18 @@ public class PrettifyNames(
         Dictionary<string, IEnumerable<MethodDeclarationSyntax>>? methods = null
     )
     {
-        // Ensure the trimmers don't see names that have been manually overridden, as we don't want them to influence
-        // automatic prefix determination for example
+        // TODO: Move this into its own processor and update the comment
+        // Ensure the name processors don't see names that have been manually overridden
         var namesToProcess = context.Names;
         foreach (var (nativeName, overriddenName) in nameOverrides)
         {
             var nameToAdd = nativeName;
             if (nativeName.Contains('.'))
             {
+                // TODO: Update/clarify comment
                 // We're processing a type dictionary, so don't add a member thing.
+                // TODO: This if statement is useless now since context.Scope is non-null
+                // TODO: Consider reworking this to internally split the override target into scope + member name instead of using two branches
                 if (context.Scope is null)
                 {
                     continue;
@@ -399,15 +402,19 @@ public class PrettifyNames(
             secondary.Sort((a, b) => -a.Length.CompareTo(b.Length));
         }
 
-        // Create a map from primaries to trimming names, to account for multiple overloads with the same primary and
-        // same trimming name (i.e. it is a generated/transformed overload) but differing discriminators.
+        // TODO: Update terminology since we don't trim here anymore
+        // Create a map from primaries to trimming names to account for multiple overloads
+        // with the same primary and same trimming name (i.e. it is a generated/transformed overload)
+        // but differing discriminators
         var primaries = new Dictionary<string, HashSet<string>>();
-        foreach (var (trimmingName, (primary, _)) in context.Names)
+        foreach (var (originalName, (primary, _)) in context.Names)
         {
-            var trimmingNamesForPrimary = primaries.TryGetValue(primary, out var tnfp)
-                ? tnfp
-                : primaries[primary] = [];
-            trimmingNamesForPrimary.Add(trimmingName);
+            if (!primaries.TryGetValue(primary, out var trimmingNamesForPrimary))
+            {
+                primaries[primary] = trimmingNamesForPrimary = [];
+            }
+
+            trimmingNamesForPrimary.Add(originalName);
         }
 
         // Unwind some names back to their secondary names if the primaries would duplicate
@@ -425,8 +432,8 @@ public class PrettifyNames(
         var conflictingTrimmingNames = new HashSet<string>();
         while (namesToEval.GetEnumerator() is var e && e.MoveNext() && e.Current is var primary)
         {
-            // ^-- We can't use a foreach loop because we're mutating below. We're also using GetEnumerator instead of
-            // First to avoid allocations.
+            // ^-- We can't use a foreach loop because we're mutating below.
+            // We're also using GetEnumerator instead of First to avoid allocations.
 
             // First, let's check whether we have any conflicting discriminators. If we don't, we can mark this as all
             // good right away.
@@ -442,6 +449,7 @@ public class PrettifyNames(
             var nMethods = 0;
             var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts
             string? noSecondaryTrimmingName = null;
+            // TODO: Rewrite this logic to account for the fact that non-methods are also mixed in here now
             foreach (var trimmingNameToEval in trimmingNamesForOldPrimary)
             {
                 // Do we even have a secondary to fall back on if there is a conflict?
@@ -635,6 +643,8 @@ public class PrettifyNames(
                 }
             }
         }
+
+        // TODO: Add a name processor that outputs names to the final dictionary
     }
 
     /// <inheritdoc />
@@ -982,6 +992,7 @@ public class PrettifyNames(
             }
         }
 
+        // TODO: Consider replacing this with a general GetMemberData method in Visitor or some VisitorData class
         /// <summary>
         /// Gets affix data for the specified scope and original name of the identifier.
         /// </summary>
