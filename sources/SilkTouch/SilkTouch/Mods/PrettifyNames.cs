@@ -1153,7 +1153,7 @@ public class PrettifyNames(
 
                     // Remaining must be a cycle
                     throw new InvalidOperationException(
-                        $"Detected cycle in referenced affixes. Names that are part of the cycle: {string.Join(", ", dependencyCountByKey)}"
+                        $"Detected cycle in referenced affixes. Names that are part of the cycle: {string.Join(", ", dependencyCountByKey.Keys)}"
                     );
                 }
             }
