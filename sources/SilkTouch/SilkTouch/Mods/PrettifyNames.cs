@@ -796,7 +796,7 @@ public class PrettifyNames(
             ReportName(node.Identifier, node.AttributeLists);
 
         public override void VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            ReportName(node.Identifier, node.AttributeLists);
+            ReportName(node.Identifier, node.AttributeLists, node);
     }
 
     private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
