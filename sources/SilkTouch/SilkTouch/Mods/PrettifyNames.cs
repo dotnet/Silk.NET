@@ -388,6 +388,7 @@ public class PrettifyNames(
             nameProcessor.ProcessNames(context with { Names = namesToProcess });
         }
 
+        // TODO: This is to handle overridden names that were hidden above. Move this into yet another processor.
         // Apply changes
         if (namesToProcess != context.Names)
         {
@@ -891,7 +892,7 @@ public class PrettifyNames(
             string scope,
             string originalName,
             List<string> secondary,
-            NameProcessorContext? context // TODO: Handle this better. Exposing the entire context is excessive.
+            NameProcessorContext context // TODO: Handle this better. Exposing the entire context is excessive.
         )
         {
             var affixes = GetAffixes(scope, originalName);
@@ -978,11 +979,7 @@ public class PrettifyNames(
                     var affixValue = affix.Affix;
                     if (
                         affix.IsReference
-                        && context.HasValue
-                        && context.Value.Names.TryGetValue(
-                            affixValue,
-                            out var referencedCandidateNames
-                        )
+                        && context.Names.TryGetValue(affixValue, out var referencedCandidateNames)
                     )
                     {
                         affixValue = referencedCandidateNames.Primary;
@@ -1235,13 +1232,13 @@ public class PrettifyNames(
     /// <summary>
     /// State made available to <see cref="INameProcessor"/> implementations.
     /// </summary>
-    private readonly struct NameProcessorContext
+    private class NameProcessorContext
     {
         // TODO: Change this
         /// <summary>
         /// The name of the current "scope" (a type name or an empty string for the global scope).
         /// </summary>
-        public string Scope { get; init; }
+        public required string Scope { get; init; }
 
         /// <summary>
         /// Gets a dictionary mapping the original API name to a primary candidate name to rename that API to. The previous
@@ -1249,6 +1246,12 @@ public class PrettifyNames(
         /// list (in order of preference).
         /// </summary>
         public required Dictionary<string, CandidateNames> Names { get; init; }
+
+        /// <summary>
+        /// Represents a mapping: ScopeName -> (MemberName -> NewMemberName).
+        /// This stores the final names for each member.
+        /// </summary>
+        public Dictionary<string, Dictionary<string, string>> FinalNames { get; } = [];
     }
 
     /// <summary>
