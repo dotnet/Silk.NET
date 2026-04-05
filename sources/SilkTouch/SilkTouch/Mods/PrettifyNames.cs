@@ -1236,4 +1236,15 @@ public class PrettifyNames(
         /// </summary>
         public required Dictionary<string, CandidateNames> Names { get; init; }
     }
+
+    /// <summary>
+    /// Represents the set of primary and secondary candidates for the prettified version of a name.
+    /// </summary>
+    /// <param name="Primary">The preferred version of the output name.</param>
+    /// <param name="Secondary">The fallback versions of the output name. Used in the case the primary causes conflicts.</param>
+    private readonly record struct CandidateNames(string Primary, List<string> Secondary)
+    {
+        public override string ToString() =>
+            $"(Primary={Primary}, Secondary=[{string.Join(", ", Secondary)}])";
+    }
 }
