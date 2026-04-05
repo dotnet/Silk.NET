@@ -102,7 +102,6 @@ public class PrettifyNames(
 
         // Process the names
         var nameProcessorContext = new NameProcessorContext(visitor);
-        var newNames = nameProcessorContext.FinalNames;
         {
             var nameAffixer = new PrettifyNamesAffixer(visitor.Scopes, cfg.Affixes);
             var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
@@ -110,41 +109,22 @@ public class PrettifyNames(
             // Define name processors
             var nameProcessors = new INameProcessor[]
             {
+                new HandleOverridesProcessor(),
                 new StripAffixesProcessor(nameAffixer),
                 new PrettifyProcessor(namePrettifier),
                 new ReapplyAffixesProcessor(nameAffixer),
                 new PrefixIfStartsWithNumberProcessor(),
+                new ResolveConflictsProcessor(),
+                new OutputFinalNamesProcessor(),
             };
 
             foreach (var nameProcessor in nameProcessors)
             {
                 nameProcessor.ProcessNames(nameProcessorContext);
             }
-
-            // foreach (var candidateScope in candidateScopes)
-            // {
-            //     // TODO: This is a temporary shim. Consider removing/moving
-            //     // TODO: Currently this combines both methods and non-methods. This doesn't matter *here* anymore, but IdentifiedSharedPrefixes should consider splitting scopes by methods and non-methods
-            //     // TODO: Also, when moving this code ensure that this is done per scope instead of globally for all scopes
-            //     var methods = visitor
-            //         .Scopes[candidateScope.Key]
-            //         .Where(y => y.Value.MethodDeclarations != null)
-            //         .ToDictionary(
-            //             // Method name
-            //             y => y.Key,
-            //             // Method declarations
-            //             IEnumerable<MethodDeclarationSyntax> (y) => y.Value.MethodDeclarations!
-            //         );
-            //
-            //     if (methods.Count == 0)
-            //     {
-            //         methods = null;
-            //     }
-            //
-            //     ProcessNames(context, nameProcessors, cfg.NameOverrides, methods);
-            // }
         }
 
+        var newNames = nameProcessorContext.FinalNames;
         if (logger.IsEnabled(LogLevel.Debug))
         {
             logger.LogDebug("Prettified names by scope:");
@@ -302,355 +282,6 @@ public class PrettifyNames(
         ctx.SourceProject = proj;
     }
 
-    private void ProcessNames(
-        NameProcessorContext context,
-        IEnumerable<INameProcessor> nameProcessors,
-        Dictionary<string, string> nameOverrides, // TODO: Move to a separate name processor
-        Dictionary<string, IEnumerable<MethodDeclarationSyntax>>? methods = null
-    )
-    {
-        // TODO: Move this into its own processor and update the comment
-        // Ensure the name processors don't see names that have been manually overridden
-        var namesToProcess = context.Names;
-        foreach (var (nativeName, overriddenName) in nameOverrides)
-        {
-            var nameToAdd = nativeName;
-            if (nativeName.Contains('.'))
-            {
-                // TODO: Update/clarify comment
-                // We're processing a type dictionary, so don't add a member thing.
-                // TODO: This if statement is useless now since context.Scope is non-null
-                // TODO: Consider reworking this to internally split the override target into scope + member name instead of using two branches
-                if (context.Scope is null)
-                {
-                    continue;
-                }
-
-                // Check whether the override is for this type.
-                var nativeNameSpan = nativeName.AsSpan();
-                var scopeSpan = nativeNameSpan[..nativeNameSpan.IndexOf('.')];
-                if (
-                    scopeSpan.Equals("*", StringComparison.Ordinal)
-                    || scopeSpan.Equals(context.Scope, StringComparison.Ordinal)
-                )
-                {
-                    nameToAdd = nativeNameSpan[(nativeNameSpan.IndexOf('.') + 1)..].ToString();
-                }
-                else
-                {
-                    continue;
-                }
-            }
-
-            if (!namesToProcess.TryGetValue(nameToAdd, out var v))
-            {
-                continue;
-            }
-
-            // If we haven't created the differentiated dictionary yet, then do so now. We do want to keep the original
-            // dictionary so we can actually apply the renames; if we have created two different branching dictionaries
-            // they are recombined following name processing.
-            if (namesToProcess == context.Names)
-            {
-                namesToProcess = namesToProcess.ToDictionary();
-            }
-
-            // Don't let the name processors see the overridden native name.
-            namesToProcess.Remove(nameToAdd);
-
-            // Apply the name override to the dictionary we actually use.
-            context.Names[nameToAdd] = new CandidateNames(
-                overriddenName,
-                [.. v.Secondary, nameToAdd]
-            );
-        }
-
-        // Run each name processor
-        foreach (var nameProcessor in nameProcessors)
-        {
-            nameProcessor.ProcessNames(context with { Names = namesToProcess });
-        }
-
-        // TODO: This is to handle overridden names that were hidden above. Move this into yet another processor.
-        // Apply changes
-        if (namesToProcess != context.Names)
-        {
-            foreach (var (evalName, result) in namesToProcess)
-            {
-                context.Names[evalName] = result;
-            }
-        }
-
-        // Prefer shorter names
-        foreach (var (_, (_, secondary)) in context.Names)
-        {
-            secondary.Sort((a, b) => -a.Length.CompareTo(b.Length));
-        }
-
-        // Create a mapping: Primary name -> Original name
-        // Primary name refers to the primary candidate name
-        // Original name refers to the original name of the member as seen in source code
-        //
-        // This is to account for method overloads that have the
-        // same primary candidate name and original name, but different discriminators
-        //
-        // This usually happens with generated/transformed overloads
-        var primaries = new Dictionary<string, HashSet<string>>();
-        foreach (var (originalName, (primary, _)) in context.Names)
-        {
-            if (!primaries.TryGetValue(primary, out var originalNamesForPrimary))
-            {
-                primaries[primary] = originalNamesForPrimary = [];
-            }
-
-            originalNamesForPrimary.Add(originalName);
-        }
-
-        // Unwind some names back to their secondary names if the primaries would duplicate
-        // We'll use a hash set to determine whether we need to check a primary for conflicts.
-        var namesToEval = primaries.Keys.ToHashSet();
-
-        // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
-        // renamed. We keep track of the first original name so that we can add it to conflictingOriginalNames when we
-        // do discover a conflict (along with the original name of the actual conflict).
-        var methodDiscriminators =
-            new Dictionary<
-                string,
-                (string? FirstOriginalName, List<MethodDeclarationSyntax> Methods)
-            >();
-        var conflictingOriginalNames = new HashSet<string>();
-        while (namesToEval.GetEnumerator() is var e && e.MoveNext() && e.Current is var primary)
-        {
-            // ^-- We can't use a foreach loop because we're mutating below.
-            // We're also using GetEnumerator instead of First to avoid allocations.
-
-            // First, let's check whether we have any conflicting discriminators.
-            // If we don't, we can mark this as all good right away.
-            methodDiscriminators.Clear();
-            conflictingOriginalNames.Clear();
-            var originalNamesForOldPrimary = primaries[primary];
-
-            // Function-specific logic where some conflicts are okay,
-            // so we have to evaluate each signature to see
-            // if we can discriminate each one such that there are no conflicts.
-            //
-            // An example of where this is the case is e.g. alGetBufferf/alGetBufferfv - signatures are identical.
-            var nMethodConflicts = 0;
-            var nMethods = 0;
-            var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts
-            string? noSecondaryOriginalName = null;
-            // TODO: Rewrite this logic to account for the fact that non-methods are also mixed in here now
-            foreach (var originalNameToEval in originalNamesForOldPrimary)
-            {
-                // Do we even have a secondary to fall back on if there is a conflict?
-                if (context.Names[originalNameToEval].Secondary.Count == 0)
-                {
-                    noSecondaryOriginalName ??= originalNameToEval;
-                    nNoSecondaries++;
-                }
-
-                if (
-                    methods is not null
-                    && methods.TryGetValue(originalNameToEval, out var methodDeclarations)
-                )
-                {
-                    foreach (var methodDeclaration in methodDeclarations)
-                    {
-                        var discriminator = ModUtils.GetMethodDiscriminator(
-                            methodDeclaration.Modifiers,
-                            methodDeclaration.TypeParameterList,
-                            primary,
-                            methodDeclaration.ParameterList,
-                            returnType: null
-                        );
-
-                        if (
-                            !methodDiscriminators.TryGetValue(
-                                discriminator,
-                                out var methodDiscriminator
-                            )
-                        )
-                        {
-                            methodDiscriminators[discriminator] = methodDiscriminator = (
-                                originalNameToEval,
-                                []
-                            );
-                        }
-
-                        var (firstOriginalName, discriminatorMatches) = methodDiscriminator;
-
-                        discriminatorMatches.Add(methodDeclaration);
-                        nMethods++;
-
-                        // NOTE: The number of conflicts influences how we go about conflict resolution. See the
-                        // logic below all of these loops just in case this comment is out of date, but at time of
-                        // writing if 50% or more of the methods with this primary name are conflicting then we
-                        // rename all of them, otherwise we rename only the conflicting overloads.
-                        nMethodConflicts += discriminatorMatches.Count switch
-                        {
-                            2 => 2, // The original needs to be counted as a conflict in addition to this conflict
-                            > 2 => 1, // Just mark this conflict, original is already counted.
-                            _ => 0, // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
-                        };
-
-                        if (discriminatorMatches.Count == 2 && firstOriginalName is not null)
-                        {
-                            conflictingOriginalNames.Add(firstOriginalName);
-                        }
-
-                        if (discriminatorMatches.Count > 1)
-                        {
-                            conflictingOriginalNames.Add(originalNameToEval);
-                        }
-                    }
-                }
-            }
-
-            // If we're checking methods for conflicts and in our travels we've discovered that there are in fact
-            // no conflicts, we can bail out early here.
-            if (nMethods > 0 && (methodDiscriminators.Count == 0 || nMethodConflicts == 0))
-            {
-                namesToEval.Remove(primary);
-                continue;
-            }
-
-            // We need to determine if we even have alternative names. If one doesn't that's fine because as long
-            // as we unwind all the others that one still won't conflict.
-            if (nNoSecondaries > 1)
-            {
-                logger.LogError(
-                    "Couldn't resolve conflict for \"{}\" because {} of the APIs with that primary name did not have any secondary names.",
-                    primary,
-                    nNoSecondaries
-                );
-                namesToEval.Remove(primary);
-                continue;
-            }
-
-            var renameOnlyConflicts = nMethodConflicts <= nMethods / 2.0;
-
-            // We can afford to leave one API alone. If that place isn't already filled by a method without a secondary
-            // name then we should fill it with whatever has the shortest original name. The logic being that the more
-            // characters (i.e. longer suffix) a name has, the more discriminatory/important that name is ergo the
-            // reverse (the shorter the name, the less discriminatory/important it is) is also true.
-            string? first = null;
-            var primaryClaimed = noSecondaryOriginalName is not null;
-            namesToEval.Remove(primary); // <-- just in case the below loop somehow produces the same primary again.
-            foreach (
-                var conflictingOriginalName in (
-                    renameOnlyConflicts ? conflictingOriginalNames : primaries[primary]
-                ).OrderBy(x => x.Length)
-            )
-            {
-                // Do not rename if this is the original name that does not have a secondary.
-                if (noSecondaryOriginalName == conflictingOriginalName)
-                {
-                    continue;
-                }
-
-                // If the current primary hasn't been "claimed" by an original name without a secondary, we only want
-                // to let the shortest name claim it (per the logic described in the last comment) if it is actually
-                // the absolute shortest name and not joint-1st for that title. Therefore, the first original name
-                // is saved for the second iteration where we'll make that judgement call and handle both at the
-                // same time.
-                if (first is null)
-                {
-                    first = conflictingOriginalName;
-                    if (!primaryClaimed)
-                    {
-                        continue;
-                    }
-                }
-
-                // Now we're going to make the above judgement call. If the first item has the same length as the
-                // second item, the first item has no right to claim the primary name therefore both items will be
-                // demoted to use their secondary name.
-                if (!primaryClaimed)
-                {
-                    if (first.Length == conflictingOriginalName.Length)
-                    {
-                        // Update the output name.
-                        var firstSecondary =
-                            context.Names[first].Secondary
-                            ?? throw new InvalidOperationException(
-                                "More than one original member name without secondary names."
-                            );
-                        var firstNextPrimary = firstSecondary[^1];
-                        firstSecondary.RemoveAt(firstSecondary.Count - 1);
-                        context.Names[first] = new CandidateNames(firstNextPrimary, firstSecondary);
-
-                        // Update our primary to original name map
-                        if (!primaries.TryGetValue(firstNextPrimary, out var originalNamesForFirst))
-                        {
-                            primaries[firstNextPrimary] = originalNamesForFirst = [];
-                        }
-
-                        originalNamesForFirst.Add(first);
-                        originalNamesForOldPrimary.Remove(first);
-                        if (originalNamesForOldPrimary.Count == 0)
-                        {
-                            primaries.Remove(primary);
-                        }
-
-                        // Make sure we do a pass over the new primary just in case we already have APIs with that
-                        // primary
-                        namesToEval.Add(firstNextPrimary);
-                        if (logger.IsEnabled(LogLevel.Trace)) // <-- prevent needless string.Join
-                        {
-                            logger.LogTrace(
-                                "{}: {} -> {} (remaining secondaries: {})",
-                                first,
-                                primary,
-                                firstNextPrimary,
-                                string.Join(", ", firstNextPrimary)
-                            );
-                        }
-                    }
-
-                    primaryClaimed = true;
-                }
-
-                // Conflict resolution! Update the output name.
-                var secondary =
-                    context.Names[conflictingOriginalName].Secondary
-                    ?? throw new InvalidOperationException(
-                        "More than one original member name without secondary names."
-                    );
-                var nextPrimary = secondary[^1];
-                secondary.RemoveAt(secondary.Count - 1);
-                context.Names[conflictingOriginalName] = new CandidateNames(nextPrimary, secondary);
-
-                // Update our primary to original name map
-                if (!primaries.TryGetValue(nextPrimary, out var originalNamesForNewPrimary))
-                {
-                    primaries[nextPrimary] = originalNamesForNewPrimary = [];
-                }
-
-                originalNamesForNewPrimary.Add(conflictingOriginalName);
-                originalNamesForOldPrimary.Remove(conflictingOriginalName);
-                if (originalNamesForOldPrimary.Count == 0)
-                {
-                    primaries.Remove(primary);
-                }
-
-                // Make sure we do a pass over the new primary just in case we already have APIs with that primary
-                namesToEval.Add(nextPrimary);
-                if (logger.IsEnabled(LogLevel.Trace)) // <-- prevent needless string.Join
-                {
-                    logger.LogTrace(
-                        "{}: {} -> {} (remaining secondaries: {})",
-                        conflictingOriginalName,
-                        primary,
-                        nextPrimary,
-                        string.Join(", ", secondary)
-                    );
-                }
-            }
-        }
-
-        // TODO: Add a name processor that outputs names to the final dictionary
-    }
-
     /// <inheritdoc />
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
@@ -705,11 +336,7 @@ public class PrettifyNames(
 
     private class Visitor : CSharpSyntaxWalker
     {
-        /// <summary>
-        /// Represents a mapping: ScopeName -> (MemberName -> MemberData).
-        /// This data is used later by name processors to transform and prettify the names.
-        /// </summary>
-        public Dictionary<string, Dictionary<string, MemberData>> Scopes { get; } = [];
+        public ScrapedNameData NameData { get; } = new();
 
         private BaseTypeDeclarationSyntax? _scope;
 
@@ -723,9 +350,9 @@ public class PrettifyNames(
             var memberName = memberIdentifier.ToString();
             var affixes = memberAttributeLists.GetNameAffixes();
 
-            if (!Scopes.TryGetValue(scopeName, out var members))
+            if (!NameData.Scopes.TryGetValue(scopeName, out var members))
             {
-                Scopes[scopeName] = members = [];
+                NameData.Scopes[scopeName] = members = [];
             }
 
             if (!members.TryGetValue(memberName, out var memberData))
@@ -816,14 +443,135 @@ public class PrettifyNames(
             ).WithRenameSafeAttributeLists();
     }
 
-    /// <param name="nameData">The name data retrieved by the <see cref="Visitor"/>.</param>
-    /// <param name="config">The configuration from <see cref="Configuration.Affixes"/>.</param>
-    private class PrettifyNamesAffixer(
-        Dictionary<string, Dictionary<string, MemberData>> nameData,
-        Dictionary<string, NameAffixConfiguration> config
-    )
+    private class ScrapedNameData
     {
-        private static readonly NameAffixConfiguration _defaultConfig = new();
+        /// <summary>
+        /// Represents a mapping: ScopeName -> (MemberName -> MemberData).
+        /// This data is used by name processors to transform and prettify the names.
+        /// </summary>
+        public Dictionary<string, Dictionary<string, MemberData>> Scopes { get; } = [];
+
+        /// <summary>
+        /// Tries to get the member data for the specified scope and original name of the identifier.
+        /// </summary>
+        /// <param name="scope">The scope name or an empty string for the global scope.</param>
+        /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
+        /// <param name="memberData">The retrieved member data</param>
+        /// <returns>Whether the data retrieval was successful.</returns>
+        public bool TryGetMemberData(string scope, string originalName, out MemberData memberData)
+        {
+            if (Scopes.TryGetValue(scope, out var members))
+            {
+                return members.TryGetValue(originalName, out memberData);
+            }
+
+            memberData = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Gets affix data for the specified scope and original name of the identifier.
+        /// </summary>
+        /// <param name="scope">The scope name or an empty string for the global scope.</param>
+        /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
+        /// <returns>The name affixes for the specified identifier.</returns>
+        public NameAffix[] GetAffixes(string scope, string originalName)
+        {
+            if (Scopes.TryGetValue(scope, out var members))
+            {
+                if (members.TryGetValue(originalName, out var memberData))
+                {
+                    return memberData.Affixes;
+                }
+            }
+
+            return [];
+        }
+    }
+
+    private class HandleOverridesProcessor : INameProcessor
+    {
+        public void ProcessNames(NameProcessorContext context)
+        {
+            // TODO: Move this into its own processor and update the comment
+            // Ensure the name processors don't see names that have been manually overridden
+            var namesToProcess = context.Names;
+            foreach (var (nativeName, overriddenName) in nameOverrides)
+            {
+                var nameToAdd = nativeName;
+                if (nativeName.Contains('.'))
+                {
+                    // TODO: Update/clarify comment
+                    // We're processing a type dictionary, so don't add a member thing.
+                    // TODO: This if statement is useless now since context.Scope is non-null
+                    // TODO: Consider reworking this to internally split the override target into scope + member name instead of using two branches
+                    if (context.Scope is null)
+                    {
+                        continue;
+                    }
+
+                    // Check whether the override is for this type.
+                    var nativeNameSpan = nativeName.AsSpan();
+                    var scopeSpan = nativeNameSpan[..nativeNameSpan.IndexOf('.')];
+                    if (
+                        scopeSpan.Equals("*", StringComparison.Ordinal)
+                        || scopeSpan.Equals(context.Scope, StringComparison.Ordinal)
+                    )
+                    {
+                        nameToAdd = nativeNameSpan[(nativeNameSpan.IndexOf('.') + 1)..].ToString();
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+
+                if (!namesToProcess.TryGetValue(nameToAdd, out var v))
+                {
+                    continue;
+                }
+
+                // If we haven't created the differentiated dictionary yet, then do so now. We do want to keep the original
+                // dictionary so we can actually apply the renames; if we have created two different branching dictionaries
+                // they are recombined following name processing.
+                if (namesToProcess == context.Names)
+                {
+                    namesToProcess = namesToProcess.ToDictionary();
+                }
+
+                // Don't let the name processors see the overridden native name.
+                namesToProcess.Remove(nameToAdd);
+
+                // Apply the name override to the dictionary we actually use.
+                context.Names[nameToAdd] = new CandidateNames(
+                    overriddenName,
+                    [.. v.Secondary, nameToAdd]
+                );
+            }
+        }
+    }
+
+    /// <summary>
+    /// Removes identified affixes so that other name processors can process the base name separately.
+    /// These affixes should be reapplied by <see cref="ReapplyAffixesProcessor"/>.
+    /// </summary>
+    private class StripAffixesProcessor(PrettifyNamesAffixer affixer) : INameProcessor
+    {
+        public void ProcessNames(NameProcessorContext context)
+        {
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                var secondaries = secondary;
+                var newPrimary = affixer.RemoveAffixes(
+                    primary,
+                    context.Scope,
+                    original,
+                    secondaries
+                );
+
+                context.Names[original] = new CandidateNames(newPrimary, secondaries);
+            }
+        }
 
         /// <summary>
         /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list if provided.
@@ -857,6 +605,148 @@ public class PrettifyNames(
 
             return stripped;
         }
+    }
+
+    private class PrettifyProcessor(NamePrettifier namePrettifier) : INameProcessor
+    {
+        public void ProcessNames(NameProcessorContext context)
+        {
+            // Be lenient about caps for type names (e.g. GL)
+            var allowAllCaps = context.Scope == "";
+
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                for (var i = 0; i < secondary.Count; i++)
+                {
+                    secondary[i] = namePrettifier.Prettify(secondary[i], allowAllCaps);
+                }
+
+                context.Names[original] = new CandidateNames(
+                    namePrettifier.Prettify(primary, allowAllCaps),
+                    secondary
+                );
+            }
+        }
+    }
+
+    /// <summary>
+    /// Reapplies and transforms identified affixes based on <see cref="NameAffixConfiguration"/>.
+    /// </summary>
+    private class ReapplyAffixesProcessor(PrettifyNamesAffixer affixer) : INameProcessor
+    {
+        private static readonly NameAffixConfiguration _defaultConfig = new();
+
+        public void ProcessNames(NameProcessorContext context)
+        {
+            // Calculate processing order using topological sort
+            // Name affixes can reference other names
+            // We want names that don't reference other names to be processed first
+            var processingOrderByKey = new List<string>();
+            {
+                var ready = new Queue<string>();
+                var dependencyCountByKey = new Dictionary<string, int>();
+                var notifyDependantByKey = new Dictionary<string, List<string>>();
+
+                // Build dependency graph
+                foreach (var key in context.Names.Keys)
+                {
+                    var dependencyCount = 0;
+
+                    var affixes = affixer.GetAffixes(context.Scope, key);
+                    foreach (var affix in affixes)
+                    {
+                        if (!affix.IsReference)
+                        {
+                            continue;
+                        }
+
+                        // Add as dependency
+                        if (!notifyDependantByKey.TryGetValue(affix.Affix, out var dependants))
+                        {
+                            notifyDependantByKey[affix.Affix] = dependants = [];
+                        }
+
+                        dependants.Add(key);
+                        dependencyCount++;
+                    }
+
+                    if (dependencyCount == 0)
+                    {
+                        // No dependencies
+                        ready.Enqueue(key);
+                        continue;
+                    }
+
+                    // Store dependency count
+                    dependencyCountByKey.Add(key, dependencyCount);
+                }
+
+                // Output final order
+                while (ready.TryDequeue(out var key))
+                {
+                    processingOrderByKey.Add(key);
+                    if (notifyDependantByKey.TryGetValue(key, out var dependants))
+                    {
+                        foreach (var dependant in dependants)
+                        {
+                            if (
+                                dependencyCountByKey.TryGetValue(dependant, out var dependencyCount)
+                            )
+                            {
+                                dependencyCount--;
+                                if (dependencyCount == 0)
+                                {
+                                    ready.Enqueue(dependant);
+                                    dependencyCountByKey.Remove(dependant);
+                                    continue;
+                                }
+
+                                dependencyCountByKey[dependant] = dependencyCount;
+                            }
+                        }
+                    }
+                }
+
+                // Check for unfulfilled dependencies
+                if (dependencyCountByKey.Count != 0)
+                {
+                    // Check for missing dependencies
+                    foreach (var key in dependencyCountByKey.Keys)
+                    {
+                        if (!context.Names.ContainsKey(key))
+                        {
+                            // This is because we currently can only resolve names that are given by the NameProcessorContext
+                            // Please update this message if this limitation changes
+                            throw new InvalidOperationException(
+                                $"A name affix for '{key}' references a name that does not exist or is part of a different scope. "
+                                    + $"Referencing names from other scopes is currently not supported"
+                            );
+                        }
+                    }
+
+                    // Remaining must be a cycle
+                    throw new InvalidOperationException(
+                        $"Detected cycle in referenced affixes. Names that are part of the cycle: {string.Join(", ", dependencyCountByKey.Keys)}"
+                    );
+                }
+            }
+
+            foreach (var original in processingOrderByKey)
+            {
+                var (primary, secondary) = context.Names[original];
+
+                var secondaries = secondary;
+                var newPrimary = affixer.ApplyAffixes(
+                    primary,
+                    context.Scope,
+                    original,
+                    secondaries,
+                    context
+                );
+
+                context.Names[original] = new CandidateNames(newPrimary, secondaries);
+            }
+        }
 
         /// <summary>
         /// Applies affixes to the specified primary name and adds fallbacks to the secondary list if provided.
@@ -875,7 +765,7 @@ public class PrettifyNames(
             string scope,
             string originalName,
             List<string> secondary,
-            NameProcessorContext context // TODO: Handle this better. Exposing the entire context is excessive.
+            NameProcessorContext context // TODO: Handle this better. Exposing the entire context is excessive... Actually, this might be fine now that I moved this to be in an actual name processor
         )
         {
             var affixes = GetAffixes(scope, originalName);
@@ -992,194 +882,11 @@ public class PrettifyNames(
             }
         }
 
-        // TODO: Consider replacing this with a general GetMemberData method in Visitor or some VisitorData class
-        /// <summary>
-        /// Gets affix data for the specified scope and original name of the identifier.
-        /// </summary>
-        /// <param name="scope">The scope name or an empty string for the global scope.</param>
-        /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
-        /// <returns>The name affixes for the specified identifier.</returns>
-        public NameAffix[] GetAffixes(string scope, string originalName)
-        {
-            if (nameData.TryGetValue(scope, out var members))
-            {
-                if (members.TryGetValue(originalName, out var memberData))
-                {
-                    return memberData.Affixes;
-                }
-            }
-
-            return [];
-        }
-
         private NameAffixConfiguration GetConfiguration(NameAffix affix) =>
             GetConfiguration(affix.Category);
 
         private NameAffixConfiguration GetConfiguration(string category) =>
             config.GetValueOrDefault(category, _defaultConfig);
-    }
-
-    /// <summary>
-    /// Removes identified affixes so that other name processors can process the base name separately.
-    /// These affixes should be reapplied by <see cref="ReapplyAffixesProcessor"/>.
-    /// </summary>
-    private class StripAffixesProcessor(PrettifyNamesAffixer affixer) : INameProcessor
-    {
-        public void ProcessNames(NameProcessorContext context)
-        {
-            foreach (var (original, (primary, secondary)) in context.Names)
-            {
-                var secondaries = secondary;
-                var newPrimary = affixer.RemoveAffixes(
-                    primary,
-                    context.Scope,
-                    original,
-                    secondaries
-                );
-
-                context.Names[original] = new CandidateNames(newPrimary, secondaries);
-            }
-        }
-    }
-
-    private class PrettifyProcessor(NamePrettifier namePrettifier) : INameProcessor
-    {
-        public void ProcessNames(NameProcessorContext context)
-        {
-            // Be lenient about caps for type names (e.g. GL)
-            var allowAllCaps = context.Scope == "";
-
-            foreach (var (original, (primary, secondary)) in context.Names)
-            {
-                for (var i = 0; i < secondary.Count; i++)
-                {
-                    secondary[i] = namePrettifier.Prettify(secondary[i], allowAllCaps);
-                }
-
-                context.Names[original] = new CandidateNames(
-                    namePrettifier.Prettify(primary, allowAllCaps),
-                    secondary
-                );
-            }
-        }
-    }
-
-    /// <summary>
-    /// Reapplies and transforms identified affixes based on <see cref="NameAffixConfiguration"/>.
-    /// </summary>
-    private class ReapplyAffixesProcessor(PrettifyNamesAffixer affixer) : INameProcessor
-    {
-        public void ProcessNames(NameProcessorContext context)
-        {
-            // Calculate processing order using topological sort
-            // Name affixes can reference other names
-            // We want names that don't reference other names to be processed first
-            var processingOrderByKey = new List<string>();
-            {
-                var ready = new Queue<string>();
-                var dependencyCountByKey = new Dictionary<string, int>();
-                var notifyDependantByKey = new Dictionary<string, List<string>>();
-
-                // Build dependency graph
-                foreach (var key in context.Names.Keys)
-                {
-                    var dependencyCount = 0;
-
-                    var affixes = affixer.GetAffixes(context.Scope, key);
-                    foreach (var affix in affixes)
-                    {
-                        if (!affix.IsReference)
-                        {
-                            continue;
-                        }
-
-                        // Add as dependency
-                        if (!notifyDependantByKey.TryGetValue(affix.Affix, out var dependants))
-                        {
-                            notifyDependantByKey[affix.Affix] = dependants = [];
-                        }
-
-                        dependants.Add(key);
-                        dependencyCount++;
-                    }
-
-                    if (dependencyCount == 0)
-                    {
-                        // No dependencies
-                        ready.Enqueue(key);
-                        continue;
-                    }
-
-                    // Store dependency count
-                    dependencyCountByKey.Add(key, dependencyCount);
-                }
-
-                // Output final order
-                while (ready.TryDequeue(out var key))
-                {
-                    processingOrderByKey.Add(key);
-                    if (notifyDependantByKey.TryGetValue(key, out var dependants))
-                    {
-                        foreach (var dependant in dependants)
-                        {
-                            if (
-                                dependencyCountByKey.TryGetValue(dependant, out var dependencyCount)
-                            )
-                            {
-                                dependencyCount--;
-                                if (dependencyCount == 0)
-                                {
-                                    ready.Enqueue(dependant);
-                                    dependencyCountByKey.Remove(dependant);
-                                    continue;
-                                }
-
-                                dependencyCountByKey[dependant] = dependencyCount;
-                            }
-                        }
-                    }
-                }
-
-                // Check for unfulfilled dependencies
-                if (dependencyCountByKey.Count != 0)
-                {
-                    // Check for missing dependencies
-                    foreach (var key in dependencyCountByKey.Keys)
-                    {
-                        if (!context.Names.ContainsKey(key))
-                        {
-                            // This is because we currently can only resolve names that are given by the NameProcessorContext
-                            // Please update this message if this limitation changes
-                            throw new InvalidOperationException(
-                                $"A name affix for '{key}' references a name that does not exist or is part of a different scope. "
-                                    + $"Referencing names from other scopes is currently not supported"
-                            );
-                        }
-                    }
-
-                    // Remaining must be a cycle
-                    throw new InvalidOperationException(
-                        $"Detected cycle in referenced affixes. Names that are part of the cycle: {string.Join(", ", dependencyCountByKey.Keys)}"
-                    );
-                }
-            }
-
-            foreach (var original in processingOrderByKey)
-            {
-                var (primary, secondary) = context.Names[original];
-
-                var secondaries = secondary;
-                var newPrimary = affixer.ApplyAffixes(
-                    primary,
-                    context.Scope,
-                    original,
-                    secondaries,
-                    context
-                );
-
-                context.Names[original] = new CandidateNames(newPrimary, secondaries);
-            }
-        }
     }
 
     private class PrefixIfStartsWithNumberProcessor : INameProcessor
@@ -1199,6 +906,326 @@ public class PrettifyNames(
                 );
             }
         }
+    }
+
+    private class ResolveConflictsProcessor : INameProcessor
+    {
+        public void ProcessNames(NameProcessorContext context)
+        {
+            // foreach (var candidateScope in candidateScopes)
+            // {
+            //     // TODO: This is a temporary shim. Consider removing/moving
+            //     // TODO: Currently this combines both methods and non-methods. This doesn't matter *here* anymore, but IdentifiedSharedPrefixes should consider splitting scopes by methods and non-methods
+            //     // TODO: Also, when moving this code ensure that this is done per scope instead of globally for all scopes
+            //     var methods = visitor
+            //         .Scopes[candidateScope.Key]
+            //         .Where(y => y.Value.MethodDeclarations != null)
+            //         .ToDictionary(
+            //             // Method name
+            //             y => y.Key,
+            //             // Method declarations
+            //             IEnumerable<MethodDeclarationSyntax> (y) => y.Value.MethodDeclarations!
+            //         );
+            //
+            //     if (methods.Count == 0)
+            //     {
+            //         methods = null;
+            //     }
+            //
+            //     ProcessNames(context, nameProcessors, cfg.NameOverrides, methods);
+            // }
+
+            if (namesToProcess != context.Names)
+            {
+                foreach (var (evalName, result) in namesToProcess)
+                {
+                    context.Names[evalName] = result;
+                }
+            }
+
+            // Prefer shorter names
+            foreach (var (_, (_, secondary)) in context.Names)
+            {
+                secondary.Sort((a, b) => -a.Length.CompareTo(b.Length));
+            }
+
+            // Create a mapping: Primary name -> Original name
+            // Primary name refers to the primary candidate name
+            // Original name refers to the original name of the member as seen in source code
+            //
+            // This is to account for method overloads that have the
+            // same primary candidate name and original name, but different discriminators
+            //
+            // This usually happens with generated/transformed overloads
+            var primaries = new Dictionary<string, HashSet<string>>();
+            foreach (var (originalName, (primary, _)) in context.Names)
+            {
+                if (!primaries.TryGetValue(primary, out var originalNamesForPrimary))
+                {
+                    primaries[primary] = originalNamesForPrimary = [];
+                }
+
+                originalNamesForPrimary.Add(originalName);
+            }
+
+            // Unwind some names back to their secondary names if the primaries would duplicate
+            // We'll use a hash set to determine whether we need to check a primary for conflicts.
+            var namesToEval = primaries.Keys.ToHashSet();
+
+            // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
+            // renamed. We keep track of the first original name so that we can add it to conflictingOriginalNames when we
+            // do discover a conflict (along with the original name of the actual conflict).
+            var methodDiscriminators =
+                new Dictionary<
+                    string,
+                    (string? FirstOriginalName, List<MethodDeclarationSyntax> Methods)
+                >();
+            var conflictingOriginalNames = new HashSet<string>();
+            while (namesToEval.GetEnumerator() is var e && e.MoveNext() && e.Current is var primary)
+            {
+                // ^-- We can't use a foreach loop because we're mutating below.
+                // We're also using GetEnumerator instead of First to avoid allocations.
+
+                // First, let's check whether we have any conflicting discriminators.
+                // If we don't, we can mark this as all good right away.
+                methodDiscriminators.Clear();
+                conflictingOriginalNames.Clear();
+                var originalNamesForOldPrimary = primaries[primary];
+
+                // Function-specific logic where some conflicts are okay,
+                // so we have to evaluate each signature to see
+                // if we can discriminate each one such that there are no conflicts.
+                //
+                // An example of where this is the case is e.g. alGetBufferf/alGetBufferfv - signatures are identical.
+                var nMethodConflicts = 0;
+                var nMethods = 0;
+                var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts
+                string? noSecondaryOriginalName = null;
+                // TODO: Rewrite this logic to account for the fact that non-methods are also mixed in here now
+                foreach (var originalNameToEval in originalNamesForOldPrimary)
+                {
+                    // Do we even have a secondary to fall back on if there is a conflict?
+                    if (context.Names[originalNameToEval].Secondary.Count == 0)
+                    {
+                        noSecondaryOriginalName ??= originalNameToEval;
+                        nNoSecondaries++;
+                    }
+
+                    if (
+                        methods is not null
+                        && methods.TryGetValue(originalNameToEval, out var methodDeclarations)
+                    )
+                    {
+                        foreach (var methodDeclaration in methodDeclarations)
+                        {
+                            var discriminator = ModUtils.GetMethodDiscriminator(
+                                methodDeclaration.Modifiers,
+                                methodDeclaration.TypeParameterList,
+                                primary,
+                                methodDeclaration.ParameterList,
+                                returnType: null
+                            );
+
+                            if (
+                                !methodDiscriminators.TryGetValue(
+                                    discriminator,
+                                    out var methodDiscriminator
+                                )
+                            )
+                            {
+                                methodDiscriminators[discriminator] = methodDiscriminator = (
+                                    originalNameToEval,
+                                    []
+                                );
+                            }
+
+                            var (firstOriginalName, discriminatorMatches) = methodDiscriminator;
+
+                            discriminatorMatches.Add(methodDeclaration);
+                            nMethods++;
+
+                            // NOTE: The number of conflicts influences how we go about conflict resolution. See the
+                            // logic below all of these loops just in case this comment is out of date, but at time of
+                            // writing if 50% or more of the methods with this primary name are conflicting then we
+                            // rename all of them, otherwise we rename only the conflicting overloads.
+                            nMethodConflicts += discriminatorMatches.Count switch
+                            {
+                                2 => 2, // The original needs to be counted as a conflict in addition to this conflict
+                                > 2 => 1, // Just mark this conflict, original is already counted.
+                                _ => 0, // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
+                            };
+
+                            if (discriminatorMatches.Count == 2 && firstOriginalName is not null)
+                            {
+                                conflictingOriginalNames.Add(firstOriginalName);
+                            }
+
+                            if (discriminatorMatches.Count > 1)
+                            {
+                                conflictingOriginalNames.Add(originalNameToEval);
+                            }
+                        }
+                    }
+                }
+
+                // If we're checking methods for conflicts and in our travels we've discovered that there are in fact
+                // no conflicts, we can bail out early here.
+                if (nMethods > 0 && (methodDiscriminators.Count == 0 || nMethodConflicts == 0))
+                {
+                    namesToEval.Remove(primary);
+                    continue;
+                }
+
+                // We need to determine if we even have alternative names. If one doesn't that's fine because as long
+                // as we unwind all the others that one still won't conflict.
+                if (nNoSecondaries > 1)
+                {
+                    logger.LogError(
+                        "Couldn't resolve conflict for \"{}\" because {} of the APIs with that primary name did not have any secondary names.",
+                        primary,
+                        nNoSecondaries
+                    );
+                    namesToEval.Remove(primary);
+                    continue;
+                }
+
+                var renameOnlyConflicts = nMethodConflicts <= nMethods / 2.0;
+
+                // We can afford to leave one API alone. If that place isn't already filled by a method without a secondary
+                // name then we should fill it with whatever has the shortest original name. The logic being that the more
+                // characters (i.e. longer suffix) a name has, the more discriminatory/important that name is ergo the
+                // reverse (the shorter the name, the less discriminatory/important it is) is also true.
+                string? first = null;
+                var primaryClaimed = noSecondaryOriginalName is not null;
+                namesToEval.Remove(primary); // <-- just in case the below loop somehow produces the same primary again.
+                foreach (
+                    var conflictingOriginalName in (
+                        renameOnlyConflicts ? conflictingOriginalNames : primaries[primary]
+                    ).OrderBy(x => x.Length)
+                )
+                {
+                    // Do not rename if this is the original name that does not have a secondary.
+                    if (noSecondaryOriginalName == conflictingOriginalName)
+                    {
+                        continue;
+                    }
+
+                    // If the current primary hasn't been "claimed" by an original name without a secondary, we only want
+                    // to let the shortest name claim it (per the logic described in the last comment) if it is actually
+                    // the absolute shortest name and not joint-1st for that title. Therefore, the first original name
+                    // is saved for the second iteration where we'll make that judgement call and handle both at the
+                    // same time.
+                    if (first is null)
+                    {
+                        first = conflictingOriginalName;
+                        if (!primaryClaimed)
+                        {
+                            continue;
+                        }
+                    }
+
+                    // Now we're going to make the above judgement call. If the first item has the same length as the
+                    // second item, the first item has no right to claim the primary name therefore both items will be
+                    // demoted to use their secondary name.
+                    if (!primaryClaimed)
+                    {
+                        if (first.Length == conflictingOriginalName.Length)
+                        {
+                            // Update the output name.
+                            var firstSecondary =
+                                context.Names[first].Secondary
+                                ?? throw new InvalidOperationException(
+                                    "More than one original member name without secondary names."
+                                );
+                            var firstNextPrimary = firstSecondary[^1];
+                            firstSecondary.RemoveAt(firstSecondary.Count - 1);
+                            context.Names[first] = new CandidateNames(
+                                firstNextPrimary,
+                                firstSecondary
+                            );
+
+                            // Update our primary to original name map
+                            if (
+                                !primaries.TryGetValue(
+                                    firstNextPrimary,
+                                    out var originalNamesForFirst
+                                )
+                            )
+                            {
+                                primaries[firstNextPrimary] = originalNamesForFirst = [];
+                            }
+
+                            originalNamesForFirst.Add(first);
+                            originalNamesForOldPrimary.Remove(first);
+                            if (originalNamesForOldPrimary.Count == 0)
+                            {
+                                primaries.Remove(primary);
+                            }
+
+                            // Make sure we do a pass over the new primary just in case we already have APIs with that
+                            // primary
+                            namesToEval.Add(firstNextPrimary);
+                            if (logger.IsEnabled(LogLevel.Trace)) // <-- prevent needless string.Join
+                            {
+                                logger.LogTrace(
+                                    "{}: {} -> {} (remaining secondaries: {})",
+                                    first,
+                                    primary,
+                                    firstNextPrimary,
+                                    string.Join(", ", firstNextPrimary)
+                                );
+                            }
+                        }
+
+                        primaryClaimed = true;
+                    }
+
+                    // Conflict resolution! Update the output name.
+                    var secondary =
+                        context.Names[conflictingOriginalName].Secondary
+                        ?? throw new InvalidOperationException(
+                            "More than one original member name without secondary names."
+                        );
+                    var nextPrimary = secondary[^1];
+                    secondary.RemoveAt(secondary.Count - 1);
+                    context.Names[conflictingOriginalName] = new CandidateNames(
+                        nextPrimary,
+                        secondary
+                    );
+
+                    // Update our primary to original name map
+                    if (!primaries.TryGetValue(nextPrimary, out var originalNamesForNewPrimary))
+                    {
+                        primaries[nextPrimary] = originalNamesForNewPrimary = [];
+                    }
+
+                    originalNamesForNewPrimary.Add(conflictingOriginalName);
+                    originalNamesForOldPrimary.Remove(conflictingOriginalName);
+                    if (originalNamesForOldPrimary.Count == 0)
+                    {
+                        primaries.Remove(primary);
+                    }
+
+                    // Make sure we do a pass over the new primary just in case we already have APIs with that primary
+                    namesToEval.Add(nextPrimary);
+                    if (logger.IsEnabled(LogLevel.Trace)) // <-- prevent needless string.Join
+                    {
+                        logger.LogTrace(
+                            "{}: {} -> {} (remaining secondaries: {})",
+                            conflictingOriginalName,
+                            primary,
+                            nextPrimary,
+                            string.Join(", ", secondary)
+                        );
+                    }
+                }
+            }
+        }
+    }
+
+    private class OutputFinalNamesProcessor : INameProcessor
+    {
+        public void ProcessNames(NameProcessorContext context);
     }
 
     /// <summary>
