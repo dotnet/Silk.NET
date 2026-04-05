@@ -464,15 +464,18 @@ public class PrettifyNames(
                     nNoSecondaries++;
                 }
 
-                if (methods is not null)
+                if (
+                    methods is not null
+                    && methods.TryGetValue(originalNameToEval, out var methodDeclarations)
+                )
                 {
-                    foreach (var method in methods[originalNameToEval])
+                    foreach (var methodDeclaration in methodDeclarations)
                     {
                         var discriminator = ModUtils.GetMethodDiscriminator(
-                            method.Modifiers,
-                            method.TypeParameterList,
+                            methodDeclaration.Modifiers,
+                            methodDeclaration.TypeParameterList,
                             primary,
-                            method.ParameterList,
+                            methodDeclaration.ParameterList,
                             returnType: null
                         );
 
@@ -491,7 +494,7 @@ public class PrettifyNames(
 
                         var (firstOriginalName, discriminatorMatches) = methodDiscriminator;
 
-                        discriminatorMatches.Add(method);
+                        discriminatorMatches.Add(methodDeclaration);
                         nMethods++;
 
                         // NOTE: The number of conflicts influences how we go about conflict resolution. See the
