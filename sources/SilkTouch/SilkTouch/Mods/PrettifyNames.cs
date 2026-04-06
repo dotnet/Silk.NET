@@ -94,14 +94,14 @@ public class PrettifyNames(
         }
 
         // Scan sources to gather names
-        var visitor = new Visitor();
+        var visitor = new NameDataVisitor();
         foreach (var doc in ctx.SourceProject.Documents)
         {
             visitor.Visit(await doc.GetSyntaxRootAsync(ct));
         }
 
         // Process the names
-        var nameProcessorContext = new NameProcessorContext(visitor.NameData);
+        var nameProcessorContext = new NameProcessorContext(visitor);
         {
             var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
 
@@ -109,11 +109,11 @@ public class PrettifyNames(
             var nameProcessors = new INameProcessor[]
             {
                 new HandleOverridesProcessor(cfg.NameOverrides),
-                new StripAffixesProcessor(visitor.NameData),
+                new StripAffixesProcessor(visitor),
                 new PrettifyProcessor(namePrettifier),
-                new ReapplyAffixesProcessor(visitor.NameData, cfg.Affixes),
+                new ReapplyAffixesProcessor(visitor, cfg.Affixes),
                 new PrefixIfStartsWithNumberProcessor(),
-                new ResolveConflictsProcessor(visitor.NameData, logger),
+                new ResolveConflictsProcessor(visitor, logger),
                 new OutputFinalNamesProcessor(),
             };
 
@@ -333,9 +333,13 @@ public class PrettifyNames(
         List<MethodDeclarationSyntax>? MethodDeclarations
     );
 
-    private class Visitor : CSharpSyntaxWalker
+    private class NameDataVisitor : CSharpSyntaxWalker
     {
-        public ScrapedNameData NameData { get; } = new();
+        /// <summary>
+        /// Represents a mapping: ScopeName -> (MemberName -> MemberData).
+        /// This data is used by name processors to transform and prettify the names.
+        /// </summary>
+        public Dictionary<string, Dictionary<string, MemberData>> Scopes { get; } = [];
 
         private BaseTypeDeclarationSyntax? _scope;
 
@@ -349,9 +353,9 @@ public class PrettifyNames(
             var memberName = memberIdentifier.ToString();
             var affixes = memberAttributeLists.GetNameAffixes();
 
-            if (!NameData.Scopes.TryGetValue(scopeName, out var members))
+            if (!Scopes.TryGetValue(scopeName, out var members))
             {
-                NameData.Scopes[scopeName] = members = [];
+                Scopes[scopeName] = members = [];
             }
 
             if (!members.TryGetValue(memberName, out var memberData))
@@ -442,15 +446,6 @@ public class PrettifyNames(
             ).WithRenameSafeAttributeLists();
     }
 
-    private class ScrapedNameData
-    {
-        /// <summary>
-        /// Represents a mapping: ScopeName -> (MemberName -> MemberData).
-        /// This data is used by name processors to transform and prettify the names.
-        /// </summary>
-        public Dictionary<string, Dictionary<string, MemberData>> Scopes { get; } = [];
-    }
-
     private class HandleOverridesProcessor(Dictionary<string, string> nameOverrides)
         : INameProcessor
     {
@@ -525,7 +520,7 @@ public class PrettifyNames(
     /// Removes identified affixes so that other name processors can process the base name separately.
     /// These affixes should be reapplied by <see cref="ReapplyAffixesProcessor"/>.
     /// </summary>
-    private class StripAffixesProcessor(ScrapedNameData nameData) : INameProcessor
+    private class StripAffixesProcessor(NameDataVisitor nameData) : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
         {
@@ -603,7 +598,7 @@ public class PrettifyNames(
     /// Reapplies and transforms identified affixes based on <see cref="NameAffixConfiguration"/>.
     /// </summary>
     private class ReapplyAffixesProcessor(
-        ScrapedNameData nameData,
+        NameDataVisitor nameData,
         Dictionary<string, NameAffixConfiguration> affixConfig
     ) : INameProcessor
     {
@@ -881,7 +876,7 @@ public class PrettifyNames(
         }
     }
 
-    private class ResolveConflictsProcessor(ScrapedNameData nameData, ILogger logger)
+    private class ResolveConflictsProcessor(NameDataVisitor nameData, ILogger logger)
         : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
@@ -1237,7 +1232,7 @@ public class PrettifyNames(
         /// <summary>
         /// Creates a new context from the scraped name data.
         /// </summary>
-        public NameProcessorContext(ScrapedNameData nameData) =>
+        public NameProcessorContext(NameDataVisitor nameData) =>
             Scopes = nameData.Scopes.ToDictionary(
                 // Scope
                 x => x.Key,
