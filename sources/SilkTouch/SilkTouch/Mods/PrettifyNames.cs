@@ -884,6 +884,10 @@ public class PrettifyNames(
             config.GetValueOrDefault(category, _defaultConfig);
     }
 
+    /// <summary>
+    /// Prefixes candidate names that start with a number.
+    /// This is required because C# identifiers cannot start with a number.
+    /// </summary>
     private class PrefixIfStartsWithNumberProcessor : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
