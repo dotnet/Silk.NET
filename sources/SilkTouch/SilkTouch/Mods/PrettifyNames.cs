@@ -115,6 +115,7 @@ public class PrettifyNames(
                 new PrefixIfStartsWithNumberProcessor(),
                 new ResolveConflictsProcessor(visitor, logger),
                 new OutputFinalNamesProcessor(),
+                new RemoveUnmodifiedFinalNamesProcessor(),
             };
 
             foreach (var nameProcessor in nameProcessors)
@@ -446,6 +447,10 @@ public class PrettifyNames(
             ).WithRenameSafeAttributeLists();
     }
 
+    /// <summary>
+    /// Applies name overrides and moves overridden names to the final set of names.
+    /// Overridden names are removed from the working set to prevent later processors from directly seeing them.
+    /// </summary>
     private class HandleOverridesProcessor(Dictionary<string, string> nameOverrides)
         : INameProcessor
     {
@@ -568,6 +573,10 @@ public class PrettifyNames(
         }
     }
 
+    /// <summary>
+    /// Prettifies the primary and secondary candidate names.
+    /// Also see <see cref="NamePrettifier.Prettify"/>.
+    /// </summary>
     private class PrettifyProcessor(NamePrettifier namePrettifier) : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
@@ -897,6 +906,10 @@ public class PrettifyNames(
         }
     }
 
+    /// <summary>
+    /// Resolves conflicts where multiple names have been transformed into the same output name.
+    /// This also considers cases where the methods with the same name are compatible because of method overloading rules.
+    /// </summary>
     private class ResolveConflictsProcessor(NameDataVisitor nameData, ILogger logger)
         : INameProcessor
     {
@@ -1213,9 +1226,73 @@ public class PrettifyNames(
         }
     }
 
+    /// <summary>
+    /// Outputs all primary names to the final set of names.
+    /// </summary>
+    /// <remarks>
+    /// This is intentionally implemented in a naive manner.
+    /// The working set of names is not cleared and existing data in the final set can be overwritten.
+    /// </remarks>
     private class OutputFinalNamesProcessor : INameProcessor
     {
-        public void ProcessNames(NameProcessorContext context);
+        public void ProcessNames(NameProcessorContext context)
+        {
+            foreach (var (scope, members) in context.Scopes)
+            {
+                if (!context.FinalNames.TryGetValue(scope, out var outputScope))
+                {
+                    context.FinalNames[scope] = outputScope = [];
+                }
+
+                foreach (var (member, (primary, _)) in members)
+                {
+                    outputScope[member] = primary;
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Removes all unmodified names from the final set of names.
+    /// </summary>
+    private class RemoveUnmodifiedFinalNamesProcessor : INameProcessor
+    {
+        public void ProcessNames(NameProcessorContext context)
+        {
+            var unmodified = new List<string>();
+
+            // Remove unmodified members
+            foreach (var (scope, members) in context.FinalNames)
+            {
+                unmodified.Clear();
+                foreach (var (originalName, newName) in members)
+                {
+                    if (originalName == newName)
+                    {
+                        unmodified.Add(originalName);
+                    }
+                }
+
+                foreach (var unmodifiedMember in unmodified)
+                {
+                    members.Remove(unmodifiedMember);
+                }
+            }
+
+            // Remove unmodified scopes
+            foreach (var (scope, members) in context.FinalNames)
+            {
+                if (members.Count == 0)
+                {
+                    unmodified.Add(scope);
+                }
+            }
+
+            foreach (var unmodifiedScope in unmodified)
+            {
+                context.FinalNames.Remove(unmodifiedScope);
+            }
+        }
     }
 
     /// <summary>

@@ -21,6 +21,7 @@ public class NamePrettifier(int longAcronymThreshold)
 {
     /// <summary>
     /// Prettifies the given C# identifier.
+    /// This involves transformation steps such as removing underscores and pascal casing the identifier.
     /// </summary>
     /// <remarks>
     /// See the test cases for this method to see examples on how this method behaves.
