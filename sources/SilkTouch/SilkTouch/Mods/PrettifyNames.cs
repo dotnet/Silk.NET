@@ -575,20 +575,23 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            // Be lenient about caps for type names (e.g. GL)
-            var allowAllCaps = context.Scope == "";
-
-            foreach (var (original, (primary, secondary)) in context.Names)
+            foreach (var (scope, members) in context.Scopes)
             {
-                for (var i = 0; i < secondary.Count; i++)
-                {
-                    secondary[i] = namePrettifier.Prettify(secondary[i], allowAllCaps);
-                }
+                // Be lenient about caps for type names (e.g. GL)
+                var allowAllCaps = scope == "";
 
-                context.Names[original] = new CandidateNames(
-                    namePrettifier.Prettify(primary, allowAllCaps),
-                    secondary
-                );
+                foreach (var (original, (primary, secondary)) in members)
+                {
+                    for (var i = 0; i < secondary.Count; i++)
+                    {
+                        secondary[i] = namePrettifier.Prettify(secondary[i], allowAllCaps);
+                    }
+
+                    members[original] = new CandidateNames(
+                        namePrettifier.Prettify(primary, allowAllCaps),
+                        secondary
+                    );
+                }
             }
         }
     }
