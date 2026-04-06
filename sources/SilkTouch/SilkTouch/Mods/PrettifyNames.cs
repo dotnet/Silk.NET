@@ -449,43 +449,6 @@ public class PrettifyNames(
         /// This data is used by name processors to transform and prettify the names.
         /// </summary>
         public Dictionary<string, Dictionary<string, MemberData>> Scopes { get; } = [];
-
-        /// <summary>
-        /// Tries to get the member data for the specified scope and original name of the identifier.
-        /// </summary>
-        /// <param name="scope">The scope name or an empty string for the global scope.</param>
-        /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
-        /// <param name="memberData">The retrieved member data</param>
-        /// <returns>Whether the data retrieval was successful.</returns>
-        public bool TryGetMemberData(string scope, string originalName, out MemberData memberData)
-        {
-            if (Scopes.TryGetValue(scope, out var members))
-            {
-                return members.TryGetValue(originalName, out memberData);
-            }
-
-            memberData = default;
-            return false;
-        }
-
-        /// <summary>
-        /// Gets affix data for the specified scope and original name of the identifier.
-        /// </summary>
-        /// <param name="scope">The scope name or an empty string for the global scope.</param>
-        /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
-        /// <returns>The name affixes for the specified identifier.</returns>
-        public NameAffix[] GetAffixes(string scope, string originalName)
-        {
-            if (Scopes.TryGetValue(scope, out var members))
-            {
-                if (members.TryGetValue(originalName, out var memberData))
-                {
-                    return memberData.Affixes;
-                }
-            }
-
-            return [];
-        }
     }
 
     private class HandleOverridesProcessor(Dictionary<string, string> nameOverrides)
