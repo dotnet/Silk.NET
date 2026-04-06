@@ -547,9 +547,6 @@ public class PrettifyNames(
         /// <summary>
         /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list.
         /// </summary>
-        /// <remarks>
-        /// Designed to be used by <see cref="StripAffixesProcessor"/>.
-        /// </remarks>
         /// <param name="primary">The current primary name.</param>
         /// <param name="secondary">The current secondary names.</param>
         /// <param name="affixes">The affixes declared for the original name.</param>
@@ -601,144 +598,159 @@ public class PrettifyNames(
     /// </summary>
     private class ReapplyAffixesProcessor(
         NameDataVisitor nameData,
-        Dictionary<string, NameAffixConfiguration> affixConfig
+        Dictionary<string, NameAffixConfiguration> config
     ) : INameProcessor
     {
         private static readonly NameAffixConfiguration _defaultConfig = new();
 
         public void ProcessNames(NameProcessorContext context)
         {
-            // Calculate processing order using topological sort
-            // Name affixes can reference other names
-            // We want names that don't reference other names to be processed first
-            var processingOrderByKey = new List<string>();
+            // TODO: Proper implementation that builds a dependency graph for the entire project instead of per scope
+            foreach (var (scope, members) in context.Scopes)
             {
-                var ready = new Queue<string>();
-                var dependencyCountByKey = new Dictionary<string, int>();
-                var notifyDependantByKey = new Dictionary<string, List<string>>();
-
-                // Build dependency graph
-                foreach (var key in context.Names.Keys)
+                if (!nameData.Scopes.TryGetValue(scope, out var scopeData))
                 {
-                    var dependencyCount = 0;
+                    continue;
+                }
 
-                    var affixes = affixer.GetAffixes(context.Scope, key);
-                    foreach (var affix in affixes)
+                // Calculate processing order using topological sort
+                // Name affixes can reference other names
+                // We want names that don't reference other names to be processed first
+                var processingOrderByKey = new List<string>();
+                {
+                    var ready = new Queue<string>();
+                    var dependencyCountByKey = new Dictionary<string, int>();
+                    var notifyDependantByKey = new Dictionary<string, List<string>>();
+
+                    // Build dependency graph
+                    foreach (var (member, _) in members)
                     {
-                        if (!affix.IsReference)
+                        if (!scopeData.TryGetValue(member, out var memberData))
                         {
                             continue;
                         }
 
-                        // Add as dependency
-                        if (!notifyDependantByKey.TryGetValue(affix.Affix, out var dependants))
+                        var dependencyCount = 0;
+                        var affixes = memberData.Affixes;
+                        foreach (var affix in affixes)
                         {
-                            notifyDependantByKey[affix.Affix] = dependants = [];
+                            if (!affix.IsReference)
+                            {
+                                continue;
+                            }
+
+                            // Add as dependency
+                            if (!notifyDependantByKey.TryGetValue(affix.Affix, out var dependants))
+                            {
+                                notifyDependantByKey[affix.Affix] = dependants = [];
+                            }
+
+                            dependants.Add(member);
+                            dependencyCount++;
                         }
 
-                        dependants.Add(key);
-                        dependencyCount++;
-                    }
-
-                    if (dependencyCount == 0)
-                    {
-                        // No dependencies
-                        ready.Enqueue(key);
-                        continue;
-                    }
-
-                    // Store dependency count
-                    dependencyCountByKey.Add(key, dependencyCount);
-                }
-
-                // Output final order
-                while (ready.TryDequeue(out var key))
-                {
-                    processingOrderByKey.Add(key);
-                    if (notifyDependantByKey.TryGetValue(key, out var dependants))
-                    {
-                        foreach (var dependant in dependants)
+                        if (dependencyCount == 0)
                         {
-                            if (
-                                dependencyCountByKey.TryGetValue(dependant, out var dependencyCount)
-                            )
-                            {
-                                dependencyCount--;
-                                if (dependencyCount == 0)
-                                {
-                                    ready.Enqueue(dependant);
-                                    dependencyCountByKey.Remove(dependant);
-                                    continue;
-                                }
+                            // No dependencies
+                            ready.Enqueue(member);
+                            continue;
+                        }
 
-                                dependencyCountByKey[dependant] = dependencyCount;
+                        // Store dependency count
+                        dependencyCountByKey.Add(member, dependencyCount);
+                    }
+
+                    // Output final order
+                    while (ready.TryDequeue(out var key))
+                    {
+                        processingOrderByKey.Add(key);
+                        if (notifyDependantByKey.TryGetValue(key, out var dependants))
+                        {
+                            foreach (var dependant in dependants)
+                            {
+                                if (
+                                    dependencyCountByKey.TryGetValue(
+                                        dependant,
+                                        out var dependencyCount
+                                    )
+                                )
+                                {
+                                    dependencyCount--;
+                                    if (dependencyCount == 0)
+                                    {
+                                        ready.Enqueue(dependant);
+                                        dependencyCountByKey.Remove(dependant);
+                                        continue;
+                                    }
+
+                                    dependencyCountByKey[dependant] = dependencyCount;
+                                }
                             }
                         }
                     }
+
+                    // Check for unfulfilled dependencies
+                    if (dependencyCountByKey.Count != 0)
+                    {
+                        // Check for missing dependencies
+                        foreach (var key in dependencyCountByKey.Keys)
+                        {
+                            if (!members.ContainsKey(key))
+                            {
+                                // This is because we currently can only resolve names that are given by the NameProcessorContext
+                                // Please update this message if this limitation changes
+                                throw new InvalidOperationException(
+                                    $"A name affix for '{key}' references a name that does not exist or is part of a different scope. "
+                                        + $"Currently, only references to names directly in the same scope are supported"
+                                );
+                            }
+                        }
+
+                        // Remaining must be a cycle
+                        throw new InvalidOperationException(
+                            $"Detected cycle in referenced affixes. Names that are part of the cycle: {string.Join(", ", dependencyCountByKey.Keys)}"
+                        );
+                    }
                 }
 
-                // Check for unfulfilled dependencies
-                if (dependencyCountByKey.Count != 0)
+                foreach (var member in processingOrderByKey)
                 {
-                    // Check for missing dependencies
-                    foreach (var key in dependencyCountByKey.Keys)
+                    if (!scopeData.TryGetValue(member, out var memberData))
                     {
-                        if (!context.Names.ContainsKey(key))
-                        {
-                            // This is because we currently can only resolve names that are given by the NameProcessorContext
-                            // Please update this message if this limitation changes
-                            throw new InvalidOperationException(
-                                $"A name affix for '{key}' references a name that does not exist or is part of a different scope. "
-                                    + $"Referencing names from other scopes is currently not supported"
-                            );
-                        }
+                        continue;
                     }
 
-                    // Remaining must be a cycle
-                    throw new InvalidOperationException(
-                        $"Detected cycle in referenced affixes. Names that are part of the cycle: {string.Join(", ", dependencyCountByKey.Keys)}"
+                    var (primary, secondary) = members[member];
+                    var newPrimary = ApplyAffixes(
+                        scope,
+                        primary,
+                        secondary,
+                        memberData.Affixes,
+                        context
                     );
+                    members[member] = new CandidateNames(newPrimary, secondary);
                 }
-            }
-
-            foreach (var original in processingOrderByKey)
-            {
-                var (primary, secondary) = context.Names[original];
-
-                var secondaries = secondary;
-                var newPrimary = affixer.ApplyAffixes(
-                    primary,
-                    context.Scope,
-                    original,
-                    secondaries,
-                    context
-                );
-
-                context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }
         }
 
         /// <summary>
-        /// Applies affixes to the specified primary name and adds fallbacks to the secondary list if provided.
+        /// Applies affixes to the specified primary name and adds fallbacks to the secondary list.
         /// </summary>
-        /// <remarks>
-        /// Designed to be used by <see cref="ReapplyAffixesProcessor"/>.
-        /// </remarks>
+        /// <param name="scope">The scope of the original name. Used for resolving referenced affixes.</param>
         /// <param name="primary">The current primary name.</param>
-        /// <param name="scope">The scope name or an empty string for the global scope.</param>
-        /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
-        /// <param name="secondary">The list of secondary names.</param>
-        /// <param name="context">The context containing the current names for the current scope.</param>
+        /// <param name="secondary">The current secondary names.</param>
+        /// <param name="affixes">The affixes declared for the original name.</param>
         /// <returns>The new primary name.</returns>
-        public string ApplyAffixes(
-            string primary,
+        /// <param name="context">The current <see cref="NameProcessorContext"/>. Used for resolving referenced affixes.</param>
+        /// <returns>The new primary name.</returns>
+        private string ApplyAffixes(
             string scope,
-            string originalName,
+            string primary,
             List<string> secondary,
-            NameProcessorContext context // TODO: Handle this better. Exposing the entire context is excessive... Actually, this might be fine now that I moved this to be in an actual name processor
+            NameAffix[] affixes,
+            NameProcessorContext context
         )
         {
-            var affixes = GetAffixes(scope, originalName);
             if (affixes.Length == 0)
             {
                 return primary;
@@ -822,7 +834,11 @@ public class PrettifyNames(
                     var affixValue = affix.Affix;
                     if (
                         affix.IsReference
-                        && context.Names.TryGetValue(affixValue, out var referencedCandidateNames)
+                        && context.Scopes.TryGetValue(scope, out var referencedScopeMembers)
+                        && referencedScopeMembers.TryGetValue(
+                            affixValue,
+                            out var referencedCandidateNames
+                        )
                     )
                     {
                         affixValue = referencedCandidateNames.Primary;
