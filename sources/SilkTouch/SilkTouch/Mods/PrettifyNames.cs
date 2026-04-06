@@ -524,39 +524,38 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            foreach (var (original, (primary, secondary)) in context.Names)
+            foreach (var (scope, members) in context.Scopes)
             {
-                var secondaries = secondary;
-                var newPrimary = affixer.RemoveAffixes(
-                    primary,
-                    context.Scope,
-                    original,
-                    secondaries
-                );
+                if (!nameData.Scopes.TryGetValue(scope, out var scopeData))
+                {
+                    continue;
+                }
 
-                context.Names[original] = new CandidateNames(newPrimary, secondaries);
+                foreach (var (original, (primary, secondary)) in members)
+                {
+                    if (!scopeData.TryGetValue(original, out var memberData))
+                    {
+                        continue;
+                    }
+
+                    var newPrimary = RemoveAffixes(primary, secondary, memberData.Affixes);
+                    members[original] = new CandidateNames(newPrimary, secondary);
+                }
             }
         }
 
         /// <summary>
-        /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list if provided.
+        /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list.
         /// </summary>
         /// <remarks>
         /// Designed to be used by <see cref="StripAffixesProcessor"/>.
         /// </remarks>
         /// <param name="primary">The current primary name.</param>
-        /// <param name="scope">The scope name or an empty string for the global scope.</param>
-        /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
-        /// <param name="secondary">The list of secondary names.</param>
+        /// <param name="secondary">The current secondary names.</param>
+        /// <param name="affixes">The affixes declared for the original name.</param>
         /// <returns>The new primary name.</returns>
-        public string RemoveAffixes(
-            string primary,
-            string scope,
-            string originalName,
-            List<string> secondary
-        )
+        private string RemoveAffixes(string primary, List<string> secondary, NameAffix[] affixes)
         {
-            var affixes = GetAffixes(scope, originalName);
             if (affixes.Length == 0)
             {
                 return primary;
