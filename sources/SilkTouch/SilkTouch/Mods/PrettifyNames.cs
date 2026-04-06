@@ -879,17 +879,20 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            foreach (var (original, (primary, secondary)) in context.Names)
+            foreach (var (scope, members) in context.Scopes)
             {
-                for (var i = 0; i < secondary.Count; i++)
+                foreach (var (original, (primary, secondary)) in members)
                 {
-                    secondary[i] = NameUtils.PrefixIfStartsWithNumber(secondary[i]);
-                }
+                    for (var i = 0; i < secondary.Count; i++)
+                    {
+                        secondary[i] = NameUtils.PrefixIfStartsWithNumber(secondary[i]);
+                    }
 
-                context.Names[original] = new CandidateNames(
-                    NameUtils.PrefixIfStartsWithNumber(primary),
-                    secondary
-                );
+                    members[original] = new CandidateNames(
+                        NameUtils.PrefixIfStartsWithNumber(primary),
+                        secondary
+                    );
+                }
             }
         }
     }
