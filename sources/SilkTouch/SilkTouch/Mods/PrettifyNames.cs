@@ -101,7 +101,7 @@ public class PrettifyNames(
         }
 
         // Process the names
-        var nameProcessorContext = new NameProcessorContext(visitor);
+        var nameProcessorContext = new NameProcessorContext(visitor.NameData);
         {
             var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
 
@@ -1258,8 +1258,9 @@ public class PrettifyNames(
         /// <summary>
         /// Represents a mapping: ScopeName -> (MemberName -> MemberCandidateNames).
         /// This stores the candidates for the final prettified name for each name organized by scope.
+        /// Also known as the working set of names.
         /// </summary>
-        public Dictionary<string, Dictionary<string, CandidateNames>> Scopes { get; init; }
+        public Dictionary<string, Dictionary<string, CandidateNames>> Scopes { get; }
 
         /// <summary>
         /// Represents a mapping: ScopeName -> (MemberName -> NewMemberName).
@@ -1271,10 +1272,10 @@ public class PrettifyNames(
         public Dictionary<string, Dictionary<string, string>> FinalNames { get; } = [];
 
         /// <summary>
-        /// Creates a new context from the scraped visitor data.
+        /// Creates a new context from the scraped name data.
         /// </summary>
-        public NameProcessorContext(Visitor visitor) =>
-            Scopes = visitor.NameData.Scopes.ToDictionary(
+        public NameProcessorContext(ScrapedNameData nameData) =>
+            Scopes = nameData.Scopes.ToDictionary(
                 // Scope
                 x => x.Key,
                 x =>
