@@ -493,60 +493,67 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            // TODO: Move this into its own processor and update the comment
-            // Ensure the name processors don't see names that have been manually overridden
-            var namesToProcess = context.Names;
-            foreach (var (nativeName, overriddenName) in nameOverrides)
+            var overriddenNames = new List<(string Scope, string Member, string OverriddenName)>();
+            foreach (var (overrideTargetName, overriddenName) in nameOverrides)
             {
-                var nameToAdd = nativeName;
-                if (nativeName.Contains('.'))
-                {
-                    // TODO: Update/clarify comment
-                    // We're processing a type dictionary, so don't add a member thing.
-                    // TODO: This if statement is useless now since context.Scope is non-null
-                    // TODO: Consider reworking this to internally split the override target into scope + member name instead of using two branches
-                    if (context.Scope is null)
-                    {
-                        continue;
-                    }
+                // Target format can either be "Member" or "Scope.Member"
+                // Split into the two parts here
+                var overrideTargetScopeEnd = overrideTargetName.IndexOf('.');
+                var overrideTargetScope =
+                    overrideTargetScopeEnd >= 0
+                        ? overrideTargetName[..overrideTargetScopeEnd]
+                        : null;
+                var overrideTargetMember = overrideTargetName[(overrideTargetScopeEnd + 1)..];
 
-                    // Check whether the override is for this type.
-                    var nativeNameSpan = nativeName.AsSpan();
-                    var scopeSpan = nativeNameSpan[..nativeNameSpan.IndexOf('.')];
+                // Wildcard scope is the same as not specifying a scope
+                if (
+                    overrideTargetScope != null
+                    && overrideTargetScope.Equals("*", StringComparison.Ordinal)
+                )
+                {
+                    overrideTargetScope = null;
+                }
+
+                if (overrideTargetScope == null)
+                {
+                    // Apply unscoped override
+                    foreach (var (scope, members) in context.Scopes)
+                    {
+                        if (members.ContainsKey(overrideTargetMember))
+                        {
+                            overriddenNames.Add((scope, overrideTargetMember, overriddenName));
+                        }
+                    }
+                }
+                else
+                {
+                    // Apply scoped override
                     if (
-                        scopeSpan.Equals("*", StringComparison.Ordinal)
-                        || scopeSpan.Equals(context.Scope, StringComparison.Ordinal)
+                        context.Scopes.TryGetValue(overrideTargetScope, out var members)
+                        && members.ContainsKey(overrideTargetMember)
                     )
                     {
-                        nameToAdd = nativeNameSpan[(nativeNameSpan.IndexOf('.') + 1)..].ToString();
-                    }
-                    else
-                    {
-                        continue;
+                        overriddenNames.Add(
+                            (overrideTargetScope, overrideTargetMember, overriddenName)
+                        );
                     }
                 }
+            }
 
-                if (!namesToProcess.TryGetValue(nameToAdd, out var v))
+            // Move overridden names to final output
+            foreach (var overriddenName in overriddenNames)
+            {
+                // Remove from working set
+                // This is to prevent later processors from modifying overrides
+                context.Scopes[overriddenName.Scope].Remove(overriddenName.Member);
+
+                // Add to final names
+                if (!context.FinalNames.TryGetValue(overriddenName.Scope, out var members))
                 {
-                    continue;
+                    context.FinalNames[overriddenName.Scope] = members = [];
                 }
 
-                // If we haven't created the differentiated dictionary yet, then do so now. We do want to keep the original
-                // dictionary so we can actually apply the renames; if we have created two different branching dictionaries
-                // they are recombined following name processing.
-                if (namesToProcess == context.Names)
-                {
-                    namesToProcess = namesToProcess.ToDictionary();
-                }
-
-                // Don't let the name processors see the overridden native name.
-                namesToProcess.Remove(nameToAdd);
-
-                // Apply the name override to the dictionary we actually use.
-                context.Names[nameToAdd] = new CandidateNames(
-                    overriddenName,
-                    [.. v.Secondary, nameToAdd]
-                );
+                members[overriddenName.Member] = overriddenName.OverriddenName;
             }
         }
     }
@@ -1258,6 +1265,9 @@ public class PrettifyNames(
         /// Represents a mapping: ScopeName -> (MemberName -> NewMemberName).
         /// This stores the final names for each member.
         /// </summary>
+        /// <remarks>
+        /// Processors are allowed to modify these, but should have a good reason in doing so.
+        /// </remarks>
         public Dictionary<string, Dictionary<string, string>> FinalNames { get; } = [];
 
         /// <summary>
