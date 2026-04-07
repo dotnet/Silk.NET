@@ -919,311 +919,306 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            // foreach (var candidateScope in candidateScopes)
-            // {
-            //     // TODO: This is a temporary shim. Consider removing/moving
-            //     // TODO: Currently this combines both methods and non-methods. This doesn't matter *here* anymore, but IdentifiedSharedPrefixes should consider splitting scopes by methods and non-methods
-            //     // TODO: Also, when moving this code ensure that this is done per scope instead of globally for all scopes
-            //     var methods = visitor
-            //         .Scopes[candidateScope.Key]
-            //         .Where(y => y.Value.MethodDeclarations != null)
-            //         .ToDictionary(
-            //             // Method name
-            //             y => y.Key,
-            //             // Method declarations
-            //             IEnumerable<MethodDeclarationSyntax> (y) => y.Value.MethodDeclarations!
-            //         );
-            //
-            //     if (methods.Count == 0)
-            //     {
-            //         methods = null;
-            //     }
-            //
-            //     ProcessNames(context, nameProcessors, cfg.NameOverrides, methods);
-            // }
-
-            if (namesToProcess != context.Names)
+            // Add the names from the final set to the working set
+            // This is so that conflicts are resolved with all names available
+            foreach (var (scope, finalMembers) in context.FinalNames)
             {
-                foreach (var (evalName, result) in namesToProcess)
+                if (!context.Scopes.TryGetValue(scope, out var workingMembers))
                 {
-                    context.Names[evalName] = result;
+                    context.Scopes[scope] = workingMembers = [];
+                }
+
+                // Naively overwrite working set names
+                foreach (var (member, newMemberName) in finalMembers)
+                {
+                    workingMembers[member] = new CandidateNames(newMemberName, []);
                 }
             }
 
-            // Prefer shorter names
-            foreach (var (_, (_, secondary)) in context.Names)
+            foreach (var (scope, members) in context.Scopes)
             {
-                secondary.Sort((a, b) => -a.Length.CompareTo(b.Length));
-            }
+                nameData.Scopes.TryGetValue(scope, out var scopeData);
 
-            // Create a mapping: Primary name -> Original name
-            // Primary name refers to the primary candidate name
-            // Original name refers to the original name of the member as seen in source code
-            //
-            // This is to account for method overloads that have the
-            // same primary candidate name and original name, but different discriminators
-            //
-            // This usually happens with generated/transformed overloads
-            var primaries = new Dictionary<string, HashSet<string>>();
-            foreach (var (originalName, (primary, _)) in context.Names)
-            {
-                if (!primaries.TryGetValue(primary, out var originalNamesForPrimary))
+                // Prefer shorter names
+                foreach (var (_, secondary) in members.Values)
                 {
-                    primaries[primary] = originalNamesForPrimary = [];
+                    secondary.Sort((a, b) => -a.Length.CompareTo(b.Length));
                 }
 
-                originalNamesForPrimary.Add(originalName);
-            }
-
-            // Unwind some names back to their secondary names if the primaries would duplicate
-            // We'll use a hash set to determine whether we need to check a primary for conflicts.
-            var namesToEval = primaries.Keys.ToHashSet();
-
-            // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
-            // renamed. We keep track of the first original name so that we can add it to conflictingOriginalNames when we
-            // do discover a conflict (along with the original name of the actual conflict).
-            var methodDiscriminators =
-                new Dictionary<
-                    string,
-                    (string? FirstOriginalName, List<MethodDeclarationSyntax> Methods)
-                >();
-            var conflictingOriginalNames = new HashSet<string>();
-            while (namesToEval.GetEnumerator() is var e && e.MoveNext() && e.Current is var primary)
-            {
-                // ^-- We can't use a foreach loop because we're mutating below.
-                // We're also using GetEnumerator instead of First to avoid allocations.
-
-                // First, let's check whether we have any conflicting discriminators.
-                // If we don't, we can mark this as all good right away.
-                methodDiscriminators.Clear();
-                conflictingOriginalNames.Clear();
-                var originalNamesForOldPrimary = primaries[primary];
-
-                // Function-specific logic where some conflicts are okay,
-                // so we have to evaluate each signature to see
-                // if we can discriminate each one such that there are no conflicts.
+                // Create a mapping: Primary name -> Original name
+                // Primary name refers to the primary candidate name
+                // Original name refers to the original name of the member as seen in source code
                 //
-                // An example of where this is the case is e.g. alGetBufferf/alGetBufferfv - signatures are identical.
-                var nMethodConflicts = 0;
-                var nMethods = 0;
-                var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts
-                string? noSecondaryOriginalName = null;
-                // TODO: Rewrite this logic to account for the fact that non-methods are also mixed in here now
-                foreach (var originalNameToEval in originalNamesForOldPrimary)
+                // This is to account for method overloads that have the
+                // same primary candidate name and original name, but different discriminators
+                //
+                // This usually happens with generated/transformed overloads
+                var primaries = new Dictionary<string, HashSet<string>>();
+                foreach (var (originalName, (primary, _)) in members)
                 {
-                    // Do we even have a secondary to fall back on if there is a conflict?
-                    if (context.Names[originalNameToEval].Secondary.Count == 0)
+                    if (!primaries.TryGetValue(primary, out var originalNamesForPrimary))
                     {
-                        noSecondaryOriginalName ??= originalNameToEval;
-                        nNoSecondaries++;
+                        primaries[primary] = originalNamesForPrimary = [];
                     }
 
-                    if (
-                        methods is not null
-                        && methods.TryGetValue(originalNameToEval, out var methodDeclarations)
-                    )
+                    originalNamesForPrimary.Add(originalName);
+                }
+
+                // Unwind some names back to their secondary names if the primaries would duplicate
+                // We'll use a hash set to determine whether we need to check a primary for conflicts.
+                var namesToEval = primaries.Keys.ToHashSet();
+
+                // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
+                // renamed. We keep track of the first original name so that we can add it to conflictingOriginalNames when we
+                // do discover a conflict (along with the original name of the actual conflict).
+                var methodDiscriminators =
+                    new Dictionary<
+                        string,
+                        (string? FirstOriginalName, List<MethodDeclarationSyntax> Methods)
+                    >();
+                var conflictingOriginalNames = new HashSet<string>();
+                while (
+                    namesToEval.GetEnumerator() is var e && e.MoveNext() && e.Current is var primary
+                )
+                {
+                    // ^-- We can't use a foreach loop because we're mutating below.
+                    // We're also using GetEnumerator instead of First to avoid allocations.
+
+                    // First, let's check whether we have any conflicting discriminators.
+                    // If we don't, we can mark this as all good right away.
+                    methodDiscriminators.Clear();
+                    conflictingOriginalNames.Clear();
+                    var originalNamesForOldPrimary = primaries[primary];
+
+                    // Function-specific logic where some conflicts are okay,
+                    // so we have to evaluate each signature to see
+                    // if we can discriminate each one such that there are no conflicts.
+                    //
+                    // An example of where this is the case is e.g. alGetBufferf/alGetBufferfv - signatures are identical.
+                    var nMethodConflicts = 0;
+                    var nMethods = 0;
+                    var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts
+                    string? noSecondaryOriginalName = null;
+                    foreach (var originalNameToEval in originalNamesForOldPrimary)
                     {
-                        foreach (var methodDeclaration in methodDeclarations)
+                        // Do we even have a secondary to fall back on if there is a conflict?
+                        if (members[originalNameToEval].Secondary.Count == 0)
                         {
-                            var discriminator = ModUtils.GetMethodDiscriminator(
-                                methodDeclaration.Modifiers,
-                                methodDeclaration.TypeParameterList,
-                                primary,
-                                methodDeclaration.ParameterList,
-                                returnType: null
-                            );
+                            noSecondaryOriginalName ??= originalNameToEval;
+                            nNoSecondaries++;
+                        }
 
-                            if (
-                                !methodDiscriminators.TryGetValue(
-                                    discriminator,
-                                    out var methodDiscriminator
-                                )
-                            )
+                        if (
+                            scopeData != null
+                            && scopeData.TryGetValue(originalNameToEval, out var memberData)
+                            && memberData.MethodDeclarations is { } methodDeclarations
+                        )
+                        {
+                            foreach (var methodDeclaration in methodDeclarations)
                             {
-                                methodDiscriminators[discriminator] = methodDiscriminator = (
-                                    originalNameToEval,
-                                    []
+                                var discriminator = ModUtils.GetMethodDiscriminator(
+                                    methodDeclaration.Modifiers,
+                                    methodDeclaration.TypeParameterList,
+                                    primary,
+                                    methodDeclaration.ParameterList,
+                                    returnType: null
                                 );
-                            }
 
-                            var (firstOriginalName, discriminatorMatches) = methodDiscriminator;
+                                if (
+                                    !methodDiscriminators.TryGetValue(
+                                        discriminator,
+                                        out var methodDiscriminator
+                                    )
+                                )
+                                {
+                                    methodDiscriminators[discriminator] = methodDiscriminator = (
+                                        originalNameToEval,
+                                        []
+                                    );
+                                }
 
-                            discriminatorMatches.Add(methodDeclaration);
-                            nMethods++;
+                                var (firstOriginalName, discriminatorMatches) = methodDiscriminator;
 
-                            // NOTE: The number of conflicts influences how we go about conflict resolution. See the
-                            // logic below all of these loops just in case this comment is out of date, but at time of
-                            // writing if 50% or more of the methods with this primary name are conflicting then we
-                            // rename all of them, otherwise we rename only the conflicting overloads.
-                            nMethodConflicts += discriminatorMatches.Count switch
-                            {
-                                2 => 2, // The original needs to be counted as a conflict in addition to this conflict
-                                > 2 => 1, // Just mark this conflict, original is already counted.
-                                _ => 0, // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
-                            };
+                                discriminatorMatches.Add(methodDeclaration);
+                                nMethods++;
 
-                            if (discriminatorMatches.Count == 2 && firstOriginalName is not null)
-                            {
-                                conflictingOriginalNames.Add(firstOriginalName);
-                            }
+                                // NOTE: The number of conflicts influences how we go about conflict resolution. See the
+                                // logic below all of these loops just in case this comment is out of date, but at time of
+                                // writing if 50% or more of the methods with this primary name are conflicting then we
+                                // rename all of them, otherwise we rename only the conflicting overloads.
+                                nMethodConflicts += discriminatorMatches.Count switch
+                                {
+                                    2 => 2, // The original needs to be counted as a conflict in addition to this conflict
+                                    > 2 => 1, // Just mark this conflict, original is already counted.
+                                    _ => 0, // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
+                                };
 
-                            if (discriminatorMatches.Count > 1)
-                            {
-                                conflictingOriginalNames.Add(originalNameToEval);
+                                if (
+                                    discriminatorMatches.Count == 2
+                                    && firstOriginalName is not null
+                                )
+                                {
+                                    conflictingOriginalNames.Add(firstOriginalName);
+                                }
+
+                                if (discriminatorMatches.Count > 1)
+                                {
+                                    conflictingOriginalNames.Add(originalNameToEval);
+                                }
                             }
                         }
                     }
-                }
 
-                // If we're checking methods for conflicts and in our travels we've discovered that there are in fact
-                // no conflicts, we can bail out early here.
-                if (nMethods > 0 && (methodDiscriminators.Count == 0 || nMethodConflicts == 0))
-                {
-                    namesToEval.Remove(primary);
-                    continue;
-                }
-
-                // We need to determine if we even have alternative names. If one doesn't that's fine because as long
-                // as we unwind all the others that one still won't conflict.
-                if (nNoSecondaries > 1)
-                {
-                    logger.LogError(
-                        "Couldn't resolve conflict for \"{}\" because {} of the APIs with that primary name did not have any secondary names.",
-                        primary,
-                        nNoSecondaries
-                    );
-                    namesToEval.Remove(primary);
-                    continue;
-                }
-
-                var renameOnlyConflicts = nMethodConflicts <= nMethods / 2.0;
-
-                // We can afford to leave one API alone. If that place isn't already filled by a method without a secondary
-                // name then we should fill it with whatever has the shortest original name. The logic being that the more
-                // characters (i.e. longer suffix) a name has, the more discriminatory/important that name is ergo the
-                // reverse (the shorter the name, the less discriminatory/important it is) is also true.
-                string? first = null;
-                var primaryClaimed = noSecondaryOriginalName is not null;
-                namesToEval.Remove(primary); // <-- just in case the below loop somehow produces the same primary again.
-                foreach (
-                    var conflictingOriginalName in (
-                        renameOnlyConflicts ? conflictingOriginalNames : primaries[primary]
-                    ).OrderBy(x => x.Length)
-                )
-                {
-                    // Do not rename if this is the original name that does not have a secondary.
-                    if (noSecondaryOriginalName == conflictingOriginalName)
+                    // If we're checking methods for conflicts and in our travels we've discovered that there are in fact
+                    // no conflicts, we can bail out early here.
+                    if (nMethods > 0 && (methodDiscriminators.Count == 0 || nMethodConflicts == 0))
                     {
+                        namesToEval.Remove(primary);
                         continue;
                     }
 
-                    // If the current primary hasn't been "claimed" by an original name without a secondary, we only want
-                    // to let the shortest name claim it (per the logic described in the last comment) if it is actually
-                    // the absolute shortest name and not joint-1st for that title. Therefore, the first original name
-                    // is saved for the second iteration where we'll make that judgement call and handle both at the
-                    // same time.
-                    if (first is null)
+                    // We need to determine if we even have alternative names. If one doesn't that's fine because as long
+                    // as we unwind all the others that one still won't conflict.
+                    if (nNoSecondaries > 1)
                     {
-                        first = conflictingOriginalName;
-                        if (!primaryClaimed)
+                        logger.LogError(
+                            "Couldn't resolve conflict for \"{}\" because {} of the APIs with that primary name did not have any secondary names.",
+                            primary,
+                            nNoSecondaries
+                        );
+                        namesToEval.Remove(primary);
+                        continue;
+                    }
+
+                    var renameOnlyConflicts = nMethodConflicts <= nMethods / 2.0;
+
+                    // We can afford to leave one API alone. If that place isn't already filled by a method without a secondary
+                    // name then we should fill it with whatever has the shortest original name. The logic being that the more
+                    // characters (i.e. longer suffix) a name has, the more discriminatory/important that name is ergo the
+                    // reverse (the shorter the name, the less discriminatory/important it is) is also true.
+                    string? first = null;
+                    var primaryClaimed = noSecondaryOriginalName is not null;
+                    namesToEval.Remove(primary); // <-- just in case the below loop somehow produces the same primary again.
+                    foreach (
+                        var conflictingOriginalName in (
+                            renameOnlyConflicts ? conflictingOriginalNames : primaries[primary]
+                        ).OrderBy(x => x.Length)
+                    )
+                    {
+                        // Do not rename if this is the original name that does not have a secondary.
+                        if (noSecondaryOriginalName == conflictingOriginalName)
                         {
                             continue;
                         }
-                    }
 
-                    // Now we're going to make the above judgement call. If the first item has the same length as the
-                    // second item, the first item has no right to claim the primary name therefore both items will be
-                    // demoted to use their secondary name.
-                    if (!primaryClaimed)
-                    {
-                        if (first.Length == conflictingOriginalName.Length)
+                        // If the current primary hasn't been "claimed" by an original name without a secondary, we only want
+                        // to let the shortest name claim it (per the logic described in the last comment) if it is actually
+                        // the absolute shortest name and not joint-1st for that title. Therefore, the first original name
+                        // is saved for the second iteration where we'll make that judgement call and handle both at the
+                        // same time.
+                        if (first is null)
                         {
-                            // Update the output name.
-                            var firstSecondary =
-                                context.Names[first].Secondary
-                                ?? throw new InvalidOperationException(
-                                    "More than one original member name without secondary names."
-                                );
-                            var firstNextPrimary = firstSecondary[^1];
-                            firstSecondary.RemoveAt(firstSecondary.Count - 1);
-                            context.Names[first] = new CandidateNames(
-                                firstNextPrimary,
-                                firstSecondary
-                            );
-
-                            // Update our primary to original name map
-                            if (
-                                !primaries.TryGetValue(
-                                    firstNextPrimary,
-                                    out var originalNamesForFirst
-                                )
-                            )
+                            first = conflictingOriginalName;
+                            if (!primaryClaimed)
                             {
-                                primaries[firstNextPrimary] = originalNamesForFirst = [];
-                            }
-
-                            originalNamesForFirst.Add(first);
-                            originalNamesForOldPrimary.Remove(first);
-                            if (originalNamesForOldPrimary.Count == 0)
-                            {
-                                primaries.Remove(primary);
-                            }
-
-                            // Make sure we do a pass over the new primary just in case we already have APIs with that
-                            // primary
-                            namesToEval.Add(firstNextPrimary);
-                            if (logger.IsEnabled(LogLevel.Trace)) // <-- prevent needless string.Join
-                            {
-                                logger.LogTrace(
-                                    "{}: {} -> {} (remaining secondaries: {})",
-                                    first,
-                                    primary,
-                                    firstNextPrimary,
-                                    string.Join(", ", firstNextPrimary)
-                                );
+                                continue;
                             }
                         }
 
-                        primaryClaimed = true;
-                    }
+                        // Now we're going to make the above judgement call. If the first item has the same length as the
+                        // second item, the first item has no right to claim the primary name therefore both items will be
+                        // demoted to use their secondary name.
+                        if (!primaryClaimed)
+                        {
+                            if (first.Length == conflictingOriginalName.Length)
+                            {
+                                // Update the output name.
+                                var firstSecondary =
+                                    members[first].Secondary
+                                    ?? throw new InvalidOperationException(
+                                        "More than one original member name without secondary names."
+                                    );
+                                var firstNextPrimary = firstSecondary[^1];
+                                firstSecondary.RemoveAt(firstSecondary.Count - 1);
+                                members[first] = new CandidateNames(
+                                    firstNextPrimary,
+                                    firstSecondary
+                                );
 
-                    // Conflict resolution! Update the output name.
-                    var secondary =
-                        context.Names[conflictingOriginalName].Secondary
-                        ?? throw new InvalidOperationException(
-                            "More than one original member name without secondary names."
-                        );
-                    var nextPrimary = secondary[^1];
-                    secondary.RemoveAt(secondary.Count - 1);
-                    context.Names[conflictingOriginalName] = new CandidateNames(
-                        nextPrimary,
-                        secondary
-                    );
+                                // Update our primary to original name map
+                                if (
+                                    !primaries.TryGetValue(
+                                        firstNextPrimary,
+                                        out var originalNamesForFirst
+                                    )
+                                )
+                                {
+                                    primaries[firstNextPrimary] = originalNamesForFirst = [];
+                                }
 
-                    // Update our primary to original name map
-                    if (!primaries.TryGetValue(nextPrimary, out var originalNamesForNewPrimary))
-                    {
-                        primaries[nextPrimary] = originalNamesForNewPrimary = [];
-                    }
+                                originalNamesForFirst.Add(first);
+                                originalNamesForOldPrimary.Remove(first);
+                                if (originalNamesForOldPrimary.Count == 0)
+                                {
+                                    primaries.Remove(primary);
+                                }
 
-                    originalNamesForNewPrimary.Add(conflictingOriginalName);
-                    originalNamesForOldPrimary.Remove(conflictingOriginalName);
-                    if (originalNamesForOldPrimary.Count == 0)
-                    {
-                        primaries.Remove(primary);
-                    }
+                                // Make sure we do a pass over the new primary just in case we already have APIs with that
+                                // primary
+                                namesToEval.Add(firstNextPrimary);
+                                if (logger.IsEnabled(LogLevel.Trace)) // <-- prevent needless string.Join
+                                {
+                                    logger.LogTrace(
+                                        "{}: {} -> {} (remaining secondaries: {})",
+                                        first,
+                                        primary,
+                                        firstNextPrimary,
+                                        string.Join(", ", firstNextPrimary)
+                                    );
+                                }
+                            }
 
-                    // Make sure we do a pass over the new primary just in case we already have APIs with that primary
-                    namesToEval.Add(nextPrimary);
-                    if (logger.IsEnabled(LogLevel.Trace)) // <-- prevent needless string.Join
-                    {
-                        logger.LogTrace(
-                            "{}: {} -> {} (remaining secondaries: {})",
-                            conflictingOriginalName,
-                            primary,
+                            primaryClaimed = true;
+                        }
+
+                        // Conflict resolution! Update the output name.
+                        var secondary =
+                            members[conflictingOriginalName].Secondary
+                            ?? throw new InvalidOperationException(
+                                "More than one original member name without secondary names."
+                            );
+                        var nextPrimary = secondary[^1];
+                        secondary.RemoveAt(secondary.Count - 1);
+                        members[conflictingOriginalName] = new CandidateNames(
                             nextPrimary,
-                            string.Join(", ", secondary)
+                            secondary
                         );
+
+                        // Update our primary to original name map
+                        if (!primaries.TryGetValue(nextPrimary, out var originalNamesForNewPrimary))
+                        {
+                            primaries[nextPrimary] = originalNamesForNewPrimary = [];
+                        }
+
+                        originalNamesForNewPrimary.Add(conflictingOriginalName);
+                        originalNamesForOldPrimary.Remove(conflictingOriginalName);
+                        if (originalNamesForOldPrimary.Count == 0)
+                        {
+                            primaries.Remove(primary);
+                        }
+
+                        // Make sure we do a pass over the new primary just in case we already have APIs with that primary
+                        namesToEval.Add(nextPrimary);
+                        if (logger.IsEnabled(LogLevel.Trace)) // <-- prevent needless string.Join
+                        {
+                            logger.LogTrace(
+                                "{}: {} -> {} (remaining secondaries: {})",
+                                conflictingOriginalName,
+                                primary,
+                                nextPrimary,
+                                string.Join(", ", secondary)
+                            );
+                        }
                     }
                 }
             }
