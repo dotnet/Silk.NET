@@ -163,55 +163,16 @@ public class PrettifyNames(
         logger.LogDebug("Discovering references to symbols to rename for {}...", ctx.JobKey);
         ctx.SourceProject = proj;
 
-        var comp =
+        var compilation =
             await proj.GetCompilationAsync(ct)
             ?? throw new InvalidOperationException(
                 "Failed to obtain compilation for source project!"
             );
 
-        // TODO: Replace this with another visitor. I really don't like LINQ blobs and a visitor might be faster.
-        // TODO: Also consider using a symbol visitor instead of a syntax one. It might be faster since we only care about declarations
-        await NameUtils.RenameAllAsync(
-            ctx,
-            newNames.SelectMany(x =>
-            {
-                var nonFunctionConflicts = x
-                    .Value.NonFunctions.Values.Where(y => x.Value.Functions.ContainsValue(y))
-                    .ToHashSet();
-                return comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
-                    .OfType<ITypeSymbol>()
-                    .SelectMany<ITypeSymbol, (ISymbol, string)>(y =>
-                        [
-                            .. Enumerable.SelectMany(
-                                [
-                                    .. x.Value.NonFunctions.Select(z =>
-                                        nonFunctionConflicts.Contains(z.Value)
-                                            ? new KeyValuePair<string, string>(
-                                                z.Key,
-                                                $"{z.Value}Value"
-                                            )
-                                            : z
-                                    ),
-                                    .. x.Value.Functions,
-                                ],
-                                z =>
-                                {
-                                    return y.GetMembers(z.Key).Select(w => (w, z.Value));
-                                }
-                            ),
-                            .. y.GetMembers()
-                                .OfType<IMethodSymbol>()
-                                .Where(z =>
-                                    z.MethodKind is MethodKind.Constructor or MethodKind.Destructor
-                                )
-                                .Select(z => (z, x.Value.NewName)),
-                            (y, x.Value.NewName),
-                        ]
-                    );
-            }),
-            logger,
-            ct
-        );
+        // Gather symbols and rename
+        var symbolVisitor = new NameSymbolVisitor(newNames);
+        symbolVisitor.Visit(compilation.Assembly);
+        await NameUtils.RenameAllAsync(ctx, symbolVisitor.ToRename, logger, ct);
 
         logger.LogDebug(
             "Reference renaming took {} seconds for {}.",
@@ -437,6 +398,71 @@ public class PrettifyNames(
 
         public override void VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             ReportName(node.Identifier, node.AttributeLists, node);
+    }
+
+    /// <summary>
+    /// Discovers and stores symbol to new name mappings to be used by <see cref="NameUtils.RenameAllAsync"/>.
+    /// </summary>
+    /// <param name="newNames">The new names in the format defined by <see cref="NameProcessorContext.FinalNames"/>.</param>
+    private class NameSymbolVisitor(Dictionary<string, Dictionary<string, string>> newNames)
+        : SymbolVisitor
+    {
+        public readonly List<(ISymbol Symbol, string NewName)> ToRename = [];
+
+        private INamedTypeSymbol? _scope;
+
+        private void ReportSymbol(ISymbol symbol)
+        {
+            var scopeName = _scope?.Name ?? "";
+            var memberName = symbol.Name;
+
+            if (!newNames.TryGetValue(scopeName, out var memberNewNames))
+            {
+                return;
+            }
+
+            if (!memberNewNames.TryGetValue(memberName, out var memberNewName))
+            {
+                return;
+            }
+
+            ToRename.Add((symbol, memberNewName));
+        }
+
+        // ----- Entry -----
+
+        public override void VisitAssembly(IAssemblySymbol symbol) => Visit(symbol.GlobalNamespace);
+
+        public override void VisitNamespace(INamespaceSymbol symbol)
+        {
+            foreach (var member in symbol.GetMembers())
+            {
+                Visit(member);
+            }
+        }
+
+        // ----- Types -----
+
+        public override void VisitNamedType(INamedTypeSymbol symbol)
+        {
+            ReportSymbol(symbol);
+
+            var previousScope = _scope;
+            _scope = symbol;
+            foreach (var member in symbol.GetMembers())
+            {
+                Visit(member);
+            }
+            _scope = previousScope;
+        }
+
+        // ----- Members -----
+
+        public override void VisitField(IFieldSymbol symbol) => ReportSymbol(symbol);
+
+        public override void VisitProperty(IPropertySymbol symbol) => ReportSymbol(symbol);
+
+        public override void VisitMethod(IMethodSymbol symbol) => ReportSymbol(symbol);
     }
 
     private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
