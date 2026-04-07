@@ -12,6 +12,10 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// A mod that will convert other naming conventions to the PascalCase nomenclature typically used in C#.
 /// </summary>
+/// <remarks>
+/// Does not support nested types. Please use <see cref="ExtractNestedTyping"/> before this mod.
+/// Note that despite this, some initial work has been done to add nested type support so that it can be added when necessary.
+/// </remarks>
 [ModConfiguration<Configuration>]
 public class PrettifyNames(
     ILogger<PrettifyNames> logger,
