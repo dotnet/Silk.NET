@@ -914,6 +914,10 @@ public class PrettifyNames(
     /// Resolves conflicts where multiple names have been transformed into the same output name.
     /// This also considers cases where the methods with the same name are compatible because of method overloading rules.
     /// </summary>
+    /// <remarks>
+    /// This also copies the names from the final set back into the working set.
+    /// This is to ensure that all names are considered by the conflict resolution algorithm.
+    /// </remarks>
     private class ResolveConflictsProcessor(NameDataVisitor nameData, ILogger logger)
         : INameProcessor
     {
