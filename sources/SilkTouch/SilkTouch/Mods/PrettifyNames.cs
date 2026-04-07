@@ -420,6 +420,16 @@ public class PrettifyNames(
             var scopeName = _scope?.Name ?? "";
             var memberName = symbol.Name;
 
+            if (
+                symbol is IMethodSymbol methodSymbol
+                && methodSymbol.MethodKind is MethodKind.Constructor or MethodKind.Destructor
+            )
+            {
+                // Constructors/destructors use the name of their containing types
+                memberName = scopeName;
+                scopeName = "";
+            }
+
             if (!newNames.TryGetValue(scopeName, out var memberNewNames))
             {
                 return;
