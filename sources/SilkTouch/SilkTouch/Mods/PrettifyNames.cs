@@ -292,11 +292,11 @@ public class PrettifyNames(
     /// </summary>
     /// <param name="Name">The name as it exists in source code.</param>
     /// <param name="Affixes">The affixes declared for the name.</param>
-    /// <param name="MethodDeclarations">The method declarations, if the name represents a method.</param>
+    /// <param name="Declarations">The declaration syntaxes for the member.</param>
     private record struct MemberData(
         string Name,
         NameAffix[] Affixes,
-        List<MethodDeclarationSyntax>? MethodDeclarations
+        List<MemberDeclarationSyntax> Declarations
     );
 
     private class NameDataVisitor : CSharpSyntaxWalker
@@ -312,7 +312,7 @@ public class PrettifyNames(
         private void ReportName(
             SyntaxToken memberIdentifier,
             SyntaxList<AttributeListSyntax> memberAttributeLists,
-            MethodDeclarationSyntax? memberMethodDeclaration = null
+            MemberDeclarationSyntax memberDeclaration
         )
         {
             var scopeName = _scope?.Identifier.ToString() ?? "";
@@ -328,17 +328,10 @@ public class PrettifyNames(
             {
                 // Note that we only store affix data for the first encountered version of the name
                 // This is fine because if two members have the same name, they should have the same affixes
-                memberData = new MemberData(memberName, affixes, null);
+                memberData = new MemberData(memberName, affixes, []);
             }
 
-            if (memberMethodDeclaration != null)
-            {
-                // Store method declarations so that we have information on each overload
-                // This is used later for overload conflict resolution
-                memberData.MethodDeclarations ??= [];
-                memberData.MethodDeclarations.Add(memberMethodDeclaration);
-            }
-
+            memberData.Declarations.Add(memberDeclaration);
             members[memberName] = memberData;
         }
 
@@ -346,7 +339,7 @@ public class PrettifyNames(
 
         public override void VisitClassDeclaration(ClassDeclarationSyntax node)
         {
-            ReportName(node.Identifier, node.AttributeLists);
+            ReportName(node.Identifier, node.AttributeLists, node);
 
             var previousScope = _scope;
             _scope = node;
@@ -359,7 +352,7 @@ public class PrettifyNames(
 
         public override void VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            ReportName(node.Identifier, node.AttributeLists);
+            ReportName(node.Identifier, node.AttributeLists, node);
 
             var previousScope = _scope;
             _scope = node;
@@ -372,7 +365,7 @@ public class PrettifyNames(
 
         public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            ReportName(node.Identifier, node.AttributeLists);
+            ReportName(node.Identifier, node.AttributeLists, node);
 
             var previousScope = _scope;
             _scope = node;
@@ -384,21 +377,21 @@ public class PrettifyNames(
         }
 
         public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            ReportName(node.Identifier, node.AttributeLists);
+            ReportName(node.Identifier, node.AttributeLists, node);
 
         // ----- Members -----
 
         public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
-            ReportName(node.Identifier, node.AttributeLists);
+            ReportName(node.Identifier, node.AttributeLists, node);
 
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
             var firstVariable = node.Declaration.Variables.First();
-            ReportName(firstVariable.Identifier, node.AttributeLists);
+            ReportName(firstVariable.Identifier, node.AttributeLists, node);
         }
 
         public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
-            ReportName(node.Identifier, node.AttributeLists);
+            ReportName(node.Identifier, node.AttributeLists, node);
 
         public override void VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             ReportName(node.Identifier, node.AttributeLists, node);
@@ -1039,8 +1032,9 @@ public class PrettifyNames(
                     // if we can discriminate each one such that there are no conflicts.
                     //
                     // An example of where this is the case is e.g. alGetBufferf/alGetBufferfv - signatures are identical.
-                    var nMethodConflicts = 0;
+                    var nNonMethods = 0;
                     var nMethods = 0;
+                    var nMethodConflicts = 0;
                     var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts
                     string? noSecondaryOriginalName = null;
                     foreach (var originalNameToEval in originalNamesForOldPrimary)
@@ -1055,11 +1049,16 @@ public class PrettifyNames(
                         if (
                             scopeData != null
                             && scopeData.TryGetValue(originalNameToEval, out var memberData)
-                            && memberData.MethodDeclarations is { } methodDeclarations
                         )
                         {
-                            foreach (var methodDeclaration in methodDeclarations)
+                            foreach (var declaration in memberData.Declarations)
                             {
+                                if (declaration is not MethodDeclarationSyntax methodDeclaration)
+                                {
+                                    nNonMethods++;
+                                    continue;
+                                }
+
                                 var discriminator = ModUtils.GetMethodDiscriminator(
                                     methodDeclaration.Modifiers,
                                     methodDeclaration.TypeParameterList,
@@ -1113,9 +1112,15 @@ public class PrettifyNames(
                         }
                     }
 
-                    // If we're checking methods for conflicts and in our travels we've discovered that there are in fact
-                    // no conflicts, we can bail out early here.
-                    if (nMethods > 0 && (methodDiscriminators.Count == 0 || nMethodConflicts == 0))
+                    // If there are methods, check for two conditions:
+                    // 1. That there are no non-methods (these always conflict)
+                    // 2. That there are no conflicting method signatures
+                    // If these conditions are satisfied, we can bail out early
+                    if (
+                        nMethods > 0
+                        && nNonMethods == 0
+                        && (methodDiscriminators.Count == 0 || nMethodConflicts == 0)
+                    )
                     {
                         namesToEval.Remove(primary);
                         continue;
