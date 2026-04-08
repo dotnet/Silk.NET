@@ -1151,7 +1151,9 @@ public class PrettifyNames(
                     foreach (
                         var conflictingOriginalName in (
                             renameOnlyConflicts ? conflictingOriginalNames : primaries[primary]
-                        ).OrderBy(x => x.Length)
+                        )
+                            .OrderBy(x => x.Length) // Short names have priority
+                            .ThenBy(x => x) // Tie-breaker
                     )
                     {
                         // Do not rename if this is the original name that does not have a secondary.
