@@ -368,4 +368,64 @@ public class PrettifyNamesTests
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
+
+    [Test]
+    public async Task ConflictsAreResolved_ForMethodsAndConstants_WithAdditionalDiscriminatorAffixes()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Sdl.gen.cs",
+                """
+                public class Sdl
+                {
+                    [NameAffix("Suffix", "TestDiscriminator", "Test")]
+                    public static delegate* <int, sbyte**, int> main => &SDL_main;
+
+                    [NameAffix("Prefix", "SharedPrefix", "SDL")]
+                    [NameAffix("Suffix", "TestDiscriminator", "Test")]
+                    public static extern int SDL_main(int argc, sbyte** argv);
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+            {
+                Value =
+                {
+                    Affixes =
+                    {
+                        {
+                            "SharedPrefix",
+                            new PrettifyNames.NameAffixConfiguration()
+                            {
+                                DiscriminatorPriority = 1,
+                                IsDiscriminator = true,
+                            }
+                        },
+                        {
+                            "TestDiscriminator",
+                            new PrettifyNames.NameAffixConfiguration()
+                            {
+                                DiscriminatorPriority = 0,
+                                IsDiscriminator = true,
+                            }
+                        },
+                    },
+                },
+            }
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // The two members should not be output as the same name
+        // SharedPrefix should be preferred as the discriminator since it has higher priority
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
 }
