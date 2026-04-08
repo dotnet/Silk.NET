@@ -323,6 +323,8 @@ public class PrettifyNamesTests
     [Test]
     public async Task ConflictsAreResolved_ForMethodsAndConstants()
     {
+        // This test focuses on an edge case where method conflicts might be resolved while
+        // ignoring the fact that a constant also wants to have the same output name
         var project = TestUtils
             .CreateTestProject()
             .AddDocument(
@@ -365,6 +367,9 @@ public class PrettifyNamesTests
         await prettifyNames.ExecuteAsync(context);
 
         // The two members should not be output as the same name
+        // Expected:
+        // Property is named "Main"
+        // Method is named "SDLMain" (affixes are not prettified)
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
@@ -372,6 +377,7 @@ public class PrettifyNamesTests
     [Test]
     public async Task ConflictsAreResolved_ForMethodsAndConstants_WithAdditionalDiscriminatorAffixes()
     {
+        // This test is here to ensure that multiple discriminator affixes do not mess up the conflict resolution algorithm
         var project = TestUtils
             .CreateTestProject()
             .AddDocument(
@@ -425,6 +431,74 @@ public class PrettifyNamesTests
 
         // The two members should not be output as the same name
         // SharedPrefix should be preferred as the discriminator since it has higher priority
+        // Expected:
+        // Property is named "Main"
+        // Method is named "SDLMain" (affixes are not prettified)
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task ConflictsAreResolved_ForMethodsAndConstants_WithAdditionalDiscriminatorAffixes_ReversedPriority()
+    {
+        // This test changes the discriminator priority config to ensure the config is respected
+        // Notably, conflict resolution cannot naively take the shortest secondary name
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Sdl.gen.cs",
+                """
+                public class Sdl
+                {
+                    [NameAffix("Suffix", "TestDiscriminator", "Test")]
+                    public static delegate* <int, sbyte**, int> main => &SDL_main;
+
+                    [NameAffix("Prefix", "SharedPrefix", "SDL")]
+                    [NameAffix("Suffix", "TestDiscriminator", "Test")]
+                    public static extern int SDL_main(int argc, sbyte** argv);
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+            {
+                Value =
+                {
+                    Affixes =
+                    {
+                        {
+                            "SharedPrefix",
+                            new PrettifyNames.NameAffixConfiguration()
+                            {
+                                DiscriminatorPriority = 0,
+                                IsDiscriminator = true,
+                            }
+                        },
+                        {
+                            "TestDiscriminator",
+                            new PrettifyNames.NameAffixConfiguration()
+                            {
+                                DiscriminatorPriority = 1,
+                                IsDiscriminator = true,
+                            }
+                        },
+                    },
+                },
+            }
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // The two members should not be output as the same name
+        // TestDiscriminator should be preferred as the discriminator since it has higher priority
+        // Expected:
+        // Property is named "Main"
+        // Method is named "MainTest"
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
