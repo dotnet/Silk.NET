@@ -825,6 +825,7 @@ public class PrettifyNames(
             string? newPrimary = null;
 
             // Process each group of affixes
+            var secondaryNamesAdded = 0;
             var hasProcessedNonDiscriminator = false;
             var currentPriority = int.MaxValue;
             for (var affixI = 0; affixI < affixes.Length; affixI++)
@@ -849,6 +850,10 @@ public class PrettifyNames(
 
             // Process final group since the loop above skips the final group
             CreateName(primary, affixes);
+
+            // Reverse the secondaries added since secondaries later in the list have higher priority
+            // The original code above assumed that earlier had higher priority so this fixes that
+            secondary.AsSpan()[^secondaryNamesAdded..].Reverse();
 
             return newPrimary!;
 
@@ -906,6 +911,7 @@ public class PrettifyNames(
                 else
                 {
                     secondary.Add(name);
+                    secondaryNamesAdded++;
                 }
             }
         }
@@ -975,12 +981,6 @@ public class PrettifyNames(
             foreach (var (scope, members) in context.Scopes)
             {
                 nameData.Scopes.TryGetValue(scope, out var scopeData);
-
-                // Prefer shorter names
-                foreach (var (_, secondary) in members.Values)
-                {
-                    secondary.Sort((a, b) => -a.Length.CompareTo(b.Length));
-                }
 
                 // Create a mapping: Primary name -> Original name
                 // Primary name refers to the primary candidate name
@@ -1139,7 +1139,10 @@ public class PrettifyNames(
                         continue;
                     }
 
-                    var renameOnlyConflicts = nMethodConflicts <= nMethods / 2.0;
+                    // Only rename the conflicts if most of the methods do not conflict
+                    // Exception to this rule: If we have both non-methods and methods
+                    var renameOnlyConflicts =
+                        nMethodConflicts <= (nMethods / 2.0) && !(nNonMethods > 0 && nMethods > 0);
 
                     // We can afford to leave one API alone. If that place isn't already filled by a method without a secondary
                     // name then we should fill it with whatever has the shortest original name. The logic being that the more
@@ -1398,7 +1401,11 @@ public class PrettifyNames(
     /// Represents the set of primary and secondary candidates for the prettified version of a name.
     /// </summary>
     /// <param name="Primary">The preferred version of the output name.</param>
-    /// <param name="Secondary">The fallback versions of the output name. Used in the case the primary causes conflicts.</param>
+    /// <param name="Secondary">
+    /// The fallback versions of the output name.
+    /// Used in the case the primary causes conflicts.
+    /// Names later in the list have higher priority.
+    /// </param>
     private readonly record struct CandidateNames(string Primary, List<string> Secondary)
     {
         public override string ToString() =>

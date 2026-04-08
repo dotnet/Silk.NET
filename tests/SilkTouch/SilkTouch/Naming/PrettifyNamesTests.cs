@@ -369,7 +369,7 @@ public class PrettifyNamesTests
         // The two members should not be output as the same name
         // Expected:
         // Property is named "Main"
-        // Method is named "SDLMain" (affixes are not prettified)
+        // Method is named "SDLMain" (affixes are currently not prettified)
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
@@ -433,7 +433,7 @@ public class PrettifyNamesTests
         // SharedPrefix should be preferred as the discriminator since it has higher priority
         // Expected:
         // Property is named "Main"
-        // Method is named "SDLMain" (affixes are not prettified)
+        // Method is named "SDLMain" (affixes are currently not prettified)
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }

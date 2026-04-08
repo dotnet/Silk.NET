@@ -1,0 +1,9 @@
+﻿public class Sdl
+{
+    [NameAffix("Suffix", "TestDiscriminator", "Test")]
+    public static delegate*<int, sbyte**, int> Main => &MainTest;
+
+    [NameAffix("Prefix", "SharedPrefix", "SDL")]
+    [NameAffix("Suffix", "TestDiscriminator", "Test")]
+    public static extern int MainTest(int argc, sbyte** argv);
+}
