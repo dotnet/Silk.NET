@@ -1030,41 +1030,95 @@ public class PrettifyNames(
                     // ^-- We can't use a foreach loop because we're mutating below.
                     // We're also using GetEnumerator instead of First to avoid allocations.
 
-                    // Initialize data
-                    // We map the primary name to the original names so we can fetch information about the original members
-                    var originalNamesForPrimary = originalNamesByPrimary[primary];
+                    // Clear temporary collections
                     methodDiscriminators.Clear();
                     conflictingOriginalNames.Clear();
 
-                    // Function-specific logic where some conflicts are okay,
-                    // so we have to evaluate each signature to see
-                    // if we can discriminate each one such that there are no conflicts.
-                    //
-                    // An example of where this is the case is e.g. alGetBufferf/alGetBufferfv - signatures are identical.
+                    // We map the primary name to the original names so we can fetch information about the original members
+                    var originalNamesForPrimary = originalNamesByPrimary[primary];
+
+                    // Count the number of original members that share this primary candidate name
                     var nNonMethods = 0;
                     var nMethods = 0;
+                    if (scopeData != null)
+                    {
+                        foreach (var originalName in originalNamesForPrimary)
+                        {
+                            if (scopeData.TryGetValue(originalName, out var memberData))
+                            {
+                                foreach (var declaration in memberData.Declarations)
+                                {
+                                    if (declaration is MethodDeclarationSyntax)
+                                    {
+                                        nMethods++;
+                                        continue;
+                                    }
+
+                                    nNonMethods++;
+                                }
+                            }
+                        }
+                    }
+
+                    // If there are both non-methods and methods sharing the primary name,
+                    // suffix the non-methods with "-Value"
+                    //
+                    // Main case: Non-method and method share the same name, but with different casing/underscoring
+                    // GL_PROGRAM_STRING_ARB (constant) and glProgramStringARB (method)
+                    // Both usually result in primaries of ProgramStringARB
+                    // Prefixing the non-member with "-Value" works here
+                    //
+                    // Another way to handle this is to restore the namespace prefix for one of the members
+                    // This works here, but is not always the case
+                    // Suffixing with "-Value" should almost always work
+                    if (scopeData != null && nNonMethods != 0 && nMethods != 0)
+                    {
+                        foreach (var originalName in originalNamesForPrimary)
+                        {
+                            if (
+                                scopeData.TryGetValue(originalName, out var memberData)
+                                && memberData.Declarations.Any(d =>
+                                    d is not MethodDeclarationSyntax
+                                )
+                            )
+                            {
+                                var candidateNames = members[originalName];
+                                candidateNames.Secondary.Add(candidateNames.Primary);
+                                members[originalName] = new CandidateNames(
+                                    $"{candidateNames.Primary}Value",
+                                    candidateNames.Secondary
+                                );
+                            }
+                        }
+                    }
+
+                    // Methods can have the same names assuming their overloads are compatible
+                    // We need to evaluate each signature to see
+                    // if we can discriminate each one such that there are no conflicts.
+                    //
+                    // Example: alGetBufferf/alGetBufferfv (signatures are identical)
+                    // In this case, we have to use secondary names to prevent the methods from conflicting
                     var nMethodConflicts = 0;
                     var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts
                     string? noSecondaryOriginalName = null;
-                    foreach (var originalNameToEval in originalNamesForPrimary)
+                    foreach (var originalName in originalNamesForPrimary)
                     {
                         // Do we even have a secondary to fall back on if there is a conflict?
-                        if (members[originalNameToEval].Secondary.Count == 0)
+                        if (members[originalName].Secondary.Count == 0)
                         {
-                            noSecondaryOriginalName ??= originalNameToEval;
+                            noSecondaryOriginalName ??= originalName;
                             nNoSecondaries++;
                         }
 
                         if (
                             scopeData != null
-                            && scopeData.TryGetValue(originalNameToEval, out var memberData)
+                            && scopeData.TryGetValue(originalName, out var memberData)
                         )
                         {
                             foreach (var declaration in memberData.Declarations)
                             {
                                 if (declaration is not MethodDeclarationSyntax methodDeclaration)
                                 {
-                                    nNonMethods++;
                                     continue;
                                 }
 
@@ -1084,7 +1138,7 @@ public class PrettifyNames(
                                 )
                                 {
                                     methodDiscriminators[discriminator] = methodDiscriminator = (
-                                        originalNameToEval,
+                                        originalName,
                                         []
                                     );
                                 }
@@ -1092,7 +1146,6 @@ public class PrettifyNames(
                                 var (firstOriginalName, discriminatorMatches) = methodDiscriminator;
 
                                 discriminatorMatches.Add(methodDeclaration);
-                                nMethods++;
 
                                 // NOTE: The number of conflicts influences how we go about conflict resolution. See the
                                 // logic below all of these loops just in case this comment is out of date, but at time of
@@ -1115,7 +1168,7 @@ public class PrettifyNames(
 
                                 if (discriminatorMatches.Count > 1)
                                 {
-                                    conflictingOriginalNames.Add(originalNameToEval);
+                                    conflictingOriginalNames.Add(originalName);
                                 }
                             }
                         }

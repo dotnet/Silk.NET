@@ -1,6 +1,6 @@
 ﻿public class Sdl
 {
-    public static delegate*<int, sbyte**, int> Main => &SDLMain;
+    public static delegate*<int, sbyte**, int> MainValue => &SDLMain;
 
     [NameAffix("Prefix", "SharedPrefix", "SDL")]
     public static extern int SDLMain(int argc, sbyte** argv);

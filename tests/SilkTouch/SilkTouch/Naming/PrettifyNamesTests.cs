@@ -134,7 +134,7 @@ public class PrettifyNamesTests
     }
 
     [Test]
-    public async Task Regression_IncorrectSecondary_ChosenAsFallback()
+    public async Task FallbackIsChosenCorrectly()
     {
         var project = TestUtils
             .CreateTestProject()
@@ -192,8 +192,79 @@ public class PrettifyNamesTests
         await prettifyNames.ExecuteAsync(context);
 
         // This is to catch a regression where choosing the shortest secondary available is not always correct
-        // The second method (with the -v suffix) should not have the global prefix restored
+        // The second method (with the -v suffix) should not have the shared prefix restored
         // Eg: We don't want AlGetBufferPtr
+        //
+        // The expected output is:
+        // GetBufferPtrDirectSOFT
+        // GetBufferPtrvDirectSOFT
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task FallbackIsChosenCorrectly_ReversedPriority()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "AL.gen.cs",
+                """
+                public class AL
+                {
+                    [NameAffix("Prefix", "SharedPrefix", "al")]
+                    [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
+                    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+                    public void alGetBufferPtrDirectSOFT() { }
+
+                    [NameAffix("Prefix", "SharedPrefix", "al")]
+                    [NameAffix("Suffix", "KhronosFunctionDataType", "v")]
+                    [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
+                    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+                    public void alGetBufferPtrvDirectSOFT() { }
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration()
+                {
+                    LongAcronymThreshold = 4,
+                    Affixes =
+                    {
+                        {
+                            "SharedPrefix",
+                            new PrettifyNames.NameAffixConfiguration()
+                            {
+                                DiscriminatorPriority = 1,
+                                IsDiscriminator = true,
+                            }
+                        },
+                        {
+                            "KhronosFunctionDataType",
+                            new PrettifyNames.NameAffixConfiguration()
+                            {
+                                DiscriminatorPriority = 0,
+                                IsDiscriminator = true,
+                            }
+                        },
+                    },
+                }
+            )
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // This ensures that the config is respected
+        //
+        // The expected output is:
+        // GetBufferPtrDirectSOFT
+        // alGetBufferPtrDirectSOFT (affixes are currently not prettified, so "al" is correct)
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
@@ -368,137 +439,8 @@ public class PrettifyNamesTests
 
         // The two members should not be output as the same name
         // Expected:
-        // Property is named "Main"
-        // Method is named "SDLMain" (affixes are currently not prettified)
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
-    }
-
-    [Test]
-    public async Task ConflictsAreResolved_ForMethodsAndConstants_WithAdditionalDiscriminatorAffixes()
-    {
-        // This test is here to ensure that multiple discriminator affixes do not mess up the conflict resolution algorithm
-        var project = TestUtils
-            .CreateTestProject()
-            .AddDocument(
-                "Sdl.gen.cs",
-                """
-                public class Sdl
-                {
-                    [NameAffix("Suffix", "TestDiscriminator", "Test")]
-                    public static delegate* <int, sbyte**, int> main => &SDL_main;
-
-                    [NameAffix("Prefix", "SharedPrefix", "SDL")]
-                    [NameAffix("Suffix", "TestDiscriminator", "Test")]
-                    public static extern int SDL_main(int argc, sbyte** argv);
-                }
-                """
-            )
-            .Project;
-
-        var context = new DummyModContext() { SourceProject = project };
-
-        var prettifyNames = new PrettifyNames(
-            NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
-            {
-                Value =
-                {
-                    Affixes =
-                    {
-                        {
-                            "SharedPrefix",
-                            new PrettifyNames.NameAffixConfiguration()
-                            {
-                                DiscriminatorPriority = 1,
-                                IsDiscriminator = true,
-                            }
-                        },
-                        {
-                            "TestDiscriminator",
-                            new PrettifyNames.NameAffixConfiguration()
-                            {
-                                DiscriminatorPriority = 0,
-                                IsDiscriminator = true,
-                            }
-                        },
-                    },
-                },
-            }
-        );
-
-        await prettifyNames.ExecuteAsync(context);
-
-        // The two members should not be output as the same name
-        // SharedPrefix should be preferred as the discriminator since it has higher priority
-        // Expected:
-        // Property is named "Main"
-        // Method is named "SDLMain" (affixes are currently not prettified)
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
-    }
-
-    [Test]
-    public async Task ConflictsAreResolved_ForMethodsAndConstants_WithAdditionalDiscriminatorAffixes_ReversedPriority()
-    {
-        // This test changes the discriminator priority config to ensure the config is respected
-        // Notably, conflict resolution cannot naively take the shortest secondary name
-        var project = TestUtils
-            .CreateTestProject()
-            .AddDocument(
-                "Sdl.gen.cs",
-                """
-                public class Sdl
-                {
-                    [NameAffix("Suffix", "TestDiscriminator", "Test")]
-                    public static delegate* <int, sbyte**, int> main => &SDL_main;
-
-                    [NameAffix("Prefix", "SharedPrefix", "SDL")]
-                    [NameAffix("Suffix", "TestDiscriminator", "Test")]
-                    public static extern int SDL_main(int argc, sbyte** argv);
-                }
-                """
-            )
-            .Project;
-
-        var context = new DummyModContext() { SourceProject = project };
-
-        var prettifyNames = new PrettifyNames(
-            NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
-            {
-                Value =
-                {
-                    Affixes =
-                    {
-                        {
-                            "SharedPrefix",
-                            new PrettifyNames.NameAffixConfiguration()
-                            {
-                                DiscriminatorPriority = 0,
-                                IsDiscriminator = true,
-                            }
-                        },
-                        {
-                            "TestDiscriminator",
-                            new PrettifyNames.NameAffixConfiguration()
-                            {
-                                DiscriminatorPriority = 1,
-                                IsDiscriminator = true,
-                            }
-                        },
-                    },
-                },
-            }
-        );
-
-        await prettifyNames.ExecuteAsync(context);
-
-        // The two members should not be output as the same name
-        // TestDiscriminator should be preferred as the discriminator since it has higher priority
-        // Expected:
-        // Property is named "Main"
-        // Method is named "MainTest"
+        // Property is named "MainValue"
+        // Method is named "Main"
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
