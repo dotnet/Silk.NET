@@ -676,27 +676,33 @@ public class PrettifyNames(
                                 scope,
                                 referencedMemberOriginalName,
                                 out var referencedMemberScope,
-                                out var referencedMemberValue
+                                out _,
+                                out var isInFinalSet
                             )
                         )
                         {
-                            // Add as dependency
-                            var referencedMemberkey = new MemberKey(
-                                referencedMemberScope,
-                                referencedMemberOriginalName
-                            );
-                            if (
-                                !notifyDependantByKey.TryGetValue(
-                                    referencedMemberkey,
-                                    out var dependants
-                                )
-                            )
+                            // Add as dependency only if not in final set
+                            // This is because this processor does not process names from the final set
+                            // Names from the final set should therefore not affect the processing order
+                            if (!isInFinalSet)
                             {
-                                notifyDependantByKey[referencedMemberkey] = dependants = [];
-                            }
+                                var referencedMemberkey = new MemberKey(
+                                    referencedMemberScope,
+                                    referencedMemberOriginalName
+                                );
+                                if (
+                                    !notifyDependantByKey.TryGetValue(
+                                        referencedMemberkey,
+                                        out var dependants
+                                    )
+                                )
+                                {
+                                    notifyDependantByKey[referencedMemberkey] = dependants = [];
+                                }
 
-                            dependants.Add(new MemberKey(scope, member));
-                            dependencyCount++;
+                                dependants.Add(new MemberKey(scope, member));
+                                dependencyCount++;
+                            }
                         }
                         else
                         {
@@ -884,7 +890,8 @@ public class PrettifyNames(
                                 scope,
                                 affixValue,
                                 out _,
-                                out var referencedMemberValue
+                                out var referencedMemberValue,
+                                out _
                             )
                         )
                         {
@@ -925,12 +932,14 @@ public class PrettifyNames(
         /// <param name="referencedMember">The original name of the member being referenced.</param>
         /// <param name="referencedMemberScope">The scope in which the referenced member was found.</param>
         /// <param name="referencedMemberValue">The current output name of the member being referenced.</param>
+        /// <param name="isInFinalSet">Whether the referenced member was found in the final set.</param>
         private bool TryResolveName(
             NameProcessorContext context,
             string referenceScope,
             string referencedMember,
             [NotNullWhen(true)] out string? referencedMemberScope,
-            [NotNullWhen(true)] out string? referencedMemberValue
+            [NotNullWhen(true)] out string? referencedMemberValue,
+            out bool isInFinalSet
         )
         {
             var currentScope = referenceScope;
@@ -947,6 +956,7 @@ public class PrettifyNames(
                 {
                     referencedMemberScope = currentScope;
                     referencedMemberValue = referencedCandidateNames.Primary;
+                    isInFinalSet = false;
                     return true;
                 }
 
@@ -958,6 +968,7 @@ public class PrettifyNames(
                 {
                     referencedMemberScope = currentScope;
                     referencedMemberValue = referencedFinalName;
+                    isInFinalSet = true;
                     return true;
                 }
 
@@ -974,6 +985,7 @@ public class PrettifyNames(
 
             referencedMemberScope = null;
             referencedMemberValue = null;
+            isInFinalSet = false;
             return false;
         }
 
