@@ -318,20 +318,13 @@
         "NameOverrides": {
           "ALContext": "ALContext",
           "EFXEAXREVERBPROPERTIES": "EfxEaxReverbProperties",
-          "EFXEAXREVERBPROPERTIESflReflectionsPan": "EfxEaxReverbPropertiesFlReflectionsPan",
-          "EFXEAXREVERBPROPERTIESflLateReverbPan": "EfxEaxReverbPropertiesFlLateReverbPan",
           "ALCcontextHandle": "ContextHandle",
           "ALCdeviceHandle": "DeviceHandle",
           "ALBUFFERCALLBACKTYPESOFT": "BufferCallbackSOFT",
-          "ALBUFFERCALLBACKTYPESOFTDelegate": "BufferCallbackSOFTDelegate",
           "ALCEVENTPROCTYPESOFT": "ContextEventProcSOFT",
-          "ALCEVENTPROCTYPESOFTDelegate": "ContextEventProcSOFTDelegate",
           "ALEVENTPROCSOFT": "EventProcSOFT",
-          "ALEVENTPROCSOFTDelegate": "EventProcSOFTDelegate",
           "ALDEBUGPROCEXT": "DebugProcEXT",
-          "ALDEBUGPROCEXTDelegate": "DebugProcEXTDelegate",
-          "LPALFOLDBACKCALLBACK": "FoldbackCallback",
-          "LPALFOLDBACKCALLBACKDelegate": "FoldbackCallbackDelegate"
+          "LPALFOLDBACKCALLBACK": "FoldbackCallback"
         },
         "Affixes": {
           "HandleType": {

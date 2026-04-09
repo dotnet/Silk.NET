@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -666,14 +667,22 @@ public class PrettifyNames(
                                 continue;
                             }
 
-                            // Add as dependency
-                            if (!notifyDependantByKey.TryGetValue(affix.Affix, out var dependants))
+                            // Add as dependency if name exists in working set
+                            if (members.ContainsKey(affix.Affix))
                             {
-                                notifyDependantByKey[affix.Affix] = dependants = [];
-                            }
+                                if (
+                                    !notifyDependantByKey.TryGetValue(
+                                        affix.Affix,
+                                        out var dependants
+                                    )
+                                )
+                                {
+                                    notifyDependantByKey[affix.Affix] = dependants = [];
+                                }
 
-                            dependants.Add(member);
-                            dependencyCount++;
+                                dependants.Add(member);
+                                dependencyCount++;
+                            }
                         }
 
                         if (dependencyCount == 0)
@@ -864,16 +873,64 @@ public class PrettifyNames(
                 foreach (var affix in currentAffixes)
                 {
                     var affixValue = affix.Affix;
-                    if (
-                        affix.IsReference
-                        && context.Scopes.TryGetValue(scope, out var referencedScopeMembers)
-                        && referencedScopeMembers.TryGetValue(
-                            affixValue,
-                            out var referencedCandidateNames
-                        )
-                    )
+                    if (affix.IsReference)
                     {
-                        affixValue = referencedCandidateNames.Primary;
+                        if (
+                            // Attempt to resolve the current output name for the referenced member
+                            // We currently only resolve from the current scope
+                            //
+                            // If this gets extended to resolve from parent scopes,
+                            // make sure that the topological sort above is updated
+                            // and that closer scopes are prioritized for both the working and final set
+                            TryResolveFromWorkingSet(affixValue, out var referencedMemberValue)
+                            || TryResolveFromFinalSet(affixValue, out referencedMemberValue)
+                        )
+                        {
+                            affixValue = referencedMemberValue;
+                        }
+
+                        bool TryResolveFromWorkingSet(
+                            string referencedMember,
+                            [NotNullWhen(true)] out string? outReferencedMemberValue
+                        )
+                        {
+                            if (
+                                context.Scopes.TryGetValue(scope, out var referencedScopeMembers)
+                                && referencedScopeMembers.TryGetValue(
+                                    affixValue,
+                                    out var referencedCandidateNames
+                                )
+                            )
+                            {
+                                outReferencedMemberValue = referencedCandidateNames.Primary;
+                                return true;
+                            }
+
+                            outReferencedMemberValue = null;
+                            return false;
+                        }
+
+                        bool TryResolveFromFinalSet(
+                            string referencedMember,
+                            [NotNullWhen(true)] out string? outReferencedMemberValue
+                        )
+                        {
+                            if (
+                                context.FinalNames.TryGetValue(
+                                    scope,
+                                    out var referencedScopeMembers
+                                )
+                            )
+                            {
+                                return referencedScopeMembers.TryGetValue(
+                                    affixValue,
+                                    out outReferencedMemberValue
+                                );
+                            }
+
+                            outReferencedMemberValue = null;
+                            return false;
+                        }
                     }
 
                     if (!GetConfiguration(affix).Remove)
