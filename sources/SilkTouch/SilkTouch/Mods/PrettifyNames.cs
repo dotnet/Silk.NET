@@ -974,33 +974,75 @@ public class PrettifyNames(
                 >();
             var conflictingOriginalNames = new HashSet<string>();
 
+            // This loop cannot be part of the loop below because it modifies the primaries
+            foreach (var (scope, members) in context.Scopes)
+            {
+                if (!nameData.Scopes.TryGetValue(scope, out var scopeData))
+                {
+                    continue;
+                }
+
+                var originalNamesByPrimary = GetOriginalNamesByPrimary(members);
+                foreach (var (_, originalNames) in originalNamesByPrimary)
+                {
+                    // Count the number of original members that share this primary name
+                    var nNonMethods = 0;
+                    var nMethods = 0;
+                    foreach (var originalName in originalNames)
+                    {
+                        if (scopeData.TryGetValue(originalName, out var memberData))
+                        {
+                            foreach (var declaration in memberData.Declarations)
+                            {
+                                if (declaration is MethodDeclarationSyntax)
+                                {
+                                    nMethods++;
+                                    continue;
+                                }
+
+                                nNonMethods++;
+                            }
+                        }
+                    }
+
+                    // If there are both non-methods and methods sharing the primary name,
+                    // suffix the non-methods with "-Value"
+                    //
+                    // Main case: Non-method and method share the same name, but with different casing/underscoring
+                    // GL_PROGRAM_STRING_ARB (constant) and glProgramStringARB (method)
+                    // Both usually result in primaries of ProgramStringARB
+                    // Prefixing the non-member with "-Value" works here
+                    //
+                    // Another way to handle this is to restore the namespace prefix for one of the members
+                    // This works here, but is not always the case
+                    // Suffixing with "-Value" should almost always work
+                    if (nNonMethods != 0 && nMethods != 0)
+                    {
+                        foreach (var originalName in originalNames)
+                        {
+                            if (
+                                scopeData.TryGetValue(originalName, out var memberData)
+                                && memberData.Declarations.Any(d =>
+                                    d is not MethodDeclarationSyntax
+                                )
+                            )
+                            {
+                                var candidateNames = members[originalName];
+                                candidateNames.Secondary.Add(candidateNames.Primary);
+                                members[originalName] = new CandidateNames(
+                                    $"{candidateNames.Primary}Value",
+                                    candidateNames.Secondary
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+
             foreach (var (scope, members) in context.Scopes)
             {
                 nameData.Scopes.TryGetValue(scope, out var scopeData);
-
-                // Create a mapping: Primary name -> Original name
-                // Primary name refers to the primary candidate name
-                // Original name refers to the original name of the member as seen in source code
-                //
-                // This is to account for method overloads that have the
-                // same primary candidate name and original name, but different discriminators
-                //
-                // This usually happens with generated/transformed overloads
-                var originalNamesByPrimary = new Dictionary<string, HashSet<string>>();
-                foreach (var (originalName, (primary, _)) in members)
-                {
-                    if (
-                        !originalNamesByPrimary.TryGetValue(
-                            primary,
-                            out var originalNamesForPrimary
-                        )
-                    )
-                    {
-                        originalNamesByPrimary[primary] = originalNamesForPrimary = [];
-                    }
-
-                    originalNamesForPrimary.Add(originalName);
-                }
+                var originalNamesByPrimary = GetOriginalNamesByPrimary(members);
 
                 // Unwind some names back to their secondary names if the primaries would duplicate
                 // We'll use a hash set to determine whether we need to check a primary for conflicts.
@@ -1022,7 +1064,7 @@ public class PrettifyNames(
                     // We map the primary name to the original names so we can fetch information about the original members
                     var originalNamesForPrimary = originalNamesByPrimary[primary];
 
-                    // Count the number of original members that share this primary candidate name
+                    // Count the number of original members that share this primary name
                     var nNonMethods = 0;
                     var nMethods = 0;
                     if (scopeData != null)
@@ -1041,38 +1083,6 @@ public class PrettifyNames(
 
                                     nNonMethods++;
                                 }
-                            }
-                        }
-                    }
-
-                    // If there are both non-methods and methods sharing the primary name,
-                    // suffix the non-methods with "-Value"
-                    //
-                    // Main case: Non-method and method share the same name, but with different casing/underscoring
-                    // GL_PROGRAM_STRING_ARB (constant) and glProgramStringARB (method)
-                    // Both usually result in primaries of ProgramStringARB
-                    // Prefixing the non-member with "-Value" works here
-                    //
-                    // Another way to handle this is to restore the namespace prefix for one of the members
-                    // This works here, but is not always the case
-                    // Suffixing with "-Value" should almost always work
-                    if (scopeData != null && nNonMethods != 0 && nMethods != 0)
-                    {
-                        foreach (var originalName in originalNamesForPrimary)
-                        {
-                            if (
-                                scopeData.TryGetValue(originalName, out var memberData)
-                                && memberData.Declarations.Any(d =>
-                                    d is not MethodDeclarationSyntax
-                                )
-                            )
-                            {
-                                var candidateNames = members[originalName];
-                                candidateNames.Secondary.Add(candidateNames.Primary);
-                                members[originalName] = new CandidateNames(
-                                    $"{candidateNames.Primary}Value",
-                                    candidateNames.Secondary
-                                );
                             }
                         }
                     }
@@ -1330,6 +1340,39 @@ public class PrettifyNames(
                         }
                     }
                 }
+            }
+
+            return;
+
+            Dictionary<string, HashSet<string>> GetOriginalNamesByPrimary(
+                Dictionary<string, CandidateNames> members
+            )
+            {
+                // Create a mapping: Primary name -> Original name
+                // Primary name refers to the primary candidate name
+                // Original name refers to the original name of the member as seen in source code
+                //
+                // This is to account for method overloads that have the
+                // same primary candidate name and original name, but different discriminators
+                //
+                // This usually happens with generated/transformed overloads
+                var originalNamesByPrimary = new Dictionary<string, HashSet<string>>();
+                foreach (var (originalName, (primary, _)) in members)
+                {
+                    if (
+                        !originalNamesByPrimary.TryGetValue(
+                            primary,
+                            out var originalNamesForPrimary
+                        )
+                    )
+                    {
+                        originalNamesByPrimary[primary] = originalNamesForPrimary = [];
+                    }
+
+                    originalNamesForPrimary.Add(originalName);
+                }
+
+                return originalNamesByPrimary;
             }
         }
     }
