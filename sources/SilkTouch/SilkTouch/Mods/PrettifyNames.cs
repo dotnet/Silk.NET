@@ -876,60 +876,16 @@ public class PrettifyNames(
                     if (affix.IsReference)
                     {
                         if (
-                            // Attempt to resolve the current output name for the referenced member
-                            // We currently only resolve from the current scope
-                            //
-                            // If this gets extended to resolve from parent scopes,
-                            // make sure that the topological sort above is updated
-                            // and that closer scopes are prioritized for both the working and final set
-                            TryResolveFromWorkingSet(affixValue, out var referencedMemberValue)
-                            || TryResolveFromFinalSet(affixValue, out referencedMemberValue)
+                            TryResolveName(
+                                context,
+                                scope,
+                                affixValue,
+                                out _,
+                                out var referencedMemberValue
+                            )
                         )
                         {
                             affixValue = referencedMemberValue;
-                        }
-
-                        bool TryResolveFromWorkingSet(
-                            string referencedMember,
-                            [NotNullWhen(true)] out string? outReferencedMemberValue
-                        )
-                        {
-                            if (
-                                context.Scopes.TryGetValue(scope, out var referencedScopeMembers)
-                                && referencedScopeMembers.TryGetValue(
-                                    affixValue,
-                                    out var referencedCandidateNames
-                                )
-                            )
-                            {
-                                outReferencedMemberValue = referencedCandidateNames.Primary;
-                                return true;
-                            }
-
-                            outReferencedMemberValue = null;
-                            return false;
-                        }
-
-                        bool TryResolveFromFinalSet(
-                            string referencedMember,
-                            [NotNullWhen(true)] out string? outReferencedMemberValue
-                        )
-                        {
-                            if (
-                                context.FinalNames.TryGetValue(
-                                    scope,
-                                    out var referencedScopeMembers
-                                )
-                            )
-                            {
-                                return referencedScopeMembers.TryGetValue(
-                                    affixValue,
-                                    out outReferencedMemberValue
-                                );
-                            }
-
-                            outReferencedMemberValue = null;
-                            return false;
                         }
                     }
 
@@ -956,6 +912,66 @@ public class PrettifyNames(
                     secondaryNamesAdded++;
                 }
             }
+        }
+
+        /// <summary>
+        /// Tries the resolve the current output name of the referenced member from the current scope.
+        /// </summary>
+        /// <param name="context">The name processor context. Used during the name resolution process.</param>
+        /// <param name="referenceScope">The scope from which the reference was made. The reference scope and its parent scopes will be used during the resolution process.</param>
+        /// <param name="referencedMember">The original name of the member being referenced.</param>
+        /// <param name="referencedMemberScope">The scope in which the referenced member was found.</param>
+        /// <param name="referencedMemberValue">The current output name of the member being referenced.</param>
+        private bool TryResolveName(
+            NameProcessorContext context,
+            string referenceScope,
+            string referencedMember,
+            [NotNullWhen(true)] out string? referencedMemberScope,
+            [NotNullWhen(true)] out string? referencedMemberValue
+        )
+        {
+            var currentScope = referenceScope;
+            while (true)
+            {
+                // Try resolve from working set
+                if (
+                    context.Scopes.TryGetValue(currentScope, out var workingScopeMembers)
+                    && workingScopeMembers.TryGetValue(
+                        referencedMember,
+                        out var referencedCandidateNames
+                    )
+                )
+                {
+                    referencedMemberScope = currentScope;
+                    referencedMemberValue = referencedCandidateNames.Primary;
+                    return true;
+                }
+
+                // Try resolve from final set
+                if (
+                    context.FinalNames.TryGetValue(currentScope, out var finalScopeMembers)
+                    && finalScopeMembers.TryGetValue(referencedMember, out var referencedFinalName)
+                )
+                {
+                    referencedMemberScope = currentScope;
+                    referencedMemberValue = referencedFinalName;
+                    return true;
+                }
+
+                // Try to go up a scope
+                // This currently does not handle nested scopes
+                if (currentScope != "")
+                {
+                    currentScope = "";
+                    continue;
+                }
+
+                break;
+            }
+
+            referencedMemberScope = null;
+            referencedMemberValue = null;
+            return false;
         }
 
         private NameAffixConfiguration GetConfiguration(NameAffix affix) =>
