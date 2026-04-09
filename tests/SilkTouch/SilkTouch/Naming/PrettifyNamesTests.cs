@@ -304,6 +304,41 @@ public class PrettifyNamesTests
     }
 
     [Test]
+    public async Task SuccessfullyUsesReferencedAffixes_FromParentScope()
+    {
+        // Note that at time of writing, no nested scopes are supported
+        // This means that the only valid scope is the global scope
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                [NameAffix("Suffix", "Test", "Suffix")]
+                public struct A
+                {
+                    [NameAffix("Suffix", "Test", nameof(A))]
+                    public static int B;
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // A should become ASuffix
+        // B should become BASuffix
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
     public void CycleInReferencedAffixes_Throws()
     {
         var project = TestUtils
@@ -358,41 +393,6 @@ public class PrettifyNamesTests
         {
             await prettifyNames.ExecuteAsync(context);
         });
-    }
-
-    [Test]
-    public async Task SuccessfullyUsesReferencedAffixes_FromParentScope()
-    {
-        // Note that at time of writing, no nested scopes are supported
-        // This means that the only valid scope is the global scope
-        var project = TestUtils
-            .CreateTestProject()
-            .AddDocument(
-                "Test.gen.cs",
-                """
-                [NameAffix("Suffix", "Test", "Suffix")]
-                public struct A
-                {
-                    [NameAffix("Suffix", "Test", nameof(A))]
-                    public static int B;
-                }
-                """
-            )
-            .Project;
-
-        var context = new DummyModContext() { SourceProject = project };
-
-        var prettifyNames = new PrettifyNames(
-            NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
-        );
-
-        await prettifyNames.ExecuteAsync(context);
-
-        // A should become ASuffix
-        // B should become BASuffix
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
     }
 
     [Test]
