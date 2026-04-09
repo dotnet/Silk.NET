@@ -708,7 +708,7 @@ public class PrettifyNames(
                         {
                             // Failed to resolve reference
                             throw new InvalidOperationException(
-                                $"Failed to resolve a name affix reference '{affix.Affix}' defined on '{member}'"
+                                $"Failed to resolve a name affix reference '{affix.Affix}' defined for member '{member}'"
                             );
                         }
                     }

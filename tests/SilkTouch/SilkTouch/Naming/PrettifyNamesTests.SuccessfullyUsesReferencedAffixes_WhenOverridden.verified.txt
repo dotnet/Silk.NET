@@ -1,0 +1,4 @@
+﻿public struct BufferCallbackSOFT;
+[NameAffix("Prefix", "FunctionPointerParent", nameof(BufferCallbackSOFT))]
+[NameAffix("Suffix", "FunctionPointerDelegateType", "Delegate")]
+public delegate int BufferCallbackSOFTDelegate();

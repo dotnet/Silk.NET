@@ -339,6 +339,42 @@ public class PrettifyNamesTests
     }
 
     [Test]
+    public async Task SuccessfullyUsesReferencedAffixes_WhenOverridden()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "AL.gen.cs",
+                """
+                public struct ALBUFFERCALLBACKTYPESOFT;
+
+                [NameAffix("Prefix", "FunctionPointerParent", nameof(ALBUFFERCALLBACKTYPESOFT))]
+                [NameAffix("Suffix", "FunctionPointerDelegateType", "Delegate")]
+                public delegate int ALBUFFERCALLBACKTYPESOFTDelegate();
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration()
+                {
+                    NameOverrides = { { "ALBUFFERCALLBACKTYPESOFT", "BufferCallbackSOFT" } },
+                }
+            )
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // Both names should be affected by the override
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
     public void CycleInReferencedAffixes_Throws()
     {
         var project = TestUtils
