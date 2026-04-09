@@ -276,25 +276,11 @@ public class PrettifyNames(
     }
 
     /// <summary>
-    /// Contains the new name of a type and mappings between original names and new names of its members.
-    /// </summary>
-    /// <param name="NewName">The new name of the type.</param>
-    /// <param name="NonFunctions">The mappings from original names to new names of the type's non-function members.</param>
-    /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
-    private record struct RenamedType(
-        string NewName,
-        Dictionary<string, string> NonFunctions,
-        Dictionary<string, string> Functions
-    );
-
-    /// <summary>
     /// Stores additional data for each scope member.
     /// </summary>
-    /// <param name="Name">The name as it exists in source code.</param>
     /// <param name="Affixes">The affixes declared for the name.</param>
     /// <param name="Declarations">The declaration syntaxes for the member.</param>
     private record struct MemberData(
-        string Name,
         NameAffix[] Affixes,
         List<MemberDeclarationSyntax> Declarations
     );
@@ -328,7 +314,7 @@ public class PrettifyNames(
             {
                 // Note that we only store affix data for the first encountered version of the name
                 // This is fine because if two members have the same name, they should have the same affixes
-                memberData = new MemberData(memberName, affixes, []);
+                memberData = new MemberData(affixes, []);
             }
 
             memberData.Declarations.Add(memberDeclaration);
