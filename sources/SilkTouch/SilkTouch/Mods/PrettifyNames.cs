@@ -931,7 +931,7 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            foreach (var (scope, members) in context.Scopes)
+            foreach (var (_, members) in context.Scopes)
             {
                 foreach (var (original, (primary, secondary)) in members)
                 {
@@ -978,6 +978,17 @@ public class PrettifyNames(
                 }
             }
 
+            // These collections are used later.
+            // These keep track of method discriminators to determine whether we have incompatible overloads.
+            // We keep track of the first original name so that we can add it to conflictingOriginalNames when we
+            // do discover a conflict (along with the original name of the actual conflict).
+            var methodDiscriminators =
+                new Dictionary<
+                    string,
+                    (string? FirstOriginalName, List<MethodDeclarationSyntax> Methods)
+                >();
+            var conflictingOriginalNames = new HashSet<string>();
+
             foreach (var (scope, members) in context.Scopes)
             {
                 nameData.Scopes.TryGetValue(scope, out var scopeData);
@@ -990,12 +1001,17 @@ public class PrettifyNames(
                 // same primary candidate name and original name, but different discriminators
                 //
                 // This usually happens with generated/transformed overloads
-                var primaries = new Dictionary<string, HashSet<string>>();
+                var originalNamesByPrimary = new Dictionary<string, HashSet<string>>();
                 foreach (var (originalName, (primary, _)) in members)
                 {
-                    if (!primaries.TryGetValue(primary, out var originalNamesForPrimary))
+                    if (
+                        !originalNamesByPrimary.TryGetValue(
+                            primary,
+                            out var originalNamesForPrimary
+                        )
+                    )
                     {
-                        primaries[primary] = originalNamesForPrimary = [];
+                        originalNamesByPrimary[primary] = originalNamesForPrimary = [];
                     }
 
                     originalNamesForPrimary.Add(originalName);
@@ -1003,29 +1019,22 @@ public class PrettifyNames(
 
                 // Unwind some names back to their secondary names if the primaries would duplicate
                 // We'll use a hash set to determine whether we need to check a primary for conflicts.
-                var namesToEval = primaries.Keys.ToHashSet();
+                var primariesToEval = originalNamesByPrimary.Keys.ToHashSet();
 
-                // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
-                // renamed. We keep track of the first original name so that we can add it to conflictingOriginalNames when we
-                // do discover a conflict (along with the original name of the actual conflict).
-                var methodDiscriminators =
-                    new Dictionary<
-                        string,
-                        (string? FirstOriginalName, List<MethodDeclarationSyntax> Methods)
-                    >();
-                var conflictingOriginalNames = new HashSet<string>();
                 while (
-                    namesToEval.GetEnumerator() is var e && e.MoveNext() && e.Current is var primary
+                    primariesToEval.GetEnumerator() is var e
+                    && e.MoveNext()
+                    && e.Current is var primary
                 )
                 {
                     // ^-- We can't use a foreach loop because we're mutating below.
                     // We're also using GetEnumerator instead of First to avoid allocations.
 
-                    // First, let's check whether we have any conflicting discriminators.
-                    // If we don't, we can mark this as all good right away.
+                    // Initialize data
+                    // We map the primary name to the original names so we can fetch information about the original members
+                    var originalNamesForPrimary = originalNamesByPrimary[primary];
                     methodDiscriminators.Clear();
                     conflictingOriginalNames.Clear();
-                    var originalNamesForOldPrimary = primaries[primary];
 
                     // Function-specific logic where some conflicts are okay,
                     // so we have to evaluate each signature to see
@@ -1037,7 +1046,7 @@ public class PrettifyNames(
                     var nMethodConflicts = 0;
                     var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts
                     string? noSecondaryOriginalName = null;
-                    foreach (var originalNameToEval in originalNamesForOldPrimary)
+                    foreach (var originalNameToEval in originalNamesForPrimary)
                     {
                         // Do we even have a secondary to fall back on if there is a conflict?
                         if (members[originalNameToEval].Secondary.Count == 0)
@@ -1122,7 +1131,7 @@ public class PrettifyNames(
                         && (methodDiscriminators.Count == 0 || nMethodConflicts == 0)
                     )
                     {
-                        namesToEval.Remove(primary);
+                        primariesToEval.Remove(primary);
                         continue;
                     }
 
@@ -1135,7 +1144,7 @@ public class PrettifyNames(
                             primary,
                             nNoSecondaries
                         );
-                        namesToEval.Remove(primary);
+                        primariesToEval.Remove(primary);
                         continue;
                     }
 
@@ -1150,10 +1159,12 @@ public class PrettifyNames(
                     // reverse (the shorter the name, the less discriminatory/important it is) is also true.
                     string? first = null;
                     var primaryClaimed = noSecondaryOriginalName is not null;
-                    namesToEval.Remove(primary); // <-- just in case the below loop somehow produces the same primary again.
+                    primariesToEval.Remove(primary); // <-- just in case the below loop somehow produces the same primary again.
                     foreach (
                         var conflictingOriginalName in (
-                            renameOnlyConflicts ? conflictingOriginalNames : primaries[primary]
+                            renameOnlyConflicts
+                                ? conflictingOriginalNames
+                                : originalNamesByPrimary[primary]
                         )
                             .OrderBy(x => x.Length) // Short names have priority
                             .ThenBy(x => x) // Tie-breaker
@@ -1201,25 +1212,26 @@ public class PrettifyNames(
 
                                 // Update our primary to original name map
                                 if (
-                                    !primaries.TryGetValue(
+                                    !originalNamesByPrimary.TryGetValue(
                                         firstNextPrimary,
                                         out var originalNamesForFirst
                                     )
                                 )
                                 {
-                                    primaries[firstNextPrimary] = originalNamesForFirst = [];
+                                    originalNamesByPrimary[firstNextPrimary] =
+                                        originalNamesForFirst = [];
                                 }
 
                                 originalNamesForFirst.Add(first);
-                                originalNamesForOldPrimary.Remove(first);
-                                if (originalNamesForOldPrimary.Count == 0)
+                                originalNamesForPrimary.Remove(first);
+                                if (originalNamesForPrimary.Count == 0)
                                 {
-                                    primaries.Remove(primary);
+                                    originalNamesByPrimary.Remove(primary);
                                 }
 
                                 // Make sure we do a pass over the new primary just in case we already have APIs with that
                                 // primary
-                                namesToEval.Add(firstNextPrimary);
+                                primariesToEval.Add(firstNextPrimary);
                                 if (logger.IsEnabled(LogLevel.Trace)) // <-- prevent needless string.Join
                                 {
                                     logger.LogTrace(
@@ -1249,20 +1261,25 @@ public class PrettifyNames(
                         );
 
                         // Update our primary to original name map
-                        if (!primaries.TryGetValue(nextPrimary, out var originalNamesForNewPrimary))
+                        if (
+                            !originalNamesByPrimary.TryGetValue(
+                                nextPrimary,
+                                out var originalNamesForNewPrimary
+                            )
+                        )
                         {
-                            primaries[nextPrimary] = originalNamesForNewPrimary = [];
+                            originalNamesByPrimary[nextPrimary] = originalNamesForNewPrimary = [];
                         }
 
                         originalNamesForNewPrimary.Add(conflictingOriginalName);
-                        originalNamesForOldPrimary.Remove(conflictingOriginalName);
-                        if (originalNamesForOldPrimary.Count == 0)
+                        originalNamesForPrimary.Remove(conflictingOriginalName);
+                        if (originalNamesForPrimary.Count == 0)
                         {
-                            primaries.Remove(primary);
+                            originalNamesByPrimary.Remove(primary);
                         }
 
                         // Make sure we do a pass over the new primary just in case we already have APIs with that primary
-                        namesToEval.Add(nextPrimary);
+                        primariesToEval.Add(nextPrimary);
                         if (logger.IsEnabled(LogLevel.Trace)) // <-- prevent needless string.Join
                         {
                             logger.LogTrace(
@@ -1315,7 +1332,7 @@ public class PrettifyNames(
             var unmodified = new List<string>();
 
             // Remove unmodified members
-            foreach (var (scope, members) in context.FinalNames)
+            foreach (var (_, members) in context.FinalNames)
             {
                 unmodified.Clear();
                 foreach (var (originalName, newName) in members)
