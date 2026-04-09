@@ -647,7 +647,6 @@ public class PrettifyNames(
 
         public void ProcessNames(NameProcessorContext context)
         {
-            // TODO: Proper implementation that builds a dependency graph for the entire project instead of per scope
             foreach (var (scope, members) in context.Scopes)
             {
                 if (!nameData.Scopes.TryGetValue(scope, out var scopeData))
