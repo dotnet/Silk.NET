@@ -1,0 +1,6 @@
+﻿[NameAffix("Suffix", "Test", "Suffix")]
+public struct ASuffix
+{
+    [NameAffix("Suffix", "Test", nameof(ASuffix))]
+    public static int BASuffix;
+}

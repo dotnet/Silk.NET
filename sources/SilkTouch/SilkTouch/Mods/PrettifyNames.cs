@@ -630,10 +630,21 @@ public class PrettifyNames(
         Dictionary<string, NameAffixConfiguration> config
     ) : INameProcessor
     {
+        private readonly record struct MemberKey(string Scope, string Member);
+
         private static readonly NameAffixConfiguration _defaultConfig = new();
 
         public void ProcessNames(NameProcessorContext context)
         {
+            // Calculate processing order using topological sort
+            // Name affixes can reference other names
+            // We want names that don't reference other names to be processed first
+            var processingOrderByKey = new List<MemberKey>();
+
+            var ready = new Queue<MemberKey>();
+            var dependencyCountByKey = new Dictionary<MemberKey, int>();
+            var notifyDependantByKey = new Dictionary<MemberKey, List<MemberKey>>();
+
             foreach (var (scope, members) in context.Scopes)
             {
                 if (!nameData.Scopes.TryGetValue(scope, out var scopeData))
@@ -641,131 +652,123 @@ public class PrettifyNames(
                     continue;
                 }
 
-                // Calculate processing order using topological sort
-                // Name affixes can reference other names
-                // We want names that don't reference other names to be processed first
-                var processingOrderByKey = new List<string>();
-                {
-                    var ready = new Queue<string>();
-                    var dependencyCountByKey = new Dictionary<string, int>();
-                    var notifyDependantByKey = new Dictionary<string, List<string>>();
-
-                    // Build dependency graph
-                    foreach (var (member, _) in members)
-                    {
-                        if (!scopeData.TryGetValue(member, out var memberData))
-                        {
-                            continue;
-                        }
-
-                        var dependencyCount = 0;
-                        var affixes = memberData.Affixes;
-                        foreach (var affix in affixes)
-                        {
-                            if (!affix.IsReference)
-                            {
-                                continue;
-                            }
-
-                            // Add as dependency if name exists in working set
-                            if (members.ContainsKey(affix.Affix))
-                            {
-                                if (
-                                    !notifyDependantByKey.TryGetValue(
-                                        affix.Affix,
-                                        out var dependants
-                                    )
-                                )
-                                {
-                                    notifyDependantByKey[affix.Affix] = dependants = [];
-                                }
-
-                                dependants.Add(member);
-                                dependencyCount++;
-                            }
-                        }
-
-                        if (dependencyCount == 0)
-                        {
-                            // No dependencies
-                            ready.Enqueue(member);
-                            continue;
-                        }
-
-                        // Store dependency count
-                        dependencyCountByKey.Add(member, dependencyCount);
-                    }
-
-                    // Output final order
-                    while (ready.TryDequeue(out var key))
-                    {
-                        processingOrderByKey.Add(key);
-                        if (notifyDependantByKey.TryGetValue(key, out var dependants))
-                        {
-                            foreach (var dependant in dependants)
-                            {
-                                if (
-                                    dependencyCountByKey.TryGetValue(
-                                        dependant,
-                                        out var dependencyCount
-                                    )
-                                )
-                                {
-                                    dependencyCount--;
-                                    if (dependencyCount == 0)
-                                    {
-                                        ready.Enqueue(dependant);
-                                        dependencyCountByKey.Remove(dependant);
-                                        continue;
-                                    }
-
-                                    dependencyCountByKey[dependant] = dependencyCount;
-                                }
-                            }
-                        }
-                    }
-
-                    // Check for unfulfilled dependencies
-                    if (dependencyCountByKey.Count != 0)
-                    {
-                        // Check for missing dependencies
-                        foreach (var key in dependencyCountByKey.Keys)
-                        {
-                            if (!members.ContainsKey(key))
-                            {
-                                // This is because we currently can only resolve names that are given by the NameProcessorContext
-                                // Please update this message if this limitation changes
-                                throw new InvalidOperationException(
-                                    $"A name affix for '{key}' references a name that does not exist or is part of a different scope. "
-                                        + $"Currently, only references to names directly in the same scope are supported"
-                                );
-                            }
-                        }
-
-                        // Remaining must be a cycle
-                        throw new InvalidOperationException(
-                            $"Detected cycle in referenced affixes. Names that are part of the cycle: {string.Join(", ", dependencyCountByKey.Keys)}"
-                        );
-                    }
-                }
-
-                foreach (var member in processingOrderByKey)
+                // Build dependency graph
+                foreach (var (member, _) in members)
                 {
                     if (!scopeData.TryGetValue(member, out var memberData))
                     {
                         continue;
                     }
 
-                    var (primary, secondary) = members[member];
-                    var newPrimary = ApplyAffixes(
-                        scope,
-                        primary,
-                        secondary,
-                        memberData.Affixes,
-                        context
-                    );
-                    members[member] = new CandidateNames(newPrimary, secondary);
+                    var dependencyCount = 0;
+                    var affixes = memberData.Affixes;
+                    foreach (var affix in affixes)
+                    {
+                        if (!affix.IsReference)
+                        {
+                            continue;
+                        }
+
+                        var referencedMemberOriginalName = affix.Affix;
+                        if (
+                            TryResolveName(
+                                context,
+                                scope,
+                                referencedMemberOriginalName,
+                                out var referencedMemberScope,
+                                out var referencedMemberValue
+                            )
+                        )
+                        {
+                            // Add as dependency
+                            var referencedMemberkey = new MemberKey(
+                                referencedMemberScope,
+                                referencedMemberOriginalName
+                            );
+                            if (
+                                !notifyDependantByKey.TryGetValue(
+                                    referencedMemberkey,
+                                    out var dependants
+                                )
+                            )
+                            {
+                                notifyDependantByKey[referencedMemberkey] = dependants = [];
+                            }
+
+                            dependants.Add(new MemberKey(scope, member));
+                            dependencyCount++;
+                        }
+                        else
+                        {
+                            // Failed to resolve reference
+                            throw new InvalidOperationException(
+                                $"Failed to resolve a name affix reference '{affix.Affix}' defined on '{member}'"
+                            );
+                        }
+                    }
+
+                    if (dependencyCount == 0)
+                    {
+                        // No dependencies
+                        ready.Enqueue(new MemberKey(scope, member));
+                        continue;
+                    }
+
+                    // Store dependency count
+                    dependencyCountByKey.Add(new MemberKey(scope, member), dependencyCount);
                 }
+            }
+
+            // Output final order
+            while (ready.TryDequeue(out var key))
+            {
+                processingOrderByKey.Add(key);
+                if (notifyDependantByKey.TryGetValue(key, out var dependants))
+                {
+                    foreach (var dependant in dependants)
+                    {
+                        if (dependencyCountByKey.TryGetValue(dependant, out var dependencyCount))
+                        {
+                            dependencyCount--;
+                            if (dependencyCount == 0)
+                            {
+                                ready.Enqueue(dependant);
+                                dependencyCountByKey.Remove(dependant);
+                                continue;
+                            }
+
+                            dependencyCountByKey[dependant] = dependencyCount;
+                        }
+                    }
+                }
+            }
+
+            // Check for cycles
+            if (dependencyCountByKey.Count != 0)
+            {
+                throw new InvalidOperationException(
+                    $"Detected cycle in referenced affixes. Names that are part of the cycle: {string.Join(", ", dependencyCountByKey.Keys)}"
+                );
+            }
+
+            foreach (var key in processingOrderByKey)
+            {
+                var scopeData = nameData.Scopes[key.Scope];
+                var scopeMembers = context.Scopes[key.Scope];
+                if (!scopeData.TryGetValue(key.Member, out var memberData))
+                {
+                    continue;
+                }
+
+                var (primary, secondary) = scopeMembers[key.Member];
+                var newPrimary = ApplyAffixes(
+                    key.Scope,
+                    primary,
+                    secondary,
+                    memberData.Affixes,
+                    context
+                );
+                scopeMembers[key.Member] = new CandidateNames(newPrimary, secondary);
             }
         }
 

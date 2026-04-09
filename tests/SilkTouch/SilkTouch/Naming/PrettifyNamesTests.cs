@@ -361,14 +361,16 @@ public class PrettifyNamesTests
     }
 
     [Test]
-    public void ReferencedAffixExists_ButInDifferentContainer_Throws()
+    public async Task SuccessfullyUsesReferencedAffixes_FromParentScope()
     {
-        // This test is here because referencing names in different containers is currently not supported
+        // Note that at time of writing, no nested scopes are supported
+        // This means that the only valid scope is the global scope
         var project = TestUtils
             .CreateTestProject()
             .AddDocument(
                 "Test.gen.cs",
                 """
+                [NameAffix("Suffix", "Test", "Suffix")]
                 public struct A
                 {
                     [NameAffix("Suffix", "Test", nameof(A))]
@@ -385,10 +387,12 @@ public class PrettifyNamesTests
             new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
         );
 
-        Assert.ThrowsAsync<InvalidOperationException>(async () =>
-        {
-            await prettifyNames.ExecuteAsync(context);
-        });
+        await prettifyNames.ExecuteAsync(context);
+
+        // A should become ASuffix
+        // B should become BASuffix
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
     }
 
     [Test]
