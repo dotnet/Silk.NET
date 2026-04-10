@@ -292,7 +292,7 @@ public class PrettifyNames(
         /// Represents a mapping: ScopeName -> (MemberName -> MemberData).
         /// This data is used by name processors to transform and prettify the names.
         /// </summary>
-        public Dictionary<string, Dictionary<string, MemberData>> Scopes { get; } = [];
+        public Dictionary<string, Dictionary<string, MemberData>> Names { get; } = [];
 
         private BaseTypeDeclarationSyntax? _scope;
 
@@ -306,9 +306,9 @@ public class PrettifyNames(
             var memberName = memberIdentifier.ToString();
             var affixes = memberAttributeLists.GetNameAffixes();
 
-            if (!Scopes.TryGetValue(scopeName, out var members))
+            if (!Names.TryGetValue(scopeName, out var members))
             {
-                Scopes[scopeName] = members = [];
+                Names[scopeName] = members = [];
             }
 
             if (!members.TryGetValue(memberName, out var memberData))
@@ -500,7 +500,7 @@ public class PrettifyNames(
                 if (overrideTargetScope == null)
                 {
                     // Apply unscoped override
-                    foreach (var (scope, members) in context.Scopes)
+                    foreach (var (scope, members) in context.Names)
                     {
                         if (members.ContainsKey(overrideTargetMember))
                         {
@@ -512,7 +512,7 @@ public class PrettifyNames(
                 {
                     // Apply scoped override
                     if (
-                        context.Scopes.TryGetValue(overrideTargetScope, out var members)
+                        context.Names.TryGetValue(overrideTargetScope, out var members)
                         && members.ContainsKey(overrideTargetMember)
                     )
                     {
@@ -528,7 +528,7 @@ public class PrettifyNames(
             {
                 // Remove from working set
                 // This is to prevent later processors from modifying overrides
-                context.Scopes[overriddenName.Scope].Remove(overriddenName.Member);
+                context.Names[overriddenName.Scope].Remove(overriddenName.Member);
 
                 // Add to final names
                 if (!context.FinalNames.TryGetValue(overriddenName.Scope, out var members))
@@ -549,9 +549,9 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            foreach (var (scope, members) in context.Scopes)
+            foreach (var (scope, members) in context.Names)
             {
-                if (!nameData.Scopes.TryGetValue(scope, out var scopeData))
+                if (!nameData.Names.TryGetValue(scope, out var scopeData))
                 {
                     continue;
                 }
@@ -601,7 +601,7 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            foreach (var (scope, members) in context.Scopes)
+            foreach (var (scope, members) in context.Names)
             {
                 // Be lenient about caps for type names (e.g. GL)
                 var allowAllCaps = scope == "";
@@ -645,9 +645,9 @@ public class PrettifyNames(
             var dependencyCountByKey = new Dictionary<MemberKey, int>();
             var notifyDependantByKey = new Dictionary<MemberKey, List<MemberKey>>();
 
-            foreach (var (scope, members) in context.Scopes)
+            foreach (var (scope, members) in context.Names)
             {
-                if (!nameData.Scopes.TryGetValue(scope, out var scopeData))
+                if (!nameData.Names.TryGetValue(scope, out var scopeData))
                 {
                     continue;
                 }
@@ -759,8 +759,8 @@ public class PrettifyNames(
 
             foreach (var key in processingOrderByKey)
             {
-                var scopeData = nameData.Scopes[key.Scope];
-                var scopeMembers = context.Scopes[key.Scope];
+                var scopeData = nameData.Names[key.Scope];
+                var scopeMembers = context.Names[key.Scope];
                 if (!scopeData.TryGetValue(key.Member, out var memberData))
                 {
                     continue;
@@ -947,7 +947,7 @@ public class PrettifyNames(
             {
                 // Try resolve from working set
                 if (
-                    context.Scopes.TryGetValue(currentScope, out var workingScopeMembers)
+                    context.Names.TryGetValue(currentScope, out var workingScopeMembers)
                     && workingScopeMembers.TryGetValue(
                         referencedMember,
                         out var referencedCandidateNames
@@ -1004,7 +1004,7 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            foreach (var (_, members) in context.Scopes)
+            foreach (var (_, members) in context.Names)
             {
                 foreach (var (original, (primary, secondary)) in members)
                 {
@@ -1039,9 +1039,9 @@ public class PrettifyNames(
             // This is so that conflicts are resolved with all names available
             foreach (var (scope, finalMembers) in context.FinalNames)
             {
-                if (!context.Scopes.TryGetValue(scope, out var workingMembers))
+                if (!context.Names.TryGetValue(scope, out var workingMembers))
                 {
-                    context.Scopes[scope] = workingMembers = [];
+                    context.Names[scope] = workingMembers = [];
                 }
 
                 // Naively overwrite working set names
@@ -1063,9 +1063,9 @@ public class PrettifyNames(
             var conflictingOriginalNames = new HashSet<string>();
 
             // This loop cannot be part of the loop below because it modifies the primaries
-            foreach (var (scope, members) in context.Scopes)
+            foreach (var (scope, members) in context.Names)
             {
-                if (!nameData.Scopes.TryGetValue(scope, out var scopeData))
+                if (!nameData.Names.TryGetValue(scope, out var scopeData))
                 {
                     continue;
                 }
@@ -1127,9 +1127,9 @@ public class PrettifyNames(
                 }
             }
 
-            foreach (var (scope, members) in context.Scopes)
+            foreach (var (scope, members) in context.Names)
             {
-                nameData.Scopes.TryGetValue(scope, out var scopeData);
+                nameData.Names.TryGetValue(scope, out var scopeData);
                 var originalNamesByPrimary = GetOriginalNamesByPrimary(members);
 
                 // Unwind some names back to their secondary names if the primaries would duplicate
@@ -1476,7 +1476,7 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            foreach (var (scope, members) in context.Scopes)
+            foreach (var (scope, members) in context.Names)
             {
                 if (!context.FinalNames.TryGetValue(scope, out var outputScope))
                 {
@@ -1555,7 +1555,7 @@ public class PrettifyNames(
         /// This stores the candidates for the final prettified name for each name organized by scope.
         /// Also known as the working set of names.
         /// </summary>
-        public Dictionary<string, Dictionary<string, CandidateNames>> Scopes { get; }
+        public Dictionary<string, Dictionary<string, CandidateNames>> Names { get; }
 
         /// <summary>
         /// Represents a mapping: ScopeName -> (MemberName -> NewMemberName).
@@ -1570,7 +1570,7 @@ public class PrettifyNames(
         /// Creates a new context from the scraped name data.
         /// </summary>
         public NameProcessorContext(NameDataVisitor nameData) =>
-            Scopes = nameData.Scopes.ToDictionary(
+            Names = nameData.Names.ToDictionary(
                 // Scope
                 x => x.Key,
                 x =>
