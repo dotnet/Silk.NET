@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -830,7 +831,8 @@ public class PrettifyNames(
             // Used to track the number of secondaries added
             var originalSecondaryCount = candidateNames.Secondary.Count;
 
-            // Temporary buffer used by CreateName
+            // Temporary buffers used by CreateName
+            var stringBuilder = new StringBuilder();
             var tempNameFragments = new List<NameFragment>();
 
             // Process each group of affixes
@@ -852,27 +854,29 @@ public class PrettifyNames(
                 {
                     hasProcessedNonDiscriminator = true;
                     currentPriority = GetConfiguration(affix).DiscriminatorPriority;
-                    CreateName(
-                        scope,
-                        candidateNames.Primary,
-                        ref newPrimary,
-                        candidateNames.Secondary,
-                        affixes.AsSpan()[..affixI],
-                        context,
-                        tempNameFragments
+                    OutputName(
+                        CreateName(
+                            scope,
+                            candidateNames.Primary,
+                            affixes.AsSpan()[..affixI],
+                            context,
+                            stringBuilder,
+                            tempNameFragments
+                        )
                     );
                 }
             }
 
             // Process final group since the loop above skips the final group
-            CreateName(
-                scope,
-                candidateNames.Primary,
-                ref newPrimary,
-                candidateNames.Secondary,
-                affixes,
-                context,
-                tempNameFragments
+            OutputName(
+                CreateName(
+                    scope,
+                    candidateNames.Primary,
+                    affixes,
+                    context,
+                    stringBuilder,
+                    tempNameFragments
+                )
             );
 
             // Reverse the secondaries added since secondaries later in the list have higher priority
@@ -880,30 +884,38 @@ public class PrettifyNames(
             var secondaryNamesAdded = candidateNames.Secondary.Count - originalSecondaryCount;
             candidateNames.Secondary.AsSpan()[^secondaryNamesAdded..].Reverse();
 
-            // TODO: Try to write the code in a way that doesn't require a null assertion here
             return new CandidateNames(newPrimary!, candidateNames.Secondary);
+
+            void OutputName(string name)
+            {
+                if (newPrimary == null)
+                {
+                    newPrimary = name;
+                }
+                else
+                {
+                    candidateNames.Secondary.Add(name);
+                }
+            }
         }
 
-        // TODO: Handle newPrimary and secondary output in a different method
         /// <summary>
         /// Creates a new name using the provided information.
         /// See the docs for what each individual parameter does.
         /// </summary>
         /// <param name="scope">The scope the original name is in. Used for referenced affix resolution.</param>
         /// <param name="baseName">The base name that affixes will be applied to.</param>
-        /// <param name="newPrimary">If null, the new name will be output here. If non-null, the new name will be output as a secondary.</param>
-        /// <param name="secondary">The list to output the name to if there is already a new primary.</param>
         /// <param name="affixes">The affixes to be applied to the base name.</param>
         /// <param name="context">The context from which referenced affixes will be resolved from.</param>
+        /// <param name="stringBuilder">A temporary string builder. Used to avoid repeated allocations.</param>
         /// <param name="tempNameFragments">A temporary buffer of name fragments. Used to avoid repeated allocations.</param>
-        private void CreateName(
+        private string CreateName(
             string scope,
             string baseName,
-            ref string? newPrimary,
-            List<string> secondary,
             Span<NameAffix> affixes,
             NameProcessorContext context,
-            List<NameFragment> tempNameFragments // TODO
+            StringBuilder stringBuilder,
+            List<NameFragment> tempNameFragments
         )
         {
             // Sort affixes so that the inner affixes are first
@@ -957,14 +969,7 @@ public class PrettifyNames(
                 }
             }
 
-            if (newPrimary == null)
-            {
-                newPrimary = result;
-            }
-            else
-            {
-                secondary.Add(result);
-            }
+            return result;
         }
 
         /// <summary>
