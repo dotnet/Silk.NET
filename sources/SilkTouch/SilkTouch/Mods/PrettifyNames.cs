@@ -57,8 +57,15 @@ public class PrettifyNames(
     {
         /// <summary>
         /// Whether the affix should be removed.
+        /// Defaults to false.
         /// </summary>
         public bool Remove { get; init; } = false;
+
+        /// <summary>
+        /// Whether the affix should be prettified.
+        /// Defaults to true.
+        /// </summary>
+        public bool Prettify { get; init; } = true;
 
         /// <summary>
         /// The order with which the affix is applied.
@@ -556,40 +563,37 @@ public class PrettifyNames(
                     continue;
                 }
 
-                foreach (var (original, (primary, secondary)) in members)
+                foreach (var (original, candidateNames) in members)
                 {
                     if (!scopeData.TryGetValue(original, out var memberData))
                     {
                         continue;
                     }
 
-                    var newPrimary = RemoveAffixes(primary, secondary, memberData.Affixes);
-                    members[original] = new CandidateNames(newPrimary, secondary);
+                    members[original] = StripAffixes(candidateNames, memberData.Affixes);
                 }
             }
         }
 
         /// <summary>
-        /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list.
+        /// Removes affixes from the primary name and adds the original primary to the secondary list.
         /// </summary>
-        /// <param name="primary">The current primary name.</param>
-        /// <param name="secondary">The current secondary names.</param>
+        /// <param name="candidateNames">The current candidate names.</param>
         /// <param name="affixes">The affixes declared for the original name.</param>
-        /// <returns>The new primary name.</returns>
-        private string RemoveAffixes(string primary, List<string> secondary, NameAffix[] affixes)
+        private CandidateNames StripAffixes(CandidateNames candidateNames, NameAffix[] affixes)
         {
             if (affixes.Length == 0)
             {
-                return primary;
+                return candidateNames;
             }
 
-            var stripped = NameAffixer.StripAffixes(primary, affixes);
-            if (stripped != primary)
+            var stripped = NameAffixer.StripAffixes(candidateNames.Primary, affixes);
+            if (stripped != candidateNames.Primary)
             {
-                secondary.Add(primary);
+                candidateNames.Secondary.Add(candidateNames.Primary);
             }
 
-            return stripped;
+            return new CandidateNames(stripped, candidateNames.Secondary);
         }
     }
 
@@ -631,6 +635,8 @@ public class PrettifyNames(
     ) : INameProcessor
     {
         private readonly record struct MemberKey(string Scope, string Member);
+
+        private readonly record struct NameFragment(string Value, bool Prettify);
 
         private static readonly NameAffixConfiguration _defaultConfig = new();
 
@@ -766,39 +772,33 @@ public class PrettifyNames(
                     continue;
                 }
 
-                var (primary, secondary) = scopeMembers[key.Member];
-                var newPrimary = ApplyAffixes(
+                scopeMembers[key.Member] = ApplyAffixes(
                     key.Scope,
-                    primary,
-                    secondary,
+                    scopeMembers[key.Member],
                     memberData.Affixes,
                     context
                 );
-                scopeMembers[key.Member] = new CandidateNames(newPrimary, secondary);
             }
         }
 
         /// <summary>
-        /// Applies affixes to the specified primary name and adds fallbacks to the secondary list.
+        /// Applies affixes to the primary name and adds fallbacks to the secondary list.
         /// </summary>
         /// <param name="scope">The scope of the original name. Used for resolving referenced affixes.</param>
-        /// <param name="primary">The current primary name.</param>
-        /// <param name="secondary">The current secondary names.</param>
+        /// <param name="candidateNames">The current candidate names.</param>
         /// <param name="affixes">The affixes declared for the original name.</param>
         /// <returns>The new primary name.</returns>
         /// <param name="context">The current <see cref="NameProcessorContext"/>. Used for resolving referenced affixes.</param>
-        /// <returns>The new primary name.</returns>
-        private string ApplyAffixes(
+        private CandidateNames ApplyAffixes(
             string scope,
-            string primary,
-            List<string> secondary,
+            CandidateNames candidateNames,
             NameAffix[] affixes,
             NameProcessorContext context
         )
         {
             if (affixes.Length == 0)
             {
-                return primary;
+                return candidateNames;
             }
 
             // Sort affixes by priority
@@ -827,8 +827,13 @@ public class PrettifyNames(
             // This is guaranteed to be non-null when this method returns if there is at least one affix
             string? newPrimary = null;
 
+            // Used to track the number of secondaries added
+            var originalSecondaryCount = candidateNames.Secondary.Count;
+
+            // Temporary buffer used by CreateName
+            var tempNameFragments = new List<NameFragment>();
+
             // Process each group of affixes
-            var secondaryNamesAdded = 0;
             var hasProcessedNonDiscriminator = false;
             var currentPriority = int.MaxValue;
             for (var affixI = 0; affixI < affixes.Length; affixI++)
@@ -847,80 +852,118 @@ public class PrettifyNames(
                 {
                     hasProcessedNonDiscriminator = true;
                     currentPriority = GetConfiguration(affix).DiscriminatorPriority;
-                    CreateName(primary, affixes.AsSpan()[..affixI]);
+                    CreateName(
+                        scope,
+                        candidateNames.Primary,
+                        ref newPrimary,
+                        candidateNames.Secondary,
+                        affixes.AsSpan()[..affixI],
+                        context,
+                        tempNameFragments
+                    );
                 }
             }
 
             // Process final group since the loop above skips the final group
-            CreateName(primary, affixes);
+            CreateName(
+                scope,
+                candidateNames.Primary,
+                ref newPrimary,
+                candidateNames.Secondary,
+                affixes,
+                context,
+                tempNameFragments
+            );
 
             // Reverse the secondaries added since secondaries later in the list have higher priority
             // The original code above assumed that earlier had higher priority so this fixes that
-            secondary.AsSpan()[^secondaryNamesAdded..].Reverse();
+            var secondaryNamesAdded = candidateNames.Secondary.Count - originalSecondaryCount;
+            candidateNames.Secondary.AsSpan()[^secondaryNamesAdded..].Reverse();
 
-            return newPrimary!;
+            // TODO: Try to write the code in a way that doesn't require a null assertion here
+            return new CandidateNames(newPrimary!, candidateNames.Secondary);
+        }
 
-            void CreateName(string name, Span<NameAffix> currentAffixes)
+        // TODO: Handle newPrimary and secondary output in a different method
+        /// <summary>
+        /// Creates a new name using the provided information.
+        /// See the docs for what each individual parameter does.
+        /// </summary>
+        /// <param name="scope">The scope the original name is in. Used for referenced affix resolution.</param>
+        /// <param name="baseName">The base name that affixes will be applied to.</param>
+        /// <param name="newPrimary">If null, the new name will be output here. If non-null, the new name will be output as a secondary.</param>
+        /// <param name="secondary">The list to output the name to if there is already a new primary.</param>
+        /// <param name="affixes">The affixes to be applied to the base name.</param>
+        /// <param name="context">The context from which referenced affixes will be resolved from.</param>
+        /// <param name="tempNameFragments">A temporary buffer of name fragments. Used to avoid repeated allocations.</param>
+        private void CreateName(
+            string scope,
+            string baseName,
+            ref string? newPrimary,
+            List<string> secondary,
+            Span<NameAffix> affixes,
+            NameProcessorContext context,
+            List<NameFragment> tempNameFragments // TODO
+        )
+        {
+            // Sort affixes so that the inner affixes are first
+            affixes.Sort(
+                (a, b) =>
+                {
+                    // Sort by descending order
+                    // Higher order means the affix is closer to the inside of the name
+                    if (GetConfiguration(a).Order != GetConfiguration(b).Order)
+                    {
+                        return -GetConfiguration(a).Order.CompareTo(GetConfiguration(b).Order);
+                    }
+
+                    // Then by ascending declaration order
+                    // Lower declaration order means the affix is closer to the inside of the name
+                    return a.DeclarationOrder.CompareTo(b.DeclarationOrder);
+                }
+            );
+
+            var result = baseName;
+            foreach (var affix in affixes)
             {
-                // Sort affixes so that the inner affixes are first
-                currentAffixes.Sort(
-                    (a, b) =>
-                    {
-                        // Sort by descending order
-                        // Higher order means the affix is closer to the inside of the name
-                        if (GetConfiguration(a).Order != GetConfiguration(b).Order)
-                        {
-                            return -GetConfiguration(a).Order.CompareTo(GetConfiguration(b).Order);
-                        }
-
-                        // Then by ascending declaration order
-                        // Lower declaration order means the affix is closer to the inside of the name
-                        return a.DeclarationOrder.CompareTo(b.DeclarationOrder);
-                    }
-                );
-
-                foreach (var affix in currentAffixes)
+                var affixValue = affix.Affix;
+                if (affix.IsReference)
                 {
-                    var affixValue = affix.Affix;
-                    if (affix.IsReference)
-                    {
-                        if (
-                            TryResolveName(
-                                context,
-                                scope,
-                                affixValue,
-                                out _,
-                                out var referencedMemberValue,
-                                out _
-                            )
+                    if (
+                        TryResolveName(
+                            context,
+                            scope,
+                            affixValue,
+                            out _,
+                            out var referencedMemberValue,
+                            out _
                         )
-                        {
-                            affixValue = referencedMemberValue;
-                        }
-                    }
-
-                    if (!GetConfiguration(affix).Remove)
+                    )
                     {
-                        if (affix.Type == NameAffixType.Prefix)
-                        {
-                            name = affixValue + name;
-                        }
-                        else
-                        {
-                            name += affixValue;
-                        }
+                        affixValue = referencedMemberValue;
                     }
                 }
 
-                if (newPrimary == null)
+                if (!GetConfiguration(affix).Remove)
                 {
-                    newPrimary = name;
+                    if (affix.Type == NameAffixType.Prefix)
+                    {
+                        result = affixValue + result;
+                    }
+                    else
+                    {
+                        result += affixValue;
+                    }
                 }
-                else
-                {
-                    secondary.Add(name);
-                    secondaryNamesAdded++;
-                }
+            }
+
+            if (newPrimary == null)
+            {
+                newPrimary = result;
+            }
+            else
+            {
+                secondary.Add(result);
             }
         }
 
