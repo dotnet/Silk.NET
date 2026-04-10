@@ -11,7 +11,7 @@
     [NameAffix("Suffix", "KhronosFunctionDataType", "v")]
     [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
     [NameAffix("Suffix", "KhronosVendor", "SOFT")]
-    public void alGetBufferPtrDirectSOFT()
+    public void AlGetBufferPtrDirectSOFT()
     {
     }
 }

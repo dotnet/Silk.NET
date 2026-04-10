@@ -124,7 +124,7 @@ public class PrettifyNames(
                 new HandleOverridesProcessor(cfg.NameOverrides),
                 new StripAffixesProcessor(visitor),
                 new PrettifyProcessor(namePrettifier),
-                new ReapplyAffixesProcessor(visitor, cfg.Affixes),
+                new ReapplyAffixesProcessor(visitor, namePrettifier, cfg.Affixes),
                 new PrefixIfStartsWithNumberProcessor(),
                 new ResolveConflictsProcessor(visitor, logger),
                 new OutputFinalNamesProcessor(),
@@ -632,6 +632,7 @@ public class PrettifyNames(
     /// </summary>
     private class ReapplyAffixesProcessor(
         NameDataVisitor nameData,
+        NamePrettifier namePrettifier,
         Dictionary<string, NameAffixConfiguration> config
     ) : INameProcessor
     {
@@ -831,10 +832,6 @@ public class PrettifyNames(
             // Used to track the number of secondaries added
             var originalSecondaryCount = candidateNames.Secondary.Count;
 
-            // Temporary buffers used by CreateName
-            var stringBuilder = new StringBuilder();
-            var tempNameFragments = new List<NameFragment>();
-
             // Process each group of affixes
             var hasProcessedNonDiscriminator = false;
             var currentPriority = int.MaxValue;
@@ -859,25 +856,14 @@ public class PrettifyNames(
                             scope,
                             candidateNames.Primary,
                             affixes.AsSpan()[..affixI],
-                            context,
-                            stringBuilder,
-                            tempNameFragments
+                            context
                         )
                     );
                 }
             }
 
             // Process final group since the loop above skips the final group
-            OutputName(
-                CreateName(
-                    scope,
-                    candidateNames.Primary,
-                    affixes,
-                    context,
-                    stringBuilder,
-                    tempNameFragments
-                )
-            );
+            OutputName(CreateName(scope, candidateNames.Primary, affixes, context));
 
             // Reverse the secondaries added since secondaries later in the list have higher priority
             // The original code above assumed that earlier had higher priority so this fixes that
@@ -907,26 +893,25 @@ public class PrettifyNames(
         /// <param name="baseName">The base name that affixes will be applied to.</param>
         /// <param name="affixes">The affixes to be applied to the base name.</param>
         /// <param name="context">The context from which referenced affixes will be resolved from.</param>
-        /// <param name="stringBuilder">A temporary string builder. Used to avoid repeated allocations.</param>
-        /// <param name="tempNameFragments">A temporary buffer of name fragments. Used to avoid repeated allocations.</param>
         private string CreateName(
             string scope,
             string baseName,
             Span<NameAffix> affixes,
-            NameProcessorContext context,
-            StringBuilder stringBuilder,
-            List<NameFragment> tempNameFragments
+            NameProcessorContext context
         )
         {
             // Sort affixes so that the inner affixes are first
             affixes.Sort(
                 (a, b) =>
                 {
+                    var configA = GetConfiguration(a);
+                    var configB = GetConfiguration(b);
+
                     // Sort by descending order
                     // Higher order means the affix is closer to the inside of the name
-                    if (GetConfiguration(a).Order != GetConfiguration(b).Order)
+                    if (configA.Order != configB.Order)
                     {
-                        return -GetConfiguration(a).Order.CompareTo(GetConfiguration(b).Order);
+                        return -configA.Order.CompareTo(configB.Order);
                     }
 
                     // Then by ascending declaration order
@@ -935,7 +920,7 @@ public class PrettifyNames(
                 }
             );
 
-            var result = baseName;
+            var nameFragments = new List<NameFragment> { new(baseName, false) };
             foreach (var affix in affixes)
             {
                 var affixValue = affix.Affix;
@@ -956,20 +941,67 @@ public class PrettifyNames(
                     }
                 }
 
-                if (!GetConfiguration(affix).Remove)
+                var affixConfig = GetConfiguration(affix);
+                if (!affixConfig.Remove)
                 {
+                    var fragment = new NameFragment(affixValue, affixConfig.Prettify);
                     if (affix.Type == NameAffixType.Prefix)
                     {
-                        result = affixValue + result;
+                        nameFragments.Insert(0, fragment);
                     }
                     else
                     {
-                        result += affixValue;
+                        nameFragments.Add(fragment);
                     }
                 }
             }
 
+            // Build result by merging fragments
+            var result = "";
+            var previousFragment = new NameFragment("", false);
+            foreach (var nameFragment in nameFragments)
+            {
+                switch (previousFragment.Prettify, nameFragment.Prettify)
+                {
+                    case (true, true):
+                    {
+                        previousFragment = new NameFragment(
+                            $"{previousFragment.Value}_{nameFragment.Value}",
+                            true
+                        );
+                        break;
+                    }
+                    case (false, false):
+                    {
+                        previousFragment = new NameFragment(
+                            $"{previousFragment.Value}{nameFragment.Value}",
+                            false
+                        );
+                        break;
+                    }
+                    default:
+                    {
+                        OutputFragment(previousFragment);
+                        previousFragment = nameFragment;
+                        break;
+                    }
+                }
+            }
+
+            OutputFragment(previousFragment);
+
             return result;
+
+            void OutputFragment(NameFragment fragment)
+            {
+                var fragmentValue = fragment.Value;
+                if (previousFragment.Prettify)
+                {
+                    fragmentValue = namePrettifier.Prettify(fragmentValue, true);
+                }
+
+                result += fragmentValue;
+            }
         }
 
         /// <summary>
