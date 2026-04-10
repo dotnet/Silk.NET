@@ -199,16 +199,21 @@
             "Order": 1
           },
           "KhronosVendor": {
-            "Order": -1
+            "Order": -1,
+            "Prettify": false
           },
           "KhronosFunctionDataType": {
-            "IsDiscriminator": true
+            "IsDiscriminator": true,
+            "Prettify": false
           },
           "KhronosImpliedVendor": {
             "Remove": true
           },
           "KhronosNonExclusiveVendor": {
             "Remove": true
+          },
+          "KhronosNamespaceEnum": {
+            "Prettify": false
           },
           "SharedPrefix": {
             "Remove": true
@@ -334,16 +339,21 @@
             "Order": 1
           },
           "KhronosVendor": {
-            "Order": -1
+            "Order": -1,
+            "Prettify": false
           },
           "KhronosFunctionDataType": {
-            "IsDiscriminator": true
+            "IsDiscriminator": true,
+            "Prettify": false
           },
           "KhronosImpliedVendor": {
             "Remove": true
           },
           "KhronosNonExclusiveVendor": {
             "Remove": true
+          },
+          "KhronosNamespaceEnum": {
+            "Prettify": false
           },
           "SharedPrefix": {
             "Remove": true
@@ -456,7 +466,8 @@
             "Order": 1
           },
           "KhronosVendor": {
-            "Order": -1
+            "Order": -1,
+            "Prettify": false
           },
           "KhronosImpliedVendor": {
             "Remove": true
