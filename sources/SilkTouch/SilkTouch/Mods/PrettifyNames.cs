@@ -64,9 +64,9 @@ public class PrettifyNames(
 
         /// <summary>
         /// Whether the affix should be prettified.
-        /// Defaults to true for normal affixes and false for referenced affixes.
+        /// Defaults to false.
         /// </summary>
-        public bool? Prettify { get; init; } = null;
+        public bool Prettify { get; init; } = false;
 
         /// <summary>
         /// The order with which the affix is applied.
@@ -95,26 +95,6 @@ public class PrettifyNames(
         /// Affixes with the same priority are applied together as a group.
         /// </summary>
         public int DiscriminatorPriority { get; init; } = 0;
-
-        /// <summary>
-        /// Gets the value for the prettify option for the specified affix.
-        /// If the option is explicitly set, then returns the specified option.
-        /// Otherwise, the default depends on the affix type.
-        /// </summary>
-        public bool GetPrettifyOption(NameAffix affix)
-        {
-            if (Prettify.HasValue)
-            {
-                return Prettify.Value;
-            }
-
-            if (affix.IsReference)
-            {
-                return false;
-            }
-
-            return true;
-        }
     }
 
     /// <inheritdoc />
@@ -964,10 +944,7 @@ public class PrettifyNames(
                 var affixConfig = GetConfiguration(affix);
                 if (!affixConfig.Remove)
                 {
-                    var fragment = new NameFragment(
-                        affixValue,
-                        affixConfig.GetPrettifyOption(affix)
-                    );
+                    var fragment = new NameFragment(affixValue, affixConfig.Prettify);
 
                     if (affix.Type == NameAffixType.Prefix)
                     {

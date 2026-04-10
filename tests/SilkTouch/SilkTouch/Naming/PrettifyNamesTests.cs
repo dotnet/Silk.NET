@@ -182,7 +182,6 @@ public class PrettifyNamesTests
                             {
                                 DiscriminatorPriority = 1,
                                 IsDiscriminator = true,
-                                Prettify = false,
                             }
                         },
                     },
@@ -265,7 +264,7 @@ public class PrettifyNamesTests
         //
         // The expected output is:
         // GetBufferPtrDirectSOFT
-        // AlGetBufferPtrDirectSOFT
+        // alGetBufferPtrDirectSOFT (affixes are not prettified by default)
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
