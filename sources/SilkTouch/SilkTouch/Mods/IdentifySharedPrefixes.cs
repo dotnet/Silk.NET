@@ -23,7 +23,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 {
     /// <summary>
     /// This was from the original NameTrimmer code
-    /// Quoting from the original documentation:
+    /// Referencing the original documentation:
     /// The second pass does not use <see cref="GetTrimmingName"/>.
     /// The third pass uses naive prefix detection for <see cref="GetPrefix"/>.
     /// </summary>
