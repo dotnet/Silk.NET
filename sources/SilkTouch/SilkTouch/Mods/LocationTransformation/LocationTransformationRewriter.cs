@@ -48,6 +48,9 @@ public class LocationTransformationRewriter : CSharpSyntaxRewriter
     {
         _symbols = symbols;
         _transformers = transformers;
+
+        // Used to skip symbol lookups
+        // Does not handle the omission of the "-Attribute" suffix, but generally, we don't need to transform attributes
         _relevantIdentifiers = _symbols.Select(s => s.Name).ToHashSet();
     }
 
