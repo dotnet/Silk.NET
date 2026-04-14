@@ -10,21 +10,21 @@ namespace Silk.NET.SilkTouch.Profiling;
 /// </summary>
 internal readonly struct ProfilingScope : IDisposable
 {
-    private readonly string name;
-    private readonly long timestamp;
+    private readonly string _name;
+    private readonly long _timestamp;
 
     public ProfilingScope(string name)
     {
-        this.name = name;
-        timestamp = Stopwatch.GetTimestamp();
+        _name = name;
+        _timestamp = Stopwatch.GetTimestamp();
     }
 
     public void Dispose()
     {
-        var elapsed = Stopwatch.GetElapsedTime(timestamp);
+        var elapsed = Stopwatch.GetElapsedTime(_timestamp);
         Console.WriteLine(
             "Elapsed time for scope \"{0}\": {1:F3} ms",
-            name,
+            _name,
             elapsed.TotalMilliseconds
         );
     }
