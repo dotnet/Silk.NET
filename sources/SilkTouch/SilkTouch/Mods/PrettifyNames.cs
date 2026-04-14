@@ -195,8 +195,14 @@ public class PrettifyNames(
 
         // Change the filenames where appropriate.
         proj = ctx.SourceProject;
+
         var typeNames = newNames.GetValueOrDefault("", []);
         var typeNamesLongestFirst = typeNames.OrderByDescending(x => x.Key.Length).ToArray();
+
+        var documentPaths = proj
+            .Documents.Select(d => d.FilePath)
+            .Where(d => d != null)
+            .ToHashSet();
 
         foreach (var docId in proj.DocumentIds)
         {
@@ -206,6 +212,7 @@ public class PrettifyNames(
                 continue;
             }
 
+            // Find best matching document for renamed types
             var firstMatch = typeNamesLongestFirst.FirstOrDefault(x =>
                 doc.FilePath.Contains(x.Key) || doc.Name.Contains(x.Key)
             );
@@ -214,43 +221,23 @@ public class PrettifyNames(
                 continue;
             }
 
+            // Rename doc and update path
             var originalName = doc.Name;
+            var originalPath = doc.FilePath;
             doc = doc.ReplaceNameAndPath(oldName, newName);
 
-            var found = false;
-            if (doc.FilePath is not null)
-            {
-                foreach (var checkDocId in proj.DocumentIds)
-                {
-                    if (checkDocId == docId)
-                    {
-                        continue;
-                    }
-
-                    var checkDoc = proj.GetDocument(checkDocId);
-                    if (checkDoc?.FilePath is null)
-                    {
-                        continue;
-                    }
-
-                    if (checkDoc.FilePath == doc.FilePath)
-                    {
-                        found = true;
-                        break;
-                    }
-                }
-            }
-
-            if (found)
+            // Check for path conflict
+            documentPaths.Remove(originalPath);
+            if (!documentPaths.Add(doc.FilePath!))
             {
                 logger.LogError(
                     $"{originalName} -> {doc.Name} failed to rename file as a file already exists at {doc.FilePath}"
                 );
+
+                continue;
             }
-            else
-            {
-                proj = doc.Project;
-            }
+
+            proj = doc.Project;
         }
 
         ctx.SourceProject = proj;
