@@ -14,39 +14,47 @@ namespace Silk.NET.SilkTouch.Mods.LocationTransformation;
 /// and modifies the nodes only when coming back up.
 /// <br/>
 /// Modifying nodes cause them to be detached from the semantic model (meaning no symbol information),
-/// so this ensures that we gather all of the data we need before making changes.
+/// so this ensures that we gather all the data we need before making changes.
 /// </remarks>
-/// <param name="symbols">Symbols to search for.</param>
-/// <param name="transformers">Transformers to use on each found symbol reference.</param>
-public class LocationTransformationRewriter(
-    HashSet<ISymbol> symbols,
-    List<LocationTransformer> transformers
-) : CSharpSyntaxRewriter
+public class LocationTransformationRewriter : CSharpSyntaxRewriter
 {
     // Symbols can also be referenced within XML doc, which are trivia nodes.
     /// <inheritdoc />
     public override bool VisitIntoStructuredTrivia => true;
 
-    private readonly Dictionary<SyntaxNode, QueuedTransformation> queuedTransformations = new();
+    private readonly Dictionary<SyntaxNode, QueuedTransformation> _queuedTransformations = new();
 
     /// <param name="Symbol">The symbol for the node.</param>
     /// <param name="TransformerIndex">The index of the transformer that should be used when continuing the transformation process.</param>
     private record struct QueuedTransformation(ISymbol Symbol, int TransformerIndex);
 
-    private readonly List<SyntaxNode> tempNodeList = new();
+    private readonly List<SyntaxNode> _tempNodeList = new();
 
     /// <summary>
     /// The semantic model of the currently processed document.
     /// </summary>
-    private SemanticModel semanticModel = null!;
+    private SemanticModel _semanticModel = null!;
+
+    private readonly HashSet<ISymbol> _symbols;
+    private readonly List<LocationTransformer> _transformers;
+    private readonly HashSet<string> _relevantIdentifiers;
+
+    /// <param name="symbols">Symbols to search for.</param>
+    /// <param name="transformers">Transformers to use on each found symbol reference.</param>
+    public LocationTransformationRewriter(
+        HashSet<ISymbol> symbols,
+        List<LocationTransformer> transformers
+    )
+    {
+        _symbols = symbols;
+        _transformers = transformers;
+        _relevantIdentifiers = _symbols.Select(s => s.Name).ToHashSet();
+    }
 
     /// <summary>
     /// Initializes the renamer to work for a new document. Must be called before visiting any nodes.
     /// </summary>
-    public void Initialize(SemanticModel semanticModel)
-    {
-        this.semanticModel = semanticModel;
-    }
+    public void Initialize(SemanticModel semanticModel) => _semanticModel = semanticModel;
 
     /// <inheritdoc />
     [return: NotNullIfNotNull("unmodifiedNode")]
@@ -63,12 +71,12 @@ public class LocationTransformationRewriter(
         // Check for queued transformation
         // To apply a transformation, we must be in the same level in the hierarchy as the selected node
         // We also must apply transformations when going back up in the hierarchy so we don't overwrite previous transformations
-        if (queuedTransformations.Remove(unmodifiedNode, out var transformation))
+        if (_queuedTransformations.Remove(unmodifiedNode, out var transformation))
         {
             if (transformation.TransformerIndex >= 0)
             {
                 // Apply deferred transformer
-                var deferredTransformer = transformers[transformation.TransformerIndex];
+                var deferredTransformer = _transformers[transformation.TransformerIndex];
                 modifiedNode = deferredTransformer
                     .Visit(modifiedNode)
                     .WithLeadingTrivia(unmodifiedNode.GetLeadingTrivia().Select(VisitTrivia))
@@ -76,12 +84,12 @@ public class LocationTransformationRewriter(
             }
 
             // Continue applying remaining transformers
-            for (var i = transformation.TransformerIndex + 1; i < transformers.Count; i++)
+            for (var i = transformation.TransformerIndex + 1; i < _transformers.Count; i++)
             {
-                var transformer = transformers[i];
+                var transformer = _transformers[i];
 
                 // Calculate hierarchy
-                var hierarchy = tempNodeList;
+                var hierarchy = _tempNodeList;
                 {
                     hierarchy.Clear();
 
@@ -109,7 +117,7 @@ public class LocationTransformationRewriter(
                 {
                     // We can't directly transform the node since we are at the wrong place in the hierarchy
                     // Defer it so it is processed later
-                    queuedTransformations.Add(
+                    _queuedTransformations.Add(
                         selectedNode,
                         new QueuedTransformation(transformation.Symbol, i)
                     );
@@ -130,12 +138,12 @@ public class LocationTransformationRewriter(
 
     private void ReportSymbol(SyntaxNode node, ISymbol? symbol)
     {
-        if (symbol == null || !symbols.Contains(symbol))
+        if (symbol == null || !_symbols.Contains(symbol))
         {
             return;
         }
 
-        queuedTransformations.Add(node, new QueuedTransformation(symbol, -1));
+        _queuedTransformations.Add(node, new QueuedTransformation(symbol, -1));
     }
 
     // ----- Types -----
@@ -143,7 +151,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitClassDeclaration(ClassDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitClassDeclaration(node)!;
@@ -152,7 +160,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitStructDeclaration(node)!;
@@ -161,7 +169,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitInterfaceDeclaration(InterfaceDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitInterfaceDeclaration(node)!;
@@ -170,7 +178,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitRecordDeclaration(RecordDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitRecordDeclaration(node)!;
@@ -179,7 +187,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitDelegateDeclaration(DelegateDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitDelegateDeclaration(node)!;
@@ -188,7 +196,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitEnumDeclaration(node)!;
@@ -199,7 +207,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitEnumMemberDeclaration(node)!;
@@ -208,7 +216,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitPropertyDeclaration(node)!;
@@ -217,7 +225,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitEventDeclaration(EventDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitEventDeclaration(node)!;
@@ -226,7 +234,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitMethodDeclaration(node)!;
@@ -235,7 +243,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitConstructorDeclaration(node)!;
@@ -244,7 +252,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitDestructorDeclaration(DestructorDeclarationSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitDestructorDeclaration(node)!;
@@ -255,7 +263,12 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node)
     {
-        var symbol = semanticModel.GetSymbolInfo(node).Symbol;
+        if (!_relevantIdentifiers.Contains(node.Identifier.Text))
+        {
+            return node;
+        }
+
+        var symbol = _semanticModel.GetSymbolInfo(node).Symbol;
         ReportSymbol(node, symbol);
 
         return base.VisitIdentifierName(node)!;
@@ -265,7 +278,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitVariableDeclarator(VariableDeclaratorSyntax node)
     {
-        var symbol = semanticModel.GetDeclaredSymbol(node);
+        var symbol = _semanticModel.GetDeclaredSymbol(node);
         ReportSymbol(node, symbol);
 
         return base.VisitVariableDeclarator(node)!;
