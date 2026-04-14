@@ -255,8 +255,7 @@ public class LocationTransformationRewriter(
     /// <inheritdoc />
     public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node)
     {
-        var symbol =
-            semanticModel.GetSymbolInfo(node).Symbol ?? semanticModel.GetTypeInfo(node).Type;
+        var symbol = semanticModel.GetSymbolInfo(node).Symbol;
         ReportSymbol(node, symbol);
 
         return base.VisitIdentifierName(node)!;
