@@ -18,7 +18,10 @@ namespace Silk.NET.SilkTouch.Mods.LocationTransformation;
 /// </remarks>
 /// <param name="symbols">Symbols to search for.</param>
 /// <param name="transformers">Transformers to use on each found symbol reference.</param>
-public class LocationTransformationRewriter(HashSet<ISymbol> symbols, List<LocationTransformer> transformers) : CSharpSyntaxRewriter
+public class LocationTransformationRewriter(
+    HashSet<ISymbol> symbols,
+    List<LocationTransformer> transformers
+) : CSharpSyntaxRewriter
 {
     // Symbols can also be referenced within XML doc, which are trivia nodes.
     /// <inheritdoc />
@@ -66,7 +69,8 @@ public class LocationTransformationRewriter(HashSet<ISymbol> symbols, List<Locat
             {
                 // Apply deferred transformer
                 var deferredTransformer = transformers[transformation.TransformerIndex];
-                modifiedNode = deferredTransformer.Visit(modifiedNode)
+                modifiedNode = deferredTransformer
+                    .Visit(modifiedNode)
                     .WithLeadingTrivia(unmodifiedNode.GetLeadingTrivia().Select(VisitTrivia))
                     .WithTrailingTrivia(unmodifiedNode.GetTrailingTrivia());
             }
@@ -105,13 +109,17 @@ public class LocationTransformationRewriter(HashSet<ISymbol> symbols, List<Locat
                 {
                     // We can't directly transform the node since we are at the wrong place in the hierarchy
                     // Defer it so it is processed later
-                    queuedTransformations.Add(selectedNode, new QueuedTransformation(transformation.Symbol, i));
+                    queuedTransformations.Add(
+                        selectedNode,
+                        new QueuedTransformation(transformation.Symbol, i)
+                    );
 
                     break;
                 }
 
                 // Transform the node
-                modifiedNode = transformer.Visit(modifiedNode)
+                modifiedNode = transformer
+                    .Visit(modifiedNode)
                     .WithLeadingTrivia(unmodifiedNode.GetLeadingTrivia().Select(VisitTrivia))
                     .WithTrailingTrivia(unmodifiedNode.GetTrailingTrivia());
             }
@@ -247,7 +255,8 @@ public class LocationTransformationRewriter(HashSet<ISymbol> symbols, List<Locat
     /// <inheritdoc />
     public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node)
     {
-        var symbol = semanticModel.GetSymbolInfo(node).Symbol ?? semanticModel.GetTypeInfo(node).Type;
+        var symbol =
+            semanticModel.GetSymbolInfo(node).Symbol ?? semanticModel.GetTypeInfo(node).Type;
         ReportSymbol(node, symbol);
 
         return base.VisitIdentifierName(node)!;
