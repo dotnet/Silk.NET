@@ -200,7 +200,7 @@ public class PrettifyNames(
         var typeNamesLongestFirst = typeNames.OrderByDescending(x => x.Key.Length).ToArray();
 
         var documentPaths = proj
-            .Documents.Select(d => d.FilePath)
+            .Documents.Select(d => d.RelativePath())
             .Where(d => d != null)
             .ToHashSet();
 
@@ -223,12 +223,13 @@ public class PrettifyNames(
 
             // Rename doc and update path
             var originalName = doc.Name;
-            var originalPath = doc.FilePath;
+            var originalPath = doc.RelativePath();
             doc = doc.ReplaceNameAndPath(oldName, newName);
+            var newPath = doc.RelativePath();
 
             // Check for path conflict
             documentPaths.Remove(originalPath);
-            if (!documentPaths.Add(doc.FilePath!))
+            if (!documentPaths.Add(newPath))
             {
                 logger.LogError(
                     $"{originalName} -> {doc.Name} failed to rename file as a file already exists at {doc.FilePath}"
