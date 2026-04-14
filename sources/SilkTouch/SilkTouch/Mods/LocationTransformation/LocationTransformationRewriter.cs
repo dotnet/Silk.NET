@@ -283,4 +283,9 @@ public class LocationTransformationRewriter : CSharpSyntaxRewriter
 
         return base.VisitVariableDeclarator(node)!;
     }
+
+    // ----- Skipped nodes -----
+
+    /// <inheritdoc />
+    public override SyntaxNode VisitUsingDirective(UsingDirectiveSyntax node) => node;
 }
