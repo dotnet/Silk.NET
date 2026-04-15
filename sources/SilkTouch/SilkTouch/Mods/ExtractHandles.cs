@@ -51,7 +51,7 @@ public class ExtractHandles(ILogger<ExtractHandles> logger) : Mod
             project = project
                 .AddDocument(
                     Path.GetFileName(relativePath),
-                    node.NormalizeWhitespace(),
+                    node,
                     filePath: project.FullPath(relativePath)
                 )
                 .Project;

@@ -37,7 +37,7 @@ public class MarkNativeNames : IMod
             var doc =
                 proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
-                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }

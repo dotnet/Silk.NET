@@ -86,7 +86,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             // This is also where extracted enums are processed.
             rewriter.File = fname;
             project = doc.WithSyntaxRoot(
-                rewriter.Visit(node)?.NormalizeWhitespace()
+                rewriter.Visit(node)
                     ?? throw new InvalidOperationException("Rewriter returned null")
             ).Project;
 
@@ -110,8 +110,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                                             )
                                     )
                                     : SingletonList<MemberDeclarationSyntax>(newStruct)
-                            )
-                            .NormalizeWhitespace(),
+                            ),
                         filePath: project.FullPath(
                             $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
                         )
@@ -174,8 +173,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                                         .WithMembers(SingletonList(typeDecl))
                                 )
                                 : SingletonList(typeDecl)
-                        )
-                        .NormalizeWhitespace(),
+                        ),
                     filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
                 )
                 .Project;

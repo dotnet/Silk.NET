@@ -363,7 +363,7 @@ public partial class MixKhronosData(
             var doc =
                 proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
-                rewriter1.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                rewriter1.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
@@ -373,7 +373,7 @@ public partial class MixKhronosData(
         {
             proj = proj.AddDocument(
                 Path.GetFileName(filePath),
-                node.NormalizeWhitespace(),
+                node,
                 filePath: proj.FullPath(filePath)
             ).Project;
         }
@@ -385,7 +385,7 @@ public partial class MixKhronosData(
             var doc =
                 proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
-                rewriter2.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                rewriter2.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
@@ -397,7 +397,7 @@ public partial class MixKhronosData(
             var doc =
                 proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
-                rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }

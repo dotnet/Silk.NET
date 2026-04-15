@@ -115,9 +115,7 @@ public class TransformHandles(
             var syntaxRoot = await syntaxTree.GetRootAsync(ct);
 
             // Rewrite handle struct to include handle members
-            document = document.WithSyntaxRoot(
-                handleTypeRewriter.Visit(syntaxRoot).NormalizeWhitespace()
-            );
+            document = document.WithSyntaxRoot(handleTypeRewriter.Visit(syntaxRoot));
 
             project = document.Project;
         }

@@ -117,7 +117,6 @@ public class FunctionTransformer(
                         .WithBody(null)
                         .WithExpressionBody(null)
                         .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                        .NormalizeWhitespace(eol: "\n")
                         .ToFullString()
                 );
                 continue;
