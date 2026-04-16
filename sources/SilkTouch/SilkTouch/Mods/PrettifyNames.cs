@@ -222,7 +222,7 @@ public class PrettifyNames(
             }
 
             // Save syntax tree so we can restore it later
-            // Modifying the document can cause it to be reparsed
+            // This is because modifying the document can cause it to be reparsed
             // C# discord: https://discord.com/channels/143867839282020352/598678594750775301/1494176147351535687
             var syntaxRoot = await doc.GetSyntaxRootAsync(ct);
             if (syntaxRoot == null)
@@ -244,7 +244,7 @@ public class PrettifyNames(
             if (!documentPaths.Add(newPath))
             {
                 logger.LogError(
-                    $"{originalName} -> {doc.Name} failed to rename file as a file already exists at {doc.FilePath}"
+                    $"{originalName} -> {doc.Name} failed to rename file as a file already exists at {newPath}"
                 );
 
                 continue;
