@@ -308,7 +308,7 @@ internal class MSBuildModContext(
         CancellationToken ct = default
     )
     {
-        var normalizedRoot = root.NormalizeWhitespace();
+        var normalizedRoot = root.NormalizeWhitespace(eol: "\n");
         var result = await CodeFormatter.FormatAsync(normalizedRoot.SyntaxTree, _opts, ct);
         return !result.CompilationErrors.Any() ? result.Code : normalizedRoot.ToFullString();
     }
