@@ -31,8 +31,9 @@ public abstract class LocationTransformer : CSharpSyntaxRewriter
 
     /// <summary>
     /// Clone this location transformer for purposes of thread safety.
-    /// If the location transformer is already thread safe, the location transformer
-    /// does not need to be cloned.
     /// </summary>
+    /// <remarks>
+    /// This is allowed to return the current instance and share data.
+    /// </remarks>
     public abstract LocationTransformer GetThreadSafeCopy();
 }

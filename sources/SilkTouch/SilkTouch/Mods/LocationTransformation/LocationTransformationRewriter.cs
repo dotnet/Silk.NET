@@ -51,13 +51,37 @@ public class LocationTransformationRewriter : CSharpSyntaxRewriter
 
         // Used to skip symbol lookups
         // Does not handle the omission of the "-Attribute" suffix, but generally, we don't need to transform attributes
-        _relevantIdentifiers = _symbols.Select(s => s.Name).ToHashSet();
+        _relevantIdentifiers = new HashSet<string>(_symbols.Count);
+        foreach (var symbol in _symbols)
+        {
+            _relevantIdentifiers.Add(symbol.Name);
+        }
+    }
+
+    private LocationTransformationRewriter(
+        HashSet<ISymbol> symbols,
+        List<LocationTransformer> transformers,
+        HashSet<string> relevantIdentifiers
+    )
+    {
+        _symbols = symbols;
+        _transformers = transformers;
+        _relevantIdentifiers = relevantIdentifiers;
     }
 
     /// <summary>
     /// Initializes the renamer to work for a new document. Must be called before visiting any nodes.
     /// </summary>
     public void Initialize(SemanticModel semanticModel) => _semanticModel = semanticModel;
+
+    /// <summary>
+    /// Clone this rewriter for purposes of thread safety.
+    /// </summary>
+    /// <remarks>
+    /// This is allowed to return the current instance and share data.
+    /// </remarks>
+    public LocationTransformationRewriter GetThreadSafeCopy() =>
+        new(_symbols, [.. _transformers.Select(t => t.GetThreadSafeCopy())], _relevantIdentifiers);
 
     /// <inheritdoc />
     [return: NotNullIfNotNull("unmodifiedNode")]
