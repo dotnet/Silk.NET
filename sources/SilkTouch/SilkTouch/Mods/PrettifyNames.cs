@@ -1132,17 +1132,6 @@ public class PrettifyNames(
                 }
             }
 
-            // These collections are used later.
-            // These keep track of method discriminators to determine whether we have incompatible overloads.
-            // We keep track of the first original name so that we can add it to conflictingOriginalNames when we
-            // do discover a conflict (along with the original name of the actual conflict).
-            var methodDiscriminators =
-                new Dictionary<
-                    string,
-                    (string? FirstOriginalName, List<MethodDeclarationSyntax> Methods)
-                >();
-            var conflictingOriginalNames = new HashSet<string>();
-
             // This loop cannot be part of the loop below because it modifies the primaries
             foreach (var (scope, members) in context.Names)
             {
@@ -1207,6 +1196,17 @@ public class PrettifyNames(
                     }
                 }
             }
+
+            // These collections are used later.
+            // These keep track of method discriminators to determine whether we have incompatible overloads.
+            // We keep track of the first original name so that we can add it to conflictingOriginalNames when we
+            // do discover a conflict (along with the original name of the actual conflict).
+            var methodDiscriminators =
+                new Dictionary<
+                    string,
+                    (string? FirstOriginalName, List<MethodDeclarationSyntax> Methods)
+                >();
+            var conflictingOriginalNames = new HashSet<string>();
 
             foreach (var (scope, members) in context.Names)
             {
