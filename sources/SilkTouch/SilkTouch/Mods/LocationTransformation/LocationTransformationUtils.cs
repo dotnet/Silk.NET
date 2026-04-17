@@ -45,12 +45,6 @@ public static class LocationTransformationUtils
         ];
 
         var originalSolution = sourceProject.Solution;
-        var compilation = await sourceProject.GetCompilationAsync(ct);
-        if (compilation == null)
-        {
-            return;
-        }
-
         var newDocuments = new ConcurrentDictionary<DocumentId, SyntaxNode>();
         var symbolSet = new HashSet<ISymbol>(symbols, SymbolEqualityComparer.Default);
         var baseRewriter = new LocationTransformationRewriter(symbolSet, transformers.ToList());
@@ -66,12 +60,11 @@ public static class LocationTransformationUtils
                 }
 
                 var originalRoot = await originalDocument.GetSyntaxRootAsync(ct);
-                if (originalRoot == null)
+                var semanticModel = await originalDocument.GetSemanticModelAsync(ct);
+                if (originalRoot == null || semanticModel == null)
                 {
                     return;
                 }
-
-                var semanticModel = compilation.GetSemanticModel(originalRoot.SyntaxTree);
 
                 // Since this is multithreaded, each thread needs their own copy of the rewriter and transformers
                 var rewriter = baseRewriter.GetThreadSafeCopy();
