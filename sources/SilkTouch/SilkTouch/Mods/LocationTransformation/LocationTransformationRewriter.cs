@@ -313,6 +313,7 @@ public class LocationTransformationRewriter : CSharpSyntaxRewriter
 
     // ----- Skipped nodes -----
 
+    // Using statements contain a lot of identifier nodes, but never any symbol references that we care about.
     /// <inheritdoc />
     public override SyntaxNode VisitUsingDirective(UsingDirectiveSyntax node) => node;
 }
