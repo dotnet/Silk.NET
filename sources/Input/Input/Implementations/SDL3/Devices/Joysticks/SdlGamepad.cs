@@ -139,9 +139,9 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     #endregion
 
-    public static SdlGamepad? CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext context)
+    public static SdlGamepad? CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext context)
     {
-        if (!backend.TryGetOrCreateDevice<SdlJoystick>(sdlDeviceId, out var joystick))
+        if (!backend.TryGetOrCreateDevice<SdlJoystick>(sdlDeviceId, timestamp, sdlTimestamp, out var joystick))
         {
             return null;
         }

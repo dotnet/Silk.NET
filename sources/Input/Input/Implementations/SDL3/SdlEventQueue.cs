@@ -13,7 +13,7 @@ internal class SdlEventQueue<T> : ISdlEventQueue<T> where T : struct
     private ulong[] _sdlTimestamps = new ulong[8];
 
 #pragma warning disable CS8500 // This takes the address of, gets the size of, or declares a pointer to a managed type
-    protected ref T GetPtr(int index, out ulong sdlTimestamp)
+    protected ref T GetRef(int index, out ulong sdlTimestamp)
     {
         sdlTimestamp = _sdlTimestamps[index];
         return ref _events[index];
@@ -67,7 +67,7 @@ internal sealed class GenericEventQueue : SdlEventQueue<GenericEvent>
     public GenericEventQueue(SdlTimestampCalculator.Basis basis) => _basis = basis;
 
 
-    public unsafe void ConsumeQueue<T>(in SdlEventQueue<T> queue) where T : struct, ITimestampedEvent
+    public unsafe void ConsumeOther<T>(in SdlEventQueue<T> queue) where T : struct, ITimestampedEvent
     {
         var q = queue.Consume();
         for (var i = 0; i < q.Count; i++)
@@ -81,7 +81,7 @@ internal sealed class GenericEventQueue : SdlEventQueue<GenericEvent>
         }
     }
 
-    public ReadOnlySpan<GenericEvent> ConsumeAndGetSorted()
+    public ReadOnlySpan<GenericEvent> ConsumeAndSortSelf()
     {
         var pair = Consume();
         var valuesToSort = pair.Values.AsSpan(0, pair.Count);
@@ -98,15 +98,6 @@ internal sealed class GenericEventQueue : SdlEventQueue<GenericEvent>
         return valuesToSort;
     }
 
-
-    // taking a pointer to this type is safe, as we're not using any
-
-    private readonly ref struct Timing(long timestamp, ulong sdlTimestamp)
-    {
-        public readonly ulong SdlTimestamp = sdlTimestamp;
-        public readonly long StopwatchTimestamp = timestamp;
-    }
-
     public unsafe bool TryDequeue([NotNullWhen(true)] out void* value, out ulong timestamp)
     {
         if (Count == 0)
@@ -117,7 +108,7 @@ internal sealed class GenericEventQueue : SdlEventQueue<GenericEvent>
         }
 
 
-        ref var valRef = ref GetPtr(--Count, out timestamp);
+        ref var valRef = ref GetRef(--Count, out timestamp);
         value = Unsafe.AsPointer(ref valRef);
         return true;
     }

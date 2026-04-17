@@ -16,7 +16,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         State = new PointerState(Buttons, Points);
     }
 
-    public static SdlPen CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlPen CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         nint uniqueId = 0;
 

@@ -32,7 +32,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
         float? pressure = null)
     {
         pressure ??= isDown ? 1.0f : 0.0f;
-        var idx = EnumInfo<PointerButton>.ValueIndexOfUnnamed(button);
+        var idx = EnumInfo<PointerButton>.ValueIndexOf(button);
 
         while (idx >= _buttons.Count)
         {

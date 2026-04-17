@@ -71,7 +71,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         (SdlMouseInputFlags)NativeBackend.GetMouseState((float*)Unsafe.AsPointer(ref x),
             (float*)Unsafe.AsPointer(ref y));
 
-    public static SdlMouse CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlMouse CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         var deviceName = backend.Sdl.GetMouseNameForID((uint)sdlDeviceId);
         nint uniqueId = 0;

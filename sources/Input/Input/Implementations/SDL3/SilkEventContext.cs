@@ -58,22 +58,22 @@ internal class SilkEventContext
 
     public void RaiseEvents(params Span<IInputHandler> handlers)
     {
-        _orderedSdlEvents.ConsumeQueue(_buttonChangedSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_connectionSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_keyChangedSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_gamepadThumbstickMoveSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_gamepadTriggerMoveSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_joystickAxisMoveSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_joystickHatMoveSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_keyCharSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_mouseScrollSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_pointChangedSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_pointerClickSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_pointerGripChangedSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_pointerTargetChangedSdlEvents);
-        _orderedSdlEvents.ConsumeQueue(_pointerButtonSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_buttonChangedSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_connectionSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_keyChangedSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_gamepadThumbstickMoveSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_gamepadTriggerMoveSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_joystickAxisMoveSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_joystickHatMoveSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_keyCharSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_mouseScrollSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_pointChangedSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_pointerClickSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_pointerGripChangedSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_pointerTargetChangedSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_pointerButtonSdlEvents);
 
-        var genericEvents = _orderedSdlEvents.ConsumeAndGetSorted();
+        var genericEvents = _orderedSdlEvents.ConsumeAndSortSelf();
 
         if (handlers is not { Length: > 0 })
         {

@@ -13,7 +13,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     private JoystickType _joystickType;
     internal JoystickHandle JoystickHandle { get; private set; }
 
-    public static SdlJoystick CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlJoystick CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         nint uniqueId = 0;
 

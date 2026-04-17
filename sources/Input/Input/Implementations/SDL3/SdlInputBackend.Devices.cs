@@ -2,13 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
 
 namespace Silk.NET.Input.SDL3;
 
 internal partial class SdlInputBackend
 {
-    internal bool TryGetOrCreateDevice<T>(ulong id, [NotNullWhen(true)] out T? device)
+    internal bool TryGetOrCreateDevice<T>(ulong id, long timestamp, ulong sdlTimestamp, [NotNullWhen(true)] out T? device)
         where T : SdlDevice, ISdlDevice<T>
     {
         // If we already have a device with this ID, return it.
@@ -24,7 +25,7 @@ internal partial class SdlInputBackend
 
         try
         {
-            device = T.CreateDevice(id, this, _silkEvents);
+            device = T.CreateDevice(id, timestamp, sdlTimestamp, this, _silkEvents);
         }
         catch (Exception e)
         {
@@ -51,64 +52,27 @@ internal partial class SdlInputBackend
             return false;
         }
 
-        sdlDevices.Add(device);
+        _eventProcessingArgs.AddDevice(device, timestamp, sdlTimestamp);
         InputLog.Debug($"{typeof(T)} added: (sdl ID: {id})");
         return true;
     }
 
-    private bool RemoveDevice<T>(List<SdlDevice> devices, uint id)
+    private bool RemoveDevice<T>(uint id, long timestamp, ulong sdlTimestamp) where T : SdlDevice, ISdlDevice<T>
     {
-        var deviceIdx = devices.FindIndex(x => x is T && x.SdlDeviceId == id);
-
-        if (deviceIdx == -1)
+        if (_eventProcessingArgs.RemoveDevice<T>(id, timestamp, sdlTimestamp, out var device))
         {
-            // we never used this device to begin with, so just ignore its removal
-            return false;
-        }
-
-        var device = devices[deviceIdx];
-        device.Dispose();
-        devices.RemoveAt(deviceIdx);
-        _ = UnregisterDevice(device.Id);
-
-        // device IDs may have changed when a device was removed, so we need to refresh them
-        RefreshDeviceIds(devices);
-        return true;
-    }
-
-    private bool UnregisterDevice(nint uniqueId)
-    {
-#if DEBUG
-        if (_deviceRegistry.Remove(uniqueId))
-        {
+            // device IDs may have changed when a device was removed, so we need to refresh them
+            RefreshDeviceIds(_eventProcessingArgs.Devices);
             return true;
         }
 
-        InputLog.Error($"Tried to unregister device with id {uniqueId} that was not registered");
         return false;
-
-#else
-        return _deviceRegistry.Remove(uniqueId);
-#endif
     }
 
-    public bool RegisterDevice(nint uniqueId)
-    {
-#if DEBUG
-        if (_deviceRegistry.Add(uniqueId))
-        {
-            return true;
-        }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public bool ContainsDevice(nint uniqueId) => _eventProcessingArgs.ContainsDevice(uniqueId);
 
-        InputLog.Error($"Tried to register device with id {uniqueId} that was already registered");
-        return false;
-
-#else
-        return _deviceRegistry.Add(uniqueId);
-#endif
-    }
-
-    private static void RefreshDeviceIds(List<SdlDevice> devices)
+    private static void RefreshDeviceIds(IReadOnlyList<SdlDevice> devices)
     {
         for (var i = 0; i < devices.Count; i++)
         {

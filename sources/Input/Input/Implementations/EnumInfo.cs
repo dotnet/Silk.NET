@@ -19,7 +19,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// <summary>
     /// All enum values sorted in increasing order (unstable sort)
     /// </summary>
-    public static IReadOnlyList<T> All => _all;
+    public static IReadOnlyList<T> AllValuesOrdered => _allValuesOrdered;
 
     /// <summary>
     /// All enum values with distinct numerical values sorted in increasing order.
@@ -43,9 +43,8 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// </summary>
     public static readonly Type UnderlyingType = typeof(T).GetEnumUnderlyingType();
 
-    private static readonly T[] _all;
-    private static readonly string[] _names;
-    private static readonly Dictionary<T, int> _numericallyDistinctValues;
+    private static readonly T[] _allValuesOrdered;
+    private static readonly Dictionary<T, int> _numericallyDistinctIndices;
     private static readonly ulong[] _allEnumValuesRaw;
     private static readonly bool _unnamedAreIndexable;
 
@@ -127,60 +126,22 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
             throw new InvalidOperationException("Enum provided uses an unknown numeric base??");
         }
 
-
-        var names = new string[all.Length];
-        for (var index = 0; index < all.Length; index++)
-        {
-            names[index] = all[index].ToString(); // todo: readable name attributes?
-        }
-
         var dict = new Dictionary<T, int>(vals.Length);
-        for (var i = 0; i < vals.Length; i++)
+        for (var index = 0; index < vals.Length; index++)
         {
-            var enumVal = vals[i];
+            var enumVal = vals[index];
 
             // get attribute and check for ignore
 
-            dict.Add(enumVal, i);
+            dict.Add(enumVal, index);
         }
 
-        _names = names;
-        _all = all;
+        _allValuesOrdered = all;
         UniqueValues = vals;
-        _numericallyDistinctValues = dict;
-        MinValue = All[0];
-        MaxValue = All[^1];
+        _numericallyDistinctIndices = dict;
+        MinValue = AllValuesOrdered[0];
+        MaxValue = AllValuesOrdered[^1];
     }
-
-    /// <summary>
-    /// Get the ordered index of the value provided.
-    /// Values with the same numerical value will *not* return the same index, and are not guaranteed to be
-    /// stably sorted across application runs.
-    /// The index provided
-    /// </summary>
-    /// <param name="value"></param>
-    /// <returns>The index of the sorted enum value</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static int NameIndexOf(T value) => Array.IndexOf(_all, value);
-
-    /// <inheritdoc cref="_names"/>
-
-    /// <summary>
-    /// Returns the names of an enum value, pre-allocated
-    /// </summary>
-    public static string NameOf(T value) => _names[NameIndexOf(value)];
-
-    /// <summary>
-    /// Get the ordered index of the value provided.
-    /// Values with the same numerical value will return the same index
-    /// </summary>
-    /// <param name="value"></param>
-    /// <returns>The index of the sorted enum numerical value, or -1 if not a named enum member.</returns>
-    /// <exception cref="InvalidOperationException"></exception>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static int ValueIndexOf(T value) => !_unnamedAreIndexable
-        ? ValueOf<T, int>(value)
-        : _numericallyDistinctValues.GetValueOrDefault(value, -1);
 
     /// <summary>
     /// Gets the ordered index of the unnamed enum value provided. This index is calculated by:
@@ -190,57 +151,60 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// </summary>
     /// <param name="value"></param>
     /// <returns></returns>
-    public static int ValueIndexOfUnnamed(T value)
+    public static int ValueIndexOf(T value)
     {
-        if (!_unnamedAreIndexable)
-        {
-            return ValueOf<T, int>(value);
-        }
-
-        if(_numericallyDistinctValues.TryGetValue(value, out var index))
+        // happy path - it's a named value we've already computed
+        if(_numericallyDistinctIndices.TryGetValue(value, out var index))
         {
             return index;
         }
 
-        var rawValue = ValueOf<T, int>(value);
+        // unhappy path - it's an unnamed value we haven't computed yet
+        if (!_unnamedAreIndexable)
+        {
+            // unnamed indexing is disabled
+            return -1;
+        }
+
+        var rawValue = Convert<T, int>(value);
 
         // todo - don't rely on joystickButton's unknown - find the MinValue
-        if (rawValue <= 0 || rawValue >= ValueOf<ulong, int>(_allEnumValuesRaw[0]))
+        if (rawValue <= 0 || rawValue >= Convert<ulong, int>(_allEnumValuesRaw[0]))
         {
             return -1;
         }
 
-        return  _all.Length + rawValue;
+        return  _allValuesOrdered.Length + rawValue;
     }
 
     /// <summary>
     /// Returns the numerical value of the enum value provided in a type-safe way
     /// </summary>
     /// <param name="value"></param>
-    /// <typeparam name="TValue"></typeparam>
-    /// <typeparam name="TNumber"></typeparam>
+    /// <typeparam name="TFrom"></typeparam>
+    /// <typeparam name="TTo"></typeparam>
     /// <returns></returns>
-    private static unsafe TNumber ValueOf<TValue, TNumber>(TValue value) where TNumber : unmanaged where TValue : unmanaged
+    private static unsafe TTo Convert<TFrom, TTo>(TFrom value) where TTo : unmanaged where TFrom : unmanaged
     {
-        if (sizeof(T) == sizeof(TNumber))
+        if (sizeof(T) == sizeof(TTo))
         {
-            return Unsafe.Read<TNumber>(&value);
+            return Unsafe.Read<TTo>(&value);
         }
 
-        var minSize = Math.Min(sizeof(TNumber), sizeof(T));
+        var minSize = Math.Min(sizeof(TTo), sizeof(T));
 
         var originalValuePtr = (byte*)&value;
 
         var valuePtr = &originalValuePtr[Math.Abs(minSize - sizeof(T))]; // does this assume little-endianness?
-        var numberPtr = stackalloc byte[sizeof(TNumber)];
+        var numberPtr = stackalloc byte[sizeof(TTo)];
 
         // ensure block is initialized (as it isnt guaranteed?) so any missing bytes of the output will stay 0
         // if type TNumber is a larger size than type T
-        Unsafe.InitBlock(numberPtr, 0, (uint)sizeof(TNumber));
+        Unsafe.InitBlock(numberPtr, 0, (uint)sizeof(TTo));
 
-        var copyToPtr = &numberPtr[Math.Abs(minSize - sizeof(TNumber))];
-        Buffer.MemoryCopy(valuePtr, copyToPtr, sizeof(TNumber), minSize);
-        return *(TNumber*)numberPtr;
+        var copyToPtr = &numberPtr[Math.Abs(minSize - sizeof(TTo))];
+        Buffer.MemoryCopy(valuePtr, copyToPtr, sizeof(TTo), minSize);
+        return *(TTo*)numberPtr;
     }
 
     private static T[] OrderedValues<TNumber>(bool byNumericValue)
@@ -251,13 +215,13 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
         if (byNumericValue)
         {
-            allValues = allValues.DistinctBy(ValueOf<T, TNumber>).ToArray();
+            allValues = allValues.DistinctBy(Convert<T, TNumber>).ToArray();
         }
 
         // sort by increasing order
         allValues.AsSpan().StableSort((a, b) => {
-            var aNumber = ValueOf<T, TNumber>(a);
-            var bNumber = ValueOf<T, TNumber>(b);
+            var aNumber = Convert<T, TNumber>(a);
+            var bNumber = Convert<T, TNumber>(b);
             return aNumber.CompareTo(bNumber);
         });
 
@@ -271,4 +235,10 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     }
 
     public static unsafe bool HasValue(int value) => _allEnumValuesRaw.Contains(*(uint*)&value);
+
+    public static unsafe T ValueOfIndex(int index)
+    {
+        var value = _allEnumValuesRaw[index];
+        return *(T*)&value;
+    }
 }

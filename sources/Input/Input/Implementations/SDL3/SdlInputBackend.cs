@@ -61,7 +61,6 @@ internal partial class SdlInputBackend : IInputBackend
         _getWindowHandles = GetWindowHandles;
         _getWindowId = GetWindowId;
         _getDisplayId = GetDisplayId;
-        _eventProcessingArgs = new ProcessEventArgs(this);
 
         var ptr = new EventFilter(OnEvent);
         // TODO overload resolution priority?
@@ -73,6 +72,7 @@ internal partial class SdlInputBackend : IInputBackend
         Id = (nint)ptr.Handle;
         CursorConfiguration = new SdlCursor(Sdl);
         InitializeEventQueue(out _silkEvents);
+        _eventProcessingArgs = new ProcessEventArgs(this, _silkEvents.ConnectionSdlEvents);
 
         // ===============================================================================================
         // === If we ever need to share common state across window-specific "backends", use the below: ===
@@ -244,8 +244,11 @@ internal partial class SdlInputBackend : IInputBackend
     private static void ProcessEvent(in Event evt, long timestamp, ref ProcessEventArgs processEventArgs)
     {
         var backend = processEventArgs.Backend;
-        var devices = processEventArgs.Devices;
-        Debug.Assert(evt.Common.Timestamp >= processEventArgs.PreviousTimestamp, "Events out of order");
+        if (evt.Common.Timestamp < processEventArgs.PreviousTimestamp)
+        {
+            InputLog.Error("Events out of order");
+        }
+
         processEventArgs.PreviousTimestamp = evt.Common.Timestamp;
 
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
@@ -256,25 +259,25 @@ internal partial class SdlInputBackend : IInputBackend
             case EventType.GamepadAdded:
                 return;
             case EventType.GamepadRemoved:
-                backend.RemoveDevice<SdlGamepad>(devices, evt.Gdevice.Which);
+                backend.RemoveDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, evt.Common.Timestamp);
                 return;
             case EventType.JoystickRemoved:
-                backend.RemoveDevice<SdlJoystick>(devices, evt.Jdevice.Which);
+                backend.RemoveDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, evt.Common.Timestamp);
                 return;
             case EventType.KeyboardRemoved:
-                backend.RemoveDevice<SdlKeyboard>(devices, evt.Kdevice.Which);
+                backend.RemoveDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp);
                 return;
             case EventType.MouseRemoved:
-                backend.RemoveDevice<SdlMouse>(devices, evt.Mdevice.Which);
+                backend.RemoveDevice<SdlMouse>(evt.Mdevice.Which, timestamp, evt.Common.Timestamp);
                 return;
             case EventType.PenProximityOut:
-                backend.RemoveDevice<SdlPen>(devices, evt.Ptouch.Which);
+                backend.RemoveDevice<SdlPen>(evt.Ptouch.Which, timestamp, evt.Common.Timestamp);
                 break;
 
             // Keyboard events
             case >= EventType.KeyDown and <= EventType.TextEditingCandidates:
             {
-                if (!backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, out var keyboard))
+                if (!backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp, out var keyboard))
                 {
                     return;
                 }
@@ -306,7 +309,8 @@ internal partial class SdlInputBackend : IInputBackend
             // Gamepad events
             case >= EventType.GamepadAxisMotion and <= EventType.GamepadSteamHandleUpdated:
             {
-                if (!backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, out var gamepad))
+                if (!backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, evt.Common.Timestamp,
+                        out var gamepad))
                 {
                     return;
                 }
@@ -340,7 +344,7 @@ internal partial class SdlInputBackend : IInputBackend
             // Joystick events
             case >= EventType.JoystickAxisMotion and <= EventType.JoystickUpdateComplete:
             {
-                if (!backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, out var joystick))
+                if (!backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, evt.Common.Timestamp, out var joystick))
                 {
                     return;
                 }
@@ -378,7 +382,7 @@ internal partial class SdlInputBackend : IInputBackend
             // Mouse events
             case >= EventType.MouseMotion and <= EventType.MouseAdded:
             {
-                if (!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, out var mouse))
+                if (!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, timestamp, evt.Common.Timestamp, out var mouse))
                 {
                     return;
                 }
@@ -408,7 +412,7 @@ internal partial class SdlInputBackend : IInputBackend
                 Debug.Assert(type != EventType.PenProximityOut);
 
                 var which = evt.Ptouch.Which;
-                if (!backend.TryGetOrCreateDevice<SdlPen>(which, out var penDevice))
+                if (!backend.TryGetOrCreateDevice<SdlPen>(which, timestamp, evt.Common.Timestamp, out var penDevice))
                 {
                     return;
                 }
@@ -452,7 +456,7 @@ internal partial class SdlInputBackend : IInputBackend
             {
                 var finger = evt.Tfinger;
                 var device = finger.TouchID;
-                if (!backend.TryGetOrCreateDevice<SdlTouchSurface>(device, out var touchDevice))
+                if (!backend.TryGetOrCreateDevice<SdlTouchSurface>(device, timestamp, evt.Common.Timestamp, out var touchDevice))
                 {
                     return;
                 }
@@ -621,19 +625,62 @@ internal partial class SdlInputBackend : IInputBackend
     private struct ProcessEventArgs
     {
         public readonly SdlInputBackend Backend;
-        public readonly List<SdlDevice> Devices;
+        public readonly IReadOnlyList<SdlDevice> Devices => _devices;
         public readonly List<SdlWindowTarget> SdlWindowTargets;
         public readonly List<SdlDisplayTarget> SdlDisplayTargets;
         public ulong PreviousTimestamp;
+        private readonly List<SdlDevice> _devices;
+        private readonly ISdlEventQueue<ConnectionEvent> _connectionEventQueue;
+        private readonly HashSet<nint> _deviceRegistry = [];
 
-        public ProcessEventArgs(SdlInputBackend backend)
+        public ProcessEventArgs(SdlInputBackend backend, ISdlEventQueue<ConnectionEvent> connectionEventQueue)
         {
             Backend = backend;
             PreviousTimestamp = ulong.MinValue;
-            Devices = [];
+            _devices = [];
             SdlWindowTargets = [];
             SdlDisplayTargets = [];
+            _connectionEventQueue = connectionEventQueue;
         }
+
+        public void AddDevice<T>(T device, long timestamp, ulong sdlTimestamp) where T : SdlDevice, ISdlDevice<T>
+        {
+            if (!_deviceRegistry.Add(device.Id))
+            {
+                InputLog.Error($"Tried to add device with id {device.Id} that was already registered");
+                return;
+            }
+
+            _devices.Add(device);
+            _connectionEventQueue.Enqueue(new ConnectionEvent(device, timestamp, true), sdlTimestamp);
+        }
+
+        public bool RemoveDevice<T>(uint id, long timestamp, ulong sdlTimestamp, [NotNullWhen(true)] out SdlDevice? device) where T : SdlDevice, ISdlDevice<T>
+        {
+            var deviceIdx = _devices.FindIndex(x => x is T && x.SdlDeviceId == id);
+
+            if (deviceIdx == -1)
+            {
+                // we never used this device to begin with, so just ignore its removal
+                device = null;
+                return false;
+            }
+
+            device = _devices[deviceIdx];
+            device.Dispose();
+            _devices.RemoveAt(deviceIdx);
+            // note - registration is handled in the device ID creation process
+            if (!_deviceRegistry.Remove(device.Id))
+            {
+                InputLog.Error($"Tried to unregister device with id {device.Id} that was not registered");
+                return false;
+            }
+
+            _connectionEventQueue.Enqueue(new ConnectionEvent(device, timestamp, false), sdlTimestamp);
+            return true;
+        }
+
+        public bool ContainsDevice(nint uniqueId) => _deviceRegistry.Contains(uniqueId);
     }
 
     internal enum FingerEventType : uint
@@ -662,8 +709,6 @@ internal partial class SdlInputBackend : IInputBackend
         /// </summary>
         BoundedPointerTargetUpdate,
     }
-
-    private readonly HashSet<nint> _deviceRegistry = [];
 
     // NOTE: Be careful where these are used!
 

@@ -21,7 +21,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     private bool _hasUpdates;
 
-    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         var namePtr = backend.Sdl.GetKeyboardNameForID((uint)sdlDeviceId);
 
@@ -86,27 +86,30 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         }
         else
         {
-            _textIsRecording = TextRecorderState.RecordingNoSdl;
+            _textRecordState = TextRecorderState.RecordingNoSdl;
         }
+
+        InputLog.Debug($"BeginInput {_textRecordState.ToString()}");
     }
 
     private void BeginRecordingSdl(WindowHandle sdlWindow)
     {
-        _textIsRecording = TextRecorderState.RecordingSdl;
+        _textRecordState = TextRecorderState.RecordingSdl;
         _textEntryWindow = sdlWindow;
     }
 
     public string? EndInput()
     {
-        switch (_textIsRecording)
+        InputLog.Debug($"EndInput {_textRecordState.ToString()}");
+        switch (_textRecordState)
         {
             case TextRecorderState.None:
                 return null;
             case TextRecorderState.RecordingNoSdl:
-                _textIsRecording = TextRecorderState.None;
+                _textRecordState = TextRecorderState.None;
                 break;
             case TextRecorderState.RecordingSdl:
-                _textIsRecording = TextRecorderState.None;
+                _textRecordState = TextRecorderState.None;
                 var sdlWindow = _textEntryWindow;
                 if (sdlWindow != null)
                 {
@@ -114,7 +117,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
                 }
                 break;
         }
-        _textIsRecording = TextRecorderState.None;
+        _textRecordState = TextRecorderState.None;
         return _textRecorder?.ConsumeInput();
     }
 
@@ -142,15 +145,24 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
             var isRepeat = key.Repeat != 0;
             _keyStates.SetKeyState(keyName, key.Down);
 
-            var shouldRecord = _textIsRecording == TextRecorderState.RecordingNoSdl &&
-                               ((stateChanged && isDown) ||
-                                (!stateChanged && isRepeat));
+            var shouldRecord = _textRecordState != TextRecorderState.None &&
+                               ((stateChanged && isDown) || (!stateChanged && isRepeat));
             if (shouldRecord)
             {
                 _textRecorder ??= new TextRecorder(null);
                 if(_textRecorder.AddKeyStroke(keyName, this, out var newChar))
                 {
                     KeyCharEvents.Enqueue(new KeyCharEvent(this, timestamp, newChar.Value), key.Timestamp);
+                }
+                else
+                {
+                    KeyChangedEvents.Enqueue(new KeyChangedEvent(
+                        Keyboard: this,
+                        Timestamp: timestamp,
+                        Key: _keyStates[keyName],
+                        Previous: button,
+                        Modifiers: State.Modifiers,
+                        IsRepeat: isRepeat), key.Timestamp);
                 }
             }
             else
@@ -246,7 +258,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
     private WindowHandle? _textEntryWindow;
     private TextRecorder? _textRecorder;
     private enum TextRecorderState {None, RecordingNoSdl, RecordingSdl}
-    private TextRecorderState _textIsRecording;
+    private TextRecorderState _textRecordState;
     private ushort _modState;
     private const float _pressureMultiplier = 1f / 255f;
     private readonly ButtonStates _keyStates;
@@ -255,49 +267,55 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     private class ButtonStates : IReadOnlyList<Button<KeyName>>
     {
-        private static readonly int _keyCount;
-        private readonly byte[] _keyPressures = new byte[_keyCount];
-        private static readonly int[] _indices;
+        private byte[] _keyPressures = new byte[EnumInfo<KeyName>.ValueIndexOf(EnumInfo<KeyName>.MaxValue) + 1];
 
         static ButtonStates()
         {
-            _indices = new int[512];
-            for (var i = 0; i < 512; i++)
-            {
-                _indices[i] = Enum.IsDefined((KeyName)i) ? _keyCount++ : -1;
-            }
+
         }
 
-        public int SetKeyState(KeyName key, byte pressure) => _keyPressures[_indices[(int)key]] = pressure;
+        public void SetKeyState(KeyName key, byte pressure)
+        {
+            var idx = EnumInfo<KeyName>.ValueIndexOf(key);
+            if (idx == -1)
+                throw new InvalidOperationException("No key index found?? this is a bug");
+
+            if (_keyPressures.Length <= idx)
+            {
+                Array.Resize(ref _keyPressures, idx + 1);
+            }
+
+            _keyPressures[idx] = pressure;
+        }
 
         public IEnumerator<Button<KeyName>> GetEnumerator()
         {
-            for (var i = 0; i < _keyCount; i++)
+            for (var i = 0; i < _keyPressures.Length; i++)
             {
-                var index = _indices[i];
-                if(index != -1)
-                {
-                    yield return GetButton(index);
-                }
+                yield return GetButton(EnumInfo<KeyName>.ValueOfIndex(i), i);
             }
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
-        public int Count => _keyCount;
+        public int Count => _keyPressures.Length;
 
-        public Button<KeyName> this[int index] => GetButton(index);
-        public Button<KeyName> this[KeyName key] => GetButton((int)key);
+        public Button<KeyName> this[int index] => GetButton(EnumInfo<KeyName>.ValueOfIndex(index), index);
+        public Button<KeyName> this[KeyName key] => GetButton(key, EnumInfo<KeyName>.ValueIndexOf(key));
 
-        private Button<KeyName> GetButton(KeyName key) => GetButton((int)key);
-        private Button<KeyName> GetButton(int key)
+        private Button<KeyName> GetButton(KeyName key) => GetButton(key, EnumInfo<KeyName>.ValueIndexOf(key));
+        private Button<KeyName> GetButton(KeyName key, int index)
         {
-            var keyIdx = _indices[key];
-            return CreateButton((KeyName)key, _keyPressures[keyIdx]);
+            if (index >= _keyPressures.Length)
+            {
+                Array.Resize(ref _keyPressures, index + 1);
+            }
+
+            return CreateButton(key, _keyPressures[index]);
         }
 
         private static Button<KeyName> CreateButton(KeyName key, byte pressure) => new(key, pressure > 0, pressure * _pressureMultiplier);
 
-        public static bool IsDefined(KeyName keyName) => _indices[(int)keyName] >= 0;
+        public static bool IsDefined(KeyName keyName) => true;
     }
 }

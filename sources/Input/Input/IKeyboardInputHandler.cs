@@ -3,7 +3,7 @@ namespace Silk.NET.Input;
 /// <summary>
 /// An <see cref="IInputHandler"/> that also receives <see cref="IKeyboard"/> events.
 /// </summary>
-public interface IKeyboardInputHandler : IButtonInputHandler<KeyName>, IInputHandler<KeyChangedEvent>
+public interface IKeyboardInputHandler : IButtonInputHandler<KeyName>, IInputHandler<KeyChangedEvent>, IInputHandler<KeyCharEvent>
 {
     /// <summary>
     /// Called when a key is pressed or depressed.
@@ -21,5 +21,6 @@ public interface IKeyboardInputHandler : IButtonInputHandler<KeyName>, IInputHan
     /// <param name="event">The event details.</param>
     void HandleKeyChar(KeyCharEvent @event);
 
+    void IInputHandler<KeyCharEvent>.Handle(KeyCharEvent @event) => HandleKeyChar(@event);
     void IInputHandler<KeyChangedEvent>.Handle(KeyChangedEvent @event) => HandleKeyChanged(@event);
 }

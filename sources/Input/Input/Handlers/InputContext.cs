@@ -18,6 +18,7 @@ public class InputContext
         IMouseInputHandler,
         IPointerInputHandler,
         IKeyboardInputHandler,
+        IInputHandler<ConnectionEvent>,
         IList<IInputBackend>,
         IReadOnlyList<IInputBackend>
 {
@@ -128,14 +129,18 @@ public class InputContext
     private void HandleBackendAddition(IInputBackend backend)
     {
         var timestamp = Stopwatch.GetTimestamp();
+        InputLog.Debug($"Adding backend {backend.Name}");
         foreach (var device in backend.Devices)
         {
             HandleDeviceConnectionChanged(new ConnectionEvent(device, timestamp, true));
         }
     }
 
+    void IInputHandler<ConnectionEvent>.Handle(ConnectionEvent e) => HandleDeviceConnectionChanged(e);
+
     private void HandleDeviceConnectionChanged(ConnectionEvent e)
     {
+        InputLog.Debug($"Input device connection changed: {e}");
         _pointers?.HandleDeviceConnectionChanged(e);
         _joysticks?.HandleDeviceConnectionChanged(e);
         _gamepads?.HandleDeviceConnectionChanged(e);

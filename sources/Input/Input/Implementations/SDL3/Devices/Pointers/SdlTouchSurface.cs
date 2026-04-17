@@ -20,7 +20,7 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 /// </summary>
 internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, IPointerDevice
 {
-    public static SdlTouchSurface CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlTouchSurface CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         var namePtr = backend.Sdl.GetTouchDeviceName(sdlDeviceId);
 

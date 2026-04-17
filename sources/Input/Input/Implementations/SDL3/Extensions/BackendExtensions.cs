@@ -57,7 +57,7 @@ internal static unsafe class BackendExtensions
         public bool AttemptUniqueId(ReadOnlySpan<byte> bytes, ref nint uniqueId1)
         {
             uniqueId1 = Modify(uniqueId1, bytes);
-            return backend.RegisterDevice(uniqueId1);
+            return !backend.ContainsDevice(uniqueId1);
             static nint Modify(nint original, ReadOnlySpan<byte> withBytes)
             {
                 if (sizeof(nint) == 4)

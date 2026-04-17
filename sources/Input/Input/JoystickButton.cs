@@ -125,7 +125,7 @@ public static class JoystickButtonExtensions
     /// <returns></returns>
     public static bool IsIdentified(this JoystickButton button) => button > JoystickButton.Unknown;
 
-    /// <inheritdoc cref="EnumInfo{T}.ValueIndexOfUnnamed"/>
+    /// <inheritdoc cref="EnumInfo{T}.ValueIndexOf(T)"/>
     public static int Index<T>(this T value) where T : unmanaged, Enum => EnumInfo<T>.ValueIndexOf(value);
 }
 
