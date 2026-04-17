@@ -7,7 +7,7 @@ fi
 rm -rf build
 mkdir build
 cd build
-cmake ../../../../eng/submodules/sdl -DCMAKE_SYSTEM_NAME=tvOS -DCMAKE_OSX_SYSROOT=appletvsimulator "-DCMAKE_OSX_ARCHITECTURES=arm64" -DCMAKE_OSX_DEPLOYMENT_TARGET=9.0 -DCMAKE_BUILD_TYPE=Release -DSDL_STATIC=ON
+cmake ../../../../eng/submodules/sdl -DCMAKE_SYSTEM_NAME=tvOS -DCMAKE_OSX_SYSROOT=appletvsimulator "-DCMAKE_OSX_ARCHITECTURES=arm64" -DCMAKE_OSX_DEPLOYMENT_TARGET=9.0 -DCMAKE_BUILD_TYPE=Release -DSDL_STATIC=ON -DSDL_TEST_LIBRARY=OFF
 cmake --build . --parallel
 cd ..
 mkdir -p runtimes/tvossimulator/native
