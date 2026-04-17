@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Reflection;
-using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
 
@@ -143,6 +142,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         MaxValue = AllValuesOrdered[^1];
     }
 
+#pragma warning disable ST0006 ST0007 ST0008 ST0009
     /// <summary>
     /// Gets the ordered index of the unnamed enum value provided. This index is calculated by:
     /// (the number of named members in this enum type) + (the raw value of the number if unnamed)
@@ -154,7 +154,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     public static int ValueIndexOf(T value)
     {
         // happy path - it's a named value we've already computed
-        if(_numericallyDistinctIndices.TryGetValue(value, out var index))
+        if (_numericallyDistinctIndices.TryGetValue(value, out var index))
         {
             return index;
         }
@@ -166,46 +166,17 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
             return -1;
         }
 
-        var rawValue = Convert<T, int>(value);
+        var rawValue = value.Convert<T, int>();
 
         // todo - don't rely on joystickButton's unknown - find the MinValue
-        if (rawValue <= 0 || rawValue >= Convert<ulong, int>(_allEnumValuesRaw[0]))
+        if (rawValue <= 0 || rawValue >= _allEnumValuesRaw[0].Convert<ulong, int>())
         {
             return -1;
         }
 
-        return  _allValuesOrdered.Length + rawValue;
+        return _allValuesOrdered.Length + rawValue;
     }
 
-    /// <summary>
-    /// Returns the numerical value of the enum value provided in a type-safe way
-    /// </summary>
-    /// <param name="value"></param>
-    /// <typeparam name="TFrom"></typeparam>
-    /// <typeparam name="TTo"></typeparam>
-    /// <returns></returns>
-    private static unsafe TTo Convert<TFrom, TTo>(TFrom value) where TTo : unmanaged where TFrom : unmanaged
-    {
-        if (sizeof(T) == sizeof(TTo))
-        {
-            return Unsafe.Read<TTo>(&value);
-        }
-
-        var minSize = Math.Min(sizeof(TTo), sizeof(T));
-
-        var originalValuePtr = (byte*)&value;
-
-        var valuePtr = &originalValuePtr[Math.Abs(minSize - sizeof(T))]; // does this assume little-endianness?
-        var numberPtr = stackalloc byte[sizeof(TTo)];
-
-        // ensure block is initialized (as it isnt guaranteed?) so any missing bytes of the output will stay 0
-        // if type TNumber is a larger size than type T
-        Unsafe.InitBlock(numberPtr, 0, (uint)sizeof(TTo));
-
-        var copyToPtr = &numberPtr[Math.Abs(minSize - sizeof(TTo))];
-        Buffer.MemoryCopy(valuePtr, copyToPtr, sizeof(TTo), minSize);
-        return *(TTo*)numberPtr;
-    }
 
     private static T[] OrderedValues<TNumber>(bool byNumericValue)
         where TNumber : unmanaged, IComparable<TNumber>
@@ -215,18 +186,20 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
         if (byNumericValue)
         {
-            allValues = allValues.DistinctBy(Convert<T, TNumber>).ToArray();
+            allValues = allValues.DistinctBy(UnsafeNumericValueExtensions.Convert<T, TNumber>).ToArray();
         }
 
         // sort by increasing order
         allValues.AsSpan().StableSort((a, b) => {
-            var aNumber = Convert<T, TNumber>(a);
-            var bNumber = Convert<T, TNumber>(b);
+            var aNumber = a.Convert<T, TNumber>();
+            var bNumber = b.Convert<T, TNumber>();
             return aNumber.CompareTo(bNumber);
         });
 
         return allValues;
     }
+
+#pragma warning restore ST0006 ST0007 ST0008 ST0009
 
     private static bool IsIgnored(T value)
     {
