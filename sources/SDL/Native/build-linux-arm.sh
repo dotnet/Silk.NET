@@ -13,7 +13,7 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     sudo tee /etc/apt/sources.list.d/ubuntu-ports.sources <<EOF
 Types: deb
 URIs: http://ports.ubuntu.com/ubuntu-ports/
-Suites: echo Suites: $(lsb_release -sc) $(lsb_release -sc)-updates $(lsb_release -sc)-backports $(lsb_release -sc)-security
+Suites: $(lsb_release -sc) $(lsb_release -sc)-updates $(lsb_release -sc)-backports $(lsb_release -sc)-security
 Components: main restricted universe multiverse
 Architectures: armhf
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
