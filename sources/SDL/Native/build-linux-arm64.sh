@@ -8,7 +8,7 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
 
     # Enable ports repository
-    cat <<EOF > /etc/apt/sources.list.d/ubuntu-ports.sources
+    sudo cat <<EOF > /etc/apt/sources.list.d/ubuntu-ports.sources
 Types: deb
 URIs: http://ports.ubuntu.com/ubuntu-ports/
 Suites: noble noble-updates noble-backports noble-security
