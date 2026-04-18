@@ -11,12 +11,13 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     sudo apt-get update
     sudo apt-get install build-essential git make \
         pkg-config cmake ninja-build gnome-desktop-testing \
+        libglib2.0-dev-bin \
         libasound2-dev:arm libpulse-dev:arm \
         libaudio-dev:arm libfribidi-dev:arm libjack-dev:arm libsndio-dev:arm libx11-dev:arm libxext-dev:arm \
         libxrandr-dev:arm libxcursor-dev:arm libxfixes-dev:arm libxi-dev:arm libxss-dev:arm libxtst-dev:arm \
         libxkbcommon-dev:arm libdrm-dev:arm libgbm-dev:arm libgl1-mesa-dev:arm libgles2-mesa-dev:arm \
         libegl1-mesa-dev:arm libdbus-1-dev:arm libibus-1.0-dev:arm libudev-dev:arm libthai-dev:arm \
-        libpipewire-0.3-dev:arm libwayland-dev:arm libdecor-0-dev:arm liburing-dev
+        libpipewire-0.3-dev:arm libwayland-dev:arm libdecor-0-dev:arm liburing-dev:arm
 fi
 rm -rf build
 mkdir build

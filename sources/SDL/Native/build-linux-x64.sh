@@ -11,12 +11,13 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     sudo apt-get update
     sudo apt-get install build-essential git make \
         pkg-config cmake ninja-build gnome-desktop-testing \
+        libglib2.0-dev-bin \
         libasound2-dev:amd64 libpulse-dev:amd64 \
         libaudio-dev:amd64 libfribidi-dev:amd64 libjack-dev:amd64 libsndio-dev:amd64 libx11-dev:amd64 libxext-dev:amd64 \
         libxrandr-dev:amd64 libxcursor-dev:amd64 libxfixes-dev:amd64 libxi-dev:amd64 libxss-dev:amd64 libxtst-dev:amd64 \
         libxkbcommon-dev:amd64 libdrm-dev:amd64 libgbm-dev:amd64 libgl1-mesa-dev:amd64 libgles2-mesa-dev:amd64 \
         libegl1-mesa-dev:amd64 libdbus-1-dev:amd64 libibus-1.0-dev:amd64 libudev-dev:amd64 libthai-dev:amd64 \
-        libpipewire-0.3-dev:amd64 libwayland-dev:amd64 libdecor-0-dev:amd64 liburing-dev
+        libpipewire-0.3-dev:amd64 libwayland-dev:amd64 libdecor-0-dev:amd64 liburing-dev:amd64
 fi
 rm -rf build
 mkdir build
