@@ -10,7 +10,7 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     # Enable ports repository
     sudo apt-get update
     sudo apt install lsb-release
-    grep -q "^Architectures:" /etc/apt/sources.list.d/ubuntu.sources || sed -i "/^Signed-By: /a Architectures: amd64" /etc/apt/sources.list.d/ubuntu.sources
+    grep -q "^Architectures:" /etc/apt/sources.list.d/ubuntu.sources || sudo sed -i "/^Signed-By: /a Architectures: amd64" /etc/apt/sources.list.d/ubuntu.sources
     sudo tee /etc/apt/sources.list.d/ubuntu-ports.sources <<EOF
 Types: deb
 URIs: http://ports.ubuntu.com/ubuntu-ports/
