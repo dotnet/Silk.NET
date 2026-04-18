@@ -8,10 +8,12 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
 
     # Enable ports repository
+    sudo apt-get update
+    sudo apt install lsb-release
     sudo tee /etc/apt/sources.list.d/ubuntu-ports.sources <<EOF
 Types: deb
 URIs: http://ports.ubuntu.com/ubuntu-ports/
-Suites: noble noble-updates noble-backports noble-security
+Suites: echo Suites: $(lsb_release -sc) $(lsb_release -sc)-updates $(lsb_release -sc)-backports $(lsb_release -sc)-security
 Components: main restricted universe multiverse
 Architectures: armhf
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
