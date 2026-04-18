@@ -6,6 +6,17 @@ fi
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     ../../../eng/native/buildsystem/download-zig.py
     export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
+
+    # Enable ports repository
+    cat <<EOF > /etc/apt/sources.list.d/ubuntu-ports.sources
+Types: deb
+URIs: http://ports.ubuntu.com/ubuntu-ports/
+Suites: noble noble-updates noble-backports noble-security
+Components: main restricted universe multiverse
+Architectures: arm64
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+EOF
+
     # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
     sudo dpkg --add-architecture arm64
     sudo apt-get update

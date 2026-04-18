@@ -6,6 +6,7 @@ fi
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     ../../../eng/native/buildsystem/download-zig.py
     export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
+
     # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
     sudo dpkg --add-architecture amd64
     sudo apt-get update
