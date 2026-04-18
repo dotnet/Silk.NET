@@ -2,7 +2,7 @@ if not exist "../../../eng/submodules/openal-soft/CMakeLists.txt" (
     git submodule update --init --recursive --depth 1 ..\..\..\eng\submodules\openal-soft
 )
 
-call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" arm64
+call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" amd64_arm64
 rd /s /q build
 mkdir build
 cd build
