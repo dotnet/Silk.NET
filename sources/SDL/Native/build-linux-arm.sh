@@ -7,14 +7,16 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     ../../../eng/native/buildsystem/download-zig.py
     export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
     # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
+    sudo dpkg --add-architecture arm
     sudo apt-get update
     sudo apt-get install build-essential git make \
-        pkg-config cmake ninja-build gnome-desktop-testing libasound2-dev libpulse-dev \
-        libaudio-dev libfribidi-dev libjack-dev libsndio-dev libx11-dev libxext-dev \
-        libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libxtst-dev \
-        libxkbcommon-dev libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev \
-        libegl1-mesa-dev libdbus-1-dev libibus-1.0-dev libudev-dev libthai-dev \
-        libpipewire-0.3-dev libwayland-dev libdecor-0-dev liburing-dev
+        pkg-config cmake ninja-build gnome-desktop-testing \
+        libasound2-dev:arm libpulse-dev:arm \
+        libaudio-dev:arm libfribidi-dev:arm libjack-dev:arm libsndio-dev:arm libx11-dev:arm libxext-dev:arm \
+        libxrandr-dev:arm libxcursor-dev:arm libxfixes-dev:arm libxi-dev:arm libxss-dev:arm libxtst-dev:arm \
+        libxkbcommon-dev:arm libdrm-dev:arm libgbm-dev:arm libgl1-mesa-dev:arm libgles2-mesa-dev:arm \
+        libegl1-mesa-dev:arm libdbus-1-dev:arm libibus-1.0-dev:arm libudev-dev:arm libthai-dev:arm \
+        libpipewire-0.3-dev:arm libwayland-dev:arm libdecor-0-dev:arm liburing-dev
 fi
 rm -rf build
 mkdir build
