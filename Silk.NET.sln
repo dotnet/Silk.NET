@@ -116,9 +116,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{12B4D1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenAL", "OpenAL", "{662A1AEC-91F2-48FA-AA29-6F27038D30F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAL.Tutorial001.HelloSound", "examples\CSharp\OpenAL\OpenAL.Tutorial001.HelloSound\OpenAL.Tutorial001.HelloSound.csproj", "{946C912C-5BBB-446A-A566-0D1696D19F59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAL.Tutorial001.HelloSound", "examples\CSharp\OpenAL\Tutorial001.HelloSound\OpenAL.Tutorial001.HelloSound.csproj", "{946C912C-5BBB-446A-A566-0D1696D19F59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDL.Tutorial001.HelloWindow", "examples\CSharp\SDL\SDL.Tutorial001.HelloWindow\SDL.Tutorial001.HelloWindow.csproj", "{3444151F-2DE3-41BC-B5E0-EFBF0091C087}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDL.Tutorial001.HelloWindow", "examples\CSharp\SDL\Tutorial001.HelloWindow\SDL.Tutorial001.HelloWindow.csproj", "{3444151F-2DE3-41BC-B5E0-EFBF0091C087}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDL", "SDL", "{96567E92-4A89-4AC8-9F20-C2A3FE644D10}"
 EndProject
