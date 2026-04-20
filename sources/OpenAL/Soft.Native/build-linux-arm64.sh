@@ -5,9 +5,11 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     if [[ ! -z ${SILKDOTNET_DockerBuild+x} ]]; then
         dpkg --add-architecture arm64
         apt update
-        apt install -y libasound2-dev:arm64 libpulse-dev:arm64 libsoundio-dev:arm64 libsndfile1-dev:arm64 \
-            libmysofa-dev:arm64 qtbase5-dev:arm64 libdbus-1-dev:arm64 libjack-dev:arm64 portaudio19-dev:arm64 git \
-            cmake python3 libpipewire-0.3-dev:arm64 qt6-base-dev:arm64 pulseaudio:arm64 \
+        apt install -y \
+            git cmake python3 \
+            libasound2-dev:arm64 libpulse-dev:arm64 libsoundio-dev:arm64 libsndfile1-dev:arm64 \
+            libmysofa-dev:arm64 qtbase5-dev:arm64 libdbus-1-dev:arm64 libjack-dev:arm64 portaudio19-dev:arm64 \
+            libpipewire-0.3-dev:arm64 qt6-base-dev:arm64 pulseaudio:arm64 \
             gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
     else
         docker="docker"

@@ -21,8 +21,9 @@ EOF
     # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
     sudo dpkg --add-architecture arm64
     sudo apt-get update
-    sudo apt-get install build-essential git make \
-        pkg-config cmake ninja-build gnome-desktop-testing \
+    sudo apt-get install -y \
+        git cmake make build-essential  \
+        pkg-config ninja-build gnome-desktop-testing \
         libglib2.0-dev-bin \
         libasound2-dev:arm64 libpulse-dev:arm64 \
         libaudio-dev:arm64 libfribidi-dev:arm64 libjack-dev:arm64 libsndio-dev:arm64 libx11-dev:arm64 libxext-dev:arm64 \

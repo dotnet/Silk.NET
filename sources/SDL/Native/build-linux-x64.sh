@@ -8,8 +8,9 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
     sudo dpkg --add-architecture amd64
     sudo apt-get update
-    sudo apt-get install build-essential git make \
-        pkg-config cmake ninja-build gnome-desktop-testing \
+    sudo apt-get install -y \
+        git cmake make build-essential  \
+        pkg-config ninja-build gnome-desktop-testing \
         libglib2.0-dev-bin \
         libasound2-dev:amd64 libpulse-dev:amd64 \
         libaudio-dev:amd64 libfribidi-dev:amd64 libjack-dev:amd64 libsndio-dev:amd64 libx11-dev:amd64 libxext-dev:amd64 \
