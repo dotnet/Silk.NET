@@ -1,9 +1,11 @@
 #!/usr/bin/env -S bash -eu
 
+# Submodule
 if [ ! -e ../../../eng/submodules/sdl/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/sdl
 fi
 
+# Dependencies
 rm -rf build
 mkdir build
 cd build

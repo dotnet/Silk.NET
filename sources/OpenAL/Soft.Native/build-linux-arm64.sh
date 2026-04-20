@@ -1,4 +1,6 @@
 #!/usr/bin/env -S bash -eu
+
+# Dependencies
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     if [[ ! -z ${SILKDOTNET_DockerBuild+x} ]]; then
         dpkg --add-architecture arm64
@@ -16,9 +18,13 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
         exit
     fi
 fi
+
+# Submodule
 if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
 fi
+
+# Build
 rm -rf build
 mkdir build
 cd build

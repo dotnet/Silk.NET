@@ -1,15 +1,18 @@
 #!/usr/bin/env -S bash -eu
 
+# Submodule
 if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
 fi
 
+# Dependencies
 if [ ! -z "$GITHUB_ACTIONS" ]; then
   # NDK already installed: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md
   sdkmanager=( /usr/local/lib/android/sdk/cmdline-tools/*/bin/sdkmanager )
   ${sdkmanager[-1]} --install "platforms;android-21"
 fi
 
+# Build
 rm -rf build
 mkdir build
 cd build

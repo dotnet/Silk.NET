@@ -1,8 +1,11 @@
 #!/usr/bin/env -S bash -eu
+
+# Submodule
 if [ ! -e ../../../eng/submodules/sdl/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/sdl
 fi
 
+# Dependencies
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     ../../../eng/native/buildsystem/download-zig.py
     export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
@@ -33,6 +36,8 @@ EOF
         libegl1-mesa-dev:armhf libdbus-1-dev:armhf libibus-1.0-dev:armhf libudev-dev:armhf libthai-dev:armhf \
         libpipewire-0.3-dev:armhf libwayland-dev:armhf libdecor-0-dev:armhf liburing-dev:armhf
 fi
+
+# Build
 rm -rf build
 mkdir build
 cd build
