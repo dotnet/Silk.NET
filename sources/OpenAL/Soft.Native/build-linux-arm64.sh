@@ -2,7 +2,15 @@
 
 # Dependencies
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
-    if [[ ! -z ${SILKDOTNET_DockerBuild+x} ]]; then
+    if [[ -z ${SILKDOTNET_DockerBuild+x} ]]; then
+        # Enter Debian container for multiarch packages
+        docker="docker"
+        if command -v podman >/dev/null 2>&1; then
+            docker="podman"
+        fi
+        $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v $(readlink -f ../../../):/data debian bash -c "cd /data/sources/OpenAL/Soft.Native && ./build-linux-arm64.sh"
+        exit
+    else
         dpkg --add-architecture arm64
         apt update
         apt install -y \
@@ -11,13 +19,6 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
             libmysofa-dev:arm64 qtbase5-dev:arm64 libdbus-1-dev:arm64 libjack-dev:arm64 portaudio19-dev:arm64 \
             libpipewire-0.3-dev:arm64 qt6-base-dev:arm64 pulseaudio:arm64 \
             gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
-    else
-        docker="docker"
-        if command -v podman >/dev/null 2>&1; then
-            docker="podman"
-        fi
-        $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v $(readlink -f ../../../):/data debian bash -c "cd /data/sources/OpenAL/Soft.Native && ./build-linux-arm64.sh"
-        exit
     fi
 fi
 
