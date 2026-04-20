@@ -1,10 +1,5 @@
 #!/usr/bin/env -S bash -eu
 
-# Submodule
-if [ ! -e ../../../eng/submodules/sdl/CMakeLists.txt ]; then
-    git submodule update --init --recursive --depth 1 ../../../eng/submodules/sdl
-fi
-
 # Dependencies
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
     ../../../eng/native/buildsystem/download-zig.py
@@ -35,6 +30,11 @@ EOF
         libxkbcommon-dev:arm64 libdrm-dev:arm64 libgbm-dev:arm64 libgl1-mesa-dev:arm64 libgles2-mesa-dev:arm64 \
         libegl1-mesa-dev:arm64 libdbus-1-dev:arm64 libibus-1.0-dev:arm64 libudev-dev:arm64 libthai-dev:arm64 \
         libpipewire-0.3-dev:arm64 libwayland-dev:arm64 libdecor-0-dev:arm64 liburing-dev:arm64
+fi
+
+# Submodule
+if [ ! -e ../../../eng/submodules/sdl/CMakeLists.txt ]; then
+    git submodule update --init --recursive --depth 1 ../../../eng/submodules/sdl
 fi
 
 # Build
