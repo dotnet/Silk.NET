@@ -2,8 +2,8 @@
 
 # Dependencies
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
-    sudo apt update
-    sudo apt install -y \
+    sudo apt-get update
+    sudo apt-get install -y \
         git cmake python3 build-essential \
         libasound2-dev:amd64 libpulse-dev:amd64 libsoundio-dev:amd64 libsndfile1-dev:amd64 \
         libmysofa-dev:amd64 qtbase5-dev:amd64 libdbus-1-dev:amd64 libjack-dev:amd64 portaudio19-dev:amd64 \

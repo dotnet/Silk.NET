@@ -12,8 +12,8 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
         exit
     else
         dpkg --add-architecture armhf
-        apt update
-        apt install -y \
+        apt-get update
+        apt-get install -y \
             git cmake python3 \
             libasound2-dev:armhf libpulse-dev:armhf libsoundio-dev:armhf libsndfile1-dev:armhf \
             libmysofa-dev:armhf qtbase5-dev:armhf libdbus-1-dev:armhf libjack-dev:armhf portaudio19-dev:armhf \

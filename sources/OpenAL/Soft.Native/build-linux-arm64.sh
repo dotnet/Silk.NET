@@ -12,8 +12,8 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
         exit
     else
         dpkg --add-architecture arm64
-        apt update
-        apt install -y \
+        apt-get update
+        apt-get install -y \
             git cmake python3 \
             libasound2-dev:arm64 libpulse-dev:arm64 libsoundio-dev:arm64 libsndfile1-dev:arm64 \
             libmysofa-dev:arm64 qtbase5-dev:arm64 libdbus-1-dev:arm64 libjack-dev:arm64 portaudio19-dev:arm64 \
