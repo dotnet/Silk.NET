@@ -8,7 +8,7 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
         if command -v podman >/dev/null 2>&1; then
             docker="podman"
         fi
-        $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v $(readlink -f ../../../):/data debian bash -c "cd /data/sources/OpenAL/Soft.Native && ./build-linux-arm64.sh"
+        $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v $(readlink -f ../../../):/data debian bash -c "cd /data/sources/SDL/Native && ./build-linux-arm64.sh"
         exit
     else
         ../../../eng/native/buildsystem/download-zig.py
