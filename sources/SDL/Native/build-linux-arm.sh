@@ -2,35 +2,32 @@
 
 # Dependencies
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
-    ../../../eng/native/buildsystem/download-zig.py
-    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
+    if [[ -z ${SILKDOTNET_DockerBuild+x} ]]; then
+        # Enter Debian container for multiarch packages
+        docker="docker"
+        if command -v podman >/dev/null 2>&1; then
+            docker="podman"
+        fi
+        $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v $(readlink -f ../../../):/data debian bash -c "cd /data/sources/OpenAL/Soft.Native && ./build-linux-arm64.sh"
+        exit
+    else
+        ../../../eng/native/buildsystem/download-zig.py
+        export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
 
-    # Enable ports repository
-    sudo apt-get update
-    sudo apt install lsb-release
-    grep -q "^Architectures:" /etc/apt/sources.list.d/ubuntu.sources || sudo sed -i "/^Signed-By: /a Architectures: amd64" /etc/apt/sources.list.d/ubuntu.sources
-    sudo tee /etc/apt/sources.list.d/ubuntu-ports.sources <<EOF
-Types: deb
-URIs: http://ports.ubuntu.com/ubuntu-ports/
-Suites: $(lsb_release -sc) $(lsb_release -sc)-updates $(lsb_release -sc)-backports $(lsb_release -sc)-security
-Components: main restricted universe multiverse
-Architectures: armhf
-Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
-EOF
-
-    # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
-    sudo dpkg --add-architecture armhf
-    sudo apt-get update
-    sudo apt-get install -y \
-        git cmake make build-essential  \
-        pkg-config ninja-build gnome-desktop-testing \
-        libglib2.0-dev-bin \
-        libasound2-dev:armhf libpulse-dev:armhf \
-        libaudio-dev:armhf libfribidi-dev:armhf libjack-dev:armhf libsndio-dev:armhf libx11-dev:armhf libxext-dev:armhf \
-        libxrandr-dev:armhf libxcursor-dev:armhf libxfixes-dev:armhf libxi-dev:armhf libxss-dev:armhf libxtst-dev:armhf \
-        libxkbcommon-dev:armhf libdrm-dev:armhf libgbm-dev:armhf libgl1-mesa-dev:armhf libgles2-mesa-dev:armhf \
-        libegl1-mesa-dev:armhf libdbus-1-dev:armhf libibus-1.0-dev:armhf libudev-dev:armhf libthai-dev:armhf \
-        libpipewire-0.3-dev:armhf libwayland-dev:armhf libdecor-0-dev:armhf liburing-dev:armhf
+        # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
+        sudo dpkg --add-architecture armhf
+        sudo apt-get update
+        sudo apt-get install -y \
+            git cmake make build-essential  \
+            pkg-config ninja-build gnome-desktop-testing \
+            libglib2.0-dev-bin \
+            libasound2-dev:armhf libpulse-dev:armhf \
+            libaudio-dev:armhf libfribidi-dev:armhf libjack-dev:armhf libsndio-dev:armhf libx11-dev:armhf libxext-dev:armhf \
+            libxrandr-dev:armhf libxcursor-dev:armhf libxfixes-dev:armhf libxi-dev:armhf libxss-dev:armhf libxtst-dev:armhf \
+            libxkbcommon-dev:armhf libdrm-dev:armhf libgbm-dev:armhf libgl1-mesa-dev:armhf libgles2-mesa-dev:armhf \
+            libegl1-mesa-dev:armhf libdbus-1-dev:armhf libibus-1.0-dev:armhf libudev-dev:armhf libthai-dev:armhf \
+            libpipewire-0.3-dev:armhf libwayland-dev:armhf libdecor-0-dev:armhf liburing-dev:armhf
+    fi
 fi
 
 # Submodule

@@ -2,35 +2,32 @@
 
 # Dependencies
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
-    ../../../eng/native/buildsystem/download-zig.py
-    export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
+    if [[ -z ${SILKDOTNET_DockerBuild+x} ]]; then
+        # Enter Debian container for multiarch packages
+        docker="docker"
+        if command -v podman >/dev/null 2>&1; then
+            docker="podman"
+        fi
+        $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v $(readlink -f ../../../):/data debian bash -c "cd /data/sources/OpenAL/Soft.Native && ./build-linux-arm64.sh"
+        exit
+    else
+        ../../../eng/native/buildsystem/download-zig.py
+        export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
 
-    # Enable ports repository
-    sudo apt-get update
-    sudo apt install lsb-release
-    grep -q "^Architectures:" /etc/apt/sources.list.d/ubuntu.sources || sudo sed -i "/^Signed-By: /a Architectures: amd64" /etc/apt/sources.list.d/ubuntu.sources
-    sudo tee /etc/apt/sources.list.d/ubuntu-ports.sources <<EOF
-Types: deb
-URIs: http://ports.ubuntu.com/ubuntu-ports/
-Suites: $(lsb_release -sc) $(lsb_release -sc)-updates $(lsb_release -sc)-backports $(lsb_release -sc)-security
-Components: main restricted universe multiverse
-Architectures: arm64
-Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
-EOF
-
-    # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
-    sudo dpkg --add-architecture arm64
-    sudo apt-get update
-    sudo apt-get install -y \
-        git cmake make build-essential  \
-        pkg-config ninja-build gnome-desktop-testing \
-        libglib2.0-dev-bin \
-        libasound2-dev:arm64 libpulse-dev:arm64 \
-        libaudio-dev:arm64 libfribidi-dev:arm64 libjack-dev:arm64 libsndio-dev:arm64 libx11-dev:arm64 libxext-dev:arm64 \
-        libxrandr-dev:arm64 libxcursor-dev:arm64 libxfixes-dev:arm64 libxi-dev:arm64 libxss-dev:arm64 libxtst-dev:arm64 \
-        libxkbcommon-dev:arm64 libdrm-dev:arm64 libgbm-dev:arm64 libgl1-mesa-dev:arm64 libgles2-mesa-dev:arm64 \
-        libegl1-mesa-dev:arm64 libdbus-1-dev:arm64 libibus-1.0-dev:arm64 libudev-dev:arm64 libthai-dev:arm64 \
-        libpipewire-0.3-dev:arm64 libwayland-dev:arm64 libdecor-0-dev:arm64 liburing-dev:arm64
+        # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
+        sudo dpkg --add-architecture arm64
+        sudo apt-get update
+        sudo apt-get install -y \
+            git cmake make build-essential  \
+            pkg-config ninja-build gnome-desktop-testing \
+            libglib2.0-dev-bin \
+            libasound2-dev:arm64 libpulse-dev:arm64 \
+            libaudio-dev:arm64 libfribidi-dev:arm64 libjack-dev:arm64 libsndio-dev:arm64 libx11-dev:arm64 libxext-dev:arm64 \
+            libxrandr-dev:arm64 libxcursor-dev:arm64 libxfixes-dev:arm64 libxi-dev:arm64 libxss-dev:arm64 libxtst-dev:arm64 \
+            libxkbcommon-dev:arm64 libdrm-dev:arm64 libgbm-dev:arm64 libgl1-mesa-dev:arm64 libgles2-mesa-dev:arm64 \
+            libegl1-mesa-dev:arm64 libdbus-1-dev:arm64 libibus-1.0-dev:arm64 libudev-dev:arm64 libthai-dev:arm64 \
+            libpipewire-0.3-dev:arm64 libwayland-dev:arm64 libdecor-0-dev:arm64 liburing-dev:arm64
+    fi
 fi
 
 # Submodule
