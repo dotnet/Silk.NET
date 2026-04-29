@@ -17,9 +17,9 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
         export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
 
         # Dependency list is from https://github.com/libsdl-org/SDL/blob/main/docs/README-linux.md#build-dependencies
-        sudo dpkg --add-architecture arm64
-        sudo apt-get update
-        sudo apt-get install -y \
+        dpkg --add-architecture arm64
+        apt-get update
+        apt-get install -y \
             git cmake make build-essential  \
             pkg-config ninja-build gnome-desktop-testing \
             libglib2.0-dev-bin \
