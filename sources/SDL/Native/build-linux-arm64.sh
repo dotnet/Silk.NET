@@ -11,6 +11,8 @@ if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
         $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v $(readlink -f ../../../):/data debian bash -c "cd /data/sources/SDL/Native && ./build-linux-arm64.sh"
         exit
     else
+        apt update
+        apt install -y python3
         ../../../eng/native/buildsystem/download-zig.py
         export PATH="$PATH:$(readlink -f "../../../eng/native/buildsystem/zig")"
 
