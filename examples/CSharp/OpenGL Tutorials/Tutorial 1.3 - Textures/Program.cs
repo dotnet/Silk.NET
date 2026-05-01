@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using Silk.NET.Maths;
 using Silk.NET.Windowing;
 using Silk.NET.OpenGL;
-using StbImageSharp;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
+using Color = System.Drawing.Color;
 
 // Textures!
 // In this tutorial, you'll learn how to load and render textures.
@@ -195,40 +196,55 @@ namespace Tutorial
             _gl.BindBuffer(BufferTargetARB.ArrayBuffer, 0);
             _gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, 0);
 
-            // Now we create our texture!
-            // First, we create the texture itself. Then, we must set an active texture unit. Each texture unit is a
+            // Now we begin the process of creating our texture!
+            // First, we create the texture handle. Then, we must set an active texture unit. Each texture unit is a
             // separate bindable texture that we can use in a shader. GPUs have a maximum number of texture units they
             // can use, however the OpenGL spec states there MUST be at least 32 units available.
-            // Much like buffers, we then bind the texture to a Texture2D target.
+            // Much like buffers, we then bind the texture to the Texture2D target.
             _texture = _gl.GenTexture();
             _gl.ActiveTexture(TextureUnit.Texture0);
             _gl.BindTexture(TextureTarget.Texture2D, _texture);
 
-            // Use StbImageSharp to load an image from our PNG file.
-            // This will load and decompress the result into a raw byte array that we can pass directly into OpenGL.
-            ImageResult result = ImageResult.FromMemory(File.ReadAllBytes("silk.png"), ColorComponents.RedGreenBlueAlpha);
-
-            fixed (byte* ptr = result.Data)
+            // Use ImageSharp to load an image from our PNG file.
+            using (Image<Rgba32> image = Image.Load<Rgba32>("silk.png"))
             {
-                // Upload our texture data to the GPU.
-                // Let's go over each parameter used here:
-                // 1. Tell OpenGL that we want to upload to the texture bound in the Texture2D target.
-                // 2. We are uploading the "base" texture level, therefore this value should be 0. You don't need to
+                // Now, let's create the texture itself.
+                // Much like buffers, the texture is not created until you call glTexImage2D, where you define some
+                // parameters to describe the texture. Let's go over each parameter used here:
+                // 1. Tell OpenGL that we want to use the texture bound in the Texture2D target.
+                // 2. We are creating the "base" texture level, therefore this value should be 0. You don't need to
                 //    worry about texture levels for now.
                 // 3. We tell OpenGL that we want the GPU to store this data as RGBA formatted data on the GPU itself.
                 // 4. The image's width.
                 // 5. The image's height.
-                // 6. This is the image's border. This valu MUST be 0. It is a leftover component from legacy OpenGL, and
-                //    it serves no purpose.
+                // 6. This is the image's border. This value MUST be 0. It is a leftover component from legacy OpenGL,
+                //    and it serves no purpose.
                 // 7. Our image data is formatted as RGBA data, therefore we must tell OpenGL we are uploading RGBA data.
-                // 8. StbImageSharp returns this data as a byte[] array, therefore we must tell OpenGL we are uploading
-                //    data in the unsigned byte format.
-                // 9. The actual pointer to our data!
-                _gl.TexImage2D(TextureTarget.Texture2D, 0, InternalFormat.Rgba, (uint) result.Width,
-                    (uint) result.Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, ptr);
+                // 8. The Rgba32 struct contains four color channels stored as bytes. Therefore we must tell OpenGL we
+                //    each color channel will be an unsigned byte.
+                // 9. This parameter is a pointer to an array of texture data. ImageSharp doesn't provide a single array
+                //    of data, so we just pass in null here, and upload our texture data below instead.
+                _gl.TexImage2D(TextureTarget.Texture2D, 0, InternalFormat.Rgba, (uint) image.Width, (uint) image.Height,
+                    0, PixelFormat.Rgba, PixelType.UnsignedByte, null);
+                
+                // Upload our texture data line-by-line.
+                image.ProcessPixelRows(accessor =>
+                {
+                    for (int y = 0; y < accessor.Height; y++)
+                    {
+                        fixed (void* data = accessor.GetRowSpan(y))
+                        {
+                            // glTexSubImage2D allows us to upload data to arbitrary locations within the texture.
+                            // This can be used to upload to sub-regions of the texture.
+                            // In this case, we use it to upload each line of our texture data to the texture.
+                            _gl.TexSubImage2D(TextureTarget.Texture2D, 0, 0, y, (uint) accessor.Width, 1,
+                                PixelFormat.Rgba, PixelType.UnsignedByte, data);
+                        }
+                    }
+                });
             }
 
-            // Let's set some texture parameters!
+            // Now let's set some texture parameters!
             // This tells the GPU how it should sample the texture.
 
             // Set the texture wrap mode to repeat.
