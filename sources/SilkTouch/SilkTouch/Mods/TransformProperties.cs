@@ -66,7 +66,10 @@ public class TransformProperties(IOptionsSnapshot<TransformProperties.Configurat
             // Transform bool-like fields to use MaybeBool
             var nativeType =
                 node.AttributeLists.GetNativeTypeName() ?? node.Declaration.Type.ToString();
-            if (config.BoolTypes.TryGetValue(nativeType, out var scheme))
+            if (
+                config.BoolTypes.TryGetValue(nativeType, out var scheme)
+                || (nativeType == "bool" && node.Declaration.Type.ToString().Trim() != "bool") // stdbool.h, hopefully...
+            )
             {
                 var newType = string.IsNullOrWhiteSpace(scheme)
                     ? GenericName(
@@ -94,7 +97,10 @@ public class TransformProperties(IOptionsSnapshot<TransformProperties.Configurat
         {
             // Transform bool-like properties to use MaybeBool
             var nativeType = node.AttributeLists.GetNativeTypeName() ?? node.Type.ToString();
-            if (config.BoolTypes.TryGetValue(nativeType, out var scheme))
+            if (
+                config.BoolTypes.TryGetValue(nativeType, out var scheme)
+                || (nativeType == "bool" && node.Type.ToString().Trim() != "bool") // stdbool.h, hopefully...
+            )
             {
                 var newType = string.IsNullOrWhiteSpace(scheme)
                     ? GenericName(
