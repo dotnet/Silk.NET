@@ -2279,9 +2279,13 @@ public partial class MixKhronosData(
                 return node;
             }
 
+            // Structs need to have a constructor if we use field initializers
+            var hasConstructor = false;
+            var initializerAdded = false;
             var members = new List<MemberDeclarationSyntax>();
             foreach (var memberNode in node.Members)
             {
+                hasConstructor |= memberNode is ConstructorDeclarationSyntax;
                 if (memberNode is not FieldDeclarationSyntax memberFieldNode)
                 {
                     members.Add(memberNode);
@@ -2312,6 +2316,7 @@ public partial class MixKhronosData(
                     )
                 );
 
+                initializerAdded = true;
                 members.Add(
                     memberFieldNode.WithDeclaration(
                         memberFieldNode.Declaration.WithVariables(
@@ -2322,6 +2327,15 @@ public partial class MixKhronosData(
                             ]
                         )
                     )
+                );
+            }
+
+            if (initializerAdded && !hasConstructor)
+            {
+                members.Add(
+                    ConstructorDeclaration(node.Identifier)
+                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                        .WithBody(Block())
                 );
             }
 
