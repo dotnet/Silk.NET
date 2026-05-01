@@ -120,6 +120,11 @@ public partial class MixKhronosData(
         /// This was added for Vulkan Flags/FlagBits remappings.
         /// </remarks>
         public Dictionary<string, string> AdditionalTypeRemappings = [];
+
+        /// <summary>
+        /// A mapping from struct type to information about the structure type member.
+        /// </summary>
+        public Dictionary<string, StructureTypeMember> StructureTypeMembers = [];
     }
 
     /// <summary>
@@ -145,6 +150,12 @@ public partial class MixKhronosData(
         /// A map of native type names to C# type names. This is mostly used for determining enum backing types.
         /// </summary>
         public Dictionary<string, string>? TypeMap { get; init; }
+
+        /// <summary>
+        /// The structure type enums used by the API.
+        /// Eg: VkStructureType for Vulkan
+        /// </summary>
+        public HashSet<string> StructureTypes { get; init; } = [];
 
         /// <summary>
         /// The base type used for flags/bitmask enums.
@@ -342,6 +353,58 @@ public partial class MixKhronosData(
 
             job.AdditionalTypeRemappings[mapFrom] = mapTo;
         }
+
+        // Gather information about struct structure type enums
+        if (currentConfig.StructureTypes.Count != 0)
+        {
+            foreach (
+                var typeElement in xml.Elements("registry")
+                    .Elements("types")
+                    .Elements("type")
+                    .Where(x => x.Attribute("category")?.Value == "struct")
+            )
+            {
+                var structName = typeElement.Attribute("name")?.Value;
+                if (structName == null)
+                {
+                    continue;
+                }
+
+                foreach (var memberElement in typeElement.Elements("member"))
+                {
+                    var memberType = memberElement.Element("type")?.Value;
+                    if (memberType == null)
+                    {
+                        continue;
+                    }
+
+                    if (currentConfig.StructureTypes.Contains(memberType))
+                    {
+                        var memberName = memberElement.Element("name")?.Value;
+                        if (memberName == null)
+                        {
+                            continue;
+                        }
+
+                        var memberValue = memberElement.Attribute("values")?.Value;
+                        if (memberValue == null)
+                        {
+                            continue;
+                        }
+
+                        job.StructureTypeMembers.Add(
+                            structName,
+                            new StructureTypeMember()
+                            {
+                                Name = memberName,
+                                Type = memberType,
+                                Value = memberValue,
+                            }
+                        );
+                    }
+                }
+            }
+        }
     }
 
     /// <inheritdoc />
@@ -439,6 +502,13 @@ public partial class MixKhronosData(
             .ToList();
 
         return Task.FromResult(rsps);
+    }
+
+    internal record struct StructureTypeMember
+    {
+        public string Name;
+        public string Type;
+        public string Value;
     }
 
     /// <summary>
