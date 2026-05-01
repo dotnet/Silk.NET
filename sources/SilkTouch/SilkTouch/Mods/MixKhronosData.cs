@@ -465,6 +465,18 @@ public partial class MixKhronosData(
             ).Project;
         }
 
+        // Rewrite phase 4
+        var rewriter4 = new RewriterPhase4(jobData);
+        foreach (var docId in proj.DocumentIds)
+        {
+            var doc =
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            proj = doc.WithSyntaxRoot(
+                rewriter4.Visit(await doc.GetSyntaxRootAsync(ct))
+                    ?? throw new InvalidOperationException("Visit returned null.")
+            ).Project;
+        }
+
         // Rename documents to account for FlagBits/Flags differences
         foreach (var docId in proj.DocumentIds)
         {
@@ -1969,9 +1981,6 @@ public partial class MixKhronosData(
     /// <summary>
     /// This rewriter identifies and extracts vendor extension suffixes into [NameSuffix] attributes.
     /// </summary>
-    /// <remarks>
-    /// Yes, this is a 3rd rewriter.
-    /// </remarks>
     private class RewriterPhase3(JobData job, Configuration config) : CSharpSyntaxRewriter
     {
         private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(
@@ -2253,6 +2262,64 @@ public partial class MixKhronosData(
             node.WithAttributeLists(
                 ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false, node)
             );
+    }
+
+    /// <summary>
+    /// This rewriter adds default field values for structure type members.
+    /// </summary>
+    private class RewriterPhase4(JobData job) : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            if (node.Parent is not StructDeclarationSyntax structNode)
+            {
+                return node;
+            }
+
+            var structNativeName = structNode.AttributeLists.GetNativeNameOrDefault(
+                structNode.Identifier
+            );
+            if (
+                !job.StructureTypeMembers.TryGetValue(structNativeName, out var structureTypeMember)
+            )
+            {
+                return node;
+            }
+
+            var memberNativeName = node.AttributeLists.GetNativeNameOrDefault(
+                node.Declaration.Variables.First().Identifier
+            );
+            if (memberNativeName != structureTypeMember.Name)
+            {
+                return node;
+            }
+
+            // Don't replace the default value if one is already provided
+            if (node.Declaration.Variables.First().Initializer != null)
+            {
+                return node;
+            }
+
+            var initializer = EqualsValueClause(
+                MemberAccessExpression(
+                    SyntaxKind.SimpleMemberAccessExpression,
+                    IdentifierName(structureTypeMember.Type),
+                    IdentifierName(structureTypeMember.Value)
+                )
+            );
+
+            node = node.WithDeclaration(
+                node.Declaration.WithVariables(
+                    [
+                        .. node.Declaration.Variables.Select(variable =>
+                            variable.WithInitializer(initializer)
+                        ),
+                    ]
+                )
+            );
+
+            return node;
+        }
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]
