@@ -1690,11 +1690,7 @@ public partial class MixKhronosData(
                     var attributes = SingletonList(
                         AttributeList([Attribute(IdentifierName("Transformed"))])
                     );
-
-                    if (groupInfo.NativeName != null)
-                    {
-                        attributes = attributes.WithNativeName(groupInfo.NativeName);
-                    }
+                    attributes = attributes.WithNativeName(groupInfo.NativeName);
 
                     var baseTypeSyntax = ParseTypeName(baseType);
 
