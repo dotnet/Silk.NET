@@ -30,7 +30,7 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
         public required bool IntReturnsMaybeBool { get; init; }
 
         /// <summary>
-        /// Types to treat as boolean and their boolean schemes if different to default.
+        /// Types to treat as boolean and their boolean schemes if different from the default.
         /// </summary>
         public Dictionary<string, string?>? BoolTypes { get; init; }
     }

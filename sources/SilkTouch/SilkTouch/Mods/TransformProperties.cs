@@ -15,7 +15,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Despite the name of the name, fields are also handled here because
 /// they often need to be transformed alongside properties.
 /// <para/>
-/// This currently does the following changes:
+/// This currently does the following transformations:
 /// 1. Transform string constant properties like
 /// <c>static ReadOnlySpan&lt;byte&gt; Thing => "thing"u8;</c> to be
 /// <c>static Utf8String Thing => "thing"u8;</c>.
