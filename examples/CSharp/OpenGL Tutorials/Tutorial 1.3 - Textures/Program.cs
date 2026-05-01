@@ -170,7 +170,7 @@ namespace Tutorial
             _gl.DetachShader(_program, fragmentShader);
             _gl.DeleteShader(vertexShader);
             _gl.DeleteShader(fragmentShader);
-            
+
             // Set up our vertex attributes! These tell the vertex array (VAO) how to process the vertex data we defined
             // earlier. Each vertex array contains attributes. 
 
@@ -224,20 +224,20 @@ namespace Tutorial
                 // 8. StbImageSharp returns this data as a byte[] array, therefore we must tell OpenGL we are uploading
                 //    data in the unsigned byte format.
                 // 9. The actual pointer to our data!
-                _gl.TexImage2D(TextureTarget.Texture2D, 0, InternalFormat.Rgba, (uint) result.Width, 
+                _gl.TexImage2D(TextureTarget.Texture2D, 0, InternalFormat.Rgba, (uint) result.Width,
                     (uint) result.Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, ptr);
             }
 
             // Let's set some texture parameters!
             // This tells the GPU how it should sample the texture.
-            
+
             // Set the texture wrap mode to repeat.
             // The texture wrap mode defines what should happen when the texture coordinates go outside of the 0-1 range.
             // In this case, we set it to repeat. The texture will just repeatedly tile over and over again.
             // You'll notice we're using S and T wrapping here. This is OpenGL's version of the standard UV mapping you
             // may be more used to, where S is on the X-axis, and T is on the Y-axis.
-            _gl.TextureParameter(_texture, TextureParameterName.TextureWrapS, (int) TextureWrapMode.Repeat);
-            _gl.TextureParameter(_texture, TextureParameterName.TextureWrapT, (int) TextureWrapMode.Repeat);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int) TextureWrapMode.Repeat);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int) TextureWrapMode.Repeat);
 
             // The min and mag filters define how the texture should be sampled as it resized.
             // The min, or minification filter, is used when the texture is reduced in size.
@@ -246,8 +246,8 @@ namespace Tutorial
             // You can also use nearest (point) filtering, or anisotropic filtering, which is only available on the min
             // filter.
             // You may notice that the min filter defines a "mipmap" filter as well. We'll go over mipmaps below.
-            _gl.TextureParameter(_texture, TextureParameterName.TextureMinFilter, (int) TextureMinFilter.LinearMipmapLinear);
-            _gl.TextureParameter(_texture, TextureParameterName.TextureMagFilter, (int) TextureMagFilter.Linear);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int) TextureMinFilter.LinearMipmapLinear);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int) TextureMagFilter.Linear);
 
             // Generate mipmaps for this texture.
             // Note: We MUST do this or the texture will appear as black (this is an option you can change but this is
