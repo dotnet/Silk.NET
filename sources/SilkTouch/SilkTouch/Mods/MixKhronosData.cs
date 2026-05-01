@@ -2269,16 +2269,9 @@ public partial class MixKhronosData(
     /// </summary>
     private class RewriterPhase4(JobData job) : CSharpSyntaxRewriter
     {
-        public override SyntaxNode VisitFieldDeclaration(FieldDeclarationSyntax node)
+        public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            if (node.Parent is not StructDeclarationSyntax structNode)
-            {
-                return node;
-            }
-
-            var structNativeName = structNode.AttributeLists.GetNativeNameOrDefault(
-                structNode.Identifier
-            );
+            var structNativeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
             if (
                 !job.StructureTypeMembers.TryGetValue(structNativeName, out var structureTypeMember)
             )
@@ -2286,37 +2279,53 @@ public partial class MixKhronosData(
                 return node;
             }
 
-            var memberNativeName = node.AttributeLists.GetNativeNameOrDefault(
-                node.Declaration.Variables.First().Identifier
-            );
-            if (memberNativeName != structureTypeMember.Name)
+            var members = new List<MemberDeclarationSyntax>();
+            foreach (var memberNode in node.Members)
             {
-                return node;
+                if (memberNode is not FieldDeclarationSyntax memberFieldNode)
+                {
+                    members.Add(memberNode);
+                    continue;
+                }
+
+                var memberNativeName = memberFieldNode.AttributeLists.GetNativeNameOrDefault(
+                    memberFieldNode.Declaration.Variables.First().Identifier
+                );
+
+                if (memberNativeName != structureTypeMember.Name)
+                {
+                    members.Add(memberNode);
+                    continue;
+                }
+
+                // Don't replace the default value if one is already provided
+                if (memberFieldNode.Declaration.Variables.First().Initializer != null)
+                {
+                    return node;
+                }
+
+                var initializer = EqualsValueClause(
+                    MemberAccessExpression(
+                        SyntaxKind.SimpleMemberAccessExpression,
+                        IdentifierName(structureTypeMember.Type),
+                        IdentifierName(structureTypeMember.Value)
+                    )
+                );
+
+                members.Add(
+                    memberFieldNode.WithDeclaration(
+                        memberFieldNode.Declaration.WithVariables(
+                            [
+                                .. memberFieldNode.Declaration.Variables.Select(variable =>
+                                    variable.WithInitializer(initializer)
+                                ),
+                            ]
+                        )
+                    )
+                );
             }
 
-            // Don't replace the default value if one is already provided
-            if (node.Declaration.Variables.First().Initializer != null)
-            {
-                return node;
-            }
-
-            var initializer = EqualsValueClause(
-                MemberAccessExpression(
-                    SyntaxKind.SimpleMemberAccessExpression,
-                    IdentifierName(structureTypeMember.Type),
-                    IdentifierName(structureTypeMember.Value)
-                )
-            );
-
-            node = node.WithDeclaration(
-                node.Declaration.WithVariables(
-                    [
-                        .. node.Declaration.Variables.Select(variable =>
-                            variable.WithInitializer(initializer)
-                        ),
-                    ]
-                )
-            );
+            node = node.WithMembers([.. members]);
 
             return node;
         }
