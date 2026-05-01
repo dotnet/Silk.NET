@@ -68,6 +68,11 @@
           "SDL_bool": null
         }
       },
+      "TransformProperties": {
+        "BoolTypes": {
+          "SDL_bool": null
+        }
+      },
       "IdentifySharedPrefixes": {
         "GlobalPrefixHints": ["SDL"]
       },
@@ -224,6 +229,11 @@
           "GLboolean": null
         }
       },
+      "TransformProperties": {
+        "BoolTypes": {
+          "GLboolean": null
+        }
+      },
       "StripAttributes": {
         "Remove": [
           "NativeTypeName",
@@ -361,6 +371,12 @@
         },
         "BenefitOfTheDoubtArrayTransformation": true
       },
+      "TransformProperties": {
+        "BoolTypes": {
+          "ALboolean": null,
+          "ALCboolean": null
+        }
+      },
       "TransformHandles": {
         "UseDsl": true
       },
@@ -430,6 +446,11 @@
         ]
       },
       "TransformFunctions": {
+        "BoolTypes": {
+          "VkBool32": null
+        }
+      },
+      "TransformProperties": {
         "BoolTypes": {
           "VkBool32": null
         }
