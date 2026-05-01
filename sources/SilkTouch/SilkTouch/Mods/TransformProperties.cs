@@ -1,9 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -12,11 +9,18 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Applies transformations to property signatures.
+/// Applies transformations to fields and properties.
 /// </summary>
 /// <remarks>
-/// Today, this only includes transforming properties like <c>static ReadOnlySpan&lt;byte&gt; Thing => "thing"u8;</c>
-/// to be <c>static Utf8String Thing => "thing"u8;</c>.
+/// Despite the name of the name, fields are also handled here because
+/// they often need to be transformed alongside properties.
+/// <para/>
+/// This currently does the following changes:
+/// 1. Transform string constant properties like
+/// <c>static ReadOnlySpan&lt;byte&gt; Thing => "thing"u8;</c> to be
+/// <c>static Utf8String Thing => "thing"u8;</c>.
+/// 2. Transform fields and properties that are recognised
+/// to be akin to booleans to use the <c>MaybeBool</c> type.
 /// </remarks>
 public class TransformProperties : IMod
 {
@@ -48,7 +52,7 @@ public class TransformProperties : IMod
                     is GenericNameSyntax
                     {
                         TypeArgumentList.Arguments: [PredefinedTypeSyntax pt],
-                        Identifier.Text: "ReadOnlySpan"
+                        Identifier.Text: "ReadOnlySpan",
                     }
                 && (
                     pt.Keyword.IsKind(SyntaxKind.ByteKeyword)
