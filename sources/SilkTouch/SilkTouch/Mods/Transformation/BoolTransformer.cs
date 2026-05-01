@@ -27,7 +27,7 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
         var retNative = current.GetNativeReturnTypeName() ?? current.ReturnType.ToString();
         if (
             (current.ReturnType.IsInteger() && cfg.IntReturnsMaybeBool)
-            || (cfg.BoolTypes?.TryGetValue(retNative, out retBoolScheme) ?? false)
+            || cfg.BoolTypes.TryGetValue(retNative, out retBoolScheme)
             || (retNative == "bool" && current.ReturnType.ToString().Trim() != "bool") // stdbool.h, hopefully...
         )
         {
@@ -60,7 +60,7 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
                 paramNative is not null
                 && param.Type is not null
                 && (
-                    (cfg.BoolTypes?.TryGetValue(paramNative, out paramBoolScheme) ?? false)
+                    cfg.BoolTypes.TryGetValue(paramNative, out paramBoolScheme)
                     || (paramNative == "bool" && param.Type.ToString().Trim() != "bool") // stdbool.h, hopefully...
                 )
             )

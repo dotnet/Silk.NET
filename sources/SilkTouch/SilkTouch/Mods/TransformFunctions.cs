@@ -29,7 +29,7 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
         /// <summary>
         /// Types to treat as boolean and their boolean schemes if different from the default.
         /// </summary>
-        public Dictionary<string, string?>? BoolTypes { get; init; }
+        public Dictionary<string, string?> BoolTypes { get; init; } = [];
     }
 
     /// <inheritdoc />
