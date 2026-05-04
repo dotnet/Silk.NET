@@ -12,14 +12,26 @@ Capitalization Conventions: https://learn.microsoft.com/en-us/dotnet/standard/de
 
 ## High-Level Overview
 
-This section explains how names flow through the SilkTouch generator pipeline:
+This section explains how names flow through the SilkTouch generator pipeline.
+This section uses `vkCreateSwapchainKHR` from Vulkan as an example.
 
-1. Names enter the pipeline from native sources (eg: C header files)
-   - Eg: ``
+1. Names enter the pipeline from native sources (eg: C header files).
+   - Eg: `vkCreateSwapchainKHR` as input from Vulkan during the `ClangScraper` mod.
+
 2. Mods add metadata to each name as C# attributes.
-   - Eg: `[NativeName]`, `[NameAffix]`
+   - `[NativeName("vkCreateSwapchainKHR")]` from `MarkNativeNames`
+   - `[NameAffix("Suffix", "KhronosVendor", "KHR")]` from `MixKhronosData`
+   - `[NameAffix("Prefix", "SharedPrefix", "vk")]` from `IdentifySharedPrefixes`
+
 3. `PrettifyNames` uses the metadata to transform the names according to user-provided configuration.
-4. Metadata is stripped from the generated bindings.
+   - The affixes are first stripped → `CreateSwapchain`
+   - The base name is "prettified" (pascal-casing, removal of underscores) → `CreateSwapchain` (No change)
+   - Affixes are reapplied according to user configuration → `CreateSwapchainKHR`
+      - We usually remove shared prefixes and preserve Khronos vendor suffixes.
+
+4. Unwanted metadata is stripped from the generated bindings to keep the output clean.
+   - `[NativeName]` is kept. `[NameAffix]` is removed.
+   - Tip: Disabling the `StripAttributes` mod can be helpful for debugging unwanted outputs.
 
 (TODO: Elaborate more and provide examples)
 
