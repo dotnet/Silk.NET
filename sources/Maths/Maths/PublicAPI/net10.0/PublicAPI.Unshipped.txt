@@ -1318,7 +1318,7 @@ static Silk.NET.Maths.Quaternion<T>.explicit operator checked System.Numerics.Qu
 static Silk.NET.Maths.Quaternion<T>.explicit operator Silk.NET.Maths.Quaternion<T>(System.Numerics.Quaternion from) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.explicit operator System.Numerics.Quaternion(Silk.NET.Maths.Quaternion<T> from) -> System.Numerics.Quaternion
 static Silk.NET.Maths.Quaternion<T>.Identity.get -> Silk.NET.Maths.Quaternion<T>
-static Silk.NET.Maths.Quaternion<T>.Invert(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.Inverse(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.Lerp(Silk.NET.Maths.Quaternion<T> value1, Silk.NET.Maths.Quaternion<T> value2, T amount) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.Normalize(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.operator !=(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> bool

@@ -501,7 +501,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(-0.0287356321f, -0.03448276f, -0.0402298868f, 0.04597701f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Invert(a);
+            actual = Quaternion<float>.Inverse(a);
             Assert.Equal(expected, actual);
         }
 
@@ -511,7 +511,7 @@ namespace Silk.NET.Maths.Tests
         public void QuaternionInverseTest1()
         {
             Quaternion<float> a = new Quaternion<float>();
-            Quaternion<float> actual = Quaternion<float>.Invert(a);
+            Quaternion<float> actual = Quaternion<float>.Inverse(a);
 
             Assert.True(float.IsNaN(actual.X) && float.IsNaN(actual.Y) && float.IsNaN(actual.Z) && float.IsNaN(actual.W)
                 , $"Quaternion<float>.Inverse - did not return the expected value: expected {new Quaternion<float>(float.NaN, float.NaN, float.NaN, float.NaN)} actual {actual}");

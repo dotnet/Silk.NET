@@ -331,7 +331,7 @@ namespace Silk.NET.Maths
         /// <summary>Inverts a Quaternion.</summary>
         /// <param name="value">The source Quaternion.</param>
         /// <returns>The inverted Quaternion.</returns>
-        public static Quaternion<T> Invert(Quaternion<T> value)
+        public static Quaternion<T> Inverse(Quaternion<T> value)
         {
             //  -1   (       a              -v       )
             // q   = ( -------------   ------------- )
@@ -350,7 +350,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Inverts the Quaternion.</summary>
-        /// <remarks>This modifies the Quaternion. Use <see cref="Invert(Quaternion{T})"/> to obtain a new value without affecting the original.</remarks>
+        /// <remarks>This modifies the Quaternion. Use <see cref="Inverse(Quaternion{T})"/> to obtain a new value without affecting the original.</remarks>
         public void Invert()
         {
             var invNorm = T.One / LengthSquared;
