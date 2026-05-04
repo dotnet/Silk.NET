@@ -15,6 +15,39 @@ namespace Silk.NET.Maths
         private const float BillboardMinAngle = 1.0f - (0.1f * (MathF.PI / 180.0f)); // 0.1 degrees
         private const float DecomposeEpsilon = 0.0001f;
 
+        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix3X2{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix3X2{T}"/>.</param>
+        public static Matrix4X4<T> CreateFromAffine<T>(Matrix3X2<T> value)
+            where T : INumber<T> => new
+            (
+                new(value.M11, value.M12, T.Zero, T.Zero),
+                new(value.M21, value.M22, T.Zero, T.Zero),
+                Vector4D<T>.UnitZ,
+                new(value.M31, value.M32, T.Zero, T.One)
+            );
+
+        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix3X3{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix3X3{T}"/>.</param>
+        public static Matrix4X4<T> CreateFromLinear<T>(Matrix3X3<T> value)
+            where T : INumber<T> => new
+            (
+                new(value.M11, value.M12, value.M13, T.Zero),
+                new(value.M21, value.M22, value.M23, T.Zero),
+                Vector4D<T>.UnitZ,
+                new(value.M31, value.M32, value.M33, T.One)
+            );
+
+        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix3X3{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix3X3{T}"/>.</param>
+        public static Matrix4X4<T> CreateFromHomogenous<T>(Matrix3X3<T> value)
+            where T : INumber<T> => new
+            (
+                new(value.M11, value.M12, T.Zero, value.M13),
+                new(value.M21, value.M22, T.Zero, value.M23),
+                Vector4D<T>.UnitZ,
+                new(value.M31, value.M32, T.Zero, value.M33)
+            );
+
         /// <summary>Creates a spherical billboard that rotates around a specified object position.</summary>
         /// <param name="objectPosition">Position of the object the billboard will rotate around.</param>
         /// <param name="cameraPosition">Position of the camera.</param>
@@ -811,7 +844,7 @@ namespace Silk.NET.Maths
         /// <returns><c>true</c> if the source matrix could be inverted; <c>false</c> otherwise.</returns>
         ///
         [MethodImpl((MethodImplOptions)768)]
-        public static unsafe bool Invert<T>(Matrix4X4<T> matrix, out Matrix4X4<T> result)
+        public static bool Invert<T>(Matrix4X4<T> matrix, out Matrix4X4<T> result)
             where T : IFloatingPointIeee754<T>
         {
             // This implementation is based on the DirectX Math Library XMMatrixInverse method
@@ -1412,7 +1445,7 @@ namespace Silk.NET.Maths
         /// <summary>Transposes the rows and columns of a matrix.</summary>
         /// <param name="matrix">The source matrix.</param>
         /// <returns>The transposed matrix.</returns>
-        public static unsafe Matrix4X4<T> Transpose<T>(Matrix4X4<T> matrix)
+        public static Matrix4X4<T> Transpose<T>(Matrix4X4<T> matrix)
             where T : INumberBase<T>
         {
             return new(matrix.Column1, matrix.Column2, matrix.Column3, matrix.Column4);

@@ -5,66 +5,6 @@ namespace Silk.NET.Maths
 {
     public partial struct Matrix4X4<T>
     {
-        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix3X2{T}"/>.</summary>
-        /// <param name="value">The source <see cref="Matrix3X2{T}"/>.</param>
-        public Matrix4X4(Matrix3X2<T> value)
-        {
-            Row1 = new(value.M11, value.M12, T.Zero, T.Zero);
-            Row2 = new(value.M21, value.M22, T.Zero, T.Zero);
-            Row4 = new(value.M31, value.M32, T.Zero, T.One);
-            Row3 = new(T.Zero, T.Zero, T.One, T.Zero);
-        }
-
-        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix4X3{T}"/>.</summary>
-        /// <param name="value">The source <see cref="Matrix4X3{T}"/>.</param>
-        public Matrix4X4(Matrix4X3<T> value)
-        {
-            Row1 = new(value.M11, value.M12, value.M13, T.Zero);
-            Row2 = new(value.M21, value.M22, value.M23, T.Zero);
-            Row3 = new(value.M31, value.M32, value.M33, T.Zero);
-            Row4 = new(value.M41, value.M42, value.M43, T.One);
-        }
-
-        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix3X4{T}"/>.</summary>
-        /// <param name="value">The source <see cref="Matrix3X4{T}"/>.</param>
-        public Matrix4X4(Matrix3X4<T> value)
-        {
-            Row1 = new(value.M11, value.M12, value.M13, value.M14);
-            Row2 = new(value.M21, value.M22, value.M23, value.M24);
-            Row3 = new(value.M31, value.M32, value.M33, value.M34);
-            Row4 = default;
-        }
-
-        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix3X3{T}"/>.</summary>
-        /// <param name="value">The source <see cref="Matrix3X3{T}"/>.</param>
-        public Matrix4X4(Matrix3X3<T> value)
-        {
-            Row1 = new(value.M11, value.M12, value.M13, T.Zero);
-            Row2 = new(value.M21, value.M22, value.M23, T.Zero);
-            Row4 = new(value.M31, value.M32, value.M33, T.One);
-            Row3 = new(T.Zero, T.Zero, T.One, T.Zero);
-        }
-
-        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix2X4{T}"/>.</summary>
-        /// <param name="value">The source <see cref="Matrix2X4{T}"/>.</param>
-        public Matrix4X4(Matrix2X4<T> value)
-        {
-            Row1 = new(value.M11, value.M12, value.M13, value.M14);
-            Row2 = new(value.M21, value.M22, value.M23, value.M24);
-            Row3 = Vector4D<T>.UnitZ;
-            Row4 = Vector4D<T>.UnitW;
-        }
-
-        /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix4X2{T}"/>.</summary>
-        /// <param name="value">The source <see cref="Matrix4X2{T}"/>.</param>
-        public Matrix4X4(Matrix4X2<T> value)
-        {
-            Row1 = new(value.M11, value.M12, T.Zero, T.Zero);
-            Row2 = new(value.M21, value.M22, T.Zero, T.Zero);
-            Row3 = new(value.M31, value.M32, T.One, T.Zero);
-            Row4 = new(value.M41, value.M42, T.Zero, T.One);
-        }
-
         /// <summary>Calculates the determinant of the matrix.</summary>
         /// <returns>The determinant of the matrix.</returns>
         public readonly T GetDeterminant()

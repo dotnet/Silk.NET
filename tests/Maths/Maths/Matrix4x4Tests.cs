@@ -375,7 +375,7 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> translation;
 
             Assert.False(Matrix4X4.Decompose(GenerateIncrementalMatrixNumber(), out scales, out rotation, out translation), "decompose should have failed.");
-            Assert.False(Matrix4X4.Decompose(new Matrix4X4<float>(Matrix3X2.CreateSkew<float>(1, 2)), out scales, out rotation, out translation), "decompose should have failed.");
+            Assert.False(Matrix4X4.Decompose(Matrix4X4.CreateFromAffine(Matrix3X2.CreateSkew<float>(1, 2)), out scales, out rotation, out translation), "decompose should have failed.");
         }
 
         // Transform by quaternion test
@@ -2301,7 +2301,7 @@ namespace Silk.NET.Maths.Tests
         public void Matrix4x4From3x2Test()
         {
             Matrix3X2<float> source = new Matrix3X2<float>(1, 2, 3, 4, 5, 6);
-            Matrix4X4<float> result = new Matrix4X4<float>(source);
+            Matrix4X4<float> result = Matrix4X4.CreateFromAffine(source);
 
             Assert.Equal(source.M11, result.M11);
             Assert.Equal(source.M12, result.M12);

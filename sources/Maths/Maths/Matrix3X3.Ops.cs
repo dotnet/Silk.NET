@@ -513,7 +513,7 @@ namespace Silk.NET.Maths
         /// <summary>Transposes the rows and columns of a matrix.</summary>
         /// <param name="matrix">The source matrix.</param>
         /// <returns>The transposed matrix.</returns>
-        public static unsafe Matrix3X3<T> Transpose<T>(Matrix3X3<T> matrix)
+        public static Matrix3X3<T> Transpose<T>(Matrix3X3<T> matrix)
             where T : INumberBase<T>
         {
             return new(matrix.Column1, matrix.Column2, matrix.Column3);
