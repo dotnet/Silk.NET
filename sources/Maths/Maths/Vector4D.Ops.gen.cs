@@ -210,6 +210,11 @@ namespace Silk.NET.Maths
             where T : IFloatingPoint<T> =>
             Vector4D.Ceiling(vector).AsChecked<int>();
 
+        /// <summary>Converts a <see cref="Vector4D{T}"/> to <see cref="Vector4"/>.</summary>
+        public static Vector4 ToNumerics<T>(this Vector4D<T> from)
+            where T : INumberBase<T> =>
+            (Vector4)from;
+
         /// <summary>Converts a <see cref="Vector4D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
         public static Vector128<float> ToVector128(this Vector4D<float> vector) =>
             Vector128.Create(vector.X, vector.Y, vector.Z, vector.W);

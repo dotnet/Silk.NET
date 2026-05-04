@@ -206,6 +206,11 @@ namespace Silk.NET.Maths
             where T : IFloatingPoint<T> =>
             Vector2D.Ceiling(vector).AsChecked<int>();
 
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to <see cref="Vector2"/>.</summary>
+        public static Vector2 ToNumerics<T>(this Vector2D<T> from)
+            where T : INumberBase<T> =>
+            (Vector2)from;
+
         /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
         public static Vector64<float> ToVector64(this Vector2D<float> vector) =>
             Vector64.Create(vector.X, vector.Y);

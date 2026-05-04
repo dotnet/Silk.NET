@@ -1508,6 +1508,7 @@ static Silk.NET.Maths.Vector2D.Sqrt<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> 
 static Silk.NET.Maths.Vector2D.Tan<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Tanh<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.TanPi<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.ToNumerics<T>(this Silk.NET.Maths.Vector2D<T> from) -> System.Numerics.Vector2
 static Silk.NET.Maths.Vector2D.ToVector128(this Silk.NET.Maths.Vector2D<byte> vector) -> System.Runtime.Intrinsics.Vector128<byte>
 static Silk.NET.Maths.Vector2D.ToVector128(this Silk.NET.Maths.Vector2D<double> vector) -> System.Runtime.Intrinsics.Vector128<double>
 static Silk.NET.Maths.Vector2D.ToVector128(this Silk.NET.Maths.Vector2D<float> vector) -> System.Runtime.Intrinsics.Vector128<float>
@@ -1775,6 +1776,7 @@ static Silk.NET.Maths.Vector3D.Sqrt<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> 
 static Silk.NET.Maths.Vector3D.Tan<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Tanh<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.TanPi<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.ToNumerics<T>(this Silk.NET.Maths.Vector3D<T> from) -> System.Numerics.Vector3
 static Silk.NET.Maths.Vector3D.ToVector128(this Silk.NET.Maths.Vector3D<byte> vector) -> System.Runtime.Intrinsics.Vector128<byte>
 static Silk.NET.Maths.Vector3D.ToVector128(this Silk.NET.Maths.Vector3D<float> vector) -> System.Runtime.Intrinsics.Vector128<float>
 static Silk.NET.Maths.Vector3D.ToVector128(this Silk.NET.Maths.Vector3D<int> vector) -> System.Runtime.Intrinsics.Vector128<int>
@@ -2048,6 +2050,7 @@ static Silk.NET.Maths.Vector4D.Sqrt<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> 
 static Silk.NET.Maths.Vector4D.Tan<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Tanh<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.TanPi<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.ToNumerics<T>(this Silk.NET.Maths.Vector4D<T> from) -> System.Numerics.Vector4
 static Silk.NET.Maths.Vector4D.ToVector128(this Silk.NET.Maths.Vector4D<byte> vector) -> System.Runtime.Intrinsics.Vector128<byte>
 static Silk.NET.Maths.Vector4D.ToVector128(this Silk.NET.Maths.Vector4D<float> vector) -> System.Runtime.Intrinsics.Vector128<float>
 static Silk.NET.Maths.Vector4D.ToVector128(this Silk.NET.Maths.Vector4D<int> vector) -> System.Runtime.Intrinsics.Vector128<int>
