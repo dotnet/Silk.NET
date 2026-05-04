@@ -6,9 +6,9 @@ using System.Numerics;
 namespace Silk.NET.Maths
 {
     /// <summary>
-    /// Helper methods to work with <see cref="Rectangle{T}"/>
+    /// Helper methods to work with <see cref="Rect2D{T}"/>
     /// </summary>
-    public static class Rectangle
+    public static class Rect2D
     {
         /// <summary>
         /// Constructs a rectangle from the given edge positions.
@@ -19,11 +19,11 @@ namespace Silk.NET.Maths
         /// <param name="bottom">The bottom edge.</param>
         /// <typeparam name="T">The type.</typeparam>
         /// <returns>The constructed rectangle.</returns>
-        public static Rectangle<T> FromLTRB<T>(T left, T top, T right, T bottom)
+        public static Rect2D<T> FromLTRB<T>(T left, T top, T right, T bottom)
             where T : INumber<T>
         {
             Vector2D<T> o = new(left, top);
-            return new Rectangle<T>(o, new Vector2D<T>(right, bottom) - o);
+            return new Rect2D<T>(o, new Vector2D<T>(right, bottom) - o);
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace Silk.NET.Maths
         /// <param name="rectangle">The rectangle.</param>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
-        public static T GetDistanceToNearestEdge<T>(this Rectangle<T> rectangle, Vector2D<T> point)
+        public static T GetDistanceToNearestEdge<T>(this Rect2D<T> rectangle, Vector2D<T> point)
             where T : INumber<T>, IRootFunctions<T>
         {
             var max = rectangle.Max;

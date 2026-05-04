@@ -11,8 +11,8 @@ namespace Silk.NET.Maths
     /// </summary>
     [Serializable]
     [DataContract]
-    public struct Cube<T> :
-        IEquatable<Cube<T>>
+    public struct Rect3D<T> :
+        IEquatable<Rect3D<T>>
         where T : INumber<T>
     {
         /// <summary>
@@ -32,7 +32,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="origin">The origin of the cube.</param>
         /// <param name="size">The size of the cube.</param>
-        public Cube(Vector3D<T> origin, Vector3D<T> size)
+        public Rect3D(Vector3D<T> origin, Vector3D<T> size)
         {
             Origin = origin;
             Size = size;
@@ -45,7 +45,7 @@ namespace Silk.NET.Maths
         /// <param name="sizeX">The X component of the size of the cube.</param>
         /// <param name="sizeY">The Y component of the size of the cube.</param>
         /// <param name="sizeZ">The Z component of the size of the cube.</param>
-        public Cube(Vector3D<T> origin, T sizeX, T sizeY, T sizeZ)
+        public Rect3D(Vector3D<T> origin, T sizeX, T sizeY, T sizeZ)
             : this(origin, new Vector3D<T>(sizeX, sizeY, sizeZ))
         {
         }
@@ -57,7 +57,7 @@ namespace Silk.NET.Maths
         /// <param name="originY">The Y component of the origin of the cube.</param>
         /// <param name="originZ">The Z component of the origin of the cube.</param>
         /// <param name="size">The size of the cube.</param>
-        public Cube(T originX, T originY, T originZ, Vector3D<T> size)
+        public Rect3D(T originX, T originY, T originZ, Vector3D<T> size)
             : this(new Vector3D<T>(originX, originY, originZ), size)
         {
         }
@@ -71,7 +71,7 @@ namespace Silk.NET.Maths
         /// <param name="sizeX">The X component of the size of the cube.</param>
         /// <param name="sizeY">The Y component of the size of the cube.</param>
         /// <param name="sizeZ">The Z component of the size of the cube.</param>
-        public Cube(T originX, T originY, T originZ, T sizeX, T sizeY, T sizeZ)
+        public Rect3D(T originX, T originY, T originZ, T sizeX, T sizeY, T sizeZ)
             : this(new Vector3D<T>(originX, originY, originZ), new Vector3D<T>(sizeX, sizeY, sizeZ))
         {
         }
@@ -113,7 +113,7 @@ namespace Silk.NET.Maths
         /// <param name="other">The cube.</param>
         /// <returns><c>true</c> if this cube contains the given cube; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a cube that touches the edge contained.</remarks>
-        public bool Contains(Cube<T> other)
+        public bool Contains(Rect3D<T> other)
         {
             var tMax = this.Max;
             var oMax = other.Max;
@@ -126,7 +126,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance.</param>
         /// <returns>The calculated cube.</returns>
-        public readonly Cube<T> GetTranslated(Vector3D<T> distance) =>
+        public readonly Rect3D<T> GetTranslated(Vector3D<T> distance) =>
             new(Origin + distance, Size);
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Silk.NET.Maths
         /// <param name="scale">The scale.</param>
         /// <param name="anchor">The anchor.</param>
         /// <returns>The calculated cube.</returns>
-        public Cube<T> GetScaled(Vector3D<T> scale, Vector3D<T> anchor)
+        public Rect3D<T> GetScaled(Vector3D<T> scale, Vector3D<T> anchor)
         {
             var min = (scale * (Origin - anchor)) + anchor;
             var max = (scale * (Max - anchor)) + anchor;
@@ -149,7 +149,7 @@ namespace Silk.NET.Maths
         /// <param name="scale">The scale.</param>
         /// <param name="anchor">The anchor.</param>
         /// <returns>The calculated cube.</returns>
-        public Cube<T> GetScaled<TScale>(Vector3D<TScale> scale, Vector3D<T> anchor)
+        public Rect3D<T> GetScaled<TScale>(Vector3D<TScale> scale, Vector3D<T> anchor)
             where TScale : INumberBase<TScale>
         {
             var convertedAnchor = anchor.AsTruncating<TScale>();
@@ -163,7 +163,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The cube.</returns>
-        public Cube<T> GetInflated(Vector3D<T> point)
+        public Rect3D<T> GetInflated(Vector3D<T> point)
         {
             var min = Vector3D.Min(Origin, point);
             var max = Vector3D.Max(Max, point);
@@ -173,14 +173,14 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Cube is equal to this Cube instance.</summary>
         /// <param name="other">The Cube to compare this instance to.</param>
         /// <returns><c>true</c> if the other Cube is equal to this instance; <c>false</c> otherwise.</returns>
-        public bool Equals(Cube<T> other) =>
+        public bool Equals(Rect3D<T> other) =>
             Origin.Equals(other.Origin) && Size.Equals(other.Size);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Cube instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns><c>true</c> if the Object is equal to this Cube; <c>false</c> otherwise.</returns>
         public override bool Equals(object? obj) =>
-            obj is Cube<T> other && Equals(other);
+            obj is Rect3D<T> other && Equals(other);
 
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>The hash code.</returns>
@@ -191,14 +191,14 @@ namespace Silk.NET.Maths
         /// <param name="left">The first Cube to compare.</param>
         /// <param name="right">The second Cube to compare.</param>
         /// <returns><c>true</c> if the Cubes are equal; <c>false</c> otherwise.</returns>
-        public static bool operator ==(Cube<T> left, Cube<T> right) =>
+        public static bool operator ==(Rect3D<T> left, Rect3D<T> right) =>
             left.Origin == right.Origin && left.Size == right.Size;
 
         /// <summary>Returns a boolean indicating whether the two given Cubes are not equal.</summary>
         /// <param name="left">The first Cube to compare.</param>
         /// <param name="right">The second Cube to compare.</param>
         /// <returns><c>true</c> if the Cubes are not equal; <c>false</c> if they are equal.</returns>
-        public static bool operator !=(Cube<T> left, Cube<T> right) =>
+        public static bool operator !=(Rect3D<T> left, Rect3D<T> right) =>
             left.Origin != right.Origin || left.Size != right.Size;
 
         /// <summary>
@@ -207,32 +207,10 @@ namespace Silk.NET.Maths
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted cube</returns>
         [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
-        public Cube<TOther> As<TOther>()
+        public Rect3D<TOther> As<TOther>()
             where TOther : INumber<TOther>
         {
             return new(Origin.As<TOther>(), Max.As<TOther>());
-        }
-    }
-
-    /// <summary>
-    /// Helper methods to work with <see cref="Cube{T}"/>
-    /// </summary>
-    public static class Cube
-    {
-        /// <summary>
-        /// Calculates the distance to the nearest edge from the point.
-        /// </summary>
-        /// <param name="cube">The cube.</param>
-        /// <param name="point">The point.</param>
-        /// <returns>The distance.</returns>
-        public static T GetDistanceToNearestEdge<T>(Cube<T> cube, Vector3D<T> point)
-            where T : INumber<T>, IRootFunctions<T>
-        {
-            var max = cube.Max;
-            var dx = T.Max(T.Max(cube.Origin.X - point.X, T.Zero), point.X - max.X);
-            var dy = T.Max(T.Max(cube.Origin.Y - point.Y, T.Zero), point.Y - max.Y);
-            var dz = T.Max(T.Max(cube.Origin.Z - point.Z, T.Zero), point.Z - max.Z);
-            return T.Sqrt((dx * dx) + (dy * dy) + (dz * dz));
         }
     }
 }

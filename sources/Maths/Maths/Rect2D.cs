@@ -11,8 +11,8 @@ namespace Silk.NET.Maths
     /// </summary>
     [Serializable]
     [DataContract]
-    public struct Rectangle<T> :
-        IEquatable<Rectangle<T>>
+    public struct Rect2D<T> :
+        IEquatable<Rect2D<T>>
         where T : INumber<T>
     {
         /// <summary>
@@ -32,7 +32,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="origin">The origin of the rect.</param>
         /// <param name="size">The size of the rect.</param>
-        public Rectangle(Vector2D<T> origin, Vector2D<T> size)
+        public Rect2D(Vector2D<T> origin, Vector2D<T> size)
         {
             Origin = origin;
             Size = size;
@@ -44,7 +44,7 @@ namespace Silk.NET.Maths
         /// <param name="origin">The origin of the rect.</param>
         /// <param name="sizeX">The X component of the size of the rect.</param>
         /// <param name="sizeY">The Y component of the size of the rect.</param>
-        public Rectangle(Vector2D<T> origin, T sizeX, T sizeY)
+        public Rect2D(Vector2D<T> origin, T sizeX, T sizeY)
             : this(origin, new Vector2D<T>(sizeX, sizeY))
         {
         }
@@ -55,7 +55,7 @@ namespace Silk.NET.Maths
         /// <param name="originX">The X component of the origin of the rect.</param>
         /// <param name="originY">The Y component of the origin of the rect.</param>
         /// <param name="size">The size of the rect.</param>
-        public Rectangle(T originX, T originY, Vector2D<T> size)
+        public Rect2D(T originX, T originY, Vector2D<T> size)
             : this(new Vector2D<T>(originX, originY), size)
         {
         }
@@ -67,7 +67,7 @@ namespace Silk.NET.Maths
         /// <param name="originY">The Y component of the origin of the rect.</param>
         /// <param name="sizeX">The X component of the size of the rect.</param>
         /// <param name="sizeY">The Y component of the size of the rect.</param>
-        public Rectangle(T originX, T originY, T sizeX, T sizeY)
+        public Rect2D(T originX, T originY, T sizeX, T sizeY)
             : this(new Vector2D<T>(originX, originY), new Vector2D<T>(sizeX, sizeY))
         {
         }
@@ -109,7 +109,7 @@ namespace Silk.NET.Maths
         /// <param name="other">The rectangle.</param>
         /// <returns><c>true</c> if this rectangle contains the given rectangle; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a rectangle that touches the edge contained.</remarks>
-        public bool Contains(Rectangle<T> other)
+        public bool Contains(Rect2D<T> other)
         {
             var tMax = this.Max;
             var oMax = other.Max;
@@ -122,7 +122,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance.</param>
         /// <returns>The calculated rectangle.</returns>
-        public readonly Rectangle<T> GetTranslated(Vector2D<T> distance) =>
+        public readonly Rect2D<T> GetTranslated(Vector2D<T> distance) =>
             new(Origin + distance, Size);
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace Silk.NET.Maths
         /// <param name="scale">The scale.</param>
         /// <param name="anchor">The anchor.</param>
         /// <returns>The calculated rectangle.</returns>
-        public Rectangle<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
+        public Rect2D<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
         {
             var min = (scale * (Origin - anchor)) + anchor;
             var max = (scale * (Max - anchor)) + anchor;
@@ -145,7 +145,7 @@ namespace Silk.NET.Maths
         /// <param name="scale">The scale.</param>
         /// <param name="anchor">The anchor.</param>
         /// <returns>The calculated rectangle.</returns>
-        public Rectangle<T> GetScaled<TScale>(Vector2D<TScale> scale, Vector2D<T> anchor)
+        public Rect2D<T> GetScaled<TScale>(Vector2D<TScale> scale, Vector2D<T> anchor)
             where TScale : INumberBase<TScale>
         {
             var convertedAnchor = anchor.AsTruncating<TScale>();
@@ -159,7 +159,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The calculated rectangle.</returns>
-        public Rectangle<T> GetInflated(Vector2D<T> point)
+        public Rect2D<T> GetInflated(Vector2D<T> point)
         {
             var min = Vector2D.Min(Origin, point);
             var max = Vector2D.Max(Max, point);
@@ -169,14 +169,14 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Rectangle is equal to this Rectangle instance.</summary>
         /// <param name="other">The Rectangle to compare this instance to.</param>
         /// <returns><c>true</c> if the other Rectangle is equal to this instance; <c>false</c> otherwise.</returns>
-        public bool Equals(Rectangle<T> other) =>
+        public bool Equals(Rect2D<T> other) =>
             Origin.Equals(other.Origin) && Size.Equals(other.Size);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Rectangle instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns><c>true</c> if the Object is equal to this Rectangle; <c>false</c> otherwise.</returns>
         public override bool Equals(object? obj) =>
-            obj is Rectangle<T> other && Equals(other);
+            obj is Rect2D<T> other && Equals(other);
 
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>The hash code.</returns>
@@ -187,14 +187,14 @@ namespace Silk.NET.Maths
         /// <param name="left">The first Rectangle to compare.</param>
         /// <param name="right">The second Rectangle to compare.</param>
         /// <returns><c>true</c> if the Rectangles are equal; <c>false</c> otherwise.</returns>
-        public static bool operator ==(Rectangle<T> left, Rectangle<T> right) =>
+        public static bool operator ==(Rect2D<T> left, Rect2D<T> right) =>
             left.Origin == right.Origin && left.Size == right.Size;
 
         /// <summary>Returns a boolean indicating whether the two given Rectangles are not equal.</summary>
         /// <param name="left">The first Rectangle to compare.</param>
         /// <param name="right">The second Rectangle to compare.</param>
         /// <returns><c>true</c> if the Rectangles are not equal; <c>false</c> if they are equal.</returns>
-        public static bool operator !=(Rectangle<T> left, Rectangle<T> right) =>
+        public static bool operator !=(Rect2D<T> left, Rect2D<T> right) =>
             left.Origin != right.Origin || left.Size != right.Size;
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted rectangle</returns>
         [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
-        public Rectangle<TOther> As<TOther>()
+        public Rect2D<TOther> As<TOther>()
             where TOther : INumber<TOther>
         {
             return new(Origin.As<TOther>(), Size.As<TOther>());

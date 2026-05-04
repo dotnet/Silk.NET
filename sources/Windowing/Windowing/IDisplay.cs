@@ -24,7 +24,7 @@ public interface IDisplay : IEquatable<IDisplay>
     /// <summary>
     /// Gets the position and resolution of the monitor in screen space.
     /// </summary>
-    Rectangle<float> Bounds { get; }
+    Rect2D<float> Bounds { get; }
 
     /// <summary>
     /// Gets the area within <see cref="Bounds" /> where surfaces are <i>intended</i> to be drawn.
@@ -32,7 +32,7 @@ public interface IDisplay : IEquatable<IDisplay>
     /// <remarks>
     /// This typically is the area left once you account for things like the menu bar and taskbar.
     /// </remarks>
-    Rectangle<float> WorkArea { get; }
+    Rect2D<float> WorkArea { get; }
 
     /// <summary>
     /// Gets a list of video modes known to be available when this display is <see cref="ISurfaceDisplay.Current" />.
