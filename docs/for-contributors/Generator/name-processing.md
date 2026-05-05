@@ -111,6 +111,8 @@ and the `NameSplitterTests` test cases.
 Numbers are always split out as their own individual token. This is because this is easier to work with and consistent
 than special casing when numbers should "stick" to preceding or proceeding tokens.
 
+Note: The codebase is inconsistent when referring to tokens, usually calling them "words" or "fragments" instead.
+
 For example:
 - `2D` is split as `2_D`
 - `R32` is split as `R_32`
@@ -145,8 +147,6 @@ processed.
 For specifics on how this process works and the exact behaviors, it is best to refer to the `NamePrettifier` source code
 and the `NamePrettifierTests` test cases.
 
-(TODO: Explain how prettification works alongside name splitting. Explain how acronyms are handled. Explain why number fragments are merged to preceding letter fragments and how this affects acronyms and pascal casing.)
-
 ### Name Prettification - Notable Decisions
 
 #### Output of Fully Capitalized Names
@@ -170,7 +170,7 @@ Where this behavior matters is in the following case:
   capitalized by default. This means `RG` is actually output as `Rg`.
 - `RG32` is split as `RG_32`. Because this is an acronym of length 4, it is output as `Rg32`.
 
-Notably, means that `RG` and `RG32` are consistently output as `Rg-`.
+Notably, this means that `RG` and `RG32` are consistently output as `Rg-`.
 
 In the code, this is implemented by merging number tokens with preceding letter tokens.
 
@@ -179,7 +179,7 @@ For example:
 - `RG_32` is merged as `RG32`.
 
 This can be argued to be a hack, but simplifies acronym length calculations and continues to work with the code that
-handles pascal casing.
+handles pascal casing, which simply uppercases the first character and lowercases the rest for each token.
 
 #### Acronym Indeterminate Inputs
 
