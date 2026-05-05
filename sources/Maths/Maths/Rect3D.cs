@@ -92,15 +92,13 @@ namespace Silk.NET.Maths
 
         /// <inheritdoc/>
         public readonly bool Contains<TOther>(TOther other)
-            where TOther : IExtents3D<T>
-        {
-            var tMin = Origin;
-            var tMax = Max;
-            var oMin = other.Min;
-            var oMax = other.Max;
-            return (oMin.X >= tMin.X) && (oMin.Y >= tMin.Y) && (oMin.Z >= tMin.Z)
-                && (oMax.X <= tMax.X) && (oMax.Y <= tMax.Y) && (oMax.Z <= tMax.Z);
-        }
+            where TOther : IExtents3D<T> =>
+            Extents3D.Contains<Rect3D<T>, TOther, T>(this, other);
+
+        /// <inheritdoc/>
+        public readonly bool Intersects<TOther>(TOther other)
+            where TOther : IExtents3D<T> =>
+            Extents3D.Intersects<Rect3D<T>, TOther, T>(this, other);
 
         /// <summary>
         /// Calculates a new Rect3D scaled by the given scale around the given anchor.

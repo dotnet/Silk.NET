@@ -37,7 +37,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="other">The region.</param>
         /// <returns><c>true</c> if this region contains the given region; <c>false</c> otherwise.</returns>
-        /// <remarks>This does consider a region that touches the edge contained.</remarks>
+        /// <remarks>This does consider regions that share external boundaries to be contained.</remarks>
         bool Contains<TOther>(TOther other)
             where TOther : IExtents2D<T>;
     }

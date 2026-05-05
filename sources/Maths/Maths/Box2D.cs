@@ -82,15 +82,13 @@ namespace Silk.NET.Maths
 
         /// <inheritdoc/>
         public readonly bool Contains<TOther>(TOther other)
-            where TOther : IExtents2D<T>
-        {
-            var tMin = Min;
-            var tMax = Max;
-            var oMin = other.Min;
-            var oMax = other.Max;
-            return (oMin.X >= tMin.X) && (oMin.Y >= tMin.Y)
-                && (oMax.X <= tMax.X) && (oMax.Y <= tMax.Y);
-        }
+            where TOther : IExtents2D<T> =>
+            Extents2D.Contains<Box2D<T>, TOther, T>(this, other);
+
+        /// <inheritdoc/>
+        public readonly bool Intersects<TOther>(TOther other)
+            where TOther : IExtents2D<T> =>
+            Extents2D.Intersects<Box2D<T>, TOther, T>(this, other);
 
         /// <summary>
         /// Calculates a new Box2D scaled by the given scale around the given anchor.

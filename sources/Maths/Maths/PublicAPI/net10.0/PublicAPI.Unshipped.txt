@@ -77,6 +77,7 @@ Silk.NET.Maths.Box2D<T>.GetInflated(Silk.NET.Maths.Vector2D<T> point) -> Silk.NE
 Silk.NET.Maths.Box2D<T>.GetScaled(Silk.NET.Maths.Vector2D<T> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Box2D<T>
 Silk.NET.Maths.Box2D<T>.GetTranslated(Silk.NET.Maths.Vector2D<T> distance) -> Silk.NET.Maths.Box2D<T>
 Silk.NET.Maths.Box2D<T>.HalfSize.get -> Silk.NET.Maths.Vector2D<T>
+Silk.NET.Maths.Box2D<T>.Intersects<TOther>(TOther other) -> bool
 Silk.NET.Maths.Box2D<T>.Max.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Box2D<T>.Max.set -> void
 Silk.NET.Maths.Box2D<T>.Min.get -> Silk.NET.Maths.Vector2D<T>
@@ -99,6 +100,7 @@ Silk.NET.Maths.Box3D<T>.GetInflated(Silk.NET.Maths.Vector3D<T> point) -> Silk.NE
 Silk.NET.Maths.Box3D<T>.GetScaled(Silk.NET.Maths.Vector3D<T> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Box3D<T>
 Silk.NET.Maths.Box3D<T>.GetTranslated(Silk.NET.Maths.Vector3D<T> distance) -> Silk.NET.Maths.Box3D<T>
 Silk.NET.Maths.Box3D<T>.HalfSize.get -> Silk.NET.Maths.Vector3D<T>
+Silk.NET.Maths.Box3D<T>.Intersects<TOther>(TOther other) -> bool
 Silk.NET.Maths.Box3D<T>.Max.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Box3D<T>.Max.set -> void
 Silk.NET.Maths.Box3D<T>.Min.get -> Silk.NET.Maths.Vector3D<T>
@@ -507,6 +509,7 @@ Silk.NET.Maths.Rect2D<T>.GetInflated(Silk.NET.Maths.Vector2D<T> point) -> Silk.N
 Silk.NET.Maths.Rect2D<T>.GetScaled(Silk.NET.Maths.Vector2D<T> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Rect2D<T>
 Silk.NET.Maths.Rect2D<T>.GetTranslated(Silk.NET.Maths.Vector2D<T> distance) -> Silk.NET.Maths.Rect2D<T>
 Silk.NET.Maths.Rect2D<T>.HalfSize.get -> Silk.NET.Maths.Vector2D<T>
+Silk.NET.Maths.Rect2D<T>.Intersects<TOther>(TOther other) -> bool
 Silk.NET.Maths.Rect2D<T>.Max.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Rect2D<T>.Origin.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Rect2D<T>.Origin.set -> void
@@ -529,6 +532,7 @@ Silk.NET.Maths.Rect3D<T>.GetInflated(Silk.NET.Maths.Vector3D<T> point) -> Silk.N
 Silk.NET.Maths.Rect3D<T>.GetScaled(Silk.NET.Maths.Vector3D<T> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Rect3D<T>
 Silk.NET.Maths.Rect3D<T>.GetTranslated(Silk.NET.Maths.Vector3D<T> distance) -> Silk.NET.Maths.Rect3D<T>
 Silk.NET.Maths.Rect3D<T>.HalfSize.get -> Silk.NET.Maths.Vector3D<T>
+Silk.NET.Maths.Rect3D<T>.Intersects<TOther>(TOther other) -> bool
 Silk.NET.Maths.Rect3D<T>.Max.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Rect3D<T>.Origin.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Rect3D<T>.Origin.set -> void
@@ -650,10 +654,14 @@ static Silk.NET.Maths.Circle.Contains<T>(this Silk.NET.Maths.Circle<T> circle, S
 static Silk.NET.Maths.Circle.GetInflated<T>(this Silk.NET.Maths.Circle<T> circle, Silk.NET.Maths.Vector2D<T> point) -> Silk.NET.Maths.Circle<T>
 static Silk.NET.Maths.Circle<T>.operator !=(Silk.NET.Maths.Circle<T> left, Silk.NET.Maths.Circle<T> right) -> bool
 static Silk.NET.Maths.Circle<T>.operator ==(Silk.NET.Maths.Circle<T> left, Silk.NET.Maths.Circle<T> right) -> bool
+static Silk.NET.Maths.Extents2D.Contains<T1, T2, TPoint>(T1 a, T2 b) -> bool
 static Silk.NET.Maths.Extents2D.Contains<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector2D<TPoint> point) -> bool
 static Silk.NET.Maths.Extents2D.GetDistanceToInterior<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector2D<TPoint> point) -> TPoint
+static Silk.NET.Maths.Extents2D.Intersects<T1, T2, TPoint>(T1 a, T2 b) -> bool
+static Silk.NET.Maths.Extents3D.Contains<T1, T2, TPoint>(T1 a, T2 b) -> bool
 static Silk.NET.Maths.Extents3D.Contains<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector3D<TPoint> point) -> bool
 static Silk.NET.Maths.Extents3D.GetDistanceToInterior<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector3D<TPoint> point) -> TPoint
+static Silk.NET.Maths.Extents3D.Intersects<T1, T2, TPoint>(T1 a, T2 b) -> bool
 static Silk.NET.Maths.Matrix2X2.Add<T>(Silk.NET.Maths.Matrix2X2<T> left, Silk.NET.Maths.Matrix2X2<T> right) -> Silk.NET.Maths.Matrix2X2<T>
 static Silk.NET.Maths.Matrix2X2.Lerp<T>(Silk.NET.Maths.Matrix2X2<T> value1, Silk.NET.Maths.Matrix2X2<T> value2, T amount) -> Silk.NET.Maths.Matrix2X2<T>
 static Silk.NET.Maths.Matrix2X2.Multiply<T>(Silk.NET.Maths.Matrix2X2<T> left, Silk.NET.Maths.Matrix2X2<T> right) -> Silk.NET.Maths.Matrix2X2<T>
