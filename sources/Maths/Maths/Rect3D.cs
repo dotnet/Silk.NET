@@ -171,10 +171,43 @@ namespace Silk.NET.Maths
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted Rect3D</returns>
         [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
-        public Rect3D<TOther> As<TOther>()
+        public readonly Rect3D<TOther> As<TOther>()
             where TOther : INumber<TOther>
         {
             return new(Origin.As<TOther>(), Size.As<TOther>());
+        }
+
+        /// <summary>
+        /// Returns this Rect2D casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted Rect2D</returns>
+        public readonly Rect3D<TOther> AsChecked<TOther>()
+            where TOther : INumber<TOther>
+        {
+            return new(Origin.AsChecked<TOther>(), Size.AsChecked<TOther>());
+        }
+
+        /// <summary>
+        /// Returns this Rect2D casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted Rect2D</returns>
+        public readonly Rect3D<TOther> AsSaturating<TOther>()
+            where TOther : INumber<TOther>
+        {
+            return new(Origin.AsSaturating<TOther>(), Size.AsSaturating<TOther>());
+        }
+
+        /// <summary>
+        /// Returns this Rect2D casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted Rect2D</returns>
+        public readonly Rect3D<TOther> AsTruncating<TOther>()
+            where TOther : INumber<TOther>
+        {
+            return new(Origin.AsTruncating<TOther>(), Size.AsTruncating<TOther>());
         }
     }
 }

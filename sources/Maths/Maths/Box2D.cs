@@ -160,7 +160,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted box</returns>
         [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
-        public Box2D<TOther> As<TOther>()
+        public readonly Box2D<TOther> As<TOther>()
             where TOther : INumber<TOther>
         {
             return new(Min.As<TOther>(), Max.As<TOther>());
@@ -171,7 +171,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted box</returns>
-        public Box2D<TOther> AsChecked<TOther>()
+        public readonly Box2D<TOther> AsChecked<TOther>()
             where TOther : INumber<TOther>
         {
             return new(Min.AsChecked<TOther>(), Max.AsChecked<TOther>());
@@ -182,7 +182,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted box</returns>
-        public Box2D<TOther> AsSaturating<TOther>()
+        public readonly Box2D<TOther> AsSaturating<TOther>()
             where TOther : INumber<TOther>
         {
             return new(Min.AsSaturating<TOther>(), Max.AsSaturating<TOther>());
@@ -193,7 +193,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted box</returns>
-        public Box2D<TOther> AsTruncating<TOther>()
+        public readonly Box2D<TOther> AsTruncating<TOther>()
             where TOther : INumber<TOther>
         {
             return new(Min.AsTruncating<TOther>(), Max.AsTruncating<TOther>());

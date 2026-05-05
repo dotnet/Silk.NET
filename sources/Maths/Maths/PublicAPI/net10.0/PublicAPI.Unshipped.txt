@@ -84,6 +84,9 @@ Silk.NET.Maths.Box2D<T>.Min.set -> void
 Silk.NET.Maths.Box2D<T>.Size.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Box3D<T>
 Silk.NET.Maths.Box3D<T>.As<TOther>() -> Silk.NET.Maths.Box3D<TOther>
+Silk.NET.Maths.Box3D<T>.AsChecked<TOther>() -> Silk.NET.Maths.Box3D<TOther>
+Silk.NET.Maths.Box3D<T>.AsSaturating<TOther>() -> Silk.NET.Maths.Box3D<TOther>
+Silk.NET.Maths.Box3D<T>.AsTruncating<TOther>() -> Silk.NET.Maths.Box3D<TOther>
 Silk.NET.Maths.Box3D<T>.Box3D() -> void
 Silk.NET.Maths.Box3D<T>.Box3D(Silk.NET.Maths.Vector3D<T> min, Silk.NET.Maths.Vector3D<T> max) -> void
 Silk.NET.Maths.Box3D<T>.Box3D(Silk.NET.Maths.Vector3D<T> min, T maxX, T maxY, T maxZ) -> void
@@ -496,6 +499,9 @@ Silk.NET.Maths.Ray3D<T>.Ray3D(T originX, T originY, T originZ, T directionX, T d
 Silk.NET.Maths.Rect2D
 Silk.NET.Maths.Rect2D<T>
 Silk.NET.Maths.Rect2D<T>.As<TOther>() -> Silk.NET.Maths.Rect2D<TOther>
+Silk.NET.Maths.Rect2D<T>.AsChecked<TOther>() -> Silk.NET.Maths.Rect2D<TOther>
+Silk.NET.Maths.Rect2D<T>.AsSaturating<TOther>() -> Silk.NET.Maths.Rect2D<TOther>
+Silk.NET.Maths.Rect2D<T>.AsTruncating<TOther>() -> Silk.NET.Maths.Rect2D<TOther>
 Silk.NET.Maths.Rect2D<T>.Center.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Rect2D<T>.Contains<TOther>(TOther other) -> bool
 Silk.NET.Maths.Rect2D<T>.Equals(Silk.NET.Maths.Rect2D<T> other) -> bool
@@ -515,6 +521,9 @@ Silk.NET.Maths.Rect2D<T>.Size.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Rect2D<T>.Size.set -> void
 Silk.NET.Maths.Rect3D<T>
 Silk.NET.Maths.Rect3D<T>.As<TOther>() -> Silk.NET.Maths.Rect3D<TOther>
+Silk.NET.Maths.Rect3D<T>.AsChecked<TOther>() -> Silk.NET.Maths.Rect3D<TOther>
+Silk.NET.Maths.Rect3D<T>.AsSaturating<TOther>() -> Silk.NET.Maths.Rect3D<TOther>
+Silk.NET.Maths.Rect3D<T>.AsTruncating<TOther>() -> Silk.NET.Maths.Rect3D<TOther>
 Silk.NET.Maths.Rect3D<T>.Center.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Rect3D<T>.Contains<TOther>(TOther other) -> bool
 Silk.NET.Maths.Rect3D<T>.Equals(Silk.NET.Maths.Rect3D<T> other) -> bool
