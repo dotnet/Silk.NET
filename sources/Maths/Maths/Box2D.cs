@@ -12,20 +12,16 @@ namespace Silk.NET.Maths
     [Serializable]
     [DataContract]
     public struct Box2D<T> :
-        IEquatable<Box2D<T>>
+        IEquatable<Box2D<T>>, IExtents2D<T>
         where T : INumber<T>
     {
-        /// <summary>
-        /// The min.
-        /// </summary>
+        /// <inheritdoc/>
         [DataMember]
-        public Vector2D<T> Min;
+        public Vector2D<T> Min { get; set; }
 
-        /// <summary>
-        /// The max.
-        /// </summary>
+        /// <inheritdoc/>
         [DataMember]
-        public Vector2D<T> Max;
+        public Vector2D<T> Max { get; set; }
 
         /// <summary>
         /// Constructs a Box2D from a min and a max
@@ -72,38 +68,42 @@ namespace Silk.NET.Maths
         {
         }
 
-        /// <summary>
-        /// The center of this box.
-        /// </summary>
+        /// <inheritdoc/>
         [IgnoreDataMember]
         public readonly Vector2D<T> Center => (Min + Max) / T.CreateTruncating(2);
 
-        /// <summary>
-        /// The size of this box.
-        /// When setting the box is scaled about its center.
-        /// </summary>
+        /// <inheritdoc/>
         [IgnoreDataMember]
         public readonly Vector2D<T> Size => Max - Min;
 
-        /// <summary>
-        /// Calculates whether this box contains a point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns><c>true</c> if this box contains the point; <c>false</c> otherwise.</returns>
-        /// <remarks>This does consider a point on the edge contained.</remarks>
-        public readonly bool Contains(Vector2D<T> point) =>
-            (point.X >= Min.X) && (point.Y >= Min.Y) &&
-            (point.X <= Max.X) && (point.Y <= Max.Y);
+        /// <inheritdoc/>
+        [IgnoreDataMember]
+        public readonly Vector2D<T> HalfSize => Size / T.CreateTruncating(2);
+
+        /// <inheritdoc/>
+        public readonly bool Contains<TOther>(TOther other)
+            where TOther : IExtents2D<T>
+        {
+            var tMin = Min;
+            var tMax = Max;
+            var oMin = other.Min;
+            var oMax = other.Max;
+            return (oMin.X >= tMin.X) && (oMin.Y >= tMin.Y)
+                && (oMax.X <= tMax.X) && (oMax.Y <= tMax.Y);
+        }
 
         /// <summary>
-        /// Calculates whether this box contains another box
+        /// Calculates a new Box2D scaled by the given scale around the given anchor.
         /// </summary>
-        /// <param name="other">The box.</param>
-        /// <returns><c>true</c> if this box contains the given box; <c>false</c> otherwise.</returns>
-        /// <remarks>This does consider a box that touches the edge contained.</remarks>
-        public readonly bool Contains(Box2D<T> other) =>
-            (other.Min.X >= Min.X) && (other.Min.Y >= Min.Y) &&
-            (other.Max.X <= Max.X) && (other.Max.Y <= Max.Y);
+        /// <param name="scale">The scale.</param>
+        /// <param name="anchor">The anchor.</param>
+        /// <returns>The calculated Box2D.</returns>
+        public readonly Box2D<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
+        {
+            var min = (scale * (Min - anchor)) + anchor;
+            var max = (scale * (Max - anchor)) + anchor;
+            return new(min, max);
+        }
 
         /// <summary>
         /// Calculates this box translated by a given distance.
@@ -116,30 +116,6 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Calculates a new box scaled by the given scale around the given anchor.
-        /// </summary>
-        /// <param name="scale">The scale.</param>
-        /// <param name="anchor">The anchor.</param>
-        /// <returns>The calculated box.</returns>
-        public readonly Box2D<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
-        {
-            var min = (scale * (Min - anchor)) + anchor;
-            var max = (scale * (Max - anchor)) + anchor;
-            return new(min, max);
-        }
-
-        /// <summary>
-        /// Calculates a new box scaled by the given scale around the given anchor.
-        /// </summary>
-        /// <param name="scale">The scale.</param>
-        /// <param name="anchor">The anchor.</param>
-        /// <typeparam name="TScale">The type of the scale.</typeparam>
-        /// <returns>The calculated box.</returns>
-        public Box2D<T> GetScaled<TScale>(Vector2D<TScale> scale, Vector2D<T> anchor)
-            where TScale : INumber<TScale> =>
-            this.AsTruncating<TScale>().GetScaled(scale, anchor.AsTruncating<TScale>()).AsTruncating<T>();
-
-        /// <summary>
         /// Calculates a box inflated to contain the given point.
         /// </summary>
         /// <param name="point">The point.</param>
@@ -150,7 +126,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Box2D is equal to this Box2D instance.</summary>
         /// <param name="other">The Box2D to compare this instance to.</param>
         /// <returns><c>true</c> if the other Box2D is equal to this instance; <c>false</c> otherwise.</returns>
-        public bool Equals(Box2D<T> other) =>
+        public readonly bool Equals(Box2D<T> other) =>
             Min.Equals(other.Min) && Max.Equals(other.Max);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Box2D instance.</summary>
@@ -221,26 +197,6 @@ namespace Silk.NET.Maths
             where TOther : INumber<TOther>
         {
             return new(Min.AsTruncating<TOther>(), Max.AsTruncating<TOther>());
-        }
-    }
-
-    /// <summary>
-    /// Helper methods to work with <see cref="Box2D{T}"/>
-    /// </summary>
-    public static class Box2D
-    {
-        /// <summary>
-        /// Calculates the distance to the nearest edge from the point.
-        /// </summary>
-        /// <param name="box">The box.</param>
-        /// <param name="point">The point.</param>
-        /// <returns>The distance.</returns>
-        public static T GetDistanceToNearestEdge<T>(this Box2D<T> box, Vector2D<T> point)
-            where T : INumber<T>, IRootFunctions<T>
-        {
-            var dx = T.Max(T.Max(box.Min.X - point.X, T.Zero), point.X - box.Max.X);
-            var dy = T.Max(T.Max(box.Min.Y - point.Y, T.Zero), point.Y - box.Max.Y);
-            return T.Sqrt((dx * dx) + (dy * dy));
         }
     }
 }

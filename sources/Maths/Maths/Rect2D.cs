@@ -7,28 +7,26 @@ using System.Runtime.Serialization;
 namespace Silk.NET.Maths
 {
     /// <summary>
-    /// A structure representing a Rectangle with an <see cref="Origin"/> and <see cref="Size"/>
+    /// A structure representing a Rect2D with an <see cref="Origin"/> and <see cref="Size"/>
     /// </summary>
     [Serializable]
     [DataContract]
     public struct Rect2D<T> :
-        IEquatable<Rect2D<T>>
+        IEquatable<Rect2D<T>>, IExtents2D<T>
         where T : INumber<T>
     {
         /// <summary>
         /// The origin.
         /// </summary>
         [DataMember]
-        public Vector2D<T> Origin;
+        public Vector2D<T> Origin { get; set; }
 
-        /// <summary>
-        /// The size.
-        /// </summary>
+        /// <inheritdoc/>
         [DataMember]
-        public Vector2D<T> Size;
+        public Vector2D<T> Size { get; set; }
 
         /// <summary>
-        /// Constructs a Rectangle from an origin and a size
+        /// Constructs a Rect2D from an origin and a size
         /// </summary>
         /// <param name="origin">The origin of the rect.</param>
         /// <param name="size">The size of the rect.</param>
@@ -39,7 +37,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Constructs a Rectangle from an origin and components of a size
+        /// Constructs a Rect2D from an origin and components of a size
         /// </summary>
         /// <param name="origin">The origin of the rect.</param>
         /// <param name="sizeX">The X component of the size of the rect.</param>
@@ -50,7 +48,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Constructs a Rectangle from components of an origin and a size
+        /// Constructs a Rect2D from components of an origin and a size
         /// </summary>
         /// <param name="originX">The X component of the origin of the rect.</param>
         /// <param name="originY">The Y component of the origin of the rect.</param>
@@ -61,7 +59,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Constructs a Rectangle from components of an origin and components of a size
+        /// Constructs a Rect2D from components of an origin and components of a size
         /// </summary>
         /// <param name="originX">The X component of the origin of the rect.</param>
         /// <param name="originY">The Y component of the origin of the rect.</param>
@@ -72,109 +70,75 @@ namespace Silk.NET.Maths
         {
         }
 
-        /// <summary>
-        /// The center of this rectangle.
-        /// </summary>
+        /// <inheritdoc/>
         [IgnoreDataMember]
-        public Vector2D<T> Center => Origin + HalfSize;
+        readonly Vector2D<T> IExtents2D<T>.Min => Origin;
 
-        /// <summary>
-        /// The Maximum point of this Rectangle.
-        /// </summary>
+        /// <inheritdoc/>
         [IgnoreDataMember]
         public readonly Vector2D<T> Max => Origin + Size;
 
-        /// <summary>
-        /// Half the size of this rectangle.
-        /// </summary>
+        /// <inheritdoc/>
+        [IgnoreDataMember]
+        public readonly Vector2D<T> Center => Origin + Size / T.CreateTruncating(2);
+
+        /// <inheritdoc/>
         [IgnoreDataMember]
         public readonly Vector2D<T> HalfSize => Size / T.CreateTruncating(2);
 
-        /// <summary>
-        /// Calculates whether this rectangle contains a point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns><c>true</c> if this rectangle contains the point; <c>false</c> otherwise.</returns>
-        /// <remarks>This does consider a point on the edge contained.</remarks>
-        public bool Contains(Vector2D<T> point)
+        /// <inheritdoc/>
+        public readonly bool Contains<TOther>(TOther other)
+            where TOther : IExtents2D<T>
         {
-            var max = Max;
-            return (point.X >= Origin.X) && (point.Y >= Origin.Y)
-                && (point.X <= max.X) && (point.Y <= max.Y);
-        }
-
-        /// <summary>
-        /// Calculates whether this rectangle contains another rectangle
-        /// </summary>
-        /// <param name="other">The rectangle.</param>
-        /// <returns><c>true</c> if this rectangle contains the given rectangle; <c>false</c> otherwise.</returns>
-        /// <remarks>This does consider a rectangle that touches the edge contained.</remarks>
-        public bool Contains(Rect2D<T> other)
-        {
-            var tMax = this.Max;
+            var tMin = Origin;
+            var tMax = Max;
+            var oMin = other.Min;
             var oMax = other.Max;
-            return (other.Origin.X >= this.Origin.X) && (other.Origin.Y >= this.Origin.Y)
+            return (oMin.X >= tMin.X) && (oMin.Y >= tMin.Y)
                 && (oMax.X <= tMax.X) && (oMax.Y <= tMax.Y);
         }
 
         /// <summary>
-        /// Calculates a new rectangle translated by a given distance.
+        /// Calculates a new Rect2D scaled by the given scale around the given anchor.
+        /// </summary>
+        /// <param name="scale">The scale.</param>
+        /// <param name="anchor">The anchor.</param>
+        /// <returns>The calculated Rect2D.</returns>
+        public readonly Rect2D<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
+        {
+            var min = (scale * (Origin - anchor)) + anchor;
+            return new(min, scale * Size);
+        }
+
+        /// <summary>
+        /// Calculates a new Rect2D translated by a given distance.
         /// </summary>
         /// <param name="distance">The distance.</param>
-        /// <returns>The calculated rectangle.</returns>
+        /// <returns>The calculated Rect2D.</returns>
         public readonly Rect2D<T> GetTranslated(Vector2D<T> distance) =>
             new(Origin + distance, Size);
 
         /// <summary>
-        /// Calculates a new rectangle scaled by the given scale around the given anchor.
-        /// </summary>
-        /// <param name="scale">The scale.</param>
-        /// <param name="anchor">The anchor.</param>
-        /// <returns>The calculated rectangle.</returns>
-        public Rect2D<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
-        {
-            var min = (scale * (Origin - anchor)) + anchor;
-            var max = (scale * (Max - anchor)) + anchor;
-            return new(min, max - min);
-        }
-
-        /// <summary>
-        /// Calculates a new rectangle scaled by the given scale around the given anchor.
-        /// </summary>
-        /// <typeparam name="TScale">The type of the scale.</typeparam>
-        /// <param name="scale">The scale.</param>
-        /// <param name="anchor">The anchor.</param>
-        /// <returns>The calculated rectangle.</returns>
-        public Rect2D<T> GetScaled<TScale>(Vector2D<TScale> scale, Vector2D<T> anchor)
-            where TScale : INumberBase<TScale>
-        {
-            var convertedAnchor = anchor.AsTruncating<TScale>();
-            var min = (scale * (Origin.AsTruncating<TScale>() - convertedAnchor)) + convertedAnchor;
-            var max = (scale * (Max.AsTruncating<TScale>() - convertedAnchor)) + convertedAnchor;
-            return new(min.AsTruncating<T>(), (max - min).AsTruncating<T>());
-        }
-
-        /// <summary>
-        /// Calculates a rectangle inflated to contain the given point.
+        /// Calculates a Rect2D inflated to contain the given point.
         /// </summary>
         /// <param name="point">The point.</param>
-        /// <returns>The calculated rectangle.</returns>
-        public Rect2D<T> GetInflated(Vector2D<T> point)
+        /// <returns>The calculated Rect2D.</returns>
+        public readonly Rect2D<T> GetInflated(Vector2D<T> point)
         {
             var min = Vector2D.Min(Origin, point);
-            var max = Vector2D.Max(Max, point);
+            var max = Vector2D.Max(Origin + Size, point);
             return new(min, max - min);
         }
 
-        /// <summary>Returns a boolean indicating whether the given Rectangle is equal to this Rectangle instance.</summary>
-        /// <param name="other">The Rectangle to compare this instance to.</param>
-        /// <returns><c>true</c> if the other Rectangle is equal to this instance; <c>false</c> otherwise.</returns>
-        public bool Equals(Rect2D<T> other) =>
+        /// <summary>Returns a boolean indicating whether the given Rect2D is equal to this Rect2D instance.</summary>
+        /// <param name="other">The Rect2D to compare this instance to.</param>
+        /// <returns><c>true</c> if the other Rect2D is equal to this instance; <c>false</c> otherwise.</returns>
+        public readonly bool Equals(Rect2D<T> other) =>
             Origin.Equals(other.Origin) && Size.Equals(other.Size);
 
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this Rectangle instance.</summary>
+        /// <summary>Returns a boolean indicating whether the given Object is equal to this Rect2D instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
-        /// <returns><c>true</c> if the Object is equal to this Rectangle; <c>false</c> otherwise.</returns>
+        /// <returns><c>true</c> if the Object is equal to this Rect2D; <c>false</c> otherwise.</returns>
         public override bool Equals(object? obj) =>
             obj is Rect2D<T> other && Equals(other);
 
@@ -183,25 +147,25 @@ namespace Silk.NET.Maths
         public override readonly int GetHashCode() =>
             HashCode.Combine(Origin, Size);
 
-        /// <summary>Returns a boolean indicating whether the two given Rectangles are equal.</summary>
-        /// <param name="left">The first Rectangle to compare.</param>
-        /// <param name="right">The second Rectangle to compare.</param>
-        /// <returns><c>true</c> if the Rectangles are equal; <c>false</c> otherwise.</returns>
+        /// <summary>Returns a boolean indicating whether the two given Rect2Ds are equal.</summary>
+        /// <param name="left">The first Rect2D to compare.</param>
+        /// <param name="right">The second Rect2D to compare.</param>
+        /// <returns><c>true</c> if the Rect2Ds are equal; <c>false</c> otherwise.</returns>
         public static bool operator ==(Rect2D<T> left, Rect2D<T> right) =>
             left.Origin == right.Origin && left.Size == right.Size;
 
-        /// <summary>Returns a boolean indicating whether the two given Rectangles are not equal.</summary>
-        /// <param name="left">The first Rectangle to compare.</param>
-        /// <param name="right">The second Rectangle to compare.</param>
-        /// <returns><c>true</c> if the Rectangles are not equal; <c>false</c> if they are equal.</returns>
+        /// <summary>Returns a boolean indicating whether the two given Rect2Ds are not equal.</summary>
+        /// <param name="left">The first Rect2D to compare.</param>
+        /// <param name="right">The second Rect2D to compare.</param>
+        /// <returns><c>true</c> if the Rect2Ds are not equal; <c>false</c> if they are equal.</returns>
         public static bool operator !=(Rect2D<T> left, Rect2D<T> right) =>
             left.Origin != right.Origin || left.Size != right.Size;
 
         /// <summary>
-        /// Returns this rectangle casted to <typeparamref name="TOther"></typeparamref>
+        /// Returns this Rect2D casted to <typeparamref name="TOther"></typeparamref>
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
-        /// <returns>The casted rectangle</returns>
+        /// <returns>The casted Rect2D</returns>
         [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
         public Rect2D<TOther> As<TOther>()
             where TOther : INumber<TOther>
