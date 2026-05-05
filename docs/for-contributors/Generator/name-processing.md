@@ -77,12 +77,12 @@ At time of writing, these are the name processors in use:
 ```cs
 var nameProcessors = new INameProcessor[]
 {
-    new HandleOverridesProcessor(cfg.NameOverrides), // Overrides are user configurable
-    new StripAffixesProcessor(visitor),
-    new PrettifyProcessor(namePrettifier), // Acronym threshold is user configurable
-    new ReapplyAffixesProcessor(visitor, namePrettifier, cfg.Affixes), // Affix reapplication is user configurable
+    new HandleOverridesProcessor(...), // Overrides are user configurable
+    new StripAffixesProcessor(...),
+    new PrettifyProcessor(...), // Acronym threshold is user configurable
+    new ReapplyAffixesProcessor(...), // Affix reapplication is user configurable
     new PrefixIfStartsWithNumberProcessor(),
-    new ResolveConflictsProcessor(visitor, logger),
+    new ResolveConflictsProcessor(...),
     new OutputFinalNamesProcessor(),
     new RemoveUnmodifiedFinalNamesProcessor(),
 };
