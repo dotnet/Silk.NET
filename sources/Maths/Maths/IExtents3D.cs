@@ -33,12 +33,6 @@ namespace Silk.NET.Maths
         Vector3D<T> Size { get; }
 
         /// <summary>
-        /// Gets the half-size of the bounding box.
-        /// </summary>
-        /// <remarks>Similar in concept to radius.</remarks>
-        Vector3D<T> HalfSize { get; }
-
-        /// <summary>
         /// Calculates whether this region contains another region.
         /// </summary>
         /// <param name="other">The region.</param>

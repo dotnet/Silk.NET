@@ -130,14 +130,12 @@ Silk.NET.Maths.Extents3D.extension<TSelf, TPoint>(TSelf).GetDistanceToInterior(S
 Silk.NET.Maths.IExtents2D<T>
 Silk.NET.Maths.IExtents2D<T>.Center.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.IExtents2D<T>.Contains<TOther>(TOther other) -> bool
-Silk.NET.Maths.IExtents2D<T>.HalfSize.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.IExtents2D<T>.Max.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.IExtents2D<T>.Min.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.IExtents2D<T>.Size.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.IExtents3D<T>
 Silk.NET.Maths.IExtents3D<T>.Center.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.IExtents3D<T>.Contains<TOther>(TOther other) -> bool
-Silk.NET.Maths.IExtents3D<T>.HalfSize.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.IExtents3D<T>.Max.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.IExtents3D<T>.Min.get -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.IExtents3D<T>.Size.get -> Silk.NET.Maths.Vector3D<T>
