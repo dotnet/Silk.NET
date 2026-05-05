@@ -92,11 +92,106 @@ For specifics on how these processors and other steps work, it is best to refer 
 
 ## Name Splitting
 
-(TODO: Explain how name splitting works, relate it to tokenization. Explain decisions like why "2D" is split as "2_D")
+Name splitting involves splitting an identifier into separate "tokens" (also called "words" by the code) and is handled
+by the `NameSplitter` class. These tokens can refer to literal words (as identified by underscore/pascal case
+separations), but can also refer to groups of numbers or capitalized letters.
+
+The goal of name splitting is to have a consistent representation of a name where each part of the name can be examined
+individually. This is helpful when names differ by casing or by different types of separation.
+
+For example, `VkAccessFlags`, `vkCreateBuffer`, and `VK_MAX_MEMORY_HEAPS` effectively have the same shared prefix.
+
+For specifics on how this process works and the exact behaviors, it is best to refer to the `NameSplitter` source code
+and the `NameSplitterTests` test cases.
+
+### Name Splitting - Notable Decisions
+
+#### Handling of Numbers
+
+Numbers are always split out as their own individual token. This is because this is easier to work with and consistent
+than special casing when numbers should "stick" to preceding or proceeding tokens.
+
+For example:
+- `2D` is split as `2_D`
+- `R32` is split as `R_32`
+
+In these two cases, both inputs can be considered one English word, so it can be argued that the output should be the
+same as the input. However, this means the name splitting code should have preferences for when numbers should "stick"
+one way or the other.
+
+This gets even messier with names like `Image_2D_RGB16` or `Image2D_RGB16`. Although these exact names have not shown
+up in native code, names like `SpvImageFormatR32ui` do in fact exist.
+
+Because the goal of name splitting is to have a consistent tokenized representation of the name, it can be argued
+that it is safer to go for a more naive approach that does not attempt to group numbers with letters together at all.
+In this case, a more naive approach means simpler code. It also means less potential surprises since the output is more
+resistant to subtle changes in the input.
 
 ## Name Prettification
 
+As hinted to previous, name prettification is the process of transforming an identifier to follow the Framework
+Design Guidelines and is handled by the `NamePrettifier` class.
+
+This primarily involves pascal casing and the removal of underscore separators. Acronyms are also handled. By default,
+acronyms of length 2 are preserved (matching the guidelines), while acronyms of greater lengths are pascal-cased.
+
+For example, "UI" is prettified as "UI" while "GUI" is prettified as "Gui".
+Similarly, "GL" is prettified as "GL" while "EGL" is prettified as "Egl".
+
+Name prettification takes in a name "fragment" and outputs another fragment representing the prettified version of the
+input. The input is first split using `NameSplitter` to get a tokenized representation of the name before being
+processed.
+
+For specifics on how this process works and the exact behaviors, it is best to refer to the `NamePrettifier` source code
+and the `NamePrettifierTests` test cases.
+
 (TODO: Explain how prettification works alongside name splitting. Explain how acronyms are handled. Explain why number fragments are merged to preceding letter fragments and how this affects acronyms and pascal casing.)
+
+### Name Prettification - Notable Decisions
+
+#### Output of Fully Capitalized Names
+
+By default, the `NamePrettifier` disallows outputs that are all caps.
+For example, if `GL` is the output and `allowAllCaps` is the default of false, then `Gl` will be the actual output.
+
+This is to prevent fully capitalized member names, so the codebase typically overrides this behavior when dealing with
+type names. This means the `GL` class remains as `GL`.
+
+#### Handling of Acronyms that contain Numbers
+
+An acronym includes the capital letters and the numbers immediately following those letters.
+
+For example:
+- `2D` is split as `2_D`. There are 2 acronyms of length 1 here.
+- `R32` is split as `R_32`. There is 1 acronym of length 3 here.
+
+Where this behavior matters is in the following case:
+- `RG` is split as `RG` and is prettified as `RG`, however the `NamePrettifier` also disallows outputs that are fully
+  capitalized by default. This means `RG` is actually output as `Rg`.
+- `RG32` is split as `RG_32`. Because this is an acronym of length 4, it is output as `Rg32`.
+
+Notably, means that `RG` and `RG32` are consistently output as `Rg-`.
+
+In the code, this is implemented by merging number tokens with preceding letter tokens.
+
+For example:
+- `2_D` is merged as `2_D`.
+- `RG_32` is merged as `RG32`.
+
+This can be argued to be a hack, but simplifies acronym length calculations and continues to work with the code that
+handles pascal casing.
+
+#### Acronym Indeterminate Inputs
+
+(TODO)
+
+#### Handling of Consecutive Acronyms
+
+(TODO)
+
+#### Lowercase "x" between Numbers
+
+(TODO)
 
 ## Name Affixes
 
