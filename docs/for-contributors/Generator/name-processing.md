@@ -92,9 +92,11 @@ For specifics on how these processors and other steps work, it is best to refer 
 
 ## Name Splitting
 
-Name splitting involves splitting an identifier into separate "tokens" (also called "words" by the code) and is handled
-by the `NameSplitter` class. These tokens can refer to literal words (as identified by underscore/pascal case
-separations), but can also refer to groups of numbers or capitalized letters.
+Name splitting involves splitting an identifier into separate "tokens" and is handled by the `NameSplitter` class. These
+tokens can refer to literal words (as identified by underscore/pascal case separations), but can also refer to groups of
+numbers or capitalized letters.
+
+Note: The codebase is inconsistent when referring to tokens, usually calling them "words" or "fragments" instead.
 
 The goal of name splitting is to have a consistent representation of a name where each part of the name can be examined
 individually. This is helpful when names differ by casing or by different types of separation.
@@ -110,8 +112,6 @@ and the `NameSplitterTests` test cases.
 
 Numbers are always split out as their own individual token. This is because this is easier to work with and consistent
 than special casing when numbers should "stick" to preceding or proceeding tokens.
-
-Note: The codebase is inconsistent when referring to tokens, usually calling them "words" or "fragments" instead.
 
 For example:
 - `2D` is split as `2_D`
