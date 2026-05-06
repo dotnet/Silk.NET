@@ -74,18 +74,32 @@ namespace Silk.NET.Maths
             where TPoint : INumber<TPoint>, IRootFunctions<TPoint>
         {
             /// <summary>
-            /// Calculates the distance to the interior of the region from the specified point.
+            /// Calculates the signed distance to the nearest edge of the region from the specified point.
             /// </summary>
             /// <param name="point">The point.</param>
-            /// <returns>The distance to the interior of the region.</returns>
-            public TPoint GetDistanceToInterior(Vector2D<TPoint> point)
+            /// <returns>The signed distance to the nearest edge of the region.</returns>
+            public TPoint GetSignedDistanceToEdge(Vector2D<TPoint> point)
             {
-                var min = region.Min;
-                var max = region.Max;
-                var dx = TPoint.Max(TPoint.Max(min.X - point.X, TPoint.Zero), point.X - max.X);
-                var dy = TPoint.Max(TPoint.Max(min.Y - point.Y, TPoint.Zero), point.Y - max.Y);
-                return TPoint.Sqrt((dx * dx) + (dy * dy));
+                var q = Vector2D.Max(region.Min - point, point - region.Max);
+                var dInner = TPoint.Max(q.X, q.Y);
+                return dInner < TPoint.Zero ? dInner : Vector2D.Max(q, TPoint.Zero).Length;
             }
+
+            /// <summary>
+            /// Calculates the distance to the nearest edge from the point.
+            /// </summary>
+            /// <param name="point">The point.</param>
+            /// <returns>The distance.</returns>
+            public TPoint GetDistanceToEdge(Vector2D<TPoint> point) =>
+                TPoint.Abs(region.GetSignedDistanceToEdge(point));
+
+            /// <summary>
+            /// Calculates the distance to the interior from the point.
+            /// </summary>
+            /// <param name="point">The point.</param>
+            /// <returns>The distance.</returns>
+            public TPoint GetDistanceToInterior(Vector2D<TPoint> point) =>
+                TPoint.Max(region.GetSignedDistanceToEdge(point), TPoint.Zero);
         }
     }
 }

@@ -120,21 +120,26 @@ Silk.NET.Maths.Circle<T>.Contains(Silk.NET.Maths.Circle<T> other) -> bool
 Silk.NET.Maths.Circle<T>.Contains(Silk.NET.Maths.Vector2D<T> point) -> bool
 Silk.NET.Maths.Circle<T>.Diameter.get -> T
 Silk.NET.Maths.Circle<T>.Equals(Silk.NET.Maths.Circle<T> other) -> bool
+Silk.NET.Maths.Circle<T>.GetDistanceToEdge(Silk.NET.Maths.Vector2D<T> point) -> T
 Silk.NET.Maths.Circle<T>.GetDistanceToInterior(Silk.NET.Maths.Vector2D<T> point) -> T
-Silk.NET.Maths.Circle<T>.GetDistanceToInteriorSquared(Silk.NET.Maths.Vector2D<T> point) -> T
 Silk.NET.Maths.Circle<T>.GetInflated(Silk.NET.Maths.Vector2D<T> point) -> Silk.NET.Maths.Circle<T>
 Silk.NET.Maths.Circle<T>.GetScaled(T scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Circle<T>
+Silk.NET.Maths.Circle<T>.GetSignedDistanceToEdge(Silk.NET.Maths.Vector2D<T> point) -> T
 Silk.NET.Maths.Circle<T>.GetTranslated(Silk.NET.Maths.Vector2D<T> distance) -> Silk.NET.Maths.Circle<T>
 Silk.NET.Maths.Circle<T>.Radius -> T
 Silk.NET.Maths.Circle<T>.SquaredRadius.get -> T
 Silk.NET.Maths.Extents2D
 Silk.NET.Maths.Extents2D.extension<TSelf, TPoint>(TSelf)
 Silk.NET.Maths.Extents2D.extension<TSelf, TPoint>(TSelf).Contains(Silk.NET.Maths.Vector2D<TPoint> point) -> bool
+Silk.NET.Maths.Extents2D.extension<TSelf, TPoint>(TSelf).GetDistanceToEdge(Silk.NET.Maths.Vector2D<TPoint> point) -> TPoint
 Silk.NET.Maths.Extents2D.extension<TSelf, TPoint>(TSelf).GetDistanceToInterior(Silk.NET.Maths.Vector2D<TPoint> point) -> TPoint
+Silk.NET.Maths.Extents2D.extension<TSelf, TPoint>(TSelf).GetSignedDistanceToEdge(Silk.NET.Maths.Vector2D<TPoint> point) -> TPoint
 Silk.NET.Maths.Extents3D
 Silk.NET.Maths.Extents3D.extension<TSelf, TPoint>(TSelf)
 Silk.NET.Maths.Extents3D.extension<TSelf, TPoint>(TSelf).Contains(Silk.NET.Maths.Vector3D<TPoint> point) -> bool
+Silk.NET.Maths.Extents3D.extension<TSelf, TPoint>(TSelf).GetDistanceToEdge(Silk.NET.Maths.Vector3D<TPoint> point) -> TPoint
 Silk.NET.Maths.Extents3D.extension<TSelf, TPoint>(TSelf).GetDistanceToInterior(Silk.NET.Maths.Vector3D<TPoint> point) -> TPoint
+Silk.NET.Maths.Extents3D.extension<TSelf, TPoint>(TSelf).GetSignedDistanceToEdge(Silk.NET.Maths.Vector3D<TPoint> point) -> TPoint
 Silk.NET.Maths.IExtents2D<T>
 Silk.NET.Maths.IExtents2D<T>.Center.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.IExtents2D<T>.Contains<TOther>(TOther other) -> bool
@@ -559,10 +564,11 @@ Silk.NET.Maths.Sphere<T>.Contains(Silk.NET.Maths.Sphere<T> other) -> bool
 Silk.NET.Maths.Sphere<T>.Contains(Silk.NET.Maths.Vector3D<T> point) -> bool
 Silk.NET.Maths.Sphere<T>.Diameter.get -> T
 Silk.NET.Maths.Sphere<T>.Equals(Silk.NET.Maths.Sphere<T> other) -> bool
+Silk.NET.Maths.Sphere<T>.GetDistanceToEdge(Silk.NET.Maths.Vector3D<T> point) -> T
 Silk.NET.Maths.Sphere<T>.GetDistanceToInterior(Silk.NET.Maths.Vector3D<T> point) -> T
-Silk.NET.Maths.Sphere<T>.GetDistanceToInteriorSquared(Silk.NET.Maths.Vector3D<T> point) -> T
 Silk.NET.Maths.Sphere<T>.GetInflated(Silk.NET.Maths.Vector3D<T> point) -> Silk.NET.Maths.Sphere<T>
 Silk.NET.Maths.Sphere<T>.GetScaled(T scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Sphere<T>
+Silk.NET.Maths.Sphere<T>.GetSignedDistanceToEdge(Silk.NET.Maths.Vector3D<T> point) -> T
 Silk.NET.Maths.Sphere<T>.GetTranslated(Silk.NET.Maths.Vector3D<T> distance) -> Silk.NET.Maths.Sphere<T>
 Silk.NET.Maths.Sphere<T>.Radius -> T
 Silk.NET.Maths.Sphere<T>.Sphere() -> void
@@ -665,11 +671,15 @@ static Silk.NET.Maths.Circle<T>.operator !=(Silk.NET.Maths.Circle<T> left, Silk.
 static Silk.NET.Maths.Circle<T>.operator ==(Silk.NET.Maths.Circle<T> left, Silk.NET.Maths.Circle<T> right) -> bool
 static Silk.NET.Maths.Extents2D.Contains<T1, T2, TPoint>(T1 a, T2 b) -> bool
 static Silk.NET.Maths.Extents2D.Contains<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector2D<TPoint> point) -> bool
+static Silk.NET.Maths.Extents2D.GetDistanceToEdge<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector2D<TPoint> point) -> TPoint
 static Silk.NET.Maths.Extents2D.GetDistanceToInterior<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector2D<TPoint> point) -> TPoint
+static Silk.NET.Maths.Extents2D.GetSignedDistanceToEdge<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector2D<TPoint> point) -> TPoint
 static Silk.NET.Maths.Extents2D.Intersects<T1, T2, TPoint>(T1 a, T2 b) -> bool
 static Silk.NET.Maths.Extents3D.Contains<T1, T2, TPoint>(T1 a, T2 b) -> bool
 static Silk.NET.Maths.Extents3D.Contains<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector3D<TPoint> point) -> bool
+static Silk.NET.Maths.Extents3D.GetDistanceToEdge<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector3D<TPoint> point) -> TPoint
 static Silk.NET.Maths.Extents3D.GetDistanceToInterior<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector3D<TPoint> point) -> TPoint
+static Silk.NET.Maths.Extents3D.GetSignedDistanceToEdge<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector3D<TPoint> point) -> TPoint
 static Silk.NET.Maths.Extents3D.Intersects<T1, T2, TPoint>(T1 a, T2 b) -> bool
 static Silk.NET.Maths.Matrix2X2.Add<T>(Silk.NET.Maths.Matrix2X2<T> left, Silk.NET.Maths.Matrix2X2<T> right) -> Silk.NET.Maths.Matrix2X2<T>
 static Silk.NET.Maths.Matrix2X2.Lerp<T>(Silk.NET.Maths.Matrix2X2<T> value1, Silk.NET.Maths.Matrix2X2<T> value2, T amount) -> Silk.NET.Maths.Matrix2X2<T>

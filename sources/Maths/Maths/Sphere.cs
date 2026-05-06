@@ -68,10 +68,8 @@ namespace Silk.NET.Maths
         /// <param name="point">The point.</param>
         /// <returns><c>true</c> if this sphere contains the point; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
-        public bool Contains(Vector3D<T> point)
-        {
-            return Vector3D.DistanceSquared(Center, point) <= SquaredRadius;
-        }
+        public bool Contains(Vector3D<T> point) =>
+            Vector3D.DistanceSquared(Center, point) <= SquaredRadius;
 
         /// <summary>
         /// Calculates whether this sphere contains another sphere
@@ -81,26 +79,39 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a sphere that touches the edge contained.</remarks>
         public bool Contains(Sphere<T> other)
         {
+            if (Radius < other.Radius)
+            {
+                return false;
+            }
+
             var distanceSquared = Vector3D.DistanceSquared(Center, other.Center);
             var radiusDiff = Radius - other.Radius;
             return distanceSquared <= radiusDiff * radiusDiff;
         }
 
         /// <summary>
-        /// Calculates the squared distance to the nearest edge from the point.
+        /// Calculates the signed distance to the nearest edge from the point.
         /// </summary>
         /// <param name="point">The point.</param>
-        /// <returns>The distance squared.</returns>
-        public T GetDistanceToInteriorSquared(Vector3D<T> point) =>
-            T.Max(Vector3D.DistanceSquared(Center, point) - SquaredRadius, T.Zero);
+        /// <returns>The distance.</returns>
+        public T GetSignedDistanceToEdge(Vector3D<T> point) =>
+            Vector3D.Distance(Center, point) - Radius;
 
         /// <summary>
         /// Calculates the distance to the nearest edge from the point.
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
+        public T GetDistanceToEdge(Vector3D<T> point) =>
+            T.Abs(GetSignedDistanceToEdge(point));
+
+        /// <summary>
+        /// Calculates the distance to the interior from the point.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>The distance.</returns>
         public T GetDistanceToInterior(Vector3D<T> point) =>
-            T.Sqrt(GetDistanceToInteriorSquared(point));
+            T.Max(GetSignedDistanceToEdge(point), T.Zero);
 
         /// <summary>
         /// Calculates a sphere inflated to contain the given point.
