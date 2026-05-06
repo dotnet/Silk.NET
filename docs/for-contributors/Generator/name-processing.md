@@ -183,7 +183,20 @@ handles pascal casing, which simply uppercases the first character and lowercase
 
 #### Acronym Indeterminate Inputs
 
-(TODO)
+These refer to inputs that are fully uppercased, making it hard to tell whether the input is a standalone acronym or
+simply written in screaming case.
+
+The current code handling this behavior was implemented back when the generator used a default long acronym threshold of
+3 (and occasionally using 4*), which in turn was ported from the original Humanizer-based prettify implementation.
+Therefore, the examples given in the code state a threshold of 4.
+
+\*4 was used for Khronos APIs as a best effort to preserve vendor suffixes (eg: `KHR`, `EXT`, `NV`, `QCOM`). This is no
+longer necessary because the name affix system is now used to preserve these suffixes.
+
+This behavior notably is less noticeable with the long acronym threshold of 2, but still affects a few names, such as
+the `GL` class. Without this, `GL` gets turned into `Gl` since the input is treated as screaming case.
+
+To learn more about this behavior, please refer to the comments in `NamePrettifier`.
 
 #### Handling of Consecutive Acronyms
 
