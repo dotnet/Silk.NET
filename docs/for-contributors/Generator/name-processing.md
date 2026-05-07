@@ -90,6 +90,37 @@ var nameProcessors = new INameProcessor[]
 
 For specifics on how these processors and other steps work, it is best to refer to the `PrettifyNames` source code.
 
+## PrettifyNames - Notable Decisions
+
+Note: It may be helpful to come back to this section after reading about the rest of the name processing pipeline.
+
+### Strip/Reapply Affixes Scope
+
+Affixes are stripped and reapplied to create a "scope" where only the base name is visible.
+
+For example, in the execution order above, `PrettifyProcessor` only affects the base name, but
+`PrefixIfStartsWithNumberProcessor` works on the full name with affixes applied.
+
+Currently, this distinction is not as prevalent as it was when shared prefix trimming was done during `PrettifyNames`.
+
+Originally, this was implemented so that prefix identification ignores any affixes that have been declared. This
+notably affects cases like the `I-` prefix in the Microsoft bindings (the C-style namespace prefix is after the `I-`)
+and the vendor suffixes in the Khronos bindings (removing the suffixes before identifying shared prefixes prevents
+problematic cases where prefix trimming trims everything except for the vendor suffix, since the vendor suffix was the
+only non-shared part of the name; see `OcclusionQueryParameterNameNV` in OpenGL for example).
+
+Shared prefix identification is now handled by `IdentifySharedPrefixes` by handling affix stripping/reapplication using
+the utility methods provided by `NameAffixer`. `PrettifyNames` can be then configured to remove these shared prefixes,
+thus matching the original behavior.
+
+### Strip/Reapply Affixes Configuration
+
+To keep things simple, only affix reapplication is configurable. This is because the user is expected to configure the
+generator output, while mods are expected to handle the process of affix identification.
+
+Affix reapplication is when common transformations to affixes are applied, such as removing them, reordering them, and
+prettifying them.
+
 ## Name Splitting
 
 Name splitting involves splitting an identifier into separate "tokens" and is handled by the `NameSplitter` class. These
@@ -233,8 +264,6 @@ target transformations to a specific, known part of a name.
 Furthermore, because each category of affix can be identified by different mods, it keeps the complex affix
 identification process localized to the mod that specializes in that area. For example, C-style namespace prefixes
 are handled by `IdentifySharedPrefixes`.
-
-(TODO: Explain the motivation behind this system. Explain that users configure how name affixes are processed while mods identify affixes (separation of concerns).)
 
 ### Referenced Affixes
 
