@@ -248,6 +248,8 @@ The use of a *lowercase* x in particular is a stylistic choice and matches names
 
 ## Name Affixes
 
+(TODO: Explain how these actually look in metadata/attribute form)
+
 Name prefixes and suffixes are used commonly in both native code and in identifiers created by the SilkTouch generator.
 
 For example, in `VkPresentInfoKHR` from Vulkan, `Vk-` is a namespace prefix commonly used in C code, while `-KHR` is a
@@ -267,11 +269,55 @@ are handled by `IdentifySharedPrefixes`.
 
 ### Referenced Affixes
 
-(TODO: Explain why referenced affixes exist (compound names and types that are the logical extensions of other types) and when these are used in the generator. Explain how these are processed.)
+(TODO: Explain how these actually look in metadata/attribute form)
+
+Referenced affixes were added to handle compound names where part of the name is actually the name of another
+identifier. This ensures that the "referenced" part of the name always matches the name being referenced, in other
+words, changes to the referenced name is "synchronized" to the name referencing it (more on this later).
+
+This occurs primarily in types added to the bindings by Silk. For example:
+
+- **Nested types** - Nested types are extracted by `ExtractNestedType` to be non-nested types. These types have the name
+  of their parent type plus their original name (for nested types that have proper names in the native code) or the name
+  of their parent type plus the name of the field that uses them (eg: for `InlineArray` types).
+   - Example: `GamepadBinding`, `GamepadBindingInput`, and `GamepadBindingInputAxis` in the SDL bindings. The latter are
+     nested structs.
+   - Example: `PerformanceCounterDescriptionARM` and `PerformanceCounterDescriptionARMName` in the Vulkan bindings. The
+     latter is an inline array used by the field, `PerformanceCounterDescriptionARM.Name`.
+
+- **Derived types** - Derived types refer to types that are generated based on another type (not to be confused with
+  inheritance). At time of writing, this only refers to function pointer types for which Silk generates a function
+  pointer struct and a corresponding delegate type. The delegate type has the `-Delegate` suffix appended to it.
+   - Example: `DebugReportCallbackEXT` and `DebugReportCallbackEXTDelegate` in the Vulkan bindings.
+
+In other words, referenced affixes are most helpful when dealing with types that are the logical extensions of other
+types.
+
+Most notably, handle type suffixes do not fall into the above categorization.
+
+For example: `PipelineBinaryHandleKHR` in the Vulkan bindings is not an extension of `PipelineBinaryKHR`, it *is* the
+type, just renamed to avoid naming collisions.
+
+Going back to the idea of synchronizing changes, if `GamepadBinding` was to be renamed using an override, the referenced
+affix system ensures that `GamepadBindingInput` and `GamepadBindingInputAxis` are renamed correspondingly.
+
+Similarly, it ensures that if an affix is configured to be moved to the end of the referenced name, the affix only moves
+to the end of the name it was originally declared on. This can be seen in `PerformanceCounterDescriptionARMName` and
+`PipelineBinaryHandleKHR`. `ARM` is a Khronos vendor suffix for `PerformanceCounterDescriptionARM`, so it only moves to
+the end of that name; however, `KHR` is a vendor suffix for `PipelineBinaryHandleKHR` as a whole.
+
+Side note: Another benefit of referenced affixes is that it ensures that derived types show up when typing the base
+type's name in the IDE. For example, if vendor suffixes always moved to the end of the name,
+`PerformanceCounterDescriptionARMName` would become `PerformanceCounterDescriptionNameARM` and would not show up when
+autocompleting `PerformanceCounterDescriptionARM`.
 
 ### Affix Categories
 
 (TODO: Exhaustively list each category being used in the generator. Explain which mods add the affix category. Provide examples on what the affixes look like. Provide recommendations on how each affix should be configured (i.e., should match the configuration used by `generator.json`).)
+
+(TODO: This overrides the previous todo. Don't list the affix categories. Just explain them. List them out in the generator-mods.md doc instead.)
+
+(TODO: Edit. Just explain them as part of the syntax section for Name Affixes above.)
 
 ## Symbol-based Renamer
 
