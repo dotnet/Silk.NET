@@ -200,11 +200,20 @@ To learn more about this behavior, please refer to the comments in `NamePrettifi
 
 #### Handling of Consecutive Acronyms
 
-(TODO)
+Consecutive acronyms are pascal-cased, if they both are candidates for being uppercased.
+
+For example, assuming a long acronym threshold of 4, `RGBA_ASTC` will be prettified as `RgbaAstc`, not `RGBAASTC`.
+This is because the latter is much harder to read.
 
 #### Lowercase "x" between Numbers
 
-(TODO)
+Consecutive numbers are separated by a lowercase "x". Furthermore, if a name already is in the format `2_X_2`, the "X"
+will be lowercased.
+
+The use of the "x" is to ensure that numbers remain separated, especially because prettified names never contain
+underscores, which is usually how consecutive numbers are separated in native code.
+
+The use of a *lowercase* x in particular is a stylistic choice and matches names like `System.Numerics.Matrix4x4`.
 
 ## Name Affixes
 
