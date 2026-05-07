@@ -217,6 +217,23 @@ The use of a *lowercase* x in particular is a stylistic choice and matches names
 
 ## Name Affixes
 
+Name prefixes and suffixes are used commonly in both native code and in identifiers created by the SilkTouch generator.
+
+For example, in `VkPresentInfoKHR` from Vulkan, `Vk-` is a namespace prefix commonly used in C code, while `-KHR` is a
+Khronos-style suffix denoting that the type belongs to the `KHR` family of extensions.
+
+In the generator, suffixes are usually used to denote names that are derived from other names or to prevent name
+collisions. For example, `-Handle` is appended to handle types transformed by `TransformHandles`. This means that handle
+types like `Buffer` are named as `BufferHandle` instead, thus reducing name collision risks with user-defined types.
+
+Because of the prevalence of affixes in both native and generated code, the name affix system was added so that names
+can be annotated with information about what affixes have been identified or added to the name. This allows mods to
+target transformations to a specific, known part of a name.
+
+Furthermore, because each category of affix can be identified by different mods, it keeps the complex affix
+identification process localized to the mod that specializes in that area. For example, C-style namespace prefixes
+are handled by `IdentifySharedPrefixes`.
+
 (TODO: Explain the motivation behind this system. Explain that users configure how name affixes are processed while mods identify affixes (separation of concerns).)
 
 ### Referenced Affixes
