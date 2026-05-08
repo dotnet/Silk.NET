@@ -185,9 +185,69 @@ public class IdentifySharedPrefixesTests
 
         await identifySharedPrefixes.ExecuteAsync(context);
 
-        // The declaration of the 2 NV member suffixes should make PrettifyNames trim less of the member name
+        // The declaration of the 2 NV member suffixes should make IdentifySharedPrefixes identify less of the member name as the shared prefix
         // IdentifySharedPrefixes should only use the unaffixed name for prefix identification
         // The shared prefix should be "GL_PIXEL"
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task IdentifiesSharedPrefix_WhenPrefixesDeclared()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "D3D12.gen.cs",
+                """
+                public struct D3D12_BUFFER_BARRIER;
+
+                [NameAffix("Prefix", "Interface", "I")]
+                public struct ID3D12Device;
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var identifySharedPrefixes = new IdentifySharedPrefixes(
+            new DummyOptions<IdentifySharedPrefixes.Configuration>(
+                new IdentifySharedPrefixes.Configuration()
+            )
+        );
+
+        await identifySharedPrefixes.ExecuteAsync(context);
+
+        // The declaration of the I- prefix should lead to "D3D12" being identified as the shared prefix
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task IdentifiesSharedPrefix_WhenPrefixesDeclared_WithHint()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "D3D12.gen.cs",
+                """
+                [NameAffix("Prefix", "Interface", "I")]
+                public struct ID3D12Device;
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var identifySharedPrefixes = new IdentifySharedPrefixes(
+            new DummyOptions<IdentifySharedPrefixes.Configuration>(
+                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["D3D12"] }
+            )
+        );
+
+        await identifySharedPrefixes.ExecuteAsync(context);
+
+        // The declaration of the I- prefix should lead to "D3D12" being identified as the shared prefix
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }

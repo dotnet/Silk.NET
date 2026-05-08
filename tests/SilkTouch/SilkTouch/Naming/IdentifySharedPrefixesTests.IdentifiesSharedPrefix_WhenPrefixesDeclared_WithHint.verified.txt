@@ -1,0 +1,3 @@
+﻿[NameAffix("Prefix", "SharedPrefix", "D3D12")]
+[NameAffix("Prefix", "Interface", "I")]
+public struct ID3D12Device;
