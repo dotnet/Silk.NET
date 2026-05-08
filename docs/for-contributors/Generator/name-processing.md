@@ -294,7 +294,8 @@ In order, the parameters are:
      arguably cleaner to avoid leading or trailing underscores in affix values. If this does prove to be a problem,
      prefer updating the affix stripping code to be tolerant of extra underscores.
 
-These parameters are all strings for simplicity when parsing.
+These parameters are all strings for simplicity when parsing. Additionally, the order of the attributes is significant:
+name affixes declared earlier in the attribute list represent name affixes closer to the inside of the name.
 
 However, as a user of the name affix system, the utilities provided by `NameAffixer` should provide everything necessary
 for interacting with name affixes without interacting with the exact syntax node representation.
@@ -371,13 +372,24 @@ type's name in the IDE. For example, if vendor suffixes always moved to the end 
 `PerformanceCounterDescriptionARMName` would become `PerformanceCounterDescriptionNameARM` and would not show up when
 autocompleting `PerformanceCounterDescriptionARM`.
 
-### Affix Categories
+### Referenced Affixes - Metadata Format
 
-(TODO: Exhaustively list each category being used in the generator. Explain which mods add the affix category. Provide examples on what the affixes look like. Provide recommendations on how each affix should be configured (i.e., should match the configuration used by `generator.json`).)
+Referenced affixes work the exact same as normal name affixes, but take advantage of C#'s nameof syntax.
 
-(TODO: This overrides the previous todo. Don't list the affix categories. Just explain them. List them out in the generator-mods.md doc instead.)
+```cs
+public struct GamepadBinding;
 
-(TODO: Edit. Just explain them as part of the syntax section for Name Affixes above.)
+[NameAffix("Prefix", "NestedStructParent", nameof(GamepadBinding))]
+public struct GamepadBindingInput;
+
+[NameAffix("Prefix", "NestedStructParent", nameof(GamepadBindingInput))]
+public struct GamepadBindingInputAxis;
+```
+
+Limitation: Only simple references are allowed because references are resolved manually by `PrettifyNames`. For example,
+`nameof(GamepadBinding.Member)` will not work because member access expressions are not handled. Currently, only
+identifiers that exist in the current scope or parent scope can be referenced. That said, this should be enough for most
+use cases.
 
 ## Symbol-based Renamer
 
