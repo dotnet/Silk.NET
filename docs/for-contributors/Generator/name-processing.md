@@ -39,30 +39,29 @@ This section explains how names flow through the SilkTouch generator pipeline.
 
 ## Test cases
 
-The behavior for the name processing pipeline is heavily unit tested.
-Please refer to the unit tests for the corresponding section of the codebase to see detailed examples
-of expected inputs and outputs.
+The behavior for the name processing pipeline is heavily unit tested. Please refer to the unit tests for the
+corresponding section of the codebase to see detailed examples of expected inputs and outputs.
 
 ## PrettifyNames
 
 As seen above, `PrettifyNames` is the mod central to name processing.
 
-The goal of this mod is to take all of the names from the generated bindings and transform them in bulk.
-This keeps other mods performant and simple, as renaming identifiers is a costly operation
-that involves searching the entire project for references to that identifier.
+The goal of this mod is to take all of the names from the generated bindings and transform them in bulk. This keeps
+other mods performant and simple, as renaming identifiers is a costly operation that involves searching the entire
+project for references to that identifier.
 
-Despite this, `PrettifyNames` also has the goal of remaining dumb and straightforward.
-It relies on the generator config for API-specific decisions (eg: removing/reordering affixes, overrides)
-and other mods for API-specific annotations (eg: API-specific prefix/suffix conventions).
-The rest of the processing (eg: prettification), while complex, is done uniformly.
+Despite this, `PrettifyNames` also has the goal of remaining dumb and straightforward. It relies on the generator config
+for API-specific decisions (eg: removing/reordering affixes, overrides) and other mods for API-specific annotations
+(eg: API-specific prefix/suffix conventions). The rest of the processing (eg: prettification), while complex, is done
+uniformly.
 
-This allows `PrettifyNames` to focus strictly on the common case, while edge cases are handled elsewhere.
-This works fairly well in practice. Even though the configuration options are limited mostly to how affixes are
-handled, affixes are usually where native APIs differ in their naming conventions. Other differences fall outside
-the common case and are therefore handled by the generator user or by other mods.
+This allows `PrettifyNames` to focus strictly on the common case, while edge cases are handled elsewhere. This works
+fairly well in practice. Even though the configuration options are limited mostly to how affixes are handled, affixes
+are usually where native APIs differ in their naming conventions. Other differences fall outside the common case and are
+therefore handled by the generator user or by other mods.
 
-Furthermore, to keep `PrettifyNames` simple and linear, each step takes the output of the previous step,
-with no interweaving of logic.
+Furthermore, to keep `PrettifyNames` simple and linear, each step takes the output of the previous step, with no
+interweaving of logic.
 
 `PrettifyNames` works as follows:
 
