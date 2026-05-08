@@ -248,8 +248,6 @@ The use of a *lowercase* x in particular is a stylistic choice and matches names
 
 ## Name Affixes
 
-(TODO: Explain how these actually look in metadata/attribute form)
-
 Name prefixes and suffixes are used commonly in both native code and in identifiers created by the SilkTouch generator.
 
 For example, in `VkPresentInfoKHR` from Vulkan, `Vk-` is a namespace prefix commonly used in C code, while `-KHR` is a
@@ -266,6 +264,68 @@ target transformations to a specific, known part of a name.
 Furthermore, because each category of affix can be identified by different mods, it keeps the complex affix
 identification process localized to the mod that specializes in that area. For example, C-style namespace prefixes
 are handled by `IdentifySharedPrefixes`.
+
+### Name Affixes - Metadata Format
+
+The name affixes for a corresponding identifier are stored as C# attributes declared on that identifier. This takes
+advantage of the fact that the SilkTouch generator is designed such that mods primarily take Roslyn syntax trees as
+input and return new syntax trees as output.
+
+For example, from the OpenGL bindings:
+```cs
+public enum InternalFormat
+{
+    [NameAffix("Prefix", "SharedPrefix", "GL")]
+    [NameAffix("Suffix", "KhronosVendor", "ARB")]
+    GL_RGBA32F_ARB = 34836,
+}
+```
+
+In order, the parameters are:
+
+1. Affix type - Either "Prefix" or "Suffix".
+2. Affix category - Used to identify the purpose or source of that affix.
+   - `PrettifyNames` can be configured to process different affix categories in different ways. For example,
+     shared prefixes can be removed by targeting the `SharedPrefix` category.
+3. Affix value - The affix as it appears in the identifier.
+   - Note: Currently, affixes need to verbatim match the part of the identifier they represent. For example, stripping
+     `GL_RGBA32F_ARB` of the `GL-` prefix leads to `_RGBA32F_ARB`, while `GL_-` will lead to `RGBA32F_ARB`. Despite
+     this, the codebase is written to not include the underscore since it currently does not affect the output and is
+     arguably cleaner to avoid leading or trailing underscores in affix values. If this does prove to be a problem,
+     prefer updating the affix stripping code to be tolerant of extra underscores.
+
+These parameters are all strings for simplicity when parsing.
+
+However, as a user of the name affix system, the utilities provided by `NameAffixer` should provide everything necessary
+for interacting with name affixes without interacting with the exact syntax node representation.
+
+### Name Affixes - Notable Interactions
+
+#### IdentifySharedPrefixes and Name Affixes
+
+`IdentifySharedPrefixes` strips affixes before identifying shared prefixes. Therefore, names like `ID3D12Device` will
+appear as `D3D12Device` if the `I-` prefix is identified beforehand.
+
+#### Deferring Renames
+
+Renames that involve the addition of affixes can be done simply by adding the affix to the name, assuming that
+`PrettifyNames` runs afterward. This is preferable because it avoids a project-wide symbol search to locate and update
+where that identifier is used.
+
+This is because stripping affixes is tolerant of missing affixes and affixes reapplication will then add the newly
+declared affix to the final name.
+
+For example, the `-Handle` suffix is added by `TransformHandles`. This leads to syntax that looks like:
+```cs
+[NameAffix("Suffix", "HandleType", "Handle")]
+public struct Buffer;
+```
+
+Even though `Buffer` does not have a `-Handle` suffix, it will have it after `PrettifyNames` executes. This is assuming
+that `PrettifyNames` is not configured to remove it.
+
+The removal of affixes can be done similarly, but will involve updating the generator config so that `PrettifyNames`
+removes the affix.
 
 ### Referenced Affixes
 
