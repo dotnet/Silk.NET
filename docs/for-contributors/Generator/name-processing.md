@@ -234,6 +234,9 @@ Consecutive acronyms are pascal-cased, if they both are candidates for being upp
 For example, assuming a long acronym threshold of 4, `RGBA_ASTC` will be prettified as `RgbaAstc`, not `RGBAASTC`.
 This is because the latter is much harder to read.
 
+However, if only one of the two consecutive acronyms is a candidate, for example, with a threshold of 2 and `RG_ASTC`,
+the result will be `RGAstc`.
+
 #### Lowercase "x" between Numbers
 
 Consecutive numbers are separated by a lowercase "x". Furthermore, if a name already is in the format `2_X_2`, the "X"
