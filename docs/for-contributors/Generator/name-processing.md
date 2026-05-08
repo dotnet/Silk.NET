@@ -330,8 +330,6 @@ removes the affix.
 
 ### Referenced Affixes
 
-(TODO: Explain how these actually look in metadata/attribute form)
-
 Referenced affixes were added to handle compound names where part of the name is actually the name of another
 identifier. This ensures that the "referenced" part of the name always matches the name being referenced, in other
 words, changes to the referenced name is "synchronized" to the name referencing it (more on this later).
