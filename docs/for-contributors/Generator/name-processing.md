@@ -29,12 +29,11 @@ This section explains how names flow through the SilkTouch generator pipeline.
    - The affixes are first stripped → `CreateSwapchain`
    - The base name is "prettified" (pascal-casing, removal of underscores) → `CreateSwapchain` (No change in this case)
    - Affixes are reapplied according to user configuration → `CreateSwapchainKHR`
-      - We usually remove shared prefixes and preserve Khronos vendor suffixes verbatim
-        (notably in contradiction with the Framework Design Guidelines).
-        The reasons for this are explained below.
+      - Silk's bindings remove shared prefixes since these represent C namespace prefixes and preserve Khronos vendor
+        suffixes verbatim for emphasis (notably in contradiction with the Framework Design Guidelines).
 
 4. Mods strip most metadata from the generated bindings to keep the output clean.
-   - We generally keep metadata useful for users, while removing internal generator metadata.
+   - Silk's bindings keep metadata useful for users, while removing internal generator metadata.
    - For example, `[NativeName]` is kept and `[NameAffix]` is removed during the `StripAttributes` mod.
    - Tip: Disabling the `StripAttributes` mod can be helpful for debugging unwanted outputs.
 
@@ -384,10 +383,10 @@ public struct GamepadBindingInput;
 public struct GamepadBindingInputAxis;
 ```
 
-Limitation: Only simple references are allowed because references are resolved manually by `PrettifyNames`. For example,
-`nameof(GamepadBinding.Member)` will not work because member access expressions are not handled. Currently, only
-identifiers that exist in the current scope or parent scope can be referenced. That said, this should be enough for most
-use cases.
+Limitation: Only simple references are allowed because references are resolved manually by `PrettifyNames` and not by
+Roslyn. For example, `nameof(GamepadBinding.Member)` will not work because member access expressions are not handled.
+Currently, only identifiers that exist in the current scope or parent scope can be referenced. That said, this should be
+enough for most use cases.
 
 ## Symbol-based Renamer
 
