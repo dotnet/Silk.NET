@@ -372,6 +372,7 @@ autocompleting `PerformanceCounterDescriptionARM`.
 
 Referenced affixes work the exact same as normal name affixes, but take advantage of C#'s nameof syntax.
 
+For example, from the SDL bindings:
 ```cs
 public struct GamepadBinding;
 
