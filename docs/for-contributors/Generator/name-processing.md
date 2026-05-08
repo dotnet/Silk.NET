@@ -391,4 +391,27 @@ use cases.
 
 ## Symbol-based Renamer
 
-(TODO: Explain how the symbol-based renamer works and why `SymbolFinder.FindReferencesAsync` is not used.)
+The renamer exists as `NameUtils.RenameAllAsync()` and uses Roslyn symbols to determine whether an identifier needs to
+be replaced.
+
+The renamer has gone through several iterations, mainly due to performance reasons.
+
+Previously, it used `SymbolFinder.FindReferencesAsync()`, which was replaced since it was far too slow for bigger APIs
+like the Microsoft bindings. `FindReferencesAsync` was not designed for mass replacement of all identifiers in a project
+and thus suffered an `O(n^2)` scaling (where `n` is the size of the project) since it scanned the entire project for
+each symbol replaced.
+
+The current implementation, which is the `LocationTransformationUtils` class in the codebase, uses a
+`CSharpSyntaxRewriter` that visits every syntax node in the project and looks up symbols related to the node before
+deciding to replace it. This changes the scaling to `O(n)` with symbol lookup being the primary bottleneck. Symbol
+lookup is optimized by checking if the name of the identifier matches a name of the symbols to rename, which doubles the
+speed of renaming when it comes to the Vulkan bindings.
+
+The reason the new renamer is part of the "location transformation" code is because the renamer has also been
+generalized to work with any transformation that needs to modify all references of a symbol. This notably was designed
+back when `TransformHandles` needed to simultaneously rename all references to a handle type and decrease the pointer
+dimension of the references to the type by one (eg: `Buffer**` becomes `BufferHandle*`). This bulk modification ensures
+that symbol lookup only needs to occur once.
+
+Side note: Arguably, "reference transformation" better describes this area of the codebase, but the name originally came
+from the `ReferenceLocation` type returned by `SymbolFinder.FindReferencesAsync()`.
