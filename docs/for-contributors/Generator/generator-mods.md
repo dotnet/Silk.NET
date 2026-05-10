@@ -32,6 +32,10 @@ addition, most mods have a configuration class located in their source code with
 
 This section provides a high level explanation of what each mod does. The list is sorted in alphabetical order.
 
+In particular, config options and specific implementation details are omitted here as the source code documentation
+provides the information in a more clear format with less chance of being outdated. However, high level design decisions
+will be documented here.
+
 ### AddApiProfiles
 
 ### AddIncludes
