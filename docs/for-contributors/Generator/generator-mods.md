@@ -36,6 +36,13 @@ In particular, config options and specific implementation details are omitted he
 provides the information in a more clear format with less chance of being outdated. However, high level design decisions
 will be documented here.
 
+Standardized sections:
+
+- **Mod categories** - Assigns a category to the mod and is purely for documentation purposes. This allows for easy
+  searching for related mods and is used in a later section to provide recommendations relating to those mod categories.
+
+- **Name affix categories** - Lists the name affix categories that the mod adds.
+
 ### AddApiProfiles
 
 ### AddIncludes
@@ -56,13 +63,34 @@ will be documented here.
 
 ### ExtractNestedTyping
 
+Name affix categories:
+
+- `FunctionPointerDelegateType` - TODO (TODO: Indicate whether it is usually a suffix or prefix)
+
 ### IdentifySharedPrefixes
 
+Name affix categories:
+
+- `SharedPrefix` - TODO
+
 ### InterceptNativeFunctions
+
+Name affix categories:
+
+- `InterceptedFunction` - TODO
 
 ### MarkNativeNames
 
 ### MixKhronosData
+
+Name affix categories:
+
+- `KhronosFunctionDataType` - TODO
+- `KhronosHandleType` - TODO
+- `KhronosImpliedVendor` - TODO
+- `KhronosNamespaceEnum` - TODO
+- `KhronosNonExclusiveVendor` - TODO
+- `KhronosVendor` - TODO
 
 ### PrettifyNames
 
@@ -72,12 +100,24 @@ will be documented here.
 
 ### TransformFunctions
 
+Name affix categories:
+
+- `RawFunction` - TODO
+
 ### TransformHandles
+
+Name affix categories:
+
+- `HandleType` - TODO
 
 ### TransformProperties
 
 (TODO: Add a section for each mod and explain what they do at a high level. Also provide examples of the transformations done. Also link to where more information can be obtained (source code, test cases))
 
-### Affix Categories
+## Mod Categories
+
+(TODO)
+
+## Name Affix Categories
 
 (TODO: Don't keep this as its own section, but for each mod, explain the affix categories that the mod adds. Provide examples on what the affixes look like and how they should be configured in `generator.json`)
