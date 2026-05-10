@@ -38,54 +38,127 @@ will be documented here.
 
 Standardized sections:
 
-- **Mod categories** - Assigns a category to the mod and is purely for documentation purposes. This allows for easy
-  searching for related mods. The category is also used to provide recommendations and information relating to those
-  categories.
+- **Mod categories** - Assigns a category to the mod and is purely for documentation purposes. Alphabetically sorted.
+  This allows for easy searching for related mods. The category is also used to provide recommendations and information
+  relating to those categories.
 
-- **Name affix categories** - Lists the name affix categories that the mod adds.
+- **Name affix categories** - Lists the name affix categories that the mod adds. Alphabetically sorted.
 
 - **Usage recommendations** - Provides information such as situations the mod is useful for, how to configure it, and
   where to place it in the mod order.
 
+General recommendations:
+
+For the most part, mods should be configured to run in an order similar to the mod orders used by Silk's existing
+bindings. The same goes for the configuration, but more care needs to be done regarding whether the configuration is
+specific to that set of bindings.
+
 ### AddApiProfiles
+
+Mod categories: Metadata
+
+This mod adds `[SupportedApiProfile]` attributes throughout the generated bindings for the purpose of providing API
+analyzers the ability to understand when a specific API can be used.
+
+This mod is WIP:
+
+- Ideally, the mod internally uses `[NativeName]` attributes to associate data with the API exposed by the bindings.
+  Currently, the managed C# names are used, meaning that name prettification and other name modifications can lead to
+  inaccurate `[SupportedApiProfile]` attributes.
+
+Usage recommendations:
+
+This mod should be positioned late in the mod order, after all APIs have been added to the generated bindings.
+If the attribute is missing on a certain API and a later mod adds that API, investigate whether this mod can be moved
+to be after that mod.
 
 ### AddIncludes
 
+Mod categories:
+
+Usage recommendations:
+
 ### AddOpaqueStructs
+
+Mod categories:
+
+Usage recommendations:
 
 ### AddVTables
 
+Mod categories:
+
+Usage recommendations:
+
 ### BakeSourceSets
+
+Mod categories:
+
+Usage recommendations:
 
 ### ChangeNamespace
 
+Mod categories:
+
+Usage recommendations:
+
 ### ChangeNativeClass
+
+Mod categories:
+
+Usage recommendations:
 
 ### ClangScraper
 
+Mod categories:
+
+Usage recommendations:
+
 ### ExtractHandles
 
+Mod categories:
+
+Usage recommendations:
+
 ### ExtractNestedTyping
+
+Mod categories:
 
 Name affix categories:
 
 - `FunctionPointerDelegateType` - TODO (TODO: Indicate whether it is usually a suffix or prefix)
 
+Usage recommendations:
+
 ### IdentifySharedPrefixes
+
+Mod categories:
 
 Name affix categories:
 
 - `SharedPrefix` - TODO
 
+Usage recommendations:
+
 ### InterceptNativeFunctions
+
+Mod categories:
 
 Name affix categories:
 
 - `InterceptedFunction` - TODO
 
+Usage recommendations:
+
 ### MarkNativeNames
 
+Mod categories:
+
+Usage recommendations:
+
 ### MixKhronosData
+
+Mod categories:
 
 Name affix categories:
 
@@ -96,32 +169,60 @@ Name affix categories:
 - `KhronosNonExclusiveVendor` - TODO
 - `KhronosVendor` - TODO
 
+Usage recommendations:
+
 ### PrettifyNames
+
+Mod categories:
+
+Usage recommendations:
 
 ### StripAttributes
 
+Mod categories:
+
+Usage recommendations:
+
 ### TransformEnums
 
+Mod categories:
+
+Usage recommendations:
+
 ### TransformFunctions
+
+Mod categories:
 
 Name affix categories:
 
 - `RawFunction` - TODO
 
+Usage recommendations:
+
 ### TransformHandles
+
+Mod categories:
 
 Name affix categories:
 
 - `HandleType` - TODO
 
+Usage recommendations:
+
 ### TransformProperties
 
-(TODO: Add a section for each mod and explain what they do at a high level. Also provide examples of the transformations done. Also link to where more information can be obtained (source code, test cases))
+Mod categories:
+
+Usage recommendations:
 
 ## Mod Categories
 
-(TODO)
+### Input
 
-## Name Affix Categories
+(TODO: Think of a better category name. This is supposed to represent mods that insert new APIs into the generated bindings. Also figure out which mods I should include here. This definitely includes ClangScraper, but should TransformFunctions be here? Sure it adds new APIs, but it's a completely new API. MixKhronosData is a better example of which mods should be included. MixKhronosData should be included because it introduces new APIs that cannot be found in any form elsewhere in the generated bindings.)
 
-(TODO: Don't keep this as its own section, but for each mod, explain the affix categories that the mod adds. Provide examples on what the affixes look like and how they should be configured in `generator.json`)
+### Metadata
+
+### Transformation
+
+### Naming
