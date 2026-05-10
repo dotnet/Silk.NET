@@ -24,6 +24,10 @@ code representing the generated bindings instead.
 
 ### Mod Configuration
 
+Mods are configured through the generator config JSON file. Silk's config file is named `generator.json` and is located
+at the root of the Silk.NET repository. This config file can be used as reference for your own config files. In
+addition, most mods have a configuration class located in their source code with additional documentation.
+
 ## Available Mods
 
 (TODO: Make a section for each mod provided by Silk)
