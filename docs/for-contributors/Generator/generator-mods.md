@@ -30,7 +30,47 @@ addition, most mods have a configuration class located in their source code with
 
 ## Available Mods
 
-(TODO: Make a section for each mod provided by Silk)
+This section provides a high level explanation of what each mod does. The list is sorted in alphabetical order.
+
+### AddApiProfiles
+
+### AddIncludes
+
+### AddOpaqueStructs
+
+### AddVTables
+
+### BakeSourceSets
+
+### ChangeNamespace
+
+### ChangeNativeClass
+
+### ClangScraper
+
+### ExtractHandles
+
+### ExtractNestedTyping
+
+### IdentifySharedPrefixes
+
+### InterceptNativeFunctions
+
+### MarkNativeNames
+
+### MixKhronosData
+
+### PrettifyNames
+
+### StripAttributes
+
+### TransformEnums
+
+### TransformFunctions
+
+### TransformHandles
+
+### TransformProperties
 
 (TODO: Add a section for each mod and explain what they do at a high level. Also provide examples of the transformations done. Also link to where more information can be obtained (source code, test cases))
 
