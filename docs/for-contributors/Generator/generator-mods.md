@@ -39,9 +39,13 @@ will be documented here.
 Standardized sections:
 
 - **Mod categories** - Assigns a category to the mod and is purely for documentation purposes. This allows for easy
-  searching for related mods and is used in a later section to provide recommendations relating to those mod categories.
+  searching for related mods. The category is also used to provide recommendations and information relating to those
+  categories.
 
 - **Name affix categories** - Lists the name affix categories that the mod adds.
+
+- **Usage recommendations** - Provides information such as situations the mod is useful for, how to configure it, and
+  where to place it in the mod order.
 
 ### AddApiProfiles
 
