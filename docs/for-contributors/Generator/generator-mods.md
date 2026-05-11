@@ -45,7 +45,8 @@ Standardized sections:
 - **Name affix categories** - Lists the name affix categories that the mod adds. Alphabetically sorted.
 
 - **Usage recommendations** - Provides information such as situations the mod is useful for, how to configure it, and
-  where to place it in the mod order.
+  where to place it in the mod order. This information can include examples of how Silk's own bindings use it or whether
+  the mod is mainly designed for Silk internal use.
 
 General recommendations:
 
@@ -108,19 +109,31 @@ Usage recommendations:
 
 Mod categories:
 
+This mod merges multiple sets of source code into one set of source code.
+
 Usage recommendations:
+
+(TODO: To be added)
 
 ### ChangeNamespace
 
 Mod categories:
 
+This mod moves types from one namespace to another.
+
 Usage recommendations:
+
+(TODO: To be added)
 
 ### ChangeNativeClass
 
 Mod categories:
 
+This mod moves members from one type to another.
+
 Usage recommendations:
+
+(TODO: To be added)
 
 ### ClangScraper
 
