@@ -76,19 +76,41 @@ to be after that mod.
 
 Mod categories:
 
+This mod interacts with `ClangScraper` by providing standard include directories and other user-specified include paths
+to `ClangScraper`.
+
 Usage recommendations:
+
+This should be positioned at the start of the mod order.
 
 ### AddOpaqueStructs
 
 Mod categories:
 
+This mod adds an empty struct for each name specified in its mod configuration.
+
 Usage recommendations:
+
+To be added.
 
 ### AddVTables
 
 Mod categories:
 
+This mod transforms `[DllImport]` and `[Transformed]` methods to use Silk-style virtual tables. These vtables allow for
+different styles of accessing native APIs, such as through an instance of an API object or through static methods.
+
 Usage recommendations:
+
+This mod *should* so that the generated bindings are exposed through Silk-style vtables; however, these *must* be used
+if the API has more complicated API-loading requirements not expressed by `[DllImport]`.
+
+For example, SDL has a simple configuration `AddVTables` configuration since all of its functions can be loaded
+statically. However, APIs like OpenGL and Vulkan are more complex. OpenGL uses a context object that is bound to a
+specific thread. Vulkan loads its function pointers from its `Instance` and `Device` objects. In OpenGL, the context
+object can be both set and both by
+
+(TODO: Explain the different types of vtables)
 
 ### BakeSourceSets
 
@@ -217,12 +239,22 @@ Usage recommendations:
 
 ## Mod Categories
 
-### Input
+### Creation
 
-(TODO: Think of a better category name. This is supposed to represent mods that insert new APIs into the generated bindings. Also figure out which mods I should include here. This definitely includes ClangScraper, but should TransformFunctions be here? Sure it adds new APIs, but it's a completely new API. MixKhronosData is a better example of which mods should be included. MixKhronosData should be included because it introduces new APIs that cannot be found in any form elsewhere in the generated bindings.)
+These mods focus on the creation of new APIs that strictly do not exist in any form in the current state of the
+bindings.
+
+Generally, these mods should be early in the mod order so that other mods have the chance to modify their outputs.
 
 ### Metadata
 
-### Transformation
+These mods deal with metadata, either by annotating the generated bindings or by providing metadata to other mods.
 
 ### Naming
+
+These mods deal with the naming of type and member identifiers within the generated bindings.
+
+### Transformation
+
+These mods focus on the transformation of existing APIs. While these mods can create new APIs, these new APIs are based
+on APIs that already exist in the generated bindings.
