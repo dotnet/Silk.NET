@@ -156,7 +156,46 @@ This mod should be positioned at the start of the mod order, after `AddIncludes`
 
 Mod categories: Creation
 
+This mod adds empty structs for missing types that are identified to be used as handle types. To be a handle type, the
+type must only be ever referenced through a pointer. After the empty struct representing the handle type is extracted,
+`TransformHandles` can then be used to transform the pointer to be wrapped within the handle struct.
+
+Side note: This mod is similar to `AddOpaqueStructs` in that it adds empty structs, but `ExtractHandles` has a much more
+automated approach since it deals specifically with handle types that are referenced using pointers.
+
+This code has been manually trimmed for the sake of example and comes from the state of the Vulkan bindings before
+`ExtractHandles` executes. In this case, `VkInstance_T` will be identified as a missing handle type and an empty struct
+will be added for it. On the other hand, `VkInstanceCreateInfo` and `VkAllocationCallbacks` will not be affected since
+they already exist. Similarly, `VkResult` is not affected because it is not referenced through a pointer.
+```cs
+public struct VkAllocationCallbacks;
+public struct VkInstanceCreateInfo;
+
+public class Vk
+{
+    public static extern VkResult vkCreateInstance(
+        VkInstanceCreateInfo* pCreateInfo,
+        VkAllocationCallbacks* pAllocator,
+        VkInstance_T** pInstance
+    );
+}
+```
+
+The result of running `ExtractHandles` on the above code will lead to the creation of a new type:
+```cs
+public unsafe partial struct VkInstance_T
+{
+}
+```
+
 Usage recommendations:
+
+This mod should be used if a set of bindings contains types referenced only through pointers and those pointers are
+missing from the final set of generated bindings.
+
+Furthermore, this mod should be used alongside `TransformHandles` so that the handles are transformed into a more
+user-friendly version. `ExtractHandles` should be positioned before `TransformHandles` and any other mods that might use
+its results in the mod order.
 
 ### ExtractNestedTyping
 

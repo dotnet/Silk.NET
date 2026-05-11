@@ -1,0 +1,3 @@
+﻿public unsafe partial struct VkInstance_T
+{
+}
