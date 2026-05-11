@@ -166,7 +166,8 @@ automated approach since it deals specifically with handle types that are refere
 This code has been manually trimmed for the sake of example and comes from the state of the Vulkan bindings before
 `ExtractHandles` executes. In this case, `VkInstance_T` will be identified as a missing handle type and an empty struct
 will be added for it. On the other hand, `VkInstanceCreateInfo` and `VkAllocationCallbacks` will not be affected since
-they already exist. Similarly, `VkResult` is not affected because it is not referenced through a pointer.
+they already exist. Similarly, `VkResult` is not affected because it is not referenced through a pointer. This example
+has a matching test case in the SilkTouch unit tests.
 ```cs
 public struct VkAllocationCallbacks;
 public struct VkInstanceCreateInfo;
