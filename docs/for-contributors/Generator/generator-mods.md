@@ -91,7 +91,7 @@ This mod adds an empty struct for each name specified in its mod configuration.
 
 Usage recommendations:
 
-To be added.
+(TODO: To be added)
 
 ### AddVTables
 
@@ -102,15 +102,7 @@ different styles of accessing native APIs, such as through an instance of an API
 
 Usage recommendations:
 
-This mod *should* so that the generated bindings are exposed through Silk-style vtables; however, these *must* be used
-if the API has more complicated API-loading requirements not expressed by `[DllImport]`.
-
-For example, SDL has a simple configuration `AddVTables` configuration since all of its functions can be loaded
-statically. However, APIs like OpenGL and Vulkan are more complex. OpenGL uses a context object that is bound to a
-specific thread. Vulkan loads its function pointers from its `Instance` and `Device` objects. In OpenGL, the context
-object can be both set and both by
-
-(TODO: Explain the different types of vtables)
+(TODO: To be added)
 
 ### BakeSourceSets
 
