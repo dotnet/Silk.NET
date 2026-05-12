@@ -211,17 +211,27 @@ so due to lack of time invested into doing so. There is also the slight performa
 out since it will lead to three separate passes over the codebase, but this cost is negligible for most reasonably sized
 native APIs.
 
-Nested type extraction:
-
-Nested type extraction involves the identification (TODO)
-
 Name affix categories:
 
-- `FunctionPointerDelegateType` - TODO (TODO: Indicate whether it is usually a suffix or prefix)
-- `FunctionPointerParent` - TODO
-- `NestedStructParent` - TODO
+- `FunctionPointerDelegateType` - This is a suffix that always has the value of `Delegate`. This is used for the
+  delegate representation of a function pointer type to distinguish the delegate type from the struct type for extracted
+  function pointers.
+
+- `FunctionPointerParent` - This is a prefix used by the delegate representation of a function pointer type. This is
+  used to ensure that the delegate type always uses the current name of its struct counterpart as part of its own name.
+
+- `NestedStructParent` - This is a prefix that references the name of the type that the extracted type was previously
+  nested in. This is used to ensure that the extracted type always uses the current name of its original "parent" type
+  as part of its own name.
+
+These affixes are usually left unconfigured in `PrettifyNames`.
 
 Usage recommendations:
+
+This mod must be used before `PrettifyNames` when using `PrettifyNames` and there are nested types in the generated
+bindings. This is because `PrettifyNames` does not handle nesting when renaming identifiers. Other mods may have similar
+restrictions. This restriction is generally because nesting increases complexity, and as such, mods are written with the
+assumption that nested types are extracted beforehand.
 
 ### IdentifySharedPrefixes
 
