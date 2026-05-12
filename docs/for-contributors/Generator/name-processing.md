@@ -337,7 +337,7 @@ words, changes to the referenced name is "synchronized" to the name referencing 
 
 This occurs primarily in types added to the bindings by Silk. For example:
 
-- **Nested types** - Nested types are extracted by `ExtractNestedType` to be non-nested types. These types have the name
+- **Nested types** - Nested types are extracted by `ExtractNestedTyping` to be non-nested types. These types have the name
   of their parent type plus their original name (for nested types that have proper names in the native code) or the name
   of their parent type plus the name of the field that uses them (eg: for `InlineArray` types).
    - Example: `GamepadBinding`, `GamepadBindingInput`, and `GamepadBindingInputAxis` in the SDL bindings. The latter are

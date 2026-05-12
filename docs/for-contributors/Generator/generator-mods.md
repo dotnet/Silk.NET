@@ -202,9 +202,24 @@ its results in the mod order.
 
 Mod categories: Creation
 
+This mod handles a few responsibilities, the primary of which is to extract nested types out of their parent types and
+into the containing namespace as non-nested types. The second is replacing function pointers with structs and delegate
+types representing those function pointers. The third is moving C-style enum constants into their respective enums.
+
+Arguably, the non-primary responsibilities of this mod should be split out into separate mods, but has not yet been done
+so due to lack of time invested into doing so. There is also the slight performance hit of splitting out the operations
+out since it will lead to three separate passes over the codebase, but this cost is negligible for most reasonably sized
+native APIs.
+
+Nested type extraction:
+
+Nested type extraction involves the identification (TODO)
+
 Name affix categories:
 
 - `FunctionPointerDelegateType` - TODO (TODO: Indicate whether it is usually a suffix or prefix)
+- `FunctionPointerParent` - TODO
+- `NestedStructParent` - TODO
 
 Usage recommendations:
 

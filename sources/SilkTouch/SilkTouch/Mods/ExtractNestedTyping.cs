@@ -17,7 +17,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <list type="bullet">
 /// <item><description>
 /// Replacing function pointers identified by their <see cref="NativeTypeNameAttribute"/>s with delegates and
-/// <c>Pfn</c>-prefixed structures.
+/// function pointer structs.
 /// </description></item>
 /// <item><description>
 /// Moving constants into their respective enums. These constants are identified by checking for an enum with

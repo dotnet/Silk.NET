@@ -21,14 +21,21 @@ public static class TestUtils
     public static async Task VerifyDocumentsAsync(params IEnumerable<Document> documents)
     {
         var builder = new StringBuilder();
+        var isFirst = true;
         foreach (var document in documents.OrderBy(doc => doc.Name))
         {
+            if (!isFirst)
+            {
+                builder.AppendLine();
+            }
+
+            isFirst = false;
+
             builder.Append("// ");
             builder.AppendLine(document.Name);
 
             var root = await document.GetSyntaxRootAsync();
             builder.AppendLine(root!.NormalizeWhitespace().ToString());
-            builder.AppendLine();
         }
 
         await Verify(builder.ToString());
