@@ -1059,11 +1059,11 @@
             "namespace": "Silk.NET.Assimp",
             "extensionsNamespace": "Silk.NET.Assimp.Extensions",
             "nameContainer": {
-                "linux-x64": "libassimp.so.5",
+                "linux-x64": "libassimp.so.6",
                 "win-x64": "Assimp64.dll",
                 "win-x86": "Assimp32.dll",
-                "osx-x64": "libassimp.5.dylib",
-                "android": "libassimp.so.5",
+                "osx-x64": "libassimp.6.dylib",
+                "android": "libassimp.so.6",
                 "iOS": "__Internal",
                 "className": "AssimpLibraryNameContainer"
             },
