@@ -49,7 +49,7 @@ public class ExtractHandlesTests
 
         // There should be an empty struct named VkInstance_T in a new file
         var result = await context
-            .SourceProject.Documents.First(x => x.Name != inputDocName)
+            .SourceProject.Documents.Single(x => x.Name != inputDocName)
             .GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
