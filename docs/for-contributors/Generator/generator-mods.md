@@ -307,11 +307,35 @@ an enum to the corresponding enum. As such, this `IdentifySharedPrefixes` should
 
 Mod categories: Transformation
 
+This mod intercepts native functions and allows the generator user to provide a manual implementation in a non-generated
+partial file.
+
+This is done by identifying native functions by name and by their `[DllImport]` attribute. If the native function's name
+is one of the functions to intercept, the original method is replaced with two new method:
+
+1. A `private` version of the original that is suffixed with `-Internal`.
+2. A `public` version with no method body, but using the `partial` keyword.
+
+This second `partial` method is what allows generator users to provide their own implementation. Similar to overriding
+`virtual` methods, the generator user is free to do anything within this implementation, but common use cases involve
+wrapping the method before calling the original `-Internal` suffixed version of the method.
+
+Examples for how `InterceptNativeFunctions` works can be found in the `InterceptNativeFunctionsTests` test cases.
+
 Name affix categories:
 
-- `InterceptedFunction` - TODO
+- `InterceptedFunction` - This is a suffix that always has the value of `Internal`. This is used for the original
+  version of the private, intercepted native function to distinguish it from the new, public version.
 
 Usage recommendations:
+
+Use this when there is a strong reason to directly replace the original native function rather than create a custom
+overload or utility method.
+
+For example, this is used in the Vulkan bindings to capture the created `Instance` and `Device` objects to be used in
+native function loading. Specifically, `vkCreateInstance` and `vkCreateDevice` are intercepted so that the created
+objects can be passed to `vkGetInstanceProcAddr` and `vkGetDeviceProcAddr` respectively. In this case, the reason for
+intercepting these native functions is so that function pointers can be automatically loaded without user intervention.
 
 ### MarkNativeNames
 
