@@ -42,7 +42,10 @@ Standardized sections:
   This allows for easy searching for related mods. The category is also used to provide recommendations and information
   relating to those categories.
 
-- **Name affix categories** - Lists the name affix categories that the mod adds. Alphabetically sorted.
+- **Name affix categories** - Lists the name affix categories that the mod adds. Alphabetically sorted. Please refer
+  to the [Name Processing](name-processing.md) documentation to understand what these are and how to make use of them.
+  That said, advice for how to handle each category is also provided alongside information about what the name affix
+  represents.
 
 - **Usage recommendations** - Provides information such as situations the mod is useful for, how to configure it, and
   where to place it in the mod order. This information can include examples of how Silk's own bindings use it or whether
@@ -211,6 +214,8 @@ so due to lack of time invested into doing so. There is also the slight performa
 out since it will lead to three separate passes over the codebase, but this cost is negligible for most reasonably sized
 native APIs.
 
+Examples for how `ExtractNestedTyping` works can be found in the `ExtractNestedTypingTests` class.
+
 Name affix categories:
 
 - `FunctionPointerDelegateType` - This is a suffix that always has the value of `Delegate`. This is used for the
@@ -237,11 +242,39 @@ assumption that nested types are extracted beforehand.
 
 Mod categories: Metadata, Naming
 
+This mod is designed to handle C-style namespace prefixes where all types, functions, and constants in a library share
+a common prefix. This includes casing convention differences. For example, constants often use screaming case while
+type and function names use camel case or pascal case.
+
+Examples for how `IdentifySharedPrefixes` works can be found in the `IdentifySharedPrefixesTests` class.
+
 Name affix categories:
 
-- `SharedPrefix` - TODO
+- `SharedPrefix` - This is a prefix that represents the shared prefix that is identified for a group of names. Silk's
+  bindings typically remove this prefix because these prefixes are typically used to prevent naming collisions in C
+  libraries. C# has its own namespacing functionality, thus making this prefix irrelevant. This prefix can be kept or
+  prettified if preferred over removing the prefix. The prefix can also be configured as a discriminator, which removes
+  the prefix by default, but allows the prefix to be used in case of name conflicts.
+
+Example name affix configurations for `PrettifyNames`:
+
+```
+"SharedPrefix": {
+  "Remove": true
+}
+```
+
+```
+"SharedPrefix": {
+  "IsDiscriminator": true
+}
+```
 
 Usage recommendations:
+
+This mod should be used when the transformation of C-style namespace prefixes or similar naming patterns is desired.
+The most common case of this is the removal of such prefixes by using `IdentifySharedPrefixes` before `PrettifyNames`.
+`PrettifyNames` can then be configured like above to remove or use shared prefixes as discriminators.
 
 ### InterceptNativeFunctions
 
