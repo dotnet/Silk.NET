@@ -257,8 +257,8 @@ prefix shared by the enum type's members. In the case of `SDL_BlendMode`, all of
 `SDL_BLENDMODE_` as their common prefix.
 
 Note: Despite `VK_` and `SDL_BLENDMODE_` being the "true" shared prefix, `IdentifySharedPrefixes` annotates the
-identifier with `VK` and `SDL_BLENDMODE` as the shared prefix, without the trailing underscore. While whether the
-inclusion of the underscore can be debated and can subtly affect the bindings output by the generator, this is the
+identifier with `VK` and `SDL_BLENDMODE` as the shared prefix, without the trailing underscore. While the inclusion of
+the underscore can be debated and can subtly affect the bindings output by the generator in edge cases, this is the
 current behavior of `IdentifySharedPrefixes`.
 
 Implementation-wise, this mod's functionality was notably originally part of `PrettifyNames`. In the original form,
