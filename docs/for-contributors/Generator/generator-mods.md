@@ -214,7 +214,7 @@ so due to lack of time invested into doing so. There is also the slight performa
 out since it will lead to three separate passes over the codebase, but this cost is negligible for most reasonably sized
 native APIs.
 
-Examples for how `ExtractNestedTyping` works can be found in the `ExtractNestedTypingTests` class.
+Examples for how `ExtractNestedTyping` works can be found in the `ExtractNestedTypingTests` test cases.
 
 Name affix categories:
 
@@ -246,7 +246,11 @@ This mod is designed to handle C-style namespace prefixes where all types, funct
 a common prefix. This includes casing convention differences. For example, constants often use screaming case while
 type and function names use camel case or pascal case.
 
-Examples for how `IdentifySharedPrefixes` works can be found in the `IdentifySharedPrefixesTests` class.
+Implementation-wise, this mod's functionality was notably originally part of `PrettifyNames`. In the original form,
+`PrettifyNames` handled both the identification of and removal of shared prefixes. This has now been split out to
+simplify `PrettifyNames` and to provide better control over how shared prefixes are processed.
+
+Examples for how `IdentifySharedPrefixes` works can be found in the `IdentifySharedPrefixesTests` test cases.
 
 Name affix categories:
 
