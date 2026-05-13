@@ -92,7 +92,7 @@ public class IdentifySharedPrefixesTests
         var project = TestUtils
             .CreateTestProject()
             .AddDocument(
-                "VocalMorpherPhoneme.gen.cs",
+                "Glfw.gen.cs",
                 """
                 public struct Glfw;
                 public struct GLFWallocator;
