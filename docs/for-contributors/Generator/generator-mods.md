@@ -244,13 +244,32 @@ Mod categories: Metadata, Naming
 
 This mod is designed to handle C-style namespace prefixes where all types, functions, and constants in a library share
 a common prefix. This includes casing convention differences. For example, constants often use screaming case while
-type and function names use camel case or pascal case.
+type and function names use camel case or pascal case. This can be seen in Vulkan, where functions are prefixed with
+`vk`, such as in `vkCreateInstance` and `vkCmdBindPipeline`, and constants are prefixed with `VK_`, such as in
+`VK_MAX_MEMORY_HEAPS` and `VK_TRUE`.
+
+Furthermore, identification of shared prefixes is done per scope and only in cases where C-style namespace prefixes
+might be used. For example, a struct type typically does not use namespace prefixes because the struct itself acts as
+a way to disambiguate names contained inside of it. However, C-style enum values are often defined as global constants
+using macros such as `#define SDL_BLENDMODE_BLEND_PREMULTIPLIED 0x00000010u`. After these constants are moved to their
+corresponding enum types by `ExtractNestedTyping`, `IdentifySharedPrefixes` then handles the identification of the
+prefix shared by the enum type's members. In the case of `SDL_BlendMode`, all of the members of `SDL_BlendMode` share
+`SDL_BLENDMODE_` as their common prefix.
+
+Note: Despite `VK_` and `SDL_BLENDMODE_` being the "true" shared prefix, `IdentifySharedPrefixes` annotates the
+identifier with `VK` and `SDL_BLENDMODE` as the shared prefix, without the trailing underscore. While whether the
+inclusion of the underscore can be debated and can subtly affect the bindings output by the generator, this is the
+current behavior of `IdentifySharedPrefixes`.
 
 Implementation-wise, this mod's functionality was notably originally part of `PrettifyNames`. In the original form,
 `PrettifyNames` handled both the identification of and removal of shared prefixes. This has now been split out to
 simplify `PrettifyNames` and to provide better control over how shared prefixes are processed.
 
 Examples for how `IdentifySharedPrefixes` works can be found in the `IdentifySharedPrefixesTests` test cases.
+
+The [Name Processing](name-processing.md) documentation also covers `IdentifySharedPrefixes` to a limited extent,
+notably relating to how existing name affixes are treated in the
+[IdentifySharedPrefixes and Name Affixes](name-processing.md#identifysharedprefixes-and-name-affixes) section.
 
 Name affix categories:
 
@@ -279,6 +298,10 @@ Usage recommendations:
 This mod should be used when the transformation of C-style namespace prefixes or similar naming patterns is desired.
 The most common case of this is the removal of such prefixes by using `IdentifySharedPrefixes` before `PrettifyNames`.
 `PrettifyNames` can then be configured like above to remove or use shared prefixes as discriminators.
+
+This mod also interacts with `ExtractNestedTyping`, which moves constants that are identified as likely being part of
+an enum to the corresponding enum. As such, this `IdentifySharedPrefixes` should be positioned after
+`ExtractNestedTyping` in the mod order.
 
 ### InterceptNativeFunctions
 
