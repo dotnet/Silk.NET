@@ -341,7 +341,29 @@ intercepting these native functions is so that function pointers can be automati
 
 Mod categories: Metadata, Naming
 
+This mod naively adds `[NativeName]` attributes to most identifiers in the generated bindings and is designed to be
+placed immediately after `ClangScraper`. Syntax nodes that are not output by `ClangScraper` are intentionally not
+processed.
+
+The name stored by the `[NativeName]` attribute matches the C# identifier at the time the mod runs. This assumes that
+the name used by the C# source code matches the name used by the native source code, which is *usually* the case when
+this mod is placed immediately after `ClangScraper`. However, there are cases where the names output by `ClangScraper`
+do not correspond to native names. These cases are usually because there is no native name available, such as for
+inline array types (named in the format `_name_e__FixedBuffer`) or backing fields used by bitfield structs (named
+`_bitfield`).
+
 Usage recommendations:
+
+As mentioned, this mod is best used immediately after `ClangScraper` runs. This should mark all identifiers output
+by `ClangScraper` itself.
+
+However, do not assume that this mod is sufficient to mark all identifiers present in the final set of generated
+bindings. When other mods introduce new identifiers, those mods will need to add `[NativeName]` attributes themselves,
+or have another mod do it for them, in the case those identifiers represent a native API.
+
+Because the name stored as the value for `[NativeName]` comes from the native API, it can be used as a stable identifier
+for an API. This is in contrast to the current C# identifier being used, as that identifier is often transformed by mods
+such as `[PrettifyNames]`.
 
 ### MixKhronosData
 
