@@ -413,11 +413,35 @@ Be aware that these link to the latest version. Silk's repo may be using an olde
 
 Name affix categories:
 
-- `KhronosFunctionDataType` - TODO
-- `KhronosHandleType` - TODO
-- `KhronosImpliedVendor` - TODO
-- `KhronosNamespaceEnum` - TODO
+- `KhronosFunctionDataType` - This is a suffix relevant to OpenGL-like APIs where functions like `glColor3` have
+  variants such as `glColor3i`, `glColor3f`, and `glColor3b`. These suffixes indicate the data type that the function
+  expects. In this case, integer, float, and byte, respectively. Silk's bindings configure these as discriminators so
+  that they can be removed when removing them does not lead to method overload conflicts. `IdentifyFunctionDataTypes`
+  must be set to true in the `MixKhronosData` configuration for this affix category to be identified.
+
+- `KhronosHandleType` - This is a suffix resulting from the typedefs used by Khronos in their headers. For example,
+  Vulkan uses the following macro to define handle types:
+  `#define VK_DEFINE_HANDLE(object) typedef struct object##_T* object;`, used as `VK_DEFINE_HANDLE(VkInstance)`.
+  Although Vulkan uses the handle type as `VkInstance`, `ClangScraper` outputs the type as `VkInstance_T` due to the
+  typedef. As such, `MixKhronosData` identifies this suffix so that `PrettifyNames` can be configured to remove this
+  suffix later.
+
+- `KhronosImpliedVendor` - This is a suffix added when an enum member has the same vendor suffix as the containing enum
+  type. This suffix exists in native code because the enum member is usually defined as a standalone, global constant
+  without any other context whether the enum member is part of an extension. In C#, this is not a problem because the
+  enum type itself conveys that information. For example, in Vulkan, `VkPresentModeKHR` in Vulkan is a `KHR` suffixed
+  enum type that contains `VK_PRESENT_MODE_IMMEDIATE_KHR` as a member. In C#, this `KHR` suffix on the member is
+  redundant. As such, Silk's bindings are configured to remove this suffix. `IdentifyEnumMemberImpliedVendors` must be
+  set to true in the `MixKhronosData` configuration for this affix category to be identified.
+
+- `KhronosNamespaceEnum` - This is a prefix added to the "namespace" enum of OpenGL-like APIs such as `GLEnum`,
+  `ALEnum`, and `ALCEnum`. In this case, the value of the prefix would be `GL`, `AL`, and `ALC`, respectively. This is
+  so that the casing of the prefix is preserved by `PrettifyNames`. As such, Silk's bindings leaves the affix category
+  unconfigured in the `PrettifyNames` configuration so that `PrettifyNames` uses the default behavior of preserving the
+  affix.
+
 - `KhronosNonExclusiveVendor` - TODO
+
 - `KhronosVendor` - TODO
 
 Usage recommendations:
