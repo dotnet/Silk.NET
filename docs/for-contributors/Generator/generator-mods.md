@@ -369,6 +369,48 @@ such as `[PrettifyNames]`.
 
 Mod categories: Creation, Metadata, Naming, Transformation
 
+This is a monolithic mod that handles behavior specific to Khronos APIs such as OpenGL, OpenAL, Vulkan, and much more.
+
+Because this mod is intended more for internal use rather than public use, the documentation here will focus on
+decisions made during the development of the mod and other internal details rather than the exact usage of the mod.
+For information relating to how the mod should be used, please use Silk's `generator.json` configuration, source code,
+and `MixKhronosDataTests` as a reference.
+
+(TODO: Document major decisions relating to MixKhronosData. This is difficult because of the mod's long development
+history. This should be done over time as further changes are made to the mod.)
+
+To combat the monolithic nature of the mod, the mod is split into multiple phases. This refers to both the
+`InitializeAsync` and `ExecuteAsync` phases, as well as the use of multiple rewriters. The mod also implements
+multiple interfaces that integrate `MixKhronosData` into the behavior of other mods.
+
+`InitializeAsync` is where `MixKhronosData` initializes its data by reading the Khronos-style XML specification file
+containing data relating to the API that the generator is generating bindings for. A list of such specifications is
+provided below. These XML specs roughly follow the same format, but have subtle or major differences depending on the
+history of that API. For example, OpenGL is similar to OpenAL, but differs greatly from Vulkan and OpenXR who are
+themselves similar. As such, it is best to have all of the specification files open for reference when working on
+parsing. It may also be helpful to have the corresponding header files open.
+
+`ExecuteAsync` is where `MixKhronosData` does multiple sequential transformation steps on the source code representing
+the generated bindings. These steps are split into different rewriter phases in a way that focuses on balancing
+performance with maintainability. Performance-wise, these rewriters should be combined as much as possible. This is
+because repeated loops over the project source code has an associated time cost. However, for sake of maintainability,
+it is much easier to understand how transformations are done when they are separated out into different phases.
+Fortunately, as long as the transformations do not use the symbol representation (eg: `ISymbol`, `SemanticModel`) of
+the source code, the transformation is fairly lightweight and only adds a few seconds to the total execution time of
+the mod.
+
+Khronos-style XML specifications:
+
+OpenAL: https://raw.githubusercontent.com/kcat/openal-soft/refs/heads/master/registry/xml/al.xml
+OpenCL: https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/refs/heads/main/xml/cl.xml
+OpenGL Windows: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml
+OpenGL X11: https://github.com/KhronosGroup/OpenGL-Registry/blob/main/xml/glx.xml
+OpenGL: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/refs/heads/main/xml/gl.xml
+OpenXR: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK-Source/main/specification/registry/xr.xml
+Vulkan: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/refs/heads/main/xml/vk.xml
+
+Be aware that these link to the latest version. Silk's repo may be using an older version of these XML files.
+
 Name affix categories:
 
 - `KhronosFunctionDataType` - TODO
