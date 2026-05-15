@@ -493,7 +493,29 @@ benefit `MixKhronosData` provides for those bindings.
 
 Mod categories: Naming, Transformation
 
+This is the mod central to name processing. `PrettifyNames` focuses on the bulk prettification of names and the
+processing of name affixes declared by other mods.
+
+Name processing as a whole and information about the high level implementation details of `PrettifyNames` is available
+in the [Name Processing](name-processing.md) documentation.
+
 Usage recommendations:
+
+This mod should be positioned late in the mod order to ensure that all mods that introduce new identifiers and
+`[NameAffix]` attributes have run.
+
+The placement of this mod can also affect mods that rely on the C# identifiers of types and their members rather than
+the names specified by that identifier's `[NativeName]` attribute. One notable mod of this type is `TransformEnums`.
+
+When configuring how name affixes are processed in the `PrettifyNames` configuration, note that the name affix category
+configuration is designed to be verbose on purpose. If a category is left unconfigured, it will simply use the default
+configuration. Mods cannot provide default affix category configurations. This is to ensure that what you see in the
+`PrettifyNames` configuration directly corresponds to the output.
+
+Furthermore, when defining values for the `Order` and `DiscriminatorPriority` properties, prefer to use consecutive
+values since there is no need to reserve space for intermediate values when new name affix categories are introduced.
+This is because it is easy enough to update the other entries to use a higher/lower value for the set of bindings being
+configured. New name affixes are also very unlikely to be introduced after the set of bindings have been created.
 
 ### StripAttributes
 
