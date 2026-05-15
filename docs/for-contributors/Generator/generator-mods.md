@@ -531,8 +531,8 @@ This mod removes attributes that are listed in the `Remove` list of its config.
 
 Usage recommendations:
 
-This mod is intended to be used as a way to clean up intermediate metadata attributes and other attributes not
-particularly useful to the end user of the generated bindings.
+This mod is intended to be used as a way to clean up intermediate metadata attributes and other attributes usually
+useful during bindings generation or debugging, but not particularly useful to the end user of the generated bindings.
 
 These are attributes removed in Silk's own bindings:
 
