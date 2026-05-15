@@ -413,26 +413,27 @@ Be aware that these link to the latest version. Silk's repo may be using an olde
 
 Name affix categories:
 
-- `KhronosFunctionDataType` - This is a suffix relevant to OpenGL-like APIs where functions like `glColor3` have
-  variants such as `glColor3i`, `glColor3f`, and `glColor3b`. These suffixes indicate the data type that the function
-  expects. In this case, integer, float, and byte, respectively. Silk's bindings configure these as discriminators so
-  that they can be removed when removing them does not lead to method overload conflicts. `IdentifyFunctionDataTypes`
-  must be set to true in the `MixKhronosData` configuration for this affix category to be identified.
+- `KhronosFunctionDataType` - `IdentifyFunctionDataTypes` must be set to true in the `MixKhronosData` configuration for
+  this affix category to be identified. This is a suffix relevant to OpenGL-like APIs where functions like `glColor3`
+  have variants such as `glColor3i`, `glColor3f`, and `glColor3b`. These suffixes indicate the data type that the
+  function expects. In this case, integer, float, and byte, respectively. Silk's bindings configure these as
+  discriminators so that they can be removed when removing them does not lead to method overload conflicts.
 
-- `KhronosHandleType` - This is a suffix resulting from the typedefs used by Khronos in their headers. For example,
-  Vulkan uses the following macro to define handle types:
+- `KhronosHandleType` - This is a suffix used on handle structs resulting from the typedefs used by Khronos in their
+  headers. For example, Vulkan uses the following macro to define handle types:
   `#define VK_DEFINE_HANDLE(object) typedef struct object##_T* object;`, used as `VK_DEFINE_HANDLE(VkInstance)`.
   Although Vulkan uses the handle type as `VkInstance`, `ClangScraper` outputs the type as `VkInstance_T` due to the
   typedef. As such, `MixKhronosData` identifies this suffix so that `PrettifyNames` can be configured to remove this
   suffix later.
 
-- `KhronosImpliedVendor` - This is a suffix added when an enum member has the same vendor suffix as the containing enum
-  type. This suffix exists in native code because the enum member is usually defined as a standalone, global constant
-  without any other context whether the enum member is part of an extension. In C#, this is not a problem because the
-  enum type itself conveys that information. For example, in Vulkan, `VkPresentModeKHR` in Vulkan is a `KHR` suffixed
-  enum type that contains `VK_PRESENT_MODE_IMMEDIATE_KHR` as a member. In C#, this `KHR` suffix on the member is
-  redundant. As such, Silk's bindings are configured to remove this suffix. `IdentifyEnumMemberImpliedVendors` must be
-  set to true in the `MixKhronosData` configuration for this affix category to be identified.
+- `KhronosImpliedVendor` - `IdentifyEnumMemberImpliedVendors` must be set to true in the `MixKhronosData` configuration
+  for this affix category to be identified. This is a suffix used on enum members instead of `KhronosVendor` when an
+  enum member has the same vendor suffix as **the containing enum type. This suffix exists in native code because the
+  enum member is usually defined as a standalone, global constant without any other context whether the enum member is
+  part of an extension. In C#, this is not a problem because the enum type itself conveys that information. For example,
+  in Vulkan, `VkPresentModeKHR` in Vulkan is a `KHR` suffixed enum type that contains `VK_PRESENT_MODE_IMMEDIATE_KHR` as
+  a member. In C#, this `KHR` suffix on the member is redundant. As such, Silk's bindings are configured to remove this
+  suffix.
 
 - `KhronosNamespaceEnum` - This is a prefix added to the "namespace" enum of OpenGL-like APIs such as `GLEnum`,
   `ALEnum`, and `ALCEnum`. In this case, the value of the prefix would be `GL`, `AL`, and `ALC`, respectively. This is
@@ -440,7 +441,24 @@ Name affix categories:
   unconfigured in the `PrettifyNames` configuration so that `PrettifyNames` uses the default behavior of preserving the
   affix.
 
-- `KhronosNonExclusiveVendor` - TODO
+- `KhronosNonExclusiveVendor` - `IdentifyEnumTypeNonExclusiveVendors` must be set to true in the `MixKhronosData`
+  configuration for this affix category to be identified. This is a suffix used on enum types instead of `KhronosVendor`
+  when the enum type's vendor suffix does not match the vendor suffixes used by the enum members contained within that
+  type. For example, `BufferUsageARB` has the `ARB` vendor suffix, but contains non-suffixed members such as
+  `GL_STREAM_DRAW`. Similarly, `GetMultisamplePNameNV` contains `ProgrammableSampleLocationARB`, which is also a
+  mismatch. This affix category is only intended to be used for OpenGL-like APIs where enum member promotion was not
+  fully defined, leading to inconsistent vendor suffixing where a non-promoted enum type contains a promoted enum
+  member. Modern APIs like Vulkan do not have this issue. In modern APIs, there can be "mismatches", but those are cases
+  where promoted enum types contain non-promoted enum members, which is allowed. As such, Silk's bindings enables
+  `IdentifyEnumTypeNonExclusiveVendors` and configures `KhronosNonExclusiveVendor` affixes to be removed only for
+  OpenGL-like APIs. Furthermore, `IdentifyEnumTypeNonExclusiveVendors` also interacts with
+  `IdentifyEnumMemberImpliedVendors`. Specifically, if an enum type is identified to have a non-exclusive vendor, that
+  vendor will not be used to identify implied vendors, as it is assumed that the non-exclusive vendor will be removed.
+  Also note that the behavior of `IdentifyEnumTypeNonExclusiveVendors` can be considered "too aggressive" since it
+  triggers off of *any* mismatch. For example, if a vendor suffixed enum type contains something generic such as
+  `GL_NONE`, the enum type vendor suffix will still be identified as a `KhronosNonExclusiveVendor`. This behavior was
+  ported from the now removed `NameTrimmer`-based implementation and is kept for simplicity and consistency with the old
+  implementation.
 
 - `KhronosVendor` - TODO
 
