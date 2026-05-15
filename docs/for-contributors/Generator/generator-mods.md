@@ -460,7 +460,18 @@ Name affix categories:
   ported from the now removed `NameTrimmer`-based implementation and is kept for simplicity and consistency with the old
   implementation.
 
-- `KhronosVendor` - TODO
+- `KhronosNonVendor` - This is a suffix added to any identifier that is identified to contain a suffix listed in the
+  `NonVendorSuffixes` array of the `MixKhronosData` configuration. This is used in cases when a suffix might block the
+  identification of other suffixes. For example, OpenAL has names such as `alAuxiliaryEffectSlotfDirect` where the
+  `Direct` suffix is after the `KhronosFunctionDataType` suffix, thus blocking the `KhronosFunctionDataType` suffix
+  from being identified. In this case, adding `Direct` as a non-vendor suffix fixes the issue. Because this is a
+  "helper" affix, Silk's bindings leave this affix category unconfigured in the `PrettifyNames` configuration.
+
+- `KhronosVendor` - This is a suffix added to any identifier that is identified to contain a Khronos vendor suffix such
+  as `KHR`, `EXT`, or `NV`. The list of vendor suffixes used during identification is retrieved from the provided XML
+  specification. Silk's bindings are configured to move `KhronosVendor` suffixes to the end of the name. This is to
+  match Khronos's own naming convention. This primarily affects cases where Silk's generator added additional suffixes
+  to the end of the name, such as for handle types like `DebugUtilsMessengerHandleEXT` in Vulkan.
 
 Usage recommendations:
 
