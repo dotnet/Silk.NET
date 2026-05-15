@@ -369,7 +369,7 @@ such as `[PrettifyNames]`.
 
 Mod categories: Creation, Metadata, Naming, Transformation
 
-This is a monolithic mod that handles behavior specific to Khronos APIs such as OpenGL, OpenAL, Vulkan, and much more.
+This is a monolithic mod that handles behavior specific to Khronos-style APIs such as OpenGL, OpenAL, Vulkan, and more.
 
 Because this mod is intended more for internal use rather than public use, the documentation here will focus on
 decisions made during the development of the mod and other internal details rather than the exact usage of the mod.
@@ -471,9 +471,23 @@ Name affix categories:
   as `KHR`, `EXT`, or `NV`. The list of vendor suffixes used during identification is retrieved from the provided XML
   specification. Silk's bindings are configured to move `KhronosVendor` suffixes to the end of the name. This is to
   match Khronos's own naming convention. This primarily affects cases where Silk's generator added additional suffixes
-  to the end of the name, such as for handle types like `DebugUtilsMessengerHandleEXT` in Vulkan.
+  to the end of the name, such as with `HandleType` suffixes like in `DebugUtilsMessengerHandleEXT` in Vulkan.
 
 Usage recommendations:
+
+This mod should only be used when generating bindings for Khronos-style APIs. While the mod does not strictly require
+the XML specification file, `MixKhronosData` has not been tested for use without the XML specification.
+
+One key consideration when using `MixKhronosData` is identifying the conventions used by the API for which bindings are
+being generated for. Older Khronos APIs are more similar to OpenGL while newer Khronos APIs are more similar to Vulkan.
+These conventions determine which settings should be used in the `MixKhronosData` configuration. For exact configuration
+details, please refer to the configurations used by Silk for the existing Khronos-style bindings as well as the source
+code.
+
+Note: Although `MixKhronosData` has not been used by Silk for generating bindings for APIs that do not have XML
+specifications, we will likely experiment with using this mod for bindings that do not have XML specifications such as
+SPIRV-Reflect in the near future. Whether we end up using this mod for these types of bindings depends on how much
+benefit `MixKhronosData` provides for those bindings.
 
 ### PrettifyNames
 
