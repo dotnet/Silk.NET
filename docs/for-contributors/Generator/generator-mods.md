@@ -461,7 +461,7 @@ Name affix categories:
   implementation.
 
 - `KhronosNonVendor` - This is a suffix added to any identifier that is identified to contain a suffix listed in the
-  `NonVendorSuffixes` array of the `MixKhronosData` configuration. This is used in cases when a suffix might block the
+  `NonVendorSuffixes` list of the `MixKhronosData` configuration. This is used in cases when a suffix might block the
   identification of other suffixes. For example, OpenAL has names such as `alAuxiliaryEffectSlotfDirect` where the
   `Direct` suffix is after the `KhronosFunctionDataType` suffix, thus blocking the `KhronosFunctionDataType` suffix
   from being identified. In this case, adding `Direct` as a non-vendor suffix fixes the issue. Because this is a
@@ -521,7 +521,25 @@ configured. New name affixes are also very unlikely to be introduced after the s
 
 Mod categories: Metadata
 
+This mod removes attributes that are listed in the `Remove` list of its config.
+
 Usage recommendations:
+
+This mod is intended to be used as a way to clean up intermediate metadata attributes and other attributes not
+particularly useful to the end user of the generated bindings.
+
+These are attributes removed in Silk's own bindings:
+
+- `NameAffix` - Metadata attribute used to store name affix information. Introduced by various mods.
+
+- `NativeTypeName` - Metadata attribute used to store native type information. Introduced by `ClangScraper`.
+
+- `Transformed` - Metadata attribute used to denote that an API is a transformed variant of another API. Introduced by
+  various mods.
+
+Tip: When debugging the name processing pipeline, disabling the `StripAttributes` mod (or just removing the
+`[NameAffix]` attribute from the list of attributes to be removed) can be helpful. Disabling the stripping of other
+attributes can also be helpful for this or other purposes.
 
 ### TransformEnums
 
