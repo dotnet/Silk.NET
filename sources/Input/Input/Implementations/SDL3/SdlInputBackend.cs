@@ -33,9 +33,16 @@ internal partial class SdlInputBackend : IInputBackend
 
     public readonly ICursorConfiguration CursorConfiguration;
 
+    private const uint SdlInitFlags =
+        SDL.Sdl.InitJoystick | SDL.Sdl.InitGamepad | SDL.Sdl.InitEvents | SDL.Sdl.InitHaptic | SDL.Sdl.InitSensor;
+
+
     public unsafe SdlInputBackend(SdlPlatformInfo info)
     {
         Sdl = info.Sdl ?? SDL.Sdl.Instance;
+
+
+
         if (Sdl == null)
         {
             throw new ArgumentNullException(nameof(info), "No SDL instance was provided or found.");
@@ -73,6 +80,12 @@ internal partial class SdlInputBackend : IInputBackend
         CursorConfiguration = new SdlCursor(Sdl);
         InitializeEventQueue(out _silkEvents);
         _eventProcessingArgs = new ProcessEventArgs(this, _silkEvents.ConnectionSdlEvents);
+
+
+        if (!Sdl.InitSubSystem(SdlInitFlags))
+        {
+            SdlLog.Error("Failed to initialize SDL gamepad subsystem.");
+        }
 
         // ===============================================================================================
         // === If we ever need to share common state across window-specific "backends", use the below: ===
@@ -257,18 +270,31 @@ internal partial class SdlInputBackend : IInputBackend
         switch (type)
         {
             case EventType.GamepadAdded:
+                backend.TryGetOrCreateDevice<SdlGamepad>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp, out _);
                 return;
             case EventType.GamepadRemoved:
                 backend.RemoveDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, evt.Common.Timestamp);
                 return;
+            case EventType.JoystickAdded:
+                backend.TryGetOrCreateDevice<SdlJoystick>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp, out _);
+                return;
             case EventType.JoystickRemoved:
                 backend.RemoveDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, evt.Common.Timestamp);
+                return;
+            case EventType.KeyboardAdded:
+                backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp, out _);
                 return;
             case EventType.KeyboardRemoved:
                 backend.RemoveDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp);
                 return;
+            case EventType.MouseAdded:
+                backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, timestamp, evt.Common.Timestamp, out _);
+                return;
             case EventType.MouseRemoved:
                 backend.RemoveDevice<SdlMouse>(evt.Mdevice.Which, timestamp, evt.Common.Timestamp);
+                return;
+            case EventType.PenProximityIn:
+                _ = backend.TryGetOrCreateDevice<SdlPen>(evt.Ptouch.Which, timestamp, evt.Common.Timestamp, out _);
                 return;
             case EventType.PenProximityOut:
                 backend.RemoveDevice<SdlPen>(evt.Ptouch.Which, timestamp, evt.Common.Timestamp);
@@ -284,8 +310,6 @@ internal partial class SdlInputBackend : IInputBackend
 
                 switch (type)
                 {
-                    case EventType.KeyboardAdded:
-                        return;
                     case EventType.KeyDown:
                     case EventType.KeyUp:
                         keyboard.AddKeyEvent(evt.Key, timestamp);
@@ -335,6 +359,7 @@ internal partial class SdlInputBackend : IInputBackend
                     case EventType.GamepadSensorUpdate:
                     case EventType.GamepadUpdateComplete:
                     case EventType.GamepadSteamHandleUpdated:
+                        InputLog.Debug(type.ToString());
                         break;
                 }
 
@@ -351,13 +376,12 @@ internal partial class SdlInputBackend : IInputBackend
 
                 switch (type)
                 {
-                    case EventType.JoystickAdded:
-                        return;
                     case EventType.JoystickAxisMotion:
                         joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value, evt.Jaxis.Timestamp, timestamp);
                         break;
                     case EventType.JoystickBallMotion:
                         // todo: ball events?
+                        InputLog.Debug("Ball input detected");
                         break;
                     case EventType.JoystickHatMotion:
                         joystick.AddHatEvent(evt.Jhat.Hat, evt.Jhat.Value, evt.Jhat.Timestamp, timestamp);
@@ -389,8 +413,6 @@ internal partial class SdlInputBackend : IInputBackend
 
                 switch (type)
                 {
-                    case EventType.MouseAdded:
-                        return;
                     case EventType.MouseMotion:
                         mouse.AddMotion(evt.Motion, timestamp);
                         break;
@@ -407,12 +429,13 @@ internal partial class SdlInputBackend : IInputBackend
             }
 
             // Pen events
-            case >= EventType.PenProximityIn and <= EventType.PenAxis:
+            case > EventType.PenProximityIn and <= EventType.PenAxis:
             {
                 Debug.Assert(type != EventType.PenProximityOut);
 
-                var which = evt.Ptouch.Which;
-                if (!backend.TryGetOrCreateDevice<SdlPen>(which, timestamp, evt.Common.Timestamp, out var penDevice))
+
+                if (!backend.TryGetOrCreateDevice<SdlPen>(evt.Ptouch.Which, timestamp, evt.Common.Timestamp,
+                        out var penDevice))
                 {
                     return;
                 }
@@ -420,10 +443,6 @@ internal partial class SdlInputBackend : IInputBackend
 
                 switch (type)
                 {
-                    case EventType.PenProximityIn:
-                    {
-                        return;
-                    }
                     case EventType.PenDown:
                     case EventType.PenUp:
                     {
@@ -526,6 +545,7 @@ internal partial class SdlInputBackend : IInputBackend
     public void Dispose()
     {
         ReleaseUnmanagedResources();
+        Sdl.QuitSubSystem(SdlInitFlags);
         GC.SuppressFinalize(this);
     }
 

@@ -14,7 +14,7 @@ public readonly record struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
     where T : unmanaged, Enum
 {
     private readonly Func<int, int> _indexMap;
-    private readonly IReadOnlyList<Button<T>> _list;
+    internal readonly IReadOnlyList<Button<T>> List;
 
     /// <summary>
     /// A constructor for an input list that takes in:
@@ -24,7 +24,7 @@ public readonly record struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
     /// used for iterating through the button list in order, regardless of the backend's internal button order.</param>
     public ButtonReadOnlyList(IReadOnlyList<Button<T>> buttonList, Func<int, int>? indexMap = null)
     {
-        _list = buttonList;
+        List = buttonList;
         _indexMap = indexMap ?? (i => i);
     }
 
@@ -32,16 +32,16 @@ public readonly record struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
     /// Gets the state for the button with the given name.
     /// </summary>
     /// <param name="name">The button name.</param>
-    public Button<T> this[T name] => _list[EnumInfo<T>.ValueIndexOf(name)];
+    public Button<T> this[T name] => List[name.ValueIndex()];
 
     /// <inheritdoc />
-    public IEnumerator<Button<T>> GetEnumerator() => _list.GetEnumerator();
+    public IEnumerator<Button<T>> GetEnumerator() => List.GetEnumerator();
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
     /// <inheritdoc />
-    public int Count => _list.Count;
+    public int Count => List.Count;
 
     /// <inheritdoc />
-    public Button<T> this[int index] => _list[_indexMap(index)];
+    public Button<T> this[int index] => List[_indexMap(index)];
 }

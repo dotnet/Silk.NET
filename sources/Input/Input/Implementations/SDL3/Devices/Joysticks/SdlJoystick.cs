@@ -61,7 +61,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     public override ulong SdlDeviceId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => SdlDeviceId;
+        get => _sdlDeviceId;
     }
 
 
@@ -157,6 +157,9 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
     protected internal override void Initialize()
     {
+        var nowTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+        var nowSdlTimestamp = NativeBackend.GetTicks();
+
         var joystickHandle = NativeBackend.OpenJoystick((uint)SdlDeviceId);
         if (joystickHandle.Handle == null)
         {
@@ -173,15 +176,20 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
         // init current joystick state
         var buttonCount = NativeBackend.GetNumJoystickButtons(joystickHandle);
-        var nowTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
-        var nowSdlTimestamp = NativeBackend.GetTicks();
+        _rawButtonState = new Button<JoystickButton>[EnumInfo<JoystickButton>.UniqueValues.Count + buttonCount];
+
+        var axisCount = NativeBackend.GetNumJoystickAxes(joystickHandle);
+        _rawAxisState = new float[EnumInfo<JoystickAxis>.UniqueValues.Count + axisCount];
+
+        var hatCount = NativeBackend.GetNumJoystickHats(joystickHandle);
+        _rawHatState = new Vector2[hatCount];
+
         for (byte i = 0; i < buttonCount; i++)
         {
             var joystickInput = NativeBackend.GetJoystickButtonRaw(JoystickHandle, i);
             AddButtonEvent(i, joystickInput, nowSdlTimestamp, nowTimestamp);
         }
 
-        var axisCount = NativeBackend.GetNumJoystickAxes(joystickHandle);
         for (var i = 0; i < axisCount; i++)
         {
             var joystickInput = NativeBackend.GetJoystickAxis(JoystickHandle, i);
@@ -194,7 +202,6 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
             AddAxisEvent(i, joystickInput, nowSdlTimestamp, nowTimestamp);
         }
 
-        var hatCount = NativeBackend.GetNumJoystickHats(joystickHandle);
         for (var i = 0; i < hatCount; ++i)
         {
             var hatInput = NativeBackend.GetJoystickHat(joystickHandle, i);
@@ -203,13 +210,10 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
         JoystickHandle = joystickHandle;
         _joystickType = NativeBackend.GetJoystickType(joystickHandle);
-        _rawAxisState = new float[EnumInfo<JoystickAxis>.UniqueValues.Count + axisCount];
-        _rawButtonState = new Button<JoystickButton>[EnumInfo<JoystickButton>.UniqueValues.Count + buttonCount];
         State = new JoystickState(_rawAxisState, _rawButtonState, _rawHatState);
     }
 
     protected override void Release() => NativeBackend.CloseJoystick(JoystickHandle);
-
 
     public void RefreshSdlId() => _sdlDeviceId = NativeBackend.GetJoystickID(JoystickHandle);
     private ulong _sdlDeviceId;
@@ -217,7 +221,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     // State
     private Button<JoystickButton>[] _rawButtonState;
     private float[] _rawAxisState;
-    private Vector2[] _rawHatState = [];
+    private Vector2[] _rawHatState;
 
     // Constants
     internal const short DigitalThreshold = short.MaxValue / 8;

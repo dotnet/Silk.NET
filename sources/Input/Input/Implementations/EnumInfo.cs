@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
 
@@ -214,4 +215,13 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         var value = _allEnumValuesRaw[index];
         return *(T*)&value;
     }
+}
+
+/// <summary>
+/// A class for simplifying calls to the generic form of <see cref="EnumInfo{T}"/>
+/// </summary>
+public static class EnumInfo
+{
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static int ValueIndex<T>(this T value) where T : unmanaged, Enum => EnumInfo<T>.ValueIndexOf(value);
 }
