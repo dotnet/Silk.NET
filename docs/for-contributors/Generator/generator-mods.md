@@ -577,11 +577,23 @@ metadata is available for identifying `[Flags]` enums, consider using that inste
 
 Mod categories: Transformation
 
+This mod focuses on the transformation of methods, such as by changing parameters types and adding new overloads.
+
+(TODO: To be expanded)
+
+Notably, the transformations include transforming methods to use the Silk DSL types (`Ptr`, `Ref`, `MaybeBool`, etc).
+
 Name affix categories:
 
-- `RawFunction` - TODO
+- `RawFunction` - This is a suffix added when method overloads conflict with each other. Specifically, if a transformed
+  version of a method differs from the original method only by return type, the *original* has the `-Raw` suffix added
+  along with the corresponding `[NameAffix]` attribute.
 
 Usage recommendations:
+
+(TODO: To be expanded)
+
+The `BoolTypes` property in the configuration should match the configuration used in `TransformProperties`.
 
 ### TransformHandles
 
@@ -593,11 +605,17 @@ Name affix categories:
 
 Usage recommendations:
 
+(TODO: To be added)
+
 ### TransformProperties
 
 Mod categories: Transformation
 
 Usage recommendations:
+
+(TODO: To be expanded)
+
+The `BoolTypes` property in the configuration should match the configuration used in `TransformFunctions`.
 
 ## Mod Categories
 
