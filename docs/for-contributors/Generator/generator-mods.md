@@ -599,13 +599,34 @@ The `BoolTypes` property in the configuration should match the configuration use
 
 Mod categories: Transformation
 
+This mod focuses on the transformation of opaque structs into more developer-friendly handle types.
+
+This is done by finding references to empty structs. If all references to the empty struct are done through pointers,
+that struct will be treated as a handle type and transformed.
+
+Empty structs identified as handle types will be transformed in two ways:
+
+1. The struct itself will be transformed to wrap the underlying pointer and have methods/operators added for ease of
+   use.
+
+2. All references to that struct will have their pointer dimension reduced. For example, `VkBuffer**` becomes
+   `VkBuffer*` This is because the mentioned struct transformation means that the innermost pointer dimension is now
+   stored inside the struct.
+
+This mod currently only processes handle types that wrap pointer types. Integer types are not yet supported.
+
 Name affix categories:
 
-- `HandleType` - TODO
+- `HandleType` - This is a suffix added to handle types transformed by `TransformedHandles`. Note that
+  `TransformHandles` only adds the attribute and does not rename the actual handle type. This is so that the rename is
+  deferred until `PrettifyNames` where all renames are done in bulk for performance reasons. This pattern is explained
+  in the [Name Processing - Deferring Renames](name-processing.md#deferring-renames) documentation.
 
 Usage recommendations:
 
-(TODO: To be added)
+This mod should be placed after `ExtractHandles` and `AddOpaqueStructs`. This is because `TransformHandles` relies on
+the previously mentioned mods to add the empty struct types. `TransformHandles` itself does not add new structs, it only
+transforms existing ones that it identifies as a handle type.
 
 ### TransformProperties
 
