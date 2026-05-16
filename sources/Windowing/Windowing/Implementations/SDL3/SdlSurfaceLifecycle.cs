@@ -125,7 +125,7 @@ internal unsafe class SdlSurfaceLifecycle(SdlSurface surface) : IDetachedSurface
 
     private static void CoreEvent(SdlSurface surface, ref Event @event)
     {
-        DebugPrint($"got {(EventType)@event.Type}, root surface is {surface}.");
+        // DebugPrint($"got {(EventType)@event.Type}, root surface is {surface}.");
         SdlEventProcessor.DeliverEvent(ref @event);
     }
 

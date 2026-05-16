@@ -19,4 +19,10 @@
     <PackageReference Include="Nuke.Common" Version="10.0.0" />
     <PackageReference Include="YamlDotNet" Version="16.3.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\tests\Input\Input\Silk.NET.Input.UnitTests.csproj">
+      <Link>Directory.Build\tests\Input\Input\Silk.NET.Input.UnitTests.csproj</Link>
+    </Content>
+  </ItemGroup>
 </Project>

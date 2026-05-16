@@ -284,7 +284,24 @@ public abstract class Surface : IGLContextSource, INativeWindow
     /// Centers this window to the given monitor or, if null, the current monitor the window's on.
     /// </summary>
     /// <param name="display">The specific display to center the window to, if any.</param>
-    public void Center(IDisplay? display = null) => throw new NotImplementedException();
+    public void Center(IDisplay? display = null)
+    {
+        if (
+            Window is null
+            || Display is null
+            || display is not null && !Display.Available.Contains(display)
+        )
+        {
+            return;
+        }
+
+        if (display is not null)
+        {
+            Display.Current = display;
+        }
+
+        Window.Position = (Vector2)Display.Current.WorkArea.Center - (Window.Size / 2);
+    }
 
     /// <summary>
     /// Converts a point that is defined in the same coordinate space as <see cref="IDisplay.Bounds" /> to instead be
@@ -293,7 +310,15 @@ public abstract class Surface : IGLContextSource, INativeWindow
     /// </summary>
     /// <param name="point">The point to transform.</param>
     /// <returns>The transformed point.</returns>
-    public Vector2 ScreenToClient(Vector2 point) => throw new NotImplementedException();
+    public Vector2 ScreenToClient(Vector2 point)
+    {
+        if (Window is null || Display is null)
+        {
+            return point;
+        }
+
+        return point - Window.Position;
+    }
 
     /// <summary>
     /// Converts a point that is defined relative to <see cref="ISurfaceWindow.ClientArea" /> to instead be defined in the
@@ -302,7 +327,15 @@ public abstract class Surface : IGLContextSource, INativeWindow
     /// </summary>
     /// <param name="point">The point to transform.</param>
     /// <returns>The transformed point.</returns>
-    public Vector2 ClientToScreen(Vector2 point) => throw new NotImplementedException();
+    public Vector2 ClientToScreen(Vector2 point)
+    {
+        if (Window is null || Display is null)
+        {
+            return point;
+        }
+
+        return point + Window.Position;
+    }
 
     /// <summary>
     /// Converts a point that is defined relative to <see cref="ISurfaceWindow.ClientArea" /> by multiplying it with the
@@ -310,7 +343,31 @@ public abstract class Surface : IGLContextSource, INativeWindow
     /// </summary>
     /// <param name="point">The point to transform.</param>
     /// <returns>The transformed point.</returns>
-    public Vector2 ClientToDrawable(Vector2 point) => throw new NotImplementedException();
+    public Vector2 ClientToDrawable(Vector2 point)
+    {
+        if (Window is null)
+        {
+            return point;
+        }
+
+        return point * (DrawableSize / Window.ClientSize);
+    }
+
+    /// <summary>
+    /// Converts a point that is defined in terms of <see cref="DrawableSize"/> by dividing it by the division of
+    /// <see cref="DrawableSize"/> by <see cref="ISurfaceWindow.ClientArea"/>'s size.
+    /// </summary>
+    /// <param name="point">The point to transform.</param>
+    /// <returns>The transformed point.</returns>
+    public Vector2 DrawableToClient(Vector2 point)
+    {
+        if (Window is null)
+        {
+            return point;
+        }
+
+        return point / (DrawableSize / Window.ClientSize);
+    }
 
     /// <inheritdoc />
     public abstract bool TryGetPlatformInfo<TPlatformInfo>(

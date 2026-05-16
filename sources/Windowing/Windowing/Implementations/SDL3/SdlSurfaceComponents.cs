@@ -106,7 +106,14 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
         DebugPrintWithError(IsChildrenEnabled ? "Children supported" : "Children unsupported");
         Sdl.ClearError();
 
-        IsWindowEnabled = Sdl.SetWindowPosition(tempWindow, 1, 1);
+        var videoDriverNamePtr = Sdl.GetVideoDriver(0);
+        Span<char> videoDriverName = stackalloc char[64];
+        var isWayland = videoDriverNamePtr != nullptr
+                        && videoDriverNamePtr.TryReadToSpan(ref videoDriverName)
+                        && videoDriverName.StartsWith("wayland");
+
+        IsWindowEnabled = isWayland || Sdl.SetWindowPosition(tempWindow, 1, 1);
+
         DebugPrintWithError($"Window decoration {(IsWindowEnabled ? "supported" : "unsupported")}");
         Sdl.ClearError();
         return tempWindow;

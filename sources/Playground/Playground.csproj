@@ -12,6 +12,7 @@
       <ProjectReference Include="..\OpenGL\OpenGL\Silk.NET.OpenGL.csproj" />
       <ProjectReference Include="..\SDL\SDL\Silk.NET.SDL.csproj" />
       <ProjectReference Include="..\Windowing\Windowing\Silk.NET.Windowing.csproj" />
+      <ProjectReference Include="..\Input\Input\Silk.NET.Input.csproj" />
     </ItemGroup>
 
 </Project>
