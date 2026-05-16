@@ -575,6 +575,9 @@ metadata is available for identifying `[Flags]` enums, consider using that inste
 
 ### TransformFunctions
 
+(TODO: This section preemptively contains information for changes made by
+https://github.com/dotnet/Silk.NET/pull/2574. Remove this todo once the PR is merged.)
+
 Mod categories: Transformation
 
 This mod focuses on the transformation of methods, such as by changing parameters types and adding new overloads.
@@ -630,7 +633,23 @@ transforms existing ones that it identifies as a handle type.
 
 ### TransformProperties
 
+(TODO: This section preemptively contains information for changes made by
+https://github.com/dotnet/Silk.NET/pull/2574. Remove this todo once the PR is merged.)
+
 Mod categories: Transformation
+
+This mod focuses on the transformation of fields and properties. Despite the name, fields are also handled because they
+often need to be transformed alongside properties or have very similar transformations that it makes sense to colocate
+these transformations in the same mod.
+
+This mod currently handles the following transformations:
+
+1. Transform string constant properties to use the `Utf8String` type. For example,
+   `static ReadOnlySpan<byte> Thing => "thing"u8;` becomes
+   `static Utf8String Thing => "thing"u8;`.
+
+2. Transform fields and properties identified to be boolean-like to use the `MaybeBool` type. This is similar to the
+   transformation done by `TransformFunctions`.
 
 Usage recommendations:
 
@@ -659,3 +678,6 @@ These mods deal with the naming of type and member identifiers within the genera
 
 These mods focus on the transformation of existing APIs. While these mods can create new APIs, these new APIs are based
 on APIs that already exist in the generated bindings.
+
+Generally, these mods should be placed after any mods (such as ones in the Creation category) that introduce any APIs
+that might get transformed by these Transformation mods.
