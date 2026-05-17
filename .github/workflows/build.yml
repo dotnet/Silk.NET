@@ -51,7 +51,7 @@ jobs:
       run: dotnet workload install android ios maccatalyst
     - name: Test
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
-      # skip Clean, Restore, and Compile as this will build the affect the whole solution.
+      # skip Clean, Restore, and Compile as those will affect the whole solution.
       # dotnet test will compile the necessary projects for testing only.
       run: ./build.sh Test --skip Clean Restore Compile
     - name: Validation Checks
