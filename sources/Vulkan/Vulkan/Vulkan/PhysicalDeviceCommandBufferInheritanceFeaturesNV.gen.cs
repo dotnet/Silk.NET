@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceCommandBufferInheritanceFeaturesNV
             "VK_NV_command_buffer_inheritance+VK_VERSION_1_1",
         ]
     )]
-    public uint CommandBufferInheritance;
+    public MaybeBool<uint> CommandBufferInheritance;
 }

@@ -48,5 +48,5 @@ public unsafe partial struct PhysicalDeviceHostImageCopyFeatures
             "VK_VERSION_1_3",
         ]
     )]
-    public uint HostImageCopy;
+    public MaybeBool<uint> HostImageCopy;
 }

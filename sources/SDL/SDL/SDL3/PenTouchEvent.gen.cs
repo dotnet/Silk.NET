@@ -36,8 +36,8 @@ public partial struct PenTouchEvent
     public float Y;
 
     [NativeName("eraser")]
-    public byte Eraser;
+    public MaybeBool<byte> Eraser;
 
     [NativeName("down")]
-    public byte Down;
+    public MaybeBool<byte> Down;
 }

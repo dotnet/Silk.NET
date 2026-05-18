@@ -82,7 +82,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderUniformBufferArrayNonUniformIndexingNative;
+    public MaybeBool<uint> ShaderUniformBufferArrayNonUniformIndexingNative;
 
     [NativeName("shaderSampledImageArrayNonUniformIndexingNative")]
     [SupportedApiProfile(
@@ -100,7 +100,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderSampledImageArrayNonUniformIndexingNative;
+    public MaybeBool<uint> ShaderSampledImageArrayNonUniformIndexingNative;
 
     [NativeName("shaderStorageBufferArrayNonUniformIndexingNative")]
     [SupportedApiProfile(
@@ -118,7 +118,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderStorageBufferArrayNonUniformIndexingNative;
+    public MaybeBool<uint> ShaderStorageBufferArrayNonUniformIndexingNative;
 
     [NativeName("shaderStorageImageArrayNonUniformIndexingNative")]
     [SupportedApiProfile(
@@ -136,7 +136,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderStorageImageArrayNonUniformIndexingNative;
+    public MaybeBool<uint> ShaderStorageImageArrayNonUniformIndexingNative;
 
     [NativeName("shaderInputAttachmentArrayNonUniformIndexingNative")]
     [SupportedApiProfile(
@@ -154,7 +154,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderInputAttachmentArrayNonUniformIndexingNative;
+    public MaybeBool<uint> ShaderInputAttachmentArrayNonUniformIndexingNative;
 
     [NativeName("robustBufferAccessUpdateAfterBind")]
     [SupportedApiProfile(
@@ -172,7 +172,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint RobustBufferAccessUpdateAfterBind;
+    public MaybeBool<uint> RobustBufferAccessUpdateAfterBind;
 
     [NativeName("quadDivergentImplicitLod")]
     [SupportedApiProfile(
@@ -190,7 +190,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint QuadDivergentImplicitLod;
+    public MaybeBool<uint> QuadDivergentImplicitLod;
 
     [NativeName("maxPerStageDescriptorUpdateAfterBindSamplers")]
     [SupportedApiProfile(

@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3TessellationDomainOrigin;
+    public MaybeBool<uint> ExtendedDynamicState3TessellationDomainOrigin;
 
     [NativeName("extendedDynamicState3DepthClampEnable")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3DepthClampEnable;
+    public MaybeBool<uint> ExtendedDynamicState3DepthClampEnable;
 
     [NativeName("extendedDynamicState3PolygonMode")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3PolygonMode;
+    public MaybeBool<uint> ExtendedDynamicState3PolygonMode;
 
     [NativeName("extendedDynamicState3RasterizationSamples")]
     [SupportedApiProfile(
@@ -76,7 +76,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3RasterizationSamples;
+    public MaybeBool<uint> ExtendedDynamicState3RasterizationSamples;
 
     [NativeName("extendedDynamicState3SampleMask")]
     [SupportedApiProfile(
@@ -87,7 +87,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3SampleMask;
+    public MaybeBool<uint> ExtendedDynamicState3SampleMask;
 
     [NativeName("extendedDynamicState3AlphaToCoverageEnable")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3AlphaToCoverageEnable;
+    public MaybeBool<uint> ExtendedDynamicState3AlphaToCoverageEnable;
 
     [NativeName("extendedDynamicState3AlphaToOneEnable")]
     [SupportedApiProfile(
@@ -109,7 +109,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3AlphaToOneEnable;
+    public MaybeBool<uint> ExtendedDynamicState3AlphaToOneEnable;
 
     [NativeName("extendedDynamicState3LogicOpEnable")]
     [SupportedApiProfile(
@@ -120,7 +120,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3LogicOpEnable;
+    public MaybeBool<uint> ExtendedDynamicState3LogicOpEnable;
 
     [NativeName("extendedDynamicState3ColorBlendEnable")]
     [SupportedApiProfile(
@@ -131,7 +131,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3ColorBlendEnable;
+    public MaybeBool<uint> ExtendedDynamicState3ColorBlendEnable;
 
     [NativeName("extendedDynamicState3ColorBlendEquation")]
     [SupportedApiProfile(
@@ -142,7 +142,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3ColorBlendEquation;
+    public MaybeBool<uint> ExtendedDynamicState3ColorBlendEquation;
 
     [NativeName("extendedDynamicState3ColorWriteMask")]
     [SupportedApiProfile(
@@ -153,7 +153,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3ColorWriteMask;
+    public MaybeBool<uint> ExtendedDynamicState3ColorWriteMask;
 
     [NativeName("extendedDynamicState3RasterizationStream")]
     [SupportedApiProfile(
@@ -164,7 +164,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3RasterizationStream;
+    public MaybeBool<uint> ExtendedDynamicState3RasterizationStream;
 
     [NativeName("extendedDynamicState3ConservativeRasterizationMode")]
     [SupportedApiProfile(
@@ -175,7 +175,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3ConservativeRasterizationMode;
+    public MaybeBool<uint> ExtendedDynamicState3ConservativeRasterizationMode;
 
     [NativeName("extendedDynamicState3ExtraPrimitiveOverestimationSize")]
     [SupportedApiProfile(
@@ -186,7 +186,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3ExtraPrimitiveOverestimationSize;
+    public MaybeBool<uint> ExtendedDynamicState3ExtraPrimitiveOverestimationSize;
 
     [NativeName("extendedDynamicState3DepthClipEnable")]
     [SupportedApiProfile(
@@ -197,7 +197,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3DepthClipEnable;
+    public MaybeBool<uint> ExtendedDynamicState3DepthClipEnable;
 
     [NativeName("extendedDynamicState3SampleLocationsEnable")]
     [SupportedApiProfile(
@@ -208,7 +208,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3SampleLocationsEnable;
+    public MaybeBool<uint> ExtendedDynamicState3SampleLocationsEnable;
 
     [NativeName("extendedDynamicState3ColorBlendAdvanced")]
     [SupportedApiProfile(
@@ -219,7 +219,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3ColorBlendAdvanced;
+    public MaybeBool<uint> ExtendedDynamicState3ColorBlendAdvanced;
 
     [NativeName("extendedDynamicState3ProvokingVertexMode")]
     [SupportedApiProfile(
@@ -230,7 +230,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3ProvokingVertexMode;
+    public MaybeBool<uint> ExtendedDynamicState3ProvokingVertexMode;
 
     [NativeName("extendedDynamicState3LineRasterizationMode")]
     [SupportedApiProfile(
@@ -241,7 +241,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3LineRasterizationMode;
+    public MaybeBool<uint> ExtendedDynamicState3LineRasterizationMode;
 
     [NativeName("extendedDynamicState3LineStippleEnable")]
     [SupportedApiProfile(
@@ -252,7 +252,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3LineStippleEnable;
+    public MaybeBool<uint> ExtendedDynamicState3LineStippleEnable;
 
     [NativeName("extendedDynamicState3DepthClipNegativeOneToOne")]
     [SupportedApiProfile(
@@ -263,7 +263,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3DepthClipNegativeOneToOne;
+    public MaybeBool<uint> ExtendedDynamicState3DepthClipNegativeOneToOne;
 
     [NativeName("extendedDynamicState3ViewportWScalingEnable")]
     [SupportedApiProfile(
@@ -274,7 +274,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3ViewportWScalingEnable;
+    public MaybeBool<uint> ExtendedDynamicState3ViewportWScalingEnable;
 
     [NativeName("extendedDynamicState3ViewportSwizzle")]
     [SupportedApiProfile(
@@ -285,7 +285,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3ViewportSwizzle;
+    public MaybeBool<uint> ExtendedDynamicState3ViewportSwizzle;
 
     [NativeName("extendedDynamicState3CoverageToColorEnable")]
     [SupportedApiProfile(
@@ -296,7 +296,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3CoverageToColorEnable;
+    public MaybeBool<uint> ExtendedDynamicState3CoverageToColorEnable;
 
     [NativeName("extendedDynamicState3CoverageToColorLocation")]
     [SupportedApiProfile(
@@ -307,7 +307,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3CoverageToColorLocation;
+    public MaybeBool<uint> ExtendedDynamicState3CoverageToColorLocation;
 
     [NativeName("extendedDynamicState3CoverageModulationMode")]
     [SupportedApiProfile(
@@ -318,7 +318,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3CoverageModulationMode;
+    public MaybeBool<uint> ExtendedDynamicState3CoverageModulationMode;
 
     [NativeName("extendedDynamicState3CoverageModulationTableEnable")]
     [SupportedApiProfile(
@@ -329,7 +329,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3CoverageModulationTableEnable;
+    public MaybeBool<uint> ExtendedDynamicState3CoverageModulationTableEnable;
 
     [NativeName("extendedDynamicState3CoverageModulationTable")]
     [SupportedApiProfile(
@@ -340,7 +340,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3CoverageModulationTable;
+    public MaybeBool<uint> ExtendedDynamicState3CoverageModulationTable;
 
     [NativeName("extendedDynamicState3CoverageReductionMode")]
     [SupportedApiProfile(
@@ -351,7 +351,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3CoverageReductionMode;
+    public MaybeBool<uint> ExtendedDynamicState3CoverageReductionMode;
 
     [NativeName("extendedDynamicState3RepresentativeFragmentTestEnable")]
     [SupportedApiProfile(
@@ -362,7 +362,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3RepresentativeFragmentTestEnable;
+    public MaybeBool<uint> ExtendedDynamicState3RepresentativeFragmentTestEnable;
 
     [NativeName("extendedDynamicState3ShadingRateImageEnable")]
     [SupportedApiProfile(
@@ -373,5 +373,5 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState3ShadingRateImageEnable;
+    public MaybeBool<uint> ExtendedDynamicState3ShadingRateImageEnable;
 }

@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceMaintenance9PropertiesKHR
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    public uint Image2DViewOf3DSparse;
+    public MaybeBool<uint> Image2DViewOf3DSparse;
 
     [NativeName("defaultVertexAttributeValue")]
     [SupportedApiProfile(

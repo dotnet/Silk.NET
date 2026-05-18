@@ -39,7 +39,7 @@ public partial struct PhysicalDeviceSparseProperties
         ],
         MinVersion = "1.0"
     )]
-    public uint ResidencyStandard2DBlockShape;
+    public MaybeBool<uint> ResidencyStandard2DBlockShape;
 
     [NativeName("residencyStandard2DMultisampleBlockShape")]
     [SupportedApiProfile(
@@ -68,7 +68,7 @@ public partial struct PhysicalDeviceSparseProperties
         ],
         MinVersion = "1.0"
     )]
-    public uint ResidencyStandard2DMultisampleBlockShape;
+    public MaybeBool<uint> ResidencyStandard2DMultisampleBlockShape;
 
     [NativeName("residencyStandard3DBlockShape")]
     [SupportedApiProfile(
@@ -97,7 +97,7 @@ public partial struct PhysicalDeviceSparseProperties
         ],
         MinVersion = "1.0"
     )]
-    public uint ResidencyStandard3DBlockShape;
+    public MaybeBool<uint> ResidencyStandard3DBlockShape;
 
     [NativeName("residencyAlignedMipSize")]
     [SupportedApiProfile(
@@ -126,7 +126,7 @@ public partial struct PhysicalDeviceSparseProperties
         ],
         MinVersion = "1.0"
     )]
-    public uint ResidencyAlignedMipSize;
+    public MaybeBool<uint> ResidencyAlignedMipSize;
 
     [NativeName("residencyNonResidentStrict")]
     [SupportedApiProfile(
@@ -155,5 +155,5 @@ public partial struct PhysicalDeviceSparseProperties
         ],
         MinVersion = "1.0"
     )]
-    public uint ResidencyNonResidentStrict;
+    public MaybeBool<uint> ResidencyNonResidentStrict;
 }

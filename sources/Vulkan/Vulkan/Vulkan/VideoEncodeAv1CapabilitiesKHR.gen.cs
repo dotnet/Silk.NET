@@ -201,7 +201,7 @@ public unsafe partial struct VideoEncodeAv1CapabilitiesKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint PrefersGopRemainingFrames;
+    public MaybeBool<uint> PrefersGopRemainingFrames;
 
     [NativeName("requiresGopRemainingFrames")]
     [SupportedApiProfile(
@@ -209,7 +209,7 @@ public unsafe partial struct VideoEncodeAv1CapabilitiesKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint RequiresGopRemainingFrames;
+    public MaybeBool<uint> RequiresGopRemainingFrames;
 
     [NativeName("stdSyntaxFlags")]
     [SupportedApiProfile(

@@ -44,5 +44,5 @@ public unsafe partial struct PhysicalDeviceShaderTerminateInvocationFeatures
 
     [NativeName("shaderTerminateInvocation")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint ShaderTerminateInvocation;
+    public MaybeBool<uint> ShaderTerminateInvocation;
 }

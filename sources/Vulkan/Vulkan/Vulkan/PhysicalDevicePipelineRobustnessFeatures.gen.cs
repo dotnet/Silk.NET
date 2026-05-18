@@ -29,5 +29,5 @@ public unsafe partial struct PhysicalDevicePipelineRobustnessFeatures
 
     [NativeName("pipelineRobustness")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint PipelineRobustness;
+    public MaybeBool<uint> PipelineRobustness;
 }

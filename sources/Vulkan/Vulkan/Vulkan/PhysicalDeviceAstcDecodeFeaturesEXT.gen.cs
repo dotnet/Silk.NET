@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceAstcDecodeFeaturesEXT
             "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
         ]
     )]
-    public uint DecodeModeSharedExponent;
+    public MaybeBool<uint> DecodeModeSharedExponent;
 }

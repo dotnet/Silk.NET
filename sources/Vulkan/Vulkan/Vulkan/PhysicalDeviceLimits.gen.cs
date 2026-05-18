@@ -2678,7 +2678,7 @@ public partial struct PhysicalDeviceLimits
         ],
         MinVersion = "1.0"
     )]
-    public uint TimestampComputeAndGraphics;
+    public MaybeBool<uint> TimestampComputeAndGraphics;
 
     [NativeName("timestampPeriod")]
     [SupportedApiProfile(
@@ -2968,7 +2968,7 @@ public partial struct PhysicalDeviceLimits
         ],
         MinVersion = "1.0"
     )]
-    public uint StrictLines;
+    public MaybeBool<uint> StrictLines;
 
     [NativeName("standardSampleLocations")]
     [SupportedApiProfile(
@@ -2997,7 +2997,7 @@ public partial struct PhysicalDeviceLimits
         ],
         MinVersion = "1.0"
     )]
-    public uint StandardSampleLocations;
+    public MaybeBool<uint> StandardSampleLocations;
 
     [NativeName("optimalBufferCopyOffsetAlignment")]
     [SupportedApiProfile(

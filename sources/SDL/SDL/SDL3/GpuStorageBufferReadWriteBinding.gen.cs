@@ -14,7 +14,7 @@ public unsafe partial struct GpuStorageBufferReadWriteBinding
     public GpuBufferHandle Buffer;
 
     [NativeName("cycle")]
-    public byte Cycle;
+    public MaybeBool<byte> Cycle;
 
     [NativeName("padding1")]
     public byte Padding1;

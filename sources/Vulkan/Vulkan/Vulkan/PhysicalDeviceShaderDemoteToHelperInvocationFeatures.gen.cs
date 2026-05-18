@@ -44,5 +44,5 @@ public unsafe partial struct PhysicalDeviceShaderDemoteToHelperInvocationFeature
 
     [NativeName("shaderDemoteToHelperInvocation")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint ShaderDemoteToHelperInvocation;
+    public MaybeBool<uint> ShaderDemoteToHelperInvocation;
 }

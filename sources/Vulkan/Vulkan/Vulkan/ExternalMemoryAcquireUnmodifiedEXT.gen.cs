@@ -42,5 +42,5 @@ public unsafe partial struct ExternalMemoryAcquireUnmodifiedEXT
             "VK_EXT_external_memory_acquire_unmodified+VK_VERSION_1_1",
         ]
     )]
-    public uint AcquireUnmodifiedMemory;
+    public MaybeBool<uint> AcquireUnmodifiedMemory;
 }

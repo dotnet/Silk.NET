@@ -17,10 +17,10 @@ public partial struct GpuMultisampleState
     public uint SampleMask;
 
     [NativeName("enable_mask")]
-    public byte EnableMask;
+    public MaybeBool<byte> EnableMask;
 
     [NativeName("enable_alpha_to_coverage")]
-    public byte EnableAlphaToCoverage;
+    public MaybeBool<byte> EnableAlphaToCoverage;
 
     [NativeName("padding2")]
     public byte Padding2;

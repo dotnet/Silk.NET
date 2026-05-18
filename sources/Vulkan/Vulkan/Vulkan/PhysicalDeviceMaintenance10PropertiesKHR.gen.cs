@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceMaintenance10PropertiesKHR
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    public uint Rgba4OpaqueBlackSwizzled;
+    public MaybeBool<uint> Rgba4OpaqueBlackSwizzled;
 
     [NativeName("resolveSrgbFormatAppliesTransferFunction")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public unsafe partial struct PhysicalDeviceMaintenance10PropertiesKHR
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    public uint ResolveSrgbFormatAppliesTransferFunction;
+    public MaybeBool<uint> ResolveSrgbFormatAppliesTransferFunction;
 
     [NativeName("resolveSrgbFormatSupportsTransferFunctionControl")]
     [SupportedApiProfile(
@@ -64,5 +64,5 @@ public unsafe partial struct PhysicalDeviceMaintenance10PropertiesKHR
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    public uint ResolveSrgbFormatSupportsTransferFunctionControl;
+    public MaybeBool<uint> ResolveSrgbFormatSupportsTransferFunctionControl;
 }

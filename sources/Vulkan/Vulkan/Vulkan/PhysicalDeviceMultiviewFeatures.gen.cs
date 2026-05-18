@@ -52,7 +52,7 @@ public unsafe partial struct PhysicalDeviceMultiviewFeatures
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public uint Multiview;
+    public MaybeBool<uint> Multiview;
 
     [NativeName("multiviewGeometryShader")]
     [SupportedApiProfile(
@@ -69,7 +69,7 @@ public unsafe partial struct PhysicalDeviceMultiviewFeatures
         ],
         MinVersion = "1.1"
     )]
-    public uint MultiviewGeometryShader;
+    public MaybeBool<uint> MultiviewGeometryShader;
 
     [NativeName("multiviewTessellationShader")]
     [SupportedApiProfile(
@@ -86,5 +86,5 @@ public unsafe partial struct PhysicalDeviceMultiviewFeatures
         ],
         MinVersion = "1.1"
     )]
-    public uint MultiviewTessellationShader;
+    public MaybeBool<uint> MultiviewTessellationShader;
 }

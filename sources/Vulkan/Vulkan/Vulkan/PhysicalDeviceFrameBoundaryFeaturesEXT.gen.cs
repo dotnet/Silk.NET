@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceFrameBoundaryFeaturesEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public uint FrameBoundary;
+    public MaybeBool<uint> FrameBoundary;
 }

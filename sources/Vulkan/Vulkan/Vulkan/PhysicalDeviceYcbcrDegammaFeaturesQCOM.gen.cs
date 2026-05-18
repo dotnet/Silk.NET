@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceYcbcrDegammaFeaturesQCOM
             "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
         ]
     )]
-    public uint YcbcrDegamma;
+    public MaybeBool<uint> YcbcrDegamma;
 }

@@ -85,7 +85,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint DepthClampEnable;
+    public MaybeBool<uint> DepthClampEnable;
 
     [NativeName("rasterizerDiscardEnable")]
     [SupportedApiProfile(
@@ -104,7 +104,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint RasterizerDiscardEnable;
+    public MaybeBool<uint> RasterizerDiscardEnable;
 
     [NativeName("polygonMode")]
     [SupportedApiProfile(
@@ -180,7 +180,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint DepthBiasEnable;
+    public MaybeBool<uint> DepthBiasEnable;
 
     [NativeName("depthBiasConstantFactor")]
     [SupportedApiProfile(

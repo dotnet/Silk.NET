@@ -34,5 +34,5 @@ public unsafe partial struct PhysicalDeviceVideoDecodeVp9FeaturesKHR
         ["VK_KHR_video_decode_vp9"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public uint VideoDecodeVp9;
+    public MaybeBool<uint> VideoDecodeVp9;
 }
