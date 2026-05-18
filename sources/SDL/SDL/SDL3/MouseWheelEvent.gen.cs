@@ -39,4 +39,10 @@ public partial struct MouseWheelEvent
 
     [NativeName("mouse_y")]
     public float MouseY;
+
+    [NativeName("integer_x")]
+    public int IntegerX;
+
+    [NativeName("integer_y")]
+    public int IntegerY;
 }

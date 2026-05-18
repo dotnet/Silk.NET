@@ -67,6 +67,14 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicInt")]
         static abstract int AddAtomicInt(Ref<AtomicInt> a, int v);
 
+        [NativeName("SDL_AddAtomicU32")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicU32")]
+        static abstract uint AddAtomicU32(AtomicU32* a, int v);
+
+        [NativeName("SDL_AddAtomicU32")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicU32")]
+        static abstract uint AddAtomicU32(Ref<AtomicU32> a, int v);
+
         [NativeName("SDL_AddEventWatch")]
         [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
         static abstract byte AddEventWatch(EventFilter filter, void* userdata);
@@ -1143,6 +1151,24 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_crc32")]
         static abstract uint Crc32(uint crc, Ref data, nuint len);
 
+        [NativeName("SDL_CreateAnimatedCursor")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateAnimatedCursor")]
+        static abstract CursorHandle CreateAnimatedCursor(
+            CursorFrameInfo* frames,
+            int frame_count,
+            int hot_x,
+            int hot_y
+        );
+
+        [NativeName("SDL_CreateAnimatedCursor")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateAnimatedCursor")]
+        static abstract CursorHandle CreateAnimatedCursor(
+            Ref<CursorFrameInfo> frames,
+            int frame_count,
+            int hot_x,
+            int hot_y
+        );
+
         [NativeName("SDL_CreateAudioStream")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateAudioStream")]
         static abstract AudioStreamHandle CreateAudioStream(
@@ -1267,6 +1293,27 @@ public unsafe partial interface ISdl
         static abstract GpuGraphicsPipelineHandle CreateGpuGraphicsPipeline(
             GpuDeviceHandle device,
             Ref<GpuGraphicsPipelineCreateInfo> createinfo
+        );
+
+        [NativeName("SDL_CreateGPURenderer")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPURenderer")]
+        static abstract RendererHandle CreateGpuRenderer(
+            GpuDeviceHandle device,
+            WindowHandle window
+        );
+
+        [NativeName("SDL_CreateGPURenderState")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPURenderState")]
+        static abstract GpuRenderStateHandle CreateGpuRenderState(
+            RendererHandle renderer,
+            GpuRenderStateCreateInfo* createinfo
+        );
+
+        [NativeName("SDL_CreateGPURenderState")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPURenderState")]
+        static abstract GpuRenderStateHandle CreateGpuRenderState(
+            RendererHandle renderer,
+            Ref<GpuRenderStateCreateInfo> createinfo
         );
 
         [NativeName("SDL_CreateGPUSampler")]
@@ -1608,6 +1655,10 @@ public unsafe partial interface ISdl
         [NativeName("SDL_DestroyGPUDevice")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyGPUDevice")]
         static abstract void DestroyGpuDevice(GpuDeviceHandle device);
+
+        [NativeName("SDL_DestroyGPURenderState")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_DestroyGPURenderState")]
+        static abstract void DestroyGpuRenderState(GpuRenderStateHandle state);
 
         [NativeName("SDL_DestroyHapticEffect")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyHapticEffect")]
@@ -2353,7 +2404,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GetCameraPermissionState")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraPermissionState")]
-        static abstract int GetCameraPermissionState(CameraHandle camera);
+        static abstract CameraPermissionState GetCameraPermissionState(CameraHandle camera);
 
         [NativeName("SDL_GetCameraPosition")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraPosition")]
@@ -2542,6 +2593,20 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultLogOutputFunction")]
         static abstract LogOutputFunction GetDefaultLogOutputFunction();
 
+        [NativeName("SDL_GetDefaultTextureScaleMode")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultTextureScaleMode")]
+        static abstract byte GetDefaultTextureScaleMode(
+            RendererHandle renderer,
+            ScaleMode* scale_mode
+        );
+
+        [NativeName("SDL_GetDefaultTextureScaleMode")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultTextureScaleMode")]
+        static abstract MaybeBool<byte> GetDefaultTextureScaleMode(
+            RendererHandle renderer,
+            Ref<ScaleMode> scale_mode
+        );
+
         [NativeName("SDL_GetDesktopDisplayMode")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDesktopDisplayMode")]
         static abstract Ptr<DisplayMode> GetDesktopDisplayMode(uint displayID);
@@ -2669,6 +2734,14 @@ public unsafe partial interface ISdl
         [NativeName("SDL_GetError")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetError")]
         static abstract sbyte* GetErrorRaw();
+
+        [NativeName("SDL_GetEventDescription")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetEventDescription")]
+        static abstract int GetEventDescription(Event* @event, sbyte* buf, int buflen);
+
+        [NativeName("SDL_GetEventDescription")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetEventDescription")]
+        static abstract int GetEventDescription(Ref<Event> @event, Ref<sbyte> buf, int buflen);
 
         [NativeName("SDL_GetEventFilter")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
@@ -3043,6 +3116,10 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
         static abstract sbyte* GetGpuDeviceDriverRaw(GpuDeviceHandle device);
 
+        [NativeName("SDL_GetGPUDeviceProperties")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceProperties")]
+        static abstract uint GetGpuDeviceProperties(GpuDeviceHandle device);
+
         [NativeName("SDL_GetGPUDriver")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
         static abstract Ptr<sbyte> GetGpuDriver(int index);
@@ -3050,6 +3127,10 @@ public unsafe partial interface ISdl
         [NativeName("SDL_GetGPUDriver")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
         static abstract sbyte* GetGpuDriverRaw(int index);
+
+        [NativeName("SDL_GetGPURendererDevice")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPURendererDevice")]
+        static abstract GpuDeviceHandle GetGpuRendererDevice(RendererHandle renderer);
 
         [NativeName("SDL_GetGPUShaderFormats")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUShaderFormats")]
@@ -3061,6 +3142,10 @@ public unsafe partial interface ISdl
             GpuDeviceHandle device,
             WindowHandle window
         );
+
+        [NativeName("SDL_GetGPUTextureFormatFromPixelFormat")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUTextureFormatFromPixelFormat")]
+        static abstract GpuTextureFormat GetGpuTextureFormatFromPixelFormat(PixelFormat format);
 
         [NativeName("SDL_GetGrabbedWindow")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGrabbedWindow")]
@@ -3576,6 +3661,10 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPathInfo")]
         static abstract MaybeBool<byte> GetPathInfo(Ref<sbyte> path, Ref<PathInfo> info);
 
+        [NativeName("SDL_GetPenDeviceType")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetPenDeviceType")]
+        static abstract PenDeviceType GetPenDeviceType(uint instance_id);
+
         [NativeName("SDL_GetPerformanceCounter")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPerformanceCounter")]
         static abstract ulong GetPerformanceCounter();
@@ -3601,6 +3690,10 @@ public unsafe partial interface ISdl
             uint Bmask,
             uint Amask
         );
+
+        [NativeName("SDL_GetPixelFormatFromGPUTextureFormat")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatFromGPUTextureFormat")]
+        static abstract PixelFormat GetPixelFormatFromGpuTextureFormat(GpuTextureFormat format);
 
         [NativeName("SDL_GetPixelFormatName")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatName")]
@@ -4005,6 +4098,22 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderTarget")]
         static abstract Texture* GetRenderTargetRaw(RendererHandle renderer);
 
+        [NativeName("SDL_GetRenderTextureAddressMode")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderTextureAddressMode")]
+        static abstract byte GetRenderTextureAddressMode(
+            RendererHandle renderer,
+            TextureAddressMode* u_mode,
+            TextureAddressMode* v_mode
+        );
+
+        [NativeName("SDL_GetRenderTextureAddressMode")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderTextureAddressMode")]
+        static abstract MaybeBool<byte> GetRenderTextureAddressMode(
+            RendererHandle renderer,
+            Ref<TextureAddressMode> u_mode,
+            Ref<TextureAddressMode> v_mode
+        );
+
         [NativeName("SDL_GetRenderViewport")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderViewport")]
         static abstract byte GetRenderViewport(RendererHandle renderer, Rect* rect);
@@ -4036,7 +4145,7 @@ public unsafe partial interface ISdl
         [NativeName("SDL_GetRGB")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
         static abstract void GetRgb(
-            uint pixel,
+            uint pixelvalue,
             PixelFormatDetails* format,
             Palette* palette,
             byte* r,
@@ -4047,7 +4156,7 @@ public unsafe partial interface ISdl
         [NativeName("SDL_GetRGB")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
         static abstract void GetRgb(
-            uint pixel,
+            uint pixelvalue,
             Ref<PixelFormatDetails> format,
             Ref<Palette> palette,
             Ref<byte> r,
@@ -4058,7 +4167,7 @@ public unsafe partial interface ISdl
         [NativeName("SDL_GetRGBA")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRGBA")]
         static abstract void GetRgba(
-            uint pixel,
+            uint pixelvalue,
             PixelFormatDetails* format,
             Palette* palette,
             byte* r,
@@ -4070,7 +4179,7 @@ public unsafe partial interface ISdl
         [NativeName("SDL_GetRGBA")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRGBA")]
         static abstract void GetRgba(
-            uint pixel,
+            uint pixelvalue,
             Ref<PixelFormatDetails> format,
             Ref<Palette> palette,
             Ref<byte> r,
@@ -4303,6 +4412,10 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceProperties")]
         static abstract uint GetSurfaceProperties(Ref<Surface> surface);
 
+        [NativeName("SDL_GetSystemPageSize")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetSystemPageSize")]
+        static abstract int GetSystemPageSize();
+
         [NativeName("SDL_GetSystemRAM")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSystemRAM")]
         static abstract int GetSystemRam();
@@ -4383,6 +4496,14 @@ public unsafe partial interface ISdl
             Ref<float> g,
             Ref<float> b
         );
+
+        [NativeName("SDL_GetTexturePalette")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetTexturePalette")]
+        static abstract Palette* GetTexturePalette(Texture* texture);
+
+        [NativeName("SDL_GetTexturePalette")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetTexturePalette")]
+        static abstract Ptr<Palette> GetTexturePalette(Ref<Texture> texture);
 
         [NativeName("SDL_GetTextureProperties")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureProperties")]
@@ -4646,6 +4767,14 @@ public unsafe partial interface ISdl
             Ref<int> x,
             Ref<int> y
         );
+
+        [NativeName("SDL_GetWindowProgressState")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowProgressState")]
+        static abstract ProgressState GetWindowProgressState(WindowHandle window);
+
+        [NativeName("SDL_GetWindowProgressValue")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowProgressValue")]
+        static abstract float GetWindowProgressValue(WindowHandle window);
 
         [NativeName("SDL_GetWindowProperties")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowProperties")]
@@ -5261,6 +5390,10 @@ public unsafe partial interface ISdl
             nuint maxlen
         );
 
+        [NativeName("SDL_hid_get_properties")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_properties")]
+        static abstract uint HidGetProperties(HidDeviceHandle dev);
+
         [NativeName("SDL_hid_get_report_descriptor")]
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_report_descriptor")]
         static abstract int HidGetReportDescriptor(HidDeviceHandle dev, byte* buf, nuint buf_size);
@@ -5730,6 +5863,38 @@ public unsafe partial interface ISdl
         [NativeName("SDL_LoadObject")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadObject")]
         static abstract SharedObjectHandle LoadObject(Ref<sbyte> sofile);
+
+        [NativeName("SDL_LoadPNG")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_LoadPNG")]
+        static abstract Surface* LoadPng(sbyte* file);
+
+        [NativeName("SDL_LoadPNG")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_LoadPNG")]
+        static abstract Ptr<Surface> LoadPng(Ref<sbyte> file);
+
+        [NativeName("SDL_LoadPNG_IO")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_LoadPNG_IO")]
+        static abstract Surface* LoadPngIO(IOStreamHandle src, byte closeio);
+
+        [NativeName("SDL_LoadPNG_IO")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_LoadPNG_IO")]
+        static abstract Ptr<Surface> LoadPngIO(IOStreamHandle src, MaybeBool<byte> closeio);
+
+        [NativeName("SDL_LoadSurface")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_LoadSurface")]
+        static abstract Surface* LoadSurface(sbyte* file);
+
+        [NativeName("SDL_LoadSurface")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_LoadSurface")]
+        static abstract Ptr<Surface> LoadSurface(Ref<sbyte> file);
+
+        [NativeName("SDL_LoadSurface_IO")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_LoadSurface_IO")]
+        static abstract Surface* LoadSurfaceIO(IOStreamHandle src, byte closeio);
+
+        [NativeName("SDL_LoadSurface_IO")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_LoadSurface_IO")]
+        static abstract Ptr<Surface> LoadSurfaceIO(IOStreamHandle src, MaybeBool<byte> closeio);
 
         [NativeName("SDL_LoadWAV")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV")]
@@ -6425,6 +6590,44 @@ public unsafe partial interface ISdl
             AudioStreamHandle stream,
             Ref buf,
             int len
+        );
+
+        [NativeName("SDL_PutAudioStreamDataNoCopy")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamDataNoCopy")]
+        static abstract byte PutAudioStreamDataNoCopy(
+            AudioStreamHandle stream,
+            void* buf,
+            int len,
+            AudioStreamDataCompleteCallback callback,
+            void* userdata
+        );
+
+        [NativeName("SDL_PutAudioStreamDataNoCopy")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamDataNoCopy")]
+        static abstract MaybeBool<byte> PutAudioStreamDataNoCopy(
+            AudioStreamHandle stream,
+            Ref buf,
+            int len,
+            AudioStreamDataCompleteCallback callback,
+            Ref userdata
+        );
+
+        [NativeName("SDL_PutAudioStreamPlanarData")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamPlanarData")]
+        static abstract byte PutAudioStreamPlanarData(
+            AudioStreamHandle stream,
+            void** channel_buffers,
+            int num_channels,
+            int num_samples
+        );
+
+        [NativeName("SDL_PutAudioStreamPlanarData")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamPlanarData")]
+        static abstract MaybeBool<byte> PutAudioStreamPlanarData(
+            AudioStreamHandle stream,
+            Ref2D channel_buffers,
+            int num_channels,
+            int num_samples
         );
 
         [NativeName("SDL_qsort")]
@@ -7152,6 +7355,36 @@ public unsafe partial interface ISdl
             Ref<FRect> dstrect
         );
 
+        [NativeName("SDL_RenderTexture9GridTiled")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture9GridTiled")]
+        static abstract byte RenderTexture9GridTiled(
+            RendererHandle renderer,
+            Texture* texture,
+            FRect* srcrect,
+            float left_width,
+            float right_width,
+            float top_height,
+            float bottom_height,
+            float scale,
+            FRect* dstrect,
+            float tileScale
+        );
+
+        [NativeName("SDL_RenderTexture9GridTiled")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture9GridTiled")]
+        static abstract MaybeBool<byte> RenderTexture9GridTiled(
+            RendererHandle renderer,
+            Ref<Texture> texture,
+            Ref<FRect> srcrect,
+            float left_width,
+            float right_width,
+            float top_height,
+            float bottom_height,
+            float scale,
+            Ref<FRect> dstrect,
+            float tileScale
+        );
+
         [NativeName("SDL_RenderTextureAffine")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureAffine")]
         static abstract byte RenderTextureAffine(
@@ -7299,6 +7532,14 @@ public unsafe partial interface ISdl
         [NativeName("SDL_ResumeHaptic")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ResumeHaptic")]
         static abstract byte ResumeHapticRaw(HapticHandle haptic);
+
+        [NativeName("SDL_RotateSurface")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RotateSurface")]
+        static abstract Surface* RotateSurface(Surface* surface, float angle);
+
+        [NativeName("SDL_RotateSurface")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RotateSurface")]
+        static abstract Ptr<Surface> RotateSurface(Ref<Surface> surface, float angle);
 
         [NativeName("SDL_round")]
         [NativeFunction("SDL3", EntryPoint = "SDL_round")]
@@ -7464,6 +7705,26 @@ public unsafe partial interface ISdl
             IOStreamHandle src,
             Ref data,
             nuint datasize,
+            MaybeBool<byte> closeio
+        );
+
+        [NativeName("SDL_SavePNG")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SavePNG")]
+        static abstract byte SavePng(Surface* surface, sbyte* file);
+
+        [NativeName("SDL_SavePNG")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SavePNG")]
+        static abstract MaybeBool<byte> SavePng(Ref<Surface> surface, Ref<sbyte> file);
+
+        [NativeName("SDL_SavePNG_IO")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SavePNG_IO")]
+        static abstract byte SavePngIO(Surface* surface, IOStreamHandle dst, byte closeio);
+
+        [NativeName("SDL_SavePNG_IO")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SavePNG_IO")]
+        static abstract MaybeBool<byte> SavePngIO(
+            Ref<Surface> surface,
+            IOStreamHandle dst,
             MaybeBool<byte> closeio
         );
 
@@ -7792,6 +8053,20 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetCursor")]
         static abstract byte SetCursorRaw(CursorHandle cursor);
 
+        [NativeName("SDL_SetDefaultTextureScaleMode")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetDefaultTextureScaleMode")]
+        static abstract MaybeBool<byte> SetDefaultTextureScaleMode(
+            RendererHandle renderer,
+            ScaleMode scale_mode
+        );
+
+        [NativeName("SDL_SetDefaultTextureScaleMode")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetDefaultTextureScaleMode")]
+        static abstract byte SetDefaultTextureScaleModeRaw(
+            RendererHandle renderer,
+            ScaleMode scale_mode
+        );
+
         [NativeName("SDL_setenv_unsafe")]
         [NativeFunction("SDL3", EntryPoint = "SDL_setenv_unsafe")]
         static abstract int SetenvUnsafe(sbyte* name, sbyte* value, int overwrite);
@@ -7946,6 +8221,38 @@ public unsafe partial interface ISdl
             GpuDeviceHandle device,
             GpuBufferHandle buffer,
             Ref<sbyte> text
+        );
+
+        [NativeName("SDL_SetGPURenderState")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPURenderState")]
+        static abstract MaybeBool<byte> SetGpuRenderState(
+            RendererHandle renderer,
+            GpuRenderStateHandle state
+        );
+
+        [NativeName("SDL_SetGPURenderStateFragmentUniforms")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPURenderStateFragmentUniforms")]
+        static abstract byte SetGpuRenderStateFragmentUniforms(
+            GpuRenderStateHandle state,
+            uint slot_index,
+            void* data,
+            uint length
+        );
+
+        [NativeName("SDL_SetGPURenderStateFragmentUniforms")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPURenderStateFragmentUniforms")]
+        static abstract MaybeBool<byte> SetGpuRenderStateFragmentUniforms(
+            GpuRenderStateHandle state,
+            uint slot_index,
+            Ref data,
+            uint length
+        );
+
+        [NativeName("SDL_SetGPURenderState")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetGPURenderState")]
+        static abstract byte SetGpuRenderStateRaw(
+            RendererHandle renderer,
+            GpuRenderStateHandle state
         );
 
         [NativeName("SDL_SetGPUScissor")]
@@ -8290,6 +8597,20 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetPrimarySelectionText")]
         static abstract MaybeBool<byte> SetPrimarySelectionText(Ref<sbyte> text);
 
+        [NativeName("SDL_SetRelativeMouseTransform")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRelativeMouseTransform")]
+        static abstract byte SetRelativeMouseTransform(
+            MouseMotionTransformCallback callback,
+            void* userdata
+        );
+
+        [NativeName("SDL_SetRelativeMouseTransform")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRelativeMouseTransform")]
+        static abstract MaybeBool<byte> SetRelativeMouseTransform(
+            MouseMotionTransformCallback callback,
+            Ref userdata
+        );
+
         [NativeName("SDL_SetRenderClipRect")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderClipRect")]
         static abstract byte SetRenderClipRect(RendererHandle renderer, Rect* rect);
@@ -8399,6 +8720,22 @@ public unsafe partial interface ISdl
         static abstract MaybeBool<byte> SetRenderTarget(
             RendererHandle renderer,
             Ref<Texture> texture
+        );
+
+        [NativeName("SDL_SetRenderTextureAddressMode")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderTextureAddressMode")]
+        static abstract MaybeBool<byte> SetRenderTextureAddressMode(
+            RendererHandle renderer,
+            TextureAddressMode u_mode,
+            TextureAddressMode v_mode
+        );
+
+        [NativeName("SDL_SetRenderTextureAddressMode")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderTextureAddressMode")]
+        static abstract byte SetRenderTextureAddressModeRaw(
+            RendererHandle renderer,
+            TextureAddressMode u_mode,
+            TextureAddressMode v_mode
         );
 
         [NativeName("SDL_SetRenderViewport")]
@@ -8587,6 +8924,17 @@ public unsafe partial interface ISdl
             float b
         );
 
+        [NativeName("SDL_SetTexturePalette")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetTexturePalette")]
+        static abstract byte SetTexturePalette(Texture* texture, Palette* palette);
+
+        [NativeName("SDL_SetTexturePalette")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetTexturePalette")]
+        static abstract MaybeBool<byte> SetTexturePalette(
+            Ref<Texture> texture,
+            Ref<Palette> palette
+        );
+
         [NativeName("SDL_SetTextureScaleMode")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureScaleMode")]
         static abstract byte SetTextureScaleMode(Texture* texture, ScaleMode scaleMode);
@@ -8646,6 +8994,17 @@ public unsafe partial interface ISdl
         static abstract MaybeBool<byte> SetWindowBordered(
             WindowHandle window,
             MaybeBool<byte> bordered
+        );
+
+        [NativeName("SDL_SetWindowFillDocument")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFillDocument")]
+        static abstract byte SetWindowFillDocument(WindowHandle window, byte fill);
+
+        [NativeName("SDL_SetWindowFillDocument")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFillDocument")]
+        static abstract MaybeBool<byte> SetWindowFillDocument(
+            WindowHandle window,
+            MaybeBool<byte> fill
         );
 
         [NativeName("SDL_SetWindowFocusable")]
@@ -8790,6 +9149,25 @@ public unsafe partial interface ISdl
         [NativeName("SDL_SetWindowPosition")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowPosition")]
         static abstract byte SetWindowPositionRaw(WindowHandle window, int x, int y);
+
+        [NativeName("SDL_SetWindowProgressState")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowProgressState")]
+        static abstract MaybeBool<byte> SetWindowProgressState(
+            WindowHandle window,
+            ProgressState state
+        );
+
+        [NativeName("SDL_SetWindowProgressState")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowProgressState")]
+        static abstract byte SetWindowProgressStateRaw(WindowHandle window, ProgressState state);
+
+        [NativeName("SDL_SetWindowProgressValue")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowProgressValue")]
+        static abstract MaybeBool<byte> SetWindowProgressValue(WindowHandle window, float value);
+
+        [NativeName("SDL_SetWindowProgressValue")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowProgressValue")]
+        static abstract byte SetWindowProgressValueRaw(WindowHandle window, float value);
 
         [NativeName("SDL_SetWindowRelativeMouseMode")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowRelativeMouseMode")]
@@ -10399,6 +10777,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicInt")]
     int AddAtomicInt(Ref<AtomicInt> a, int v);
 
+    [NativeName("SDL_AddAtomicU32")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicU32")]
+    uint AddAtomicU32(AtomicU32* a, int v);
+
+    [NativeName("SDL_AddAtomicU32")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_AddAtomicU32")]
+    uint AddAtomicU32(Ref<AtomicU32> a, int v);
+
     [NativeName("SDL_AddEventWatch")]
     [NativeFunction("SDL3", EntryPoint = "SDL_AddEventWatch")]
     byte AddEventWatch(EventFilter filter, void* userdata);
@@ -11396,6 +11782,24 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_crc32")]
     uint Crc32(uint crc, Ref data, nuint len);
 
+    [NativeName("SDL_CreateAnimatedCursor")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateAnimatedCursor")]
+    CursorHandle CreateAnimatedCursor(
+        CursorFrameInfo* frames,
+        int frame_count,
+        int hot_x,
+        int hot_y
+    );
+
+    [NativeName("SDL_CreateAnimatedCursor")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateAnimatedCursor")]
+    CursorHandle CreateAnimatedCursor(
+        Ref<CursorFrameInfo> frames,
+        int frame_count,
+        int hot_x,
+        int hot_y
+    );
+
     [NativeName("SDL_CreateAudioStream")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateAudioStream")]
     AudioStreamHandle CreateAudioStream(AudioSpec* src_spec, AudioSpec* dst_spec);
@@ -11486,6 +11890,24 @@ public unsafe partial interface ISdl
     GpuGraphicsPipelineHandle CreateGpuGraphicsPipeline(
         GpuDeviceHandle device,
         Ref<GpuGraphicsPipelineCreateInfo> createinfo
+    );
+
+    [NativeName("SDL_CreateGPURenderer")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPURenderer")]
+    RendererHandle CreateGpuRenderer(GpuDeviceHandle device, WindowHandle window);
+
+    [NativeName("SDL_CreateGPURenderState")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPURenderState")]
+    GpuRenderStateHandle CreateGpuRenderState(
+        RendererHandle renderer,
+        GpuRenderStateCreateInfo* createinfo
+    );
+
+    [NativeName("SDL_CreateGPURenderState")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPURenderState")]
+    GpuRenderStateHandle CreateGpuRenderState(
+        RendererHandle renderer,
+        Ref<GpuRenderStateCreateInfo> createinfo
     );
 
     [NativeName("SDL_CreateGPUSampler")]
@@ -11788,6 +12210,10 @@ public unsafe partial interface ISdl
     [NativeName("SDL_DestroyGPUDevice")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyGPUDevice")]
     void DestroyGpuDevice(GpuDeviceHandle device);
+
+    [NativeName("SDL_DestroyGPURenderState")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_DestroyGPURenderState")]
+    void DestroyGpuRenderState(GpuRenderStateHandle state);
 
     [NativeName("SDL_DestroyHapticEffect")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyHapticEffect")]
@@ -12492,7 +12918,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GetCameraPermissionState")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraPermissionState")]
-    int GetCameraPermissionState(CameraHandle camera);
+    CameraPermissionState GetCameraPermissionState(CameraHandle camera);
 
     [NativeName("SDL_GetCameraPosition")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCameraPosition")]
@@ -12671,6 +13097,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultLogOutputFunction")]
     LogOutputFunction GetDefaultLogOutputFunction();
 
+    [NativeName("SDL_GetDefaultTextureScaleMode")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultTextureScaleMode")]
+    byte GetDefaultTextureScaleMode(RendererHandle renderer, ScaleMode* scale_mode);
+
+    [NativeName("SDL_GetDefaultTextureScaleMode")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetDefaultTextureScaleMode")]
+    MaybeBool<byte> GetDefaultTextureScaleMode(RendererHandle renderer, Ref<ScaleMode> scale_mode);
+
     [NativeName("SDL_GetDesktopDisplayMode")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDesktopDisplayMode")]
     Ptr<DisplayMode> GetDesktopDisplayMode(uint displayID);
@@ -12794,6 +13228,14 @@ public unsafe partial interface ISdl
     [NativeName("SDL_GetError")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetError")]
     sbyte* GetErrorRaw();
+
+    [NativeName("SDL_GetEventDescription")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetEventDescription")]
+    int GetEventDescription(Event* @event, sbyte* buf, int buflen);
+
+    [NativeName("SDL_GetEventDescription")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetEventDescription")]
+    int GetEventDescription(Ref<Event> @event, Ref<sbyte> buf, int buflen);
 
     [NativeName("SDL_GetEventFilter")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetEventFilter")]
@@ -13136,6 +13578,10 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
     sbyte* GetGpuDeviceDriverRaw(GpuDeviceHandle device);
 
+    [NativeName("SDL_GetGPUDeviceProperties")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceProperties")]
+    uint GetGpuDeviceProperties(GpuDeviceHandle device);
+
     [NativeName("SDL_GetGPUDriver")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
     Ptr<sbyte> GetGpuDriver(int index);
@@ -13144,6 +13590,10 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
     sbyte* GetGpuDriverRaw(int index);
 
+    [NativeName("SDL_GetGPURendererDevice")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGPURendererDevice")]
+    GpuDeviceHandle GetGpuRendererDevice(RendererHandle renderer);
+
     [NativeName("SDL_GetGPUShaderFormats")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUShaderFormats")]
     uint GetGpuShaderFormats(GpuDeviceHandle device);
@@ -13151,6 +13601,10 @@ public unsafe partial interface ISdl
     [NativeName("SDL_GetGPUSwapchainTextureFormat")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUSwapchainTextureFormat")]
     GpuTextureFormat GetGpuSwapchainTextureFormat(GpuDeviceHandle device, WindowHandle window);
+
+    [NativeName("SDL_GetGPUTextureFormatFromPixelFormat")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUTextureFormatFromPixelFormat")]
+    GpuTextureFormat GetGpuTextureFormatFromPixelFormat(PixelFormat format);
 
     [NativeName("SDL_GetGrabbedWindow")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGrabbedWindow")]
@@ -13650,6 +14104,10 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPathInfo")]
     MaybeBool<byte> GetPathInfo(Ref<sbyte> path, Ref<PathInfo> info);
 
+    [NativeName("SDL_GetPenDeviceType")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetPenDeviceType")]
+    PenDeviceType GetPenDeviceType(uint instance_id);
+
     [NativeName("SDL_GetPerformanceCounter")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPerformanceCounter")]
     ulong GetPerformanceCounter();
@@ -13669,6 +14127,10 @@ public unsafe partial interface ISdl
     [NativeName("SDL_GetPixelFormatForMasks")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatForMasks")]
     PixelFormat GetPixelFormatForMasks(int bpp, uint Rmask, uint Gmask, uint Bmask, uint Amask);
+
+    [NativeName("SDL_GetPixelFormatFromGPUTextureFormat")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatFromGPUTextureFormat")]
+    PixelFormat GetPixelFormatFromGpuTextureFormat(GpuTextureFormat format);
 
     [NativeName("SDL_GetPixelFormatName")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetPixelFormatName")]
@@ -14010,6 +14472,22 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderTarget")]
     Texture* GetRenderTargetRaw(RendererHandle renderer);
 
+    [NativeName("SDL_GetRenderTextureAddressMode")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderTextureAddressMode")]
+    byte GetRenderTextureAddressMode(
+        RendererHandle renderer,
+        TextureAddressMode* u_mode,
+        TextureAddressMode* v_mode
+    );
+
+    [NativeName("SDL_GetRenderTextureAddressMode")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderTextureAddressMode")]
+    MaybeBool<byte> GetRenderTextureAddressMode(
+        RendererHandle renderer,
+        Ref<TextureAddressMode> u_mode,
+        Ref<TextureAddressMode> v_mode
+    );
+
     [NativeName("SDL_GetRenderViewport")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRenderViewport")]
     byte GetRenderViewport(RendererHandle renderer, Rect* rect);
@@ -14041,7 +14519,7 @@ public unsafe partial interface ISdl
     [NativeName("SDL_GetRGB")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
     void GetRgb(
-        uint pixel,
+        uint pixelvalue,
         PixelFormatDetails* format,
         Palette* palette,
         byte* r,
@@ -14052,7 +14530,7 @@ public unsafe partial interface ISdl
     [NativeName("SDL_GetRGB")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
     void GetRgb(
-        uint pixel,
+        uint pixelvalue,
         Ref<PixelFormatDetails> format,
         Ref<Palette> palette,
         Ref<byte> r,
@@ -14063,7 +14541,7 @@ public unsafe partial interface ISdl
     [NativeName("SDL_GetRGBA")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRGBA")]
     void GetRgba(
-        uint pixel,
+        uint pixelvalue,
         PixelFormatDetails* format,
         Palette* palette,
         byte* r,
@@ -14075,7 +14553,7 @@ public unsafe partial interface ISdl
     [NativeName("SDL_GetRGBA")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRGBA")]
     void GetRgba(
-        uint pixel,
+        uint pixelvalue,
         Ref<PixelFormatDetails> format,
         Ref<Palette> palette,
         Ref<byte> r,
@@ -14284,6 +14762,10 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSurfaceProperties")]
     uint GetSurfaceProperties(Ref<Surface> surface);
 
+    [NativeName("SDL_GetSystemPageSize")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetSystemPageSize")]
+    int GetSystemPageSize();
+
     [NativeName("SDL_GetSystemRAM")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSystemRAM")]
     int GetSystemRam();
@@ -14344,6 +14826,14 @@ public unsafe partial interface ISdl
         Ref<float> g,
         Ref<float> b
     );
+
+    [NativeName("SDL_GetTexturePalette")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetTexturePalette")]
+    Palette* GetTexturePalette(Texture* texture);
+
+    [NativeName("SDL_GetTexturePalette")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetTexturePalette")]
+    Ptr<Palette> GetTexturePalette(Ref<Texture> texture);
 
     [NativeName("SDL_GetTextureProperties")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTextureProperties")]
@@ -14578,6 +15068,14 @@ public unsafe partial interface ISdl
     [NativeName("SDL_GetWindowPosition")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowPosition")]
     MaybeBool<byte> GetWindowPosition(WindowHandle window, Ref<int> x, Ref<int> y);
+
+    [NativeName("SDL_GetWindowProgressState")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowProgressState")]
+    ProgressState GetWindowProgressState(WindowHandle window);
+
+    [NativeName("SDL_GetWindowProgressValue")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowProgressValue")]
+    float GetWindowProgressValue(WindowHandle window);
 
     [NativeName("SDL_GetWindowProperties")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowProperties")]
@@ -15158,6 +15656,10 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_product_string")]
     int HidGetProductString(HidDeviceHandle dev, Ref<ushort> @string, nuint maxlen);
 
+    [NativeName("SDL_hid_get_properties")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_properties")]
+    uint HidGetProperties(HidDeviceHandle dev);
+
     [NativeName("SDL_hid_get_report_descriptor")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_report_descriptor")]
     int HidGetReportDescriptor(HidDeviceHandle dev, byte* buf, nuint buf_size);
@@ -15582,6 +16084,38 @@ public unsafe partial interface ISdl
     [NativeName("SDL_LoadObject")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadObject")]
     SharedObjectHandle LoadObject(Ref<sbyte> sofile);
+
+    [NativeName("SDL_LoadPNG")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_LoadPNG")]
+    Surface* LoadPng(sbyte* file);
+
+    [NativeName("SDL_LoadPNG")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_LoadPNG")]
+    Ptr<Surface> LoadPng(Ref<sbyte> file);
+
+    [NativeName("SDL_LoadPNG_IO")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_LoadPNG_IO")]
+    Surface* LoadPngIO(IOStreamHandle src, byte closeio);
+
+    [NativeName("SDL_LoadPNG_IO")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_LoadPNG_IO")]
+    Ptr<Surface> LoadPngIO(IOStreamHandle src, MaybeBool<byte> closeio);
+
+    [NativeName("SDL_LoadSurface")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_LoadSurface")]
+    Surface* LoadSurface(sbyte* file);
+
+    [NativeName("SDL_LoadSurface")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_LoadSurface")]
+    Ptr<Surface> LoadSurface(Ref<sbyte> file);
+
+    [NativeName("SDL_LoadSurface_IO")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_LoadSurface_IO")]
+    Surface* LoadSurfaceIO(IOStreamHandle src, byte closeio);
+
+    [NativeName("SDL_LoadSurface_IO")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_LoadSurface_IO")]
+    Ptr<Surface> LoadSurfaceIO(IOStreamHandle src, MaybeBool<byte> closeio);
 
     [NativeName("SDL_LoadWAV")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV")]
@@ -16218,6 +16752,44 @@ public unsafe partial interface ISdl
     [NativeName("SDL_PutAudioStreamData")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamData")]
     MaybeBool<byte> PutAudioStreamData(AudioStreamHandle stream, Ref buf, int len);
+
+    [NativeName("SDL_PutAudioStreamDataNoCopy")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamDataNoCopy")]
+    byte PutAudioStreamDataNoCopy(
+        AudioStreamHandle stream,
+        void* buf,
+        int len,
+        AudioStreamDataCompleteCallback callback,
+        void* userdata
+    );
+
+    [NativeName("SDL_PutAudioStreamDataNoCopy")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamDataNoCopy")]
+    MaybeBool<byte> PutAudioStreamDataNoCopy(
+        AudioStreamHandle stream,
+        Ref buf,
+        int len,
+        AudioStreamDataCompleteCallback callback,
+        Ref userdata
+    );
+
+    [NativeName("SDL_PutAudioStreamPlanarData")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamPlanarData")]
+    byte PutAudioStreamPlanarData(
+        AudioStreamHandle stream,
+        void** channel_buffers,
+        int num_channels,
+        int num_samples
+    );
+
+    [NativeName("SDL_PutAudioStreamPlanarData")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_PutAudioStreamPlanarData")]
+    MaybeBool<byte> PutAudioStreamPlanarData(
+        AudioStreamHandle stream,
+        Ref2D channel_buffers,
+        int num_channels,
+        int num_samples
+    );
 
     [NativeName("SDL_qsort")]
     [NativeFunction("SDL3", EntryPoint = "SDL_qsort")]
@@ -16863,6 +17435,36 @@ public unsafe partial interface ISdl
         Ref<FRect> dstrect
     );
 
+    [NativeName("SDL_RenderTexture9GridTiled")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture9GridTiled")]
+    byte RenderTexture9GridTiled(
+        RendererHandle renderer,
+        Texture* texture,
+        FRect* srcrect,
+        float left_width,
+        float right_width,
+        float top_height,
+        float bottom_height,
+        float scale,
+        FRect* dstrect,
+        float tileScale
+    );
+
+    [NativeName("SDL_RenderTexture9GridTiled")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RenderTexture9GridTiled")]
+    MaybeBool<byte> RenderTexture9GridTiled(
+        RendererHandle renderer,
+        Ref<Texture> texture,
+        Ref<FRect> srcrect,
+        float left_width,
+        float right_width,
+        float top_height,
+        float bottom_height,
+        float scale,
+        Ref<FRect> dstrect,
+        float tileScale
+    );
+
     [NativeName("SDL_RenderTextureAffine")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RenderTextureAffine")]
     byte RenderTextureAffine(
@@ -17000,6 +17602,14 @@ public unsafe partial interface ISdl
     [NativeName("SDL_ResumeHaptic")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ResumeHaptic")]
     byte ResumeHapticRaw(HapticHandle haptic);
+
+    [NativeName("SDL_RotateSurface")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RotateSurface")]
+    Surface* RotateSurface(Surface* surface, float angle);
+
+    [NativeName("SDL_RotateSurface")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RotateSurface")]
+    Ptr<Surface> RotateSurface(Ref<Surface> surface, float angle);
 
     [NativeName("SDL_round")]
     [NativeFunction("SDL3", EntryPoint = "SDL_round")]
@@ -17145,6 +17755,22 @@ public unsafe partial interface ISdl
         nuint datasize,
         MaybeBool<byte> closeio
     );
+
+    [NativeName("SDL_SavePNG")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SavePNG")]
+    byte SavePng(Surface* surface, sbyte* file);
+
+    [NativeName("SDL_SavePNG")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SavePNG")]
+    MaybeBool<byte> SavePng(Ref<Surface> surface, Ref<sbyte> file);
+
+    [NativeName("SDL_SavePNG_IO")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SavePNG_IO")]
+    byte SavePngIO(Surface* surface, IOStreamHandle dst, byte closeio);
+
+    [NativeName("SDL_SavePNG_IO")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SavePNG_IO")]
+    MaybeBool<byte> SavePngIO(Ref<Surface> surface, IOStreamHandle dst, MaybeBool<byte> closeio);
 
     [NativeName("SDL_scalbn")]
     [NativeFunction("SDL3", EntryPoint = "SDL_scalbn")]
@@ -17426,6 +18052,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetCursor")]
     byte SetCursorRaw(CursorHandle cursor);
 
+    [NativeName("SDL_SetDefaultTextureScaleMode")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetDefaultTextureScaleMode")]
+    MaybeBool<byte> SetDefaultTextureScaleMode(RendererHandle renderer, ScaleMode scale_mode);
+
+    [NativeName("SDL_SetDefaultTextureScaleMode")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetDefaultTextureScaleMode")]
+    byte SetDefaultTextureScaleModeRaw(RendererHandle renderer, ScaleMode scale_mode);
+
     [NativeName("SDL_setenv_unsafe")]
     [NativeFunction("SDL3", EntryPoint = "SDL_setenv_unsafe")]
     int SetenvUnsafe(sbyte* name, sbyte* value, int overwrite);
@@ -17545,6 +18179,32 @@ public unsafe partial interface ISdl
     [NativeName("SDL_SetGPUBufferName")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
     void SetGpuBufferName(GpuDeviceHandle device, GpuBufferHandle buffer, Ref<sbyte> text);
+
+    [NativeName("SDL_SetGPURenderState")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPURenderState")]
+    MaybeBool<byte> SetGpuRenderState(RendererHandle renderer, GpuRenderStateHandle state);
+
+    [NativeName("SDL_SetGPURenderStateFragmentUniforms")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPURenderStateFragmentUniforms")]
+    byte SetGpuRenderStateFragmentUniforms(
+        GpuRenderStateHandle state,
+        uint slot_index,
+        void* data,
+        uint length
+    );
+
+    [NativeName("SDL_SetGPURenderStateFragmentUniforms")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPURenderStateFragmentUniforms")]
+    MaybeBool<byte> SetGpuRenderStateFragmentUniforms(
+        GpuRenderStateHandle state,
+        uint slot_index,
+        Ref data,
+        uint length
+    );
+
+    [NativeName("SDL_SetGPURenderState")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetGPURenderState")]
+    byte SetGpuRenderStateRaw(RendererHandle renderer, GpuRenderStateHandle state);
 
     [NativeName("SDL_SetGPUScissor")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
@@ -17828,6 +18488,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetPrimarySelectionText")]
     MaybeBool<byte> SetPrimarySelectionText(Ref<sbyte> text);
 
+    [NativeName("SDL_SetRelativeMouseTransform")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRelativeMouseTransform")]
+    byte SetRelativeMouseTransform(MouseMotionTransformCallback callback, void* userdata);
+
+    [NativeName("SDL_SetRelativeMouseTransform")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRelativeMouseTransform")]
+    MaybeBool<byte> SetRelativeMouseTransform(MouseMotionTransformCallback callback, Ref userdata);
+
     [NativeName("SDL_SetRenderClipRect")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderClipRect")]
     byte SetRenderClipRect(RendererHandle renderer, Rect* rect);
@@ -17907,6 +18575,22 @@ public unsafe partial interface ISdl
     [NativeName("SDL_SetRenderTarget")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderTarget")]
     MaybeBool<byte> SetRenderTarget(RendererHandle renderer, Ref<Texture> texture);
+
+    [NativeName("SDL_SetRenderTextureAddressMode")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderTextureAddressMode")]
+    MaybeBool<byte> SetRenderTextureAddressMode(
+        RendererHandle renderer,
+        TextureAddressMode u_mode,
+        TextureAddressMode v_mode
+    );
+
+    [NativeName("SDL_SetRenderTextureAddressMode")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderTextureAddressMode")]
+    byte SetRenderTextureAddressModeRaw(
+        RendererHandle renderer,
+        TextureAddressMode u_mode,
+        TextureAddressMode v_mode
+    );
 
     [NativeName("SDL_SetRenderViewport")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetRenderViewport")]
@@ -18052,6 +18736,14 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureColorModFloat")]
     MaybeBool<byte> SetTextureColorModFloat(Ref<Texture> texture, float r, float g, float b);
 
+    [NativeName("SDL_SetTexturePalette")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetTexturePalette")]
+    byte SetTexturePalette(Texture* texture, Palette* palette);
+
+    [NativeName("SDL_SetTexturePalette")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetTexturePalette")]
+    MaybeBool<byte> SetTexturePalette(Ref<Texture> texture, Ref<Palette> palette);
+
     [NativeName("SDL_SetTextureScaleMode")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTextureScaleMode")]
     byte SetTextureScaleMode(Texture* texture, ScaleMode scaleMode);
@@ -18091,6 +18783,14 @@ public unsafe partial interface ISdl
     [NativeName("SDL_SetWindowBordered")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowBordered")]
     MaybeBool<byte> SetWindowBordered(WindowHandle window, MaybeBool<byte> bordered);
+
+    [NativeName("SDL_SetWindowFillDocument")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFillDocument")]
+    byte SetWindowFillDocument(WindowHandle window, byte fill);
+
+    [NativeName("SDL_SetWindowFillDocument")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFillDocument")]
+    MaybeBool<byte> SetWindowFillDocument(WindowHandle window, MaybeBool<byte> fill);
 
     [NativeName("SDL_SetWindowFocusable")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowFocusable")]
@@ -18203,6 +18903,22 @@ public unsafe partial interface ISdl
     [NativeName("SDL_SetWindowPosition")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowPosition")]
     byte SetWindowPositionRaw(WindowHandle window, int x, int y);
+
+    [NativeName("SDL_SetWindowProgressState")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowProgressState")]
+    MaybeBool<byte> SetWindowProgressState(WindowHandle window, ProgressState state);
+
+    [NativeName("SDL_SetWindowProgressState")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowProgressState")]
+    byte SetWindowProgressStateRaw(WindowHandle window, ProgressState state);
+
+    [NativeName("SDL_SetWindowProgressValue")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowProgressValue")]
+    MaybeBool<byte> SetWindowProgressValue(WindowHandle window, float value);
+
+    [NativeName("SDL_SetWindowProgressValue")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowProgressValue")]
+    byte SetWindowProgressValueRaw(WindowHandle window, float value);
 
     [NativeName("SDL_SetWindowRelativeMouseMode")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowRelativeMouseMode")]

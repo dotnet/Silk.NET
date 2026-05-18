@@ -61,11 +61,14 @@ public enum EventType
     [NativeName("SDL_EVENT_DISPLAY_CONTENT_SCALE_CHANGED")]
     DisplayContentScaleChanged = 343,
 
+    [NativeName("SDL_EVENT_DISPLAY_USABLE_BOUNDS_CHANGED")]
+    DisplayUsableBoundsChanged = 344,
+
     [NativeName("SDL_EVENT_DISPLAY_FIRST")]
     DisplayFirst = DisplayOrientation,
 
     [NativeName("SDL_EVENT_DISPLAY_LAST")]
-    DisplayLast = DisplayContentScaleChanged,
+    DisplayLast = DisplayUsableBoundsChanged,
 
     [NativeName("SDL_EVENT_WINDOW_SHOWN")]
     WindowShown = 514,
@@ -172,6 +175,12 @@ public enum EventType
     [NativeName("SDL_EVENT_TEXT_EDITING_CANDIDATES")]
     TextEditingCandidates = 775,
 
+    [NativeName("SDL_EVENT_SCREEN_KEYBOARD_SHOWN")]
+    ScreenKeyboardShown = 776,
+
+    [NativeName("SDL_EVENT_SCREEN_KEYBOARD_HIDDEN")]
+    ScreenKeyboardHidden = 777,
+
     [NativeName("SDL_EVENT_MOUSE_MOTION")]
     MouseMotion = 1024,
 
@@ -264,6 +273,15 @@ public enum EventType
 
     [NativeName("SDL_EVENT_FINGER_CANCELED")]
     FingerCanceled = 1795,
+
+    [NativeName("SDL_EVENT_PINCH_BEGIN")]
+    PinchBegin = 1808,
+
+    [NativeName("SDL_EVENT_PINCH_UPDATE")]
+    PinchUpdate = 1809,
+
+    [NativeName("SDL_EVENT_PINCH_END")]
+    PinchEnd = 1810,
 
     [NativeName("SDL_EVENT_CLIPBOARD_UPDATE")]
     ClipboardUpdate = 2304,
