@@ -8,7 +8,7 @@
     <SilkNativeHasAndroidJars>true</SilkNativeHasAndroidJars>
     <SilkNativeiOSLinkerFlags>-framework CoreAudio -framework CoreFoundation -framework AudioUnit -framework ApplicationServices -framework AudioToolbox</SilkNativeiOSLinkerFlags>
     <EnableDefaultAndroidItems>false</EnableDefaultAndroidItems>
-    <PackageLicenseExpression>LGPL-2.1+</PackageLicenseExpression>
+    <PackageLicenseExpression>LGPL-2.0-or-later</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
