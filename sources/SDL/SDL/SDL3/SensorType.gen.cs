@@ -33,4 +33,7 @@ public enum SensorType
 
     [NativeName("SDL_SENSOR_GYRO_R")]
     GyroR = 6,
+
+    [NativeName("SDL_SENSOR_COUNT")]
+    Count = 7,
 }

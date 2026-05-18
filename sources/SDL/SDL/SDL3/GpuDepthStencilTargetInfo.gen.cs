@@ -34,9 +34,9 @@ public unsafe partial struct GpuDepthStencilTargetInfo
     [NativeName("clear_stencil")]
     public byte ClearStencil;
 
-    [NativeName("padding1")]
-    public byte Padding1;
+    [NativeName("mip_level")]
+    public byte MipLevel;
 
-    [NativeName("padding2")]
-    public byte Padding2;
+    [NativeName("layer")]
+    public byte Layer;
 }

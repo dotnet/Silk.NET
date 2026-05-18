@@ -31,6 +31,6 @@ public static unsafe partial class SDL_MouseWheelEventTests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(MouseWheelEvent), Is.EqualTo(48));
+        Assert.That(sizeof(MouseWheelEvent), Is.EqualTo(56));
     }
 }

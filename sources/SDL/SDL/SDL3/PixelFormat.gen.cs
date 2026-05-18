@@ -202,6 +202,9 @@ public enum PixelFormat
     [NativeName("SDL_PIXELFORMAT_EXTERNAL_OES")]
     ExternalOes = 542328143,
 
+    [NativeName("SDL_PIXELFORMAT_MJPG")]
+    Mjpg = 1196444237,
+
     [NativeName("SDL_PIXELFORMAT_RGBA32")]
     Rgba32 = Abgr8888,
 
