@@ -96,6 +96,9 @@ public class TransformPropertiesTests
         await transformProperties.ExecuteAsync(context);
 
         // Only members with exactly [NativeTypeName("TestBool32")] should be transformed
+        //
+        // Note: [NativeTypeName("TestBool32 : 1")] can be found in bitfield structs
+        // This is currently not handled since this is an unlikely case
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
