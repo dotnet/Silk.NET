@@ -17,7 +17,38 @@ public class TransformPropertiesTests
     }
 
     [Test]
-    public async Task MaybeBool_Transforms_FieldsAndProperties()
+    public async Task Transforms_Utf8String_StaticConstProperties()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                public struct Test
+                {
+                    public static ReadOnlySpan<byte> Text => "Hello world!"u8;
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var transformProperties = new TransformProperties(
+            new DummyOptions<TransformProperties.Configuration>(
+                new TransformProperties.Configuration() { BoolTypes = { { "TestBool32", null } } }
+            )
+        );
+
+        await transformProperties.ExecuteAsync(context);
+
+        // Test.Text should be transformed to use the Utf8String type
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task Transforms_MaybeBool_FieldsAndProperties()
     {
         var project = TestUtils
             .CreateTestProject()
@@ -64,7 +95,7 @@ public class TransformPropertiesTests
 
         await transformProperties.ExecuteAsync(context);
 
-        // Only members with [NativeTypeName("TestBool32")] should be transformed
+        // Only members with exactly [NativeTypeName("TestBool32")] should be transformed
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
