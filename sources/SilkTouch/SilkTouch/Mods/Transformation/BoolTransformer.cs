@@ -31,23 +31,8 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
             || (retNative == "bool" && current.ReturnType.ToString().Trim() != "bool") // stdbool.h, hopefully...
         )
         {
-            current = current.WithReturnType(
-                newRetType = string.IsNullOrWhiteSpace(retBoolScheme)
-                    ? GenericName(
-                        Identifier("MaybeBool"),
-                        TypeArgumentList(SingletonSeparatedList(current.ReturnType))
-                    )
-                    : GenericName(
-                        Identifier("MaybeBool"),
-                        TypeArgumentList(
-                            SeparatedList(
-                                // ReSharper disable once RedundantCast <-- false positive
-                                (IEnumerable<TypeSyntax>)
-                                    [current.ReturnType, IdentifierName(retBoolScheme)]
-                            )
-                        )
-                    )
-            );
+            newRetType = MaybeBoolUtils.MaybeBoolType(current.ReturnType, retBoolScheme);
+            current = current.WithReturnType(newRetType);
         }
 
         List<ParameterSyntax>? @params = null;
@@ -65,23 +50,8 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
                 )
             )
             {
-                (@params ??= [.. current.ParameterList.Parameters])[i] = param.WithType(
-                    string.IsNullOrWhiteSpace(paramBoolScheme)
-                        ? GenericName(
-                            Identifier("MaybeBool"),
-                            TypeArgumentList(SingletonSeparatedList(param.Type))
-                        )
-                        : GenericName(
-                            Identifier("MaybeBool"),
-                            TypeArgumentList(
-                                SeparatedList(
-                                    // ReSharper disable once RedundantCast <-- false positive
-                                    (IEnumerable<TypeSyntax>)
-                                        [param.Type, IdentifierName(paramBoolScheme)]
-                                )
-                            )
-                        )
-                );
+                var newType = MaybeBoolUtils.MaybeBoolType(param.Type, paramBoolScheme);
+                (@params ??= [.. current.ParameterList.Parameters])[i] = param.WithType(newType);
             }
         }
 

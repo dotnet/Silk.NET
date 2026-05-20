@@ -71,22 +71,7 @@ public class TransformProperties(IOptionsSnapshot<TransformProperties.Configurat
                 || (nativeType == "bool" && node.Declaration.Type.ToString().Trim() != "bool") // stdbool.h, hopefully...
             )
             {
-                var newType = string.IsNullOrWhiteSpace(scheme)
-                    ? GenericName(
-                        Identifier("MaybeBool"),
-                        TypeArgumentList(SingletonSeparatedList(node.Declaration.Type))
-                    )
-                    : GenericName(
-                        Identifier("MaybeBool"),
-                        TypeArgumentList(
-                            SeparatedList(
-                                // ReSharper disable once RedundantCast <-- false positive
-                                (IEnumerable<TypeSyntax>)
-                                    [node.Declaration.Type, IdentifierName(scheme)]
-                            )
-                        )
-                    );
-
+                var newType = MaybeBoolUtils.MaybeBoolType(node.Declaration.Type, scheme);
                 node = node.WithDeclaration(node.Declaration.WithType(newType));
             }
 
@@ -102,21 +87,7 @@ public class TransformProperties(IOptionsSnapshot<TransformProperties.Configurat
                 || (nativeType == "bool" && node.Type.ToString().Trim() != "bool") // stdbool.h, hopefully...
             )
             {
-                var newType = string.IsNullOrWhiteSpace(scheme)
-                    ? GenericName(
-                        Identifier("MaybeBool"),
-                        TypeArgumentList(SingletonSeparatedList(node.Type))
-                    )
-                    : GenericName(
-                        Identifier("MaybeBool"),
-                        TypeArgumentList(
-                            SeparatedList(
-                                // ReSharper disable once RedundantCast <-- false positive
-                                (IEnumerable<TypeSyntax>)[node.Type, IdentifierName(scheme)]
-                            )
-                        )
-                    );
-
+                var newType = MaybeBoolUtils.MaybeBoolType(node.Type, scheme);
                 node = node.WithType(newType);
             }
 
