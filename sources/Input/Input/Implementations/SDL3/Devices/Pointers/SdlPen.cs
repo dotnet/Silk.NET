@@ -70,7 +70,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         get;
     }
 
-    protected internal override void Initialize()
+    protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
     {
         // todo ?
     }

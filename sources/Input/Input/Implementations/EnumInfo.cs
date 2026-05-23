@@ -170,7 +170,8 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         var rawValue = value.Convert<T, int>();
 
         // todo - don't rely on joystickButton's unknown - find the MinValue
-        if (rawValue <= 0 || rawValue >= _allEnumValuesRaw[0].Convert<ulong, int>())
+        var minKnownVal = _allEnumValuesRaw[0].Convert<ulong, int>();
+        if (rawValue < 0 || rawValue >= minKnownVal)
         {
             return -1;
         }
@@ -215,13 +216,4 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         var value = _allEnumValuesRaw[index];
         return *(T*)&value;
     }
-}
-
-/// <summary>
-/// A class for simplifying calls to the generic form of <see cref="EnumInfo{T}"/>
-/// </summary>
-public static class EnumInfo
-{
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static int ValueIndex<T>(this T value) where T : unmanaged, Enum => EnumInfo<T>.ValueIndexOf(value);
 }

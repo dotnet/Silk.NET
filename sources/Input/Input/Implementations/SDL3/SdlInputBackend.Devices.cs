@@ -42,7 +42,7 @@ internal partial class SdlInputBackend
 
         try
         {
-            device.Initialize();
+            device.Initialize(timestamp, sdlTimestamp);
         }
         catch (Exception e)
         {

@@ -51,19 +51,21 @@ public static class UnsafeNumericValueExtensions
             }
 
             var minSize = Math.Min(sizeof(TTo), sizeof(T));
+            // var maxSize = Math.Max(sizeof(TTo), sizeof(T));
 
             var originalValuePtr = (byte*)&value;
 
-            var valuePtr = &originalValuePtr[Math.Abs(minSize - sizeof(T))]; // todo: does this assume little-endianness?
-            var numberPtr = stackalloc byte[sizeof(TTo)];
+            // var sizeDelta = maxSize - minSize;
+            var valuePtr = &originalValuePtr[0]; // todo: does this assume little-endianness?
+            var resultPtr = stackalloc byte[sizeof(TTo)];
 
             // ensure block is initialized (as it isnt guaranteed?) so any missing bytes of the output will stay 0
             // if type TNumber is a larger size than type T
-            Unsafe.InitBlock(numberPtr, 0, (uint)sizeof(TTo));
+            Unsafe.InitBlock(resultPtr, 0, (uint)sizeof(TTo));
 
-            var copyToPtr = &numberPtr[Math.Abs(minSize - sizeof(TTo))];
+            var copyToPtr = &resultPtr[0];
             Buffer.MemoryCopy(valuePtr, copyToPtr, sizeof(TTo), minSize);
-            return *(TTo*)numberPtr;
+            return *(TTo*)resultPtr;
         }
     }
 }

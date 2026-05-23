@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -123,7 +125,16 @@ public static class JoystickButtonExtensions
     /// </summary>
     /// <param name="button"></param>
     /// <returns></returns>
-    public static bool IsIdentified(this JoystickButton button) => button > JoystickButton.Unknown;
+    public static bool IsIdentified(this JoystickButton button)
+    {
+#if !DEBUG
+        return button > JoystickButton.Unknown;
+#else
+        var isIdentified = button > JoystickButton.Unknown;
+        Debug.Assert(isIdentified == EnumInfo<JoystickButton>.HasValue((int)button));
+        return isIdentified;
+#endif
+    }
 
     /// <inheritdoc cref="EnumInfo{T}.ValueIndexOf(T)"/>
     public static int Index<T>(this T value) where T : unmanaged, Enum => EnumInfo<T>.ValueIndexOf(value);

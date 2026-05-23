@@ -14,11 +14,14 @@ namespace Silk.NET.Input.SDL3.Devices.Joysticks;
 internal interface ISdlJoystick : IOrderedDevice
 {
     public SdlJoystick Joystick { get; }
+
     /// <summary>
     /// Raw joystick axis input events are forwarded here
     /// </summary>
     /// <param name="axis">Input axis (which axis)</param>
     /// <param name="joystickInput">Input axis value</param>
+    /// <param name="sdlTimestamp"></param>
+    /// <param name="timestamp"></param>
     public void UpdateFromJoyAxis(int axis, short joystickInput, ulong sdlTimestamp, long timestamp);
 
     /// <summary>
@@ -26,6 +29,8 @@ internal interface ISdlJoystick : IOrderedDevice
     /// </summary>
     /// <param name="hatIdx">Input hat (which hat)</param>
     /// <param name="hatState">Input hat value</param>
+    /// <param name="sdlTimestamp"></param>
+    /// <param name="timestamp"></param>
     public void UpdateFromJoyHat(int hatIdx, SdlJoystick.HatState hatState, ulong sdlTimestamp, long timestamp);
 
     /// <summary>
@@ -33,5 +38,7 @@ internal interface ISdlJoystick : IOrderedDevice
     /// </summary>
     /// <param name="buttonIdx">Input button (which button)</param>
     /// <param name="down">Button state</param>
+    /// <param name="sdlTimestamp"></param>
+    /// <param name="timestamp"></param>
     public void UpdateFromJoyButton(int buttonIdx, bool down, ulong sdlTimestamp, long timestamp);
 }

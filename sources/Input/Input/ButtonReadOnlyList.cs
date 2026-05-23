@@ -32,7 +32,7 @@ public readonly record struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
     /// Gets the state for the button with the given name.
     /// </summary>
     /// <param name="name">The button name.</param>
-    public Button<T> this[T name] => List[name.ValueIndex()];
+    public Button<T> this[T name] => List[name.Index()];
 
     /// <inheritdoc />
     public IEnumerator<Button<T>> GetEnumerator() => List.GetEnumerator();

@@ -127,7 +127,21 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     public void AddButtonEvent(byte sdlButtonId, byte sdlButtonDown, ulong sdlTimestamp, long timestamp)
     {
         var down = sdlButtonDown > 0;
-        _rawButtonState[sdlButtonId] = new Button<JoystickButton>((JoystickButton)sdlButtonId, down, down ? 1 : 0);
+        var joystickButton = (JoystickButton)sdlButtonId;
+        var idx = joystickButton.Index();
+        if (idx == -1)
+        {
+            InputLog.Error($"No index for button {sdlButtonId} on joystick {Id}");
+            return;
+        }
+
+        if (idx >= _rawButtonState.Length)
+        {
+            InputLog.Error($"Button index {idx} exceeds button state array length {_rawButtonState.Length} on joystick {Id}");
+            return;
+        }
+
+        _rawButtonState[idx] = new Button<JoystickButton>(joystickButton, down, down ? 1 : 0);
         foreach (var device in _devices)
         {
             device.UpdateFromJoyButton(sdlButtonId, down, sdlTimestamp, timestamp);
@@ -155,7 +169,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
         return value > 0 ? new Vector2(0, value) : new Vector2(value, 0);
     }
 
-    protected internal override void Initialize()
+    protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
     {
         var nowTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
         var nowSdlTimestamp = NativeBackend.GetTicks();
@@ -176,7 +190,8 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
         // init current joystick state
         var buttonCount = NativeBackend.GetNumJoystickButtons(joystickHandle);
-        _rawButtonState = new Button<JoystickButton>[EnumInfo<JoystickButton>.UniqueValues.Count + buttonCount];
+        var uniqueJoyButtonCount = Math.Max(EnumInfo<JoystickButton>.UniqueValues.Count, (int)GamepadButton.Count);
+        _rawButtonState = new Button<JoystickButton>[uniqueJoyButtonCount + buttonCount];
 
         var axisCount = NativeBackend.GetNumJoystickAxes(joystickHandle);
         _rawAxisState = new float[EnumInfo<JoystickAxis>.UniqueValues.Count + axisCount];

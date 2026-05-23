@@ -18,7 +18,7 @@ namespace Silk.NET.Input;
 /// implementations are discovered.
 /// </remarks>
 // NOTE: Not experimental so that we don't eliminate the prospects of third-party implementations.
-public static class InputMarshal
+internal static class InputMarshal
 {
     /// <summary>
     /// A wrapper class denoting ownership of a <see cref="InputReadOnlyList{T}"/>. This is used to attempt to stop
@@ -26,7 +26,7 @@ public static class InputMarshal
     /// terrible things.
     /// </summary>
     /// <typeparam name="T">The list element type.</typeparam>
-    public struct ListOwner<T>
+    internal struct ListOwner<T>
     {
         internal ListOwner(InputReadOnlyList<T> list) => List = list;
 
@@ -36,7 +36,7 @@ public static class InputMarshal
         public InputReadOnlyList<T> List { get; }
     }
 
-    internal class ButtonList<T>(uint[] binary, Dictionary<T, Button<T>>? other)
+    private class ButtonList<T>(uint[] binary, Dictionary<T, Button<T>>? other)
         : IReadOnlyList<Button<T>>
         where T : unmanaged, Enum
     {
@@ -297,7 +297,7 @@ public static class InputMarshal
     /// <typeparamref name="T"/> is not a supported button name type.
     /// </returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int GetButtonListCount<T>()
+    private static int GetButtonListCount<T>()
     {
         if (typeof(T) == typeof(JoystickButton))
         {
@@ -341,7 +341,7 @@ public static class InputMarshal
     /// <typeparam name="T">The button name type.</typeparam>
     /// <returns>The button list.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)] // <-- generic specialisation
-    public static ButtonReadOnlyList<T> AsButtonList<T>(this InputReadOnlyList<Button<T>> list)
+    private static ButtonReadOnlyList<T> AsButtonList<T>(this InputReadOnlyList<Button<T>> list)
         where T : unmanaged, Enum => new(list);
 
     /// <summary>
@@ -350,7 +350,7 @@ public static class InputMarshal
     /// <param name="list">The list.</param>
     /// <typeparam name="T">The button name type.</typeparam>
     /// <returns>The button list.</returns>
-    public static InputReadOnlyList<Button<T>> AsInputList<T>(this ButtonReadOnlyList<T> list)
+    private static InputReadOnlyList<Button<T>> AsInputList<T>(this ButtonReadOnlyList<T> list)
         where T : unmanaged, Enum => new(list);
 
     /// <summary>
@@ -362,7 +362,7 @@ public static class InputMarshal
     /// <typeparam name="T">The element type.</typeparam>
     /// <returns>The list.</returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)] // <-- generic specialisation
-    public static ListOwner<T> CreateList<T>(int capacity = 0)
+    private static ListOwner<T> CreateList<T>(int capacity = 0)
     {
         if (typeof(T) == typeof(Button<KeyName>))
         {

@@ -57,7 +57,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
             numLockActive: () => (_modState & Sdl.KmodNum) == Sdl.KmodNum);
     }
 
-    protected internal override void Initialize()
+    protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
     {
 
     }
@@ -267,7 +267,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     private class ButtonStates : IReadOnlyList<Button<KeyName>>
     {
-        private byte[] _keyPressures = new byte[EnumInfo<KeyName>.ValueIndexOf(EnumInfo<KeyName>.MaxValue) + 1];
+        private byte[] _keyPressures = new byte[EnumInfo<KeyName>.MaxValue.Index() + 1];
 
         static ButtonStates()
         {

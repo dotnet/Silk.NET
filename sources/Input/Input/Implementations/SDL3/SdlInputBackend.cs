@@ -349,7 +349,7 @@ internal partial class SdlInputBackend : IInputBackend
                         gamepad.AddButtonEvent(evt.Gbutton.Button, evt.Gbutton.Down, evt.Gbutton.Timestamp, timestamp);
                         break;
                     case EventType.GamepadRemapped:
-                        gamepad.Remap();
+                        gamepad.Remap(timestamp, evt.Common.Timestamp);
                         break;
 
                     // todo - sensor + touchpad

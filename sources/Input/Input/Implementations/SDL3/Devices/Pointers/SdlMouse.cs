@@ -26,13 +26,11 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         Cursor = cursor;
     }
 
-    protected internal override void Initialize()
+    protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
     {
         float x = 0, y = 0;
-        var nowSdl = NativeBackend.GetTicks();
-        var now = Stopwatch.GetTimestamp();
         var mouseInputFlags = GetMouseState(ref x, ref y);
-        ApplyMouseButtonState(mouseInputFlags, nowSdl, now);
+        ApplyMouseButtonState(mouseInputFlags, sdlTimestamp, timestamp);
 
         var window = NativeBackend.GetMouseFocus();
         uint windowId;
@@ -51,7 +49,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 
 
         // var pressure = _state.Buttons[PointerButton.Primary].Pressure;
-        AddOrUpdatePoint(null, windowId, new Vector3(x, y, 0), null, DownState, null, true, nowSdl, now);
+        AddOrUpdatePoint(null, windowId, new Vector3(x, y, 0), null, DownState, null, true, sdlTimestamp, timestamp);
         // var point = _unboundedPointerTarget.GetPoint(this, 0);
     }
 

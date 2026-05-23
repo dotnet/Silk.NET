@@ -36,7 +36,7 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
         SdlDeviceId = sdlDeviceId;
     }
 
-    protected internal abstract void Initialize();
+    protected internal abstract void Initialize(long timestamp, ulong sdlTimestamp);
 
     protected abstract void Release();
 

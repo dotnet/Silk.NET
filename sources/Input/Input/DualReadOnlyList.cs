@@ -22,19 +22,27 @@ public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
     /// <summary>
     /// The first/leftmost element.
     /// </summary>
-    public T Left => _left();
+    public T Left
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => _left();
+    }
 
     /// <summary>
     /// The second/rightmost element.
     /// </summary>
-    public T Right => _right();
+    public T Right
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => _right();
+    }
 
 
     /// <inheritdoc />
     public IEnumerator<T> GetEnumerator()
     {
-        yield return Left;
-        yield return Right;
+        yield return _left();
+        yield return _right();
     }
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
@@ -46,11 +54,10 @@ public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
     public T this[int index] =>
         index switch
         {
-            0 => Left,
-            1 => Right,
+            0 => _left(),
+            1 => _right(),
             _ => throw new IndexOutOfRangeException(),
         };
-
 
 
     private readonly Func<T> _left;
