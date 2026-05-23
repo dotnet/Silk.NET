@@ -14,19 +14,25 @@ public class IdentifierRenamingTransformer : LocationTransformer
 {
     private ISymbol symbol = null!;
 
-    private readonly IReadOnlyDictionary<string, List<(ISymbol Symbol, string NewName)>> newNameLookup;
+    private readonly IReadOnlyDictionary<
+        string,
+        List<(ISymbol Symbol, string NewName)>
+    > newNameLookup;
 
     /// <summary>
     /// Creates a new IdentifierRenamingTransformer.
     /// </summary>
     /// <param name="newNames">The new names for each symbol</param>
-    public IdentifierRenamingTransformer(IEnumerable<(ISymbol Symbol, string NewName)> newNames) : this(CreateNameLookup(newNames)) {}
+    public IdentifierRenamingTransformer(IEnumerable<(ISymbol Symbol, string NewName)> newNames)
+        : this(CreateNameLookup(newNames)) { }
 
     /// <summary>
     /// Creates a new IdentifierRenamingTransformer.
     /// </summary>
     /// <param name="newNameLookup">The new names for each symbol grouped by symbol name.</param>
-    public IdentifierRenamingTransformer(IReadOnlyDictionary<string, List<(ISymbol Symbol, string NewName)>> newNameLookup)
+    public IdentifierRenamingTransformer(
+        IReadOnlyDictionary<string, List<(ISymbol Symbol, string NewName)>> newNameLookup
+    )
     {
         this.newNameLookup = newNameLookup;
     }
@@ -34,9 +40,14 @@ public class IdentifierRenamingTransformer : LocationTransformer
     /// <summary>
     /// Creates a name lookup dictionary designed for <see cref="IdentifierRenamingTransformer"/>.
     /// </summary>
-    public static IReadOnlyDictionary<string, List<(ISymbol Symbol, string NewName)>> CreateNameLookup(IEnumerable<(ISymbol Symbol, string NewName)> names)
+    public static IReadOnlyDictionary<
+        string,
+        List<(ISymbol Symbol, string NewName)>
+    > CreateNameLookup(IEnumerable<(ISymbol Symbol, string NewName)> names)
     {
-        return names.GroupBy(t => t.Symbol.Name).ToDictionary(group => group.Key, group => group.ToList());
+        return names
+            .GroupBy(t => t.Symbol.Name)
+            .ToDictionary(group => group.Key, group => group.ToList());
     }
 
     /// <inheritdoc />
@@ -68,7 +79,7 @@ public class IdentifierRenamingTransformer : LocationTransformer
         return currentNameIdentifier;
     }
 
-     // ----- Types -----
+    // ----- Types -----
 
     /// <inheritdoc />
     public override SyntaxNode VisitClassDeclaration(ClassDeclarationSyntax node)

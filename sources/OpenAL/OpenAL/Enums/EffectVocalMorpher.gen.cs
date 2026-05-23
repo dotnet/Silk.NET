@@ -10,13 +10,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("EffectVocalMorpher")]
 public enum EffectVocalMorpher : uint
 {
-    Phonemea = unchecked((uint)0x0001),
-    PhonemeaCoarseTuning = unchecked((uint)0x0002),
-    Phonemeb = unchecked((uint)0x0003),
-    PhonemebCoarseTuning = unchecked((uint)0x0004),
-    Waveform = unchecked((uint)0x0005),
-    Rate = unchecked((uint)0x0006),
+    [NativeName("AL_VOCAL_MORPHER_PHONEMEA")]
+    Phonemea = 1,
+
+    [NativeName("AL_VOCAL_MORPHER_PHONEMEA_COARSE_TUNING")]
+    PhonemeaCoarseTuning = 2,
+
+    [NativeName("AL_VOCAL_MORPHER_PHONEMEB")]
+    Phonemeb = 3,
+
+    [NativeName("AL_VOCAL_MORPHER_PHONEMEB_COARSE_TUNING")]
+    PhonemebCoarseTuning = 4,
+
+    [NativeName("AL_VOCAL_MORPHER_WAVEFORM")]
+    Waveform = 5,
+
+    [NativeName("AL_VOCAL_MORPHER_RATE")]
+    Rate = 6,
 }

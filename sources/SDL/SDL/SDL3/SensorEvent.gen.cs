@@ -7,22 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_SensorEvent")]
 public partial struct SensorEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public ulong Timestamp;
 
-    [NativeTypeName("SDL_SensorID")]
+    [NativeName("which")]
     public uint Which;
 
-    [NativeTypeName("float[6]")]
+    [NativeName("data")]
     public SensorEventData Data;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("sensor_timestamp")]
     public ulong SensorTimestamp;
 }

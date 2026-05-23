@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAttachmentSampleCountInfoAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AttachmentSampleCountInfoAMD
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -20,7 +22,7 @@ public unsafe partial struct AttachmentSampleCountInfoAMD
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +32,7 @@ public unsafe partial struct AttachmentSampleCountInfoAMD
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("colorAttachmentCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +42,7 @@ public unsafe partial struct AttachmentSampleCountInfoAMD
     )]
     public uint ColorAttachmentCount;
 
-    [NativeTypeName("const VkSampleCountFlagBits *")]
+    [NativeName("pColorAttachmentSamples")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,6 +52,7 @@ public unsafe partial struct AttachmentSampleCountInfoAMD
     )]
     public SampleCountFlags* PColorAttachmentSamples;
 
+    [NativeName("depthStencilAttachmentSamples")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkFormat")]
 [SupportedApiProfile("vulkan")]
 public enum Format : uint
 {
+    [NativeName("VK_FORMAT_UNDEFINED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,6 +41,7 @@ public enum Format : uint
     )]
     Undefined = 0,
 
+    [NativeName("VK_FORMAT_R4G4_UNORM_PACK8")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,6 +70,7 @@ public enum Format : uint
     )]
     R4G4UnormPack8 = 1,
 
+    [NativeName("VK_FORMAT_R4G4B4A4_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,6 +99,7 @@ public enum Format : uint
     )]
     R4G4B4A4UnormPack16 = 2,
 
+    [NativeName("VK_FORMAT_B4G4R4A4_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -124,6 +128,7 @@ public enum Format : uint
     )]
     B4G4R4A4UnormPack16 = 3,
 
+    [NativeName("VK_FORMAT_R5G6B5_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -152,6 +157,7 @@ public enum Format : uint
     )]
     R5G6B5UnormPack16 = 4,
 
+    [NativeName("VK_FORMAT_B5G6R5_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -180,6 +186,7 @@ public enum Format : uint
     )]
     B5G6R5UnormPack16 = 5,
 
+    [NativeName("VK_FORMAT_R5G5B5A1_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -208,6 +215,7 @@ public enum Format : uint
     )]
     R5G5B5A1UnormPack16 = 6,
 
+    [NativeName("VK_FORMAT_B5G5R5A1_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -236,6 +244,7 @@ public enum Format : uint
     )]
     B5G5R5A1UnormPack16 = 7,
 
+    [NativeName("VK_FORMAT_A1R5G5B5_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -264,6 +273,7 @@ public enum Format : uint
     )]
     A1R5G5B5UnormPack16 = 8,
 
+    [NativeName("VK_FORMAT_R8_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -292,6 +302,7 @@ public enum Format : uint
     )]
     R8Unorm = 9,
 
+    [NativeName("VK_FORMAT_R8_SNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -320,6 +331,7 @@ public enum Format : uint
     )]
     R8Snorm = 10,
 
+    [NativeName("VK_FORMAT_R8_USCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -348,6 +360,7 @@ public enum Format : uint
     )]
     R8Uscaled = 11,
 
+    [NativeName("VK_FORMAT_R8_SSCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -376,6 +389,7 @@ public enum Format : uint
     )]
     R8Sscaled = 12,
 
+    [NativeName("VK_FORMAT_R8_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -404,6 +418,7 @@ public enum Format : uint
     )]
     R8Uint = 13,
 
+    [NativeName("VK_FORMAT_R8_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -432,6 +447,7 @@ public enum Format : uint
     )]
     R8Sint = 14,
 
+    [NativeName("VK_FORMAT_R8_SRGB")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -460,6 +476,7 @@ public enum Format : uint
     )]
     R8Srgb = 15,
 
+    [NativeName("VK_FORMAT_R8G8_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -488,6 +505,7 @@ public enum Format : uint
     )]
     R8G8Unorm = 16,
 
+    [NativeName("VK_FORMAT_R8G8_SNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -516,6 +534,7 @@ public enum Format : uint
     )]
     R8G8Snorm = 17,
 
+    [NativeName("VK_FORMAT_R8G8_USCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -544,6 +563,7 @@ public enum Format : uint
     )]
     R8G8Uscaled = 18,
 
+    [NativeName("VK_FORMAT_R8G8_SSCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -572,6 +592,7 @@ public enum Format : uint
     )]
     R8G8Sscaled = 19,
 
+    [NativeName("VK_FORMAT_R8G8_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -600,6 +621,7 @@ public enum Format : uint
     )]
     R8G8Uint = 20,
 
+    [NativeName("VK_FORMAT_R8G8_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -628,6 +650,7 @@ public enum Format : uint
     )]
     R8G8Sint = 21,
 
+    [NativeName("VK_FORMAT_R8G8_SRGB")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -656,6 +679,7 @@ public enum Format : uint
     )]
     R8G8Srgb = 22,
 
+    [NativeName("VK_FORMAT_R8G8B8_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -684,6 +708,7 @@ public enum Format : uint
     )]
     R8G8B8Unorm = 23,
 
+    [NativeName("VK_FORMAT_R8G8B8_SNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -712,6 +737,7 @@ public enum Format : uint
     )]
     R8G8B8Snorm = 24,
 
+    [NativeName("VK_FORMAT_R8G8B8_USCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -740,6 +766,7 @@ public enum Format : uint
     )]
     R8G8B8Uscaled = 25,
 
+    [NativeName("VK_FORMAT_R8G8B8_SSCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -768,6 +795,7 @@ public enum Format : uint
     )]
     R8G8B8Sscaled = 26,
 
+    [NativeName("VK_FORMAT_R8G8B8_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -796,6 +824,7 @@ public enum Format : uint
     )]
     R8G8B8Uint = 27,
 
+    [NativeName("VK_FORMAT_R8G8B8_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -824,6 +853,7 @@ public enum Format : uint
     )]
     R8G8B8Sint = 28,
 
+    [NativeName("VK_FORMAT_R8G8B8_SRGB")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -852,6 +882,7 @@ public enum Format : uint
     )]
     R8G8B8Srgb = 29,
 
+    [NativeName("VK_FORMAT_B8G8R8_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -880,6 +911,7 @@ public enum Format : uint
     )]
     B8G8R8Unorm = 30,
 
+    [NativeName("VK_FORMAT_B8G8R8_SNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -908,6 +940,7 @@ public enum Format : uint
     )]
     B8G8R8Snorm = 31,
 
+    [NativeName("VK_FORMAT_B8G8R8_USCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -936,6 +969,7 @@ public enum Format : uint
     )]
     B8G8R8Uscaled = 32,
 
+    [NativeName("VK_FORMAT_B8G8R8_SSCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -964,6 +998,7 @@ public enum Format : uint
     )]
     B8G8R8Sscaled = 33,
 
+    [NativeName("VK_FORMAT_B8G8R8_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -992,6 +1027,7 @@ public enum Format : uint
     )]
     B8G8R8Uint = 34,
 
+    [NativeName("VK_FORMAT_B8G8R8_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1020,6 +1056,7 @@ public enum Format : uint
     )]
     B8G8R8Sint = 35,
 
+    [NativeName("VK_FORMAT_B8G8R8_SRGB")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1048,6 +1085,7 @@ public enum Format : uint
     )]
     B8G8R8Srgb = 36,
 
+    [NativeName("VK_FORMAT_R8G8B8A8_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1076,6 +1114,7 @@ public enum Format : uint
     )]
     R8G8B8A8Unorm = 37,
 
+    [NativeName("VK_FORMAT_R8G8B8A8_SNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1104,6 +1143,7 @@ public enum Format : uint
     )]
     R8G8B8A8Snorm = 38,
 
+    [NativeName("VK_FORMAT_R8G8B8A8_USCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1132,6 +1172,7 @@ public enum Format : uint
     )]
     R8G8B8A8Uscaled = 39,
 
+    [NativeName("VK_FORMAT_R8G8B8A8_SSCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1160,6 +1201,7 @@ public enum Format : uint
     )]
     R8G8B8A8Sscaled = 40,
 
+    [NativeName("VK_FORMAT_R8G8B8A8_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1188,6 +1230,7 @@ public enum Format : uint
     )]
     R8G8B8A8Uint = 41,
 
+    [NativeName("VK_FORMAT_R8G8B8A8_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1216,6 +1259,7 @@ public enum Format : uint
     )]
     R8G8B8A8Sint = 42,
 
+    [NativeName("VK_FORMAT_R8G8B8A8_SRGB")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1244,6 +1288,7 @@ public enum Format : uint
     )]
     R8G8B8A8Srgb = 43,
 
+    [NativeName("VK_FORMAT_B8G8R8A8_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1272,6 +1317,7 @@ public enum Format : uint
     )]
     B8G8R8A8Unorm = 44,
 
+    [NativeName("VK_FORMAT_B8G8R8A8_SNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1300,6 +1346,7 @@ public enum Format : uint
     )]
     B8G8R8A8Snorm = 45,
 
+    [NativeName("VK_FORMAT_B8G8R8A8_USCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1328,6 +1375,7 @@ public enum Format : uint
     )]
     B8G8R8A8Uscaled = 46,
 
+    [NativeName("VK_FORMAT_B8G8R8A8_SSCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1356,6 +1404,7 @@ public enum Format : uint
     )]
     B8G8R8A8Sscaled = 47,
 
+    [NativeName("VK_FORMAT_B8G8R8A8_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1384,6 +1433,7 @@ public enum Format : uint
     )]
     B8G8R8A8Uint = 48,
 
+    [NativeName("VK_FORMAT_B8G8R8A8_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1412,6 +1462,7 @@ public enum Format : uint
     )]
     B8G8R8A8Sint = 49,
 
+    [NativeName("VK_FORMAT_B8G8R8A8_SRGB")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1440,6 +1491,7 @@ public enum Format : uint
     )]
     B8G8R8A8Srgb = 50,
 
+    [NativeName("VK_FORMAT_A8B8G8R8_UNORM_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1468,6 +1520,7 @@ public enum Format : uint
     )]
     A8B8G8R8UnormPack32 = 51,
 
+    [NativeName("VK_FORMAT_A8B8G8R8_SNORM_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1496,6 +1549,7 @@ public enum Format : uint
     )]
     A8B8G8R8SnormPack32 = 52,
 
+    [NativeName("VK_FORMAT_A8B8G8R8_USCALED_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1524,6 +1578,7 @@ public enum Format : uint
     )]
     A8B8G8R8UscaledPack32 = 53,
 
+    [NativeName("VK_FORMAT_A8B8G8R8_SSCALED_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1552,6 +1607,7 @@ public enum Format : uint
     )]
     A8B8G8R8SscaledPack32 = 54,
 
+    [NativeName("VK_FORMAT_A8B8G8R8_UINT_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1580,6 +1636,7 @@ public enum Format : uint
     )]
     A8B8G8R8UintPack32 = 55,
 
+    [NativeName("VK_FORMAT_A8B8G8R8_SINT_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1608,6 +1665,7 @@ public enum Format : uint
     )]
     A8B8G8R8SintPack32 = 56,
 
+    [NativeName("VK_FORMAT_A8B8G8R8_SRGB_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1636,6 +1694,7 @@ public enum Format : uint
     )]
     A8B8G8R8SrgbPack32 = 57,
 
+    [NativeName("VK_FORMAT_A2R10G10B10_UNORM_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1664,6 +1723,7 @@ public enum Format : uint
     )]
     A2R10G10B10UnormPack32 = 58,
 
+    [NativeName("VK_FORMAT_A2R10G10B10_SNORM_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1692,6 +1752,7 @@ public enum Format : uint
     )]
     A2R10G10B10SnormPack32 = 59,
 
+    [NativeName("VK_FORMAT_A2R10G10B10_USCALED_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1720,6 +1781,7 @@ public enum Format : uint
     )]
     A2R10G10B10UscaledPack32 = 60,
 
+    [NativeName("VK_FORMAT_A2R10G10B10_SSCALED_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1748,6 +1810,7 @@ public enum Format : uint
     )]
     A2R10G10B10SscaledPack32 = 61,
 
+    [NativeName("VK_FORMAT_A2R10G10B10_UINT_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1776,6 +1839,7 @@ public enum Format : uint
     )]
     A2R10G10B10UintPack32 = 62,
 
+    [NativeName("VK_FORMAT_A2R10G10B10_SINT_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1804,6 +1868,7 @@ public enum Format : uint
     )]
     A2R10G10B10SintPack32 = 63,
 
+    [NativeName("VK_FORMAT_A2B10G10R10_UNORM_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1832,6 +1897,7 @@ public enum Format : uint
     )]
     A2B10G10R10UnormPack32 = 64,
 
+    [NativeName("VK_FORMAT_A2B10G10R10_SNORM_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1860,6 +1926,7 @@ public enum Format : uint
     )]
     A2B10G10R10SnormPack32 = 65,
 
+    [NativeName("VK_FORMAT_A2B10G10R10_USCALED_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1888,6 +1955,7 @@ public enum Format : uint
     )]
     A2B10G10R10UscaledPack32 = 66,
 
+    [NativeName("VK_FORMAT_A2B10G10R10_SSCALED_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1916,6 +1984,7 @@ public enum Format : uint
     )]
     A2B10G10R10SscaledPack32 = 67,
 
+    [NativeName("VK_FORMAT_A2B10G10R10_UINT_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1944,6 +2013,7 @@ public enum Format : uint
     )]
     A2B10G10R10UintPack32 = 68,
 
+    [NativeName("VK_FORMAT_A2B10G10R10_SINT_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1972,6 +2042,7 @@ public enum Format : uint
     )]
     A2B10G10R10SintPack32 = 69,
 
+    [NativeName("VK_FORMAT_R16_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2000,6 +2071,7 @@ public enum Format : uint
     )]
     R16Unorm = 70,
 
+    [NativeName("VK_FORMAT_R16_SNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2028,6 +2100,7 @@ public enum Format : uint
     )]
     R16Snorm = 71,
 
+    [NativeName("VK_FORMAT_R16_USCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2056,6 +2129,7 @@ public enum Format : uint
     )]
     R16Uscaled = 72,
 
+    [NativeName("VK_FORMAT_R16_SSCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2084,6 +2158,7 @@ public enum Format : uint
     )]
     R16Sscaled = 73,
 
+    [NativeName("VK_FORMAT_R16_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2112,6 +2187,7 @@ public enum Format : uint
     )]
     R16Uint = 74,
 
+    [NativeName("VK_FORMAT_R16_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2140,6 +2216,7 @@ public enum Format : uint
     )]
     R16Sint = 75,
 
+    [NativeName("VK_FORMAT_R16_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2168,6 +2245,7 @@ public enum Format : uint
     )]
     R16Sfloat = 76,
 
+    [NativeName("VK_FORMAT_R16G16_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2196,6 +2274,7 @@ public enum Format : uint
     )]
     R16G16Unorm = 77,
 
+    [NativeName("VK_FORMAT_R16G16_SNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2224,6 +2303,7 @@ public enum Format : uint
     )]
     R16G16Snorm = 78,
 
+    [NativeName("VK_FORMAT_R16G16_USCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2252,6 +2332,7 @@ public enum Format : uint
     )]
     R16G16Uscaled = 79,
 
+    [NativeName("VK_FORMAT_R16G16_SSCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2280,6 +2361,7 @@ public enum Format : uint
     )]
     R16G16Sscaled = 80,
 
+    [NativeName("VK_FORMAT_R16G16_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2308,6 +2390,7 @@ public enum Format : uint
     )]
     R16G16Uint = 81,
 
+    [NativeName("VK_FORMAT_R16G16_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2336,6 +2419,7 @@ public enum Format : uint
     )]
     R16G16Sint = 82,
 
+    [NativeName("VK_FORMAT_R16G16_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2364,6 +2448,7 @@ public enum Format : uint
     )]
     R16G16Sfloat = 83,
 
+    [NativeName("VK_FORMAT_R16G16B16_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2392,6 +2477,7 @@ public enum Format : uint
     )]
     R16G16B16Unorm = 84,
 
+    [NativeName("VK_FORMAT_R16G16B16_SNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2420,6 +2506,7 @@ public enum Format : uint
     )]
     R16G16B16Snorm = 85,
 
+    [NativeName("VK_FORMAT_R16G16B16_USCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2448,6 +2535,7 @@ public enum Format : uint
     )]
     R16G16B16Uscaled = 86,
 
+    [NativeName("VK_FORMAT_R16G16B16_SSCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2476,6 +2564,7 @@ public enum Format : uint
     )]
     R16G16B16Sscaled = 87,
 
+    [NativeName("VK_FORMAT_R16G16B16_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2504,6 +2593,7 @@ public enum Format : uint
     )]
     R16G16B16Uint = 88,
 
+    [NativeName("VK_FORMAT_R16G16B16_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2532,6 +2622,7 @@ public enum Format : uint
     )]
     R16G16B16Sint = 89,
 
+    [NativeName("VK_FORMAT_R16G16B16_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2560,6 +2651,7 @@ public enum Format : uint
     )]
     R16G16B16Sfloat = 90,
 
+    [NativeName("VK_FORMAT_R16G16B16A16_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2588,6 +2680,7 @@ public enum Format : uint
     )]
     R16G16B16A16Unorm = 91,
 
+    [NativeName("VK_FORMAT_R16G16B16A16_SNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2616,6 +2709,7 @@ public enum Format : uint
     )]
     R16G16B16A16Snorm = 92,
 
+    [NativeName("VK_FORMAT_R16G16B16A16_USCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2644,6 +2738,7 @@ public enum Format : uint
     )]
     R16G16B16A16Uscaled = 93,
 
+    [NativeName("VK_FORMAT_R16G16B16A16_SSCALED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2672,6 +2767,7 @@ public enum Format : uint
     )]
     R16G16B16A16Sscaled = 94,
 
+    [NativeName("VK_FORMAT_R16G16B16A16_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2700,6 +2796,7 @@ public enum Format : uint
     )]
     R16G16B16A16Uint = 95,
 
+    [NativeName("VK_FORMAT_R16G16B16A16_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2728,6 +2825,7 @@ public enum Format : uint
     )]
     R16G16B16A16Sint = 96,
 
+    [NativeName("VK_FORMAT_R16G16B16A16_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2756,6 +2854,7 @@ public enum Format : uint
     )]
     R16G16B16A16Sfloat = 97,
 
+    [NativeName("VK_FORMAT_R32_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2784,6 +2883,7 @@ public enum Format : uint
     )]
     R32Uint = 98,
 
+    [NativeName("VK_FORMAT_R32_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2812,6 +2912,7 @@ public enum Format : uint
     )]
     R32Sint = 99,
 
+    [NativeName("VK_FORMAT_R32_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2840,6 +2941,7 @@ public enum Format : uint
     )]
     R32Sfloat = 100,
 
+    [NativeName("VK_FORMAT_R32G32_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2868,6 +2970,7 @@ public enum Format : uint
     )]
     R32G32Uint = 101,
 
+    [NativeName("VK_FORMAT_R32G32_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2896,6 +2999,7 @@ public enum Format : uint
     )]
     R32G32Sint = 102,
 
+    [NativeName("VK_FORMAT_R32G32_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2924,6 +3028,7 @@ public enum Format : uint
     )]
     R32G32Sfloat = 103,
 
+    [NativeName("VK_FORMAT_R32G32B32_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2952,6 +3057,7 @@ public enum Format : uint
     )]
     R32G32B32Uint = 104,
 
+    [NativeName("VK_FORMAT_R32G32B32_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2980,6 +3086,7 @@ public enum Format : uint
     )]
     R32G32B32Sint = 105,
 
+    [NativeName("VK_FORMAT_R32G32B32_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3008,6 +3115,7 @@ public enum Format : uint
     )]
     R32G32B32Sfloat = 106,
 
+    [NativeName("VK_FORMAT_R32G32B32A32_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3036,6 +3144,7 @@ public enum Format : uint
     )]
     R32G32B32A32Uint = 107,
 
+    [NativeName("VK_FORMAT_R32G32B32A32_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3064,6 +3173,7 @@ public enum Format : uint
     )]
     R32G32B32A32Sint = 108,
 
+    [NativeName("VK_FORMAT_R32G32B32A32_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3092,6 +3202,7 @@ public enum Format : uint
     )]
     R32G32B32A32Sfloat = 109,
 
+    [NativeName("VK_FORMAT_R64_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3120,6 +3231,7 @@ public enum Format : uint
     )]
     R64Uint = 110,
 
+    [NativeName("VK_FORMAT_R64_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3148,6 +3260,7 @@ public enum Format : uint
     )]
     R64Sint = 111,
 
+    [NativeName("VK_FORMAT_R64_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3176,6 +3289,7 @@ public enum Format : uint
     )]
     R64Sfloat = 112,
 
+    [NativeName("VK_FORMAT_R64G64_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3204,6 +3318,7 @@ public enum Format : uint
     )]
     R64G64Uint = 113,
 
+    [NativeName("VK_FORMAT_R64G64_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3232,6 +3347,7 @@ public enum Format : uint
     )]
     R64G64Sint = 114,
 
+    [NativeName("VK_FORMAT_R64G64_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3260,6 +3376,7 @@ public enum Format : uint
     )]
     R64G64Sfloat = 115,
 
+    [NativeName("VK_FORMAT_R64G64B64_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3288,6 +3405,7 @@ public enum Format : uint
     )]
     R64G64B64Uint = 116,
 
+    [NativeName("VK_FORMAT_R64G64B64_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3316,6 +3434,7 @@ public enum Format : uint
     )]
     R64G64B64Sint = 117,
 
+    [NativeName("VK_FORMAT_R64G64B64_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3344,6 +3463,7 @@ public enum Format : uint
     )]
     R64G64B64Sfloat = 118,
 
+    [NativeName("VK_FORMAT_R64G64B64A64_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3372,6 +3492,7 @@ public enum Format : uint
     )]
     R64G64B64A64Uint = 119,
 
+    [NativeName("VK_FORMAT_R64G64B64A64_SINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3400,6 +3521,7 @@ public enum Format : uint
     )]
     R64G64B64A64Sint = 120,
 
+    [NativeName("VK_FORMAT_R64G64B64A64_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3428,6 +3550,7 @@ public enum Format : uint
     )]
     R64G64B64A64Sfloat = 121,
 
+    [NativeName("VK_FORMAT_B10G11R11_UFLOAT_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3456,6 +3579,7 @@ public enum Format : uint
     )]
     B10G11R11UfloatPack32 = 122,
 
+    [NativeName("VK_FORMAT_E5B9G9R9_UFLOAT_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3484,6 +3608,7 @@ public enum Format : uint
     )]
     E5B9G9R9UfloatPack32 = 123,
 
+    [NativeName("VK_FORMAT_D16_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3512,6 +3637,7 @@ public enum Format : uint
     )]
     D16Unorm = 124,
 
+    [NativeName("VK_FORMAT_X8_D24_UNORM_PACK32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3540,6 +3666,7 @@ public enum Format : uint
     )]
     X8D24UnormPack32 = 125,
 
+    [NativeName("VK_FORMAT_D32_SFLOAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3568,6 +3695,7 @@ public enum Format : uint
     )]
     D32Sfloat = 126,
 
+    [NativeName("VK_FORMAT_S8_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3596,6 +3724,7 @@ public enum Format : uint
     )]
     S8Uint = 127,
 
+    [NativeName("VK_FORMAT_D16_UNORM_S8_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3624,6 +3753,7 @@ public enum Format : uint
     )]
     D16UnormS8Uint = 128,
 
+    [NativeName("VK_FORMAT_D24_UNORM_S8_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3652,6 +3782,7 @@ public enum Format : uint
     )]
     D24UnormS8Uint = 129,
 
+    [NativeName("VK_FORMAT_D32_SFLOAT_S8_UINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3680,6 +3811,7 @@ public enum Format : uint
     )]
     D32SfloatS8Uint = 130,
 
+    [NativeName("VK_FORMAT_BC1_RGB_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3708,6 +3840,7 @@ public enum Format : uint
     )]
     Bc1RgbUnormBlock = 131,
 
+    [NativeName("VK_FORMAT_BC1_RGB_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3736,6 +3869,7 @@ public enum Format : uint
     )]
     Bc1RgbSrgbBlock = 132,
 
+    [NativeName("VK_FORMAT_BC1_RGBA_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3764,6 +3898,7 @@ public enum Format : uint
     )]
     Bc1RgbaUnormBlock = 133,
 
+    [NativeName("VK_FORMAT_BC1_RGBA_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3792,6 +3927,7 @@ public enum Format : uint
     )]
     Bc1RgbaSrgbBlock = 134,
 
+    [NativeName("VK_FORMAT_BC2_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3820,6 +3956,7 @@ public enum Format : uint
     )]
     Bc2UnormBlock = 135,
 
+    [NativeName("VK_FORMAT_BC2_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3848,6 +3985,7 @@ public enum Format : uint
     )]
     Bc2SrgbBlock = 136,
 
+    [NativeName("VK_FORMAT_BC3_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3876,6 +4014,7 @@ public enum Format : uint
     )]
     Bc3UnormBlock = 137,
 
+    [NativeName("VK_FORMAT_BC3_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3904,6 +4043,7 @@ public enum Format : uint
     )]
     Bc3SrgbBlock = 138,
 
+    [NativeName("VK_FORMAT_BC4_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3932,6 +4072,7 @@ public enum Format : uint
     )]
     Bc4UnormBlock = 139,
 
+    [NativeName("VK_FORMAT_BC4_SNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3960,6 +4101,7 @@ public enum Format : uint
     )]
     Bc4SnormBlock = 140,
 
+    [NativeName("VK_FORMAT_BC5_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3988,6 +4130,7 @@ public enum Format : uint
     )]
     Bc5UnormBlock = 141,
 
+    [NativeName("VK_FORMAT_BC5_SNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4016,6 +4159,7 @@ public enum Format : uint
     )]
     Bc5SnormBlock = 142,
 
+    [NativeName("VK_FORMAT_BC6H_UFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4044,6 +4188,7 @@ public enum Format : uint
     )]
     Bc6HUfloatBlock = 143,
 
+    [NativeName("VK_FORMAT_BC6H_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4072,6 +4217,7 @@ public enum Format : uint
     )]
     Bc6HSfloatBlock = 144,
 
+    [NativeName("VK_FORMAT_BC7_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4100,6 +4246,7 @@ public enum Format : uint
     )]
     Bc7UnormBlock = 145,
 
+    [NativeName("VK_FORMAT_BC7_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4128,6 +4275,7 @@ public enum Format : uint
     )]
     Bc7SrgbBlock = 146,
 
+    [NativeName("VK_FORMAT_ETC2_R8G8B8_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4156,6 +4304,7 @@ public enum Format : uint
     )]
     Etc2R8G8B8UnormBlock = 147,
 
+    [NativeName("VK_FORMAT_ETC2_R8G8B8_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4184,6 +4333,7 @@ public enum Format : uint
     )]
     Etc2R8G8B8SrgbBlock = 148,
 
+    [NativeName("VK_FORMAT_ETC2_R8G8B8A1_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4212,6 +4362,7 @@ public enum Format : uint
     )]
     Etc2R8G8B8A1UnormBlock = 149,
 
+    [NativeName("VK_FORMAT_ETC2_R8G8B8A1_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4240,6 +4391,7 @@ public enum Format : uint
     )]
     Etc2R8G8B8A1SrgbBlock = 150,
 
+    [NativeName("VK_FORMAT_ETC2_R8G8B8A8_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4268,6 +4420,7 @@ public enum Format : uint
     )]
     Etc2R8G8B8A8UnormBlock = 151,
 
+    [NativeName("VK_FORMAT_ETC2_R8G8B8A8_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4296,6 +4449,7 @@ public enum Format : uint
     )]
     Etc2R8G8B8A8SrgbBlock = 152,
 
+    [NativeName("VK_FORMAT_EAC_R11_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4324,6 +4478,7 @@ public enum Format : uint
     )]
     EacR11UnormBlock = 153,
 
+    [NativeName("VK_FORMAT_EAC_R11_SNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4352,6 +4507,7 @@ public enum Format : uint
     )]
     EacR11SnormBlock = 154,
 
+    [NativeName("VK_FORMAT_EAC_R11G11_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4380,6 +4536,7 @@ public enum Format : uint
     )]
     EacR11G11UnormBlock = 155,
 
+    [NativeName("VK_FORMAT_EAC_R11G11_SNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4408,6 +4565,7 @@ public enum Format : uint
     )]
     EacR11G11SnormBlock = 156,
 
+    [NativeName("VK_FORMAT_ASTC_4x4_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4434,8 +4592,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC4X4UnormBlock = 157,
+    Astc4x4UnormBlock = 157,
 
+    [NativeName("VK_FORMAT_ASTC_4x4_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4462,8 +4621,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC4X4SrgbBlock = 158,
+    Astc4x4SrgbBlock = 158,
 
+    [NativeName("VK_FORMAT_ASTC_5x4_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4490,8 +4650,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X4UnormBlock = 159,
+    Astc5x4UnormBlock = 159,
 
+    [NativeName("VK_FORMAT_ASTC_5x4_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4518,8 +4679,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X4SrgbBlock = 160,
+    Astc5x4SrgbBlock = 160,
 
+    [NativeName("VK_FORMAT_ASTC_5x5_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4546,8 +4708,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X5UnormBlock = 161,
+    Astc5x5UnormBlock = 161,
 
+    [NativeName("VK_FORMAT_ASTC_5x5_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4574,8 +4737,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X5SrgbBlock = 162,
+    Astc5x5SrgbBlock = 162,
 
+    [NativeName("VK_FORMAT_ASTC_6x5_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4602,8 +4766,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X5UnormBlock = 163,
+    Astc6x5UnormBlock = 163,
 
+    [NativeName("VK_FORMAT_ASTC_6x5_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4630,8 +4795,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X5SrgbBlock = 164,
+    Astc6x5SrgbBlock = 164,
 
+    [NativeName("VK_FORMAT_ASTC_6x6_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4658,8 +4824,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X6UnormBlock = 165,
+    Astc6x6UnormBlock = 165,
 
+    [NativeName("VK_FORMAT_ASTC_6x6_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4686,8 +4853,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X6SrgbBlock = 166,
+    Astc6x6SrgbBlock = 166,
 
+    [NativeName("VK_FORMAT_ASTC_8x5_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4714,8 +4882,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X5UnormBlock = 167,
+    Astc8x5UnormBlock = 167,
 
+    [NativeName("VK_FORMAT_ASTC_8x5_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4742,8 +4911,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X5SrgbBlock = 168,
+    Astc8x5SrgbBlock = 168,
 
+    [NativeName("VK_FORMAT_ASTC_8x6_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4770,8 +4940,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X6UnormBlock = 169,
+    Astc8x6UnormBlock = 169,
 
+    [NativeName("VK_FORMAT_ASTC_8x6_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4798,8 +4969,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X6SrgbBlock = 170,
+    Astc8x6SrgbBlock = 170,
 
+    [NativeName("VK_FORMAT_ASTC_8x8_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4826,8 +4998,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X8UnormBlock = 171,
+    Astc8x8UnormBlock = 171,
 
+    [NativeName("VK_FORMAT_ASTC_8x8_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4854,8 +5027,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X8SrgbBlock = 172,
+    Astc8x8SrgbBlock = 172,
 
+    [NativeName("VK_FORMAT_ASTC_10x5_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4882,8 +5056,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X5UnormBlock = 173,
+    Astc10x5UnormBlock = 173,
 
+    [NativeName("VK_FORMAT_ASTC_10x5_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4910,8 +5085,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X5SrgbBlock = 174,
+    Astc10x5SrgbBlock = 174,
 
+    [NativeName("VK_FORMAT_ASTC_10x6_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4938,8 +5114,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X6UnormBlock = 175,
+    Astc10x6UnormBlock = 175,
 
+    [NativeName("VK_FORMAT_ASTC_10x6_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4966,8 +5143,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X6SrgbBlock = 176,
+    Astc10x6SrgbBlock = 176,
 
+    [NativeName("VK_FORMAT_ASTC_10x8_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -4994,8 +5172,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X8UnormBlock = 177,
+    Astc10x8UnormBlock = 177,
 
+    [NativeName("VK_FORMAT_ASTC_10x8_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5022,8 +5201,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X8SrgbBlock = 178,
+    Astc10x8SrgbBlock = 178,
 
+    [NativeName("VK_FORMAT_ASTC_10x10_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5050,8 +5230,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X10UnormBlock = 179,
+    Astc10x10UnormBlock = 179,
 
+    [NativeName("VK_FORMAT_ASTC_10x10_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5078,8 +5259,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X10SrgbBlock = 180,
+    Astc10x10SrgbBlock = 180,
 
+    [NativeName("VK_FORMAT_ASTC_12x10_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5106,8 +5288,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X10UnormBlock = 181,
+    Astc12x10UnormBlock = 181,
 
+    [NativeName("VK_FORMAT_ASTC_12x10_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5134,8 +5317,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X10SrgbBlock = 182,
+    Astc12x10SrgbBlock = 182,
 
+    [NativeName("VK_FORMAT_ASTC_12x12_UNORM_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5162,8 +5346,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X12UnormBlock = 183,
+    Astc12x12UnormBlock = 183,
 
+    [NativeName("VK_FORMAT_ASTC_12x12_SRGB_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5190,8 +5375,9 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X12SrgbBlock = 184,
+    Astc12x12SrgbBlock = 184,
 
+    [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5214,8 +5400,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8G8R8X422Unorm = 1000156000,
+    G8B8G8R8x422Unorm = 1000156000,
 
+    [NativeName("VK_FORMAT_B8G8R8G8_422_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5238,8 +5425,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    B8G8R8G8X422Unorm = 1000156001,
+    B8G8R8G8x422Unorm = 1000156001,
 
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_420_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5262,8 +5450,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8R8X3Plane420Unorm = 1000156002,
+    G8B8R8x3Plane420Unorm = 1000156002,
 
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_420_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5286,8 +5475,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8R8X2Plane420Unorm = 1000156003,
+    G8B8R8x2Plane420Unorm = 1000156003,
 
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_422_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5310,8 +5500,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8R8X3Plane422Unorm = 1000156004,
+    G8B8R8x3Plane422Unorm = 1000156004,
 
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_422_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5334,8 +5525,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8R8X2Plane422Unorm = 1000156005,
+    G8B8R8x2Plane422Unorm = 1000156005,
 
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_444_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5358,8 +5550,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8R8X3Plane444Unorm = 1000156006,
+    G8B8R8x3Plane444Unorm = 1000156006,
 
+    [NativeName("VK_FORMAT_R10X6_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5382,8 +5575,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R10X6UnormPack16 = 1000156007,
+    R10x6UnormPack16 = 1000156007,
 
+    [NativeName("VK_FORMAT_R10X6G10X6_UNORM_2PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5406,8 +5600,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R10X6G10X6Unorm2Pack16 = 1000156008,
+    R10x6G10x6Unorm2Pack16 = 1000156008,
 
+    [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5430,8 +5625,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R10X6G10X6B10X6A10X6Unorm4Pack16 = 1000156009,
+    R10x6G10x6B10x6A10x6Unorm4Pack16 = 1000156009,
 
+    [NativeName("VK_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5454,8 +5650,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6G10X6R10X6X422Unorm4Pack16 = 1000156010,
+    G10x6B10x6G10x6R10x6x422Unorm4Pack16 = 1000156010,
 
+    [NativeName("VK_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5478,8 +5675,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    B10X6G10X6R10X6G10X6X422Unorm4Pack16 = 1000156011,
+    B10x6G10x6R10x6G10x6x422Unorm4Pack16 = 1000156011,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5502,8 +5700,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6R10X6X3Plane420Unorm3Pack16 = 1000156012,
+    G10x6B10x6R10x6x3Plane420Unorm3Pack16 = 1000156012,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5526,8 +5725,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6R10X6X2Plane420Unorm3Pack16 = 1000156013,
+    G10x6B10x6R10x6x2Plane420Unorm3Pack16 = 1000156013,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5550,8 +5750,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6R10X6X3Plane422Unorm3Pack16 = 1000156014,
+    G10x6B10x6R10x6x3Plane422Unorm3Pack16 = 1000156014,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5574,8 +5775,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6R10X6X2Plane422Unorm3Pack16 = 1000156015,
+    G10x6B10x6R10x6x2Plane422Unorm3Pack16 = 1000156015,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5598,8 +5800,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6R10X6X3Plane444Unorm3Pack16 = 1000156016,
+    G10x6B10x6R10x6x3Plane444Unorm3Pack16 = 1000156016,
 
+    [NativeName("VK_FORMAT_R12X4_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5622,8 +5825,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R12X4UnormPack16 = 1000156017,
+    R12x4UnormPack16 = 1000156017,
 
+    [NativeName("VK_FORMAT_R12X4G12X4_UNORM_2PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5646,8 +5850,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R12X4G12X4Unorm2Pack16 = 1000156018,
+    R12x4G12x4Unorm2Pack16 = 1000156018,
 
+    [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5670,8 +5875,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R12X4G12X4B12X4A12X4Unorm4Pack16 = 1000156019,
+    R12x4G12x4B12x4A12x4Unorm4Pack16 = 1000156019,
 
+    [NativeName("VK_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5694,8 +5900,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4G12X4R12X4X422Unorm4Pack16 = 1000156020,
+    G12x4B12x4G12x4R12x4x422Unorm4Pack16 = 1000156020,
 
+    [NativeName("VK_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5718,8 +5925,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    B12X4G12X4R12X4G12X4X422Unorm4Pack16 = 1000156021,
+    B12x4G12x4R12x4G12x4x422Unorm4Pack16 = 1000156021,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5742,8 +5950,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4R12X4X3Plane420Unorm3Pack16 = 1000156022,
+    G12x4B12x4R12x4x3Plane420Unorm3Pack16 = 1000156022,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5766,8 +5975,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4R12X4X2Plane420Unorm3Pack16 = 1000156023,
+    G12x4B12x4R12x4x2Plane420Unorm3Pack16 = 1000156023,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5790,8 +6000,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4R12X4X3Plane422Unorm3Pack16 = 1000156024,
+    G12x4B12x4R12x4x3Plane422Unorm3Pack16 = 1000156024,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5814,8 +6025,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4R12X4X2Plane422Unorm3Pack16 = 1000156025,
+    G12x4B12x4R12x4x2Plane422Unorm3Pack16 = 1000156025,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5838,8 +6050,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4R12X4X3Plane444Unorm3Pack16 = 1000156026,
+    G12x4B12x4R12x4x3Plane444Unorm3Pack16 = 1000156026,
 
+    [NativeName("VK_FORMAT_G16B16G16R16_422_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5862,8 +6075,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16G16R16X422Unorm = 1000156027,
+    G16B16G16R16x422Unorm = 1000156027,
 
+    [NativeName("VK_FORMAT_B16G16R16G16_422_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5886,8 +6100,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    B16G16R16G16X422Unorm = 1000156028,
+    B16G16R16G16x422Unorm = 1000156028,
 
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_420_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5910,8 +6125,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16R16X3Plane420Unorm = 1000156029,
+    G16B16R16x3Plane420Unorm = 1000156029,
 
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_420_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5934,8 +6150,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16R16X2Plane420Unorm = 1000156030,
+    G16B16R16x2Plane420Unorm = 1000156030,
 
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5958,8 +6175,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16R16X3Plane422Unorm = 1000156031,
+    G16B16R16x3Plane422Unorm = 1000156031,
 
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_422_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -5982,8 +6200,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16R16X2Plane422Unorm = 1000156032,
+    G16B16R16x2Plane422Unorm = 1000156032,
 
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6006,8 +6225,9 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16R16X3Plane444Unorm = 1000156033,
+    G16B16R16x3Plane444Unorm = 1000156033,
 
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_444_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6022,8 +6242,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    G8B8R8X2Plane444Unorm = 1000330000,
+    G8B8R8x2Plane444Unorm = 1000330000,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6038,8 +6259,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    G10X6B10X6R10X6X2Plane444Unorm3Pack16 = 1000330001,
+    G10x6B10x6R10x6x2Plane444Unorm3Pack16 = 1000330001,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6054,8 +6276,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    G12X4B12X4R12X4X2Plane444Unorm3Pack16 = 1000330002,
+    G12x4B12x4R12x4x2Plane444Unorm3Pack16 = 1000330002,
 
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_444_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6070,8 +6293,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    G16B16R16X2Plane444Unorm = 1000330003,
+    G16B16R16x2Plane444Unorm = 1000330003,
 
+    [NativeName("VK_FORMAT_A4R4G4B4_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6088,6 +6312,7 @@ public enum Format : uint
     )]
     A4R4G4B4UnormPack16 = 1000340000,
 
+    [NativeName("VK_FORMAT_A4B4G4R4_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6104,6 +6329,7 @@ public enum Format : uint
     )]
     A4B4G4R4UnormPack16 = 1000340001,
 
+    [NativeName("VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6118,8 +6344,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC4X4SfloatBlock = 1000066000,
+    Astc4x4SfloatBlock = 1000066000,
 
+    [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6134,8 +6361,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC5X4SfloatBlock = 1000066001,
+    Astc5x4SfloatBlock = 1000066001,
 
+    [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6150,8 +6378,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC5X5SfloatBlock = 1000066002,
+    Astc5x5SfloatBlock = 1000066002,
 
+    [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6166,8 +6395,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC6X5SfloatBlock = 1000066003,
+    Astc6x5SfloatBlock = 1000066003,
 
+    [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6182,8 +6412,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC6X6SfloatBlock = 1000066004,
+    Astc6x6SfloatBlock = 1000066004,
 
+    [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6198,8 +6429,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC8X5SfloatBlock = 1000066005,
+    Astc8x5SfloatBlock = 1000066005,
 
+    [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6214,8 +6446,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC8X6SfloatBlock = 1000066006,
+    Astc8x6SfloatBlock = 1000066006,
 
+    [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6230,8 +6463,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC8X8SfloatBlock = 1000066007,
+    Astc8x8SfloatBlock = 1000066007,
 
+    [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6246,8 +6480,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X5SfloatBlock = 1000066008,
+    Astc10x5SfloatBlock = 1000066008,
 
+    [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6262,8 +6497,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X6SfloatBlock = 1000066009,
+    Astc10x6SfloatBlock = 1000066009,
 
+    [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6278,8 +6514,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X8SfloatBlock = 1000066010,
+    Astc10x8SfloatBlock = 1000066010,
 
+    [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6294,8 +6531,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X10SfloatBlock = 1000066011,
+    Astc10x10SfloatBlock = 1000066011,
 
+    [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6310,8 +6548,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC12X10SfloatBlock = 1000066012,
+    Astc12x10SfloatBlock = 1000066012,
 
+    [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6326,8 +6565,9 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC12X12SfloatBlock = 1000066013,
+    Astc12x12SfloatBlock = 1000066013,
 
+    [NativeName("VK_FORMAT_A1B5G5R5_UNORM_PACK16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6340,6 +6580,7 @@ public enum Format : uint
     )]
     A1B5G5R5UnormPack16 = 1000470000,
 
+    [NativeName("VK_FORMAT_A8_UNORM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -6352,33 +6593,43 @@ public enum Format : uint
     )]
     A8Unorm = 1000470001,
 
+    [NativeName("VK_FORMAT_PVRTC1_2BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X2BppUnormBlockIMG = 1000054000,
+    Pvrtc1x2BppUnormBlockIMG = 1000054000,
 
+    [NativeName("VK_FORMAT_PVRTC1_4BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X4BppUnormBlockIMG = 1000054001,
+    Pvrtc1x4BppUnormBlockIMG = 1000054001,
 
+    [NativeName("VK_FORMAT_PVRTC2_2BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X2BppUnormBlockIMG = 1000054002,
+    Pvrtc2x2BppUnormBlockIMG = 1000054002,
 
+    [NativeName("VK_FORMAT_PVRTC2_4BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X4BppUnormBlockIMG = 1000054003,
+    Pvrtc2x4BppUnormBlockIMG = 1000054003,
 
+    [NativeName("VK_FORMAT_PVRTC1_2BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X2BppSrgbBlockIMG = 1000054004,
+    Pvrtc1x2BppSrgbBlockIMG = 1000054004,
 
+    [NativeName("VK_FORMAT_PVRTC1_4BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X4BppSrgbBlockIMG = 1000054005,
+    Pvrtc1x4BppSrgbBlockIMG = 1000054005,
 
+    [NativeName("VK_FORMAT_PVRTC2_2BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X2BppSrgbBlockIMG = 1000054006,
+    Pvrtc2x2BppSrgbBlockIMG = 1000054006,
 
+    [NativeName("VK_FORMAT_PVRTC2_4BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X4BppSrgbBlockIMG = 1000054007,
+    Pvrtc2x4BppSrgbBlockIMG = 1000054007,
 
+    [NativeName("VK_FORMAT_R8_BOOL_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     R8BoolARM = 1000460000,
 
+    [NativeName("VK_FORMAT_R16G16_SFIXED5_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -6390,6 +6641,7 @@ public enum Format : uint
     )]
     R16G16Sfixed5NV = 1000464000,
 
+    [NativeName("VK_FORMAT_R10X6_UINT_PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6398,8 +6650,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R10X6UintPack16ARM = 1000609000,
+    R10x6UintPack16ARM = 1000609000,
 
+    [NativeName("VK_FORMAT_R10X6G10X6_UINT_2PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6408,8 +6661,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6Uint2Pack16ARM = 1000609001,
+    R10x6G10x6Uint2Pack16ARM = 1000609001,
 
+    [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UINT_4PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6418,8 +6672,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6B10X6A10X6Uint4Pack16ARM = 1000609002,
+    R10x6G10x6B10x6A10x6Uint4Pack16ARM = 1000609002,
 
+    [NativeName("VK_FORMAT_R12X4_UINT_PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6428,8 +6683,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R12X4UintPack16ARM = 1000609003,
+    R12x4UintPack16ARM = 1000609003,
 
+    [NativeName("VK_FORMAT_R12X4G12X4_UINT_2PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6438,8 +6694,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4Uint2Pack16ARM = 1000609004,
+    R12x4G12x4Uint2Pack16ARM = 1000609004,
 
+    [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UINT_4PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6448,8 +6705,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4B12X4A12X4Uint4Pack16ARM = 1000609005,
+    R12x4G12x4B12x4A12x4Uint4Pack16ARM = 1000609005,
 
+    [NativeName("VK_FORMAT_R14X2_UINT_PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6458,8 +6716,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2UintPack16ARM = 1000609006,
+    R14x2UintPack16ARM = 1000609006,
 
+    [NativeName("VK_FORMAT_R14X2G14X2_UINT_2PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6468,8 +6727,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2Uint2Pack16ARM = 1000609007,
+    R14x2G14x2Uint2Pack16ARM = 1000609007,
 
+    [NativeName("VK_FORMAT_R14X2G14X2B14X2A14X2_UINT_4PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6478,8 +6738,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2B14X2A14X2Uint4Pack16ARM = 1000609008,
+    R14x2G14x2B14x2A14x2Uint4Pack16ARM = 1000609008,
 
+    [NativeName("VK_FORMAT_R14X2_UNORM_PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6488,8 +6749,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2UnormPack16ARM = 1000609009,
+    R14x2UnormPack16ARM = 1000609009,
 
+    [NativeName("VK_FORMAT_R14X2G14X2_UNORM_2PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6498,8 +6760,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2Unorm2Pack16ARM = 1000609010,
+    R14x2G14x2Unorm2Pack16ARM = 1000609010,
 
+    [NativeName("VK_FORMAT_R14X2G14X2B14X2A14X2_UNORM_4PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6508,8 +6771,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2B14X2A14X2Unorm4Pack16ARM = 1000609011,
+    R14x2G14x2B14x2A14x2Unorm4Pack16ARM = 1000609011,
 
+    [NativeName("VK_FORMAT_G14X2_B14X2R14X2_2PLANE_420_UNORM_3PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6518,8 +6782,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    G14X2B14X2R14X2X2Plane420Unorm3Pack16ARM = 1000609012,
+    G14x2B14x2R14x2x2Plane420Unorm3Pack16ARM = 1000609012,
 
+    [NativeName("VK_FORMAT_G14X2_B14X2R14X2_2PLANE_422_UNORM_3PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -6528,8 +6793,9 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    G14X2B14X2R14X2X2Plane422Unorm3Pack16ARM = 1000609013,
+    G14x2B14x2R14x2x2Plane422Unorm3Pack16ARM = 1000609013,
 
+    [NativeName("VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6538,8 +6804,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC4X4SfloatBlockEXT = ASTC4X4SfloatBlock,
+    Astc4x4SfloatBlockEXT = Astc4x4SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6548,8 +6815,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC5X4SfloatBlockEXT = ASTC5X4SfloatBlock,
+    Astc5x4SfloatBlockEXT = Astc5x4SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6558,8 +6826,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC5X5SfloatBlockEXT = ASTC5X5SfloatBlock,
+    Astc5x5SfloatBlockEXT = Astc5x5SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6568,8 +6837,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC6X5SfloatBlockEXT = ASTC6X5SfloatBlock,
+    Astc6x5SfloatBlockEXT = Astc6x5SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6578,8 +6848,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC6X6SfloatBlockEXT = ASTC6X6SfloatBlock,
+    Astc6x6SfloatBlockEXT = Astc6x6SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6588,8 +6859,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X5SfloatBlockEXT = ASTC8X5SfloatBlock,
+    Astc8x5SfloatBlockEXT = Astc8x5SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6598,8 +6870,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X6SfloatBlockEXT = ASTC8X6SfloatBlock,
+    Astc8x6SfloatBlockEXT = Astc8x6SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6608,8 +6881,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X8SfloatBlockEXT = ASTC8X8SfloatBlock,
+    Astc8x8SfloatBlockEXT = Astc8x8SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6618,8 +6892,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X5SfloatBlockEXT = ASTC10X5SfloatBlock,
+    Astc10x5SfloatBlockEXT = Astc10x5SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6628,8 +6903,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X6SfloatBlockEXT = ASTC10X6SfloatBlock,
+    Astc10x6SfloatBlockEXT = Astc10x6SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6638,8 +6914,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X8SfloatBlockEXT = ASTC10X8SfloatBlock,
+    Astc10x8SfloatBlockEXT = Astc10x8SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6648,8 +6925,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X10SfloatBlockEXT = ASTC10X10SfloatBlock,
+    Astc10x10SfloatBlockEXT = Astc10x10SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6658,8 +6936,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC12X10SfloatBlockEXT = ASTC12X10SfloatBlock,
+    Astc12x10SfloatBlockEXT = Astc12x10SfloatBlock,
 
+    [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -6668,8 +6947,9 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC12X12SfloatBlockEXT = ASTC12X12SfloatBlock,
+    Astc12x12SfloatBlockEXT = Astc12x12SfloatBlock,
 
+    [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6678,8 +6958,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8G8R8X422UnormKHR = G8B8G8R8X422Unorm,
+    G8B8G8R8x422UnormKHR = G8B8G8R8x422Unorm,
 
+    [NativeName("VK_FORMAT_B8G8R8G8_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6688,8 +6969,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B8G8R8G8X422UnormKHR = B8G8R8G8X422Unorm,
+    B8G8R8G8x422UnormKHR = B8G8R8G8x422Unorm,
 
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6698,8 +6980,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X3Plane420UnormKHR = G8B8R8X3Plane420Unorm,
+    G8B8R8x3Plane420UnormKHR = G8B8R8x3Plane420Unorm,
 
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6708,8 +6991,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X2Plane420UnormKHR = G8B8R8X2Plane420Unorm,
+    G8B8R8x2Plane420UnormKHR = G8B8R8x2Plane420Unorm,
 
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6718,8 +7002,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X3Plane422UnormKHR = G8B8R8X3Plane422Unorm,
+    G8B8R8x3Plane422UnormKHR = G8B8R8x3Plane422Unorm,
 
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6728,8 +7013,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X2Plane422UnormKHR = G8B8R8X2Plane422Unorm,
+    G8B8R8x2Plane422UnormKHR = G8B8R8x2Plane422Unorm,
 
+    [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_444_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6738,8 +7024,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X3Plane444UnormKHR = G8B8R8X3Plane444Unorm,
+    G8B8R8x3Plane444UnormKHR = G8B8R8x3Plane444Unorm,
 
+    [NativeName("VK_FORMAT_R10X6_UNORM_PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6748,8 +7035,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R10X6UnormPack16KHR = R10X6UnormPack16,
+    R10x6UnormPack16KHR = R10x6UnormPack16,
 
+    [NativeName("VK_FORMAT_R10X6G10X6_UNORM_2PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6758,8 +7046,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6Unorm2Pack16KHR = R10X6G10X6Unorm2Pack16,
+    R10x6G10x6Unorm2Pack16KHR = R10x6G10x6Unorm2Pack16,
 
+    [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6768,8 +7057,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6B10X6A10X6Unorm4Pack16KHR = R10X6G10X6B10X6A10X6Unorm4Pack16,
+    R10x6G10x6B10x6A10x6Unorm4Pack16KHR = R10x6G10x6B10x6A10x6Unorm4Pack16,
 
+    [NativeName("VK_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6778,8 +7068,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6G10X6R10X6X422Unorm4Pack16KHR = G10X6B10X6G10X6R10X6X422Unorm4Pack16,
+    G10x6B10x6G10x6R10x6x422Unorm4Pack16KHR = G10x6B10x6G10x6R10x6x422Unorm4Pack16,
 
+    [NativeName("VK_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6788,8 +7079,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B10X6G10X6R10X6G10X6X422Unorm4Pack16KHR = B10X6G10X6R10X6G10X6X422Unorm4Pack16,
+    B10x6G10x6R10x6G10x6x422Unorm4Pack16KHR = B10x6G10x6R10x6G10x6x422Unorm4Pack16,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6798,8 +7090,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X3Plane420Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane420Unorm3Pack16,
+    G10x6B10x6R10x6x3Plane420Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane420Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6808,8 +7101,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X2Plane420Unorm3Pack16KHR = G10X6B10X6R10X6X2Plane420Unorm3Pack16,
+    G10x6B10x6R10x6x2Plane420Unorm3Pack16KHR = G10x6B10x6R10x6x2Plane420Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6818,8 +7112,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X3Plane422Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane422Unorm3Pack16,
+    G10x6B10x6R10x6x3Plane422Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane422Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6828,8 +7123,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X2Plane422Unorm3Pack16KHR = G10X6B10X6R10X6X2Plane422Unorm3Pack16,
+    G10x6B10x6R10x6x2Plane422Unorm3Pack16KHR = G10x6B10x6R10x6x2Plane422Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6838,8 +7134,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X3Plane444Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane444Unorm3Pack16,
+    G10x6B10x6R10x6x3Plane444Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane444Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_R12X4_UNORM_PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6848,8 +7145,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R12X4UnormPack16KHR = R12X4UnormPack16,
+    R12x4UnormPack16KHR = R12x4UnormPack16,
 
+    [NativeName("VK_FORMAT_R12X4G12X4_UNORM_2PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6858,8 +7156,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4Unorm2Pack16KHR = R12X4G12X4Unorm2Pack16,
+    R12x4G12x4Unorm2Pack16KHR = R12x4G12x4Unorm2Pack16,
 
+    [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6868,8 +7167,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4B12X4A12X4Unorm4Pack16KHR = R12X4G12X4B12X4A12X4Unorm4Pack16,
+    R12x4G12x4B12x4A12x4Unorm4Pack16KHR = R12x4G12x4B12x4A12x4Unorm4Pack16,
 
+    [NativeName("VK_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6878,8 +7178,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4G12X4R12X4X422Unorm4Pack16KHR = G12X4B12X4G12X4R12X4X422Unorm4Pack16,
+    G12x4B12x4G12x4R12x4x422Unorm4Pack16KHR = G12x4B12x4G12x4R12x4x422Unorm4Pack16,
 
+    [NativeName("VK_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6888,8 +7189,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B12X4G12X4R12X4G12X4X422Unorm4Pack16KHR = B12X4G12X4R12X4G12X4X422Unorm4Pack16,
+    B12x4G12x4R12x4G12x4x422Unorm4Pack16KHR = B12x4G12x4R12x4G12x4x422Unorm4Pack16,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6898,8 +7200,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X3Plane420Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane420Unorm3Pack16,
+    G12x4B12x4R12x4x3Plane420Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane420Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6908,8 +7211,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X2Plane420Unorm3Pack16KHR = G12X4B12X4R12X4X2Plane420Unorm3Pack16,
+    G12x4B12x4R12x4x2Plane420Unorm3Pack16KHR = G12x4B12x4R12x4x2Plane420Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6918,8 +7222,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X3Plane422Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane422Unorm3Pack16,
+    G12x4B12x4R12x4x3Plane422Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane422Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6928,8 +7233,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X2Plane422Unorm3Pack16KHR = G12X4B12X4R12X4X2Plane422Unorm3Pack16,
+    G12x4B12x4R12x4x2Plane422Unorm3Pack16KHR = G12x4B12x4R12x4x2Plane422Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6938,8 +7244,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X3Plane444Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane444Unorm3Pack16,
+    G12x4B12x4R12x4x3Plane444Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane444Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G16B16G16R16_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6948,8 +7255,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16G16R16X422UnormKHR = G16B16G16R16X422Unorm,
+    G16B16G16R16x422UnormKHR = G16B16G16R16x422Unorm,
 
+    [NativeName("VK_FORMAT_B16G16R16G16_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6958,8 +7266,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B16G16R16G16X422UnormKHR = B16G16R16G16X422Unorm,
+    B16G16R16G16x422UnormKHR = B16G16R16G16x422Unorm,
 
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6968,8 +7277,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X3Plane420UnormKHR = G16B16R16X3Plane420Unorm,
+    G16B16R16x3Plane420UnormKHR = G16B16R16x3Plane420Unorm,
 
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6978,8 +7288,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X2Plane420UnormKHR = G16B16R16X2Plane420Unorm,
+    G16B16R16x2Plane420UnormKHR = G16B16R16x2Plane420Unorm,
 
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6988,8 +7299,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X3Plane422UnormKHR = G16B16R16X3Plane422Unorm,
+    G16B16R16x3Plane422UnormKHR = G16B16R16x3Plane422Unorm,
 
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -6998,8 +7310,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X2Plane422UnormKHR = G16B16R16X2Plane422Unorm,
+    G16B16R16x2Plane422UnormKHR = G16B16R16x2Plane422Unorm,
 
+    [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -7008,8 +7321,9 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X3Plane444UnormKHR = G16B16R16X3Plane444Unorm,
+    G16B16R16x3Plane444UnormKHR = G16B16R16x3Plane444Unorm,
 
+    [NativeName("VK_FORMAT_G8_B8R8_2PLANE_444_UNORM_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_ycbcr_2plane_444_formats"],
@@ -7018,8 +7332,9 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X2Plane444UnormEXT = G8B8R8X2Plane444Unorm,
+    G8B8R8x2Plane444UnormEXT = G8B8R8x2Plane444Unorm,
 
+    [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_ycbcr_2plane_444_formats"],
@@ -7028,8 +7343,9 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X2Plane444Unorm3Pack16EXT = G10X6B10X6R10X6X2Plane444Unorm3Pack16,
+    G10x6B10x6R10x6x2Plane444Unorm3Pack16EXT = G10x6B10x6R10x6x2Plane444Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_ycbcr_2plane_444_formats"],
@@ -7038,8 +7354,9 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X2Plane444Unorm3Pack16EXT = G12X4B12X4R12X4X2Plane444Unorm3Pack16,
+    G12x4B12x4R12x4x2Plane444Unorm3Pack16EXT = G12x4B12x4R12x4x2Plane444Unorm3Pack16,
 
+    [NativeName("VK_FORMAT_G16_B16R16_2PLANE_444_UNORM_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_ycbcr_2plane_444_formats"],
@@ -7048,8 +7365,9 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X2Plane444UnormEXT = G16B16R16X2Plane444Unorm,
+    G16B16R16x2Plane444UnormEXT = G16B16R16x2Plane444Unorm,
 
+    [NativeName("VK_FORMAT_A4R4G4B4_UNORM_PACK16_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_4444_formats"],
@@ -7060,6 +7378,7 @@ public enum Format : uint
     )]
     A4R4G4B4UnormPack16EXT = A4R4G4B4UnormPack16,
 
+    [NativeName("VK_FORMAT_A4B4G4R4_UNORM_PACK16_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_4444_formats"],
@@ -7070,6 +7389,7 @@ public enum Format : uint
     )]
     A4B4G4R4UnormPack16EXT = A4B4G4R4UnormPack16,
 
+    [NativeName("VK_FORMAT_A1B5G5R5_UNORM_PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance5"],
@@ -7077,6 +7397,7 @@ public enum Format : uint
     )]
     A1B5G5R5UnormPack16KHR = A1B5G5R5UnormPack16,
 
+    [NativeName("VK_FORMAT_A8_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance5"],

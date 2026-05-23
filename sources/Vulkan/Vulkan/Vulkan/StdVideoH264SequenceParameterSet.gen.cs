@@ -8,101 +8,107 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH264SequenceParameterSet")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct StdVideoH264SequenceParameterSet
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264SpsFlags Flags;
 
+    [NativeName("profile_idc")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264ProfileIdc ProfileIdc;
 
+    [NativeName("level_idc")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264LevelIdc LevelIdc;
 
+    [NativeName("chroma_format_idc")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264ChromaFormatIdc ChromaFormatIdc;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("seq_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte SeqParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("bit_depth_luma_minus8")]
     [SupportedApiProfile("vulkan")]
     public byte BitDepthLumaMinus8;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("bit_depth_chroma_minus8")]
     [SupportedApiProfile("vulkan")]
     public byte BitDepthChromaMinus8;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("log2_max_frame_num_minus4")]
     [SupportedApiProfile("vulkan")]
     public byte Log2MaxFrameNumMinus4;
 
+    [NativeName("pic_order_cnt_type")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264PocType PicOrderCntType;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("offset_for_non_ref_pic")]
     [SupportedApiProfile("vulkan")]
     public int OffsetForNonRefPic;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("offset_for_top_to_bottom_field")]
     [SupportedApiProfile("vulkan")]
     public int OffsetForTopToBottomField;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("log2_max_pic_order_cnt_lsb_minus4")]
     [SupportedApiProfile("vulkan")]
     public byte Log2MaxPicOrderCntLsbMinus4;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_ref_frames_in_pic_order_cnt_cycle")]
     [SupportedApiProfile("vulkan")]
     public byte NumRefFramesInPicOrderCntCycle;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("max_num_ref_frames")]
     [SupportedApiProfile("vulkan")]
     public byte MaxNumRefFrames;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("reserved1")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved1;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("pic_width_in_mbs_minus1")]
     [SupportedApiProfile("vulkan")]
     public uint PicWidthInMbsMinus1;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("pic_height_in_map_units_minus1")]
     [SupportedApiProfile("vulkan")]
     public uint PicHeightInMapUnitsMinus1;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("frame_crop_left_offset")]
     [SupportedApiProfile("vulkan")]
     public uint FrameCropLeftOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("frame_crop_right_offset")]
     [SupportedApiProfile("vulkan")]
     public uint FrameCropRightOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("frame_crop_top_offset")]
     [SupportedApiProfile("vulkan")]
     public uint FrameCropTopOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("frame_crop_bottom_offset")]
     [SupportedApiProfile("vulkan")]
     public uint FrameCropBottomOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("reserved2")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved2;
 
-    [NativeTypeName("const int32_t *")]
+    [NativeName("pOffsetForRefFrame")]
     [SupportedApiProfile("vulkan")]
     public int* POffsetForRefFrame;
 
-    [NativeTypeName("const StdVideoH264ScalingLists *")]
+    [NativeName("pScalingLists")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264ScalingLists* PScalingLists;
 
-    [NativeTypeName("const StdVideoH264SequenceParameterSetVui *")]
+    [NativeName("pSequenceParameterSetVui")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264SequenceParameterSetVui* PSequenceParameterSetVui;
 }

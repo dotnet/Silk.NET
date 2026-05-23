@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_realloc_func")]
 public readonly unsafe struct ReallocFunc : IDisposable
 {
     private readonly void* Pointer;

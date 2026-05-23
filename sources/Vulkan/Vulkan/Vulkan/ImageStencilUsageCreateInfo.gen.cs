@@ -6,9 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImageStencilUsageCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageStencilUsageCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -23,7 +25,7 @@ public unsafe partial struct ImageStencilUsageCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,7 +40,7 @@ public unsafe partial struct ImageStencilUsageCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkImageUsageFlags")]
+    [NativeName("stencilUsage")]
     [SupportedApiProfile(
         "vulkan",
         [

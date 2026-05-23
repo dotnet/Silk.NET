@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceColorWriteEnableFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceColorWriteEnableFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_color_write_enable"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceColorWriteEnableFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_color_write_enable"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceColorWriteEnableFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("colorWriteEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_color_write_enable"],

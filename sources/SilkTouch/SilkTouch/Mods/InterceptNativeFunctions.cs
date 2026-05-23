@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
+using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -47,7 +48,7 @@ public class InterceptNativeFunctions(
             var doc =
                 proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
-                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
@@ -113,7 +114,7 @@ public class InterceptNativeFunctions(
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
             );
 
-            return node.WithRenameSafeAttributeLists()
+            node = node.WithRenameSafeAttributeLists()
                 .WithIdentifier(Identifier($"{node.Identifier}Internal"))
                 .WithModifiers(
                     [
@@ -129,6 +130,14 @@ public class InterceptNativeFunctions(
                         ),
                     ]
                 );
+
+            return node.WithAttributeLists(
+                node.AttributeLists.AddNameAffix(
+                    NameAffixType.Suffix,
+                    "InterceptedFunction",
+                    "Internal"
+                )
+            );
         }
     }
 }

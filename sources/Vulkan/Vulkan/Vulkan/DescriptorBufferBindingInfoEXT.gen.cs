@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDescriptorBufferBindingInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorBufferBindingInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -23,7 +25,7 @@ public unsafe partial struct DescriptorBufferBindingInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -36,7 +38,7 @@ public unsafe partial struct DescriptorBufferBindingInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("address")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -49,7 +51,7 @@ public unsafe partial struct DescriptorBufferBindingInfoEXT
     )]
     public ulong Address;
 
-    [NativeTypeName("VkBufferUsageFlags")]
+    [NativeName("usage")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],

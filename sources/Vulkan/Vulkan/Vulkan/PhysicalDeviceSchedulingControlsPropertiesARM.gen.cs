@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceSchedulingControlsPropertiesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSchedulingControlsPropertiesARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_scheduling_controls"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceSchedulingControlsPropertiesARM
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_scheduling_controls"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceSchedulingControlsPropertiesARM
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPhysicalDeviceSchedulingControlsFlagsARM")]
+    [NativeName("schedulingControlsFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_scheduling_controls"],

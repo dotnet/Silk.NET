@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDecompressMemoryRegionEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct DecompressMemoryRegionEXT
 {
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("srcAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],
@@ -18,7 +19,7 @@ public partial struct DecompressMemoryRegionEXT
     )]
     public ulong SrcAddress;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("dstAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],
@@ -26,7 +27,7 @@ public partial struct DecompressMemoryRegionEXT
     )]
     public ulong DstAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("compressedSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],
@@ -34,7 +35,7 @@ public partial struct DecompressMemoryRegionEXT
     )]
     public ulong CompressedSize;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("decompressedSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],

@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -32,7 +35,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxIndirectPipelineCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -44,7 +47,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public uint MaxIndirectPipelineCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxIndirectShaderObjectCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -56,7 +59,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public uint MaxIndirectShaderObjectCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxIndirectSequenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -68,7 +71,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public uint MaxIndirectSequenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxIndirectCommandsTokenCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -80,7 +83,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public uint MaxIndirectCommandsTokenCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxIndirectCommandsTokenOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -92,7 +95,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public uint MaxIndirectCommandsTokenOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxIndirectCommandsIndirectStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -104,7 +107,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public uint MaxIndirectCommandsIndirectStride;
 
-    [NativeTypeName("VkIndirectCommandsInputModeFlagsEXT")]
+    [NativeName("supportedIndirectCommandsInputModes")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -116,7 +119,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public IndirectCommandsInputModeFlagsEXT SupportedIndirectCommandsInputModes;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("supportedIndirectCommandsShaderStages")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -128,7 +131,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public ShaderStageFlags SupportedIndirectCommandsShaderStages;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("supportedIndirectCommandsShaderStagesPipelineBinding")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -140,7 +143,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public ShaderStageFlags SupportedIndirectCommandsShaderStagesPipelineBinding;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("supportedIndirectCommandsShaderStagesShaderBinding")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -152,7 +155,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public ShaderStageFlags SupportedIndirectCommandsShaderStagesShaderBinding;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("deviceGeneratedCommandsTransformFeedback")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -164,7 +167,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
     )]
     public uint DeviceGeneratedCommandsTransformFeedback;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("deviceGeneratedCommandsMultiDrawIndirectCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

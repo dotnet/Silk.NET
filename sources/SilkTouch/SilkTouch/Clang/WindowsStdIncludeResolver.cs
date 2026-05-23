@@ -37,6 +37,6 @@ public class WindowsStdIncludeResolver : IStdIncludeResolver
         }
 
         _logger.LogWarning("Failed to resolve VS, but OS is Windows!");
-        return Enumerable.Empty<string>();
+        return [];
     }
 }

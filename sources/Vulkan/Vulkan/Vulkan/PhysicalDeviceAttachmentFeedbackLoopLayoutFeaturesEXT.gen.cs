@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_attachment_feedback_loop_layout"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesE
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_attachment_feedback_loop_layout"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesE
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("attachmentFeedbackLoopLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_attachment_feedback_loop_layout"],

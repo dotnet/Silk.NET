@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkShaderCreateFlagBitsEXT")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ShaderCreateFlagsEXT : uint
 {
     None = 0x0,
 
+    [NativeName("VK_SHADER_CREATE_LINK_STAGE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -24,8 +25,9 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateLinkStageBitEXT = 0x1,
+    CreateLinkStageBit = 0x1,
 
+    [NativeName("VK_SHADER_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,8 +40,9 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateAllowVaryingSubgroupSizeBitEXT = 0x2,
+    CreateAllowVaryingSubgroupSizeBit = 0x2,
 
+    [NativeName("VK_SHADER_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -52,8 +55,9 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateRequireFullSubgroupsBitEXT = 0x4,
+    CreateRequireFullSubgroupsBit = 0x4,
 
+    [NativeName("VK_SHADER_CREATE_NO_TASK_SHADER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object+VK_EXT_mesh_shader", "VK_EXT_shader_object+VK_NV_mesh_shader"],
@@ -63,8 +67,9 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateNoTaskShaderBitEXT = 0x8,
+    CreateNoTaskShaderBit = 0x8,
 
+    [NativeName("VK_SHADER_CREATE_DISPATCH_BASE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object+VK_KHR_device_group", "VK_EXT_shader_object+VK_VERSION_1_1"],
@@ -74,8 +79,9 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateDispatchBaseBitEXT = 0x10,
+    CreateDispatchBaseBit = 0x10,
 
+    [NativeName("VK_SHADER_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object", "VK_KHR_fragment_shading_rate"],
@@ -86,8 +92,9 @@ public enum ShaderCreateFlagsEXT : uint
         ],
         RequireAll = true
     )]
-    CreateFragmentShadingRateAttachmentBitEXT = 0x20,
+    CreateFragmentShadingRateAttachmentBit = 0x20,
 
+    [NativeName("VK_SHADER_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map", "VK_EXT_shader_object"],
@@ -98,8 +105,9 @@ public enum ShaderCreateFlagsEXT : uint
         ],
         RequireAll = true
     )]
-    CreateFragmentDensityMapAttachmentBitEXT = 0x40,
+    CreateFragmentDensityMapAttachmentBit = 0x40,
 
+    [NativeName("VK_SHADER_CREATE_INDIRECT_BINDABLE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -109,8 +117,9 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CreateIndirectBindableBitEXT = 0x80,
+    CreateIndirectBindableBit = 0x80,
 
+    [NativeName("VK_SHADER_CREATE_64_BIT_INDEXING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_64bit_indexing"],
@@ -119,5 +128,5 @@ public enum ShaderCreateFlagsEXT : uint
             "VK_EXT_shader_64bit_indexing+VK_VERSION_1_1",
         ]
     )]
-    Create64BitIndexingBitEXT = 0x8000,
+    Create64BitIndexingBit = 0x8000,
 }

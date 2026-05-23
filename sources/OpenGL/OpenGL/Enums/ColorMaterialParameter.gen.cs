@@ -7,12 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ColorMaterialParameter")]
 public enum ColorMaterialParameter : uint
 {
-    Ambient = unchecked((uint)0x1200),
-    Diffuse = unchecked((uint)0x1201),
-    Specular = unchecked((uint)0x1202),
-    Emission = unchecked((uint)0x1600),
-    AmbientAndDiffuse = unchecked((uint)0x1602),
+    [NativeName("GL_AMBIENT")]
+    Ambient = 4608,
+
+    [NativeName("GL_DIFFUSE")]
+    Diffuse = 4609,
+
+    [NativeName("GL_SPECULAR")]
+    Specular = 4610,
+
+    [NativeName("GL_EMISSION")]
+    Emission = 5632,
+
+    [NativeName("GL_AMBIENT_AND_DIFFUSE")]
+    AmbientAndDiffuse = 5634,
 }

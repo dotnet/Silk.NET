@@ -1,0 +1,17 @@
+﻿public struct Glfw;
+[NameAffix("Prefix", "SharedPrefix", "GLFW")]
+public struct GLFWallocator;
+[NameAffix("Prefix", "SharedPrefix", "GLFW")]
+public struct GLFWcursor;
+[NameAffix("Prefix", "SharedPrefix", "GLFW")]
+public struct GLFWgamepadstate;
+[NameAffix("Prefix", "SharedPrefix", "GLFW")]
+public struct GLFWgammaramp;
+[NameAffix("Prefix", "SharedPrefix", "GLFW")]
+public struct GLFWimage;
+[NameAffix("Prefix", "SharedPrefix", "GLFW")]
+public struct GLFWmonitor;
+[NameAffix("Prefix", "SharedPrefix", "GLFW")]
+public struct GLFWvidmode;
+[NameAffix("Prefix", "SharedPrefix", "GLFW")]
+public struct GLFWwindow;

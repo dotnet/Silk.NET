@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVertexInputAttributeDescription2EXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VertexInputAttributeDescription2EXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -21,6 +23,7 @@ public unsafe partial struct VertexInputAttributeDescription2EXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -31,7 +34,7 @@ public unsafe partial struct VertexInputAttributeDescription2EXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("location")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -42,7 +45,7 @@ public unsafe partial struct VertexInputAttributeDescription2EXT
     )]
     public uint Location;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("binding")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -53,6 +56,7 @@ public unsafe partial struct VertexInputAttributeDescription2EXT
     )]
     public uint Binding;
 
+    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -63,7 +67,7 @@ public unsafe partial struct VertexInputAttributeDescription2EXT
     )]
     public Format Format;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("offset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],

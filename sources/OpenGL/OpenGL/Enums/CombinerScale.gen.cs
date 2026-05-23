@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("CombinerScaleNV")]
 public enum CombinerScale : uint
 {
-    None = unchecked((uint)0),
-    ScaleByTwoNV = unchecked((uint)0x853E),
-    ScaleByFourNV = unchecked((uint)0x853F),
-    ScaleByOneHalfNV = unchecked((uint)0x8540),
+    [NativeName("GL_NONE")]
+    None = 0,
+
+    [NativeName("GL_SCALE_BY_TWO_NV")]
+    ScaleByTwoNV = 34110,
+
+    [NativeName("GL_SCALE_BY_FOUR_NV")]
+    ScaleByFourNV = 34111,
+
+    [NativeName("GL_SCALE_BY_ONE_HALF_NV")]
+    ScaleByOneHalfNV = 34112,
 }

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCopyDescriptorSet")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyDescriptorSet
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +36,7 @@ public unsafe partial struct CopyDescriptorSet
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,7 +60,7 @@ public unsafe partial struct CopyDescriptorSet
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDescriptorSet")]
+    [NativeName("srcSet")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -82,7 +84,7 @@ public unsafe partial struct CopyDescriptorSet
     )]
     public DescriptorSetHandle SrcSet;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("srcBinding")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -106,7 +108,7 @@ public unsafe partial struct CopyDescriptorSet
     )]
     public uint SrcBinding;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("srcArrayElement")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -130,7 +132,7 @@ public unsafe partial struct CopyDescriptorSet
     )]
     public uint SrcArrayElement;
 
-    [NativeTypeName("VkDescriptorSet")]
+    [NativeName("dstSet")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -154,7 +156,7 @@ public unsafe partial struct CopyDescriptorSet
     )]
     public DescriptorSetHandle DstSet;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dstBinding")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -178,7 +180,7 @@ public unsafe partial struct CopyDescriptorSet
     )]
     public uint DstBinding;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dstArrayElement")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -202,7 +204,7 @@ public unsafe partial struct CopyDescriptorSet
     )]
     public uint DstArrayElement;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("descriptorCount")]
     [SupportedApiProfile(
         "vulkan",
         [

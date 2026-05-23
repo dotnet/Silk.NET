@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBufferCopy")]
 [SupportedApiProfile("vulkan")]
 public partial struct BufferCopy
 {
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("srcOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +41,7 @@ public partial struct BufferCopy
     )]
     public ulong SrcOffset;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("dstOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +70,7 @@ public partial struct BufferCopy
     )]
     public ulong DstOffset;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         [

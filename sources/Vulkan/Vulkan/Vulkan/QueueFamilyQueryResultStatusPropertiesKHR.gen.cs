@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkQueueFamilyQueryResultStatusPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct QueueFamilyQueryResultStatusPropertiesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -18,6 +20,7 @@ public unsafe partial struct QueueFamilyQueryResultStatusPropertiesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -25,7 +28,7 @@ public unsafe partial struct QueueFamilyQueryResultStatusPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("queryResultStatusSupport")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

@@ -8,65 +8,67 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH265HrdParameters")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct StdVideoH265HrdParameters
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265HrdFlags Flags;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("tick_divisor_minus2")]
     [SupportedApiProfile("vulkan")]
     public byte TickDivisorMinus2;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("du_cpb_removal_delay_increment_length_minus1")]
     [SupportedApiProfile("vulkan")]
     public byte DuCpbRemovalDelayIncrementLengthMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("dpb_output_delay_du_length_minus1")]
     [SupportedApiProfile("vulkan")]
     public byte DpbOutputDelayDuLengthMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("bit_rate_scale")]
     [SupportedApiProfile("vulkan")]
     public byte BitRateScale;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("cpb_size_scale")]
     [SupportedApiProfile("vulkan")]
     public byte CpbSizeScale;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("cpb_size_du_scale")]
     [SupportedApiProfile("vulkan")]
     public byte CpbSizeDuScale;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("initial_cpb_removal_delay_length_minus1")]
     [SupportedApiProfile("vulkan")]
     public byte InitialCpbRemovalDelayLengthMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("au_cpb_removal_delay_length_minus1")]
     [SupportedApiProfile("vulkan")]
     public byte AuCpbRemovalDelayLengthMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("dpb_output_delay_length_minus1")]
     [SupportedApiProfile("vulkan")]
     public byte DpbOutputDelayLengthMinus1;
 
-    [NativeTypeName("uint8_t[7]")]
+    [NativeName("cpb_cnt_minus1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265HrdParametersCpbCntMinus1 CpbCntMinus1;
 
-    [NativeTypeName("uint16_t[7]")]
+    [NativeName("elemental_duration_in_tc_minus1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265HrdParametersElementalDurationInTcMinus1 ElementalDurationInTcMinus1;
 
-    [NativeTypeName("uint16_t[3]")]
+    [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265HrdParametersReserved Reserved;
 
-    [NativeTypeName("const StdVideoH265SubLayerHrdParameters *")]
+    [NativeName("pSubLayerHrdParametersNal")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265SubLayerHrdParameters* PSubLayerHrdParametersNal;
 
-    [NativeTypeName("const StdVideoH265SubLayerHrdParameters *")]
+    [NativeName("pSubLayerHrdParametersVcl")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265SubLayerHrdParameters* PSubLayerHrdParametersVcl;
 }

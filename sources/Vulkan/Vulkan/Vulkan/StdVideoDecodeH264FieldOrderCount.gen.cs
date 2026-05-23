@@ -8,13 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("StdVideoDecodeH264FieldOrderCount")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoDecodeH264FieldOrderCount : uint
 {
+    [NativeName("STD_VIDEO_DECODE_H264_FIELD_ORDER_COUNT_TOP")]
     [SupportedApiProfile("vulkan")]
     Top = 0,
 
+    [NativeName("STD_VIDEO_DECODE_H264_FIELD_ORDER_COUNT_BOTTOM")]
     [SupportedApiProfile("vulkan")]
     Bottom = 1,
 }

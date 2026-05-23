@@ -1,8 +1,5 @@
 ﻿using System.Buffers;
 using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
-using System.Text.RegularExpressions;
-using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
@@ -14,67 +11,57 @@ namespace Silk.NET.SilkTouch.Naming;
 /// Contains utilities used throughout the naming namespace.
 /// </summary>
 [SuppressMessage("ReSharper", "LoopCanBeConvertedToQuery")]
-public static partial class NameUtils
+public static class NameUtils
 {
     /// <summary>
-    /// An instance of <see cref="SearchValues{T}"/> matching ASCII capital letters.
+    /// All capital letters.
     /// </summary>
-    public static readonly SearchValues<char> Uppercase = SearchValues.Create(
+    public static readonly SearchValues<char> UpperChars = SearchValues.Create(
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     );
 
     /// <summary>
-    /// An instance of <see cref="SearchValues{T}"/> matching ASCII lowercase letters and numbers.
+    /// All digits.
     /// </summary>
-    public static readonly SearchValues<char> NotUppercase = SearchValues.Create(
-        "abcdefghijklmnopqrstuvwxyz0123456789"
-    );
+    public static readonly SearchValues<char> NumberChars = SearchValues.Create("0123456789");
 
     /// <summary>
-    /// An instance of <see cref="SearchValues{T}"/> matching ASCII letters, numbers, and an underscore.
+    /// All characters that separate words in C# identifiers.
+    /// </summary>
+    public static readonly SearchValues<char> SeparatorChars = SearchValues.Create("_");
+
+    /// <summary>
+    /// ASCII letters, numbers, and an underscore.
     /// </summary>
     public static readonly SearchValues<char> IdentifierChars = SearchValues.Create(
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
     );
 
     /// <summary>
-    /// Prettifies the given string.
+    /// Prefixes the given identifier with the specified prefix if it starts with a number.
     /// </summary>
-    /// <param name="str">The string to prettify.</param>
-    /// <param name="transformer">
-    /// The transformer that mutates a humanised string before being converted back to pascal case.
-    /// </param>
-    /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
-    /// <returns>The pretty string.</returns>
-    public static string Prettify(
-        this string str,
-        ICulturedStringTransformer transformer,
-        bool allowAllCaps = false
-    )
+    public static string PrefixIfStartsWithNumber(string identifier, string prefix = "X")
     {
-        var ret = string.Join(
-            null,
-            str.LenientUnderscore()
-                .Humanize()
-                .Transform(transformer)
-                .Pascalize()
-                .Where(x => char.IsLetter(x) || char.IsNumber(x))
-        );
-
-        if (ret.Length == 0)
+        if (identifier.Length > 0 && char.IsDigit(identifier[0]))
         {
-            throw new InvalidOperationException($"Failed to prettify string: {str}");
+            return $"X{identifier}";
         }
 
-        var retSpan = ret.AsSpan();
-        if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
-        {
-            Span<char> caps = stackalloc char[retSpan.Length - 1];
-            retSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
-            ret = $"{ret[0]}{caps}";
-        }
-        return !char.IsLetter(ret[0]) ? $"X{ret}" : ret;
+        return identifier;
     }
+
+    /// <summary>
+    /// Gets the char type for the specified character according
+    /// to the categorization defined by <see cref="CharType"/>.
+    /// </summary>
+    public static CharType GetCharType(char c) =>
+        c switch
+        {
+            { } when UpperChars.Contains(c) => CharType.Upper,
+            { } when NumberChars.Contains(c) => CharType.Number,
+            { } when SeparatorChars.Contains(c) => CharType.Separator,
+            _ => CharType.Other,
+        };
 
     /// <summary>
     /// Finds a common prefix in a set of names with respect to the word boundaries
@@ -126,7 +113,7 @@ public static partial class NameUtils
     /// Finds a common prefix in a set of names with respect to the word boundaries
     /// </summary>
     /// <param name="names">Set of names, snake_case</param>
-    /// <param name="allowFullMatch">Allows result to be a a full match with one of the names</param>
+    /// <param name="allowFullMatch">Allows result to be a full match with one of the names</param>
     /// <param name="maxLen">Match length limit</param>
     /// <param name="naive">
     /// Just match the start of the strings, don't bother checking for obvious name separation gaps.
@@ -200,116 +187,6 @@ public static partial class NameUtils
     }
 
     /// <summary>
-    /// Separates the input words with underscore
-    /// </summary>
-    /// <param name="input">The string to be underscored</param>
-    /// <returns></returns>
-    public static string LenientUnderscore(this string input) =>
-        // This is a modified version of Humanizer's Underscore methods with the following changes:
-        // - The regex ([\p{Ll}\d])([\p{Lu}]) has been replaced with
-        //   ([\p{Ll}\d])(?=[\p{Lu}][\p{Lu}\p{Ll}])([\p{Lu}]) - In this regex, the positive lookahead assertion
-        //   (?=[\p{Lu}][\p{Lu}\p{Ll}]) ensures that the next character after the match is an uppercase letter,
-        //   followed by any letter (uppercase or lowercase). This will only match if the 2nd character after the
-        //   initial match is uppercase. That was suggested by ChatGPT, a human had to add the final
-        //   [\p{Ll}])([\p{Lu}]) to ensure we don't erroneous match non-pascal case strings and to capture the
-        //   second character to ensure we can do the replacement. Still pretty smart though.
-        // - The final ToLower has been omitted as it was not deemed necessary
-        // - The regex ([\p{Ll}])([\p{Lu}]) has been added to replace lowercase letters followed by an uppercase letter with the
-        //   same sequence but with an underscore inbetween,
-        //   this fixes cases like SpvImageFormatR32ui being Spv_Image_FormatR32ui instead of Spv_Image_Format_R32ui
-        KebabOrSpace()
-            .Replace(
-                LowerUpper()
-                    .Replace(
-                        LowerUpperAnyUpper()
-                            .Replace(LowerUpperLower().Replace(input, "$1_$2"), "$1_$2"),
-                        "$1_$2"
-                    ),
-                "_"
-            );
-
-    [GeneratedRegex(@"[-\s]")]
-    private static partial Regex KebabOrSpace();
-
-    [GeneratedRegex(@"([\p{Ll}])([\p{Lu}])")]
-    private static partial Regex LowerUpper();
-
-    [GeneratedRegex(@"([\p{Ll}])(?=[\p{Lu}][\p{Lu}\p{Ll}])([\p{Lu}])")]
-    private static partial Regex LowerUpperAnyUpper();
-
-    [GeneratedRegex(@"([\p{Lu}]+)([\p{Lu}][\p{Ll}])")]
-    private static partial Regex LowerUpperLower();
-
-    internal partial class NameTransformer(int longAcronymThreshold) : ICulturedStringTransformer
-    {
-        public string Transform(string input) => Transform(input, null);
-
-        public string Transform(string input, CultureInfo? culture)
-        {
-            culture ??= CultureInfo.CurrentCulture;
-
-            var matches = Words().Split(input);
-            for (var i = 0; i < matches.Length; i++)
-            {
-                ref var word = ref matches[i];
-                if (string.IsNullOrWhiteSpace(word))
-                {
-                    continue;
-                }
-                if (
-                    word.Length > longAcronymThreshold
-                    || !AllCapitals(word)
-                    || (
-                        AllCapitals(input)
-                        && input.Length > longAcronymThreshold
-                        && matches.Length > 1
-                    )
-                )
-                {
-                    word = MakeFirstLetterUpper(word, culture);
-                }
-
-                for (var j = i - 1; j >= 0; j--)
-                {
-                    if (string.IsNullOrWhiteSpace(matches[j]))
-                    {
-                        continue;
-                    }
-                    if (i > 0 && char.IsDigit(word[0]) && char.IsDigit(matches[j][^1]))
-                    {
-                        word = $"x{word}";
-                    }
-
-                    break;
-                }
-            }
-
-            return string.Join(" ", matches);
-        }
-
-        private static bool AllCapitals(string input) =>
-            input.ToCharArray().All(x => char.IsUpper(x) || !char.IsLetter(x));
-
-        private static string MakeFirstLetterUpper(string wordToConvert, CultureInfo culture)
-        {
-            var nextLetter = wordToConvert.TakeWhile(char.IsDigit).Count() + 1;
-            if (nextLetter > wordToConvert.Length)
-            {
-                // It's not a word?
-                return wordToConvert;
-            }
-
-            return culture.TextInfo.ToUpper(wordToConvert[..nextLetter])
-                + culture.TextInfo.ToLower(wordToConvert.Remove(0, nextLetter));
-        }
-
-        // https://chat.openai.com/share/f5eb195b-96a4-4f0f-955b-9d08b976a955
-        // https://chat.openai.com/share/8d3f2ec4-7eec-4dbd-a01e-a8d73e885964
-        [GeneratedRegex(@"(?<=\D)(?=\d)|(?<=\d)(?=\D)|\W+")]
-        private static partial Regex Words();
-    }
-
-    /// <summary>
     /// Rename all symbols with the given new names
     /// </summary>
     /// <param name="ctx">Mod context to use</param>
@@ -324,8 +201,12 @@ public static partial class NameUtils
     )
     {
         var newNames = toRename.ToList();
-        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, newNames.Select(x => x.Symbol), [
-            new IdentifierRenamingTransformer(newNames),
-        ], logger, ct);
+        await LocationTransformationUtils.ModifyAllReferencesAsync(
+            ctx,
+            newNames.Select(x => x.Symbol),
+            [new IdentifierRenamingTransformer(newNames)],
+            logger,
+            ct
+        );
     }
 }

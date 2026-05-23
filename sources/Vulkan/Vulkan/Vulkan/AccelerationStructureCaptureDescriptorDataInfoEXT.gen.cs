@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccelerationStructureCaptureDescriptorDataInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -26,7 +28,7 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +44,7 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkAccelerationStructureKHR")]
+    [NativeName("accelerationStructure")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -51,9 +53,9 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHRHandle AccelerationStructure;
+    public AccelerationStructureHandleKHR AccelerationStructure;
 
-    [NativeTypeName("VkAccelerationStructureNV")]
+    [NativeName("accelerationStructureNV")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,5 +69,5 @@ public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public AccelerationStructureNVHandle AccelerationStructureNV;
+    public AccelerationStructureHandleNV AccelerationStructureNV;
 }

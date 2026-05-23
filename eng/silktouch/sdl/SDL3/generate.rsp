@@ -2,6 +2,7 @@
 @../remap.rsp
 --exclude
 SDL_SetX11EventHook
+SDL_SetWindowsMessageHook
 SDL_FUNCTION
 SDL_SIZE_MAX
 SDL_memcpy
@@ -12,6 +13,9 @@ SDL_EndThreadFunction
 SDL_fabsf
 SDL_size_add_check_overflow_builtin
 SDL_size_mul_check_overflow_builtin
+SDL_FILE
+SDL_LINE
+SDL_NULL_WHILE_LOOP_CONDITION
 --file
 sdl-SDL.h
 --methodClassName

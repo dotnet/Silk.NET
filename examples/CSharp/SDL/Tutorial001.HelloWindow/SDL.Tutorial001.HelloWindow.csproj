@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <!-- Ensure native binaries are copied when referencing Silk by ProjectReference -->
+        <!-- See: https://dotnet.github.io/Silk.NET/docs/v3/for-contributors/build-system#native-packaging -->
+        <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\sources\SDL\SDL\Silk.NET.SDL.csproj" />
+    </ItemGroup>
+
+</Project>

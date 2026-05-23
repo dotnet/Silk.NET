@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkGraphicsShaderGroupCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GraphicsShaderGroupCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -18,7 +20,7 @@ public unsafe partial struct GraphicsShaderGroupCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -26,7 +28,7 @@ public unsafe partial struct GraphicsShaderGroupCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("stageCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -34,7 +36,7 @@ public unsafe partial struct GraphicsShaderGroupCreateInfoNV
     )]
     public uint StageCount;
 
-    [NativeTypeName("const VkPipelineShaderStageCreateInfo *")]
+    [NativeName("pStages")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -42,7 +44,7 @@ public unsafe partial struct GraphicsShaderGroupCreateInfoNV
     )]
     public PipelineShaderStageCreateInfo* PStages;
 
-    [NativeTypeName("const VkPipelineVertexInputStateCreateInfo *")]
+    [NativeName("pVertexInputState")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -50,7 +52,7 @@ public unsafe partial struct GraphicsShaderGroupCreateInfoNV
     )]
     public PipelineVertexInputStateCreateInfo* PVertexInputState;
 
-    [NativeTypeName("const VkPipelineTessellationStateCreateInfo *")]
+    [NativeName("pTessellationState")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

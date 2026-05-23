@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAmigoProfilingSubmitInfoSEC")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AmigoProfilingSubmitInfoSEC
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_SEC_amigo_profiling"],
@@ -20,7 +22,7 @@ public unsafe partial struct AmigoProfilingSubmitInfoSEC
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_SEC_amigo_profiling"],
@@ -31,7 +33,7 @@ public unsafe partial struct AmigoProfilingSubmitInfoSEC
     )]
     public void* PNext;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("firstDrawTimestamp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_SEC_amigo_profiling"],
@@ -42,7 +44,7 @@ public unsafe partial struct AmigoProfilingSubmitInfoSEC
     )]
     public ulong FirstDrawTimestamp;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("swapBufferTimestamp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_SEC_amigo_profiling"],

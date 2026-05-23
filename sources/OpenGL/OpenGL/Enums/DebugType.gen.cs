@@ -7,17 +7,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("DebugType")]
 public enum DebugType : uint
 {
-    DontCare = unchecked((uint)0x1100),
-    DebugTypeError = unchecked((uint)0x824C),
-    DebugTypeDeprecatedBehavior = unchecked((uint)0x824D),
-    DebugTypeUndefinedBehavior = unchecked((uint)0x824E),
-    DebugTypePortability = unchecked((uint)0x824F),
-    DebugTypePerformance = unchecked((uint)0x8250),
-    DebugTypeOther = unchecked((uint)0x8251),
-    DebugTypeMarker = unchecked((uint)0x8268),
-    DebugTypePushGroup = unchecked((uint)0x8269),
-    DebugTypePopGroup = unchecked((uint)0x826A),
+    [NativeName("GL_DONT_CARE")]
+    DontCare = 4352,
+
+    [NativeName("GL_DEBUG_TYPE_ERROR")]
+    DebugTypeError = 33356,
+
+    [NativeName("GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR")]
+    DebugTypeDeprecatedBehavior = 33357,
+
+    [NativeName("GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR")]
+    DebugTypeUndefinedBehavior = 33358,
+
+    [NativeName("GL_DEBUG_TYPE_PORTABILITY")]
+    DebugTypePortability = 33359,
+
+    [NativeName("GL_DEBUG_TYPE_PERFORMANCE")]
+    DebugTypePerformance = 33360,
+
+    [NativeName("GL_DEBUG_TYPE_OTHER")]
+    DebugTypeOther = 33361,
+
+    [NativeName("GL_DEBUG_TYPE_MARKER")]
+    DebugTypeMarker = 33384,
+
+    [NativeName("GL_DEBUG_TYPE_PUSH_GROUP")]
+    DebugTypePushGroup = 33385,
+
+    [NativeName("GL_DEBUG_TYPE_POP_GROUP")]
+    DebugTypePopGroup = 33386,
 }

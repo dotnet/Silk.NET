@@ -102,13 +102,13 @@ internal class SdlSurface : Surface, IDisposable
             return true;
         }
 
-        if (typeof(TPlatformInfo) == typeof(EGLPlatformInfo))
+        if (typeof(TPlatformInfo) == typeof(EglPlatformInfo))
         {
             info = (TPlatformInfo)
                 (object)
-                    new EGLPlatformInfo(
-                        (nint)Sdl.EGLGetCurrentDisplay(),
-                        (nint)Sdl.EGLGetWindowSurface(Impl.Handle)
+                    new EglPlatformInfo(
+                        (nint)Sdl.EglGetCurrentDisplay(),
+                        (nint)Sdl.EglGetWindowSurface(Impl.Handle)
                     );
             Sdl.ClearError();
             return true;

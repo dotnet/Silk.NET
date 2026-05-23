@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceExclusiveScissorFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_scissor_exclusive"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_scissor_exclusive"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("exclusiveScissor")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_scissor_exclusive"],

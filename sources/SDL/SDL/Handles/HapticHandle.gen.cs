@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Haptic")]
 public readonly unsafe partial struct HapticHandle
 {
     public readonly void* Handle;
+
+    public HapticHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(HapticHandle other) => Handle == other.Handle;
 

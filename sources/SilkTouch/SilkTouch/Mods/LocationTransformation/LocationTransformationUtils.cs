@@ -26,7 +26,8 @@ public static class LocationTransformationUtils
         IEnumerable<ISymbol> symbols,
         IEnumerable<LocationTransformer> transformers,
         ILogger? logger = null,
-        CancellationToken ct = default)
+        CancellationToken ct = default
+    )
     {
         var sourceProject = ctx.SourceProject;
         if (sourceProject == null)
@@ -37,33 +38,42 @@ public static class LocationTransformationUtils
         // We need to track both the original solution and modified solution
         // The original is where we retrieve documents and semantic models
         // The modified solution is where we place the results
-        IReadOnlyList<DocumentId> documentIds = [.. sourceProject.DocumentIds, .. ctx.TestProject?.DocumentIds ?? []];
+        IReadOnlyList<DocumentId> documentIds =
+        [
+            .. sourceProject.DocumentIds,
+            .. ctx.TestProject?.DocumentIds ?? [],
+        ];
 
         var originalSolution = sourceProject.Solution;
         var newDocuments = new ConcurrentDictionary<DocumentId, SyntaxNode>();
         var symbolSet = new HashSet<ISymbol>(symbols, SymbolEqualityComparer.Default);
-        await Parallel.ForEachAsync(documentIds, ct, async (documentId, _) => {
-            var originalDocument = originalSolution.GetDocument(documentId);
-            if (originalDocument == null)
+        var baseRewriter = new LocationTransformationRewriter(symbolSet, transformers.ToList());
+        await Parallel.ForEachAsync(
+            documentIds,
+            ct,
+            async (documentId, _) =>
             {
-                return;
+                var originalDocument = originalSolution.GetDocument(documentId);
+                if (originalDocument == null)
+                {
+                    return;
+                }
+
+                var originalRoot = await originalDocument.GetSyntaxRootAsync(ct);
+                var semanticModel = await originalDocument.GetSemanticModelAsync(ct);
+                if (originalRoot == null || semanticModel == null)
+                {
+                    return;
+                }
+
+                // Since this is multithreaded, each thread needs their own copy of the rewriter and transformers
+                var rewriter = baseRewriter.GetThreadSafeCopy();
+
+                rewriter.Initialize(semanticModel);
+                var newRoot = rewriter.Visit(originalRoot);
+                newDocuments.TryAdd(documentId, newRoot);
             }
-
-            var originalRoot = await originalDocument.GetSyntaxRootAsync(ct);
-            var semanticModel = await originalDocument.GetSemanticModelAsync(ct);
-
-            if (originalRoot == null || semanticModel == null)
-            {
-                return;
-            }
-
-            // Since this is multithreaded, each thread needs their own copy of the rewriter and transformers
-            var rewriter = new LocationTransformationRewriter(symbolSet, [..transformers.Select(t => t.GetThreadSafeCopy())]);
-            rewriter.Initialize(semanticModel);
-
-            var newRoot = rewriter.Visit(originalRoot);
-            newDocuments.TryAdd(documentId, newRoot);
-        });
+        );
 
         var modifiedSolution = sourceProject.Solution;
         foreach (var (documentId, newRoot) in newDocuments)

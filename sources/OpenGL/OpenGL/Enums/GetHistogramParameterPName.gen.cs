@@ -7,23 +7,54 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("GetHistogramParameterPNameEXT")]
 public enum GetHistogramParameterPName : uint
 {
-    Width = unchecked((uint)0x8026),
-    Format = unchecked((uint)0x8027),
-    RedSize = unchecked((uint)0x8028),
-    GreenSize = unchecked((uint)0x8029),
-    BlueSize = unchecked((uint)0x802A),
-    AlphaSize = unchecked((uint)0x802B),
-    LuminanceSize = unchecked((uint)0x802C),
-    Sink = unchecked((uint)0x802D),
-    WidthEXT = unchecked((uint)0x8026),
-    FormatEXT = unchecked((uint)0x8027),
-    RedSizeEXT = unchecked((uint)0x8028),
-    GreenSizeEXT = unchecked((uint)0x8029),
-    BlueSizeEXT = unchecked((uint)0x802A),
-    AlphaSizeEXT = unchecked((uint)0x802B),
-    LuminanceSizeEXT = unchecked((uint)0x802C),
-    SinkEXT = unchecked((uint)0x802D),
+    [NativeName("GL_HISTOGRAM_WIDTH")]
+    Width = 32806,
+
+    [NativeName("GL_HISTOGRAM_FORMAT")]
+    Format = 32807,
+
+    [NativeName("GL_HISTOGRAM_RED_SIZE")]
+    RedSize = 32808,
+
+    [NativeName("GL_HISTOGRAM_GREEN_SIZE")]
+    GreenSize = 32809,
+
+    [NativeName("GL_HISTOGRAM_BLUE_SIZE")]
+    BlueSize = 32810,
+
+    [NativeName("GL_HISTOGRAM_ALPHA_SIZE")]
+    AlphaSize = 32811,
+
+    [NativeName("GL_HISTOGRAM_LUMINANCE_SIZE")]
+    LuminanceSize = 32812,
+
+    [NativeName("GL_HISTOGRAM_SINK")]
+    Sink = 32813,
+
+    [NativeName("GL_HISTOGRAM_WIDTH_EXT")]
+    WidthEXT = 32806,
+
+    [NativeName("GL_HISTOGRAM_FORMAT_EXT")]
+    FormatEXT = 32807,
+
+    [NativeName("GL_HISTOGRAM_RED_SIZE_EXT")]
+    RedSizeEXT = 32808,
+
+    [NativeName("GL_HISTOGRAM_GREEN_SIZE_EXT")]
+    GreenSizeEXT = 32809,
+
+    [NativeName("GL_HISTOGRAM_BLUE_SIZE_EXT")]
+    BlueSizeEXT = 32810,
+
+    [NativeName("GL_HISTOGRAM_ALPHA_SIZE_EXT")]
+    AlphaSizeEXT = 32811,
+
+    [NativeName("GL_HISTOGRAM_LUMINANCE_SIZE_EXT")]
+    LuminanceSizeEXT = 32812,
+
+    [NativeName("GL_HISTOGRAM_SINK_EXT")]
+    SinkEXT = 32813,
 }

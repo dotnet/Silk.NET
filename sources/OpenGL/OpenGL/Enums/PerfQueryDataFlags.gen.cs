@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("PerfQueryDataFlags")]
 public enum PerfQueryDataFlags : uint
 {
-    WaitIntel = unchecked((uint)0x83FB),
-    FlushIntel = unchecked((uint)0x83FA),
-    DonotFlushIntel = unchecked((uint)0x83F9),
+    [NativeName("GL_PERFQUERY_WAIT_INTEL")]
+    WaitINTEL = 33787,
+
+    [NativeName("GL_PERFQUERY_FLUSH_INTEL")]
+    FlushINTEL = 33786,
+
+    [NativeName("GL_PERFQUERY_DONOT_FLUSH_INTEL")]
+    DonotFlushINTEL = 33785,
 }

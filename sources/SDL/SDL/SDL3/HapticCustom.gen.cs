@@ -7,45 +7,48 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_HapticCustom")]
 public unsafe partial struct HapticCustom
 {
-    [NativeTypeName("Uint16")]
+    [NativeName("type")]
     public ushort Type;
+
+    [NativeName("direction")]
     public HapticDirection Direction;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("length")]
     public uint Length;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("delay")]
     public ushort Delay;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("button")]
     public ushort Button;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("interval")]
     public ushort Interval;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("channels")]
     public byte Channels;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("period")]
     public ushort Period;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("samples")]
     public ushort Samples;
 
-    [NativeTypeName("Uint16 *")]
+    [NativeName("data")]
     public ushort* Data;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("attack_length")]
     public ushort AttackLength;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("attack_level")]
     public ushort AttackLevel;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("fade_length")]
     public ushort FadeLength;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("fade_level")]
     public ushort FadeLevel;
 }

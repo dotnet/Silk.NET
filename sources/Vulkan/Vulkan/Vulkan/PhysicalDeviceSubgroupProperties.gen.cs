@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceSubgroupProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSubgroupProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,6 +32,7 @@ public unsafe partial struct PhysicalDeviceSubgroupProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +53,7 @@ public unsafe partial struct PhysicalDeviceSubgroupProperties
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("subgroupSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -71,7 +74,7 @@ public unsafe partial struct PhysicalDeviceSubgroupProperties
     )]
     public uint SubgroupSize;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("supportedStages")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -92,7 +95,7 @@ public unsafe partial struct PhysicalDeviceSubgroupProperties
     )]
     public ShaderStageFlags SupportedStages;
 
-    [NativeTypeName("VkSubgroupFeatureFlags")]
+    [NativeName("supportedOperations")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -113,7 +116,7 @@ public unsafe partial struct PhysicalDeviceSubgroupProperties
     )]
     public SubgroupFeatureFlags SupportedOperations;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("quadOperationsInAllStages")]
     [SupportedApiProfile(
         "vulkan",
         [

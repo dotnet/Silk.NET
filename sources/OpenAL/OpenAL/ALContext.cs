@@ -13,11 +13,16 @@ public partial class ALContext
         "CurrentDevice cannot be changed once set, use another API object for additional devices. For more "
         + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
 
-    static ALContext() =>
+    static ALContext()
+    {
         LoaderInterface.RegisterAlternativeName(
             "openal",
             "/System/Library/Frameworks/OpenAL.framework/OpenAL"
         );
+
+        LoaderInterface.RegisterAlternativeName("openal", "OpenAL32");
+        LoaderInterface.RegisterAlternativeName("openal", "soft_oal");
+    }
 
     public unsafe partial class DllImport
     {

@@ -7,13 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum IOStatus : uint
+[NativeName("SDL_IOStatus")]
+public enum IOStatus
 {
-    Ready,
-    Error,
-    Eof,
-    NotReady,
-    Readonly,
-    Writeonly,
+    [NativeName("SDL_IO_STATUS_READY")]
+    Ready = 0,
+
+    [NativeName("SDL_IO_STATUS_ERROR")]
+    Error = 1,
+
+    [NativeName("SDL_IO_STATUS_EOF")]
+    Eof = 2,
+
+    [NativeName("SDL_IO_STATUS_NOT_READY")]
+    NotReady = 3,
+
+    [NativeName("SDL_IO_STATUS_READONLY")]
+    Readonly = 4,
+
+    [NativeName("SDL_IO_STATUS_WRITEONLY")]
+    Writeonly = 5,
 }

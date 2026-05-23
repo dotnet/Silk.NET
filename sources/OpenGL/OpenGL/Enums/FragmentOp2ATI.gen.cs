@@ -7,12 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FragmentOp2ATI")]
 public enum FragmentOp2ATI : uint
 {
-    Add = unchecked((uint)0x8963),
-    Mul = unchecked((uint)0x8964),
-    Sub = unchecked((uint)0x8965),
-    Dot3 = unchecked((uint)0x8966),
-    Dot4 = unchecked((uint)0x8967),
+    [NativeName("GL_ADD_ATI")]
+    Add = 35171,
+
+    [NativeName("GL_MUL_ATI")]
+    Mul = 35172,
+
+    [NativeName("GL_SUB_ATI")]
+    Sub = 35173,
+
+    [NativeName("GL_DOT3_ATI")]
+    Dot3 = 35174,
+
+    [NativeName("GL_DOT4_ATI")]
+    Dot4 = 35175,
 }

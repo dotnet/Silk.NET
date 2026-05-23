@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoSessionCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoSessionCreateInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -18,7 +20,7 @@ public unsafe partial struct VideoSessionCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -26,7 +28,7 @@ public unsafe partial struct VideoSessionCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queueFamilyIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -34,7 +36,7 @@ public unsafe partial struct VideoSessionCreateInfoKHR
     )]
     public uint QueueFamilyIndex;
 
-    [NativeTypeName("VkVideoSessionCreateFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -42,7 +44,7 @@ public unsafe partial struct VideoSessionCreateInfoKHR
     )]
     public VideoSessionCreateFlagsKHR Flags;
 
-    [NativeTypeName("const VkVideoProfileInfoKHR *")]
+    [NativeName("pVideoProfile")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -50,6 +52,7 @@ public unsafe partial struct VideoSessionCreateInfoKHR
     )]
     public VideoProfileInfoKHR* PVideoProfile;
 
+    [NativeName("pictureFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -57,6 +60,7 @@ public unsafe partial struct VideoSessionCreateInfoKHR
     )]
     public Format PictureFormat;
 
+    [NativeName("maxCodedExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -64,6 +68,7 @@ public unsafe partial struct VideoSessionCreateInfoKHR
     )]
     public Extent2D MaxCodedExtent;
 
+    [NativeName("referencePictureFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -71,7 +76,7 @@ public unsafe partial struct VideoSessionCreateInfoKHR
     )]
     public Format ReferencePictureFormat;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxDpbSlots")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -79,7 +84,7 @@ public unsafe partial struct VideoSessionCreateInfoKHR
     )]
     public uint MaxDpbSlots;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxActiveReferencePictures")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -87,7 +92,7 @@ public unsafe partial struct VideoSessionCreateInfoKHR
     )]
     public uint MaxActiveReferencePictures;
 
-    [NativeTypeName("const VkExtensionProperties *")]
+    [NativeName("pStdHeaderVersion")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

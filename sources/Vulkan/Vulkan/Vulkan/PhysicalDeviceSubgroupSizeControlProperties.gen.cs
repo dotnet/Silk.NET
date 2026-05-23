@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceSubgroupSizeControlProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSubgroupSizeControlProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,6 +27,7 @@ public unsafe partial struct PhysicalDeviceSubgroupSizeControlProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +42,7 @@ public unsafe partial struct PhysicalDeviceSubgroupSizeControlProperties
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("minSubgroupSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,7 +57,7 @@ public unsafe partial struct PhysicalDeviceSubgroupSizeControlProperties
     )]
     public uint MinSubgroupSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxSubgroupSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +72,7 @@ public unsafe partial struct PhysicalDeviceSubgroupSizeControlProperties
     )]
     public uint MaxSubgroupSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxComputeWorkgroupSubgroups")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +87,7 @@ public unsafe partial struct PhysicalDeviceSubgroupSizeControlProperties
     )]
     public uint MaxComputeWorkgroupSubgroups;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("requiredSubgroupSizeStages")]
     [SupportedApiProfile(
         "vulkan",
         [

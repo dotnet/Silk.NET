@@ -80,7 +80,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                             ty.BaseList.Types.Concat(
                                     ((BaseTypeDeclarationSyntax)existing.Value.Syntax)
                                         .BaseList
-                                        ?.Types ?? Enumerable.Empty<BaseTypeSyntax>()
+                                        ?.Types ?? []
                                 )
                                 .DistinctBy(x => x.ToString())
                         )

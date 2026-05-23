@@ -1,0 +1,7 @@
+﻿public class Sdl
+{
+    public static delegate*<int, sbyte**, int> MainValue => &Main;
+
+    [NameAffix("Prefix", "SharedPrefix", "SDL")]
+    public static extern int Main(int argc, sbyte** argv);
+}

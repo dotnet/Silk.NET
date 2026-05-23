@@ -1,0 +1,5 @@
+﻿[NativeName("GLenum")]
+[NameAffix("Prefix", "KhronosNamespaceEnum", "GL")]
+public enum GLEnum
+{
+}

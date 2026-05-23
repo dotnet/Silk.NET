@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkResolveImageFlagBitsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ResolveImageFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_RESOLVE_IMAGE_SKIP_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10+VK_KHR_copy_commands2", "VK_KHR_maintenance10+VK_VERSION_1_3"],
@@ -23,8 +24,9 @@ public enum ResolveImageFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    SkipTransferFunctionBitKHR = 0x1,
+    SkipTransferFunctionBit = 0x1,
 
+    [NativeName("VK_RESOLVE_IMAGE_ENABLE_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10+VK_KHR_copy_commands2", "VK_KHR_maintenance10+VK_VERSION_1_3"],
@@ -33,5 +35,5 @@ public enum ResolveImageFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    EnableTransferFunctionBitKHR = 0x2,
+    EnableTransferFunctionBit = 0x2,
 }

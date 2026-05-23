@@ -7,27 +7,66 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ProgramPropertyARB")]
 public enum ProgramProperty : uint
 {
-    DeleteStatus = unchecked((uint)0x8B80),
-    LinkStatus = unchecked((uint)0x8B82),
-    ValidateStatus = unchecked((uint)0x8B83),
-    InfoLogLength = unchecked((uint)0x8B84),
-    AttachedShaders = unchecked((uint)0x8B85),
-    ActiveUniforms = unchecked((uint)0x8B86),
-    ActiveUniformMaxLength = unchecked((uint)0x8B87),
-    ActiveAttributes = unchecked((uint)0x8B89),
-    ActiveAttributeMaxLength = unchecked((uint)0x8B8A),
-    TransformFeedbackVaryingMaxLength = unchecked((uint)0x8C76),
-    TransformFeedbackBufferMode = unchecked((uint)0x8C7F),
-    TransformFeedbackVaryings = unchecked((uint)0x8C83),
-    ActiveUniformBlockMaxNameLength = unchecked((uint)0x8A35),
-    ActiveUniformBlocks = unchecked((uint)0x8A36),
-    GeometryVerticesOut = unchecked((uint)0x8916),
-    GeometryInputType = unchecked((uint)0x8917),
-    GeometryOutputType = unchecked((uint)0x8918),
-    ProgramBinaryLength = unchecked((uint)0x8741),
-    ActiveAtomicCounterBuffers = unchecked((uint)0x92D9),
-    ComputeWorkGroupSize = unchecked((uint)0x8267),
+    [NativeName("GL_DELETE_STATUS")]
+    DeleteStatus = 35712,
+
+    [NativeName("GL_LINK_STATUS")]
+    LinkStatus = 35714,
+
+    [NativeName("GL_VALIDATE_STATUS")]
+    ValidateStatus = 35715,
+
+    [NativeName("GL_INFO_LOG_LENGTH")]
+    InfoLogLength = 35716,
+
+    [NativeName("GL_ATTACHED_SHADERS")]
+    AttachedShaders = 35717,
+
+    [NativeName("GL_ACTIVE_UNIFORMS")]
+    ActiveUniforms = 35718,
+
+    [NativeName("GL_ACTIVE_UNIFORM_MAX_LENGTH")]
+    ActiveUniformMaxLength = 35719,
+
+    [NativeName("GL_ACTIVE_ATTRIBUTES")]
+    ActiveAttributes = 35721,
+
+    [NativeName("GL_ACTIVE_ATTRIBUTE_MAX_LENGTH")]
+    ActiveAttributeMaxLength = 35722,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH")]
+    TransformFeedbackVaryingMaxLength = 35958,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_MODE")]
+    TransformFeedbackBufferMode = 35967,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK_VARYINGS")]
+    TransformFeedbackVaryings = 35971,
+
+    [NativeName("GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH")]
+    ActiveUniformBlockMaxNameLength = 35381,
+
+    [NativeName("GL_ACTIVE_UNIFORM_BLOCKS")]
+    ActiveUniformBlocks = 35382,
+
+    [NativeName("GL_GEOMETRY_VERTICES_OUT")]
+    GeometryVerticesOut = 35094,
+
+    [NativeName("GL_GEOMETRY_INPUT_TYPE")]
+    GeometryInputType = 35095,
+
+    [NativeName("GL_GEOMETRY_OUTPUT_TYPE")]
+    GeometryOutputType = 35096,
+
+    [NativeName("GL_PROGRAM_BINARY_LENGTH")]
+    ProgramBinaryLength = 34625,
+
+    [NativeName("GL_ACTIVE_ATOMIC_COUNTER_BUFFERS")]
+    ActiveAtomicCounterBuffers = 37593,
+
+    [NativeName("GL_COMPUTE_WORK_GROUP_SIZE")]
+    ComputeWorkGroupSize = 33383,
 }

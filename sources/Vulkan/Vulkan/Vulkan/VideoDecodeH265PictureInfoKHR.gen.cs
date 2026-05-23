@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoDecodeH265PictureInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeH265PictureInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],
@@ -18,7 +20,7 @@ public unsafe partial struct VideoDecodeH265PictureInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],
@@ -26,7 +28,7 @@ public unsafe partial struct VideoDecodeH265PictureInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("const StdVideoDecodeH265PictureInfo *")]
+    [NativeName("pStdPictureInfo")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],
@@ -34,7 +36,7 @@ public unsafe partial struct VideoDecodeH265PictureInfoKHR
     )]
     public StdVideoDecodeH265PictureInfo* PStdPictureInfo;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("sliceSegmentCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],
@@ -42,7 +44,7 @@ public unsafe partial struct VideoDecodeH265PictureInfoKHR
     )]
     public uint SliceSegmentCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pSliceSegmentOffsets")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],

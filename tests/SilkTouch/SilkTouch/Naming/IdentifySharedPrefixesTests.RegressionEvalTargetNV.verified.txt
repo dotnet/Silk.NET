@@ -1,0 +1,7 @@
+﻿public enum EvalTargetNV
+{
+    [NameAffix("Prefix", "SharedPrefix", "GL")]
+    GL_EVAL_2D_NV,
+    [NameAffix("Prefix", "SharedPrefix", "GL")]
+    GL_EVAL_TRIANGULAR_2D_NV
+}

@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMicromapCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MicromapCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -20,7 +22,7 @@ public unsafe partial struct MicromapCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -31,7 +33,7 @@ public unsafe partial struct MicromapCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkMicromapCreateFlagsEXT")]
+    [NativeName("createFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -42,7 +44,7 @@ public unsafe partial struct MicromapCreateInfoEXT
     )]
     public MicromapCreateFlagsEXT CreateFlags;
 
-    [NativeTypeName("VkBuffer")]
+    [NativeName("buffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -53,7 +55,7 @@ public unsafe partial struct MicromapCreateInfoEXT
     )]
     public BufferHandle Buffer;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("offset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -64,7 +66,7 @@ public unsafe partial struct MicromapCreateInfoEXT
     )]
     public ulong Offset;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -75,6 +77,7 @@ public unsafe partial struct MicromapCreateInfoEXT
     )]
     public ulong Size;
 
+    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -85,7 +88,7 @@ public unsafe partial struct MicromapCreateInfoEXT
     )]
     public MicromapTypeEXT Type;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("deviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

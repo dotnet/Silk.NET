@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPushConstantRange")]
 [SupportedApiProfile("vulkan")]
 public partial struct PushConstantRange
 {
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("stageFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +35,7 @@ public partial struct PushConstantRange
     )]
     public ShaderStageFlags StageFlags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("offset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,7 +59,7 @@ public partial struct PushConstantRange
     )]
     public uint Offset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         [

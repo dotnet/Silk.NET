@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("PixelTransformPNameEXT")]
 public enum PixelTransformPNameEXT : uint
 {
-    MagFilter = unchecked((uint)0x8331),
-    MinFilter = unchecked((uint)0x8332),
-    CubicWeight = unchecked((uint)0x8333),
+    [NativeName("GL_PIXEL_MAG_FILTER_EXT")]
+    MagFilter = 33585,
+
+    [NativeName("GL_PIXEL_MIN_FILTER_EXT")]
+    MinFilter = 33586,
+
+    [NativeName("GL_PIXEL_CUBIC_WEIGHT_EXT")]
+    CubicWeight = 33587,
 }

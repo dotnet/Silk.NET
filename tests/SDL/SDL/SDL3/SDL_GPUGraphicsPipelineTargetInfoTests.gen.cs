@@ -8,40 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GPUGraphicsPipelineTargetInfo"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GpuGraphicsPipelineTargetInfo"/> struct.</summary>
 public static unsafe partial class SDL_GPUGraphicsPipelineTargetInfoTests
 {
-    /// <summary>Validates that the <see cref = "GPUGraphicsPipelineTargetInfo"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GpuGraphicsPipelineTargetInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GPUGraphicsPipelineTargetInfo>(),
-            Is.EqualTo(sizeof(GPUGraphicsPipelineTargetInfo))
+            Marshal.SizeOf<GpuGraphicsPipelineTargetInfo>(),
+            Is.EqualTo(sizeof(GpuGraphicsPipelineTargetInfo))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GPUGraphicsPipelineTargetInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GpuGraphicsPipelineTargetInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GPUGraphicsPipelineTargetInfo).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GpuGraphicsPipelineTargetInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GPUGraphicsPipelineTargetInfo"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GpuGraphicsPipelineTargetInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GPUGraphicsPipelineTargetInfo), Is.EqualTo(24));
+            Assert.That(sizeof(GpuGraphicsPipelineTargetInfo), Is.EqualTo(24));
         }
         else
         {
-            Assert.That(sizeof(GPUGraphicsPipelineTargetInfo), Is.EqualTo(16));
+            Assert.That(sizeof(GpuGraphicsPipelineTargetInfo), Is.EqualTo(16));
         }
     }
 }

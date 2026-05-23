@@ -10,9 +10,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("ContextAmbisonicLayoutSOFT")]
 public enum ContextAmbisonicLayoutSOFT : uint
 {
-    Fuma = unchecked((uint)0x0000),
-    Acn = unchecked((uint)0x0001),
+    [NativeName("ALC_FUMA_SOFT")]
+    Fuma = 0,
+
+    [NativeName("ALC_ACN_SOFT")]
+    Acn = 1,
 }

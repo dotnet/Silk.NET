@@ -59,7 +59,8 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
 
             rsps[i] = rsp with
             {
-                GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with {
+                GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with
+                {
                     DefaultNamespace = def,
                     WithNamespaces = with,
                 },
@@ -91,7 +92,7 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             var doc =
                 proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
-                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
@@ -116,17 +117,16 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             _usingsToAdd.Clear();
             return base.VisitCompilationUnit(node) switch
             {
-                CompilationUnitSyntax syntax
-                    => syntax.AddUsings(
-                        _usingsToAdd
-                            .Select(x => UsingDirective(ModUtils.NamespaceIntoIdentifierName(x)))
-                            .Where(x =>
-                                syntax.Usings.All(y => x.Name?.ToString() != y.Name?.ToString())
-                            )
-                            .ToArray()
-                    ),
+                CompilationUnitSyntax syntax => syntax.AddUsings(
+                    _usingsToAdd
+                        .Select(x => UsingDirective(ModUtils.NamespaceIntoIdentifierName(x)))
+                        .Where(x =>
+                            syntax.Usings.All(y => x.Name?.ToString() != y.Name?.ToString())
+                        )
+                        .ToArray()
+                ),
                 { } ret => ret,
-                null => null
+                null => null,
             };
         }
 
@@ -140,10 +140,11 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             }
             return base.VisitNamespaceDeclaration(node) switch
             {
-                NamespaceDeclarationSyntax syntax
-                    => syntax.WithName(ModUtils.NamespaceIntoIdentifierName(newNs)),
+                NamespaceDeclarationSyntax syntax => syntax.WithName(
+                    ModUtils.NamespaceIntoIdentifierName(newNs)
+                ),
                 { } ret => ret,
-                null => null
+                null => null,
             };
         }
 
@@ -159,10 +160,11 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             }
             return base.VisitFileScopedNamespaceDeclaration(node) switch
             {
-                FileScopedNamespaceDeclarationSyntax syntax
-                    => syntax.WithName(ModUtils.NamespaceIntoIdentifierName(newNs)),
+                FileScopedNamespaceDeclarationSyntax syntax => syntax.WithName(
+                    ModUtils.NamespaceIntoIdentifierName(newNs)
+                ),
                 { } ret => ret,
-                null => null
+                null => null,
             };
         }
     }

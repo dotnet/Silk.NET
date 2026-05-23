@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AppInit_func")]
 public unsafe delegate AppResult AppInitFuncDelegate(void** arg0, int arg1, sbyte** arg2);

@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSystemAllocationScope")]
 [SupportedApiProfile("vulkan")]
 public enum SystemAllocationScope : uint
 {
+    [NativeName("VK_SYSTEM_ALLOCATION_SCOPE_COMMAND")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,6 +41,7 @@ public enum SystemAllocationScope : uint
     )]
     Command = 0,
 
+    [NativeName("VK_SYSTEM_ALLOCATION_SCOPE_OBJECT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,6 +70,7 @@ public enum SystemAllocationScope : uint
     )]
     Object = 1,
 
+    [NativeName("VK_SYSTEM_ALLOCATION_SCOPE_CACHE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,6 +99,7 @@ public enum SystemAllocationScope : uint
     )]
     Cache = 2,
 
+    [NativeName("VK_SYSTEM_ALLOCATION_SCOPE_DEVICE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -124,6 +128,7 @@ public enum SystemAllocationScope : uint
     )]
     Device = 3,
 
+    [NativeName("VK_SYSTEM_ALLOCATION_SCOPE_INSTANCE")]
     [SupportedApiProfile(
         "vulkan",
         [

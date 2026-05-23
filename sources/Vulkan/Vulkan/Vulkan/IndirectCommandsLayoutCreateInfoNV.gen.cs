@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkIndirectCommandsLayoutCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -18,7 +20,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -26,7 +28,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkIndirectCommandsLayoutUsageFlagsNV")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -34,6 +36,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
     )]
     public IndirectCommandsLayoutUsageFlagsNV Flags;
 
+    [NativeName("pipelineBindPoint")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -41,7 +44,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
     )]
     public PipelineBindPoint PipelineBindPoint;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("tokenCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -49,7 +52,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
     )]
     public uint TokenCount;
 
-    [NativeTypeName("const VkIndirectCommandsLayoutTokenNV *")]
+    [NativeName("pTokens")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -57,7 +60,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
     )]
     public IndirectCommandsLayoutTokenNV* PTokens;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("streamCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -65,7 +68,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
     )]
     public uint StreamCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pStreamStrides")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

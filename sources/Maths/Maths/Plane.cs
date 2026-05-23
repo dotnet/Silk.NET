@@ -19,12 +19,10 @@ namespace Silk.NET.Maths
         where T : INumberBase<T>
     {
         /// <summary>The normal vector of the Plane.</summary>
-        [DataMember]
-        public Vector3D<T> Normal;
+        [DataMember] public Vector3D<T> Normal;
 
         /// <summary>The distance of the Plane along its normal from the origin.</summary>
-        [DataMember]
-        public T Distance;
+        [DataMember] public T Distance;
 
         /// <summary>Constructs a Plane from the X, Y, and Z components of its normal, and its distance from the origin on that normal.</summary>
         /// <param name="x">The X-component of the normal.</param>
@@ -94,7 +92,12 @@ namespace Silk.NET.Maths
         public override readonly string ToString()
         {
             CultureInfo ci = CultureInfo.CurrentCulture;
-            return string.Format(ci, "{{Normal:{0} D:{1}}}", Normal.ToString(), Distance.ToString("G", ci));
+            return string.Format(
+                ci,
+                "{{Normal:{0} D:{1}}}",
+                Normal.ToString(),
+                Distance.ToString("G", ci)
+            );
         }
 
         /// <summary>
@@ -208,8 +211,6 @@ namespace Silk.NET.Maths
         /// <returns>The casted plane</returns>
         [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
         public Plane<TOther> As<TOther>() where TOther : INumberBase<TOther>
-        {
-            return new(Normal.As<TOther>(), TOther.CreateTruncating(Distance));
-        }
+            => new(Normal.As<TOther>(), TOther.CreateTruncating(Distance));
     }
 }

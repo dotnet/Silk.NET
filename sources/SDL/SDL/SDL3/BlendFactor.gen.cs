@@ -4,17 +4,36 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum BlendFactor : uint
+[NativeName("SDL_BlendFactor")]
+public enum BlendFactor
 {
-    Zero = 0x1,
-    One = 0x2,
-    SrcColor = 0x3,
-    OneMinusSrcColor = 0x4,
-    SrcAlpha = 0x5,
-    OneMinusSrcAlpha = 0x6,
-    DstColor = 0x7,
-    OneMinusDstColor = 0x8,
-    DstAlpha = 0x9,
-    OneMinusDstAlpha = 0xA,
+    [NativeName("SDL_BLENDFACTOR_ZERO")]
+    Zero = 1,
+
+    [NativeName("SDL_BLENDFACTOR_ONE")]
+    One = 2,
+
+    [NativeName("SDL_BLENDFACTOR_SRC_COLOR")]
+    SrcColor = 3,
+
+    [NativeName("SDL_BLENDFACTOR_ONE_MINUS_SRC_COLOR")]
+    OneMinusSrcColor = 4,
+
+    [NativeName("SDL_BLENDFACTOR_SRC_ALPHA")]
+    SrcAlpha = 5,
+
+    [NativeName("SDL_BLENDFACTOR_ONE_MINUS_SRC_ALPHA")]
+    OneMinusSrcAlpha = 6,
+
+    [NativeName("SDL_BLENDFACTOR_DST_COLOR")]
+    DstColor = 7,
+
+    [NativeName("SDL_BLENDFACTOR_ONE_MINUS_DST_COLOR")]
+    OneMinusDstColor = 8,
+
+    [NativeName("SDL_BLENDFACTOR_DST_ALPHA")]
+    DstAlpha = 9,
+
+    [NativeName("SDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA")]
+    OneMinusDstAlpha = 10,
 }

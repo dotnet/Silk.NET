@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCopyMemoryIndirectCommandKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct CopyMemoryIndirectCommandKHR
 {
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("srcAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -22,7 +23,7 @@ public partial struct CopyMemoryIndirectCommandKHR
     )]
     public ulong SrcAddress;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("dstAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -33,7 +34,7 @@ public partial struct CopyMemoryIndirectCommandKHR
     )]
     public ulong DstAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],

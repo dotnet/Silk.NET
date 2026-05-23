@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDescriptorUpdateTemplate")]
 public readonly unsafe partial struct DescriptorUpdateTemplateHandle
 {
     public readonly void* Handle;
+
+    public DescriptorUpdateTemplateHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(DescriptorUpdateTemplateHandle other) => Handle == other.Handle;
 

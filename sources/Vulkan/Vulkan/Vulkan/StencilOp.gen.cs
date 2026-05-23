@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkStencilOp")]
 [SupportedApiProfile("vulkan")]
 public enum StencilOp : uint
 {
+    [NativeName("VK_STENCIL_OP_KEEP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,6 +30,7 @@ public enum StencilOp : uint
     )]
     Keep = 0,
 
+    [NativeName("VK_STENCIL_OP_ZERO")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -47,6 +49,7 @@ public enum StencilOp : uint
     )]
     Zero = 1,
 
+    [NativeName("VK_STENCIL_OP_REPLACE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -65,6 +68,7 @@ public enum StencilOp : uint
     )]
     Replace = 2,
 
+    [NativeName("VK_STENCIL_OP_INCREMENT_AND_CLAMP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -83,6 +87,7 @@ public enum StencilOp : uint
     )]
     IncrementAndClamp = 3,
 
+    [NativeName("VK_STENCIL_OP_DECREMENT_AND_CLAMP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -101,6 +106,7 @@ public enum StencilOp : uint
     )]
     DecrementAndClamp = 4,
 
+    [NativeName("VK_STENCIL_OP_INVERT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -119,6 +125,7 @@ public enum StencilOp : uint
     )]
     Invert = 5,
 
+    [NativeName("VK_STENCIL_OP_INCREMENT_AND_WRAP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -137,6 +144,7 @@ public enum StencilOp : uint
     )]
     IncrementAndWrap = 6,
 
+    [NativeName("VK_STENCIL_OP_DECREMENT_AND_WRAP")]
     [SupportedApiProfile(
         "vulkan",
         [

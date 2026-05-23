@@ -1,0 +1,17 @@
+﻿public class AL
+{
+    [NameAffix("Prefix", "SharedPrefix", "al")]
+    [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
+    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+    public void GetBufferPtrDirectSOFT()
+    {
+    }
+
+    [NameAffix("Prefix", "SharedPrefix", "al")]
+    [NameAffix("Suffix", "KhronosFunctionDataType", "v")]
+    [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
+    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+    public void GetBufferPtrvDirectSOFT()
+    {
+    }
+}

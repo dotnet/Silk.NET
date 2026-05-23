@@ -7,19 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_PathInfo")]
 public partial struct PathInfo
 {
+    [NativeName("type")]
     public PathType Type;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("size")]
     public ulong Size;
 
-    [NativeTypeName("SDL_Time")]
+    [NativeName("create_time")]
     public long CreateTime;
 
-    [NativeTypeName("SDL_Time")]
+    [NativeName("modify_time")]
     public long ModifyTime;
 
-    [NativeTypeName("SDL_Time")]
+    [NativeName("access_time")]
     public long AccessTime;
 }

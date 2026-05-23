@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBindAccelerationStructureMemoryInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindAccelerationStructureMemoryInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -21,7 +23,7 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -32,7 +34,7 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkAccelerationStructureNV")]
+    [NativeName("accelerationStructure")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -41,9 +43,9 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureNVHandle AccelerationStructure;
+    public AccelerationStructureHandleNV AccelerationStructure;
 
-    [NativeTypeName("VkDeviceMemory")]
+    [NativeName("memory")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -54,7 +56,7 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
     )]
     public DeviceMemoryHandle Memory;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("memoryOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -65,7 +67,7 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
     )]
     public ulong MemoryOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("deviceIndexCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -76,7 +78,7 @@ public unsafe partial struct BindAccelerationStructureMemoryInfoNV
     )]
     public uint DeviceIndexCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pDeviceIndices")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

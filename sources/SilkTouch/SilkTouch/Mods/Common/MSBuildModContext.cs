@@ -28,13 +28,11 @@ internal class MSBuildModContext(
     ILogger logger
 ) : IModContext
 {
-    private string? _cacheKey;
     private Project? _srcProject,
         _testProject;
 
     private SilkTouchConfiguration? _cfg = cfg.Get<SilkTouchConfiguration>();
     public string JobKey { get; } = cfg.Key;
-    public string JobCacheKey => _cacheKey ??= ObtainCacheKey();
     public string ConfigurationDirectory { get; init; } = Environment.CurrentDirectory;
 
     public Project? SourceProject
@@ -310,13 +308,8 @@ internal class MSBuildModContext(
         CancellationToken ct = default
     )
     {
-        var result = await CodeFormatter.FormatAsync(
-            root.NormalizeWhitespace().SyntaxTree,
-            _opts,
-            ct
-        );
-        return !result.CompilationErrors.Any()
-            ? result.Code
-            : root.NormalizeWhitespace(eol: "\n").ToFullString();
+        var normalizedRoot = root.NormalizeWhitespace();
+        var result = await CodeFormatter.FormatAsync(normalizedRoot.SyntaxTree, _opts, ct);
+        return !result.CompilationErrors.Any() ? result.Code : normalizedRoot.ToFullString();
     }
 }

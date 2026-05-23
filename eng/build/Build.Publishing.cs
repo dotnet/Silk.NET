@@ -46,31 +46,21 @@ partial class Build
 
     AbsolutePath OutputPackageDir => RootDirectory / "artifacts" / "pkg";
 
-    private void RemoveTemporaryFeeds()
-    {
-        try
-        {
-            if (DotNet("nuget list source").Any(x => x.Text.Contains(TemporaryNuGetFeed)))
-            {
-                DotNet($"nuget remove source \"{TemporaryNuGetFeed}\"");
-            }
-        }
-        catch
-        {
-            // probably hasn't existed yet, don't care.
-        }
-    }
+    AbsolutePath NuGetConfigFile => TemporaryDirectory / "push.nuget.config";
+
+    private void RemoveTemporaryFeeds() => NuGetConfigFile.DeleteFile();
 
     private IEnumerable<Output> AddTemporaryFeed()
     {
-        if (NugetFeed.Contains("nuget.org"))
-        {
-            return [];
-        }
+        NuGetConfigFile.WriteAllText(
+            "<?xml version=\"1.0\" encoding=\"utf-8\"?><configuration><packageSources><clear />"
+                + "</packageSources></configuration>"
+        );
 
         var srcSettings = new DotNetNuGetAddSourceSettings()
             .SetName(TemporaryNuGetFeed)
-            .SetSource(NugetFeed);
+            .SetSource(NugetFeed)
+            .SetConfigFile(NuGetConfigFile);
 
         if (NugetUsername is null != NugetPassword is null)
         {
@@ -130,7 +120,8 @@ partial class Build
             var ret = new DotNetNuGetPushSettings()
                 .SetNoServiceEndpoint(NugetNoServiceEndpoint)
                 .EnableSkipDuplicate()
-                .SetSource(NugetFeed.Contains("nuget.org") ? "nuget.org" : TemporaryNuGetFeed);
+                .SetSource(NugetFeed.Contains("nuget.org") ? "nuget.org" : TemporaryNuGetFeed)
+                .AddProcessAdditionalArguments("--configfile", NuGetConfigFile);
             if (NugetApiKey is not null)
             {
                 ret = ret.SetApiKey(NugetApiKey);

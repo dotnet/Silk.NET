@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkGraphicsPipelineShaderGroupsCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -18,7 +20,7 @@ public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -26,7 +28,7 @@ public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("groupCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -34,7 +36,7 @@ public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV
     )]
     public uint GroupCount;
 
-    [NativeTypeName("const VkGraphicsShaderGroupCreateInfoNV *")]
+    [NativeName("pGroups")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -42,7 +44,7 @@ public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV
     )]
     public GraphicsShaderGroupCreateInfoNV* PGroups;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("pipelineCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -50,7 +52,7 @@ public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV
     )]
     public uint PipelineCount;
 
-    [NativeTypeName("const VkPipeline *")]
+    [NativeName("pPipelines")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

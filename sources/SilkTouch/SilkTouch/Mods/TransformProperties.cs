@@ -58,7 +58,7 @@ public class TransformProperties : IMod
                 && lit.IsKind(SyntaxKind.Utf8StringLiteralExpression)
             )
             {
-                node = node.WithType(IdentifierName("Utf8String")).NormalizeWhitespace();
+                node = node.WithType(IdentifierName("Utf8String"));
             }
 
             return base.VisitPropertyDeclaration(node);

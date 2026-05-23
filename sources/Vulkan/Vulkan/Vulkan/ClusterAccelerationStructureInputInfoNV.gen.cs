@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkClusterAccelerationStructureInputInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ClusterAccelerationStructureInputInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -18,6 +20,7 @@ public unsafe partial struct ClusterAccelerationStructureInputInfoNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -25,7 +28,7 @@ public unsafe partial struct ClusterAccelerationStructureInputInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxAccelerationStructureCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -33,7 +36,7 @@ public unsafe partial struct ClusterAccelerationStructureInputInfoNV
     )]
     public uint MaxAccelerationStructureCount;
 
-    [NativeTypeName("VkBuildAccelerationStructureFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -41,6 +44,7 @@ public unsafe partial struct ClusterAccelerationStructureInputInfoNV
     )]
     public BuildAccelerationStructureFlagsKHR Flags;
 
+    [NativeName("opType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -48,6 +52,7 @@ public unsafe partial struct ClusterAccelerationStructureInputInfoNV
     )]
     public ClusterAccelerationStructureOpTypeNV OpType;
 
+    [NativeName("opMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -55,6 +60,7 @@ public unsafe partial struct ClusterAccelerationStructureInputInfoNV
     )]
     public ClusterAccelerationStructureOpModeNV OpMode;
 
+    [NativeName("opInput")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

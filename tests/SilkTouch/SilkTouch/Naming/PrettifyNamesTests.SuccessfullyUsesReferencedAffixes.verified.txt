@@ -1,0 +1,14 @@
+﻿[NameAffix("Suffix", "Test", "ShouldBeInOutputName")]
+public struct GamepadBindingShouldBeInOutputName
+{
+}
+
+[NameAffix("Prefix", "NestedStructParent", nameof(GamepadBindingShouldBeInOutputName))]
+public struct GamepadBindingShouldBeInOutputNameInput
+{
+}
+
+[NameAffix("Prefix", "NestedStructParent", nameof(GamepadBindingShouldBeInOutputNameInput))]
+public struct GamepadBindingShouldBeInOutputNameInputAxis
+{
+}

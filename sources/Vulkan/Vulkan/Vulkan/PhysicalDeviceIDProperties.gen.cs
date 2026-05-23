@@ -6,9 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceIDProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceIDProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,6 +35,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +60,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
     )]
     public void* PNext;
 
-    [NativeTypeName("uint8_t[16]")]
+    [NativeName("deviceUUID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -80,9 +83,9 @@ public unsafe partial struct PhysicalDeviceIDProperties
         ],
         MinVersion = "1.1"
     )]
-    public PhysicalDeviceIDPropertiesDeviceUUID DeviceUUID;
+    public PhysicalDeviceIDPropertiesDeviceUuid DeviceUuid;
 
-    [NativeTypeName("uint8_t[16]")]
+    [NativeName("driverUUID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -105,9 +108,9 @@ public unsafe partial struct PhysicalDeviceIDProperties
         ],
         MinVersion = "1.1"
     )]
-    public PhysicalDeviceIDPropertiesDriverUUID DriverUUID;
+    public PhysicalDeviceIDPropertiesDriverUuid DriverUuid;
 
-    [NativeTypeName("uint8_t[8]")]
+    [NativeName("deviceLUID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -130,9 +133,9 @@ public unsafe partial struct PhysicalDeviceIDProperties
         ],
         MinVersion = "1.1"
     )]
-    public PhysicalDeviceIDPropertiesDeviceLUID DeviceLUID;
+    public PhysicalDeviceIDPropertiesDeviceLuid DeviceLuid;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("deviceNodeMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -157,7 +160,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
     )]
     public uint DeviceNodeMask;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("deviceLUIDValid")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -180,5 +183,5 @@ public unsafe partial struct PhysicalDeviceIDProperties
         ],
         MinVersion = "1.1"
     )]
-    public uint DeviceLUIDValid;
+    public uint DeviceLuidValid;
 }

@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("MemoryObjectParameterName")]
 public enum MemoryObjectParameterName : uint
 {
-    DedicatedMemoryObjectEXT = unchecked((uint)0x9581),
-    ProtectedMemoryObjectEXT = unchecked((uint)0x959B),
+    [NativeName("GL_DEDICATED_MEMORY_OBJECT_EXT")]
+    DedicatedMemoryObjectEXT = 38273,
+
+    [NativeName("GL_PROTECTED_MEMORY_OBJECT_EXT")]
+    ProtectedMemoryObjectEXT = 38299,
 }
