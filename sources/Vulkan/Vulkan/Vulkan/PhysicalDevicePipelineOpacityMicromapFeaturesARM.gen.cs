@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDevicePipelineOpacityMicromapFeaturesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineOpacityMicromapFeaturesARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_pipeline_opacity_micromap"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDevicePipelineOpacityMicromapFeaturesARM
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_pipeline_opacity_micromap"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDevicePipelineOpacityMicromapFeaturesARM
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("pipelineOpacityMicromap")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_pipeline_opacity_micromap"],

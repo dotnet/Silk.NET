@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceTexelBufferAlignmentProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,6 +27,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +42,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("storageTexelBufferOffsetAlignmentBytes")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,7 +57,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
     )]
     public ulong StorageTexelBufferOffsetAlignmentBytes;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("storageTexelBufferOffsetSingleTexelAlignment")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +72,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
     )]
     public uint StorageTexelBufferOffsetSingleTexelAlignment;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("uniformTexelBufferOffsetAlignmentBytes")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +87,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
     )]
     public ulong UniformTexelBufferOffsetAlignmentBytes;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("uniformTexelBufferOffsetSingleTexelAlignment")]
     [SupportedApiProfile(
         "vulkan",
         [

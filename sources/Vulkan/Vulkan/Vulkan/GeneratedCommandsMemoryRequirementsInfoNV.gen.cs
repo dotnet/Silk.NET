@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkGeneratedCommandsMemoryRequirementsInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -18,7 +20,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -26,6 +28,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
     )]
     public void* PNext;
 
+    [NativeName("pipelineBindPoint")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -33,7 +36,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
     )]
     public PipelineBindPoint PipelineBindPoint;
 
-    [NativeTypeName("VkPipeline")]
+    [NativeName("pipeline")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -41,15 +44,15 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
     )]
     public PipelineHandle Pipeline;
 
-    [NativeTypeName("VkIndirectCommandsLayoutNV")]
+    [NativeName("indirectCommandsLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public IndirectCommandsLayoutNVHandle IndirectCommandsLayout;
+    public IndirectCommandsLayoutHandleNV IndirectCommandsLayout;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxSequencesCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

@@ -8,17 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkSurfaceCounterFlagBitsEXT")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum SurfaceCounterFlagsEXT : uint
 {
     None = 0x0,
 
+    [NativeName("VK_SURFACE_COUNTER_VBLANK_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    VblankBitEXT = 0x1,
+    VblankBit = 0x1,
 }

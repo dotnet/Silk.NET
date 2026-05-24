@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMaintenance4Properties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMaintenance4Properties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -26,6 +28,7 @@ public unsafe partial struct PhysicalDeviceMaintenance4Properties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceMaintenance4Properties
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("maxBufferSize")]
     [SupportedApiProfile(
         "vulkan",
         [

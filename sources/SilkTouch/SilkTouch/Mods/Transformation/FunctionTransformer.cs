@@ -6,6 +6,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.Transformation;
@@ -55,14 +56,14 @@ public class FunctionTransformer(
                 // to null as overloads that differ only by return type aren't acceptable. However, we do need a
                 // discriminator that does include the return type so we can determine whether the function has gone
                 // through the transformation pipeline completely unmodified.
-                var discrim = ModUtils.DiscrimStr(
+                var discrim = ModUtils.GetMethodDiscriminator(
                     meth.Modifiers,
                     meth.TypeParameterList,
                     meth.Identifier.ToString(),
                     meth.ParameterList,
                     returnType: null
                 );
-                var discrimWithRet = ModUtils.DiscrimStr(
+                var discrimWithRet = ModUtils.GetMethodDiscriminator(
                     meth.Modifiers,
                     meth.TypeParameterList,
                     meth.Identifier.ToString(),
@@ -116,7 +117,6 @@ public class FunctionTransformer(
                         .WithBody(null)
                         .WithExpressionBody(null)
                         .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                        .NormalizeWhitespace(eol: "\n")
                         .ToFullString()
                 );
                 continue;
@@ -126,14 +126,14 @@ public class FunctionTransformer(
             // to null as overloads that differ only by return type aren't acceptable. However, we do need a
             // discriminator that does include the return type so we can determine whether the function has gone
             // through the transformation pipeline completely unmodified.
-            var discrim = ModUtils.DiscrimStr(
+            var discrim = ModUtils.GetMethodDiscriminator(
                 function.Modifiers,
                 function.TypeParameterList,
                 function.Identifier.ToString(),
                 function.ParameterList,
                 returnType: null
             );
-            var discrimWithRet = ModUtils.DiscrimStr(
+            var discrimWithRet = ModUtils.GetMethodDiscriminator(
                 function.Modifiers,
                 function.TypeParameterList,
                 function.Identifier.ToString(),
@@ -180,7 +180,16 @@ public class FunctionTransformer(
                     var newFun = function
                         .WithRenameSafeAttributeLists()
                         .WithIdentifier(Identifier(newIden));
-                    discrim = ModUtils.DiscrimStr(
+
+                    newFun = newFun.WithAttributeLists(
+                        newFun.AttributeLists.AddNameAffix(
+                            NameAffixType.Suffix,
+                            "RawFunction",
+                            "Raw"
+                        )
+                    );
+
+                    discrim = ModUtils.GetMethodDiscriminator(
                         function.Modifiers,
                         function.TypeParameterList,
                         newIden,

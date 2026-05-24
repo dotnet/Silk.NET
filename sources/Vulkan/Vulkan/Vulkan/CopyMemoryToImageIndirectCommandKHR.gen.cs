@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCopyMemoryToImageIndirectCommandKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct CopyMemoryToImageIndirectCommandKHR
 {
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("srcAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -22,7 +23,7 @@ public partial struct CopyMemoryToImageIndirectCommandKHR
     )]
     public ulong SrcAddress;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("bufferRowLength")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -33,7 +34,7 @@ public partial struct CopyMemoryToImageIndirectCommandKHR
     )]
     public uint BufferRowLength;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("bufferImageHeight")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -44,6 +45,7 @@ public partial struct CopyMemoryToImageIndirectCommandKHR
     )]
     public uint BufferImageHeight;
 
+    [NativeName("imageSubresource")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -54,6 +56,7 @@ public partial struct CopyMemoryToImageIndirectCommandKHR
     )]
     public ImageSubresourceLayers ImageSubresource;
 
+    [NativeName("imageOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -64,6 +67,7 @@ public partial struct CopyMemoryToImageIndirectCommandKHR
     )]
     public Offset3D ImageOffset;
 
+    [NativeName("imageExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],

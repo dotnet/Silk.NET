@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeH265CapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH265CapabilitiesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -18,6 +20,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -25,7 +28,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkVideoEncodeH265CapabilityFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -33,6 +36,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public VideoEncodeH265CapabilityFlagsKHR Flags;
 
+    [NativeName("maxLevelIdc")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -40,7 +44,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public StdVideoH265LevelIdc MaxLevelIdc;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxSliceSegmentCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -48,6 +52,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public uint MaxSliceSegmentCount;
 
+    [NativeName("maxTiles")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -55,7 +60,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public Extent2D MaxTiles;
 
-    [NativeTypeName("VkVideoEncodeH265CtbSizeFlagsKHR")]
+    [NativeName("ctbSizes")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -63,7 +68,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public VideoEncodeH265CtbSizeFlagsKHR CtbSizes;
 
-    [NativeTypeName("VkVideoEncodeH265TransformBlockSizeFlagsKHR")]
+    [NativeName("transformBlockSizes")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -71,7 +76,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public VideoEncodeH265TransformBlockSizeFlagsKHR TransformBlockSizes;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxPPictureL0ReferenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -79,7 +84,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public uint MaxPPictureL0ReferenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxBPictureL0ReferenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -87,7 +92,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public uint MaxBPictureL0ReferenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxL1ReferenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -95,7 +100,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public uint MaxL1ReferenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxSubLayerCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -103,7 +108,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public uint MaxSubLayerCount;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("expectDyadicTemporalSubLayerPattern")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -111,7 +116,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public uint ExpectDyadicTemporalSubLayerPattern;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("minQp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -119,7 +124,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public int MinQp;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("maxQp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -127,7 +132,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public int MaxQp;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("prefersGopRemainingFrames")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -135,7 +140,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public uint PrefersGopRemainingFrames;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("requiresGopRemainingFrames")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -143,7 +148,7 @@ public unsafe partial struct VideoEncodeH265CapabilitiesKHR
     )]
     public uint RequiresGopRemainingFrames;
 
-    [NativeTypeName("VkVideoEncodeH265StdFlagsKHR")]
+    [NativeName("stdSyntaxFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],

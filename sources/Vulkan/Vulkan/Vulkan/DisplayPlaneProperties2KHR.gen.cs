@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDisplayPlaneProperties2KHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayPlaneProperties2KHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_get_display_properties2"],
@@ -18,6 +20,7 @@ public unsafe partial struct DisplayPlaneProperties2KHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_get_display_properties2"],
@@ -25,6 +28,7 @@ public unsafe partial struct DisplayPlaneProperties2KHR
     )]
     public void* PNext;
 
+    [NativeName("displayPlaneProperties")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_get_display_properties2"],

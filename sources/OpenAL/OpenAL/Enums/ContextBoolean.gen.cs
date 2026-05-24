@@ -10,9 +10,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("ContextBoolean")]
 public enum ContextBoolean : uint
 {
-    Sync = unchecked((uint)0x1009),
-    Connected = unchecked((uint)0x313),
+    [NativeName("ALC_SYNC")]
+    Sync = 4105,
+
+    [NativeName("ALC_CONNECTED")]
+    Connected = 787,
 }

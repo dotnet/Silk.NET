@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkTraceRaysIndirectCommand2KHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct TraceRaysIndirectCommand2KHR
 {
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("raygenShaderRecordAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -20,7 +21,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong RaygenShaderRecordAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("raygenShaderRecordSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -29,7 +30,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong RaygenShaderRecordSize;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("missShaderBindingTableAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -38,7 +39,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong MissShaderBindingTableAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("missShaderBindingTableSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -47,7 +48,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong MissShaderBindingTableSize;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("missShaderBindingTableStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -56,7 +57,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong MissShaderBindingTableStride;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("hitShaderBindingTableAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -65,7 +66,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong HitShaderBindingTableAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("hitShaderBindingTableSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -74,7 +75,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong HitShaderBindingTableSize;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("hitShaderBindingTableStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -83,7 +84,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong HitShaderBindingTableStride;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("callableShaderBindingTableAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -92,7 +93,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong CallableShaderBindingTableAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("callableShaderBindingTableSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -101,7 +102,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong CallableShaderBindingTableSize;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("callableShaderBindingTableStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -110,7 +111,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public ulong CallableShaderBindingTableStride;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("width")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -119,7 +120,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public uint Width;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("height")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],
@@ -128,7 +129,7 @@ public partial struct TraceRaysIndirectCommand2KHR
     )]
     public uint Height;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("depth")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1", "VK_KHR_ray_tracing_pipeline"],

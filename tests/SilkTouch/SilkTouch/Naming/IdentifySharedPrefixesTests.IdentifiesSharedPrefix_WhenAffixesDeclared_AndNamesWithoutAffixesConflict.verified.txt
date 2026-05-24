@@ -1,0 +1,10 @@
+﻿[NameAffix("Suffix", "KhronosVendor", "KHR")]
+public enum VkPresentModeKHR
+{
+    [NameAffix("Prefix", "SharedPrefix", "VK_PRESENT_MODE_FIFO_LATEST")]
+    [NameAffix("Suffix", "KhronosVendor", "KHR")]
+    VK_PRESENT_MODE_FIFO_LATEST_READY_KHR = 1000361000,
+    [NameAffix("Prefix", "SharedPrefix", "VK_PRESENT_MODE_FIFO_LATEST")]
+    [NameAffix("Suffix", "KhronosVendor", "EXT")]
+    VK_PRESENT_MODE_FIFO_LATEST_READY_EXT = VK_PRESENT_MODE_FIFO_LATEST_READY_KHR
+}

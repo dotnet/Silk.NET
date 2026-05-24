@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkComputePipelineIndirectBufferInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ComputePipelineIndirectBufferInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -17,7 +19,7 @@ public unsafe partial struct ComputePipelineIndirectBufferInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -25,7 +27,7 @@ public unsafe partial struct ComputePipelineIndirectBufferInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("deviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -33,7 +35,7 @@ public unsafe partial struct ComputePipelineIndirectBufferInfoNV
     )]
     public ulong DeviceAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -41,7 +43,7 @@ public unsafe partial struct ComputePipelineIndirectBufferInfoNV
     )]
     public ulong Size;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("pipelineDeviceAddressCaptureReplay")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],

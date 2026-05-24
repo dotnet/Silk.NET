@@ -7,8 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("PixelTransformTargetEXT")]
 public enum PixelTransformTargetEXT : uint
 {
-    PixelTransform2D = unchecked((uint)0x8330),
+    [NativeName("GL_PIXEL_TRANSFORM_2D_EXT")]
+    PixelTransform2D = 33584,
 }

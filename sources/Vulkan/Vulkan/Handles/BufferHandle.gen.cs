@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBuffer")]
 public readonly unsafe partial struct BufferHandle
 {
     public readonly void* Handle;
+
+    public BufferHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(BufferHandle other) => Handle == other.Handle;
 

@@ -1,0 +1,11 @@
+﻿[NameAffix("Suffix", "KhronosNonVendor", "Direct")]
+[NativeFunction("opengl", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
+public static void alDeleteAuxiliaryEffectSlotsDirect(ALCcontext context, [NativeTypeName("ALsizei")] int n, [NativeTypeName("const ALuint *")] uint* effectslots)
+{
+}
+
+[NameAffix("Suffix", "KhronosNonVendor", "Direct")]
+[NativeFunction("opengl", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
+public static void alDeleteAuxiliaryEffectSlotDirect(ALCcontext context, [NativeTypeName("const ALuint *")] uint effectslots)
+{
+}

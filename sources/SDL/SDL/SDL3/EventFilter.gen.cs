@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_EventFilter")]
 public readonly unsafe struct EventFilter : IDisposable
 {
     private readonly void* Pointer;

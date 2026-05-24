@@ -8,17 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkIndirectStateFlagBitsNV")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum IndirectStateFlagsNV : uint
 {
     None = 0x0,
 
+    [NativeName("VK_INDIRECT_STATE_FLAG_FRONTFACE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    FrontfaceBitNV = 0x1,
+    FrontfaceBit = 0x1,
 }

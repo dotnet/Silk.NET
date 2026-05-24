@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceRayTracingValidationFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRayTracingValidationFeaturesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_validation"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceRayTracingValidationFeaturesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_validation"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceRayTracingValidationFeaturesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("rayTracingValidation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_validation"],

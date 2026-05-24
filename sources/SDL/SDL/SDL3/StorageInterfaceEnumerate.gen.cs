@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[Transformed]
+[NativeName("SDL_StorageInterface_enumerate")]
 public readonly unsafe struct StorageInterfaceEnumerate : IDisposable
 {
     private readonly void* Pointer;

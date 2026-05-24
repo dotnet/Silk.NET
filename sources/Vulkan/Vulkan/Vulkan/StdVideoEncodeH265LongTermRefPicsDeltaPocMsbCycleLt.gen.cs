@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_delta_poc_msb_cycle_lt_e__FixedBuffer")]
 [InlineArray(48)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265LongTermRefPicsDeltaPocMsbCycleLt
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

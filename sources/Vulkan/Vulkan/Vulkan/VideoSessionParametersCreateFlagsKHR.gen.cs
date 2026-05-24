@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkVideoSessionParametersCreateFlagBitsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoSessionParametersCreateFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_VIDEO_SESSION_PARAMETERS_CREATE_QUANTIZATION_MAP_COMPATIBLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_quantization_map"],
@@ -22,5 +23,5 @@ public enum VideoSessionParametersCreateFlagsKHR : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    QuantizationMapCompatibleBitKHR = 0x1,
+    QuantizationMapCompatibleBit = 0x1,
 }

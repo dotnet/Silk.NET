@@ -7,9 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum ScaleMode : uint
+[NativeName("SDL_ScaleMode")]
+public enum ScaleMode
 {
-    Nearest,
-    Linear,
+    [NativeName("SDL_SCALEMODE_INVALID")]
+    Invalid = -1,
+
+    [NativeName("SDL_SCALEMODE_NEAREST")]
+    Nearest = 0,
+
+    [NativeName("SDL_SCALEMODE_LINEAR")]
+    Linear = 1,
+
+    [NativeName("SDL_SCALEMODE_PIXELART")]
+    Pixelart = 2,
 }

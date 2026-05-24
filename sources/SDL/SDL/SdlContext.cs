@@ -89,7 +89,7 @@ public class SdlContext : IGLContext
     public unsafe void* LoadFunction(string functionName, string libraryNameHint)
     {
         var ret = libraryNameHint.Contains("EGL")
-            ? Api.EGLGetProcAddress(libraryNameHint)
+            ? Api.EglGetProcAddress(libraryNameHint)
             : Api.GLGetProcAddress(functionName);
         Api.ClearError();
         return ret;

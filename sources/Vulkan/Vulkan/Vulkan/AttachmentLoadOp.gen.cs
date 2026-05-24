@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkAttachmentLoadOp")]
 [SupportedApiProfile("vulkan")]
 public enum AttachmentLoadOp : uint
 {
+    [NativeName("VK_ATTACHMENT_LOAD_OP_LOAD")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,6 +30,7 @@ public enum AttachmentLoadOp : uint
     )]
     Load = 0,
 
+    [NativeName("VK_ATTACHMENT_LOAD_OP_CLEAR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -47,6 +49,7 @@ public enum AttachmentLoadOp : uint
     )]
     Clear = 1,
 
+    [NativeName("VK_ATTACHMENT_LOAD_OP_DONT_CARE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -65,6 +68,7 @@ public enum AttachmentLoadOp : uint
     )]
     DontCare = 2,
 
+    [NativeName("VK_ATTACHMENT_LOAD_OP_NONE")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -72,9 +76,11 @@ public enum AttachmentLoadOp : uint
     )]
     None = 1000400000,
 
+    [NativeName("VK_ATTACHMENT_LOAD_OP_NONE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_load_store_op_none"])]
     NoneEXT = None,
 
+    [NativeName("VK_ATTACHMENT_LOAD_OP_NONE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_load_store_op_none"])]
     NoneKHR = None,
 }

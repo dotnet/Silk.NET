@@ -1,2 +1,3 @@
+@../../remap-stdint.rsp
 --remap
 _GUID=System.Guid

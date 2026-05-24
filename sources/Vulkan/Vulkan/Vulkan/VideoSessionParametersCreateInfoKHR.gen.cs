@@ -6,9 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoSessionParametersCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoSessionParametersCreateInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -16,7 +18,7 @@ public unsafe partial struct VideoSessionParametersCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -24,7 +26,7 @@ public unsafe partial struct VideoSessionParametersCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkVideoSessionParametersCreateFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -32,19 +34,19 @@ public unsafe partial struct VideoSessionParametersCreateInfoKHR
     )]
     public VideoSessionParametersCreateFlagsKHR Flags;
 
-    [NativeTypeName("VkVideoSessionParametersKHR")]
+    [NativeName("videoSessionParametersTemplate")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public VideoSessionParametersKHRHandle VideoSessionParametersTemplate;
+    public VideoSessionParametersHandleKHR VideoSessionParametersTemplate;
 
-    [NativeTypeName("VkVideoSessionKHR")]
+    [NativeName("videoSession")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public VideoSessionKHRHandle VideoSession;
+    public VideoSessionHandleKHR VideoSession;
 }

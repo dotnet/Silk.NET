@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_CompareCallback_r")]
 public readonly unsafe struct CompareCallbackR : IDisposable
 {
     private readonly void* Pointer;

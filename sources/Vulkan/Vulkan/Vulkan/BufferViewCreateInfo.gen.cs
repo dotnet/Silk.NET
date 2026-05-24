@@ -4,9 +4,11 @@
 // Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBufferViewCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BufferViewCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +32,7 @@ public unsafe partial struct BufferViewCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,7 +56,7 @@ public unsafe partial struct BufferViewCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBufferViewCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -78,7 +80,7 @@ public unsafe partial struct BufferViewCreateInfo
     )]
     public uint Flags;
 
-    [NativeTypeName("VkBuffer")]
+    [NativeName("buffer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -102,6 +104,7 @@ public unsafe partial struct BufferViewCreateInfo
     )]
     public BufferHandle Buffer;
 
+    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -125,7 +128,7 @@ public unsafe partial struct BufferViewCreateInfo
     )]
     public Format Format;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("offset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -149,7 +152,7 @@ public unsafe partial struct BufferViewCreateInfo
     )]
     public ulong Offset;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("range")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -1,4 +1,5 @@
-using System;
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 namespace Silk.NET.SilkTouch.Caching;
 
@@ -9,18 +10,22 @@ namespace Silk.NET.SilkTouch.Caching;
 public enum CacheFlags
 {
     /// <summary>
-    /// If the cache doesn't exist, allow it to be created and lock other callers from accessing the directory until it
-    /// is committed.
+    /// No flags set.
     /// </summary>
-    AllowNewLocked = 1,
+    None = 0,
 
     /// <summary>
-    /// Same as <see cref="AllowNewLocked"/>, but does not return a directory unless it is brand new.
+    /// If the cache doesn't exist, allow it to be created.
     /// </summary>
-    RequireNewLocked = 1 | (1 << 1),
+    AllowNew = 1,
 
     /// <summary>
-    /// Don't write cache files to disk.
+    /// Same as <see cref="AllowNew"/> but the new cache will replace the old cache once committed.
     /// </summary>
-    NoHostDirectory = 1 << 2
+    RequireNew = AllowNew | (1 << 1),
+
+    /// <summary>
+    /// The cache provider needs the cache directory to reside on disk.
+    /// </summary>
+    RequireHostDirectory = 1 << 3,
 }

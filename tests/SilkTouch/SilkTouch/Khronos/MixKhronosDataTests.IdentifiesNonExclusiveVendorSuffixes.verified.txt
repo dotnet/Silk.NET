@@ -1,0 +1,6 @@
+﻿[NameAffix("Suffix", "KhronosNonExclusiveVendor", "ARB")]
+public enum BufferUsageARB : uint
+{
+    GL_STREAM_DRAW = 35040,
+    GL_STREAM_READ = 35041,
+}

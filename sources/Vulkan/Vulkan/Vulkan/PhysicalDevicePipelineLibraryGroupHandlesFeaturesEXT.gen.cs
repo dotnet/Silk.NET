@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_library_group_handles"],
@@ -17,6 +19,7 @@ public unsafe partial struct PhysicalDevicePipelineLibraryGroupHandlesFeaturesEX
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_library_group_handles"],
@@ -24,7 +27,7 @@ public unsafe partial struct PhysicalDevicePipelineLibraryGroupHandlesFeaturesEX
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("pipelineLibraryGroupHandles")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_library_group_handles"],

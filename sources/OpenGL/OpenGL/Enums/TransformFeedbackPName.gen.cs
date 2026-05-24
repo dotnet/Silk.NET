@@ -7,12 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("TransformFeedbackPName")]
 public enum TransformFeedbackPName : uint
 {
-    BufferStart = unchecked((uint)0x8C84),
-    BufferSize = unchecked((uint)0x8C85),
-    BufferBinding = unchecked((uint)0x8C8F),
-    Active = unchecked((uint)0x8E24),
-    Paused = unchecked((uint)0x8E23),
+    [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_START")]
+    BufferStart = 35972,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_SIZE")]
+    BufferSize = 35973,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_BINDING")]
+    BufferBinding = 35983,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK_ACTIVE")]
+    Active = 36388,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK_PAUSED")]
+    Paused = 36387,
 }

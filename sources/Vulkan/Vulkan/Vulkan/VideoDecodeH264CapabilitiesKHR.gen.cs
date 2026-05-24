@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoDecodeH264CapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeH264CapabilitiesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
@@ -17,6 +19,7 @@ public unsafe partial struct VideoDecodeH264CapabilitiesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
@@ -24,6 +27,7 @@ public unsafe partial struct VideoDecodeH264CapabilitiesKHR
     )]
     public void* PNext;
 
+    [NativeName("maxLevelIdc")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
@@ -31,6 +35,7 @@ public unsafe partial struct VideoDecodeH264CapabilitiesKHR
     )]
     public StdVideoH264LevelIdc MaxLevelIdc;
 
+    [NativeName("fieldOffsetGranularity")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],

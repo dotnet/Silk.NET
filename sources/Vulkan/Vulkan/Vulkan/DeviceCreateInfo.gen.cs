@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public unsafe partial struct DeviceCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +70,7 @@ public unsafe partial struct DeviceCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +99,7 @@ public unsafe partial struct DeviceCreateInfo
     )]
     public uint Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queueCreateInfoCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +128,7 @@ public unsafe partial struct DeviceCreateInfo
     )]
     public uint QueueCreateInfoCount;
 
-    [NativeTypeName("const VkDeviceQueueCreateInfo *")]
+    [NativeName("pQueueCreateInfos")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -155,7 +157,7 @@ public unsafe partial struct DeviceCreateInfo
     )]
     public DeviceQueueCreateInfo* PQueueCreateInfos;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("enabledLayerCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -184,7 +186,7 @@ public unsafe partial struct DeviceCreateInfo
     )]
     public uint EnabledLayerCount;
 
-    [NativeTypeName("const char *const *")]
+    [NativeName("ppEnabledLayerNames")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -213,7 +215,7 @@ public unsafe partial struct DeviceCreateInfo
     )]
     public sbyte** PpEnabledLayerNames;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("enabledExtensionCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -242,7 +244,7 @@ public unsafe partial struct DeviceCreateInfo
     )]
     public uint EnabledExtensionCount;
 
-    [NativeTypeName("const char *const *")]
+    [NativeName("ppEnabledExtensionNames")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -271,7 +273,7 @@ public unsafe partial struct DeviceCreateInfo
     )]
     public sbyte** PpEnabledExtensionNames;
 
-    [NativeTypeName("const VkPhysicalDeviceFeatures *")]
+    [NativeName("pEnabledFeatures")]
     [SupportedApiProfile(
         "vulkan",
         [

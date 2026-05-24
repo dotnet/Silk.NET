@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_free_func")]
 public readonly unsafe struct FreeFunc : IDisposable
 {
     private readonly void* Pointer;

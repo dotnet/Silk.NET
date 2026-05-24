@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("LightModelColorControl")]
 public enum LightModelColorControl : uint
 {
-    SingleColor = unchecked((uint)0x81F9),
-    SeparateSpecularColor = unchecked((uint)0x81FA),
-    SingleColorEXT = unchecked((uint)0x81F9),
-    SeparateSpecularColorEXT = unchecked((uint)0x81FA),
+    [NativeName("GL_SINGLE_COLOR")]
+    SingleColor = 33273,
+
+    [NativeName("GL_SEPARATE_SPECULAR_COLOR")]
+    SeparateSpecularColor = 33274,
+
+    [NativeName("GL_SINGLE_COLOR_EXT")]
+    SingleColorEXT = 33273,
+
+    [NativeName("GL_SEPARATE_SPECULAR_COLOR_EXT")]
+    SeparateSpecularColorEXT = 33274,
 }

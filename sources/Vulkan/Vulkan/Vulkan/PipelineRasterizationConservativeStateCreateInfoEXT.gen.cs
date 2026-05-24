@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineRasterizationConservativeStateCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -20,7 +22,7 @@ public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -31,7 +33,7 @@ public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineRasterizationConservativeStateCreateFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -42,6 +44,7 @@ public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT
     )]
     public uint Flags;
 
+    [NativeName("conservativeRasterizationMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -52,6 +55,7 @@ public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT
     )]
     public ConservativeRasterizationModeEXT ConservativeRasterizationMode;
 
+    [NativeName("extraPrimitiveOverestimationSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],

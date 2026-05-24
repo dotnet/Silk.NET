@@ -1,10 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Buffers;
 using System.Diagnostics;
-using System.Linq;
 using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -87,8 +84,8 @@ public class ArrayParameterTransformer : IFunctionTransformer
                         x.CountParamIdx,
                         // 2. Select only the last parameter this count parameter is associated with
                         ParamForCount: x.ParamsForCount.Select(
-                            (y, j) => (PtrParamInfo: y, ParamForCountIdx: j)
-                        )
+                                (y, j) => (PtrParamInfo: y, ParamForCountIdx: j)
+                            )
                             .LastOrDefault()
                     )
                 )
@@ -126,8 +123,8 @@ public class ArrayParameterTransformer : IFunctionTransformer
         // Get information from the function name for benefit-of-doubt overloading i.e. if the function matches a very
         // well-known function style then let's just go ahead and overload it. (Mainly for OpenAL)
         var epSpan = entryPoint.AsSpan();
-        var verb = epSpan[int.Max(epSpan.IndexOfAny(NameUtils.Uppercase), 0)..];
-        verb = verb[..(verb[1..].IndexOfAny(NameUtils.Uppercase) + 1)];
+        var verb = epSpan[int.Max(epSpan.IndexOfAny(NameUtils.UpperChars), 0)..];
+        verb = verb[..(verb[1..].IndexOfAny(NameUtils.UpperChars) + 1)];
         var benefitOfDoubt = false;
         if (
             countParam is null
@@ -231,8 +228,16 @@ public class ArrayParameterTransformer : IFunctionTransformer
         bool isHr
     ) : CSharpSyntaxRewriter
     {
-        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            node.WithIdentifier(Identifier(node.Identifier.ToString().Singularize(false)))
+        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node)
+        {
+            var identifier = node.Identifier.Text;
+            var affixes = node.AttributeLists.GetNameAffixes();
+            var singularizedIdentifier = NameAffixer.ApplyAffixes(
+                NameAffixer.StripAffixes(identifier, affixes).Singularize(),
+                affixes
+            );
+
+            return node.WithIdentifier(Identifier(singularizedIdentifier))
                 .WithReturnType(
                     isOutput ? ptrElementType : PredefinedType(Token(SyntaxKind.VoidKeyword))
                 )
@@ -253,7 +258,6 @@ public class ArrayParameterTransformer : IFunctionTransformer
                             // call.
                             ? Block(
                                 (StatementSyntax[])
-
                                     [
                                         LocalDeclarationStatement(
                                             VariableDeclaration(
@@ -271,7 +275,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
                                             )
                                         ),
                                         .. blk.Statements,
-                                        ReturnStatement(IdentifierName(ptrParam))
+                                        ReturnStatement(IdentifierName(ptrParam)),
                                     ]
                             )
                             : blk
@@ -282,6 +286,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
                 .WithParameterList(
                     Visit(node.ParameterList) as ParameterListSyntax ?? ParameterList()
                 );
+        }
 
         public override SyntaxNode VisitReturnStatement(ReturnStatementSyntax node) =>
             ExpressionStatement(
@@ -309,15 +314,15 @@ public class ArrayParameterTransformer : IFunctionTransformer
                 ? syn.WithParameters(
                     SeparatedList(
                         syn.Parameters.Select(x =>
-                            x.Identifier.ToString() == countParam
-                            || (isOutput && x.Identifier.ToString() == ptrParam)
-                                ? null
+                                x.Identifier.ToString() == countParam
+                                || (isOutput && x.Identifier.ToString() == ptrParam)
+                                    ? null
                                 : base.VisitParameter(x) is ParameterSyntax p
                                     ? p.Identifier.ToString() == ptrParam
-                                        ? p.WithType(ptrElementType)
+                                            ? p.WithType(ptrElementType)
                                         : p
-                                    : null
-                        )
+                                : null
+                            )
                             .OfType<ParameterSyntax>()
                     )
                 )

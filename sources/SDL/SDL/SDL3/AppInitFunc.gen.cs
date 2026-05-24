@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AppInit_func")]
 public readonly unsafe struct AppInitFunc : IDisposable
 {
     private readonly void* Pointer;

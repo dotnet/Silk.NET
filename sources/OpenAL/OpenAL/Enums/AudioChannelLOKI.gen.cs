@@ -10,10 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("AudioChannelLOKI")]
 public enum AudioChannelLOKI : uint
 {
-    Main = unchecked((uint)0x500001),
-    Pcm = unchecked((uint)0x500002),
-    Cd = unchecked((uint)0x500003),
+    [NativeName("ALC_CHAN_MAIN_LOKI")]
+    Main = 5242881,
+
+    [NativeName("ALC_CHAN_PCM_LOKI")]
+    Pcm = 5242882,
+
+    [NativeName("ALC_CHAN_CD_LOKI")]
+    Cd = 5242883,
 }

@@ -8,29 +8,31 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCopyTensorInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyTensorInfoARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
-    [NativeTypeName("VkTensorARM")]
+    [NativeName("srcTensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARMHandle SrcTensor;
+    public TensorHandleARM SrcTensor;
 
-    [NativeTypeName("VkTensorARM")]
+    [NativeName("dstTensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARMHandle DstTensor;
+    public TensorHandleARM DstTensor;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("regionCount")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint RegionCount;
 
-    [NativeTypeName("const VkTensorCopyARM *")]
+    [NativeName("pRegions")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorCopyARM* PRegions;
 }

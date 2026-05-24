@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[Transformed]
+[NativeName("SDL_StorageInterface_space_remaining")]
 public readonly unsafe struct StorageInterfaceSpaceRemaining : IDisposable
 {
     private readonly void* Pointer;

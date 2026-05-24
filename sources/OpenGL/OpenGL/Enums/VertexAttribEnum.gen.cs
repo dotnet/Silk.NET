@@ -7,16 +7,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("VertexAttribEnum")]
 public enum VertexAttribEnum : uint
 {
-    VertexAttribArrayBufferBinding = unchecked((uint)0x889F),
-    VertexAttribArrayEnabled = unchecked((uint)0x8622),
-    VertexAttribArraySize = unchecked((uint)0x8623),
-    VertexAttribArrayStride = unchecked((uint)0x8624),
-    VertexAttribArrayType = unchecked((uint)0x8625),
-    CurrentVertexAttrib = unchecked((uint)0x8626),
-    VertexAttribArrayNormalized = unchecked((uint)0x886A),
-    VertexAttribArrayInteger = unchecked((uint)0x88FD),
-    VertexAttribArrayDivisor = unchecked((uint)0x88FE),
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING")]
+    VertexAttribArrayBufferBinding = 34975,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_ENABLED")]
+    VertexAttribArrayEnabled = 34338,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_SIZE")]
+    VertexAttribArraySize = 34339,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_STRIDE")]
+    VertexAttribArrayStride = 34340,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_TYPE")]
+    VertexAttribArrayType = 34341,
+
+    [NativeName("GL_CURRENT_VERTEX_ATTRIB")]
+    CurrentVertexAttrib = 34342,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_NORMALIZED")]
+    VertexAttribArrayNormalized = 34922,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_INTEGER")]
+    VertexAttribArrayInteger = 35069,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR")]
+    VertexAttribArrayDivisor = 35070,
 }

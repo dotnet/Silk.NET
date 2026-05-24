@@ -6,10 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkFilter")]
 [SupportedApiProfile("vulkan")]
 public enum Filter : uint
 {
+    [NativeName("VK_FILTER_NEAREST")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,6 +34,7 @@ public enum Filter : uint
     )]
     Nearest = 0,
 
+    [NativeName("VK_FILTER_LINEAR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -56,9 +58,11 @@ public enum Filter : uint
     )]
     Linear = 1,
 
+    [NativeName("VK_FILTER_CUBIC_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     CubicEXT = 1000015000,
 
+    [NativeName("VK_FILTER_CUBIC_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_filter_cubic"])]
     CubicIMG = CubicEXT,
 }

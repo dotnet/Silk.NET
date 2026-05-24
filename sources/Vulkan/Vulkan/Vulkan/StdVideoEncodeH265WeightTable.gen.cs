@@ -8,49 +8,51 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoEncodeH265WeightTable")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265WeightTable
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265WeightTableFlags Flags;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("luma_log2_weight_denom")]
     [SupportedApiProfile("vulkan")]
     public byte LumaLog2WeightDenom;
 
-    [NativeTypeName("int8_t")]
+    [NativeName("delta_chroma_log2_weight_denom")]
     [SupportedApiProfile("vulkan")]
     public sbyte DeltaChromaLog2WeightDenom;
 
-    [NativeTypeName("int8_t[15]")]
+    [NativeName("delta_luma_weight_l0")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265WeightTableDeltaLumaWeightL0 DeltaLumaWeightL0;
 
-    [NativeTypeName("int8_t[15]")]
+    [NativeName("luma_offset_l0")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265WeightTableLumaOffsetL0 LumaOffsetL0;
 
-    [NativeTypeName("int8_t[15][2]")]
+    [NativeName("delta_chroma_weight_l0")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265WeightTableDeltaChromaWeightL0 DeltaChromaWeightL0;
 
-    [NativeTypeName("int8_t[15][2]")]
+    [NativeName("delta_chroma_offset_l0")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265WeightTableDeltaChromaOffsetL0 DeltaChromaOffsetL0;
 
-    [NativeTypeName("int8_t[15]")]
+    [NativeName("delta_luma_weight_l1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265WeightTableDeltaLumaWeightL1 DeltaLumaWeightL1;
 
-    [NativeTypeName("int8_t[15]")]
+    [NativeName("luma_offset_l1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265WeightTableLumaOffsetL1 LumaOffsetL1;
 
-    [NativeTypeName("int8_t[15][2]")]
+    [NativeName("delta_chroma_weight_l1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265WeightTableDeltaChromaWeightL1 DeltaChromaWeightL1;
 
-    [NativeTypeName("int8_t[15][2]")]
+    [NativeName("delta_chroma_offset_l1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265WeightTableDeltaChromaOffsetL1 DeltaChromaOffsetL1;
 }

@@ -265,9 +265,7 @@ public class AddApiProfiles(
                 logger.LogDebug("No profile identified for {}", path);
             }
 
-            ctx.SourceProject = doc.WithSyntaxRoot(
-                rewriter.Visit(root).NormalizeWhitespace()
-            ).Project;
+            ctx.SourceProject = doc.WithSyntaxRoot(rewriter.Visit(root)).Project;
             rewriter.Profile = null;
         }
     }

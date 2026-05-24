@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAttachmentFeedbackLoopInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AttachmentFeedbackLoopInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -24,7 +26,7 @@ public unsafe partial struct AttachmentFeedbackLoopInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,7 +40,7 @@ public unsafe partial struct AttachmentFeedbackLoopInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("feedbackLoopEnable")]
     [SupportedApiProfile(
         "vulkan",
         [

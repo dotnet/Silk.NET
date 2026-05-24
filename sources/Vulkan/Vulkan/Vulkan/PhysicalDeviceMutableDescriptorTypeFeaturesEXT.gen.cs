@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mutable_descriptor_type"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mutable_descriptor_type"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("mutableDescriptorType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_mutable_descriptor_type"],

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceQueueGlobalPriorityCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceQueueGlobalPriorityCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -23,7 +25,7 @@ public unsafe partial struct DeviceQueueGlobalPriorityCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,6 +38,7 @@ public unsafe partial struct DeviceQueueGlobalPriorityCreateInfo
     )]
     public void* PNext;
 
+    [NativeName("globalPriority")]
     [SupportedApiProfile(
         "vulkan",
         [

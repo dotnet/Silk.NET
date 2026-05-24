@@ -7,14 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ProgramTarget")]
 public enum ProgramTarget : uint
 {
-    FragmentProgramARB = unchecked((uint)0x8804),
-    VertexProgramARB = unchecked((uint)0x8620),
-    TextFragmentShaderATI = unchecked((uint)0x8200),
-    ComputeProgramNV = unchecked((uint)0x90FB),
-    GeometryProgramNV = unchecked((uint)0x8C26),
-    TessControlProgramNV = unchecked((uint)0x891E),
-    TessEvaluationProgramNV = unchecked((uint)0x891F),
+    [NativeName("GL_FRAGMENT_PROGRAM_ARB")]
+    FragmentProgramARB = 34820,
+
+    [NativeName("GL_VERTEX_PROGRAM_ARB")]
+    VertexProgramARB = 34336,
+
+    [NativeName("GL_TEXT_FRAGMENT_SHADER_ATI")]
+    TextFragmentShaderATI = 33280,
+
+    [NativeName("GL_COMPUTE_PROGRAM_NV")]
+    ComputeProgramNV = 37115,
+
+    [NativeName("GL_GEOMETRY_PROGRAM_NV")]
+    GeometryProgramNV = 35878,
+
+    [NativeName("GL_TESS_CONTROL_PROGRAM_NV")]
+    TessControlProgramNV = 35102,
+
+    [NativeName("GL_TESS_EVALUATION_PROGRAM_NV")]
+    TessEvaluationProgramNV = 35103,
 }

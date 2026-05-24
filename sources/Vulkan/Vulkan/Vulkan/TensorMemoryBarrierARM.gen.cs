@@ -8,41 +8,43 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkTensorMemoryBarrierARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TensorMemoryBarrierARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineStageFlags2")]
+    [NativeName("srcStageMask")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public PipelineStageFlags2 SrcStageMask;
 
-    [NativeTypeName("VkAccessFlags2")]
+    [NativeName("srcAccessMask")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public AccessFlags2 SrcAccessMask;
 
-    [NativeTypeName("VkPipelineStageFlags2")]
+    [NativeName("dstStageMask")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public PipelineStageFlags2 DstStageMask;
 
-    [NativeTypeName("VkAccessFlags2")]
+    [NativeName("dstAccessMask")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public AccessFlags2 DstAccessMask;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("srcQueueFamilyIndex")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint SrcQueueFamilyIndex;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dstQueueFamilyIndex")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint DstQueueFamilyIndex;
 
-    [NativeTypeName("VkTensorARM")]
+    [NativeName("tensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public TensorARMHandle Tensor;
+    public TensorHandleARM Tensor;
 }

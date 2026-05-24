@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_free_func")]
 public unsafe delegate void FreeFuncDelegate(void* arg0);

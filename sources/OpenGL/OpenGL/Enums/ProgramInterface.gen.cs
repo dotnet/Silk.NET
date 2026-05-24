@@ -7,27 +7,66 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ProgramInterface")]
 public enum ProgramInterface : uint
 {
-    TransformFeedbackBuffer = unchecked((uint)0x8C8E),
-    Uniform = unchecked((uint)0x92E1),
-    UniformBlock = unchecked((uint)0x92E2),
-    ProgramInput = unchecked((uint)0x92E3),
-    ProgramOutput = unchecked((uint)0x92E4),
-    BufferVariable = unchecked((uint)0x92E5),
-    ShaderStorageBlock = unchecked((uint)0x92E6),
-    VertexSubroutine = unchecked((uint)0x92E8),
-    TessControlSubroutine = unchecked((uint)0x92E9),
-    TessEvaluationSubroutine = unchecked((uint)0x92EA),
-    GeometrySubroutine = unchecked((uint)0x92EB),
-    FragmentSubroutine = unchecked((uint)0x92EC),
-    ComputeSubroutine = unchecked((uint)0x92ED),
-    VertexSubroutineUniform = unchecked((uint)0x92EE),
-    TessControlSubroutineUniform = unchecked((uint)0x92EF),
-    TessEvaluationSubroutineUniform = unchecked((uint)0x92F0),
-    GeometrySubroutineUniform = unchecked((uint)0x92F1),
-    FragmentSubroutineUniform = unchecked((uint)0x92F2),
-    ComputeSubroutineUniform = unchecked((uint)0x92F3),
-    TransformFeedbackVarying = unchecked((uint)0x92F4),
+    [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER")]
+    TransformFeedbackBuffer = 35982,
+
+    [NativeName("GL_UNIFORM")]
+    Uniform = 37601,
+
+    [NativeName("GL_UNIFORM_BLOCK")]
+    UniformBlock = 37602,
+
+    [NativeName("GL_PROGRAM_INPUT")]
+    ProgramInput = 37603,
+
+    [NativeName("GL_PROGRAM_OUTPUT")]
+    ProgramOutput = 37604,
+
+    [NativeName("GL_BUFFER_VARIABLE")]
+    BufferVariable = 37605,
+
+    [NativeName("GL_SHADER_STORAGE_BLOCK")]
+    ShaderStorageBlock = 37606,
+
+    [NativeName("GL_VERTEX_SUBROUTINE")]
+    VertexSubroutine = 37608,
+
+    [NativeName("GL_TESS_CONTROL_SUBROUTINE")]
+    TessControlSubroutine = 37609,
+
+    [NativeName("GL_TESS_EVALUATION_SUBROUTINE")]
+    TessEvaluationSubroutine = 37610,
+
+    [NativeName("GL_GEOMETRY_SUBROUTINE")]
+    GeometrySubroutine = 37611,
+
+    [NativeName("GL_FRAGMENT_SUBROUTINE")]
+    FragmentSubroutine = 37612,
+
+    [NativeName("GL_COMPUTE_SUBROUTINE")]
+    ComputeSubroutine = 37613,
+
+    [NativeName("GL_VERTEX_SUBROUTINE_UNIFORM")]
+    VertexSubroutineUniform = 37614,
+
+    [NativeName("GL_TESS_CONTROL_SUBROUTINE_UNIFORM")]
+    TessControlSubroutineUniform = 37615,
+
+    [NativeName("GL_TESS_EVALUATION_SUBROUTINE_UNIFORM")]
+    TessEvaluationSubroutineUniform = 37616,
+
+    [NativeName("GL_GEOMETRY_SUBROUTINE_UNIFORM")]
+    GeometrySubroutineUniform = 37617,
+
+    [NativeName("GL_FRAGMENT_SUBROUTINE_UNIFORM")]
+    FragmentSubroutineUniform = 37618,
+
+    [NativeName("GL_COMPUTE_SUBROUTINE_UNIFORM")]
+    ComputeSubroutineUniform = 37619,
+
+    [NativeName("GL_TRANSFORM_FEEDBACK_VARYING")]
+    TransformFeedbackVarying = 37620,
 }

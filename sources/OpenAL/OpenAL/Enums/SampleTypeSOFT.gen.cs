@@ -10,17 +10,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("SampleTypeSOFT")]
 public enum SampleTypeSOFT : uint
 {
-    Byte = unchecked((uint)0x1400),
-    UnsignedByte = unchecked((uint)0x1401),
-    Short = unchecked((uint)0x1402),
-    UnsignedShort = unchecked((uint)0x1403),
-    Int = unchecked((uint)0x1404),
-    UnsignedInt = unchecked((uint)0x1405),
-    Float = unchecked((uint)0x1406),
-    Double = unchecked((uint)0x1407),
-    Byte3 = unchecked((uint)0x1408),
-    UnsignedByte3 = unchecked((uint)0x1409),
+    [NativeName("AL_BYTE_SOFT")]
+    Byte = 5120,
+
+    [NativeName("AL_UNSIGNED_BYTE_SOFT")]
+    UnsignedByte = 5121,
+
+    [NativeName("AL_SHORT_SOFT")]
+    Short = 5122,
+
+    [NativeName("AL_UNSIGNED_SHORT_SOFT")]
+    UnsignedShort = 5123,
+
+    [NativeName("AL_INT_SOFT")]
+    Int = 5124,
+
+    [NativeName("AL_UNSIGNED_INT_SOFT")]
+    UnsignedInt = 5125,
+
+    [NativeName("AL_FLOAT_SOFT")]
+    Float = 5126,
+
+    [NativeName("AL_DOUBLE_SOFT")]
+    Double = 5127,
+
+    [NativeName("AL_BYTE3_SOFT")]
+    Byte3 = 5128,
+
+    [NativeName("AL_UNSIGNED_BYTE3_SOFT")]
+    UnsignedByte3 = 5129,
 }

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_HintCallback")]
 public readonly unsafe struct HintCallback : IDisposable
 {
     private readonly void* Pointer;

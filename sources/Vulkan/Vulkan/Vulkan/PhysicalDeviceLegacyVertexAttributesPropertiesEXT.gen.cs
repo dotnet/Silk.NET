@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceLegacyVertexAttributesPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLegacyVertexAttributesPropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_legacy_vertex_attributes"],
@@ -17,6 +19,7 @@ public unsafe partial struct PhysicalDeviceLegacyVertexAttributesPropertiesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_legacy_vertex_attributes"],
@@ -24,7 +27,7 @@ public unsafe partial struct PhysicalDeviceLegacyVertexAttributesPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("nativeUnalignedPerformance")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_legacy_vertex_attributes"],

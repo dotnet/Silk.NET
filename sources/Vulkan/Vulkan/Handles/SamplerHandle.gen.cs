@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSampler")]
 public readonly unsafe partial struct SamplerHandle
 {
     public readonly void* Handle;
+
+    public SamplerHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(SamplerHandle other) => Handle == other.Handle;
 

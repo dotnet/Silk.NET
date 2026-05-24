@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_early_and_late_fragment_tests"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceShaderEarlyAndLateFragmentTestsFeatur
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_early_and_late_fragment_tests"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceShaderEarlyAndLateFragmentTestsFeatur
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderEarlyAndLateFragmentTests")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_early_and_late_fragment_tests"],

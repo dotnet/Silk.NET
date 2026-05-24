@@ -14,8 +14,7 @@ namespace Silk.NET.Maths
     /// <typeparam name="T">The type used to store values.</typeparam>
     [Serializable]
     [DataContract]
-    public struct Plane<T> :
-        IEquatable<Plane<T>>
+    public struct Plane<T> : IEquatable<Plane<T>>
         where T : INumberBase<T>
     {
         /// <summary>The normal vector of the Plane.</summary>
@@ -94,7 +93,12 @@ namespace Silk.NET.Maths
         public override readonly string ToString()
         {
             CultureInfo ci = CultureInfo.CurrentCulture;
-            return string.Format(ci, "{{Normal:{0} D:{1}}}", Normal.ToString(), Distance.ToString("G", ci));
+            return string.Format(
+                ci,
+                "{{Normal:{0} D:{1}}}",
+                Normal.ToString(),
+                Distance.ToString("G", ci)
+            );
         }
 
         /// <summary>
@@ -207,7 +211,8 @@ namespace Silk.NET.Maths
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted plane</returns>
         [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
-        public Plane<TOther> As<TOther>() where TOther : INumberBase<TOther>
+        public Plane<TOther> As<TOther>()
+            where TOther : INumberBase<TOther>
         {
             return new(Normal.As<TOther>(), TOther.CreateTruncating(Distance));
         }

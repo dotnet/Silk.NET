@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRenderPassSampleLocationsBeginInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassSampleLocationsBeginInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -21,7 +23,7 @@ public unsafe partial struct RenderPassSampleLocationsBeginInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -32,7 +34,7 @@ public unsafe partial struct RenderPassSampleLocationsBeginInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("attachmentInitialSampleLocationsCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -43,7 +45,7 @@ public unsafe partial struct RenderPassSampleLocationsBeginInfoEXT
     )]
     public uint AttachmentInitialSampleLocationsCount;
 
-    [NativeTypeName("const VkAttachmentSampleLocationsEXT *")]
+    [NativeName("pAttachmentInitialSampleLocations")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -54,7 +56,7 @@ public unsafe partial struct RenderPassSampleLocationsBeginInfoEXT
     )]
     public AttachmentSampleLocationsEXT* PAttachmentInitialSampleLocations;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("postSubpassSampleLocationsCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -65,7 +67,7 @@ public unsafe partial struct RenderPassSampleLocationsBeginInfoEXT
     )]
     public uint PostSubpassSampleLocationsCount;
 
-    [NativeTypeName("const VkSubpassSampleLocationsEXT *")]
+    [NativeName("pPostSubpassSampleLocations")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],

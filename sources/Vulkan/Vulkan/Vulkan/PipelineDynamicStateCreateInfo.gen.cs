@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineDynamicStateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineDynamicStateCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +31,7 @@ public unsafe partial struct PipelineDynamicStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +50,7 @@ public unsafe partial struct PipelineDynamicStateCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineDynamicStateCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,7 +69,7 @@ public unsafe partial struct PipelineDynamicStateCreateInfo
     )]
     public uint Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dynamicStateCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +88,7 @@ public unsafe partial struct PipelineDynamicStateCreateInfo
     )]
     public uint DynamicStateCount;
 
-    [NativeTypeName("const VkDynamicState *")]
+    [NativeName("pDynamicStates")]
     [SupportedApiProfile(
         "vulkan",
         [

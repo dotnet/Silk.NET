@@ -8,12 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkIndirectCommandsTokenDataEXT")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectCommandsTokenDataEXT
 {
+    [NativeName("pPushConstant")]
     [FieldOffset(0)]
-    [NativeTypeName("const VkIndirectCommandsPushConstantTokenEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -25,8 +26,8 @@ public unsafe partial struct IndirectCommandsTokenDataEXT
     )]
     public IndirectCommandsPushConstantTokenEXT* PPushConstant;
 
+    [NativeName("pVertexBuffer")]
     [FieldOffset(0)]
-    [NativeTypeName("const VkIndirectCommandsVertexBufferTokenEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -38,8 +39,8 @@ public unsafe partial struct IndirectCommandsTokenDataEXT
     )]
     public IndirectCommandsVertexBufferTokenEXT* PVertexBuffer;
 
+    [NativeName("pIndexBuffer")]
     [FieldOffset(0)]
-    [NativeTypeName("const VkIndirectCommandsIndexBufferTokenEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -51,8 +52,8 @@ public unsafe partial struct IndirectCommandsTokenDataEXT
     )]
     public IndirectCommandsIndexBufferTokenEXT* PIndexBuffer;
 
+    [NativeName("pExecutionSet")]
     [FieldOffset(0)]
-    [NativeTypeName("const VkIndirectCommandsExecutionSetTokenEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

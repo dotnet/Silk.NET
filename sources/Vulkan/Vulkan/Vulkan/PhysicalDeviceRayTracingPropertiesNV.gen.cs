@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceRayTracingPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("shaderGroupHandleSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
     )]
     public uint ShaderGroupHandleSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxRecursionDepth")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
     )]
     public uint MaxRecursionDepth;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxShaderGroupStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -64,7 +67,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
     )]
     public uint MaxShaderGroupStride;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("shaderGroupBaseAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -75,7 +78,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
     )]
     public uint ShaderGroupBaseAlignment;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("maxGeometryCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -86,7 +89,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
     )]
     public ulong MaxGeometryCount;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("maxInstanceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -97,7 +100,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
     )]
     public ulong MaxInstanceCount;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("maxTriangleCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -108,7 +111,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
     )]
     public ulong MaxTriangleCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxDescriptorSetAccelerationStructures")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

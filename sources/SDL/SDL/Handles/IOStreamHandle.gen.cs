@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_IOStream")]
 public readonly unsafe partial struct IOStreamHandle
 {
     public readonly void* Handle;
+
+    public IOStreamHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(IOStreamHandle other) => Handle == other.Handle;
 

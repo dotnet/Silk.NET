@@ -8,17 +8,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkExternalMemoryTensorCreateInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ExternalMemoryTensorCreateInfoARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
-    [NativeTypeName("VkExternalMemoryHandleTypeFlags")]
+    [NativeName("handleTypes")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public ExternalMemoryHandleTypeFlags HandleTypes;
 }

@@ -808,7 +808,7 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
         string? filePath = null
     )
     {
-        logger.LogDebug("ClangSharp command line arguments: {0}", string.Join(" ", args));
+        logger.LogTrace("ClangSharp command line arguments: {0}", string.Join(" ", args));
         var context = (ParseResult: new Parser(s_rootCommand).Parse(args), Dummy: 0);
 
         // Begin verbatim ClangSharp code: https://github.com/dotnet/ClangSharp/blob/main/sources/ClangSharpPInvokeGenerator/Program.cs

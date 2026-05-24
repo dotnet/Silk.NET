@@ -17,12 +17,6 @@ public interface IModContext : IAsyncDisposable
     public string JobKey { get; }
 
     /// <summary>
-    /// A cache key that can be used for the current job. Use of this key shall mean that if the job configuration
-    /// changes in any way, the cache is invalidated.
-    /// </summary>
-    public string JobCacheKey { get; }
-
-    /// <summary>
     /// Gets the directory in which the configuration file is contained. May be null if I/O is banned in the current
     /// generator form factor (e.g. the SilkTouch framework is running as a source generator).
     /// </summary>

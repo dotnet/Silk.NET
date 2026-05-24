@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMeshShaderPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTaskWorkGroupTotalCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxTaskWorkGroupTotalCount;
 
-    [NativeTypeName("uint32_t[3]")]
+    [NativeName("maxTaskWorkGroupCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public PhysicalDeviceMeshShaderPropertiesEXTMaxTaskWorkGroupCount MaxTaskWorkGroupCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTaskWorkGroupInvocations")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -49,7 +52,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxTaskWorkGroupInvocations;
 
-    [NativeTypeName("uint32_t[3]")]
+    [NativeName("maxTaskWorkGroupSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -57,7 +60,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public PhysicalDeviceMeshShaderPropertiesEXTMaxTaskWorkGroupSize MaxTaskWorkGroupSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTaskPayloadSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -65,7 +68,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxTaskPayloadSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTaskSharedMemorySize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -73,7 +76,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxTaskSharedMemorySize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTaskPayloadAndSharedMemorySize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -81,7 +84,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxTaskPayloadAndSharedMemorySize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshWorkGroupTotalCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -89,7 +92,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshWorkGroupTotalCount;
 
-    [NativeTypeName("uint32_t[3]")]
+    [NativeName("maxMeshWorkGroupCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -97,7 +100,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public PhysicalDeviceMeshShaderPropertiesEXTMaxMeshWorkGroupCount MaxMeshWorkGroupCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshWorkGroupInvocations")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -105,7 +108,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshWorkGroupInvocations;
 
-    [NativeTypeName("uint32_t[3]")]
+    [NativeName("maxMeshWorkGroupSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -113,7 +116,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public PhysicalDeviceMeshShaderPropertiesEXTMaxMeshWorkGroupSize MaxMeshWorkGroupSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshSharedMemorySize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -121,7 +124,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshSharedMemorySize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshPayloadAndSharedMemorySize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -129,7 +132,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshPayloadAndSharedMemorySize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshOutputMemorySize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -137,7 +140,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshOutputMemorySize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshPayloadAndOutputMemorySize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -145,7 +148,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshPayloadAndOutputMemorySize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshOutputComponents")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -153,7 +156,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshOutputComponents;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshOutputVertices")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -161,7 +164,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshOutputVertices;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshOutputPrimitives")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -169,7 +172,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshOutputPrimitives;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshOutputLayers")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -177,7 +180,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshOutputLayers;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxMeshMultiviewViewCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -185,7 +188,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxMeshMultiviewViewCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("meshOutputPerVertexGranularity")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -193,7 +196,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MeshOutputPerVertexGranularity;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("meshOutputPerPrimitiveGranularity")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -201,7 +204,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MeshOutputPerPrimitiveGranularity;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxPreferredTaskWorkGroupInvocations")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -209,7 +212,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxPreferredTaskWorkGroupInvocations;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxPreferredMeshWorkGroupInvocations")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -217,7 +220,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint MaxPreferredMeshWorkGroupInvocations;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("prefersLocalInvocationVertexOutput")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -225,7 +228,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint PrefersLocalInvocationVertexOutput;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("prefersLocalInvocationPrimitiveOutput")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -233,7 +236,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint PrefersLocalInvocationPrimitiveOutput;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("prefersCompactVertexOutput")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -241,7 +244,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
     )]
     public uint PrefersCompactVertexOutput;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("prefersCompactPrimitiveOutput")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],

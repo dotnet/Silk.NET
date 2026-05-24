@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDynamicRenderingFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDynamicRenderingFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -17,6 +19,7 @@ public unsafe partial struct PhysicalDeviceDynamicRenderingFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -24,7 +27,7 @@ public unsafe partial struct PhysicalDeviceDynamicRenderingFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("dynamicRendering")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint DynamicRendering;
 }

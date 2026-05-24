@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkIndirectCommandsStreamNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectCommandsStreamNV
 {
-    [NativeTypeName("VkBuffer")]
+    [NativeName("buffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -18,7 +19,7 @@ public unsafe partial struct IndirectCommandsStreamNV
     )]
     public BufferHandle Buffer;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("offset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

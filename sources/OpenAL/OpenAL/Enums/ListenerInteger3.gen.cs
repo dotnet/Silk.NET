@@ -10,9 +10,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("ListenerInteger3")]
 public enum ListenerInteger3 : uint
 {
-    Direction = unchecked((uint)0x1005),
-    Velocity = unchecked((uint)0x1006),
+    [NativeName("AL_DIRECTION")]
+    Direction = 4101,
+
+    [NativeName("AL_VELOCITY")]
+    Velocity = 4102,
 }

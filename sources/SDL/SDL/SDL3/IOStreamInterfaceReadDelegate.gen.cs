@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[Transformed]
+[NativeName("SDL_IOStreamInterface_read")]
 public unsafe delegate nuint IOStreamInterfaceReadDelegate(
     void* arg0,
     void* arg1,

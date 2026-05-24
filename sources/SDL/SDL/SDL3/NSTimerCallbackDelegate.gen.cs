@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_NSTimerCallback")]
 public unsafe delegate ulong NSTimerCallbackDelegate(void* arg0, uint arg1, ulong arg2);

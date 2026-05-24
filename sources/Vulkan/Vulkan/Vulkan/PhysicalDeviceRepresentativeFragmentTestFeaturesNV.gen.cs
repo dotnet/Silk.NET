@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_representative_fragment_test"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_representative_fragment_test"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("representativeFragmentTest")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_representative_fragment_test"],

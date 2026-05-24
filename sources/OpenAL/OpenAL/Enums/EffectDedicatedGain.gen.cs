@@ -10,8 +10,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("EffectDedicatedGain")]
 public enum EffectDedicatedGain : uint
 {
-    DedicatedGain = unchecked((uint)0x0001),
+    [NativeName("AL_DEDICATED_GAIN")]
+    DedicatedGain = 1,
 }

@@ -10,9 +10,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("EventSupportSOFT")]
 public enum EventSupportSOFT : uint
 {
-    Supported = unchecked((uint)0x19D9),
-    NotSupported = unchecked((uint)0x19DA),
+    [NativeName("ALC_EVENT_SUPPORTED_SOFT")]
+    Supported = 6617,
+
+    [NativeName("ALC_EVENT_NOT_SUPPORTED_SOFT")]
+    NotSupported = 6618,
 }

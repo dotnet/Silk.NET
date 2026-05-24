@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkGeometryTrianglesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeometryTrianglesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -20,7 +22,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -31,7 +33,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBuffer")]
+    [NativeName("vertexData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -42,7 +44,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public BufferHandle VertexData;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("vertexOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -53,7 +55,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public ulong VertexOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("vertexCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -64,7 +66,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public uint VertexCount;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("vertexStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -75,6 +77,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public ulong VertexStride;
 
+    [NativeName("vertexFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -85,7 +88,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public Format VertexFormat;
 
-    [NativeTypeName("VkBuffer")]
+    [NativeName("indexData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -96,7 +99,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public BufferHandle IndexData;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("indexOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -107,7 +110,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public ulong IndexOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("indexCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -118,6 +121,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public uint IndexCount;
 
+    [NativeName("indexType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -128,7 +132,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public IndexType IndexType;
 
-    [NativeTypeName("VkBuffer")]
+    [NativeName("transformData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -139,7 +143,7 @@ public unsafe partial struct GeometryTrianglesNV
     )]
     public BufferHandle TransformData;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("transformOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

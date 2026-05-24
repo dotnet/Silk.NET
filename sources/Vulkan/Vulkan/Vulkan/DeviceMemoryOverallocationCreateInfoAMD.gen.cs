@@ -8,16 +8,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceMemoryOverallocationCreateInfoAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceMemoryOverallocationCreateInfoAMD
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     public void* PNext;
 
+    [NativeName("overallocationBehavior")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     public MemoryOverallocationBehaviorAMD OverallocationBehavior;
 }

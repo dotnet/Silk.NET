@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[Transformed]
+[NativeName("SDL_StorageInterface_write_file")]
 public readonly unsafe struct StorageInterfaceWriteFile : IDisposable
 {
     private readonly void* Pointer;

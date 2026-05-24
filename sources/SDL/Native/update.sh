@@ -1,7 +1,11 @@
 #!/usr/bin/env -S bash -eu
+
+# Submodule
 if [ ! -e ../../../eng/submodules/sdl/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/sdl
 fi
+
+# Update
 verout="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/version.txt"
 (
     cd ../../../eng/submodules/sdl

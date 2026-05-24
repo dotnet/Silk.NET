@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AppQuit_func")]
 public unsafe delegate void AppQuitFuncDelegate(void* arg0, AppResult arg1);

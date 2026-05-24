@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBufferOpaqueCaptureAddressCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BufferOpaqueCaptureAddressCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,7 +33,7 @@ public unsafe partial struct BufferOpaqueCaptureAddressCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -52,7 +54,7 @@ public unsafe partial struct BufferOpaqueCaptureAddressCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("opaqueCaptureAddress")]
     [SupportedApiProfile(
         "vulkan",
         [
