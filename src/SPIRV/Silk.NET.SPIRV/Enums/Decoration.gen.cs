@@ -106,6 +106,8 @@ namespace Silk.NET.SPIRV
         AlignmentId = 0x2E,
         [NativeName("Name", "SpvDecorationMaxByteOffsetId")]
         MaxByteOffsetId = 0x2F,
+        [NativeName("Name", "SpvDecorationSaturatedToLargestFloat8NormalConversionEXT")]
+        SaturatedToLargestFloat8NormalConversionExt = 0x1078,
         [NativeName("Name", "SpvDecorationNoSignedWrap")]
         NoSignedWrap = 0x1175,
         [NativeName("Name", "SpvDecorationNoUnsignedWrap")]
@@ -126,6 +128,14 @@ namespace Silk.NET.SPIRV
         TrackFinishWritingAmdx = 0x13D6,
         [NativeName("Name", "SpvDecorationPayloadNodeNameAMDX")]
         PayloadNodeNameAmdx = 0x13E3,
+        [NativeName("Name", "SpvDecorationPayloadNodeBaseIndexAMDX")]
+        PayloadNodeBaseIndexAmdx = 0x13EA,
+        [NativeName("Name", "SpvDecorationPayloadNodeSparseArrayAMDX")]
+        PayloadNodeSparseArrayAmdx = 0x13EB,
+        [NativeName("Name", "SpvDecorationPayloadNodeArraySizeAMDX")]
+        PayloadNodeArraySizeAmdx = 0x13EC,
+        [NativeName("Name", "SpvDecorationPayloadDispatchIndirectAMDX")]
+        PayloadDispatchIndirectAmdx = 0x13F1,
         [NativeName("Name", "SpvDecorationOverrideCoverageNV")]
         OverrideCoverageNV = 0x1480,
         [NativeName("Name", "SpvDecorationPassthroughNV")]
@@ -160,6 +170,8 @@ namespace Silk.NET.SPIRV
         AliasedPointerExt = 0x14EC,
         [NativeName("Name", "SpvDecorationHitObjectShaderRecordBufferNV")]
         HitObjectShaderRecordBufferNV = 0x150A,
+        [NativeName("Name", "SpvDecorationHitObjectShaderRecordBufferEXT")]
+        HitObjectShaderRecordBufferExt = 0x150D,
         [NativeName("Name", "SpvDecorationBindlessSamplerNV")]
         BindlessSamplerNV = 0x1516,
         [NativeName("Name", "SpvDecorationBindlessImageNV")]
@@ -200,62 +212,116 @@ namespace Silk.NET.SPIRV
         FunctionRoundingModeIntel = 0x16BE,
         [NativeName("Name", "SpvDecorationFunctionDenormModeINTEL")]
         FunctionDenormModeIntel = 0x16BF,
+        [NativeName("Name", "SpvDecorationRegisterALTERA")]
+        RegisterAltera = 0x16C1,
         [NativeName("Name", "SpvDecorationRegisterINTEL")]
         RegisterIntel = 0x16C1,
+        [NativeName("Name", "SpvDecorationMemoryALTERA")]
+        MemoryAltera = 0x16C2,
         [NativeName("Name", "SpvDecorationMemoryINTEL")]
         MemoryIntel = 0x16C2,
+        [NativeName("Name", "SpvDecorationNumbanksALTERA")]
+        NumbanksAltera = 0x16C3,
         [NativeName("Name", "SpvDecorationNumbanksINTEL")]
         NumbanksIntel = 0x16C3,
+        [NativeName("Name", "SpvDecorationBankwidthALTERA")]
+        BankwidthAltera = 0x16C4,
         [NativeName("Name", "SpvDecorationBankwidthINTEL")]
         BankwidthIntel = 0x16C4,
+        [NativeName("Name", "SpvDecorationMaxPrivateCopiesALTERA")]
+        MaxPrivateCopiesAltera = 0x16C5,
         [NativeName("Name", "SpvDecorationMaxPrivateCopiesINTEL")]
         MaxPrivateCopiesIntel = 0x16C5,
+        [NativeName("Name", "SpvDecorationSinglepumpALTERA")]
+        SinglepumpAltera = 0x16C6,
         [NativeName("Name", "SpvDecorationSinglepumpINTEL")]
         SinglepumpIntel = 0x16C6,
+        [NativeName("Name", "SpvDecorationDoublepumpALTERA")]
+        DoublepumpAltera = 0x16C7,
         [NativeName("Name", "SpvDecorationDoublepumpINTEL")]
         DoublepumpIntel = 0x16C7,
+        [NativeName("Name", "SpvDecorationMaxReplicatesALTERA")]
+        MaxReplicatesAltera = 0x16C8,
         [NativeName("Name", "SpvDecorationMaxReplicatesINTEL")]
         MaxReplicatesIntel = 0x16C8,
+        [NativeName("Name", "SpvDecorationSimpleDualPortALTERA")]
+        SimpleDualPortAltera = 0x16C9,
         [NativeName("Name", "SpvDecorationSimpleDualPortINTEL")]
         SimpleDualPortIntel = 0x16C9,
+        [NativeName("Name", "SpvDecorationMergeALTERA")]
+        MergeAltera = 0x16CA,
         [NativeName("Name", "SpvDecorationMergeINTEL")]
         MergeIntel = 0x16CA,
+        [NativeName("Name", "SpvDecorationBankBitsALTERA")]
+        BankBitsAltera = 0x16CB,
         [NativeName("Name", "SpvDecorationBankBitsINTEL")]
         BankBitsIntel = 0x16CB,
+        [NativeName("Name", "SpvDecorationForcePow2DepthALTERA")]
+        ForcePow2DepthAltera = 0x16CC,
         [NativeName("Name", "SpvDecorationForcePow2DepthINTEL")]
         ForcePow2DepthIntel = 0x16CC,
+        [NativeName("Name", "SpvDecorationStridesizeALTERA")]
+        StridesizeAltera = 0x16FB,
         [NativeName("Name", "SpvDecorationStridesizeINTEL")]
         StridesizeIntel = 0x16FB,
+        [NativeName("Name", "SpvDecorationWordsizeALTERA")]
+        WordsizeAltera = 0x16FC,
         [NativeName("Name", "SpvDecorationWordsizeINTEL")]
         WordsizeIntel = 0x16FC,
+        [NativeName("Name", "SpvDecorationTrueDualPortALTERA")]
+        TrueDualPortAltera = 0x16FD,
         [NativeName("Name", "SpvDecorationTrueDualPortINTEL")]
         TrueDualPortIntel = 0x16FD,
+        [NativeName("Name", "SpvDecorationBurstCoalesceALTERA")]
+        BurstCoalesceAltera = 0x170B,
         [NativeName("Name", "SpvDecorationBurstCoalesceINTEL")]
         BurstCoalesceIntel = 0x170B,
+        [NativeName("Name", "SpvDecorationCacheSizeALTERA")]
+        CacheSizeAltera = 0x170C,
         [NativeName("Name", "SpvDecorationCacheSizeINTEL")]
         CacheSizeIntel = 0x170C,
+        [NativeName("Name", "SpvDecorationDontStaticallyCoalesceALTERA")]
+        DontStaticallyCoalesceAltera = 0x170D,
         [NativeName("Name", "SpvDecorationDontStaticallyCoalesceINTEL")]
         DontStaticallyCoalesceIntel = 0x170D,
+        [NativeName("Name", "SpvDecorationPrefetchALTERA")]
+        PrefetchAltera = 0x170E,
         [NativeName("Name", "SpvDecorationPrefetchINTEL")]
         PrefetchIntel = 0x170E,
+        [NativeName("Name", "SpvDecorationStallEnableALTERA")]
+        StallEnableAltera = 0x1711,
         [NativeName("Name", "SpvDecorationStallEnableINTEL")]
         StallEnableIntel = 0x1711,
+        [NativeName("Name", "SpvDecorationFuseLoopsInFunctionALTERA")]
+        FuseLoopsInFunctionAltera = 0x1713,
         [NativeName("Name", "SpvDecorationFuseLoopsInFunctionINTEL")]
         FuseLoopsInFunctionIntel = 0x1713,
+        [NativeName("Name", "SpvDecorationMathOpDSPModeALTERA")]
+        MathOpDspModeAltera = 0x1715,
         [NativeName("Name", "SpvDecorationMathOpDSPModeINTEL")]
         MathOpDspModeIntel = 0x1715,
         [NativeName("Name", "SpvDecorationAliasScopeINTEL")]
         AliasScopeIntel = 0x171A,
         [NativeName("Name", "SpvDecorationNoAliasINTEL")]
         NoAliasIntel = 0x171B,
+        [NativeName("Name", "SpvDecorationInitiationIntervalALTERA")]
+        InitiationIntervalAltera = 0x171D,
         [NativeName("Name", "SpvDecorationInitiationIntervalINTEL")]
         InitiationIntervalIntel = 0x171D,
+        [NativeName("Name", "SpvDecorationMaxConcurrencyALTERA")]
+        MaxConcurrencyAltera = 0x171E,
         [NativeName("Name", "SpvDecorationMaxConcurrencyINTEL")]
         MaxConcurrencyIntel = 0x171E,
+        [NativeName("Name", "SpvDecorationPipelineEnableALTERA")]
+        PipelineEnableAltera = 0x171F,
         [NativeName("Name", "SpvDecorationPipelineEnableINTEL")]
         PipelineEnableIntel = 0x171F,
+        [NativeName("Name", "SpvDecorationBufferLocationALTERA")]
+        BufferLocationAltera = 0x1721,
         [NativeName("Name", "SpvDecorationBufferLocationINTEL")]
         BufferLocationIntel = 0x1721,
+        [NativeName("Name", "SpvDecorationIOPipeStorageALTERA")]
+        IOPipeStorageAltera = 0x1738,
         [NativeName("Name", "SpvDecorationIOPipeStorageINTEL")]
         IOPipeStorageIntel = 0x1738,
         [NativeName("Name", "SpvDecorationFunctionFloatingPointModeINTEL")]
@@ -266,38 +332,68 @@ namespace Silk.NET.SPIRV
         VectorComputeCallableFunctionIntel = 0x17C7,
         [NativeName("Name", "SpvDecorationMediaBlockIOINTEL")]
         MediaBlockIointel = 0x17FC,
+        [NativeName("Name", "SpvDecorationStallFreeALTERA")]
+        StallFreeAltera = 0x1807,
         [NativeName("Name", "SpvDecorationStallFreeINTEL")]
         StallFreeIntel = 0x1807,
         [NativeName("Name", "SpvDecorationFPMaxErrorDecorationINTEL")]
         FPMaxErrorDecorationIntel = 0x181A,
+        [NativeName("Name", "SpvDecorationLatencyControlLabelALTERA")]
+        LatencyControlLabelAltera = 0x181C,
         [NativeName("Name", "SpvDecorationLatencyControlLabelINTEL")]
         LatencyControlLabelIntel = 0x181C,
+        [NativeName("Name", "SpvDecorationLatencyControlConstraintALTERA")]
+        LatencyControlConstraintAltera = 0x181D,
         [NativeName("Name", "SpvDecorationLatencyControlConstraintINTEL")]
         LatencyControlConstraintIntel = 0x181D,
+        [NativeName("Name", "SpvDecorationConduitKernelArgumentALTERA")]
+        ConduitKernelArgumentAltera = 0x181F,
         [NativeName("Name", "SpvDecorationConduitKernelArgumentINTEL")]
         ConduitKernelArgumentIntel = 0x181F,
+        [NativeName("Name", "SpvDecorationRegisterMapKernelArgumentALTERA")]
+        RegisterMapKernelArgumentAltera = 0x1820,
         [NativeName("Name", "SpvDecorationRegisterMapKernelArgumentINTEL")]
         RegisterMapKernelArgumentIntel = 0x1820,
+        [NativeName("Name", "SpvDecorationMMHostInterfaceAddressWidthALTERA")]
+        MMHostInterfaceAddressWidthAltera = 0x1821,
         [NativeName("Name", "SpvDecorationMMHostInterfaceAddressWidthINTEL")]
         MMHostInterfaceAddressWidthIntel = 0x1821,
+        [NativeName("Name", "SpvDecorationMMHostInterfaceDataWidthALTERA")]
+        MMHostInterfaceDataWidthAltera = 0x1822,
         [NativeName("Name", "SpvDecorationMMHostInterfaceDataWidthINTEL")]
         MMHostInterfaceDataWidthIntel = 0x1822,
+        [NativeName("Name", "SpvDecorationMMHostInterfaceLatencyALTERA")]
+        MMHostInterfaceLatencyAltera = 0x1823,
         [NativeName("Name", "SpvDecorationMMHostInterfaceLatencyINTEL")]
         MMHostInterfaceLatencyIntel = 0x1823,
+        [NativeName("Name", "SpvDecorationMMHostInterfaceReadWriteModeALTERA")]
+        MMHostInterfaceReadWriteModeAltera = 0x1824,
         [NativeName("Name", "SpvDecorationMMHostInterfaceReadWriteModeINTEL")]
         MMHostInterfaceReadWriteModeIntel = 0x1824,
+        [NativeName("Name", "SpvDecorationMMHostInterfaceMaxBurstALTERA")]
+        MMHostInterfaceMaxBurstAltera = 0x1825,
         [NativeName("Name", "SpvDecorationMMHostInterfaceMaxBurstINTEL")]
         MMHostInterfaceMaxBurstIntel = 0x1825,
+        [NativeName("Name", "SpvDecorationMMHostInterfaceWaitRequestALTERA")]
+        MMHostInterfaceWaitRequestAltera = 0x1826,
         [NativeName("Name", "SpvDecorationMMHostInterfaceWaitRequestINTEL")]
         MMHostInterfaceWaitRequestIntel = 0x1826,
+        [NativeName("Name", "SpvDecorationStableKernelArgumentALTERA")]
+        StableKernelArgumentAltera = 0x1827,
         [NativeName("Name", "SpvDecorationStableKernelArgumentINTEL")]
         StableKernelArgumentIntel = 0x1827,
         [NativeName("Name", "SpvDecorationHostAccessINTEL")]
         HostAccessIntel = 0x182C,
+        [NativeName("Name", "SpvDecorationInitModeALTERA")]
+        InitModeAltera = 0x182E,
         [NativeName("Name", "SpvDecorationInitModeINTEL")]
         InitModeIntel = 0x182E,
+        [NativeName("Name", "SpvDecorationImplementInRegisterMapALTERA")]
+        ImplementInRegisterMapAltera = 0x182F,
         [NativeName("Name", "SpvDecorationImplementInRegisterMapINTEL")]
         ImplementInRegisterMapIntel = 0x182F,
+        [NativeName("Name", "SpvDecorationConditionalINTEL")]
+        ConditionalIntel = 0x1867,
         [NativeName("Name", "SpvDecorationCacheControlLoadINTEL")]
         CacheControlLoadIntel = 0x192A,
         [NativeName("Name", "SpvDecorationCacheControlStoreINTEL")]

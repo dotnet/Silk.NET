@@ -36,13 +36,16 @@ jobs:
           echo running extras
           ${{ matrix.env.extras }}
       - name: Install Zig
-        uses: goto-bus-stop/setup-zig@v2
-      - name: Setup .NET 6.0 and .NET 7.0
+        uses: mlugg/setup-zig@v2
+        with:
+          version: 0.15.2
+      - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: |
             6.0.201
             7.0.*
+            8.0.*
       - name: Build SPIRV-Reflect
         run: ${{ matrix.env.nuke_invoke }} SPIRVReflect
         env:

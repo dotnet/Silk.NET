@@ -25,7 +25,8 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.Tools.Git.GitTasks;
 using static Nuke.Common.Tools.GitHub.GitHubTasks;
 
-partial class Build {
+partial class Build
+{
     AbsolutePath SPIRVCrossPath => RootDirectory / "build" / "submodules" / "SPIRV-Cross";
 
     //This is the build script for the SPIRV-Reflect shared library
@@ -34,62 +35,64 @@ const fs = std.fs;
 
 pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
-    const mode = b.standardOptimizeOption(.{});
+    const optimize = b.standardOptimizeOption(.{});
 
-    const shared_lib_options: std.Build.SharedLibraryOptions = .{
-        .name = ""spirv-cross"",
+    const lib_mod = b.createModule(.{
         .target = target,
-        .optimize = mode,
-    };
+        .optimize = optimize,
+        .link_libc = true,
+        .link_libcpp = true,
+    });
 
-    const lib: *std.Build.Step.Compile = b.addSharedLibrary(shared_lib_options);
-    lib.linkLibC();
-    lib.linkLibCpp();
+    const lib = b.addLibrary(.{
+        .name = ""spirv-cross"",
+        .root_module = lib_mod,
+        .use_llvm = true,
+        .linkage = .dynamic,
+    });
 
     const flags = &.{ ""-std=c++11"", ""-fPIC"" };
 
     //Enable the GLSL, HLSL, MSL, CPP, and Reflect C APIs
-    lib.defineCMacro(""SPIRV_CROSS_C_API_GLSL"", ""1"");
-    lib.defineCMacro(""SPIRV_CROSS_C_API_HLSL"", ""1"");
-    lib.defineCMacro(""SPIRV_CROSS_C_API_MSL"", ""1"");
-    lib.defineCMacro(""SPIRV_CROSS_C_API_CPP"", ""1"");
-    lib.defineCMacro(""SPIRV_CROSS_C_API_REFLECT"", ""1"");
+    lib_mod.addCMacro(""SPIRV_CROSS_C_API_GLSL"", ""1"");
+    lib_mod.addCMacro(""SPIRV_CROSS_C_API_HLSL"", ""1"");
+    lib_mod.addCMacro(""SPIRV_CROSS_C_API_MSL"", ""1"");
+    lib_mod.addCMacro(""SPIRV_CROSS_C_API_CPP"", ""1"");
+    lib_mod.addCMacro(""SPIRV_CROSS_C_API_REFLECT"", ""1"");
 
     //Export the C API symbols
-    lib.defineCMacro(""SPVC_EXPORT_SYMBOLS"", ""1"");
+    lib_mod.addCMacro(""SPVC_EXPORT_SYMBOLS"", ""1"");
 
     //On windows, we need to specify `__declspec(dllexport)` ourselves
     //else SPIRV-Cross thinks this is a GNU toolchain and uses the wrong attribute in this case
     if (target.result.os.tag == .windows) {
-        lib.defineCMacro(""SPVC_PUBLIC_API"", ""__declspec(dllexport)"");
+        lib_mod.addCMacro(""SPVC_PUBLIC_API"", ""__declspec(dllexport)"");
     }
 
     //If we arent in debug, defined NDEBUG and strip symbols
-    if (mode != .Debug) {
-        lib.defineCMacro(""NDEBUG"", ""1"");
+    if (optimize != .Debug) {
+        lib_mod.addCMacro(""NDEBUG"", ""1"");
 
-        lib.root_module.strip = true;
+        lib_mod.strip = true;
     }
 
-    lib.addCSourceFiles(.{
-        .files = &.{
-            ""spirv_cross.cpp"",
-            ""spirv_cfg.cpp"",
-            ""spirv_cpp.cpp"",
-            ""spirv_cross_c.cpp"",
-            ""spirv_cross_parsed_ir.cpp"",
-            ""spirv_cross_util.cpp"",
-            ""spirv_glsl.cpp"",
-            ""spirv_hlsl.cpp"",
-            ""spirv_msl.cpp"",
-            ""spirv_parser.cpp"",
-            ""spirv_reflect.cpp"",
-        },
-        .flags = flags
-    });
+    lib_mod.addCSourceFiles(.{ .files = &.{
+        ""spirv_cross.cpp"",
+        ""spirv_cfg.cpp"",
+        ""spirv_cpp.cpp"",
+        ""spirv_cross_c.cpp"",
+        ""spirv_cross_parsed_ir.cpp"",
+        ""spirv_cross_util.cpp"",
+        ""spirv_glsl.cpp"",
+        ""spirv_hlsl.cpp"",
+        ""spirv_msl.cpp"",
+        ""spirv_parser.cpp"",
+        ""spirv_reflect.cpp"",
+    }, .flags = flags });
 
     b.installArtifact(lib);
-}";
+}
+";
 
     Target SPIRVCross => CommonTarget
         (
