@@ -42,5 +42,5 @@ public unsafe partial struct PhysicalDeviceMultiviewPerViewRenderAreasFeaturesQC
             "VK_QCOM_multiview_per_view_render_areas+VK_VERSION_1_1",
         ]
     )]
-    public uint MultiviewPerViewRenderAreas;
+    public MaybeBool<uint> MultiviewPerViewRenderAreas;
 }

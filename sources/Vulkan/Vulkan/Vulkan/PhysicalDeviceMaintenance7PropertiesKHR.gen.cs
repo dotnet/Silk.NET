@@ -22,11 +22,11 @@ public unsafe partial struct PhysicalDeviceMaintenance7PropertiesKHR
 
     [NativeName("robustFragmentShadingRateAttachmentAccess")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public uint RobustFragmentShadingRateAttachmentAccess;
+    public MaybeBool<uint> RobustFragmentShadingRateAttachmentAccess;
 
     [NativeName("separateDepthStencilAttachmentAccess")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public uint SeparateDepthStencilAttachmentAccess;
+    public MaybeBool<uint> SeparateDepthStencilAttachmentAccess;
 
     [NativeName("maxDescriptorSetTotalUniformBuffersDynamic")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]

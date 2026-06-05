@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFea
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    public uint RasterizationOrderColorAttachmentAccess;
+    public MaybeBool<uint> RasterizationOrderColorAttachmentAccess;
 
     [NativeName("rasterizationOrderDepthAttachmentAccess")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFea
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    public uint RasterizationOrderDepthAttachmentAccess;
+    public MaybeBool<uint> RasterizationOrderDepthAttachmentAccess;
 
     [NativeName("rasterizationOrderStencilAttachmentAccess")]
     [SupportedApiProfile(
@@ -65,5 +65,5 @@ public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFea
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    public uint RasterizationOrderStencilAttachmentAccess;
+    public MaybeBool<uint> RasterizationOrderStencilAttachmentAccess;
 }

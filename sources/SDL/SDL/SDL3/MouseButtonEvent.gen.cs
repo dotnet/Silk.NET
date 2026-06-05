@@ -29,7 +29,7 @@ public partial struct MouseButtonEvent
     public byte Button;
 
     [NativeName("down")]
-    public byte Down;
+    public MaybeBool<byte> Down;
 
     [NativeName("clicks")]
     public byte Clicks;

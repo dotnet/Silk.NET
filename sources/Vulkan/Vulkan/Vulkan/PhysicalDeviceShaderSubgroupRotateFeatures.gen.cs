@@ -30,9 +30,9 @@ public unsafe partial struct PhysicalDeviceShaderSubgroupRotateFeatures
 
     [NativeName("shaderSubgroupRotate")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderSubgroupRotate;
+    public MaybeBool<uint> ShaderSubgroupRotate;
 
     [NativeName("shaderSubgroupRotateClustered")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderSubgroupRotateClustered;
+    public MaybeBool<uint> ShaderSubgroupRotateClustered;
 }

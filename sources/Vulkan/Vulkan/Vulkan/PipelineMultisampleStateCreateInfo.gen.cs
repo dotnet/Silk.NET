@@ -105,7 +105,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint SampleShadingEnable;
+    public MaybeBool<uint> SampleShadingEnable;
 
     [NativeName("minSampleShading")]
     [SupportedApiProfile(
@@ -162,7 +162,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint AlphaToCoverageEnable;
+    public MaybeBool<uint> AlphaToCoverageEnable;
 
     [NativeName("alphaToOneEnable")]
     [SupportedApiProfile(
@@ -181,5 +181,5 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint AlphaToOneEnable;
+    public MaybeBool<uint> AlphaToOneEnable;
 }

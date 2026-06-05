@@ -20,7 +20,7 @@ public unsafe partial struct GpuStorageTextureReadWriteBinding
     public uint Layer;
 
     [NativeName("cycle")]
-    public byte Cycle;
+    public MaybeBool<byte> Cycle;
 
     [NativeName("padding1")]
     public byte Padding1;

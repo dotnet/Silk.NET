@@ -44,5 +44,5 @@ public unsafe partial struct PhysicalDeviceZeroInitializeWorkgroupMemoryFeatures
 
     [NativeName("shaderZeroInitializeWorkgroupMemory")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint ShaderZeroInitializeWorkgroupMemory;
+    public MaybeBool<uint> ShaderZeroInitializeWorkgroupMemory;
 }

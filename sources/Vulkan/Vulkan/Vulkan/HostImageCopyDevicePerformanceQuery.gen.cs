@@ -49,7 +49,7 @@ public unsafe partial struct HostImageCopyDevicePerformanceQuery
         ],
         MinVersion = "1.4"
     )]
-    public uint OptimalDeviceAccess;
+    public MaybeBool<uint> OptimalDeviceAccess;
 
     [NativeName("identicalMemoryLayout")]
     [SupportedApiProfile(
@@ -62,5 +62,5 @@ public unsafe partial struct HostImageCopyDevicePerformanceQuery
         ],
         MinVersion = "1.4"
     )]
-    public uint IdenticalMemoryLayout;
+    public MaybeBool<uint> IdenticalMemoryLayout;
 }

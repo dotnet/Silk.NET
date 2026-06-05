@@ -44,10 +44,10 @@ public partial struct GpuSamplerCreateInfo
     public float MaxLod;
 
     [NativeName("enable_anisotropy")]
-    public byte EnableAnisotropy;
+    public MaybeBool<byte> EnableAnisotropy;
 
     [NativeName("enable_compare")]
-    public byte EnableCompare;
+    public MaybeBool<byte> EnableCompare;
 
     [NativeName("padding1")]
     public byte Padding1;

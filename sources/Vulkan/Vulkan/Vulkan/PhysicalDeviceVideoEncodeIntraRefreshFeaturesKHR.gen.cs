@@ -34,5 +34,5 @@ public unsafe partial struct PhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint VideoEncodeIntraRefresh;
+    public MaybeBool<uint> VideoEncodeIntraRefresh;
 }

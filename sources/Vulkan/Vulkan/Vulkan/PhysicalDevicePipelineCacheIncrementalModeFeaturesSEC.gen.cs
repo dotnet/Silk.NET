@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDevicePipelineCacheIncrementalModeFeaturesS
             "VK_SEC_pipeline_cache_incremental_mode+VK_VERSION_1_1",
         ]
     )]
-    public uint PipelineCacheIncrementalMode;
+    public MaybeBool<uint> PipelineCacheIncrementalMode;
 }

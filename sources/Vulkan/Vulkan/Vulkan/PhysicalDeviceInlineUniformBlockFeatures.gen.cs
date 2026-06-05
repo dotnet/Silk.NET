@@ -44,9 +44,9 @@ public unsafe partial struct PhysicalDeviceInlineUniformBlockFeatures
 
     [NativeName("inlineUniformBlock")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint InlineUniformBlock;
+    public MaybeBool<uint> InlineUniformBlock;
 
     [NativeName("descriptorBindingInlineUniformBlockUpdateAfterBind")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint DescriptorBindingInlineUniformBlockUpdateAfterBind;
+    public MaybeBool<uint> DescriptorBindingInlineUniformBlockUpdateAfterBind;
 }

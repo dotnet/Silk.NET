@@ -29,5 +29,5 @@ public unsafe partial struct PhysicalDeviceShaderFloatControls2Features
 
     [NativeName("shaderFloatControls2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderFloatControls2;
+    public MaybeBool<uint> ShaderFloatControls2;
 }

@@ -48,43 +48,43 @@ public unsafe partial struct PhysicalDeviceVulkan13Features
 
     [NativeName("robustImageAccess")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint RobustImageAccess;
+    public MaybeBool<uint> RobustImageAccess;
 
     [NativeName("inlineUniformBlock")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint InlineUniformBlock;
+    public MaybeBool<uint> InlineUniformBlock;
 
     [NativeName("descriptorBindingInlineUniformBlockUpdateAfterBind")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint DescriptorBindingInlineUniformBlockUpdateAfterBind;
+    public MaybeBool<uint> DescriptorBindingInlineUniformBlockUpdateAfterBind;
 
     [NativeName("pipelineCreationCacheControl")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint PipelineCreationCacheControl;
+    public MaybeBool<uint> PipelineCreationCacheControl;
 
     [NativeName("privateData")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint PrivateData;
+    public MaybeBool<uint> PrivateData;
 
     [NativeName("shaderDemoteToHelperInvocation")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint ShaderDemoteToHelperInvocation;
+    public MaybeBool<uint> ShaderDemoteToHelperInvocation;
 
     [NativeName("shaderTerminateInvocation")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint ShaderTerminateInvocation;
+    public MaybeBool<uint> ShaderTerminateInvocation;
 
     [NativeName("subgroupSizeControl")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint SubgroupSizeControl;
+    public MaybeBool<uint> SubgroupSizeControl;
 
     [NativeName("computeFullSubgroups")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint ComputeFullSubgroups;
+    public MaybeBool<uint> ComputeFullSubgroups;
 
     [NativeName("synchronization2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint Synchronization2;
+    public MaybeBool<uint> Synchronization2;
 
     [NativeName("textureCompressionASTC_HDR")]
     [SupportedApiProfile(
@@ -95,21 +95,21 @@ public unsafe partial struct PhysicalDeviceVulkan13Features
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    public uint TextureCompressionAstcHdr;
+    public MaybeBool<uint> TextureCompressionAstcHdr;
 
     [NativeName("shaderZeroInitializeWorkgroupMemory")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint ShaderZeroInitializeWorkgroupMemory;
+    public MaybeBool<uint> ShaderZeroInitializeWorkgroupMemory;
 
     [NativeName("dynamicRendering")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint DynamicRendering;
+    public MaybeBool<uint> DynamicRendering;
 
     [NativeName("shaderIntegerDotProduct")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint ShaderIntegerDotProduct;
+    public MaybeBool<uint> ShaderIntegerDotProduct;
 
     [NativeName("maintenance4")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint Maintenance4;
+    public MaybeBool<uint> Maintenance4;
 }

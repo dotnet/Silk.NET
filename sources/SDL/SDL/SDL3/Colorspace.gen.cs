@@ -48,5 +48,5 @@ public enum Colorspace
     RgbDefault = Srgb,
 
     [NativeName("SDL_COLORSPACE_YUV_DEFAULT")]
-    YuvDefault = Jpeg,
+    YuvDefault = Bt601Limited,
 }

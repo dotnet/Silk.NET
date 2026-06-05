@@ -42,5 +42,5 @@ public unsafe partial struct PhysicalDeviceShaderRelaxedExtendedInstructionFeatu
             "VK_KHR_shader_relaxed_extended_instruction+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderRelaxedExtendedInstruction;
+    public MaybeBool<uint> ShaderRelaxedExtendedInstruction;
 }

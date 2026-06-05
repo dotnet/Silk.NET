@@ -5,10 +5,15 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+
+        <!-- Ensure native binaries are copied when referencing Silk by ProjectReference -->
+        <!-- See: https://dotnet.github.io/Silk.NET/docs/v3/for-contributors/build-system#native-packaging -->
+        <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\sources\OpenAL\OpenAL\Silk.NET.OpenAL.csproj" />
+      <ProjectReference Include="..\..\..\..\sources\OpenAL\Soft.Native\Silk.NET.OpenAL.Soft.Native.csproj" />
     </ItemGroup>
 
     <ItemGroup>

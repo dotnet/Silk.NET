@@ -135,5 +135,5 @@ public unsafe partial struct PhysicalDeviceSubgroupProperties
         ],
         MinVersion = "1.1"
     )]
-    public uint QuadOperationsInAllStages;
+    public MaybeBool<uint> QuadOperationsInAllStages;
 }

@@ -43,6 +43,9 @@ public enum GamepadType
     [NativeName("SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_PAIR")]
     NintendoSwitchJoyconPair = 10,
 
+    [NativeName("SDL_GAMEPAD_TYPE_GAMECUBE")]
+    Gamecube = 11,
+
     [NativeName("SDL_GAMEPAD_TYPE_COUNT")]
-    Count = 11,
+    Count = 12,
 }

@@ -29,7 +29,7 @@ public partial struct PipelineColorBlendAttachmentState
         ],
         MinVersion = "1.0"
     )]
-    public uint BlendEnable;
+    public MaybeBool<uint> BlendEnable;
 
     [NativeName("srcColorBlendFactor")]
     [SupportedApiProfile(

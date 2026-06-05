@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceIndexTypeUint8Features
 
     [NativeName("indexTypeUint8")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint IndexTypeUint8;
+    public MaybeBool<uint> IndexTypeUint8;
 }

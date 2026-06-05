@@ -84,7 +84,7 @@ public unsafe partial struct MemoryDedicatedRequirements
         ],
         MinVersion = "1.1"
     )]
-    public uint PrefersDedicatedAllocation;
+    public MaybeBool<uint> PrefersDedicatedAllocation;
 
     [NativeName("requiresDedicatedAllocation")]
     [SupportedApiProfile(
@@ -109,5 +109,5 @@ public unsafe partial struct MemoryDedicatedRequirements
         ],
         MinVersion = "1.1"
     )]
-    public uint RequiresDedicatedAllocation;
+    public MaybeBool<uint> RequiresDedicatedAllocation;
 }

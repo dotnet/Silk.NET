@@ -7,11 +7,16 @@ namespace Silk.NET.OpenAL;
 
 public partial class AL
 {
-    static AL() =>
+    static AL()
+    {
         LoaderInterface.RegisterAlternativeName(
             "openal",
             "/System/Library/Frameworks/OpenAL.framework/OpenAL"
         );
+
+        LoaderInterface.RegisterAlternativeName("openal", "OpenAL32");
+        LoaderInterface.RegisterAlternativeName("openal", "soft_oal");
+    }
 
     public partial class ThisThread
     {

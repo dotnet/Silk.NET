@@ -29,5 +29,5 @@ public unsafe partial struct PhysicalDeviceDynamicRenderingFeatures
 
     [NativeName("dynamicRendering")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint DynamicRendering;
+    public MaybeBool<uint> DynamicRendering;
 }

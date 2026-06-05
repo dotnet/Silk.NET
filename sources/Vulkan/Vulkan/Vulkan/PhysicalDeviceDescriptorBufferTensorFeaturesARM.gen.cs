@@ -36,5 +36,5 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferTensorFeaturesARM
         ImpliesSets = ["VK_VERSION_1_3"],
         RequireAll = true
     )]
-    public uint DescriptorBufferTensorDescriptors;
+    public MaybeBool<uint> DescriptorBufferTensorDescriptors;
 }

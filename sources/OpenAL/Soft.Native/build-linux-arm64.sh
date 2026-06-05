@@ -1,24 +1,33 @@
 #!/usr/bin/env -S bash -eu
+
+# Dependencies
 if [[ ! -z ${GITHUB_ACTIONS+x} ]]; then
-    if [[ ! -z ${SILKDOTNET_DockerBuild+x} ]]; then
-        dpkg --add-architecture arm64
-        apt update
-        apt install -y libasound2-dev:arm64 libpulse-dev:arm64 libsoundio-dev:arm64 libsndfile1-dev:arm64 \
-            libmysofa-dev:arm64 qtbase5-dev:arm64 libdbus-1-dev:arm64 libjack-dev:arm64 portaudio19-dev:arm64 git \
-            cmake python3 libpipewire-0.3-dev:arm64 qt6-base-dev:arm64 pulseaudio:arm64 \
-            gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
-    else
+    if [[ -z ${SILKDOTNET_DockerBuild+x} ]]; then
+        # Enter Debian container for multiarch packages
         docker="docker"
         if command -v podman >/dev/null 2>&1; then
             docker="podman"
         fi
         $docker run --platform linux/amd64 -e SILKDOTNET_DockerBuild=1 -e GITHUB_ACTIONS=1 -v $(readlink -f ../../../):/data debian bash -c "cd /data/sources/OpenAL/Soft.Native && ./build-linux-arm64.sh"
         exit
+    else
+        dpkg --add-architecture arm64
+        apt-get update
+        apt-get install -y \
+            git cmake python3 \
+            libasound2-dev:arm64 libpulse-dev:arm64 libsoundio-dev:arm64 libsndfile1-dev:arm64 \
+            libmysofa-dev:arm64 qtbase5-dev:arm64 libdbus-1-dev:arm64 libjack-dev:arm64 portaudio19-dev:arm64 \
+            libpipewire-0.3-dev:arm64 qt6-base-dev:arm64 pulseaudio:arm64 \
+            gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
     fi
 fi
+
+# Submodule
 if [ ! -e ../../../eng/submodules/openal-soft/CMakeLists.txt ]; then
     git submodule update --init --recursive --depth 1 ../../../eng/submodules/openal-soft
 fi
+
+# Build
 rm -rf build
 mkdir build
 cd build

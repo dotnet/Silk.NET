@@ -29,10 +29,10 @@ public partial struct GpuRasterizerState
     public float DepthBiasSlopeFactor;
 
     [NativeName("enable_depth_bias")]
-    public byte EnableDepthBias;
+    public MaybeBool<byte> EnableDepthBias;
 
     [NativeName("enable_depth_clip")]
-    public byte EnableDepthClip;
+    public MaybeBool<byte> EnableDepthClip;
 
     [NativeName("padding1")]
     public byte Padding1;

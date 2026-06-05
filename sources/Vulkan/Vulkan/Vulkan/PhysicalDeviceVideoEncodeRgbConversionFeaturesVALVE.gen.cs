@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    public uint VideoEncodeRgbConversion;
+    public MaybeBool<uint> VideoEncodeRgbConversion;
 }

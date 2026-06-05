@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesKHR
             "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
         ]
     )]
-    public uint ComputeDerivativeGroupQuads;
+    public MaybeBool<uint> ComputeDerivativeGroupQuads;
 
     [NativeName("computeDerivativeGroupLinear")]
     [SupportedApiProfile(
@@ -54,5 +54,5 @@ public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesKHR
             "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
         ]
     )]
-    public uint ComputeDerivativeGroupLinear;
+    public MaybeBool<uint> ComputeDerivativeGroupLinear;
 }

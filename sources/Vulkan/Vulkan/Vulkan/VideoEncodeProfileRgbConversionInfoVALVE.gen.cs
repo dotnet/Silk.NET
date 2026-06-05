@@ -43,5 +43,5 @@ public unsafe partial struct VideoEncodeProfileRgbConversionInfoVALVE
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    public uint PerformEncodeRgbConversion;
+    public MaybeBool<uint> PerformEncodeRgbConversion;
 }

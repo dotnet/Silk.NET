@@ -1,0 +1,24 @@
+﻿public struct Transform
+{
+    [NativeTypeName("TestBool32")]
+    public MaybeBool<uint> OptionField;
+    [NativeTypeName("TestBool32")]
+    public MaybeBool<uint> OptionProperty => OptionField;
+
+    [NativeTypeName("TestBool32")]
+    public MaybeBool<uint> OptionAutoProperty { get; set; }
+}
+
+public struct NoTransform
+{
+    [NativeTypeName("TestBool")]
+    public uint OptionField;
+    [NativeTypeName("TestBool")]
+    public uint OptionProperty => OptionField;
+
+    [NativeTypeName("TestBool")]
+    public uint OptionAutoProperty { get; set; }
+
+    [NativeTypeName("TestBool32 : 1")]
+    public uint OptionAutoProperty { get; set; }
+}

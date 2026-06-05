@@ -70,7 +70,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
         ],
         MinVersion = "1.3"
     )]
-    public uint StorageTexelBufferOffsetSingleTexelAlignment;
+    public MaybeBool<uint> StorageTexelBufferOffsetSingleTexelAlignment;
 
     [NativeName("uniformTexelBufferOffsetAlignmentBytes")]
     [SupportedApiProfile(
@@ -100,5 +100,5 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentProperties
         ],
         MinVersion = "1.3"
     )]
-    public uint UniformTexelBufferOffsetSingleTexelAlignment;
+    public MaybeBool<uint> UniformTexelBufferOffsetSingleTexelAlignment;
 }
