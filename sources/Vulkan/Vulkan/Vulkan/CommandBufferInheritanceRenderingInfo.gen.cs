@@ -18,7 +18,7 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CommandBufferInheritanceRenderingInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -83,4 +83,11 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
         MinVersion = "1.3"
     )]
     public SampleCountFlags RasterizationSamples;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    public CommandBufferInheritanceRenderingInfo() { }
 }

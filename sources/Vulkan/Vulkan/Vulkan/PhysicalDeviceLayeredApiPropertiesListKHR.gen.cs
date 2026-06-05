@@ -14,7 +14,7 @@ public unsafe partial struct PhysicalDeviceLayeredApiPropertiesListKHR
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceLayeredApiPropertiesListKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
@@ -27,4 +27,7 @@ public unsafe partial struct PhysicalDeviceLayeredApiPropertiesListKHR
     [NativeName("pLayeredApis")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public PhysicalDeviceLayeredApiPropertiesKHR* PLayeredApis;
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
+    public PhysicalDeviceLayeredApiPropertiesListKHR() { }
 }

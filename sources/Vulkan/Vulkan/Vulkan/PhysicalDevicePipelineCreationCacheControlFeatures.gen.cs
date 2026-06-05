@@ -24,7 +24,7 @@ public unsafe partial struct PhysicalDevicePipelineCreationCacheControlFeatures
         ],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePipelineCreationCacheControlFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,18 @@ public unsafe partial struct PhysicalDevicePipelineCreationCacheControlFeatures
     [NativeName("pipelineCreationCacheControl")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public MaybeBool<uint> PipelineCreationCacheControl;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    public PhysicalDevicePipelineCreationCacheControlFeatures() { }
 }

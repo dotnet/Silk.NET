@@ -13,7 +13,7 @@ public unsafe partial struct CuModuleCreateInfoNVX
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.CuModuleCreateInfoNVX;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
@@ -26,4 +26,7 @@ public unsafe partial struct CuModuleCreateInfoNVX
     [NativeName("pData")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public void* PData;
+
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
+    public CuModuleCreateInfoNVX() { }
 }

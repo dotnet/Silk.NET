@@ -18,7 +18,7 @@ public unsafe partial struct VideoEncodeAv1RateControlLayerInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeAv1RateControlLayerInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -75,4 +75,11 @@ public unsafe partial struct VideoEncodeAv1RateControlLayerInfoKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     public VideoEncodeAv1FrameSizeKHR MaxFrameSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_av1"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeAv1RateControlLayerInfoKHR() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct VideoFormatAv1QuantizationMapPropertiesKHR
         ],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoFormatAv1QuantizationMapPropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -46,4 +46,15 @@ public unsafe partial struct VideoFormatAv1QuantizationMapPropertiesKHR
         RequireAll = true
     )]
     public VideoEncodeAv1SuperblockSizeFlagsKHR CompatibleSuperblockSizes;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_av1", "VK_KHR_video_encode_quantization_map"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
+    public VideoFormatAv1QuantizationMapPropertiesKHR() { }
 }

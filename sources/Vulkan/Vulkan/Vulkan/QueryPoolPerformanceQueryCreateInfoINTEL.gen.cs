@@ -14,7 +14,7 @@ public unsafe partial struct QueryPoolPerformanceQueryCreateInfoINTEL
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.QueryPoolPerformanceQueryCreateInfoINTEL;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
@@ -23,4 +23,7 @@ public unsafe partial struct QueryPoolPerformanceQueryCreateInfoINTEL
     [NativeName("performanceCountersSampling")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public QueryPoolSamplingModeINTEL PerformanceCountersSampling;
+
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
+    public QueryPoolPerformanceQueryCreateInfoINTEL() { }
 }

@@ -22,7 +22,7 @@ public unsafe partial struct SwapchainPresentScalingCreateInfoKHR
             "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SwapchainPresentScalingCreateInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -71,4 +71,15 @@ public unsafe partial struct SwapchainPresentScalingCreateInfoKHR
         ]
     )]
     public PresentGravityFlagsKHR PresentGravityY;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
+    public SwapchainPresentScalingCreateInfoKHR() { }
 }

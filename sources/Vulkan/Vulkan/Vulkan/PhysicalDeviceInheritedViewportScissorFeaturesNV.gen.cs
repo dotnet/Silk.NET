@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceInheritedViewportScissorFeaturesNV
             "VK_NV_inherited_viewport_scissor+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceInheritedViewportScissorFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceInheritedViewportScissorFeaturesNV
         ]
     )]
     public MaybeBool<uint> InheritedViewportScissor2D;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_inherited_viewport_scissor"],
+        ImpliesSets = [
+            "VK_NV_inherited_viewport_scissor+VK_KHR_get_physical_device_properties2",
+            "VK_NV_inherited_viewport_scissor+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceInheritedViewportScissorFeaturesNV() { }
 }

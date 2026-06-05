@@ -61,6 +61,17 @@ public enum GeometryTypeKHR : uint
     )]
     LinearSweptSpheresNV = 1000429005,
 
+    [NativeName("VK_GEOMETRY_TYPE_DENSE_GEOMETRY_FORMAT_TRIANGLES_AMDX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_dense_geometry_format"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_maintenance5",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_4",
+        ]
+    )]
+    DenseGeometryFormatTrianglesAMDX = 1000478000,
+
     [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_NV")]
     [SupportedApiProfile(
         "vulkan",

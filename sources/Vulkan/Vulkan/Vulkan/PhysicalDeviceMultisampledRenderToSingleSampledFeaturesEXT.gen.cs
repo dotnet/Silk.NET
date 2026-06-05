@@ -18,7 +18,8 @@ public unsafe partial struct PhysicalDeviceMultisampledRenderToSingleSampledFeat
         ["VK_EXT_multisampled_render_to_single_sampled"],
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +36,11 @@ public unsafe partial struct PhysicalDeviceMultisampledRenderToSingleSampledFeat
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
     public MaybeBool<uint> MultisampledRenderToSingleSampled;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_single_sampled"],
+        ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
+    )]
+    public PhysicalDeviceMultisampledRenderToSingleSampledFeaturesEXT() { }
 }

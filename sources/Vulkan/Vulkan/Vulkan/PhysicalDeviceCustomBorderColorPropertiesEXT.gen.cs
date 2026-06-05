@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceCustomBorderColorPropertiesEXT
             "VK_EXT_custom_border_color+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCustomBorderColorPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceCustomBorderColorPropertiesEXT
         ]
     )]
     public uint MaxCustomBorderColorSamplers;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_border_color"],
+        ImpliesSets = [
+            "VK_EXT_custom_border_color+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_border_color+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceCustomBorderColorPropertiesEXT() { }
 }

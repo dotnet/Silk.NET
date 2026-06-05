@@ -22,7 +22,7 @@ public unsafe partial struct SurfaceCapabilitiesPresentWait2KHR
             "VK_KHR_swapchain",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SurfaceCapabilitiesPresentWait2KHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -49,4 +49,16 @@ public unsafe partial struct SurfaceCapabilitiesPresentWait2KHR
         ]
     )]
     public MaybeBool<uint> PresentWait2Supported;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_wait2"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_surface",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    public SurfaceCapabilitiesPresentWait2KHR() { }
 }

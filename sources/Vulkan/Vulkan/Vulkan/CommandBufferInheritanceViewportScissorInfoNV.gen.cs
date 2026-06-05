@@ -20,7 +20,7 @@ public unsafe partial struct CommandBufferInheritanceViewportScissorInfoNV
             "VK_NV_inherited_viewport_scissor+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CommandBufferInheritanceViewportScissorInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -65,4 +65,14 @@ public unsafe partial struct CommandBufferInheritanceViewportScissorInfoNV
         ]
     )]
     public Viewport* PViewportDepths;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_inherited_viewport_scissor"],
+        ImpliesSets = [
+            "VK_NV_inherited_viewport_scissor+VK_KHR_get_physical_device_properties2",
+            "VK_NV_inherited_viewport_scissor+VK_VERSION_1_1",
+        ]
+    )]
+    public CommandBufferInheritanceViewportScissorInfoNV() { }
 }

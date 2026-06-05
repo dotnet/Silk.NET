@@ -18,7 +18,7 @@ public unsafe partial struct WriteDescriptorSetPartitionedAccelerationStructureN
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.WriteDescriptorSetPartitionedAccelerationStructureNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,11 @@ public unsafe partial struct WriteDescriptorSetPartitionedAccelerationStructureN
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     public ulong* PAccelerationStructures;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public WriteDescriptorSetPartitionedAccelerationStructureNV() { }
 }

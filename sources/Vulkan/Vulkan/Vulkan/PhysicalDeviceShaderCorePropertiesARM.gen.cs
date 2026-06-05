@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesARM
         ["VK_ARM_shader_core_properties"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderCorePropertiesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -50,4 +50,11 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesARM
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
     public uint FmaRate;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_core_properties"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
+    public PhysicalDeviceShaderCorePropertiesARM() { }
 }

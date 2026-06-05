@@ -25,7 +25,7 @@ public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeatures
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceSeparateDepthStencilLayoutsFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -49,4 +49,18 @@ public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeatures
         MinVersion = "1.2"
     )]
     public MaybeBool<uint> SeparateDepthStencilLayouts;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceSeparateDepthStencilLayoutsFeatures() { }
 }

@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceRayTracingLinearSweptSpheresFeaturesN
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,11 @@ public unsafe partial struct PhysicalDeviceRayTracingLinearSweptSpheresFeaturesN
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
     public MaybeBool<uint> LinearSweptSpheres;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_linear_swept_spheres"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
+    public PhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV() { }
 }

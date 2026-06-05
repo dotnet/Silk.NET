@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct PhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     public MaybeBool<uint> VideoEncodeIntraRefresh;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public PhysicalDeviceVideoEncodeIntraRefreshFeaturesKHR() { }
 }

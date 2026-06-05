@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDevicePresentIdFeaturesKHR
             "VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePresentIdFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDevicePresentIdFeaturesKHR
         ]
     )]
     public MaybeBool<uint> PresentId;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id"],
+        ImpliesSets = [
+            "VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDevicePresentIdFeaturesKHR() { }
 }

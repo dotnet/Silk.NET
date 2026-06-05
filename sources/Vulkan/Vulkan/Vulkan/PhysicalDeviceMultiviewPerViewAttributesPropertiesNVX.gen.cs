@@ -21,7 +21,8 @@ public unsafe partial struct PhysicalDeviceMultiviewPerViewAttributesPropertiesN
             "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +45,14 @@ public unsafe partial struct PhysicalDeviceMultiviewPerViewAttributesPropertiesN
         ]
     )]
     public MaybeBool<uint> PerViewPositionAllComponents;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NVX_multiview_per_view_attributes"],
+        ImpliesSets = [
+            "VK_NVX_multiview_per_view_attributes+VK_KHR_multiview",
+            "VK_NVX_multiview_per_view_attributes+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX() { }
 }

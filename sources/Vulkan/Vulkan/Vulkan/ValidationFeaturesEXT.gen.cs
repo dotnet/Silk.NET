@@ -14,7 +14,7 @@ public unsafe partial struct ValidationFeaturesEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.ValidationFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
@@ -35,4 +35,7 @@ public unsafe partial struct ValidationFeaturesEXT
     [NativeName("pDisabledValidationFeatures")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
     public ValidationFeatureDisableEXT* PDisabledValidationFeatures;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
+    public ValidationFeaturesEXT() { }
 }

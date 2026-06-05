@@ -21,7 +21,7 @@ public unsafe partial struct DepthBiasRepresentationInfoEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DepthBiasRepresentationInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct DepthBiasRepresentationInfoEXT
         ]
     )]
     public MaybeBool<uint> DepthBiasExact;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_bias_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_bias_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_bias_control+VK_VERSION_1_1",
+        ]
+    )]
+    public DepthBiasRepresentationInfoEXT() { }
 }

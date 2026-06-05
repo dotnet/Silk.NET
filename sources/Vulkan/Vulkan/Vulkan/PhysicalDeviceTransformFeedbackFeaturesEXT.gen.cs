@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackFeaturesEXT
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceTransformFeedbackFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -60,4 +60,14 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackFeaturesEXT
         RequireAll = true
     )]
     public MaybeBool<uint> GeometryStreams;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceTransformFeedbackFeaturesEXT() { }
 }

@@ -17,7 +17,7 @@ public unsafe partial struct VideoDecodeH265CapabilitiesKHR
         ["VK_KHR_video_decode_h265"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoDecodeH265CapabilitiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct VideoDecodeH265CapabilitiesKHR
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
     public StdVideoH265LevelIdc MaxLevelIdc;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h265"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
+    public VideoDecodeH265CapabilitiesKHR() { }
 }

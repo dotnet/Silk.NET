@@ -18,7 +18,7 @@ public unsafe partial struct SamplerBlockMatchWindowCreateInfoQCOM
         ["VK_QCOM_image_processing2"],
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SamplerBlockMatchWindowCreateInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,11 @@ public unsafe partial struct SamplerBlockMatchWindowCreateInfoQCOM
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
     public BlockMatchWindowCompareModeQCOM WindowCompareMode;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing2"],
+        ImpliesSets = ["VK_QCOM_image_processing"]
+    )]
+    public SamplerBlockMatchWindowCreateInfoQCOM() { }
 }

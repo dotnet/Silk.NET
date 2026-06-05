@@ -19,7 +19,7 @@ public unsafe partial struct AcquireNextImageInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.AcquireNextImageInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -74,4 +74,12 @@ public unsafe partial struct AcquireNextImageInfoKHR
         RequireAll = true
     )]
     public uint DeviceMask;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    public AcquireNextImageInfoKHR() { }
 }

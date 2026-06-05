@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDevicePresentBarrierFeaturesNV
             "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePresentBarrierFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDevicePresentBarrierFeaturesNV
         ]
     )]
     public MaybeBool<uint> PresentBarrier;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_present_barrier"],
+        ImpliesSets = [
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_surface+VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDevicePresentBarrierFeaturesNV() { }
 }

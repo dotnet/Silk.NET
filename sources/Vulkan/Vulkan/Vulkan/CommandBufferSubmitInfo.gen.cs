@@ -26,7 +26,7 @@ public unsafe partial struct CommandBufferSubmitInfo
         ],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CommandBufferSubmitInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -78,4 +78,20 @@ public unsafe partial struct CommandBufferSubmitInfo
         MinVersion = "1.3"
     )]
     public uint DeviceMask;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    public CommandBufferSubmitInfo() { }
 }

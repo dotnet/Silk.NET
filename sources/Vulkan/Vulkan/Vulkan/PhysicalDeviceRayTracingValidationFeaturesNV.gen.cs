@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceRayTracingValidationFeaturesNV
             "VK_NV_ray_tracing_validation+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceRayTracingValidationFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceRayTracingValidationFeaturesNV
         ]
     )]
     public MaybeBool<uint> RayTracingValidation;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_validation"],
+        ImpliesSets = [
+            "VK_NV_ray_tracing_validation+VK_KHR_get_physical_device_properties2",
+            "VK_NV_ray_tracing_validation+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceRayTracingValidationFeaturesNV() { }
 }

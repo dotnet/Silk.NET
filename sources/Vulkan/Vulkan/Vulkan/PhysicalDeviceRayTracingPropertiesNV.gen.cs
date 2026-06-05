@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
             "VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceRayTracingPropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -121,4 +121,14 @@ public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
         ]
     )]
     public uint MaxDescriptorSetAccelerationStructures;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceRayTracingPropertiesNV() { }
 }

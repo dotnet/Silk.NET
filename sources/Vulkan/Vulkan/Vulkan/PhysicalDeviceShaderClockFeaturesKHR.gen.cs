@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
             "VK_KHR_shader_clock+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderClockFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
         ]
     )]
     public MaybeBool<uint> ShaderDeviceClock;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_clock"],
+        ImpliesSets = [
+            "VK_KHR_shader_clock+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_clock+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceShaderClockFeaturesKHR() { }
 }

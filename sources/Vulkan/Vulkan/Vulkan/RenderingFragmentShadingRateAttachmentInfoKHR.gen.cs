@@ -24,7 +24,7 @@ public unsafe partial struct RenderingFragmentShadingRateAttachmentInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.RenderingFragmentShadingRateAttachmentInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -85,4 +85,18 @@ public unsafe partial struct RenderingFragmentShadingRateAttachmentInfoKHR
         ]
     )]
     public Extent2D ShadingRateAttachmentTexelSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_KHR_fragment_shading_rate+VK_KHR_dynamic_rendering",
+            "VK_KHR_fragment_shading_rate+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    public RenderingFragmentShadingRateAttachmentInfoKHR() { }
 }

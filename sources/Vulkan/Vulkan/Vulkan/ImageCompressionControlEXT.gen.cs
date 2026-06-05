@@ -21,7 +21,7 @@ public unsafe partial struct ImageCompressionControlEXT
             "VK_EXT_image_compression_control+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ImageCompressionControlEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -66,4 +66,14 @@ public unsafe partial struct ImageCompressionControlEXT
         ]
     )]
     public ImageCompressionFixedRateFlagsEXT* PFixedRateFlags;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control"],
+        ImpliesSets = [
+            "VK_EXT_image_compression_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_image_compression_control+VK_VERSION_1_1",
+        ]
+    )]
+    public ImageCompressionControlEXT() { }
 }

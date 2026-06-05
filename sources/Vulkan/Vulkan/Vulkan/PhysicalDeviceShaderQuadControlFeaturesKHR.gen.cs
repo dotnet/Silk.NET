@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceShaderQuadControlFeaturesKHR
             "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_2",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderQuadControlFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceShaderQuadControlFeaturesKHR
         ]
     )]
     public MaybeBool<uint> ShaderQuadControl;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_quad_control"],
+        ImpliesSets = [
+            "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_1+VK_KHR_vulkan_memory_model",
+            "VK_KHR_shader_maximal_reconvergence+VK_VERSION_1_2",
+        ]
+    )]
+    public PhysicalDeviceShaderQuadControlFeaturesKHR() { }
 }

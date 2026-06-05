@@ -14,7 +14,7 @@ public unsafe partial struct DebugReportCallbackCreateInfoEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.DebugReportCallbackCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
@@ -31,4 +31,7 @@ public unsafe partial struct DebugReportCallbackCreateInfoEXT
     [NativeName("pUserData")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     public void* PUserData;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
+    public DebugReportCallbackCreateInfoEXT() { }
 }

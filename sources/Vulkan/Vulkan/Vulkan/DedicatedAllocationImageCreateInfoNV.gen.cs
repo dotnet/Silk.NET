@@ -14,7 +14,7 @@ public unsafe partial struct DedicatedAllocationImageCreateInfoNV
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.DedicatedAllocationImageCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
@@ -23,4 +23,7 @@ public unsafe partial struct DedicatedAllocationImageCreateInfoNV
     [NativeName("dedicatedAllocation")]
     [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
     public MaybeBool<uint> DedicatedAllocation;
+
+    [SupportedApiProfile("vulkan", ["VK_NV_dedicated_allocation"])]
+    public DedicatedAllocationImageCreateInfoNV() { }
 }

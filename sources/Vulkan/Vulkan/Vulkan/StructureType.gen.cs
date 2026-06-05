@@ -6533,6 +6533,61 @@ public enum StructureType : uint
     )]
     AndroidHardwareBufferFormatProperties2ANDROID = 1000129006,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ENQUEUE_FEATURES_AMDX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_shader_enqueue"],
+        ImpliesSets = [
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_KHR_synchronization2+VK_KHR_spirv_1_4+VK_EXT_extended_dynamic_state",
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_VERSION_1_3",
+        ]
+    )]
+    PhysicalDeviceShaderEnqueueFeaturesAMDX = 1000134000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ENQUEUE_PROPERTIES_AMDX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_shader_enqueue"],
+        ImpliesSets = [
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_KHR_synchronization2+VK_KHR_spirv_1_4+VK_EXT_extended_dynamic_state",
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_VERSION_1_3",
+        ]
+    )]
+    PhysicalDeviceShaderEnqueuePropertiesAMDX = 1000134001,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXECUTION_GRAPH_PIPELINE_SCRATCH_SIZE_AMDX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_shader_enqueue"],
+        ImpliesSets = [
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_KHR_synchronization2+VK_KHR_spirv_1_4+VK_EXT_extended_dynamic_state",
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_VERSION_1_3",
+        ]
+    )]
+    ExecutionGraphPipelineScratchSizeAMDX = 1000134002,
+
+    [NativeName("VK_STRUCTURE_TYPE_EXECUTION_GRAPH_PIPELINE_CREATE_INFO_AMDX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_shader_enqueue"],
+        ImpliesSets = [
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_KHR_synchronization2+VK_KHR_spirv_1_4+VK_EXT_extended_dynamic_state",
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_VERSION_1_3",
+        ]
+    )]
+    ExecutionGraphPipelineCreateInfoAMDX = 1000134003,
+
+    [NativeName("VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_NODE_CREATE_INFO_AMDX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_shader_enqueue"],
+        ImpliesSets = [
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_KHR_synchronization2+VK_KHR_spirv_1_4+VK_EXT_extended_dynamic_state",
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_VERSION_1_3",
+        ]
+    )]
+    PipelineShaderStageNodeCreateInfoAMDX = 1000134004,
+
     [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_SAMPLE_COUNT_INFO_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -6971,6 +7026,28 @@ public enum StructureType : uint
     [NativeName("VK_STRUCTURE_TYPE_SHADER_MODULE_VALIDATION_CACHE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     ShaderModuleValidationCacheCreateInfoEXT = 1000160001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PORTABILITY_SUBSET_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_portability_subset"],
+        ImpliesSets = [
+            "VK_KHR_portability_subset+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_portability_subset+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevicePortabilitySubsetFeaturesKHR = 1000163000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PORTABILITY_SUBSET_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_portability_subset"],
+        ImpliesSets = [
+            "VK_KHR_portability_subset+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_portability_subset+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevicePortabilitySubsetPropertiesKHR = 1000163001,
 
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_SHADING_RATE_IMAGE_STATE_CREATE_INFO_NV")]
     [SupportedApiProfile(
@@ -8427,6 +8504,61 @@ public enum StructureType : uint
     )]
     DeviceDiagnosticsConfigCreateInfoNV = 1000300001,
 
+    [NativeName("VK_STRUCTURE_TYPE_CUDA_MODULE_CREATE_INFO_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cuda_kernel_launch"],
+        ImpliesSets = [
+            "VK_NV_cuda_kernel_launch+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cuda_kernel_launch+VK_VERSION_1_1",
+        ]
+    )]
+    CudaModuleCreateInfoNV = 1000307000,
+
+    [NativeName("VK_STRUCTURE_TYPE_CUDA_FUNCTION_CREATE_INFO_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cuda_kernel_launch"],
+        ImpliesSets = [
+            "VK_NV_cuda_kernel_launch+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cuda_kernel_launch+VK_VERSION_1_1",
+        ]
+    )]
+    CudaFunctionCreateInfoNV = 1000307001,
+
+    [NativeName("VK_STRUCTURE_TYPE_CUDA_LAUNCH_INFO_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cuda_kernel_launch"],
+        ImpliesSets = [
+            "VK_NV_cuda_kernel_launch+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cuda_kernel_launch+VK_VERSION_1_1",
+        ]
+    )]
+    CudaLaunchInfoNV = 1000307002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUDA_KERNEL_LAUNCH_FEATURES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cuda_kernel_launch"],
+        ImpliesSets = [
+            "VK_NV_cuda_kernel_launch+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cuda_kernel_launch+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceCudaKernelLaunchFeaturesNV = 1000307003,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUDA_KERNEL_LAUNCH_PROPERTIES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cuda_kernel_launch"],
+        ImpliesSets = [
+            "VK_NV_cuda_kernel_launch+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cuda_kernel_launch+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceCudaKernelLaunchPropertiesNV = 1000307004,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TILE_SHADING_FEATURES_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -9686,6 +9818,30 @@ public enum StructureType : uint
     )]
     AccelerationStructureTrianglesOpacityMicromapEXT = 1000396009,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DISPLACEMENT_MICROMAP_FEATURES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_displacement_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
+    PhysicalDeviceDisplacementMicromapFeaturesNV = 1000397000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DISPLACEMENT_MICROMAP_PROPERTIES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_displacement_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
+    PhysicalDeviceDisplacementMicromapPropertiesNV = 1000397001,
+
+    [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_TRIANGLES_DISPLACEMENT_MICROMAP_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_displacement_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
+    AccelerationStructureTrianglesDisplacementMicromapNV = 1000397002,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CLUSTER_CULLING_SHADER_FEATURES_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -10534,6 +10690,30 @@ public enum StructureType : uint
         ]
     )]
     AntiLagPresentationInfoAMD = 1000476002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DENSE_GEOMETRY_FORMAT_FEATURES_AMDX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_dense_geometry_format"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_maintenance5",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_4",
+        ]
+    )]
+    PhysicalDeviceDenseGeometryFormatFeaturesAMDX = 1000478000,
+
+    [NativeName(
+        "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_DENSE_GEOMETRY_FORMAT_TRIANGLES_DATA_AMDX"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_dense_geometry_format"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_maintenance5",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_4",
+        ]
+    )]
+    AccelerationStructureDenseGeometryFormatTrianglesDataAMDX = 1000478001,
 
     [NativeName("VK_STRUCTURE_TYPE_SURFACE_CAPABILITIES_PRESENT_ID_2_KHR")]
     [SupportedApiProfile(
@@ -12931,6 +13111,28 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceRobustness2PropertiesKHR = 1000286001,
+
+    [NativeName("VK_STRUCTURE_TYPE_SET_PRESENT_CONFIG_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_present_metering"],
+        ImpliesSets = [
+            "VK_NV_present_metering+VK_KHR_get_physical_device_properties2",
+            "VK_NV_present_metering+VK_VERSION_1_1",
+        ]
+    )]
+    SetPresentConfigNV = 1000613000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_METERING_FEATURES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_present_metering"],
+        ImpliesSets = [
+            "VK_NV_present_metering+VK_KHR_get_physical_device_properties2",
+            "VK_NV_present_metering+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevicePresentMeteringFeaturesNV = 1000613001,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_EXT")]
     [SupportedApiProfile(

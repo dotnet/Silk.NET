@@ -27,7 +27,7 @@ public unsafe partial struct PhysicalDeviceShaderFloat16Int8Features
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderFloat16Int8Features;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -68,4 +68,21 @@ public unsafe partial struct PhysicalDeviceShaderFloat16Int8Features
     [NativeName("shaderInt8")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public MaybeBool<uint> ShaderInt8;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceShaderFloat16Int8Features() { }
 }

@@ -20,7 +20,7 @@ public unsafe partial struct ImportSemaphoreFdInfoKHR
             "VK_KHR_external_semaphore_fd+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ImportSemaphoreFdInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -76,4 +76,14 @@ public unsafe partial struct ImportSemaphoreFdInfoKHR
         ]
     )]
     public int Fd;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_semaphore_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_semaphore_fd+VK_KHR_external_semaphore",
+            "VK_KHR_external_semaphore_fd+VK_VERSION_1_1",
+        ]
+    )]
+    public ImportSemaphoreFdInfoKHR() { }
 }

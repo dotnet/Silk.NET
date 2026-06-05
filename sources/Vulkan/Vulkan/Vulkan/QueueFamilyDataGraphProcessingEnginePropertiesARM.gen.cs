@@ -18,7 +18,7 @@ public unsafe partial struct QueueFamilyDataGraphProcessingEnginePropertiesARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.QueueFamilyDataGraphProcessingEnginePropertiesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,11 @@ public unsafe partial struct QueueFamilyDataGraphProcessingEnginePropertiesARM
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
     public ExternalMemoryHandleTypeFlags ForeignMemoryHandleTypes;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
+    public QueueFamilyDataGraphProcessingEnginePropertiesARM() { }
 }
