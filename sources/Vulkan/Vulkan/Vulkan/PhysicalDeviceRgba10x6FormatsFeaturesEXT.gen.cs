@@ -42,5 +42,5 @@ public unsafe partial struct PhysicalDeviceRgba10x6FormatsFeaturesEXT
             "VK_EXT_rgba10x6_formats+VK_VERSION_1_1",
         ]
     )]
-    public uint FormatRgba10x6WithoutYCbCrSampler;
+    public MaybeBool<uint> FormatRgba10x6WithoutYCbCrSampler;
 }

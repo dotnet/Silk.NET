@@ -86,5 +86,5 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionProperties
             "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
-    public uint IdentityTransformOrder;
+    public MaybeBool<uint> IdentityTransformOrder;
 }

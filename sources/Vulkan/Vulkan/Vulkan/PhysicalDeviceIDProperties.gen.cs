@@ -183,5 +183,5 @@ public unsafe partial struct PhysicalDeviceIDProperties
         ],
         MinVersion = "1.1"
     )]
-    public uint DeviceLuidValid;
+    public MaybeBool<uint> DeviceLuidValid;
 }

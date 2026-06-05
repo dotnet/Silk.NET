@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDevicePerformanceQueryFeaturesKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public uint PerformanceCounterQueryPools;
+    public MaybeBool<uint> PerformanceCounterQueryPools;
 
     [NativeName("performanceCounterMultipleQueryPools")]
     [SupportedApiProfile(
@@ -54,5 +54,5 @@ public unsafe partial struct PhysicalDevicePerformanceQueryFeaturesKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public uint PerformanceCounterMultipleQueryPools;
+    public MaybeBool<uint> PerformanceCounterMultipleQueryPools;
 }

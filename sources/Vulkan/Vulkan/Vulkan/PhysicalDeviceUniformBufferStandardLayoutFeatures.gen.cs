@@ -53,5 +53,5 @@ public unsafe partial struct PhysicalDeviceUniformBufferStandardLayoutFeatures
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint UniformBufferStandardLayout;
+    public MaybeBool<uint> UniformBufferStandardLayout;
 }

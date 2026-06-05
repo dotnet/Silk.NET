@@ -114,5 +114,5 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
         ],
         MinVersion = "1.4"
     )]
-    public uint IdenticalMemoryTypeRequirements;
+    public MaybeBool<uint> IdenticalMemoryTypeRequirements;
 }

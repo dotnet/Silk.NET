@@ -157,7 +157,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public uint DeviceLuidValid;
+    public MaybeBool<uint> DeviceLuidValid;
 
     [NativeName("subgroupSize")]
     [SupportedApiProfile(
@@ -241,7 +241,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public uint SubgroupQuadOperationsInAllStages;
+    public MaybeBool<uint> SubgroupQuadOperationsInAllStages;
 
     [NativeName("pointClippingBehavior")]
     [SupportedApiProfile(
@@ -325,7 +325,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public uint ProtectedNoFault;
+    public MaybeBool<uint> ProtectedNoFault;
 
     [NativeName("maxPerSetDescriptors")]
     [SupportedApiProfile(

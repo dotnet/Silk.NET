@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV
             "VK_NV_extended_sparse_address_space+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedSparseAddressSpace;
+    public MaybeBool<uint> ExtendedSparseAddressSpace;
 }

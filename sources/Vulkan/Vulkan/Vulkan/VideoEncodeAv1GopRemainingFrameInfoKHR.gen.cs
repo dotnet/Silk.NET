@@ -33,7 +33,7 @@ public unsafe partial struct VideoEncodeAv1GopRemainingFrameInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseGopRemainingFrames;
+    public MaybeBool<uint> UseGopRemainingFrames;
 
     [NativeName("gopRemainingIntra")]
     [SupportedApiProfile(

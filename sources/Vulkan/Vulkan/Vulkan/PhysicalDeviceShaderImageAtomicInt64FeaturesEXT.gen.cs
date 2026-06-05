@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceShaderImageAtomicInt64FeaturesEXT
             "VK_EXT_shader_image_atomic_int64+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderImageInt64Atomics;
+    public MaybeBool<uint> ShaderImageInt64Atomics;
 
     [NativeName("sparseImageInt64Atomics")]
     [SupportedApiProfile(
@@ -53,5 +53,5 @@ public unsafe partial struct PhysicalDeviceShaderImageAtomicInt64FeaturesEXT
             "VK_EXT_shader_image_atomic_int64+VK_VERSION_1_1",
         ]
     )]
-    public uint SparseImageInt64Atomics;
+    public MaybeBool<uint> SparseImageInt64Atomics;
 }

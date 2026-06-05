@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceShadingRateImageFeaturesNV
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    public uint ShadingRateImage;
+    public MaybeBool<uint> ShadingRateImage;
 
     [NativeName("shadingRateCoarseSampleOrder")]
     [SupportedApiProfile(
@@ -54,5 +54,5 @@ public unsafe partial struct PhysicalDeviceShadingRateImageFeaturesNV
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    public uint ShadingRateCoarseSampleOrder;
+    public MaybeBool<uint> ShadingRateCoarseSampleOrder;
 }

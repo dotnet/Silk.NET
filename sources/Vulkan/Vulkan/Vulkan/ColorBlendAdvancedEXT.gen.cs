@@ -31,7 +31,7 @@ public partial struct ColorBlendAdvancedEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint SrcPremultiplied;
+    public MaybeBool<uint> SrcPremultiplied;
 
     [NativeName("dstPremultiplied")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public partial struct ColorBlendAdvancedEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint DstPremultiplied;
+    public MaybeBool<uint> DstPremultiplied;
 
     [NativeName("blendOverlap")]
     [SupportedApiProfile(
@@ -64,5 +64,5 @@ public partial struct ColorBlendAdvancedEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public uint ClampResults;
+    public MaybeBool<uint> ClampResults;
 }

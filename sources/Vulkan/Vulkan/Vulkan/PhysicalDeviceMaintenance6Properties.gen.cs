@@ -49,7 +49,7 @@ public unsafe partial struct PhysicalDeviceMaintenance6Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint BlockTexelViewCompatibleMultipleLayers;
+    public MaybeBool<uint> BlockTexelViewCompatibleMultipleLayers;
 
     [NativeName("maxCombinedImageSamplerDescriptorCount")]
     [SupportedApiProfile(
@@ -75,5 +75,5 @@ public unsafe partial struct PhysicalDeviceMaintenance6Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint FragmentShadingRateClampCombinerInputs;
+    public MaybeBool<uint> FragmentShadingRateClampCombinerInputs;
 }

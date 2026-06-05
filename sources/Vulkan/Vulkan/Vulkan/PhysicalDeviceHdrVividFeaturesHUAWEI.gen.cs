@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceHdrVividFeaturesHUAWEI
             "VK_KHR_swapchain+VK_EXT_hdr_metadata+VK_VERSION_1_1",
         ]
     )]
-    public uint HdrVivid;
+    public MaybeBool<uint> HdrVivid;
 }

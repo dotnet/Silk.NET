@@ -34,7 +34,7 @@ public unsafe partial struct VideoEncodeAv1RateControlLayerInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseMinQIndex;
+    public MaybeBool<uint> UseMinQIndex;
 
     [NativeName("minQIndex")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public unsafe partial struct VideoEncodeAv1RateControlLayerInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseMaxQIndex;
+    public MaybeBool<uint> UseMaxQIndex;
 
     [NativeName("maxQIndex")]
     [SupportedApiProfile(
@@ -66,7 +66,7 @@ public unsafe partial struct VideoEncodeAv1RateControlLayerInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseMaxFrameSize;
+    public MaybeBool<uint> UseMaxFrameSize;
 
     [NativeName("maxFrameSize")]
     [SupportedApiProfile(

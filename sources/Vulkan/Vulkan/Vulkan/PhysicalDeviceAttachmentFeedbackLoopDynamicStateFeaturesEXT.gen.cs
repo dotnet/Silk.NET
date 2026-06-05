@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopDynamicStateFea
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    public uint AttachmentFeedbackLoopDynamicState;
+    public MaybeBool<uint> AttachmentFeedbackLoopDynamicState;
 }

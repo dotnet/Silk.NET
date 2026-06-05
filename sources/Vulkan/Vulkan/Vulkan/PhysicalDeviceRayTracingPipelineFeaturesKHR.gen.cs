@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public uint RayTracingPipeline;
+    public MaybeBool<uint> RayTracingPipeline;
 
     [NativeName("rayTracingPipelineShaderGroupHandleCaptureReplay")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public uint RayTracingPipelineShaderGroupHandleCaptureReplay;
+    public MaybeBool<uint> RayTracingPipelineShaderGroupHandleCaptureReplay;
 
     [NativeName("rayTracingPipelineShaderGroupHandleCaptureReplayMixed")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public uint RayTracingPipelineShaderGroupHandleCaptureReplayMixed;
+    public MaybeBool<uint> RayTracingPipelineShaderGroupHandleCaptureReplayMixed;
 
     [NativeName("rayTracingPipelineTraceRaysIndirect")]
     [SupportedApiProfile(
@@ -76,7 +76,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public uint RayTracingPipelineTraceRaysIndirect;
+    public MaybeBool<uint> RayTracingPipelineTraceRaysIndirect;
 
     [NativeName("rayTraversalPrimitiveCulling")]
     [SupportedApiProfile(
@@ -88,5 +88,5 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
         ],
         RequireAll = true
     )]
-    public uint RayTraversalPrimitiveCulling;
+    public MaybeBool<uint> RayTraversalPrimitiveCulling;
 }

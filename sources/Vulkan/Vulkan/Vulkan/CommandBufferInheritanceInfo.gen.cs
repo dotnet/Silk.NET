@@ -184,7 +184,7 @@ public unsafe partial struct CommandBufferInheritanceInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint OcclusionQueryEnable;
+    public MaybeBool<uint> OcclusionQueryEnable;
 
     [NativeName("queryFlags")]
     [SupportedApiProfile(

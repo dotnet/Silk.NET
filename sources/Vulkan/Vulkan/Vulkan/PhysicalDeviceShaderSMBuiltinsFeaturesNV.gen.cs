@@ -21,5 +21,5 @@ public unsafe partial struct PhysicalDeviceShaderSMBuiltinsFeaturesNV
 
     [NativeName("shaderSMBuiltins")]
     [SupportedApiProfile("vulkan", ["VK_NV_shader_sm_builtins"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public uint ShaderSMBuiltins;
+    public MaybeBool<uint> ShaderSMBuiltins;
 }

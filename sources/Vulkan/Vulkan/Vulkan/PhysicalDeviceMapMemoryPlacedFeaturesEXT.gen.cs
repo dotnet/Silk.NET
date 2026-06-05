@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceMapMemoryPlacedFeaturesEXT
             "VK_EXT_map_memory_placed+VK_VERSION_1_4",
         ]
     )]
-    public uint MemoryMapPlaced;
+    public MaybeBool<uint> MemoryMapPlaced;
 
     [NativeName("memoryMapRangePlaced")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public unsafe partial struct PhysicalDeviceMapMemoryPlacedFeaturesEXT
             "VK_EXT_map_memory_placed+VK_VERSION_1_4",
         ]
     )]
-    public uint MemoryMapRangePlaced;
+    public MaybeBool<uint> MemoryMapRangePlaced;
 
     [NativeName("memoryUnmapReserve")]
     [SupportedApiProfile(
@@ -64,5 +64,5 @@ public unsafe partial struct PhysicalDeviceMapMemoryPlacedFeaturesEXT
             "VK_EXT_map_memory_placed+VK_VERSION_1_4",
         ]
     )]
-    public uint MemoryUnmapReserve;
+    public MaybeBool<uint> MemoryUnmapReserve;
 }

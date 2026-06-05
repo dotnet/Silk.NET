@@ -30,7 +30,7 @@ public unsafe partial struct PipelineCoverageModulationStateCreateInfoNV
 
     [NativeName("coverageModulationTableEnable")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    public uint CoverageModulationTableEnable;
+    public MaybeBool<uint> CoverageModulationTableEnable;
 
     [NativeName("coverageModulationTableCount")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]

@@ -43,5 +43,5 @@ public unsafe partial struct TextureLodGatherFormatPropertiesAMD
             "VK_AMD_texture_gather_bias_lod+VK_VERSION_1_1",
         ]
     )]
-    public uint SupportsTextureGatherLodBiasAMD;
+    public MaybeBool<uint> SupportsTextureGatherLodBiasAMD;
 }

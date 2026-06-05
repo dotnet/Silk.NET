@@ -34,7 +34,7 @@ public unsafe partial struct PhysicalDeviceRayTracingLinearSweptSpheresFeaturesN
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public uint Spheres;
+    public MaybeBool<uint> Spheres;
 
     [NativeName("linearSweptSpheres")]
     [SupportedApiProfile(
@@ -42,5 +42,5 @@ public unsafe partial struct PhysicalDeviceRayTracingLinearSweptSpheresFeaturesN
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public uint LinearSweptSpheres;
+    public MaybeBool<uint> LinearSweptSpheres;
 }

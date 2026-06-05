@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public uint HasPrimary;
+    public MaybeBool<uint> HasPrimary;
 
     [NativeName("hasRender")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public uint HasRender;
+    public MaybeBool<uint> HasRender;
 
     [NativeName("primaryMajor")]
     [SupportedApiProfile(

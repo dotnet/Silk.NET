@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapFeaturesEXT
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public uint FragmentDensityMap;
+    public MaybeBool<uint> FragmentDensityMap;
 
     [NativeName("fragmentDensityMapDynamic")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapFeaturesEXT
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public uint FragmentDensityMapDynamic;
+    public MaybeBool<uint> FragmentDensityMapDynamic;
 
     [NativeName("fragmentDensityMapNonSubsampledImages")]
     [SupportedApiProfile(
@@ -65,5 +65,5 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapFeaturesEXT
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public uint FragmentDensityMapNonSubsampledImages;
+    public MaybeBool<uint> FragmentDensityMapNonSubsampledImages;
 }

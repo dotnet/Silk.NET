@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapFeaturesEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public uint Micromap;
+    public MaybeBool<uint> Micromap;
 
     [NativeName("micromapCaptureReplay")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapFeaturesEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public uint MicromapCaptureReplay;
+    public MaybeBool<uint> MicromapCaptureReplay;
 
     [NativeName("micromapHostCommands")]
     [SupportedApiProfile(
@@ -65,5 +65,5 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapFeaturesEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public uint MicromapHostCommands;
+    public MaybeBool<uint> MicromapHostCommands;
 }

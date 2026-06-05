@@ -20,7 +20,7 @@ public unsafe partial struct ClipboardEvent
     public ulong Timestamp;
 
     [NativeName("owner")]
-    public byte Owner;
+    public MaybeBool<byte> Owner;
 
     [NativeName("num_mime_types")]
     public int NumMimeTypes;

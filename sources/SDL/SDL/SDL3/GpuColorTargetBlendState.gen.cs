@@ -33,10 +33,10 @@ public partial struct GpuColorTargetBlendState
     public byte ColorWriteMask;
 
     [NativeName("enable_blend")]
-    public byte EnableBlend;
+    public MaybeBool<byte> EnableBlend;
 
     [NativeName("enable_color_write_mask")]
-    public byte EnableColorWriteMask;
+    public MaybeBool<byte> EnableColorWriteMask;
 
     [NativeName("padding1")]
     public byte Padding1;

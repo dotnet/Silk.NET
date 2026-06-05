@@ -165,7 +165,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint DeviceGeneratedCommandsTransformFeedback;
+    public MaybeBool<uint> DeviceGeneratedCommandsTransformFeedback;
 
     [NativeName("deviceGeneratedCommandsMultiDrawIndirectCount")]
     [SupportedApiProfile(
@@ -177,5 +177,5 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public uint DeviceGeneratedCommandsMultiDrawIndirectCount;
+    public MaybeBool<uint> DeviceGeneratedCommandsMultiDrawIndirectCount;
 }

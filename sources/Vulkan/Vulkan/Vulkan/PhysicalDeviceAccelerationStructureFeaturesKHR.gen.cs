@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public uint AccelerationStructure;
+    public MaybeBool<uint> AccelerationStructure;
 
     [NativeName("accelerationStructureCaptureReplay")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public uint AccelerationStructureCaptureReplay;
+    public MaybeBool<uint> AccelerationStructureCaptureReplay;
 
     [NativeName("accelerationStructureIndirectBuild")]
     [SupportedApiProfile(
@@ -64,7 +64,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public uint AccelerationStructureIndirectBuild;
+    public MaybeBool<uint> AccelerationStructureIndirectBuild;
 
     [NativeName("accelerationStructureHostCommands")]
     [SupportedApiProfile(
@@ -75,7 +75,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public uint AccelerationStructureHostCommands;
+    public MaybeBool<uint> AccelerationStructureHostCommands;
 
     [NativeName("descriptorBindingAccelerationStructureUpdateAfterBind")]
     [SupportedApiProfile(
@@ -86,5 +86,5 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public uint DescriptorBindingAccelerationStructureUpdateAfterBind;
+    public MaybeBool<uint> DescriptorBindingAccelerationStructureUpdateAfterBind;
 }
