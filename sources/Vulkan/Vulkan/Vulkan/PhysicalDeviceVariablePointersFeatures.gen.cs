@@ -56,9 +56,9 @@ public unsafe partial struct PhysicalDeviceVariablePointersFeatures
 
     [NativeName("variablePointersStorageBuffer")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint VariablePointersStorageBuffer;
+    public MaybeBool<uint> VariablePointersStorageBuffer;
 
     [NativeName("variablePointers")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint VariablePointers;
+    public MaybeBool<uint> VariablePointers;
 }

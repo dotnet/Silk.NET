@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState2;
+    public MaybeBool<uint> ExtendedDynamicState2;
 
     [NativeName("extendedDynamicState2LogicOp")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState2LogicOp;
+    public MaybeBool<uint> ExtendedDynamicState2LogicOp;
 
     [NativeName("extendedDynamicState2PatchControlPoints")]
     [SupportedApiProfile(
@@ -65,5 +65,5 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState2PatchControlPoints;
+    public MaybeBool<uint> ExtendedDynamicState2PatchControlPoints;
 }

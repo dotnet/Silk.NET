@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceShaderBfloat16FeaturesKHR
             "VK_KHR_shader_bfloat16+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderBFloat16Type;
+    public MaybeBool<uint> ShaderBFloat16Type;
 
     [NativeName("shaderBFloat16DotProduct")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceShaderBfloat16FeaturesKHR
             "VK_KHR_shader_bfloat16+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderBFloat16DotProduct;
+    public MaybeBool<uint> ShaderBFloat16DotProduct;
 
     [NativeName("shaderBFloat16CooperativeMatrix")]
     [SupportedApiProfile(
@@ -65,5 +65,5 @@ public unsafe partial struct PhysicalDeviceShaderBfloat16FeaturesKHR
             "VK_KHR_shader_bfloat16+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderBFloat16CooperativeMatrix;
+    public MaybeBool<uint> ShaderBFloat16CooperativeMatrix;
 }

@@ -42,5 +42,5 @@ public unsafe partial struct PhysicalDeviceDeviceMemoryReportFeaturesEXT
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public uint DeviceMemoryReport;
+    public MaybeBool<uint> DeviceMemoryReport;
 }

@@ -42,5 +42,5 @@ public unsafe partial struct VideoDecodeAv1ProfileInfoKHR
         ["VK_KHR_video_decode_av1"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public uint FilmGrainSupport;
+    public MaybeBool<uint> FilmGrainSupport;
 }

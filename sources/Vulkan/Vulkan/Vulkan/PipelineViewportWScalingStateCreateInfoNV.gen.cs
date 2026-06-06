@@ -22,7 +22,7 @@ public unsafe partial struct PipelineViewportWScalingStateCreateInfoNV
 
     [NativeName("viewportWScalingEnable")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
-    public uint ViewportWScalingEnable;
+    public MaybeBool<uint> ViewportWScalingEnable;
 
     [NativeName("viewportCount")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]

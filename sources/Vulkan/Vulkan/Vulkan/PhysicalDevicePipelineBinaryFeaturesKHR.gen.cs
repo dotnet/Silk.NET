@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDevicePipelineBinaryFeaturesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public uint PipelineBinaries;
+    public MaybeBool<uint> PipelineBinaries;
 }

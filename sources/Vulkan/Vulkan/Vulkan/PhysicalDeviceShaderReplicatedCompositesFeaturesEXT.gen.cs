@@ -42,5 +42,5 @@ public unsafe partial struct PhysicalDeviceShaderReplicatedCompositesFeaturesEXT
             "VK_EXT_shader_replicated_composites+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderReplicatedComposites;
+    public MaybeBool<uint> ShaderReplicatedComposites;
 }

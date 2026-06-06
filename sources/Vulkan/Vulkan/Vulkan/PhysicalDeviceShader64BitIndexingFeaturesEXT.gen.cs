@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceShader64BitIndexingFeaturesEXT
             "VK_EXT_shader_64bit_indexing+VK_VERSION_1_1",
         ]
     )]
-    public uint Shader64BitIndexing;
+    public MaybeBool<uint> Shader64BitIndexing;
 }

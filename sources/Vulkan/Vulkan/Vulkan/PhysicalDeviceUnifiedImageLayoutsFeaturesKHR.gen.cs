@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
             "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
         ]
     )]
-    public uint UnifiedImageLayouts;
+    public MaybeBool<uint> UnifiedImageLayouts;
 
     [NativeName("unifiedImageLayoutsVideo")]
     [SupportedApiProfile(
@@ -53,5 +53,5 @@ public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
             "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
         ]
     )]
-    public uint UnifiedImageLayoutsVideo;
+    public MaybeBool<uint> UnifiedImageLayoutsVideo;
 }

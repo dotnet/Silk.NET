@@ -66,7 +66,7 @@ public unsafe partial struct PhysicalDeviceTensorPropertiesARM
 
     [NativeName("shaderStorageTensorArrayNonUniformIndexingNative")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderStorageTensorArrayNonUniformIndexingNative;
+    public MaybeBool<uint> ShaderStorageTensorArrayNonUniformIndexingNative;
 
     [NativeName("shaderTensorSupportedStages")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]

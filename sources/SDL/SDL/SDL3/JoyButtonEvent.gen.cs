@@ -26,7 +26,7 @@ public partial struct JoyButtonEvent
     public byte Button;
 
     [NativeName("down")]
-    public byte Down;
+    public MaybeBool<byte> Down;
 
     [NativeName("padding1")]
     public byte Padding1;

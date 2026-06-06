@@ -40,5 +40,5 @@ public unsafe partial struct PhysicalDeviceMaintenance5Features
 
     [NativeName("maintenance5")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint Maintenance5;
+    public MaybeBool<uint> Maintenance5;
 }

@@ -18,4 +18,7 @@ public enum FlipMode
 
     [NativeName("SDL_FLIP_VERTICAL")]
     Vertical = 2,
+
+    [NativeName("SDL_FLIP_HORIZONTAL_AND_VERTICAL")]
+    HorizontalAndVertical = (Horizontal | Vertical),
 }

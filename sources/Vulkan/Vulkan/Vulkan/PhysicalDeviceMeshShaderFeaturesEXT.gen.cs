@@ -32,7 +32,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public uint TaskShader;
+    public MaybeBool<uint> TaskShader;
 
     [NativeName("meshShader")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    public uint MeshShader;
+    public MaybeBool<uint> MeshShader;
 
     [NativeName("multiviewMeshShader")]
     [SupportedApiProfile(
@@ -51,7 +51,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public uint MultiviewMeshShader;
+    public MaybeBool<uint> MultiviewMeshShader;
 
     [NativeName("primitiveFragmentShadingRateMeshShader")]
     [SupportedApiProfile(
@@ -59,7 +59,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public uint PrimitiveFragmentShadingRateMeshShader;
+    public MaybeBool<uint> PrimitiveFragmentShadingRateMeshShader;
 
     [NativeName("meshShaderQueries")]
     [SupportedApiProfile(
@@ -67,5 +67,5 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public uint MeshShaderQueries;
+    public MaybeBool<uint> MeshShaderQueries;
 }

@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapLayeredFeaturesVALV
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
-    public uint FragmentDensityMapLayered;
+    public MaybeBool<uint> FragmentDensityMapLayered;
 }

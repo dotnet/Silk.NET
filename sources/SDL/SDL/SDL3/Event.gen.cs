@@ -131,6 +131,10 @@ public partial struct Event
     [FieldOffset(0)]
     public TouchFingerEvent Tfinger;
 
+    [NativeName("pinch")]
+    [FieldOffset(0)]
+    public PinchFingerEvent Pinch;
+
     [NativeName("pproximity")]
     [FieldOffset(0)]
     public PenProximityEvent Pproximity;

@@ -1,9 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -30,27 +27,12 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
         var retNative = current.GetNativeReturnTypeName() ?? current.ReturnType.ToString();
         if (
             (current.ReturnType.IsInteger() && cfg.IntReturnsMaybeBool)
-            || (cfg.BoolTypes?.TryGetValue(retNative, out retBoolScheme) ?? false)
+            || cfg.BoolTypes.TryGetValue(retNative, out retBoolScheme)
             || (retNative == "bool" && current.ReturnType.ToString().Trim() != "bool") // stdbool.h, hopefully...
         )
         {
-            current = current.WithReturnType(
-                newRetType = string.IsNullOrWhiteSpace(retBoolScheme)
-                    ? GenericName(
-                        Identifier("MaybeBool"),
-                        TypeArgumentList(SingletonSeparatedList(current.ReturnType))
-                    )
-                    : GenericName(
-                        Identifier("MaybeBool"),
-                        TypeArgumentList(
-                            SeparatedList(
-                                // ReSharper disable once RedundantCast <-- false positive
-                                (IEnumerable<TypeSyntax>)
-                                    [current.ReturnType, IdentifierName(retBoolScheme)]
-                            )
-                        )
-                    )
-            );
+            newRetType = MaybeBoolUtils.MaybeBoolType(current.ReturnType, retBoolScheme);
+            current = current.WithReturnType(newRetType);
         }
 
         List<ParameterSyntax>? @params = null;
@@ -63,28 +45,13 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
                 paramNative is not null
                 && param.Type is not null
                 && (
-                    (cfg.BoolTypes?.TryGetValue(paramNative, out paramBoolScheme) ?? false)
+                    cfg.BoolTypes.TryGetValue(paramNative, out paramBoolScheme)
                     || (paramNative == "bool" && param.Type.ToString().Trim() != "bool") // stdbool.h, hopefully...
                 )
             )
             {
-                (@params ??= [.. current.ParameterList.Parameters])[i] = param.WithType(
-                    string.IsNullOrWhiteSpace(paramBoolScheme)
-                        ? GenericName(
-                            Identifier("MaybeBool"),
-                            TypeArgumentList(SingletonSeparatedList(param.Type))
-                        )
-                        : GenericName(
-                            Identifier("MaybeBool"),
-                            TypeArgumentList(
-                                SeparatedList(
-                                    // ReSharper disable once RedundantCast <-- false positive
-                                    (IEnumerable<TypeSyntax>)
-                                        [param.Type, IdentifierName(paramBoolScheme)]
-                                )
-                            )
-                        )
-                );
+                var newType = MaybeBoolUtils.MaybeBoolType(param.Type, paramBoolScheme);
+                (@params ??= [.. current.ParameterList.Parameters])[i] = param.WithType(newType);
             }
         }
 

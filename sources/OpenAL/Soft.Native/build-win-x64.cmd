@@ -1,7 +1,9 @@
+@REM Submodule
 if not exist "../../../eng/submodules/openal-soft/CMakeLists.txt" (
     git submodule update --init --recursive --depth 1 ..\..\..\eng\submodules\openal-soft
 )
 
+@REM Build
 call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
 rd /s /q build
 mkdir build

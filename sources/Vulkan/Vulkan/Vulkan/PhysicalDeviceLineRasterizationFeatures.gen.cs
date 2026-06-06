@@ -34,11 +34,11 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public uint RectangularLines;
+    public MaybeBool<uint> RectangularLines;
 
     [NativeName("bresenhamLines")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint BresenhamLines;
+    public MaybeBool<uint> BresenhamLines;
 
     [NativeName("smoothLines")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public uint SmoothLines;
+    public MaybeBool<uint> SmoothLines;
 
     [NativeName("stippledRectangularLines")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public uint StippledRectangularLines;
+    public MaybeBool<uint> StippledRectangularLines;
 
     [NativeName("stippledBresenhamLines")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public uint StippledBresenhamLines;
+    public MaybeBool<uint> StippledBresenhamLines;
 
     [NativeName("stippledSmoothLines")]
     [SupportedApiProfile(
@@ -70,5 +70,5 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public uint StippledSmoothLines;
+    public MaybeBool<uint> StippledSmoothLines;
 }

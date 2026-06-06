@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceShaderUniformBufferUnsizedArrayFeatur
             "VK_EXT_shader_uniform_buffer_unsized_array+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderUniformBufferUnsizedArray;
+    public MaybeBool<uint> ShaderUniformBufferUnsizedArray;
 }

@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceExternalMemoryRdmaFeaturesNV
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    public uint ExternalMemoryRdma;
+    public MaybeBool<uint> ExternalMemoryRdma;
 }

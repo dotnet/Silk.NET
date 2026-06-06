@@ -29,14 +29,14 @@ public unsafe partial struct GpuDepthStencilTargetInfo
     public GpuStoreOp StencilStoreOp;
 
     [NativeName("cycle")]
-    public byte Cycle;
+    public MaybeBool<byte> Cycle;
 
     [NativeName("clear_stencil")]
     public byte ClearStencil;
 
-    [NativeName("padding1")]
-    public byte Padding1;
+    [NativeName("mip_level")]
+    public byte MipLevel;
 
-    [NativeName("padding2")]
-    public byte Padding2;
+    [NativeName("layer")]
+    public byte Layer;
 }

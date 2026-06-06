@@ -38,5 +38,5 @@ public partial struct PenButtonEvent
     public byte Button;
 
     [NativeName("down")]
-    public byte Down;
+    public MaybeBool<byte> Down;
 }

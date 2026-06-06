@@ -274,7 +274,7 @@ public unsafe partial struct SamplerCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint AnisotropyEnable;
+    public MaybeBool<uint> AnisotropyEnable;
 
     [NativeName("maxAnisotropy")]
     [SupportedApiProfile(
@@ -322,7 +322,7 @@ public unsafe partial struct SamplerCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint CompareEnable;
+    public MaybeBool<uint> CompareEnable;
 
     [NativeName("compareOp")]
     [SupportedApiProfile(
@@ -429,5 +429,5 @@ public unsafe partial struct SamplerCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint UnnormalizedCoordinates;
+    public MaybeBool<uint> UnnormalizedCoordinates;
 }

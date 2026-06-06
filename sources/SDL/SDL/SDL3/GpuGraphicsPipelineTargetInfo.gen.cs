@@ -20,7 +20,7 @@ public unsafe partial struct GpuGraphicsPipelineTargetInfo
     public GpuTextureFormat DepthStencilFormat;
 
     [NativeName("has_depth_stencil_target")]
-    public byte HasDepthStencilTarget;
+    public MaybeBool<byte> HasDepthStencilTarget;
 
     [NativeName("padding1")]
     public byte Padding1;

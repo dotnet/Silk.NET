@@ -75,7 +75,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint SupportsNonZeroFirstInstance;
+    public MaybeBool<uint> SupportsNonZeroFirstInstance;
 
     [NativeName("maxPushDescriptors")]
     [SupportedApiProfile(
@@ -101,7 +101,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint DynamicRenderingLocalReadDepthStencilAttachments;
+    public MaybeBool<uint> DynamicRenderingLocalReadDepthStencilAttachments;
 
     [NativeName("dynamicRenderingLocalReadMultisampledAttachments")]
     [SupportedApiProfile(
@@ -114,7 +114,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint DynamicRenderingLocalReadMultisampledAttachments;
+    public MaybeBool<uint> DynamicRenderingLocalReadMultisampledAttachments;
 
     [NativeName("earlyFragmentMultisampleCoverageAfterSampleCounting")]
     [SupportedApiProfile(
@@ -127,7 +127,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint EarlyFragmentMultisampleCoverageAfterSampleCounting;
+    public MaybeBool<uint> EarlyFragmentMultisampleCoverageAfterSampleCounting;
 
     [NativeName("earlyFragmentSampleMaskTestBeforeSampleCounting")]
     [SupportedApiProfile(
@@ -140,7 +140,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint EarlyFragmentSampleMaskTestBeforeSampleCounting;
+    public MaybeBool<uint> EarlyFragmentSampleMaskTestBeforeSampleCounting;
 
     [NativeName("depthStencilSwizzleOneSupport")]
     [SupportedApiProfile(
@@ -153,7 +153,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint DepthStencilSwizzleOneSupport;
+    public MaybeBool<uint> DepthStencilSwizzleOneSupport;
 
     [NativeName("polygonModePointSize")]
     [SupportedApiProfile(
@@ -166,7 +166,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint PolygonModePointSize;
+    public MaybeBool<uint> PolygonModePointSize;
 
     [NativeName("nonStrictSinglePixelWideLinesUseParallelogram")]
     [SupportedApiProfile(
@@ -179,7 +179,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint NonStrictSinglePixelWideLinesUseParallelogram;
+    public MaybeBool<uint> NonStrictSinglePixelWideLinesUseParallelogram;
 
     [NativeName("nonStrictWideLinesUseParallelogram")]
     [SupportedApiProfile(
@@ -192,7 +192,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint NonStrictWideLinesUseParallelogram;
+    public MaybeBool<uint> NonStrictWideLinesUseParallelogram;
 
     [NativeName("blockTexelViewCompatibleMultipleLayers")]
     [SupportedApiProfile(
@@ -205,7 +205,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint BlockTexelViewCompatibleMultipleLayers;
+    public MaybeBool<uint> BlockTexelViewCompatibleMultipleLayers;
 
     [NativeName("maxCombinedImageSamplerDescriptorCount")]
     [SupportedApiProfile(
@@ -231,7 +231,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint FragmentShadingRateClampCombinerInputs;
+    public MaybeBool<uint> FragmentShadingRateClampCombinerInputs;
 
     [NativeName("defaultRobustnessStorageBuffers")]
     [SupportedApiProfile(
@@ -361,5 +361,5 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public uint IdenticalMemoryTypeRequirements;
+    public MaybeBool<uint> IdenticalMemoryTypeRequirements;
 }

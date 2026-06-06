@@ -1,29 +1,50 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Options;
+using Silk.NET.SilkTouch.Mods.Transformation;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Applies transformations to property signatures.
+/// Applies transformations to fields and properties.
 /// </summary>
 /// <remarks>
-/// Today, this only includes transforming properties like <c>static ReadOnlySpan&lt;byte&gt; Thing => "thing"u8;</c>
-/// to be <c>static Utf8String Thing => "thing"u8;</c>.
+/// Despite the name of the name, fields are also handled here because
+/// they often need to be transformed alongside properties.
+/// <para/>
+/// This currently does the following transformations:
+/// 1. Transform string constant properties like
+/// <c>static ReadOnlySpan&lt;byte&gt; Thing => "thing"u8;</c> to be
+/// <c>static Utf8String Thing => "thing"u8;</c>.
+/// 2. Transform fields and properties that are recognised
+/// to be akin to booleans to use the <c>MaybeBool</c> type.
+/// This functionality is based on <see cref="BoolTransformer"/>.
 /// </remarks>
-public class TransformProperties : IMod
+[ModConfiguration<Configuration>]
+public class TransformProperties(IOptionsSnapshot<TransformProperties.Configuration> cfg) : IMod
 {
+    /// <summary>
+    /// Configuration for the <see cref="TransformProperties"/>.
+    /// </summary>
+    public class Configuration
+    {
+        /// <summary>
+        /// Types to treat as boolean and their boolean schemes if different from the default.
+        /// </summary>
+        public Dictionary<string, string?> BoolTypes { get; init; } = [];
+    }
+
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var rw = new Rewriter();
+        var config = cfg.Get(ctx.JobKey);
+
+        var rw = new Rewriter(config);
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
@@ -38,17 +59,46 @@ public class TransformProperties : IMod
         ctx.SourceProject = proj;
     }
 
-    private class Rewriter : CSharpSyntaxRewriter
+    private class Rewriter(Configuration config) : CSharpSyntaxRewriter
     {
+        public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            // Transform bool-like fields to use MaybeBool
+            var nativeType =
+                node.AttributeLists.GetNativeTypeName() ?? node.Declaration.Type.ToString();
+            if (
+                config.BoolTypes.TryGetValue(nativeType, out var scheme)
+                || (nativeType == "bool" && node.Declaration.Type.ToString().Trim() != "bool") // stdbool.h, hopefully...
+            )
+            {
+                var newType = MaybeBoolUtils.MaybeBoolType(node.Declaration.Type, scheme);
+                node = node.WithDeclaration(node.Declaration.WithType(newType));
+            }
+
+            return base.VisitFieldDeclaration(node);
+        }
+
         public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node)
         {
+            // Transform bool-like properties to use MaybeBool
+            var nativeType = node.AttributeLists.GetNativeTypeName() ?? node.Type.ToString();
+            if (
+                config.BoolTypes.TryGetValue(nativeType, out var scheme)
+                || (nativeType == "bool" && node.Type.ToString().Trim() != "bool") // stdbool.h, hopefully...
+            )
+            {
+                var newType = MaybeBoolUtils.MaybeBoolType(node.Type, scheme);
+                node = node.WithType(newType);
+            }
+
+            // Transform ReadOnlySpan<byte> string constants to use Utf8String
             if (
                 node.Modifiers.Any(SyntaxKind.StaticKeyword)
                 && node.Type
                     is GenericNameSyntax
                     {
                         TypeArgumentList.Arguments: [PredefinedTypeSyntax pt],
-                        Identifier.Text: "ReadOnlySpan"
+                        Identifier.Text: "ReadOnlySpan",
                     }
                 && (
                     pt.Keyword.IsKind(SyntaxKind.ByteKeyword)

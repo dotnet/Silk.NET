@@ -65,7 +65,7 @@ public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
             "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
-    public uint SerializeRegions;
+    public MaybeBool<uint> SerializeRegions;
 
     [NativeName("counterIndexCount")]
     [SupportedApiProfile(

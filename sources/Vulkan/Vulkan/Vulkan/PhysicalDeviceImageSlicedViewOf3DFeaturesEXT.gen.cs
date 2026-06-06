@@ -43,5 +43,5 @@ public unsafe partial struct PhysicalDeviceImageSlicedViewOf3DFeaturesEXT
             "VK_VERSION_1_1",
         ]
     )]
-    public uint ImageSlicedViewOf3D;
+    public MaybeBool<uint> ImageSlicedViewOf3D;
 }

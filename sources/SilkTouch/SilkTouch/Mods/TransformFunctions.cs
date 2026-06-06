@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -30,9 +27,9 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
         public required bool IntReturnsMaybeBool { get; init; }
 
         /// <summary>
-        /// Types to treat as boolean and their boolean schemes if different to default.
+        /// Types to treat as boolean and their boolean schemes if different from the default.
         /// </summary>
-        public Dictionary<string, string?>? BoolTypes { get; init; }
+        public Dictionary<string, string?> BoolTypes { get; init; } = [];
     }
 
     /// <inheritdoc />

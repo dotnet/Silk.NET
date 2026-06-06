@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferFeaturesEXT
             "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
         ]
     )]
-    public uint NestedCommandBuffer;
+    public MaybeBool<uint> NestedCommandBuffer;
 
     [NativeName("nestedCommandBufferRendering")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferFeaturesEXT
             "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
         ]
     )]
-    public uint NestedCommandBufferRendering;
+    public MaybeBool<uint> NestedCommandBufferRendering;
 
     [NativeName("nestedCommandBufferSimultaneousUse")]
     [SupportedApiProfile(
@@ -65,5 +65,5 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferFeaturesEXT
             "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
         ]
     )]
-    public uint NestedCommandBufferSimultaneousUse;
+    public MaybeBool<uint> NestedCommandBufferSimultaneousUse;
 }

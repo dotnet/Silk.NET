@@ -86,7 +86,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint DepthTestEnable;
+    public MaybeBool<uint> DepthTestEnable;
 
     [NativeName("depthWriteEnable")]
     [SupportedApiProfile(
@@ -105,7 +105,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint DepthWriteEnable;
+    public MaybeBool<uint> DepthWriteEnable;
 
     [NativeName("depthCompareOp")]
     [SupportedApiProfile(
@@ -143,7 +143,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint DepthBoundsTestEnable;
+    public MaybeBool<uint> DepthBoundsTestEnable;
 
     [NativeName("stencilTestEnable")]
     [SupportedApiProfile(
@@ -162,7 +162,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint StencilTestEnable;
+    public MaybeBool<uint> StencilTestEnable;
 
     [NativeName("front")]
     [SupportedApiProfile(
