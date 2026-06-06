@@ -575,9 +575,6 @@ metadata is available for identifying `[Flags]` enums, consider using that inste
 
 ### TransformFunctions
 
-(TODO: This section preemptively contains information for changes made by
-https://github.com/dotnet/Silk.NET/pull/2574. Remove this todo once the PR is merged.)
-
 Mod categories: Transformation
 
 This mod focuses on the transformation of methods, such as by changing parameters types and adding new overloads.
@@ -633,9 +630,6 @@ the previously mentioned mods to add the empty struct types. `TransformHandles` 
 transforms existing ones that it identifies as a handle type.
 
 ### TransformProperties
-
-(TODO: This section preemptively contains information for changes made by
-https://github.com/dotnet/Silk.NET/pull/2574. Remove this todo once the PR is merged.)
 
 Mod categories: Transformation
 
