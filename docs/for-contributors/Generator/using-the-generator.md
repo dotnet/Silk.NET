@@ -12,7 +12,7 @@ This is probably the case until we are a few previews in.
 
 **Also note that only C bindings are supported right now. COM will be available later.**
 
-## Generator overview
+## Generator Overview
 
 There are two main things to configure:
 
@@ -47,7 +47,7 @@ Aside from reading documentation, some other ways to learn about the mods are to
 
 - Add them one by one. Mods run in the order you define them and work off the output of the previous mod.
 
-(TODO: Not sure how to set up the bindings test projects. See the `TestProject` property in `generator.json`.)
+(TODO: Not sure how to set up bindings test projects. This refers to the `TestProject` property in `generator.json`.)
 
 ## `eng/silktouch`
 
@@ -106,17 +106,17 @@ eng
 - silktouch
   - sdl
     - SDL3
-      - generate.rsp <-- The main settings file.
+      - generate.rsp <-- The main settings file. Used as the entrypoint. All import paths must be relative to this file.
       - header.txt
       - sdl-SDL.h <-- Handwritten header file that #includes the relevant headers of the library you want to bind.
     - remap.rsp
     - settings.rsp <-- Shared settings for all profiles.
 ```
 
-(TODO)
+### `eng/silktouch` - Example Configuration
 
-Let's take a look at the `sdl-SDL.h` file and the `generate.rsp` and `settings.rsp` files.
-I'll only include the important parts of the config here.
+This section will now focus on how to actually create the `.rsp` files, beginning with the `sdl-SDL.h`, `generate.rsp`,
+and `settings.rsp` files. The snippets below will only contain the most important sections of those files for brevity.
 
 `sdl-SDL.h`:
 ```h
@@ -163,27 +163,36 @@ header.txt
 *=SDL3
 ```
 
-#### Relevant options from `generate.rsp`:
+#### Relevant Options from `generate.rsp`:
 
-`--file` specifies the header file that we first look through.
-`--traverse` specifies which header files actually contribute towards the output. (Not sure if you can glob or similar here)
+- `--file` specifies the header file to use as the entrypoint. This should be the custom header you defined.
 
-This separation is because while we need certain header files such as the system headers to compile the library, we don't want to include the system headers as part of our generated bindings.
+- `--traverse` specifies which header files contribute towards the output.
 
-`--output` should point to the same `Jobs.JOB_NAME.SourceProject` path you defined in `generator.json`.
+This separation is because while header files, such as system headers, may be required to compile the library, we do not
+want to include those headers as part of the final set of generated bindings.
 
-`--methodClassName` specifies which C# class contains the generated methods/constants.
-`--namespace` specifies the C# namespace of the generated files.
+- `--output` should point to the same `Jobs.JOB_NAME.SourceProject` path you defined in `generator.json`.
 
-`--exclude` allows you exclude types/functions/constants from the output. Usually these are things that aren't useful, don't generate correctly, or are platform-specific.
+- `--methodClassName` specifies which C# class contains the generated methods/constants.
+
+- `--namespace` specifies the C# namespace of the generated files.
+
+- `--exclude` allows you exclude types/functions/constants from the output. These usually are APIs that are not useful,
+  do not generate correctly, or are platform-specific.
 
 #### Relevant options from `settings.rsp`:
 
-`--headerFile` specifies the header file appended to the top of every generated file.
+- `--headerFile` specifies the header file appended to the top of every generated file. Silk uses this to inject its
+  copyright headers.
 
-`--include-directory` specifies the include directories. This affects all of the headers included, such as in `sdl-SDL.h`.
+- `--include-directory` specifies the include directories to be used. This affects all headers included, such as
+  `sdl-SDL.h`.
 
-`--with-librarypath` is the name of the native library without prefixes/suffixes. If the library name differs outside of the usual `lib` prefix or `.dll`/`.so`/`.dylib` suffixes, the way to handle this is to add `UseAlternativeName` in the generated bindings. An example with Vulkan can be found at `sources/Vulkan/Vulkan/Vk.cs`.
+- `--with-librarypath` is the name of the native library without prefixes/suffixes. If the library name differs outside
+  of the usual `lib` prefix or `.dll`/`.so`/`.dylib` suffixes, the way to handle this is to add `UseAlternativeName` in
+  the generated bindings. An example with Vulkan can be found in
+  [`sources/Vulkan/Vulkan/Vk.cs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/Vulkan/Vulkan/Vk.cs), which is a manually written file.
 
 ```cs
 static Vk()
@@ -194,16 +203,21 @@ static Vk()
 }
 ```
 
-### Generated bindings output
+### Generated Bindings Output
 
-All generated binding will be output to the `Jobs.JOB_NAME.SourceProject` path you defined in `generator.json`.
+All generated binding will be output to the `Jobs.JOB_NAME.SourceProject` path defined in `generator.json`.
 
 These generated files all have the `.gen.cs` suffix and most of them are partial type declarations.
 This means by creating a similarly named `.cs` file and using the `partial` C# keyword, you can add to the type.
 
-Do not modify the `.gen.cs` files manually since rerunning the generator will overwrite those changes.
+Do not modify the `.gen.cs` files since running the generator again will overwrite those changes.
 
-### Packing the generated bindings
+### Packing the Generated Bindings
 
-Haven't done this myself so I'll leave this section as WIP.
-I imagine that `dotnet pack` or similar will just work though.
+(TODO: This section needs verification.)
+
+`dotnet pack` should simply work here.
+
+If you are contributing to Silk's repository, Silk automatically packs and pushes changes made during a pull request
+to its experimental NuGet feed. More information on how to access this feed is available in the
+[Experimental Feed](../../silk.net/experimental-feed.md) documentation.
