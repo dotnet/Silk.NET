@@ -22,10 +22,11 @@ There are two main things to configure:
 
 Both are organized by native API.
 
-I suggest referencing the SDL configuration since it best represents your average C API. Most options there should be
-applicable after you replace the SDL specific types/paths/etc.
+Note: For the average C API, SDL's generator configuration would be the best configuration to reference. Most options
+used for the SDL bindings should be applicable after replacing the SDL-specific paths and values to suit the C API that
+you are binding.
 
-### `generator.json`
+## `generator.json`
 
 This file defines the different bindings jobs and defines which mods to run for each of them.
 
@@ -46,31 +47,39 @@ Aside from reading documentation, some other ways to learn about the mods are to
 
 - Add them one by one. Mods run in the order you define them and work off the output of the previous mod.
 
-That said, for most C APIs, you can probably get by just copying the mod configuration from SDL verbatim and updating
-the SDL-specific paths/values to suit the C API that you are binding.
-
 (TODO: Not sure how to set up the bindings test projects. See the `TestProject` property in `generator.json`.)
 
-### `eng/silktouch`
+## `eng/silktouch`
 
-(TODO)
+This folder stores `.rsp` files that hold command line arguments for ClangSharpPInvokeGenerator. While these `.rsp`
+files can be stored anywhere in relation to the `generator.json` file, Silk stores its own `.rsp` files in the
+[`eng/silktouch`](https://github.com/dotnet/Silk.NET/tree/develop/3.0/eng/silktouch) folder.
 
-This folder contains a bunch of `.rsp` files, which hold command line arguments for ClangSharpPInvokeGenerator.
-
-> To read more about ClangSharpPInvokeGenerator's command line arguments, I recommend installing the tool and using its help options.
+> To read more about ClangSharpPInvokeGenerator's command line arguments, a good option is to install the tool directly
+> and use `--help` to display its command line documentation.
 >
 > ```sh
 > dotnet tool install --global ClangSharpPInvokeGenerator
 > ClangSharpPInvokeGenerator --help
-> ClangSharpPInvokeGenerator -c help
+> ClangSharpPInvokeGenerator --config help
 > ```
 
-These rsp files can import other rsp files using the `@path` syntax.
-Eg: `@../settings.rsp`
+Aside from simply storing the command line arguments to be passed into ClangSharpPInvokeGenerator, these `.rsp` files
+can also import other `.rsp` files using the `@path` syntax. For example: `@../settings.rsp`.
 
-Note that these paths are relative to the `generate.rsp` file (I think... or at least the folder containing that file).
+Silk commonly uses these import paths to share settings between different sets of bindings, such as the
+[common.rsp](https://github.com/dotnet/Silk.NET/blob/develop/3.0/eng/silktouch/common.rsp) file for general shared
+settings and the [remap-stdint.rsp](https://github.com/dotnet/Silk.NET/blob/develop/3.0/eng/silktouch/remap-stdint.rsp)
+file used to ensure that the `stdint.h` types behave consistently between Windows and Linux.
 
-`@../../remap-stdint.rsp` is my addition that ensures that stdint types behave consistently between Windows and Linux.
+Please note that these paths are relative to the `.rsp` file specified in the generator and **not** relative to the
+`.rsp` file the directive is actually defined in.
+
+For example, Silk's SDL bindings sets `ClangSharpResponseFiles` to be `eng/silktouch/sdl/**/generate.rsp`. Therefore,
+any import paths used in any `.rsp` file reference, including transitively imported `.rsp files`, must be relative to
+the matched `generate.rsp` file.
+
+### `eng/silktouch` - Folder Structure
 
 This is the general structure of the `eng/silktouch` folder:
 
@@ -86,22 +95,25 @@ eng
     - SDL3
 ```
 
-You likely don't need to worry about profiles, so we'll just keep focusing on the SDL case.
+Profiles likely will not be relevent for most C APIs, so the examples here will keep focusing on the SDL case.
 
-This is the structure of the SDL rsps.
-Note that you don't necessarily have to structure it this way.
+The following is the folder structure used for Silk's SDL bindings. Note that you do not necessarily have to structure
+it this way. Silk's structure focuses on keeping consistency in its `.rsp` file organization, regardless of whether the
+API makes use of profiles or not.
 
 ```
 eng
 - silktouch
   - sdl
     - SDL3
-      - generate.rsp <-- The main settings file
+      - generate.rsp <-- The main settings file.
       - header.txt
-      - sdl-SDL.h <-- Hand written header file that includes the relevant headers of the library you want to bind
+      - sdl-SDL.h <-- Handwritten header file that #includes the relevant headers of the library you want to bind
     - remap.rsp
-    - settings.rsp <-- Shared settings for all profiles. Technically can be merged into generate.rsp.
+    - settings.rsp <-- Shared settings for all profiles.
 ```
+
+(TODO)
 
 Let's take a look at the `sdl-SDL.h` file and the `generate.rsp` and `settings.rsp` files.
 I'll only include the important parts of the config here.
