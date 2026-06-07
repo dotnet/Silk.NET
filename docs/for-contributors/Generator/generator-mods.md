@@ -5,7 +5,9 @@ source code represented by Roslyn syntax nodes. This approach used by Silk 3 is 
 where a monolithic generator output code represented by bespoke data structures. Silk 3 focuses on breaking down each
 transformation step into its own mod to aid in maintainability and understanding of the codebase.
 
-This document explains how mods are implemented and the mods provided by the generator.
+This document is intended to act as both documentation on how to use the mods as well notes on how the mods were
+implemented. For users of the generator, first read the [Using the Generator](using-the-generator.md) documentation,
+then use this document to understand how each individual mod works.
 
 ## Implementation
 
@@ -162,7 +164,8 @@ provide cross-platform bindings.
 
 - `uint64_t` in C becomes `ulong` on Windows, `nuint` on Linux. This is filed as an issue in the ClangSharp repo:
   https://github.com/dotnet/ClangSharp/issues/574. Silk handles this by  remapping the `stdint.h` types in
-  `remap-stdint.rsp`. APIs, such as OpenGL, that define their own integer types may require additional configuration.
+  [remap-stdint.rsp](https://github.com/dotnet/Silk.NET/blob/develop/3.0/eng/silktouch/remap-stdint.rsp). APIs, such as
+  OpenGL, that define their own integer types may require additional configuration.
 
 - Enums use `uint` as their backing type on Linux instead of `int` like on Windows. Silk handles this by using
   `TransformEnums` to "coerce" the backing types to their Windows equivalents when possible.
