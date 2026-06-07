@@ -45,8 +45,7 @@ public class IdentifySharedPrefixesTests
 
         // The prefix shared by the member names should be identified (GL_PIXEL_COUNT)
         // The type itself should be left untouched
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -79,8 +78,7 @@ public class IdentifySharedPrefixesTests
 
         // The prefix shared by the member names should be identified (AL_VOCAL_MORPHER_PHONEME)
         // The type itself should be left untouched
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -122,8 +120,7 @@ public class IdentifySharedPrefixesTests
 
         // The hint should not affect the output because the shared prefix is shared by most of the names
         // Glfw should not have a prefix
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -151,8 +148,7 @@ public class IdentifySharedPrefixesTests
         await identifySharedPrefixes.ExecuteAsync(context);
 
         // The prefixes should be identified as "VkPresent", not "Vk"
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -188,8 +184,7 @@ public class IdentifySharedPrefixesTests
         // The declaration of the 2 NV member suffixes should make IdentifySharedPrefixes identify less of the member name as the shared prefix
         // IdentifySharedPrefixes should only use the unaffixed name for prefix identification
         // The shared prefix should be "GL_PIXEL"
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -219,8 +214,7 @@ public class IdentifySharedPrefixesTests
         await identifySharedPrefixes.ExecuteAsync(context);
 
         // The declaration of the I- prefix should lead to "D3D12" being identified as the shared prefix
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -248,8 +242,7 @@ public class IdentifySharedPrefixesTests
         await identifySharedPrefixes.ExecuteAsync(context);
 
         // The declaration of the I- prefix should lead to "D3D12" being identified as the shared prefix
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -430,8 +423,7 @@ public class IdentifySharedPrefixesTests
         // This test should run without erroring
         // This is to catch potential regressions
         // where the names without affixes would conflict
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -453,8 +445,7 @@ public class IdentifySharedPrefixesTests
         await identifySharedPrefixes.ExecuteAsync(context);
 
         // The type prefix should be identified as Vk
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -476,8 +467,7 @@ public class IdentifySharedPrefixesTests
         await identifySharedPrefixes.ExecuteAsync(context);
 
         // No prefix should be identified
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -502,8 +492,7 @@ public class IdentifySharedPrefixesTests
         await identifySharedPrefixes.ExecuteAsync(context);
 
         // No prefix should be identified
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -532,8 +521,7 @@ public class IdentifySharedPrefixesTests
 
         // The presence of the NameAffix attribute should prevent the GL- prefix of GLEnum from being identified as a shared prefix
         // This is because IdentifySharedPrefixes should only use the unaffixed name for prefix identification
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -567,8 +555,7 @@ public class IdentifySharedPrefixesTests
         await identifySharedPrefixes.ExecuteAsync(context);
 
         // The identified prefix should be "GL"
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -600,8 +587,7 @@ public class IdentifySharedPrefixesTests
         await identifySharedPrefixes.ExecuteAsync(context);
 
         // The identified prefix should be "GL"
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -632,8 +618,7 @@ public class IdentifySharedPrefixesTests
         await identifySharedPrefixes.ExecuteAsync(context);
 
         // The identified prefix should be "GL"
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -664,7 +649,6 @@ public class IdentifySharedPrefixesTests
         await identifySharedPrefixes.ExecuteAsync(context);
 
         // The identified prefix should be "ALC"
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 }

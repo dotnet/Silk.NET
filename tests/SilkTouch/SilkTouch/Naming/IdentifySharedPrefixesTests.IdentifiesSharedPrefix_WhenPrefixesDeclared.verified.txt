@@ -1,4 +1,5 @@
-﻿[NameAffix("Prefix", "SharedPrefix", "D3D12")]
+﻿// D3D12.gen.cs
+[NameAffix("Prefix", "SharedPrefix", "D3D12")]
 public struct D3D12_BUFFER_BARRIER;
 [NameAffix("Prefix", "SharedPrefix", "D3D12")]
 [NameAffix("Prefix", "Interface", "I")]

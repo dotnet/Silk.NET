@@ -328,8 +328,7 @@ public class MixKhronosDataTests
         await mixKhronosData.ExecuteAsync(context);
 
         // There should be 3 NV suffixes identified
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -370,8 +369,7 @@ public class MixKhronosDataTests
 
         // The NV suffix on the type name should be identified as KhronosVendor
         // The NV suffixes on the member names should be identified as KhronosImpliedVendor
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -412,8 +410,7 @@ public class MixKhronosDataTests
 
         // The ARB suffix on the type name should be identified as KhronosNonExclusiveVendor
         // This is because the enum group contains core enums
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -464,7 +461,6 @@ public class MixKhronosDataTests
 
         // The ARB suffix on the type name should be identified as KhronosNonExclusiveVendor
         // This is because the enum group contains core enums
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 }

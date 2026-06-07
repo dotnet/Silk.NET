@@ -1,3 +1,4 @@
-﻿public unsafe partial struct VkInstance_T
+﻿// VkInstance_T.gen.cs
+public unsafe partial struct VkInstance_T
 {
 }

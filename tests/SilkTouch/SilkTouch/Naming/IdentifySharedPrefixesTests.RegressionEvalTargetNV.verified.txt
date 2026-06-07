@@ -1,4 +1,5 @@
-﻿public enum EvalTargetNV
+﻿// EvalTargetNV.gen.cs
+public enum EvalTargetNV
 {
     [NameAffix("Prefix", "SharedPrefix", "GL")]
     GL_EVAL_2D_NV,

@@ -43,8 +43,7 @@ public class TransformPropertiesTests
         await transformProperties.ExecuteAsync(context);
 
         // Test.Text should be transformed to use the Utf8String type
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -99,7 +98,6 @@ public class TransformPropertiesTests
         //
         // Note: [NativeTypeName("TestBool32 : 1")] can be found in bitfield structs
         // This is currently not handled since this is an unlikely case
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 }

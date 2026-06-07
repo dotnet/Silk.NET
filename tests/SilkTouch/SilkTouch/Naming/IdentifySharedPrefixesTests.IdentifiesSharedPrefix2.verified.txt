@@ -1,4 +1,5 @@
-﻿public enum VocalMorpherPhoneme
+﻿// VocalMorpherPhoneme.gen.cs
+public enum VocalMorpherPhoneme
 {
     [NameAffix("Prefix", "SharedPrefix", "AL_VOCAL_MORPHER_PHONEME")]
     AL_VOCAL_MORPHER_PHONEME_A = 0,
