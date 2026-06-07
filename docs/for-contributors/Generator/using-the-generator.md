@@ -1,45 +1,59 @@
-(This needs clean up before merging. This was originally meant to be a Discord message, but I figured it's a good start to having proper docs.)
+# Using the Generator
 
-Okay, so short guide (by Exanite):
+The way that Silk 3 works is by taking the output of ClangSharpPInvokeGenerator, which itself is its own bindings
+generator, and modifying the output with a set of mods. These mods apply transformations such as renaming identifiers,
+creating types such as handle structs or enums, and adding method overloads.
 
-Note that this is from my perspective as a new contributor/maintainer. I'm guessing at how some of this stuff works. :sweat_smile:
-
-The way that Silk 3 works is by taking the output of ClangSharpPInvokeGenerator and modifying the output with a set of mods.
-These mods do things such as renaming identifiers, creating types such as handle structs or enums, and adding method overloads.
+In other words, ClangSharpPInvokeGenerator acts as the input to the SilkTouch generator. Other inputs to the SilkTouch
+generator will likely be available in the future to cover APIs such as Metal.
 
 **Do note that Silk 3 is in heavy development and things can change without warning.**
-This is probably the case until we're a few previews in.
+This is probably the case until we are a few previews in.
 
 **Also note that only C bindings are supported right now. COM will be available later.**
 
 ## Generator overview
 
 There are two main things to configure:
+
 1. Silk 3 - This is the [`generator.json`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/generator.json) file.
+
 2. ClangSharpPInvokeGenerator - This is the [`eng/silktouch`](https://github.com/dotnet/Silk.NET/tree/develop/3.0/eng/silktouch) folder.
 
-Both are organized by library.
+Both are organized by native API.
 
-I suggest referencing the SDL configuration since it best represents your average C library.
-Most options there should be applicable after you replace the SDL specific types/paths/etc.
+I suggest referencing the SDL configuration since it best represents your average C API. Most options there should be
+applicable after you replace the SDL specific types/paths/etc.
 
 ### `generator.json`
 
-This defines which mods to run.
-- `AddIncludes` adds system header files. You want this.
-- `ClangScraper` runs ClangSharpPInvokeGenerator. Only including this is equivalent to running ClangSharpPInvokeGenerator directly.
-- The rest do a bunch of other transformations that I won't cover here. Ask if you're interested please.
+This file defines the different bindings jobs and defines which mods to run for each of them.
 
-One way to learn about the mods and debug them is to add them one by one.
-Mods run in the order you define them and work off the output of each other.
+For example, when binding to a C API:
 
-However, you can probably get by just copying the mod order from SDL verbatim.
+- `AddIncludes` tells `ClangScraper` where to find the system header files. You likely want to include this.
 
-Things to note:
-- I'm unfamiliar with the test project config. You probably can ignore it.
-- Bool types are only transformed for functions. Bool types in structs will likely be left as`int` or similar.
+- `ClangScraper` runs ClangSharpPInvokeGenerator. Including this mod on its own is equivalent to running
+  ClangSharpPInvokeGenerator directly.
+
+- The rest of the mods apply different transformations to the output of `ClangScraper`. Documentation for the other mods
+  can be found in the [Generator Mods](generator-mods.md) documentation.
+
+Aside from reading documentation, some other ways to learn about the mods are to:
+
+- Read through the tests. The tests act as examples for specific behaviors expected by each mod, with configurations,
+  inputs, and expected outputs provided for each case.
+
+- Add them one by one. Mods run in the order you define them and work off the output of the previous mod.
+
+That said, for most C APIs, you can probably get by just copying the mod configuration from SDL verbatim and updating
+the SDL-specific paths/values to suit the C API that you are binding.
+
+(TODO: Not sure how to set up the bindings test projects. See the `TestProject` property in `generator.json`.)
 
 ### `eng/silktouch`
+
+(TODO)
 
 This folder contains a bunch of `.rsp` files, which hold command line arguments for ClangSharpPInvokeGenerator.
 
