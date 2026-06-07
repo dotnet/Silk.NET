@@ -1,4 +1,4 @@
-# Library-Specific Notes
+# API-Specific Notes
 
 This document's purpose is to note down any decisions or quirks that are specific to a library that Silk is generating
 bindings for.

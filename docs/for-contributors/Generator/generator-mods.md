@@ -168,8 +168,8 @@ provide cross-platform bindings.
   `TransformEnums` to "coerce" the backing types to their Windows equivalents when possible.
 
 Note: There may be other differences not yet documented here. In the case new differences are discovered, please
-update this section. Library-specific differences should not be documented here and should be documented in the
-[Library-Specific Notes](library-specific-notes.md) document.
+update this section. API-specific differences should not be documented here and should be documented in the
+[API-Specific Notes](api-specific-notes.md) document.
 
 To further avoid platform-specific differences, Silk prefers to generate its bindings on Windows. However, for sake of
 development and iteration, the generator is typically set up so that platform-specific differences are minimalized.
@@ -270,10 +270,10 @@ assumption that nested types are extracted beforehand.
 
 Mod categories: Metadata, Naming
 
-This mod is designed to handle C-style namespace prefixes where all types, functions, and constants in a library share
-a common prefix. This includes casing convention differences. For example, constants often use screaming case while
-type and function names use camel case or pascal case. This can be seen in Vulkan, where functions are prefixed with
-`vk`, such as in `vkCreateInstance` and `vkCmdBindPipeline`, and constants are prefixed with `VK_`, such as in
+This mod is designed to handle C-style namespace prefixes where all types, functions, and constants in a native API
+share a common prefix. This includes casing convention differences. For example, constants often use screaming case
+while type and function names use camel case or pascal case. This can be seen in Vulkan, where functions are prefixed
+with `vk`, such as in `vkCreateInstance` and `vkCmdBindPipeline`, and constants are prefixed with `VK_`, such as in
 `VK_MAX_MEMORY_HEAPS` and `VK_TRUE`.
 
 Furthermore, identification of shared prefixes is done per scope and only in cases where C-style namespace prefixes
