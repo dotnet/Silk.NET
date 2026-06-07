@@ -105,6 +105,10 @@ Mod categories: Transformation
 This mod transforms `[DllImport]` and `[Transformed]` methods to use Silk-style virtual tables. These vtables allow for
 different styles of accessing native APIs, such as through an instance of an API object or through static methods.
 
+Stateless APIs are typically accessed through static methods, while stateful APIs are typically accessed through API
+objects. More information on this can be found in the
+[Static vs Instance Bindings](../../silk.net/static-vs-instance-bindings.md) document.
+
 Usage recommendations:
 
 (TODO: To be added)
