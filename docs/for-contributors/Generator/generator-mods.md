@@ -164,7 +164,8 @@ provide cross-platform bindings.
   `TransformEnums` to "coerce" the backing types to their Windows equivalents when possible.
 
 Note: There may be other differences not yet documented here. In the case new differences are discovered, please
-update this section. Library-specific differences should not be documented here.
+update this section. Library-specific differences should not be documented here and should be documented in the
+[Library-Specific Notes](library-specific-notes.md) document.
 
 To further avoid platform-specific differences, Silk prefers to generate its bindings on Windows. However, for sake of
 development and iteration, the generator is typically set up so that platform-specific differences are minimalized.
