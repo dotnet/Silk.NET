@@ -86,8 +86,8 @@ This is the general structure of the `eng/silktouch` folder:
 ```
 eng
 - silktouch
-  - opengl <-- This level contains folders per library
-    - glcompat <-- This level contains folders for each "profile" (I think that's the term) for each variant of the library
+  - opengl <-- This level contains folders per native API.
+    - glcompat <-- This level contains folders for each "profile", which represent variants of the API.
     - glcore
     - gles1
     - gles2
@@ -108,7 +108,7 @@ eng
     - SDL3
       - generate.rsp <-- The main settings file.
       - header.txt
-      - sdl-SDL.h <-- Handwritten header file that #includes the relevant headers of the library you want to bind
+      - sdl-SDL.h <-- Handwritten header file that #includes the relevant headers of the library you want to bind.
     - remap.rsp
     - settings.rsp <-- Shared settings for all profiles.
 ```
