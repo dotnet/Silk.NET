@@ -192,7 +192,8 @@ want to include those headers as part of the final set of generated bindings.
 - `--with-librarypath` is the name of the native library without prefixes/suffixes. If the library name differs outside
   of the usual `lib` prefix or `.dll`/`.so`/`.dylib` suffixes, the way to handle this is to add `UseAlternativeName` in
   the generated bindings. An example with Vulkan can be found in
-  [`sources/Vulkan/Vulkan/Vk.cs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/Vulkan/Vulkan/Vk.cs), which is a manually written file.
+  [`sources/Vulkan/Vulkan/Vk.cs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/Vulkan/Vulkan/Vk.cs),
+  which is a manually written file.
 
 ```cs
 static Vk()
