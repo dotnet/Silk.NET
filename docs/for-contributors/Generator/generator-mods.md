@@ -19,8 +19,9 @@ the primary input *and* output of each mod. The output of each mod is passed dir
 transformation.
 
 `InitializeAsync` is rarely used and is used to initialize data before any transformations have begun so that other mods
-can access that data. This is especially so because most communication between mods should be done through the C# source
-code representing the generated bindings instead.
+can access that data before their own `ExecuteAsync` method runs. The usage of this method is made even rarer since most
+communication between mods should be done through the C# source code representing the generated bindings instead, or
+ideally, no communication is done at all so that mods are kept completely standalone.
 
 ### Mod Configuration
 
@@ -150,7 +151,23 @@ Note that this mod is platform specific and will have different outputs dependin
 `ClangSharpPInvokeGenerator`, and by extension, `ClangScraper` makes use of system headers. Any platform specific
 differences in the API for which bindings are being generated will also affect the output.
 
-(TODO: Document platform specific differences and how they are handled by Silk)
+Platform-specific differences:
+
+For the most part, these behaviors are expected, but potentially unwanted behaviors considering the goal of Silk is to
+provide cross-platform bindings.
+
+- `uint64_t` in C becomes `ulong` on Windows, `nuint` on Linux. This is filed as an issue in the ClangSharp repo:
+  https://github.com/dotnet/ClangSharp/issues/574. Silk handles this by  remapping the `stdint.h` types in
+  `remap-stdint.rsp`. APIs, such as OpenGL, that define their own integer types may require additional configuration.
+
+- Enums use `uint` as their backing type on Linux instead of `int` like on Windows. Silk handles this by using
+  `TransformEnums` to "coerce" the backing types to their Windows equivalents when possible.
+
+Note: There may be other differences not yet documented here. In the case new differences are discovered, please
+update this section. Library-specific differences should not be documented here.
+
+To further avoid platform-specific differences, Silk prefers to generate its bindings on Windows. However, for sake of
+development and iteration, the generator is typically set up so that platform-specific differences are minimalized.
 
 Usage recommendations:
 
@@ -169,7 +186,7 @@ This mod adds empty structs for missing types that are identified to be used as 
 type must only be ever referenced through a pointer. After the empty struct representing the handle type is extracted,
 `TransformHandles` can then be used to transform the pointer to be wrapped within the handle struct.
 
-Side note: This mod is similar to `AddOpaqueStructs` in that it adds empty structs, but `ExtractHandles` has a much more
+Note: This mod is similar to `AddOpaqueStructs` in that it adds empty structs, but `ExtractHandles` has a much more
 automated approach since it deals specifically with handle types that are referenced using pointers.
 
 This code has been manually trimmed for the sake of example and comes from the state of the Vulkan bindings before
@@ -407,13 +424,13 @@ the mod.
 
 Khronos-style XML specifications:
 
-OpenAL: https://raw.githubusercontent.com/kcat/openal-soft/refs/heads/master/registry/xml/al.xml
-OpenCL: https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/refs/heads/main/xml/cl.xml
-OpenGL Windows: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml
-OpenGL X11: https://github.com/KhronosGroup/OpenGL-Registry/blob/main/xml/glx.xml
-OpenGL: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/refs/heads/main/xml/gl.xml
-OpenXR: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK-Source/main/specification/registry/xr.xml
-Vulkan: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/refs/heads/main/xml/vk.xml
+- OpenAL: https://raw.githubusercontent.com/kcat/openal-soft/refs/heads/master/registry/xml/al.xml
+- OpenCL: https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/refs/heads/main/xml/cl.xml
+- OpenGL: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/refs/heads/main/xml/gl.xml
+- OpenGL Windows: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml
+- OpenGL X11: https://github.com/KhronosGroup/OpenGL-Registry/blob/main/xml/glx.xml
+- OpenXR: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK-Source/main/specification/registry/xr.xml
+- Vulkan: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/refs/heads/main/xml/vk.xml
 
 Be aware that these link to the latest version. Silk's repo may be using an older version of these XML files.
 
