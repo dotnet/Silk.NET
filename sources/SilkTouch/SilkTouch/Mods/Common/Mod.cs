@@ -40,7 +40,8 @@ public abstract class Mod : IMod
     }
 
     /// <inheritdoc />
-    public virtual void InitializeAsync(IModContext ctx, CancellationToken ct = default) { }
+    public virtual Task InitializeAsync(IModContext ctx, CancellationToken ct = default) =>
+        Task.CompletedTask;
 
     /// <inheritdoc />
     public virtual async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
