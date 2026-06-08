@@ -2,7 +2,6 @@ using System.IO.Compression;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
-using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging.Abstractions;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
