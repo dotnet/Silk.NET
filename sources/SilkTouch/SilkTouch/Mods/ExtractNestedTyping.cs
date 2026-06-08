@@ -7,20 +7,15 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// A mod that extracts type system information nested within other types. This currently includes:
-/// <list type="bullet">
-/// <item><description>
-/// Replacing function pointers identified by their <see cref="NativeTypeNameAttribute"/>s with delegates and
-/// function pointer structs.
-/// </description></item>
-/// <item><description>
-/// Moving constants into their respective enums. These constants are identified by checking for an enum with
+/// Moves enum constants into their respective enums.
+/// These constants are identified by checking for an enum with
 /// a matching prefix, as identified by the enum's <see cref="NativeTypeNameAttribute"/>.
 /// This accounts for the below pattern seen frequently pre-C99:
 /// <code>
@@ -28,11 +23,24 @@ namespace Silk.NET.SilkTouch.Mods;
 /// #define MY_ENUM_HELLO 0
 /// extern MyEnum GetMyEnum();
 /// </code>
-/// </description></item>
-/// <item><description>
-/// Extracting fixed buffers and anonymous structures contained within structures into separate types.
-/// </description></item>
-/// </list>
+/// </summary>
+public class ExtractEnumConstants : Mod
+{
+    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default) { }
+}
+
+/// <summary>
+/// Replaces function pointers identified by their <see cref="NativeTypeNameAttribute"/>s
+/// with delegates and function pointer structs.
+/// </summary>
+public class ExtractFunctionPointers : Mod
+{
+    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default) { }
+}
+
+/// <summary>
+/// Extracts nested types into their own separate types.
+/// In particular, this also handles fixed buffers and anonymous structures output by <see cref="ClangScraper"/>.
 /// </summary>
 public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : Mod
 {

@@ -24,6 +24,8 @@ public class ModLoader
             nameof(ChangeNamespace) => typeof(ChangeNamespace),
             nameof(ChangeNativeClass) => typeof(ChangeNativeClass),
             nameof(ClangScraper) => typeof(ClangScraper),
+            nameof(ExtractEnumConstants) => typeof(ExtractEnumConstants),
+            nameof(ExtractFunctionPointers) => typeof(ExtractFunctionPointers),
             nameof(ExtractHandles) => typeof(ExtractHandles),
             nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
             nameof(IdentifySharedPrefixes) => typeof(IdentifySharedPrefixes),
