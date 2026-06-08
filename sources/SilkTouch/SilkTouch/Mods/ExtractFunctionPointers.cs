@@ -16,7 +16,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Replaces function pointers identified by their <see cref="NativeTypeNameAttribute"/>s
 /// with delegates and function pointer structs.
 /// </summary>
-public partial class ExtractFunctionPointers(ILogger<ExtractNestedTyping> logger) : Mod
+public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> logger) : Mod
 {
     /// <inheritdoc />
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)

@@ -15,7 +15,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Extracts nested types into their own separate types.
 /// In particular, this also handles fixed buffers and anonymous structures output by <see cref="ClangScraper"/>.
 /// </summary>
-public partial class ExtractNestedTyping : Mod
+public partial class ExtractNestedTypes : Mod
 {
     /// <inheritdoc />
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
@@ -34,19 +34,13 @@ public partial class ExtractNestedTyping : Mod
             var doc =
                 project.GetDocument(docId)
                 ?? throw new InvalidOperationException("Document missing");
-            var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
-            if (fname is null)
+            var (file, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
+            if (file is null)
             {
                 continue;
             }
 
-            // Rewrite nodes
-            // What this does depends on the node's type
-            //
-            // For example:
-            // This will handle removing nested structs.
-            // This is also where extracted enums are processed.
-            rewriter.File = fname;
+            rewriter.File = file;
             project = doc.WithSyntaxRoot(
                 rewriter.Visit(node)
                     ?? throw new InvalidOperationException("Rewriter returned null")
@@ -74,7 +68,7 @@ public partial class ExtractNestedTyping : Mod
                                     : SingletonList<MemberDeclarationSyntax>(newStruct)
                             ),
                         filePath: project.FullPath(
-                            $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
+                            $"{file.AsSpan()[..file.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
                         )
                     )
                     .Project;

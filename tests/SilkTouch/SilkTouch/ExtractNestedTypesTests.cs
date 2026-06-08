@@ -6,9 +6,9 @@ using Silk.NET.SilkTouch.Mods;
 
 namespace Silk.NET.SilkTouch.UnitTests;
 
-public class ExtractNestedTypingTests
+public class ExtractNestedTypesTests
 {
-    static ExtractNestedTypingTests()
+    static ExtractNestedTypesTests()
     {
         if (!VerifyDiffPlex.Initialized)
         {
@@ -46,7 +46,7 @@ public class ExtractNestedTypingTests
 
         var context = new DummyModContext() { SourceProject = project };
 
-        var extractNestedTyping = new ExtractNestedTyping(NullLogger<ExtractNestedTyping>.Instance);
+        var extractNestedTyping = new ExtractNestedTypes(NullLogger<ExtractNestedTypes>.Instance);
 
         await extractNestedTyping.ExecuteAsync(context);
 
@@ -85,7 +85,7 @@ public class ExtractNestedTypingTests
 
         var context = new DummyModContext() { SourceProject = project };
 
-        var extractNestedTyping = new ExtractNestedTyping(NullLogger<ExtractNestedTyping>.Instance);
+        var extractNestedTyping = new ExtractNestedTypes(NullLogger<ExtractNestedTypes>.Instance);
 
         await extractNestedTyping.ExecuteAsync(context);
 
@@ -142,7 +142,7 @@ public class ExtractNestedTypingTests
 
         var context = new DummyModContext() { SourceProject = project };
 
-        var extractNestedTyping = new ExtractNestedTyping(NullLogger<ExtractNestedTyping>.Instance);
+        var extractNestedTyping = new ExtractNestedTypes(NullLogger<ExtractNestedTypes>.Instance);
 
         await extractNestedTyping.ExecuteAsync(context);
 
@@ -200,7 +200,7 @@ public class ExtractNestedTypingTests
 
         var context = new DummyModContext() { SourceProject = project };
 
-        var extractNestedTyping = new ExtractNestedTyping(NullLogger<ExtractNestedTyping>.Instance);
+        var extractNestedTyping = new ExtractNestedTypes(NullLogger<ExtractNestedTypes>.Instance);
 
         await extractNestedTyping.ExecuteAsync(context);
 
@@ -258,7 +258,7 @@ public class ExtractNestedTypingTests
 
         var context = new DummyModContext() { SourceProject = project };
 
-        var extractNestedTyping = new ExtractNestedTyping(NullLogger<ExtractNestedTyping>.Instance);
+        var extractNestedTyping = new ExtractNestedTypes(NullLogger<ExtractNestedTypes>.Instance);
 
         await extractNestedTyping.ExecuteAsync(context);
 
@@ -320,7 +320,7 @@ public class ExtractNestedTypingTests
 
         var context = new DummyModContext() { SourceProject = project };
 
-        var extractNestedTyping = new ExtractNestedTyping(NullLogger<ExtractNestedTyping>.Instance);
+        var extractNestedTyping = new ExtractNestedTypes(NullLogger<ExtractNestedTypes>.Instance);
 
         await extractNestedTyping.ExecuteAsync(context);
 

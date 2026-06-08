@@ -27,7 +27,7 @@ public class ModLoader
             nameof(ExtractEnumConstants) => typeof(ExtractEnumConstants),
             nameof(ExtractFunctionPointers) => typeof(ExtractFunctionPointers),
             nameof(ExtractHandles) => typeof(ExtractHandles),
-            nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
+            nameof(ExtractNestedTypes) => typeof(ExtractNestedTypes),
             nameof(IdentifySharedPrefixes) => typeof(IdentifySharedPrefixes),
             nameof(InterceptNativeFunctions) => typeof(InterceptNativeFunctions),
             nameof(MarkNativeNames) => typeof(MarkNativeNames),
