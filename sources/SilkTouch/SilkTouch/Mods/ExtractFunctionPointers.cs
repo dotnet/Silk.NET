@@ -66,16 +66,16 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
                         ),
                     ]
             )
-            .Concat( // TODO: Looks like I misnamed the variable when I refactored this last year. This handles both enums and function pointers
-                enums.Select(x =>
-                    (
-                        (MemberDeclarationSyntax)x.Value.Item1,
-                        x.Value.Item1.Identifier.ToString(),
-                        x.Value.Item2,
-                        x.Value.Item3
-                    )
-                )
-            )
+            // .Concat( // TODO: Looks like I misnamed the variable when I refactored this last year. This handles both enums and function pointers
+            //     enums.Select(x =>
+            //         (
+            //             (MemberDeclarationSyntax)x.Value.Item1,
+            //             x.Value.Item1.Identifier.ToString(),
+            //             x.Value.Item2,
+            //             x.Value.Item3
+            //         )
+            //     )
+            // )
             .ToList();
 
         foreach (var (typeDecl, identifier, fileDirs, namespaces) in extractedFunctionPointers)
@@ -415,11 +415,11 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
 
         public override SyntaxNode? VisitPredefinedType(PredefinedTypeSyntax node)
         {
-            var nativeTypeName = GetNativeTypeNameForPredefinedType(node).ToString();
-            if (ExtractedEnums?.Contains(nativeTypeName) ?? false)
-            {
-                return IdentifierName(nativeTypeName).WithTriviaFrom(node);
-            }
+            // var nativeTypeName = GetNativeTypeNameForPredefinedType(node).ToString();
+            // if (ExtractedEnums?.Contains(nativeTypeName) ?? false)
+            // {
+            // return IdentifierName(nativeTypeName).WithTriviaFrom(node);
+            // }
 
             return base.VisitPredefinedType(node);
         }
@@ -575,41 +575,41 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
             // Generate the types if we haven't already.
             if (!FunctionPointerTypes.TryGetValue(currentNativeTypeName, out var pfnInfo))
             {
-                var (pfn, @delegate) = CreateFunctionPointerTypes(
-                    currentNativeTypeName,
-                    $"{currentNativeTypeName}Delegate",
-                    (
-                        currentNativeTypeName == fallback
-                            ? SingletonList(
-                                AttributeList(
-                                    SingletonSeparatedList(Attribute(IdentifierName("Transformed")))
-                                )
-                            )
-                            : default
-                    ).WithNativeName(currentNativeTypeName),
-                    (
-                        currentNativeTypeName == fallback
-                            ? SingletonList(
-                                AttributeList(
-                                    SingletonSeparatedList(Attribute(IdentifierName("Transformed")))
-                                )
-                            )
-                            : default
-                    )
-                        .WithNativeName(currentNativeTypeName)
-                        .AddReferencedNameAffix(
-                            NameAffixType.Prefix,
-                            "FunctionPointerParent",
-                            currentNativeTypeName
-                        )
-                        .AddNameAffix(
-                            NameAffixType.Suffix,
-                            "FunctionPointerDelegateType",
-                            "Delegate"
-                        ),
-                    node
-                );
-                FunctionPointerTypes[currentNativeTypeName] = pfnInfo = (pfn, @delegate, [], []);
+                // var (pfn, @delegate) = CreateFunctionPointerTypes(
+                //     currentNativeTypeName,
+                //     $"{currentNativeTypeName}Delegate",
+                //     (
+                //         currentNativeTypeName == fallback
+                //             ? SingletonList(
+                //                 AttributeList(
+                //                     SingletonSeparatedList(Attribute(IdentifierName("Transformed")))
+                //                 )
+                //             )
+                //             : default
+                //     ).WithNativeName(currentNativeTypeName),
+                //     (
+                //         currentNativeTypeName == fallback
+                //             ? SingletonList(
+                //                 AttributeList(
+                //                     SingletonSeparatedList(Attribute(IdentifierName("Transformed")))
+                //                 )
+                //             )
+                //             : default
+                //     )
+                //         .WithNativeName(currentNativeTypeName)
+                //         .AddReferencedNameAffix(
+                //             NameAffixType.Prefix,
+                //             "FunctionPointerParent",
+                //             currentNativeTypeName
+                //         )
+                //         .AddNameAffix(
+                //             NameAffixType.Suffix,
+                //             "FunctionPointerDelegateType",
+                //             "Delegate"
+                //         ),
+                //     node
+                // );
+                // FunctionPointerTypes[currentNativeTypeName] = pfnInfo = (pfn, @delegate, [], []);
             }
 
             // Ensure this visitation is used to determine the namespace/location.

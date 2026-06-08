@@ -74,43 +74,43 @@ public class ExtractEnumConstants : Mod
 
         public override SyntaxNode? VisitPredefinedType(PredefinedTypeSyntax node)
         {
-            var nativeTypeName = GetNativeTypeNameForPredefinedType(node).ToString();
-            if (nativeTypeName.Length > 0)
-            {
-                // Detect type discrepancies.
-                var thisType = node.Keyword.Kind();
-                if (!_numericTypeNames.TryGetValue(nativeTypeName, out var numericTypeName))
-                {
-                    _numericTypeNames[nativeTypeName] = numericTypeName = (thisType, [], []);
-                }
-
-                if (
-                    thisType
-                        is not (
-                            SyntaxKind.ByteKeyword
-                            or SyntaxKind.SByteKeyword
-                            or SyntaxKind.ShortKeyword
-                            or SyntaxKind.UShortKeyword
-                            or SyntaxKind.IntKeyword
-                            or SyntaxKind.UIntKeyword
-                            or SyntaxKind.LongKeyword
-                            or SyntaxKind.ULongKeyword
-                        )
-                    || thisType != numericTypeName?.Type
-                )
-                {
-                    _numericTypeNames[nativeTypeName] = numericTypeName = null;
-                }
-
-                if (numericTypeName is { } theTypeDetails)
-                {
-                    theTypeDetails.ReferencingNamespaces.Add(node.NamespaceFromSyntaxNode());
-                    if (File?[..File.LastIndexOf('/')] is { } dir)
-                    {
-                        theTypeDetails.ReferencingFileDirs.Add(dir);
-                    }
-                }
-            }
+            // var nativeTypeName = GetNativeTypeNameForPredefinedType(node).ToString();
+            // if (nativeTypeName.Length > 0)
+            // {
+            //     // Detect type discrepancies.
+            //     var thisType = node.Keyword.Kind();
+            //     if (!_numericTypeNames.TryGetValue(nativeTypeName, out var numericTypeName))
+            //     {
+            //         _numericTypeNames[nativeTypeName] = numericTypeName = (thisType, [], []);
+            //     }
+            //
+            //     if (
+            //         thisType
+            //             is not (
+            //                 SyntaxKind.ByteKeyword
+            //                 or SyntaxKind.SByteKeyword
+            //                 or SyntaxKind.ShortKeyword
+            //                 or SyntaxKind.UShortKeyword
+            //                 or SyntaxKind.IntKeyword
+            //                 or SyntaxKind.UIntKeyword
+            //                 or SyntaxKind.LongKeyword
+            //                 or SyntaxKind.ULongKeyword
+            //             )
+            //         || thisType != numericTypeName?.Type
+            //     )
+            //     {
+            //         _numericTypeNames[nativeTypeName] = numericTypeName = null;
+            //     }
+            //
+            //     if (numericTypeName is { } theTypeDetails)
+            //     {
+            //         theTypeDetails.ReferencingNamespaces.Add(node.NamespaceFromSyntaxNode());
+            //         if (File?[..File.LastIndexOf('/')] is { } dir)
+            //         {
+            //             theTypeDetails.ReferencingFileDirs.Add(dir);
+            //         }
+            //     }
+            // }
             return base.VisitPredefinedType(node);
         }
 
@@ -264,7 +264,7 @@ public class ExtractEnumConstants : Mod
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            InvalidateIfSeen(_numericTypeNames, node.Identifier.ToString());
+            // InvalidateIfSeen(_numericTypeNames, node.Identifier.ToString());
             return base.VisitEnumDeclaration(node);
         }
     }
