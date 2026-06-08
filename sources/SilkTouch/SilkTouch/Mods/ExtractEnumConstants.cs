@@ -49,6 +49,8 @@ public class ExtractEnumConstants : IMod
         rewriter.ConstantsToRemove = constants;
         rewriter.ExtractedEnums = enums.Keys;
 
+        // TODO: Place this comment where it should go after this mod works: Place extracted enum types in the directory common to where the types are referenced from
+
         ctx.SourceProject = project;
     }
 

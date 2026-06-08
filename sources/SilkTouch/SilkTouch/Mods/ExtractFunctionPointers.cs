@@ -88,6 +88,7 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
                                 )
                                 : SingletonList(typeDecl)
                         ),
+                    // Place extracted function pointer types in the directory common to where the types are referenced from
                     filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
                 )
                 .Project;

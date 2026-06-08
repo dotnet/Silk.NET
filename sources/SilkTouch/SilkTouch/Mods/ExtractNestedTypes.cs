@@ -66,6 +66,7 @@ public partial class ExtractNestedTypes : IMod
                                     )
                                     : SingletonList<MemberDeclarationSyntax>(newStruct)
                             ),
+                        // Place extracted struct next to the original file it came from
                         filePath: project.FullPath(
                             $"{file.AsSpan()[..file.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
                         )
