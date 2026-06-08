@@ -15,13 +15,11 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Extracts fixed buffers and anonymous structs output by <see cref="ClangScraper"/>
 /// into their own files as non-nested structs.
 /// </summary>
-public partial class ExtractNestedTypes : Mod
+public partial class ExtractNestedTypes : IMod
 {
     /// <inheritdoc />
-    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        await base.ExecuteAsync(ctx, ct);
-
         var project = ctx.SourceProject;
         if (project == null)
         {
@@ -42,6 +40,7 @@ public partial class ExtractNestedTypes : Mod
                 continue;
             }
 
+            rewriter.File = file;
             project = doc.WithSyntaxRoot(
                 rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")

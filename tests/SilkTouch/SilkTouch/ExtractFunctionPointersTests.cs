@@ -40,7 +40,7 @@ public class ExtractFunctionPointersTests
                         uint> pfnCallback;
                 }
                 """,
-                // TODO: ExtractFunctionPointers requires the file path to be set and that the document is under a subfolder
+                // ExtractFunctionPointers requires the file path to be set and that the document is under a subfolder
                 filePath: $"Vulkan/{inputDocName}"
             )
             .Project;

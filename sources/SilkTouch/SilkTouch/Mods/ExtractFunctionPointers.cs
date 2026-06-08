@@ -16,13 +16,11 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Replaces function pointers identified by their <see cref="NativeTypeNameAttribute"/>s
 /// with delegates and function pointer structs.
 /// </summary>
-public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> logger) : Mod
+public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> logger) : IMod
 {
     /// <inheritdoc />
-    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        await base.ExecuteAsync(ctx, ct);
-
         var project = ctx.SourceProject;
         if (project == null)
         {
@@ -36,6 +34,14 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
             var doc =
                 project.GetDocument(docId)
                 ?? throw new InvalidOperationException("Document missing");
+
+            var file = doc.RelativePath();
+            if (file is null)
+            {
+                continue;
+            }
+
+            rewriter.File = file;
             project = doc.WithSyntaxRoot(
                 rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")
@@ -45,9 +51,7 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
         // Add documents for each extracted function pointer
         // This is moved out of the foreach statement for better debuggability
         var extractedFunctionPointers = rewriter
-            .FunctionPointerTypes.Values
-            // .Where(x => x.IsUnique)
-            .SelectMany(x =>
+            .FunctionPointerTypes.Values.SelectMany(x =>
                 (IEnumerable<(MemberDeclarationSyntax, string, HashSet<string>, HashSet<string>)>)
                     [
                         (
@@ -64,16 +68,6 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
                         ),
                     ]
             )
-            // .Concat( // TODO: Looks like I misnamed the variable when I refactored this last year. This handles both enums and function pointers
-            //     enums.Select(x =>
-            //         (
-            //             (MemberDeclarationSyntax)x.Value.Item1,
-            //             x.Value.Item1.Identifier.ToString(),
-            //             x.Value.Item2,
-            //             x.Value.Item3
-            //         )
-            //     )
-            // )
             .ToList();
 
         foreach (var (typeDecl, identifier, fileDirs, namespaces) in extractedFunctionPointers)
