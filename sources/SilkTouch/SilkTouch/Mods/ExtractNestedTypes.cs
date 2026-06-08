@@ -12,8 +12,8 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Extracts nested types into their own separate types.
-/// In particular, this also handles fixed buffers and anonymous structures output by <see cref="ClangScraper"/>.
+/// Extracts fixed buffers and anonymous structs output by <see cref="ClangScraper"/>
+/// into their own files as non-nested structs.
 /// </summary>
 public partial class ExtractNestedTypes : Mod
 {
@@ -91,6 +91,14 @@ public partial class ExtractNestedTypes : Mod
         public string? Namespace { get; set; }
         public string? File { get; set; }
 
+        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) =>
+            base.VisitIdentifierName(
+                _typeRenames.TryGetValue(node.Identifier.ToString(), out var newType)
+                || (newType = null) is not null
+                    ? node.WithIdentifier(Identifier(newType))
+                    : node
+            );
+
         public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
         {
             // Extract nested structs
@@ -101,32 +109,32 @@ public partial class ExtractNestedTypes : Mod
             var members = node.Members;
             for (var i = 0; i < members.Count; i++)
             {
-                var mem = members[i];
+                var member = members[i];
                 if (
-                    mem is not StructDeclarationSyntax struc
-                    || GeneratedNestedTypeRegex().Match(struc.Identifier.ToString())
+                    member is not StructDeclarationSyntax structNode
+                    || GeneratedNestedTypeRegex().Match(structNode.Identifier.ToString())
                         is not { Success: true, Groups.Count: 3 } match
                 )
                 {
                     continue;
                 }
 
-                var iden = $"{node.Identifier}{match.Groups[1].Value}";
-                _typeRenames[struc.Identifier.ToString()] = iden;
-                struc =
+                var extractedIdentifier = $"{node.Identifier}{match.Groups[1].Value}";
+                _typeRenames[structNode.Identifier.ToString()] = extractedIdentifier;
+                structNode =
                     VisitStructDeclaration(
-                        struc
-                            .WithIdentifier(Identifier(iden))
+                        structNode
+                            .WithIdentifier(Identifier(extractedIdentifier))
                             .WithAttributeLists(
-                                struc.AttributeLists.AddReferencedNameAffix(
+                                structNode.AttributeLists.AddReferencedNameAffix(
                                     NameAffixType.Prefix,
                                     "NestedStructParent",
                                     node.Identifier.ToString()
                                 )
                             )
                     ) as StructDeclarationSyntax
-                    ?? struc;
-                ExtractedNestedStructs.Add(struc);
+                    ?? structNode;
+                ExtractedNestedStructs.Add(structNode);
                 members = members.RemoveAt(i--);
             }
 

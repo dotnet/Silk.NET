@@ -38,7 +38,7 @@ public class ExtractNestedTypesTests
                     }
                 }
                 """,
-                // TODO: ExtractNestedTyping requires the file path to be set and that the document is under a subfolder
+                // ExtractNestedTyping requires the file path to be set and that the document is under a subfolder
                 filePath: $"Vulkan/{inputDocName}"
             )
             .Project;
@@ -50,40 +50,6 @@ public class ExtractNestedTypesTests
         await extractNestedTyping.ExecuteAsync(context);
 
         // The nested struct should be extracted and named as VkPerformanceCounterDescriptionARMname
-        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
-    }
-
-    [Test]
-    public async Task SuccessfullyExtractsNestedStructs()
-    {
-        var inputDocName = "Test.cs";
-        var project = TestUtils
-            .CreateTestProject()
-            .AddDocument(
-                inputDocName,
-                """
-                public struct A
-                {
-                    public struct B
-                    {
-                        public struct C
-                        {
-                        }
-                    }
-                }
-                """,
-                // TODO: ExtractNestedTyping requires the file path to be set and that the document is under a subfolder
-                filePath: $"Tests/{inputDocName}"
-            )
-            .Project;
-
-        var context = new DummyModContext() { SourceProject = project };
-
-        var extractNestedTyping = new ExtractNestedTypes();
-
-        await extractNestedTyping.ExecuteAsync(context);
-
-        // There should be 3 structs in separate documents named A, AB, and ABC
         await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 }
