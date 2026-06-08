@@ -47,34 +47,12 @@ public partial class ExtractEnumConstants : Mod
             walker.Visit(node);
         }
 
-        var rewriter = new Rewriter(logger);
+        var rewriter = new Rewriter();
         var (enums, constants) = walker.GetExtractedEnums();
         rewriter.ConstantsToRemove = constants;
         rewriter.ExtractedEnums = enums.Keys;
 
         ctx.SourceProject = project;
-    }
-
-    private partial class Rewriter(ILogger logger) : CSharpSyntaxRewriter
-    {
-        public IReadOnlyCollection<string>? ConstantsToRemove { get; set; }
-
-        public IReadOnlyCollection<string>? ExtractedEnums { get; set; }
-
-        public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
-        {
-            var ret = base.VisitFieldDeclaration(node) as FieldDeclarationSyntax;
-            return ret?.Declaration.Variables.Count == 0 ? null : ret;
-        }
-
-        public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node)
-        {
-            if (ConstantsToRemove?.Contains(node.Identifier.ToString()) ?? false)
-            {
-                return null;
-            }
-            return base.VisitVariableDeclarator(node);
-        }
     }
 
     private class Walker : CSharpSyntaxRewriter
@@ -289,6 +267,28 @@ public partial class ExtractEnumConstants : Mod
         {
             InvalidateIfSeen(_numericTypeNames, node.Identifier.ToString());
             return base.VisitEnumDeclaration(node);
+        }
+    }
+
+    private partial class Rewriter : CSharpSyntaxRewriter
+    {
+        public IReadOnlyCollection<string>? ConstantsToRemove { get; set; }
+
+        public IReadOnlyCollection<string>? ExtractedEnums { get; set; }
+
+        public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            var ret = base.VisitFieldDeclaration(node) as FieldDeclarationSyntax;
+            return ret?.Declaration.Variables.Count == 0 ? null : ret;
+        }
+
+        public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node)
+        {
+            if (ConstantsToRemove?.Contains(node.Identifier.ToString()) ?? false)
+            {
+                return null;
+            }
+            return base.VisitVariableDeclarator(node);
         }
     }
 }

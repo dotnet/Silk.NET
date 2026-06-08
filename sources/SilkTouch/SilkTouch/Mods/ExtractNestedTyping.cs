@@ -5,7 +5,6 @@ using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -16,7 +15,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Extracts nested types into their own separate types.
 /// In particular, this also handles fixed buffers and anonymous structures output by <see cref="ClangScraper"/>.
 /// </summary>
-public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : Mod
+public partial class ExtractNestedTyping : Mod
 {
     /// <inheritdoc />
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
@@ -29,22 +28,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             return;
         }
 
-        // First pass to gather data, such as the types to extract and generate
-        var walker = new Walker();
-        foreach (var doc in project.Documents)
-        {
-            var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
-            if (fname is null)
-            {
-                continue;
-            }
-
-            walker.File = fname;
-            walker.Visit(node);
-        }
-
-        // Second pass to modify existing files as per our discovery.
-        var rewriter = new Rewriter(logger);
+        var rewriter = new Rewriter();
         foreach (var docId in project.DocumentIds)
         {
             var doc =
@@ -104,61 +88,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
         ctx.SourceProject = project;
     }
 
-    private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(
-        PredefinedTypeSyntax node,
-        Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames = null
-    )
-    {
-        // Walk up to the parameter or method. We only allow primitive integer types right now.
-        var current = node.Parent;
-        var indirectionLevels = 0;
-        while (current is PointerTypeSyntax)
-        {
-            indirectionLevels++;
-            current = current.Parent;
-        }
-
-        var attrs = current switch
-        {
-            MethodDeclarationSyntax meth => meth.AttributeLists,
-            ParameterSyntax param => param.AttributeLists,
-            _ => default,
-        };
-
-        if (attrs.Count == 0)
-        {
-            return default;
-        }
-
-        if (!attrs.TryParseNativeTypeName(out var info))
-        {
-            return null;
-        }
-
-        // Ensure that the indirection levels indicated by the type name is the same as we've encountered when walking
-        // up the type. If this isn't, this indicates that the native type name is a typedef to a pointer and shouldn't
-        // be something that is mapped into an enum.
-        if (info.IndirectionLevels == indirectionLevels)
-        {
-            return info.Name;
-        }
-
-        InvalidateIfSeen(numericTypeNames, info.Name);
-        return null;
-    }
-
-    private static void InvalidateIfSeen(
-        Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames,
-        string nativeTypeName
-    )
-    {
-        if (numericTypeNames?.ContainsKey(nativeTypeName) ?? false)
-        {
-            numericTypeNames[nativeTypeName] = null;
-        }
-    }
-
-    private partial class Rewriter(ILogger logger) : CSharpSyntaxRewriter
+    private partial class Rewriter : CSharpSyntaxRewriter
     {
         private Dictionary<string, string> _typeRenames = [];
 
@@ -166,32 +96,6 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
 
         public string? Namespace { get; set; }
         public string? File { get; set; }
-
-        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) =>
-            base.VisitIdentifierName(
-                _typeRenames.TryGetValue(node.Identifier.ToString(), out var v)
-                || (
-                    v =
-                        FunctionPointerTypes?.TryGetValue(node.Identifier.ToString(), out var pfni)
-                        ?? false
-                            ? pfni.Pfn.Identifier.ToString()
-                            : null
-                )
-                    is not null
-                    ? node.WithIdentifier(Identifier(v))
-                    : node
-            );
-
-        public override SyntaxNode? VisitPredefinedType(PredefinedTypeSyntax node)
-        {
-            var nativeTypeName = GetNativeTypeNameForPredefinedType(node).ToString();
-            if (ExtractedEnums?.Contains(nativeTypeName) ?? false)
-            {
-                return IdentifierName(nativeTypeName).WithTriviaFrom(node);
-            }
-
-            return base.VisitPredefinedType(node);
-        }
 
         public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
         {
