@@ -1,0 +1,608 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Text.RegularExpressions;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Naming;
+
+namespace Silk.NET.SilkTouch.Mods;
+
+/// <summary>
+/// Replaces function pointers identified by their <see cref="NativeTypeNameAttribute"/>s
+/// with delegates and function pointer structs.
+/// </summary>
+public partial class ExtractFunctionPointers : Mod
+{
+    /// <inheritdoc />
+    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    {
+        await base.ExecuteAsync(ctx, ct);
+
+        var project = ctx.SourceProject;
+        if (project == null)
+        {
+            return;
+        }
+
+        // First pass to gather data, such as the types to extract and generate
+        var walker = new Walker();
+        foreach (var doc in project.Documents)
+        {
+            var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
+            if (fname is null)
+            {
+                continue;
+            }
+
+            walker.File = fname;
+            walker.Visit(node);
+        }
+
+        // Add documents for each extracted function pointer
+        // This is moved out of the foreach statement for better debuggability
+        var extractedFunctionPointers = rewriter
+            .FunctionPointerTypes.Values
+            // .Where(x => x.IsUnique)
+            .SelectMany(x =>
+                (IEnumerable<(MemberDeclarationSyntax, string, HashSet<string>, HashSet<string>)>)
+                    [
+                        (
+                            x.Delegate,
+                            x.Delegate.Identifier.ToString(),
+                            x.ReferencingFileDirs,
+                            x.ReferencingNamespaces
+                        ),
+                        (
+                            x.Pfn,
+                            x.Pfn.Identifier.ToString(),
+                            x.ReferencingFileDirs,
+                            x.ReferencingNamespaces
+                        ),
+                    ]
+            )
+            .Concat(
+                enums.Select(x =>
+                    (
+                        (MemberDeclarationSyntax)x.Value.Item1,
+                        x.Value.Item1.Identifier.ToString(),
+                        x.Value.Item2,
+                        x.Value.Item3
+                    )
+                )
+            )
+            .ToList();
+
+        foreach (var (typeDecl, identifier, fileDirs, namespaces) in extractedFunctionPointers)
+        {
+            var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
+            var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
+            project = project
+                ?.AddDocument(
+                    $"{identifier}.gen.cs",
+                    SyntaxFactory
+                        .CompilationUnit()
+                        .WithMembers(
+                            ns is { Length: > 0 }
+                                ? SyntaxFactory.SingletonList<MemberDeclarationSyntax>(
+                                    SyntaxFactory
+                                        .FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
+                                        )
+                                        .WithMembers(SingletonList(typeDecl))
+                                )
+                                : SingletonList(typeDecl)
+                        ),
+                    filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
+                )
+                .Project;
+        }
+
+        ctx.SourceProject = project;
+    }
+
+    private partial class Rewriter(ILogger logger) : CSharpSyntaxRewriter
+    {
+        private string? _typeNameFromOuterFunctionPointer;
+        private string? _fallbackFromOuterFunctionPointer;
+
+        public Dictionary<
+            string,
+            (
+                StructDeclarationSyntax Pfn,
+                DelegateDeclarationSyntax Delegate,
+                HashSet<string> ReferencingFileDirs,
+                HashSet<string> ReferencingNamespaces
+            )
+        > FunctionPointerTypes { get; set; } = [];
+
+        public override SyntaxNode? VisitFunctionPointerType(FunctionPointerTypeSyntax node)
+        {
+            // Walk up the type. We expect only pointers above us, but we could encounter a function pointer type in
+            // which case we just ignore all this as we should already have a _currentNativeTypeName. Anything else and
+            // we don't have enough context for a fallback.
+            var current = node.Parent;
+            var indirectionLevels = 0;
+            while (current is PointerTypeSyntax)
+            {
+                indirectionLevels++;
+                current = current.Parent;
+            }
+
+            // As above, get the native type name if we can and also get a fallback name based on context.
+            var (currentNativeTypeName, fallback) = current switch
+            {
+                MethodDeclarationSyntax meth => (
+                    meth.AttributeLists.GetNativeTypeName(SyntaxKind.ReturnKeyword),
+                    $"{meth.Identifier}_r"
+                ),
+                ParameterSyntax { Parent.Parent: MethodDeclarationSyntax meth } param => (
+                    param.AttributeLists.GetNativeTypeName(),
+                    $"{meth.Identifier}_{param.Identifier}"
+                ),
+                VariableDeclarationSyntax
+                {
+                    Parent: FieldDeclarationSyntax { Parent: BaseTypeDeclarationSyntax type } fld
+                } vardec => (
+                    fld.AttributeLists.GetNativeTypeName(),
+                    $"{type.Identifier}_{vardec.Variables[0].Identifier}"
+                ),
+                _ => (null, null),
+            };
+
+            // If the native type name is actually the function pointer signature (i.e. not through a typedef) then we
+            // should pass the native type name down when recursing.
+            fallback = _fallbackFromOuterFunctionPointer ?? fallback;
+            currentNativeTypeName =
+                (_typeNameFromOuterFunctionPointer ?? currentNativeTypeName)?.Trim() ?? fallback;
+            string[]? recursiveTypeNames = null;
+            if (currentNativeTypeName.AsSpan().ContainsAnyExcept(NameUtils.IdentifierChars))
+            {
+                var match = FunctionPointerNativeTypeNameRegex().Match(currentNativeTypeName!);
+                if (match.Success)
+                {
+                    currentNativeTypeName = fallback;
+
+                    // NOTE: We expect the groups to be as follows:
+                    // 0 = everything
+                    // 1 = return type
+                    // 2 = indirection levels + 1
+                    // 3 = comma separated parameter types
+                    recursiveTypeNames = new string[
+                        1
+                            + (match.Groups[3].Value.Length > 0 ? 1 : 0)
+                            + match.Groups[3].Value.AsSpan().Count(',')
+                    ];
+                    if (match.Groups[2].Value.AsSpan().Count('*') != indirectionLevels + 1)
+                    {
+                        logger.LogWarning(
+                            "Unable to deal with function pointer usage at {} - mismatch of indirection "
+                                + "levels: {} for {}",
+                            node.GetLocation().GetLineSpan(),
+                            node,
+                            currentNativeTypeName
+                        );
+                        return node;
+                    }
+
+                    recursiveTypeNames[^1] = match.Groups[1].Value;
+                    var @params = match
+                        .Groups[3]
+                        .Value.Split(
+                            ',',
+                            StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries
+                        );
+                    for (var i = 0; i < @params.Length; i++)
+                    {
+                        recursiveTypeNames[i] = @params[i];
+                    }
+                }
+                else
+                {
+                    // Maybe it's a pointer type?
+                    var idSpan = currentNativeTypeName.AsSpan();
+                    if (idSpan.StartsWith("const "))
+                    {
+                        idSpan = idSpan["const ".Length..];
+                    }
+
+                    // If the indirection levels match (and the only other non-identifier characters are whitespace)
+                    // then we can use the identifier as the native name.
+                    idSpan = idSpan.Trim();
+                    var badStart = idSpan.IndexOfAnyExcept(NameUtils.IdentifierChars);
+                    var bad = idSpan[badStart..];
+                    currentNativeTypeName =
+                        badStart == -1
+                        || (
+                            bad.Count('*') == indirectionLevels
+                            && bad.Count(' ') == bad.Length - indirectionLevels
+                        )
+                            ? idSpan[..badStart].ToString()
+                            : fallback;
+                }
+            }
+
+            if (currentNativeTypeName is null)
+            {
+                logger.LogWarning(
+                    "Unable to deal with function pointer usage at {} - terminated at {}: {}",
+                    node.GetLocation().GetLineSpan(),
+                    current?.GetType().Name ?? "null",
+                    current
+                );
+                return node;
+            }
+
+            // Assert that our state is valid given the tests we've done above before recursing.
+            Debug.Assert(
+                _fallbackFromOuterFunctionPointer is not null
+                    == node.Ancestors().OfType<FunctionPointerTypeSyntax>().Any()
+            );
+
+            // Ensure that we've recursively generated and fixed up any function pointers contained within this function
+            // pointer.
+            var ns = node.NamespaceFromSyntaxNode();
+            node = node.WithParameterList(
+                node.ParameterList.WithParameters(
+                    SyntaxFactory.SeparatedList(
+                        node.ParameterList.Parameters.Select(
+                                (x, i) =>
+                                {
+                                    var typeNameBefore = _typeNameFromOuterFunctionPointer;
+                                    var fallbackBefore = _fallbackFromOuterFunctionPointer;
+                                    _typeNameFromOuterFunctionPointer = recursiveTypeNames?[i];
+                                    _fallbackFromOuterFunctionPointer =
+                                        $"{currentNativeTypeName}_p{i}";
+                                    var ret = base.Visit(x);
+                                    _typeNameFromOuterFunctionPointer = typeNameBefore;
+                                    _fallbackFromOuterFunctionPointer = fallbackBefore;
+                                    return ret;
+                                }
+                            )
+                            .OfType<FunctionPointerParameterSyntax>()
+                    )
+                )
+            );
+
+            // Generate the types if we haven't already.
+            if (!FunctionPointerTypes.TryGetValue(currentNativeTypeName, out var pfnInfo))
+            {
+                var (pfn, @delegate) = CreateFunctionPointerTypes(
+                    currentNativeTypeName,
+                    $"{currentNativeTypeName}Delegate",
+                    (
+                        currentNativeTypeName == fallback
+                            ? SyntaxFactory.SingletonList(
+                                SyntaxFactory.AttributeList(
+                                    SyntaxFactory.SingletonSeparatedList(
+                                        SyntaxFactory.Attribute(
+                                            SyntaxFactory.IdentifierName("Transformed")
+                                        )
+                                    )
+                                )
+                            )
+                            : default
+                    ).WithNativeName(currentNativeTypeName),
+                    (
+                        currentNativeTypeName == fallback
+                            ? SyntaxFactory.SingletonList(
+                                SyntaxFactory.AttributeList(
+                                    SyntaxFactory.SingletonSeparatedList(
+                                        SyntaxFactory.Attribute(
+                                            SyntaxFactory.IdentifierName("Transformed")
+                                        )
+                                    )
+                                )
+                            )
+                            : default
+                    )
+                        .WithNativeName(currentNativeTypeName)
+                        .AddReferencedNameAffix(
+                            NameAffixType.Prefix,
+                            "FunctionPointerParent",
+                            currentNativeTypeName
+                        )
+                        .AddNameAffix(
+                            NameAffixType.Suffix,
+                            "FunctionPointerDelegateType",
+                            "Delegate"
+                        ),
+                    node
+                );
+                FunctionPointerTypes[currentNativeTypeName] = pfnInfo = (pfn, @delegate, [], []);
+            }
+
+            // Ensure this visitation is used to determine the namespace/location.
+            pfnInfo.ReferencingNamespaces.Add(ns);
+            if (File?[..File.LastIndexOf('/')] is { } dir)
+            {
+                pfnInfo.ReferencingFileDirs.Add(dir);
+            }
+
+            return SyntaxFactory.IdentifierName(currentNativeTypeName);
+        }
+
+        [GeneratedRegex(
+            @"^((?:[A-Za-z0-9\s\*_]|\[[0-9]*\])+)\((\*)+\)\(((?:(?:[A-Za-z0-9\s\*_]|\[[0-9]*\])+,?)*)\)"
+        )]
+        private partial Regex FunctionPointerNativeTypeNameRegex();
+    }
+
+    private class Walker : CSharpSyntaxRewriter
+    {
+        private static (
+            StructDeclarationSyntax Pfn,
+            DelegateDeclarationSyntax Delegate
+        ) CreateFunctionPointerTypes(
+            string pfnName,
+            string delegateName,
+            SyntaxList<AttributeListSyntax> pfnAttrLists,
+            SyntaxList<AttributeListSyntax> delegateAttrLists,
+            FunctionPointerTypeSyntax rawPfn
+        )
+        {
+            // Ported from https://github.com/dotnet/Silk.NET/blob/d30cc43b/src/Core/Silk.NET.BuildTools/Bind/StructWriter.cs#L744-L774
+            var pfn = SyntaxFactory
+                .StructDeclaration(pfnName)
+                .WithModifiers(
+                    SyntaxFactory.TokenList(
+                        SyntaxFactory.Token(SyntaxKind.PublicKeyword),
+                        SyntaxFactory.Token(SyntaxKind.UnsafeKeyword),
+                        SyntaxFactory.Token(SyntaxKind.ReadOnlyKeyword)
+                    )
+                )
+                .WithBaseList(
+                    SyntaxFactory.BaseList(
+                        SyntaxFactory.SingletonSeparatedList<BaseTypeSyntax>(
+                            SyntaxFactory.SimpleBaseType(
+                                SyntaxFactory.IdentifierName("IDisposable")
+                            )
+                        )
+                    )
+                )
+                .WithAttributeLists(pfnAttrLists)
+                .WithMembers(
+                    SyntaxFactory.List<MemberDeclarationSyntax>(
+                        [
+                            SyntaxFactory
+                                .FieldDeclaration(
+                                    SyntaxFactory.VariableDeclaration(
+                                        SyntaxFactory.PointerType(
+                                            SyntaxFactory.PredefinedType(
+                                                SyntaxFactory.Token(SyntaxKind.VoidKeyword)
+                                            )
+                                        ),
+                                        SyntaxFactory.SingletonSeparatedList(
+                                            SyntaxFactory.VariableDeclarator("_pointer")
+                                        )
+                                    )
+                                )
+                                .WithModifiers(
+                                    SyntaxFactory.TokenList(
+                                        SyntaxFactory.Token(SyntaxKind.PrivateKeyword),
+                                        SyntaxFactory.Token(SyntaxKind.ReadOnlyKeyword)
+                                    )
+                                ),
+                            SyntaxFactory
+                                .PropertyDeclaration(rawPfn, "Handle")
+                                .WithModifiers(
+                                    SyntaxFactory.TokenList(
+                                        SyntaxFactory.Token(SyntaxKind.PublicKeyword)
+                                    )
+                                )
+                                .WithExpressionBody(
+                                    SyntaxFactory.ArrowExpressionClause(
+                                        SyntaxFactory.CastExpression(
+                                            rawPfn,
+                                            SyntaxFactory.IdentifierName("_pointer")
+                                        )
+                                    )
+                                )
+                                .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
+                            SyntaxFactory
+                                .ConstructorDeclaration(pfnName)
+                                .WithParameterList(
+                                    SyntaxFactory.ParameterList(
+                                        SyntaxFactory.SingletonSeparatedList(
+                                            SyntaxFactory
+                                                .Parameter(SyntaxFactory.Identifier("ptr"))
+                                                .WithType(rawPfn)
+                                        )
+                                    )
+                                )
+                                .WithExpressionBody(
+                                    SyntaxFactory.ArrowExpressionClause(
+                                        SyntaxFactory.AssignmentExpression(
+                                            SyntaxKind.SimpleAssignmentExpression,
+                                            SyntaxFactory.IdentifierName("_pointer"),
+                                            SyntaxFactory.IdentifierName("ptr")
+                                        )
+                                    )
+                                )
+                                .WithModifiers(
+                                    SyntaxFactory.TokenList(
+                                        SyntaxFactory.Token(SyntaxKind.PublicKeyword)
+                                    )
+                                )
+                                .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
+                            SyntaxFactory
+                                .ConstructorDeclaration(pfnName)
+                                .WithParameterList(
+                                    SyntaxFactory.ParameterList(
+                                        SyntaxFactory.SingletonSeparatedList(
+                                            SyntaxFactory
+                                                .Parameter(SyntaxFactory.Identifier("proc"))
+                                                .WithType(
+                                                    SyntaxFactory.IdentifierName(delegateName)
+                                                )
+                                        )
+                                    )
+                                )
+                                .WithExpressionBody(
+                                    SyntaxFactory.ArrowExpressionClause(
+                                        SyntaxFactory.AssignmentExpression(
+                                            SyntaxKind.SimpleAssignmentExpression,
+                                            SyntaxFactory.IdentifierName("_pointer"),
+                                            SyntaxFactory.InvocationExpression(
+                                                SyntaxFactory.MemberAccessExpression(
+                                                    SyntaxKind.SimpleMemberAccessExpression,
+                                                    SyntaxFactory.IdentifierName("SilkMarshal"),
+                                                    SyntaxFactory.IdentifierName("DelegateToPtr")
+                                                ),
+                                                SyntaxFactory.ArgumentList(
+                                                    SyntaxFactory.SingletonSeparatedList(
+                                                        SyntaxFactory.Argument(
+                                                            SyntaxFactory.IdentifierName("proc")
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                                .WithModifiers(
+                                    SyntaxFactory.TokenList(
+                                        SyntaxFactory.Token(SyntaxKind.PublicKeyword)
+                                    )
+                                )
+                                .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
+                            SyntaxFactory
+                                .MethodDeclaration(
+                                    SyntaxFactory.PredefinedType(
+                                        SyntaxFactory.Token(SyntaxKind.VoidKeyword)
+                                    ),
+                                    "Dispose"
+                                )
+                                .WithExpressionBody(
+                                    SyntaxFactory.ArrowExpressionClause(
+                                        SyntaxFactory.InvocationExpression(
+                                            SyntaxFactory.MemberAccessExpression(
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                SyntaxFactory.IdentifierName("SilkMarshal"),
+                                                SyntaxFactory.IdentifierName("Free")
+                                            ),
+                                            SyntaxFactory.ArgumentList(
+                                                SyntaxFactory.SingletonSeparatedList(
+                                                    SyntaxFactory.Argument(
+                                                        SyntaxFactory.IdentifierName("_pointer")
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                                .WithModifiers(
+                                    SyntaxFactory.TokenList(
+                                        SyntaxFactory.Token(SyntaxKind.PublicKeyword)
+                                    )
+                                )
+                                .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
+                            SyntaxFactory
+                                .ConversionOperatorDeclaration(
+                                    SyntaxFactory.Token(SyntaxKind.ImplicitKeyword),
+                                    SyntaxFactory.IdentifierName(pfnName)
+                                )
+                                .WithParameterList(
+                                    SyntaxFactory.ParameterList(
+                                        SyntaxFactory.SingletonSeparatedList(
+                                            SyntaxFactory
+                                                .Parameter(SyntaxFactory.Identifier("pfn"))
+                                                .WithType(rawPfn)
+                                        )
+                                    )
+                                )
+                                .WithModifiers(
+                                    SyntaxFactory.TokenList(
+                                        SyntaxFactory.Token(SyntaxKind.PublicKeyword),
+                                        SyntaxFactory.Token(SyntaxKind.StaticKeyword)
+                                    )
+                                )
+                                .WithExpressionBody(
+                                    SyntaxFactory.ArrowExpressionClause(
+                                        SyntaxFactory.ImplicitObjectCreationExpression(
+                                            SyntaxFactory.ArgumentList(
+                                                SyntaxFactory.SingletonSeparatedList(
+                                                    SyntaxFactory.Argument(
+                                                        SyntaxFactory.IdentifierName("pfn")
+                                                    )
+                                                )
+                                            ),
+                                            null
+                                        )
+                                    )
+                                )
+                                .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
+                            SyntaxFactory
+                                .ConversionOperatorDeclaration(
+                                    SyntaxFactory.Token(SyntaxKind.ImplicitKeyword),
+                                    rawPfn
+                                )
+                                .WithParameterList(
+                                    SyntaxFactory.ParameterList(
+                                        SyntaxFactory.SingletonSeparatedList(
+                                            SyntaxFactory
+                                                .Parameter(SyntaxFactory.Identifier("pfn"))
+                                                .WithType(SyntaxFactory.IdentifierName(pfnName))
+                                        )
+                                    )
+                                )
+                                .WithModifiers(
+                                    SyntaxFactory.TokenList(
+                                        SyntaxFactory.Token(SyntaxKind.PublicKeyword),
+                                        SyntaxFactory.Token(SyntaxKind.StaticKeyword)
+                                    )
+                                )
+                                .WithExpressionBody(
+                                    SyntaxFactory.ArrowExpressionClause(
+                                        SyntaxFactory.CastExpression(
+                                            rawPfn,
+                                            SyntaxFactory.MemberAccessExpression(
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                SyntaxFactory.IdentifierName("pfn"),
+                                                SyntaxFactory.IdentifierName("_pointer")
+                                            )
+                                        )
+                                    )
+                                )
+                                .WithSemicolonToken(SyntaxFactory.Token(SyntaxKind.SemicolonToken)),
+                            // TODO invoke method?
+                        ]
+                    )
+                );
+
+            var @delegate = SyntaxFactory
+                .DelegateDeclaration(
+                    rawPfn.ParameterList.Parameters.Last().Type,
+                    SyntaxFactory.Identifier(delegateName)
+                )
+                .WithModifiers(
+                    SyntaxFactory.TokenList(
+                        SyntaxFactory.Token(SyntaxKind.PublicKeyword),
+                        SyntaxFactory.Token(SyntaxKind.UnsafeKeyword)
+                    )
+                )
+                .WithAttributeLists(delegateAttrLists)
+                .WithParameterList(
+                    SyntaxFactory.ParameterList(
+                        SyntaxFactory.SeparatedList(
+                            rawPfn
+                                .ParameterList.Parameters.SkipLast(1)
+                                .Select(
+                                    (y, i) =>
+                                        SyntaxFactory.Parameter(
+                                            y.AttributeLists,
+                                            y.Modifiers,
+                                            y.Type,
+                                            SyntaxFactory.Identifier($"arg{i}"),
+                                            null
+                                        )
+                                )
+                        )
+                    )
+                );
+            return (pfn, @delegate);
+        }
+    }
+}
