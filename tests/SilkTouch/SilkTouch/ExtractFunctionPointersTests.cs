@@ -6,7 +6,6 @@ using Silk.NET.SilkTouch.Mods;
 
 namespace Silk.NET.SilkTouch.UnitTests;
 
-// TODO
 public class ExtractFunctionPointersTests
 {
     static ExtractFunctionPointersTests()

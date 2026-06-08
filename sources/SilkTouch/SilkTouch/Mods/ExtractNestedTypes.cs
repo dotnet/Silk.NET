@@ -28,22 +28,23 @@ public partial class ExtractNestedTypes : Mod
             return;
         }
 
+        // Scan and extract nested structs
         var rewriter = new Rewriter();
         foreach (var docId in project.DocumentIds)
         {
             var doc =
                 project.GetDocument(docId)
                 ?? throw new InvalidOperationException("Document missing");
-            var (file, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
+
+            var file = doc.RelativePath();
             if (file is null)
             {
                 continue;
             }
 
-            rewriter.File = file;
             project = doc.WithSyntaxRoot(
-                rewriter.Visit(node)
-                    ?? throw new InvalidOperationException("Rewriter returned null")
+                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
+                    ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
 
             foreach (var newStruct in rewriter.ExtractedNestedStructs)
