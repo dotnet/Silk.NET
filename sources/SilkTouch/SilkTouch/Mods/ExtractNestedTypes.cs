@@ -40,7 +40,6 @@ public partial class ExtractNestedTypes : IMod
                 continue;
             }
 
-            rewriter.File = file;
             project = doc.WithSyntaxRoot(
                 rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")
@@ -74,7 +73,6 @@ public partial class ExtractNestedTypes : IMod
                     .Project;
             }
 
-            rewriter.File = null;
             rewriter.Namespace = null;
             rewriter.ExtractedNestedStructs.Clear();
         }
@@ -89,7 +87,6 @@ public partial class ExtractNestedTypes : IMod
         public List<StructDeclarationSyntax> ExtractedNestedStructs { get; } = [];
 
         public string? Namespace { get; set; }
-        public string? File { get; set; }
 
         public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) =>
             base.VisitIdentifierName(

@@ -109,9 +109,8 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
                 HashSet<string> ReferencingFileDirs,
                 HashSet<string> ReferencingNamespaces
             )
-        > FunctionPointerTypes { get; set; } = [];
+        > FunctionPointerTypes { get; } = [];
 
-        public string? Namespace { get; set; }
         public string? File { get; set; }
 
         public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node)
@@ -535,61 +534,6 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
                     )
                 );
             return (pfn, @delegate);
-        }
-
-        private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(
-            PredefinedTypeSyntax node,
-            Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames =
-                null
-        )
-        {
-            // Walk up to the parameter or method. We only allow primitive integer types right now.
-            var current = node.Parent;
-            var indirectionLevels = 0;
-            while (current is PointerTypeSyntax)
-            {
-                indirectionLevels++;
-                current = current.Parent;
-            }
-
-            var attrs = current switch
-            {
-                MethodDeclarationSyntax meth => meth.AttributeLists,
-                ParameterSyntax param => param.AttributeLists,
-                _ => default,
-            };
-
-            if (attrs.Count == 0)
-            {
-                return default;
-            }
-
-            if (!attrs.TryParseNativeTypeName(out var info))
-            {
-                return null;
-            }
-
-            // Ensure that the indirection levels indicated by the type name is the same as we've encountered when walking
-            // up the type. If this isn't, this indicates that the native type name is a typedef to a pointer and shouldn't
-            // be something that is mapped into an enum.
-            if (info.IndirectionLevels == indirectionLevels)
-            {
-                return info.Name;
-            }
-
-            InvalidateIfSeen(numericTypeNames, info.Name);
-            return null;
-        }
-
-        private static void InvalidateIfSeen(
-            Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames,
-            string nativeTypeName
-        )
-        {
-            if (numericTypeNames?.ContainsKey(nativeTypeName) ?? false)
-            {
-                numericTypeNames[nativeTypeName] = null;
-            }
         }
 
         [GeneratedRegex(

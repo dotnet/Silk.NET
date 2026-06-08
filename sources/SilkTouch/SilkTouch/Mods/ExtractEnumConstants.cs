@@ -74,43 +74,44 @@ public class ExtractEnumConstants : Mod
 
         public override SyntaxNode? VisitPredefinedType(PredefinedTypeSyntax node)
         {
-            // var nativeTypeName = GetNativeTypeNameForPredefinedType(node).ToString();
-            // if (nativeTypeName.Length > 0)
-            // {
-            //     // Detect type discrepancies.
-            //     var thisType = node.Keyword.Kind();
-            //     if (!_numericTypeNames.TryGetValue(nativeTypeName, out var numericTypeName))
-            //     {
-            //         _numericTypeNames[nativeTypeName] = numericTypeName = (thisType, [], []);
-            //     }
-            //
-            //     if (
-            //         thisType
-            //             is not (
-            //                 SyntaxKind.ByteKeyword
-            //                 or SyntaxKind.SByteKeyword
-            //                 or SyntaxKind.ShortKeyword
-            //                 or SyntaxKind.UShortKeyword
-            //                 or SyntaxKind.IntKeyword
-            //                 or SyntaxKind.UIntKeyword
-            //                 or SyntaxKind.LongKeyword
-            //                 or SyntaxKind.ULongKeyword
-            //             )
-            //         || thisType != numericTypeName?.Type
-            //     )
-            //     {
-            //         _numericTypeNames[nativeTypeName] = numericTypeName = null;
-            //     }
-            //
-            //     if (numericTypeName is { } theTypeDetails)
-            //     {
-            //         theTypeDetails.ReferencingNamespaces.Add(node.NamespaceFromSyntaxNode());
-            //         if (File?[..File.LastIndexOf('/')] is { } dir)
-            //         {
-            //             theTypeDetails.ReferencingFileDirs.Add(dir);
-            //         }
-            //     }
-            // }
+            var nativeTypeName = GetNativeTypeNameForPredefinedType(node).ToString();
+            if (nativeTypeName.Length > 0)
+            {
+                // Detect type discrepancies.
+                var thisType = node.Keyword.Kind();
+                if (!_numericTypeNames.TryGetValue(nativeTypeName, out var numericTypeName))
+                {
+                    _numericTypeNames[nativeTypeName] = numericTypeName = (thisType, [], []);
+                }
+
+                if (
+                    thisType
+                        is not (
+                            SyntaxKind.ByteKeyword
+                            or SyntaxKind.SByteKeyword
+                            or SyntaxKind.ShortKeyword
+                            or SyntaxKind.UShortKeyword
+                            or SyntaxKind.IntKeyword
+                            or SyntaxKind.UIntKeyword
+                            or SyntaxKind.LongKeyword
+                            or SyntaxKind.ULongKeyword
+                        )
+                    || thisType != numericTypeName?.Type
+                )
+                {
+                    _numericTypeNames[nativeTypeName] = numericTypeName = null;
+                }
+
+                if (numericTypeName is { } theTypeDetails)
+                {
+                    theTypeDetails.ReferencingNamespaces.Add(node.NamespaceFromSyntaxNode());
+                    if (File?[..File.LastIndexOf('/')] is { } dir)
+                    {
+                        theTypeDetails.ReferencingFileDirs.Add(dir);
+                    }
+                }
+            }
+
             return base.VisitPredefinedType(node);
         }
 
@@ -264,8 +265,63 @@ public class ExtractEnumConstants : Mod
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            // InvalidateIfSeen(_numericTypeNames, node.Identifier.ToString());
+            InvalidateIfSeen(_numericTypeNames, node.Identifier.ToString());
             return base.VisitEnumDeclaration(node);
+        }
+
+        private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(
+            PredefinedTypeSyntax node,
+            Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames =
+                null
+        )
+        {
+            // Walk up to the parameter or method. We only allow primitive integer types right now.
+            var current = node.Parent;
+            var indirectionLevels = 0;
+            while (current is PointerTypeSyntax)
+            {
+                indirectionLevels++;
+                current = current.Parent;
+            }
+
+            var attrs = current switch
+            {
+                MethodDeclarationSyntax meth => meth.AttributeLists,
+                ParameterSyntax param => param.AttributeLists,
+                _ => default,
+            };
+
+            if (attrs.Count == 0)
+            {
+                return default;
+            }
+
+            if (!attrs.TryParseNativeTypeName(out var info))
+            {
+                return null;
+            }
+
+            // Ensure that the indirection levels indicated by the type name is the same as we've encountered when walking
+            // up the type. If this isn't, this indicates that the native type name is a typedef to a pointer and shouldn't
+            // be something that is mapped into an enum.
+            if (info.IndirectionLevels == indirectionLevels)
+            {
+                return info.Name;
+            }
+
+            InvalidateIfSeen(numericTypeNames, info.Name);
+            return null;
+        }
+
+        private static void InvalidateIfSeen(
+            Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames,
+            string nativeTypeName
+        )
+        {
+            if (numericTypeNames?.ContainsKey(nativeTypeName) ?? false)
+            {
+                numericTypeNames[nativeTypeName] = null;
+            }
         }
     }
 
