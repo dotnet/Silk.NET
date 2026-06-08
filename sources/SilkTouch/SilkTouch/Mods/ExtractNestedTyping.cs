@@ -40,7 +40,7 @@ public partial class ExtractNestedTyping : Mod
                 continue;
             }
 
-            // Rewrite node
+            // Rewrite nodes
             // What this does depends on the node's type
             //
             // For example:

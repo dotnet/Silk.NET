@@ -4,7 +4,6 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Naming;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -20,7 +19,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// extern MyEnum GetMyEnum();
 /// </code>
 /// </summary>
-public partial class ExtractEnumConstants : Mod
+public class ExtractEnumConstants : Mod
 {
     /// <inheritdoc />
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
@@ -270,10 +269,9 @@ public partial class ExtractEnumConstants : Mod
         }
     }
 
-    private partial class Rewriter : CSharpSyntaxRewriter
+    private class Rewriter : CSharpSyntaxRewriter
     {
         public IReadOnlyCollection<string>? ConstantsToRemove { get; set; }
-
         public IReadOnlyCollection<string>? ExtractedEnums { get; set; }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
