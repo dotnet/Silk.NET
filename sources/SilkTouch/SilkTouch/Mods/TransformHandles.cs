@@ -32,7 +32,7 @@ namespace Silk.NET.SilkTouch.Mods;
 public class TransformHandles(
     IOptionsSnapshot<TransformHandles.Config> config,
     ILogger<TransformHandles> logger
-) : Mod
+) : IMod
 {
     /// <summary>
     /// The configuration for the <see cref="TransformHandles"/> mod.
@@ -46,10 +46,8 @@ public class TransformHandles(
     }
 
     /// <inheritdoc />
-    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        await base.ExecuteAsync(ctx, ct);
-
         var cfg = config.Get(ctx.JobKey);
         var project = ctx.SourceProject;
         if (project == null)

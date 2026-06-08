@@ -19,13 +19,11 @@ namespace Silk.NET.SilkTouch.Mods;
 /// extern MyEnum GetMyEnum();
 /// </code>
 /// </summary>
-public class ExtractEnumConstants : Mod
+public class ExtractEnumConstants : IMod
 {
     /// <inheritdoc />
-    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        await base.ExecuteAsync(ctx, ct);
-
         var project = ctx.SourceProject;
         if (project == null)
         {
