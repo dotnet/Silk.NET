@@ -104,10 +104,7 @@ public class ExtractEnumConstants : IMod
         ctx.SourceProject = project;
     }
 
-    private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(
-        PredefinedTypeSyntax node,
-        Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames = null
-    )
+    private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(PredefinedTypeSyntax node)
     {
         // Walk up to the parameter or method. We only allow primitive integer types right now.
         var current = node.Parent;
@@ -143,19 +140,7 @@ public class ExtractEnumConstants : IMod
             return info.Name;
         }
 
-        InvalidateIfSeen(numericTypeNames, info.Name);
         return null;
-    }
-
-    private static void InvalidateIfSeen(
-        Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames,
-        string nativeTypeName
-    )
-    {
-        if (numericTypeNames?.ContainsKey(nativeTypeName) ?? false)
-        {
-            numericTypeNames[nativeTypeName] = null;
-        }
     }
 
     private class Walker : CSharpSyntaxRewriter
@@ -359,12 +344,6 @@ public class ExtractEnumConstants : IMod
                 }
             }
             return base.VisitFieldDeclaration(node);
-        }
-
-        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
-        {
-            InvalidateIfSeen(_numericTypeNames, node.Identifier.ToString());
-            return base.VisitEnumDeclaration(node);
         }
     }
 
