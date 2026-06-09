@@ -103,6 +103,7 @@ public class ExtractEnumConstants : IMod
     private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(PredefinedTypeSyntax node)
     {
         // Walk up to the parameter or method. We only allow primitive integer types right now.
+        SyntaxNode previous = node;
         var current = node.Parent;
         var indirectionLevels = 0;
         while (current is PointerTypeSyntax)
@@ -111,19 +112,37 @@ public class ExtractEnumConstants : IMod
             current = current.Parent;
         }
 
-        var attrs = current switch
+        SyntaxList<AttributeListSyntax> attributes;
+        SyntaxKind? requiredTargetSpecifier = null;
+        switch (current)
         {
-            MethodDeclarationSyntax meth => meth.AttributeLists,
-            ParameterSyntax param => param.AttributeLists,
-            _ => default,
-        };
+            // Method return type
+            case MethodDeclarationSyntax method:
+            {
+                attributes = method.AttributeLists;
+                requiredTargetSpecifier = SyntaxKind.ReturnKeyword;
 
-        if (attrs.Count == 0)
+                break;
+            }
+            // Method parameter
+            case ParameterSyntax param:
+            {
+                attributes = param.AttributeLists;
+                break;
+            }
+            default:
+            {
+                attributes = default;
+                break;
+            }
+        }
+
+        if (attributes.Count == 0)
         {
             return default;
         }
 
-        if (!attrs.TryParseNativeTypeName(out var info))
+        if (!attributes.TryParseNativeTypeName(out var info, requiredTargetSpecifier))
         {
             return default;
         }
