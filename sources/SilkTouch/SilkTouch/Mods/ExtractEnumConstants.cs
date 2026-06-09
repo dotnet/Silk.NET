@@ -46,10 +46,8 @@ public class ExtractEnumConstants : IMod
             walker.Visit(node);
         }
 
-        var rewriter = new Rewriter();
         var (enums, constants) = walker.GetExtractedEnums();
-        rewriter.ConstantsToRemove = constants;
-        rewriter.ExtractedEnums = enums.Keys;
+        var rewriter = new Rewriter(constants, enums.Keys);
         foreach (var docId in project.DocumentIds)
         {
             var doc =
@@ -347,15 +345,15 @@ public class ExtractEnumConstants : IMod
         }
     }
 
-    private class Rewriter : CSharpSyntaxRewriter
+    private class Rewriter(
+        IReadOnlyCollection<string> constantsToRemove,
+        IReadOnlyCollection<string> extractedEnums
+    ) : CSharpSyntaxRewriter
     {
-        public IReadOnlyCollection<string>? ConstantsToRemove { get; set; }
-        public IReadOnlyCollection<string>? ExtractedEnums { get; set; }
-
         public override SyntaxNode? VisitPredefinedType(PredefinedTypeSyntax node)
         {
             var nativeTypeName = GetNativeTypeNameForPredefinedType(node).ToString();
-            if (ExtractedEnums?.Contains(nativeTypeName) ?? false)
+            if (extractedEnums.Contains(nativeTypeName))
             {
                 return IdentifierName(nativeTypeName).WithTriviaFrom(node);
             }
@@ -371,10 +369,11 @@ public class ExtractEnumConstants : IMod
 
         public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node)
         {
-            if (ConstantsToRemove?.Contains(node.Identifier.ToString()) ?? false)
+            if (constantsToRemove.Contains(node.Identifier.ToString()))
             {
                 return null;
             }
+
             return base.VisitVariableDeclarator(node);
         }
     }
