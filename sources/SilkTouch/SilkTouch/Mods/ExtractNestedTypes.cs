@@ -15,6 +15,10 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Extracts fixed buffers and anonymous structs output by <see cref="ClangScraper"/>
 /// into their own files as non-nested structs.
 /// </summary>
+/// <remarks>
+/// Apparently this mod only handles the special nested structs output by <see cref="ClangScraper"/>
+/// right now. We might change this in the future if there is the need.
+/// </remarks>
 public partial class ExtractNestedTypes : IMod
 {
     /// <inheritdoc />
