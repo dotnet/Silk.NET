@@ -12,7 +12,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Extracts fixed buffers and anonymous structs output by <see cref="ClangScraper"/>
+/// Extracts unions, fixed buffers, and anonymous structs output by <see cref="ClangScraper"/>
 /// into their own files as non-nested structs.
 /// </summary>
 /// <remarks>

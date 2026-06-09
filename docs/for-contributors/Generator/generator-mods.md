@@ -186,6 +186,71 @@ configure the generator as a whole is found in the [Using the Generator](using-t
 
 This mod should be positioned at the start of the mod order, after `AddIncludes`.
 
+### ExtractEnumConstants
+
+Mod categories: Creation
+
+This mod moves C-style enum constants into their respective enums, creating those enums if they do not already exist.
+
+This is to account for the pattern seen frequently before C99:
+
+```c
+typedef unsigned int MyEnum;
+#define MY_ENUM_HELLO 0
+extern MyEnum GetMyEnum();
+```
+
+This mod handles this pattern by first identifying when integral types are annotated with `[NativeTypeName]` attributes
+by `ClangScraper`, these are considered to be potentially enum types. At the same time, constant fields are also
+identified. These two sets of data are then analyzed by seeing which fields have a name that is prefixed by the name of
+a potential enum type. This prefix check is done using a fuzzy comparison that accounts for casing and underscore
+differences. Constant fields that are identified to be part of an enum type are then moved to the corresponding enum
+type.
+
+Examples for how `ExtractEnumConstants` works can be found in the `ExtractEnumConstantsTests` test cases.
+
+Usage recommendations:
+
+This mod should be used when the API being bound makes use of the pre-C99 enum pattern described above.
+
+This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
+mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
+being generated.
+
+### ExtractFunctionPointers
+
+Mod categories: Creation
+
+This mod replaces function pointers (unmanaged delegates) with structs and delegate types representing those function
+pointers.
+
+```cs
+[NativeTypeName("PFN_vkDebugReportCallbackEXT")]
+public delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> pfnCallback;
+```
+
+Examples for how `ExtractFunctionPointers` works can be found in the `ExtractFunctionPointersTests` test cases.
+
+Name affix categories:
+
+- `FunctionPointerDelegateType` - This is a suffix that always has the value of `Delegate`. This is used for the
+  delegate representation of a function pointer type to distinguish the delegate type from the struct type for extracted
+  function pointers.
+
+- `FunctionPointerParent` - This is a prefix used by the delegate representation of a function pointer type. This is
+  used to ensure that the delegate type always uses the current name of its struct counterpart as part of its own name.
+
+These affixes are usually left unconfigured in `PrettifyNames`.
+
+Usage recommendations:
+
+This mod should be used when a set of bindings contains unmanaged delegates annotated with `[NativeTypeName]`
+attributes.
+
+This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
+mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
+being generated.
+
 ### ExtractHandles
 
 Mod categories: Creation
@@ -225,36 +290,30 @@ public unsafe partial struct VkInstance_T
 
 Usage recommendations:
 
-This mod should be used if a set of bindings contains types referenced only through pointers and those pointers are
+This mod should be used when a set of bindings contains types referenced only through pointers and those types are
 missing from the final set of generated bindings.
 
 Furthermore, this mod should be used alongside `TransformHandles` so that the handles are transformed into a more
 user-friendly version. `ExtractHandles` should be positioned before `TransformHandles` and any other mods that might use
 its results in the mod order.
 
-### ExtractNestedTyping
+This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
+mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
+being generated.
+
+### ExtractNestedTypes
 
 Mod categories: Creation
 
-This mod handles a few responsibilities, the primary of which is to extract nested types out of their parent types and
-into the containing namespace as non-nested types. The second is replacing function pointers with structs and delegate
-types representing those function pointers. The third is moving C-style enum constants into their respective enums.
+This mod extracts unions, fixed buffers, and anonymous structs output `ClangScraper` into their own files as non-nested
+structs.
 
-Arguably, the non-primary responsibilities of this mod should be split out into separate mods, but has not yet been done
-so due to lack of time invested into doing so. There is also the slight performance hit of splitting out the operations
-out since it will lead to three separate passes over the codebase, but this cost is negligible for most reasonably sized
-native APIs.
+Contrary to the name, this mod currently does not extract nested types into their own files as non-nested types. We may
+add this functionality in the future to this mod if there is the need.
 
-Examples for how `ExtractNestedTyping` works can be found in the `ExtractNestedTypingTests` test cases.
+Examples for how `ExtractNestedTypes` works can be found in the `ExtractNestedTypesTests` test cases.
 
 Name affix categories:
-
-- `FunctionPointerDelegateType` - This is a suffix that always has the value of `Delegate`. This is used for the
-  delegate representation of a function pointer type to distinguish the delegate type from the struct type for extracted
-  function pointers.
-
-- `FunctionPointerParent` - This is a prefix used by the delegate representation of a function pointer type. This is
-  used to ensure that the delegate type always uses the current name of its struct counterpart as part of its own name.
 
 - `NestedStructParent` - This is a prefix that references the name of the type that the extracted type was previously
   nested in. This is used to ensure that the extracted type always uses the current name of its original "parent" type
@@ -268,6 +327,10 @@ This mod must be used before `PrettifyNames` when using `PrettifyNames` and ther
 bindings. This is because `PrettifyNames` does not handle nesting when renaming identifiers. Other mods may have similar
 restrictions. This restriction is generally because nesting increases complexity, and as such, mods are written with the
 assumption that nested types are extracted beforehand.
+
+This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
+mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
+being generated.
 
 ### IdentifySharedPrefixes
 
@@ -283,7 +346,7 @@ Furthermore, identification of shared prefixes is done per scope and only in cas
 might be used. For example, a struct type typically does not use namespace prefixes because the struct itself acts as
 a way to disambiguate names contained inside of it. However, C-style enum values are often defined as global constants
 using macros such as `#define SDL_BLENDMODE_BLEND_PREMULTIPLIED 0x00000010u`. After these constants are moved to their
-corresponding enum types by `ExtractNestedTyping`, `IdentifySharedPrefixes` then handles the identification of the
+corresponding enum types by `ExtractEnumConstants`, `IdentifySharedPrefixes` then handles the identification of the
 prefix shared by the enum type's members. In the case of `SDL_BlendMode`, all of the members of `SDL_BlendMode` share
 `SDL_BLENDMODE_` as their common prefix.
 
@@ -330,9 +393,9 @@ This mod should be used when the transformation of C-style namespace prefixes or
 The most common case of this is the removal of such prefixes by using `IdentifySharedPrefixes` before `PrettifyNames`.
 `PrettifyNames` can then be configured like above to remove or use shared prefixes as discriminators.
 
-This mod also interacts with `ExtractNestedTyping`, which moves constants that are identified as likely being part of
+This mod also interacts with `ExtractEnumConstants`, which moves constants that are identified as likely being part of
 an enum to the corresponding enum. As such, this `IdentifySharedPrefixes` should be positioned after
-`ExtractNestedTyping` in the mod order.
+`ExtractEnumConstants` in the mod order.
 
 ### InterceptNativeFunctions
 
@@ -640,6 +703,8 @@ Empty structs identified as handle types will be transformed in two ways:
    stored inside the struct.
 
 This mod currently only processes handle types that wrap pointer types. Integer types are not yet supported.
+
+Examples for how `TransformHandles` works can be found in the `TransformHandlesTests` test cases.
 
 Name affix categories:
 
