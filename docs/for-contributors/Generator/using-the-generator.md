@@ -1,14 +1,15 @@
 # Using the Generator
 
-The way that Silk 3 works is by taking the output of ClangSharpPInvokeGenerator, which itself is its own bindings
-generator, and modifying the output with a set of mods. These mods apply transformations such as renaming identifiers,
-creating types such as handle structs or enums, and adding method overloads.
+**Warning: The generator is still in heavy development and will likely be subject to frequent breaking changes.**
+This will likely be the case until we are a few previews in.
 
-In other words, ClangSharpPInvokeGenerator acts as the input to the SilkTouch generator. Other inputs to the SilkTouch
-generator will likely be available in the future to cover APIs such as Metal.
+SilkTouch is Silk 3's bindings generator, which works by taking the output of ClangSharpPInvokeGenerator, which itself
+is its own bindings generator, and modifying the output with a set of mods. These mods apply transformations such as
+renaming identifiers, creating types such as handle structs or enums, and adding method overloads.
 
-**Do note that Silk 3 is in heavy development and things can change without warning.**
-This is probably the case until we are a few previews in.
+In other words, ClangSharpPInvokeGenerator acts as the input to the SilkTouch generator and SilkTouch works to improve
+on that input. Other inputs to the SilkTouch generator will likely be available in the future to cover APIs such as
+Metal.
 
 **Also note that only C bindings are supported right now. COM will be available later.**
 
