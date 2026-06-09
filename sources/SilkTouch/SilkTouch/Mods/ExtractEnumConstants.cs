@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Naming;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -34,13 +35,14 @@ public class ExtractEnumConstants : IMod
         var walker = new Walker();
         foreach (var doc in project.Documents)
         {
-            var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
-            if (fname is null)
+            var file = doc.RelativePath();
+            if (file is null)
             {
                 continue;
             }
 
-            walker.File = fname;
+            var node = await doc.GetSyntaxRootAsync(ct);
+            walker.File = file;
             walker.Visit(node);
         }
 
@@ -48,10 +50,112 @@ public class ExtractEnumConstants : IMod
         var (enums, constants) = walker.GetExtractedEnums();
         rewriter.ConstantsToRemove = constants;
         rewriter.ExtractedEnums = enums.Keys;
+        foreach (var docId in project.DocumentIds)
+        {
+            var doc =
+                project.GetDocument(docId)
+                ?? throw new InvalidOperationException("Document missing");
 
-        // TODO: Place this comment where it should go after this mod works: Place extracted enum types in the directory common to where the types are referenced from
+            var file = doc.RelativePath();
+            if (file is null)
+            {
+                continue;
+            }
+
+            project = doc.WithSyntaxRoot(
+                rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
+                    ?? throw new InvalidOperationException("Visit returned null.")
+            ).Project;
+        }
+
+        var newEnums = enums.Select(x =>
+            (
+                (MemberDeclarationSyntax)x.Value.Item1,
+                x.Value.Item1.Identifier.ToString(),
+                x.Value.Item2,
+                x.Value.Item3
+            )
+        );
+
+        foreach (var (typeDecl, identifier, fileDirs, namespaces) in newEnums)
+        {
+            var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
+            var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
+            project = project
+                ?.AddDocument(
+                    $"{identifier}.gen.cs",
+                    CompilationUnit()
+                        .WithMembers(
+                            ns is { Length: > 0 }
+                                ? SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
+                                        )
+                                        .WithMembers(SingletonList(typeDecl))
+                                )
+                                : SingletonList(typeDecl)
+                        ),
+                    // Place extracted enum types in the directory common to where the types are referenced from
+                    filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
+                )
+                .Project;
+        }
 
         ctx.SourceProject = project;
+    }
+
+    private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(
+        PredefinedTypeSyntax node,
+        Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames = null
+    )
+    {
+        // Walk up to the parameter or method. We only allow primitive integer types right now.
+        var current = node.Parent;
+        var indirectionLevels = 0;
+        while (current is PointerTypeSyntax)
+        {
+            indirectionLevels++;
+            current = current.Parent;
+        }
+
+        var attrs = current switch
+        {
+            MethodDeclarationSyntax meth => meth.AttributeLists,
+            ParameterSyntax param => param.AttributeLists,
+            _ => default,
+        };
+
+        if (attrs.Count == 0)
+        {
+            return default;
+        }
+
+        if (!attrs.TryParseNativeTypeName(out var info))
+        {
+            return null;
+        }
+
+        // Ensure that the indirection levels indicated by the type name is the same as we've encountered when walking
+        // up the type. If this isn't, this indicates that the native type name is a typedef to a pointer and shouldn't
+        // be something that is mapped into an enum.
+        if (info.IndirectionLevels == indirectionLevels)
+        {
+            return info.Name;
+        }
+
+        InvalidateIfSeen(numericTypeNames, info.Name);
+        return null;
+    }
+
+    private static void InvalidateIfSeen(
+        Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames,
+        string nativeTypeName
+    )
+    {
+        if (numericTypeNames?.ContainsKey(nativeTypeName) ?? false)
+        {
+            numericTypeNames[nativeTypeName] = null;
+        }
     }
 
     private class Walker : CSharpSyntaxRewriter
@@ -142,14 +246,9 @@ public class ExtractEnumConstants : IMod
                 (EnumDeclarationSyntax, HashSet<string>, HashSet<string>)? extractedEnum = enumType
                     is { } theType
                     ? (
-                        SyntaxFactory
-                            .EnumDeclaration(enumName)
-                            .AddBaseListTypes(
-                                SyntaxFactory.SimpleBaseType(
-                                    SyntaxFactory.PredefinedType(SyntaxFactory.Token(theType.Type))
-                                )
-                            )
-                            .AddModifiers(SyntaxFactory.Token(SyntaxKind.PublicKeyword)),
+                        EnumDeclaration(enumName)
+                            .AddBaseListTypes(SimpleBaseType(PredefinedType(Token(theType.Type))))
+                            .AddModifiers(Token(SyntaxKind.PublicKeyword)),
                         theType.ReferencingFileDirs,
                         theType.ReferencingNamespaces
                     )
@@ -212,9 +311,8 @@ public class ExtractEnumConstants : IMod
                             }
 
                             theExtractedEnum.Item1 = theExtractedEnum.Item1.AddMembers(
-                                SyntaxFactory
-                                    .EnumMemberDeclaration(constant)
-                                    .WithEqualsValue(SyntaxFactory.EqualsValueClause(value))
+                                EnumMemberDeclaration(constant)
+                                    .WithEqualsValue(EqualsValueClause(value))
                             );
                             extractedEnum = theExtractedEnum;
                             break;
@@ -268,67 +366,23 @@ public class ExtractEnumConstants : IMod
             InvalidateIfSeen(_numericTypeNames, node.Identifier.ToString());
             return base.VisitEnumDeclaration(node);
         }
-
-        private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(
-            PredefinedTypeSyntax node,
-            Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames =
-                null
-        )
-        {
-            // Walk up to the parameter or method. We only allow primitive integer types right now.
-            var current = node.Parent;
-            var indirectionLevels = 0;
-            while (current is PointerTypeSyntax)
-            {
-                indirectionLevels++;
-                current = current.Parent;
-            }
-
-            var attrs = current switch
-            {
-                MethodDeclarationSyntax meth => meth.AttributeLists,
-                ParameterSyntax param => param.AttributeLists,
-                _ => default,
-            };
-
-            if (attrs.Count == 0)
-            {
-                return default;
-            }
-
-            if (!attrs.TryParseNativeTypeName(out var info))
-            {
-                return null;
-            }
-
-            // Ensure that the indirection levels indicated by the type name is the same as we've encountered when walking
-            // up the type. If this isn't, this indicates that the native type name is a typedef to a pointer and shouldn't
-            // be something that is mapped into an enum.
-            if (info.IndirectionLevels == indirectionLevels)
-            {
-                return info.Name;
-            }
-
-            InvalidateIfSeen(numericTypeNames, info.Name);
-            return null;
-        }
-
-        private static void InvalidateIfSeen(
-            Dictionary<string, (SyntaxKind, HashSet<string>, HashSet<string>)?>? numericTypeNames,
-            string nativeTypeName
-        )
-        {
-            if (numericTypeNames?.ContainsKey(nativeTypeName) ?? false)
-            {
-                numericTypeNames[nativeTypeName] = null;
-            }
-        }
     }
 
     private class Rewriter : CSharpSyntaxRewriter
     {
         public IReadOnlyCollection<string>? ConstantsToRemove { get; set; }
         public IReadOnlyCollection<string>? ExtractedEnums { get; set; }
+
+        public override SyntaxNode? VisitPredefinedType(PredefinedTypeSyntax node)
+        {
+            var nativeTypeName = GetNativeTypeNameForPredefinedType(node).ToString();
+            if (ExtractedEnums?.Contains(nativeTypeName) ?? false)
+            {
+                return IdentifierName(nativeTypeName).WithTriviaFrom(node);
+            }
+
+            return base.VisitPredefinedType(node);
+        }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
