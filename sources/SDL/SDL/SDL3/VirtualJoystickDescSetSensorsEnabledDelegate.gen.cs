@@ -6,5 +6,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.SDL;
+
 [NativeName("SDL_VirtualJoystickDesc_SetSensorsEnabled")]
 public unsafe delegate byte VirtualJoystickDescSetSensorsEnabledDelegate(void* arg0, byte arg1);
