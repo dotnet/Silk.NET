@@ -250,6 +250,22 @@ public class TransformHandles(
                         Token(SyntaxKind.UnsafeKeyword),
                         Token(SyntaxKind.PartialKeyword)
                     )
+                )
+                .WithBaseList(
+                    BaseList(
+                        SingletonSeparatedList<BaseTypeSyntax>(
+                            SimpleBaseType(
+                                GenericName(Identifier("IEquatable"))
+                                    .WithTypeArgumentList(
+                                        TypeArgumentList(
+                                            SingletonSeparatedList<TypeSyntax>(
+                                                IdentifierName(structName)
+                                            )
+                                        )
+                                    )
+                            )
+                        )
+                    )
                 );
         }
 
