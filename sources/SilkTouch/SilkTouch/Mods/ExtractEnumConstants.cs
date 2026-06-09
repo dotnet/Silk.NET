@@ -66,14 +66,12 @@ public class ExtractEnumConstants : IMod
             ).Project;
         }
 
-        var newEnums = enums.Select(x =>
-            (
-                (MemberDeclarationSyntax)x.Value.Item1,
-                x.Value.Item1.Identifier.ToString(),
-                x.Value.Item2,
-                x.Value.Item3
-            )
-        );
+        var newEnums = enums.Select(x => new ExtractedType(
+            x.Value.Item1,
+            x.Value.Item1.Identifier.ToString(),
+            x.Value.Item2,
+            x.Value.Item3
+        ));
 
         foreach (var (typeDecl, identifier, fileDirs, namespaces) in newEnums)
         {
@@ -141,16 +139,30 @@ public class ExtractEnumConstants : IMod
         return info.Name;
     }
 
+    private record struct ExtractedType(
+        MemberDeclarationSyntax Node,
+        string Identifier,
+        HashSet<string> ReferencingFileDirs,
+        HashSet<string> ReferencingNamespaces
+    );
+
+    // TODO: Figure out what these actually mean
+    private record struct A(
+        SyntaxKind Type,
+        HashSet<string> ReferencingFileDirs,
+        HashSet<string> ReferencingNamespaces
+    );
+
+    // TODO: Figure out what these actually mean
+    private record struct B(
+        EnumDeclarationSyntax Item1,
+        HashSet<string> Item2,
+        HashSet<string> Item3
+    );
+
     private class Walker : CSharpSyntaxRewriter
     {
-        private readonly Dictionary<
-            string,
-            (
-                SyntaxKind Type,
-                HashSet<string> ReferencingFileDirs,
-                HashSet<string> ReferencingNamespaces
-            )?
-        > _numericTypeNames = new();
+        private readonly Dictionary<string, A?> _numericTypeNames = new();
 
         /// <summary>
         /// Tracks the name and value of constants discovered.
@@ -204,19 +216,13 @@ public class ExtractEnumConstants : IMod
 
         // This code can probably be better.
         public (
-            Dictionary<
-                string,
-                (EnumDeclarationSyntax, HashSet<string>, HashSet<string>)
-            > ExtractedEnums,
+            Dictionary<string, B> ExtractedEnums,
             HashSet<string> ExtractedConstants
         ) GetExtractedEnums()
         {
             var ineligibleConstants = new HashSet<string>();
             var extractedConstants = new HashSet<string>();
-            var extractedEnums = new Dictionary<
-                string,
-                (EnumDeclarationSyntax, HashSet<string>, HashSet<string>)
-            >(_numericTypeNames.Count);
+            var extractedEnums = new Dictionary<string, B>(_numericTypeNames.Count);
 
             // Try and find constants for each of the enums we've found.
             // We do this in descending length order to ensure that we find the longest match for constant names to enum
@@ -226,9 +232,8 @@ public class ExtractEnumConstants : IMod
             )
             {
                 var enumTrimmingName = NameSplitter.Underscore(enumName);
-                (EnumDeclarationSyntax, HashSet<string>, HashSet<string>)? extractedEnum = enumType
-                    is { } theType
-                    ? (
+                B? extractedEnum = enumType is { } theType
+                    ? new B(
                         EnumDeclaration(enumName)
                             .AddBaseListTypes(SimpleBaseType(PredefinedType(Token(theType.Type))))
                             .AddModifiers(Token(SyntaxKind.PublicKeyword)),

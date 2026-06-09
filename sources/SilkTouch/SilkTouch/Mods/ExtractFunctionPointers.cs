@@ -52,15 +52,15 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
         // This is moved out of the foreach statement for better debuggability
         var extractedFunctionPointers = rewriter
             .FunctionPointerTypes.Values.SelectMany(x =>
-                (IEnumerable<(MemberDeclarationSyntax, string, HashSet<string>, HashSet<string>)>)
+                (IEnumerable<ExtractedType>)
                     [
-                        (
+                        new ExtractedType(
                             x.Delegate,
                             x.Delegate.Identifier.ToString(),
                             x.ReferencingFileDirs,
                             x.ReferencingNamespaces
                         ),
-                        (
+                        new ExtractedType(
                             x.Pfn,
                             x.Pfn.Identifier.ToString(),
                             x.ReferencingFileDirs,
@@ -97,20 +97,26 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
         ctx.SourceProject = project;
     }
 
+    private record struct ExtractedType(
+        MemberDeclarationSyntax Node,
+        string Identifier,
+        HashSet<string> ReferencingFileDirs,
+        HashSet<string> ReferencingNamespaces
+    );
+
+    private record struct ExtractedFunctionPointerType(
+        StructDeclarationSyntax Pfn,
+        DelegateDeclarationSyntax Delegate,
+        HashSet<string> ReferencingFileDirs,
+        HashSet<string> ReferencingNamespaces
+    );
+
     private partial class Rewriter(ILogger logger) : CSharpSyntaxRewriter
     {
         private string? _typeNameFromOuterFunctionPointer;
         private string? _fallbackFromOuterFunctionPointer;
 
-        public Dictionary<
-            string,
-            (
-                StructDeclarationSyntax Pfn,
-                DelegateDeclarationSyntax Delegate,
-                HashSet<string> ReferencingFileDirs,
-                HashSet<string> ReferencingNamespaces
-            )
-        > FunctionPointerTypes { get; } = [];
+        public Dictionary<string, ExtractedFunctionPointerType> FunctionPointerTypes { get; } = [];
 
         public string? File { get; set; }
 
@@ -309,7 +315,9 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
                         ),
                     node
                 );
-                FunctionPointerTypes[currentNativeTypeName] = pfnInfo = (pfn, @delegate, [], []);
+
+                FunctionPointerTypes[currentNativeTypeName] = pfnInfo =
+                    new ExtractedFunctionPointerType(pfn, @delegate, [], []);
             }
 
             // Ensure this visitation is used to determine the namespace/location.
