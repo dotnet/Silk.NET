@@ -129,18 +129,18 @@ public class ExtractEnumConstants : IMod
 
         if (!attrs.TryParseNativeTypeName(out var info))
         {
-            return null;
+            return default;
         }
 
         // Ensure that the indirection levels indicated by the type name is the same as we've encountered when walking
         // up the type. If this isn't, this indicates that the native type name is a typedef to a pointer and shouldn't
         // be something that is mapped into an enum.
-        if (info.IndirectionLevels == indirectionLevels)
+        if (info.IndirectionLevels != indirectionLevels)
         {
-            return info.Name;
+            return default;
         }
 
-        return null;
+        return info.Name;
     }
 
     private class Walker : CSharpSyntaxRewriter
