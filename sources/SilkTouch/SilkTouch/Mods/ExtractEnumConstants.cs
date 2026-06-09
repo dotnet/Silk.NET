@@ -111,7 +111,6 @@ public class ExtractEnumConstants : IMod
     private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(PredefinedTypeSyntax node)
     {
         // Walk up to the parameter or method. We only allow primitive integer types right now.
-        SyntaxNode previous = node;
         var current = node.Parent;
         var indirectionLevels = 0;
         while (current is PointerTypeSyntax)
