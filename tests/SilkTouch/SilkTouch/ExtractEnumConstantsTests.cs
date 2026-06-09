@@ -5,7 +5,6 @@ using Silk.NET.SilkTouch.Mods;
 
 namespace Silk.NET.SilkTouch.UnitTests;
 
-// TODO
 public class ExtractEnumConstantsTests
 {
     static ExtractEnumConstantsTests()
@@ -58,7 +57,7 @@ public class ExtractEnumConstantsTests
                     public uint Blend;
                 }
                 """,
-                // TODO: ExtractEnumConstants requires the file path to be set and that the document is under a subfolder
+                // ExtractEnumConstants requires the file path to be set and that the document is under a subfolder
                 filePath: $"SDL3/{inputDocName}"
             )
             .Project;
