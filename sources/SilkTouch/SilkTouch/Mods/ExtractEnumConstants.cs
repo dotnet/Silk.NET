@@ -67,10 +67,10 @@ public class ExtractEnumConstants : IMod
         }
 
         var newEnums = enums.Select(x => new ExtractedType(
-            x.Value.Item1,
-            x.Value.Item1.Identifier.ToString(),
-            x.Value.Item2,
-            x.Value.Item3
+            x.Value.Node,
+            x.Value.Node.Identifier.ToString(),
+            x.Value.ReferencingFileDirs,
+            x.Value.ReferencingNamespaces
         ));
 
         foreach (var (typeDecl, identifier, fileDirs, namespaces) in newEnums)
@@ -146,22 +146,21 @@ public class ExtractEnumConstants : IMod
         HashSet<string> ReferencingNamespaces
     );
 
-    // TODO: Figure out what these actually mean
-    private record struct A(
-        SyntaxKind Type,
+    private record struct ExtractedEnumType(
+        EnumDeclarationSyntax Node,
         HashSet<string> ReferencingFileDirs,
         HashSet<string> ReferencingNamespaces
     );
 
-    // TODO: Figure out what these actually mean
-    private record struct B(
-        EnumDeclarationSyntax Item1,
-        HashSet<string> Item2,
-        HashSet<string> Item3
-    );
-
     private class Walker : CSharpSyntaxRewriter
     {
+        // TODO: Figure out what these actually mean
+        private record struct A(
+            SyntaxKind Type,
+            HashSet<string> ReferencingFileDirs,
+            HashSet<string> ReferencingNamespaces
+        );
+
         private readonly Dictionary<string, A?> _numericTypeNames = new();
 
         /// <summary>
@@ -180,7 +179,7 @@ public class ExtractEnumConstants : IMod
                 var thisType = node.Keyword.Kind();
                 if (!_numericTypeNames.TryGetValue(nativeTypeName, out var numericTypeName))
                 {
-                    _numericTypeNames[nativeTypeName] = numericTypeName = (thisType, [], []);
+                    _numericTypeNames[nativeTypeName] = numericTypeName = new A(thisType, [], []);
                 }
 
                 if (
@@ -216,13 +215,13 @@ public class ExtractEnumConstants : IMod
 
         // This code can probably be better.
         public (
-            Dictionary<string, B> ExtractedEnums,
+            Dictionary<string, ExtractedEnumType> ExtractedEnums,
             HashSet<string> ExtractedConstants
         ) GetExtractedEnums()
         {
             var ineligibleConstants = new HashSet<string>();
             var extractedConstants = new HashSet<string>();
-            var extractedEnums = new Dictionary<string, B>(_numericTypeNames.Count);
+            var extractedEnums = new Dictionary<string, ExtractedEnumType>(_numericTypeNames.Count);
 
             // Try and find constants for each of the enums we've found.
             // We do this in descending length order to ensure that we find the longest match for constant names to enum
@@ -232,8 +231,8 @@ public class ExtractEnumConstants : IMod
             )
             {
                 var enumTrimmingName = NameSplitter.Underscore(enumName);
-                B? extractedEnum = enumType is { } theType
-                    ? new B(
+                ExtractedEnumType? extractedEnum = enumType is { } theType
+                    ? new ExtractedEnumType(
                         EnumDeclaration(enumName)
                             .AddBaseListTypes(SimpleBaseType(PredefinedType(Token(theType.Type))))
                             .AddModifiers(Token(SyntaxKind.PublicKeyword)),
@@ -298,7 +297,7 @@ public class ExtractEnumConstants : IMod
                                 break;
                             }
 
-                            theExtractedEnum.Item1 = theExtractedEnum.Item1.AddMembers(
+                            theExtractedEnum.Node = theExtractedEnum.Node.AddMembers(
                                 EnumMemberDeclaration(constant)
                                     .WithEqualsValue(EqualsValueClause(value))
                             );
@@ -323,7 +322,7 @@ public class ExtractEnumConstants : IMod
                 }
 
                 ineligibleConstants.Clear();
-                if (extractedEnum is { Item1.Members.Count: > 0 })
+                if (extractedEnum is { Node.Members.Count: > 0 })
                 {
                     extractedEnums[enumName] = extractedEnum.Value;
                 }
