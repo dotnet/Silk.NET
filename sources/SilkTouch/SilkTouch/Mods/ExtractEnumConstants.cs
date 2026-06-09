@@ -100,6 +100,14 @@ public class ExtractEnumConstants : IMod
         ctx.SourceProject = project;
     }
 
+    /// <summary>
+    /// Returns the native type name for a predefined type syntax node found in the syntax tree.
+    /// The native type name will be retrieved from the corresponding [NativeTypeName] attribute.
+    /// </summary>
+    /// <remarks>
+    /// This is designed to be used to find references to enum types.
+    /// As such, this method returns "" for native type names that are identifiable as being potential enum members.
+    /// </remarks>
     private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(PredefinedTypeSyntax node)
     {
         // Walk up to the parameter or method. We only allow primitive integer types right now.
@@ -130,6 +138,20 @@ public class ExtractEnumConstants : IMod
                 attributes = param.AttributeLists;
                 break;
             }
+            // Maybe a field
+            case VariableDeclarationSyntax variable:
+            {
+                attributes = default;
+                if (
+                    variable.Parent is FieldDeclarationSyntax field
+                    && !field.Modifiers.Any(m => m.IsKind(SyntaxKind.ConstKeyword))
+                )
+                {
+                    attributes = field.AttributeLists;
+                }
+
+                break;
+            }
             default:
             {
                 attributes = default;
@@ -143,6 +165,13 @@ public class ExtractEnumConstants : IMod
         }
 
         if (!attributes.TryParseNativeTypeName(out var info, requiredTargetSpecifier))
+        {
+            return default;
+        }
+
+        // Ignore defines.
+        // These are likely enum members.
+        if (info.IsDefine)
         {
             return default;
         }
