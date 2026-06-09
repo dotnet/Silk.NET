@@ -1,4 +1,5 @@
 ﻿// SDL_BlendMode.gen.cs
+[NativeName("SDL_BlendMode")]
 public enum SDL_BlendMode : uint
 {
     SDL_BLENDMODE_NONE = 0x00000000U,

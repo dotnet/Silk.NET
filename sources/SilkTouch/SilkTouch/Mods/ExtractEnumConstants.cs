@@ -352,10 +352,15 @@ public class ExtractEnumConstants : IMod
                                 break;
                             }
 
-                            theExtractedEnum.Node = theExtractedEnum.Node.AddMembers(
-                                EnumMemberDeclaration(constant)
-                                    .WithEqualsValue(EqualsValueClause(value))
-                            );
+                            theExtractedEnum.Node = theExtractedEnum
+                                .Node.AddMembers(
+                                    EnumMemberDeclaration(constant)
+                                        .WithEqualsValue(EqualsValueClause(value))
+                                )
+                                .WithAttributeLists(
+                                    theExtractedEnum.Node.AttributeLists.WithNativeName(enumName)
+                                );
+
                             extractedEnum = theExtractedEnum;
                             break;
                         }
