@@ -268,6 +268,23 @@ public class ExtractEnumConstants : IMod
             return base.VisitPredefinedType(node);
         }
 
+        public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            if (node.Modifiers.Any(SyntaxKind.ConstKeyword))
+            {
+                foreach (var vardec in node.Declaration.Variables)
+                {
+                    if (vardec.Initializer is null)
+                    {
+                        continue;
+                    }
+
+                    _constants.Add(vardec.Identifier.ToString(), vardec.Initializer.Value);
+                }
+            }
+            return base.VisitFieldDeclaration(node);
+        }
+
         // This code can probably be better.
         public (
             Dictionary<string, ExtractedEnumType> ExtractedEnums,
@@ -389,23 +406,6 @@ public class ExtractEnumConstants : IMod
             }
 
             return (extractedEnums, extractedConstants);
-        }
-
-        public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
-        {
-            if (node.Modifiers.Any(SyntaxKind.ConstKeyword))
-            {
-                foreach (var vardec in node.Declaration.Variables)
-                {
-                    if (vardec.Initializer is null)
-                    {
-                        continue;
-                    }
-
-                    _constants.Add(vardec.Identifier.ToString(), vardec.Initializer.Value);
-                }
-            }
-            return base.VisitFieldDeclaration(node);
         }
     }
 
