@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_GPURenderPass")]
-public readonly unsafe partial struct GpuRenderPassHandle
+public readonly unsafe partial struct GpuRenderPassHandle : IEquatable<GpuRenderPassHandle>
 {
     public readonly void* Handle;
 

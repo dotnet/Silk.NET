@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkDescriptorUpdateTemplate")]
 public readonly unsafe partial struct DescriptorUpdateTemplateHandle
+    : IEquatable<DescriptorUpdateTemplateHandle>
 {
     public readonly void* Handle;
 

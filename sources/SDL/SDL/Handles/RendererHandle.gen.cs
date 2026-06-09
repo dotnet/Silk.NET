@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_Renderer")]
-public readonly unsafe partial struct RendererHandle
+public readonly unsafe partial struct RendererHandle : IEquatable<RendererHandle>
 {
     public readonly void* Handle;
 

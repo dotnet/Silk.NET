@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_Thread")]
-public readonly unsafe partial struct ThreadHandle
+public readonly unsafe partial struct ThreadHandle : IEquatable<ThreadHandle>
 {
     public readonly void* Handle;
 

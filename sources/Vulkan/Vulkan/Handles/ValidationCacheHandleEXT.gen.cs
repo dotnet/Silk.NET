@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkValidationCacheEXT")]
 public readonly unsafe partial struct ValidationCacheHandleEXT
+    : IEquatable<ValidationCacheHandleEXT>
 {
     public readonly void* Handle;
 
