@@ -154,14 +154,18 @@ public class ExtractEnumConstants : IMod
 
     private class Walker : CSharpSyntaxRewriter
     {
-        // TODO: Figure out what these actually mean
-        private record struct A(
+        private record struct BackingType(
             SyntaxKind Type,
             HashSet<string> ReferencingFileDirs,
             HashSet<string> ReferencingNamespaces
         );
 
-        private readonly Dictionary<string, A?> _numericTypeNames = new();
+        /// <summary>
+        /// Tracks the backing type to use for identified enum types.
+        /// Null is used when there are more than one potential backing type
+        /// or if the identified backing type cannot be used as a valid C# enum backing type.
+        /// </summary>
+        private readonly Dictionary<string, BackingType?> _numericTypeNames = new();
 
         /// <summary>
         /// Tracks the name and value of constants discovered.
@@ -179,7 +183,11 @@ public class ExtractEnumConstants : IMod
                 var thisType = node.Keyword.Kind();
                 if (!_numericTypeNames.TryGetValue(nativeTypeName, out var numericTypeName))
                 {
-                    _numericTypeNames[nativeTypeName] = numericTypeName = new A(thisType, [], []);
+                    _numericTypeNames[nativeTypeName] = numericTypeName = new BackingType(
+                        thisType,
+                        [],
+                        []
+                    );
                 }
 
                 if (
