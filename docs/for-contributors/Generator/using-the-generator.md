@@ -27,9 +27,11 @@ Note: For the average C API, SDL's generator configuration would be the best con
 used for the SDL bindings should be applicable after replacing the SDL-specific paths and values to suit the C API that
 you are binding.
 
-## `generator.json`
+## SilkTouch Configuration
 
-This file defines the different bindings jobs and defines which mods to run for each of them.
+Silk defines the configuration for SilkTouch in the
+[`generator.json`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/generator.json) file. This file defines the
+different bindings jobs and the list of mods to run for each job.
 
 For example, when binding to a C API:
 
@@ -50,11 +52,15 @@ Aside from reading documentation, some other ways to learn about the mods are to
 
 (TODO: Not sure how to set up bindings test projects. This refers to the `TestProject` property in `generator.json`.)
 
-## `eng/silktouch`
+## ClangSharpPInvokeGenerator Configuration
 
-This folder stores `.rsp` files that hold command line arguments for ClangSharpPInvokeGenerator. While these `.rsp`
-files can be stored anywhere in relation to the `generator.json` file, Silk stores its own `.rsp` files in the
-[`eng/silktouch`](https://github.com/dotnet/Silk.NET/tree/develop/3.0/eng/silktouch) folder.
+Due to SilkTouch using ClangSharpPInvokeGenerator as an input, ClangSharpPInvokeGenerator must also be configured.
+Silk stores its configuration for ClangSharpPInvokeGenerator in the
+[`eng/silktouch`](https://github.com/dotnet/Silk.NET/tree/develop/3.0/eng/silktouch) folder as `.rsp` files (response
+files). These response files store command line arguments to be passed into ClangSharpPInvokeGenerator.
+
+Note that these files can be stored anywhere since the SilkTouch configuration lets you configure where the SilkTouch
+generator looks for these response files.
 
 > To read more about ClangSharpPInvokeGenerator's command line arguments, a good option is to install the tool directly
 > and use `--help` to display its command line documentation.
@@ -65,22 +71,22 @@ files can be stored anywhere in relation to the `generator.json` file, Silk stor
 > ClangSharpPInvokeGenerator --config help
 > ```
 
-Aside from simply storing the command line arguments to be passed into ClangSharpPInvokeGenerator, these `.rsp` files
-can also import other `.rsp` files using the `@path` syntax. For example: `@../settings.rsp`.
+Aside from simply storing the command line arguments to be passed into ClangSharpPInvokeGenerator, response files can
+also import other response files using the `@path` syntax. For example: `@../settings.rsp`.
 
 Silk commonly uses these import paths to share settings between different sets of bindings, such as the
 [common.rsp](https://github.com/dotnet/Silk.NET/blob/develop/3.0/eng/silktouch/common.rsp) file for general shared
 settings and the [remap-stdint.rsp](https://github.com/dotnet/Silk.NET/blob/develop/3.0/eng/silktouch/remap-stdint.rsp)
 file used to ensure that the `stdint.h` types behave consistently between Windows and Linux.
 
-Please note that these paths are relative to the `.rsp` file specified in the generator and **not** relative to the
-`.rsp` file the directive is actually defined in.
+Please note that these paths are relative to the response file specified in the generator and **not** relative to the
+response file the `@path` directive is actually defined in.
 
 For example, Silk's SDL bindings sets `ClangSharpResponseFiles` to be `eng/silktouch/sdl/**/generate.rsp`. Therefore,
-any import paths used in any `.rsp` file reference, including transitively imported `.rsp files`, must be relative to
+any import paths used in the response files, including transitively imported response files, must be relative to
 the matched `generate.rsp` file.
 
-### `eng/silktouch` - Folder Structure
+### Example Response File Folder Structure
 
 This is the general structure of the `eng/silktouch` folder:
 
@@ -98,9 +104,9 @@ eng
 
 Profiles likely will not be relevent for most C APIs, so the examples here will keep focusing on the SDL case.
 
-The following is the folder structure used for Silk's SDL bindings. Note that you do not necessarily have to structure
-it this way. Silk's structure focuses on keeping consistency in its `.rsp` file organization, regardless of whether the
-API makes use of profiles or not.
+The following is the folder structure used for Silk's SDL bindings. You do not have to structure it the way Silk does.
+Silk's structure focuses on keeping consistency in its response file organization, regardless of whether the API makes
+use of profiles or not.
 
 ```
 eng
@@ -114,9 +120,9 @@ eng
     - settings.rsp <-- Shared settings for all profiles.
 ```
 
-### `eng/silktouch` - Example Configuration
+### Example ClangSharpPInvokeGenerator Configuration
 
-This section will now focus on how to actually create the `.rsp` files, beginning with the `sdl-SDL.h`, `generate.rsp`,
+This section will now focus on how to actually create the response files, starting with the `sdl-SDL.h`, `generate.rsp`,
 and `settings.rsp` files. The snippets below will only contain the most important sections of those files for brevity.
 
 `sdl-SDL.h`:
