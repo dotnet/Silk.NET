@@ -19,11 +19,10 @@ public class ExtractHandlesTests
     [Test]
     public async Task SuccessfullyExtractsHandleType()
     {
-        var inputDocName = "Vk.gen.cs";
         var project = TestUtils
             .CreateTestProject()
             .AddDocument(
-                inputDocName,
+                "Vk.gen.cs",
                 """
                 public struct VkAllocationCallbacks;
                 public struct VkInstanceCreateInfo;
@@ -47,8 +46,6 @@ public class ExtractHandlesTests
         await extractHandles.ExecuteAsync(context);
 
         // There should be an empty struct named VkInstance_T in a new file
-        await TestUtils.VerifyDocumentsAsync(
-            [context.SourceProject.Documents.Single(x => x.Name != inputDocName)]
-        );
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 }
