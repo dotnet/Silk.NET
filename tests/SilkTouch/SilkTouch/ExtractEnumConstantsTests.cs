@@ -115,16 +115,16 @@ public class ExtractEnumConstantsTests
                     );
                 }
                 """,
-                // ExtractNestedTyping requires the file path to be set and that the document is under a subfolder
+                // ExtractNestedConstants requires the file path to be set and that the document is under a subfolder
                 filePath: $"SDL3/{inputDocName}"
             )
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
 
-        var extractNestedTyping = new ExtractEnumConstants();
+        var extractEnumConstants = new ExtractEnumConstants();
 
-        await extractNestedTyping.ExecuteAsync(context);
+        await extractEnumConstants.ExecuteAsync(context);
 
         // The constants should have been moved from the Sdl clas to the SDL_BlendMode enum
         await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
@@ -173,16 +173,16 @@ public class ExtractEnumConstantsTests
                     );
                 }
                 """,
-                // ExtractNestedTyping requires the file path to be set and that the document is under a subfolder
+                // ExtractNestedConstants requires the file path to be set and that the document is under a subfolder
                 filePath: $"SDL3/{inputDocName}"
             )
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
 
-        var extractNestedTyping = new ExtractEnumConstants();
+        var extractEnumConstants = new ExtractEnumConstants();
 
-        await extractNestedTyping.ExecuteAsync(context);
+        await extractEnumConstants.ExecuteAsync(context);
 
         // The constants should have been moved from the Sdl clas to the SDL_BlendMode enum
         await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
@@ -235,16 +235,16 @@ public class ExtractEnumConstantsTests
                     );
                 }
                 """,
-                // ExtractNestedTyping requires the file path to be set and that the document is under a subfolder
+                // ExtractNestedConstants requires the file path to be set and that the document is under a subfolder
                 filePath: $"SDL3/{inputDocName}"
             )
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
 
-        var extractNestedTyping = new ExtractEnumConstants();
+        var extractEnumConstants = new ExtractEnumConstants();
 
-        await extractNestedTyping.ExecuteAsync(context);
+        await extractEnumConstants.ExecuteAsync(context);
 
         // The constants should have been moved from the Sdl clas to the SDL_BlendMode enum
         await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
