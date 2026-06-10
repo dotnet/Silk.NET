@@ -477,12 +477,16 @@ Name affix categories:
   when the enum type's vendor suffix does not match the vendor suffixes used by the enum members contained within that
   type. For example, `BufferUsageARB` has the `ARB` vendor suffix, but contains non-suffixed members such as
   `GL_STREAM_DRAW`. Similarly, `GetMultisamplePNameNV` contains `ProgrammableSampleLocationARB`, which is also a
-  mismatch. This affix category is only intended to be used for OpenGL-like APIs where enum member promotion was not
+  mismatch.
+
+  This affix category is only intended to be used for OpenGL-like APIs where enum member promotion was not
   fully defined, leading to inconsistent vendor suffixing where a non-promoted enum type contains a promoted enum
   member. Modern APIs like Vulkan do not have this issue. In modern APIs, there can be "mismatches", but those are cases
   where promoted enum types contain non-promoted enum members, which is allowed. As such, Silk's bindings enables
   `IdentifyEnumTypeNonExclusiveVendors` and configures `KhronosNonExclusiveVendor` affixes to be removed only for
-  OpenGL-like APIs. Furthermore, `IdentifyEnumTypeNonExclusiveVendors` also interacts with
+  OpenGL-like APIs.
+
+  Furthermore, `IdentifyEnumTypeNonExclusiveVendors` also interacts with
   `IdentifyEnumMemberImpliedVendors`. Specifically, if an enum type is identified to have a non-exclusive vendor, that
   vendor will not be used to identify implied vendors, as it is assumed that the non-exclusive vendor will be removed.
   Also note that the behavior of `IdentifyEnumTypeNonExclusiveVendors` can be considered "too aggressive" since it
