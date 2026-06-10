@@ -407,8 +407,9 @@ decisions made during the development of the mod and other internal details rath
 For information relating to how the mod should be used, please use Silk's `generator.json` configuration, source code,
 and `MixKhronosDataTests` as a reference.
 
-(TODO: Document major decisions relating to MixKhronosData. This is difficult because of the mod's long development
-history. This should be done over time as further changes are made to the mod.)
+(TODO: Document major decisions relating to `MixKhronosData`. This is difficult because of the mod's long development
+history, and while this section is already massive, it still does not cover everything the mod does. This should be done
+over time as further changes are made to the mod.)
 
 To combat the monolithic nature of the mod, the mod is split into multiple phases. This refers to both the
 `InitializeAsync` and `ExecuteAsync` phases, as well as the use of multiple rewriters. The mod also implements
@@ -677,7 +678,8 @@ This mod currently handles the following transformations:
 
 Usage recommendations:
 
-(TODO: To be expanded)
+This mod should be used when the above transformations are desired. Currently, there are no configuration options to
+disable the string constant to `Utf8String` transformation, but we may add an option in the future.
 
 While not a requirement, the `BoolTypes` property in the configuration should match the configuration used in
 `TransformFunctions` for consistency.
