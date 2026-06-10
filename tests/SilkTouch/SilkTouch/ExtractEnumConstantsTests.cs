@@ -24,7 +24,7 @@ public class ExtractEnumConstantsTests
             .AddDocument(
                 inputDocName,
                 """
-                public unsafe partial struct Sdl
+                public unsafe partial class Sdl
                 {
                     [NativeTypeName("#define SDL_BLENDMODE_NONE 0x00000000u")]
                     public const uint SDL_BLENDMODE_NONE = 0x00000000U;
@@ -81,7 +81,7 @@ public class ExtractEnumConstantsTests
             .AddDocument(
                 inputDocName,
                 """
-                public unsafe partial struct Sdl
+                public unsafe partial class Sdl
                 {
                     [NativeTypeName("#define SDL_BLENDMODE_NONE 0x00000000u")]
                     public const uint SDL_BLENDMODE_NONE = 0x00000000U;
@@ -139,7 +139,7 @@ public class ExtractEnumConstantsTests
             .AddDocument(
                 inputDocName,
                 """
-                public unsafe partial struct Sdl
+                public unsafe partial class Sdl
                 {
                     [NativeTypeName("#define SDL_BLENDMODE_NONE 0x00000000u")]
                     public const uint SDL_BLENDMODE_NONE = 0x00000000U;
@@ -197,7 +197,7 @@ public class ExtractEnumConstantsTests
             .AddDocument(
                 inputDocName,
                 """
-                public unsafe partial struct Sdl
+                public unsafe partial class Sdl
                 {
                     [NativeTypeName("#define SDL_BLENDMODE_NONE 0x00000000u")]
                     public const uint SDL_BLENDMODE_NONE = 0x00000000U;

@@ -13,7 +13,7 @@ public enum SDL_BlendMode : uint
 }
 
 // Sdl.gen.cs
-public unsafe partial struct Sdl
+public unsafe partial class Sdl
 {
 }
 
