@@ -125,6 +125,8 @@ Silk.NET.Core.IGLContext.VSync.get -> bool
 Silk.NET.Core.IGLContext.VSync.set -> void
 Silk.NET.Core.IGLContextSource
 Silk.NET.Core.IGLContextSource.GLContext.get -> Silk.NET.Core.IGLContext?
+Silk.NET.Core.IHandle
+Silk.NET.Core.IHandle.IsNull.get -> bool
 Silk.NET.Core.INativeWindow
 Silk.NET.Core.INativeWindow.TryGetPlatformInfo<TPlatformInfo>(out TPlatformInfo? info) -> bool
 Silk.NET.Core.Loader.DefaultNativeContext

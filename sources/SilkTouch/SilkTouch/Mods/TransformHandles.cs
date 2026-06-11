@@ -249,6 +249,11 @@ public class TransformHandles(
                         Token(SyntaxKind.UnsafeKeyword),
                         Token(SyntaxKind.PartialKeyword)
                     )
+                )
+                .WithBaseList(
+                    BaseList(
+                        [SimpleBaseType(ParseTypeName("IHandle"))]
+                    )
                 );
         }
 
@@ -457,6 +462,23 @@ public class TransformHandles(
                                         SingletonSeparatedList(Argument(IdentifierName("right")))
                                     )
                                 )
+                        )
+                    )
+                )
+                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
+            // IHandle.IsNull
+            yield return PropertyDeclaration(
+                    PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                    Identifier("IsNull")
+                )
+                .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                .WithExpressionBody(
+                    ArrowExpressionClause(
+                        BinaryExpression(
+                            SyntaxKind.EqualsExpression,
+                            CastExpression(IdentifierName("IntPtr"), IdentifierName("Handle")),
+                            LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(0))
                         )
                     )
                 )
