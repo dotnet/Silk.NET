@@ -1,7 +1,7 @@
 {
   "Jobs": {
     "Microsoft": {
-      "Solution": "Silk.NET.sln",
+      "Solution": "Silk.NET.slnx",
       "SourceProject": "sources/Win32/Win32/Silk.NET.Win32.csproj",
       "TestProject": "tests/Win32/Win32/Silk.NET.Win32.UnitTests.csproj",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
@@ -36,7 +36,7 @@
     "SDL": {
       "SourceProject": "sources/SDL/SDL/Silk.NET.SDL.csproj",
       "TestProject": "tests/SDL/SDL/Silk.NET.SDL.UnitTests.csproj",
-      "Solution": "Silk.NET.sln",
+      "Solution": "Silk.NET.slnx",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
@@ -97,7 +97,7 @@
     },
     "OpenGL": {
       "SourceProject": "sources/OpenGL/OpenGL/Silk.NET.OpenGL.csproj",
-      "Solution": "Silk.NET.sln",
+      "Solution": "Silk.NET.slnx",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
@@ -244,7 +244,7 @@
     },
     "OpenAL": {
       "SourceProject": "sources/OpenAL/OpenAL/Silk.NET.OpenAL.csproj",
-      "Solution": "Silk.NET.sln",
+      "Solution": "Silk.NET.slnx",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
@@ -390,7 +390,7 @@
     },
     "Vulkan": {
       "SourceProject": "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
-      "Solution": "Silk.NET.sln",
+      "Solution": "Silk.NET.slnx",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
