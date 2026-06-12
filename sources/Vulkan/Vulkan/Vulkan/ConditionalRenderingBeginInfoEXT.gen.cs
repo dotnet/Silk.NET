@@ -21,7 +21,7 @@ public unsafe partial struct ConditionalRenderingBeginInfoEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ConditionalRenderingBeginInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -66,4 +66,14 @@ public unsafe partial struct ConditionalRenderingBeginInfoEXT
         ]
     )]
     public ConditionalRenderingFlagsEXT Flags;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
+    public ConditionalRenderingBeginInfoEXT() { }
 }

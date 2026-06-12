@@ -22,7 +22,7 @@ public unsafe partial struct ShaderCreateInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ShaderCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -179,4 +179,15 @@ public unsafe partial struct ShaderCreateInfoEXT
         ]
     )]
     public SpecializationInfo* PSpecializationInfo;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_object"],
+        ImpliesSets = [
+            "VK_KHR_dynamic_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_dynamic_rendering+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    public ShaderCreateInfoEXT() { }
 }

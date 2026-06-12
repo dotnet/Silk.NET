@@ -23,7 +23,7 @@ public unsafe partial struct PhysicalDeviceMaintenance6Features
         ],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMaintenance6Features;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -41,4 +41,16 @@ public unsafe partial struct PhysicalDeviceMaintenance6Features
     [NativeName("maintenance6")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public MaybeBool<uint> Maintenance6;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    public PhysicalDeviceMaintenance6Features() { }
 }

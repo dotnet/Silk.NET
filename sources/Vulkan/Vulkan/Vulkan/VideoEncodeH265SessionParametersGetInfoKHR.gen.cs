@@ -18,7 +18,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeH265SessionParametersGetInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -75,4 +75,11 @@ public unsafe partial struct VideoEncodeH265SessionParametersGetInfoKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     public uint StdPpsId;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeH265SessionParametersGetInfoKHR() { }
 }

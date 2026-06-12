@@ -13,7 +13,7 @@ public unsafe partial struct ImageViewAddressPropertiesNVX
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.ImageViewAddressPropertiesNVX;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
@@ -26,4 +26,7 @@ public unsafe partial struct ImageViewAddressPropertiesNVX
     [NativeName("size")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     public ulong Size;
+
+    [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
+    public ImageViewAddressPropertiesNVX() { }
 }

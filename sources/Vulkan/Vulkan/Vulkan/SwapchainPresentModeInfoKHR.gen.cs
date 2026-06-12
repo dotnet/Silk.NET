@@ -22,7 +22,7 @@ public unsafe partial struct SwapchainPresentModeInfoKHR
             "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SwapchainPresentModeInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -59,4 +59,15 @@ public unsafe partial struct SwapchainPresentModeInfoKHR
         ]
     )]
     public PresentModeKHR* PPresentModes;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
+            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+        ]
+    )]
+    public SwapchainPresentModeInfoKHR() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct ImageViewAstcDecodeModeEXT
             "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ImageViewAstcDecodeModeEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct ImageViewAstcDecodeModeEXT
         ]
     )]
     public Format DecodeMode;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_astc_decode_mode"],
+        ImpliesSets = [
+            "VK_EXT_astc_decode_mode+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
+        ]
+    )]
+    public ImageViewAstcDecodeModeEXT() { }
 }

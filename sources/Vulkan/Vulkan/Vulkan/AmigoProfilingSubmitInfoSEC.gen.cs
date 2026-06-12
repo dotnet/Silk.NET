@@ -20,7 +20,7 @@ public unsafe partial struct AmigoProfilingSubmitInfoSEC
             "VK_SEC_amigo_profiling+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.AmigoProfilingSubmitInfoSEC;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct AmigoProfilingSubmitInfoSEC
         ]
     )]
     public ulong SwapBufferTimestamp;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_amigo_profiling"],
+        ImpliesSets = [
+            "VK_SEC_amigo_profiling+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_amigo_profiling+VK_VERSION_1_1",
+        ]
+    )]
+    public AmigoProfilingSubmitInfoSEC() { }
 }

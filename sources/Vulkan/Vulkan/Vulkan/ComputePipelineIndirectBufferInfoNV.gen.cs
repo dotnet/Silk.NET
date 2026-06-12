@@ -17,7 +17,7 @@ public unsafe partial struct ComputePipelineIndirectBufferInfoNV
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ComputePipelineIndirectBufferInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -50,4 +50,11 @@ public unsafe partial struct ComputePipelineIndirectBufferInfoNV
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
     public ulong PipelineDeviceAddressCaptureReplay;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands_compute"],
+        ImpliesSets = ["VK_NV_device_generated_commands"]
+    )]
+    public ComputePipelineIndirectBufferInfoNV() { }
 }

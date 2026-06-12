@@ -21,7 +21,7 @@ public unsafe partial struct DeviceDiagnosticsConfigCreateInfoNV
             "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DeviceDiagnosticsConfigCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct DeviceDiagnosticsConfigCreateInfoNV
         ]
     )]
     public DeviceDiagnosticsConfigFlagsNV Flags;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_diagnostics_config"],
+        ImpliesSets = [
+            "VK_NV_device_diagnostics_config+VK_KHR_get_physical_device_properties2",
+            "VK_NV_device_diagnostics_config+VK_VERSION_1_1",
+        ]
+    )]
+    public DeviceDiagnosticsConfigCreateInfoNV() { }
 }

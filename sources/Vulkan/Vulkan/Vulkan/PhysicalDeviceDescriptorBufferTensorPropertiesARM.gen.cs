@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferTensorPropertiesARM
         ImpliesSets = ["VK_VERSION_1_3"],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDescriptorBufferTensorPropertiesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,12 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferTensorPropertiesARM
         RequireAll = true
     )]
     public nuint TensorDescriptorSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
+    public PhysicalDeviceDescriptorBufferTensorPropertiesARM() { }
 }

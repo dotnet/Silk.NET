@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceVertexAttributeDivisorFeatures
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVertexAttributeDivisorFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -39,4 +39,11 @@ public unsafe partial struct PhysicalDeviceVertexAttributeDivisorFeatures
         MinVersion = "1.4"
     )]
     public MaybeBool<uint> VertexAttributeInstanceRateZeroDivisor;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public PhysicalDeviceVertexAttributeDivisorFeatures() { }
 }

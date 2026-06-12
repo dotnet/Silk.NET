@@ -19,7 +19,7 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
         ImpliesSets = ["VK_VERSION_1_1"],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SetDescriptorBufferOffsetsInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -83,4 +83,12 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
         RequireAll = true
     )]
     public ulong* POffsets;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
+        ImpliesSets = ["VK_VERSION_1_1"],
+        RequireAll = true
+    )]
+    public SetDescriptorBufferOffsetsInfoEXT() { }
 }

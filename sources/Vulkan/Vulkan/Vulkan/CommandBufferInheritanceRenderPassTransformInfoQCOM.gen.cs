@@ -14,7 +14,7 @@ public unsafe partial struct CommandBufferInheritanceRenderPassTransformInfoQCOM
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.CommandBufferInheritanceRenderPassTransformInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
@@ -27,4 +27,7 @@ public unsafe partial struct CommandBufferInheritanceRenderPassTransformInfoQCOM
     [NativeName("renderArea")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     public Rect2D RenderArea;
+
+    [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
+    public CommandBufferInheritanceRenderPassTransformInfoQCOM() { }
 }

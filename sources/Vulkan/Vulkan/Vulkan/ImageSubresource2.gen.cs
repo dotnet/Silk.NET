@@ -22,7 +22,7 @@ public unsafe partial struct ImageSubresource2
         ],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ImageSubresource2;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -49,4 +49,16 @@ public unsafe partial struct ImageSubresource2
         MinVersion = "1.4"
     )]
     public ImageSubresource ImageSubresource;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    public ImageSubresource2() { }
 }

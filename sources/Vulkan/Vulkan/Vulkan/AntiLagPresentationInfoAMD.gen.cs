@@ -21,7 +21,7 @@ public unsafe partial struct AntiLagPresentationInfoAMD
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.AntiLagPresentationInfoAMD;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct AntiLagPresentationInfoAMD
         ]
     )]
     public ulong FrameIndex;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_anti_lag"],
+        ImpliesSets = [
+            "VK_AMD_anti_lag+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_anti_lag+VK_VERSION_1_1",
+        ]
+    )]
+    public AntiLagPresentationInfoAMD() { }
 }

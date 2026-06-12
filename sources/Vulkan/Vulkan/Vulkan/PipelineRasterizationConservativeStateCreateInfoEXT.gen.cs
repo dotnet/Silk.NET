@@ -20,7 +20,7 @@ public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineRasterizationConservativeStateCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -65,4 +65,14 @@ public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT
         ]
     )]
     public float ExtraPrimitiveOverestimationSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conservative_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_conservative_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    public PipelineRasterizationConservativeStateCreateInfoEXT() { }
 }

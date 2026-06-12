@@ -30,7 +30,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVulkan1x2Properties;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -1144,4 +1144,24 @@ public unsafe partial struct PhysicalDeviceVulkan12Properties
         MinVersion = "1.2"
     )]
     public SampleCountFlags FramebufferIntegerColorSampleCounts;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceVulkan12Properties() { }
 }

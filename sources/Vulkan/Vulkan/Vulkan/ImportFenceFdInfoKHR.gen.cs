@@ -19,7 +19,7 @@ public unsafe partial struct ImportFenceFdInfoKHR
             "VK_KHR_external_fence_fd+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ImportFenceFdInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -75,4 +75,14 @@ public unsafe partial struct ImportFenceFdInfoKHR
         ]
     )]
     public int Fd;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_fence_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_fence_fd+VK_KHR_external_fence",
+            "VK_KHR_external_fence_fd+VK_VERSION_1_1",
+        ]
+    )]
+    public ImportFenceFdInfoKHR() { }
 }

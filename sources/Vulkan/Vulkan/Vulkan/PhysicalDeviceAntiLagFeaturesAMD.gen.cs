@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceAntiLagFeaturesAMD
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceAntiLagFeaturesAMD;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,14 @@ public unsafe partial struct PhysicalDeviceAntiLagFeaturesAMD
         ]
     )]
     public MaybeBool<uint> AntiLag;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_anti_lag"],
+        ImpliesSets = [
+            "VK_AMD_anti_lag+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_anti_lag+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceAntiLagFeaturesAMD() { }
 }

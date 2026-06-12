@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHUAWEI
             "VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceSubpassShadingFeaturesHUAWEI;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -46,4 +46,15 @@ public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHUAWEI
         ]
     )]
     public MaybeBool<uint> SubpassShading;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_subpass_shading"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_create_renderpass2",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    public PhysicalDeviceSubpassShadingFeaturesHUAWEI() { }
 }

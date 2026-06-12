@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructureFeaturesN
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceClusterAccelerationStructureFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructureFeaturesN
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     public MaybeBool<uint> ClusterAccelerationStructure;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public PhysicalDeviceClusterAccelerationStructureFeaturesNV() { }
 }

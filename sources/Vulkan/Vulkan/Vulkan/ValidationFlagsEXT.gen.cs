@@ -13,7 +13,7 @@ public unsafe partial struct ValidationFlagsEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.ValidationFlagsEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
@@ -26,4 +26,7 @@ public unsafe partial struct ValidationFlagsEXT
     [NativeName("pDisabledValidationChecks")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     public ValidationCheckEXT* PDisabledValidationChecks;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
+    public ValidationFlagsEXT() { }
 }

@@ -16,7 +16,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMeshShaderFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -68,4 +68,11 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
     public MaybeBool<uint> MeshShaderQueries;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mesh_shader"],
+        ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
+    )]
+    public PhysicalDeviceMeshShaderFeaturesEXT() { }
 }

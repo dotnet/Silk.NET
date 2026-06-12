@@ -17,7 +17,7 @@ public unsafe partial struct VideoDecodeVp9PictureInfoKHR
         ["VK_KHR_video_decode_vp9"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoDecodeVp9PictureInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -66,4 +66,11 @@ public unsafe partial struct VideoDecodeVp9PictureInfoKHR
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
     public uint TilesOffset;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
+    public VideoDecodeVp9PictureInfoKHR() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct VideoEncodeAv1QuantizationMapCapabilitiesKHR
         ],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeAv1QuantizationMapCapabilitiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -58,4 +58,15 @@ public unsafe partial struct VideoEncodeAv1QuantizationMapCapabilitiesKHR
         RequireAll = true
     )]
     public int MaxQIndexDelta;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_av1", "VK_KHR_video_encode_quantization_map"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
+    public VideoEncodeAv1QuantizationMapCapabilitiesKHR() { }
 }

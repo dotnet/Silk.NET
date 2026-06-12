@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceImageProcessing2PropertiesQCOM
         ["VK_QCOM_image_processing2"],
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceImageProcessing2PropertiesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct PhysicalDeviceImageProcessing2PropertiesQCOM
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
     public Extent2D MaxBlockMatchWindow;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing2"],
+        ImpliesSets = ["VK_QCOM_image_processing"]
+    )]
+    public PhysicalDeviceImageProcessing2PropertiesQCOM() { }
 }

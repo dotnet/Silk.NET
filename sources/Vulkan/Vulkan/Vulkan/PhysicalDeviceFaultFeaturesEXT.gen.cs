@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceFaultFeaturesEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceFaultFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct PhysicalDeviceFaultFeaturesEXT
         ]
     )]
     public MaybeBool<uint> DeviceFaultVendorBinary;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_fault"],
+        ImpliesSets = [
+            "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceFaultFeaturesEXT() { }
 }

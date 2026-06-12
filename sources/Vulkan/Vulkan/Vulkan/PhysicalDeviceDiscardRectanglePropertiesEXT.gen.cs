@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceDiscardRectanglePropertiesEXT
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDiscardRectanglePropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceDiscardRectanglePropertiesEXT
         ]
     )]
     public uint MaxDiscardRectangles;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_discard_rectangles"],
+        ImpliesSets = [
+            "VK_EXT_discard_rectangles+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_discard_rectangles+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceDiscardRectanglePropertiesEXT() { }
 }

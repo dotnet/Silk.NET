@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceExternalMemoryRdmaFeaturesNV
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceExternalMemoryRdmaFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceExternalMemoryRdmaFeaturesNV
         ]
     )]
     public MaybeBool<uint> ExternalMemoryRdma;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_rdma"],
+        ImpliesSets = [
+            "VK_NV_external_memory_rdma+VK_KHR_external_memory",
+            "VK_NV_external_memory_rdma+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceExternalMemoryRdmaFeaturesNV() { }
 }

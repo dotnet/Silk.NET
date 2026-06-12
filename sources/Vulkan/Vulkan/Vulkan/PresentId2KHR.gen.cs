@@ -18,7 +18,7 @@ public unsafe partial struct PresentId2KHR
         ["VK_KHR_present_id2"],
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PresentId2KHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,11 @@ public unsafe partial struct PresentId2KHR
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
     )]
     public ulong* PPresentIds;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id2"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
+    )]
+    public PresentId2KHR() { }
 }

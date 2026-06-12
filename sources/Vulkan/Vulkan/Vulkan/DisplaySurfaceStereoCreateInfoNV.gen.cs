@@ -17,7 +17,7 @@ public unsafe partial struct DisplaySurfaceStereoCreateInfoNV
         ["VK_NV_display_stereo"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DisplaySurfaceStereoCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct DisplaySurfaceStereoCreateInfoNV
         ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
     )]
     public DisplaySurfaceStereoTypeNV StereoType;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_display_stereo"],
+        ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
+    )]
+    public DisplaySurfaceStereoCreateInfoNV() { }
 }

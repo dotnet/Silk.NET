@@ -18,7 +18,7 @@ public unsafe partial struct SamplerCubicWeightsCreateInfoQCOM
         ["VK_QCOM_filter_cubic_weights"],
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SamplerCubicWeightsCreateInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct SamplerCubicWeightsCreateInfoQCOM
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
     public CubicFilterWeightsQCOM CubicWeights;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_filter_cubic_weights"],
+        ImpliesSets = ["VK_EXT_filter_cubic"]
+    )]
+    public SamplerCubicWeightsCreateInfoQCOM() { }
 }

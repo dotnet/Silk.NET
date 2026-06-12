@@ -19,7 +19,7 @@ public unsafe partial struct PhysicalDeviceMaintenance10FeaturesKHR
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMaintenance10FeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,4 +42,14 @@ public unsafe partial struct PhysicalDeviceMaintenance10FeaturesKHR
         ]
     )]
     public MaybeBool<uint> Maintenance10;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance10"],
+        ImpliesSets = [
+            "VK_KHR_maintenance10+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance10+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceMaintenance10FeaturesKHR() { }
 }

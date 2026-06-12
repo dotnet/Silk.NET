@@ -23,7 +23,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDescriptorBufferPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -466,4 +466,16 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
         ]
     )]
     public ulong DescriptorBufferAddressSpaceSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    public PhysicalDeviceDescriptorBufferPropertiesEXT() { }
 }

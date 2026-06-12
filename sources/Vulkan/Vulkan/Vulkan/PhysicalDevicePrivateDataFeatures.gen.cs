@@ -27,7 +27,7 @@ public unsafe partial struct PhysicalDevicePrivateDataFeatures
         ],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePrivateDataFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -49,4 +49,20 @@ public unsafe partial struct PhysicalDevicePrivateDataFeatures
     [NativeName("privateData")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public MaybeBool<uint> PrivateData;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    public PhysicalDevicePrivateDataFeatures() { }
 }

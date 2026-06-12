@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceLegacyDitheringFeaturesEXT
             "VK_EXT_legacy_dithering+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceLegacyDitheringFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,14 @@ public unsafe partial struct PhysicalDeviceLegacyDitheringFeaturesEXT
         ]
     )]
     public MaybeBool<uint> LegacyDithering;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_dithering"],
+        ImpliesSets = [
+            "VK_EXT_legacy_dithering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_legacy_dithering+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceLegacyDitheringFeaturesEXT() { }
 }

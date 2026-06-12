@@ -13,7 +13,7 @@ public unsafe partial struct ExternalComputeQueueDataParamsNV
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.ExternalComputeQueueDataParamsNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
@@ -22,4 +22,7 @@ public unsafe partial struct ExternalComputeQueueDataParamsNV
     [NativeName("deviceIndex")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     public uint DeviceIndex;
+
+    [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
+    public ExternalComputeQueueDataParamsNV() { }
 }

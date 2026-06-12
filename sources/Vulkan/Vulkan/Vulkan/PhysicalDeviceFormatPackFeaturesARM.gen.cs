@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceFormatPackFeaturesARM
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceFormatPackFeaturesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceFormatPackFeaturesARM
         ]
     )]
     public MaybeBool<uint> FormatPack;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_format_pack"],
+        ImpliesSets = [
+            "VK_ARM_format_pack+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_format_pack+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceFormatPackFeaturesARM() { }
 }

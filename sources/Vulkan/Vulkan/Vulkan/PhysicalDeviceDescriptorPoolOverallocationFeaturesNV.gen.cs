@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceDescriptorPoolOverallocationFeaturesN
         ["VK_NV_descriptor_pool_overallocation"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDescriptorPoolOverallocationFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct PhysicalDeviceDescriptorPoolOverallocationFeaturesN
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
     public MaybeBool<uint> DescriptorPoolOverallocation;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_descriptor_pool_overallocation"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
+    public PhysicalDeviceDescriptorPoolOverallocationFeaturesNV() { }
 }

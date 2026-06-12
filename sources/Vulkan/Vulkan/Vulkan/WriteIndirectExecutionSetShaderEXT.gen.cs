@@ -22,7 +22,7 @@ public unsafe partial struct WriteIndirectExecutionSetShaderEXT
         ],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.WriteIndirectExecutionSetShaderEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -62,4 +62,16 @@ public unsafe partial struct WriteIndirectExecutionSetShaderEXT
         RequireAll = true
     )]
     public ShaderHandleEXT Shader;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands", "VK_EXT_shader_object"],
+        ImpliesSets = [
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
+    public WriteIndirectExecutionSetShaderEXT() { }
 }

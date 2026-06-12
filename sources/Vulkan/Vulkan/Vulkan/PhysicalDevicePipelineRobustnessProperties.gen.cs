@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDevicePipelineRobustnessProperties
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePipelineRobustnessProperties;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -58,4 +58,11 @@ public unsafe partial struct PhysicalDevicePipelineRobustnessProperties
         MinVersion = "1.4"
     )]
     public PipelineRobustnessImageBehavior DefaultRobustnessImages;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public PhysicalDevicePipelineRobustnessProperties() { }
 }

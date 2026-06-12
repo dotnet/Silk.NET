@@ -18,7 +18,7 @@ public unsafe partial struct DisplayProperties2KHR
         ["VK_KHR_get_display_properties2"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DisplayProperties2KHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct DisplayProperties2KHR
         ImpliesSets = ["VK_KHR_display"]
     )]
     public DisplayPropertiesKHR DisplayProperties;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_get_display_properties2"],
+        ImpliesSets = ["VK_KHR_display"]
+    )]
+    public DisplayProperties2KHR() { }
 }

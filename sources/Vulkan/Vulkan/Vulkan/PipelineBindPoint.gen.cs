@@ -60,6 +60,17 @@ public enum PipelineBindPoint : uint
     )]
     Compute = 1,
 
+    [NativeName("VK_PIPELINE_BIND_POINT_EXECUTION_GRAPH_AMDX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_shader_enqueue"],
+        ImpliesSets = [
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_KHR_synchronization2+VK_KHR_spirv_1_4+VK_EXT_extended_dynamic_state",
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_VERSION_1_3",
+        ]
+    )]
+    ExecutionGraphAMDX = 1000134000,
+
     [NativeName("VK_PIPELINE_BIND_POINT_RAY_TRACING_KHR")]
     [SupportedApiProfile(
         "vulkan",

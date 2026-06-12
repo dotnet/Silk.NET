@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceCoherentMemoryFeaturesAMD
             "VK_AMD_device_coherent_memory+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCoherentMemoryFeaturesAMD;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceCoherentMemoryFeaturesAMD
         ]
     )]
     public MaybeBool<uint> DeviceCoherentMemory;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_device_coherent_memory"],
+        ImpliesSets = [
+            "VK_AMD_device_coherent_memory+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_device_coherent_memory+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceCoherentMemoryFeaturesAMD() { }
 }

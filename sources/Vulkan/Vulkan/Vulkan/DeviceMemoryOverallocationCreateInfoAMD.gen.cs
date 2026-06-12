@@ -14,7 +14,7 @@ public unsafe partial struct DeviceMemoryOverallocationCreateInfoAMD
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.DeviceMemoryOverallocationCreateInfoAMD;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
@@ -23,4 +23,7 @@ public unsafe partial struct DeviceMemoryOverallocationCreateInfoAMD
     [NativeName("overallocationBehavior")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     public MemoryOverallocationBehaviorAMD OverallocationBehavior;
+
+    [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
+    public DeviceMemoryOverallocationCreateInfoAMD() { }
 }

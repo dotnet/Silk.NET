@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceRayQueryFeaturesKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceRayQueryFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceRayQueryFeaturesKHR
         ]
     )]
     public MaybeBool<uint> RayQuery;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_query"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+        ]
+    )]
+    public PhysicalDeviceRayQueryFeaturesKHR() { }
 }
