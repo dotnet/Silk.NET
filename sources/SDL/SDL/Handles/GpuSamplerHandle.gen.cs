@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_GPUSampler")]
-public readonly unsafe partial struct GpuSamplerHandle
+public readonly unsafe partial struct GpuSamplerHandle : IEquatable<GpuSamplerHandle>
 {
     public readonly void* Handle;
 

@@ -10,6 +10,7 @@ namespace Silk.NET.SDL;
 
 [NativeName("SDL_GPUComputePipeline")]
 public readonly unsafe partial struct GpuComputePipelineHandle
+    : IEquatable<GpuComputePipelineHandle>
 {
     public readonly void* Handle;
 

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_Condition")]
-public readonly unsafe partial struct ConditionHandle
+public readonly unsafe partial struct ConditionHandle : IEquatable<ConditionHandle>
 {
     public readonly void* Handle;
 

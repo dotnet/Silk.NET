@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPrivateDataSlot")]
-public readonly unsafe partial struct PrivateDataSlotHandle
+public readonly unsafe partial struct PrivateDataSlotHandle : IEquatable<PrivateDataSlotHandle>
 {
     public readonly void* Handle;
 

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_GPUCommandBuffer")]
-public readonly unsafe partial struct GpuCommandBufferHandle
+public readonly unsafe partial struct GpuCommandBufferHandle : IEquatable<GpuCommandBufferHandle>
 {
     public readonly void* Handle;
 

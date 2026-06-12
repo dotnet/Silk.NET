@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkDataGraphPipelineSessionARM")]
 public readonly unsafe partial struct DataGraphPipelineSessionHandleARM
+    : IEquatable<DataGraphPipelineSessionHandleARM>
 {
     public readonly void* Handle;
 

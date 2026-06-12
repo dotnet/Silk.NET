@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkDescriptorSetLayout")]
 public readonly unsafe partial struct DescriptorSetLayoutHandle
+    : IEquatable<DescriptorSetLayoutHandle>
 {
     public readonly void* Handle;
 

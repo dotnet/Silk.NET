@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkPerformanceConfigurationINTEL")]
 public readonly unsafe partial struct PerformanceConfigurationHandleINTEL
+    : IEquatable<PerformanceConfigurationHandleINTEL>
 {
     public readonly void* Handle;
 

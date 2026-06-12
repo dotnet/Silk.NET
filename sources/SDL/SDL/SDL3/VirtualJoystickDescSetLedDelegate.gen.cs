@@ -6,6 +6,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.SDL;
+
 [NativeName("SDL_VirtualJoystickDesc_SetLED")]
 public unsafe delegate byte VirtualJoystickDescSetLedDelegate(
     void* arg0,

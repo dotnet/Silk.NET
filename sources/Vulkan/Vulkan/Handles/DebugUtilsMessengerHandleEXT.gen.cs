@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkDebugUtilsMessengerEXT")]
 public readonly unsafe partial struct DebugUtilsMessengerHandleEXT
+    : IEquatable<DebugUtilsMessengerHandleEXT>
 {
     public readonly void* Handle;
 

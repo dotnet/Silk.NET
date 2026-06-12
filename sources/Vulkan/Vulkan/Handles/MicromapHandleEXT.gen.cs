@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkMicromapEXT")]
-public readonly unsafe partial struct MicromapHandleEXT
+public readonly unsafe partial struct MicromapHandleEXT : IEquatable<MicromapHandleEXT>
 {
     public readonly void* Handle;
 
