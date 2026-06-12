@@ -1,7 +1,7 @@
 # API-Specific Notes
 
 This document's purpose is to note down any decisions or quirks that are specific to a library that Silk is generating
-bindings for.
+bindings for. It is fine for a section to be empty if we do not have any notes specific to that library.
 
 This is meant to be a living document. Please update this as new work is being done on the generator.
 
