@@ -496,13 +496,13 @@ the mod.
 
 Khronos-style XML specifications:
 
-- OpenAL: https://raw.githubusercontent.com/kcat/openal-soft/refs/heads/master/registry/xml/al.xml
-- OpenCL: https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/refs/heads/main/xml/cl.xml
-- OpenGL: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/refs/heads/main/xml/gl.xml
+- OpenAL: https://raw.githubusercontent.com/kcat/openal-soft/master/registry/xml/al.xml
+- OpenCL: https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/main/xml/cl.xml
+- OpenGL: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml
 - OpenGL Windows: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml
-- OpenGL X11: https://github.com/KhronosGroup/OpenGL-Registry/blob/main/xml/glx.xml
-- OpenXR: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK/refs/heads/main/specification/registry/xr.xml
-- Vulkan: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/refs/heads/main/xml/vk.xml
+- OpenGL X11: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/glx.xml
+- OpenXR: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK/main/specification/registry/xr.xml
+- Vulkan: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/main/xml/vk.xml
 
 Be aware that these link to the latest version. Silk's repo may be using an older version of these XML files.
 
