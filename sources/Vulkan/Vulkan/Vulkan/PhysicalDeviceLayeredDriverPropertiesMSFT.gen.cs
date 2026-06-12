@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceLayeredDriverPropertiesMSFT
             "VK_MSFT_layered_driver+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceLayeredDriverPropertiesMSFT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,14 @@ public unsafe partial struct PhysicalDeviceLayeredDriverPropertiesMSFT
         ]
     )]
     public LayeredDriverUnderlyingApiMSFT UnderlyingApi;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_MSFT_layered_driver"],
+        ImpliesSets = [
+            "VK_MSFT_layered_driver+VK_KHR_get_physical_device_properties2",
+            "VK_MSFT_layered_driver+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceLayeredDriverPropertiesMSFT() { }
 }

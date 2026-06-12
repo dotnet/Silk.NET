@@ -21,7 +21,8 @@ public unsafe partial struct VideoEncodeQuantizationMapSessionParametersCreateIn
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.VideoEncodeQuantizationMapSessionParametersCreateInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +45,14 @@ public unsafe partial struct VideoEncodeQuantizationMapSessionParametersCreateIn
         ]
     )]
     public Extent2D QuantizationMapTexelSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_quantization_map"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
+        ]
+    )]
+    public VideoEncodeQuantizationMapSessionParametersCreateInfoKHR() { }
 }

@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceExternalMemoryHostPropertiesEXT
             "VK_EXT_external_memory_host+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceExternalMemoryHostPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,14 @@ public unsafe partial struct PhysicalDeviceExternalMemoryHostPropertiesEXT
         ]
     )]
     public ulong MinImportedHostPointerAlignment;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_host"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_host+VK_KHR_external_memory",
+            "VK_EXT_external_memory_host+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceExternalMemoryHostPropertiesEXT() { }
 }

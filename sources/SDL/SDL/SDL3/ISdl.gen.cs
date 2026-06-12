@@ -914,7 +914,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_ComposeCustomBlendMode")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ComposeCustomBlendMode")]
-        static abstract uint ComposeCustomBlendMode(
+        static abstract BlendMode ComposeCustomBlendMode(
             BlendFactor srcColorFactor,
             BlendFactor dstColorFactor,
             BlendOperation colorOperation,
@@ -11555,7 +11555,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_ComposeCustomBlendMode")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ComposeCustomBlendMode")]
-    uint ComposeCustomBlendMode(
+    BlendMode ComposeCustomBlendMode(
         BlendFactor srcColorFactor,
         BlendFactor dstColorFactor,
         BlendOperation colorOperation,

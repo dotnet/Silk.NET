@@ -17,7 +17,7 @@ public unsafe partial struct VideoDecodeH264CapabilitiesKHR
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoDecodeH264CapabilitiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,4 +42,11 @@ public unsafe partial struct VideoDecodeH264CapabilitiesKHR
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
     public Offset2D FieldOffsetGranularity;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
+    public VideoDecodeH264CapabilitiesKHR() { }
 }

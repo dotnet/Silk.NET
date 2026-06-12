@@ -24,7 +24,7 @@ public unsafe partial struct QueueFamilyCheckpointProperties2NV
             "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.QueueFamilyCheckpointProperties2NV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -53,4 +53,17 @@ public unsafe partial struct QueueFamilyCheckpointProperties2NV
         ]
     )]
     public PipelineStageFlags2 CheckpointExecutionStageMask;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_NV_device_diagnostic_checkpoints+VK_KHR_synchronization2",
+            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_NV_device_diagnostic_checkpoints+VK_KHR_get_physical_device_properties2",
+            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
+        ]
+    )]
+    public QueueFamilyCheckpointProperties2NV() { }
 }

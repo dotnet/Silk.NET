@@ -13,7 +13,7 @@ public unsafe partial struct PipelineViewportSwizzleStateCreateInfoNV
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineViewportSwizzleStateCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
@@ -30,4 +30,7 @@ public unsafe partial struct PipelineViewportSwizzleStateCreateInfoNV
     [NativeName("pViewportSwizzles")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     public ViewportSwizzleNV* PViewportSwizzles;
+
+    [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
+    public PipelineViewportSwizzleStateCreateInfoNV() { }
 }

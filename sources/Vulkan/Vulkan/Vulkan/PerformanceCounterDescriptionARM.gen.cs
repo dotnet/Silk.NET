@@ -21,7 +21,7 @@ public unsafe partial struct PerformanceCounterDescriptionARM
             "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PerformanceCounterDescriptionARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct PerformanceCounterDescriptionARM
         ]
     )]
     public PerformanceCounterDescriptionARMName Name;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
+    public PerformanceCounterDescriptionARM() { }
 }

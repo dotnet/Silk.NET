@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_GPUCopyPass")]
-public readonly unsafe partial struct GpuCopyPassHandle
+public readonly unsafe partial struct GpuCopyPassHandle : IEquatable<GpuCopyPassHandle>
 {
     public readonly void* Handle;
 

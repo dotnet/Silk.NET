@@ -13,7 +13,7 @@ public unsafe partial struct TensorMemoryRequirementsInfoARM
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.TensorMemoryRequirementsInfoARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
@@ -22,4 +22,7 @@ public unsafe partial struct TensorMemoryRequirementsInfoARM
     [NativeName("tensor")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorHandleARM Tensor;
+
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
+    public TensorMemoryRequirementsInfoARM() { }
 }

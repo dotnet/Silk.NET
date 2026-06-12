@@ -21,7 +21,7 @@ public unsafe partial struct QueueFamilyOwnershipTransferPropertiesKHR
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.QueueFamilyOwnershipTransferPropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct QueueFamilyOwnershipTransferPropertiesKHR
         ]
     )]
     public uint OptimalImageTransferToQueueFamilies;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance9"],
+        ImpliesSets = [
+            "VK_KHR_maintenance9+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance9+VK_VERSION_1_1",
+        ]
+    )]
+    public QueueFamilyOwnershipTransferPropertiesKHR() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
             "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.RenderPassPerformanceCountersByRegionBeginInfoARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -88,4 +88,14 @@ public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
         ]
     )]
     public uint* PCounterIndices;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
+    public RenderPassPerformanceCountersByRegionBeginInfoARM() { }
 }

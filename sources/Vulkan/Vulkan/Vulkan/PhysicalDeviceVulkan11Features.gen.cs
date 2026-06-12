@@ -31,7 +31,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVulkan1x1Features;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -215,4 +215,24 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         MinVersion = "1.1"
     )]
     public MaybeBool<uint> ShaderDrawParameters;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceVulkan11Features() { }
 }

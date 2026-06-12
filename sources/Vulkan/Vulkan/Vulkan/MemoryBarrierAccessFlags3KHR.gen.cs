@@ -13,7 +13,7 @@ public unsafe partial struct MemoryBarrierAccessFlags3KHR
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.MemoryBarrierAccessFlags3KHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
@@ -26,4 +26,7 @@ public unsafe partial struct MemoryBarrierAccessFlags3KHR
     [NativeName("dstAccessMask3")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     public AccessFlags3KHR DstAccessMask3;
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
+    public MemoryBarrierAccessFlags3KHR() { }
 }

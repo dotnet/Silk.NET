@@ -21,7 +21,7 @@ public unsafe partial struct VideoDecodeCapabilitiesKHR
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoDecodeCapabilitiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct VideoDecodeCapabilitiesKHR
         ]
     )]
     public VideoDecodeCapabilityFlagsKHR Flags;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_queue"],
+        ImpliesSets = [
+            "VK_KHR_video_queue+VK_KHR_synchronization2",
+            "VK_KHR_video_queue+VK_VERSION_1_3",
+        ]
+    )]
+    public VideoDecodeCapabilitiesKHR() { }
 }

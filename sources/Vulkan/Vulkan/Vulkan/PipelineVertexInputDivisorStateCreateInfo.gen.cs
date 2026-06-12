@@ -17,7 +17,7 @@ public unsafe partial struct PipelineVertexInputDivisorStateCreateInfo
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineVertexInputDivisorStateCreateInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,4 +42,11 @@ public unsafe partial struct PipelineVertexInputDivisorStateCreateInfo
         MinVersion = "1.4"
     )]
     public VertexInputBindingDivisorDescription* PVertexBindingDivisors;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public PipelineVertexInputDivisorStateCreateInfo() { }
 }

@@ -44,6 +44,9 @@ public enum BufferUsageFlags2 : ulong
     [NativeName("VK_BUFFER_USAGE_2_SHADER_DEVICE_ADDRESS_BIT")]
     ShaderDeviceAddressBit = 0x20000,
 
+    [NativeName("VK_BUFFER_USAGE_2_EXECUTION_GRAPH_SCRATCH_BIT_AMDX")]
+    ExecutionGraphScratchBitAMDX = 0x2000000,
+
     [NativeName("VK_BUFFER_USAGE_2_TRANSFER_SRC_BIT_KHR")]
     TransferSrcBitKHR = 0x1,
 
@@ -121,6 +124,9 @@ public enum BufferUsageFlags2 : ulong
 
     [NativeName("VK_BUFFER_USAGE_2_MICROMAP_STORAGE_BIT_EXT")]
     MicromapStorageBitEXT = 0x1000000,
+
+    [NativeName("VK_BUFFER_USAGE_2_COMPRESSED_DATA_DGF1_BIT_AMDX")]
+    CompressedDataDgf1BitAMDX = 0x200000000,
 
     [NativeName("VK_BUFFER_USAGE_2_DATA_GRAPH_FOREIGN_DESCRIPTOR_BIT_ARM")]
     DataGraphForeignDescriptorBitARM = 0x20000000,

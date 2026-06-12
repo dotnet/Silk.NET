@@ -22,7 +22,7 @@ public unsafe partial struct TileMemorySizeInfoQCOM
         ],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.TileMemorySizeInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -47,4 +47,15 @@ public unsafe partial struct TileMemorySizeInfoQCOM
         RequireAll = true
     )]
     public ulong Size;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_memory_heap", "VK_QCOM_tile_properties"],
+        ImpliesSets = [
+            "VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    public TileMemorySizeInfoQCOM() { }
 }

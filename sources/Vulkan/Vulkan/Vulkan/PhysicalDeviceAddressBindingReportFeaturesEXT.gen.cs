@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceAddressBindingReportFeaturesEXT
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceAddressBindingReportFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,14 @@ public unsafe partial struct PhysicalDeviceAddressBindingReportFeaturesEXT
         ]
     )]
     public MaybeBool<uint> ReportAddressBinding;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_address_binding_report"],
+        ImpliesSets = [
+            "VK_EXT_debug_utils+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_debug_utils+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceAddressBindingReportFeaturesEXT() { }
 }

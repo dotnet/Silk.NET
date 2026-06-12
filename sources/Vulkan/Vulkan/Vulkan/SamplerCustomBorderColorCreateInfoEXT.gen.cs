@@ -20,7 +20,7 @@ public unsafe partial struct SamplerCustomBorderColorCreateInfoEXT
             "VK_EXT_custom_border_color+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SamplerCustomBorderColorCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct SamplerCustomBorderColorCreateInfoEXT
         ]
     )]
     public Format Format;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_border_color"],
+        ImpliesSets = [
+            "VK_EXT_custom_border_color+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_border_color+VK_VERSION_1_1",
+        ]
+    )]
+    public SamplerCustomBorderColorCreateInfoEXT() { }
 }

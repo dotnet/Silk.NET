@@ -21,7 +21,7 @@ public unsafe partial struct PipelineViewportDepthClipControlCreateInfoEXT
             "VK_EXT_depth_clip_control+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineViewportDepthClipControlCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PipelineViewportDepthClipControlCreateInfoEXT
         ]
     )]
     public MaybeBool<uint> NegativeOneToOne;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clip_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_clip_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_clip_control+VK_VERSION_1_1",
+        ]
+    )]
+    public PipelineViewportDepthClipControlCreateInfoEXT() { }
 }

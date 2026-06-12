@@ -18,7 +18,7 @@ public unsafe partial struct SurfaceProtectedCapabilitiesKHR
         ["VK_KHR_surface_protected_capabilities"],
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_VERSION_1_1"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SurfaceProtectedCapabilitiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct SurfaceProtectedCapabilitiesKHR
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_VERSION_1_1"]
     )]
     public MaybeBool<uint> SupportsProtected;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_protected_capabilities"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_VERSION_1_1"]
+    )]
+    public SurfaceProtectedCapabilitiesKHR() { }
 }

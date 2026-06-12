@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceMultiDrawFeaturesEXT
             "VK_EXT_multi_draw+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMultiDrawFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceMultiDrawFeaturesEXT
         ]
     )]
     public MaybeBool<uint> MultiDraw;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multi_draw"],
+        ImpliesSets = [
+            "VK_EXT_multi_draw+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_multi_draw+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceMultiDrawFeaturesEXT() { }
 }

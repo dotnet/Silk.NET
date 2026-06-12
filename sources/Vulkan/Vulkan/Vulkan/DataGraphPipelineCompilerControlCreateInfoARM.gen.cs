@@ -17,7 +17,7 @@ public unsafe partial struct DataGraphPipelineCompilerControlCreateInfoARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DataGraphPipelineCompilerControlCreateInfoARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct DataGraphPipelineCompilerControlCreateInfoARM
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
     public sbyte* PVendorOptions;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
+    public DataGraphPipelineCompilerControlCreateInfoARM() { }
 }

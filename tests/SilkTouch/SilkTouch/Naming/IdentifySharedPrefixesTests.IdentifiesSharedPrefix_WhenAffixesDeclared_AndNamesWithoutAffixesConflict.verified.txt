@@ -1,4 +1,5 @@
-﻿[NameAffix("Suffix", "KhronosVendor", "KHR")]
+﻿// VkPresentModeKHR.gen.cs
+[NameAffix("Suffix", "KhronosVendor", "KHR")]
 public enum VkPresentModeKHR
 {
     [NameAffix("Prefix", "SharedPrefix", "VK_PRESENT_MODE_FIFO_LATEST")]

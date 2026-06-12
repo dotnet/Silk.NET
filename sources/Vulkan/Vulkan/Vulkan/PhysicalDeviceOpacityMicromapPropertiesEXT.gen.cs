@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapPropertiesEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceOpacityMicromapPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapPropertiesEXT
         ]
     )]
     public uint MaxOpacity4StateSubdivisionLevel;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    public PhysicalDeviceOpacityMicromapPropertiesEXT() { }
 }

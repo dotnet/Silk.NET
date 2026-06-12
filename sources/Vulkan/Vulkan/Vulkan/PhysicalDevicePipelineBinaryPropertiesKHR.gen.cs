@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePipelineBinaryPropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -87,4 +87,14 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
         ]
     )]
     public MaybeBool<uint> PipelineBinaryCompressedData;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
+    public PhysicalDevicePipelineBinaryPropertiesKHR() { }
 }

@@ -398,6 +398,14 @@ public enum PipelineCreateFlags : uint
     )]
     RayTracingOpacityMicromapBitEXT = 0x1000000,
 
+    [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_DISPLACEMENT_MICROMAP_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_displacement_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
+    RayTracingDisplacementMicromapBitNV = 0x10000000,
+
     [NativeName("VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

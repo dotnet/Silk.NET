@@ -20,7 +20,7 @@ public unsafe partial struct CopyMemoryIndirectInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CopyMemoryIndirectInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -76,4 +76,14 @@ public unsafe partial struct CopyMemoryIndirectInfoKHR
         ]
     )]
     public StridedDeviceAddressRangeKHR CopyAddressRange;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_memory_indirect"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    public CopyMemoryIndirectInfoKHR() { }
 }

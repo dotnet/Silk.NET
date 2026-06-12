@@ -18,7 +18,7 @@ public unsafe partial struct VideoDecodeAv1PictureInfoKHR
         ["VK_KHR_video_decode_av1"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoDecodeAv1PictureInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -75,4 +75,11 @@ public unsafe partial struct VideoDecodeAv1PictureInfoKHR
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
     public uint* PTileSizes;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_av1"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
+    public VideoDecodeAv1PictureInfoKHR() { }
 }

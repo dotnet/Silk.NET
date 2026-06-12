@@ -18,7 +18,7 @@ public unsafe partial struct VideoEncodeH265PictureInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeH265PictureInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -51,4 +51,11 @@ public unsafe partial struct VideoEncodeH265PictureInfoKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     public StdVideoEncodeH265PictureInfo* PStdPictureInfo;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeH265PictureInfoKHR() { }
 }

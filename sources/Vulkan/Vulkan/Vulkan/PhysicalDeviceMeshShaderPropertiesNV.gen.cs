@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMeshShaderPropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -176,4 +176,14 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
         ]
     )]
     public uint MeshOutputPerPrimitiveGranularity;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_mesh_shader"],
+        ImpliesSets = [
+            "VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2",
+            "VK_NV_mesh_shader+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceMeshShaderPropertiesNV() { }
 }

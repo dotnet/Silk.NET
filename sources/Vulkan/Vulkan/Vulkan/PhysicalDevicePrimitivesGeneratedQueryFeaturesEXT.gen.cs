@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
         ["VK_EXT_primitives_generated_query"],
         ImpliesSets = ["VK_EXT_transform_feedback"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -51,4 +51,11 @@ public unsafe partial struct PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
         ImpliesSets = ["VK_EXT_transform_feedback"]
     )]
     public MaybeBool<uint> PrimitivesGeneratedQueryWithNonZeroStreams;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_primitives_generated_query"],
+        ImpliesSets = ["VK_EXT_transform_feedback"]
+    )]
+    public PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT() { }
 }

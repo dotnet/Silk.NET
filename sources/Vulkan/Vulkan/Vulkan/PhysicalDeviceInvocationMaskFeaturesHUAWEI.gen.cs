@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceInvocationMaskFeaturesHUAWEI
             "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceInvocationMaskFeaturesHUAWEI;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,14 @@ public unsafe partial struct PhysicalDeviceInvocationMaskFeaturesHUAWEI
         ]
     )]
     public MaybeBool<uint> InvocationMask;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_invocation_mask"],
+        ImpliesSets = [
+            "VK_KHR_ray_tracing_pipeline+VK_KHR_synchronization2",
+            "VK_KHR_ray_tracing_pipeline+VK_VERSION_1_3",
+        ]
+    )]
+    public PhysicalDeviceInvocationMaskFeaturesHUAWEI() { }
 }

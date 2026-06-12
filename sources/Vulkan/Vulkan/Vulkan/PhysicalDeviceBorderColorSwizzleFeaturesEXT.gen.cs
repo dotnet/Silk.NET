@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT
         ["VK_EXT_border_color_swizzle"],
         ImpliesSets = ["VK_EXT_custom_border_color"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceBorderColorSwizzleFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,11 @@ public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT
         ImpliesSets = ["VK_EXT_custom_border_color"]
     )]
     public MaybeBool<uint> BorderColorSwizzleFromImage;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
+    public PhysicalDeviceBorderColorSwizzleFeaturesEXT() { }
 }

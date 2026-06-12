@@ -20,7 +20,7 @@ public unsafe partial struct MemoryGetRemoteAddressInfoNV
             "VK_NV_external_memory_rdma+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MemoryGetRemoteAddressInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct MemoryGetRemoteAddressInfoNV
         ]
     )]
     public ExternalMemoryHandleTypeFlags HandleType;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory_rdma"],
+        ImpliesSets = [
+            "VK_NV_external_memory_rdma+VK_KHR_external_memory",
+            "VK_NV_external_memory_rdma+VK_VERSION_1_1",
+        ]
+    )]
+    public MemoryGetRemoteAddressInfoNV() { }
 }

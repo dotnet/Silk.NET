@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkFence")]
-public readonly unsafe partial struct FenceHandle
+public readonly unsafe partial struct FenceHandle : IEquatable<FenceHandle>
 {
     public readonly void* Handle;
 

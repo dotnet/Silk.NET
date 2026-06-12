@@ -21,7 +21,7 @@ public unsafe partial struct MutableDescriptorTypeCreateInfoEXT
             "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MutableDescriptorTypeCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct MutableDescriptorTypeCreateInfoEXT
         ]
     )]
     public MutableDescriptorTypeListEXT* PMutableDescriptorTypeLists;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
+    public MutableDescriptorTypeCreateInfoEXT() { }
 }

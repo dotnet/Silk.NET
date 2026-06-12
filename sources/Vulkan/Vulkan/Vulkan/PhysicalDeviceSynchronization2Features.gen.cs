@@ -26,7 +26,7 @@ public unsafe partial struct PhysicalDeviceSynchronization2Features
         ],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceSynchronization2Features;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -48,4 +48,20 @@ public unsafe partial struct PhysicalDeviceSynchronization2Features
     [NativeName("synchronization2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public MaybeBool<uint> Synchronization2;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    public PhysicalDeviceSynchronization2Features() { }
 }

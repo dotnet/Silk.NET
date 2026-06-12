@@ -16,7 +16,7 @@ public unsafe partial struct SurfaceCapabilities2KHR
         ["VK_KHR_get_surface_capabilities2"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SurfaceCapabilities2KHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -33,4 +33,11 @@ public unsafe partial struct SurfaceCapabilities2KHR
         ImpliesSets = ["VK_KHR_surface"]
     )]
     public SurfaceCapabilitiesKHR SurfaceCapabilities;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_get_surface_capabilities2"],
+        ImpliesSets = ["VK_KHR_surface"]
+    )]
+    public SurfaceCapabilities2KHR() { }
 }

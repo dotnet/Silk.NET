@@ -20,7 +20,7 @@ public unsafe partial struct MultisamplePropertiesEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MultisamplePropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,14 @@ public unsafe partial struct MultisamplePropertiesEXT
         ]
     )]
     public Extent2D MaxSampleLocationGridSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sample_locations+VK_VERSION_1_1",
+        ]
+    )]
+    public MultisamplePropertiesEXT() { }
 }

@@ -20,7 +20,7 @@ public unsafe partial struct TileMemoryRequirementsQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.TileMemoryRequirementsQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct TileMemoryRequirementsQCOM
         ]
     )]
     public ulong Alignment;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_memory_heap"],
+        ImpliesSets = [
+            "VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    public TileMemoryRequirementsQCOM() { }
 }

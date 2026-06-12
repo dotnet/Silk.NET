@@ -21,7 +21,7 @@ public unsafe partial struct RenderPassSubpassFeedbackCreateInfoEXT
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.RenderPassSubpassFeedbackCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct RenderPassSubpassFeedbackCreateInfoEXT
         ]
     )]
     public RenderPassSubpassFeedbackInfoEXT* PSubpassFeedback;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_subpass_merge_feedback"],
+        ImpliesSets = [
+            "VK_EXT_subpass_merge_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
+        ]
+    )]
+    public RenderPassSubpassFeedbackCreateInfoEXT() { }
 }

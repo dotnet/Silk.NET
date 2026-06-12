@@ -1,4 +1,5 @@
-﻿[NameAffix("Suffix", "KhronosNonExclusiveVendor", "ARB")]
+﻿// BufferUsageARB.gen.cs
+[NameAffix("Suffix", "KhronosNonExclusiveVendor", "ARB")]
 public enum BufferUsageARB : uint
 {
     GL_STREAM_DRAW = 35040,

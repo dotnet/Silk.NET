@@ -22,7 +22,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
             "VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceOpticalFlowPropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -167,4 +167,15 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
         ]
     )]
     public uint MaxNumRegionsOfInterest;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_optical_flow"],
+        ImpliesSets = [
+            "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_format_feature_flags2+VK_KHR_synchronization2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    public PhysicalDeviceOpticalFlowPropertiesNV() { }
 }

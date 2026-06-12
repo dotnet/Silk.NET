@@ -14,7 +14,7 @@ public unsafe partial struct DebugUtilsLabelEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.DebugUtilsLabelEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
@@ -27,4 +27,7 @@ public unsafe partial struct DebugUtilsLabelEXT
     [NativeName("color")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public DebugUtilsLabelEXTColor Color;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
+    public DebugUtilsLabelEXT() { }
 }

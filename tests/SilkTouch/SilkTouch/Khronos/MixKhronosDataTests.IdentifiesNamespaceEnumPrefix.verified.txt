@@ -1,4 +1,5 @@
-﻿[NativeName("GLenum")]
+﻿// GLEnum.gen.cs
+[NativeName("GLenum")]
 [NameAffix("Prefix", "KhronosNamespaceEnum", "GL")]
 public enum GLEnum
 {

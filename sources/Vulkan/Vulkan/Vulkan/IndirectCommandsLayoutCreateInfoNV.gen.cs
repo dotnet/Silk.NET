@@ -18,7 +18,7 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.IndirectCommandsLayoutCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -75,4 +75,11 @@ public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
     public uint* PStreamStrides;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
+    public IndirectCommandsLayoutCreateInfoNV() { }
 }

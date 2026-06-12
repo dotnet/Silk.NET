@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferFeaturesEXT
             "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceNestedCommandBufferFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -66,4 +66,14 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferFeaturesEXT
         ]
     )]
     public MaybeBool<uint> NestedCommandBufferSimultaneousUse;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_nested_command_buffer"],
+        ImpliesSets = [
+            "VK_EXT_nested_command_buffer+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_nested_command_buffer+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceNestedCommandBufferFeaturesEXT() { }
 }

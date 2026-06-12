@@ -17,7 +17,7 @@ public unsafe partial struct SamplerBorderColorComponentMappingCreateInfoEXT
         ["VK_EXT_border_color_swizzle"],
         ImpliesSets = ["VK_EXT_custom_border_color"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SamplerBorderColorComponentMappingCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,4 +42,11 @@ public unsafe partial struct SamplerBorderColorComponentMappingCreateInfoEXT
         ImpliesSets = ["VK_EXT_custom_border_color"]
     )]
     public MaybeBool<uint> Srgb;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_border_color_swizzle"],
+        ImpliesSets = ["VK_EXT_custom_border_color"]
+    )]
+    public SamplerBorderColorComponentMappingCreateInfoEXT() { }
 }

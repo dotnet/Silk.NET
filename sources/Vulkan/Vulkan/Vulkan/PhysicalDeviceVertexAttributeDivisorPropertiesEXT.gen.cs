@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceVertexAttributeDivisorPropertiesEXT
             "VK_EXT_vertex_attribute_divisor+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVertexAttributeDivisorPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceVertexAttributeDivisorPropertiesEXT
         ]
     )]
     public uint MaxVertexAttribDivisor;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_vertex_attribute_divisor"],
+        ImpliesSets = [
+            "VK_EXT_vertex_attribute_divisor+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_vertex_attribute_divisor+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceVertexAttributeDivisorPropertiesEXT() { }
 }

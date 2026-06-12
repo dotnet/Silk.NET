@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDataGraphFeaturesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -67,4 +67,11 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
     public MaybeBool<uint> DataGraphShaderModule;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
+    public PhysicalDeviceDataGraphFeaturesARM() { }
 }

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSurfaceKHR")]
-public readonly unsafe partial struct SurfaceHandleKHR
+public readonly unsafe partial struct SurfaceHandleKHR : IEquatable<SurfaceHandleKHR>
 {
     public readonly void* Handle;
 

@@ -21,7 +21,7 @@ public unsafe partial struct FrameBoundaryEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.FrameBoundaryEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -132,4 +132,14 @@ public unsafe partial struct FrameBoundaryEXT
         ]
     )]
     public void* PTag;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_frame_boundary"],
+        ImpliesSets = [
+            "VK_EXT_frame_boundary+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_frame_boundary+VK_VERSION_1_1",
+        ]
+    )]
+    public FrameBoundaryEXT() { }
 }

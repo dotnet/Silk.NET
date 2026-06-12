@@ -24,7 +24,7 @@ public unsafe partial struct RenderingFragmentDensityMapAttachmentInfoEXT
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.RenderingFragmentDensityMapAttachmentInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -67,4 +67,17 @@ public unsafe partial struct RenderingFragmentDensityMapAttachmentInfoEXT
         ]
     )]
     public ImageLayout ImageLayout;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_EXT_fragment_density_map+VK_KHR_dynamic_rendering",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_3",
+        ],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+        ]
+    )]
+    public RenderingFragmentDensityMapAttachmentInfoEXT() { }
 }

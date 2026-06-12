@@ -20,7 +20,7 @@ public unsafe partial struct PipelineColorWriteCreateInfoEXT
             "VK_EXT_color_write_enable+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineColorWriteCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct PipelineColorWriteCreateInfoEXT
         ]
     )]
     public uint* PColorWriteEnables;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_color_write_enable"],
+        ImpliesSets = [
+            "VK_EXT_color_write_enable+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_color_write_enable+VK_VERSION_1_1",
+        ]
+    )]
+    public PipelineColorWriteCreateInfoEXT() { }
 }

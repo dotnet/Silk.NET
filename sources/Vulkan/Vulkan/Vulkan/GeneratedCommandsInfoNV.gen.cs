@@ -18,7 +18,7 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.GeneratedCommandsInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -131,4 +131,11 @@ public unsafe partial struct GeneratedCommandsInfoNV
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
     public ulong SequencesIndexOffset;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
+    public GeneratedCommandsInfoNV() { }
 }

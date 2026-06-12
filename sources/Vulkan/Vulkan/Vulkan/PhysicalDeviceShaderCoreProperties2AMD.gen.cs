@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD
         ["VK_AMD_shader_core_properties2"],
         ImpliesSets = ["VK_AMD_shader_core_properties"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderCoreProperties2AMD;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,11 @@ public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD
         ImpliesSets = ["VK_AMD_shader_core_properties"]
     )]
     public uint ActiveComputeUnitCount;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_shader_core_properties2"],
+        ImpliesSets = ["VK_AMD_shader_core_properties"]
+    )]
+    public PhysicalDeviceShaderCoreProperties2AMD() { }
 }

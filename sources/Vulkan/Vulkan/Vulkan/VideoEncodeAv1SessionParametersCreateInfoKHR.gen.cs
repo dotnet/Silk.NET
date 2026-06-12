@@ -18,7 +18,7 @@ public unsafe partial struct VideoEncodeAv1SessionParametersCreateInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeAv1SessionParametersCreateInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -59,4 +59,11 @@ public unsafe partial struct VideoEncodeAv1SessionParametersCreateInfoKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     public StdVideoEncodeAv1OperatingPointInfo* PStdOperatingPoints;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_av1"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeAv1SessionParametersCreateInfoKHR() { }
 }

@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkDeferredOperationKHR")]
 public readonly unsafe partial struct DeferredOperationHandleKHR
+    : IEquatable<DeferredOperationHandleKHR>
 {
     public readonly void* Handle;
 

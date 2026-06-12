@@ -160,17 +160,24 @@ public static class ModUtils
         GetMethodDiscriminator(param.Modifiers, param.Type);
 
     /// <summary>
-    /// Gets the relative path for this document.
+    /// Gets the path relative to the document's project path for the specified document.
     /// </summary>
     /// <param name="doc">The document.</param>
     /// <returns>The relative path.</returns>
     public static string? RelativePath(this Document doc)
     {
-        if (
-            doc.FilePath is null
-            || doc.Project.FilePath is null
-            || Path.GetDirectoryName(doc.Project.FilePath) is not { Length: > 0 } dir
-        )
+        if (doc.FilePath is null)
+        {
+            return default;
+        }
+
+        // Handle projects with no path by simply returning the document path
+        if (doc.Project.FilePath is null)
+        {
+            return doc.FilePath;
+        }
+
+        if (Path.GetDirectoryName(doc.Project.FilePath) is not { Length: > 0 } dir)
         {
             return default;
         }

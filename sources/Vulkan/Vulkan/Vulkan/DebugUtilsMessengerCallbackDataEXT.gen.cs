@@ -14,7 +14,7 @@ public unsafe partial struct DebugUtilsMessengerCallbackDataEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.DebugUtilsMessengerCallbackDataEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
@@ -59,4 +59,7 @@ public unsafe partial struct DebugUtilsMessengerCallbackDataEXT
     [NativeName("pObjects")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public DebugUtilsObjectNameInfoEXT* PObjects;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
+    public DebugUtilsMessengerCallbackDataEXT() { }
 }

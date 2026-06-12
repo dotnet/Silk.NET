@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDevicePipelineLibraryGroupHandlesFeaturesEX
         ["VK_EXT_pipeline_library_group_handles"],
         ImpliesSets = ["VK_KHR_pipeline_library", "VK_KHR_ray_tracing_pipeline"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct PhysicalDevicePipelineLibraryGroupHandlesFeaturesEX
         ImpliesSets = ["VK_KHR_pipeline_library", "VK_KHR_ray_tracing_pipeline"]
     )]
     public MaybeBool<uint> PipelineLibraryGroupHandles;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pipeline_library_group_handles"],
+        ImpliesSets = ["VK_KHR_pipeline_library", "VK_KHR_ray_tracing_pipeline"]
+    )]
+    public PhysicalDevicePipelineLibraryGroupHandlesFeaturesEXT() { }
 }

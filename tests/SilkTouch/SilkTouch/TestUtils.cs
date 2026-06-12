@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Runtime.CompilerServices;
+using System.Text;
 using Microsoft.CodeAnalysis;
 
 namespace Silk.NET.SilkTouch.UnitTests;
@@ -16,4 +18,30 @@ public static class TestUtils
             "TestAssembly",
             LanguageNames.CSharp
         );
+
+    public static async Task VerifyDocumentsAsync(
+        IEnumerable<Document> documents,
+        [CallerFilePath] string sourcePath = ""
+    )
+    {
+        var builder = new StringBuilder();
+        var isFirst = true;
+        foreach (var document in documents.OrderBy(doc => doc.Name))
+        {
+            if (!isFirst)
+            {
+                builder.AppendLine();
+            }
+
+            isFirst = false;
+
+            builder.Append("// ");
+            builder.AppendLine(document.Name);
+
+            var root = await document.GetSyntaxRootAsync();
+            builder.AppendLine(root!.NormalizeWhitespace().ToString());
+        }
+
+        await Verify(builder.ToString(), sourceFile: sourcePath);
+    }
 }

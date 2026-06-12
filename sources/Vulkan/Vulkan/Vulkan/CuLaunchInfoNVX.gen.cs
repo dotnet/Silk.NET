@@ -14,7 +14,7 @@ public unsafe partial struct CuLaunchInfoNVX
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.CuLaunchInfoNVX;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
@@ -67,4 +67,7 @@ public unsafe partial struct CuLaunchInfoNVX
     [NativeName("pExtras")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public void** PExtras;
+
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
+    public CuLaunchInfoNVX() { }
 }

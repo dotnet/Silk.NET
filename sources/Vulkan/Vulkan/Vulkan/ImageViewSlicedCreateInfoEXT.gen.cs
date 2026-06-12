@@ -20,7 +20,7 @@ public unsafe partial struct ImageViewSlicedCreateInfoEXT
             "VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ImageViewSlicedCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct ImageViewSlicedCreateInfoEXT
         ]
     )]
     public uint SliceCount;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_sliced_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    public ImageViewSlicedCreateInfoEXT() { }
 }

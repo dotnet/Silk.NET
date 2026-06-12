@@ -14,7 +14,7 @@ public unsafe partial struct RenderPassTransformBeginInfoQCOM
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.RenderPassTransformBeginInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
@@ -23,4 +23,7 @@ public unsafe partial struct RenderPassTransformBeginInfoQCOM
     [NativeName("transform")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     public SurfaceTransformFlagsKHR Transform;
+
+    [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
+    public RenderPassTransformBeginInfoQCOM() { }
 }

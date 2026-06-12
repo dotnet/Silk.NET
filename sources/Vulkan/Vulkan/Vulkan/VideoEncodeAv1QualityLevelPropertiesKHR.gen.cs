@@ -18,7 +18,7 @@ public unsafe partial struct VideoEncodeAv1QualityLevelPropertiesKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeAv1QualityLevelPropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -147,4 +147,11 @@ public unsafe partial struct VideoEncodeAv1QualityLevelPropertiesKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     public uint PreferredBidirectionalCompoundReferenceNameMask;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_av1"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeAv1QualityLevelPropertiesKHR() { }
 }

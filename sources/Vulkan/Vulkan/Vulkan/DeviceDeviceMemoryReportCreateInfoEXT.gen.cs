@@ -21,7 +21,7 @@ public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DeviceDeviceMemoryReportCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -66,4 +66,14 @@ public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT
         ]
     )]
     public void* PUserData;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
+    public DeviceDeviceMemoryReportCreateInfoEXT() { }
 }

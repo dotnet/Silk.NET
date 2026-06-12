@@ -18,7 +18,8 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceClusterAccelerationStructurePropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -91,4 +92,11 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructurePropertie
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     public uint MaxClusterGeometryIndex;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public PhysicalDeviceClusterAccelerationStructurePropertiesNV() { }
 }

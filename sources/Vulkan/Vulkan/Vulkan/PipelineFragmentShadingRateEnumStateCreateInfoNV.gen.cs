@@ -17,7 +17,7 @@ public unsafe partial struct PipelineFragmentShadingRateEnumStateCreateInfoNV
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineFragmentShadingRateEnumStateCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -50,4 +50,11 @@ public unsafe partial struct PipelineFragmentShadingRateEnumStateCreateInfoNV
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
     public PipelineFragmentShadingRateEnumStateCreateInfoNVCombinerOps CombinerOps;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_fragment_shading_rate_enums"],
+        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
+    )]
+    public PipelineFragmentShadingRateEnumStateCreateInfoNV() { }
 }

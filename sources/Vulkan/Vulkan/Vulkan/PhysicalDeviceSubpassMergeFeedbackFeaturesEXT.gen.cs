@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceSubpassMergeFeedbackFeaturesEXT
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceSubpassMergeFeedbackFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceSubpassMergeFeedbackFeaturesEXT
         ]
     )]
     public MaybeBool<uint> SubpassMergeFeedback;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_subpass_merge_feedback"],
+        ImpliesSets = [
+            "VK_EXT_subpass_merge_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceSubpassMergeFeedbackFeaturesEXT() { }
 }

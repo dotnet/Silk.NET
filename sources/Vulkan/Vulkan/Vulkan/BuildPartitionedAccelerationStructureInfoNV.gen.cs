@@ -18,7 +18,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.BuildPartitionedAccelerationStructureInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -75,4 +75,11 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     public ulong SrcInfosCount;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public BuildPartitionedAccelerationStructureInfoNV() { }
 }
