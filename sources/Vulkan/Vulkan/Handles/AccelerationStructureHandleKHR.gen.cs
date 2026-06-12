@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkAccelerationStructureKHR")]
 public readonly unsafe partial struct AccelerationStructureHandleKHR
+    : IEquatable<AccelerationStructureHandleKHR>
 {
     public readonly void* Handle;
 

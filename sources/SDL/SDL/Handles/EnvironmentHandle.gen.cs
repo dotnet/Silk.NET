@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_Environment")]
-public readonly unsafe partial struct EnvironmentHandle
+public readonly unsafe partial struct EnvironmentHandle : IEquatable<EnvironmentHandle>
 {
     public readonly void* Handle;
 

@@ -1,3 +1,4 @@
-﻿public enum OcclusionQueryParameterNameNV
+﻿// OcclusionQueryParameterNameNV.gen.cs
+public enum OcclusionQueryParameterNameNV
 {
 }

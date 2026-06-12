@@ -1,0 +1,12 @@
+﻿// Vk.gen.cs
+public struct VkAllocationCallbacks;
+public struct VkInstanceCreateInfo;
+public class Vk
+{
+    public static extern VkResult vkCreateInstance(VkInstanceCreateInfo* pCreateInfo, VkAllocationCallbacks* pAllocator, VkInstance_T** pInstance);
+}
+
+// VkInstance_T.gen.cs
+public unsafe partial struct VkInstance_T
+{
+}

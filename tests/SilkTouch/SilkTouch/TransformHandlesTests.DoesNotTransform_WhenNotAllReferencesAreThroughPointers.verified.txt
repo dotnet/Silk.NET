@@ -1,0 +1,9 @@
+﻿// Vk.gen.cs
+public struct VkInstance_T
+{
+}
+
+public class Vk
+{
+    public static extern VkResult vkCreateInstance(VkInstance_T pInstance, VkInstance_T* pInstance, VkInstance_T** pInstance);
+}

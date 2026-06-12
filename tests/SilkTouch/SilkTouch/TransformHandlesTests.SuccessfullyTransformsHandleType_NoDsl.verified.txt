@@ -1,0 +1,22 @@
+﻿// Vk.gen.cs
+[NativeName("VkInstance_T")]
+[NameAffix("Suffix", "HandleType", "Handle")]
+public readonly unsafe partial struct VkInstance_T : IEquatable<VkInstance_T>
+{
+    public readonly void* Handle;
+    public VkInstance_T(void* handle)
+    {
+        Handle = handle;
+    }
+
+    public bool Equals(VkInstance_T other) => Handle == other.Handle;
+    public override bool Equals(object? obj) => obj is VkInstance_T other && Equals(other);
+    public override int GetHashCode() => HashCode.Combine((nuint)Handle);
+    public static bool operator ==(VkInstance_T left, VkInstance_T right) => left.Equals(right);
+    public static bool operator !=(VkInstance_T left, VkInstance_T right) => !left.Equals(right);
+}
+
+public class Vk
+{
+    public static extern VkResult vkCreateInstance(VkInstance_T pInstance, VkInstance_T* pInstance);
+}

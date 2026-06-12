@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkImage")]
-public readonly unsafe partial struct ImageHandle
+public readonly unsafe partial struct ImageHandle : IEquatable<ImageHandle>
 {
     public readonly void* Handle;
 

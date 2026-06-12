@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_GPUFence")]
-public readonly unsafe partial struct GpuFenceHandle
+public readonly unsafe partial struct GpuFenceHandle : IEquatable<GpuFenceHandle>
 {
     public readonly void* Handle;
 

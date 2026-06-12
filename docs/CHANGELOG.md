@@ -10,8 +10,10 @@ Please read [the Contributions Guide](CONTRIBUTING.md) before writing release no
 
 Silk.NET 3.0 Preview 1
 
-- Added SDL3 bindings using the 3.0 bindings style.
 - Added combined OpenGL bindings using the 3.0 bindings style.
+- Added OpenAL bindings using the 3.0 bindings style.
+- Added SDL3 bindings using the 3.0 bindings style.
+- Added Vulkan bindings using the 3.0 bindings style.
 - Improved the bindings style to be more accessible, IDE-friendly, and AOT-friendly. Learn more at **TODO ADD A LINK TO DOCUMENTATION HERE**.
 - Removed SDL2 bindings.
 

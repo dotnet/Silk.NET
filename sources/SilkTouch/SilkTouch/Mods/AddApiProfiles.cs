@@ -28,7 +28,7 @@ public class AddApiProfiles(
     IEnumerable<
         IJobDependency<IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>>
     > versionProviders
-) : Mod
+) : IMod
 {
     /// <summary>
     /// The mod configuration.
@@ -209,9 +209,8 @@ public class AddApiProfiles(
     }
 
     /// <inheritdoc />
-    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        await base.ExecuteAsync(ctx, ct);
         if (ctx.SourceProject is null)
         {
             return;

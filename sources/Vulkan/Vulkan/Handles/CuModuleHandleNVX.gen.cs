@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCuModuleNVX")]
-public readonly unsafe partial struct CuModuleHandleNVX
+public readonly unsafe partial struct CuModuleHandleNVX : IEquatable<CuModuleHandleNVX>
 {
     public readonly void* Handle;
 

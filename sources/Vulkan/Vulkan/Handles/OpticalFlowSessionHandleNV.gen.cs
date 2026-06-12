@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkOpticalFlowSessionNV")]
 public readonly unsafe partial struct OpticalFlowSessionHandleNV
+    : IEquatable<OpticalFlowSessionHandleNV>
 {
     public readonly void* Handle;
 

@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkExternalComputeQueueNV")]
 public readonly unsafe partial struct ExternalComputeQueueHandleNV
+    : IEquatable<ExternalComputeQueueHandleNV>
 {
     public readonly void* Handle;
 

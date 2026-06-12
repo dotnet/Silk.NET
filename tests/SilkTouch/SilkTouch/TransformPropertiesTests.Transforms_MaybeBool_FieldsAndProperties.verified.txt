@@ -1,4 +1,5 @@
-﻿public struct Transform
+﻿// Test.gen.cs
+public struct Transform
 {
     [NativeTypeName("TestBool32")]
     public MaybeBool<uint> OptionField;

@@ -1,4 +1,5 @@
-﻿public struct Glfw;
+﻿// Glfw.gen.cs
+public struct Glfw;
 [NameAffix("Prefix", "SharedPrefix", "GLFW")]
 public struct GLFWallocator;
 [NameAffix("Prefix", "SharedPrefix", "GLFW")]

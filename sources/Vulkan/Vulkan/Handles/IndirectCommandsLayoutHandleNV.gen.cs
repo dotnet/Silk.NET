@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkIndirectCommandsLayoutNV")]
 public readonly unsafe partial struct IndirectCommandsLayoutHandleNV
+    : IEquatable<IndirectCommandsLayoutHandleNV>
 {
     public readonly void* Handle;
 

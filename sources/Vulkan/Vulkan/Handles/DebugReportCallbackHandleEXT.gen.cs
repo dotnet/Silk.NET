@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkDebugReportCallbackEXT")]
 public readonly unsafe partial struct DebugReportCallbackHandleEXT
+    : IEquatable<DebugReportCallbackHandleEXT>
 {
     public readonly void* Handle;
 

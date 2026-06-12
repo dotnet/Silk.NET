@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_GLContextState")]
-public readonly unsafe partial struct GLContextStateHandle
+public readonly unsafe partial struct GLContextStateHandle : IEquatable<GLContextStateHandle>
 {
     public readonly void* Handle;
 

@@ -1,4 +1,5 @@
-﻿[NameAffix("Suffix", "Test", "Suffix")]
+﻿// Test.gen.cs
+[NameAffix("Suffix", "Test", "Suffix")]
 public struct ASuffix
 {
     [NameAffix("Suffix", "Test", nameof(ASuffix))]

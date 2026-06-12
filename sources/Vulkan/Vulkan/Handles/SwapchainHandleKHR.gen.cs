@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSwapchainKHR")]
-public readonly unsafe partial struct SwapchainHandleKHR
+public readonly unsafe partial struct SwapchainHandleKHR : IEquatable<SwapchainHandleKHR>
 {
     public readonly void* Handle;
 
