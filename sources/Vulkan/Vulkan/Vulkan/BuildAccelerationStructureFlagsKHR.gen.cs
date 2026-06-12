@@ -78,28 +78,6 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     MotionBitNV = 0x20,
 
-    [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
-    )]
-    AllowOpacityMicromapUpdateBitEXT = 0x40,
-
-    [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
-    )]
-    AllowDisableOpacityMicromapsBitEXT = 0x80,
-
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_DATA_UPDATE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -134,6 +112,30 @@ public enum BuildAccelerationStructureFlagsKHR : uint
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     AllowClusterOpacityMicromapsBitNV = 0x1000,
+
+    [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    AllowOpacityMicromapUpdateBit = 0x40,
+
+    [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    AllowDisableOpacityMicromapsBit = 0x80,
+
+    [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_MICROMAP_LOSSY_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    MicromapLossyBit = 0x400,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV")]
     [SupportedApiProfile(
@@ -189,4 +191,26 @@ public enum BuildAccelerationStructureFlagsKHR : uint
         ]
     )]
     LowMemoryBitNV = LowMemoryBit,
+
+    [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    AllowOpacityMicromapUpdateBitEXT = AllowOpacityMicromapUpdateBit,
+
+    [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    AllowDisableOpacityMicromapsBitEXT = AllowDisableOpacityMicromapsBit,
 }

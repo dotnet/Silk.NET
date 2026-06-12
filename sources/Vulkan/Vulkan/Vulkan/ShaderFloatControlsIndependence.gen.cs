@@ -16,6 +16,9 @@ public enum ShaderFloatControlsIndependence : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
             "VK_COMPUTE_VERSION_1_4",
@@ -34,6 +37,9 @@ public enum ShaderFloatControlsIndependence : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
             "VK_COMPUTE_VERSION_1_4",
@@ -52,6 +58,9 @@ public enum ShaderFloatControlsIndependence : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
             "VK_COMPUTE_VERSION_1_4",

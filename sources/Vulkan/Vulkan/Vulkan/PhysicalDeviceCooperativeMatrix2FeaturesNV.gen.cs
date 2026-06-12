@@ -79,8 +79,8 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
     [NativeName("cooperativeMatrixBlockLoads")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_cooperative_matrix2"],
-        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+        ["VK_NV_cooperative_matrix_decode_vector"],
+        ImpliesSets = ["VK_NV_cooperative_matrix2"]
     )]
     public MaybeBool<uint> CooperativeMatrixBlockLoads;
 

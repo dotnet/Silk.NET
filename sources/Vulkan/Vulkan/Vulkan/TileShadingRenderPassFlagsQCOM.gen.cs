@@ -19,10 +19,7 @@ public enum TileShadingRenderPassFlagsQCOM : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     EnableBit = 0x1,
 
@@ -30,10 +27,7 @@ public enum TileShadingRenderPassFlagsQCOM : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     PerTileExecutionBit = 0x2,
 }

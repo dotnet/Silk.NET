@@ -39,4 +39,12 @@ public enum DeviceQueueCreateFlags : uint
         MinVersion = "1.1"
     )]
     ProtectedBit = 0x1,
+
+    [NativeName("VK_DEVICE_QUEUE_CREATE_INTERNALLY_SYNCHRONIZED_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_internally_synchronized_queues"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
+    InternallySynchronizedBitKHR = 0x4,
 }

@@ -37,22 +37,11 @@ public enum SubpassDescriptionFlags : uint
     )]
     PerViewPositionXOnlyBitNVX = 0x2,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_QCOM")]
-    [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
-    FragmentRegionBitQCOM = 0x4,
-
-    [NativeName("VK_SUBPASS_DESCRIPTION_SHADER_RESOLVE_BIT_QCOM")]
-    [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
-    ShaderResolveBitQCOM = 0x8,
-
     [NativeName("VK_SUBPASS_DESCRIPTION_TILE_SHADING_APRON_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     TileShadingApronBitQCOM = 0x100,
 
@@ -99,6 +88,36 @@ public enum SubpassDescriptionFlags : uint
         ]
     )]
     EnableLegacyDitheringBitEXT = 0x80,
+
+    [NativeName("VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
+    FragmentRegionBitEXT = 0x4,
+
+    [NativeName("VK_SUBPASS_DESCRIPTION_CUSTOM_RESOLVE_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
+    CustomResolveBitEXT = 0x8,
+
+    [NativeName("VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_QCOM")]
+    [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
+    FragmentRegionBitQCOM = FragmentRegionBitEXT,
+
+    [NativeName("VK_SUBPASS_DESCRIPTION_SHADER_RESOLVE_BIT_QCOM")]
+    [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
+    ShaderResolveBitQCOM = CustomResolveBitEXT,
 
     [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_ARM")]
     [SupportedApiProfile(

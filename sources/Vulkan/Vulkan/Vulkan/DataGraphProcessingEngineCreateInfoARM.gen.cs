@@ -15,7 +15,10 @@ public unsafe partial struct DataGraphProcessingEngineCreateInfoARM
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     public StructureType SType = StructureType.DataGraphProcessingEngineCreateInfoARM;
 
@@ -23,7 +26,10 @@ public unsafe partial struct DataGraphProcessingEngineCreateInfoARM
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     public void* PNext;
 
@@ -31,7 +37,10 @@ public unsafe partial struct DataGraphProcessingEngineCreateInfoARM
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     public uint ProcessingEngineCount;
 
@@ -39,14 +48,20 @@ public unsafe partial struct DataGraphProcessingEngineCreateInfoARM
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     public PhysicalDeviceDataGraphProcessingEngineARM* PProcessingEngines;
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     public DataGraphProcessingEngineCreateInfoARM() { }
 }

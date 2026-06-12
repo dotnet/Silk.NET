@@ -15,10 +15,7 @@ public unsafe partial struct SurfacePresentModeKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public StructureType SType = StructureType.SurfacePresentModeKHR;
 
@@ -26,10 +23,7 @@ public unsafe partial struct SurfacePresentModeKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public void* PNext;
 
@@ -37,20 +31,14 @@ public unsafe partial struct SurfacePresentModeKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public PresentModeKHR PresentMode;
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public SurfacePresentModeKHR() { }
 }

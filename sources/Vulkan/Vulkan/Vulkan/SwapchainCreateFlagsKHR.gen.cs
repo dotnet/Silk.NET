@@ -45,6 +45,19 @@ public enum SwapchainCreateFlagsKHR : uint
     )]
     MutableFormatBit = 0x4,
 
+    [NativeName("VK_SWAPCHAIN_CREATE_PRESENT_TIMING_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    PresentTimingBitEXT = 0x200,
+
     [NativeName("VK_SWAPCHAIN_CREATE_PRESENT_ID_2_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -71,12 +84,19 @@ public enum SwapchainCreateFlagsKHR : uint
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     DeferredMemoryAllocationBit = 0x8,
+
+    [NativeName("VK_SWAPCHAIN_CREATE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_swapchain"],
+        ImpliesSets = ["VK_EXT_multisampled_render_to_single_sampled", "VK_KHR_swapchain"]
+    )]
+    MultisampledRenderToSingleSampledBitEXT = 0x100,
 
     [NativeName("VK_SWAPCHAIN_CREATE_DEFERRED_MEMORY_ALLOCATION_BIT_EXT")]
     [SupportedApiProfile(

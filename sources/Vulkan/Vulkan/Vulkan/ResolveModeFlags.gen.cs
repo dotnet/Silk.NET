@@ -17,6 +17,12 @@ public enum ResolveModeFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
             "VK_GRAPHICS_VERSION_1_2",
             "VK_GRAPHICS_VERSION_1_3",
             "VK_GRAPHICS_VERSION_1_4",
@@ -32,6 +38,12 @@ public enum ResolveModeFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
             "VK_GRAPHICS_VERSION_1_2",
             "VK_GRAPHICS_VERSION_1_3",
             "VK_GRAPHICS_VERSION_1_4",
@@ -47,6 +59,12 @@ public enum ResolveModeFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
             "VK_GRAPHICS_VERSION_1_2",
             "VK_GRAPHICS_VERSION_1_3",
             "VK_GRAPHICS_VERSION_1_4",
@@ -62,6 +80,12 @@ public enum ResolveModeFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
             "VK_GRAPHICS_VERSION_1_2",
             "VK_GRAPHICS_VERSION_1_3",
             "VK_GRAPHICS_VERSION_1_4",
@@ -77,6 +101,12 @@ public enum ResolveModeFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
             "VK_GRAPHICS_VERSION_1_2",
             "VK_GRAPHICS_VERSION_1_3",
             "VK_GRAPHICS_VERSION_1_4",
@@ -98,6 +128,17 @@ public enum ResolveModeFlags : uint
         ImpliesSets = ["VK_ANDROID_external_memory_android_hardware_buffer"]
     )]
     ExternalFormatDownsampleBitANDROID = 0x10,
+
+    [NativeName("VK_RESOLVE_MODE_CUSTOM_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve+VK_KHR_dynamic_rendering", "VK_EXT_custom_resolve+VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
+    CustomBitEXT = 0x20,
 
     [NativeName("VK_RESOLVE_MODE_NONE_KHR")]
     [SupportedApiProfile(

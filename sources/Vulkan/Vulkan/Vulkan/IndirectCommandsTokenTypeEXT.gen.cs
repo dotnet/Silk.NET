@@ -17,8 +17,10 @@ public enum IndirectCommandsTokenTypeEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -29,8 +31,10 @@ public enum IndirectCommandsTokenTypeEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -41,8 +45,10 @@ public enum IndirectCommandsTokenTypeEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -53,8 +59,10 @@ public enum IndirectCommandsTokenTypeEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -65,8 +73,10 @@ public enum IndirectCommandsTokenTypeEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -77,8 +87,10 @@ public enum IndirectCommandsTokenTypeEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -89,8 +101,10 @@ public enum IndirectCommandsTokenTypeEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -101,8 +115,10 @@ public enum IndirectCommandsTokenTypeEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -113,8 +129,10 @@ public enum IndirectCommandsTokenTypeEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -125,12 +143,44 @@ public enum IndirectCommandsTokenTypeEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
     Dispatch = 9,
+
+    [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_PUSH_DATA_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap", "VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ],
+        RequireAll = true
+    )]
+    PushData = 1000135000,
+
+    [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_PUSH_DATA_SEQUENCE_INDEX_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap", "VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ],
+        RequireAll = true
+    )]
+    PushDataSequenceIndex = 1000135001,
 
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_NV_EXT")]
     [SupportedApiProfile(

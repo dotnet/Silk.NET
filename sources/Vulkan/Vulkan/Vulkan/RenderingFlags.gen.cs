@@ -43,8 +43,10 @@ public enum RenderingFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_EXT_legacy_dithering+VK_KHR_dynamic_rendering+VK_KHR_extended_flags",
             "VK_EXT_legacy_dithering+VK_KHR_dynamic_rendering+VK_KHR_maintenance5",
             "VK_EXT_legacy_dithering+VK_KHR_dynamic_rendering+VK_VERSION_1_4",
+            "VK_EXT_legacy_dithering+VK_VERSION_1_3+VK_KHR_extended_flags",
             "VK_EXT_legacy_dithering+VK_VERSION_1_3+VK_KHR_maintenance5",
             "VK_EXT_legacy_dithering+VK_VERSION_1_3+VK_VERSION_1_4",
         ],
@@ -64,11 +66,34 @@ public enum RenderingFlags : uint
         "vulkan",
         ["VK_VALVE_fragment_density_map_layered"],
         ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
             "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
     PerLayerFragmentDensityBitVALVE = 0x20,
+
+    [NativeName("VK_RENDERING_FRAGMENT_REGION_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve+VK_KHR_dynamic_rendering", "VK_EXT_custom_resolve+VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
+    FragmentRegionBitEXT = 0x40,
+
+    [NativeName("VK_RENDERING_CUSTOM_RESOLVE_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve+VK_KHR_dynamic_rendering", "VK_EXT_custom_resolve+VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
+    CustomResolveBitEXT = 0x80,
 
     [NativeName("VK_RENDERING_LOCAL_READ_CONCURRENT_ACCESS_CONTROL_BIT_KHR")]
     [SupportedApiProfile(

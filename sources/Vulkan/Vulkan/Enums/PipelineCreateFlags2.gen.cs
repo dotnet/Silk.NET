@@ -44,8 +44,14 @@ public enum PipelineCreateFlags2 : ulong
     [NativeName("VK_PIPELINE_CREATE_2_EXECUTION_GRAPH_BIT_AMDX")]
     ExecutionGraphBitAMDX = 0x100000000,
 
+    [NativeName("VK_PIPELINE_CREATE_2_DESCRIPTOR_HEAP_BIT_EXT")]
+    DescriptorHeapBitEXT = 0x1000000000,
+
     [NativeName("VK_PIPELINE_CREATE_2_RAY_TRACING_SKIP_BUILT_IN_PRIMITIVES_BIT_KHR")]
     RayTracingSkipBuiltInPrimitivesBitKHR = 0x1000,
+
+    [NativeName("VK_PIPELINE_CREATE_2_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT")]
+    RayTracingOpacityMicromapBitEXT = 0x1000000,
 
     [NativeName("VK_PIPELINE_CREATE_2_RAY_TRACING_ALLOW_SPHERES_AND_LINEAR_SWEPT_SPHERES_BIT_NV")]
     RayTracingAllowSpheresAndLinearSweptSpheresBitNV = 0x200000000,
@@ -125,9 +131,6 @@ public enum PipelineCreateFlags2 : ulong
     [NativeName("VK_PIPELINE_CREATE_2_RENDERING_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
     RenderingFragmentDensityMapAttachmentBitEXT = 0x400000,
 
-    [NativeName("VK_PIPELINE_CREATE_2_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT")]
-    RayTracingOpacityMicromapBitEXT = 0x1000000,
-
     [NativeName("VK_PIPELINE_CREATE_2_COLOR_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
     ColorAttachmentFeedbackLoopBitEXT = 0x2000000,
 
@@ -149,6 +152,9 @@ public enum PipelineCreateFlags2 : ulong
     [NativeName("VK_PIPELINE_CREATE_2_DISALLOW_OPACITY_MICROMAP_BIT_ARM")]
     DisallowOpacityMicromapBitARM = 0x2000000000,
 
+    [NativeName("VK_PIPELINE_CREATE_2_INSTRUMENT_SHADERS_BIT_ARM")]
+    InstrumentShadersBitARM = 0x8000000000,
+
     [NativeName("VK_PIPELINE_CREATE_2_CAPTURE_DATA_BIT_KHR")]
     CaptureDataBitKHR = 0x80000000,
 
@@ -157,6 +163,12 @@ public enum PipelineCreateFlags2 : ulong
 
     [NativeName("VK_PIPELINE_CREATE_2_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
     PerLayerFragmentDensityBitVALVE = 0x10000000000,
+
+    [NativeName("VK_PIPELINE_CREATE_2_RAY_TRACING_OPACITY_MICROMAP_BIT_KHR")]
+    RayTracingOpacityMicromapBitKHR = 0x1000000,
+
+    [NativeName("VK_PIPELINE_CREATE_2_OPACITY_MICROMAP_DISALLOW_MIXED_SPECIAL_INDEX_BIT_KHR")]
+    OpacityMicromapDisallowMixedSpecialIndexBitKHR = 0x20000000000,
 
     [NativeName("VK_PIPELINE_CREATE_2_64_BIT_INDEXING_BIT_EXT")]
     X64BitIndexingBitEXT = 0x80000000000,

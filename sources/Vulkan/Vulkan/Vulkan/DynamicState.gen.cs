@@ -680,24 +680,30 @@ public enum DynamicState : uint
     [NativeName("VK_DYNAMIC_STATE_LINE_RASTERIZATION_MODE_EXT")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_extended_dynamic_state3", "VK_EXT_line_rasterization"],
+        [
+            "VK_EXT_extended_dynamic_state3+VK_EXT_line_rasterization",
+            "VK_EXT_extended_dynamic_state3+VK_KHR_line_rasterization",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_4",
+        ],
         ImpliesSets = [
             "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
-        ],
-        RequireAll = true
+        ]
     )]
     LineRasterizationModeEXT = 1000455020,
 
     [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_extended_dynamic_state3", "VK_EXT_line_rasterization"],
+        [
+            "VK_EXT_extended_dynamic_state3+VK_EXT_line_rasterization",
+            "VK_EXT_extended_dynamic_state3+VK_KHR_line_rasterization",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_4",
+        ],
         ImpliesSets = [
             "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
-        ],
-        RequireAll = true
+        ]
     )]
     LineStippleEnableEXT = 1000455021,
 

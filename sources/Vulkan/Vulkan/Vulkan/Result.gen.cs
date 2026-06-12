@@ -797,6 +797,19 @@ public enum Result
     )]
     ErrorInvalidDrmFormatModifierPlaneLayoutEXT = -1000158000,
 
+    [NativeName("VK_ERROR_PRESENT_TIMING_QUEUE_FULL_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    ErrorPresentTimingQueueFullEXT = -1000208000,
+
     [NativeName("VK_ERROR_FULL_SCREEN_EXCLUSIVE_MODE_LOST_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -863,6 +876,7 @@ public enum Result
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -874,6 +888,7 @@ public enum Result
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
