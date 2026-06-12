@@ -13,7 +13,7 @@ public unsafe partial struct PresentInfoKHR
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PresentInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -42,4 +42,7 @@ public unsafe partial struct PresentInfoKHR
     [NativeName("pResults")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     public Result* PResults;
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
+    public PresentInfoKHR() { }
 }

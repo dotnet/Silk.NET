@@ -19,7 +19,7 @@ public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DeviceGroupPresentCapabilitiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -47,4 +47,12 @@ public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
         RequireAll = true
     )]
     public DeviceGroupPresentModeFlagsKHR Modes;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    public DeviceGroupPresentCapabilitiesKHR() { }
 }

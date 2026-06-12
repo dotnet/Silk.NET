@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceFragmentShadingRateEnumsPropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
     public SampleCountFlags MaxFragmentShadingRateInvocationCount;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_fragment_shading_rate_enums"],
+        ImpliesSets = ["VK_KHR_fragment_shading_rate"]
+    )]
+    public PhysicalDeviceFragmentShadingRateEnumsPropertiesNV() { }
 }

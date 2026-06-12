@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceShaderSubgroupRotateFeatures
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderSubgroupRotateFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct PhysicalDeviceShaderSubgroupRotateFeatures
     [NativeName("shaderSubgroupRotateClustered")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public MaybeBool<uint> ShaderSubgroupRotateClustered;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public PhysicalDeviceShaderSubgroupRotateFeatures() { }
 }

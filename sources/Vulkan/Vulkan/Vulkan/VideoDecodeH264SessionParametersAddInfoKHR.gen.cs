@@ -18,7 +18,7 @@ public unsafe partial struct VideoDecodeH264SessionParametersAddInfoKHR
         ["VK_KHR_video_decode_h264"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoDecodeH264SessionParametersAddInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -59,4 +59,11 @@ public unsafe partial struct VideoDecodeH264SessionParametersAddInfoKHR
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
     public StdVideoH264PictureParameterSet* PStdPPSs;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_h264"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
+    public VideoDecodeH264SessionParametersAddInfoKHR() { }
 }

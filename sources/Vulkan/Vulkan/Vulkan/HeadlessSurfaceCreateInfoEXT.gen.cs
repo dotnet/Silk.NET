@@ -13,7 +13,7 @@ public unsafe partial struct HeadlessSurfaceCreateInfoEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.HeadlessSurfaceCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
@@ -22,4 +22,7 @@ public unsafe partial struct HeadlessSurfaceCreateInfoEXT
     [NativeName("flags")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public uint Flags;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    public HeadlessSurfaceCreateInfoEXT() { }
 }

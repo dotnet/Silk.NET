@@ -13,7 +13,7 @@ public unsafe partial struct InitializePerformanceApiInfoINTEL
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.InitializePerformanceApiInfoINTEL;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
@@ -22,4 +22,7 @@ public unsafe partial struct InitializePerformanceApiInfoINTEL
     [NativeName("pUserData")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     public void* PUserData;
+
+    [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
+    public InitializePerformanceApiInfoINTEL() { }
 }

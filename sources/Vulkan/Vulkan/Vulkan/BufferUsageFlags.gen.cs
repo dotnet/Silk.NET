@@ -352,6 +352,17 @@ public enum BufferUsageFlags : uint
     )]
     ConditionalRenderingBitEXT = 0x200,
 
+    [NativeName("VK_BUFFER_USAGE_EXECUTION_GRAPH_SCRATCH_BIT_AMDX")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMDX_shader_enqueue"],
+        ImpliesSets = [
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_KHR_synchronization2+VK_KHR_spirv_1_4+VK_EXT_extended_dynamic_state",
+            "VK_KHR_maintenance5+VK_KHR_pipeline_library+VK_VERSION_1_3",
+        ]
+    )]
+    ExecutionGraphScratchBitAMDX = 0x2000000,
+
     [NativeName("VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

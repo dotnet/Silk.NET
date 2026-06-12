@@ -111,6 +111,14 @@ public enum BuildAccelerationStructureFlagsKHR : uint
     )]
     AllowOpacityMicromapDataUpdateBitEXT = 0x100,
 
+    [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISPLACEMENT_MICROMAP_UPDATE_BIT_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_displacement_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
+    AllowDisplacementMicromapUpdateBitNV = 0x200,
+
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DATA_ACCESS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

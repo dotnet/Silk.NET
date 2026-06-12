@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging.Abstractions;
 using Silk.NET.SilkTouch.Mods;
 
@@ -66,8 +65,7 @@ public class PrettifyNamesTests
         //
         // While the core issue is already covered by another test,
         // this test is kept because the format enums tend to be a bit sensitive to codebase changes
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -129,8 +127,7 @@ public class PrettifyNamesTests
         // NameUtilsTests.Prettify_Capital_AfterNumber_DoesNotAffect_PreviousWord tests for the underlying issue
         //
         // Note that the NameAffix attributes do affect the output
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -198,8 +195,7 @@ public class PrettifyNamesTests
         // The expected output is:
         // GetBufferPtrDirectSOFT
         // GetBufferPtrvDirectSOFT
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -265,8 +261,7 @@ public class PrettifyNamesTests
         // The expected output is:
         // GetBufferPtrDirectSOFT
         // alGetBufferPtrDirectSOFT (affixes are not prettified by default)
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -299,8 +294,7 @@ public class PrettifyNamesTests
         await prettifyNames.ExecuteAsync(context);
 
         // All names should start with GamepadBindingShouldBeInOutputName
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -334,8 +328,7 @@ public class PrettifyNamesTests
 
         // A should become ASuffix
         // B should become BASuffix
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -370,8 +363,7 @@ public class PrettifyNamesTests
         await prettifyNames.ExecuteAsync(context);
 
         // Both names should be affected by the override
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
     [Test]
@@ -481,7 +473,6 @@ public class PrettifyNamesTests
         // Expected:
         // Property is named "MainValue"
         // Method is named "Main"
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 }

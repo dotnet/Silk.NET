@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE
         ]
     )]
     public MaybeBool<uint> VideoEncodeRgbConversion;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_video_encode_rgb_conversion"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_sampler_ycbcr_conversion",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceVideoEncodeRgbConversionFeaturesVALVE() { }
 }

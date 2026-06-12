@@ -21,7 +21,7 @@ public unsafe partial struct PipelineFragmentDensityMapLayeredCreateInfoVALVE
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineFragmentDensityMapLayeredCreateInfoVALVE;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PipelineFragmentDensityMapLayeredCreateInfoVALVE
         ]
     )]
     public uint MaxFragmentDensityMapLayers;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
+    public PipelineFragmentDensityMapLayeredCreateInfoVALVE() { }
 }

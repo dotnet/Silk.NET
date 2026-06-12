@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using Silk.NET.SilkTouch.Mods;
 
 namespace Silk.NET.SilkTouch.UnitTests;

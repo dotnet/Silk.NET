@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceImageProcessing2FeaturesQCOM
         ["VK_QCOM_image_processing2"],
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceImageProcessing2FeaturesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct PhysicalDeviceImageProcessing2FeaturesQCOM
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
     public MaybeBool<uint> TextureBlockMatch2;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing2"],
+        ImpliesSets = ["VK_QCOM_image_processing"]
+    )]
+    public PhysicalDeviceImageProcessing2FeaturesQCOM() { }
 }

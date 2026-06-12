@@ -31,7 +31,7 @@ public unsafe partial struct DescriptorSetLayoutSupport
         ],
         MinVersion = "1.1"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DescriptorSetLayoutSupport;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -74,4 +74,24 @@ public unsafe partial struct DescriptorSetLayoutSupport
         MinVersion = "1.1"
     )]
     public MaybeBool<uint> Supported;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    public DescriptorSetLayoutSupport() { }
 }

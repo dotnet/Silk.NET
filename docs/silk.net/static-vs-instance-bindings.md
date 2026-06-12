@@ -1,4 +1,4 @@
-# Static vs Input Bindings
+# Static vs Instance Bindings
 
 ## Overview
 

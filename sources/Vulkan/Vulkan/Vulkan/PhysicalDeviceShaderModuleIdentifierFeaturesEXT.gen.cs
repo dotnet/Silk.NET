@@ -22,7 +22,7 @@ public unsafe partial struct PhysicalDeviceShaderModuleIdentifierFeaturesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderModuleIdentifierFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -47,4 +47,15 @@ public unsafe partial struct PhysicalDeviceShaderModuleIdentifierFeaturesEXT
         ]
     )]
     public MaybeBool<uint> ShaderModuleIdentifier;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_module_identifier"],
+        ImpliesSets = [
+            "VK_EXT_pipeline_creation_cache_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pipeline_creation_cache_control+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    public PhysicalDeviceShaderModuleIdentifierFeaturesEXT() { }
 }

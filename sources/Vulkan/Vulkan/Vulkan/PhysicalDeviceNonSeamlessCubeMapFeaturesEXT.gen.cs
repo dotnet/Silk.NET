@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceNonSeamlessCubeMapFeaturesEXT
             "VK_EXT_non_seamless_cube_map+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceNonSeamlessCubeMapFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceNonSeamlessCubeMapFeaturesEXT
         ]
     )]
     public MaybeBool<uint> NonSeamlessCubeMap;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_non_seamless_cube_map"],
+        ImpliesSets = [
+            "VK_EXT_non_seamless_cube_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_non_seamless_cube_map+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceNonSeamlessCubeMapFeaturesEXT() { }
 }

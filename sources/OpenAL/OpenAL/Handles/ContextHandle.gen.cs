@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ALCcontext")]
-public readonly unsafe partial struct ContextHandle
+public readonly unsafe partial struct ContextHandle : IEquatable<ContextHandle>
 {
     public readonly void* Handle;
 

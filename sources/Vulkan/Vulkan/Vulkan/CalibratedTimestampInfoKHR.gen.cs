@@ -21,7 +21,7 @@ public unsafe partial struct CalibratedTimestampInfoKHR
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CalibratedTimestampInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct CalibratedTimestampInfoKHR
         ]
     )]
     public TimeDomainKHR TimeDomain;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_calibrated_timestamps"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
+        ]
+    )]
+    public CalibratedTimestampInfoKHR() { }
 }

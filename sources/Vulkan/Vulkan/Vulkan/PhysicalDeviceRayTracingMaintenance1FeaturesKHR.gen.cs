@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceRayTracingMaintenance1FeaturesKHR
         ["VK_KHR_ray_tracing_maintenance1"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceRayTracingMaintenance1FeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,4 +42,11 @@ public unsafe partial struct PhysicalDeviceRayTracingMaintenance1FeaturesKHR
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     public MaybeBool<uint> RayTracingPipelineTraceRaysIndirect2;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_maintenance1"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public PhysicalDeviceRayTracingMaintenance1FeaturesKHR() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceImageSlicedViewOf3DFeaturesEXT
             "VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceImageSlicedViewOf3DFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceImageSlicedViewOf3DFeaturesEXT
         ]
     )]
     public MaybeBool<uint> ImageSlicedViewOf3D;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_sliced_view_of_3d"],
+        ImpliesSets = [
+            "VK_KHR_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceImageSlicedViewOf3DFeaturesEXT() { }
 }

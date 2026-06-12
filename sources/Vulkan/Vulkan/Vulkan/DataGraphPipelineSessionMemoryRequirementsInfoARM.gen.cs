@@ -18,7 +18,7 @@ public unsafe partial struct DataGraphPipelineSessionMemoryRequirementsInfoARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DataGraphPipelineSessionMemoryRequirementsInfoARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -51,4 +51,11 @@ public unsafe partial struct DataGraphPipelineSessionMemoryRequirementsInfoARM
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
     public uint ObjectIndex;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
+    public DataGraphPipelineSessionMemoryRequirementsInfoARM() { }
 }

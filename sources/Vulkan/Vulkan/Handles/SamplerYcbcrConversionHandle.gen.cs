@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkSamplerYcbcrConversion")]
 public readonly unsafe partial struct SamplerYcbcrConversionHandle
+    : IEquatable<SamplerYcbcrConversionHandle>
 {
     public readonly void* Handle;
 

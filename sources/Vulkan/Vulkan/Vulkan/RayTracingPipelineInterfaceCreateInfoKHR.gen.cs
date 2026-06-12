@@ -21,7 +21,7 @@ public unsafe partial struct RayTracingPipelineInterfaceCreateInfoKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.RayTracingPipelineInterfaceCreateInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct RayTracingPipelineInterfaceCreateInfoKHR
         ]
     )]
     public uint MaxPipelineRayHitAttributeSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_pipeline"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+        ]
+    )]
+    public RayTracingPipelineInterfaceCreateInfoKHR() { }
 }

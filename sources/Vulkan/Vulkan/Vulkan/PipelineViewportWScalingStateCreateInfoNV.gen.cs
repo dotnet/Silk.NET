@@ -14,7 +14,7 @@ public unsafe partial struct PipelineViewportWScalingStateCreateInfoNV
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineViewportWScalingStateCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
@@ -31,4 +31,7 @@ public unsafe partial struct PipelineViewportWScalingStateCreateInfoNV
     [NativeName("pViewportWScalings")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     public ViewportWScalingNV* PViewportWScalings;
+
+    [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
+    public PipelineViewportWScalingStateCreateInfoNV() { }
 }

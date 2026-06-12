@@ -1,3 +1,4 @@
-﻿public enum VkPresentModeKHR
+﻿// VkPresentModeKHR.gen.cs
+public enum VkPresentModeKHR
 {
 }

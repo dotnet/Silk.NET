@@ -18,7 +18,8 @@ public unsafe partial struct PhysicalDeviceRayTracingInvocationReorderProperties
         ["VK_NV_ray_tracing_invocation_reorder"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceRayTracingInvocationReorderPropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +36,11 @@ public unsafe partial struct PhysicalDeviceRayTracingInvocationReorderProperties
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
     public RayTracingInvocationReorderModeNV RayTracingInvocationReorderReorderingHint;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_invocation_reorder"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
+    public PhysicalDeviceRayTracingInvocationReorderPropertiesNV() { }
 }

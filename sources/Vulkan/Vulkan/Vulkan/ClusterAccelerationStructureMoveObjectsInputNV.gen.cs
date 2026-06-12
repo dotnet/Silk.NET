@@ -18,7 +18,7 @@ public unsafe partial struct ClusterAccelerationStructureMoveObjectsInputNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ClusterAccelerationStructureMoveObjectsInputNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -51,4 +51,11 @@ public unsafe partial struct ClusterAccelerationStructureMoveObjectsInputNV
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     public ulong MaxMovedBytes;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public ClusterAccelerationStructureMoveObjectsInputNV() { }
 }

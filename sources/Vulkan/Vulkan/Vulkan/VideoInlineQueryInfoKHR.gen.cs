@@ -18,7 +18,7 @@ public unsafe partial struct VideoInlineQueryInfoKHR
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoInlineQueryInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -51,4 +51,11 @@ public unsafe partial struct VideoInlineQueryInfoKHR
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
     public uint QueryCount;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_maintenance1"],
+        ImpliesSets = ["VK_KHR_video_queue"]
+    )]
+    public VideoInlineQueryInfoKHR() { }
 }

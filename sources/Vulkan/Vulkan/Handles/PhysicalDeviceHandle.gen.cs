@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDevice")]
-public readonly unsafe partial struct PhysicalDeviceHandle
+public readonly unsafe partial struct PhysicalDeviceHandle : IEquatable<PhysicalDeviceHandle>
 {
     public readonly void* Handle;
 

@@ -43,7 +43,9 @@
         "ClangScraper",
         "MarkNativeNames",
         "ExtractHandles",
-        "ExtractNestedTyping",
+        "ExtractNestedTypes",
+        "ExtractEnumConstants",
+        "ExtractFunctionPointers",
         "TransformHandles",
         "TransformFunctions",
         "TransformProperties",
@@ -254,7 +256,9 @@
         "AddApiProfiles",
         "MixKhronosData",
         "ExtractHandles",
-        "ExtractNestedTyping",
+        "ExtractNestedTypes",
+        "ExtractEnumConstants",
+        "ExtractFunctionPointers",
         "TransformHandles",
         "InterceptNativeFunctions",
         "TransformFunctions",
@@ -397,7 +401,9 @@
         "ClangScraper",
         "MarkNativeNames",
         "ExtractHandles",
-        "ExtractNestedTyping",
+        "ExtractNestedTypes",
+        "ExtractEnumConstants",
+        "ExtractFunctionPointers",
         "TransformHandles",
         "MixKhronosData",
         "AddApiProfiles",
@@ -428,6 +434,9 @@
       "MixKhronosData": {
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
         "Namespace": "Silk.NET.Vulkan",
+        "StructureTypes": [
+          "VkStructureType"
+        ],
         "FlagsTypes": [
           "VkFlags",
           "VkFlags64"

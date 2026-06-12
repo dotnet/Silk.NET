@@ -21,7 +21,7 @@ public unsafe partial struct MemoryFdPropertiesKHR
             "VK_KHR_external_memory_fd+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MemoryFdPropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct MemoryFdPropertiesKHR
         ]
     )]
     public uint MemoryTypeBits;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_external_memory_fd"],
+        ImpliesSets = [
+            "VK_KHR_external_memory_fd+VK_KHR_external_memory",
+            "VK_KHR_external_memory_fd+VK_VERSION_1_1",
+        ]
+    )]
+    public MemoryFdPropertiesKHR() { }
 }

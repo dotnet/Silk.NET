@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesNV
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDeviceGeneratedCommandsFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesNV
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
     public MaybeBool<uint> DeviceGeneratedCommands;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
+    )]
+    public PhysicalDeviceDeviceGeneratedCommandsFeaturesNV() { }
 }

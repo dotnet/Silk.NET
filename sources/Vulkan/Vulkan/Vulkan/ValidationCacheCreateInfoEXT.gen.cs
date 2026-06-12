@@ -14,7 +14,7 @@ public unsafe partial struct ValidationCacheCreateInfoEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.ValidationCacheCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
@@ -31,4 +31,7 @@ public unsafe partial struct ValidationCacheCreateInfoEXT
     [NativeName("pInitialData")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     public void* PInitialData;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
+    public ValidationCacheCreateInfoEXT() { }
 }

@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkIndirectExecutionSetEXT")]
 public readonly unsafe partial struct IndirectExecutionSetHandleEXT
+    : IEquatable<IndirectExecutionSetHandleEXT>
 {
     public readonly void* Handle;
 

@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceMemoryDecompressionFeaturesEXT
         ["VK_EXT_memory_decompression"],
         ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMemoryDecompressionFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -38,4 +38,11 @@ public unsafe partial struct PhysicalDeviceMemoryDecompressionFeaturesEXT
         ]
     )]
     public MaybeBool<uint> MemoryDecompression;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_decompression"],
+        ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
+    )]
+    public PhysicalDeviceMemoryDecompressionFeaturesEXT() { }
 }

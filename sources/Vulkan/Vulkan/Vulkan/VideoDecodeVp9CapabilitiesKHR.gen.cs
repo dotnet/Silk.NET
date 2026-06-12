@@ -18,7 +18,7 @@ public unsafe partial struct VideoDecodeVp9CapabilitiesKHR
         ["VK_KHR_video_decode_vp9"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoDecodeVp9CapabilitiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct VideoDecodeVp9CapabilitiesKHR
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
     public StdVideoVp9Level MaxLevel;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_decode_vp9"],
+        ImpliesSets = ["VK_KHR_video_decode_queue"]
+    )]
+    public VideoDecodeVp9CapabilitiesKHR() { }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeatures
         ],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceSubgroupSizeControlFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -49,4 +49,18 @@ public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeatures
     [NativeName("computeFullSubgroups")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public MaybeBool<uint> ComputeFullSubgroups;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    public PhysicalDeviceSubgroupSizeControlFeatures() { }
 }

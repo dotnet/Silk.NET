@@ -1,0 +1,11 @@
+﻿// Vk.gen.cs
+public class Vk
+{
+    [DllImport("vulkan", ExactSpelling = true, EntryPoint = "vkCreateInstance")]
+    [NameAffix("Suffix", "InterceptedFunction", "Internal")]
+    private static extern VkResult vkCreateInstanceInternal(VkInstanceCreateInfo* pCreateInfo, VkAllocationCallbacks* pAllocator, VkInstance_T** pInstance);
+    [DllImport("vulkan", ExactSpelling = true)]
+    public static extern VkResult vkCreateDevice(VkPhysicalDevice_T physicalDevice, VkDeviceCreateInfo* pCreateInfo, VkAllocationCallbacks* pAllocator, VkDevice_T* pDevice);
+    [NativeFunction("vulkan", EntryPoint = "vkCreateInstance")]
+    public static partial VkResult vkCreateInstance(VkInstanceCreateInfo* pCreateInfo, VkAllocationCallbacks* pAllocator, VkInstance_T** pInstance);
+}

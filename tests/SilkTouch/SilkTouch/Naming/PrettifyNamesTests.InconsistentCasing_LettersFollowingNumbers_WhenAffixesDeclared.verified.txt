@@ -1,4 +1,5 @@
-﻿public enum GLEnum
+﻿// Test.gen.cs
+public enum GLEnum
 {
     [NameAffix("Prefix", "SharedPrefix", "GL")]
     [NameAffix("Suffix", "KhronosVendor", "EXT")]

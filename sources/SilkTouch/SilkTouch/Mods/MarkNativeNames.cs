@@ -3,6 +3,7 @@
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.SilkTouch.Clang;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -11,8 +12,8 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 /// <remarks>
 /// This mod is currently kept pretty dumb and just applies [NativeName] attributes to almost everything.
-/// Syntax nodes not output by ClangSharp are intentionally not processed.
-/// This mod is best placed directly after ClangScraper.
+/// Syntax nodes not output by <see cref="ClangScraper"/> are intentionally not processed.
+/// This mod is best placed directly after <see cref="ClangScraper"/>.
 /// </remarks>
 public class MarkNativeNames : IMod
 {

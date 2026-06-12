@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSemaphore")]
-public readonly unsafe partial struct SemaphoreHandle
+public readonly unsafe partial struct SemaphoreHandle : IEquatable<SemaphoreHandle>
 {
     public readonly void* Handle;
 

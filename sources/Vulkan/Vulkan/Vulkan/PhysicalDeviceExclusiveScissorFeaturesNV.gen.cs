@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
             "VK_NV_scissor_exclusive+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceExclusiveScissorFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
         ]
     )]
     public MaybeBool<uint> ExclusiveScissor;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_scissor_exclusive"],
+        ImpliesSets = [
+            "VK_NV_scissor_exclusive+VK_KHR_get_physical_device_properties2",
+            "VK_NV_scissor_exclusive+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceExclusiveScissorFeaturesNV() { }
 }

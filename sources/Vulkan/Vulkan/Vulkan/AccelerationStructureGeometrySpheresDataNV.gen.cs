@@ -18,7 +18,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.AccelerationStructureGeometrySpheresDataNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -99,4 +99,11 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
     public ulong IndexStride;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_linear_swept_spheres"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
+    public AccelerationStructureGeometrySpheresDataNV() { }
 }

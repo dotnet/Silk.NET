@@ -22,7 +22,7 @@ public unsafe partial struct VideoEncodeH265QuantizationMapCapabilitiesKHR
         ],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeH265QuantizationMapCapabilitiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -59,4 +59,15 @@ public unsafe partial struct VideoEncodeH265QuantizationMapCapabilitiesKHR
         RequireAll = true
     )]
     public int MaxQpDelta;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265", "VK_KHR_video_encode_quantization_map"],
+        ImpliesSets = [
+            "VK_KHR_video_encode_queue+VK_KHR_format_feature_flags2",
+            "VK_KHR_video_encode_queue+VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
+    public VideoEncodeH265QuantizationMapCapabilitiesKHR() { }
 }

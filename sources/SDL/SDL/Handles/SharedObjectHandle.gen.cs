@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_SharedObject")]
-public readonly unsafe partial struct SharedObjectHandle
+public readonly unsafe partial struct SharedObjectHandle : IEquatable<SharedObjectHandle>
 {
     public readonly void* Handle;
 

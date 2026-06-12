@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_Haptic")]
-public readonly unsafe partial struct HapticHandle
+public readonly unsafe partial struct HapticHandle : IEquatable<HapticHandle>
 {
     public readonly void* Handle;
 

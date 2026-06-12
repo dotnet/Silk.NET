@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceCubicWeightsFeaturesQCOM
         ["VK_QCOM_filter_cubic_weights"],
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCubicWeightsFeaturesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct PhysicalDeviceCubicWeightsFeaturesQCOM
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
     public MaybeBool<uint> SelectableCubicWeights;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_filter_cubic_weights"],
+        ImpliesSets = ["VK_EXT_filter_cubic"]
+    )]
+    public PhysicalDeviceCubicWeightsFeaturesQCOM() { }
 }

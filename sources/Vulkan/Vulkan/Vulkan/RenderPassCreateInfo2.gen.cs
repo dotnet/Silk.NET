@@ -25,7 +25,7 @@ public unsafe partial struct RenderPassCreateInfo2
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.RenderPassCreateInfo2;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -176,4 +176,18 @@ public unsafe partial struct RenderPassCreateInfo2
         MinVersion = "1.2"
     )]
     public uint* PCorrelatedViewMasks;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public RenderPassCreateInfo2() { }
 }

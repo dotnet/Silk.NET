@@ -6,5 +6,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.SDL;
+
 [NativeName("SDL_VirtualJoystickDesc_SetPlayerIndex")]
 public unsafe delegate void VirtualJoystickDescSetPlayerIndexDelegate(void* arg0, int arg1);

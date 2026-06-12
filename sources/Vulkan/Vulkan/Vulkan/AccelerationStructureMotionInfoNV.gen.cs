@@ -18,7 +18,7 @@ public unsafe partial struct AccelerationStructureMotionInfoNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.AccelerationStructureMotionInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,11 @@ public unsafe partial struct AccelerationStructureMotionInfoNV
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
     public uint Flags;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_motion_blur"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
+    public AccelerationStructureMotionInfoNV() { }
 }

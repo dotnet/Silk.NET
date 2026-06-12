@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkCommandBuffer")]
-public readonly unsafe partial struct CommandBufferHandle
+public readonly unsafe partial struct CommandBufferHandle : IEquatable<CommandBufferHandle>
 {
     public readonly void* Handle;
 

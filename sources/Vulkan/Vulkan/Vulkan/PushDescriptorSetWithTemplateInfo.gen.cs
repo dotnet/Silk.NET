@@ -18,7 +18,7 @@ public unsafe partial struct PushDescriptorSetWithTemplateInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PushDescriptorSetWithTemplateInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -59,4 +59,11 @@ public unsafe partial struct PushDescriptorSetWithTemplateInfo
         MinVersion = "1.4"
     )]
     public void* PData;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public PushDescriptorSetWithTemplateInfo() { }
 }

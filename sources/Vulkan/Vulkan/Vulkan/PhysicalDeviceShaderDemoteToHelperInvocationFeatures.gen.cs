@@ -25,7 +25,7 @@ public unsafe partial struct PhysicalDeviceShaderDemoteToHelperInvocationFeature
         ],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -45,4 +45,18 @@ public unsafe partial struct PhysicalDeviceShaderDemoteToHelperInvocationFeature
     [NativeName("shaderDemoteToHelperInvocation")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public MaybeBool<uint> ShaderDemoteToHelperInvocation;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    public PhysicalDeviceShaderDemoteToHelperInvocationFeatures() { }
 }

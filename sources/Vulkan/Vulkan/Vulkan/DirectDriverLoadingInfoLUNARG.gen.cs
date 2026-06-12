@@ -14,7 +14,7 @@ public unsafe partial struct DirectDriverLoadingInfoLUNARG
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.DirectDriverLoadingInfoLUNARG;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
@@ -27,4 +27,7 @@ public unsafe partial struct DirectDriverLoadingInfoLUNARG
     [NativeName("pfnGetInstanceProcAddr")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     public GetInstanceProcAddrLUNARG PfnGetInstanceProcAddr;
+
+    [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
+    public DirectDriverLoadingInfoLUNARG() { }
 }

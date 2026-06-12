@@ -1,0 +1,26 @@
+﻿// PFN_vkDebugReportCallbackEXT.gen.cs
+[NativeName("PFN_vkDebugReportCallbackEXT")]
+public unsafe readonly struct PFN_vkDebugReportCallbackEXT : IDisposable
+{
+    private readonly void* _pointer;
+    public delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> Handle => (delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> )_pointer;
+
+    public PFN_vkDebugReportCallbackEXT(delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> ptr) => _pointer = ptr;
+    public PFN_vkDebugReportCallbackEXT(PFN_vkDebugReportCallbackEXTDelegate proc) => _pointer = SilkMarshal.DelegateToPtr(proc);
+    public void Dispose() => SilkMarshal.Free(_pointer);
+    public static implicit operator PFN_vkDebugReportCallbackEXT(delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> pfn) => new(pfn);
+    public static implicit operator delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> (PFN_vkDebugReportCallbackEXT pfn) => (delegate* unmanaged<uint, VkDebugReportObjectTypeEXT, ulong, nuint, int, sbyte*, sbyte*, void*, uint> )pfn._pointer;
+}
+
+// PFN_vkDebugReportCallbackEXTDelegate.gen.cs
+[NativeName("PFN_vkDebugReportCallbackEXT")]
+[NameAffix("Prefix", "FunctionPointerParent", nameof(PFN_vkDebugReportCallbackEXT))]
+[NameAffix("Suffix", "FunctionPointerDelegateType", "Delegate")]
+public unsafe delegate uint PFN_vkDebugReportCallbackEXTDelegate(uint arg0, VkDebugReportObjectTypeEXT arg1, ulong arg2, nuint arg3, int arg4, sbyte* arg5, sbyte* arg6, void* arg7);
+
+// VkDebugReportCallbackCreateInfoEXT.gen.cs
+public unsafe partial struct VkDebugReportCallbackCreateInfoEXT
+{
+    [NativeTypeName("PFN_vkDebugReportCallbackEXT")]
+    public PFN_vkDebugReportCallbackEXT pfnCallback;
+}

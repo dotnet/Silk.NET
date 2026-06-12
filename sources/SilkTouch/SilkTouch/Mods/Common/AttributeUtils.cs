@@ -314,16 +314,19 @@ public static class AttributeUtils
     /// Retrieves the native type name within the given attribute list.
     /// </summary>
     /// <param name="attrs">The attributes.</param>
-    /// <param name="requireContext">The required attribute target/context.</param>
+    /// <param name="requiredTargetSpecifier">
+    /// The required attribute target specifier.
+    /// Eg: <see cref="SyntaxKind.ReturnKeyword"/> for <c>[return: Attribute]</c>.
+    /// </param>
     /// <returns>The native type name.</returns>
     public static string? GetNativeTypeName(
         this IEnumerable<AttributeListSyntax> attrs,
-        SyntaxKind? requireContext = null
+        SyntaxKind? requiredTargetSpecifier = null
     ) =>
         attrs
             .SelectMany(x =>
-                (x.Target is null && requireContext is null)
-                || (requireContext is { } rc && (x.Target?.Identifier.IsKind(rc) ?? false))
+                (x.Target is null && requiredTargetSpecifier is null)
+                || (requiredTargetSpecifier is { } rc && (x.Target?.Identifier.IsKind(rc) ?? false))
                     ? x.Attributes
                     : []
             )
@@ -341,16 +344,21 @@ public static class AttributeUtils
     /// </summary>
     /// <param name="attrs">The attributes.</param>
     /// <param name="info">The parsed native type info. Invalid if this method returns false.</param>
+    /// <param name="requiredTargetSpecifier">
+    /// The required attribute target specifier.
+    /// Eg: <see cref="SyntaxKind.ReturnKeyword"/> for <c>[return: Attribute]</c>.
+    /// </param>
     /// <returns>Whether the type name was successfully parsed.</returns>
     /// <remarks>
     /// This does not handle all of the possible cases.
     /// </remarks>
     public static bool TryParseNativeTypeName(
         this IEnumerable<AttributeListSyntax> attrs,
-        out NativeTypeNameInfo info
+        out NativeTypeNameInfo info,
+        SyntaxKind? requiredTargetSpecifier = null
     )
     {
-        var nativeTypeNameString = attrs.GetNativeTypeName();
+        var nativeTypeNameString = attrs.GetNativeTypeName(requiredTargetSpecifier);
         var nativeTypeName = nativeTypeNameString.AsSpan();
         if (nativeTypeName.Length == 0)
         {

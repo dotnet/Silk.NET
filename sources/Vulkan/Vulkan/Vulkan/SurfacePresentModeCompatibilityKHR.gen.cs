@@ -19,7 +19,7 @@ public unsafe partial struct SurfacePresentModeCompatibilityKHR
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SurfacePresentModeCompatibilityKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -53,4 +53,14 @@ public unsafe partial struct SurfacePresentModeCompatibilityKHR
         ]
     )]
     public PresentModeKHR* PPresentModes;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
+    public SurfacePresentModeCompatibilityKHR() { }
 }

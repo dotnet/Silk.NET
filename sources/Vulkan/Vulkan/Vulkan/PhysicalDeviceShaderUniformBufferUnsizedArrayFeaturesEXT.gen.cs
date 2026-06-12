@@ -21,7 +21,8 @@ public unsafe partial struct PhysicalDeviceShaderUniformBufferUnsizedArrayFeatur
             "VK_EXT_shader_uniform_buffer_unsized_array+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceShaderUniformBufferUnsizedArrayFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +45,14 @@ public unsafe partial struct PhysicalDeviceShaderUniformBufferUnsizedArrayFeatur
         ]
     )]
     public MaybeBool<uint> ShaderUniformBufferUnsizedArray;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_uniform_buffer_unsized_array"],
+        ImpliesSets = [
+            "VK_EXT_shader_uniform_buffer_unsized_array+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_uniform_buffer_unsized_array+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceShaderUniformBufferUnsizedArrayFeaturesEXT() { }
 }
