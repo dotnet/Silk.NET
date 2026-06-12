@@ -22,3 +22,36 @@
 [submodule "eng/submodules/vulkan-headers"]
 	path = eng/submodules/vulkan-headers
 	url = https://github.com/KhronosGroup/Vulkan-Headers.git
+[submodule "eng/submodules/assimp"]
+	path = eng/submodules/assimp
+	url = https://github.com/assimp/assimp
+[submodule "eng/submodules/spirv-tools"]
+	path = eng/submodules/spirv-tools
+	url = https://github.com/KhronosGroup/SPIRV-Tools
+[submodule "eng/submodules/spirv-reflect"]
+	path = eng/submodules/spirv-reflect
+	url = https://github.com/KhronosGroup/SPIRV-Reflect.git
+[submodule "eng/submodules/spirv-headers"]
+	path = eng/submodules/spirv-headers
+	url = https://github.com/KhronosGroup/SPIRV-Headers
+[submodule "eng/submodules/spirv-cross"]
+	path = eng/submodules/spirv-cross
+	url = https://github.com/KhronosGroup/SPIRV-Cross
+[submodule "eng/submodules/shaderc"]
+	path = eng/submodules/shaderc
+	url = https://github.com/google/shaderc
+[submodule "eng/submodules/moltenvk"]
+	path = eng/submodules/moltenvk
+	url = https://github.com/KhronosGroup/MoltenVK
+[submodule "eng/submodules/vulkan-memory-allocator"]
+	path = eng/submodules/vulkan-memory-allocator
+	url = https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
+[submodule "eng/submodules/glslang"]
+	path = eng/submodules/glslang
+	url = https://github.com/KhronosGroup/glslang.git
+[submodule "eng/submodules/openxr"]
+	path = eng/submodules/openxr
+	url = https://github.com/KhronosGroup/OpenXR-SDK.git
+[submodule "eng/submodules/opencl"]
+	path = eng/submodules/opencl
+	url = https://github.com/KhronosGroup/OpenCL-Docs.git
