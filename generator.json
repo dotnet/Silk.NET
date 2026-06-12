@@ -470,6 +470,7 @@
       "IdentifySharedPrefixes": {
         "GlobalPrefixHints": ["PFN_vk", "vk"],
         "PrefixOverrides": {
+          "VkImageCreateFlags2KHR": "VK_IMAGE_CREATE_2",
           "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2",
           "VkMemoryDecompressionMethodFlagsEXT": "VK_MEMORY_DECOMPRESSION_METHOD"
         }
