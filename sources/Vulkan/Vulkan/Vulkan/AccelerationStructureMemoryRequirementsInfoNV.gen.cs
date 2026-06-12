@@ -21,7 +21,7 @@ public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.AccelerationStructureMemoryRequirementsInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct AccelerationStructureMemoryRequirementsInfoNV
         ]
     )]
     public AccelerationStructureHandleNV AccelerationStructure;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_get_memory_requirements2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    public AccelerationStructureMemoryRequirementsInfoNV() { }
 }

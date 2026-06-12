@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3PropertiesEXT
             "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceExtendedDynamicState3PropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,14 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3PropertiesEXT
         ]
     )]
     public MaybeBool<uint> DynamicPrimitiveTopologyUnrestricted;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state3"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state3+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state3+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceExtendedDynamicState3PropertiesEXT() { }
 }

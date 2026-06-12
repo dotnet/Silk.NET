@@ -14,7 +14,7 @@ public unsafe partial struct ExternalTensorPropertiesARM
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.ExternalTensorPropertiesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
@@ -23,4 +23,7 @@ public unsafe partial struct ExternalTensorPropertiesARM
     [NativeName("externalMemoryProperties")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public ExternalMemoryProperties ExternalMemoryProperties;
+
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
+    public ExternalTensorPropertiesARM() { }
 }

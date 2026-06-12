@@ -22,7 +22,7 @@ public unsafe partial struct RenderPassStripeInfoARM
             "VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.RenderPassStripeInfoARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -47,4 +47,15 @@ public unsafe partial struct RenderPassStripeInfoARM
         ]
     )]
     public Rect2D StripeArea;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_render_pass_striped"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_VERSION_1_1",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    public RenderPassStripeInfoARM() { }
 }

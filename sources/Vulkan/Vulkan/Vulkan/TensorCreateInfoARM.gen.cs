@@ -14,7 +14,7 @@ public unsafe partial struct TensorCreateInfoARM
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.TensorCreateInfoARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
@@ -39,4 +39,7 @@ public unsafe partial struct TensorCreateInfoARM
     [NativeName("pQueueFamilyIndices")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint* PQueueFamilyIndices;
+
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
+    public TensorCreateInfoARM() { }
 }

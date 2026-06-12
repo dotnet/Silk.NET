@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrixFeaturesNV
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCooperativeMatrixFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrixFeaturesNV
         ]
     )]
     public MaybeBool<uint> CooperativeMatrixRobustBufferAccess;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_NV_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceCooperativeMatrixFeaturesNV() { }
 }

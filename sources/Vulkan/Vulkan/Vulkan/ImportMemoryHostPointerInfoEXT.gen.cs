@@ -21,7 +21,7 @@ public unsafe partial struct ImportMemoryHostPointerInfoEXT
             "VK_EXT_external_memory_host+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ImportMemoryHostPointerInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct ImportMemoryHostPointerInfoEXT
         ]
     )]
     public void* PHostPointer;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_host"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_host+VK_KHR_external_memory",
+            "VK_EXT_external_memory_host+VK_VERSION_1_1",
+        ]
+    )]
+    public ImportMemoryHostPointerInfoEXT() { }
 }

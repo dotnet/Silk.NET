@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceShadingRateImagePropertiesNV
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShadingRateImagePropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -66,4 +66,14 @@ public unsafe partial struct PhysicalDeviceShadingRateImagePropertiesNV
         ]
     )]
     public uint ShadingRateMaxCoarseSamples;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceShadingRateImagePropertiesNV() { }
 }

@@ -17,7 +17,7 @@ public unsafe partial struct DataGraphPipelineBuiltinModelCreateInfoQCOM
         ["VK_QCOM_data_graph_model"],
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DataGraphPipelineBuiltinModelCreateInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct DataGraphPipelineBuiltinModelCreateInfoQCOM
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
     public PhysicalDeviceDataGraphOperationSupportARM* POperation;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_data_graph_model"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    public DataGraphPipelineBuiltinModelCreateInfoQCOM() { }
 }

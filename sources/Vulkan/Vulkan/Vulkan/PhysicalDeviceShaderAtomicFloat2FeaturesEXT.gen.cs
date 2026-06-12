@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ["VK_EXT_shader_atomic_float2"],
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderAtomicFloat2FeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -126,4 +126,11 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloat2FeaturesEXT
         ImpliesSets = ["VK_EXT_shader_atomic_float"]
     )]
     public MaybeBool<uint> SparseImageFloat32AtomicMinMax;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float2"],
+        ImpliesSets = ["VK_EXT_shader_atomic_float"]
+    )]
+    public PhysicalDeviceShaderAtomicFloat2FeaturesEXT() { }
 }

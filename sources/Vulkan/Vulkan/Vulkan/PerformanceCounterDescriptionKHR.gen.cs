@@ -20,7 +20,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PerformanceCounterDescriptionKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -76,4 +76,14 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
         ]
     )]
     public PerformanceCounterDescriptionKHRDescription Description;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
+    public PerformanceCounterDescriptionKHR() { }
 }

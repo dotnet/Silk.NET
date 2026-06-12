@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceShaderCoreBuiltinsPropertiesARM
             "VK_ARM_shader_core_builtins+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderCoreBuiltinsPropertiesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -66,4 +66,14 @@ public unsafe partial struct PhysicalDeviceShaderCoreBuiltinsPropertiesARM
         ]
     )]
     public uint ShaderWarpsPerCore;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_core_builtins"],
+        ImpliesSets = [
+            "VK_ARM_shader_core_builtins+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_core_builtins+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceShaderCoreBuiltinsPropertiesARM() { }
 }

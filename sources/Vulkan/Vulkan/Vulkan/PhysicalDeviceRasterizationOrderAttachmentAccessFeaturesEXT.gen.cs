@@ -21,7 +21,8 @@ public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFea
             "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -66,4 +67,14 @@ public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFea
         ]
     )]
     public MaybeBool<uint> RasterizationOrderStencilAttachmentAccess;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_rasterization_order_attachment_access"],
+        ImpliesSets = [
+            "VK_EXT_rasterization_order_attachment_access+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_rasterization_order_attachment_access+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT() { }
 }

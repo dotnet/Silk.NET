@@ -21,7 +21,7 @@ public unsafe partial struct IndirectExecutionSetCreateInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.IndirectExecutionSetCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -58,4 +58,15 @@ public unsafe partial struct IndirectExecutionSetCreateInfoEXT
         ]
     )]
     public IndirectExecutionSetInfoEXT Info;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    public IndirectExecutionSetCreateInfoEXT() { }
 }

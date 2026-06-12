@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceBlendOperationAdvancedPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -98,4 +98,14 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
         ]
     )]
     public MaybeBool<uint> AdvancedBlendAllOperations;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_blend_operation_advanced"],
+        ImpliesSets = [
+            "VK_EXT_blend_operation_advanced+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceBlendOperationAdvancedPropertiesEXT() { }
 }

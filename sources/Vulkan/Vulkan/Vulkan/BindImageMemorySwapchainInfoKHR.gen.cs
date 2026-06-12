@@ -19,7 +19,7 @@ public unsafe partial struct BindImageMemorySwapchainInfoKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.BindImageMemorySwapchainInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -47,4 +47,12 @@ public unsafe partial struct BindImageMemorySwapchainInfoKHR
         RequireAll = true
     )]
     public uint ImageIndex;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+        ImpliesSets = ["VK_KHR_surface"],
+        RequireAll = true
+    )]
+    public BindImageMemorySwapchainInfoKHR() { }
 }

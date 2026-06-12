@@ -14,7 +14,7 @@ public unsafe partial struct PhysicalDeviceTensorPropertiesARM
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceTensorPropertiesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
@@ -71,4 +71,7 @@ public unsafe partial struct PhysicalDeviceTensorPropertiesARM
     [NativeName("shaderTensorSupportedStages")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public ShaderStageFlags ShaderTensorSupportedStages;
+
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
+    public PhysicalDeviceTensorPropertiesARM() { }
 }

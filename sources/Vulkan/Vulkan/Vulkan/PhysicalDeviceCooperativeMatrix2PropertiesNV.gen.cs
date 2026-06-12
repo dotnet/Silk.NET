@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2PropertiesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCooperativeMatrix2PropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -51,4 +51,11 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2PropertiesNV
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
     public uint CooperativeMatrixWorkgroupScopeReservedSharedMemory;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public PhysicalDeviceCooperativeMatrix2PropertiesNV() { }
 }

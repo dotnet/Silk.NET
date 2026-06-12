@@ -14,7 +14,7 @@ public unsafe partial struct HdrMetadataEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.HdrMetadataEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
@@ -51,4 +51,7 @@ public unsafe partial struct HdrMetadataEXT
     [NativeName("maxFrameAverageLightLevel")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     public float MaxFrameAverageLightLevel;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
+    public HdrMetadataEXT() { }
 }

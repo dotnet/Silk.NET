@@ -18,7 +18,7 @@ public unsafe partial struct DeviceQueueShaderCoreControlCreateInfoARM
         ["VK_ARM_scheduling_controls"],
         ImpliesSets = ["VK_ARM_shader_core_builtins"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DeviceQueueShaderCoreControlCreateInfoARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct DeviceQueueShaderCoreControlCreateInfoARM
         ImpliesSets = ["VK_ARM_shader_core_builtins"]
     )]
     public uint ShaderCoreCount;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_scheduling_controls"],
+        ImpliesSets = ["VK_ARM_shader_core_builtins"]
+    )]
+    public DeviceQueueShaderCoreControlCreateInfoARM() { }
 }

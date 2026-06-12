@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
             "VK_INTEL_shader_integer_functions2+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
         ]
     )]
     public MaybeBool<uint> ShaderIntegerFunctions2;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_INTEL_shader_integer_functions2"],
+        ImpliesSets = [
+            "VK_INTEL_shader_integer_functions2+VK_KHR_get_physical_device_properties2",
+            "VK_INTEL_shader_integer_functions2+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL() { }
 }

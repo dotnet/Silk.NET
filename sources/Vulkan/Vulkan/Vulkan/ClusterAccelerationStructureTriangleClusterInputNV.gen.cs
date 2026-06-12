@@ -18,7 +18,7 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ClusterAccelerationStructureTriangleClusterInputNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -91,4 +91,11 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     public uint MinPositionTruncateBitCount;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public ClusterAccelerationStructureTriangleClusterInputNV() { }
 }

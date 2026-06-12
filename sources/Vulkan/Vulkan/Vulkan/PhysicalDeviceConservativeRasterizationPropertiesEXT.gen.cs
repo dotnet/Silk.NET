@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceConservativeRasterizationPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -131,4 +131,14 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
         ]
     )]
     public MaybeBool<uint> ConservativeRasterizationPostDepthCoverage;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conservative_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_conservative_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceConservativeRasterizationPropertiesEXT() { }
 }

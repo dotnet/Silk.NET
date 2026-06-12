@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentFeaturesEXT
             "VK_EXT_texel_buffer_alignment+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceTexelBufferAlignmentFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,14 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentFeaturesEXT
         ]
     )]
     public MaybeBool<uint> TexelBufferAlignment;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texel_buffer_alignment"],
+        ImpliesSets = [
+            "VK_EXT_texel_buffer_alignment+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texel_buffer_alignment+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceTexelBufferAlignmentFeaturesEXT() { }
 }

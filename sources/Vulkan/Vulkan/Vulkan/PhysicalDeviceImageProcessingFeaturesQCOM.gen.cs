@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceImageProcessingFeaturesQCOM
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceImageProcessingFeaturesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -65,4 +65,14 @@ public unsafe partial struct PhysicalDeviceImageProcessingFeaturesQCOM
         ]
     )]
     public MaybeBool<uint> TextureBlockMatch;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing+VK_KHR_format_feature_flags2",
+            "VK_QCOM_image_processing+VK_VERSION_1_3",
+        ]
+    )]
+    public PhysicalDeviceImageProcessingFeaturesQCOM() { }
 }

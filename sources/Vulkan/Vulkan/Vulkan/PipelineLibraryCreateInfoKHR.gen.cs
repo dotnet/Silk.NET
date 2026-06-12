@@ -14,7 +14,7 @@ public unsafe partial struct PipelineLibraryCreateInfoKHR
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineLibraryCreateInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
@@ -27,4 +27,7 @@ public unsafe partial struct PipelineLibraryCreateInfoKHR
     [NativeName("pLibraries")]
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
     public PipelineHandle* PLibraries;
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
+    public PipelineLibraryCreateInfoKHR() { }
 }

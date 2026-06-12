@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceLegacyVertexAttributesPropertiesEXT
         ["VK_EXT_legacy_vertex_attributes"],
         ImpliesSets = ["VK_EXT_vertex_input_dynamic_state"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceLegacyVertexAttributesPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct PhysicalDeviceLegacyVertexAttributesPropertiesEXT
         ImpliesSets = ["VK_EXT_vertex_input_dynamic_state"]
     )]
     public MaybeBool<uint> NativeUnalignedPerformance;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_legacy_vertex_attributes"],
+        ImpliesSets = ["VK_EXT_vertex_input_dynamic_state"]
+    )]
+    public PhysicalDeviceLegacyVertexAttributesPropertiesEXT() { }
 }

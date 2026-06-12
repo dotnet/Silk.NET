@@ -14,7 +14,7 @@ public unsafe partial struct LayerSettingsCreateInfoEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.LayerSettingsCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
@@ -27,4 +27,7 @@ public unsafe partial struct LayerSettingsCreateInfoEXT
     [NativeName("pSettings")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     public LayerSettingEXT* PSettings;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
+    public LayerSettingsCreateInfoEXT() { }
 }

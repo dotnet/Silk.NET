@@ -23,7 +23,7 @@ public unsafe partial struct CopyMemoryToImageInfo
         ],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CopyMemoryToImageInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -102,4 +102,16 @@ public unsafe partial struct CopyMemoryToImageInfo
         MinVersion = "1.4"
     )]
     public MemoryToImageCopy* PRegions;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    public CopyMemoryToImageInfo() { }
 }

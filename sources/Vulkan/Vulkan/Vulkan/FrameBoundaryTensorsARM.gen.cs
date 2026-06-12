@@ -19,7 +19,7 @@ public unsafe partial struct FrameBoundaryTensorsARM
         ImpliesSets = ["VK_VERSION_1_3"],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.FrameBoundaryTensorsARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -47,4 +47,12 @@ public unsafe partial struct FrameBoundaryTensorsARM
         RequireAll = true
     )]
     public TensorHandleARM* PTensors;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_frame_boundary"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
+    public FrameBoundaryTensorsARM() { }
 }

@@ -18,7 +18,7 @@ public unsafe partial struct ClusterAccelerationStructureInputInfoNV
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ClusterAccelerationStructureInputInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -67,4 +67,11 @@ public unsafe partial struct ClusterAccelerationStructureInputInfoNV
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     public ClusterAccelerationStructureOpInputNV OpInput;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public ClusterAccelerationStructureInputInfoNV() { }
 }

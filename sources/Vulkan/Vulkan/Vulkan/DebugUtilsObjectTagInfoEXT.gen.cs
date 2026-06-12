@@ -14,7 +14,7 @@ public unsafe partial struct DebugUtilsObjectTagInfoEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.DebugUtilsObjectTagInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
@@ -39,4 +39,7 @@ public unsafe partial struct DebugUtilsObjectTagInfoEXT
     [NativeName("pTag")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public void* PTag;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
+    public DebugUtilsObjectTagInfoEXT() { }
 }

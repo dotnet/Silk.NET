@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceRgba10x6FormatsFeaturesEXT
             "VK_EXT_rgba10x6_formats+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceRgba10x6FormatsFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +43,14 @@ public unsafe partial struct PhysicalDeviceRgba10x6FormatsFeaturesEXT
         ]
     )]
     public MaybeBool<uint> FormatRgba10x6WithoutYCbCrSampler;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_rgba10x6_formats"],
+        ImpliesSets = [
+            "VK_EXT_rgba10x6_formats+VK_KHR_sampler_ycbcr_conversion",
+            "VK_EXT_rgba10x6_formats+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceRgba10x6FormatsFeaturesEXT() { }
 }

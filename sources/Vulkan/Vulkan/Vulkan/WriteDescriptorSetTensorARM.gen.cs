@@ -13,7 +13,7 @@ public unsafe partial struct WriteDescriptorSetTensorARM
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.WriteDescriptorSetTensorARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
@@ -26,4 +26,7 @@ public unsafe partial struct WriteDescriptorSetTensorARM
     [NativeName("pTensorViews")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorViewHandleARM* PTensorViews;
+
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
+    public WriteDescriptorSetTensorARM() { }
 }

@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapPropertiesEXT
             "VK_EXT_fragment_density_map+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceFragmentDensityMapPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -65,4 +65,14 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapPropertiesEXT
         ]
     )]
     public MaybeBool<uint> FragmentDensityInvocations;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_density_map"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceFragmentDensityMapPropertiesEXT() { }
 }

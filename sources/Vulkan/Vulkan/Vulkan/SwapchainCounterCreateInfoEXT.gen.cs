@@ -17,7 +17,7 @@ public unsafe partial struct SwapchainCounterCreateInfoEXT
         ["VK_EXT_display_control"],
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SwapchainCounterCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct SwapchainCounterCreateInfoEXT
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
     public SurfaceCounterFlagsEXT SurfaceCounters;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_display_control"],
+        ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
+    )]
+    public SwapchainCounterCreateInfoEXT() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceRawAccessChainsFeaturesNV
             "VK_NV_raw_access_chains+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceRawAccessChainsFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceRawAccessChainsFeaturesNV
         ]
     )]
     public MaybeBool<uint> ShaderRawAccessChains;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_raw_access_chains"],
+        ImpliesSets = [
+            "VK_NV_raw_access_chains+VK_KHR_get_physical_device_properties2",
+            "VK_NV_raw_access_chains+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceRawAccessChainsFeaturesNV() { }
 }

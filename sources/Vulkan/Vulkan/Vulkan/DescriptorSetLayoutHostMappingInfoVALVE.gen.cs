@@ -20,7 +20,7 @@ public unsafe partial struct DescriptorSetLayoutHostMappingInfoVALVE
             "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DescriptorSetLayoutHostMappingInfoVALVE;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct DescriptorSetLayoutHostMappingInfoVALVE
         ]
     )]
     public uint DescriptorSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
+    public DescriptorSetLayoutHostMappingInfoVALVE() { }
 }

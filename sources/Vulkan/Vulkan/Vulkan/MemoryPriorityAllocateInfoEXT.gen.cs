@@ -21,7 +21,7 @@ public unsafe partial struct MemoryPriorityAllocateInfoEXT
             "VK_EXT_memory_priority+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MemoryPriorityAllocateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct MemoryPriorityAllocateInfoEXT
         ]
     )]
     public float Priority;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_priority"],
+        ImpliesSets = [
+            "VK_EXT_memory_priority+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_memory_priority+VK_VERSION_1_1",
+        ]
+    )]
+    public MemoryPriorityAllocateInfoEXT() { }
 }

@@ -21,7 +21,8 @@ public unsafe partial struct PipelineRasterizationProvokingVertexStateCreateInfo
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PipelineRasterizationProvokingVertexStateCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +45,14 @@ public unsafe partial struct PipelineRasterizationProvokingVertexStateCreateInfo
         ]
     )]
     public ProvokingVertexModeEXT ProvokingVertexMode;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_provoking_vertex"],
+        ImpliesSets = [
+            "VK_EXT_provoking_vertex+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_provoking_vertex+VK_VERSION_1_1",
+        ]
+    )]
+    public PipelineRasterizationProvokingVertexStateCreateInfoEXT() { }
 }

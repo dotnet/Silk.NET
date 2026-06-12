@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceAmigoProfilingFeaturesSEC
             "VK_SEC_amigo_profiling+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceAmigoProfilingFeaturesSEC;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceAmigoProfilingFeaturesSEC
         ]
     )]
     public MaybeBool<uint> AmigoProfiling;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_amigo_profiling"],
+        ImpliesSets = [
+            "VK_SEC_amigo_profiling+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_amigo_profiling+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceAmigoProfilingFeaturesSEC() { }
 }

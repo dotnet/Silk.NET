@@ -27,7 +27,7 @@ public unsafe partial struct PhysicalDeviceScalarBlockLayoutFeatures
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceScalarBlockLayoutFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -50,4 +50,21 @@ public unsafe partial struct PhysicalDeviceScalarBlockLayoutFeatures
     [NativeName("scalarBlockLayout")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public MaybeBool<uint> ScalarBlockLayout;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceScalarBlockLayoutFeatures() { }
 }

@@ -20,7 +20,7 @@ public unsafe partial struct DescriptorSetBindingReferenceVALVE
             "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DescriptorSetBindingReferenceVALVE;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct DescriptorSetBindingReferenceVALVE
         ]
     )]
     public uint Binding;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_descriptor_set_host_mapping"],
+        ImpliesSets = [
+            "VK_VALVE_descriptor_set_host_mapping+VK_KHR_get_physical_device_properties2",
+            "VK_VALVE_descriptor_set_host_mapping+VK_VERSION_1_1",
+        ]
+    )]
+    public DescriptorSetBindingReferenceVALVE() { }
 }

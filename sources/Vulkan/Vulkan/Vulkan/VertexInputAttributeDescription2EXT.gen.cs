@@ -21,7 +21,7 @@ public unsafe partial struct VertexInputAttributeDescription2EXT
             "VK_EXT_vertex_input_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VertexInputAttributeDescription2EXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -77,4 +77,14 @@ public unsafe partial struct VertexInputAttributeDescription2EXT
         ]
     )]
     public uint Offset;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_vertex_input_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_vertex_input_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_vertex_input_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    public VertexInputAttributeDescription2EXT() { }
 }

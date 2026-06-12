@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceTileShadingFeaturesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -186,4 +186,14 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
         ]
     )]
     public MaybeBool<uint> TileShadingImageProcessing;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_shading"],
+        ImpliesSets = [
+            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
+        ]
+    )]
+    public PhysicalDeviceTileShadingFeaturesQCOM() { }
 }

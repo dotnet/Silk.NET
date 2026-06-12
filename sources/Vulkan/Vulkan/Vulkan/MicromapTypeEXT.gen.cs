@@ -22,4 +22,12 @@ public enum MicromapTypeEXT : uint
         ]
     )]
     OpacityMicromap = 0,
+
+    [NativeName("VK_MICROMAP_TYPE_DISPLACEMENT_MICROMAP_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_displacement_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
+    DisplacementMicromapNV = 1000397000,
 }

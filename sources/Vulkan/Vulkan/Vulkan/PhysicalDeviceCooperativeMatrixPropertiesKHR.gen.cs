@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrixPropertiesKHR
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCooperativeMatrixPropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrixPropertiesKHR
         ]
     )]
     public ShaderStageFlags CooperativeMatrixSupportedStages;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_KHR_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceCooperativeMatrixPropertiesKHR() { }
 }

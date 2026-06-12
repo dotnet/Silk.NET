@@ -13,7 +13,7 @@ public unsafe partial struct QueryLowLatencySupportNV
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_low_latency"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.QueryLowLatencySupportNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_low_latency"])]
@@ -22,4 +22,7 @@ public unsafe partial struct QueryLowLatencySupportNV
     [NativeName("pQueriedLowLatencyData")]
     [SupportedApiProfile("vulkan", ["VK_NV_low_latency"])]
     public void* PQueriedLowLatencyData;
+
+    [SupportedApiProfile("vulkan", ["VK_NV_low_latency"])]
+    public QueryLowLatencySupportNV() { }
 }

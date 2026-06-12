@@ -428,6 +428,9 @@
       "MixKhronosData": {
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
         "Namespace": "Silk.NET.Vulkan",
+        "StructureTypes": [
+          "VkStructureType"
+        ],
         "FlagsTypes": [
           "VkFlags",
           "VkFlags64"

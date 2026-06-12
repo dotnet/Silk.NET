@@ -21,7 +21,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.RayTracingPipelineCreateInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -165,4 +165,14 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
         ]
     )]
     public int BasePipelineIndex;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_pipeline"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_spirv_1_4",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_2",
+        ]
+    )]
+    public RayTracingPipelineCreateInfoKHR() { }
 }

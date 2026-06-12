@@ -19,7 +19,7 @@ public unsafe partial struct DescriptorGetTensorInfoARM
         ImpliesSets = ["VK_VERSION_1_3"],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DescriptorGetTensorInfoARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -38,4 +38,12 @@ public unsafe partial struct DescriptorGetTensorInfoARM
         RequireAll = true
     )]
     public TensorViewHandleARM TensorView;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
+    public DescriptorGetTensorInfoARM() { }
 }

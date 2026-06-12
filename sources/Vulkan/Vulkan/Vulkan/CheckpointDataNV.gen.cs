@@ -20,7 +20,7 @@ public unsafe partial struct CheckpointDataNV
             "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CheckpointDataNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct CheckpointDataNV
         ]
     )]
     public void* PCheckpointMarker;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_diagnostic_checkpoints"],
+        ImpliesSets = [
+            "VK_NV_device_diagnostic_checkpoints+VK_KHR_get_physical_device_properties2",
+            "VK_NV_device_diagnostic_checkpoints+VK_VERSION_1_1",
+        ]
+    )]
+    public CheckpointDataNV() { }
 }

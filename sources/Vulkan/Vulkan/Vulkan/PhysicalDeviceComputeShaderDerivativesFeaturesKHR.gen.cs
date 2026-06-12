@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesKHR
             "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceComputeShaderDerivativesFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesKHR
         ]
     )]
     public MaybeBool<uint> ComputeDerivativeGroupLinear;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_compute_shader_derivatives"],
+        ImpliesSets = [
+            "VK_KHR_compute_shader_derivatives+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_compute_shader_derivatives+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceComputeShaderDerivativesFeaturesKHR() { }
 }

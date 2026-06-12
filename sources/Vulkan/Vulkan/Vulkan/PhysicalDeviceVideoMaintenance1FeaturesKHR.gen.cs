@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceVideoMaintenance1FeaturesKHR
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVideoMaintenance1FeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct PhysicalDeviceVideoMaintenance1FeaturesKHR
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
     public MaybeBool<uint> VideoMaintenance1;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_maintenance1"],
+        ImpliesSets = ["VK_KHR_video_queue"]
+    )]
+    public PhysicalDeviceVideoMaintenance1FeaturesKHR() { }
 }

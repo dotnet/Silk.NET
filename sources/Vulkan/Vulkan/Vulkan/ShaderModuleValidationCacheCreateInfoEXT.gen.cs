@@ -14,7 +14,7 @@ public unsafe partial struct ShaderModuleValidationCacheCreateInfoEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.ShaderModuleValidationCacheCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
@@ -23,4 +23,7 @@ public unsafe partial struct ShaderModuleValidationCacheCreateInfoEXT
     [NativeName("validationCache")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     public ValidationCacheHandleEXT ValidationCache;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
+    public ShaderModuleValidationCacheCreateInfoEXT() { }
 }

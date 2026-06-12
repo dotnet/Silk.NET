@@ -21,7 +21,7 @@ public unsafe partial struct CopyCommandTransformInfoQCOM
             "VK_QCOM_rotated_copy_commands+VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CopyCommandTransformInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct CopyCommandTransformInfoQCOM
         ]
     )]
     public SurfaceTransformFlagsKHR Transform;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_rotated_copy_commands"],
+        ImpliesSets = [
+            "VK_QCOM_rotated_copy_commands+VK_KHR_copy_commands2",
+            "VK_QCOM_rotated_copy_commands+VK_VERSION_1_3",
+        ]
+    )]
+    public CopyCommandTransformInfoQCOM() { }
 }

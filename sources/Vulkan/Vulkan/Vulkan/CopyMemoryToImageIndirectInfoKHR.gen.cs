@@ -21,7 +21,7 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CopyMemoryToImageIndirectInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -99,4 +99,14 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
         ]
     )]
     public ImageSubresourceLayers* PImageSubresources;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_copy_memory_indirect"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_buffer_device_address",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    public CopyMemoryToImageIndirectInfoKHR() { }
 }

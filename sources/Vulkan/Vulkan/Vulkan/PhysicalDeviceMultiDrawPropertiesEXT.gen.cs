@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceMultiDrawPropertiesEXT
             "VK_EXT_multi_draw+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMultiDrawPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceMultiDrawPropertiesEXT
         ]
     )]
     public uint MaxMultiDrawCount;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multi_draw"],
+        ImpliesSets = [
+            "VK_EXT_multi_draw+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_multi_draw+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceMultiDrawPropertiesEXT() { }
 }

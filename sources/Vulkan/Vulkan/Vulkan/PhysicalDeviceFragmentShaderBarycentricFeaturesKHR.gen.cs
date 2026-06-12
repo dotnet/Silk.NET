@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceFragmentShaderBarycentricFeaturesKHR
             "VK_KHR_fragment_shader_barycentric+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceFragmentShaderBarycentricFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,4 +44,14 @@ public unsafe partial struct PhysicalDeviceFragmentShaderBarycentricFeaturesKHR
         ]
     )]
     public MaybeBool<uint> FragmentShaderBarycentric;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_fragment_shader_barycentric"],
+        ImpliesSets = [
+            "VK_KHR_fragment_shader_barycentric+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_fragment_shader_barycentric+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceFragmentShaderBarycentricFeaturesKHR() { }
 }
