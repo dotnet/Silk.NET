@@ -14,33 +14,39 @@ internal class Program
         new(["--log-level", "-l"], () => LogLevel.Information);
 
     private static Option<string[]> SkipOption { get; } =
-        new(["--skip", "-s"], Array.Empty<string>, "A list of job names to skip.")
+        new(["--skip", "-s"], Array.Empty<string>)
         {
+            Description = "A list of job names to skip.  Takes precedence over --only.",
+            Arity = ArgumentArity.ZeroOrMore,
+        };
+
+    private static Option<string[]> OnlyOption { get; } =
+        new(new[] { "--only", "-o" }, Array.Empty<string>)
+        {
+            Description = "A list of job names to run.",
             Arity = ArgumentArity.ZeroOrMore,
         };
 
     private static Argument<string[]> ConfigsArgument { get; } =
-        new("configs", "Path(s) to JSON SilkTouch configuration(s)")
+        new("configs")
         {
+            Description = "Path(s) to JSON SilkTouch configuration(s)",
             Arity = ArgumentArity.OneOrMore,
         };
 
     private static Argument<string[]> ConfigOverridesArgument { get; } =
-        new(
-            "overrides",
-            Array.Empty<string>,
-            "Arguments recognisable by Microsoft.Extensions.Configuration.CommandLine to override JSON configuration items."
-        )
+        new("overrides", Array.Empty<string>)
         {
+            Description =
+                "Arguments recognisable by Microsoft.Extensions.Configuration.CommandLine to override JSON configuration items.",
             Arity = ArgumentArity.ZeroOrMore,
         };
 
     private static Option<int> JobsOption { get; } =
-        new(
-            new[] { "--max-jobs", "-j" },
-            () => Environment.ProcessorCount,
-            "Maximum number of parallel ClangSharp executions."
-        );
+        new(new[] { "--max-jobs", "-j" }, () => Environment.ProcessorCount)
+        {
+            Description = "Maximum number of parallel ClangSharp executions.",
+        };
 
     public static async Task Main(string[] args)
     {
@@ -48,6 +54,7 @@ internal class Program
         {
             LoggingOption,
             SkipOption,
+            OnlyOption,
             ConfigsArgument,
             ConfigOverridesArgument,
             JobsOption,
@@ -95,18 +102,32 @@ internal class Program
                 .AddSilkTouch(config)
                 .BuildServiceProvider();
 
+            var jobsToRun = new HashSet<string>(
+                ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
+                StringComparer.OrdinalIgnoreCase
+            );
+
+            var jobsToSkip = new HashSet<string>(
+                ctx.ParseResult.GetValueForOption(SkipOption) ?? [],
+                StringComparer.OrdinalIgnoreCase
+            );
+
             var logger = sp.GetRequiredService<ILogger<Program>>();
-            var skipped = ctx.ParseResult.GetValueForOption(SkipOption);
             var generator = sp.GetRequiredService<SilkTouchGenerator>();
 
             await Parallel.ForEachAsync(
                 config
                     .GetSection("Jobs")
                     .GetChildren()
-                    .Where(x =>
-                        skipped?.All(y => !x.Key.Equals(y, StringComparison.OrdinalIgnoreCase))
-                        ?? true
-                    ),
+                    .Where(section =>
+                    {
+                        if (jobsToSkip.Contains(section.Key))
+                        {
+                            return false;
+                        }
+
+                        return jobsToRun.Count == 0 || jobsToRun.Contains(section.Key);
+                    }),
                 async (job, ct) =>
                 {
                     await generator.RunAsync(
