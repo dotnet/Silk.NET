@@ -392,6 +392,136 @@
         ]
       }
     },
+    "OpenXR": {
+      "SourceProject": "sources/OpenXR/OpenXR/Silk.NET.OpenXR.csproj",
+      "Solution": "Silk.NET.slnx",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "AddIncludes",
+        "ClangScraper",
+        "MarkNativeNames",
+        "ExtractHandles",
+        "ExtractNestedTypes",
+        "ExtractEnumConstants",
+        "ExtractFunctionPointers",
+        "TransformHandles",
+        "MixKhronosData",
+        "AddApiProfiles",
+        "InterceptNativeFunctions",
+        "TransformFunctions",
+        "TransformProperties",
+        "IdentifySharedPrefixes",
+        "PrettifyNames",
+        "TransformEnums",
+        "AddVTables",
+        "StripAttributes"
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/openxr/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/OpenXR",
+        "InputTestRoot": "tests/OpenXR"
+      },
+      "AddApiProfiles": {
+        "Profiles": [
+          {
+            "Profile": "openxr",
+            "SourceSubdirectory": "openxr"
+          }
+        ]
+      },
+      "MixKhronosData": {
+        "SpecPath": "eng/submodules/openxr/specification/registry/xr.xml",
+        "Namespace": "Silk.NET.OpenXR",
+        "StructureTypes": [
+          "XrStructureType"
+        ],
+        "FlagsTypes": [
+          "XrFlags64"
+        ],
+        "IdentifyEnumMemberImpliedVendors": true
+      },
+      "InterceptNativeFunctions": {
+        "NativeFunctionNames": [
+          "xrCreateInstance"
+        ]
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "XrBool32": null
+        }
+      },
+      "TransformProperties": {
+        "BoolTypes": {
+          "XrBool32": null
+        }
+      },
+      "TransformHandles": {
+        "UseDsl": true
+      },
+      "IdentifySharedPrefixes": {
+      },
+      "PrettifyNames": {
+        "Affixes": {
+          "HandleType": {
+            "Order": 1
+          },
+          "FunctionPointerDelegateType": {
+            "Order": 1
+          },
+          "KhronosVendor": {
+            "Order": -1
+          },
+          "KhronosImpliedVendor": {
+            "Remove": true
+          },
+          "KhronosHandleType": {
+            "Remove": true
+          },
+          "SharedPrefix": {
+            "Remove": true
+          }
+        }
+      },
+//      "TransformEnums": {
+//        "AddNoneMemberToFlags": true,
+//        "RemoveMembers": [
+//          {
+//            "MemberName": "MaxEnum",
+//            "MemberValue": "0x7FFFFFFF"
+//          },
+//          {
+//            "MemberName": "Invalid",
+//            "MemberValue": "0x7FFFFFFF"
+//          }
+//        ],
+//        "CoerceBackingTypes": "PreferUnsigned",
+//        "RewriteMemberValues": true
+//      },
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport"
+          },
+          {
+            "Kind": "StaticWrapper"
+          },
+          {
+            "Kind": "ThisThread",
+            "IsDefault": true,
+            "GenerateFactoryPartial": true
+          }
+        ]
+      },
+      "StripAttributes": {
+        "Remove": [
+          "NativeTypeName",
+          "NameAffix",
+          "Transformed"
+        ]
+      }
+    },
     "Vulkan": {
       "SourceProject": "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
       "Solution": "Silk.NET.slnx",
