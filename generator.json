@@ -485,21 +485,17 @@
           }
         }
       },
-//      "TransformEnums": {
-//        "AddNoneMemberToFlags": true,
-//        "RemoveMembers": [
-//          {
-//            "MemberName": "MaxEnum",
-//            "MemberValue": "0x7FFFFFFF"
-//          },
-//          {
-//            "MemberName": "Invalid",
-//            "MemberValue": "0x7FFFFFFF"
-//          }
-//        ],
-//        "CoerceBackingTypes": "PreferUnsigned",
-//        "RewriteMemberValues": true
-//      },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RemoveMembers": [
+          {
+            "MemberName": "MaxEnum",
+            "MemberValue": "0x7FFFFFFF"
+          }
+        ],
+        "CoerceBackingTypes": "PreferUnsigned",
+        "RewriteMemberValues": true
+      },
       "AddVTables": {
         "VTables": [
           {
