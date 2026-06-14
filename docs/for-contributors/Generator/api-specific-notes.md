@@ -5,19 +5,36 @@ bindings for. It is fine for a section to be empty if we do not have any notes s
 
 This is meant to be a living document. Please update this as new work is being done on the generator.
 
-## OpenAL
+Certain APIs are grouped together because they share similar characteristics.
+
+## C Bindings
+
+These are APIs that can be categorized as being straightforward C APIs or are C APIs that simply do not share
+characteristics with other bindings.
+
+### SDL
 
 Currently empty.
 
-## OpenGL
+## Khronos-like Bindings
 
-Currently empty.
+These are APIs managed either by Khronos or APIs managed in a similar way to the official Khronos APIs.
 
-## SDL
+### OpenAL
 
-Currently empty.
+Spec file used: https://raw.githubusercontent.com/kcat/openal-soft/master/registry/xml/al.xml
 
-## Vulkan
+### OpenGL
+
+Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml
+
+### OpenXR
+
+Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK/main/specification/registry/xr.xml
+
+### Vulkan
+
+Spec file used: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/main/xml/vk.xml
 
 There will be the following errors in the generation log. This is expected. These types are part of the XML
 specification, but not part of the main `vulkan.h` header.
