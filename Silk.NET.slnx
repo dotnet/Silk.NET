@@ -57,9 +57,9 @@
   <Folder Name="/sources/OpenGL/">
     <Project Path="sources/OpenGL/OpenGL/Silk.NET.OpenGL.csproj" />
   </Folder>
-    <Folder Name="/sources/OpenXR/">
-        <Project Path="sources/OpenXR/OpenXR/Silk.NET.OpenXR.csproj" />
-    </Folder>
+  <Folder Name="/sources/OpenXR/">
+    <Project Path="sources/OpenXR/OpenXR/Silk.NET.OpenXR.csproj" />
+  </Folder>
   <Folder Name="/sources/SDL/">
     <Project Path="sources/SDL/Native/Silk.NET.SDL.Native.csproj" />
     <Project Path="sources/SDL/SDL/Silk.NET.SDL.csproj" />
