@@ -1,0 +1,14 @@
+@../settings.rsp
+@../remap.rsp
+--file
+openxr-openxr.h
+--methodClassName
+Xr
+--namespace
+Silk.NET.OpenXR
+--output
+../../../../sources/OpenXR/OpenXR
+--test-output
+../../../../tests/OpenXR/OpenXR
+--traverse
+../../../submodules/openxr/include/openxr/openxr.h
