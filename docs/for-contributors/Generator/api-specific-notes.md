@@ -32,6 +32,18 @@ Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/m
 
 Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK/main/specification/registry/xr.xml
 
+There will be the following errors in the generation log. This is expected. These types are part of the XML
+specification, but not part of the main `openxr.h` header.
+
+API Constants shows up here, but not in Vulkan because OpenXR's XML lacks the `type="constants"` attribute that
+Vulkan's XML has.
+
+```
+fail: Silk.NET.SilkTouch.Mods.MixKhronosData[0] Enum "API Constants" has no base type. Please add TypeMap entry to the configuration. This enum group will be skipped.
+fail: Silk.NET.SilkTouch.Mods.MixKhronosData[0] Enum "XrAndroidThreadTypeKHR" has no base type. Please add TypeMap entry to the configuration. This enum group will be skipped.
+fail: Silk.NET.SilkTouch.Mods.MixKhronosData[0] Enum "XrLoaderInterfaceStructs" has no base type. Please add TypeMap entry to the configuration. This enum group will be skipped.
+```
+
 ### Vulkan
 
 Spec file used: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/main/xml/vk.xml
