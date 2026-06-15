@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
 
@@ -44,4 +45,7 @@ public readonly record struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
 
     /// <inheritdoc />
     public Button<T> this[int index] => List[_indexMap(index)];
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    internal IReadOnlyList<Button<T>> CreateListCopy() => List.ToArray();
 }

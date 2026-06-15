@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
 
@@ -29,4 +30,7 @@ public readonly struct InputReadOnlyList<T> : IReadOnlyList<T>
     public T this[int index] => _list[index];
 
     private readonly IReadOnlyList<T> _list;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    internal IReadOnlyList<T> CreateListCopy() => _list.ToArray();
 }

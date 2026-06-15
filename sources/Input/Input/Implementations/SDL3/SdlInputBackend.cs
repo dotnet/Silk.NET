@@ -342,11 +342,11 @@ internal partial class SdlInputBackend : IInputBackend
                 switch (type)
                 {
                     case EventType.GamepadAxisMotion:
-                        gamepad.AddAxisEvent(evt.Gaxis.Axis, evt.Gaxis.Value, evt.Gaxis.Timestamp, timestamp);
+                        // gamepad.AddAxisEvent(evt.Gaxis.Axis, evt.Gaxis.Value, evt.Gaxis.Timestamp, timestamp);
                         break;
                     case EventType.GamepadButtonDown:
                     case EventType.GamepadButtonUp:
-                        gamepad.AddButtonEvent(evt.Gbutton.Button, evt.Gbutton.Down, evt.Gbutton.Timestamp, timestamp);
+                        // gamepad.AddButtonEvent(evt.Gbutton.Button, evt.Gbutton.Down, evt.Gbutton.Timestamp, timestamp);
                         break;
                     case EventType.GamepadRemapped:
                         gamepad.Remap(timestamp, evt.Common.Timestamp);
@@ -359,8 +359,12 @@ internal partial class SdlInputBackend : IInputBackend
                     case EventType.GamepadSensorUpdate:
                     case EventType.GamepadUpdateComplete:
                     case EventType.GamepadSteamHandleUpdated:
+                    {
+#if DEBUG
                         InputLog.Debug(type.ToString());
+#endif
                         break;
+                    }
                 }
 
                 break;
@@ -561,7 +565,7 @@ internal partial class SdlInputBackend : IInputBackend
             return false;
         }
 
-        var id = Sdl!.GetWindowID(window);
+        var id = Sdl.GetWindowID(window);
         return TryGetPointerTargetForWindow(id, out target);
     }
 
@@ -574,8 +578,19 @@ internal partial class SdlInputBackend : IInputBackend
             return false;
         }
 
-        target = _eventProcessingArgs.SdlWindowTargets.FirstOrDefault(x => x.Id == id);
-        return target != null;
+        for (var i = 0; i < _eventProcessingArgs.SdlWindowTargets.Count; ++i)
+        {
+            var t = _eventProcessingArgs.SdlWindowTargets[i];
+            if (t.Id == id)
+            {
+                target = t;
+                return true;
+            }
+
+        }
+
+        target = null;
+        return false;
     }
 
     private readonly struct TimedRawSdlEvent

@@ -9,5 +9,5 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 internal static class MathExtensions
 {
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static Box2D<float> ExtendBy(this Box2D<float> box, Box2D<float> other) => new(Scalar.Min(box.Min, other.Min), Scalar.Max(box.Max, other.Max));
+    public static Box2D<float> ExtendBy(this Box2D<float> box, Box2D<float> other) => new(Vector2D.Min(box.Min, other.Min), Vector2D.Max(box.Max, other.Max));
 }

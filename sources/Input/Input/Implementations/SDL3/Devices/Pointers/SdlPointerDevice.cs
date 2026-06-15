@@ -36,7 +36,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
 
         while (idx >= _buttons.Count)
         {
-            _buttons.Add(_unknownButton);
+            _buttons.Add(new Button<PointerButton>(PointerButton.Unknown, false, 0f));
         }
 
         ref var myButton = ref CollectionsMarshal.AsSpan(_buttons)[idx];
@@ -49,8 +49,6 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
                 sdlTimestamp);
         }
     }
-
-    private static readonly Button<PointerButton> _unknownButton = new(PointerButton.Unknown, false, 0f);
 
 
     private readonly List<Button<PointerButton>> _buttons = new(EnumInfo<PointerButton>.UniqueValues.Count);

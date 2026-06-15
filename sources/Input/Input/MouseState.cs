@@ -5,7 +5,7 @@ namespace Silk.NET.Input;
 /// <summary>
 /// Contains user input received from an <see cref="IMouse"/>.
 /// </summary>
-public class MouseState(
+public sealed class MouseState(
     ButtonReadOnlyList<PointerButton> buttons,
     InputReadOnlyList<TargetPoint> points,
     Vector2 wheelPosition,
@@ -21,8 +21,8 @@ public class MouseState(
     /// </remarks>
     public MouseState(MouseState other)
         : this(
-            new ButtonReadOnlyList<PointerButton>(other.Buttons),
-            new InputReadOnlyList<TargetPoint>(other.Points),
+            new ButtonReadOnlyList<PointerButton>(other.Buttons.CreateListCopy()),
+            new InputReadOnlyList<TargetPoint>(other.Points.CreateListCopy()),
             other.WheelPosition,
             other.GripPressure
         ) { }

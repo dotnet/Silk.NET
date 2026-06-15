@@ -62,7 +62,8 @@ internal sealed partial class SdlJoystick
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal Vector2 GetAxisStateByIndex2D(int xIndex, int yIndex) => new(GetAxisStateByIndex(xIndex), GetAxisStateByIndex(yIndex));
 
-    internal bool UpdateRawAxisState(JoystickAxis axis, float value, out JoystickAxisMoveEvent evt, ulong sdlTimestamp, long timestamp)
+    internal bool UpdateRawAxisState(JoystickAxis axis, float value, ulong sdlTimestamp, long timestamp,
+        out JoystickAxisMoveEvent evt)
     {
         var index = axis.Index();
         if (index < 0)

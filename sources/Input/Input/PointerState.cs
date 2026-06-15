@@ -18,16 +18,10 @@ public class PointerState(
     /// </remarks>
     public PointerState(PointerState other)
         : this(
-            new ButtonReadOnlyList<PointerButton>(other.Buttons),
-            new InputReadOnlyList<TargetPoint>(other.Points),
+            new ButtonReadOnlyList<PointerButton>(other.Buttons.CreateListCopy()),
+            new InputReadOnlyList<TargetPoint>(other.Points.CreateListCopy()),
             other.GripPressure
         ) { }
-
-    public PointerState(IReadOnlyList<Button<PointerButton>> buttons, IReadOnlyList<TargetPoint> points, float gripPressure = 0):
-        this(new ButtonReadOnlyList<PointerButton>(buttons), new InputReadOnlyList<TargetPoint>(points), gripPressure)
-    {
-
-    }
 
     /// <summary>
     /// Gets the captured state of each of the buttons on the device.

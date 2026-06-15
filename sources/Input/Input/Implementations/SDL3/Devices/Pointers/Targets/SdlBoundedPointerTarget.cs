@@ -62,16 +62,16 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
             return default;
         }
 
-        var bounds = new Box2D<float>(float.MaxValue, float.MaxValue, float.MinValue, float.MinValue);
+        var totalBounds = CalculateDisplayBounds(sdl, displays[0]);
 
-        for (var i = 0; i < displayCount; i++)
+        for (var i = 1; i < displayCount; i++)
         {
-            var b = CalculateDisplayBounds(sdl, displays[i]);
-            bounds = bounds.ExtendBy(b);
+            var bounds = CalculateDisplayBounds(sdl, displays[i]);
+            totalBounds = totalBounds.ExtendBy(bounds);
         }
 
         sdl.Free(displays);
-        return default;
+        return totalBounds;
     }
 
     public static unsafe Box2D<float> CalculateDisplayBounds(ISdl sdl, uint sdlDisplayId)
