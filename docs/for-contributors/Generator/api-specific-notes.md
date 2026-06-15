@@ -28,6 +28,12 @@ Spec file used: https://raw.githubusercontent.com/kcat/openal-soft/master/regist
 
 Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/main/xml/cl.xml
 
+The following warning is expected since we do not want to hardcode the version in our entrypoint header:
+
+```
+warning: cl_version.h: CL_TARGET_OPENCL_VERSION is not defined. Defaulting to 310 (OpenCL 3.1) [-W#pragma-messages]
+```
+
 ### OpenGL
 
 Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml
