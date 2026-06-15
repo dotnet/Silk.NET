@@ -55,3 +55,6 @@
 [submodule "eng/submodules/opencl-docs"]
 	path = eng/submodules/opencl-docs
 	url = https://github.com/KhronosGroup/OpenCL-Docs.git
+[submodule "eng/submodules/opencl-headers"]
+	path = eng/submodules/opencl-headers
+	url = https://github.com/KhronosGroup/OpenCL-Headers.git
