@@ -160,7 +160,7 @@
         ]
       },
       "MixKhronosData": {
-        "SpecPath": "eng/submodules/opengl/xml/gl.xml",
+        "SpecPath": "eng/submodules/opengl-registry/xml/gl.xml",
         "Namespace": "Silk.NET.OpenGL",
         "TypeMap": {
           "GLenum": "uint",
@@ -432,7 +432,7 @@
         ]
       },
       "MixKhronosData": {
-        "SpecPath": "eng/submodules/openxr/specification/registry/xr.xml",
+        "SpecPath": "eng/submodules/openxr-sdk/specification/registry/xr.xml",
         "Namespace": "Silk.NET.OpenXR",
         "StructureTypes": [
           "XrStructureType"
@@ -559,7 +559,7 @@
         ]
       },
       "MixKhronosData": {
-        "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
+        "SpecPath": "eng/submodules/vulkan-docs/xml/vk.xml",
         "Namespace": "Silk.NET.Vulkan",
         "StructureTypes": [
           "VkStructureType"

@@ -1,11 +1,11 @@
 [submodule "submodules/terrafx.interop.windows"]
 	path = eng/submodules/terrafx.interop.windows
 	url = https://github.com/terrafx/terrafx.interop.windows
-[submodule "eng/submodules/opengl"]
-	path = eng/submodules/opengl
+[submodule "eng/submodules/opengl-registry"]
+	path = eng/submodules/opengl-registry
 	url = https://github.com/KhronosGroup/OpenGL-Registry.git
-[submodule "eng/submodules/egl"]
-	path = eng/submodules/egl
+[submodule "eng/submodules/egl-registry"]
+	path = eng/submodules/egl-registry
 	url = https://github.com/KhronosGroup/EGL-Registry/
 [submodule "eng/submodules/sdl"]
 	path = eng/submodules/sdl
@@ -16,8 +16,8 @@
 [submodule "eng/submodules/openal-soft"]
 	path = eng/submodules/openal-soft
 	url = https://github.com/kcat/openal-soft
-[submodule "eng/submodules/vulkan"]
-	path = eng/submodules/vulkan
+[submodule "eng/submodules/vulkan-docs"]
+	path = eng/submodules/vulkan-docs
 	url = https://github.com/KhronosGroup/Vulkan-Docs.git
 [submodule "eng/submodules/vulkan-headers"]
 	path = eng/submodules/vulkan-headers
@@ -49,9 +49,9 @@
 [submodule "eng/submodules/glslang"]
 	path = eng/submodules/glslang
 	url = https://github.com/KhronosGroup/glslang.git
-[submodule "eng/submodules/openxr"]
-	path = eng/submodules/openxr
+[submodule "eng/submodules/openxr-sdk"]
+	path = eng/submodules/openxr-sdk
 	url = https://github.com/KhronosGroup/OpenXR-SDK.git
-[submodule "eng/submodules/opencl"]
-	path = eng/submodules/opencl
+[submodule "eng/submodules/opencl-docs"]
+	path = eng/submodules/opencl-docs
 	url = https://github.com/KhronosGroup/OpenCL-Docs.git

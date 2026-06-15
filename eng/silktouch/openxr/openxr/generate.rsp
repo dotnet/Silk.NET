@@ -11,4 +11,4 @@ Silk.NET.OpenXR
 --test-output
 ../../../../tests/OpenXR/OpenXR
 --traverse
-../../../submodules/openxr/include/openxr/openxr.h
+../../../submodules/openxr-sdk/include/openxr/openxr.h
