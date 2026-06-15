@@ -24,6 +24,10 @@ These are APIs managed either by Khronos or APIs managed in a similar way to the
 
 Spec file used: https://raw.githubusercontent.com/kcat/openal-soft/master/registry/xml/al.xml
 
+### OpenCL
+
+Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/main/xml/cl.xml
+
 ### OpenGL
 
 Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml
