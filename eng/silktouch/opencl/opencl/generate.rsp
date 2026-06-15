@@ -1,5 +1,7 @@
 @../settings.rsp
 @../remap.rsp
+--additional
+-Wno-invalid-constexpr
 --file
 opencl-opencl.h
 --methodClassName
