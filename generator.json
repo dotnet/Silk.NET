@@ -271,8 +271,6 @@
       "MixKhronosData": {
         "SpecPath": "eng/submodules/opencl-docs/xml/cl.xml",
         "Namespace": "Silk.NET.OpenCL",
-        "IdentifyFunctionDataTypes": true,
-        "IdentifyEnumTypeNonExclusiveVendors": true,
         "IdentifyEnumMemberImpliedVendors": true
       },
       "AddVTables": {

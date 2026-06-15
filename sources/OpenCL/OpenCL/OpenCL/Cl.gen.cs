@@ -1105,7 +1105,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ],
             MinVersion = "1.2"
         )]
-        public static extern _cl_program* CreateProgramWithBuiltInKernel(
+        public static extern _cl_program* CreateProgramWithBuiltInKernels(
             _cl_context* context,
             uint num_devices,
             _cl_device_id** device_list,
@@ -1130,7 +1130,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<_cl_program> CreateProgramWithBuiltInKernel(
+        public static Ptr<_cl_program> CreateProgramWithBuiltInKernels(
             Ref<_cl_context> context,
             uint num_devices,
             Ref2D<_cl_device_id> device_list,
@@ -1143,7 +1143,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_device_id** __dsl_device_list = device_list)
             fixed (_cl_context* __dsl_context = context)
             {
-                return (_cl_program*)CreateProgramWithBuiltInKernel(
+                return (_cl_program*)CreateProgramWithBuiltInKernels(
                     __dsl_context,
                     num_devices,
                     __dsl_device_list,
@@ -7833,14 +7833,14 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public _cl_program* CreateProgramWithBuiltInKernel(
+        public _cl_program* CreateProgramWithBuiltInKernels(
             _cl_context* context,
             uint num_devices,
             _cl_device_id** device_list,
             sbyte* kernel_names,
             int* errcode_ret
         ) =>
-            T.CreateProgramWithBuiltInKernel(
+            T.CreateProgramWithBuiltInKernels(
                 context,
                 num_devices,
                 device_list,
@@ -7865,14 +7865,14 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Ptr<_cl_program> CreateProgramWithBuiltInKernel(
+        public Ptr<_cl_program> CreateProgramWithBuiltInKernels(
             Ref<_cl_context> context,
             uint num_devices,
             Ref2D<_cl_device_id> device_list,
             Ref<sbyte> kernel_names,
             Ref<int> errcode_ret
         ) =>
-            T.CreateProgramWithBuiltInKernel(
+            T.CreateProgramWithBuiltInKernels(
                 context,
                 num_devices,
                 device_list,
@@ -14678,14 +14678,14 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static _cl_program* CreateProgramWithBuiltInKernel(
+        public static _cl_program* CreateProgramWithBuiltInKernels(
             _cl_context* context,
             uint num_devices,
             _cl_device_id** device_list,
             sbyte* kernel_names,
             int* errcode_ret
         ) =>
-            Underlying.Value!.CreateProgramWithBuiltInKernel(
+            Underlying.Value!.CreateProgramWithBuiltInKernels(
                 context,
                 num_devices,
                 device_list,
@@ -14710,7 +14710,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<_cl_program> CreateProgramWithBuiltInKernel(
+        public static Ptr<_cl_program> CreateProgramWithBuiltInKernels(
             Ref<_cl_context> context,
             uint num_devices,
             Ref2D<_cl_device_id> device_list,
@@ -14723,7 +14723,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_device_id** __dsl_device_list = device_list)
             fixed (_cl_context* __dsl_context = context)
             {
-                return (_cl_program*)CreateProgramWithBuiltInKernel(
+                return (_cl_program*)CreateProgramWithBuiltInKernels(
                     __dsl_context,
                     num_devices,
                     __dsl_device_list,
@@ -23473,7 +23473,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    _cl_program* ICl.CreateProgramWithBuiltInKernel(
+    _cl_program* ICl.CreateProgramWithBuiltInKernels(
         _cl_context* context,
         uint num_devices,
         _cl_device_id** device_list,
@@ -23506,14 +23506,14 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static _cl_program* CreateProgramWithBuiltInKernel(
+    public static _cl_program* CreateProgramWithBuiltInKernels(
         _cl_context* context,
         uint num_devices,
         _cl_device_id** device_list,
         sbyte* kernel_names,
         int* errcode_ret
     ) =>
-        ThisThread.CreateProgramWithBuiltInKernel(
+        ThisThread.CreateProgramWithBuiltInKernels(
             context,
             num_devices,
             device_list,
@@ -23536,7 +23536,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Ptr<_cl_program> ICl.CreateProgramWithBuiltInKernel(
+    Ptr<_cl_program> ICl.CreateProgramWithBuiltInKernels(
         Ref<_cl_context> context,
         uint num_devices,
         Ref2D<_cl_device_id> device_list,
@@ -23550,7 +23550,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         fixed (_cl_context* __dsl_context = context)
         {
             return (_cl_program*)
-                ((ICl)this).CreateProgramWithBuiltInKernel(
+                ((ICl)this).CreateProgramWithBuiltInKernels(
                     __dsl_context,
                     num_devices,
                     __dsl_device_list,
@@ -23575,14 +23575,14 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Ptr<_cl_program> CreateProgramWithBuiltInKernel(
+    public static Ptr<_cl_program> CreateProgramWithBuiltInKernels(
         Ref<_cl_context> context,
         uint num_devices,
         Ref2D<_cl_device_id> device_list,
         Ref<sbyte> kernel_names,
         Ref<int> errcode_ret
     ) =>
-        ThisThread.CreateProgramWithBuiltInKernel(
+        ThisThread.CreateProgramWithBuiltInKernels(
             context,
             num_devices,
             device_list,

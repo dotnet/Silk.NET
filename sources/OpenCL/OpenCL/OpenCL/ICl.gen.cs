@@ -782,7 +782,7 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        static abstract _cl_program* CreateProgramWithBuiltInKernel(
+        static abstract _cl_program* CreateProgramWithBuiltInKernels(
             _cl_context* context,
             uint num_devices,
             _cl_device_id** device_list,
@@ -804,7 +804,7 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        static abstract Ptr<_cl_program> CreateProgramWithBuiltInKernel(
+        static abstract Ptr<_cl_program> CreateProgramWithBuiltInKernels(
             Ref<_cl_context> context,
             uint num_devices,
             Ref2D<_cl_device_id> device_list,
@@ -5682,7 +5682,7 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
-    _cl_program* CreateProgramWithBuiltInKernel(
+    _cl_program* CreateProgramWithBuiltInKernels(
         _cl_context* context,
         uint num_devices,
         _cl_device_id** device_list,
@@ -5704,7 +5704,7 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
-    Ptr<_cl_program> CreateProgramWithBuiltInKernel(
+    Ptr<_cl_program> CreateProgramWithBuiltInKernels(
         Ref<_cl_context> context,
         uint num_devices,
         Ref2D<_cl_device_id> device_list,
