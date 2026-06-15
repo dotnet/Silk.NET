@@ -1,0 +1,14 @@
+@../settings.rsp
+@../remap.rsp
+--file
+opencl-opencl.h
+--methodClassName
+Cl
+--namespace
+Silk.NET.OpenCL
+--output
+../../../../sources/OpenCL/OpenCL
+--test-output
+../../../../tests/OpenCL/OpenCL
+--traverse
+../../../submodules/opencl-headers/CL/cl.h
