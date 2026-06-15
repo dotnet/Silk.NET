@@ -125,6 +125,14 @@ public partial class MixKhronosData(
         /// A mapping from struct type to information about the structure type member.
         /// </summary>
         public Dictionary<string, StructureTypeMember> StructureTypeMembers = [];
+
+        /// <summary>
+        /// Whether the API is determined to be likely in OpenCL's style.
+        /// </summary>
+        /// <remarks>
+        /// OpenCL differs strongly from the rest of the Khronos APIs so this is used to special case some functionality.
+        /// </remarks>
+        public bool IsLikelyOpenCL { get; set; } = false;
     }
 
     /// <summary>
@@ -454,15 +462,23 @@ public partial class MixKhronosData(
         }
 
         // Rewrite phase 3
-        var rewriter3 = new RewriterPhase3(jobData, currentConfig);
-        foreach (var docId in proj.DocumentIds)
         {
-            var doc =
-                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
-            proj = doc.WithSyntaxRoot(
-                rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))
-                    ?? throw new InvalidOperationException("Visit returned null.")
-            ).Project;
+            // OpenCL uses lower snake case names
+            var vendorSuffixComparison = jobData.IsLikelyOpenCL
+                ? StringComparison.OrdinalIgnoreCase
+                : StringComparison.Ordinal;
+
+            var rewriter3 = new RewriterPhase3(jobData, currentConfig, vendorSuffixComparison);
+            foreach (var docId in proj.DocumentIds)
+            {
+                var doc =
+                    proj.GetDocument(docId)
+                    ?? throw new InvalidOperationException("Document missing");
+                proj = doc.WithSyntaxRoot(
+                    rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))
+                        ?? throw new InvalidOperationException("Visit returned null.")
+                ).Project;
+            }
         }
 
         // Rewrite phase 4
@@ -1981,7 +1997,11 @@ public partial class MixKhronosData(
     /// <summary>
     /// This rewriter identifies and extracts vendor extension suffixes into [NameSuffix] attributes.
     /// </summary>
-    private class RewriterPhase3(JobData job, Configuration config) : CSharpSyntaxRewriter
+    private class RewriterPhase3(
+        JobData job,
+        Configuration config,
+        StringComparison vendorSuffixComparison
+    ) : CSharpSyntaxRewriter
     {
         private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(
             SyntaxList<AttributeListSyntax> attributeLists,
@@ -2010,12 +2030,12 @@ public partial class MixKhronosData(
                 // Try to identify vendor suffixes
                 foreach (var vendor in job.Vendors)
                 {
-                    if (trimmedName.EndsWith(vendor))
+                    if (trimmedName.EndsWith(vendor, vendorSuffixComparison))
                     {
                         attributeLists = attributeLists.AddNameAffix(
                             NameAffixType.Suffix,
                             "KhronosVendor",
-                            vendor
+                            trimmedName[^vendor.Length..]
                         );
                         trimmedName = trimmedName[..^vendor.Length];
 
@@ -2106,7 +2126,9 @@ public partial class MixKhronosData(
 
             var groupInfo = job.Groups.GetValueOrDefault(managedTypeName);
 
-            var typeVendor = job.Vendors.FirstOrDefault(nativeTypeName.EndsWith);
+            var typeVendor = job.Vendors.FirstOrDefault(s =>
+                nativeTypeName.EndsWith(s, vendorSuffixComparison)
+            );
             var hasTypeSuffix = typeVendor != null;
             var vendorAffixType = "KhronosVendor";
 
@@ -2127,7 +2149,9 @@ public partial class MixKhronosData(
             var exclusiveVendor = groupInfo?.ExclusiveVendor ?? typeVendor;
             if (
                 exclusiveVendor == null
-                || !node.Members.All(member => member.Identifier.Text.EndsWith(exclusiveVendor))
+                || !node.Members.All(member =>
+                    member.Identifier.Text.EndsWith(exclusiveVendor, vendorSuffixComparison)
+                )
             )
             {
                 // Not all enum members share the exclusive vendor
@@ -2167,7 +2191,7 @@ public partial class MixKhronosData(
                     node.AttributeLists.AddNameAffix(
                         NameAffixType.Suffix,
                         vendorAffixType,
-                        typeVendor,
+                        nativeTypeName[^typeVendor.Length..],
                         true
                     )
                 );
@@ -2177,12 +2201,7 @@ public partial class MixKhronosData(
             var containsUnsuffixedMembers = node.Members.Any(member =>
             {
                 var memberName = member.AttributeLists.GetNativeNameOrDefault(member.Identifier);
-                if (job.Vendors.FirstOrDefault(memberName.EndsWith) == null)
-                {
-                    return true;
-                }
-
-                return false;
+                return !job.Vendors.Any(s => memberName.EndsWith(s, vendorSuffixComparison));
             });
 
             // We should not identify member suffixes for trimming if the enum type already contains unsuffixed members
@@ -2211,7 +2230,7 @@ public partial class MixKhronosData(
                             if (
                                 member
                                     .AttributeLists.GetNativeNameOrDefault(member.Identifier)
-                                    .EndsWith(typeVendor)
+                                    .EndsWith(typeVendor, vendorSuffixComparison)
                             )
                             {
                                 // Identify for trimming
@@ -2219,7 +2238,7 @@ public partial class MixKhronosData(
                                     member.AttributeLists.AddNameAffix(
                                         NameAffixType.Suffix,
                                         "KhronosImpliedVendor",
-                                        typeVendor,
+                                        member.Identifier.Text[^typeVendor.Length..],
                                         true
                                     )
                                 );
@@ -2369,7 +2388,7 @@ public partial class MixKhronosData(
         // this information will mostly be used to enhance the enums scraped from the headers (eg: native name and bitmask information).
         var anyNamespaced =
             doc.Element("registry")?.Elements("enums").Attributes("namespace").Any() ?? false;
-        var likelyOpenCL = false; // OpenCL specific
+        var isLikelyOpenCL = false; // OpenCL specific
         var topLevelIntentionalExclusions = new HashSet<string>(); // OpenCL specific
 
         // Parse enum groups
@@ -2457,7 +2476,7 @@ public partial class MixKhronosData(
             // https://github.com/dotnet/Silk.NET/blob/d8919600/src/Core/Silk.NET.BuildTools/Converters/Readers/OpenCLReader.cs#L855-L870
             if (!anyNamespaced && groupName is not null && !topLevelIntentionalExclusion)
             {
-                FixupGroupNameForOpenCL(ref groupName, ref likelyOpenCL, ref isBitmask);
+                FixupGroupNameForOpenCL(ref groupName, ref isLikelyOpenCL, ref isBitmask);
             }
 
             // Initialize the group before enum members are parsed below
@@ -2713,7 +2732,8 @@ public partial class MixKhronosData(
         }
 
         // The relative sanity of the other specs stops here.
-        if (!likelyOpenCL)
+        data.IsLikelyOpenCL = isLikelyOpenCL;
+        if (!isLikelyOpenCL)
         {
             return;
         }
@@ -2890,7 +2910,7 @@ public partial class MixKhronosData(
                 // Just in case.
                 var tempVar = false;
                 var groupStr = group;
-                FixupGroupNameForOpenCL(ref groupStr, ref likelyOpenCL, ref tempVar);
+                FixupGroupNameForOpenCL(ref groupStr, ref isLikelyOpenCL, ref tempVar);
 
                 // Update the group info if it doesn't exist.
                 if (data.Groups.TryGetValue(groupStr, out var groupInfo))
