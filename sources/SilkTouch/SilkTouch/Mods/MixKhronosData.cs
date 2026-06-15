@@ -2428,7 +2428,9 @@ public partial class MixKhronosData(
             groupName = groupName?.Replace("FlagBits", "Flags");
             nativeName ??= groupName;
 
-            // Skip Vulkan API Constants since it is not an enum
+            // Skip constants since these aren't enums
+            // This was originally added to handle Vulkan's "API Constants" block
+            // Apparently OpenXR does not use any special annotation, so this misses that
             if (block.Attribute("type")?.Value == "constants")
             {
                 continue;
@@ -2580,6 +2582,30 @@ public partial class MixKhronosData(
             )
             .ToHashSet();
 
+        // Gather symbol data for symbol lookups when reading function annotations
+        // This was added to handle OpenXR's XML spec
+        var symbolMap = new Dictionary<string, string>();
+        {
+            var nodes = doc.Elements("registry").Elements("enums").Elements("enum");
+            nodes = nodes.Concat(
+                doc.Elements("registry")
+                    .Elements("extensions")
+                    .Elements("extension")
+                    .Elements("require")
+                    .Elements("enum")
+            );
+
+            foreach (var node in nodes)
+            {
+                var name = node.Attribute("name")?.Value;
+                var value = node.Attribute("value")?.Value;
+                if (name != null && value != null)
+                {
+                    symbolMap[name] = value;
+                }
+            }
+        }
+
         // Read the annotations from the functions
         foreach (var func in doc.Elements("registry").Elements("commands").Elements("command"))
         {
@@ -2639,7 +2665,7 @@ public partial class MixKhronosData(
                 var indirection = element?.Value.AsSpan().GetIndirectionLevels() ?? 0;
                 Span<bool> mutability = stackalloc bool[indirection + 1];
                 var outerCount = 0;
-                element?.Value.AsSpan().GetTypeDetails(mutability, out outerCount);
+                element?.Value.AsSpan().GetTypeDetails(mutability, out outerCount, symbolMap);
                 if (
                     (grp is not null && data.Groups.ContainsKey(grp))
                     || handle is not null
