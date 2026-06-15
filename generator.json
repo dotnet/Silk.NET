@@ -244,6 +244,102 @@
         ]
       }
     },
+    "OpenCL": {
+      "SourceProject": "sources/OpenCL/OpenCL/Silk.NET.OpenCL.csproj",
+      "Solution": "Silk.NET.slnx",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "AddIncludes",
+        "ClangScraper",
+        "MarkNativeNames",
+        "AddApiProfiles",
+        "MixKhronosData",
+        "TransformFunctions",
+        "IdentifySharedPrefixes",
+        "PrettifyNames",
+        "TransformEnums",
+        "AddVTables",
+        "StripAttributes"
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/opencl/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/OpenCL",
+        "InputTestRoot": "tests/OpenCL"
+      },
+      "MixKhronosData": {
+        "SpecPath": "eng/submodules/opencl-docs/xml/cl.xml",
+        "Namespace": "Silk.NET.OpenCL",
+        "IdentifyFunctionDataTypes": true,
+        "IdentifyEnumTypeNonExclusiveVendors": true,
+        "IdentifyEnumMemberImpliedVendors": true
+      },
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport"
+          },
+          {
+            "Kind": "StaticWrapper"
+          },
+          {
+            "Kind": "ThisThread",
+            "IsDefault": true,
+            "GenerateMakeCurrentPartial": true
+          }
+        ]
+      },
+      "IdentifySharedPrefixes": {
+        "GlobalPrefixHints": ["cl"]
+      },
+      "PrettifyNames": {
+        "Affixes": {
+          "HandleType": {
+            "Order": 1
+          },
+          "FunctionPointerDelegateType": {
+            "Order": 1
+          },
+          "KhronosVendor": {
+            "Order": -1
+          },
+          "KhronosFunctionDataType": {
+            "IsDiscriminator": true
+          },
+          "KhronosImpliedVendor": {
+            "Remove": true
+          },
+          "KhronosNonExclusiveVendor": {
+            "Remove": true
+          },
+          "SharedPrefix": {
+            "Remove": true
+          }
+        }
+      },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RewriteMemberValues": true
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "cl_bool": null
+        }
+      },
+      "TransformProperties": {
+        "BoolTypes": {
+          "cl_bool": null
+        }
+      },
+      "StripAttributes": {
+        "Remove": [
+          "NativeTypeName",
+          "NameAffix",
+          "Transformed"
+        ]
+      }
+    },
     "OpenAL": {
       "SourceProject": "sources/OpenAL/OpenAL/Silk.NET.OpenAL.csproj",
       "Solution": "Silk.NET.slnx",
