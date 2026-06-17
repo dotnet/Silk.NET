@@ -231,7 +231,7 @@ corresponding `ProjectReference` or `PackageReference`. Also ensure the `AllowUn
 > Note: In Silk's repository, `AllowUnsafeBlocks` is set globally by
 > [Directory.Build.props](https://github.com/dotnet/Silk.NET/blob/develop/3.0/Directory.Build.props).
 >
-> (TODO: Not sure if other properties are considered to be required.)
+> (TODO: Not sure if other properties are required.)
 
 For the solution file, both `.sln` and `.slnx` file formats are supported. This is because we defer to Roslyn and
 MSBuild under the hood.
@@ -240,10 +240,11 @@ MSBuild under the hood.
 
 All generated binding will be output to the `Jobs.JOB_NAME.SourceProject` path defined in `generator.json`.
 
-These generated files all have the `.gen.cs` suffix and most of them are partial type declarations.
-This means by creating a similarly named `.cs` file and using the `partial` C# keyword, you can add to the type.
+These generated files all have the `.gen.cs` suffix and most of them are partial type declarations. This means by
+creating a similarly named `.cs` file and using the `partial` C# keyword, you can add to the type.
 
-Do not modify the `.gen.cs` files since running the generator again will overwrite those changes.
+Do not modify the `.gen.cs` files since running the generator again will overwrite those changes. Files without this
+extension are left untouched by the generator.
 
 ### Packing the Generated Bindings
 
