@@ -1,0 +1,90 @@
+<Solution>
+  <Folder Name="/docs/">
+    <File Path="docs/CHANGELOG.md" />
+    <File Path="docs/CODEOWNERS" />
+    <File Path="docs/CODE_OF_CONDUCT.md" />
+    <File Path="docs/CONTRIBUTING.md" />
+    <File Path="docs/README.md" />
+  </Folder>
+  <Folder Name="/eng/">
+    <Project Path="eng/build/Silk.NET.NUKE.csproj" />
+  </Folder>
+  <Folder Name="/eng/benchmarks/">
+    <Project Path="eng/benchmarks/Silk.NET.Maths.Benchmarks/Silk.NET.Maths.Benchmarks.csproj" />
+  </Folder>
+  <Folder Name="/examples/" />
+  <Folder Name="/examples/CSharp/" />
+  <Folder Name="/examples/CSharp/OpenAL/">
+    <Project Path="examples/CSharp/OpenAL/Tutorial001.HelloSound/OpenAL.Tutorial001.HelloSound.csproj" />
+  </Folder>
+  <Folder Name="/examples/CSharp/SDL/">
+    <Project Path="examples/CSharp/SDL/Tutorial001.HelloWindow/SDL.Tutorial001.HelloWindow.csproj" />
+  </Folder>
+  <Folder Name="/scripts/">
+    <File Path="scripts/azure-pipelines.yml" />
+    <File Path="scripts/build.ps1" />
+    <File Path="scripts/build.sh" />
+    <File Path="scripts/cibuild.cmd" />
+    <File Path="scripts/cibuild.sh" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="generator.json" />
+    <File Path="LICENSE.md" />
+    <File Path="Silk.NET.sln.DotSettings" />
+  </Folder>
+  <Folder Name="/sources/">
+    <File Path="sources/Directory.Build.props" />
+    <File Path="sources/Directory.Build.targets" />
+    <Project Path="sources/Playground/Playground.csproj" />
+  </Folder>
+  <Folder Name="/sources/Core/">
+    <Project Path="sources/Core/Core/Silk.NET.Core.csproj" />
+    <Project Path="sources/Core/Silk.NET/Silk.NET.csproj" />
+  </Folder>
+  <Folder Name="/sources/Maths/">
+    <Project Path="sources/Maths/Maths/Silk.NET.Maths.csproj" />
+  </Folder>
+  <Folder Name="/sources/OpenAL/">
+    <Project Path="sources/OpenAL/OpenAL/Silk.NET.OpenAL.csproj" />
+    <Project Path="sources/OpenAL/Soft.Native/Silk.NET.OpenAL.Soft.Native.csproj" />
+  </Folder>
+  <Folder Name="/sources/OpenGL/">
+    <Project Path="sources/OpenGL/OpenGL/Silk.NET.OpenGL.csproj" />
+  </Folder>
+  <Folder Name="/sources/SDL/">
+    <Project Path="sources/SDL/Native/Silk.NET.SDL.Native.csproj" />
+    <Project Path="sources/SDL/SDL/Silk.NET.SDL.csproj" />
+  </Folder>
+  <Folder Name="/sources/SilkTouch/">
+    <Project Path="sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj" />
+  </Folder>
+  <Folder Name="/sources/Vulkan/">
+    <Project Path="sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj" />
+  </Folder>
+  <Folder Name="/sources/Win32/" />
+  <Folder Name="/sources/Windowing/">
+    <Project Path="sources/Windowing/Windowing/Silk.NET.Windowing.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <File Path="tests/Directory.Build.props" />
+    <File Path="tests/Directory.Build.targets" />
+  </Folder>
+  <Folder Name="/tests/Core/">
+    <Project Path="tests/Core/Core/Silk.NET.Core.UnitTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Maths/">
+    <Project Path="tests/Maths/Maths/Silk.NET.Maths.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/SDL/">
+    <Project Path="tests/SDL/SDL/Silk.NET.SDL.UnitTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/SilkTouch/">
+    <Project Path="tests/SilkTouch/SilkTouch/Silk.NET.SilkTouch.UnitTests.csproj" />
+  </Folder>
+</Solution>
