@@ -312,7 +312,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateContext")]
-        static abstract _cl_context* CreateContext(
+        static abstract _cl_context* CreateContEXT(
             nint* properties,
             uint num_devices,
             _cl_device_id** devices,
@@ -337,7 +337,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateContext")]
-        static abstract Ptr<_cl_context> CreateContext(
+        static abstract Ptr<_cl_context> CreateContEXT(
             Ref<nint> properties,
             uint num_devices,
             Ref2D<_cl_device_id> devices,
@@ -3926,7 +3926,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
-        static abstract int ReleaseContext(_cl_context* context);
+        static abstract int ReleaseContEXT(_cl_context* context);
 
         [NativeName("clReleaseContext")]
         [SupportedApiProfile(
@@ -3944,7 +3944,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
-        static abstract int ReleaseContext(Ref<_cl_context> context);
+        static abstract int ReleaseContEXT(Ref<_cl_context> context);
 
         [NativeName("clReleaseDevice")]
         [SupportedApiProfile(
@@ -4210,7 +4210,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clRetainContext")]
-        static abstract int RetainContext(_cl_context* context);
+        static abstract int RetainContEXT(_cl_context* context);
 
         [NativeName("clRetainContext")]
         [SupportedApiProfile(
@@ -4228,7 +4228,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clRetainContext")]
-        static abstract int RetainContext(Ref<_cl_context> context);
+        static abstract int RetainContEXT(Ref<_cl_context> context);
 
         [NativeName("clRetainDevice")]
         [SupportedApiProfile(
@@ -5228,7 +5228,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateContext")]
-    _cl_context* CreateContext(
+    _cl_context* CreateContEXT(
         nint* properties,
         uint num_devices,
         _cl_device_id** devices,
@@ -5253,7 +5253,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateContext")]
-    Ptr<_cl_context> CreateContext(
+    Ptr<_cl_context> CreateContEXT(
         Ref<nint> properties,
         uint num_devices,
         Ref2D<_cl_device_id> devices,
@@ -8722,7 +8722,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
-    int ReleaseContext(_cl_context* context);
+    int ReleaseContEXT(_cl_context* context);
 
     [NativeName("clReleaseContext")]
     [SupportedApiProfile(
@@ -8740,7 +8740,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
-    int ReleaseContext(Ref<_cl_context> context);
+    int ReleaseContEXT(Ref<_cl_context> context);
 
     [NativeName("clReleaseDevice")]
     [SupportedApiProfile(
@@ -9006,7 +9006,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainContext")]
-    int RetainContext(_cl_context* context);
+    int RetainContEXT(_cl_context* context);
 
     [NativeName("clRetainContext")]
     [SupportedApiProfile(
@@ -9024,7 +9024,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainContext")]
-    int RetainContext(Ref<_cl_context> context);
+    int RetainContEXT(Ref<_cl_context> context);
 
     [NativeName("clRetainDevice")]
     [SupportedApiProfile(
