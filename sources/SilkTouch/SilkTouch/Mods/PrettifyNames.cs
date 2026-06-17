@@ -69,6 +69,15 @@ public class PrettifyNames(
         public bool Prettify { get; init; } = false;
 
         /// <summary>
+        /// Whether the affix should be fully capitalized.
+        /// Defaults to false.
+        /// </summary>
+        /// <remarks>
+        /// Applies after <see cref="Prettify"/>, if <see cref="Prettify"/> is also enabled.
+        /// </remarks>
+        public bool Capitalize { get; init; } = false;
+
+        /// <summary>
         /// The order with which the affix is applied.
         /// <para/>
         /// Does nothing if <see cref="Remove"/> is true.
@@ -638,7 +647,7 @@ public class PrettifyNames(
     {
         private readonly record struct MemberKey(string Scope, string Member);
 
-        private readonly record struct NameFragment(string Value, bool Prettify);
+        private readonly record struct NameFragment(string Value, bool Prettify, bool Capitalize);
 
         private static readonly NameAffixConfiguration _defaultConfig = new();
 
@@ -920,7 +929,7 @@ public class PrettifyNames(
                 }
             );
 
-            var nameFragments = new List<NameFragment> { new(baseName, false) };
+            var nameFragments = new List<NameFragment> { new(baseName, false, false) };
             foreach (var affix in affixes)
             {
                 var affixValue = affix.Affix;
@@ -944,7 +953,11 @@ public class PrettifyNames(
                 var affixConfig = GetConfiguration(affix);
                 if (!affixConfig.Remove)
                 {
-                    var fragment = new NameFragment(affixValue, affixConfig.Prettify);
+                    var fragment = new NameFragment(
+                        affixValue,
+                        affixConfig.Prettify,
+                        affixConfig.Capitalize
+                    );
 
                     if (affix.Type == NameAffixType.Prefix)
                     {
@@ -965,6 +978,11 @@ public class PrettifyNames(
                 if (fragment.Prettify)
                 {
                     fragmentValue = namePrettifier.Prettify(fragmentValue, true);
+                }
+
+                if (fragment.Capitalize)
+                {
+                    fragmentValue = fragmentValue.ToUpperInvariant();
                 }
 
                 result += fragmentValue;
