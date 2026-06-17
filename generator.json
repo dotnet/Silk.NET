@@ -300,7 +300,8 @@
             "Order": 1
           },
           "KhronosVendor": {
-            "Order": -1
+            "Order": -1,
+            "Capitalize": true
           },
           "KhronosFunctionDataType": {
             "IsDiscriminator": true
