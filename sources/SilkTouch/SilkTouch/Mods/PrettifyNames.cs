@@ -959,50 +959,18 @@ public class PrettifyNames(
 
             // Build result by merging fragments
             var result = "";
-            var previousFragment = new NameFragment("", false);
-            foreach (var nameFragment in nameFragments)
-            {
-                switch (previousFragment.Prettify, nameFragment.Prettify)
-                {
-                    case (true, true):
-                    {
-                        previousFragment = new NameFragment(
-                            $"{previousFragment.Value}_{nameFragment.Value}",
-                            true
-                        );
-                        break;
-                    }
-                    case (false, false):
-                    {
-                        previousFragment = new NameFragment(
-                            $"{previousFragment.Value}{nameFragment.Value}",
-                            false
-                        );
-                        break;
-                    }
-                    default:
-                    {
-                        OutputFragment(previousFragment);
-                        previousFragment = nameFragment;
-                        break;
-                    }
-                }
-            }
-
-            OutputFragment(previousFragment);
-
-            return result;
-
-            void OutputFragment(NameFragment fragment)
+            foreach (var fragment in nameFragments)
             {
                 var fragmentValue = fragment.Value;
-                if (previousFragment.Prettify)
+                if (fragment.Prettify)
                 {
                     fragmentValue = namePrettifier.Prettify(fragmentValue, true);
                 }
 
                 result += fragmentValue;
             }
+
+            return result;
         }
 
         /// <summary>

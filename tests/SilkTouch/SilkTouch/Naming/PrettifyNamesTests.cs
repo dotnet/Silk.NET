@@ -475,4 +475,112 @@ public class PrettifyNamesTests
         // Method is named "Main"
         await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
+
+    [Test]
+    public async Task ReapplyAffixesProcessor_Preserves_ByDefault()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                [NameAffix("Prefix", "TestPrefix", "prefix_")]
+                public struct BaseName { }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // Result should be prefix_BaseName
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
+    }
+
+    [Test]
+    public async Task ReapplyAffixesProcessor_Prettify()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                [NameAffix("Prefix", "TestPrefix", "prefix_")]
+                public struct BaseName { }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration()
+                {
+                    Affixes =
+                    {
+                        {
+                            "TestPrefix",
+                            new PrettifyNames.NameAffixConfiguration() { Prettify = true }
+                        },
+                    },
+                }
+            )
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // Result should be PrefixBaseName
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
+    }
+
+    [Test]
+    public async Task ReapplyAffixesProcessor_Prettify2()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                [NameAffix("Prefix", "TestPrefix1", "inner_")]
+                [NameAffix("Prefix", "TestPrefix2", "outer_")]
+                public struct BaseName { }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration()
+                {
+                    Affixes =
+                    {
+                        {
+                            "TestPrefix1",
+                            new PrettifyNames.NameAffixConfiguration() { Prettify = true }
+                        },
+                        {
+                            "TestPrefix2",
+                            new PrettifyNames.NameAffixConfiguration() { Prettify = true }
+                        },
+                    },
+                }
+            )
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // Result should be OuterInnerBaseName
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
+    }
 }
