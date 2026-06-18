@@ -1620,24 +1620,27 @@ public partial class MixKhronosData(
     }
 
     /// <summary>
-    /// This regex matches against known OpenGL function endings, picking them out from function names.
+    /// This regex matches against known OpenGL function data type suffixes.
     /// It is comprised of two parts - the main matching set (here, the main capturing group), and a negative
     /// lookbehind workaround for difficult-to-match names. The primary set matches the actual function ending,
     /// while the lookbehind asserts that the ending match will not overreach into the end of a word.
     /// </summary>
     // NOTE: LET THIS BE A LESSON! Do NOT add x (fixed) here, these will frequently conflict with integer overloads.
     [GeneratedRegex("(?<!xe)([fdh]v?|u?[isb](64)?v?|v|i_v|fi|hi)$")]
-    private static partial Regex DataTypesToIdentify();
+    private static partial Regex FunctionDataTypesToIdentify();
 
     /// <summary>
-    /// This regex acts like a whitelist for endings that could have been matched in some way by the main
-    /// expression, but should be exempt from trimming altogether.
+    /// This regex is used by <see cref="CanIdentifySuffix"/> to identify cases where suffix identification
+    /// might have identified more than it should have.
     /// </summary>
     /// <remarks>
     /// This is configured to return rightmost matches first because we only care about the last match.
     /// </remarks>
     [GeneratedRegex(
-        "(sh|ib|[tdrey]s|(?<![A-Z])[eE]n[vd]|bled|Attrib|Access|Boolean|Coord|Depth|Feedbacks|Finish|Flag|"
+        // Note: This first line has the end specifier ($)
+        "((sh|ib|[tdrey]s|(?<![A-Z])[eE]n[vd]|bled)$)|"
+            // The rest are words that we don't want to accidentally identify into
+            + "(Attrib|Access|Boolean|Coord|Depth|Feedbacks|Finish|Flag|"
             + "Groups|IDs|Indexed|Instanced|Pixels|Queries|Status|Tess|Through|Uniforms|Varyings|Weight|Width|Bias|Id|"
             + "Fixed|Pass|Address|Configs|Thread|Subpass|Deferred|Extended|Affix|Annex|Box|Aux|Ex|Index|Vertex|Path|"
             + "Arch|Arith|Afresh|Both|High|Math|Mesh|Sinh|Bench|Brush|Bunch|Crash|Flush|Depth|Latch|Morph|Pinch|"
@@ -1652,6 +1655,9 @@ public partial class MixKhronosData(
     /// Returns whether the identified suffix can be identified by
     /// checking against the <see cref="EndingsToNotIdentifyInto"/> regex.
     /// </summary>
+    /// <remarks>
+    /// This is currently used when identifying function data types and vendor suffixes.
+    /// </remarks>
     private static bool CanIdentifySuffix(string name, int identifiedSuffixLength)
     {
         var match = EndingsToNotIdentifyInto().Match(name);
@@ -2102,7 +2108,7 @@ public partial class MixKhronosData(
                 // Try to identify data type suffixes
                 if (
                     config.IdentifyFunctionDataTypes
-                    && DataTypesToIdentify().Match(trimmedName) is { Success: true } match
+                    && FunctionDataTypesToIdentify().Match(trimmedName) is { Success: true } match
                     && CanIdentifySuffix(trimmedName, match.Length)
                 )
                 {
