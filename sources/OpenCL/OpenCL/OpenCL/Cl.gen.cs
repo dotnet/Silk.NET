@@ -721,8 +721,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern _cl_mem* CreateImage(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             void* host_ptr,
             int* errcode_ret
         );
@@ -747,16 +747,16 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static Ptr<_cl_mem> CreateImage(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             Ref host_ptr,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_host_ptr = host_ptr)
-            fixed (ClImageDesc* __dsl_image_desc = image_desc)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageDesc* __dsl_image_desc = image_desc)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_mem*)CreateImage(
@@ -790,7 +790,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern _cl_mem* CreateImage2D(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             nuint image_width,
             nuint image_height,
             nuint image_row_pitch,
@@ -821,7 +821,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static Ptr<_cl_mem> CreateImage2D(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             nuint image_width,
             nuint image_height,
             nuint image_row_pitch,
@@ -831,7 +831,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_host_ptr = host_ptr)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_mem*)CreateImage2D(
@@ -867,7 +867,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern _cl_mem* CreateImage3D(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             nuint image_width,
             nuint image_height,
             nuint image_depth,
@@ -900,7 +900,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static Ptr<_cl_mem> CreateImage3D(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             nuint image_width,
             nuint image_height,
             nuint image_depth,
@@ -912,7 +912,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_host_ptr = host_ptr)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_mem*)CreateImage3D(
@@ -937,8 +937,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             _cl_context* context,
             ulong* properties,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             void* host_ptr,
             int* errcode_ret
         );
@@ -953,16 +953,16 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<_cl_context> context,
             Ref<ulong> properties,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             Ref host_ptr,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_host_ptr = host_ptr)
-            fixed (ClImageDesc* __dsl_image_desc = image_desc)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageDesc* __dsl_image_desc = image_desc)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (ulong* __dsl_properties = properties)
             fixed (_cl_context* __dsl_context = context)
             {
@@ -5511,7 +5511,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             _cl_device_id* device,
             nuint image_width,
             nuint image_height,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -5528,7 +5528,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<_cl_device_id> device,
             nuint image_width,
             nuint image_height,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -5537,7 +5537,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
             fixed (void* __dsl_param_value = param_value)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (_cl_device_id* __dsl_device = device)
             {
                 return (int)GetDeviceImageInfoQCOM(
@@ -5989,8 +5989,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             _cl_context* context,
             ulong* properties,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -6011,8 +6011,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<_cl_context> context,
             Ref<ulong> properties,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -6021,8 +6021,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
             fixed (void* __dsl_param_value = param_value)
-            fixed (ClImageDesc* __dsl_image_desc = image_desc)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageDesc* __dsl_image_desc = image_desc)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (ulong* __dsl_properties = properties)
             fixed (_cl_context* __dsl_context = context)
             {
@@ -7040,7 +7040,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            ClImageFormat* image_formats,
+            ImageFormat* image_formats,
             uint* num_image_formats
         );
 
@@ -7068,12 +7068,12 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            Ref<ClImageFormat> image_formats,
+            Ref<ImageFormat> image_formats,
             Ref<uint> num_image_formats
         )
         {
             fixed (uint* __dsl_num_image_formats = num_image_formats)
-            fixed (ClImageFormat* __dsl_image_formats = image_formats)
+            fixed (ImageFormat* __dsl_image_formats = image_formats)
             fixed (_cl_context* __dsl_context = context)
             {
                 return (int)GetSupportedImageFormats(
@@ -9915,8 +9915,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         public _cl_mem* CreateImage(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             void* host_ptr,
             int* errcode_ret
         ) => T.CreateImage(context, flags, image_format, image_desc, host_ptr, errcode_ret);
@@ -9941,8 +9941,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         public Ptr<_cl_mem> CreateImage(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             Ref host_ptr,
             Ref<int> errcode_ret
         ) => T.CreateImage(context, flags, image_format, image_desc, host_ptr, errcode_ret);
@@ -9970,7 +9970,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public _cl_mem* CreateImage2D(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             nuint image_width,
             nuint image_height,
             nuint image_row_pitch,
@@ -10011,7 +10011,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public Ptr<_cl_mem> CreateImage2D(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             nuint image_width,
             nuint image_height,
             nuint image_row_pitch,
@@ -10052,7 +10052,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public _cl_mem* CreateImage3D(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             nuint image_width,
             nuint image_height,
             nuint image_depth,
@@ -10097,7 +10097,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public Ptr<_cl_mem> CreateImage3D(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             nuint image_width,
             nuint image_height,
             nuint image_depth,
@@ -10129,8 +10129,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             _cl_context* context,
             ulong* properties,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             void* host_ptr,
             int* errcode_ret
         ) =>
@@ -10154,8 +10154,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<_cl_context> context,
             Ref<ulong> properties,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             Ref host_ptr,
             Ref<int> errcode_ret
         ) =>
@@ -14701,7 +14701,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             _cl_device_id* device,
             nuint image_width,
             nuint image_height,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -14728,7 +14728,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<_cl_device_id> device,
             nuint image_width,
             nuint image_height,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -15159,8 +15159,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             _cl_context* context,
             ulong* properties,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -15192,8 +15192,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<_cl_context> context,
             Ref<ulong> properties,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -16237,7 +16237,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            ClImageFormat* image_formats,
+            ImageFormat* image_formats,
             uint* num_image_formats
         ) =>
             T.GetSupportedImageFormats(
@@ -16273,7 +16273,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            Ref<ClImageFormat> image_formats,
+            Ref<ImageFormat> image_formats,
             Ref<uint> num_image_formats
         ) =>
             T.GetSupportedImageFormats(
@@ -19044,8 +19044,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static _cl_mem* CreateImage(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             void* host_ptr,
             int* errcode_ret
         ) =>
@@ -19078,16 +19078,16 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static Ptr<_cl_mem> CreateImage(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             Ref host_ptr,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_host_ptr = host_ptr)
-            fixed (ClImageDesc* __dsl_image_desc = image_desc)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageDesc* __dsl_image_desc = image_desc)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_mem*)CreateImage(
@@ -19124,7 +19124,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static _cl_mem* CreateImage2D(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             nuint image_width,
             nuint image_height,
             nuint image_row_pitch,
@@ -19165,7 +19165,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static Ptr<_cl_mem> CreateImage2D(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             nuint image_width,
             nuint image_height,
             nuint image_row_pitch,
@@ -19175,7 +19175,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_host_ptr = host_ptr)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_mem*)CreateImage2D(
@@ -19214,7 +19214,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static _cl_mem* CreateImage3D(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             nuint image_width,
             nuint image_height,
             nuint image_depth,
@@ -19259,7 +19259,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static Ptr<_cl_mem> CreateImage3D(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             nuint image_width,
             nuint image_height,
             nuint image_depth,
@@ -19271,7 +19271,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_host_ptr = host_ptr)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_mem*)CreateImage3D(
@@ -19299,8 +19299,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             _cl_context* context,
             ulong* properties,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             void* host_ptr,
             int* errcode_ret
         ) =>
@@ -19324,16 +19324,16 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<_cl_context> context,
             Ref<ulong> properties,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             Ref host_ptr,
             Ref<int> errcode_ret
         )
         {
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_host_ptr = host_ptr)
-            fixed (ClImageDesc* __dsl_image_desc = image_desc)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageDesc* __dsl_image_desc = image_desc)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (ulong* __dsl_properties = properties)
             fixed (_cl_context* __dsl_context = context)
             {
@@ -24675,7 +24675,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             _cl_device_id* device,
             nuint image_width,
             nuint image_height,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -24702,7 +24702,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<_cl_device_id> device,
             nuint image_width,
             nuint image_height,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -24711,7 +24711,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
             fixed (void* __dsl_param_value = param_value)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (_cl_device_id* __dsl_device = device)
             {
                 return (int)GetDeviceImageInfoQCOM(
@@ -25222,8 +25222,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             _cl_context* context,
             ulong* properties,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -25255,8 +25255,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<_cl_context> context,
             Ref<ulong> properties,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -25265,8 +25265,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
             fixed (void* __dsl_param_value = param_value)
-            fixed (ClImageDesc* __dsl_image_desc = image_desc)
-            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ImageDesc* __dsl_image_desc = image_desc)
+            fixed (ImageFormat* __dsl_image_format = image_format)
             fixed (ulong* __dsl_properties = properties)
             fixed (_cl_context* __dsl_context = context)
             {
@@ -26455,7 +26455,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            ClImageFormat* image_formats,
+            ImageFormat* image_formats,
             uint* num_image_formats
         ) =>
             Underlying.Value!.GetSupportedImageFormats(
@@ -26491,12 +26491,12 @@ public unsafe partial class Cl : ICl, ICl.Static
             ulong flags,
             uint image_type,
             uint num_entries,
-            Ref<ClImageFormat> image_formats,
+            Ref<ImageFormat> image_formats,
             Ref<uint> num_image_formats
         )
         {
             fixed (uint* __dsl_num_image_formats = num_image_formats)
-            fixed (ClImageFormat* __dsl_image_formats = image_formats)
+            fixed (ImageFormat* __dsl_image_formats = image_formats)
             fixed (_cl_context* __dsl_context = context)
             {
                 return (int)GetSupportedImageFormats(
@@ -31779,8 +31779,8 @@ public unsafe partial class Cl : ICl, ICl.Static
     _cl_mem* ICl.CreateImage(
         _cl_context* context,
         ulong flags,
-        ClImageFormat* image_format,
-        ClImageDesc* image_desc,
+        ImageFormat* image_format,
+        ImageDesc* image_desc,
         void* host_ptr,
         int* errcode_ret
     ) =>
@@ -31788,8 +31788,8 @@ public unsafe partial class Cl : ICl, ICl.Static
             (delegate* unmanaged<
                 _cl_context*,
                 ulong,
-                ClImageFormat*,
-                ClImageDesc*,
+                ImageFormat*,
+                ImageDesc*,
                 void*,
                 int*,
                 _cl_mem*>)(
@@ -31817,8 +31817,8 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static _cl_mem* CreateImage(
         _cl_context* context,
         ulong flags,
-        ClImageFormat* image_format,
-        ClImageDesc* image_desc,
+        ImageFormat* image_format,
+        ImageDesc* image_desc,
         void* host_ptr,
         int* errcode_ret
     ) => ThisThread.CreateImage(context, flags, image_format, image_desc, host_ptr, errcode_ret);
@@ -31841,16 +31841,16 @@ public unsafe partial class Cl : ICl, ICl.Static
     Ptr<_cl_mem> ICl.CreateImage(
         Ref<_cl_context> context,
         ulong flags,
-        Ref<ClImageFormat> image_format,
-        Ref<ClImageDesc> image_desc,
+        Ref<ImageFormat> image_format,
+        Ref<ImageDesc> image_desc,
         Ref host_ptr,
         Ref<int> errcode_ret
     )
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
         fixed (void* __dsl_host_ptr = host_ptr)
-        fixed (ClImageDesc* __dsl_image_desc = image_desc)
-        fixed (ClImageFormat* __dsl_image_format = image_format)
+        fixed (ImageDesc* __dsl_image_desc = image_desc)
+        fixed (ImageFormat* __dsl_image_format = image_format)
         fixed (_cl_context* __dsl_context = context)
         {
             return (_cl_mem*)
@@ -31883,8 +31883,8 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static Ptr<_cl_mem> CreateImage(
         Ref<_cl_context> context,
         ulong flags,
-        Ref<ClImageFormat> image_format,
-        Ref<ClImageDesc> image_desc,
+        Ref<ImageFormat> image_format,
+        Ref<ImageDesc> image_desc,
         Ref host_ptr,
         Ref<int> errcode_ret
     ) => ThisThread.CreateImage(context, flags, image_format, image_desc, host_ptr, errcode_ret);
@@ -31910,7 +31910,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     _cl_mem* ICl.CreateImage2D(
         _cl_context* context,
         ulong flags,
-        ClImageFormat* image_format,
+        ImageFormat* image_format,
         nuint image_width,
         nuint image_height,
         nuint image_row_pitch,
@@ -31921,7 +31921,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             (delegate* unmanaged<
                 _cl_context*,
                 ulong,
-                ClImageFormat*,
+                ImageFormat*,
                 nuint,
                 nuint,
                 nuint,
@@ -31964,7 +31964,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static _cl_mem* CreateImage2D(
         _cl_context* context,
         ulong flags,
-        ClImageFormat* image_format,
+        ImageFormat* image_format,
         nuint image_width,
         nuint image_height,
         nuint image_row_pitch,
@@ -32003,7 +32003,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     Ptr<_cl_mem> ICl.CreateImage2D(
         Ref<_cl_context> context,
         ulong flags,
-        Ref<ClImageFormat> image_format,
+        Ref<ImageFormat> image_format,
         nuint image_width,
         nuint image_height,
         nuint image_row_pitch,
@@ -32013,7 +32013,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
         fixed (void* __dsl_host_ptr = host_ptr)
-        fixed (ClImageFormat* __dsl_image_format = image_format)
+        fixed (ImageFormat* __dsl_image_format = image_format)
         fixed (_cl_context* __dsl_context = context)
         {
             return (_cl_mem*)
@@ -32051,7 +32051,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static Ptr<_cl_mem> CreateImage2D(
         Ref<_cl_context> context,
         ulong flags,
-        Ref<ClImageFormat> image_format,
+        Ref<ImageFormat> image_format,
         nuint image_width,
         nuint image_height,
         nuint image_row_pitch,
@@ -32090,7 +32090,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     _cl_mem* ICl.CreateImage3D(
         _cl_context* context,
         ulong flags,
-        ClImageFormat* image_format,
+        ImageFormat* image_format,
         nuint image_width,
         nuint image_height,
         nuint image_depth,
@@ -32103,7 +32103,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             (delegate* unmanaged<
                 _cl_context*,
                 ulong,
-                ClImageFormat*,
+                ImageFormat*,
                 nuint,
                 nuint,
                 nuint,
@@ -32150,7 +32150,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static _cl_mem* CreateImage3D(
         _cl_context* context,
         ulong flags,
-        ClImageFormat* image_format,
+        ImageFormat* image_format,
         nuint image_width,
         nuint image_height,
         nuint image_depth,
@@ -32193,7 +32193,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     Ptr<_cl_mem> ICl.CreateImage3D(
         Ref<_cl_context> context,
         ulong flags,
-        Ref<ClImageFormat> image_format,
+        Ref<ImageFormat> image_format,
         nuint image_width,
         nuint image_height,
         nuint image_depth,
@@ -32205,7 +32205,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
         fixed (void* __dsl_host_ptr = host_ptr)
-        fixed (ClImageFormat* __dsl_image_format = image_format)
+        fixed (ImageFormat* __dsl_image_format = image_format)
         fixed (_cl_context* __dsl_context = context)
         {
             return (_cl_mem*)
@@ -32245,7 +32245,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static Ptr<_cl_mem> CreateImage3D(
         Ref<_cl_context> context,
         ulong flags,
-        Ref<ClImageFormat> image_format,
+        Ref<ImageFormat> image_format,
         nuint image_width,
         nuint image_height,
         nuint image_depth,
@@ -32275,8 +32275,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         _cl_context* context,
         ulong* properties,
         ulong flags,
-        ClImageFormat* image_format,
-        ClImageDesc* image_desc,
+        ImageFormat* image_format,
+        ImageDesc* image_desc,
         void* host_ptr,
         int* errcode_ret
     ) =>
@@ -32285,8 +32285,8 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_context*,
                 ulong*,
                 ulong,
-                ClImageFormat*,
-                ClImageDesc*,
+                ImageFormat*,
+                ImageDesc*,
                 void*,
                 int*,
                 _cl_mem*>)(
@@ -32307,8 +32307,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         _cl_context* context,
         ulong* properties,
         ulong flags,
-        ClImageFormat* image_format,
-        ClImageDesc* image_desc,
+        ImageFormat* image_format,
+        ImageDesc* image_desc,
         void* host_ptr,
         int* errcode_ret
     ) =>
@@ -32330,16 +32330,16 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<_cl_context> context,
         Ref<ulong> properties,
         ulong flags,
-        Ref<ClImageFormat> image_format,
-        Ref<ClImageDesc> image_desc,
+        Ref<ImageFormat> image_format,
+        Ref<ImageDesc> image_desc,
         Ref host_ptr,
         Ref<int> errcode_ret
     )
     {
         fixed (int* __dsl_errcode_ret = errcode_ret)
         fixed (void* __dsl_host_ptr = host_ptr)
-        fixed (ClImageDesc* __dsl_image_desc = image_desc)
-        fixed (ClImageFormat* __dsl_image_format = image_format)
+        fixed (ImageDesc* __dsl_image_desc = image_desc)
+        fixed (ImageFormat* __dsl_image_format = image_format)
         fixed (ulong* __dsl_properties = properties)
         fixed (_cl_context* __dsl_context = context)
         {
@@ -32364,8 +32364,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<_cl_context> context,
         Ref<ulong> properties,
         ulong flags,
-        Ref<ClImageFormat> image_format,
-        Ref<ClImageDesc> image_desc,
+        Ref<ImageFormat> image_format,
+        Ref<ImageDesc> image_desc,
         Ref host_ptr,
         Ref<int> errcode_ret
     ) =>
@@ -42344,7 +42344,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         _cl_device_id* device,
         nuint image_width,
         nuint image_height,
-        ClImageFormat* image_format,
+        ImageFormat* image_format,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -42355,7 +42355,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_device_id*,
                 nuint,
                 nuint,
-                ClImageFormat*,
+                ImageFormat*,
                 uint,
                 nuint,
                 void*,
@@ -42384,7 +42384,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         _cl_device_id* device,
         nuint image_width,
         nuint image_height,
-        ClImageFormat* image_format,
+        ImageFormat* image_format,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -42409,7 +42409,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<_cl_device_id> device,
         nuint image_width,
         nuint image_height,
-        Ref<ClImageFormat> image_format,
+        Ref<ImageFormat> image_format,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -42418,7 +42418,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     {
         fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
         fixed (void* __dsl_param_value = param_value)
-        fixed (ClImageFormat* __dsl_image_format = image_format)
+        fixed (ImageFormat* __dsl_image_format = image_format)
         fixed (_cl_device_id* __dsl_device = device)
         {
             return (int)
@@ -42443,7 +42443,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<_cl_device_id> device,
         nuint image_width,
         nuint image_height,
-        Ref<ClImageFormat> image_format,
+        Ref<ImageFormat> image_format,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -43341,8 +43341,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         _cl_context* context,
         ulong* properties,
         ulong flags,
-        ClImageFormat* image_format,
-        ClImageDesc* image_desc,
+        ImageFormat* image_format,
+        ImageDesc* image_desc,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -43353,8 +43353,8 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_context*,
                 ulong*,
                 ulong,
-                ClImageFormat*,
-                ClImageDesc*,
+                ImageFormat*,
+                ImageDesc*,
                 uint,
                 nuint,
                 void*,
@@ -43391,8 +43391,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         _cl_context* context,
         ulong* properties,
         ulong flags,
-        ClImageFormat* image_format,
-        ClImageDesc* image_desc,
+        ImageFormat* image_format,
+        ImageDesc* image_desc,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -43422,8 +43422,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<_cl_context> context,
         Ref<ulong> properties,
         ulong flags,
-        Ref<ClImageFormat> image_format,
-        Ref<ClImageDesc> image_desc,
+        Ref<ImageFormat> image_format,
+        Ref<ImageDesc> image_desc,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -43432,8 +43432,8 @@ public unsafe partial class Cl : ICl, ICl.Static
     {
         fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
         fixed (void* __dsl_param_value = param_value)
-        fixed (ClImageDesc* __dsl_image_desc = image_desc)
-        fixed (ClImageFormat* __dsl_image_format = image_format)
+        fixed (ImageDesc* __dsl_image_desc = image_desc)
+        fixed (ImageFormat* __dsl_image_format = image_format)
         fixed (ulong* __dsl_properties = properties)
         fixed (_cl_context* __dsl_context = context)
         {
@@ -43464,8 +43464,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<_cl_context> context,
         Ref<ulong> properties,
         ulong flags,
-        Ref<ClImageFormat> image_format,
-        Ref<ClImageDesc> image_desc,
+        Ref<ImageFormat> image_format,
+        Ref<ImageDesc> image_desc,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -45598,11 +45598,11 @@ public unsafe partial class Cl : ICl, ICl.Static
         ulong flags,
         uint image_type,
         uint num_entries,
-        ClImageFormat* image_formats,
+        ImageFormat* image_formats,
         uint* num_image_formats
     ) =>
         (
-            (delegate* unmanaged<_cl_context*, ulong, uint, uint, ClImageFormat*, uint*, int>)(
+            (delegate* unmanaged<_cl_context*, ulong, uint, uint, ImageFormat*, uint*, int>)(
                 _slots[118] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[118] = nativeContext.LoadFunction(
@@ -45634,7 +45634,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         ulong flags,
         uint image_type,
         uint num_entries,
-        ClImageFormat* image_formats,
+        ImageFormat* image_formats,
         uint* num_image_formats
     ) =>
         ThisThread.GetSupportedImageFormats(
@@ -45668,12 +45668,12 @@ public unsafe partial class Cl : ICl, ICl.Static
         ulong flags,
         uint image_type,
         uint num_entries,
-        Ref<ClImageFormat> image_formats,
+        Ref<ImageFormat> image_formats,
         Ref<uint> num_image_formats
     )
     {
         fixed (uint* __dsl_num_image_formats = num_image_formats)
-        fixed (ClImageFormat* __dsl_image_formats = image_formats)
+        fixed (ImageFormat* __dsl_image_formats = image_formats)
         fixed (_cl_context* __dsl_context = context)
         {
             return (int)
@@ -45710,7 +45710,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         ulong flags,
         uint image_type,
         uint num_entries,
-        Ref<ClImageFormat> image_formats,
+        Ref<ImageFormat> image_formats,
         Ref<uint> num_image_formats
     ) =>
         ThisThread.GetSupportedImageFormats(

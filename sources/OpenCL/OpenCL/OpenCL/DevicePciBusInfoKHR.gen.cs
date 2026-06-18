@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("_cl_device_pci_bus_info_khr")]
-public partial struct ClDevicePciBusInfoKHR
+public partial struct DevicePciBusInfoKHR
 {
     [NativeName("pci_domain")]
     public uint PciDomain;

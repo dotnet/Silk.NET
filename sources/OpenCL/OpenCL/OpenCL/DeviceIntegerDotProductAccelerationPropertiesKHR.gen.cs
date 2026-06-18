@@ -5,7 +5,7 @@
 namespace Silk.NET.OpenCL;
 
 [NativeName("_cl_device_integer_dot_product_acceleration_properties_khr")]
-public partial struct ClDeviceIntegerDotProductAccelerationPropertiesKHR
+public partial struct DeviceIntegerDotProductAccelerationPropertiesKHR
 {
     [NativeName("signed_accelerated")]
     public uint SignedAccelerated;

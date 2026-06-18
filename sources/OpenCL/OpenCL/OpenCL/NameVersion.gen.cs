@@ -3,13 +3,14 @@
 // Ported from the OpenCL headers and corresponding dependencies.
 // Original source is Copyright 2013-2026 The Khronos Group Inc. Licensed under the Apache 2.0 license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("_cl_name_version_khr")]
-public partial struct ClNameVersionKHR
+[NativeName("_cl_name_version")]
+public partial struct NameVersion
 {
     [NativeName("version")]
     public uint Version;

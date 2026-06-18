@@ -5,7 +5,7 @@
 namespace Silk.NET.OpenCL;
 
 [NativeName("_cl_motion_estimation_desc_intel")]
-public partial struct ClMotionEstimationDescINTEL
+public partial struct MotionEstimationDescINTEL
 {
     [NativeName("mb_block_type")]
     public uint MbBlockType;

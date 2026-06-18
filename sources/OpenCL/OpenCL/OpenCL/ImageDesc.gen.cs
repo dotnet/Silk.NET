@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("_cl_image_desc")]
-public unsafe partial struct ClImageDesc
+public unsafe partial struct ImageDesc
 {
     [NativeName("image_type")]
     public uint ImageType;

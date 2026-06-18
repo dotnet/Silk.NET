@@ -490,8 +490,8 @@ public unsafe partial interface ICl
         static abstract _cl_mem* CreateImage(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             void* host_ptr,
             int* errcode_ret
         );
@@ -513,8 +513,8 @@ public unsafe partial interface ICl
         static abstract Ptr<_cl_mem> CreateImage(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             Ref host_ptr,
             Ref<int> errcode_ret
         );
@@ -539,7 +539,7 @@ public unsafe partial interface ICl
         static abstract _cl_mem* CreateImage2D(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             nuint image_width,
             nuint image_height,
             nuint image_row_pitch,
@@ -567,7 +567,7 @@ public unsafe partial interface ICl
         static abstract Ptr<_cl_mem> CreateImage2D(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             nuint image_width,
             nuint image_height,
             nuint image_row_pitch,
@@ -595,7 +595,7 @@ public unsafe partial interface ICl
         static abstract _cl_mem* CreateImage3D(
             _cl_context* context,
             ulong flags,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             nuint image_width,
             nuint image_height,
             nuint image_depth,
@@ -625,7 +625,7 @@ public unsafe partial interface ICl
         static abstract Ptr<_cl_mem> CreateImage3D(
             Ref<_cl_context> context,
             ulong flags,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             nuint image_width,
             nuint image_height,
             nuint image_depth,
@@ -642,8 +642,8 @@ public unsafe partial interface ICl
             _cl_context* context,
             ulong* properties,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             void* host_ptr,
             int* errcode_ret
         );
@@ -655,8 +655,8 @@ public unsafe partial interface ICl
             Ref<_cl_context> context,
             Ref<ulong> properties,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             Ref host_ptr,
             Ref<int> errcode_ret
         );
@@ -3694,7 +3694,7 @@ public unsafe partial interface ICl
             _cl_device_id* device,
             nuint image_width,
             nuint image_height,
-            ClImageFormat* image_format,
+            ImageFormat* image_format,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -3708,7 +3708,7 @@ public unsafe partial interface ICl
             Ref<_cl_device_id> device,
             nuint image_width,
             nuint image_height,
-            Ref<ClImageFormat> image_format,
+            Ref<ImageFormat> image_format,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4032,8 +4032,8 @@ public unsafe partial interface ICl
             _cl_context* context,
             ulong* properties,
             ulong flags,
-            ClImageFormat* image_format,
-            ClImageDesc* image_desc,
+            ImageFormat* image_format,
+            ImageDesc* image_desc,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4051,8 +4051,8 @@ public unsafe partial interface ICl
             Ref<_cl_context> context,
             Ref<ulong> properties,
             ulong flags,
-            Ref<ClImageFormat> image_format,
-            Ref<ClImageDesc> image_desc,
+            Ref<ImageFormat> image_format,
+            Ref<ImageDesc> image_desc,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4744,7 +4744,7 @@ public unsafe partial interface ICl
             ulong flags,
             uint image_type,
             uint num_entries,
-            ClImageFormat* image_formats,
+            ImageFormat* image_formats,
             uint* num_image_formats
         );
 
@@ -4769,7 +4769,7 @@ public unsafe partial interface ICl
             ulong flags,
             uint image_type,
             uint num_entries,
-            Ref<ClImageFormat> image_formats,
+            Ref<ImageFormat> image_formats,
             Ref<uint> num_image_formats
         );
 
@@ -6803,8 +6803,8 @@ public unsafe partial interface ICl
     _cl_mem* CreateImage(
         _cl_context* context,
         ulong flags,
-        ClImageFormat* image_format,
-        ClImageDesc* image_desc,
+        ImageFormat* image_format,
+        ImageDesc* image_desc,
         void* host_ptr,
         int* errcode_ret
     );
@@ -6826,8 +6826,8 @@ public unsafe partial interface ICl
     Ptr<_cl_mem> CreateImage(
         Ref<_cl_context> context,
         ulong flags,
-        Ref<ClImageFormat> image_format,
-        Ref<ClImageDesc> image_desc,
+        Ref<ImageFormat> image_format,
+        Ref<ImageDesc> image_desc,
         Ref host_ptr,
         Ref<int> errcode_ret
     );
@@ -6852,7 +6852,7 @@ public unsafe partial interface ICl
     _cl_mem* CreateImage2D(
         _cl_context* context,
         ulong flags,
-        ClImageFormat* image_format,
+        ImageFormat* image_format,
         nuint image_width,
         nuint image_height,
         nuint image_row_pitch,
@@ -6880,7 +6880,7 @@ public unsafe partial interface ICl
     Ptr<_cl_mem> CreateImage2D(
         Ref<_cl_context> context,
         ulong flags,
-        Ref<ClImageFormat> image_format,
+        Ref<ImageFormat> image_format,
         nuint image_width,
         nuint image_height,
         nuint image_row_pitch,
@@ -6908,7 +6908,7 @@ public unsafe partial interface ICl
     _cl_mem* CreateImage3D(
         _cl_context* context,
         ulong flags,
-        ClImageFormat* image_format,
+        ImageFormat* image_format,
         nuint image_width,
         nuint image_height,
         nuint image_depth,
@@ -6938,7 +6938,7 @@ public unsafe partial interface ICl
     Ptr<_cl_mem> CreateImage3D(
         Ref<_cl_context> context,
         ulong flags,
-        Ref<ClImageFormat> image_format,
+        Ref<ImageFormat> image_format,
         nuint image_width,
         nuint image_height,
         nuint image_depth,
@@ -6955,8 +6955,8 @@ public unsafe partial interface ICl
         _cl_context* context,
         ulong* properties,
         ulong flags,
-        ClImageFormat* image_format,
-        ClImageDesc* image_desc,
+        ImageFormat* image_format,
+        ImageDesc* image_desc,
         void* host_ptr,
         int* errcode_ret
     );
@@ -6968,8 +6968,8 @@ public unsafe partial interface ICl
         Ref<_cl_context> context,
         Ref<ulong> properties,
         ulong flags,
-        Ref<ClImageFormat> image_format,
-        Ref<ClImageDesc> image_desc,
+        Ref<ImageFormat> image_format,
+        Ref<ImageDesc> image_desc,
         Ref host_ptr,
         Ref<int> errcode_ret
     );
@@ -9897,7 +9897,7 @@ public unsafe partial interface ICl
         _cl_device_id* device,
         nuint image_width,
         nuint image_height,
-        ClImageFormat* image_format,
+        ImageFormat* image_format,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -9911,7 +9911,7 @@ public unsafe partial interface ICl
         Ref<_cl_device_id> device,
         nuint image_width,
         nuint image_height,
-        Ref<ClImageFormat> image_format,
+        Ref<ImageFormat> image_format,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10229,8 +10229,8 @@ public unsafe partial interface ICl
         _cl_context* context,
         ulong* properties,
         ulong flags,
-        ClImageFormat* image_format,
-        ClImageDesc* image_desc,
+        ImageFormat* image_format,
+        ImageDesc* image_desc,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10248,8 +10248,8 @@ public unsafe partial interface ICl
         Ref<_cl_context> context,
         Ref<ulong> properties,
         ulong flags,
-        Ref<ClImageFormat> image_format,
-        Ref<ClImageDesc> image_desc,
+        Ref<ImageFormat> image_format,
+        Ref<ImageDesc> image_desc,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10921,7 +10921,7 @@ public unsafe partial interface ICl
         ulong flags,
         uint image_type,
         uint num_entries,
-        ClImageFormat* image_formats,
+        ImageFormat* image_formats,
         uint* num_image_formats
     );
 
@@ -10946,7 +10946,7 @@ public unsafe partial interface ICl
         ulong flags,
         uint image_type,
         uint num_entries,
-        Ref<ClImageFormat> image_formats,
+        Ref<ImageFormat> image_formats,
         Ref<uint> num_image_formats
     );
 

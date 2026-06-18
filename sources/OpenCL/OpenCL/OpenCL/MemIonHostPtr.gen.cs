@@ -9,12 +9,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("_cl_image_format")]
-public partial struct ClImageFormat
+[NativeName("_cl_mem_ion_host_ptr")]
+public unsafe partial struct MemIonHostPtr
 {
-    [NativeName("image_channel_order")]
-    public uint ImageChannelOrder;
+    [NativeName("ext_host_ptr")]
+    public MemExtHostPtr ExtHostPtr;
 
-    [NativeName("image_channel_data_type")]
-    public uint ImageChannelDataType;
+    [NativeName("ion_filedesc")]
+    public int IonFiledesc;
+
+    [NativeName("ion_hostptr")]
+    public void* IonHostptr;
 }

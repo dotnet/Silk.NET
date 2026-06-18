@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("_cl_device_integer_dot_product_acceleration_properties")]
-public partial struct ClDeviceIntegerDotProductAccelerationProperties
+public partial struct DeviceIntegerDotProductAccelerationProperties
 {
     [NativeName("signed_accelerated")]
     public uint SignedAccelerated;
