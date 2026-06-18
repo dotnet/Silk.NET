@@ -14,3 +14,4 @@ Silk.NET.OpenCL
 ../../../../tests/OpenCL/OpenCL
 --traverse
 ../../../submodules/opencl-headers/CL/cl.h
+../../../submodules/opencl-headers/CL/cl_ext.h
