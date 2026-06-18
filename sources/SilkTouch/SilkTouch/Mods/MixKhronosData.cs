@@ -1627,22 +1627,45 @@ public partial class MixKhronosData(
     /// </summary>
     // NOTE: LET THIS BE A LESSON! Do NOT add x (fixed) here, these will frequently conflict with integer overloads.
     [GeneratedRegex("(?<!xe)([fdh]v?|u?[isb](64)?v?|v|i_v|fi|hi)$")]
-    private static partial Regex EndingsToTrim();
+    private static partial Regex DataTypesToIdentify();
 
     /// <summary>
     /// This regex acts like a whitelist for endings that could have been matched in some way by the main
     /// expression, but should be exempt from trimming altogether.
     /// </summary>
-    // Rewindv is to prevent Rewindv from being trimmed as Rewin
-    // TODO: Consider replacing this with something that prevents a list of words from being trimmed into instead of not being trimmed at all
+    /// <remarks>
+    /// This is configured to return rightmost matches first because we only care about the last match.
+    /// </remarks>
     [GeneratedRegex(
         "(sh|ib|[tdrey]s|(?<![A-Z])[eE]n[vd]|bled|Attrib|Access|Boolean|Coord|Depth|Feedbacks|Finish|Flag|"
             + "Groups|IDs|Indexed|Instanced|Pixels|Queries|Status|Tess|Through|Uniforms|Varyings|Weight|Width|Bias|Id|"
             + "Fixed|Pass|Address|Configs|Thread|Subpass|Deferred|Extended|Affix|Annex|Box|Aux|Ex|Index|Vertex|Path|"
             + "Arch|Arith|Afresh|Both|High|Math|Mesh|Sinh|Bench|Brush|Bunch|Crash|Flush|Depth|Latch|Morph|Pinch|"
-            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Supported|Rewind|Rewindv)$"
+            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Supported|Rewind)",
+        RegexOptions.RightToLeft
     )]
-    private static partial Regex EndingsNotToTrim();
+    private static partial Regex EndingsToNotIdentifyInto();
+
+    /// <summary>
+    /// Returns whether the identified suffix can be identified by
+    /// checking against the <see cref="EndingsToNotIdentifyInto"/> regex.
+    /// </summary>
+    private static bool CanIdentifySuffix(string name, int identifiedSuffixLength)
+    {
+        var match = EndingsToNotIdentifyInto().Match(name);
+        if (!match.Success)
+        {
+            return true;
+        }
+
+        // End of matched region must be before the suffix
+        if (match.Index + match.Length <= name.Length - identifiedSuffixLength)
+        {
+            return true;
+        }
+
+        return false;
+    }
 
     /// <summary>
     /// This rewriter focuses on adding missing enums.
@@ -2067,23 +2090,20 @@ public partial class MixKhronosData(
                 }
 
                 // Try to identify data type suffixes
-                if (config.IdentifyFunctionDataTypes)
+                if (
+                    config.IdentifyFunctionDataTypes
+                    && DataTypesToIdentify().Match(trimmedName) is { Success: true } match
+                    && CanIdentifySuffix(trimmedName, match.Length)
+                )
                 {
-                    if (
-                        EndingsToTrim().Match(trimmedName) is { Success: true } match // Check if we end in a data type suffix
-                        && !EndingsNotToTrim().IsMatch(trimmedName)
-                    ) // Check if the ending is excluded
-                    {
-                        var dataTypeSuffix = trimmedName[match.Index..];
-                        trimmedName = trimmedName[..match.Index];
-
-                        attributeLists = attributeLists.AddNameAffix(
-                            NameAffixType.Suffix,
-                            "KhronosFunctionDataType",
-                            dataTypeSuffix,
-                            true
-                        );
-                    }
+                    var identifiedSuffix = trimmedName[match.Index..];
+                    attributeLists = attributeLists.AddNameAffix(
+                        NameAffixType.Suffix,
+                        "KhronosFunctionDataType",
+                        identifiedSuffix,
+                        true
+                    );
+                    trimmedName = trimmedName[..^identifiedSuffix.Length];
                 }
             }
 
