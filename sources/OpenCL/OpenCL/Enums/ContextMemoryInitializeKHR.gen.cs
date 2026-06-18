@@ -14,4 +14,10 @@ namespace Silk.NET.OpenCL;
 public enum ContextMemoryInitializeKHR : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_CONTEXT_MEMORY_INITIALIZE_LOCAL_KHR")]
+    Local = 0x1,
+
+    [NativeName("CL_CONTEXT_MEMORY_INITIALIZE_PRIVATE_KHR")]
+    Private = 0x2,
 }

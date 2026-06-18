@@ -4,12 +4,18 @@
 // Original source is Copyright 2013-2026 The Khronos Group Inc. Licensed under the Apache 2.0 license.
 namespace Silk.NET.OpenCL;
 
-[NativeName("_cl_buffer_region")]
-public partial struct ClBufferRegion
+[NativeName("_cl_kernel_allocation_info_intel")]
+public unsafe partial struct ClKernelAllocationInfoINTEL
 {
-    [NativeName("origin")]
-    public nuint Origin;
+    [NativeName("@base")]
+    public void* @base;
 
     [NativeName("size")]
     public nuint Size;
+
+    [NativeName("type")]
+    public uint Type;
+
+    [NativeName("arg_index")]
+    public int ArgIndex;
 }

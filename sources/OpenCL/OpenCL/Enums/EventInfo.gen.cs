@@ -26,4 +26,7 @@ public enum EventInfo : uint
 
     [NativeName("CL_EVENT_CONTEXT")]
     Context = 4564,
+
+    [NativeName("CL_EVENT_COMMAND_TERMINATION_REASON_ARM")]
+    CommandTerminationReasonARM = 16877,
 }

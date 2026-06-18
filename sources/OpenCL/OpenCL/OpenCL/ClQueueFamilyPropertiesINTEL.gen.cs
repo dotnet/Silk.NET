@@ -9,11 +9,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("_cl_name_version")]
-public partial struct ClNameVersion
+[NativeName("_cl_queue_family_properties_intel")]
+public partial struct ClQueueFamilyPropertiesINTEL
 {
-    [NativeName("version")]
-    public uint Version;
+    [NativeName("properties")]
+    public ulong Properties;
+
+    [NativeName("capabilities")]
+    public ulong Capabilities;
+
+    [NativeName("count")]
+    public uint Count;
 
     [NativeName("name")]
     public NameEFixedBuffer Name;

@@ -104,4 +104,55 @@ public enum CommandType : uint
 
     [NativeName("CL_COMMAND_SVM_MIGRATE_MEM")]
     SvmMigrateMem = 4622,
+
+    [NativeName("CL_COMMAND_MIGRATE_MEM_OBJECT_EXT")]
+    MigrateMemObjectEXT = 16448,
+
+    [NativeName("CL_COMMAND_ACQUIRE_GRALLOC_OBJECTS_IMG")]
+    AcquireGrallocObjectsIMG = 16594,
+
+    [NativeName("CL_COMMAND_RELEASE_GRALLOC_OBJECTS_IMG")]
+    ReleaseGrallocObjectsIMG = 16595,
+
+    [NativeName("CL_COMMAND_GENERATE_MIPMAP_IMG")]
+    GenerateMipmapIMG = 16598,
+
+    [NativeName("CL_COMMAND_ACQUIRE_EXTERNAL_MEM_OBJECTS_KHR")]
+    AcquireExternalMemObjectsKHR = 8263,
+
+    [NativeName("CL_COMMAND_RELEASE_EXTERNAL_MEM_OBJECTS_KHR")]
+    ReleaseExternalMemObjectsKHR = 8264,
+
+    [NativeName("CL_COMMAND_SEMAPHORE_WAIT_KHR")]
+    SemaphoreWaitKHR = 8258,
+
+    [NativeName("CL_COMMAND_SEMAPHORE_SIGNAL_KHR")]
+    SemaphoreSignalKHR = 8259,
+
+    [NativeName("CL_COMMAND_SVM_FREE_ARM")]
+    SvmFreeARM = 16570,
+
+    [NativeName("CL_COMMAND_SVM_MEMCPY_ARM")]
+    SvmMemcpyARM = 16571,
+
+    [NativeName("CL_COMMAND_SVM_MEMFILL_ARM")]
+    SvmMemfillARM = 16572,
+
+    [NativeName("CL_COMMAND_SVM_MAP_ARM")]
+    SvmMapARM = 16573,
+
+    [NativeName("CL_COMMAND_SVM_UNMAP_ARM")]
+    SvmUnmapARM = 16574,
+
+    [NativeName("CL_COMMAND_MEMFILL_INTEL")]
+    MemfillINTEL = 16900,
+
+    [NativeName("CL_COMMAND_MEMCPY_INTEL")]
+    MemcpyINTEL = 16901,
+
+    [NativeName("CL_COMMAND_MIGRATEMEM_INTEL")]
+    MigratememINTEL = 16902,
+
+    [NativeName("CL_COMMAND_MEMADVISE_INTEL")]
+    MemadviseINTEL = 16903,
 }

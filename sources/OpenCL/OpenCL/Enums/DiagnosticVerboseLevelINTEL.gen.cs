@@ -14,4 +14,16 @@ namespace Silk.NET.OpenCL;
 public enum DiagnosticVerboseLevelINTEL : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_CONTEXT_DIAGNOSTICS_LEVEL_ALL_INTEL")]
+    All = 0xFF,
+
+    [NativeName("CL_CONTEXT_DIAGNOSTICS_LEVEL_GOOD_INTEL")]
+    Good = 0x1,
+
+    [NativeName("CL_CONTEXT_DIAGNOSTICS_LEVEL_BAD_INTEL")]
+    Bad = 0x2,
+
+    [NativeName("CL_CONTEXT_DIAGNOSTICS_LEVEL_NEUTRAL_INTEL")]
+    Neutral = 0x4,
 }

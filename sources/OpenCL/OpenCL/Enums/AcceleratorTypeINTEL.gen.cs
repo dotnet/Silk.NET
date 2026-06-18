@@ -10,4 +10,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_accelerator_type_intel")]
-public enum AcceleratorTypeINTEL : uint { }
+public enum AcceleratorTypeINTEL : uint
+{
+    [NativeName("CL_ACCELERATOR_TYPE_MOTION_ESTIMATION_INTEL")]
+    MotionEstimation = 0,
+}

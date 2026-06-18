@@ -14,4 +14,13 @@ namespace Silk.NET.OpenCL;
 public enum DeviceControlledTerminationCapabilitiesARM : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_DEVICE_CONTROLLED_TERMINATION_SUCCESS_ARM")]
+    Success = 0x1,
+
+    [NativeName("CL_DEVICE_CONTROLLED_TERMINATION_FAILURE_ARM")]
+    Failure = 0x2,
+
+    [NativeName("CL_DEVICE_CONTROLLED_TERMINATION_QUERY_ARM")]
+    Query = 0x4,
 }

@@ -47,4 +47,7 @@ public enum ProgramInfo : uint
 
     [NativeName("CL_PROGRAM_SCOPE_GLOBAL_DTORS_PRESENT")]
     ScopeGlobalDtorsPresent = 4459,
+
+    [NativeName("CL_PROGRAM_IL_KHR")]
+    IlKHR = 4457,
 }

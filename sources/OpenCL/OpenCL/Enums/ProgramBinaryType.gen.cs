@@ -23,4 +23,7 @@ public enum ProgramBinaryType : uint
 
     [NativeName("CL_PROGRAM_BINARY_TYPE_EXECUTABLE")]
     Executable = 4,
+
+    [NativeName("CL_PROGRAM_BINARY_TYPE_INTERMEDIATE")]
+    Intermediate = 16609,
 }

@@ -10,4 +10,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_accelerator_info_intel")]
-public enum AcceleratorInfoINTEL : uint { }
+public enum AcceleratorInfoINTEL : uint
+{
+    [NativeName("CL_ACCELERATOR_DESCRIPTOR_INTEL")]
+    Descriptor = 16528,
+
+    [NativeName("CL_ACCELERATOR_REFERENCE_COUNT_INTEL")]
+    ReferenceCount = 16529,
+
+    [NativeName("CL_ACCELERATOR_CONTEXT_INTEL")]
+    Context = 16530,
+
+    [NativeName("CL_ACCELERATOR_TYPE_INTEL")]
+    Type = 16531,
+}

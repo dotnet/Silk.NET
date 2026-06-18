@@ -4,12 +4,12 @@
 // Original source is Copyright 2013-2026 The Khronos Group Inc. Licensed under the Apache 2.0 license.
 namespace Silk.NET.OpenCL;
 
-[NativeName("_cl_buffer_region")]
-public partial struct ClBufferRegion
+[NativeName("_cl_mem_ext_host_ptr")]
+public partial struct ClMemExtHostPtr
 {
-    [NativeName("origin")]
-    public nuint Origin;
+    [NativeName("allocation_type")]
+    public uint AllocationType;
 
-    [NativeName("size")]
-    public nuint Size;
+    [NativeName("host_cache_policy")]
+    public uint HostCachePolicy;
 }

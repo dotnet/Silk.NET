@@ -26,4 +26,10 @@ public enum CommandQueueProperties : ulong
 
     [NativeName("CL_QUEUE_ON_DEVICE_DEFAULT")]
     OnDeviceDefault = 0x8,
+
+    [NativeName("CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
+    ThreadLocalExecEnableINTEL = 0x80000000,
+
+    [NativeName("CL_QUEUE_NO_SYNC_OPERATIONS_INTEL")]
+    NoSyncOperationsINTEL = 0x20000000,
 }

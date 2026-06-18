@@ -23,4 +23,7 @@ public enum ContextInfo : uint
 
     [NativeName("CL_CONTEXT_NUM_DEVICES")]
     NumDevices = 4227,
+
+    [NativeName("CL_CONTEXT_PERF_HINT_QCOM")]
+    PerfHintQCOM = 16578,
 }

@@ -14,4 +14,10 @@ namespace Silk.NET.OpenCL;
 public enum SvmMemFlagsARM : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_MEM_SVM_FINE_GRAIN_BUFFER_ARM")]
+    FineGrainBuffer = 0x400,
+
+    [NativeName("CL_MEM_SVM_ATOMICS_ARM")]
+    Atomics = 0x800,
 }

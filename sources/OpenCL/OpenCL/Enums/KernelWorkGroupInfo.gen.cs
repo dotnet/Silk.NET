@@ -29,4 +29,7 @@ public enum KernelWorkGroupInfo : uint
 
     [NativeName("CL_KERNEL_GLOBAL_WORK_SIZE")]
     GlobalWorkSize = 4533,
+
+    [NativeName("CL_KERNEL_SPILL_MEM_SIZE_INTEL")]
+    SpillMemSizeINTEL = 16649,
 }

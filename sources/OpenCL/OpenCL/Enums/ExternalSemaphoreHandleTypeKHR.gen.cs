@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_external_semaphore_handle_type_khr")]
-public enum ExternalSemaphoreHandleTypeKHR : uint { }
+public enum ExternalSemaphoreHandleTypeKHR : uint
+{
+    [NativeName("CL_SEMAPHORE_HANDLE_OPAQUE_FD_KHR")]
+    OpaqueFd = 8277,
+
+    [NativeName("CL_SEMAPHORE_HANDLE_SYNC_FD_KHR")]
+    SyncFd = 8280,
+}

@@ -10,4 +10,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_perf_hint_qcom")]
-public enum PerfHintQCOM : uint { }
+public enum PerfHintQCOM : uint
+{
+    [NativeName("CL_PERF_HINT_HIGH_QCOM")]
+    High = 16579,
+
+    [NativeName("CL_PERF_HINT_NORMAL_QCOM")]
+    Normal = 16580,
+
+    [NativeName("CL_PERF_HINT_LOW_QCOM")]
+    Low = 16581,
+}

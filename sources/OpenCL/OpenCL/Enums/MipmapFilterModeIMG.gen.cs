@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_mipmap_filter_mode_img")]
-public enum MipmapFilterModeIMG : uint { }
+public enum MipmapFilterModeIMG : uint
+{
+    [NativeName("CL_MIPMAP_FILTER_ANY_IMG")]
+    Any = 0,
+
+    [NativeName("CL_MIPMAP_FILTER_BOX_IMG")]
+    Box = 1,
+}

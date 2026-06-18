@@ -3,24 +3,25 @@
 // Ported from the OpenCL headers and corresponding dependencies.
 // Original source is Copyright 2013-2026 The Khronos Group Inc. Licensed under the Apache 2.0 license.
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("cl_mem_migration_flags")]
-[Flags]
-public enum MemMigrationFlags : ulong
+[NativeName("_cl_name_version_khr")]
+public partial struct ClNameVersionKHR
 {
-    None = 0x0,
+    [NativeName("version")]
+    public uint Version;
 
-    [NativeName("CL_MIGRATE_MEM_OBJECT_HOST")]
-    Host = 0x1,
+    [NativeName("name")]
+    public NameEFixedBuffer Name;
 
-    [NativeName("CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED")]
-    ContentUndefined = 0x2,
-
-    [NativeName("CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
-    HostEXT = 0x1,
+    [NativeName("_name_e__FixedBuffer")]
+    [InlineArray(64)]
+    public partial struct NameEFixedBuffer
+    {
+        [NativeName("e0")]
+        public sbyte E0;
+    }
 }

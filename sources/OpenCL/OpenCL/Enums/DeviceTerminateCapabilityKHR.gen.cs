@@ -14,4 +14,7 @@ namespace Silk.NET.OpenCL;
 public enum DeviceTerminateCapabilityKHR : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_DEVICE_TERMINATE_CAPABILITY_CONTEXT_KHR")]
+    Context = 0x1,
 }

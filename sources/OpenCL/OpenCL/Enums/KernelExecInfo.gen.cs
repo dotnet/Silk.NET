@@ -13,8 +13,35 @@ namespace Silk.NET.OpenCL;
 public enum KernelExecInfo : uint
 {
     [NativeName("CL_KERNEL_EXEC_INFO_SVM_PTRS")]
-    Ptrs = 4534,
+    SvmPtrs = 4534,
 
     [NativeName("CL_KERNEL_EXEC_INFO_SVM_FINE_GRAIN_SYSTEM")]
-    FineGrainSystem = 4535,
+    SvmFineGrainSystem = 4535,
+
+    [NativeName("CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_ARM")]
+    WorkgroupBatchSizeARM = 16869,
+
+    [NativeName("CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
+    WorkgroupBatchSizeModifierARM = 16870,
+
+    [NativeName("CL_KERNEL_EXEC_INFO_WARP_COUNT_LIMIT_ARM")]
+    WarpCountLimitARM = 16872,
+
+    [NativeName("CL_KERNEL_EXEC_INFO_COMPUTE_UNIT_MAX_QUEUED_BATCHES_ARM")]
+    ComputeUnitMaxQueuedBatchesARM = 16881,
+
+    [NativeName("CL_KERNEL_EXEC_INFO_INDIRECT_HOST_ACCESS_INTEL")]
+    IndirectHostAccessINTEL = 16896,
+
+    [NativeName("CL_KERNEL_EXEC_INFO_INDIRECT_DEVICE_ACCESS_INTEL")]
+    IndirectDeviceAccessINTEL = 16897,
+
+    [NativeName("CL_KERNEL_EXEC_INFO_INDIRECT_SHARED_ACCESS_INTEL")]
+    IndirectSharedAccessINTEL = 16898,
+
+    [NativeName("CL_KERNEL_EXEC_INFO_USM_PTRS_INTEL")]
+    UsmPtrsINTEL = 16899,
+
+    [NativeName("CL_KERNEL_EXEC_INFO_DEVICE_PTRS_EXT")]
+    DevicePtrsEXT = 20482,
 }

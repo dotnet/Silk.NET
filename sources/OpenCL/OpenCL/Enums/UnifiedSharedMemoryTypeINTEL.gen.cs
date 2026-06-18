@@ -10,4 +10,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_unified_shared_memory_type_intel")]
-public enum UnifiedSharedMemoryTypeINTEL : uint { }
+public enum UnifiedSharedMemoryTypeINTEL : uint
+{
+    [NativeName("CL_MEM_TYPE_UNKNOWN_INTEL")]
+    Unknown = 16790,
+
+    [NativeName("CL_MEM_TYPE_HOST_INTEL")]
+    Host = 16791,
+
+    [NativeName("CL_MEM_TYPE_DEVICE_INTEL")]
+    Device = 16792,
+
+    [NativeName("CL_MEM_TYPE_SHARED_INTEL")]
+    Shared = 16793,
+}

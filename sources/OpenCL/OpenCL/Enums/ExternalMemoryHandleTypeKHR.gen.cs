@@ -10,4 +10,20 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_external_memory_handle_type_khr")]
-public enum ExternalMemoryHandleTypeKHR : uint { }
+public enum ExternalMemoryHandleTypeKHR : uint
+{
+    [NativeName("CL_EXTERNAL_MEMORY_HANDLE_DMA_BUF_KHR")]
+    DmaBuf = 8295,
+
+    [NativeName("CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_FD_KHR")]
+    OpaqueFd = 8288,
+
+    [NativeName("CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KHR")]
+    OpaqueWin32 = 8289,
+
+    [NativeName("CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_KMT_KHR")]
+    OpaqueWin32Kmt = 8290,
+
+    [NativeName("CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_NAME_KHR")]
+    OpaqueWin32Name = 8297,
+}

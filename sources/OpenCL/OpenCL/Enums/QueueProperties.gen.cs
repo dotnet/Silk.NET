@@ -10,4 +10,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_queue_properties")]
-public enum QueueProperties : ulong { }
+public enum QueueProperties : ulong
+{
+    [NativeName("CL_QUEUE_PRIORITY_KHR")]
+    PriorityKHR = 4246,
+
+    [NativeName("CL_QUEUE_THROTTLE_KHR")]
+    ThrottleKHR = 4247,
+
+    [NativeName("CL_QUEUE_JOB_SLOT_ARM")]
+    JobSlotARM = 16865,
+
+    [NativeName("CL_QUEUE_KERNEL_BATCHING_ARM")]
+    KernelBatchingARM = 16871,
+
+    [NativeName("CL_QUEUE_DEFERRED_FLUSH_ARM")]
+    DeferredFlushARM = 16876,
+
+    [NativeName("CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
+    ComputeUnitLimitARM = 16883,
+
+    [NativeName("CL_QUEUE_FAMILY_INTEL")]
+    FamilyINTEL = 16780,
+
+    [NativeName("CL_QUEUE_INDEX_INTEL")]
+    IndexINTEL = 16781,
+}

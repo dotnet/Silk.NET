@@ -9,18 +9,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("cl_mem_migration_flags")]
-[Flags]
-public enum MemMigrationFlags : ulong
+[NativeName("_cl_mem_ion_host_ptr")]
+public unsafe partial struct ClMemIonHostPtr
 {
-    None = 0x0,
+    [NativeName("ext_host_ptr")]
+    public ClMemExtHostPtr ExtHostPtr;
 
-    [NativeName("CL_MIGRATE_MEM_OBJECT_HOST")]
-    Host = 0x1,
+    [NativeName("ion_filedesc")]
+    public int IonFiledesc;
 
-    [NativeName("CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED")]
-    ContentUndefined = 0x2,
-
-    [NativeName("CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
-    HostEXT = 0x1,
+    [NativeName("ion_hostptr")]
+    public void* IonHostptr;
 }

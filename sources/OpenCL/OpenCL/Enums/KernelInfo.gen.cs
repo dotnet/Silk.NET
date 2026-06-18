@@ -29,4 +29,7 @@ public enum KernelInfo : uint
 
     [NativeName("CL_KERNEL_ATTRIBUTES")]
     Attributes = 4501,
+
+    [NativeName("CL_KERNEL_MAX_WARP_COUNT_ARM")]
+    MaxWarpCountARM = 16873,
 }

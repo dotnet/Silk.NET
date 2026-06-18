@@ -3,7 +3,6 @@
 // Ported from the OpenCL headers and corresponding dependencies.
 // Original source is Copyright 2013-2026 The Khronos Group Inc. Licensed under the Apache 2.0 license.
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -79,6 +78,28 @@ public unsafe partial class Cl : ICl, ICl.Static
                     pfn_notify,
                     __dsl_user_data
                 );
+            }
+        }
+
+        [NativeName("clCancelCommandsIMG")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCancelCommandsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
+        public static extern int CancelCommandsIMG(
+            _cl_event** event_list,
+            nuint num_events_in_list
+        );
+
+        [NativeName("clCancelCommandsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
+        [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int CancelCommandsIMG(Ref2D<_cl_event> event_list, nuint num_events_in_list)
+        {
+            fixed (_cl_event** __dsl_event_list = event_list)
+            {
+                return (int)CancelCommandsIMG(__dsl_event_list, num_events_in_list);
             }
         }
 
@@ -189,6 +210,45 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clCreateAcceleratorINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        public static extern _cl_accelerator_intel* CreateAcceleratorINTEL(
+            _cl_context* context,
+            uint accelerator_type,
+            nuint descriptor_size,
+            void* descriptor,
+            int* errcode_ret
+        );
+
+        [NativeName("clCreateAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
+            Ref<_cl_context> context,
+            uint accelerator_type,
+            nuint descriptor_size,
+            Ref descriptor,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_descriptor = descriptor)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_accelerator_intel*)CreateAcceleratorINTEL(
+                    __dsl_context,
+                    accelerator_type,
+                    descriptor_size,
+                    __dsl_descriptor,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
         [NativeName("clCreateBuffer")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateBuffer")]
         [SupportedApiProfile(
@@ -287,6 +347,53 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_mem*)CreateBufferWithProperties(
+                    __dsl_context,
+                    __dsl_properties,
+                    flags,
+                    size,
+                    __dsl_host_ptr,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
+        [NativeName("clCreateBufferWithPropertiesINTEL")]
+        [DllImport(
+            "opencl",
+            ExactSpelling = true,
+            EntryPoint = "clCreateBufferWithPropertiesINTEL"
+        )]
+        [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
+        public static extern _cl_mem* CreateBufferWithPropertiesINTEL(
+            _cl_context* context,
+            ulong* properties,
+            ulong flags,
+            nuint size,
+            void* host_ptr,
+            int* errcode_ret
+        );
+
+        [NativeName("clCreateBufferWithPropertiesINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_mem> CreateBufferWithPropertiesINTEL(
+            Ref<_cl_context> context,
+            Ref<ulong> properties,
+            ulong flags,
+            nuint size,
+            Ref host_ptr,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_host_ptr = host_ptr)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_mem*)CreateBufferWithPropertiesINTEL(
                     __dsl_context,
                     __dsl_properties,
                     flags,
@@ -414,6 +521,47 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_command_queue*)CreateCommandQueueWithProperties(
+                    __dsl_context,
+                    __dsl_device,
+                    __dsl_properties,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
+        [NativeName("clCreateCommandQueueWithPropertiesKHR")]
+        [DllImport(
+            "opencl",
+            ExactSpelling = true,
+            EntryPoint = "clCreateCommandQueueWithPropertiesKHR"
+        )]
+        [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
+        public static extern _cl_command_queue* CreateCommandQueueWithPropertiesKHR(
+            _cl_context* context,
+            _cl_device_id* device,
+            ulong* properties,
+            int* errcode_ret
+        );
+
+        [NativeName("clCreateCommandQueueWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_command_queue> CreateCommandQueueWithPropertiesKHR(
+            Ref<_cl_context> context,
+            Ref<_cl_device_id> device,
+            Ref<ulong> properties,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_device_id* __dsl_device = device)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_command_queue*)CreateCommandQueueWithPropertiesKHR(
                     __dsl_context,
                     __dsl_device,
                     __dsl_properties,
@@ -1197,6 +1345,42 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clCreateProgramWithILKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateProgramWithILKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
+        public static extern _cl_program* CreateProgramWithILKHR(
+            _cl_context* context,
+            void* il,
+            nuint length,
+            int* errcode_ret
+        );
+
+        [NativeName("clCreateProgramWithILKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_program> CreateProgramWithILKHR(
+            Ref<_cl_context> context,
+            Ref il,
+            nuint length,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_il = il)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_program*)CreateProgramWithILKHR(
+                    __dsl_context,
+                    __dsl_il,
+                    length,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
         [NativeName("clCreateProgramWithSource")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateProgramWithSource")]
         [SupportedApiProfile(
@@ -1382,6 +1566,43 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clCreateSemaphoreWithPropertiesKHR")]
+        [DllImport(
+            "opencl",
+            ExactSpelling = true,
+            EntryPoint = "clCreateSemaphoreWithPropertiesKHR"
+        )]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        public static extern _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
+            _cl_context* context,
+            ulong* sema_props,
+            int* errcode_ret
+        );
+
+        [NativeName("clCreateSemaphoreWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
+            Ref<_cl_context> context,
+            Ref<ulong> sema_props,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (ulong* __dsl_sema_props = sema_props)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_semaphore_khr*)CreateSemaphoreWithPropertiesKHR(
+                    __dsl_context,
+                    __dsl_sema_props,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
         [NativeName("clCreateSubBuffer")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateSubBuffer")]
         [SupportedApiProfile(
@@ -1507,6 +1728,46 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clCreateSubDevicesEXT")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateSubDevicesEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        public static extern int CreateSubDevicesEXT(
+            _cl_device_id* in_device,
+            ulong* properties,
+            uint num_entries,
+            _cl_device_id** out_devices,
+            uint* num_devices
+        );
+
+        [NativeName("clCreateSubDevicesEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int CreateSubDevicesEXT(
+            Ref<_cl_device_id> in_device,
+            Ref<ulong> properties,
+            uint num_entries,
+            Ref2D<_cl_device_id> out_devices,
+            Ref<uint> num_devices
+        )
+        {
+            fixed (uint* __dsl_num_devices = num_devices)
+            fixed (_cl_device_id** __dsl_out_devices = out_devices)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_device_id* __dsl_in_device = in_device)
+            {
+                return (int)CreateSubDevicesEXT(
+                    __dsl_in_device,
+                    __dsl_properties,
+                    num_entries,
+                    __dsl_out_devices,
+                    __dsl_num_devices
+                );
+            }
+        }
+
         [NativeName("clCreateUserEvent")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateUserEvent")]
         [SupportedApiProfile(
@@ -1548,6 +1809,151 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_event*)CreateUserEvent(__dsl_context, __dsl_errcode_ret);
+            }
+        }
+
+        [NativeName("clDeviceMemAllocINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clDeviceMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern void* DeviceMemAllocINTEL(
+            _cl_context* context,
+            _cl_device_id* device,
+            ulong* properties,
+            nuint size,
+            uint alignment,
+            int* errcode_ret
+        );
+
+        [NativeName("clDeviceMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr DeviceMemAllocINTEL(
+            Ref<_cl_context> context,
+            Ref<_cl_device_id> device,
+            Ref<ulong> properties,
+            nuint size,
+            uint alignment,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_device_id* __dsl_device = device)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (void*)DeviceMemAllocINTEL(
+                    __dsl_context,
+                    __dsl_device,
+                    __dsl_properties,
+                    size,
+                    alignment,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
+        [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
+        [DllImport(
+            "opencl",
+            ExactSpelling = true,
+            EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR"
+        )]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        public static extern int EnqueueAcquireExternalMemObjectsKHR(
+            _cl_command_queue* command_queue,
+            uint num_mem_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueAcquireExternalMemObjectsKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_mem_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueAcquireExternalMemObjectsKHR(
+                    __dsl_command_queue,
+                    num_mem_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
+        [DllImport(
+            "opencl",
+            ExactSpelling = true,
+            EntryPoint = "clEnqueueAcquireGrallocObjectsIMG"
+        )]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        public static extern int EnqueueAcquireGrallocObjectsIMG(
+            _cl_command_queue* command_queue,
+            uint num_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueAcquireGrallocObjectsIMG(
+            Ref<_cl_command_queue> command_queue,
+            uint num_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueAcquireGrallocObjectsIMG(
+                    __dsl_command_queue,
+                    num_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
             }
         }
 
@@ -2220,6 +2626,61 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueGenerateMipmapIMG")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
+        public static extern int EnqueueGenerateMipmapIMG(
+            _cl_command_queue* command_queue,
+            _cl_mem* src_image,
+            _cl_mem* dst_image,
+            uint mipmap_filter_mode,
+            nuint* array_region,
+            nuint* mip_region,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueGenerateMipmapIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueGenerateMipmapIMG(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_mem> src_image,
+            Ref<_cl_mem> dst_image,
+            uint mipmap_filter_mode,
+            Ref<nuint> array_region,
+            Ref<nuint> mip_region,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (nuint* __dsl_mip_region = mip_region)
+            fixed (nuint* __dsl_array_region = array_region)
+            fixed (_cl_mem* __dsl_dst_image = dst_image)
+            fixed (_cl_mem* __dsl_src_image = src_image)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueGenerateMipmapIMG(
+                    __dsl_command_queue,
+                    __dsl_src_image,
+                    __dsl_dst_image,
+                    mipmap_filter_mode,
+                    __dsl_array_region,
+                    __dsl_mip_region,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueMapBuffer")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueMapBuffer")]
         [SupportedApiProfile(
@@ -2499,6 +2960,290 @@ public unsafe partial class Cl : ICl, ICl.Static
             {
                 return (int)EnqueueMarkerWithWaitList(
                     __dsl_command_queue,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMemAdviseINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueMemAdviseINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern int EnqueueMemAdviseINTEL(
+            _cl_command_queue* command_queue,
+            void* ptr,
+            nuint size,
+            uint advice,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueMemAdviseINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemAdviseINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref ptr,
+            nuint size,
+            uint advice,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_ptr = ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMemAdviseINTEL(
+                    __dsl_command_queue,
+                    __dsl_ptr,
+                    size,
+                    advice,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMemcpyINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueMemcpyINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern int EnqueueMemcpyINTEL(
+            _cl_command_queue* command_queue,
+            uint blocking,
+            void* dst_ptr,
+            void* src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueMemcpyINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemcpyINTEL(
+            Ref<_cl_command_queue> command_queue,
+            MaybeBool<uint> blocking,
+            Ref dst_ptr,
+            Ref src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_src_ptr = src_ptr)
+            fixed (void* __dsl_dst_ptr = dst_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMemcpyINTEL(
+                    __dsl_command_queue,
+                    (uint)blocking,
+                    __dsl_dst_ptr,
+                    __dsl_src_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMemFillINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueMemFillINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern int EnqueueMemFillINTEL(
+            _cl_command_queue* command_queue,
+            void* dst_ptr,
+            void* pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueMemFillINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemFillINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref dst_ptr,
+            Ref pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_pattern = pattern)
+            fixed (void* __dsl_dst_ptr = dst_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMemFillINTEL(
+                    __dsl_command_queue,
+                    __dsl_dst_ptr,
+                    __dsl_pattern,
+                    pattern_size,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMemsetINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueMemsetINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern int EnqueueMemsetINTEL(
+            _cl_command_queue* command_queue,
+            void* dst_ptr,
+            int value,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueMemsetINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemsetINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref dst_ptr,
+            int value,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_dst_ptr = dst_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMemsetINTEL(
+                    __dsl_command_queue,
+                    __dsl_dst_ptr,
+                    value,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMigrateMemINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueMigrateMemINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern int EnqueueMigrateMemINTEL(
+            _cl_command_queue* command_queue,
+            void* ptr,
+            nuint size,
+            ulong flags,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueMigrateMemINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMigrateMemINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref ptr,
+            nuint size,
+            ulong flags,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_ptr = ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMigrateMemINTEL(
+                    __dsl_command_queue,
+                    __dsl_ptr,
+                    size,
+                    flags,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMigrateMemObjectEXT")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueMigrateMemObjectEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
+        public static extern int EnqueueMigrateMemObjectEXT(
+            _cl_command_queue* command_queue,
+            uint num_mem_objects,
+            _cl_mem** mem_objects,
+            ulong flags,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueMigrateMemObjectEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMigrateMemObjectEXT(
+            Ref<_cl_command_queue> command_queue,
+            uint num_mem_objects,
+            Ref2D<_cl_mem> mem_objects,
+            ulong flags,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMigrateMemObjectEXT(
+                    __dsl_command_queue,
+                    num_mem_objects,
+                    __dsl_mem_objects,
+                    flags,
                     num_events_in_wait_list,
                     __dsl_event_wait_list,
                     __dsl_event
@@ -2912,6 +3657,60 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueReadHostPipeINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueReadHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        public static extern int EnqueueReadHostPipeINTEL(
+            _cl_command_queue* command_queue,
+            _cl_program* program,
+            sbyte* pipe_symbol,
+            uint blocking_read,
+            void* ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueReadHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueReadHostPipeINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_program> program,
+            Ref<sbyte> pipe_symbol,
+            MaybeBool<uint> blocking_read,
+            Ref ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_ptr = ptr)
+            fixed (sbyte* __dsl_pipe_symbol = pipe_symbol)
+            fixed (_cl_program* __dsl_program = program)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueReadHostPipeINTEL(
+                    __dsl_command_queue,
+                    __dsl_program,
+                    __dsl_pipe_symbol,
+                    (uint)blocking_read,
+                    __dsl_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueReadImage")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueReadImage")]
         [SupportedApiProfile(
@@ -2999,6 +3798,155 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
+        [DllImport(
+            "opencl",
+            ExactSpelling = true,
+            EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR"
+        )]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        public static extern int EnqueueReleaseExternalMemObjectsKHR(
+            _cl_command_queue* command_queue,
+            uint num_mem_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueReleaseExternalMemObjectsKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_mem_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueReleaseExternalMemObjectsKHR(
+                    __dsl_command_queue,
+                    num_mem_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
+        [DllImport(
+            "opencl",
+            ExactSpelling = true,
+            EntryPoint = "clEnqueueReleaseGrallocObjectsIMG"
+        )]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        public static extern int EnqueueReleaseGrallocObjectsIMG(
+            _cl_command_queue* command_queue,
+            uint num_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueReleaseGrallocObjectsIMG(
+            Ref<_cl_command_queue> command_queue,
+            uint num_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueReleaseGrallocObjectsIMG(
+                    __dsl_command_queue,
+                    num_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueSignalSemaphoresKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueSignalSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        public static extern int EnqueueSignalSemaphoresKHR(
+            _cl_command_queue* command_queue,
+            uint num_sema_objects,
+            _cl_semaphore_khr** sema_objects,
+            ulong* sema_payload_list,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueSignalSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSignalSemaphoresKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_sema_objects,
+            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<ulong> sema_payload_list,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
+            fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSignalSemaphoresKHR(
+                    __dsl_command_queue,
+                    num_sema_objects,
+                    __dsl_sema_objects,
+                    __dsl_sema_payload_list,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueSVMFree")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueSVMFree")]
         [SupportedApiProfile(
@@ -3069,6 +4017,56 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueSVMFreeARM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        public static extern int EnqueueSvmFreeARM(
+            _cl_command_queue* command_queue,
+            uint num_svm_pointers,
+            void** svm_pointers,
+            delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void> pfn_free_func,
+            void* user_data,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmFreeARM(
+            Ref<_cl_command_queue> command_queue,
+            uint num_svm_pointers,
+            Ref2D svm_pointers,
+            delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void> pfn_free_func,
+            Ref user_data,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_user_data = user_data)
+            fixed (void** __dsl_svm_pointers = svm_pointers)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSvmFreeARM(
+                    __dsl_command_queue,
+                    num_svm_pointers,
+                    __dsl_svm_pointers,
+                    pfn_free_func,
+                    __dsl_user_data,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueSVMMap")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueSVMMap")]
         [SupportedApiProfile(
@@ -3126,6 +4124,55 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_command_queue* __dsl_command_queue = command_queue)
             {
                 return (int)EnqueueSvmMap(
+                    __dsl_command_queue,
+                    (uint)blocking_map,
+                    flags,
+                    __dsl_svm_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueSVMMapARM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueSVMMapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        public static extern int EnqueueSvmMapARM(
+            _cl_command_queue* command_queue,
+            uint blocking_map,
+            ulong flags,
+            void* svm_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueSVMMapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmMapARM(
+            Ref<_cl_command_queue> command_queue,
+            MaybeBool<uint> blocking_map,
+            ulong flags,
+            Ref svm_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_svm_ptr = svm_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSvmMapARM(
                     __dsl_command_queue,
                     (uint)blocking_map,
                     flags,
@@ -3208,6 +4255,56 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueSVMMemcpyARM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueSVMMemcpyARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        public static extern int EnqueueSvmMemcpyARM(
+            _cl_command_queue* command_queue,
+            uint blocking_copy,
+            void* dst_ptr,
+            void* src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueSVMMemcpyARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmMemcpyARM(
+            Ref<_cl_command_queue> command_queue,
+            MaybeBool<uint> blocking_copy,
+            Ref dst_ptr,
+            Ref src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_src_ptr = src_ptr)
+            fixed (void* __dsl_dst_ptr = dst_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSvmMemcpyARM(
+                    __dsl_command_queue,
+                    (uint)blocking_copy,
+                    __dsl_dst_ptr,
+                    __dsl_src_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueSVMMemFill")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueSVMMemFill")]
         [SupportedApiProfile(
@@ -3266,6 +4363,56 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_command_queue* __dsl_command_queue = command_queue)
             {
                 return (int)EnqueueSvmMemFill(
+                    __dsl_command_queue,
+                    __dsl_svm_ptr,
+                    __dsl_pattern,
+                    pattern_size,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueSVMMemFillARM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueSVMMemFillARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        public static extern int EnqueueSvmMemFillARM(
+            _cl_command_queue* command_queue,
+            void* svm_ptr,
+            void* pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueSVMMemFillARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmMemFillARM(
+            Ref<_cl_command_queue> command_queue,
+            Ref svm_ptr,
+            Ref pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_pattern = pattern)
+            fixed (void* __dsl_svm_ptr = svm_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSvmMemFillARM(
                     __dsl_command_queue,
                     __dsl_svm_ptr,
                     __dsl_pattern,
@@ -3387,6 +4534,46 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_command_queue* __dsl_command_queue = command_queue)
             {
                 return (int)EnqueueSvmUnmap(
+                    __dsl_command_queue,
+                    __dsl_svm_ptr,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueSVMUnmapARM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueSVMUnmapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        public static extern int EnqueueSvmUnmapARM(
+            _cl_command_queue* command_queue,
+            void* svm_ptr,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueSVMUnmapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmUnmapARM(
+            Ref<_cl_command_queue> command_queue,
+            Ref svm_ptr,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_svm_ptr = svm_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSvmUnmapARM(
                     __dsl_command_queue,
                     __dsl_svm_ptr,
                     num_events_in_wait_list,
@@ -3590,6 +4777,53 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueWaitSemaphoresKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueWaitSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        public static extern int EnqueueWaitSemaphoresKHR(
+            _cl_command_queue* command_queue,
+            uint num_sema_objects,
+            _cl_semaphore_khr** sema_objects,
+            ulong* sema_payload_list,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueWaitSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueWaitSemaphoresKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_sema_objects,
+            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<ulong> sema_payload_list,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
+            fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueWaitSemaphoresKHR(
+                    __dsl_command_queue,
+                    num_sema_objects,
+                    __dsl_sema_objects,
+                    __dsl_sema_payload_list,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueWriteBuffer")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueWriteBuffer")]
         [SupportedApiProfile(
@@ -3757,6 +4991,60 @@ public unsafe partial class Cl : ICl, ICl.Static
                     host_row_pitch,
                     host_slice_pitch,
                     __dsl_ptr,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueWriteHostPipeINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueWriteHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        public static extern int EnqueueWriteHostPipeINTEL(
+            _cl_command_queue* command_queue,
+            _cl_program* program,
+            sbyte* pipe_symbol,
+            uint blocking_write,
+            void* ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        );
+
+        [NativeName("clEnqueueWriteHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueWriteHostPipeINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_program> program,
+            Ref<sbyte> pipe_symbol,
+            MaybeBool<uint> blocking_write,
+            Ref ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_ptr = ptr)
+            fixed (sbyte* __dsl_pipe_symbol = pipe_symbol)
+            fixed (_cl_program* __dsl_program = program)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueWriteHostPipeINTEL(
+                    __dsl_command_queue,
+                    __dsl_program,
+                    __dsl_pipe_symbol,
+                    (uint)blocking_write,
+                    __dsl_ptr,
+                    size,
                     num_events_in_wait_list,
                     __dsl_event_wait_list,
                     __dsl_event
@@ -3938,6 +5226,45 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_command_queue* __dsl_command_queue = command_queue)
             {
                 return (int)Flush(__dsl_command_queue);
+            }
+        }
+
+        [NativeName("clGetAcceleratorInfoINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetAcceleratorInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        public static extern int GetAcceleratorInfoINTEL(
+            _cl_accelerator_intel* accelerator,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetAcceleratorInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetAcceleratorInfoINTEL(
+            Ref<_cl_accelerator_intel> accelerator,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
+            {
+                return (int)GetAcceleratorInfoINTEL(
+                    __dsl_accelerator,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
             }
         }
 
@@ -4173,6 +5500,55 @@ public unsafe partial class Cl : ICl, ICl.Static
                     num_entries,
                     __dsl_devices,
                     __dsl_num_devices
+                );
+            }
+        }
+
+        [NativeName("clGetDeviceImageInfoQCOM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetDeviceImageInfoQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
+        public static extern int GetDeviceImageInfoQCOM(
+            _cl_device_id* device,
+            nuint image_width,
+            nuint image_height,
+            ClImageFormat* image_format,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetDeviceImageInfoQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetDeviceImageInfoQCOM(
+            Ref<_cl_device_id> device,
+            nuint image_width,
+            nuint image_height,
+            Ref<ClImageFormat> image_format,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (_cl_device_id* __dsl_device = device)
+            {
+                return (int)GetDeviceImageInfoQCOM(
+                    __dsl_device,
+                    image_width,
+                    image_height,
+                    __dsl_image_format,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
                 );
             }
         }
@@ -4502,6 +5878,41 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clGetICDLoaderInfoOCLICD")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetICDLoaderInfoOCLICD")]
+        [SupportedApiProfile("opencl", ["cl_loader_info"])]
+        public static extern int GetIcdLoaderInfoOclicd(
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetICDLoaderInfoOCLICD")]
+        [SupportedApiProfile("opencl", ["cl_loader_info"])]
+        [NativeFunction("opencl", EntryPoint = "clGetICDLoaderInfoOCLICD")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetIcdLoaderInfoOclicd(
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            {
+                return (int)GetIcdLoaderInfoOclicd(
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
         [NativeName("clGetImageInfo")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetImageInfo")]
         [SupportedApiProfile(
@@ -4559,6 +5970,68 @@ public unsafe partial class Cl : ICl, ICl.Static
             {
                 return (int)GetImageInfo(
                     __dsl_image,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
+        [NativeName("clGetImageRequirementsInfoEXT")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetImageRequirementsInfoEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_image_requirements_info"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        public static extern int GetImageRequirementsInfoEXT(
+            _cl_context* context,
+            ulong* properties,
+            ulong flags,
+            ClImageFormat* image_format,
+            ClImageDesc* image_desc,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetImageRequirementsInfoEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_image_requirements_info"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetImageRequirementsInfoEXT(
+            Ref<_cl_context> context,
+            Ref<ulong> properties,
+            ulong flags,
+            Ref<ClImageFormat> image_format,
+            Ref<ClImageDesc> image_desc,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (ClImageDesc* __dsl_image_desc = image_desc)
+            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)GetImageRequirementsInfoEXT(
+                    __dsl_context,
+                    __dsl_properties,
+                    flags,
+                    __dsl_image_format,
+                    __dsl_image_desc,
                     param_name,
                     param_value_size,
                     __dsl_param_value,
@@ -4754,6 +6227,58 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clGetKernelSubGroupInfoKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetKernelSubGroupInfoKHR")]
+        [Obsolete]
+        [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
+        public static extern int GetKernelSubGroupInfoKHR(
+            _cl_kernel* in_kernel,
+            _cl_device_id* in_device,
+            uint param_name,
+            nuint input_value_size,
+            void* input_value,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetKernelSubGroupInfoKHR")]
+        [Obsolete]
+        [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
+        [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetKernelSubGroupInfoKHR(
+            Ref<_cl_kernel> in_kernel,
+            Ref<_cl_device_id> in_device,
+            uint param_name,
+            nuint input_value_size,
+            Ref input_value,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (void* __dsl_input_value = input_value)
+            fixed (_cl_device_id* __dsl_in_device = in_device)
+            fixed (_cl_kernel* __dsl_in_kernel = in_kernel)
+            {
+                return (int)GetKernelSubGroupInfoKHR(
+                    __dsl_in_kernel,
+                    __dsl_in_device,
+                    param_name,
+                    input_value_size,
+                    __dsl_input_value,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
         [NativeName("clGetKernelSuggestedLocalWorkSize")]
         [DllImport(
             "opencl",
@@ -4792,6 +6317,54 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_command_queue* __dsl_command_queue = command_queue)
             {
                 return (int)GetKernelSuggestedLocalWorkSize(
+                    __dsl_command_queue,
+                    __dsl_kernel,
+                    work_dim,
+                    __dsl_global_work_offset,
+                    __dsl_global_work_size,
+                    __dsl_suggested_local_work_size
+                );
+            }
+        }
+
+        [NativeName("clGetKernelSuggestedLocalWorkSizeKHR")]
+        [DllImport(
+            "opencl",
+            ExactSpelling = true,
+            EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR"
+        )]
+        [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
+        public static extern int GetKernelSuggestedLocalWorkSizeKHR(
+            _cl_command_queue* command_queue,
+            _cl_kernel* kernel,
+            uint work_dim,
+            nuint* global_work_offset,
+            nuint* global_work_size,
+            nuint* suggested_local_work_size
+        );
+
+        [NativeName("clGetKernelSuggestedLocalWorkSizeKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
+        [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetKernelSuggestedLocalWorkSizeKHR(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_kernel> kernel,
+            uint work_dim,
+            Ref<nuint> global_work_offset,
+            Ref<nuint> global_work_size,
+            Ref<nuint> suggested_local_work_size
+        )
+        {
+            fixed (nuint* __dsl_suggested_local_work_size = suggested_local_work_size)
+            fixed (nuint* __dsl_global_work_size = global_work_size)
+            fixed (nuint* __dsl_global_work_offset = global_work_offset)
+            fixed (_cl_kernel* __dsl_kernel = kernel)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)GetKernelSuggestedLocalWorkSizeKHR(
                     __dsl_command_queue,
                     __dsl_kernel,
                     work_dim,
@@ -4863,6 +6436,49 @@ public unsafe partial class Cl : ICl, ICl.Static
                 return (int)GetKernelWorkGroupInfo(
                     __dsl_kernel,
                     __dsl_device,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
+        [NativeName("clGetMemAllocInfoINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetMemAllocInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern int GetMemAllocInfoINTEL(
+            _cl_context* context,
+            void* ptr,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetMemAllocInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetMemAllocInfoINTEL(
+            Ref<_cl_context> context,
+            Ref ptr,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (void* __dsl_ptr = ptr)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)GetMemAllocInfoINTEL(
+                    __dsl_context,
+                    __dsl_ptr,
                     param_name,
                     param_value_size,
                     __dsl_param_value,
@@ -5313,6 +6929,96 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clGetSemaphoreHandleForTypeKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore"],
+            ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        public static extern int GetSemaphoreHandleForTypeKHR(
+            _cl_semaphore_khr* sema_object,
+            _cl_device_id* device,
+            uint handle_type,
+            nuint handle_size,
+            void* handle_ptr,
+            nuint* handle_size_ret
+        );
+
+        [NativeName("clGetSemaphoreHandleForTypeKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore"],
+            ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetSemaphoreHandleForTypeKHR(
+            Ref<_cl_semaphore_khr> sema_object,
+            Ref<_cl_device_id> device,
+            uint handle_type,
+            nuint handle_size,
+            Ref handle_ptr,
+            Ref<nuint> handle_size_ret
+        )
+        {
+            fixed (nuint* __dsl_handle_size_ret = handle_size_ret)
+            fixed (void* __dsl_handle_ptr = handle_ptr)
+            fixed (_cl_device_id* __dsl_device = device)
+            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+            {
+                return (int)GetSemaphoreHandleForTypeKHR(
+                    __dsl_sema_object,
+                    __dsl_device,
+                    handle_type,
+                    handle_size,
+                    __dsl_handle_ptr,
+                    __dsl_handle_size_ret
+                );
+            }
+        }
+
+        [NativeName("clGetSemaphoreInfoKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetSemaphoreInfoKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        public static extern int GetSemaphoreInfoKHR(
+            _cl_semaphore_khr* sema_object,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetSemaphoreInfoKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetSemaphoreInfoKHR(
+            Ref<_cl_semaphore_khr> sema_object,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+            {
+                return (int)GetSemaphoreInfoKHR(
+                    __dsl_sema_object,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
         [NativeName("clGetSupportedImageFormats")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetSupportedImageFormats")]
         [SupportedApiProfile(
@@ -5377,6 +7083,172 @@ public unsafe partial class Cl : ICl, ICl.Static
                     num_entries,
                     __dsl_image_formats,
                     __dsl_num_image_formats
+                );
+            }
+        }
+
+        [NativeName("clHostMemAllocINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clHostMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern void* HostMemAllocINTEL(
+            _cl_context* context,
+            ulong* properties,
+            nuint size,
+            uint alignment,
+            int* errcode_ret
+        );
+
+        [NativeName("clHostMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr HostMemAllocINTEL(
+            Ref<_cl_context> context,
+            Ref<ulong> properties,
+            nuint size,
+            uint alignment,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (void*)HostMemAllocINTEL(
+                    __dsl_context,
+                    __dsl_properties,
+                    size,
+                    alignment,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
+        [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
+        [DllImport(
+            "opencl",
+            ExactSpelling = true,
+            EntryPoint = "clIcdGetFunctionAddressForPlatformKHR"
+        )]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        public static extern void* IcdGetFunctionAddressForPlatformKHR(
+            _cl_platform_id* platform,
+            sbyte* func_name
+        );
+
+        [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr IcdGetFunctionAddressForPlatformKHR(
+            Ref<_cl_platform_id> platform,
+            Ref<sbyte> func_name
+        )
+        {
+            fixed (sbyte* __dsl_func_name = func_name)
+            fixed (_cl_platform_id* __dsl_platform = platform)
+            {
+                return (void*)IcdGetFunctionAddressForPlatformKHR(__dsl_platform, __dsl_func_name);
+            }
+        }
+
+        [NativeName("clIcdGetPlatformIDsKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clIcdGetPlatformIDsKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        public static extern int IcdGetPlatformIDsKHR(
+            uint num_entries,
+            _cl_platform_id** platforms,
+            uint* num_platforms
+        );
+
+        [NativeName("clIcdGetPlatformIDsKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int IcdGetPlatformIDsKHR(
+            uint num_entries,
+            Ref2D<_cl_platform_id> platforms,
+            Ref<uint> num_platforms
+        )
+        {
+            fixed (uint* __dsl_num_platforms = num_platforms)
+            fixed (_cl_platform_id** __dsl_platforms = platforms)
+            {
+                return (int)IcdGetPlatformIDsKHR(num_entries, __dsl_platforms, __dsl_num_platforms);
+            }
+        }
+
+        [NativeName("clIcdSetPlatformDispatchDataKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        public static extern int IcdSetPlatformDispatchDataKHR(
+            _cl_platform_id* platform,
+            void* dispatch_data
+        );
+
+        [NativeName("clIcdSetPlatformDispatchDataKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int IcdSetPlatformDispatchDataKHR(
+            Ref<_cl_platform_id> platform,
+            Ref dispatch_data
+        )
+        {
+            fixed (void* __dsl_dispatch_data = dispatch_data)
+            fixed (_cl_platform_id* __dsl_platform = platform)
+            {
+                return (int)IcdSetPlatformDispatchDataKHR(__dsl_platform, __dsl_dispatch_data);
+            }
+        }
+
+        [NativeName("clImportMemoryARM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clImportMemoryARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+        public static extern _cl_mem* ImportMemoryARM(
+            _cl_context* context,
+            ulong flags,
+            nint* properties,
+            void* memory,
+            nuint size,
+            int* errcode_ret
+        );
+
+        [NativeName("clImportMemoryARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_mem> ImportMemoryARM(
+            Ref<_cl_context> context,
+            ulong flags,
+            Ref<nint> properties,
+            Ref memory,
+            nuint size,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_memory = memory)
+            fixed (nint* __dsl_properties = properties)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_mem*)ImportMemoryARM(
+                    __dsl_context,
+                    flags,
+                    __dsl_properties,
+                    __dsl_memory,
+                    size,
+                    __dsl_errcode_ret
                 );
             }
         }
@@ -5454,6 +7326,194 @@ public unsafe partial class Cl : ICl, ICl.Static
                     __dsl_user_data,
                     __dsl_errcode_ret
                 );
+            }
+        }
+
+        [NativeName("clLogMessagesToStderrAPPLE")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        public static extern void LogMessagesToStderrAPPLE(
+            sbyte* errstr,
+            void* private_info,
+            nuint cb,
+            void* user_data
+        );
+
+        [NativeName("clLogMessagesToStderrAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void LogMessagesToStderrAPPLE(
+            Ref<sbyte> errstr,
+            Ref private_info,
+            nuint cb,
+            Ref user_data
+        )
+        {
+            fixed (void* __dsl_user_data = user_data)
+            fixed (void* __dsl_private_info = private_info)
+            fixed (sbyte* __dsl_errstr = errstr)
+            {
+                LogMessagesToStderrAPPLE(__dsl_errstr, __dsl_private_info, cb, __dsl_user_data);
+            }
+        }
+
+        [NativeName("clLogMessagesToStdoutAPPLE")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        public static extern void LogMessagesToStdoutAPPLE(
+            sbyte* errstr,
+            void* private_info,
+            nuint cb,
+            void* user_data
+        );
+
+        [NativeName("clLogMessagesToStdoutAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void LogMessagesToStdoutAPPLE(
+            Ref<sbyte> errstr,
+            Ref private_info,
+            nuint cb,
+            Ref user_data
+        )
+        {
+            fixed (void* __dsl_user_data = user_data)
+            fixed (void* __dsl_private_info = private_info)
+            fixed (sbyte* __dsl_errstr = errstr)
+            {
+                LogMessagesToStdoutAPPLE(__dsl_errstr, __dsl_private_info, cb, __dsl_user_data);
+            }
+        }
+
+        [NativeName("clLogMessagesToSystemLogAPPLE")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        public static extern void LogMessagesToSystemLogAPPLE(
+            sbyte* errstr,
+            void* private_info,
+            nuint cb,
+            void* user_data
+        );
+
+        [NativeName("clLogMessagesToSystemLogAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void LogMessagesToSystemLogAPPLE(
+            Ref<sbyte> errstr,
+            Ref private_info,
+            nuint cb,
+            Ref user_data
+        )
+        {
+            fixed (void* __dsl_user_data = user_data)
+            fixed (void* __dsl_private_info = private_info)
+            fixed (sbyte* __dsl_errstr = errstr)
+            {
+                LogMessagesToSystemLogAPPLE(__dsl_errstr, __dsl_private_info, cb, __dsl_user_data);
+            }
+        }
+
+        [NativeName("clMemBlockingFreeINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clMemBlockingFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern int MemBlockingFreeINTEL(_cl_context* context, void* ptr);
+
+        [NativeName("clMemBlockingFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int MemBlockingFreeINTEL(Ref<_cl_context> context, Ref ptr)
+        {
+            fixed (void* __dsl_ptr = ptr)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)MemBlockingFreeINTEL(__dsl_context, __dsl_ptr);
+            }
+        }
+
+        [NativeName("clMemFreeINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clMemFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern int MemFreeINTEL(_cl_context* context, void* ptr);
+
+        [NativeName("clMemFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int MemFreeINTEL(Ref<_cl_context> context, Ref ptr)
+        {
+            fixed (void* __dsl_ptr = ptr)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)MemFreeINTEL(__dsl_context, __dsl_ptr);
+            }
+        }
+
+        [NativeName("clReImportSemaphoreSyncFdKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clReImportSemaphoreSyncFdKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore_sync_fd"],
+            ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        public static extern int ReImportSemaphoreSyncFdKHR(
+            _cl_semaphore_khr* sema_object,
+            ulong* reimport_props,
+            int fd
+        );
+
+        [NativeName("clReImportSemaphoreSyncFdKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore_sync_fd"],
+            ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReImportSemaphoreSyncFdKHR(
+            Ref<_cl_semaphore_khr> sema_object,
+            Ref<ulong> reimport_props,
+            int fd
+        )
+        {
+            fixed (ulong* __dsl_reimport_props = reimport_props)
+            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+            {
+                return (int)ReImportSemaphoreSyncFdKHR(__dsl_sema_object, __dsl_reimport_props, fd);
+            }
+        }
+
+        [NativeName("clReleaseAcceleratorINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clReleaseAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        public static extern int ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator);
+
+        [NativeName("clReleaseAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
+        {
+            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
+            {
+                return (int)ReleaseAcceleratorINTEL(__dsl_accelerator);
             }
         }
 
@@ -5585,6 +7645,25 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_device_id* __dsl_device = device)
             {
                 return (int)ReleaseDevice(__dsl_device);
+            }
+        }
+
+        [NativeName("clReleaseDeviceEXT")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clReleaseDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        public static extern int ReleaseDeviceEXT(_cl_device_id* device);
+
+        [NativeName("clReleaseDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReleaseDeviceEXT(Ref<_cl_device_id> device)
+        {
+            fixed (_cl_device_id* __dsl_device = device)
+            {
+                return (int)ReleaseDeviceEXT(__dsl_device);
             }
         }
 
@@ -5813,6 +7892,44 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clReleaseSemaphoreKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clReleaseSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        public static extern int ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object);
+
+        [NativeName("clReleaseSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
+        {
+            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+            {
+                return (int)ReleaseSemaphoreKHR(__dsl_sema_object);
+            }
+        }
+
+        [NativeName("clRetainAcceleratorINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clRetainAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        public static extern int RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator);
+
+        [NativeName("clRetainAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
+        {
+            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
+            {
+                return (int)RetainAcceleratorINTEL(__dsl_accelerator);
+            }
+        }
+
         [NativeName("clRetainCommandQueue")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clRetainCommandQueue")]
         [SupportedApiProfile(
@@ -5941,6 +8058,25 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_device_id* __dsl_device = device)
             {
                 return (int)RetainDevice(__dsl_device);
+            }
+        }
+
+        [NativeName("clRetainDeviceEXT")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clRetainDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        public static extern int RetainDeviceEXT(_cl_device_id* device);
+
+        [NativeName("clRetainDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int RetainDeviceEXT(Ref<_cl_device_id> device)
+        {
+            fixed (_cl_device_id* __dsl_device = device)
+            {
+                return (int)RetainDeviceEXT(__dsl_device);
             }
         }
 
@@ -6169,6 +8305,51 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clRetainSemaphoreKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clRetainSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        public static extern int RetainSemaphoreKHR(_cl_semaphore_khr* sema_object);
+
+        [NativeName("clRetainSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
+        {
+            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+            {
+                return (int)RetainSemaphoreKHR(__dsl_sema_object);
+            }
+        }
+
+        [NativeName("clSetContentSizeBufferPoCL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetContentSizeBufferPoCL")]
+        [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
+        public static extern int SetContentSizeBufferPOCL(
+            _cl_mem* buffer,
+            _cl_mem* content_size_buffer
+        );
+
+        [NativeName("clSetContentSizeBufferPoCL")]
+        [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
+        [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetContentSizeBufferPOCL(
+            Ref<_cl_mem> buffer,
+            Ref<_cl_mem> content_size_buffer
+        )
+        {
+            fixed (_cl_mem* __dsl_content_size_buffer = content_size_buffer)
+            fixed (_cl_mem* __dsl_buffer = buffer)
+            {
+                return (int)SetContentSizeBufferPOCL(__dsl_buffer, __dsl_content_size_buffer);
+            }
+        }
+
         [NativeName("clSetContextDestructorCallback")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetContextDestructorCallback")]
         [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
@@ -6357,6 +8538,69 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clSetKernelArgDevicePointerEXT")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetKernelArgDevicePointerEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_buffer_device_address"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        public static extern int SetKernelArgDevicePointerEXT(
+            _cl_kernel* kernel,
+            uint arg_index,
+            ulong arg_value
+        );
+
+        [NativeName("clSetKernelArgDevicePointerEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_buffer_device_address"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelArgDevicePointerEXT(
+            Ref<_cl_kernel> kernel,
+            uint arg_index,
+            ulong arg_value
+        )
+        {
+            fixed (_cl_kernel* __dsl_kernel = kernel)
+            {
+                return (int)SetKernelArgDevicePointerEXT(__dsl_kernel, arg_index, arg_value);
+            }
+        }
+
+        [NativeName("clSetKernelArgMemPointerINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetKernelArgMemPointerINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern int SetKernelArgMemPointerINTEL(
+            _cl_kernel* kernel,
+            uint arg_index,
+            void* arg_value
+        );
+
+        [NativeName("clSetKernelArgMemPointerINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelArgMemPointerINTEL(
+            Ref<_cl_kernel> kernel,
+            uint arg_index,
+            Ref arg_value
+        )
+        {
+            fixed (void* __dsl_arg_value = arg_value)
+            fixed (_cl_kernel* __dsl_kernel = kernel)
+            {
+                return (int)SetKernelArgMemPointerINTEL(__dsl_kernel, arg_index, __dsl_arg_value);
+            }
+        }
+
         [NativeName("clSetKernelArgSVMPointer")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetKernelArgSVMPointer")]
         [SupportedApiProfile(
@@ -6402,6 +8646,34 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_kernel* __dsl_kernel = kernel)
             {
                 return (int)SetKernelArgSvmPointer(__dsl_kernel, arg_index, __dsl_arg_value);
+            }
+        }
+
+        [NativeName("clSetKernelArgSVMPointerARM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetKernelArgSVMPointerARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        public static extern int SetKernelArgSvmPointerARM(
+            _cl_kernel* kernel,
+            uint arg_index,
+            void* arg_value
+        );
+
+        [NativeName("clSetKernelArgSVMPointerARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelArgSvmPointerARM(
+            Ref<_cl_kernel> kernel,
+            uint arg_index,
+            Ref arg_value
+        )
+        {
+            fixed (void* __dsl_arg_value = arg_value)
+            fixed (_cl_kernel* __dsl_kernel = kernel)
+            {
+                return (int)SetKernelArgSvmPointerARM(__dsl_kernel, arg_index, __dsl_arg_value);
             }
         }
 
@@ -6460,6 +8732,69 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clSetKernelExecInfoARM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetKernelExecInfoARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        public static extern int SetKernelExecInfoARM(
+            _cl_kernel* kernel,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value
+        );
+
+        [NativeName("clSetKernelExecInfoARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelExecInfoARM(
+            Ref<_cl_kernel> kernel,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value
+        )
+        {
+            fixed (void* __dsl_param_value = param_value)
+            fixed (_cl_kernel* __dsl_kernel = kernel)
+            {
+                return (int)SetKernelExecInfoARM(
+                    __dsl_kernel,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value
+                );
+            }
+        }
+
+        [NativeName("clSetMemObjectDestructorAPPLE")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetMemObjectDestructorAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
+        public static extern int SetMemObjectDestructorAPPLE(
+            _cl_mem* memobj,
+            delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
+            void* user_data
+        );
+
+        [NativeName("clSetMemObjectDestructorAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
+        [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetMemObjectDestructorAPPLE(
+            Ref<_cl_mem> memobj,
+            delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
+            Ref user_data
+        )
+        {
+            fixed (void* __dsl_user_data = user_data)
+            fixed (_cl_mem* __dsl_memobj = memobj)
+            {
+                return (int)SetMemObjectDestructorAPPLE(__dsl_memobj, pfn_notify, __dsl_user_data);
+            }
+        }
+
         [NativeName("clSetMemObjectDestructorCallback")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetMemObjectDestructorCallback")]
         [SupportedApiProfile(
@@ -6513,6 +8848,25 @@ public unsafe partial class Cl : ICl, ICl.Static
                     pfn_notify,
                     __dsl_user_data
                 );
+            }
+        }
+
+        [NativeName("clSetPerfHintQCOM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetPerfHintQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
+        public static extern int SetPerfHintQCOM(_cl_context* context, uint perf_hint);
+
+        [NativeName("clSetPerfHintQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
+        [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetPerfHintQCOM(Ref<_cl_context> context, uint perf_hint)
+        {
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)SetPerfHintQCOM(__dsl_context, perf_hint);
             }
         }
 
@@ -6644,6 +8998,49 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clSharedMemAllocINTEL")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSharedMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        public static extern void* SharedMemAllocINTEL(
+            _cl_context* context,
+            _cl_device_id* device,
+            ulong* properties,
+            nuint size,
+            uint alignment,
+            int* errcode_ret
+        );
+
+        [NativeName("clSharedMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr SharedMemAllocINTEL(
+            Ref<_cl_context> context,
+            Ref<_cl_device_id> device,
+            Ref<ulong> properties,
+            nuint size,
+            uint alignment,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_device_id* __dsl_device = device)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (void*)SharedMemAllocINTEL(
+                    __dsl_context,
+                    __dsl_device,
+                    __dsl_properties,
+                    size,
+                    alignment,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
         [NativeName("clSVMAlloc")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSVMAlloc")]
         [SupportedApiProfile(
@@ -6693,6 +9090,35 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clSVMAllocARM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSVMAllocARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        public static extern void* SvmAllocARM(
+            _cl_context* context,
+            ulong flags,
+            nuint size,
+            uint alignment
+        );
+
+        [NativeName("clSVMAllocARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr SvmAllocARM(
+            Ref<_cl_context> context,
+            ulong flags,
+            nuint size,
+            uint alignment
+        )
+        {
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (void*)SvmAllocARM(__dsl_context, flags, size, alignment);
+            }
+        }
+
         [NativeName("clSVMFree")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSVMFree")]
         [SupportedApiProfile(
@@ -6730,6 +9156,45 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_context* __dsl_context = context)
             {
                 SvmFree(__dsl_context, __dsl_svm_pointer);
+            }
+        }
+
+        [NativeName("clSVMFreeARM")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        public static extern void SvmFreeARM(_cl_context* context, void* svm_pointer);
+
+        [NativeName("clSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SvmFreeARM(Ref<_cl_context> context, Ref svm_pointer)
+        {
+            fixed (void* __dsl_svm_pointer = svm_pointer)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                SvmFreeARM(__dsl_context, __dsl_svm_pointer);
+            }
+        }
+
+        [NativeName("clTerminateContextKHR")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clTerminateContextKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
+        public static extern int TerminateContextKHR(_cl_context* context);
+
+        [NativeName("clTerminateContextKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
+        [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int TerminateContextKHR(Ref<_cl_context> context)
+        {
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)TerminateContextKHR(__dsl_context);
             }
         }
 
@@ -6898,6 +9363,24 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref user_data
         ) => T.BuildProgram(program, num_devices, device_list, options, pfn_notify, user_data);
 
+        [NativeName("clCancelCommandsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
+        [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int CancelCommandsIMG(_cl_event** event_list, nuint num_events_in_list) =>
+            T.CancelCommandsIMG(event_list, num_events_in_list);
+
+        [NativeName("clCancelCommandsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
+        [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int CancelCommandsIMG(Ref2D<_cl_event> event_list, nuint num_events_in_list) =>
+            T.CancelCommandsIMG(event_list, num_events_in_list);
+
         [NativeName("clCloneKernel")]
         [SupportedApiProfile(
             "opencl",
@@ -7004,6 +9487,48 @@ public unsafe partial class Cl : ICl, ICl.Static
                 user_data
             );
 
+        [NativeName("clCreateAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public _cl_accelerator_intel* CreateAcceleratorINTEL(
+            _cl_context* context,
+            uint accelerator_type,
+            nuint descriptor_size,
+            void* descriptor,
+            int* errcode_ret
+        ) =>
+            T.CreateAcceleratorINTEL(
+                context,
+                accelerator_type,
+                descriptor_size,
+                descriptor,
+                errcode_ret
+            );
+
+        [NativeName("clCreateAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
+            Ref<_cl_context> context,
+            uint accelerator_type,
+            nuint descriptor_size,
+            Ref descriptor,
+            Ref<int> errcode_ret
+        ) =>
+            T.CreateAcceleratorINTEL(
+                context,
+                accelerator_type,
+                descriptor_size,
+                descriptor,
+                errcode_ret
+            );
+
         [NativeName("clCreateBuffer")]
         [SupportedApiProfile(
             "opencl",
@@ -7087,6 +9612,52 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref host_ptr,
             Ref<int> errcode_ret
         ) => T.CreateBufferWithProperties(context, properties, flags, size, host_ptr, errcode_ret);
+
+        [NativeName("clCreateBufferWithPropertiesINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public _cl_mem* CreateBufferWithPropertiesINTEL(
+            _cl_context* context,
+            ulong* properties,
+            ulong flags,
+            nuint size,
+            void* host_ptr,
+            int* errcode_ret
+        ) =>
+            T.CreateBufferWithPropertiesINTEL(
+                context,
+                properties,
+                flags,
+                size,
+                host_ptr,
+                errcode_ret
+            );
+
+        [NativeName("clCreateBufferWithPropertiesINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr<_cl_mem> CreateBufferWithPropertiesINTEL(
+            Ref<_cl_context> context,
+            Ref<ulong> properties,
+            ulong flags,
+            nuint size,
+            Ref host_ptr,
+            Ref<int> errcode_ret
+        ) =>
+            T.CreateBufferWithPropertiesINTEL(
+                context,
+                properties,
+                flags,
+                size,
+                host_ptr,
+                errcode_ret
+            );
 
         [NativeName("clCreateCommandQueue")]
         [Obsolete]
@@ -7187,6 +9758,32 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<ulong> properties,
             Ref<int> errcode_ret
         ) => T.CreateCommandQueueWithProperties(context, device, properties, errcode_ret);
+
+        [NativeName("clCreateCommandQueueWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public _cl_command_queue* CreateCommandQueueWithPropertiesKHR(
+            _cl_context* context,
+            _cl_device_id* device,
+            ulong* properties,
+            int* errcode_ret
+        ) => T.CreateCommandQueueWithPropertiesKHR(context, device, properties, errcode_ret);
+
+        [NativeName("clCreateCommandQueueWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr<_cl_command_queue> CreateCommandQueueWithPropertiesKHR(
+            Ref<_cl_context> context,
+            Ref<_cl_device_id> device,
+            Ref<ulong> properties,
+            Ref<int> errcode_ret
+        ) => T.CreateCommandQueueWithPropertiesKHR(context, device, properties, errcode_ret);
 
         [NativeName("clCreateContext")]
         [SupportedApiProfile(
@@ -7914,6 +10511,32 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<int> errcode_ret
         ) => T.CreateProgramWithIL(context, il, length, errcode_ret);
 
+        [NativeName("clCreateProgramWithILKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public _cl_program* CreateProgramWithILKHR(
+            _cl_context* context,
+            void* il,
+            nuint length,
+            int* errcode_ret
+        ) => T.CreateProgramWithILKHR(context, il, length, errcode_ret);
+
+        [NativeName("clCreateProgramWithILKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr<_cl_program> CreateProgramWithILKHR(
+            Ref<_cl_context> context,
+            Ref il,
+            nuint length,
+            Ref<int> errcode_ret
+        ) => T.CreateProgramWithILKHR(context, il, length, errcode_ret);
+
         [NativeName("clCreateProgramWithSource")]
         [SupportedApiProfile(
             "opencl",
@@ -8068,6 +10691,30 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<int> errcode_ret
         ) => T.CreateSamplerWithProperties(context, sampler_properties, errcode_ret);
 
+        [NativeName("clCreateSemaphoreWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
+            _cl_context* context,
+            ulong* sema_props,
+            int* errcode_ret
+        ) => T.CreateSemaphoreWithPropertiesKHR(context, sema_props, errcode_ret);
+
+        [NativeName("clCreateSemaphoreWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
+            Ref<_cl_context> context,
+            Ref<ulong> sema_props,
+            Ref<int> errcode_ret
+        ) => T.CreateSemaphoreWithPropertiesKHR(context, sema_props, errcode_ret);
+
         [NativeName("clCreateSubBuffer")]
         [SupportedApiProfile(
             "opencl",
@@ -8170,6 +10817,34 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<uint> num_devices_ret
         ) => T.CreateSubDevices(in_device, properties, num_devices, out_devices, num_devices_ret);
 
+        [NativeName("clCreateSubDevicesEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int CreateSubDevicesEXT(
+            _cl_device_id* in_device,
+            ulong* properties,
+            uint num_entries,
+            _cl_device_id** out_devices,
+            uint* num_devices
+        ) => T.CreateSubDevicesEXT(in_device, properties, num_entries, out_devices, num_devices);
+
+        [NativeName("clCreateSubDevicesEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int CreateSubDevicesEXT(
+            Ref<_cl_device_id> in_device,
+            Ref<ulong> properties,
+            uint num_entries,
+            Ref2D<_cl_device_id> out_devices,
+            Ref<uint> num_devices
+        ) => T.CreateSubDevicesEXT(in_device, properties, num_entries, out_devices, num_devices);
+
         [NativeName("clCreateUserEvent")]
         [SupportedApiProfile(
             "opencl",
@@ -8211,6 +10886,136 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public Ptr<_cl_event> CreateUserEvent(Ref<_cl_context> context, Ref<int> errcode_ret) =>
             T.CreateUserEvent(context, errcode_ret);
+
+        [NativeName("clDeviceMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void* DeviceMemAllocINTEL(
+            _cl_context* context,
+            _cl_device_id* device,
+            ulong* properties,
+            nuint size,
+            uint alignment,
+            int* errcode_ret
+        ) => T.DeviceMemAllocINTEL(context, device, properties, size, alignment, errcode_ret);
+
+        [NativeName("clDeviceMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr DeviceMemAllocINTEL(
+            Ref<_cl_context> context,
+            Ref<_cl_device_id> device,
+            Ref<ulong> properties,
+            nuint size,
+            uint alignment,
+            Ref<int> errcode_ret
+        ) => T.DeviceMemAllocINTEL(context, device, properties, size, alignment, errcode_ret);
+
+        [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueAcquireExternalMemObjectsKHR(
+            _cl_command_queue* command_queue,
+            uint num_mem_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueAcquireExternalMemObjectsKHR(
+                command_queue,
+                num_mem_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueAcquireExternalMemObjectsKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_mem_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueAcquireExternalMemObjectsKHR(
+                command_queue,
+                num_mem_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueAcquireGrallocObjectsIMG(
+            _cl_command_queue* command_queue,
+            uint num_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueAcquireGrallocObjectsIMG(
+                command_queue,
+                num_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueAcquireGrallocObjectsIMG(
+            Ref<_cl_command_queue> command_queue,
+            uint num_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueAcquireGrallocObjectsIMG(
+                command_queue,
+                num_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
 
         [NativeName("clEnqueueBarrier")]
         [Obsolete]
@@ -8908,6 +11713,64 @@ public unsafe partial class Cl : ICl, ICl.Static
                 @event
             );
 
+        [NativeName("clEnqueueGenerateMipmapIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueGenerateMipmapIMG(
+            _cl_command_queue* command_queue,
+            _cl_mem* src_image,
+            _cl_mem* dst_image,
+            uint mipmap_filter_mode,
+            nuint* array_region,
+            nuint* mip_region,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueGenerateMipmapIMG(
+                command_queue,
+                src_image,
+                dst_image,
+                mipmap_filter_mode,
+                array_region,
+                mip_region,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueGenerateMipmapIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueGenerateMipmapIMG(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_mem> src_image,
+            Ref<_cl_mem> dst_image,
+            uint mipmap_filter_mode,
+            Ref<nuint> array_region,
+            Ref<nuint> mip_region,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueGenerateMipmapIMG(
+                command_queue,
+                src_image,
+                dst_image,
+                mipmap_filter_mode,
+                array_region,
+                mip_region,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
         [NativeName("clEnqueueMapBuffer")]
         [SupportedApiProfile(
             "opencl",
@@ -9193,6 +12056,314 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) =>
             T.EnqueueMarkerWithWaitList(
                 command_queue,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemAdviseINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMemAdviseINTEL(
+            _cl_command_queue* command_queue,
+            void* ptr,
+            nuint size,
+            uint advice,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueMemAdviseINTEL(
+                command_queue,
+                ptr,
+                size,
+                advice,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemAdviseINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMemAdviseINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref ptr,
+            nuint size,
+            uint advice,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueMemAdviseINTEL(
+                command_queue,
+                ptr,
+                size,
+                advice,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemcpyINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMemcpyINTEL(
+            _cl_command_queue* command_queue,
+            uint blocking,
+            void* dst_ptr,
+            void* src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueMemcpyINTEL(
+                command_queue,
+                blocking,
+                dst_ptr,
+                src_ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemcpyINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMemcpyINTEL(
+            Ref<_cl_command_queue> command_queue,
+            MaybeBool<uint> blocking,
+            Ref dst_ptr,
+            Ref src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueMemcpyINTEL(
+                command_queue,
+                blocking,
+                dst_ptr,
+                src_ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemFillINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMemFillINTEL(
+            _cl_command_queue* command_queue,
+            void* dst_ptr,
+            void* pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueMemFillINTEL(
+                command_queue,
+                dst_ptr,
+                pattern,
+                pattern_size,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemFillINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMemFillINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref dst_ptr,
+            Ref pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueMemFillINTEL(
+                command_queue,
+                dst_ptr,
+                pattern,
+                pattern_size,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemsetINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMemsetINTEL(
+            _cl_command_queue* command_queue,
+            void* dst_ptr,
+            int value,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueMemsetINTEL(
+                command_queue,
+                dst_ptr,
+                value,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemsetINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMemsetINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref dst_ptr,
+            int value,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueMemsetINTEL(
+                command_queue,
+                dst_ptr,
+                value,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMigrateMemINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMigrateMemINTEL(
+            _cl_command_queue* command_queue,
+            void* ptr,
+            nuint size,
+            ulong flags,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueMigrateMemINTEL(
+                command_queue,
+                ptr,
+                size,
+                flags,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMigrateMemINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMigrateMemINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref ptr,
+            nuint size,
+            ulong flags,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueMigrateMemINTEL(
+                command_queue,
+                ptr,
+                size,
+                flags,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMigrateMemObjectEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMigrateMemObjectEXT(
+            _cl_command_queue* command_queue,
+            uint num_mem_objects,
+            _cl_mem** mem_objects,
+            ulong flags,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueMigrateMemObjectEXT(
+                command_queue,
+                num_mem_objects,
+                mem_objects,
+                flags,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMigrateMemObjectEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueMigrateMemObjectEXT(
+            Ref<_cl_command_queue> command_queue,
+            uint num_mem_objects,
+            Ref2D<_cl_mem> mem_objects,
+            ulong flags,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueMigrateMemObjectEXT(
+                command_queue,
+                num_mem_objects,
+                mem_objects,
+                flags,
                 num_events_in_wait_list,
                 event_wait_list,
                 @event
@@ -9628,6 +12799,64 @@ public unsafe partial class Cl : ICl, ICl.Static
                 @event
             );
 
+        [NativeName("clEnqueueReadHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueReadHostPipeINTEL(
+            _cl_command_queue* command_queue,
+            _cl_program* program,
+            sbyte* pipe_symbol,
+            uint blocking_read,
+            void* ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueReadHostPipeINTEL(
+                command_queue,
+                program,
+                pipe_symbol,
+                blocking_read,
+                ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueReadHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueReadHostPipeINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_program> program,
+            Ref<sbyte> pipe_symbol,
+            MaybeBool<uint> blocking_read,
+            Ref ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueReadHostPipeINTEL(
+                command_queue,
+                program,
+                pipe_symbol,
+                blocking_read,
+                ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
         [NativeName("clEnqueueReadImage")]
         [SupportedApiProfile(
             "opencl",
@@ -9720,6 +12949,156 @@ public unsafe partial class Cl : ICl, ICl.Static
                 @event
             );
 
+        [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueReleaseExternalMemObjectsKHR(
+            _cl_command_queue* command_queue,
+            uint num_mem_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueReleaseExternalMemObjectsKHR(
+                command_queue,
+                num_mem_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueReleaseExternalMemObjectsKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_mem_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueReleaseExternalMemObjectsKHR(
+                command_queue,
+                num_mem_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueReleaseGrallocObjectsIMG(
+            _cl_command_queue* command_queue,
+            uint num_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueReleaseGrallocObjectsIMG(
+                command_queue,
+                num_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueReleaseGrallocObjectsIMG(
+            Ref<_cl_command_queue> command_queue,
+            uint num_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueReleaseGrallocObjectsIMG(
+                command_queue,
+                num_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSignalSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSignalSemaphoresKHR(
+            _cl_command_queue* command_queue,
+            uint num_sema_objects,
+            _cl_semaphore_khr** sema_objects,
+            ulong* sema_payload_list,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueSignalSemaphoresKHR(
+                command_queue,
+                num_sema_objects,
+                sema_objects,
+                sema_payload_list,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSignalSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSignalSemaphoresKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_sema_objects,
+            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<ulong> sema_payload_list,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueSignalSemaphoresKHR(
+                command_queue,
+                num_sema_objects,
+                sema_objects,
+                sema_payload_list,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
         [NativeName("clEnqueueSVMFree")]
         [SupportedApiProfile(
             "opencl",
@@ -9784,6 +13163,60 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref2D<_cl_event> @event
         ) =>
             T.EnqueueSvmFree(
+                command_queue,
+                num_svm_pointers,
+                svm_pointers,
+                pfn_free_func,
+                user_data,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSvmFreeARM(
+            _cl_command_queue* command_queue,
+            uint num_svm_pointers,
+            void** svm_pointers,
+            delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void> pfn_free_func,
+            void* user_data,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueSvmFreeARM(
+                command_queue,
+                num_svm_pointers,
+                svm_pointers,
+                pfn_free_func,
+                user_data,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSvmFreeARM(
+            Ref<_cl_command_queue> command_queue,
+            uint num_svm_pointers,
+            Ref2D svm_pointers,
+            delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void> pfn_free_func,
+            Ref user_data,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueSvmFreeARM(
                 command_queue,
                 num_svm_pointers,
                 svm_pointers,
@@ -9868,6 +13301,60 @@ public unsafe partial class Cl : ICl, ICl.Static
                 @event
             );
 
+        [NativeName("clEnqueueSVMMapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSvmMapARM(
+            _cl_command_queue* command_queue,
+            uint blocking_map,
+            ulong flags,
+            void* svm_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueSvmMapARM(
+                command_queue,
+                blocking_map,
+                flags,
+                svm_ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMMapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSvmMapARM(
+            Ref<_cl_command_queue> command_queue,
+            MaybeBool<uint> blocking_map,
+            ulong flags,
+            Ref svm_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueSvmMapARM(
+                command_queue,
+                blocking_map,
+                flags,
+                svm_ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
         [NativeName("clEnqueueSVMMemcpy")]
         [SupportedApiProfile(
             "opencl",
@@ -9942,6 +13429,60 @@ public unsafe partial class Cl : ICl, ICl.Static
                 @event
             );
 
+        [NativeName("clEnqueueSVMMemcpyARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSvmMemcpyARM(
+            _cl_command_queue* command_queue,
+            uint blocking_copy,
+            void* dst_ptr,
+            void* src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueSvmMemcpyARM(
+                command_queue,
+                blocking_copy,
+                dst_ptr,
+                src_ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMMemcpyARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSvmMemcpyARM(
+            Ref<_cl_command_queue> command_queue,
+            MaybeBool<uint> blocking_copy,
+            Ref dst_ptr,
+            Ref src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueSvmMemcpyARM(
+                command_queue,
+                blocking_copy,
+                dst_ptr,
+                src_ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
         [NativeName("clEnqueueSVMMemFill")]
         [SupportedApiProfile(
             "opencl",
@@ -10006,6 +13547,60 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref2D<_cl_event> @event
         ) =>
             T.EnqueueSvmMemFill(
+                command_queue,
+                svm_ptr,
+                pattern,
+                pattern_size,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMMemFillARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSvmMemFillARM(
+            _cl_command_queue* command_queue,
+            void* svm_ptr,
+            void* pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueSvmMemFillARM(
+                command_queue,
+                svm_ptr,
+                pattern,
+                pattern_size,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMMemFillARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSvmMemFillARM(
+            Ref<_cl_command_queue> command_queue,
+            Ref svm_ptr,
+            Ref pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueSvmMemFillARM(
                 command_queue,
                 svm_ptr,
                 pattern,
@@ -10133,6 +13728,48 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref2D<_cl_event> @event
         ) =>
             T.EnqueueSvmUnmap(
+                command_queue,
+                svm_ptr,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMUnmapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSvmUnmapARM(
+            _cl_command_queue* command_queue,
+            void* svm_ptr,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueSvmUnmapARM(
+                command_queue,
+                svm_ptr,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMUnmapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueSvmUnmapARM(
+            Ref<_cl_command_queue> command_queue,
+            Ref svm_ptr,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueSvmUnmapARM(
                 command_queue,
                 svm_ptr,
                 num_events_in_wait_list,
@@ -10320,6 +13957,56 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref2D<_cl_event> event_list
         ) => T.EnqueueWaitForEvents(command_queue, num_events, event_list);
 
+        [NativeName("clEnqueueWaitSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueWaitSemaphoresKHR(
+            _cl_command_queue* command_queue,
+            uint num_sema_objects,
+            _cl_semaphore_khr** sema_objects,
+            ulong* sema_payload_list,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueWaitSemaphoresKHR(
+                command_queue,
+                num_sema_objects,
+                sema_objects,
+                sema_payload_list,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueWaitSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueWaitSemaphoresKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_sema_objects,
+            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<ulong> sema_payload_list,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueWaitSemaphoresKHR(
+                command_queue,
+                num_sema_objects,
+                sema_objects,
+                sema_payload_list,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
         [NativeName("clEnqueueWriteBuffer")]
         [SupportedApiProfile(
             "opencl",
@@ -10506,6 +14193,64 @@ public unsafe partial class Cl : ICl, ICl.Static
                 @event
             );
 
+        [NativeName("clEnqueueWriteHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueWriteHostPipeINTEL(
+            _cl_command_queue* command_queue,
+            _cl_program* program,
+            sbyte* pipe_symbol,
+            uint blocking_write,
+            void* ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            T.EnqueueWriteHostPipeINTEL(
+                command_queue,
+                program,
+                pipe_symbol,
+                blocking_write,
+                ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueWriteHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int EnqueueWriteHostPipeINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_program> program,
+            Ref<sbyte> pipe_symbol,
+            MaybeBool<uint> blocking_write,
+            Ref ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        ) =>
+            T.EnqueueWriteHostPipeINTEL(
+                command_queue,
+                program,
+                pipe_symbol,
+                blocking_write,
+                ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
         [NativeName("clEnqueueWriteImage")]
         [SupportedApiProfile(
             "opencl",
@@ -10681,6 +14426,48 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int Flush(Ref<_cl_command_queue> command_queue) => T.Flush(command_queue);
+
+        [NativeName("clGetAcceleratorInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetAcceleratorInfoINTEL(
+            _cl_accelerator_intel* accelerator,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            T.GetAcceleratorInfoINTEL(
+                accelerator,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetAcceleratorInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetAcceleratorInfoINTEL(
+            Ref<_cl_accelerator_intel> accelerator,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        ) =>
+            T.GetAcceleratorInfoINTEL(
+                accelerator,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
 
         [NativeName("clGetCommandQueueInfo")]
         [SupportedApiProfile(
@@ -10903,6 +14690,60 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref2D<_cl_device_id> devices,
             Ref<uint> num_devices
         ) => T.GetDeviceIDs(platform, device_type, num_entries, devices, num_devices);
+
+        [NativeName("clGetDeviceImageInfoQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetDeviceImageInfoQCOM(
+            _cl_device_id* device,
+            nuint image_width,
+            nuint image_height,
+            ClImageFormat* image_format,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            T.GetDeviceImageInfoQCOM(
+                device,
+                image_width,
+                image_height,
+                image_format,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetDeviceImageInfoQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetDeviceImageInfoQCOM(
+            Ref<_cl_device_id> device,
+            nuint image_width,
+            nuint image_height,
+            Ref<ClImageFormat> image_format,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        ) =>
+            T.GetDeviceImageInfoQCOM(
+                device,
+                image_width,
+                image_height,
+                image_format,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
 
         [NativeName("clGetDeviceInfo")]
         [SupportedApiProfile(
@@ -11212,6 +15053,44 @@ public unsafe partial class Cl : ICl, ICl.Static
         public int GetHostTimer(Ref<_cl_device_id> device, Ref<ulong> host_timestamp) =>
             T.GetHostTimer(device, host_timestamp);
 
+        [NativeName("clGetICDLoaderInfoOCLICD")]
+        [SupportedApiProfile("opencl", ["cl_loader_info"])]
+        [NativeFunction("opencl", EntryPoint = "clGetICDLoaderInfoOCLICD")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetIcdLoaderInfoOclicd(
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            T.GetIcdLoaderInfoOclicd(
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetICDLoaderInfoOCLICD")]
+        [SupportedApiProfile("opencl", ["cl_loader_info"])]
+        [NativeFunction("opencl", EntryPoint = "clGetICDLoaderInfoOCLICD")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetIcdLoaderInfoOclicd(
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        ) =>
+            T.GetIcdLoaderInfoOclicd(
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
         [NativeName("clGetImageInfo")]
         [SupportedApiProfile(
             "opencl",
@@ -11265,6 +15144,72 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref param_value,
             Ref<nuint> param_value_size_ret
         ) => T.GetImageInfo(image, param_name, param_value_size, param_value, param_value_size_ret);
+
+        [NativeName("clGetImageRequirementsInfoEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_image_requirements_info"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetImageRequirementsInfoEXT(
+            _cl_context* context,
+            ulong* properties,
+            ulong flags,
+            ClImageFormat* image_format,
+            ClImageDesc* image_desc,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            T.GetImageRequirementsInfoEXT(
+                context,
+                properties,
+                flags,
+                image_format,
+                image_desc,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetImageRequirementsInfoEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_image_requirements_info"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetImageRequirementsInfoEXT(
+            Ref<_cl_context> context,
+            Ref<ulong> properties,
+            ulong flags,
+            Ref<ClImageFormat> image_format,
+            Ref<ClImageDesc> image_desc,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        ) =>
+            T.GetImageRequirementsInfoEXT(
+                context,
+                properties,
+                flags,
+                image_format,
+                image_desc,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
 
         [NativeName("clGetKernelArgInfo")]
         [SupportedApiProfile(
@@ -11464,6 +15409,62 @@ public unsafe partial class Cl : ICl, ICl.Static
                 param_value_size_ret
             );
 
+        [NativeName("clGetKernelSubGroupInfoKHR")]
+        [Obsolete]
+        [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
+        [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetKernelSubGroupInfoKHR(
+            _cl_kernel* in_kernel,
+            _cl_device_id* in_device,
+            uint param_name,
+            nuint input_value_size,
+            void* input_value,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            T.GetKernelSubGroupInfoKHR(
+                in_kernel,
+                in_device,
+                param_name,
+                input_value_size,
+                input_value,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetKernelSubGroupInfoKHR")]
+        [Obsolete]
+        [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
+        [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetKernelSubGroupInfoKHR(
+            Ref<_cl_kernel> in_kernel,
+            Ref<_cl_device_id> in_device,
+            uint param_name,
+            nuint input_value_size,
+            Ref input_value,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        ) =>
+            T.GetKernelSubGroupInfoKHR(
+                in_kernel,
+                in_device,
+                param_name,
+                input_value_size,
+                input_value,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
         [NativeName("clGetKernelSuggestedLocalWorkSize")]
         [SupportedApiProfile("opencl", ["CL_VERSION_3_1"], MinVersion = "3.1")]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSize")]
@@ -11502,6 +15503,52 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<nuint> suggested_local_work_size
         ) =>
             T.GetKernelSuggestedLocalWorkSize(
+                command_queue,
+                kernel,
+                work_dim,
+                global_work_offset,
+                global_work_size,
+                suggested_local_work_size
+            );
+
+        [NativeName("clGetKernelSuggestedLocalWorkSizeKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
+        [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetKernelSuggestedLocalWorkSizeKHR(
+            _cl_command_queue* command_queue,
+            _cl_kernel* kernel,
+            uint work_dim,
+            nuint* global_work_offset,
+            nuint* global_work_size,
+            nuint* suggested_local_work_size
+        ) =>
+            T.GetKernelSuggestedLocalWorkSizeKHR(
+                command_queue,
+                kernel,
+                work_dim,
+                global_work_offset,
+                global_work_size,
+                suggested_local_work_size
+            );
+
+        [NativeName("clGetKernelSuggestedLocalWorkSizeKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
+        [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetKernelSuggestedLocalWorkSizeKHR(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_kernel> kernel,
+            uint work_dim,
+            Ref<nuint> global_work_offset,
+            Ref<nuint> global_work_size,
+            Ref<nuint> suggested_local_work_size
+        ) =>
+            T.GetKernelSuggestedLocalWorkSizeKHR(
                 command_queue,
                 kernel,
                 work_dim,
@@ -11576,6 +15623,52 @@ public unsafe partial class Cl : ICl, ICl.Static
             T.GetKernelWorkGroupInfo(
                 kernel,
                 device,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetMemAllocInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetMemAllocInfoINTEL(
+            _cl_context* context,
+            void* ptr,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            T.GetMemAllocInfoINTEL(
+                context,
+                ptr,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetMemAllocInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetMemAllocInfoINTEL(
+            Ref<_cl_context> context,
+            Ref ptr,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        ) =>
+            T.GetMemAllocInfoINTEL(
+                context,
+                ptr,
                 param_name,
                 param_value_size,
                 param_value,
@@ -12024,6 +16117,102 @@ public unsafe partial class Cl : ICl, ICl.Static
                 param_value_size_ret
             );
 
+        [NativeName("clGetSemaphoreHandleForTypeKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore"],
+            ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetSemaphoreHandleForTypeKHR(
+            _cl_semaphore_khr* sema_object,
+            _cl_device_id* device,
+            uint handle_type,
+            nuint handle_size,
+            void* handle_ptr,
+            nuint* handle_size_ret
+        ) =>
+            T.GetSemaphoreHandleForTypeKHR(
+                sema_object,
+                device,
+                handle_type,
+                handle_size,
+                handle_ptr,
+                handle_size_ret
+            );
+
+        [NativeName("clGetSemaphoreHandleForTypeKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore"],
+            ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetSemaphoreHandleForTypeKHR(
+            Ref<_cl_semaphore_khr> sema_object,
+            Ref<_cl_device_id> device,
+            uint handle_type,
+            nuint handle_size,
+            Ref handle_ptr,
+            Ref<nuint> handle_size_ret
+        ) =>
+            T.GetSemaphoreHandleForTypeKHR(
+                sema_object,
+                device,
+                handle_type,
+                handle_size,
+                handle_ptr,
+                handle_size_ret
+            );
+
+        [NativeName("clGetSemaphoreInfoKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetSemaphoreInfoKHR(
+            _cl_semaphore_khr* sema_object,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            T.GetSemaphoreInfoKHR(
+                sema_object,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetSemaphoreInfoKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetSemaphoreInfoKHR(
+            Ref<_cl_semaphore_khr> sema_object,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        ) =>
+            T.GetSemaphoreInfoKHR(
+                sema_object,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
         [NativeName("clGetSupportedImageFormats")]
         [SupportedApiProfile(
             "opencl",
@@ -12095,6 +16284,130 @@ public unsafe partial class Cl : ICl, ICl.Static
                 image_formats,
                 num_image_formats
             );
+
+        [NativeName("clHostMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void* HostMemAllocINTEL(
+            _cl_context* context,
+            ulong* properties,
+            nuint size,
+            uint alignment,
+            int* errcode_ret
+        ) => T.HostMemAllocINTEL(context, properties, size, alignment, errcode_ret);
+
+        [NativeName("clHostMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr HostMemAllocINTEL(
+            Ref<_cl_context> context,
+            Ref<ulong> properties,
+            nuint size,
+            uint alignment,
+            Ref<int> errcode_ret
+        ) => T.HostMemAllocINTEL(context, properties, size, alignment, errcode_ret);
+
+        [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void* IcdGetFunctionAddressForPlatformKHR(
+            _cl_platform_id* platform,
+            sbyte* func_name
+        ) => T.IcdGetFunctionAddressForPlatformKHR(platform, func_name);
+
+        [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr IcdGetFunctionAddressForPlatformKHR(
+            Ref<_cl_platform_id> platform,
+            Ref<sbyte> func_name
+        ) => T.IcdGetFunctionAddressForPlatformKHR(platform, func_name);
+
+        [NativeName("clIcdGetPlatformIDsKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int IcdGetPlatformIDsKHR(
+            uint num_entries,
+            _cl_platform_id** platforms,
+            uint* num_platforms
+        ) => T.IcdGetPlatformIDsKHR(num_entries, platforms, num_platforms);
+
+        [NativeName("clIcdGetPlatformIDsKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int IcdGetPlatformIDsKHR(
+            uint num_entries,
+            Ref2D<_cl_platform_id> platforms,
+            Ref<uint> num_platforms
+        ) => T.IcdGetPlatformIDsKHR(num_entries, platforms, num_platforms);
+
+        [NativeName("clIcdSetPlatformDispatchDataKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int IcdSetPlatformDispatchDataKHR(_cl_platform_id* platform, void* dispatch_data) =>
+            T.IcdSetPlatformDispatchDataKHR(platform, dispatch_data);
+
+        [NativeName("clIcdSetPlatformDispatchDataKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int IcdSetPlatformDispatchDataKHR(
+            Ref<_cl_platform_id> platform,
+            Ref dispatch_data
+        ) => T.IcdSetPlatformDispatchDataKHR(platform, dispatch_data);
+
+        [NativeName("clImportMemoryARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public _cl_mem* ImportMemoryARM(
+            _cl_context* context,
+            ulong flags,
+            nint* properties,
+            void* memory,
+            nuint size,
+            int* errcode_ret
+        ) => T.ImportMemoryARM(context, flags, properties, memory, size, errcode_ret);
+
+        [NativeName("clImportMemoryARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr<_cl_mem> ImportMemoryARM(
+            Ref<_cl_context> context,
+            ulong flags,
+            Ref<nint> properties,
+            Ref memory,
+            nuint size,
+            Ref<int> errcode_ret
+        ) => T.ImportMemoryARM(context, flags, properties, memory, size, errcode_ret);
 
         [NativeName("clLinkProgram")]
         [SupportedApiProfile(
@@ -12175,6 +16488,168 @@ public unsafe partial class Cl : ICl, ICl.Static
                 user_data,
                 errcode_ret
             );
+
+        [NativeName("clLogMessagesToStderrAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void LogMessagesToStderrAPPLE(
+            sbyte* errstr,
+            void* private_info,
+            nuint cb,
+            void* user_data
+        ) => T.LogMessagesToStderrAPPLE(errstr, private_info, cb, user_data);
+
+        [NativeName("clLogMessagesToStderrAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void LogMessagesToStderrAPPLE(
+            Ref<sbyte> errstr,
+            Ref private_info,
+            nuint cb,
+            Ref user_data
+        ) => T.LogMessagesToStderrAPPLE(errstr, private_info, cb, user_data);
+
+        [NativeName("clLogMessagesToStdoutAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void LogMessagesToStdoutAPPLE(
+            sbyte* errstr,
+            void* private_info,
+            nuint cb,
+            void* user_data
+        ) => T.LogMessagesToStdoutAPPLE(errstr, private_info, cb, user_data);
+
+        [NativeName("clLogMessagesToStdoutAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void LogMessagesToStdoutAPPLE(
+            Ref<sbyte> errstr,
+            Ref private_info,
+            nuint cb,
+            Ref user_data
+        ) => T.LogMessagesToStdoutAPPLE(errstr, private_info, cb, user_data);
+
+        [NativeName("clLogMessagesToSystemLogAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void LogMessagesToSystemLogAPPLE(
+            sbyte* errstr,
+            void* private_info,
+            nuint cb,
+            void* user_data
+        ) => T.LogMessagesToSystemLogAPPLE(errstr, private_info, cb, user_data);
+
+        [NativeName("clLogMessagesToSystemLogAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void LogMessagesToSystemLogAPPLE(
+            Ref<sbyte> errstr,
+            Ref private_info,
+            nuint cb,
+            Ref user_data
+        ) => T.LogMessagesToSystemLogAPPLE(errstr, private_info, cb, user_data);
+
+        [NativeName("clMemBlockingFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int MemBlockingFreeINTEL(_cl_context* context, void* ptr) =>
+            T.MemBlockingFreeINTEL(context, ptr);
+
+        [NativeName("clMemBlockingFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int MemBlockingFreeINTEL(Ref<_cl_context> context, Ref ptr) =>
+            T.MemBlockingFreeINTEL(context, ptr);
+
+        [NativeName("clMemFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int MemFreeINTEL(_cl_context* context, void* ptr) => T.MemFreeINTEL(context, ptr);
+
+        [NativeName("clMemFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int MemFreeINTEL(Ref<_cl_context> context, Ref ptr) => T.MemFreeINTEL(context, ptr);
+
+        [NativeName("clReImportSemaphoreSyncFdKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore_sync_fd"],
+            ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int ReImportSemaphoreSyncFdKHR(
+            _cl_semaphore_khr* sema_object,
+            ulong* reimport_props,
+            int fd
+        ) => T.ReImportSemaphoreSyncFdKHR(sema_object, reimport_props, fd);
+
+        [NativeName("clReImportSemaphoreSyncFdKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore_sync_fd"],
+            ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int ReImportSemaphoreSyncFdKHR(
+            Ref<_cl_semaphore_khr> sema_object,
+            Ref<ulong> reimport_props,
+            int fd
+        ) => T.ReImportSemaphoreSyncFdKHR(sema_object, reimport_props, fd);
+
+        [NativeName("clReleaseAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+            T.ReleaseAcceleratorINTEL(accelerator);
+
+        [NativeName("clReleaseAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator) =>
+            T.ReleaseAcceleratorINTEL(accelerator);
 
         [NativeName("clReleaseCommandQueue")]
         [SupportedApiProfile(
@@ -12299,6 +16774,22 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int ReleaseDevice(Ref<_cl_device_id> device) => T.ReleaseDevice(device);
+
+        [NativeName("clReleaseDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int ReleaseDeviceEXT(_cl_device_id* device) => T.ReleaseDeviceEXT(device);
+
+        [NativeName("clReleaseDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int ReleaseDeviceEXT(Ref<_cl_device_id> device) => T.ReleaseDeviceEXT(device);
 
         [NativeName("clReleaseEvent")]
         [SupportedApiProfile(
@@ -12510,6 +17001,42 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int ReleaseSampler(Ref<_cl_sampler> sampler) => T.ReleaseSampler(sampler);
 
+        [NativeName("clReleaseSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+            T.ReleaseSemaphoreKHR(sema_object);
+
+        [NativeName("clReleaseSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object) =>
+            T.ReleaseSemaphoreKHR(sema_object);
+
+        [NativeName("clRetainAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+            T.RetainAcceleratorINTEL(accelerator);
+
+        [NativeName("clRetainAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator) =>
+            T.RetainAcceleratorINTEL(accelerator);
+
         [NativeName("clRetainCommandQueue")]
         [SupportedApiProfile(
             "opencl",
@@ -12633,6 +17160,22 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int RetainDevice(Ref<_cl_device_id> device) => T.RetainDevice(device);
+
+        [NativeName("clRetainDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int RetainDeviceEXT(_cl_device_id* device) => T.RetainDeviceEXT(device);
+
+        [NativeName("clRetainDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int RetainDeviceEXT(Ref<_cl_device_id> device) => T.RetainDeviceEXT(device);
 
         [NativeName("clRetainEvent")]
         [SupportedApiProfile(
@@ -12844,6 +17387,44 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int RetainSampler(Ref<_cl_sampler> sampler) => T.RetainSampler(sampler);
 
+        [NativeName("clRetainSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int RetainSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+            T.RetainSemaphoreKHR(sema_object);
+
+        [NativeName("clRetainSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object) =>
+            T.RetainSemaphoreKHR(sema_object);
+
+        [NativeName("clSetContentSizeBufferPoCL")]
+        [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
+        [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetContentSizeBufferPOCL(_cl_mem* buffer, _cl_mem* content_size_buffer) =>
+            T.SetContentSizeBufferPOCL(buffer, content_size_buffer);
+
+        [NativeName("clSetContentSizeBufferPoCL")]
+        [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
+        [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetContentSizeBufferPOCL(
+            Ref<_cl_mem> buffer,
+            Ref<_cl_mem> content_size_buffer
+        ) => T.SetContentSizeBufferPOCL(buffer, content_size_buffer);
+
         [NativeName("clSetContextDestructorCallback")]
         [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
         [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
@@ -13002,6 +17583,62 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref arg_value
         ) => T.SetKernelArg(kernel, arg_index, arg_size, arg_value);
 
+        [NativeName("clSetKernelArgDevicePointerEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_buffer_device_address"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetKernelArgDevicePointerEXT(
+            _cl_kernel* kernel,
+            uint arg_index,
+            ulong arg_value
+        ) => T.SetKernelArgDevicePointerEXT(kernel, arg_index, arg_value);
+
+        [NativeName("clSetKernelArgDevicePointerEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_buffer_device_address"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetKernelArgDevicePointerEXT(
+            Ref<_cl_kernel> kernel,
+            uint arg_index,
+            ulong arg_value
+        ) => T.SetKernelArgDevicePointerEXT(kernel, arg_index, arg_value);
+
+        [NativeName("clSetKernelArgMemPointerINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetKernelArgMemPointerINTEL(
+            _cl_kernel* kernel,
+            uint arg_index,
+            void* arg_value
+        ) => T.SetKernelArgMemPointerINTEL(kernel, arg_index, arg_value);
+
+        [NativeName("clSetKernelArgMemPointerINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetKernelArgMemPointerINTEL(
+            Ref<_cl_kernel> kernel,
+            uint arg_index,
+            Ref arg_value
+        ) => T.SetKernelArgMemPointerINTEL(kernel, arg_index, arg_value);
+
         [NativeName("clSetKernelArgSVMPointer")]
         [SupportedApiProfile(
             "opencl",
@@ -13039,6 +17676,27 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetKernelArgSvmPointer(Ref<_cl_kernel> kernel, uint arg_index, Ref arg_value) =>
             T.SetKernelArgSvmPointer(kernel, arg_index, arg_value);
+
+        [NativeName("clSetKernelArgSVMPointerARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetKernelArgSvmPointerARM(_cl_kernel* kernel, uint arg_index, void* arg_value) =>
+            T.SetKernelArgSvmPointerARM(kernel, arg_index, arg_value);
+
+        [NativeName("clSetKernelArgSVMPointerARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetKernelArgSvmPointerARM(
+            Ref<_cl_kernel> kernel,
+            uint arg_index,
+            Ref arg_value
+        ) => T.SetKernelArgSvmPointerARM(kernel, arg_index, arg_value);
 
         [NativeName("clSetKernelExecInfo")]
         [SupportedApiProfile(
@@ -13085,6 +17743,56 @@ public unsafe partial class Cl : ICl, ICl.Static
             nuint param_value_size,
             Ref param_value
         ) => T.SetKernelExecInfo(kernel, param_name, param_value_size, param_value);
+
+        [NativeName("clSetKernelExecInfoARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetKernelExecInfoARM(
+            _cl_kernel* kernel,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value
+        ) => T.SetKernelExecInfoARM(kernel, param_name, param_value_size, param_value);
+
+        [NativeName("clSetKernelExecInfoARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetKernelExecInfoARM(
+            Ref<_cl_kernel> kernel,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value
+        ) => T.SetKernelExecInfoARM(kernel, param_name, param_value_size, param_value);
+
+        [NativeName("clSetMemObjectDestructorAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
+        [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetMemObjectDestructorAPPLE(
+            _cl_mem* memobj,
+            delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
+            void* user_data
+        ) => T.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
+
+        [NativeName("clSetMemObjectDestructorAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
+        [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetMemObjectDestructorAPPLE(
+            Ref<_cl_mem> memobj,
+            delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
+            Ref user_data
+        ) => T.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 
         [NativeName("clSetMemObjectDestructorCallback")]
         [SupportedApiProfile(
@@ -13133,6 +17841,24 @@ public unsafe partial class Cl : ICl, ICl.Static
             delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
             Ref user_data
         ) => T.SetMemObjectDestructorCallback(memobj, pfn_notify, user_data);
+
+        [NativeName("clSetPerfHintQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
+        [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetPerfHintQCOM(_cl_context* context, uint perf_hint) =>
+            T.SetPerfHintQCOM(context, perf_hint);
+
+        [NativeName("clSetPerfHintQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
+        [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int SetPerfHintQCOM(Ref<_cl_context> context, uint perf_hint) =>
+            T.SetPerfHintQCOM(context, perf_hint);
 
         [NativeName("clSetProgramReleaseCallback")]
         [Obsolete]
@@ -13244,6 +17970,36 @@ public unsafe partial class Cl : ICl, ICl.Static
         public int SetUserEventStatus(Ref<_cl_event> @event, int execution_status) =>
             T.SetUserEventStatus(@event, execution_status);
 
+        [NativeName("clSharedMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void* SharedMemAllocINTEL(
+            _cl_context* context,
+            _cl_device_id* device,
+            ulong* properties,
+            nuint size,
+            uint alignment,
+            int* errcode_ret
+        ) => T.SharedMemAllocINTEL(context, device, properties, size, alignment, errcode_ret);
+
+        [NativeName("clSharedMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr SharedMemAllocINTEL(
+            Ref<_cl_context> context,
+            Ref<_cl_device_id> device,
+            Ref<ulong> properties,
+            nuint size,
+            uint alignment,
+            Ref<int> errcode_ret
+        ) => T.SharedMemAllocINTEL(context, device, properties, size, alignment, errcode_ret);
+
         [NativeName("clSVMAlloc")]
         [SupportedApiProfile(
             "opencl",
@@ -13282,6 +18038,24 @@ public unsafe partial class Cl : ICl, ICl.Static
         public Ptr SvmAlloc(Ref<_cl_context> context, ulong flags, nuint size, uint alignment) =>
             T.SvmAlloc(context, flags, size, alignment);
 
+        [NativeName("clSVMAllocARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void* SvmAllocARM(_cl_context* context, ulong flags, nuint size, uint alignment) =>
+            T.SvmAllocARM(context, flags, size, alignment);
+
+        [NativeName("clSVMAllocARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public Ptr SvmAllocARM(Ref<_cl_context> context, ulong flags, nuint size, uint alignment) =>
+            T.SvmAllocARM(context, flags, size, alignment);
+
         [NativeName("clSVMFree")]
         [SupportedApiProfile(
             "opencl",
@@ -13319,6 +18093,40 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public void SvmFree(Ref<_cl_context> context, Ref svm_pointer) =>
             T.SvmFree(context, svm_pointer);
+
+        [NativeName("clSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SvmFreeARM(_cl_context* context, void* svm_pointer) =>
+            T.SvmFreeARM(context, svm_pointer);
+
+        [NativeName("clSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void SvmFreeARM(Ref<_cl_context> context, Ref svm_pointer) =>
+            T.SvmFreeARM(context, svm_pointer);
+
+        [NativeName("clTerminateContextKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
+        [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int TerminateContextKHR(_cl_context* context) => T.TerminateContextKHR(context);
+
+        [NativeName("clTerminateContextKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
+        [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int TerminateContextKHR(Ref<_cl_context> context) => T.TerminateContextKHR(context);
 
         [NativeName("clUnloadCompiler")]
         [Obsolete]
@@ -13509,6 +18317,29 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clCancelCommandsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
+        [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int CancelCommandsIMG(_cl_event** event_list, nuint num_events_in_list) =>
+            Underlying.Value!.CancelCommandsIMG(event_list, num_events_in_list);
+
+        [NativeName("clCancelCommandsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
+        [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int CancelCommandsIMG(Ref2D<_cl_event> event_list, nuint num_events_in_list)
+        {
+            fixed (_cl_event** __dsl_event_list = event_list)
+            {
+                return (int)CancelCommandsIMG(__dsl_event_list, num_events_in_list);
+            }
+        }
+
         [NativeName("clCloneKernel")]
         [SupportedApiProfile(
             "opencl",
@@ -13634,6 +18465,55 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clCreateAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static _cl_accelerator_intel* CreateAcceleratorINTEL(
+            _cl_context* context,
+            uint accelerator_type,
+            nuint descriptor_size,
+            void* descriptor,
+            int* errcode_ret
+        ) =>
+            Underlying.Value!.CreateAcceleratorINTEL(
+                context,
+                accelerator_type,
+                descriptor_size,
+                descriptor,
+                errcode_ret
+            );
+
+        [NativeName("clCreateAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
+            Ref<_cl_context> context,
+            uint accelerator_type,
+            nuint descriptor_size,
+            Ref descriptor,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_descriptor = descriptor)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_accelerator_intel*)CreateAcceleratorINTEL(
+                    __dsl_context,
+                    accelerator_type,
+                    descriptor_size,
+                    __dsl_descriptor,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
         [NativeName("clCreateBuffer")]
         [SupportedApiProfile(
             "opencl",
@@ -13746,6 +18626,60 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_mem*)CreateBufferWithProperties(
+                    __dsl_context,
+                    __dsl_properties,
+                    flags,
+                    size,
+                    __dsl_host_ptr,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
+        [NativeName("clCreateBufferWithPropertiesINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static _cl_mem* CreateBufferWithPropertiesINTEL(
+            _cl_context* context,
+            ulong* properties,
+            ulong flags,
+            nuint size,
+            void* host_ptr,
+            int* errcode_ret
+        ) =>
+            Underlying.Value!.CreateBufferWithPropertiesINTEL(
+                context,
+                properties,
+                flags,
+                size,
+                host_ptr,
+                errcode_ret
+            );
+
+        [NativeName("clCreateBufferWithPropertiesINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_mem> CreateBufferWithPropertiesINTEL(
+            Ref<_cl_context> context,
+            Ref<ulong> properties,
+            ulong flags,
+            nuint size,
+            Ref host_ptr,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_host_ptr = host_ptr)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_mem*)CreateBufferWithPropertiesINTEL(
                     __dsl_context,
                     __dsl_properties,
                     flags,
@@ -13881,6 +18815,52 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_command_queue*)CreateCommandQueueWithProperties(
+                    __dsl_context,
+                    __dsl_device,
+                    __dsl_properties,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
+        [NativeName("clCreateCommandQueueWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static _cl_command_queue* CreateCommandQueueWithPropertiesKHR(
+            _cl_context* context,
+            _cl_device_id* device,
+            ulong* properties,
+            int* errcode_ret
+        ) =>
+            Underlying.Value!.CreateCommandQueueWithPropertiesKHR(
+                context,
+                device,
+                properties,
+                errcode_ret
+            );
+
+        [NativeName("clCreateCommandQueueWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_command_queue> CreateCommandQueueWithPropertiesKHR(
+            Ref<_cl_context> context,
+            Ref<_cl_device_id> device,
+            Ref<ulong> properties,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_device_id* __dsl_device = device)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_command_queue*)CreateCommandQueueWithPropertiesKHR(
                     __dsl_context,
                     __dsl_device,
                     __dsl_properties,
@@ -14780,6 +19760,45 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clCreateProgramWithILKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static _cl_program* CreateProgramWithILKHR(
+            _cl_context* context,
+            void* il,
+            nuint length,
+            int* errcode_ret
+        ) => Underlying.Value!.CreateProgramWithILKHR(context, il, length, errcode_ret);
+
+        [NativeName("clCreateProgramWithILKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_program> CreateProgramWithILKHR(
+            Ref<_cl_context> context,
+            Ref il,
+            nuint length,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_il = il)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_program*)CreateProgramWithILKHR(
+                    __dsl_context,
+                    __dsl_il,
+                    length,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
         [NativeName("clCreateProgramWithSource")]
         [SupportedApiProfile(
             "opencl",
@@ -14989,6 +20008,42 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clCreateSemaphoreWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
+            _cl_context* context,
+            ulong* sema_props,
+            int* errcode_ret
+        ) => Underlying.Value!.CreateSemaphoreWithPropertiesKHR(context, sema_props, errcode_ret);
+
+        [NativeName("clCreateSemaphoreWithPropertiesKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
+            Ref<_cl_context> context,
+            Ref<ulong> sema_props,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (ulong* __dsl_sema_props = sema_props)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_semaphore_khr*)CreateSemaphoreWithPropertiesKHR(
+                    __dsl_context,
+                    __dsl_sema_props,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
         [NativeName("clCreateSubBuffer")]
         [SupportedApiProfile(
             "opencl",
@@ -15134,6 +20189,56 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clCreateSubDevicesEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int CreateSubDevicesEXT(
+            _cl_device_id* in_device,
+            ulong* properties,
+            uint num_entries,
+            _cl_device_id** out_devices,
+            uint* num_devices
+        ) =>
+            Underlying.Value!.CreateSubDevicesEXT(
+                in_device,
+                properties,
+                num_entries,
+                out_devices,
+                num_devices
+            );
+
+        [NativeName("clCreateSubDevicesEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int CreateSubDevicesEXT(
+            Ref<_cl_device_id> in_device,
+            Ref<ulong> properties,
+            uint num_entries,
+            Ref2D<_cl_device_id> out_devices,
+            Ref<uint> num_devices
+        )
+        {
+            fixed (uint* __dsl_num_devices = num_devices)
+            fixed (_cl_device_id** __dsl_out_devices = out_devices)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_device_id* __dsl_in_device = in_device)
+            {
+                return (int)CreateSubDevicesEXT(
+                    __dsl_in_device,
+                    __dsl_properties,
+                    num_entries,
+                    __dsl_out_devices,
+                    __dsl_num_devices
+                );
+            }
+        }
+
         [NativeName("clCreateUserEvent")]
         [SupportedApiProfile(
             "opencl",
@@ -15179,6 +20284,176 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_context* __dsl_context = context)
             {
                 return (_cl_event*)CreateUserEvent(__dsl_context, __dsl_errcode_ret);
+            }
+        }
+
+        [NativeName("clDeviceMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void* DeviceMemAllocINTEL(
+            _cl_context* context,
+            _cl_device_id* device,
+            ulong* properties,
+            nuint size,
+            uint alignment,
+            int* errcode_ret
+        ) =>
+            Underlying.Value!.DeviceMemAllocINTEL(
+                context,
+                device,
+                properties,
+                size,
+                alignment,
+                errcode_ret
+            );
+
+        [NativeName("clDeviceMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr DeviceMemAllocINTEL(
+            Ref<_cl_context> context,
+            Ref<_cl_device_id> device,
+            Ref<ulong> properties,
+            nuint size,
+            uint alignment,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_device_id* __dsl_device = device)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (void*)DeviceMemAllocINTEL(
+                    __dsl_context,
+                    __dsl_device,
+                    __dsl_properties,
+                    size,
+                    alignment,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
+        [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueAcquireExternalMemObjectsKHR(
+            _cl_command_queue* command_queue,
+            uint num_mem_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueAcquireExternalMemObjectsKHR(
+                command_queue,
+                num_mem_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueAcquireExternalMemObjectsKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_mem_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueAcquireExternalMemObjectsKHR(
+                    __dsl_command_queue,
+                    num_mem_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueAcquireGrallocObjectsIMG(
+            _cl_command_queue* command_queue,
+            uint num_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueAcquireGrallocObjectsIMG(
+                command_queue,
+                num_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueAcquireGrallocObjectsIMG(
+            Ref<_cl_command_queue> command_queue,
+            uint num_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueAcquireGrallocObjectsIMG(
+                    __dsl_command_queue,
+                    num_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
             }
         }
 
@@ -15965,6 +21240,75 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueGenerateMipmapIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueGenerateMipmapIMG(
+            _cl_command_queue* command_queue,
+            _cl_mem* src_image,
+            _cl_mem* dst_image,
+            uint mipmap_filter_mode,
+            nuint* array_region,
+            nuint* mip_region,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueGenerateMipmapIMG(
+                command_queue,
+                src_image,
+                dst_image,
+                mipmap_filter_mode,
+                array_region,
+                mip_region,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueGenerateMipmapIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueGenerateMipmapIMG(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_mem> src_image,
+            Ref<_cl_mem> dst_image,
+            uint mipmap_filter_mode,
+            Ref<nuint> array_region,
+            Ref<nuint> mip_region,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (nuint* __dsl_mip_region = mip_region)
+            fixed (nuint* __dsl_array_region = array_region)
+            fixed (_cl_mem* __dsl_dst_image = dst_image)
+            fixed (_cl_mem* __dsl_src_image = src_image)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueGenerateMipmapIMG(
+                    __dsl_command_queue,
+                    __dsl_src_image,
+                    __dsl_dst_image,
+                    mipmap_filter_mode,
+                    __dsl_array_region,
+                    __dsl_mip_region,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueMapBuffer")]
         [SupportedApiProfile(
             "opencl",
@@ -16286,6 +21630,364 @@ public unsafe partial class Cl : ICl, ICl.Static
             {
                 return (int)EnqueueMarkerWithWaitList(
                     __dsl_command_queue,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMemAdviseINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemAdviseINTEL(
+            _cl_command_queue* command_queue,
+            void* ptr,
+            nuint size,
+            uint advice,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueMemAdviseINTEL(
+                command_queue,
+                ptr,
+                size,
+                advice,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemAdviseINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemAdviseINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref ptr,
+            nuint size,
+            uint advice,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_ptr = ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMemAdviseINTEL(
+                    __dsl_command_queue,
+                    __dsl_ptr,
+                    size,
+                    advice,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMemcpyINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemcpyINTEL(
+            _cl_command_queue* command_queue,
+            uint blocking,
+            void* dst_ptr,
+            void* src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueMemcpyINTEL(
+                command_queue,
+                blocking,
+                dst_ptr,
+                src_ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemcpyINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemcpyINTEL(
+            Ref<_cl_command_queue> command_queue,
+            MaybeBool<uint> blocking,
+            Ref dst_ptr,
+            Ref src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_src_ptr = src_ptr)
+            fixed (void* __dsl_dst_ptr = dst_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMemcpyINTEL(
+                    __dsl_command_queue,
+                    (uint)blocking,
+                    __dsl_dst_ptr,
+                    __dsl_src_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMemFillINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemFillINTEL(
+            _cl_command_queue* command_queue,
+            void* dst_ptr,
+            void* pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueMemFillINTEL(
+                command_queue,
+                dst_ptr,
+                pattern,
+                pattern_size,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemFillINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemFillINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref dst_ptr,
+            Ref pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_pattern = pattern)
+            fixed (void* __dsl_dst_ptr = dst_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMemFillINTEL(
+                    __dsl_command_queue,
+                    __dsl_dst_ptr,
+                    __dsl_pattern,
+                    pattern_size,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMemsetINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemsetINTEL(
+            _cl_command_queue* command_queue,
+            void* dst_ptr,
+            int value,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueMemsetINTEL(
+                command_queue,
+                dst_ptr,
+                value,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMemsetINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMemsetINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref dst_ptr,
+            int value,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_dst_ptr = dst_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMemsetINTEL(
+                    __dsl_command_queue,
+                    __dsl_dst_ptr,
+                    value,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMigrateMemINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMigrateMemINTEL(
+            _cl_command_queue* command_queue,
+            void* ptr,
+            nuint size,
+            ulong flags,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueMigrateMemINTEL(
+                command_queue,
+                ptr,
+                size,
+                flags,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMigrateMemINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMigrateMemINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref ptr,
+            nuint size,
+            ulong flags,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_ptr = ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMigrateMemINTEL(
+                    __dsl_command_queue,
+                    __dsl_ptr,
+                    size,
+                    flags,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueMigrateMemObjectEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMigrateMemObjectEXT(
+            _cl_command_queue* command_queue,
+            uint num_mem_objects,
+            _cl_mem** mem_objects,
+            ulong flags,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueMigrateMemObjectEXT(
+                command_queue,
+                num_mem_objects,
+                mem_objects,
+                flags,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueMigrateMemObjectEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueMigrateMemObjectEXT(
+            Ref<_cl_command_queue> command_queue,
+            uint num_mem_objects,
+            Ref2D<_cl_mem> mem_objects,
+            ulong flags,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueMigrateMemObjectEXT(
+                    __dsl_command_queue,
+                    num_mem_objects,
+                    __dsl_mem_objects,
+                    flags,
                     num_events_in_wait_list,
                     __dsl_event_wait_list,
                     __dsl_event
@@ -16773,6 +22475,74 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueReadHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueReadHostPipeINTEL(
+            _cl_command_queue* command_queue,
+            _cl_program* program,
+            sbyte* pipe_symbol,
+            uint blocking_read,
+            void* ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueReadHostPipeINTEL(
+                command_queue,
+                program,
+                pipe_symbol,
+                blocking_read,
+                ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueReadHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueReadHostPipeINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_program> program,
+            Ref<sbyte> pipe_symbol,
+            MaybeBool<uint> blocking_read,
+            Ref ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_ptr = ptr)
+            fixed (sbyte* __dsl_pipe_symbol = pipe_symbol)
+            fixed (_cl_program* __dsl_program = program)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueReadHostPipeINTEL(
+                    __dsl_command_queue,
+                    __dsl_program,
+                    __dsl_pipe_symbol,
+                    (uint)blocking_read,
+                    __dsl_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueReadImage")]
         [SupportedApiProfile(
             "opencl",
@@ -16876,6 +22646,181 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueReleaseExternalMemObjectsKHR(
+            _cl_command_queue* command_queue,
+            uint num_mem_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueReleaseExternalMemObjectsKHR(
+                command_queue,
+                num_mem_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_memory"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueReleaseExternalMemObjectsKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_mem_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueReleaseExternalMemObjectsKHR(
+                    __dsl_command_queue,
+                    num_mem_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueReleaseGrallocObjectsIMG(
+            _cl_command_queue* command_queue,
+            uint num_objects,
+            _cl_mem** mem_objects,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueReleaseGrallocObjectsIMG(
+                command_queue,
+                num_objects,
+                mem_objects,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
+        [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueReleaseGrallocObjectsIMG(
+            Ref<_cl_command_queue> command_queue,
+            uint num_objects,
+            Ref2D<_cl_mem> mem_objects,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueReleaseGrallocObjectsIMG(
+                    __dsl_command_queue,
+                    num_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueSignalSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSignalSemaphoresKHR(
+            _cl_command_queue* command_queue,
+            uint num_sema_objects,
+            _cl_semaphore_khr** sema_objects,
+            ulong* sema_payload_list,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueSignalSemaphoresKHR(
+                command_queue,
+                num_sema_objects,
+                sema_objects,
+                sema_payload_list,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSignalSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSignalSemaphoresKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_sema_objects,
+            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<ulong> sema_payload_list,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
+            fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSignalSemaphoresKHR(
+                    __dsl_command_queue,
+                    num_sema_objects,
+                    __dsl_sema_objects,
+                    __dsl_sema_payload_list,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueSVMFree")]
         [SupportedApiProfile(
             "opencl",
@@ -16959,6 +22904,69 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmFreeARM(
+            _cl_command_queue* command_queue,
+            uint num_svm_pointers,
+            void** svm_pointers,
+            delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void> pfn_free_func,
+            void* user_data,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueSvmFreeARM(
+                command_queue,
+                num_svm_pointers,
+                svm_pointers,
+                pfn_free_func,
+                user_data,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmFreeARM(
+            Ref<_cl_command_queue> command_queue,
+            uint num_svm_pointers,
+            Ref2D svm_pointers,
+            delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void> pfn_free_func,
+            Ref user_data,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_user_data = user_data)
+            fixed (void** __dsl_svm_pointers = svm_pointers)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSvmFreeARM(
+                    __dsl_command_queue,
+                    num_svm_pointers,
+                    __dsl_svm_pointers,
+                    pfn_free_func,
+                    __dsl_user_data,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueSVMMap")]
         [SupportedApiProfile(
             "opencl",
@@ -17029,6 +23037,68 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_command_queue* __dsl_command_queue = command_queue)
             {
                 return (int)EnqueueSvmMap(
+                    __dsl_command_queue,
+                    (uint)blocking_map,
+                    flags,
+                    __dsl_svm_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueSVMMapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmMapARM(
+            _cl_command_queue* command_queue,
+            uint blocking_map,
+            ulong flags,
+            void* svm_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueSvmMapARM(
+                command_queue,
+                blocking_map,
+                flags,
+                svm_ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMMapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmMapARM(
+            Ref<_cl_command_queue> command_queue,
+            MaybeBool<uint> blocking_map,
+            ulong flags,
+            Ref svm_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_svm_ptr = svm_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSvmMapARM(
                     __dsl_command_queue,
                     (uint)blocking_map,
                     flags,
@@ -17124,6 +23194,69 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueSVMMemcpyARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmMemcpyARM(
+            _cl_command_queue* command_queue,
+            uint blocking_copy,
+            void* dst_ptr,
+            void* src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueSvmMemcpyARM(
+                command_queue,
+                blocking_copy,
+                dst_ptr,
+                src_ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMMemcpyARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmMemcpyARM(
+            Ref<_cl_command_queue> command_queue,
+            MaybeBool<uint> blocking_copy,
+            Ref dst_ptr,
+            Ref src_ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_src_ptr = src_ptr)
+            fixed (void* __dsl_dst_ptr = dst_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSvmMemcpyARM(
+                    __dsl_command_queue,
+                    (uint)blocking_copy,
+                    __dsl_dst_ptr,
+                    __dsl_src_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueSVMMemFill")]
         [SupportedApiProfile(
             "opencl",
@@ -17195,6 +23328,69 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_command_queue* __dsl_command_queue = command_queue)
             {
                 return (int)EnqueueSvmMemFill(
+                    __dsl_command_queue,
+                    __dsl_svm_ptr,
+                    __dsl_pattern,
+                    pattern_size,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueSVMMemFillARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmMemFillARM(
+            _cl_command_queue* command_queue,
+            void* svm_ptr,
+            void* pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueSvmMemFillARM(
+                command_queue,
+                svm_ptr,
+                pattern,
+                pattern_size,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMMemFillARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmMemFillARM(
+            Ref<_cl_command_queue> command_queue,
+            Ref svm_ptr,
+            Ref pattern,
+            nuint pattern_size,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_pattern = pattern)
+            fixed (void* __dsl_svm_ptr = svm_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSvmMemFillARM(
                     __dsl_command_queue,
                     __dsl_svm_ptr,
                     __dsl_pattern,
@@ -17339,6 +23535,56 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_command_queue* __dsl_command_queue = command_queue)
             {
                 return (int)EnqueueSvmUnmap(
+                    __dsl_command_queue,
+                    __dsl_svm_ptr,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
+        [NativeName("clEnqueueSVMUnmapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmUnmapARM(
+            _cl_command_queue* command_queue,
+            void* svm_ptr,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueSvmUnmapARM(
+                command_queue,
+                svm_ptr,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueSVMUnmapARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueSvmUnmapARM(
+            Ref<_cl_command_queue> command_queue,
+            Ref svm_ptr,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_svm_ptr = svm_ptr)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueSvmUnmapARM(
                     __dsl_command_queue,
                     __dsl_svm_ptr,
                     num_events_in_wait_list,
@@ -17566,6 +23812,65 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueWaitSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueWaitSemaphoresKHR(
+            _cl_command_queue* command_queue,
+            uint num_sema_objects,
+            _cl_semaphore_khr** sema_objects,
+            ulong* sema_payload_list,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueWaitSemaphoresKHR(
+                command_queue,
+                num_sema_objects,
+                sema_objects,
+                sema_payload_list,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueWaitSemaphoresKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueWaitSemaphoresKHR(
+            Ref<_cl_command_queue> command_queue,
+            uint num_sema_objects,
+            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<ulong> sema_payload_list,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
+            fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueWaitSemaphoresKHR(
+                    __dsl_command_queue,
+                    num_sema_objects,
+                    __dsl_sema_objects,
+                    __dsl_sema_payload_list,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueWriteBuffer")]
         [SupportedApiProfile(
             "opencl",
@@ -17773,6 +24078,74 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clEnqueueWriteHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueWriteHostPipeINTEL(
+            _cl_command_queue* command_queue,
+            _cl_program* program,
+            sbyte* pipe_symbol,
+            uint blocking_write,
+            void* ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            _cl_event** event_wait_list,
+            _cl_event** @event
+        ) =>
+            Underlying.Value!.EnqueueWriteHostPipeINTEL(
+                command_queue,
+                program,
+                pipe_symbol,
+                blocking_write,
+                ptr,
+                size,
+                num_events_in_wait_list,
+                event_wait_list,
+                @event
+            );
+
+        [NativeName("clEnqueueWriteHostPipeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int EnqueueWriteHostPipeINTEL(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_program> program,
+            Ref<sbyte> pipe_symbol,
+            MaybeBool<uint> blocking_write,
+            Ref ptr,
+            nuint size,
+            uint num_events_in_wait_list,
+            Ref2D<_cl_event> event_wait_list,
+            Ref2D<_cl_event> @event
+        )
+        {
+            fixed (_cl_event** __dsl_event = @event)
+            fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+            fixed (void* __dsl_ptr = ptr)
+            fixed (sbyte* __dsl_pipe_symbol = pipe_symbol)
+            fixed (_cl_program* __dsl_program = program)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)EnqueueWriteHostPipeINTEL(
+                    __dsl_command_queue,
+                    __dsl_program,
+                    __dsl_pipe_symbol,
+                    (uint)blocking_write,
+                    __dsl_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+            }
+        }
+
         [NativeName("clEnqueueWriteImage")]
         [SupportedApiProfile(
             "opencl",
@@ -17971,6 +24344,55 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_command_queue* __dsl_command_queue = command_queue)
             {
                 return (int)Flush(__dsl_command_queue);
+            }
+        }
+
+        [NativeName("clGetAcceleratorInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetAcceleratorInfoINTEL(
+            _cl_accelerator_intel* accelerator,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            Underlying.Value!.GetAcceleratorInfoINTEL(
+                accelerator,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetAcceleratorInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetAcceleratorInfoINTEL(
+            Ref<_cl_accelerator_intel> accelerator,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
+            {
+                return (int)GetAcceleratorInfoINTEL(
+                    __dsl_accelerator,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
             }
         }
 
@@ -18239,6 +24661,68 @@ public unsafe partial class Cl : ICl, ICl.Static
                     num_entries,
                     __dsl_devices,
                     __dsl_num_devices
+                );
+            }
+        }
+
+        [NativeName("clGetDeviceImageInfoQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetDeviceImageInfoQCOM(
+            _cl_device_id* device,
+            nuint image_width,
+            nuint image_height,
+            ClImageFormat* image_format,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            Underlying.Value!.GetDeviceImageInfoQCOM(
+                device,
+                image_width,
+                image_height,
+                image_format,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetDeviceImageInfoQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
+        [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetDeviceImageInfoQCOM(
+            Ref<_cl_device_id> device,
+            nuint image_width,
+            nuint image_height,
+            Ref<ClImageFormat> image_format,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (_cl_device_id* __dsl_device = device)
+            {
+                return (int)GetDeviceImageInfoQCOM(
+                    __dsl_device,
+                    image_width,
+                    image_height,
+                    __dsl_image_format,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
                 );
             }
         }
@@ -18605,6 +25089,50 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clGetICDLoaderInfoOCLICD")]
+        [SupportedApiProfile("opencl", ["cl_loader_info"])]
+        [NativeFunction("opencl", EntryPoint = "clGetICDLoaderInfoOCLICD")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetIcdLoaderInfoOclicd(
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            Underlying.Value!.GetIcdLoaderInfoOclicd(
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetICDLoaderInfoOCLICD")]
+        [SupportedApiProfile("opencl", ["cl_loader_info"])]
+        [NativeFunction("opencl", EntryPoint = "clGetICDLoaderInfoOCLICD")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetIcdLoaderInfoOclicd(
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            {
+                return (int)GetIcdLoaderInfoOclicd(
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
         [NativeName("clGetImageInfo")]
         [SupportedApiProfile(
             "opencl",
@@ -18672,6 +25200,82 @@ public unsafe partial class Cl : ICl, ICl.Static
             {
                 return (int)GetImageInfo(
                     __dsl_image,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
+        [NativeName("clGetImageRequirementsInfoEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_image_requirements_info"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetImageRequirementsInfoEXT(
+            _cl_context* context,
+            ulong* properties,
+            ulong flags,
+            ClImageFormat* image_format,
+            ClImageDesc* image_desc,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            Underlying.Value!.GetImageRequirementsInfoEXT(
+                context,
+                properties,
+                flags,
+                image_format,
+                image_desc,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetImageRequirementsInfoEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_image_requirements_info"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetImageRequirementsInfoEXT(
+            Ref<_cl_context> context,
+            Ref<ulong> properties,
+            ulong flags,
+            Ref<ClImageFormat> image_format,
+            Ref<ClImageDesc> image_desc,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (ClImageDesc* __dsl_image_desc = image_desc)
+            fixed (ClImageFormat* __dsl_image_format = image_format)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)GetImageRequirementsInfoEXT(
+                    __dsl_context,
+                    __dsl_properties,
+                    flags,
+                    __dsl_image_format,
+                    __dsl_image_desc,
                     param_name,
                     param_value_size,
                     __dsl_param_value,
@@ -18901,6 +25505,71 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clGetKernelSubGroupInfoKHR")]
+        [Obsolete]
+        [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
+        [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetKernelSubGroupInfoKHR(
+            _cl_kernel* in_kernel,
+            _cl_device_id* in_device,
+            uint param_name,
+            nuint input_value_size,
+            void* input_value,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            Underlying.Value!.GetKernelSubGroupInfoKHR(
+                in_kernel,
+                in_device,
+                param_name,
+                input_value_size,
+                input_value,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetKernelSubGroupInfoKHR")]
+        [Obsolete]
+        [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
+        [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetKernelSubGroupInfoKHR(
+            Ref<_cl_kernel> in_kernel,
+            Ref<_cl_device_id> in_device,
+            uint param_name,
+            nuint input_value_size,
+            Ref input_value,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (void* __dsl_input_value = input_value)
+            fixed (_cl_device_id* __dsl_in_device = in_device)
+            fixed (_cl_kernel* __dsl_in_kernel = in_kernel)
+            {
+                return (int)GetKernelSubGroupInfoKHR(
+                    __dsl_in_kernel,
+                    __dsl_in_device,
+                    param_name,
+                    input_value_size,
+                    __dsl_input_value,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
         [NativeName("clGetKernelSuggestedLocalWorkSize")]
         [SupportedApiProfile("opencl", ["CL_VERSION_3_1"], MinVersion = "3.1")]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSize")]
@@ -18946,6 +25615,61 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_command_queue* __dsl_command_queue = command_queue)
             {
                 return (int)GetKernelSuggestedLocalWorkSize(
+                    __dsl_command_queue,
+                    __dsl_kernel,
+                    work_dim,
+                    __dsl_global_work_offset,
+                    __dsl_global_work_size,
+                    __dsl_suggested_local_work_size
+                );
+            }
+        }
+
+        [NativeName("clGetKernelSuggestedLocalWorkSizeKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
+        [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetKernelSuggestedLocalWorkSizeKHR(
+            _cl_command_queue* command_queue,
+            _cl_kernel* kernel,
+            uint work_dim,
+            nuint* global_work_offset,
+            nuint* global_work_size,
+            nuint* suggested_local_work_size
+        ) =>
+            Underlying.Value!.GetKernelSuggestedLocalWorkSizeKHR(
+                command_queue,
+                kernel,
+                work_dim,
+                global_work_offset,
+                global_work_size,
+                suggested_local_work_size
+            );
+
+        [NativeName("clGetKernelSuggestedLocalWorkSizeKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
+        [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetKernelSuggestedLocalWorkSizeKHR(
+            Ref<_cl_command_queue> command_queue,
+            Ref<_cl_kernel> kernel,
+            uint work_dim,
+            Ref<nuint> global_work_offset,
+            Ref<nuint> global_work_size,
+            Ref<nuint> suggested_local_work_size
+        )
+        {
+            fixed (nuint* __dsl_suggested_local_work_size = suggested_local_work_size)
+            fixed (nuint* __dsl_global_work_size = global_work_size)
+            fixed (nuint* __dsl_global_work_offset = global_work_offset)
+            fixed (_cl_kernel* __dsl_kernel = kernel)
+            fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+            {
+                return (int)GetKernelSuggestedLocalWorkSizeKHR(
                     __dsl_command_queue,
                     __dsl_kernel,
                     work_dim,
@@ -19028,6 +25752,60 @@ public unsafe partial class Cl : ICl, ICl.Static
                 return (int)GetKernelWorkGroupInfo(
                     __dsl_kernel,
                     __dsl_device,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
+        [NativeName("clGetMemAllocInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetMemAllocInfoINTEL(
+            _cl_context* context,
+            void* ptr,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            Underlying.Value!.GetMemAllocInfoINTEL(
+                context,
+                ptr,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetMemAllocInfoINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetMemAllocInfoINTEL(
+            Ref<_cl_context> context,
+            Ref ptr,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (void* __dsl_ptr = ptr)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)GetMemAllocInfoINTEL(
+                    __dsl_context,
+                    __dsl_ptr,
                     param_name,
                     param_value_size,
                     __dsl_param_value,
@@ -19542,6 +26320,117 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clGetSemaphoreHandleForTypeKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore"],
+            ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetSemaphoreHandleForTypeKHR(
+            _cl_semaphore_khr* sema_object,
+            _cl_device_id* device,
+            uint handle_type,
+            nuint handle_size,
+            void* handle_ptr,
+            nuint* handle_size_ret
+        ) =>
+            Underlying.Value!.GetSemaphoreHandleForTypeKHR(
+                sema_object,
+                device,
+                handle_type,
+                handle_size,
+                handle_ptr,
+                handle_size_ret
+            );
+
+        [NativeName("clGetSemaphoreHandleForTypeKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore"],
+            ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetSemaphoreHandleForTypeKHR(
+            Ref<_cl_semaphore_khr> sema_object,
+            Ref<_cl_device_id> device,
+            uint handle_type,
+            nuint handle_size,
+            Ref handle_ptr,
+            Ref<nuint> handle_size_ret
+        )
+        {
+            fixed (nuint* __dsl_handle_size_ret = handle_size_ret)
+            fixed (void* __dsl_handle_ptr = handle_ptr)
+            fixed (_cl_device_id* __dsl_device = device)
+            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+            {
+                return (int)GetSemaphoreHandleForTypeKHR(
+                    __dsl_sema_object,
+                    __dsl_device,
+                    handle_type,
+                    handle_size,
+                    __dsl_handle_ptr,
+                    __dsl_handle_size_ret
+                );
+            }
+        }
+
+        [NativeName("clGetSemaphoreInfoKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetSemaphoreInfoKHR(
+            _cl_semaphore_khr* sema_object,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            Underlying.Value!.GetSemaphoreInfoKHR(
+                sema_object,
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetSemaphoreInfoKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetSemaphoreInfoKHR(
+            Ref<_cl_semaphore_khr> sema_object,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+            {
+                return (int)GetSemaphoreInfoKHR(
+                    __dsl_sema_object,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
         [NativeName("clGetSupportedImageFormats")]
         [SupportedApiProfile(
             "opencl",
@@ -19617,6 +26506,191 @@ public unsafe partial class Cl : ICl, ICl.Static
                     num_entries,
                     __dsl_image_formats,
                     __dsl_num_image_formats
+                );
+            }
+        }
+
+        [NativeName("clHostMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void* HostMemAllocINTEL(
+            _cl_context* context,
+            ulong* properties,
+            nuint size,
+            uint alignment,
+            int* errcode_ret
+        ) => Underlying.Value!.HostMemAllocINTEL(context, properties, size, alignment, errcode_ret);
+
+        [NativeName("clHostMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr HostMemAllocINTEL(
+            Ref<_cl_context> context,
+            Ref<ulong> properties,
+            nuint size,
+            uint alignment,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (void*)HostMemAllocINTEL(
+                    __dsl_context,
+                    __dsl_properties,
+                    size,
+                    alignment,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
+        [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void* IcdGetFunctionAddressForPlatformKHR(
+            _cl_platform_id* platform,
+            sbyte* func_name
+        ) => Underlying.Value!.IcdGetFunctionAddressForPlatformKHR(platform, func_name);
+
+        [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr IcdGetFunctionAddressForPlatformKHR(
+            Ref<_cl_platform_id> platform,
+            Ref<sbyte> func_name
+        )
+        {
+            fixed (sbyte* __dsl_func_name = func_name)
+            fixed (_cl_platform_id* __dsl_platform = platform)
+            {
+                return (void*)IcdGetFunctionAddressForPlatformKHR(__dsl_platform, __dsl_func_name);
+            }
+        }
+
+        [NativeName("clIcdGetPlatformIDsKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int IcdGetPlatformIDsKHR(
+            uint num_entries,
+            _cl_platform_id** platforms,
+            uint* num_platforms
+        ) => Underlying.Value!.IcdGetPlatformIDsKHR(num_entries, platforms, num_platforms);
+
+        [NativeName("clIcdGetPlatformIDsKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int IcdGetPlatformIDsKHR(
+            uint num_entries,
+            Ref2D<_cl_platform_id> platforms,
+            Ref<uint> num_platforms
+        )
+        {
+            fixed (uint* __dsl_num_platforms = num_platforms)
+            fixed (_cl_platform_id** __dsl_platforms = platforms)
+            {
+                return (int)IcdGetPlatformIDsKHR(num_entries, __dsl_platforms, __dsl_num_platforms);
+            }
+        }
+
+        [NativeName("clIcdSetPlatformDispatchDataKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int IcdSetPlatformDispatchDataKHR(
+            _cl_platform_id* platform,
+            void* dispatch_data
+        ) => Underlying.Value!.IcdSetPlatformDispatchDataKHR(platform, dispatch_data);
+
+        [NativeName("clIcdSetPlatformDispatchDataKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+        [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int IcdSetPlatformDispatchDataKHR(
+            Ref<_cl_platform_id> platform,
+            Ref dispatch_data
+        )
+        {
+            fixed (void* __dsl_dispatch_data = dispatch_data)
+            fixed (_cl_platform_id* __dsl_platform = platform)
+            {
+                return (int)IcdSetPlatformDispatchDataKHR(__dsl_platform, __dsl_dispatch_data);
+            }
+        }
+
+        [NativeName("clImportMemoryARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static _cl_mem* ImportMemoryARM(
+            _cl_context* context,
+            ulong flags,
+            nint* properties,
+            void* memory,
+            nuint size,
+            int* errcode_ret
+        ) =>
+            Underlying.Value!.ImportMemoryARM(
+                context,
+                flags,
+                properties,
+                memory,
+                size,
+                errcode_ret
+            );
+
+        [NativeName("clImportMemoryARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr<_cl_mem> ImportMemoryARM(
+            Ref<_cl_context> context,
+            ulong flags,
+            Ref<nint> properties,
+            Ref memory,
+            nuint size,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (void* __dsl_memory = memory)
+            fixed (nint* __dsl_properties = properties)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (_cl_mem*)ImportMemoryARM(
+                    __dsl_context,
+                    flags,
+                    __dsl_properties,
+                    __dsl_memory,
+                    size,
+                    __dsl_errcode_ret
                 );
             }
         }
@@ -19708,6 +26782,218 @@ public unsafe partial class Cl : ICl, ICl.Static
                     __dsl_user_data,
                     __dsl_errcode_ret
                 );
+            }
+        }
+
+        [NativeName("clLogMessagesToStderrAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void LogMessagesToStderrAPPLE(
+            sbyte* errstr,
+            void* private_info,
+            nuint cb,
+            void* user_data
+        ) => Underlying.Value!.LogMessagesToStderrAPPLE(errstr, private_info, cb, user_data);
+
+        [NativeName("clLogMessagesToStderrAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void LogMessagesToStderrAPPLE(
+            Ref<sbyte> errstr,
+            Ref private_info,
+            nuint cb,
+            Ref user_data
+        )
+        {
+            fixed (void* __dsl_user_data = user_data)
+            fixed (void* __dsl_private_info = private_info)
+            fixed (sbyte* __dsl_errstr = errstr)
+            {
+                LogMessagesToStderrAPPLE(__dsl_errstr, __dsl_private_info, cb, __dsl_user_data);
+            }
+        }
+
+        [NativeName("clLogMessagesToStdoutAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void LogMessagesToStdoutAPPLE(
+            sbyte* errstr,
+            void* private_info,
+            nuint cb,
+            void* user_data
+        ) => Underlying.Value!.LogMessagesToStdoutAPPLE(errstr, private_info, cb, user_data);
+
+        [NativeName("clLogMessagesToStdoutAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void LogMessagesToStdoutAPPLE(
+            Ref<sbyte> errstr,
+            Ref private_info,
+            nuint cb,
+            Ref user_data
+        )
+        {
+            fixed (void* __dsl_user_data = user_data)
+            fixed (void* __dsl_private_info = private_info)
+            fixed (sbyte* __dsl_errstr = errstr)
+            {
+                LogMessagesToStdoutAPPLE(__dsl_errstr, __dsl_private_info, cb, __dsl_user_data);
+            }
+        }
+
+        [NativeName("clLogMessagesToSystemLogAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void LogMessagesToSystemLogAPPLE(
+            sbyte* errstr,
+            void* private_info,
+            nuint cb,
+            void* user_data
+        ) => Underlying.Value!.LogMessagesToSystemLogAPPLE(errstr, private_info, cb, user_data);
+
+        [NativeName("clLogMessagesToSystemLogAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+        [NativeFunction("opencl", EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void LogMessagesToSystemLogAPPLE(
+            Ref<sbyte> errstr,
+            Ref private_info,
+            nuint cb,
+            Ref user_data
+        )
+        {
+            fixed (void* __dsl_user_data = user_data)
+            fixed (void* __dsl_private_info = private_info)
+            fixed (sbyte* __dsl_errstr = errstr)
+            {
+                LogMessagesToSystemLogAPPLE(__dsl_errstr, __dsl_private_info, cb, __dsl_user_data);
+            }
+        }
+
+        [NativeName("clMemBlockingFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int MemBlockingFreeINTEL(_cl_context* context, void* ptr) =>
+            Underlying.Value!.MemBlockingFreeINTEL(context, ptr);
+
+        [NativeName("clMemBlockingFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int MemBlockingFreeINTEL(Ref<_cl_context> context, Ref ptr)
+        {
+            fixed (void* __dsl_ptr = ptr)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)MemBlockingFreeINTEL(__dsl_context, __dsl_ptr);
+            }
+        }
+
+        [NativeName("clMemFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int MemFreeINTEL(_cl_context* context, void* ptr) =>
+            Underlying.Value!.MemFreeINTEL(context, ptr);
+
+        [NativeName("clMemFreeINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int MemFreeINTEL(Ref<_cl_context> context, Ref ptr)
+        {
+            fixed (void* __dsl_ptr = ptr)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)MemFreeINTEL(__dsl_context, __dsl_ptr);
+            }
+        }
+
+        [NativeName("clReImportSemaphoreSyncFdKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore_sync_fd"],
+            ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReImportSemaphoreSyncFdKHR(
+            _cl_semaphore_khr* sema_object,
+            ulong* reimport_props,
+            int fd
+        ) => Underlying.Value!.ReImportSemaphoreSyncFdKHR(sema_object, reimport_props, fd);
+
+        [NativeName("clReImportSemaphoreSyncFdKHR")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_khr_external_semaphore_sync_fd"],
+            ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReImportSemaphoreSyncFdKHR(
+            Ref<_cl_semaphore_khr> sema_object,
+            Ref<ulong> reimport_props,
+            int fd
+        )
+        {
+            fixed (ulong* __dsl_reimport_props = reimport_props)
+            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+            {
+                return (int)ReImportSemaphoreSyncFdKHR(__dsl_sema_object, __dsl_reimport_props, fd);
+            }
+        }
+
+        [NativeName("clReleaseAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+            Underlying.Value!.ReleaseAcceleratorINTEL(accelerator);
+
+        [NativeName("clReleaseAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
+        {
+            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
+            {
+                return (int)ReleaseAcceleratorINTEL(__dsl_accelerator);
             }
         }
 
@@ -19851,6 +27137,29 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_device_id* __dsl_device = device)
             {
                 return (int)ReleaseDevice(__dsl_device);
+            }
+        }
+
+        [NativeName("clReleaseDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReleaseDeviceEXT(_cl_device_id* device) =>
+            Underlying.Value!.ReleaseDeviceEXT(device);
+
+        [NativeName("clReleaseDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReleaseDeviceEXT(Ref<_cl_device_id> device)
+        {
+            fixed (_cl_device_id* __dsl_device = device)
+            {
+                return (int)ReleaseDeviceEXT(__dsl_device);
             }
         }
 
@@ -20098,6 +27407,52 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clReleaseSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+            Underlying.Value!.ReleaseSemaphoreKHR(sema_object);
+
+        [NativeName("clReleaseSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
+        {
+            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+            {
+                return (int)ReleaseSemaphoreKHR(__dsl_sema_object);
+            }
+        }
+
+        [NativeName("clRetainAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+            Underlying.Value!.RetainAcceleratorINTEL(accelerator);
+
+        [NativeName("clRetainAcceleratorINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
+        {
+            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
+            {
+                return (int)RetainAcceleratorINTEL(__dsl_accelerator);
+            }
+        }
+
         [NativeName("clRetainCommandQueue")]
         [SupportedApiProfile(
             "opencl",
@@ -20238,6 +27593,29 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_device_id* __dsl_device = device)
             {
                 return (int)RetainDevice(__dsl_device);
+            }
+        }
+
+        [NativeName("clRetainDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int RetainDeviceEXT(_cl_device_id* device) =>
+            Underlying.Value!.RetainDeviceEXT(device);
+
+        [NativeName("clRetainDeviceEXT")]
+        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int RetainDeviceEXT(Ref<_cl_device_id> device)
+        {
+            fixed (_cl_device_id* __dsl_device = device)
+            {
+                return (int)RetainDeviceEXT(__dsl_device);
             }
         }
 
@@ -20485,6 +27863,56 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clRetainSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int RetainSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+            Underlying.Value!.RetainSemaphoreKHR(sema_object);
+
+        [NativeName("clRetainSemaphoreKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+        [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
+        {
+            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+            {
+                return (int)RetainSemaphoreKHR(__dsl_sema_object);
+            }
+        }
+
+        [NativeName("clSetContentSizeBufferPoCL")]
+        [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
+        [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetContentSizeBufferPOCL(_cl_mem* buffer, _cl_mem* content_size_buffer) =>
+            Underlying.Value!.SetContentSizeBufferPOCL(buffer, content_size_buffer);
+
+        [NativeName("clSetContentSizeBufferPoCL")]
+        [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
+        [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetContentSizeBufferPOCL(
+            Ref<_cl_mem> buffer,
+            Ref<_cl_mem> content_size_buffer
+        )
+        {
+            fixed (_cl_mem* __dsl_content_size_buffer = content_size_buffer)
+            fixed (_cl_mem* __dsl_buffer = buffer)
+            {
+                return (int)SetContentSizeBufferPOCL(__dsl_buffer, __dsl_content_size_buffer);
+            }
+        }
+
         [NativeName("clSetContextDestructorCallback")]
         [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
         [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
@@ -20691,6 +28119,75 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clSetKernelArgDevicePointerEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_buffer_device_address"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelArgDevicePointerEXT(
+            _cl_kernel* kernel,
+            uint arg_index,
+            ulong arg_value
+        ) => Underlying.Value!.SetKernelArgDevicePointerEXT(kernel, arg_index, arg_value);
+
+        [NativeName("clSetKernelArgDevicePointerEXT")]
+        [SupportedApiProfile(
+            "opencl",
+            ["cl_ext_buffer_device_address"],
+            ImpliesSets = ["CL_VERSION_3_0"]
+        )]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelArgDevicePointerEXT(
+            Ref<_cl_kernel> kernel,
+            uint arg_index,
+            ulong arg_value
+        )
+        {
+            fixed (_cl_kernel* __dsl_kernel = kernel)
+            {
+                return (int)SetKernelArgDevicePointerEXT(__dsl_kernel, arg_index, arg_value);
+            }
+        }
+
+        [NativeName("clSetKernelArgMemPointerINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelArgMemPointerINTEL(
+            _cl_kernel* kernel,
+            uint arg_index,
+            void* arg_value
+        ) => Underlying.Value!.SetKernelArgMemPointerINTEL(kernel, arg_index, arg_value);
+
+        [NativeName("clSetKernelArgMemPointerINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelArgMemPointerINTEL(
+            Ref<_cl_kernel> kernel,
+            uint arg_index,
+            Ref arg_value
+        )
+        {
+            fixed (void* __dsl_arg_value = arg_value)
+            fixed (_cl_kernel* __dsl_kernel = kernel)
+            {
+                return (int)SetKernelArgMemPointerINTEL(__dsl_kernel, arg_index, __dsl_arg_value);
+            }
+        }
+
         [NativeName("clSetKernelArgSVMPointer")]
         [SupportedApiProfile(
             "opencl",
@@ -20739,6 +28236,37 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_kernel* __dsl_kernel = kernel)
             {
                 return (int)SetKernelArgSvmPointer(__dsl_kernel, arg_index, __dsl_arg_value);
+            }
+        }
+
+        [NativeName("clSetKernelArgSVMPointerARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelArgSvmPointerARM(
+            _cl_kernel* kernel,
+            uint arg_index,
+            void* arg_value
+        ) => Underlying.Value!.SetKernelArgSvmPointerARM(kernel, arg_index, arg_value);
+
+        [NativeName("clSetKernelArgSVMPointerARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelArgSvmPointerARM(
+            Ref<_cl_kernel> kernel,
+            uint arg_index,
+            Ref arg_value
+        )
+        {
+            fixed (void* __dsl_arg_value = arg_value)
+            fixed (_cl_kernel* __dsl_kernel = kernel)
+            {
+                return (int)SetKernelArgSvmPointerARM(__dsl_kernel, arg_index, __dsl_arg_value);
             }
         }
 
@@ -20800,6 +28328,81 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clSetKernelExecInfoARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelExecInfoARM(
+            _cl_kernel* kernel,
+            uint param_name,
+            nuint param_value_size,
+            void* param_value
+        ) =>
+            Underlying.Value!.SetKernelExecInfoARM(
+                kernel,
+                param_name,
+                param_value_size,
+                param_value
+            );
+
+        [NativeName("clSetKernelExecInfoARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetKernelExecInfoARM(
+            Ref<_cl_kernel> kernel,
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value
+        )
+        {
+            fixed (void* __dsl_param_value = param_value)
+            fixed (_cl_kernel* __dsl_kernel = kernel)
+            {
+                return (int)SetKernelExecInfoARM(
+                    __dsl_kernel,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value
+                );
+            }
+        }
+
+        [NativeName("clSetMemObjectDestructorAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
+        [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetMemObjectDestructorAPPLE(
+            _cl_mem* memobj,
+            delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
+            void* user_data
+        ) => Underlying.Value!.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
+
+        [NativeName("clSetMemObjectDestructorAPPLE")]
+        [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
+        [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetMemObjectDestructorAPPLE(
+            Ref<_cl_mem> memobj,
+            delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
+            Ref user_data
+        )
+        {
+            fixed (void* __dsl_user_data = user_data)
+            fixed (_cl_mem* __dsl_memobj = memobj)
+            {
+                return (int)SetMemObjectDestructorAPPLE(__dsl_memobj, pfn_notify, __dsl_user_data);
+            }
+        }
+
         [NativeName("clSetMemObjectDestructorCallback")]
         [SupportedApiProfile(
             "opencl",
@@ -20856,6 +28459,29 @@ public unsafe partial class Cl : ICl, ICl.Static
                     pfn_notify,
                     __dsl_user_data
                 );
+            }
+        }
+
+        [NativeName("clSetPerfHintQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
+        [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetPerfHintQCOM(_cl_context* context, uint perf_hint) =>
+            Underlying.Value!.SetPerfHintQCOM(context, perf_hint);
+
+        [NativeName("clSetPerfHintQCOM")]
+        [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
+        [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int SetPerfHintQCOM(Ref<_cl_context> context, uint perf_hint)
+        {
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)SetPerfHintQCOM(__dsl_context, perf_hint);
             }
         }
 
@@ -20999,6 +28625,60 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clSharedMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void* SharedMemAllocINTEL(
+            _cl_context* context,
+            _cl_device_id* device,
+            ulong* properties,
+            nuint size,
+            uint alignment,
+            int* errcode_ret
+        ) =>
+            Underlying.Value!.SharedMemAllocINTEL(
+                context,
+                device,
+                properties,
+                size,
+                alignment,
+                errcode_ret
+            );
+
+        [NativeName("clSharedMemAllocINTEL")]
+        [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr SharedMemAllocINTEL(
+            Ref<_cl_context> context,
+            Ref<_cl_device_id> device,
+            Ref<ulong> properties,
+            nuint size,
+            uint alignment,
+            Ref<int> errcode_ret
+        )
+        {
+            fixed (int* __dsl_errcode_ret = errcode_ret)
+            fixed (ulong* __dsl_properties = properties)
+            fixed (_cl_device_id* __dsl_device = device)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (void*)SharedMemAllocINTEL(
+                    __dsl_context,
+                    __dsl_device,
+                    __dsl_properties,
+                    size,
+                    alignment,
+                    __dsl_errcode_ret
+                );
+            }
+        }
+
         [NativeName("clSVMAlloc")]
         [SupportedApiProfile(
             "opencl",
@@ -21051,6 +28731,38 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clSVMAllocARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void* SvmAllocARM(
+            _cl_context* context,
+            ulong flags,
+            nuint size,
+            uint alignment
+        ) => Underlying.Value!.SvmAllocARM(context, flags, size, alignment);
+
+        [NativeName("clSVMAllocARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static Ptr SvmAllocARM(
+            Ref<_cl_context> context,
+            ulong flags,
+            nuint size,
+            uint alignment
+        )
+        {
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (void*)SvmAllocARM(__dsl_context, flags, size, alignment);
+            }
+        }
+
         [NativeName("clSVMFree")]
         [SupportedApiProfile(
             "opencl",
@@ -21092,6 +28804,53 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_context* __dsl_context = context)
             {
                 SvmFree(__dsl_context, __dsl_svm_pointer);
+            }
+        }
+
+        [NativeName("clSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SvmFreeARM(_cl_context* context, void* svm_pointer) =>
+            Underlying.Value!.SvmFreeARM(context, svm_pointer);
+
+        [NativeName("clSVMFreeARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void SvmFreeARM(Ref<_cl_context> context, Ref svm_pointer)
+        {
+            fixed (void* __dsl_svm_pointer = svm_pointer)
+            fixed (_cl_context* __dsl_context = context)
+            {
+                SvmFreeARM(__dsl_context, __dsl_svm_pointer);
+            }
+        }
+
+        [NativeName("clTerminateContextKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
+        [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int TerminateContextKHR(_cl_context* context) =>
+            Underlying.Value!.TerminateContextKHR(context);
+
+        [NativeName("clTerminateContextKHR")]
+        [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
+        [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int TerminateContextKHR(Ref<_cl_context> context)
+        {
+            fixed (_cl_context* __dsl_context = context)
+            {
+                return (int)TerminateContextKHR(__dsl_context);
             }
         }
 
@@ -21263,6 +29022,1370 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["CL_VERSION_3_1"], MinVersion = "3.1")]
     public const int LuidSize = 8;
 
+    [NativeName("CL_KHR_FP64_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrFp64ExtensionName => "cl_khr_fp64"u8;
+
+    [NativeName("CL_KHR_FP64_EXTENSION_VERSION")]
+    public const int KhrFp64ExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_FP16_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrFp16ExtensionName => "cl_khr_fp16"u8;
+
+    [NativeName("CL_KHR_FP16_EXTENSION_VERSION")]
+    public const int KhrFp16ExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_APPLE_SETMEMOBJECTDESTRUCTOR_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> AppleSetmemobjectdestructorExtensionName =>
+        "cl_APPLE_SetMemObjectDestructor"u8;
+
+    [NativeName("CL_APPLE_SETMEMOBJECTDESTRUCTOR_EXTENSION_VERSION")]
+    public const int AppleSetmemobjectdestructorExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_APPLE_CONTEXTLOGGINGFUNCTIONS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> AppleContextloggingfunctionsExtensionName =>
+        "cl_APPLE_ContextLoggingFunctions"u8;
+
+    [NativeName("CL_APPLE_CONTEXTLOGGINGFUNCTIONS_EXTENSION_VERSION")]
+    public const int AppleContextloggingfunctionsExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_ICD_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrIcdExtensionName => "cl_khr_icd"u8;
+
+    [NativeName("CL_KHR_ICD_EXTENSION_VERSION")]
+    public const int KhrIcdExtensionVersion = (
+        (((2) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((1) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_ICD2_TAG_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    public const nint Icd2TagKHR = unchecked((nint)(0x4F50454E434C3331));
+
+    [NativeName("CL_KHR_ICD_UNLOADABLE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrIcdUnloadableExtensionName => "cl_khr_icd_unloadable"u8;
+
+    [NativeName("CL_KHR_ICD_UNLOADABLE_EXTENSION_VERSION")]
+    public const int KhrIcdUnloadableExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_IL_PROGRAM_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrIlProgramExtensionName => "cl_khr_il_program"u8;
+
+    [NativeName("CL_KHR_IL_PROGRAM_EXTENSION_VERSION")]
+    public const int KhrIlProgramExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_IMAGE2D_FROM_BUFFER_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrImage2DFromBufferExtensionName =>
+        "cl_khr_image2d_from_buffer"u8;
+
+    [NativeName("CL_KHR_IMAGE2D_FROM_BUFFER_EXTENSION_VERSION")]
+    public const int KhrImage2DFromBufferExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_INITIALIZE_MEMORY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrInitializeMemoryExtensionName =>
+        "cl_khr_initialize_memory"u8;
+
+    [NativeName("CL_KHR_INITIALIZE_MEMORY_EXTENSION_VERSION")]
+    public const int KhrInitializeMemoryExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_TERMINATE_CONTEXT_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrTerminateContextExtensionName =>
+        "cl_khr_terminate_context"u8;
+
+    [NativeName("CL_KHR_TERMINATE_CONTEXT_EXTENSION_VERSION")]
+    public const int KhrTerminateContextExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SPIR_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSpirExtensionName => "cl_khr_spir"u8;
+
+    [NativeName("CL_KHR_SPIR_EXTENSION_VERSION")]
+    public const int KhrSpirExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_CREATE_COMMAND_QUEUE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrCreateCommandQueueExtensionName =>
+        "cl_khr_create_command_queue"u8;
+
+    [NativeName("CL_KHR_CREATE_COMMAND_QUEUE_EXTENSION_VERSION")]
+    public const int KhrCreateCommandQueueExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_NV_DEVICE_ATTRIBUTE_QUERY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> NvDeviceAttributeQueryExtensionName =>
+        "cl_nv_device_attribute_query"u8;
+
+    [NativeName("CL_NV_DEVICE_ATTRIBUTE_QUERY_EXTENSION_VERSION")]
+    public const int NvDeviceAttributeQueryExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_AMD_DEVICE_ATTRIBUTE_QUERY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> AmdDeviceAttributeQueryExtensionName =>
+        "cl_amd_device_attribute_query"u8;
+
+    [NativeName("CL_AMD_DEVICE_ATTRIBUTE_QUERY_EXTENSION_VERSION")]
+    public const int AmdDeviceAttributeQueryExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_ARM_PRINTF_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ArmPrintfExtensionName => "cl_arm_printf"u8;
+
+    [NativeName("CL_ARM_PRINTF_EXTENSION_VERSION")]
+    public const int ArmPrintfExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_EXT_DEVICE_FISSION_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtDeviceFissionExtensionName => "cl_ext_device_fission"u8;
+
+    [NativeName("CL_EXT_DEVICE_FISSION_EXTENSION_VERSION")]
+    public const int ExtDeviceFissionExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_PROPERTIES_LIST_END_EXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    public const ulong PropertiesListEndEXT = ((ulong)(0));
+
+    [NativeName("CL_PARTITION_BY_COUNTS_LIST_END_EXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    public const ulong PartitionByCountsListEndEXT = ((ulong)(0));
+
+    [NativeName("CL_PARTITION_BY_NAMES_LIST_END_EXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    public const ulong PartitionByNamesListEndEXT = unchecked((ulong)(0) - 1);
+
+    [NativeName("CL_EXT_MIGRATE_MEMOBJECT_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtMigrateMemobjectExtensionName =>
+        "cl_ext_migrate_memobject"u8;
+
+    [NativeName("CL_EXT_MIGRATE_MEMOBJECT_EXTENSION_VERSION")]
+    public const int ExtMigrateMemobjectExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_EXT_CXX_FOR_OPENCL_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtCxxForOpenclExtensionName => "cl_ext_cxx_for_opencl"u8;
+
+    [NativeName("CL_EXT_CXX_FOR_OPENCL_EXTENSION_VERSION")]
+    public const int ExtCxxForOpenclExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_QCOM_EXT_HOST_PTR_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> QcomExtHostPtrExtensionName => "cl_qcom_ext_host_ptr"u8;
+
+    [NativeName("CL_QCOM_EXT_HOST_PTR_EXTENSION_VERSION")]
+    public const int QcomExtHostPtrExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_QCOM_EXT_HOST_PTR_IOCOHERENT_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> QcomExtHostPtrIocoherentExtensionName =>
+        "cl_qcom_ext_host_ptr_iocoherent"u8;
+
+    [NativeName("CL_QCOM_EXT_HOST_PTR_IOCOHERENT_EXTENSION_VERSION")]
+    public const int QcomExtHostPtrIocoherentExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_QCOM_ION_HOST_PTR_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> QcomIonHostPtrExtensionName => "cl_qcom_ion_host_ptr"u8;
+
+    [NativeName("CL_QCOM_ION_HOST_PTR_EXTENSION_VERSION")]
+    public const int QcomIonHostPtrExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_QCOM_ANDROID_NATIVE_BUFFER_HOST_PTR_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> QcomAndroidNativeBufferHostPtrExtensionName =>
+        "cl_qcom_android_native_buffer_host_ptr"u8;
+
+    [NativeName("CL_QCOM_ANDROID_NATIVE_BUFFER_HOST_PTR_EXTENSION_VERSION")]
+    public const int QcomAndroidNativeBufferHostPtrExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_IMG_YUV_IMAGE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ImgYuvImageExtensionName => "cl_img_yuv_image"u8;
+
+    [NativeName("CL_IMG_YUV_IMAGE_EXTENSION_VERSION")]
+    public const int ImgYuvImageExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_IMG_CACHED_ALLOCATIONS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ImgCachedAllocationsExtensionName =>
+        "cl_img_cached_allocations"u8;
+
+    [NativeName("CL_IMG_CACHED_ALLOCATIONS_EXTENSION_VERSION")]
+    public const int ImgCachedAllocationsExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_IMG_USE_GRALLOC_PTR_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ImgUseGrallocPtrExtensionName => "cl_img_use_gralloc_ptr"u8;
+
+    [NativeName("CL_IMG_USE_GRALLOC_PTR_EXTENSION_VERSION")]
+    public const int ImgUseGrallocPtrExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_IMG_GENERATE_MIPMAP_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ImgGenerateMipmapExtensionName => "cl_img_generate_mipmap"u8;
+
+    [NativeName("CL_IMG_GENERATE_MIPMAP_EXTENSION_VERSION")]
+    public const int ImgGenerateMipmapExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_IMG_MEM_PROPERTIES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ImgMemPropertiesExtensionName => "cl_img_mem_properties"u8;
+
+    [NativeName("CL_IMG_MEM_PROPERTIES_EXTENSION_VERSION")]
+    public const int ImgMemPropertiesExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUBGROUPS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSubgroupsExtensionName => "cl_khr_subgroups"u8;
+
+    [NativeName("CL_KHR_SUBGROUPS_EXTENSION_VERSION")]
+    public const int KhrSubgroupsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_MIPMAP_IMAGE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrMipmapImageExtensionName => "cl_khr_mipmap_image"u8;
+
+    [NativeName("CL_KHR_MIPMAP_IMAGE_EXTENSION_VERSION")]
+    public const int KhrMipmapImageExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_PRIORITY_HINTS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrPriorityHintsExtensionName => "cl_khr_priority_hints"u8;
+
+    [NativeName("CL_KHR_PRIORITY_HINTS_EXTENSION_VERSION")]
+    public const int KhrPriorityHintsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_THROTTLE_HINTS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrThrottleHintsExtensionName => "cl_khr_throttle_hints"u8;
+
+    [NativeName("CL_KHR_THROTTLE_HINTS_EXTENSION_VERSION")]
+    public const int KhrThrottleHintsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUBGROUP_NAMED_BARRIER_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSubgroupNamedBarrierExtensionName =>
+        "cl_khr_subgroup_named_barrier"u8;
+
+    [NativeName("CL_KHR_SUBGROUP_NAMED_BARRIER_EXTENSION_VERSION")]
+    public const int KhrSubgroupNamedBarrierExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_EXTENDED_VERSIONING_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExtendedVersioningExtensionName =>
+        "cl_khr_extended_versioning"u8;
+
+    [NativeName("CL_KHR_EXTENDED_VERSIONING_EXTENSION_VERSION")]
+    public const int KhrExtendedVersioningExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_VERSION_MAJOR_BITS_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_extended_versioning"])]
+    public const int VersionMajorBitsKHR = 10;
+
+    [NativeName("CL_VERSION_MINOR_BITS_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_extended_versioning"])]
+    public const int VersionMinorBitsKHR = 10;
+
+    [NativeName("CL_VERSION_PATCH_BITS_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_extended_versioning"])]
+    public const int VersionPatchBitsKHR = 12;
+
+    [NativeName("CL_VERSION_MAJOR_MASK_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_extended_versioning"])]
+    public const int VersionMajorMaskKHR = ((1 << 10) - 1);
+
+    [NativeName("CL_VERSION_MINOR_MASK_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_extended_versioning"])]
+    public const int VersionMinorMaskKHR = ((1 << 10) - 1);
+
+    [NativeName("CL_VERSION_PATCH_MASK_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_extended_versioning"])]
+    public const int VersionPatchMaskKHR = ((1 << 12) - 1);
+
+    [NativeName("CL_NAME_VERSION_MAX_NAME_SIZE_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_extended_versioning"])]
+    public const int NameVersionMaxNameSizeKHR = 64;
+
+    [NativeName("CL_KHR_DEVICE_UUID_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrDeviceUuidExtensionName => "cl_khr_device_uuid"u8;
+
+    [NativeName("CL_KHR_DEVICE_UUID_EXTENSION_VERSION")]
+    public const int KhrDeviceUuidExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_UUID_SIZE_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_device_uuid"])]
+    public const int UuidSizeKHR = 16;
+
+    [NativeName("CL_LUID_SIZE_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_device_uuid"])]
+    public const int LuidSizeKHR = 8;
+
+    [NativeName("CL_KHR_PCI_BUS_INFO_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrPciBusInfoExtensionName => "cl_khr_pci_bus_info"u8;
+
+    [NativeName("CL_KHR_PCI_BUS_INFO_EXTENSION_VERSION")]
+    public const int KhrPciBusInfoExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUGGESTED_LOCAL_WORK_SIZE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSuggestedLocalWorkSizeExtensionName =>
+        "cl_khr_suggested_local_work_size"u8;
+
+    [NativeName("CL_KHR_SUGGESTED_LOCAL_WORK_SIZE_EXTENSION_VERSION")]
+    public const int KhrSuggestedLocalWorkSizeExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_INTEGER_DOT_PRODUCT_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrIntegerDotProductExtensionName =>
+        "cl_khr_integer_dot_product"u8;
+
+    [NativeName("CL_KHR_INTEGER_DOT_PRODUCT_EXTENSION_VERSION")]
+    public const int KhrIntegerDotProductExtensionVersion = (
+        (((2) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_EXTERNAL_MEMORY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExternalMemoryExtensionName => "cl_khr_external_memory"u8;
+
+    [NativeName("CL_KHR_EXTERNAL_MEMORY_EXTENSION_VERSION")]
+    public const int KhrExternalMemoryExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((1) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_MEM_DEVICE_HANDLE_LIST_END_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
+    public const int MemDeviceHandleListEndKHR = 0;
+
+    [NativeName("CL_KHR_EXTERNAL_MEMORY_DMA_BUF_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExternalMemoryDmaBufExtensionName =>
+        "cl_khr_external_memory_dma_buf"u8;
+
+    [NativeName("CL_KHR_EXTERNAL_MEMORY_DMA_BUF_EXTENSION_VERSION")]
+    public const int KhrExternalMemoryDmaBufExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_EXTERNAL_MEMORY_OPAQUE_FD_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExternalMemoryOpaqueFdExtensionName =>
+        "cl_khr_external_memory_opaque_fd"u8;
+
+    [NativeName("CL_KHR_EXTERNAL_MEMORY_OPAQUE_FD_EXTENSION_VERSION")]
+    public const int KhrExternalMemoryOpaqueFdExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_EXTERNAL_MEMORY_WIN32_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExternalMemoryWin32ExtensionName =>
+        "cl_khr_external_memory_win32"u8;
+
+    [NativeName("CL_KHR_EXTERNAL_MEMORY_WIN32_EXTENSION_VERSION")]
+    public const int KhrExternalMemoryWin32ExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((1) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExternalSemaphoreExtensionName =>
+        "cl_khr_external_semaphore"u8;
+
+    [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_EXTENSION_VERSION")]
+    public const int KhrExternalSemaphoreExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((1) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_SEMAPHORE_EXPORT_HANDLE_TYPES_LIST_END_KHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_external_semaphore"],
+        ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+    )]
+    public const int SemaphoreExportHandleTypesListEndKHR = 0;
+
+    [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_OPAQUE_FD_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExternalSemaphoreOpaqueFdExtensionName =>
+        "cl_khr_external_semaphore_opaque_fd"u8;
+
+    [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_OPAQUE_FD_EXTENSION_VERSION")]
+    public const int KhrExternalSemaphoreOpaqueFdExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_SYNC_FD_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExternalSemaphoreSyncFdExtensionName =>
+        "cl_khr_external_semaphore_sync_fd"u8;
+
+    [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_SYNC_FD_EXTENSION_VERSION")]
+    public const int KhrExternalSemaphoreSyncFdExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SEMAPHORE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSemaphoreExtensionName => "cl_khr_semaphore"u8;
+
+    [NativeName("CL_KHR_SEMAPHORE_EXTENSION_VERSION")]
+    public const int KhrSemaphoreExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_SEMAPHORE_DEVICE_HANDLE_LIST_END_KHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    public const int SemaphoreDeviceHandleListEndKHR = 0;
+
+    [NativeName("CL_ARM_IMPORT_MEMORY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ArmImportMemoryExtensionName => "cl_arm_import_memory"u8;
+
+    [NativeName("CL_ARM_IMPORT_MEMORY_EXTENSION_VERSION")]
+    public const int ArmImportMemoryExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_IMPORT_MEMORY_WHOLE_ALLOCATION_ARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+    public const nuint ImportMemoryWholeAllocationARM = (18446744073709551615U);
+
+    [NativeName("CL_ARM_SHARED_VIRTUAL_MEMORY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ArmSharedVirtualMemoryExtensionName =>
+        "cl_arm_shared_virtual_memory"u8;
+
+    [NativeName("CL_ARM_SHARED_VIRTUAL_MEMORY_EXTENSION_VERSION")]
+    public const int ArmSharedVirtualMemoryExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("cl_arm_get_core_id")]
+    public const int ArmGetCoreId = 1;
+
+    [NativeName("CL_ARM_GET_CORE_ID_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ArmGetCoreIdExtensionName => "cl_arm_get_core_id"u8;
+
+    [NativeName("CL_ARM_GET_CORE_ID_EXTENSION_VERSION")]
+    public const int ArmGetCoreIdExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_ARM_JOB_SLOT_SELECTION_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ArmJobSlotSelectionExtensionName =>
+        "cl_arm_job_slot_selection"u8;
+
+    [NativeName("CL_ARM_JOB_SLOT_SELECTION_EXTENSION_VERSION")]
+    public const int ArmJobSlotSelectionExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_ARM_SCHEDULING_CONTROLS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ArmSchedulingControlsExtensionName =>
+        "cl_arm_scheduling_controls"u8;
+
+    [NativeName("CL_ARM_SCHEDULING_CONTROLS_EXTENSION_VERSION")]
+    public const int ArmSchedulingControlsExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_ARM_CONTROLLED_KERNEL_TERMINATION_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ArmControlledKernelTerminationExtensionName =>
+        "cl_arm_controlled_kernel_termination"u8;
+
+    [NativeName("CL_ARM_CONTROLLED_KERNEL_TERMINATION_EXTENSION_VERSION")]
+    public const int ArmControlledKernelTerminationExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_ARM_PROTECTED_MEMORY_ALLOCATION_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ArmProtectedMemoryAllocationExtensionName =>
+        "cl_arm_protected_memory_allocation"u8;
+
+    [NativeName("CL_ARM_PROTECTED_MEMORY_ALLOCATION_EXTENSION_VERSION")]
+    public const int ArmProtectedMemoryAllocationExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_EXEC_BY_LOCAL_THREAD_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelExecByLocalThreadExtensionName =>
+        "cl_intel_exec_by_local_thread"u8;
+
+    [NativeName("CL_INTEL_EXEC_BY_LOCAL_THREAD_EXTENSION_VERSION")]
+    public const int IntelExecByLocalThreadExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_DEVICE_ATTRIBUTE_QUERY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelDeviceAttributeQueryExtensionName =>
+        "cl_intel_device_attribute_query"u8;
+
+    [NativeName("CL_INTEL_DEVICE_ATTRIBUTE_QUERY_EXTENSION_VERSION")]
+    public const int IntelDeviceAttributeQueryExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_DEVICE_PARTITION_BY_NAMES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelDevicePartitionByNamesExtensionName =>
+        "cl_intel_device_partition_by_names"u8;
+
+    [NativeName("CL_INTEL_DEVICE_PARTITION_BY_NAMES_EXTENSION_VERSION")]
+    public const int IntelDevicePartitionByNamesExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_PARTITION_BY_NAMES_LIST_END_INTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_device_partition_by_names"])]
+    public const int PartitionByNamesListEndINTEL = -1;
+
+    [NativeName("CL_INTEL_ACCELERATOR_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelAcceleratorExtensionName => "cl_intel_accelerator"u8;
+
+    [NativeName("CL_INTEL_ACCELERATOR_EXTENSION_VERSION")]
+    public const int IntelAcceleratorExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_MOTION_ESTIMATION_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelMotionEstimationExtensionName =>
+        "cl_intel_motion_estimation"u8;
+
+    [NativeName("CL_INTEL_MOTION_ESTIMATION_EXTENSION_VERSION")]
+    public const int IntelMotionEstimationExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_ADVANCED_MOTION_ESTIMATION_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelAdvancedMotionEstimationExtensionName =>
+        "cl_intel_advanced_motion_estimation"u8;
+
+    [NativeName("CL_INTEL_ADVANCED_MOTION_ESTIMATION_EXTENSION_VERSION")]
+    public const int IntelAdvancedMotionEstimationExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_SIMULTANEOUS_SHARING_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelSimultaneousSharingExtensionName =>
+        "cl_intel_simultaneous_sharing"u8;
+
+    [NativeName("CL_INTEL_SIMULTANEOUS_SHARING_EXTENSION_VERSION")]
+    public const int IntelSimultaneousSharingExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_EGL_IMAGE_YUV_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelEglImageYuvExtensionName => "cl_intel_egl_image_yuv"u8;
+
+    [NativeName("CL_INTEL_EGL_IMAGE_YUV_EXTENSION_VERSION")]
+    public const int IntelEglImageYuvExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_PACKED_YUV_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelPackedYuvExtensionName => "cl_intel_packed_yuv"u8;
+
+    [NativeName("CL_INTEL_PACKED_YUV_EXTENSION_VERSION")]
+    public const int IntelPackedYuvExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_REQUIRED_SUBGROUP_SIZE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelRequiredSubgroupSizeExtensionName =>
+        "cl_intel_required_subgroup_size"u8;
+
+    [NativeName("CL_INTEL_REQUIRED_SUBGROUP_SIZE_EXTENSION_VERSION")]
+    public const int IntelRequiredSubgroupSizeExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_DRIVER_DIAGNOSTICS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelDriverDiagnosticsExtensionName =>
+        "cl_intel_driver_diagnostics"u8;
+
+    [NativeName("CL_INTEL_DRIVER_DIAGNOSTICS_EXTENSION_VERSION")]
+    public const int IntelDriverDiagnosticsExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_PLANAR_YUV_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelPlanarYuvExtensionName => "cl_intel_planar_yuv"u8;
+
+    [NativeName("CL_INTEL_PLANAR_YUV_EXTENSION_VERSION")]
+    public const int IntelPlanarYuvExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_DEVICE_SIDE_AVC_MOTION_ESTIMATION_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelDeviceSideAvcMotionEstimationExtensionName =>
+        "cl_intel_device_side_avc_motion_estimation"u8;
+
+    [NativeName("CL_INTEL_DEVICE_SIDE_AVC_MOTION_ESTIMATION_EXTENSION_VERSION")]
+    public const int IntelDeviceSideAvcMotionEstimationExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_UNIFIED_SHARED_MEMORY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelUnifiedSharedMemoryExtensionName =>
+        "cl_intel_unified_shared_memory"u8;
+
+    [NativeName("CL_INTEL_UNIFIED_SHARED_MEMORY_EXTENSION_VERSION")]
+    public const int IntelUnifiedSharedMemoryExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((1) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_MEM_ALLOC_BUFFER_LOCATION_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelMemAllocBufferLocationExtensionName =>
+        "cl_intel_mem_alloc_buffer_location"u8;
+
+    [NativeName("CL_INTEL_MEM_ALLOC_BUFFER_LOCATION_EXTENSION_VERSION")]
+    public const int IntelMemAllocBufferLocationExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_CREATE_BUFFER_WITH_PROPERTIES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelCreateBufferWithPropertiesExtensionName =>
+        "cl_intel_create_buffer_with_properties"u8;
+
+    [NativeName("CL_INTEL_CREATE_BUFFER_WITH_PROPERTIES_EXTENSION_VERSION")]
+    public const int IntelCreateBufferWithPropertiesExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_PROGRAM_SCOPE_HOST_PIPE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelProgramScopeHostPipeExtensionName =>
+        "cl_intel_program_scope_host_pipe"u8;
+
+    [NativeName("CL_INTEL_PROGRAM_SCOPE_HOST_PIPE_EXTENSION_VERSION")]
+    public const int IntelProgramScopeHostPipeExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_MEM_CHANNEL_PROPERTY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelMemChannelPropertyExtensionName =>
+        "cl_intel_mem_channel_property"u8;
+
+    [NativeName("CL_INTEL_MEM_CHANNEL_PROPERTY_EXTENSION_VERSION")]
+    public const int IntelMemChannelPropertyExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_MEM_FORCE_HOST_MEMORY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelMemForceHostMemoryExtensionName =>
+        "cl_intel_mem_force_host_memory"u8;
+
+    [NativeName("CL_INTEL_MEM_FORCE_HOST_MEMORY_EXTENSION_VERSION")]
+    public const int IntelMemForceHostMemoryExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_COMMAND_QUEUE_FAMILIES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelCommandQueueFamiliesExtensionName =>
+        "cl_intel_command_queue_families"u8;
+
+    [NativeName("CL_INTEL_COMMAND_QUEUE_FAMILIES_EXTENSION_VERSION")]
+    public const int IntelCommandQueueFamiliesExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_QUEUE_FAMILY_MAX_NAME_SIZE_INTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_command_queue_families"])]
+    public const int QueueFamilyMaxNameSizeINTEL = 64;
+
+    [NativeName("CL_QUEUE_DEFAULT_CAPABILITIES_INTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_command_queue_families"])]
+    public const int QueueDefaultCapabilitiesINTEL = 0;
+
+    [NativeName("CL_INTEL_QUEUE_NO_SYNC_OPERATIONS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelQueueNoSyncOperationsExtensionName =>
+        "cl_intel_queue_no_sync_operations"u8;
+
+    [NativeName("CL_INTEL_QUEUE_NO_SYNC_OPERATIONS_EXTENSION_VERSION")]
+    public const int IntelQueueNoSyncOperationsExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_SHARING_FORMAT_QUERY_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelSharingFormatQueryExtensionName =>
+        "cl_intel_sharing_format_query"u8;
+
+    [NativeName("CL_INTEL_SHARING_FORMAT_QUERY_EXTENSION_VERSION")]
+    public const int IntelSharingFormatQueryExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_EXT_IMAGE_REQUIREMENTS_INFO_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtImageRequirementsInfoExtensionName =>
+        "cl_ext_image_requirements_info"u8;
+
+    [NativeName("CL_EXT_IMAGE_REQUIREMENTS_INFO_EXTENSION_VERSION")]
+    public const int ExtImageRequirementsInfoExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((5) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_EXT_IMAGE_FROM_BUFFER_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtImageFromBufferExtensionName =>
+        "cl_ext_image_from_buffer"u8;
+
+    [NativeName("CL_EXT_IMAGE_FROM_BUFFER_EXTENSION_VERSION")]
+    public const int ExtImageFromBufferExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_LOADER_INFO_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> LoaderInfoExtensionName => "cl_loader_info"u8;
+
+    [NativeName("CL_LOADER_INFO_EXTENSION_VERSION")]
+    public const int LoaderInfoExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_DEPTH_IMAGES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrDepthImagesExtensionName => "cl_khr_depth_images"u8;
+
+    [NativeName("CL_KHR_DEPTH_IMAGES_EXTENSION_VERSION")]
+    public const int KhrDepthImagesExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_EXT_FLOAT_ATOMICS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtFloatAtomicsExtensionName => "cl_ext_float_atomics"u8;
+
+    [NativeName("CL_EXT_FLOAT_ATOMICS_EXTENSION_VERSION")]
+    public const int ExtFloatAtomicsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_CREATE_MEM_OBJECT_PROPERTIES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelCreateMemObjectPropertiesExtensionName =>
+        "cl_intel_create_mem_object_properties"u8;
+
+    [NativeName("CL_INTEL_CREATE_MEM_OBJECT_PROPERTIES_EXTENSION_VERSION")]
+    public const int IntelCreateMemObjectPropertiesExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_POCL_CONTENT_SIZE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> PoclContentSizeExtensionName => "cl_pocl_content_size"u8;
+
+    [NativeName("CL_POCL_CONTENT_SIZE_EXTENSION_VERSION")]
+    public const int PoclContentSizeExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_EXT_IMAGE_RAW10_RAW12_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtImageRaw10Raw12ExtensionName =>
+        "cl_ext_image_raw10_raw12"u8;
+
+    [NativeName("CL_EXT_IMAGE_RAW10_RAW12_EXTENSION_VERSION")]
+    public const int ExtImageRaw10Raw12ExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_3D_IMAGE_WRITES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> Khr3DImageWritesExtensionName => "cl_khr_3d_image_writes"u8;
+
+    [NativeName("CL_KHR_3D_IMAGE_WRITES_EXTENSION_VERSION")]
+    public const int Khr3DImageWritesExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_ASYNC_WORK_GROUP_COPY_FENCE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrAsyncWorkGroupCopyFenceExtensionName =>
+        "cl_khr_async_work_group_copy_fence"u8;
+
+    [NativeName("CL_KHR_ASYNC_WORK_GROUP_COPY_FENCE_EXTENSION_VERSION")]
+    public const int KhrAsyncWorkGroupCopyFenceExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_BYTE_ADDRESSABLE_STORE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrByteAddressableStoreExtensionName =>
+        "cl_khr_byte_addressable_store"u8;
+
+    [NativeName("CL_KHR_BYTE_ADDRESSABLE_STORE_EXTENSION_VERSION")]
+    public const int KhrByteAddressableStoreExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_DEVICE_ENQUEUE_LOCAL_ARG_TYPES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrDeviceEnqueueLocalArgTypesExtensionName =>
+        "cl_khr_device_enqueue_local_arg_types"u8;
+
+    [NativeName("CL_KHR_DEVICE_ENQUEUE_LOCAL_ARG_TYPES_EXTENSION_VERSION")]
+    public const int KhrDeviceEnqueueLocalArgTypesExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_EXPECT_ASSUME_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExpectAssumeExtensionName => "cl_khr_expect_assume"u8;
+
+    [NativeName("CL_KHR_EXPECT_ASSUME_EXTENSION_VERSION")]
+    public const int KhrExpectAssumeExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_EXTENDED_ASYNC_COPIES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExtendedAsyncCopiesExtensionName =>
+        "cl_khr_extended_async_copies"u8;
+
+    [NativeName("CL_KHR_EXTENDED_ASYNC_COPIES_EXTENSION_VERSION")]
+    public const int KhrExtendedAsyncCopiesExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_EXTENDED_BIT_OPS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrExtendedBitOpsExtensionName => "cl_khr_extended_bit_ops"u8;
+
+    [NativeName("CL_KHR_EXTENDED_BIT_OPS_EXTENSION_VERSION")]
+    public const int KhrExtendedBitOpsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_GLOBAL_INT32_BASE_ATOMICS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrGlobalInt32BaseAtomicsExtensionName =>
+        "cl_khr_global_int32_base_atomics"u8;
+
+    [NativeName("CL_KHR_GLOBAL_INT32_BASE_ATOMICS_EXTENSION_VERSION")]
+    public const int KhrGlobalInt32BaseAtomicsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_GLOBAL_INT32_EXTENDED_ATOMICS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrGlobalInt32ExtendedAtomicsExtensionName =>
+        "cl_khr_global_int32_extended_atomics"u8;
+
+    [NativeName("CL_KHR_GLOBAL_INT32_EXTENDED_ATOMICS_EXTENSION_VERSION")]
+    public const int KhrGlobalInt32ExtendedAtomicsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_INT64_BASE_ATOMICS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrInt64BaseAtomicsExtensionName =>
+        "cl_khr_int64_base_atomics"u8;
+
+    [NativeName("CL_KHR_INT64_BASE_ATOMICS_EXTENSION_VERSION")]
+    public const int KhrInt64BaseAtomicsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_INT64_EXTENDED_ATOMICS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrInt64ExtendedAtomicsExtensionName =>
+        "cl_khr_int64_extended_atomics"u8;
+
+    [NativeName("CL_KHR_INT64_EXTENDED_ATOMICS_EXTENSION_VERSION")]
+    public const int KhrInt64ExtendedAtomicsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_KERNEL_CLOCK_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrKernelClockExtensionName => "cl_khr_kernel_clock"u8;
+
+    [NativeName("CL_KHR_KERNEL_CLOCK_EXTENSION_VERSION")]
+    public const int KhrKernelClockExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_LOCAL_INT32_BASE_ATOMICS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrLocalInt32BaseAtomicsExtensionName =>
+        "cl_khr_local_int32_base_atomics"u8;
+
+    [NativeName("CL_KHR_LOCAL_INT32_BASE_ATOMICS_EXTENSION_VERSION")]
+    public const int KhrLocalInt32BaseAtomicsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_LOCAL_INT32_EXTENDED_ATOMICS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrLocalInt32ExtendedAtomicsExtensionName =>
+        "cl_khr_local_int32_extended_atomics"u8;
+
+    [NativeName("CL_KHR_LOCAL_INT32_EXTENDED_ATOMICS_EXTENSION_VERSION")]
+    public const int KhrLocalInt32ExtendedAtomicsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_MIPMAP_IMAGE_WRITES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrMipmapImageWritesExtensionName =>
+        "cl_khr_mipmap_image_writes"u8;
+
+    [NativeName("CL_KHR_MIPMAP_IMAGE_WRITES_EXTENSION_VERSION")]
+    public const int KhrMipmapImageWritesExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SELECT_FPROUNDING_MODE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSelectFproundingModeExtensionName =>
+        "cl_khr_select_fprounding_mode"u8;
+
+    [NativeName("CL_KHR_SELECT_FPROUNDING_MODE_EXTENSION_VERSION")]
+    public const int KhrSelectFproundingModeExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SPIRV_EXTENDED_DEBUG_INFO_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSpirvExtendedDebugInfoExtensionName =>
+        "cl_khr_spirv_extended_debug_info"u8;
+
+    [NativeName("CL_KHR_SPIRV_EXTENDED_DEBUG_INFO_EXTENSION_VERSION")]
+    public const int KhrSpirvExtendedDebugInfoExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SPIRV_LINKONCE_ODR_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSpirvLinkonceOdrExtensionName =>
+        "cl_khr_spirv_linkonce_odr"u8;
+
+    [NativeName("CL_KHR_SPIRV_LINKONCE_ODR_EXTENSION_VERSION")]
+    public const int KhrSpirvLinkonceOdrExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SPIRV_NO_INTEGER_WRAP_DECORATION_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSpirvNoIntegerWrapDecorationExtensionName =>
+        "cl_khr_spirv_no_integer_wrap_decoration"u8;
+
+    [NativeName("CL_KHR_SPIRV_NO_INTEGER_WRAP_DECORATION_EXTENSION_VERSION")]
+    public const int KhrSpirvNoIntegerWrapDecorationExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SPIRV_QUERIES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSpirvQueriesExtensionName => "cl_khr_spirv_queries"u8;
+
+    [NativeName("CL_KHR_SPIRV_QUERIES_EXTENSION_VERSION")]
+    public const int KhrSpirvQueriesExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SRGB_IMAGE_WRITES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSrgbImageWritesExtensionName =>
+        "cl_khr_srgb_image_writes"u8;
+
+    [NativeName("CL_KHR_SRGB_IMAGE_WRITES_EXTENSION_VERSION")]
+    public const int KhrSrgbImageWritesExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUBGROUP_BALLOT_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSubgroupBallotExtensionName => "cl_khr_subgroup_ballot"u8;
+
+    [NativeName("CL_KHR_SUBGROUP_BALLOT_EXTENSION_VERSION")]
+    public const int KhrSubgroupBallotExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUBGROUP_CLUSTERED_REDUCE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSubgroupClusteredReduceExtensionName =>
+        "cl_khr_subgroup_clustered_reduce"u8;
+
+    [NativeName("CL_KHR_SUBGROUP_CLUSTERED_REDUCE_EXTENSION_VERSION")]
+    public const int KhrSubgroupClusteredReduceExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUBGROUP_EXTENDED_TYPES_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSubgroupExtendedTypesExtensionName =>
+        "cl_khr_subgroup_extended_types"u8;
+
+    [NativeName("CL_KHR_SUBGROUP_EXTENDED_TYPES_EXTENSION_VERSION")]
+    public const int KhrSubgroupExtendedTypesExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUBGROUP_NON_UNIFORM_ARITHMETIC_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSubgroupNonUniformArithmeticExtensionName =>
+        "cl_khr_subgroup_non_uniform_arithmetic"u8;
+
+    [NativeName("CL_KHR_SUBGROUP_NON_UNIFORM_ARITHMETIC_EXTENSION_VERSION")]
+    public const int KhrSubgroupNonUniformArithmeticExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUBGROUP_NON_UNIFORM_VOTE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSubgroupNonUniformVoteExtensionName =>
+        "cl_khr_subgroup_non_uniform_vote"u8;
+
+    [NativeName("CL_KHR_SUBGROUP_NON_UNIFORM_VOTE_EXTENSION_VERSION")]
+    public const int KhrSubgroupNonUniformVoteExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUBGROUP_ROTATE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSubgroupRotateExtensionName => "cl_khr_subgroup_rotate"u8;
+
+    [NativeName("CL_KHR_SUBGROUP_ROTATE_EXTENSION_VERSION")]
+    public const int KhrSubgroupRotateExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUBGROUP_SHUFFLE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSubgroupShuffleExtensionName => "cl_khr_subgroup_shuffle"u8;
+
+    [NativeName("CL_KHR_SUBGROUP_SHUFFLE_EXTENSION_VERSION")]
+    public const int KhrSubgroupShuffleExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_SUBGROUP_SHUFFLE_RELATIVE_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrSubgroupShuffleRelativeExtensionName =>
+        "cl_khr_subgroup_shuffle_relative"u8;
+
+    [NativeName("CL_KHR_SUBGROUP_SHUFFLE_RELATIVE_EXTENSION_VERSION")]
+    public const int KhrSubgroupShuffleRelativeExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_KHR_WORK_GROUP_UNIFORM_ARITHMETIC_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> KhrWorkGroupUniformArithmeticExtensionName =>
+        "cl_khr_work_group_uniform_arithmetic"u8;
+
+    [NativeName("CL_KHR_WORK_GROUP_UNIFORM_ARITHMETIC_EXTENSION_VERSION")]
+    public const int KhrWorkGroupUniformArithmeticExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_EXT_BUFFER_DEVICE_ADDRESS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtBufferDeviceAddressExtensionName =>
+        "cl_ext_buffer_device_address"u8;
+
+    [NativeName("CL_EXT_BUFFER_DEVICE_ADDRESS_EXTENSION_VERSION")]
+    public const int ExtBufferDeviceAddressExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((2) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_EXT_IMAGE_UNORM_INT_2_101010_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtImageUnormInt2x101010ExtensionName =>
+        "cl_ext_image_unorm_int_2_101010"u8;
+
+    [NativeName("CL_EXT_IMAGE_UNORM_INT_2_101010_EXTENSION_VERSION")]
+    public const int ExtImageUnormInt2x101010ExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_EXT_IMAGE_UNSIGNED_10X6_12X4_14X2_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtImageUnsigned10x6x12x4x14x2ExtensionName =>
+        "cl_ext_image_unsigned_10x6_12x4_14x2"u8;
+
+    [NativeName("CL_EXT_IMAGE_UNSIGNED_10X6_12X4_14X2_EXTENSION_VERSION")]
+    public const int ExtImageUnsigned10x6x12x4x14x2ExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_EXT_IMMUTABLE_MEMORY_OBJECTS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ExtImmutableMemoryObjectsExtensionName =>
+        "cl_ext_immutable_memory_objects"u8;
+
+    [NativeName("CL_EXT_IMMUTABLE_MEMORY_OBJECTS_EXTENSION_VERSION")]
+    public const int ExtImmutableMemoryObjectsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_IMG_CANCEL_COMMAND_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ImgCancelCommandExtensionName => "cl_img_cancel_command"u8;
+
+    [NativeName("CL_IMG_CANCEL_COMMAND_EXTENSION_VERSION")]
+    public const int ImgCancelCommandExtensionVersion = (
+        (((0) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_IMG_SAFETY_MECHANISMS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> ImgSafetyMechanismsExtensionName =>
+        "cl_img_safety_mechanisms"u8;
+
+    [NativeName("CL_IMG_SAFETY_MECHANISMS_EXTENSION_VERSION")]
+    public const int ImgSafetyMechanismsExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_INTEL_KERNEL_ALLOCATIONS_INFO_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> IntelKernelAllocationsInfoExtensionName =>
+        "cl_intel_kernel_allocations_info"u8;
+
+    [NativeName("CL_INTEL_KERNEL_ALLOCATIONS_INFO_EXTENSION_VERSION")]
+    public const int IntelKernelAllocationsInfoExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((0) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_QCOM_PERF_HINT_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> QcomPerfHintExtensionName => "cl_qcom_perf_hint"u8;
+
+    [NativeName("CL_QCOM_PERF_HINT_EXTENSION_VERSION")]
+    public const int QcomPerfHintExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((5) & ((1 << (12)) - 1))
+    );
+
     [NativeName("clBuildProgram")]
     [SupportedApiProfile(
         "opencl",
@@ -21398,6 +30521,45 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref user_data
     ) => ThisThread.BuildProgram(program, num_devices, device_list, options, pfn_notify, user_data);
 
+    [NativeName("clCancelCommandsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
+    [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.CancelCommandsIMG(_cl_event** event_list, nuint num_events_in_list) =>
+        (
+            (delegate* unmanaged<_cl_event**, nuint, int>)(
+                _slots[1] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[1] = nativeContext.LoadFunction("clCancelCommandsIMG", "opencl")
+            )
+        )(event_list, num_events_in_list);
+
+    [NativeName("clCancelCommandsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
+    [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int CancelCommandsIMG(_cl_event** event_list, nuint num_events_in_list) =>
+        ThisThread.CancelCommandsIMG(event_list, num_events_in_list);
+
+    [NativeName("clCancelCommandsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
+    [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.CancelCommandsIMG(Ref2D<_cl_event> event_list, nuint num_events_in_list)
+    {
+        fixed (_cl_event** __dsl_event_list = event_list)
+        {
+            return (int)((ICl)this).CancelCommandsIMG(__dsl_event_list, num_events_in_list);
+        }
+    }
+
+    [NativeName("clCancelCommandsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
+    [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int CancelCommandsIMG(Ref2D<_cl_event> event_list, nuint num_events_in_list) =>
+        ThisThread.CancelCommandsIMG(event_list, num_events_in_list);
+
     [NativeName("clCloneKernel")]
     [SupportedApiProfile(
         "opencl",
@@ -21409,9 +30571,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     _cl_kernel* ICl.CloneKernel(_cl_kernel* source_kernel, int* errcode_ret) =>
         (
             (delegate* unmanaged<_cl_kernel*, int*, _cl_kernel*>)(
-                _slots[1] is not null and var loadedFnPtr
+                _slots[2] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[1] = nativeContext.LoadFunction("clCloneKernel", "opencl")
+                    : _slots[2] = nativeContext.LoadFunction("clCloneKernel", "opencl")
             )
         )(source_kernel, errcode_ret);
 
@@ -21494,9 +30656,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 delegate* unmanaged<_cl_program*, void*, void>,
                 void*,
                 int>)(
-                _slots[2] is not null and var loadedFnPtr
+                _slots[3] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[2] = nativeContext.LoadFunction("clCompileProgram", "opencl")
+                    : _slots[3] = nativeContext.LoadFunction("clCompileProgram", "opencl")
             )
         )(
             program,
@@ -21635,6 +30797,90 @@ public unsafe partial class Cl : ICl, ICl.Static
             user_data
         );
 
+    [NativeName("clCreateAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    _cl_accelerator_intel* ICl.CreateAcceleratorINTEL(
+        _cl_context* context,
+        uint accelerator_type,
+        nuint descriptor_size,
+        void* descriptor,
+        int* errcode_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_context*, uint, nuint, void*, int*, _cl_accelerator_intel*>)(
+                _slots[4] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[4] = nativeContext.LoadFunction("clCreateAcceleratorINTEL", "opencl")
+            )
+        )(context, accelerator_type, descriptor_size, descriptor, errcode_ret);
+
+    [NativeName("clCreateAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static _cl_accelerator_intel* CreateAcceleratorINTEL(
+        _cl_context* context,
+        uint accelerator_type,
+        nuint descriptor_size,
+        void* descriptor,
+        int* errcode_ret
+    ) =>
+        ThisThread.CreateAcceleratorINTEL(
+            context,
+            accelerator_type,
+            descriptor_size,
+            descriptor,
+            errcode_ret
+        );
+
+    [NativeName("clCreateAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr<_cl_accelerator_intel> ICl.CreateAcceleratorINTEL(
+        Ref<_cl_context> context,
+        uint accelerator_type,
+        nuint descriptor_size,
+        Ref descriptor,
+        Ref<int> errcode_ret
+    )
+    {
+        fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_descriptor = descriptor)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (_cl_accelerator_intel*)
+                ((ICl)this).CreateAcceleratorINTEL(
+                    __dsl_context,
+                    accelerator_type,
+                    descriptor_size,
+                    __dsl_descriptor,
+                    __dsl_errcode_ret
+                );
+        }
+    }
+
+    [NativeName("clCreateAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
+        Ref<_cl_context> context,
+        uint accelerator_type,
+        nuint descriptor_size,
+        Ref descriptor,
+        Ref<int> errcode_ret
+    ) =>
+        ThisThread.CreateAcceleratorINTEL(
+            context,
+            accelerator_type,
+            descriptor_size,
+            descriptor,
+            errcode_ret
+        );
+
     [NativeName("clCreateBuffer")]
     [SupportedApiProfile(
         "opencl",
@@ -21661,9 +30907,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, ulong, nuint, void*, int*, _cl_mem*>)(
-                _slots[3] is not null and var loadedFnPtr
+                _slots[5] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[3] = nativeContext.LoadFunction("clCreateBuffer", "opencl")
+                    : _slots[5] = nativeContext.LoadFunction("clCreateBuffer", "opencl")
             )
         )(context, flags, size, host_ptr, errcode_ret);
 
@@ -21771,9 +31017,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, ulong*, ulong, nuint, void*, int*, _cl_mem*>)(
-                _slots[4] is not null and var loadedFnPtr
+                _slots[6] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[4] = nativeContext.LoadFunction(
+                    : _slots[6] = nativeContext.LoadFunction(
                         "clCreateBufferWithProperties",
                         "opencl"
                     )
@@ -21852,6 +31098,101 @@ public unsafe partial class Cl : ICl, ICl.Static
             errcode_ret
         );
 
+    [NativeName("clCreateBufferWithPropertiesINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    _cl_mem* ICl.CreateBufferWithPropertiesINTEL(
+        _cl_context* context,
+        ulong* properties,
+        ulong flags,
+        nuint size,
+        void* host_ptr,
+        int* errcode_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_context*, ulong*, ulong, nuint, void*, int*, _cl_mem*>)(
+                _slots[7] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[7] = nativeContext.LoadFunction(
+                        "clCreateBufferWithPropertiesINTEL",
+                        "opencl"
+                    )
+            )
+        )(context, properties, flags, size, host_ptr, errcode_ret);
+
+    [NativeName("clCreateBufferWithPropertiesINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static _cl_mem* CreateBufferWithPropertiesINTEL(
+        _cl_context* context,
+        ulong* properties,
+        ulong flags,
+        nuint size,
+        void* host_ptr,
+        int* errcode_ret
+    ) =>
+        ThisThread.CreateBufferWithPropertiesINTEL(
+            context,
+            properties,
+            flags,
+            size,
+            host_ptr,
+            errcode_ret
+        );
+
+    [NativeName("clCreateBufferWithPropertiesINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr<_cl_mem> ICl.CreateBufferWithPropertiesINTEL(
+        Ref<_cl_context> context,
+        Ref<ulong> properties,
+        ulong flags,
+        nuint size,
+        Ref host_ptr,
+        Ref<int> errcode_ret
+    )
+    {
+        fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_host_ptr = host_ptr)
+        fixed (ulong* __dsl_properties = properties)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (_cl_mem*)
+                ((ICl)this).CreateBufferWithPropertiesINTEL(
+                    __dsl_context,
+                    __dsl_properties,
+                    flags,
+                    size,
+                    __dsl_host_ptr,
+                    __dsl_errcode_ret
+                );
+        }
+    }
+
+    [NativeName("clCreateBufferWithPropertiesINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr<_cl_mem> CreateBufferWithPropertiesINTEL(
+        Ref<_cl_context> context,
+        Ref<ulong> properties,
+        ulong flags,
+        nuint size,
+        Ref host_ptr,
+        Ref<int> errcode_ret
+    ) =>
+        ThisThread.CreateBufferWithPropertiesINTEL(
+            context,
+            properties,
+            flags,
+            size,
+            host_ptr,
+            errcode_ret
+        );
+
     [NativeName("clCreateCommandQueue")]
     [Obsolete]
     [SupportedApiProfile(
@@ -21878,9 +31219,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, _cl_device_id*, ulong, int*, _cl_command_queue*>)(
-                _slots[5] is not null and var loadedFnPtr
+                _slots[8] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[5] = nativeContext.LoadFunction("clCreateCommandQueue", "opencl")
+                    : _slots[8] = nativeContext.LoadFunction("clCreateCommandQueue", "opencl")
             )
         )(context, device, properties, errcode_ret);
 
@@ -21989,9 +31330,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, _cl_device_id*, ulong*, int*, _cl_command_queue*>)(
-                _slots[6] is not null and var loadedFnPtr
+                _slots[9] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[6] = nativeContext.LoadFunction(
+                    : _slots[9] = nativeContext.LoadFunction(
                         "clCreateCommandQueueWithProperties",
                         "opencl"
                     )
@@ -22058,6 +31399,75 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<int> errcode_ret
     ) => ThisThread.CreateCommandQueueWithProperties(context, device, properties, errcode_ret);
 
+    [NativeName("clCreateCommandQueueWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    _cl_command_queue* ICl.CreateCommandQueueWithPropertiesKHR(
+        _cl_context* context,
+        _cl_device_id* device,
+        ulong* properties,
+        int* errcode_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_context*, _cl_device_id*, ulong*, int*, _cl_command_queue*>)(
+                _slots[10] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[10] = nativeContext.LoadFunction(
+                        "clCreateCommandQueueWithPropertiesKHR",
+                        "opencl"
+                    )
+            )
+        )(context, device, properties, errcode_ret);
+
+    [NativeName("clCreateCommandQueueWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static _cl_command_queue* CreateCommandQueueWithPropertiesKHR(
+        _cl_context* context,
+        _cl_device_id* device,
+        ulong* properties,
+        int* errcode_ret
+    ) => ThisThread.CreateCommandQueueWithPropertiesKHR(context, device, properties, errcode_ret);
+
+    [NativeName("clCreateCommandQueueWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr<_cl_command_queue> ICl.CreateCommandQueueWithPropertiesKHR(
+        Ref<_cl_context> context,
+        Ref<_cl_device_id> device,
+        Ref<ulong> properties,
+        Ref<int> errcode_ret
+    )
+    {
+        fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (ulong* __dsl_properties = properties)
+        fixed (_cl_device_id* __dsl_device = device)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (_cl_command_queue*)
+                ((ICl)this).CreateCommandQueueWithPropertiesKHR(
+                    __dsl_context,
+                    __dsl_device,
+                    __dsl_properties,
+                    __dsl_errcode_ret
+                );
+        }
+    }
+
+    [NativeName("clCreateCommandQueueWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr<_cl_command_queue> CreateCommandQueueWithPropertiesKHR(
+        Ref<_cl_context> context,
+        Ref<_cl_device_id> device,
+        Ref<ulong> properties,
+        Ref<int> errcode_ret
+    ) => ThisThread.CreateCommandQueueWithPropertiesKHR(context, device, properties, errcode_ret);
+
     [NativeName("clCreateContext")]
     [SupportedApiProfile(
         "opencl",
@@ -22092,9 +31502,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 int*,
                 _cl_context*>)(
-                _slots[7] is not null and var loadedFnPtr
+                _slots[11] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[7] = nativeContext.LoadFunction("clCreateContext", "opencl")
+                    : _slots[11] = nativeContext.LoadFunction("clCreateContext", "opencl")
             )
         )(properties, num_devices, devices, pfn_notify, user_data, errcode_ret);
 
@@ -22241,9 +31651,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 int*,
                 _cl_context*>)(
-                _slots[8] is not null and var loadedFnPtr
+                _slots[12] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[8] = nativeContext.LoadFunction("clCreateContextFromType", "opencl")
+                    : _slots[12] = nativeContext.LoadFunction("clCreateContextFromType", "opencl")
             )
         )(properties, device_type, pfn_notify, user_data, errcode_ret);
 
@@ -22383,9 +31793,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 int*,
                 _cl_mem*>)(
-                _slots[9] is not null and var loadedFnPtr
+                _slots[13] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[9] = nativeContext.LoadFunction("clCreateImage", "opencl")
+                    : _slots[13] = nativeContext.LoadFunction("clCreateImage", "opencl")
             )
         )(context, flags, image_format, image_desc, host_ptr, errcode_ret);
 
@@ -22518,9 +31928,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 int*,
                 _cl_mem*>)(
-                _slots[10] is not null and var loadedFnPtr
+                _slots[14] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[10] = nativeContext.LoadFunction("clCreateImage2D", "opencl")
+                    : _slots[14] = nativeContext.LoadFunction("clCreateImage2D", "opencl")
             )
         )(
             context,
@@ -22702,9 +32112,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 int*,
                 _cl_mem*>)(
-                _slots[11] is not null and var loadedFnPtr
+                _slots[15] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[11] = nativeContext.LoadFunction("clCreateImage3D", "opencl")
+                    : _slots[15] = nativeContext.LoadFunction("clCreateImage3D", "opencl")
             )
         )(
             context,
@@ -22880,9 +32290,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 int*,
                 _cl_mem*>)(
-                _slots[12] is not null and var loadedFnPtr
+                _slots[16] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[12] = nativeContext.LoadFunction(
+                    : _slots[16] = nativeContext.LoadFunction(
                         "clCreateImageWithProperties",
                         "opencl"
                     )
@@ -22989,9 +32399,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     _cl_kernel* ICl.CreateKernel(_cl_program* program, sbyte* kernel_name, int* errcode_ret) =>
         (
             (delegate* unmanaged<_cl_program*, sbyte*, int*, _cl_kernel*>)(
-                _slots[13] is not null and var loadedFnPtr
+                _slots[17] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[13] = nativeContext.LoadFunction("clCreateKernel", "opencl")
+                    : _slots[17] = nativeContext.LoadFunction("clCreateKernel", "opencl")
             )
         )(program, kernel_name, errcode_ret);
 
@@ -23098,9 +32508,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_program*, uint, _cl_kernel**, uint*, int>)(
-                _slots[14] is not null and var loadedFnPtr
+                _slots[18] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[14] = nativeContext.LoadFunction("clCreateKernelsInProgram", "opencl")
+                    : _slots[18] = nativeContext.LoadFunction("clCreateKernelsInProgram", "opencl")
             )
         )(program, num_kernels, kernels, num_kernels_ret);
 
@@ -23208,9 +32618,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, ulong, uint, uint, nint*, int*, _cl_mem*>)(
-                _slots[15] is not null and var loadedFnPtr
+                _slots[19] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[15] = nativeContext.LoadFunction("clCreatePipe", "opencl")
+                    : _slots[19] = nativeContext.LoadFunction("clCreatePipe", "opencl")
             )
         )(context, flags, pipe_packet_size, pipe_max_packets, properties, errcode_ret);
 
@@ -23333,9 +32743,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 int*,
                 int*,
                 _cl_program*>)(
-                _slots[16] is not null and var loadedFnPtr
+                _slots[20] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[16] = nativeContext.LoadFunction("clCreateProgramWithBinary", "opencl")
+                    : _slots[20] = nativeContext.LoadFunction("clCreateProgramWithBinary", "opencl")
             )
         )(context, num_devices, device_list, lengths, binaries, binary_status, errcode_ret);
 
@@ -23482,9 +32892,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, uint, _cl_device_id**, sbyte*, int*, _cl_program*>)(
-                _slots[17] is not null and var loadedFnPtr
+                _slots[21] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[17] = nativeContext.LoadFunction(
+                    : _slots[21] = nativeContext.LoadFunction(
                         "clCreateProgramWithBuiltInKernels",
                         "opencl"
                     )
@@ -23606,9 +33016,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, void*, nuint, int*, _cl_program*>)(
-                _slots[18] is not null and var loadedFnPtr
+                _slots[22] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[18] = nativeContext.LoadFunction("clCreateProgramWithIL", "opencl")
+                    : _slots[22] = nativeContext.LoadFunction("clCreateProgramWithIL", "opencl")
             )
         )(context, il, length, errcode_ret);
 
@@ -23666,6 +33076,71 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<int> errcode_ret
     ) => ThisThread.CreateProgramWithIL(context, il, length, errcode_ret);
 
+    [NativeName("clCreateProgramWithILKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    _cl_program* ICl.CreateProgramWithILKHR(
+        _cl_context* context,
+        void* il,
+        nuint length,
+        int* errcode_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_context*, void*, nuint, int*, _cl_program*>)(
+                _slots[23] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[23] = nativeContext.LoadFunction("clCreateProgramWithILKHR", "opencl")
+            )
+        )(context, il, length, errcode_ret);
+
+    [NativeName("clCreateProgramWithILKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static _cl_program* CreateProgramWithILKHR(
+        _cl_context* context,
+        void* il,
+        nuint length,
+        int* errcode_ret
+    ) => ThisThread.CreateProgramWithILKHR(context, il, length, errcode_ret);
+
+    [NativeName("clCreateProgramWithILKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr<_cl_program> ICl.CreateProgramWithILKHR(
+        Ref<_cl_context> context,
+        Ref il,
+        nuint length,
+        Ref<int> errcode_ret
+    )
+    {
+        fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_il = il)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (_cl_program*)
+                ((ICl)this).CreateProgramWithILKHR(
+                    __dsl_context,
+                    __dsl_il,
+                    length,
+                    __dsl_errcode_ret
+                );
+        }
+    }
+
+    [NativeName("clCreateProgramWithILKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr<_cl_program> CreateProgramWithILKHR(
+        Ref<_cl_context> context,
+        Ref il,
+        nuint length,
+        Ref<int> errcode_ret
+    ) => ThisThread.CreateProgramWithILKHR(context, il, length, errcode_ret);
+
     [NativeName("clCreateProgramWithSource")]
     [SupportedApiProfile(
         "opencl",
@@ -23692,9 +33167,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, uint, sbyte**, nuint*, int*, _cl_program*>)(
-                _slots[19] is not null and var loadedFnPtr
+                _slots[24] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[19] = nativeContext.LoadFunction("clCreateProgramWithSource", "opencl")
+                    : _slots[24] = nativeContext.LoadFunction("clCreateProgramWithSource", "opencl")
             )
         )(context, count, strings, lengths, errcode_ret);
 
@@ -23816,9 +33291,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, uint, uint, uint, int*, _cl_sampler*>)(
-                _slots[20] is not null and var loadedFnPtr
+                _slots[25] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[20] = nativeContext.LoadFunction("clCreateSampler", "opencl")
+                    : _slots[25] = nativeContext.LoadFunction("clCreateSampler", "opencl")
             )
         )(context, normalized_coords, addressing_mode, filter_mode, errcode_ret);
 
@@ -23943,9 +33418,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, ulong*, int*, _cl_sampler*>)(
-                _slots[21] is not null and var loadedFnPtr
+                _slots[26] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[21] = nativeContext.LoadFunction(
+                    : _slots[26] = nativeContext.LoadFunction(
                         "clCreateSamplerWithProperties",
                         "opencl"
                     )
@@ -24007,6 +33482,69 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<int> errcode_ret
     ) => ThisThread.CreateSamplerWithProperties(context, sampler_properties, errcode_ret);
 
+    [NativeName("clCreateSemaphoreWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    _cl_semaphore_khr* ICl.CreateSemaphoreWithPropertiesKHR(
+        _cl_context* context,
+        ulong* sema_props,
+        int* errcode_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_context*, ulong*, int*, _cl_semaphore_khr*>)(
+                _slots[27] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[27] = nativeContext.LoadFunction(
+                        "clCreateSemaphoreWithPropertiesKHR",
+                        "opencl"
+                    )
+            )
+        )(context, sema_props, errcode_ret);
+
+    [NativeName("clCreateSemaphoreWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
+        _cl_context* context,
+        ulong* sema_props,
+        int* errcode_ret
+    ) => ThisThread.CreateSemaphoreWithPropertiesKHR(context, sema_props, errcode_ret);
+
+    [NativeName("clCreateSemaphoreWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr<_cl_semaphore_khr> ICl.CreateSemaphoreWithPropertiesKHR(
+        Ref<_cl_context> context,
+        Ref<ulong> sema_props,
+        Ref<int> errcode_ret
+    )
+    {
+        fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (ulong* __dsl_sema_props = sema_props)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (_cl_semaphore_khr*)
+                ((ICl)this).CreateSemaphoreWithPropertiesKHR(
+                    __dsl_context,
+                    __dsl_sema_props,
+                    __dsl_errcode_ret
+                );
+        }
+    }
+
+    [NativeName("clCreateSemaphoreWithPropertiesKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
+        Ref<_cl_context> context,
+        Ref<ulong> sema_props,
+        Ref<int> errcode_ret
+    ) => ThisThread.CreateSemaphoreWithPropertiesKHR(context, sema_props, errcode_ret);
+
     [NativeName("clCreateSubBuffer")]
     [SupportedApiProfile(
         "opencl",
@@ -24032,9 +33570,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_mem*, ulong, uint, void*, int*, _cl_mem*>)(
-                _slots[22] is not null and var loadedFnPtr
+                _slots[28] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[22] = nativeContext.LoadFunction("clCreateSubBuffer", "opencl")
+                    : _slots[28] = nativeContext.LoadFunction("clCreateSubBuffer", "opencl")
             )
         )(buffer, flags, buffer_create_type, buffer_create_info, errcode_ret);
 
@@ -24163,9 +33701,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_device_id*, nint*, uint, _cl_device_id**, uint*, int>)(
-                _slots[23] is not null and var loadedFnPtr
+                _slots[29] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[23] = nativeContext.LoadFunction("clCreateSubDevices", "opencl")
+                    : _slots[29] = nativeContext.LoadFunction("clCreateSubDevices", "opencl")
             )
         )(in_device, properties, num_devices, out_devices, num_devices_ret);
 
@@ -24268,6 +33806,91 @@ public unsafe partial class Cl : ICl, ICl.Static
             num_devices_ret
         );
 
+    [NativeName("clCreateSubDevicesEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.CreateSubDevicesEXT(
+        _cl_device_id* in_device,
+        ulong* properties,
+        uint num_entries,
+        _cl_device_id** out_devices,
+        uint* num_devices
+    ) =>
+        (
+            (delegate* unmanaged<_cl_device_id*, ulong*, uint, _cl_device_id**, uint*, int>)(
+                _slots[30] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[30] = nativeContext.LoadFunction("clCreateSubDevicesEXT", "opencl")
+            )
+        )(in_device, properties, num_entries, out_devices, num_devices);
+
+    [NativeName("clCreateSubDevicesEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int CreateSubDevicesEXT(
+        _cl_device_id* in_device,
+        ulong* properties,
+        uint num_entries,
+        _cl_device_id** out_devices,
+        uint* num_devices
+    ) =>
+        ThisThread.CreateSubDevicesEXT(
+            in_device,
+            properties,
+            num_entries,
+            out_devices,
+            num_devices
+        );
+
+    [NativeName("clCreateSubDevicesEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.CreateSubDevicesEXT(
+        Ref<_cl_device_id> in_device,
+        Ref<ulong> properties,
+        uint num_entries,
+        Ref2D<_cl_device_id> out_devices,
+        Ref<uint> num_devices
+    )
+    {
+        fixed (uint* __dsl_num_devices = num_devices)
+        fixed (_cl_device_id** __dsl_out_devices = out_devices)
+        fixed (ulong* __dsl_properties = properties)
+        fixed (_cl_device_id* __dsl_in_device = in_device)
+        {
+            return (int)
+                ((ICl)this).CreateSubDevicesEXT(
+                    __dsl_in_device,
+                    __dsl_properties,
+                    num_entries,
+                    __dsl_out_devices,
+                    __dsl_num_devices
+                );
+        }
+    }
+
+    [NativeName("clCreateSubDevicesEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int CreateSubDevicesEXT(
+        Ref<_cl_device_id> in_device,
+        Ref<ulong> properties,
+        uint num_entries,
+        Ref2D<_cl_device_id> out_devices,
+        Ref<uint> num_devices
+    ) =>
+        ThisThread.CreateSubDevicesEXT(
+            in_device,
+            properties,
+            num_entries,
+            out_devices,
+            num_devices
+        );
+
     [NativeName("clCreateUserEvent")]
     [SupportedApiProfile(
         "opencl",
@@ -24287,9 +33910,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     _cl_event* ICl.CreateUserEvent(_cl_context* context, int* errcode_ret) =>
         (
             (delegate* unmanaged<_cl_context*, int*, _cl_event*>)(
-                _slots[24] is not null and var loadedFnPtr
+                _slots[31] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[24] = nativeContext.LoadFunction("clCreateUserEvent", "opencl")
+                    : _slots[31] = nativeContext.LoadFunction("clCreateUserEvent", "opencl")
             )
         )(context, errcode_ret);
 
@@ -24356,6 +33979,300 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static Ptr<_cl_event> CreateUserEvent(Ref<_cl_context> context, Ref<int> errcode_ret) =>
         ThisThread.CreateUserEvent(context, errcode_ret);
 
+    [NativeName("clDeviceMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void* ICl.DeviceMemAllocINTEL(
+        _cl_context* context,
+        _cl_device_id* device,
+        ulong* properties,
+        nuint size,
+        uint alignment,
+        int* errcode_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_context*, _cl_device_id*, ulong*, nuint, uint, int*, void*>)(
+                _slots[32] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[32] = nativeContext.LoadFunction("clDeviceMemAllocINTEL", "opencl")
+            )
+        )(context, device, properties, size, alignment, errcode_ret);
+
+    [NativeName("clDeviceMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void* DeviceMemAllocINTEL(
+        _cl_context* context,
+        _cl_device_id* device,
+        ulong* properties,
+        nuint size,
+        uint alignment,
+        int* errcode_ret
+    ) => ThisThread.DeviceMemAllocINTEL(context, device, properties, size, alignment, errcode_ret);
+
+    [NativeName("clDeviceMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr ICl.DeviceMemAllocINTEL(
+        Ref<_cl_context> context,
+        Ref<_cl_device_id> device,
+        Ref<ulong> properties,
+        nuint size,
+        uint alignment,
+        Ref<int> errcode_ret
+    )
+    {
+        fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (ulong* __dsl_properties = properties)
+        fixed (_cl_device_id* __dsl_device = device)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (void*)
+                ((ICl)this).DeviceMemAllocINTEL(
+                    __dsl_context,
+                    __dsl_device,
+                    __dsl_properties,
+                    size,
+                    alignment,
+                    __dsl_errcode_ret
+                );
+        }
+    }
+
+    [NativeName("clDeviceMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr DeviceMemAllocINTEL(
+        Ref<_cl_context> context,
+        Ref<_cl_device_id> device,
+        Ref<ulong> properties,
+        nuint size,
+        uint alignment,
+        Ref<int> errcode_ret
+    ) => ThisThread.DeviceMemAllocINTEL(context, device, properties, size, alignment, errcode_ret);
+
+    [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueAcquireExternalMemObjectsKHR(
+        _cl_command_queue* command_queue,
+        uint num_mem_objects,
+        _cl_mem** mem_objects,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                _cl_mem**,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[33] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[33] = nativeContext.LoadFunction(
+                        "clEnqueueAcquireExternalMemObjectsKHR",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            num_mem_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueAcquireExternalMemObjectsKHR(
+        _cl_command_queue* command_queue,
+        uint num_mem_objects,
+        _cl_mem** mem_objects,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueAcquireExternalMemObjectsKHR(
+            command_queue,
+            num_mem_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueAcquireExternalMemObjectsKHR(
+        Ref<_cl_command_queue> command_queue,
+        uint num_mem_objects,
+        Ref2D<_cl_mem> mem_objects,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueAcquireExternalMemObjectsKHR(
+                    __dsl_command_queue,
+                    num_mem_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueAcquireExternalMemObjectsKHR(
+        Ref<_cl_command_queue> command_queue,
+        uint num_mem_objects,
+        Ref2D<_cl_mem> mem_objects,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueAcquireExternalMemObjectsKHR(
+            command_queue,
+            num_mem_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueAcquireGrallocObjectsIMG(
+        _cl_command_queue* command_queue,
+        uint num_objects,
+        _cl_mem** mem_objects,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                _cl_mem**,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[34] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[34] = nativeContext.LoadFunction(
+                        "clEnqueueAcquireGrallocObjectsIMG",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            num_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueAcquireGrallocObjectsIMG(
+        _cl_command_queue* command_queue,
+        uint num_objects,
+        _cl_mem** mem_objects,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueAcquireGrallocObjectsIMG(
+            command_queue,
+            num_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueAcquireGrallocObjectsIMG(
+        Ref<_cl_command_queue> command_queue,
+        uint num_objects,
+        Ref2D<_cl_mem> mem_objects,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueAcquireGrallocObjectsIMG(
+                    __dsl_command_queue,
+                    num_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueAcquireGrallocObjectsIMG(
+        Ref<_cl_command_queue> command_queue,
+        uint num_objects,
+        Ref2D<_cl_mem> mem_objects,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueAcquireGrallocObjectsIMG(
+            command_queue,
+            num_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueBarrier")]
     [Obsolete]
     [SupportedApiProfile(
@@ -24377,9 +34294,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.EnqueueBarrier(_cl_command_queue* command_queue) =>
         (
             (delegate* unmanaged<_cl_command_queue*, int>)(
-                _slots[25] is not null and var loadedFnPtr
+                _slots[35] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[25] = nativeContext.LoadFunction("clEnqueueBarrier", "opencl")
+                    : _slots[35] = nativeContext.LoadFunction("clEnqueueBarrier", "opencl")
             )
         )(command_queue);
 
@@ -24474,9 +34391,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_command_queue*, uint, _cl_event**, _cl_event**, int>)(
-                _slots[26] is not null and var loadedFnPtr
+                _slots[36] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[26] = nativeContext.LoadFunction(
+                    : _slots[36] = nativeContext.LoadFunction(
                         "clEnqueueBarrierWithWaitList",
                         "opencl"
                     )
@@ -24615,9 +34532,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[27] is not null and var loadedFnPtr
+                _slots[37] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[27] = nativeContext.LoadFunction("clEnqueueCopyBuffer", "opencl")
+                    : _slots[37] = nativeContext.LoadFunction("clEnqueueCopyBuffer", "opencl")
             )
         )(
             command_queue,
@@ -24808,9 +34725,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[28] is not null and var loadedFnPtr
+                _slots[38] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[28] = nativeContext.LoadFunction("clEnqueueCopyBufferRect", "opencl")
+                    : _slots[38] = nativeContext.LoadFunction("clEnqueueCopyBufferRect", "opencl")
             )
         )(
             command_queue,
@@ -25022,9 +34939,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[29] is not null and var loadedFnPtr
+                _slots[39] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[29] = nativeContext.LoadFunction(
+                    : _slots[39] = nativeContext.LoadFunction(
                         "clEnqueueCopyBufferToImage",
                         "opencl"
                     )
@@ -25213,9 +35130,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[30] is not null and var loadedFnPtr
+                _slots[40] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[30] = nativeContext.LoadFunction("clEnqueueCopyImage", "opencl")
+                    : _slots[40] = nativeContext.LoadFunction("clEnqueueCopyImage", "opencl")
             )
         )(
             command_queue,
@@ -25402,9 +35319,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[31] is not null and var loadedFnPtr
+                _slots[41] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[31] = nativeContext.LoadFunction(
+                    : _slots[41] = nativeContext.LoadFunction(
                         "clEnqueueCopyImageToBuffer",
                         "opencl"
                     )
@@ -25591,9 +35508,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[32] is not null and var loadedFnPtr
+                _slots[42] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[32] = nativeContext.LoadFunction("clEnqueueFillBuffer", "opencl")
+                    : _slots[42] = nativeContext.LoadFunction("clEnqueueFillBuffer", "opencl")
             )
         )(
             command_queue,
@@ -25767,9 +35684,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[33] is not null and var loadedFnPtr
+                _slots[43] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[33] = nativeContext.LoadFunction("clEnqueueFillImage", "opencl")
+                    : _slots[43] = nativeContext.LoadFunction("clEnqueueFillImage", "opencl")
             )
         )(
             command_queue,
@@ -25902,6 +35819,145 @@ public unsafe partial class Cl : ICl, ICl.Static
             @event
         );
 
+    [NativeName("clEnqueueGenerateMipmapIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueGenerateMipmapIMG(
+        _cl_command_queue* command_queue,
+        _cl_mem* src_image,
+        _cl_mem* dst_image,
+        uint mipmap_filter_mode,
+        nuint* array_region,
+        nuint* mip_region,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                _cl_mem*,
+                _cl_mem*,
+                uint,
+                nuint*,
+                nuint*,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[44] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[44] = nativeContext.LoadFunction(
+                        "clEnqueueGenerateMipmapIMG",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            src_image,
+            dst_image,
+            mipmap_filter_mode,
+            array_region,
+            mip_region,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueGenerateMipmapIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueGenerateMipmapIMG(
+        _cl_command_queue* command_queue,
+        _cl_mem* src_image,
+        _cl_mem* dst_image,
+        uint mipmap_filter_mode,
+        nuint* array_region,
+        nuint* mip_region,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueGenerateMipmapIMG(
+            command_queue,
+            src_image,
+            dst_image,
+            mipmap_filter_mode,
+            array_region,
+            mip_region,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueGenerateMipmapIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueGenerateMipmapIMG(
+        Ref<_cl_command_queue> command_queue,
+        Ref<_cl_mem> src_image,
+        Ref<_cl_mem> dst_image,
+        uint mipmap_filter_mode,
+        Ref<nuint> array_region,
+        Ref<nuint> mip_region,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (nuint* __dsl_mip_region = mip_region)
+        fixed (nuint* __dsl_array_region = array_region)
+        fixed (_cl_mem* __dsl_dst_image = dst_image)
+        fixed (_cl_mem* __dsl_src_image = src_image)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueGenerateMipmapIMG(
+                    __dsl_command_queue,
+                    __dsl_src_image,
+                    __dsl_dst_image,
+                    mipmap_filter_mode,
+                    __dsl_array_region,
+                    __dsl_mip_region,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueGenerateMipmapIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueGenerateMipmapIMG(
+        Ref<_cl_command_queue> command_queue,
+        Ref<_cl_mem> src_image,
+        Ref<_cl_mem> dst_image,
+        uint mipmap_filter_mode,
+        Ref<nuint> array_region,
+        Ref<nuint> mip_region,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueGenerateMipmapIMG(
+            command_queue,
+            src_image,
+            dst_image,
+            mipmap_filter_mode,
+            array_region,
+            mip_region,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueMapBuffer")]
     [SupportedApiProfile(
         "opencl",
@@ -25944,9 +36000,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 int*,
                 void*>)(
-                _slots[34] is not null and var loadedFnPtr
+                _slots[45] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[34] = nativeContext.LoadFunction("clEnqueueMapBuffer", "opencl")
+                    : _slots[45] = nativeContext.LoadFunction("clEnqueueMapBuffer", "opencl")
             )
         )(
             command_queue,
@@ -26143,9 +36199,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 int*,
                 void*>)(
-                _slots[35] is not null and var loadedFnPtr
+                _slots[46] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[35] = nativeContext.LoadFunction("clEnqueueMapImage", "opencl")
+                    : _slots[46] = nativeContext.LoadFunction("clEnqueueMapImage", "opencl")
             )
         )(
             command_queue,
@@ -26335,9 +36391,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.EnqueueMarker(_cl_command_queue* command_queue, _cl_event** @event) =>
         (
             (delegate* unmanaged<_cl_command_queue*, _cl_event**, int>)(
-                _slots[36] is not null and var loadedFnPtr
+                _slots[47] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[36] = nativeContext.LoadFunction("clEnqueueMarker", "opencl")
+                    : _slots[47] = nativeContext.LoadFunction("clEnqueueMarker", "opencl")
             )
         )(command_queue, @event);
 
@@ -26435,9 +36491,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_command_queue*, uint, _cl_event**, _cl_event**, int>)(
-                _slots[37] is not null and var loadedFnPtr
+                _slots[48] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[37] = nativeContext.LoadFunction(
+                    : _slots[48] = nativeContext.LoadFunction(
                         "clEnqueueMarkerWithWaitList",
                         "opencl"
                     )
@@ -26536,6 +36592,695 @@ public unsafe partial class Cl : ICl, ICl.Static
             @event
         );
 
+    [NativeName("clEnqueueMemAdviseINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMemAdviseINTEL(
+        _cl_command_queue* command_queue,
+        void* ptr,
+        nuint size,
+        uint advice,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                void*,
+                nuint,
+                uint,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[49] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[49] = nativeContext.LoadFunction("clEnqueueMemAdviseINTEL", "opencl")
+            )
+        )(command_queue, ptr, size, advice, num_events_in_wait_list, event_wait_list, @event);
+
+    [NativeName("clEnqueueMemAdviseINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMemAdviseINTEL(
+        _cl_command_queue* command_queue,
+        void* ptr,
+        nuint size,
+        uint advice,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueMemAdviseINTEL(
+            command_queue,
+            ptr,
+            size,
+            advice,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMemAdviseINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMemAdviseINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref ptr,
+        nuint size,
+        uint advice,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_ptr = ptr)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueMemAdviseINTEL(
+                    __dsl_command_queue,
+                    __dsl_ptr,
+                    size,
+                    advice,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueMemAdviseINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMemAdviseINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref ptr,
+        nuint size,
+        uint advice,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueMemAdviseINTEL(
+            command_queue,
+            ptr,
+            size,
+            advice,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMemcpyINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMemcpyINTEL(
+        _cl_command_queue* command_queue,
+        uint blocking,
+        void* dst_ptr,
+        void* src_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                void*,
+                void*,
+                nuint,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[50] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[50] = nativeContext.LoadFunction("clEnqueueMemcpyINTEL", "opencl")
+            )
+        )(
+            command_queue,
+            blocking,
+            dst_ptr,
+            src_ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMemcpyINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMemcpyINTEL(
+        _cl_command_queue* command_queue,
+        uint blocking,
+        void* dst_ptr,
+        void* src_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueMemcpyINTEL(
+            command_queue,
+            blocking,
+            dst_ptr,
+            src_ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMemcpyINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMemcpyINTEL(
+        Ref<_cl_command_queue> command_queue,
+        MaybeBool<uint> blocking,
+        Ref dst_ptr,
+        Ref src_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_src_ptr = src_ptr)
+        fixed (void* __dsl_dst_ptr = dst_ptr)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueMemcpyINTEL(
+                    __dsl_command_queue,
+                    (uint)blocking,
+                    __dsl_dst_ptr,
+                    __dsl_src_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueMemcpyINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMemcpyINTEL(
+        Ref<_cl_command_queue> command_queue,
+        MaybeBool<uint> blocking,
+        Ref dst_ptr,
+        Ref src_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueMemcpyINTEL(
+            command_queue,
+            blocking,
+            dst_ptr,
+            src_ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMemFillINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMemFillINTEL(
+        _cl_command_queue* command_queue,
+        void* dst_ptr,
+        void* pattern,
+        nuint pattern_size,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                void*,
+                void*,
+                nuint,
+                nuint,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[51] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[51] = nativeContext.LoadFunction("clEnqueueMemFillINTEL", "opencl")
+            )
+        )(
+            command_queue,
+            dst_ptr,
+            pattern,
+            pattern_size,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMemFillINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMemFillINTEL(
+        _cl_command_queue* command_queue,
+        void* dst_ptr,
+        void* pattern,
+        nuint pattern_size,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueMemFillINTEL(
+            command_queue,
+            dst_ptr,
+            pattern,
+            pattern_size,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMemFillINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMemFillINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref dst_ptr,
+        Ref pattern,
+        nuint pattern_size,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_pattern = pattern)
+        fixed (void* __dsl_dst_ptr = dst_ptr)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueMemFillINTEL(
+                    __dsl_command_queue,
+                    __dsl_dst_ptr,
+                    __dsl_pattern,
+                    pattern_size,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueMemFillINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMemFillINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref dst_ptr,
+        Ref pattern,
+        nuint pattern_size,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueMemFillINTEL(
+            command_queue,
+            dst_ptr,
+            pattern,
+            pattern_size,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMemsetINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMemsetINTEL(
+        _cl_command_queue* command_queue,
+        void* dst_ptr,
+        int value,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                void*,
+                int,
+                nuint,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[52] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[52] = nativeContext.LoadFunction("clEnqueueMemsetINTEL", "opencl")
+            )
+        )(command_queue, dst_ptr, value, size, num_events_in_wait_list, event_wait_list, @event);
+
+    [NativeName("clEnqueueMemsetINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMemsetINTEL(
+        _cl_command_queue* command_queue,
+        void* dst_ptr,
+        int value,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueMemsetINTEL(
+            command_queue,
+            dst_ptr,
+            value,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMemsetINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMemsetINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref dst_ptr,
+        int value,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_dst_ptr = dst_ptr)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueMemsetINTEL(
+                    __dsl_command_queue,
+                    __dsl_dst_ptr,
+                    value,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueMemsetINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMemsetINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref dst_ptr,
+        int value,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueMemsetINTEL(
+            command_queue,
+            dst_ptr,
+            value,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMigrateMemINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMigrateMemINTEL(
+        _cl_command_queue* command_queue,
+        void* ptr,
+        nuint size,
+        ulong flags,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                void*,
+                nuint,
+                ulong,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[53] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[53] = nativeContext.LoadFunction("clEnqueueMigrateMemINTEL", "opencl")
+            )
+        )(command_queue, ptr, size, flags, num_events_in_wait_list, event_wait_list, @event);
+
+    [NativeName("clEnqueueMigrateMemINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMigrateMemINTEL(
+        _cl_command_queue* command_queue,
+        void* ptr,
+        nuint size,
+        ulong flags,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueMigrateMemINTEL(
+            command_queue,
+            ptr,
+            size,
+            flags,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMigrateMemINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMigrateMemINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref ptr,
+        nuint size,
+        ulong flags,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_ptr = ptr)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueMigrateMemINTEL(
+                    __dsl_command_queue,
+                    __dsl_ptr,
+                    size,
+                    flags,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueMigrateMemINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMigrateMemINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref ptr,
+        nuint size,
+        ulong flags,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueMigrateMemINTEL(
+            command_queue,
+            ptr,
+            size,
+            flags,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMigrateMemObjectEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMigrateMemObjectEXT(
+        _cl_command_queue* command_queue,
+        uint num_mem_objects,
+        _cl_mem** mem_objects,
+        ulong flags,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                _cl_mem**,
+                ulong,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[54] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[54] = nativeContext.LoadFunction(
+                        "clEnqueueMigrateMemObjectEXT",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            num_mem_objects,
+            mem_objects,
+            flags,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMigrateMemObjectEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMigrateMemObjectEXT(
+        _cl_command_queue* command_queue,
+        uint num_mem_objects,
+        _cl_mem** mem_objects,
+        ulong flags,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueMigrateMemObjectEXT(
+            command_queue,
+            num_mem_objects,
+            mem_objects,
+            flags,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueMigrateMemObjectEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueMigrateMemObjectEXT(
+        Ref<_cl_command_queue> command_queue,
+        uint num_mem_objects,
+        Ref2D<_cl_mem> mem_objects,
+        ulong flags,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueMigrateMemObjectEXT(
+                    __dsl_command_queue,
+                    num_mem_objects,
+                    __dsl_mem_objects,
+                    flags,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueMigrateMemObjectEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueMigrateMemObjectEXT(
+        Ref<_cl_command_queue> command_queue,
+        uint num_mem_objects,
+        Ref2D<_cl_mem> mem_objects,
+        ulong flags,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueMigrateMemObjectEXT(
+            command_queue,
+            num_mem_objects,
+            mem_objects,
+            flags,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueMigrateMemObjects")]
     [SupportedApiProfile(
         "opencl",
@@ -26570,9 +37315,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[38] is not null and var loadedFnPtr
+                _slots[55] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[38] = nativeContext.LoadFunction(
+                    : _slots[55] = nativeContext.LoadFunction(
                         "clEnqueueMigrateMemObjects",
                         "opencl"
                     )
@@ -26740,9 +37485,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[39] is not null and var loadedFnPtr
+                _slots[56] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[39] = nativeContext.LoadFunction("clEnqueueNativeKernel", "opencl")
+                    : _slots[56] = nativeContext.LoadFunction("clEnqueueNativeKernel", "opencl")
             )
         )(
             command_queue,
@@ -26934,9 +37679,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[40] is not null and var loadedFnPtr
+                _slots[57] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[40] = nativeContext.LoadFunction("clEnqueueNDRangeKernel", "opencl")
+                    : _slots[57] = nativeContext.LoadFunction("clEnqueueNDRangeKernel", "opencl")
             )
         )(
             command_queue,
@@ -27122,9 +37867,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[41] is not null and var loadedFnPtr
+                _slots[58] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[41] = nativeContext.LoadFunction("clEnqueueReadBuffer", "opencl")
+                    : _slots[58] = nativeContext.LoadFunction("clEnqueueReadBuffer", "opencl")
             )
         )(
             command_queue,
@@ -27317,9 +38062,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[42] is not null and var loadedFnPtr
+                _slots[59] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[42] = nativeContext.LoadFunction("clEnqueueReadBufferRect", "opencl")
+                    : _slots[59] = nativeContext.LoadFunction("clEnqueueReadBufferRect", "opencl")
             )
         )(
             command_queue,
@@ -27498,6 +38243,144 @@ public unsafe partial class Cl : ICl, ICl.Static
             @event
         );
 
+    [NativeName("clEnqueueReadHostPipeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueReadHostPipeINTEL(
+        _cl_command_queue* command_queue,
+        _cl_program* program,
+        sbyte* pipe_symbol,
+        uint blocking_read,
+        void* ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                _cl_program*,
+                sbyte*,
+                uint,
+                void*,
+                nuint,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[60] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[60] = nativeContext.LoadFunction(
+                        "clEnqueueReadHostPipeINTEL",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            program,
+            pipe_symbol,
+            blocking_read,
+            ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueReadHostPipeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueReadHostPipeINTEL(
+        _cl_command_queue* command_queue,
+        _cl_program* program,
+        sbyte* pipe_symbol,
+        uint blocking_read,
+        void* ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueReadHostPipeINTEL(
+            command_queue,
+            program,
+            pipe_symbol,
+            blocking_read,
+            ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueReadHostPipeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueReadHostPipeINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref<_cl_program> program,
+        Ref<sbyte> pipe_symbol,
+        MaybeBool<uint> blocking_read,
+        Ref ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_ptr = ptr)
+        fixed (sbyte* __dsl_pipe_symbol = pipe_symbol)
+        fixed (_cl_program* __dsl_program = program)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueReadHostPipeINTEL(
+                    __dsl_command_queue,
+                    __dsl_program,
+                    __dsl_pipe_symbol,
+                    (uint)blocking_read,
+                    __dsl_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueReadHostPipeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueReadHostPipeINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref<_cl_program> program,
+        Ref<sbyte> pipe_symbol,
+        MaybeBool<uint> blocking_read,
+        Ref ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueReadHostPipeINTEL(
+            command_queue,
+            program,
+            pipe_symbol,
+            blocking_read,
+            ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueReadImage")]
     [SupportedApiProfile(
         "opencl",
@@ -27542,9 +38425,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[43] is not null and var loadedFnPtr
+                _slots[61] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[43] = nativeContext.LoadFunction("clEnqueueReadImage", "opencl")
+                    : _slots[61] = nativeContext.LoadFunction("clEnqueueReadImage", "opencl")
             )
         )(
             command_queue,
@@ -27704,6 +38587,343 @@ public unsafe partial class Cl : ICl, ICl.Static
             @event
         );
 
+    [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueReleaseExternalMemObjectsKHR(
+        _cl_command_queue* command_queue,
+        uint num_mem_objects,
+        _cl_mem** mem_objects,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                _cl_mem**,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[62] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[62] = nativeContext.LoadFunction(
+                        "clEnqueueReleaseExternalMemObjectsKHR",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            num_mem_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueReleaseExternalMemObjectsKHR(
+        _cl_command_queue* command_queue,
+        uint num_mem_objects,
+        _cl_mem** mem_objects,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueReleaseExternalMemObjectsKHR(
+            command_queue,
+            num_mem_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueReleaseExternalMemObjectsKHR(
+        Ref<_cl_command_queue> command_queue,
+        uint num_mem_objects,
+        Ref2D<_cl_mem> mem_objects,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueReleaseExternalMemObjectsKHR(
+                    __dsl_command_queue,
+                    num_mem_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueReleaseExternalMemObjectsKHR(
+        Ref<_cl_command_queue> command_queue,
+        uint num_mem_objects,
+        Ref2D<_cl_mem> mem_objects,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueReleaseExternalMemObjectsKHR(
+            command_queue,
+            num_mem_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueReleaseGrallocObjectsIMG(
+        _cl_command_queue* command_queue,
+        uint num_objects,
+        _cl_mem** mem_objects,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                _cl_mem**,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[63] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[63] = nativeContext.LoadFunction(
+                        "clEnqueueReleaseGrallocObjectsIMG",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            num_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueReleaseGrallocObjectsIMG(
+        _cl_command_queue* command_queue,
+        uint num_objects,
+        _cl_mem** mem_objects,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueReleaseGrallocObjectsIMG(
+            command_queue,
+            num_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueReleaseGrallocObjectsIMG(
+        Ref<_cl_command_queue> command_queue,
+        uint num_objects,
+        Ref2D<_cl_mem> mem_objects,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (_cl_mem** __dsl_mem_objects = mem_objects)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueReleaseGrallocObjectsIMG(
+                    __dsl_command_queue,
+                    num_objects,
+                    __dsl_mem_objects,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
+    [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueReleaseGrallocObjectsIMG(
+        Ref<_cl_command_queue> command_queue,
+        uint num_objects,
+        Ref2D<_cl_mem> mem_objects,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueReleaseGrallocObjectsIMG(
+            command_queue,
+            num_objects,
+            mem_objects,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSignalSemaphoresKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSignalSemaphoresKHR(
+        _cl_command_queue* command_queue,
+        uint num_sema_objects,
+        _cl_semaphore_khr** sema_objects,
+        ulong* sema_payload_list,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                _cl_semaphore_khr**,
+                ulong*,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[64] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[64] = nativeContext.LoadFunction(
+                        "clEnqueueSignalSemaphoresKHR",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            num_sema_objects,
+            sema_objects,
+            sema_payload_list,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSignalSemaphoresKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSignalSemaphoresKHR(
+        _cl_command_queue* command_queue,
+        uint num_sema_objects,
+        _cl_semaphore_khr** sema_objects,
+        ulong* sema_payload_list,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueSignalSemaphoresKHR(
+            command_queue,
+            num_sema_objects,
+            sema_objects,
+            sema_payload_list,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSignalSemaphoresKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSignalSemaphoresKHR(
+        Ref<_cl_command_queue> command_queue,
+        uint num_sema_objects,
+        Ref2D<_cl_semaphore_khr> sema_objects,
+        Ref<ulong> sema_payload_list,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
+        fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueSignalSemaphoresKHR(
+                    __dsl_command_queue,
+                    num_sema_objects,
+                    __dsl_sema_objects,
+                    __dsl_sema_payload_list,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueSignalSemaphoresKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSignalSemaphoresKHR(
+        Ref<_cl_command_queue> command_queue,
+        uint num_sema_objects,
+        Ref2D<_cl_semaphore_khr> sema_objects,
+        Ref<ulong> sema_payload_list,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueSignalSemaphoresKHR(
+            command_queue,
+            num_sema_objects,
+            sema_objects,
+            sema_payload_list,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueSVMFree")]
     [SupportedApiProfile(
         "opencl",
@@ -27733,9 +38953,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[44] is not null and var loadedFnPtr
+                _slots[65] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[44] = nativeContext.LoadFunction("clEnqueueSVMFree", "opencl")
+                    : _slots[65] = nativeContext.LoadFunction("clEnqueueSVMFree", "opencl")
             )
         )(
             command_queue,
@@ -27845,6 +39065,131 @@ public unsafe partial class Cl : ICl, ICl.Static
             @event
         );
 
+    [NativeName("clEnqueueSVMFreeARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSvmFreeARM(
+        _cl_command_queue* command_queue,
+        uint num_svm_pointers,
+        void** svm_pointers,
+        delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void> pfn_free_func,
+        void* user_data,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                void**,
+                delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void>,
+                void*,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[66] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[66] = nativeContext.LoadFunction("clEnqueueSVMFreeARM", "opencl")
+            )
+        )(
+            command_queue,
+            num_svm_pointers,
+            svm_pointers,
+            pfn_free_func,
+            user_data,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSVMFreeARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSvmFreeARM(
+        _cl_command_queue* command_queue,
+        uint num_svm_pointers,
+        void** svm_pointers,
+        delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void> pfn_free_func,
+        void* user_data,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueSvmFreeARM(
+            command_queue,
+            num_svm_pointers,
+            svm_pointers,
+            pfn_free_func,
+            user_data,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSVMFreeARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSvmFreeARM(
+        Ref<_cl_command_queue> command_queue,
+        uint num_svm_pointers,
+        Ref2D svm_pointers,
+        delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void> pfn_free_func,
+        Ref user_data,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_user_data = user_data)
+        fixed (void** __dsl_svm_pointers = svm_pointers)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueSvmFreeARM(
+                    __dsl_command_queue,
+                    num_svm_pointers,
+                    __dsl_svm_pointers,
+                    pfn_free_func,
+                    __dsl_user_data,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueSVMFreeARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSvmFreeARM(
+        Ref<_cl_command_queue> command_queue,
+        uint num_svm_pointers,
+        Ref2D svm_pointers,
+        delegate* unmanaged<_cl_command_queue*, uint, void**, void*, void> pfn_free_func,
+        Ref user_data,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueSvmFreeARM(
+            command_queue,
+            num_svm_pointers,
+            svm_pointers,
+            pfn_free_func,
+            user_data,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueSVMMap")]
     [SupportedApiProfile(
         "opencl",
@@ -27874,9 +39219,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[45] is not null and var loadedFnPtr
+                _slots[67] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[45] = nativeContext.LoadFunction("clEnqueueSVMMap", "opencl")
+                    : _slots[67] = nativeContext.LoadFunction("clEnqueueSVMMap", "opencl")
             )
         )(
             command_queue,
@@ -27985,6 +39330,130 @@ public unsafe partial class Cl : ICl, ICl.Static
             @event
         );
 
+    [NativeName("clEnqueueSVMMapARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSvmMapARM(
+        _cl_command_queue* command_queue,
+        uint blocking_map,
+        ulong flags,
+        void* svm_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                ulong,
+                void*,
+                nuint,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[68] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[68] = nativeContext.LoadFunction("clEnqueueSVMMapARM", "opencl")
+            )
+        )(
+            command_queue,
+            blocking_map,
+            flags,
+            svm_ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSVMMapARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSvmMapARM(
+        _cl_command_queue* command_queue,
+        uint blocking_map,
+        ulong flags,
+        void* svm_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueSvmMapARM(
+            command_queue,
+            blocking_map,
+            flags,
+            svm_ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSVMMapARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSvmMapARM(
+        Ref<_cl_command_queue> command_queue,
+        MaybeBool<uint> blocking_map,
+        ulong flags,
+        Ref svm_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_svm_ptr = svm_ptr)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueSvmMapARM(
+                    __dsl_command_queue,
+                    (uint)blocking_map,
+                    flags,
+                    __dsl_svm_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueSVMMapARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSvmMapARM(
+        Ref<_cl_command_queue> command_queue,
+        MaybeBool<uint> blocking_map,
+        ulong flags,
+        Ref svm_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueSvmMapARM(
+            command_queue,
+            blocking_map,
+            flags,
+            svm_ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueSVMMemcpy")]
     [SupportedApiProfile(
         "opencl",
@@ -28014,9 +39483,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[46] is not null and var loadedFnPtr
+                _slots[69] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[46] = nativeContext.LoadFunction("clEnqueueSVMMemcpy", "opencl")
+                    : _slots[69] = nativeContext.LoadFunction("clEnqueueSVMMemcpy", "opencl")
             )
         )(
             command_queue,
@@ -28126,6 +39595,131 @@ public unsafe partial class Cl : ICl, ICl.Static
             @event
         );
 
+    [NativeName("clEnqueueSVMMemcpyARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSvmMemcpyARM(
+        _cl_command_queue* command_queue,
+        uint blocking_copy,
+        void* dst_ptr,
+        void* src_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                void*,
+                void*,
+                nuint,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[70] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[70] = nativeContext.LoadFunction("clEnqueueSVMMemcpyARM", "opencl")
+            )
+        )(
+            command_queue,
+            blocking_copy,
+            dst_ptr,
+            src_ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSVMMemcpyARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSvmMemcpyARM(
+        _cl_command_queue* command_queue,
+        uint blocking_copy,
+        void* dst_ptr,
+        void* src_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueSvmMemcpyARM(
+            command_queue,
+            blocking_copy,
+            dst_ptr,
+            src_ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSVMMemcpyARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSvmMemcpyARM(
+        Ref<_cl_command_queue> command_queue,
+        MaybeBool<uint> blocking_copy,
+        Ref dst_ptr,
+        Ref src_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_src_ptr = src_ptr)
+        fixed (void* __dsl_dst_ptr = dst_ptr)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueSvmMemcpyARM(
+                    __dsl_command_queue,
+                    (uint)blocking_copy,
+                    __dsl_dst_ptr,
+                    __dsl_src_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueSVMMemcpyARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSvmMemcpyARM(
+        Ref<_cl_command_queue> command_queue,
+        MaybeBool<uint> blocking_copy,
+        Ref dst_ptr,
+        Ref src_ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueSvmMemcpyARM(
+            command_queue,
+            blocking_copy,
+            dst_ptr,
+            src_ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueSVMMemFill")]
     [SupportedApiProfile(
         "opencl",
@@ -28155,9 +39749,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[47] is not null and var loadedFnPtr
+                _slots[71] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[47] = nativeContext.LoadFunction("clEnqueueSVMMemFill", "opencl")
+                    : _slots[71] = nativeContext.LoadFunction("clEnqueueSVMMemFill", "opencl")
             )
         )(
             command_queue,
@@ -28267,6 +39861,131 @@ public unsafe partial class Cl : ICl, ICl.Static
             @event
         );
 
+    [NativeName("clEnqueueSVMMemFillARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSvmMemFillARM(
+        _cl_command_queue* command_queue,
+        void* svm_ptr,
+        void* pattern,
+        nuint pattern_size,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                void*,
+                void*,
+                nuint,
+                nuint,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[72] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[72] = nativeContext.LoadFunction("clEnqueueSVMMemFillARM", "opencl")
+            )
+        )(
+            command_queue,
+            svm_ptr,
+            pattern,
+            pattern_size,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSVMMemFillARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSvmMemFillARM(
+        _cl_command_queue* command_queue,
+        void* svm_ptr,
+        void* pattern,
+        nuint pattern_size,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueSvmMemFillARM(
+            command_queue,
+            svm_ptr,
+            pattern,
+            pattern_size,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSVMMemFillARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSvmMemFillARM(
+        Ref<_cl_command_queue> command_queue,
+        Ref svm_ptr,
+        Ref pattern,
+        nuint pattern_size,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_pattern = pattern)
+        fixed (void* __dsl_svm_ptr = svm_ptr)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueSvmMemFillARM(
+                    __dsl_command_queue,
+                    __dsl_svm_ptr,
+                    __dsl_pattern,
+                    pattern_size,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueSVMMemFillARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSvmMemFillARM(
+        Ref<_cl_command_queue> command_queue,
+        Ref svm_ptr,
+        Ref pattern,
+        nuint pattern_size,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueSvmMemFillARM(
+            command_queue,
+            svm_ptr,
+            pattern,
+            pattern_size,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueSVMMigrateMem")]
     [SupportedApiProfile(
         "opencl",
@@ -28296,9 +40015,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[48] is not null and var loadedFnPtr
+                _slots[73] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[48] = nativeContext.LoadFunction("clEnqueueSVMMigrateMem", "opencl")
+                    : _slots[73] = nativeContext.LoadFunction("clEnqueueSVMMigrateMem", "opencl")
             )
         )(
             command_queue,
@@ -28425,9 +40144,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_command_queue*, void*, uint, _cl_event**, _cl_event**, int>)(
-                _slots[49] is not null and var loadedFnPtr
+                _slots[74] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[49] = nativeContext.LoadFunction("clEnqueueSVMUnmap", "opencl")
+                    : _slots[74] = nativeContext.LoadFunction("clEnqueueSVMUnmap", "opencl")
             )
         )(command_queue, svm_ptr, num_events_in_wait_list, event_wait_list, @event);
 
@@ -28509,6 +40228,91 @@ public unsafe partial class Cl : ICl, ICl.Static
             @event
         );
 
+    [NativeName("clEnqueueSVMUnmapARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSvmUnmapARM(
+        _cl_command_queue* command_queue,
+        void* svm_ptr,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<_cl_command_queue*, void*, uint, _cl_event**, _cl_event**, int>)(
+                _slots[75] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[75] = nativeContext.LoadFunction("clEnqueueSVMUnmapARM", "opencl")
+            )
+        )(command_queue, svm_ptr, num_events_in_wait_list, event_wait_list, @event);
+
+    [NativeName("clEnqueueSVMUnmapARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSvmUnmapARM(
+        _cl_command_queue* command_queue,
+        void* svm_ptr,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueSvmUnmapARM(
+            command_queue,
+            svm_ptr,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueSVMUnmapARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueSvmUnmapARM(
+        Ref<_cl_command_queue> command_queue,
+        Ref svm_ptr,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_svm_ptr = svm_ptr)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueSvmUnmapARM(
+                    __dsl_command_queue,
+                    __dsl_svm_ptr,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueSVMUnmapARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueSvmUnmapARM(
+        Ref<_cl_command_queue> command_queue,
+        Ref svm_ptr,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueSvmUnmapARM(
+            command_queue,
+            svm_ptr,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueTask")]
     [Obsolete]
     [SupportedApiProfile(
@@ -28542,9 +40346,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[50] is not null and var loadedFnPtr
+                _slots[76] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[50] = nativeContext.LoadFunction("clEnqueueTask", "opencl")
+                    : _slots[76] = nativeContext.LoadFunction("clEnqueueTask", "opencl")
             )
         )(command_queue, kernel, num_events_in_wait_list, event_wait_list, @event);
 
@@ -28690,9 +40494,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[51] is not null and var loadedFnPtr
+                _slots[77] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[51] = nativeContext.LoadFunction("clEnqueueUnmapMemObject", "opencl")
+                    : _slots[77] = nativeContext.LoadFunction("clEnqueueUnmapMemObject", "opencl")
             )
         )(command_queue, memobj, mapped_ptr, num_events_in_wait_list, event_wait_list, @event);
 
@@ -28833,9 +40637,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_command_queue*, uint, _cl_event**, int>)(
-                _slots[52] is not null and var loadedFnPtr
+                _slots[78] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[52] = nativeContext.LoadFunction("clEnqueueWaitForEvents", "opencl")
+                    : _slots[78] = nativeContext.LoadFunction("clEnqueueWaitForEvents", "opencl")
             )
         )(command_queue, num_events, event_list);
 
@@ -28919,6 +40723,125 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref2D<_cl_event> event_list
     ) => ThisThread.EnqueueWaitForEvents(command_queue, num_events, event_list);
 
+    [NativeName("clEnqueueWaitSemaphoresKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueWaitSemaphoresKHR(
+        _cl_command_queue* command_queue,
+        uint num_sema_objects,
+        _cl_semaphore_khr** sema_objects,
+        ulong* sema_payload_list,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                uint,
+                _cl_semaphore_khr**,
+                ulong*,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[79] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[79] = nativeContext.LoadFunction(
+                        "clEnqueueWaitSemaphoresKHR",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            num_sema_objects,
+            sema_objects,
+            sema_payload_list,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueWaitSemaphoresKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueWaitSemaphoresKHR(
+        _cl_command_queue* command_queue,
+        uint num_sema_objects,
+        _cl_semaphore_khr** sema_objects,
+        ulong* sema_payload_list,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueWaitSemaphoresKHR(
+            command_queue,
+            num_sema_objects,
+            sema_objects,
+            sema_payload_list,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueWaitSemaphoresKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueWaitSemaphoresKHR(
+        Ref<_cl_command_queue> command_queue,
+        uint num_sema_objects,
+        Ref2D<_cl_semaphore_khr> sema_objects,
+        Ref<ulong> sema_payload_list,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
+        fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueWaitSemaphoresKHR(
+                    __dsl_command_queue,
+                    num_sema_objects,
+                    __dsl_sema_objects,
+                    __dsl_sema_payload_list,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueWaitSemaphoresKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueWaitSemaphoresKHR(
+        Ref<_cl_command_queue> command_queue,
+        uint num_sema_objects,
+        Ref2D<_cl_semaphore_khr> sema_objects,
+        Ref<ulong> sema_payload_list,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueWaitSemaphoresKHR(
+            command_queue,
+            num_sema_objects,
+            sema_objects,
+            sema_payload_list,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueWriteBuffer")]
     [SupportedApiProfile(
         "opencl",
@@ -28959,9 +40882,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[53] is not null and var loadedFnPtr
+                _slots[80] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[53] = nativeContext.LoadFunction("clEnqueueWriteBuffer", "opencl")
+                    : _slots[80] = nativeContext.LoadFunction("clEnqueueWriteBuffer", "opencl")
             )
         )(
             command_queue,
@@ -29154,9 +41077,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[54] is not null and var loadedFnPtr
+                _slots[81] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[54] = nativeContext.LoadFunction("clEnqueueWriteBufferRect", "opencl")
+                    : _slots[81] = nativeContext.LoadFunction("clEnqueueWriteBufferRect", "opencl")
             )
         )(
             command_queue,
@@ -29335,6 +41258,144 @@ public unsafe partial class Cl : ICl, ICl.Static
             @event
         );
 
+    [NativeName("clEnqueueWriteHostPipeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueWriteHostPipeINTEL(
+        _cl_command_queue* command_queue,
+        _cl_program* program,
+        sbyte* pipe_symbol,
+        uint blocking_write,
+        void* ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                _cl_program*,
+                sbyte*,
+                uint,
+                void*,
+                nuint,
+                uint,
+                _cl_event**,
+                _cl_event**,
+                int>)(
+                _slots[82] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[82] = nativeContext.LoadFunction(
+                        "clEnqueueWriteHostPipeINTEL",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            program,
+            pipe_symbol,
+            blocking_write,
+            ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueWriteHostPipeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueWriteHostPipeINTEL(
+        _cl_command_queue* command_queue,
+        _cl_program* program,
+        sbyte* pipe_symbol,
+        uint blocking_write,
+        void* ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        _cl_event** event_wait_list,
+        _cl_event** @event
+    ) =>
+        ThisThread.EnqueueWriteHostPipeINTEL(
+            command_queue,
+            program,
+            pipe_symbol,
+            blocking_write,
+            ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
+    [NativeName("clEnqueueWriteHostPipeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.EnqueueWriteHostPipeINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref<_cl_program> program,
+        Ref<sbyte> pipe_symbol,
+        MaybeBool<uint> blocking_write,
+        Ref ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    )
+    {
+        fixed (_cl_event** __dsl_event = @event)
+        fixed (_cl_event** __dsl_event_wait_list = event_wait_list)
+        fixed (void* __dsl_ptr = ptr)
+        fixed (sbyte* __dsl_pipe_symbol = pipe_symbol)
+        fixed (_cl_program* __dsl_program = program)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).EnqueueWriteHostPipeINTEL(
+                    __dsl_command_queue,
+                    __dsl_program,
+                    __dsl_pipe_symbol,
+                    (uint)blocking_write,
+                    __dsl_ptr,
+                    size,
+                    num_events_in_wait_list,
+                    __dsl_event_wait_list,
+                    __dsl_event
+                );
+        }
+    }
+
+    [NativeName("clEnqueueWriteHostPipeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int EnqueueWriteHostPipeINTEL(
+        Ref<_cl_command_queue> command_queue,
+        Ref<_cl_program> program,
+        Ref<sbyte> pipe_symbol,
+        MaybeBool<uint> blocking_write,
+        Ref ptr,
+        nuint size,
+        uint num_events_in_wait_list,
+        Ref2D<_cl_event> event_wait_list,
+        Ref2D<_cl_event> @event
+    ) =>
+        ThisThread.EnqueueWriteHostPipeINTEL(
+            command_queue,
+            program,
+            pipe_symbol,
+            blocking_write,
+            ptr,
+            size,
+            num_events_in_wait_list,
+            event_wait_list,
+            @event
+        );
+
     [NativeName("clEnqueueWriteImage")]
     [SupportedApiProfile(
         "opencl",
@@ -29379,9 +41440,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 _cl_event**,
                 _cl_event**,
                 int>)(
-                _slots[55] is not null and var loadedFnPtr
+                _slots[83] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[55] = nativeContext.LoadFunction("clEnqueueWriteImage", "opencl")
+                    : _slots[83] = nativeContext.LoadFunction("clEnqueueWriteImage", "opencl")
             )
         )(
             command_queue,
@@ -29561,9 +41622,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.Finish(_cl_command_queue* command_queue) =>
         (
             (delegate* unmanaged<_cl_command_queue*, int>)(
-                _slots[56] is not null and var loadedFnPtr
+                _slots[84] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[56] = nativeContext.LoadFunction("clFinish", "opencl")
+                    : _slots[84] = nativeContext.LoadFunction("clFinish", "opencl")
             )
         )(command_queue);
 
@@ -29651,9 +41712,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.Flush(_cl_command_queue* command_queue) =>
         (
             (delegate* unmanaged<_cl_command_queue*, int>)(
-                _slots[57] is not null and var loadedFnPtr
+                _slots[85] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[57] = nativeContext.LoadFunction("clFlush", "opencl")
+                    : _slots[85] = nativeContext.LoadFunction("clFlush", "opencl")
             )
         )(command_queue);
 
@@ -29721,6 +41782,90 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static int Flush(Ref<_cl_command_queue> command_queue) =>
         ThisThread.Flush(command_queue);
 
+    [NativeName("clGetAcceleratorInfoINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetAcceleratorInfoINTEL(
+        _cl_accelerator_intel* accelerator,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_accelerator_intel*, uint, nuint, void*, nuint*, int>)(
+                _slots[86] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[86] = nativeContext.LoadFunction("clGetAcceleratorInfoINTEL", "opencl")
+            )
+        )(accelerator, param_name, param_value_size, param_value, param_value_size_ret);
+
+    [NativeName("clGetAcceleratorInfoINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetAcceleratorInfoINTEL(
+        _cl_accelerator_intel* accelerator,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        ThisThread.GetAcceleratorInfoINTEL(
+            accelerator,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
+    [NativeName("clGetAcceleratorInfoINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetAcceleratorInfoINTEL(
+        Ref<_cl_accelerator_intel> accelerator,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    )
+    {
+        fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+        fixed (void* __dsl_param_value = param_value)
+        fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
+        {
+            return (int)
+                ((ICl)this).GetAcceleratorInfoINTEL(
+                    __dsl_accelerator,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+        }
+    }
+
+    [NativeName("clGetAcceleratorInfoINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetAcceleratorInfoINTEL(
+        Ref<_cl_accelerator_intel> accelerator,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    ) =>
+        ThisThread.GetAcceleratorInfoINTEL(
+            accelerator,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
     [NativeName("clGetCommandQueueInfo")]
     [SupportedApiProfile(
         "opencl",
@@ -29747,9 +41892,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_command_queue*, uint, nuint, void*, nuint*, int>)(
-                _slots[58] is not null and var loadedFnPtr
+                _slots[87] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[58] = nativeContext.LoadFunction("clGetCommandQueueInfo", "opencl")
+                    : _slots[87] = nativeContext.LoadFunction("clGetCommandQueueInfo", "opencl")
             )
         )(command_queue, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -29883,9 +42028,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, uint, nuint, void*, nuint*, int>)(
-                _slots[59] is not null and var loadedFnPtr
+                _slots[88] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[59] = nativeContext.LoadFunction("clGetContextInfo", "opencl")
+                    : _slots[88] = nativeContext.LoadFunction("clGetContextInfo", "opencl")
             )
         )(context, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -30008,9 +42153,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_device_id*, ulong*, ulong*, int>)(
-                _slots[60] is not null and var loadedFnPtr
+                _slots[89] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[60] = nativeContext.LoadFunction("clGetDeviceAndHostTimer", "opencl")
+                    : _slots[89] = nativeContext.LoadFunction("clGetDeviceAndHostTimer", "opencl")
             )
         )(device, device_timestamp, host_timestamp);
 
@@ -30095,9 +42240,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_platform_id*, ulong, uint, _cl_device_id**, uint*, int>)(
-                _slots[61] is not null and var loadedFnPtr
+                _slots[90] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[61] = nativeContext.LoadFunction("clGetDeviceIDs", "opencl")
+                    : _slots[90] = nativeContext.LoadFunction("clGetDeviceIDs", "opencl")
             )
         )(platform, device_type, num_entries, devices, num_devices);
 
@@ -30191,6 +42336,130 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<uint> num_devices
     ) => ThisThread.GetDeviceIDs(platform, device_type, num_entries, devices, num_devices);
 
+    [NativeName("clGetDeviceImageInfoQCOM")]
+    [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetDeviceImageInfoQCOM(
+        _cl_device_id* device,
+        nuint image_width,
+        nuint image_height,
+        ClImageFormat* image_format,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_device_id*,
+                nuint,
+                nuint,
+                ClImageFormat*,
+                uint,
+                nuint,
+                void*,
+                nuint*,
+                int>)(
+                _slots[91] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[91] = nativeContext.LoadFunction("clGetDeviceImageInfoQCOM", "opencl")
+            )
+        )(
+            device,
+            image_width,
+            image_height,
+            image_format,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
+    [NativeName("clGetDeviceImageInfoQCOM")]
+    [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetDeviceImageInfoQCOM(
+        _cl_device_id* device,
+        nuint image_width,
+        nuint image_height,
+        ClImageFormat* image_format,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        ThisThread.GetDeviceImageInfoQCOM(
+            device,
+            image_width,
+            image_height,
+            image_format,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
+    [NativeName("clGetDeviceImageInfoQCOM")]
+    [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetDeviceImageInfoQCOM(
+        Ref<_cl_device_id> device,
+        nuint image_width,
+        nuint image_height,
+        Ref<ClImageFormat> image_format,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    )
+    {
+        fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+        fixed (void* __dsl_param_value = param_value)
+        fixed (ClImageFormat* __dsl_image_format = image_format)
+        fixed (_cl_device_id* __dsl_device = device)
+        {
+            return (int)
+                ((ICl)this).GetDeviceImageInfoQCOM(
+                    __dsl_device,
+                    image_width,
+                    image_height,
+                    __dsl_image_format,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+        }
+    }
+
+    [NativeName("clGetDeviceImageInfoQCOM")]
+    [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
+    [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetDeviceImageInfoQCOM(
+        Ref<_cl_device_id> device,
+        nuint image_width,
+        nuint image_height,
+        Ref<ClImageFormat> image_format,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    ) =>
+        ThisThread.GetDeviceImageInfoQCOM(
+            device,
+            image_width,
+            image_height,
+            image_format,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
     [NativeName("clGetDeviceInfo")]
     [SupportedApiProfile(
         "opencl",
@@ -30217,9 +42486,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_device_id*, uint, nuint, void*, nuint*, int>)(
-                _slots[62] is not null and var loadedFnPtr
+                _slots[92] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[62] = nativeContext.LoadFunction("clGetDeviceInfo", "opencl")
+                    : _slots[92] = nativeContext.LoadFunction("clGetDeviceInfo", "opencl")
             )
         )(device, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -30353,9 +42622,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_event*, uint, nuint, void*, nuint*, int>)(
-                _slots[63] is not null and var loadedFnPtr
+                _slots[93] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[63] = nativeContext.LoadFunction("clGetEventInfo", "opencl")
+                    : _slots[93] = nativeContext.LoadFunction("clGetEventInfo", "opencl")
             )
         )(@event, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -30489,9 +42758,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_event*, uint, nuint, void*, nuint*, int>)(
-                _slots[64] is not null and var loadedFnPtr
+                _slots[94] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[64] = nativeContext.LoadFunction("clGetEventProfilingInfo", "opencl")
+                    : _slots[94] = nativeContext.LoadFunction("clGetEventProfilingInfo", "opencl")
             )
         )(@event, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -30620,9 +42889,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void* ICl.GetExtensionFunctionAddress(sbyte* func_name) =>
         (
             (delegate* unmanaged<sbyte*, void*>)(
-                _slots[65] is not null and var loadedFnPtr
+                _slots[95] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[65] = nativeContext.LoadFunction(
+                    : _slots[95] = nativeContext.LoadFunction(
                         "clGetExtensionFunctionAddress",
                         "opencl"
                     )
@@ -30715,9 +42984,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void* ICl.GetExtensionFunctionAddressForPlatform(_cl_platform_id* platform, sbyte* func_name) =>
         (
             (delegate* unmanaged<_cl_platform_id*, sbyte*, void*>)(
-                _slots[66] is not null and var loadedFnPtr
+                _slots[96] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[66] = nativeContext.LoadFunction(
+                    : _slots[96] = nativeContext.LoadFunction(
                         "clGetExtensionFunctionAddressForPlatform",
                         "opencl"
                     )
@@ -30803,9 +43072,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.GetHostTimer(_cl_device_id* device, ulong* host_timestamp) =>
         (
             (delegate* unmanaged<_cl_device_id*, ulong*, int>)(
-                _slots[67] is not null and var loadedFnPtr
+                _slots[97] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[67] = nativeContext.LoadFunction("clGetHostTimer", "opencl")
+                    : _slots[97] = nativeContext.LoadFunction("clGetHostTimer", "opencl")
             )
         )(device, host_timestamp);
 
@@ -30848,6 +43117,82 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static int GetHostTimer(Ref<_cl_device_id> device, Ref<ulong> host_timestamp) =>
         ThisThread.GetHostTimer(device, host_timestamp);
 
+    [NativeName("clGetICDLoaderInfoOCLICD")]
+    [SupportedApiProfile("opencl", ["cl_loader_info"])]
+    [NativeFunction("opencl", EntryPoint = "clGetICDLoaderInfoOCLICD")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetIcdLoaderInfoOclicd(
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        (
+            (delegate* unmanaged<uint, nuint, void*, nuint*, int>)(
+                _slots[98] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[98] = nativeContext.LoadFunction("clGetICDLoaderInfoOCLICD", "opencl")
+            )
+        )(param_name, param_value_size, param_value, param_value_size_ret);
+
+    [NativeName("clGetICDLoaderInfoOCLICD")]
+    [SupportedApiProfile("opencl", ["cl_loader_info"])]
+    [NativeFunction("opencl", EntryPoint = "clGetICDLoaderInfoOCLICD")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetIcdLoaderInfoOclicd(
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        ThisThread.GetIcdLoaderInfoOclicd(
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
+    [NativeName("clGetICDLoaderInfoOCLICD")]
+    [SupportedApiProfile("opencl", ["cl_loader_info"])]
+    [NativeFunction("opencl", EntryPoint = "clGetICDLoaderInfoOCLICD")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetIcdLoaderInfoOclicd(
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    )
+    {
+        fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+        fixed (void* __dsl_param_value = param_value)
+        {
+            return (int)
+                ((ICl)this).GetIcdLoaderInfoOclicd(
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+        }
+    }
+
+    [NativeName("clGetICDLoaderInfoOCLICD")]
+    [SupportedApiProfile("opencl", ["cl_loader_info"])]
+    [NativeFunction("opencl", EntryPoint = "clGetICDLoaderInfoOCLICD")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetIcdLoaderInfoOclicd(
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    ) =>
+        ThisThread.GetIcdLoaderInfoOclicd(
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
     [NativeName("clGetImageInfo")]
     [SupportedApiProfile(
         "opencl",
@@ -30874,9 +43219,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_mem*, uint, nuint, void*, nuint*, int>)(
-                _slots[68] is not null and var loadedFnPtr
+                _slots[99] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[68] = nativeContext.LoadFunction("clGetImageInfo", "opencl")
+                    : _slots[99] = nativeContext.LoadFunction("clGetImageInfo", "opencl")
             )
         )(image, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -30984,6 +43329,160 @@ public unsafe partial class Cl : ICl, ICl.Static
             param_value_size_ret
         );
 
+    [NativeName("clGetImageRequirementsInfoEXT")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_ext_image_requirements_info"],
+        ImpliesSets = ["CL_VERSION_3_0"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetImageRequirementsInfoEXT(
+        _cl_context* context,
+        ulong* properties,
+        ulong flags,
+        ClImageFormat* image_format,
+        ClImageDesc* image_desc,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_context*,
+                ulong*,
+                ulong,
+                ClImageFormat*,
+                ClImageDesc*,
+                uint,
+                nuint,
+                void*,
+                nuint*,
+                int>)(
+                _slots[100] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[100] = nativeContext.LoadFunction(
+                        "clGetImageRequirementsInfoEXT",
+                        "opencl"
+                    )
+            )
+        )(
+            context,
+            properties,
+            flags,
+            image_format,
+            image_desc,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
+    [NativeName("clGetImageRequirementsInfoEXT")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_ext_image_requirements_info"],
+        ImpliesSets = ["CL_VERSION_3_0"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetImageRequirementsInfoEXT(
+        _cl_context* context,
+        ulong* properties,
+        ulong flags,
+        ClImageFormat* image_format,
+        ClImageDesc* image_desc,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        ThisThread.GetImageRequirementsInfoEXT(
+            context,
+            properties,
+            flags,
+            image_format,
+            image_desc,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
+    [NativeName("clGetImageRequirementsInfoEXT")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_ext_image_requirements_info"],
+        ImpliesSets = ["CL_VERSION_3_0"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetImageRequirementsInfoEXT(
+        Ref<_cl_context> context,
+        Ref<ulong> properties,
+        ulong flags,
+        Ref<ClImageFormat> image_format,
+        Ref<ClImageDesc> image_desc,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    )
+    {
+        fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+        fixed (void* __dsl_param_value = param_value)
+        fixed (ClImageDesc* __dsl_image_desc = image_desc)
+        fixed (ClImageFormat* __dsl_image_format = image_format)
+        fixed (ulong* __dsl_properties = properties)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (int)
+                ((ICl)this).GetImageRequirementsInfoEXT(
+                    __dsl_context,
+                    __dsl_properties,
+                    flags,
+                    __dsl_image_format,
+                    __dsl_image_desc,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+        }
+    }
+
+    [NativeName("clGetImageRequirementsInfoEXT")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_ext_image_requirements_info"],
+        ImpliesSets = ["CL_VERSION_3_0"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetImageRequirementsInfoEXT(
+        Ref<_cl_context> context,
+        Ref<ulong> properties,
+        ulong flags,
+        Ref<ClImageFormat> image_format,
+        Ref<ClImageDesc> image_desc,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    ) =>
+        ThisThread.GetImageRequirementsInfoEXT(
+            context,
+            properties,
+            flags,
+            image_format,
+            image_desc,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
     [NativeName("clGetKernelArgInfo")]
     [SupportedApiProfile(
         "opencl",
@@ -31009,9 +43508,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_kernel*, uint, uint, nuint, void*, nuint*, int>)(
-                _slots[69] is not null and var loadedFnPtr
+                _slots[101] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[69] = nativeContext.LoadFunction("clGetKernelArgInfo", "opencl")
+                    : _slots[101] = nativeContext.LoadFunction("clGetKernelArgInfo", "opencl")
             )
         )(kernel, arg_indx, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -31145,9 +43644,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_kernel*, uint, nuint, void*, nuint*, int>)(
-                _slots[70] is not null and var loadedFnPtr
+                _slots[102] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[70] = nativeContext.LoadFunction("clGetKernelInfo", "opencl")
+                    : _slots[102] = nativeContext.LoadFunction("clGetKernelInfo", "opencl")
             )
         )(kernel, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -31284,9 +43783,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 nuint*,
                 int>)(
-                _slots[71] is not null and var loadedFnPtr
+                _slots[103] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[71] = nativeContext.LoadFunction("clGetKernelSubGroupInfo", "opencl")
+                    : _slots[103] = nativeContext.LoadFunction("clGetKernelSubGroupInfo", "opencl")
             )
         )(
             kernel,
@@ -31396,6 +43895,138 @@ public unsafe partial class Cl : ICl, ICl.Static
             param_value_size_ret
         );
 
+    [NativeName("clGetKernelSubGroupInfoKHR")]
+    [Obsolete]
+    [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
+    [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetKernelSubGroupInfoKHR(
+        _cl_kernel* in_kernel,
+        _cl_device_id* in_device,
+        uint param_name,
+        nuint input_value_size,
+        void* input_value,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_kernel*,
+                _cl_device_id*,
+                uint,
+                nuint,
+                void*,
+                nuint,
+                void*,
+                nuint*,
+                int>)(
+                _slots[104] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[104] = nativeContext.LoadFunction(
+                        "clGetKernelSubGroupInfoKHR",
+                        "opencl"
+                    )
+            )
+        )(
+            in_kernel,
+            in_device,
+            param_name,
+            input_value_size,
+            input_value,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
+    [NativeName("clGetKernelSubGroupInfoKHR")]
+    [Obsolete]
+    [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
+    [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetKernelSubGroupInfoKHR(
+        _cl_kernel* in_kernel,
+        _cl_device_id* in_device,
+        uint param_name,
+        nuint input_value_size,
+        void* input_value,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        ThisThread.GetKernelSubGroupInfoKHR(
+            in_kernel,
+            in_device,
+            param_name,
+            input_value_size,
+            input_value,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
+    [NativeName("clGetKernelSubGroupInfoKHR")]
+    [Obsolete]
+    [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
+    [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetKernelSubGroupInfoKHR(
+        Ref<_cl_kernel> in_kernel,
+        Ref<_cl_device_id> in_device,
+        uint param_name,
+        nuint input_value_size,
+        Ref input_value,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    )
+    {
+        fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+        fixed (void* __dsl_param_value = param_value)
+        fixed (void* __dsl_input_value = input_value)
+        fixed (_cl_device_id* __dsl_in_device = in_device)
+        fixed (_cl_kernel* __dsl_in_kernel = in_kernel)
+        {
+            return (int)
+                ((ICl)this).GetKernelSubGroupInfoKHR(
+                    __dsl_in_kernel,
+                    __dsl_in_device,
+                    param_name,
+                    input_value_size,
+                    __dsl_input_value,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+        }
+    }
+
+    [NativeName("clGetKernelSubGroupInfoKHR")]
+    [Obsolete]
+    [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
+    [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetKernelSubGroupInfoKHR(
+        Ref<_cl_kernel> in_kernel,
+        Ref<_cl_device_id> in_device,
+        uint param_name,
+        nuint input_value_size,
+        Ref input_value,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    ) =>
+        ThisThread.GetKernelSubGroupInfoKHR(
+            in_kernel,
+            in_device,
+            param_name,
+            input_value_size,
+            input_value,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
     [NativeName("clGetKernelSuggestedLocalWorkSize")]
     [SupportedApiProfile("opencl", ["CL_VERSION_3_1"], MinVersion = "3.1")]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSize")]
@@ -31417,9 +44048,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 nuint*,
                 nuint*,
                 int>)(
-                _slots[72] is not null and var loadedFnPtr
+                _slots[105] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[72] = nativeContext.LoadFunction(
+                    : _slots[105] = nativeContext.LoadFunction(
                         "clGetKernelSuggestedLocalWorkSize",
                         "opencl"
                     )
@@ -31506,6 +44137,116 @@ public unsafe partial class Cl : ICl, ICl.Static
             suggested_local_work_size
         );
 
+    [NativeName("clGetKernelSuggestedLocalWorkSizeKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
+    [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetKernelSuggestedLocalWorkSizeKHR(
+        _cl_command_queue* command_queue,
+        _cl_kernel* kernel,
+        uint work_dim,
+        nuint* global_work_offset,
+        nuint* global_work_size,
+        nuint* suggested_local_work_size
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_command_queue*,
+                _cl_kernel*,
+                uint,
+                nuint*,
+                nuint*,
+                nuint*,
+                int>)(
+                _slots[106] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[106] = nativeContext.LoadFunction(
+                        "clGetKernelSuggestedLocalWorkSizeKHR",
+                        "opencl"
+                    )
+            )
+        )(
+            command_queue,
+            kernel,
+            work_dim,
+            global_work_offset,
+            global_work_size,
+            suggested_local_work_size
+        );
+
+    [NativeName("clGetKernelSuggestedLocalWorkSizeKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
+    [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetKernelSuggestedLocalWorkSizeKHR(
+        _cl_command_queue* command_queue,
+        _cl_kernel* kernel,
+        uint work_dim,
+        nuint* global_work_offset,
+        nuint* global_work_size,
+        nuint* suggested_local_work_size
+    ) =>
+        ThisThread.GetKernelSuggestedLocalWorkSizeKHR(
+            command_queue,
+            kernel,
+            work_dim,
+            global_work_offset,
+            global_work_size,
+            suggested_local_work_size
+        );
+
+    [NativeName("clGetKernelSuggestedLocalWorkSizeKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
+    [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetKernelSuggestedLocalWorkSizeKHR(
+        Ref<_cl_command_queue> command_queue,
+        Ref<_cl_kernel> kernel,
+        uint work_dim,
+        Ref<nuint> global_work_offset,
+        Ref<nuint> global_work_size,
+        Ref<nuint> suggested_local_work_size
+    )
+    {
+        fixed (nuint* __dsl_suggested_local_work_size = suggested_local_work_size)
+        fixed (nuint* __dsl_global_work_size = global_work_size)
+        fixed (nuint* __dsl_global_work_offset = global_work_offset)
+        fixed (_cl_kernel* __dsl_kernel = kernel)
+        fixed (_cl_command_queue* __dsl_command_queue = command_queue)
+        {
+            return (int)
+                ((ICl)this).GetKernelSuggestedLocalWorkSizeKHR(
+                    __dsl_command_queue,
+                    __dsl_kernel,
+                    work_dim,
+                    __dsl_global_work_offset,
+                    __dsl_global_work_size,
+                    __dsl_suggested_local_work_size
+                );
+        }
+    }
+
+    [NativeName("clGetKernelSuggestedLocalWorkSizeKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
+    [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetKernelSuggestedLocalWorkSizeKHR(
+        Ref<_cl_command_queue> command_queue,
+        Ref<_cl_kernel> kernel,
+        uint work_dim,
+        Ref<nuint> global_work_offset,
+        Ref<nuint> global_work_size,
+        Ref<nuint> suggested_local_work_size
+    ) =>
+        ThisThread.GetKernelSuggestedLocalWorkSizeKHR(
+            command_queue,
+            kernel,
+            work_dim,
+            global_work_offset,
+            global_work_size,
+            suggested_local_work_size
+        );
+
     [NativeName("clGetKernelWorkGroupInfo")]
     [SupportedApiProfile(
         "opencl",
@@ -31533,9 +44274,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_kernel*, _cl_device_id*, uint, nuint, void*, nuint*, int>)(
-                _slots[73] is not null and var loadedFnPtr
+                _slots[107] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[73] = nativeContext.LoadFunction("clGetKernelWorkGroupInfo", "opencl")
+                    : _slots[107] = nativeContext.LoadFunction("clGetKernelWorkGroupInfo", "opencl")
             )
         )(kernel, device, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -31650,6 +44391,98 @@ public unsafe partial class Cl : ICl, ICl.Static
             param_value_size_ret
         );
 
+    [NativeName("clGetMemAllocInfoINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetMemAllocInfoINTEL(
+        _cl_context* context,
+        void* ptr,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_context*, void*, uint, nuint, void*, nuint*, int>)(
+                _slots[108] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[108] = nativeContext.LoadFunction("clGetMemAllocInfoINTEL", "opencl")
+            )
+        )(context, ptr, param_name, param_value_size, param_value, param_value_size_ret);
+
+    [NativeName("clGetMemAllocInfoINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetMemAllocInfoINTEL(
+        _cl_context* context,
+        void* ptr,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        ThisThread.GetMemAllocInfoINTEL(
+            context,
+            ptr,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
+    [NativeName("clGetMemAllocInfoINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetMemAllocInfoINTEL(
+        Ref<_cl_context> context,
+        Ref ptr,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    )
+    {
+        fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+        fixed (void* __dsl_param_value = param_value)
+        fixed (void* __dsl_ptr = ptr)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (int)
+                ((ICl)this).GetMemAllocInfoINTEL(
+                    __dsl_context,
+                    __dsl_ptr,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+        }
+    }
+
+    [NativeName("clGetMemAllocInfoINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetMemAllocInfoINTEL(
+        Ref<_cl_context> context,
+        Ref ptr,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    ) =>
+        ThisThread.GetMemAllocInfoINTEL(
+            context,
+            ptr,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
     [NativeName("clGetMemObjectInfo")]
     [SupportedApiProfile(
         "opencl",
@@ -31676,9 +44509,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_mem*, uint, nuint, void*, nuint*, int>)(
-                _slots[74] is not null and var loadedFnPtr
+                _slots[109] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[74] = nativeContext.LoadFunction("clGetMemObjectInfo", "opencl")
+                    : _slots[109] = nativeContext.LoadFunction("clGetMemObjectInfo", "opencl")
             )
         )(memobj, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -31803,9 +44636,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_mem*, uint, nuint, void*, nuint*, int>)(
-                _slots[75] is not null and var loadedFnPtr
+                _slots[110] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[75] = nativeContext.LoadFunction("clGetPipeInfo", "opencl")
+                    : _slots[110] = nativeContext.LoadFunction("clGetPipeInfo", "opencl")
             )
         )(pipe, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -31906,9 +44739,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.GetPlatformIDs(uint num_entries, _cl_platform_id** platforms, uint* num_platforms) =>
         (
             (delegate* unmanaged<uint, _cl_platform_id**, uint*, int>)(
-                _slots[76] is not null and var loadedFnPtr
+                _slots[111] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[76] = nativeContext.LoadFunction("clGetPlatformIDs", "opencl")
+                    : _slots[111] = nativeContext.LoadFunction("clGetPlatformIDs", "opencl")
             )
         )(num_entries, platforms, num_platforms);
 
@@ -32015,9 +44848,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_platform_id*, uint, nuint, void*, nuint*, int>)(
-                _slots[77] is not null and var loadedFnPtr
+                _slots[112] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[77] = nativeContext.LoadFunction("clGetPlatformInfo", "opencl")
+                    : _slots[112] = nativeContext.LoadFunction("clGetPlatformInfo", "opencl")
             )
         )(platform, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -32152,9 +44985,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_program*, _cl_device_id*, uint, nuint, void*, nuint*, int>)(
-                _slots[78] is not null and var loadedFnPtr
+                _slots[113] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[78] = nativeContext.LoadFunction("clGetProgramBuildInfo", "opencl")
+                    : _slots[113] = nativeContext.LoadFunction("clGetProgramBuildInfo", "opencl")
             )
         )(program, device, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -32295,9 +45128,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_program*, uint, nuint, void*, nuint*, int>)(
-                _slots[79] is not null and var loadedFnPtr
+                _slots[114] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[79] = nativeContext.LoadFunction("clGetProgramInfo", "opencl")
+                    : _slots[114] = nativeContext.LoadFunction("clGetProgramInfo", "opencl")
             )
         )(program, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -32431,9 +45264,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_sampler*, uint, nuint, void*, nuint*, int>)(
-                _slots[80] is not null and var loadedFnPtr
+                _slots[115] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[80] = nativeContext.LoadFunction("clGetSamplerInfo", "opencl")
+                    : _slots[115] = nativeContext.LoadFunction("clGetSamplerInfo", "opencl")
             )
         )(sampler, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -32541,6 +45374,208 @@ public unsafe partial class Cl : ICl, ICl.Static
             param_value_size_ret
         );
 
+    [NativeName("clGetSemaphoreHandleForTypeKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_external_semaphore"],
+        ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetSemaphoreHandleForTypeKHR(
+        _cl_semaphore_khr* sema_object,
+        _cl_device_id* device,
+        uint handle_type,
+        nuint handle_size,
+        void* handle_ptr,
+        nuint* handle_size_ret
+    ) =>
+        (
+            (delegate* unmanaged<
+                _cl_semaphore_khr*,
+                _cl_device_id*,
+                uint,
+                nuint,
+                void*,
+                nuint*,
+                int>)(
+                _slots[116] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[116] = nativeContext.LoadFunction(
+                        "clGetSemaphoreHandleForTypeKHR",
+                        "opencl"
+                    )
+            )
+        )(sema_object, device, handle_type, handle_size, handle_ptr, handle_size_ret);
+
+    [NativeName("clGetSemaphoreHandleForTypeKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_external_semaphore"],
+        ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetSemaphoreHandleForTypeKHR(
+        _cl_semaphore_khr* sema_object,
+        _cl_device_id* device,
+        uint handle_type,
+        nuint handle_size,
+        void* handle_ptr,
+        nuint* handle_size_ret
+    ) =>
+        ThisThread.GetSemaphoreHandleForTypeKHR(
+            sema_object,
+            device,
+            handle_type,
+            handle_size,
+            handle_ptr,
+            handle_size_ret
+        );
+
+    [NativeName("clGetSemaphoreHandleForTypeKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_external_semaphore"],
+        ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetSemaphoreHandleForTypeKHR(
+        Ref<_cl_semaphore_khr> sema_object,
+        Ref<_cl_device_id> device,
+        uint handle_type,
+        nuint handle_size,
+        Ref handle_ptr,
+        Ref<nuint> handle_size_ret
+    )
+    {
+        fixed (nuint* __dsl_handle_size_ret = handle_size_ret)
+        fixed (void* __dsl_handle_ptr = handle_ptr)
+        fixed (_cl_device_id* __dsl_device = device)
+        fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+        {
+            return (int)
+                ((ICl)this).GetSemaphoreHandleForTypeKHR(
+                    __dsl_sema_object,
+                    __dsl_device,
+                    handle_type,
+                    handle_size,
+                    __dsl_handle_ptr,
+                    __dsl_handle_size_ret
+                );
+        }
+    }
+
+    [NativeName("clGetSemaphoreHandleForTypeKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_external_semaphore"],
+        ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetSemaphoreHandleForTypeKHR(
+        Ref<_cl_semaphore_khr> sema_object,
+        Ref<_cl_device_id> device,
+        uint handle_type,
+        nuint handle_size,
+        Ref handle_ptr,
+        Ref<nuint> handle_size_ret
+    ) =>
+        ThisThread.GetSemaphoreHandleForTypeKHR(
+            sema_object,
+            device,
+            handle_type,
+            handle_size,
+            handle_ptr,
+            handle_size_ret
+        );
+
+    [NativeName("clGetSemaphoreInfoKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetSemaphoreInfoKHR(
+        _cl_semaphore_khr* sema_object,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_semaphore_khr*, uint, nuint, void*, nuint*, int>)(
+                _slots[117] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[117] = nativeContext.LoadFunction("clGetSemaphoreInfoKHR", "opencl")
+            )
+        )(sema_object, param_name, param_value_size, param_value, param_value_size_ret);
+
+    [NativeName("clGetSemaphoreInfoKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetSemaphoreInfoKHR(
+        _cl_semaphore_khr* sema_object,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        ThisThread.GetSemaphoreInfoKHR(
+            sema_object,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
+    [NativeName("clGetSemaphoreInfoKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetSemaphoreInfoKHR(
+        Ref<_cl_semaphore_khr> sema_object,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    )
+    {
+        fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+        fixed (void* __dsl_param_value = param_value)
+        fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+        {
+            return (int)
+                ((ICl)this).GetSemaphoreInfoKHR(
+                    __dsl_sema_object,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+        }
+    }
+
+    [NativeName("clGetSemaphoreInfoKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetSemaphoreInfoKHR(
+        Ref<_cl_semaphore_khr> sema_object,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    ) =>
+        ThisThread.GetSemaphoreInfoKHR(
+            sema_object,
+            param_name,
+            param_value_size,
+            param_value,
+            param_value_size_ret
+        );
+
     [NativeName("clGetSupportedImageFormats")]
     [SupportedApiProfile(
         "opencl",
@@ -32568,9 +45603,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, ulong, uint, uint, ClImageFormat*, uint*, int>)(
-                _slots[81] is not null and var loadedFnPtr
+                _slots[118] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[81] = nativeContext.LoadFunction(
+                    : _slots[118] = nativeContext.LoadFunction(
                         "clGetSupportedImageFormats",
                         "opencl"
                     )
@@ -32687,6 +45722,303 @@ public unsafe partial class Cl : ICl, ICl.Static
             num_image_formats
         );
 
+    [NativeName("clHostMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void* ICl.HostMemAllocINTEL(
+        _cl_context* context,
+        ulong* properties,
+        nuint size,
+        uint alignment,
+        int* errcode_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_context*, ulong*, nuint, uint, int*, void*>)(
+                _slots[119] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[119] = nativeContext.LoadFunction("clHostMemAllocINTEL", "opencl")
+            )
+        )(context, properties, size, alignment, errcode_ret);
+
+    [NativeName("clHostMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void* HostMemAllocINTEL(
+        _cl_context* context,
+        ulong* properties,
+        nuint size,
+        uint alignment,
+        int* errcode_ret
+    ) => ThisThread.HostMemAllocINTEL(context, properties, size, alignment, errcode_ret);
+
+    [NativeName("clHostMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr ICl.HostMemAllocINTEL(
+        Ref<_cl_context> context,
+        Ref<ulong> properties,
+        nuint size,
+        uint alignment,
+        Ref<int> errcode_ret
+    )
+    {
+        fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (ulong* __dsl_properties = properties)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (void*)
+                ((ICl)this).HostMemAllocINTEL(
+                    __dsl_context,
+                    __dsl_properties,
+                    size,
+                    alignment,
+                    __dsl_errcode_ret
+                );
+        }
+    }
+
+    [NativeName("clHostMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr HostMemAllocINTEL(
+        Ref<_cl_context> context,
+        Ref<ulong> properties,
+        nuint size,
+        uint alignment,
+        Ref<int> errcode_ret
+    ) => ThisThread.HostMemAllocINTEL(context, properties, size, alignment, errcode_ret);
+
+    [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void* ICl.IcdGetFunctionAddressForPlatformKHR(_cl_platform_id* platform, sbyte* func_name) =>
+        (
+            (delegate* unmanaged<_cl_platform_id*, sbyte*, void*>)(
+                _slots[120] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[120] = nativeContext.LoadFunction(
+                        "clIcdGetFunctionAddressForPlatformKHR",
+                        "opencl"
+                    )
+            )
+        )(platform, func_name);
+
+    [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void* IcdGetFunctionAddressForPlatformKHR(
+        _cl_platform_id* platform,
+        sbyte* func_name
+    ) => ThisThread.IcdGetFunctionAddressForPlatformKHR(platform, func_name);
+
+    [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr ICl.IcdGetFunctionAddressForPlatformKHR(Ref<_cl_platform_id> platform, Ref<sbyte> func_name)
+    {
+        fixed (sbyte* __dsl_func_name = func_name)
+        fixed (_cl_platform_id* __dsl_platform = platform)
+        {
+            return (void*)
+                ((ICl)this).IcdGetFunctionAddressForPlatformKHR(__dsl_platform, __dsl_func_name);
+        }
+    }
+
+    [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr IcdGetFunctionAddressForPlatformKHR(
+        Ref<_cl_platform_id> platform,
+        Ref<sbyte> func_name
+    ) => ThisThread.IcdGetFunctionAddressForPlatformKHR(platform, func_name);
+
+    [NativeName("clIcdGetPlatformIDsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.IcdGetPlatformIDsKHR(
+        uint num_entries,
+        _cl_platform_id** platforms,
+        uint* num_platforms
+    ) =>
+        (
+            (delegate* unmanaged<uint, _cl_platform_id**, uint*, int>)(
+                _slots[121] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[121] = nativeContext.LoadFunction("clIcdGetPlatformIDsKHR", "opencl")
+            )
+        )(num_entries, platforms, num_platforms);
+
+    [NativeName("clIcdGetPlatformIDsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int IcdGetPlatformIDsKHR(
+        uint num_entries,
+        _cl_platform_id** platforms,
+        uint* num_platforms
+    ) => ThisThread.IcdGetPlatformIDsKHR(num_entries, platforms, num_platforms);
+
+    [NativeName("clIcdGetPlatformIDsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.IcdGetPlatformIDsKHR(
+        uint num_entries,
+        Ref2D<_cl_platform_id> platforms,
+        Ref<uint> num_platforms
+    )
+    {
+        fixed (uint* __dsl_num_platforms = num_platforms)
+        fixed (_cl_platform_id** __dsl_platforms = platforms)
+        {
+            return (int)
+                ((ICl)this).IcdGetPlatformIDsKHR(num_entries, __dsl_platforms, __dsl_num_platforms);
+        }
+    }
+
+    [NativeName("clIcdGetPlatformIDsKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int IcdGetPlatformIDsKHR(
+        uint num_entries,
+        Ref2D<_cl_platform_id> platforms,
+        Ref<uint> num_platforms
+    ) => ThisThread.IcdGetPlatformIDsKHR(num_entries, platforms, num_platforms);
+
+    [NativeName("clIcdSetPlatformDispatchDataKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.IcdSetPlatformDispatchDataKHR(_cl_platform_id* platform, void* dispatch_data) =>
+        (
+            (delegate* unmanaged<_cl_platform_id*, void*, int>)(
+                _slots[122] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[122] = nativeContext.LoadFunction(
+                        "clIcdSetPlatformDispatchDataKHR",
+                        "opencl"
+                    )
+            )
+        )(platform, dispatch_data);
+
+    [NativeName("clIcdSetPlatformDispatchDataKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int IcdSetPlatformDispatchDataKHR(
+        _cl_platform_id* platform,
+        void* dispatch_data
+    ) => ThisThread.IcdSetPlatformDispatchDataKHR(platform, dispatch_data);
+
+    [NativeName("clIcdSetPlatformDispatchDataKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.IcdSetPlatformDispatchDataKHR(Ref<_cl_platform_id> platform, Ref dispatch_data)
+    {
+        fixed (void* __dsl_dispatch_data = dispatch_data)
+        fixed (_cl_platform_id* __dsl_platform = platform)
+        {
+            return (int)
+                ((ICl)this).IcdSetPlatformDispatchDataKHR(__dsl_platform, __dsl_dispatch_data);
+        }
+    }
+
+    [NativeName("clIcdSetPlatformDispatchDataKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_icd"])]
+    [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int IcdSetPlatformDispatchDataKHR(
+        Ref<_cl_platform_id> platform,
+        Ref dispatch_data
+    ) => ThisThread.IcdSetPlatformDispatchDataKHR(platform, dispatch_data);
+
+    [NativeName("clImportMemoryARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    _cl_mem* ICl.ImportMemoryARM(
+        _cl_context* context,
+        ulong flags,
+        nint* properties,
+        void* memory,
+        nuint size,
+        int* errcode_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_context*, ulong, nint*, void*, nuint, int*, _cl_mem*>)(
+                _slots[123] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[123] = nativeContext.LoadFunction("clImportMemoryARM", "opencl")
+            )
+        )(context, flags, properties, memory, size, errcode_ret);
+
+    [NativeName("clImportMemoryARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static _cl_mem* ImportMemoryARM(
+        _cl_context* context,
+        ulong flags,
+        nint* properties,
+        void* memory,
+        nuint size,
+        int* errcode_ret
+    ) => ThisThread.ImportMemoryARM(context, flags, properties, memory, size, errcode_ret);
+
+    [NativeName("clImportMemoryARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr<_cl_mem> ICl.ImportMemoryARM(
+        Ref<_cl_context> context,
+        ulong flags,
+        Ref<nint> properties,
+        Ref memory,
+        nuint size,
+        Ref<int> errcode_ret
+    )
+    {
+        fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (void* __dsl_memory = memory)
+        fixed (nint* __dsl_properties = properties)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (_cl_mem*)
+                ((ICl)this).ImportMemoryARM(
+                    __dsl_context,
+                    flags,
+                    __dsl_properties,
+                    __dsl_memory,
+                    size,
+                    __dsl_errcode_ret
+                );
+        }
+    }
+
+    [NativeName("clImportMemoryARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr<_cl_mem> ImportMemoryARM(
+        Ref<_cl_context> context,
+        ulong flags,
+        Ref<nint> properties,
+        Ref memory,
+        nuint size,
+        Ref<int> errcode_ret
+    ) => ThisThread.ImportMemoryARM(context, flags, properties, memory, size, errcode_ret);
+
     [NativeName("clLinkProgram")]
     [SupportedApiProfile(
         "opencl",
@@ -32725,9 +46057,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 int*,
                 _cl_program*>)(
-                _slots[82] is not null and var loadedFnPtr
+                _slots[124] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[82] = nativeContext.LoadFunction("clLinkProgram", "opencl")
+                    : _slots[124] = nativeContext.LoadFunction("clLinkProgram", "opencl")
             )
         )(
             context,
@@ -32866,6 +46198,393 @@ public unsafe partial class Cl : ICl, ICl.Static
             errcode_ret
         );
 
+    [NativeName("clLogMessagesToStderrAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToStderrAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ICl.LogMessagesToStderrAPPLE(
+        sbyte* errstr,
+        void* private_info,
+        nuint cb,
+        void* user_data
+    ) =>
+        (
+            (delegate* unmanaged<sbyte*, void*, nuint, void*, void>)(
+                _slots[125] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[125] = nativeContext.LoadFunction(
+                        "clLogMessagesToStderrAPPLE",
+                        "opencl"
+                    )
+            )
+        )(errstr, private_info, cb, user_data);
+
+    [NativeName("clLogMessagesToStderrAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToStderrAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void LogMessagesToStderrAPPLE(
+        sbyte* errstr,
+        void* private_info,
+        nuint cb,
+        void* user_data
+    ) => ThisThread.LogMessagesToStderrAPPLE(errstr, private_info, cb, user_data);
+
+    [NativeName("clLogMessagesToStderrAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToStderrAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ICl.LogMessagesToStderrAPPLE(Ref<sbyte> errstr, Ref private_info, nuint cb, Ref user_data)
+    {
+        fixed (void* __dsl_user_data = user_data)
+        fixed (void* __dsl_private_info = private_info)
+        fixed (sbyte* __dsl_errstr = errstr)
+        {
+            ((ICl)this).LogMessagesToStderrAPPLE(
+                __dsl_errstr,
+                __dsl_private_info,
+                cb,
+                __dsl_user_data
+            );
+        }
+    }
+
+    [NativeName("clLogMessagesToStderrAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToStderrAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void LogMessagesToStderrAPPLE(
+        Ref<sbyte> errstr,
+        Ref private_info,
+        nuint cb,
+        Ref user_data
+    ) => ThisThread.LogMessagesToStderrAPPLE(errstr, private_info, cb, user_data);
+
+    [NativeName("clLogMessagesToStdoutAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToStdoutAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ICl.LogMessagesToStdoutAPPLE(
+        sbyte* errstr,
+        void* private_info,
+        nuint cb,
+        void* user_data
+    ) =>
+        (
+            (delegate* unmanaged<sbyte*, void*, nuint, void*, void>)(
+                _slots[126] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[126] = nativeContext.LoadFunction(
+                        "clLogMessagesToStdoutAPPLE",
+                        "opencl"
+                    )
+            )
+        )(errstr, private_info, cb, user_data);
+
+    [NativeName("clLogMessagesToStdoutAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToStdoutAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void LogMessagesToStdoutAPPLE(
+        sbyte* errstr,
+        void* private_info,
+        nuint cb,
+        void* user_data
+    ) => ThisThread.LogMessagesToStdoutAPPLE(errstr, private_info, cb, user_data);
+
+    [NativeName("clLogMessagesToStdoutAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToStdoutAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ICl.LogMessagesToStdoutAPPLE(Ref<sbyte> errstr, Ref private_info, nuint cb, Ref user_data)
+    {
+        fixed (void* __dsl_user_data = user_data)
+        fixed (void* __dsl_private_info = private_info)
+        fixed (sbyte* __dsl_errstr = errstr)
+        {
+            ((ICl)this).LogMessagesToStdoutAPPLE(
+                __dsl_errstr,
+                __dsl_private_info,
+                cb,
+                __dsl_user_data
+            );
+        }
+    }
+
+    [NativeName("clLogMessagesToStdoutAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToStdoutAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void LogMessagesToStdoutAPPLE(
+        Ref<sbyte> errstr,
+        Ref private_info,
+        nuint cb,
+        Ref user_data
+    ) => ThisThread.LogMessagesToStdoutAPPLE(errstr, private_info, cb, user_data);
+
+    [NativeName("clLogMessagesToSystemLogAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ICl.LogMessagesToSystemLogAPPLE(
+        sbyte* errstr,
+        void* private_info,
+        nuint cb,
+        void* user_data
+    ) =>
+        (
+            (delegate* unmanaged<sbyte*, void*, nuint, void*, void>)(
+                _slots[127] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[127] = nativeContext.LoadFunction(
+                        "clLogMessagesToSystemLogAPPLE",
+                        "opencl"
+                    )
+            )
+        )(errstr, private_info, cb, user_data);
+
+    [NativeName("clLogMessagesToSystemLogAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void LogMessagesToSystemLogAPPLE(
+        sbyte* errstr,
+        void* private_info,
+        nuint cb,
+        void* user_data
+    ) => ThisThread.LogMessagesToSystemLogAPPLE(errstr, private_info, cb, user_data);
+
+    [NativeName("clLogMessagesToSystemLogAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ICl.LogMessagesToSystemLogAPPLE(
+        Ref<sbyte> errstr,
+        Ref private_info,
+        nuint cb,
+        Ref user_data
+    )
+    {
+        fixed (void* __dsl_user_data = user_data)
+        fixed (void* __dsl_private_info = private_info)
+        fixed (sbyte* __dsl_errstr = errstr)
+        {
+            ((ICl)this).LogMessagesToSystemLogAPPLE(
+                __dsl_errstr,
+                __dsl_private_info,
+                cb,
+                __dsl_user_data
+            );
+        }
+    }
+
+    [NativeName("clLogMessagesToSystemLogAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_ContextLoggingFunctions"])]
+    [NativeFunction("opencl", EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void LogMessagesToSystemLogAPPLE(
+        Ref<sbyte> errstr,
+        Ref private_info,
+        nuint cb,
+        Ref user_data
+    ) => ThisThread.LogMessagesToSystemLogAPPLE(errstr, private_info, cb, user_data);
+
+    [NativeName("clMemBlockingFreeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.MemBlockingFreeINTEL(_cl_context* context, void* ptr) =>
+        (
+            (delegate* unmanaged<_cl_context*, void*, int>)(
+                _slots[128] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[128] = nativeContext.LoadFunction("clMemBlockingFreeINTEL", "opencl")
+            )
+        )(context, ptr);
+
+    [NativeName("clMemBlockingFreeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int MemBlockingFreeINTEL(_cl_context* context, void* ptr) =>
+        ThisThread.MemBlockingFreeINTEL(context, ptr);
+
+    [NativeName("clMemBlockingFreeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.MemBlockingFreeINTEL(Ref<_cl_context> context, Ref ptr)
+    {
+        fixed (void* __dsl_ptr = ptr)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (int)((ICl)this).MemBlockingFreeINTEL(__dsl_context, __dsl_ptr);
+        }
+    }
+
+    [NativeName("clMemBlockingFreeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int MemBlockingFreeINTEL(Ref<_cl_context> context, Ref ptr) =>
+        ThisThread.MemBlockingFreeINTEL(context, ptr);
+
+    [NativeName("clMemFreeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.MemFreeINTEL(_cl_context* context, void* ptr) =>
+        (
+            (delegate* unmanaged<_cl_context*, void*, int>)(
+                _slots[129] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[129] = nativeContext.LoadFunction("clMemFreeINTEL", "opencl")
+            )
+        )(context, ptr);
+
+    [NativeName("clMemFreeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int MemFreeINTEL(_cl_context* context, void* ptr) =>
+        ThisThread.MemFreeINTEL(context, ptr);
+
+    [NativeName("clMemFreeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.MemFreeINTEL(Ref<_cl_context> context, Ref ptr)
+    {
+        fixed (void* __dsl_ptr = ptr)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (int)((ICl)this).MemFreeINTEL(__dsl_context, __dsl_ptr);
+        }
+    }
+
+    [NativeName("clMemFreeINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int MemFreeINTEL(Ref<_cl_context> context, Ref ptr) =>
+        ThisThread.MemFreeINTEL(context, ptr);
+
+    [NativeName("clReImportSemaphoreSyncFdKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_external_semaphore_sync_fd"],
+        ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.ReImportSemaphoreSyncFdKHR(
+        _cl_semaphore_khr* sema_object,
+        ulong* reimport_props,
+        int fd
+    ) =>
+        (
+            (delegate* unmanaged<_cl_semaphore_khr*, ulong*, int, int>)(
+                _slots[130] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[130] = nativeContext.LoadFunction(
+                        "clReImportSemaphoreSyncFdKHR",
+                        "opencl"
+                    )
+            )
+        )(sema_object, reimport_props, fd);
+
+    [NativeName("clReImportSemaphoreSyncFdKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_external_semaphore_sync_fd"],
+        ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int ReImportSemaphoreSyncFdKHR(
+        _cl_semaphore_khr* sema_object,
+        ulong* reimport_props,
+        int fd
+    ) => ThisThread.ReImportSemaphoreSyncFdKHR(sema_object, reimport_props, fd);
+
+    [NativeName("clReImportSemaphoreSyncFdKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_external_semaphore_sync_fd"],
+        ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.ReImportSemaphoreSyncFdKHR(
+        Ref<_cl_semaphore_khr> sema_object,
+        Ref<ulong> reimport_props,
+        int fd
+    )
+    {
+        fixed (ulong* __dsl_reimport_props = reimport_props)
+        fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+        {
+            return (int)
+                ((ICl)this).ReImportSemaphoreSyncFdKHR(__dsl_sema_object, __dsl_reimport_props, fd);
+        }
+    }
+
+    [NativeName("clReImportSemaphoreSyncFdKHR")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_khr_external_semaphore_sync_fd"],
+        ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int ReImportSemaphoreSyncFdKHR(
+        Ref<_cl_semaphore_khr> sema_object,
+        Ref<ulong> reimport_props,
+        int fd
+    ) => ThisThread.ReImportSemaphoreSyncFdKHR(sema_object, reimport_props, fd);
+
+    [NativeName("clReleaseAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+        (
+            (delegate* unmanaged<_cl_accelerator_intel*, int>)(
+                _slots[131] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[131] = nativeContext.LoadFunction(
+                        "clReleaseAcceleratorINTEL",
+                        "opencl"
+                    )
+            )
+        )(accelerator);
+
+    [NativeName("clReleaseAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+        ThisThread.ReleaseAcceleratorINTEL(accelerator);
+
+    [NativeName("clReleaseAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
+    {
+        fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
+        {
+            return (int)((ICl)this).ReleaseAcceleratorINTEL(__dsl_accelerator);
+        }
+    }
+
+    [NativeName("clReleaseAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator) =>
+        ThisThread.ReleaseAcceleratorINTEL(accelerator);
+
     [NativeName("clReleaseCommandQueue")]
     [SupportedApiProfile(
         "opencl",
@@ -32886,9 +46605,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseCommandQueue(_cl_command_queue* command_queue) =>
         (
             (delegate* unmanaged<_cl_command_queue*, int>)(
-                _slots[83] is not null and var loadedFnPtr
+                _slots[132] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[83] = nativeContext.LoadFunction("clReleaseCommandQueue", "opencl")
+                    : _slots[132] = nativeContext.LoadFunction("clReleaseCommandQueue", "opencl")
             )
         )(command_queue);
 
@@ -32977,9 +46696,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseContext(_cl_context* context) =>
         (
             (delegate* unmanaged<_cl_context*, int>)(
-                _slots[84] is not null and var loadedFnPtr
+                _slots[133] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[84] = nativeContext.LoadFunction("clReleaseContext", "opencl")
+                    : _slots[133] = nativeContext.LoadFunction("clReleaseContext", "opencl")
             )
         )(context);
 
@@ -33065,9 +46784,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseDevice(_cl_device_id* device) =>
         (
             (delegate* unmanaged<_cl_device_id*, int>)(
-                _slots[85] is not null and var loadedFnPtr
+                _slots[134] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[85] = nativeContext.LoadFunction("clReleaseDevice", "opencl")
+                    : _slots[134] = nativeContext.LoadFunction("clReleaseDevice", "opencl")
             )
         )(device);
 
@@ -33128,6 +46847,45 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int ReleaseDevice(Ref<_cl_device_id> device) => ThisThread.ReleaseDevice(device);
 
+    [NativeName("clReleaseDeviceEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.ReleaseDeviceEXT(_cl_device_id* device) =>
+        (
+            (delegate* unmanaged<_cl_device_id*, int>)(
+                _slots[135] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[135] = nativeContext.LoadFunction("clReleaseDeviceEXT", "opencl")
+            )
+        )(device);
+
+    [NativeName("clReleaseDeviceEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int ReleaseDeviceEXT(_cl_device_id* device) =>
+        ThisThread.ReleaseDeviceEXT(device);
+
+    [NativeName("clReleaseDeviceEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.ReleaseDeviceEXT(Ref<_cl_device_id> device)
+    {
+        fixed (_cl_device_id* __dsl_device = device)
+        {
+            return (int)((ICl)this).ReleaseDeviceEXT(__dsl_device);
+        }
+    }
+
+    [NativeName("clReleaseDeviceEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int ReleaseDeviceEXT(Ref<_cl_device_id> device) =>
+        ThisThread.ReleaseDeviceEXT(device);
+
     [NativeName("clReleaseEvent")]
     [SupportedApiProfile(
         "opencl",
@@ -33148,9 +46906,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseEvent(_cl_event* @event) =>
         (
             (delegate* unmanaged<_cl_event*, int>)(
-                _slots[86] is not null and var loadedFnPtr
+                _slots[136] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[86] = nativeContext.LoadFunction("clReleaseEvent", "opencl")
+                    : _slots[136] = nativeContext.LoadFunction("clReleaseEvent", "opencl")
             )
         )(@event);
 
@@ -33237,9 +46995,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseKernel(_cl_kernel* kernel) =>
         (
             (delegate* unmanaged<_cl_kernel*, int>)(
-                _slots[87] is not null and var loadedFnPtr
+                _slots[137] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[87] = nativeContext.LoadFunction("clReleaseKernel", "opencl")
+                    : _slots[137] = nativeContext.LoadFunction("clReleaseKernel", "opencl")
             )
         )(kernel);
 
@@ -33326,9 +47084,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseMemObject(_cl_mem* memobj) =>
         (
             (delegate* unmanaged<_cl_mem*, int>)(
-                _slots[88] is not null and var loadedFnPtr
+                _slots[138] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[88] = nativeContext.LoadFunction("clReleaseMemObject", "opencl")
+                    : _slots[138] = nativeContext.LoadFunction("clReleaseMemObject", "opencl")
             )
         )(memobj);
 
@@ -33415,9 +47173,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseProgram(_cl_program* program) =>
         (
             (delegate* unmanaged<_cl_program*, int>)(
-                _slots[89] is not null and var loadedFnPtr
+                _slots[139] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[89] = nativeContext.LoadFunction("clReleaseProgram", "opencl")
+                    : _slots[139] = nativeContext.LoadFunction("clReleaseProgram", "opencl")
             )
         )(program);
 
@@ -33505,9 +47263,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseSampler(_cl_sampler* sampler) =>
         (
             (delegate* unmanaged<_cl_sampler*, int>)(
-                _slots[90] is not null and var loadedFnPtr
+                _slots[140] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[90] = nativeContext.LoadFunction("clReleaseSampler", "opencl")
+                    : _slots[140] = nativeContext.LoadFunction("clReleaseSampler", "opencl")
             )
         )(sampler);
 
@@ -33575,6 +47333,84 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static int ReleaseSampler(Ref<_cl_sampler> sampler) =>
         ThisThread.ReleaseSampler(sampler);
 
+    [NativeName("clReleaseSemaphoreKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+        (
+            (delegate* unmanaged<_cl_semaphore_khr*, int>)(
+                _slots[141] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[141] = nativeContext.LoadFunction("clReleaseSemaphoreKHR", "opencl")
+            )
+        )(sema_object);
+
+    [NativeName("clReleaseSemaphoreKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+        ThisThread.ReleaseSemaphoreKHR(sema_object);
+
+    [NativeName("clReleaseSemaphoreKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
+    {
+        fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+        {
+            return (int)((ICl)this).ReleaseSemaphoreKHR(__dsl_sema_object);
+        }
+    }
+
+    [NativeName("clReleaseSemaphoreKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object) =>
+        ThisThread.ReleaseSemaphoreKHR(sema_object);
+
+    [NativeName("clRetainAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+        (
+            (delegate* unmanaged<_cl_accelerator_intel*, int>)(
+                _slots[142] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[142] = nativeContext.LoadFunction("clRetainAcceleratorINTEL", "opencl")
+            )
+        )(accelerator);
+
+    [NativeName("clRetainAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+        ThisThread.RetainAcceleratorINTEL(accelerator);
+
+    [NativeName("clRetainAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
+    {
+        fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
+        {
+            return (int)((ICl)this).RetainAcceleratorINTEL(__dsl_accelerator);
+        }
+    }
+
+    [NativeName("clRetainAcceleratorINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator) =>
+        ThisThread.RetainAcceleratorINTEL(accelerator);
+
     [NativeName("clRetainCommandQueue")]
     [SupportedApiProfile(
         "opencl",
@@ -33595,9 +47431,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainCommandQueue(_cl_command_queue* command_queue) =>
         (
             (delegate* unmanaged<_cl_command_queue*, int>)(
-                _slots[91] is not null and var loadedFnPtr
+                _slots[143] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[91] = nativeContext.LoadFunction("clRetainCommandQueue", "opencl")
+                    : _slots[143] = nativeContext.LoadFunction("clRetainCommandQueue", "opencl")
             )
         )(command_queue);
 
@@ -33686,9 +47522,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainContext(_cl_context* context) =>
         (
             (delegate* unmanaged<_cl_context*, int>)(
-                _slots[92] is not null and var loadedFnPtr
+                _slots[144] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[92] = nativeContext.LoadFunction("clRetainContext", "opencl")
+                    : _slots[144] = nativeContext.LoadFunction("clRetainContext", "opencl")
             )
         )(context);
 
@@ -33773,9 +47609,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainDevice(_cl_device_id* device) =>
         (
             (delegate* unmanaged<_cl_device_id*, int>)(
-                _slots[93] is not null and var loadedFnPtr
+                _slots[145] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[93] = nativeContext.LoadFunction("clRetainDevice", "opencl")
+                    : _slots[145] = nativeContext.LoadFunction("clRetainDevice", "opencl")
             )
         )(device);
 
@@ -33836,6 +47672,44 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int RetainDevice(Ref<_cl_device_id> device) => ThisThread.RetainDevice(device);
 
+    [NativeName("clRetainDeviceEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.RetainDeviceEXT(_cl_device_id* device) =>
+        (
+            (delegate* unmanaged<_cl_device_id*, int>)(
+                _slots[146] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[146] = nativeContext.LoadFunction("clRetainDeviceEXT", "opencl")
+            )
+        )(device);
+
+    [NativeName("clRetainDeviceEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int RetainDeviceEXT(_cl_device_id* device) => ThisThread.RetainDeviceEXT(device);
+
+    [NativeName("clRetainDeviceEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.RetainDeviceEXT(Ref<_cl_device_id> device)
+    {
+        fixed (_cl_device_id* __dsl_device = device)
+        {
+            return (int)((ICl)this).RetainDeviceEXT(__dsl_device);
+        }
+    }
+
+    [NativeName("clRetainDeviceEXT")]
+    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int RetainDeviceEXT(Ref<_cl_device_id> device) =>
+        ThisThread.RetainDeviceEXT(device);
+
     [NativeName("clRetainEvent")]
     [SupportedApiProfile(
         "opencl",
@@ -33856,9 +47730,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainEvent(_cl_event* @event) =>
         (
             (delegate* unmanaged<_cl_event*, int>)(
-                _slots[94] is not null and var loadedFnPtr
+                _slots[147] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[94] = nativeContext.LoadFunction("clRetainEvent", "opencl")
+                    : _slots[147] = nativeContext.LoadFunction("clRetainEvent", "opencl")
             )
         )(@event);
 
@@ -33945,9 +47819,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainKernel(_cl_kernel* kernel) =>
         (
             (delegate* unmanaged<_cl_kernel*, int>)(
-                _slots[95] is not null and var loadedFnPtr
+                _slots[148] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[95] = nativeContext.LoadFunction("clRetainKernel", "opencl")
+                    : _slots[148] = nativeContext.LoadFunction("clRetainKernel", "opencl")
             )
         )(kernel);
 
@@ -34034,9 +47908,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainMemObject(_cl_mem* memobj) =>
         (
             (delegate* unmanaged<_cl_mem*, int>)(
-                _slots[96] is not null and var loadedFnPtr
+                _slots[149] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[96] = nativeContext.LoadFunction("clRetainMemObject", "opencl")
+                    : _slots[149] = nativeContext.LoadFunction("clRetainMemObject", "opencl")
             )
         )(memobj);
 
@@ -34123,9 +47997,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainProgram(_cl_program* program) =>
         (
             (delegate* unmanaged<_cl_program*, int>)(
-                _slots[97] is not null and var loadedFnPtr
+                _slots[150] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[97] = nativeContext.LoadFunction("clRetainProgram", "opencl")
+                    : _slots[150] = nativeContext.LoadFunction("clRetainProgram", "opencl")
             )
         )(program);
 
@@ -34212,9 +48086,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainSampler(_cl_sampler* sampler) =>
         (
             (delegate* unmanaged<_cl_sampler*, int>)(
-                _slots[98] is not null and var loadedFnPtr
+                _slots[151] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[98] = nativeContext.LoadFunction("clRetainSampler", "opencl")
+                    : _slots[151] = nativeContext.LoadFunction("clRetainSampler", "opencl")
             )
         )(sampler);
 
@@ -34281,6 +48155,91 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int RetainSampler(Ref<_cl_sampler> sampler) => ThisThread.RetainSampler(sampler);
 
+    [NativeName("clRetainSemaphoreKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.RetainSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+        (
+            (delegate* unmanaged<_cl_semaphore_khr*, int>)(
+                _slots[152] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[152] = nativeContext.LoadFunction("clRetainSemaphoreKHR", "opencl")
+            )
+        )(sema_object);
+
+    [NativeName("clRetainSemaphoreKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int RetainSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+        ThisThread.RetainSemaphoreKHR(sema_object);
+
+    [NativeName("clRetainSemaphoreKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
+    {
+        fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
+        {
+            return (int)((ICl)this).RetainSemaphoreKHR(__dsl_sema_object);
+        }
+    }
+
+    [NativeName("clRetainSemaphoreKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
+    [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object) =>
+        ThisThread.RetainSemaphoreKHR(sema_object);
+
+    [NativeName("clSetContentSizeBufferPoCL")]
+    [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
+    [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetContentSizeBufferPOCL(_cl_mem* buffer, _cl_mem* content_size_buffer) =>
+        (
+            (delegate* unmanaged<_cl_mem*, _cl_mem*, int>)(
+                _slots[153] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[153] = nativeContext.LoadFunction(
+                        "clSetContentSizeBufferPoCL",
+                        "opencl"
+                    )
+            )
+        )(buffer, content_size_buffer);
+
+    [NativeName("clSetContentSizeBufferPoCL")]
+    [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
+    [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetContentSizeBufferPOCL(_cl_mem* buffer, _cl_mem* content_size_buffer) =>
+        ThisThread.SetContentSizeBufferPOCL(buffer, content_size_buffer);
+
+    [NativeName("clSetContentSizeBufferPoCL")]
+    [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
+    [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetContentSizeBufferPOCL(Ref<_cl_mem> buffer, Ref<_cl_mem> content_size_buffer)
+    {
+        fixed (_cl_mem* __dsl_content_size_buffer = content_size_buffer)
+        fixed (_cl_mem* __dsl_buffer = buffer)
+        {
+            return (int)
+                ((ICl)this).SetContentSizeBufferPOCL(__dsl_buffer, __dsl_content_size_buffer);
+        }
+    }
+
+    [NativeName("clSetContentSizeBufferPoCL")]
+    [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
+    [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetContentSizeBufferPOCL(
+        Ref<_cl_mem> buffer,
+        Ref<_cl_mem> content_size_buffer
+    ) => ThisThread.SetContentSizeBufferPOCL(buffer, content_size_buffer);
+
     [NativeName("clSetContextDestructorCallback")]
     [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
     [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
@@ -34296,9 +48255,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 delegate* unmanaged<_cl_context*, void*, void>,
                 void*,
                 int>)(
-                _slots[99] is not null and var loadedFnPtr
+                _slots[154] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[99] = nativeContext.LoadFunction(
+                    : _slots[154] = nativeContext.LoadFunction(
                         "clSetContextDestructorCallback",
                         "opencl"
                     )
@@ -34362,9 +48321,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_context*, _cl_device_id*, _cl_command_queue*, int>)(
-                _slots[100] is not null and var loadedFnPtr
+                _slots[155] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[100] = nativeContext.LoadFunction(
+                    : _slots[155] = nativeContext.LoadFunction(
                         "clSetDefaultDeviceCommandQueue",
                         "opencl"
                     )
@@ -34455,9 +48414,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 delegate* unmanaged<_cl_event*, int, void*, void>,
                 void*,
                 int>)(
-                _slots[101] is not null and var loadedFnPtr
+                _slots[156] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[101] = nativeContext.LoadFunction("clSetEventCallback", "opencl")
+                    : _slots[156] = nativeContext.LoadFunction("clSetEventCallback", "opencl")
             )
         )(@event, command_exec_callback_type, pfn_notify, user_data);
 
@@ -34563,9 +48522,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetKernelArg(_cl_kernel* kernel, uint arg_index, nuint arg_size, void* arg_value) =>
         (
             (delegate* unmanaged<_cl_kernel*, uint, nuint, void*, int>)(
-                _slots[102] is not null and var loadedFnPtr
+                _slots[157] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[102] = nativeContext.LoadFunction("clSetKernelArg", "opencl")
+                    : _slots[157] = nativeContext.LoadFunction("clSetKernelArg", "opencl")
             )
         )(kernel, arg_index, arg_size, arg_value);
 
@@ -34644,6 +48603,121 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref arg_value
     ) => ThisThread.SetKernelArg(kernel, arg_index, arg_size, arg_value);
 
+    [NativeName("clSetKernelArgDevicePointerEXT")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_ext_buffer_device_address"],
+        ImpliesSets = ["CL_VERSION_3_0"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetKernelArgDevicePointerEXT(_cl_kernel* kernel, uint arg_index, ulong arg_value) =>
+        (
+            (delegate* unmanaged<_cl_kernel*, uint, ulong, int>)(
+                _slots[158] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[158] = nativeContext.LoadFunction(
+                        "clSetKernelArgDevicePointerEXT",
+                        "opencl"
+                    )
+            )
+        )(kernel, arg_index, arg_value);
+
+    [NativeName("clSetKernelArgDevicePointerEXT")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_ext_buffer_device_address"],
+        ImpliesSets = ["CL_VERSION_3_0"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetKernelArgDevicePointerEXT(
+        _cl_kernel* kernel,
+        uint arg_index,
+        ulong arg_value
+    ) => ThisThread.SetKernelArgDevicePointerEXT(kernel, arg_index, arg_value);
+
+    [NativeName("clSetKernelArgDevicePointerEXT")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_ext_buffer_device_address"],
+        ImpliesSets = ["CL_VERSION_3_0"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetKernelArgDevicePointerEXT(Ref<_cl_kernel> kernel, uint arg_index, ulong arg_value)
+    {
+        fixed (_cl_kernel* __dsl_kernel = kernel)
+        {
+            return (int)
+                ((ICl)this).SetKernelArgDevicePointerEXT(__dsl_kernel, arg_index, arg_value);
+        }
+    }
+
+    [NativeName("clSetKernelArgDevicePointerEXT")]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_ext_buffer_device_address"],
+        ImpliesSets = ["CL_VERSION_3_0"]
+    )]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetKernelArgDevicePointerEXT(
+        Ref<_cl_kernel> kernel,
+        uint arg_index,
+        ulong arg_value
+    ) => ThisThread.SetKernelArgDevicePointerEXT(kernel, arg_index, arg_value);
+
+    [NativeName("clSetKernelArgMemPointerINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetKernelArgMemPointerINTEL(_cl_kernel* kernel, uint arg_index, void* arg_value) =>
+        (
+            (delegate* unmanaged<_cl_kernel*, uint, void*, int>)(
+                _slots[159] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[159] = nativeContext.LoadFunction(
+                        "clSetKernelArgMemPointerINTEL",
+                        "opencl"
+                    )
+            )
+        )(kernel, arg_index, arg_value);
+
+    [NativeName("clSetKernelArgMemPointerINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetKernelArgMemPointerINTEL(
+        _cl_kernel* kernel,
+        uint arg_index,
+        void* arg_value
+    ) => ThisThread.SetKernelArgMemPointerINTEL(kernel, arg_index, arg_value);
+
+    [NativeName("clSetKernelArgMemPointerINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetKernelArgMemPointerINTEL(Ref<_cl_kernel> kernel, uint arg_index, Ref arg_value)
+    {
+        fixed (void* __dsl_arg_value = arg_value)
+        fixed (_cl_kernel* __dsl_kernel = kernel)
+        {
+            return (int)
+                ((ICl)this).SetKernelArgMemPointerINTEL(__dsl_kernel, arg_index, __dsl_arg_value);
+        }
+    }
+
+    [NativeName("clSetKernelArgMemPointerINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetKernelArgMemPointerINTEL(
+        Ref<_cl_kernel> kernel,
+        uint arg_index,
+        Ref arg_value
+    ) => ThisThread.SetKernelArgMemPointerINTEL(kernel, arg_index, arg_value);
+
     [NativeName("clSetKernelArgSVMPointer")]
     [SupportedApiProfile(
         "opencl",
@@ -34655,9 +48729,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetKernelArgSvmPointer(_cl_kernel* kernel, uint arg_index, void* arg_value) =>
         (
             (delegate* unmanaged<_cl_kernel*, uint, void*, int>)(
-                _slots[103] is not null and var loadedFnPtr
+                _slots[160] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[103] = nativeContext.LoadFunction("clSetKernelArgSVMPointer", "opencl")
+                    : _slots[160] = nativeContext.LoadFunction("clSetKernelArgSVMPointer", "opencl")
             )
         )(kernel, arg_index, arg_value);
 
@@ -34704,6 +48778,56 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref arg_value
     ) => ThisThread.SetKernelArgSvmPointer(kernel, arg_index, arg_value);
 
+    [NativeName("clSetKernelArgSVMPointerARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetKernelArgSvmPointerARM(_cl_kernel* kernel, uint arg_index, void* arg_value) =>
+        (
+            (delegate* unmanaged<_cl_kernel*, uint, void*, int>)(
+                _slots[161] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[161] = nativeContext.LoadFunction(
+                        "clSetKernelArgSVMPointerARM",
+                        "opencl"
+                    )
+            )
+        )(kernel, arg_index, arg_value);
+
+    [NativeName("clSetKernelArgSVMPointerARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetKernelArgSvmPointerARM(
+        _cl_kernel* kernel,
+        uint arg_index,
+        void* arg_value
+    ) => ThisThread.SetKernelArgSvmPointerARM(kernel, arg_index, arg_value);
+
+    [NativeName("clSetKernelArgSVMPointerARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetKernelArgSvmPointerARM(Ref<_cl_kernel> kernel, uint arg_index, Ref arg_value)
+    {
+        fixed (void* __dsl_arg_value = arg_value)
+        fixed (_cl_kernel* __dsl_kernel = kernel)
+        {
+            return (int)
+                ((ICl)this).SetKernelArgSvmPointerARM(__dsl_kernel, arg_index, __dsl_arg_value);
+        }
+    }
+
+    [NativeName("clSetKernelArgSVMPointerARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetKernelArgSvmPointerARM(
+        Ref<_cl_kernel> kernel,
+        uint arg_index,
+        Ref arg_value
+    ) => ThisThread.SetKernelArgSvmPointerARM(kernel, arg_index, arg_value);
+
     [NativeName("clSetKernelExecInfo")]
     [SupportedApiProfile(
         "opencl",
@@ -34720,9 +48844,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_kernel*, uint, nuint, void*, int>)(
-                _slots[104] is not null and var loadedFnPtr
+                _slots[162] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[104] = nativeContext.LoadFunction("clSetKernelExecInfo", "opencl")
+                    : _slots[162] = nativeContext.LoadFunction("clSetKernelExecInfo", "opencl")
             )
         )(kernel, param_name, param_value_size, param_value);
 
@@ -34784,6 +48908,128 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref param_value
     ) => ThisThread.SetKernelExecInfo(kernel, param_name, param_value_size, param_value);
 
+    [NativeName("clSetKernelExecInfoARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetKernelExecInfoARM(
+        _cl_kernel* kernel,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value
+    ) =>
+        (
+            (delegate* unmanaged<_cl_kernel*, uint, nuint, void*, int>)(
+                _slots[163] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[163] = nativeContext.LoadFunction("clSetKernelExecInfoARM", "opencl")
+            )
+        )(kernel, param_name, param_value_size, param_value);
+
+    [NativeName("clSetKernelExecInfoARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetKernelExecInfoARM(
+        _cl_kernel* kernel,
+        uint param_name,
+        nuint param_value_size,
+        void* param_value
+    ) => ThisThread.SetKernelExecInfoARM(kernel, param_name, param_value_size, param_value);
+
+    [NativeName("clSetKernelExecInfoARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetKernelExecInfoARM(
+        Ref<_cl_kernel> kernel,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value
+    )
+    {
+        fixed (void* __dsl_param_value = param_value)
+        fixed (_cl_kernel* __dsl_kernel = kernel)
+        {
+            return (int)
+                ((ICl)this).SetKernelExecInfoARM(
+                    __dsl_kernel,
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value
+                );
+        }
+    }
+
+    [NativeName("clSetKernelExecInfoARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetKernelExecInfoARM(
+        Ref<_cl_kernel> kernel,
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value
+    ) => ThisThread.SetKernelExecInfoARM(kernel, param_name, param_value_size, param_value);
+
+    [NativeName("clSetMemObjectDestructorAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
+    [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetMemObjectDestructorAPPLE(
+        _cl_mem* memobj,
+        delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
+        void* user_data
+    ) =>
+        (
+            (delegate* unmanaged<_cl_mem*, delegate* unmanaged<_cl_mem*, void*, void>, void*, int>)(
+                _slots[164] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[164] = nativeContext.LoadFunction(
+                        "clSetMemObjectDestructorAPPLE",
+                        "opencl"
+                    )
+            )
+        )(memobj, pfn_notify, user_data);
+
+    [NativeName("clSetMemObjectDestructorAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
+    [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetMemObjectDestructorAPPLE(
+        _cl_mem* memobj,
+        delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
+        void* user_data
+    ) => ThisThread.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
+
+    [NativeName("clSetMemObjectDestructorAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
+    [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetMemObjectDestructorAPPLE(
+        Ref<_cl_mem> memobj,
+        delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
+        Ref user_data
+    )
+    {
+        fixed (void* __dsl_user_data = user_data)
+        fixed (_cl_mem* __dsl_memobj = memobj)
+        {
+            return (int)
+                ((ICl)this).SetMemObjectDestructorAPPLE(__dsl_memobj, pfn_notify, __dsl_user_data);
+        }
+    }
+
+    [NativeName("clSetMemObjectDestructorAPPLE")]
+    [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
+    [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetMemObjectDestructorAPPLE(
+        Ref<_cl_mem> memobj,
+        delegate* unmanaged<_cl_mem*, void*, void> pfn_notify,
+        Ref user_data
+    ) => ThisThread.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
+
     [NativeName("clSetMemObjectDestructorCallback")]
     [SupportedApiProfile(
         "opencl",
@@ -34807,9 +49053,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_mem*, delegate* unmanaged<_cl_mem*, void*, void>, void*, int>)(
-                _slots[105] is not null and var loadedFnPtr
+                _slots[165] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[105] = nativeContext.LoadFunction(
+                    : _slots[165] = nativeContext.LoadFunction(
                         "clSetMemObjectDestructorCallback",
                         "opencl"
                     )
@@ -34894,6 +49140,45 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref user_data
     ) => ThisThread.SetMemObjectDestructorCallback(memobj, pfn_notify, user_data);
 
+    [NativeName("clSetPerfHintQCOM")]
+    [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
+    [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetPerfHintQCOM(_cl_context* context, uint perf_hint) =>
+        (
+            (delegate* unmanaged<_cl_context*, uint, int>)(
+                _slots[166] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[166] = nativeContext.LoadFunction("clSetPerfHintQCOM", "opencl")
+            )
+        )(context, perf_hint);
+
+    [NativeName("clSetPerfHintQCOM")]
+    [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
+    [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetPerfHintQCOM(_cl_context* context, uint perf_hint) =>
+        ThisThread.SetPerfHintQCOM(context, perf_hint);
+
+    [NativeName("clSetPerfHintQCOM")]
+    [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
+    [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.SetPerfHintQCOM(Ref<_cl_context> context, uint perf_hint)
+    {
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (int)((ICl)this).SetPerfHintQCOM(__dsl_context, perf_hint);
+        }
+    }
+
+    [NativeName("clSetPerfHintQCOM")]
+    [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
+    [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int SetPerfHintQCOM(Ref<_cl_context> context, uint perf_hint) =>
+        ThisThread.SetPerfHintQCOM(context, perf_hint);
+
     [NativeName("clSetProgramReleaseCallback")]
     [Obsolete]
     [SupportedApiProfile(
@@ -34914,9 +49199,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 delegate* unmanaged<_cl_program*, void*, void>,
                 void*,
                 int>)(
-                _slots[106] is not null and var loadedFnPtr
+                _slots[167] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[106] = nativeContext.LoadFunction(
+                    : _slots[167] = nativeContext.LoadFunction(
                         "clSetProgramReleaseCallback",
                         "opencl"
                     )
@@ -34992,9 +49277,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<_cl_program*, uint, nuint, void*, int>)(
-                _slots[107] is not null and var loadedFnPtr
+                _slots[168] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[107] = nativeContext.LoadFunction(
+                    : _slots[168] = nativeContext.LoadFunction(
                         "clSetProgramSpecializationConstant",
                         "opencl"
                     )
@@ -35078,9 +49363,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetUserEventStatus(_cl_event* @event, int execution_status) =>
         (
             (delegate* unmanaged<_cl_event*, int, int>)(
-                _slots[108] is not null and var loadedFnPtr
+                _slots[169] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[108] = nativeContext.LoadFunction("clSetUserEventStatus", "opencl")
+                    : _slots[169] = nativeContext.LoadFunction("clSetUserEventStatus", "opencl")
             )
         )(@event, execution_status);
 
@@ -35146,6 +49431,82 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static int SetUserEventStatus(Ref<_cl_event> @event, int execution_status) =>
         ThisThread.SetUserEventStatus(@event, execution_status);
 
+    [NativeName("clSharedMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void* ICl.SharedMemAllocINTEL(
+        _cl_context* context,
+        _cl_device_id* device,
+        ulong* properties,
+        nuint size,
+        uint alignment,
+        int* errcode_ret
+    ) =>
+        (
+            (delegate* unmanaged<_cl_context*, _cl_device_id*, ulong*, nuint, uint, int*, void*>)(
+                _slots[170] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[170] = nativeContext.LoadFunction("clSharedMemAllocINTEL", "opencl")
+            )
+        )(context, device, properties, size, alignment, errcode_ret);
+
+    [NativeName("clSharedMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void* SharedMemAllocINTEL(
+        _cl_context* context,
+        _cl_device_id* device,
+        ulong* properties,
+        nuint size,
+        uint alignment,
+        int* errcode_ret
+    ) => ThisThread.SharedMemAllocINTEL(context, device, properties, size, alignment, errcode_ret);
+
+    [NativeName("clSharedMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr ICl.SharedMemAllocINTEL(
+        Ref<_cl_context> context,
+        Ref<_cl_device_id> device,
+        Ref<ulong> properties,
+        nuint size,
+        uint alignment,
+        Ref<int> errcode_ret
+    )
+    {
+        fixed (int* __dsl_errcode_ret = errcode_ret)
+        fixed (ulong* __dsl_properties = properties)
+        fixed (_cl_device_id* __dsl_device = device)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (void*)
+                ((ICl)this).SharedMemAllocINTEL(
+                    __dsl_context,
+                    __dsl_device,
+                    __dsl_properties,
+                    size,
+                    alignment,
+                    __dsl_errcode_ret
+                );
+        }
+    }
+
+    [NativeName("clSharedMemAllocINTEL")]
+    [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr SharedMemAllocINTEL(
+        Ref<_cl_context> context,
+        Ref<_cl_device_id> device,
+        Ref<ulong> properties,
+        nuint size,
+        uint alignment,
+        Ref<int> errcode_ret
+    ) => ThisThread.SharedMemAllocINTEL(context, device, properties, size, alignment, errcode_ret);
+
     [NativeName("clSVMAlloc")]
     [SupportedApiProfile(
         "opencl",
@@ -35157,9 +49518,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void* ICl.SvmAlloc(_cl_context* context, ulong flags, nuint size, uint alignment) =>
         (
             (delegate* unmanaged<_cl_context*, ulong, nuint, uint, void*>)(
-                _slots[109] is not null and var loadedFnPtr
+                _slots[171] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[109] = nativeContext.LoadFunction("clSVMAlloc", "opencl")
+                    : _slots[171] = nativeContext.LoadFunction("clSVMAlloc", "opencl")
             )
         )(context, flags, size, alignment);
 
@@ -35201,6 +49562,53 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static Ptr SvmAlloc(Ref<_cl_context> context, ulong flags, nuint size, uint alignment) =>
         ThisThread.SvmAlloc(context, flags, size, alignment);
 
+    [NativeName("clSVMAllocARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void* ICl.SvmAllocARM(_cl_context* context, ulong flags, nuint size, uint alignment) =>
+        (
+            (delegate* unmanaged<_cl_context*, ulong, nuint, uint, void*>)(
+                _slots[172] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[172] = nativeContext.LoadFunction("clSVMAllocARM", "opencl")
+            )
+        )(context, flags, size, alignment);
+
+    [NativeName("clSVMAllocARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void* SvmAllocARM(
+        _cl_context* context,
+        ulong flags,
+        nuint size,
+        uint alignment
+    ) => ThisThread.SvmAllocARM(context, flags, size, alignment);
+
+    [NativeName("clSVMAllocARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    Ptr ICl.SvmAllocARM(Ref<_cl_context> context, ulong flags, nuint size, uint alignment)
+    {
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (void*)((ICl)this).SvmAllocARM(__dsl_context, flags, size, alignment);
+        }
+    }
+
+    [NativeName("clSVMAllocARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static Ptr SvmAllocARM(
+        Ref<_cl_context> context,
+        ulong flags,
+        nuint size,
+        uint alignment
+    ) => ThisThread.SvmAllocARM(context, flags, size, alignment);
+
     [NativeName("clSVMFree")]
     [SupportedApiProfile(
         "opencl",
@@ -35212,9 +49620,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void ICl.SvmFree(_cl_context* context, void* svm_pointer) =>
         (
             (delegate* unmanaged<_cl_context*, void*, void>)(
-                _slots[110] is not null and var loadedFnPtr
+                _slots[173] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[110] = nativeContext.LoadFunction("clSVMFree", "opencl")
+                    : _slots[173] = nativeContext.LoadFunction("clSVMFree", "opencl")
             )
         )(context, svm_pointer);
 
@@ -35257,6 +49665,85 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static void SvmFree(Ref<_cl_context> context, Ref svm_pointer) =>
         ThisThread.SvmFree(context, svm_pointer);
 
+    [NativeName("clSVMFreeARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ICl.SvmFreeARM(_cl_context* context, void* svm_pointer) =>
+        (
+            (delegate* unmanaged<_cl_context*, void*, void>)(
+                _slots[174] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[174] = nativeContext.LoadFunction("clSVMFreeARM", "opencl")
+            )
+        )(context, svm_pointer);
+
+    [NativeName("clSVMFreeARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SvmFreeARM(_cl_context* context, void* svm_pointer) =>
+        ThisThread.SvmFreeARM(context, svm_pointer);
+
+    [NativeName("clSVMFreeARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void ICl.SvmFreeARM(Ref<_cl_context> context, Ref svm_pointer)
+    {
+        fixed (void* __dsl_svm_pointer = svm_pointer)
+        fixed (_cl_context* __dsl_context = context)
+        {
+            ((ICl)this).SvmFreeARM(__dsl_context, __dsl_svm_pointer);
+        }
+    }
+
+    [NativeName("clSVMFreeARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void SvmFreeARM(Ref<_cl_context> context, Ref svm_pointer) =>
+        ThisThread.SvmFreeARM(context, svm_pointer);
+
+    [NativeName("clTerminateContextKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
+    [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.TerminateContextKHR(_cl_context* context) =>
+        (
+            (delegate* unmanaged<_cl_context*, int>)(
+                _slots[175] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[175] = nativeContext.LoadFunction("clTerminateContextKHR", "opencl")
+            )
+        )(context);
+
+    [NativeName("clTerminateContextKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
+    [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int TerminateContextKHR(_cl_context* context) =>
+        ThisThread.TerminateContextKHR(context);
+
+    [NativeName("clTerminateContextKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
+    [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.TerminateContextKHR(Ref<_cl_context> context)
+    {
+        fixed (_cl_context* __dsl_context = context)
+        {
+            return (int)((ICl)this).TerminateContextKHR(__dsl_context);
+        }
+    }
+
+    [NativeName("clTerminateContextKHR")]
+    [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
+    [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int TerminateContextKHR(Ref<_cl_context> context) =>
+        ThisThread.TerminateContextKHR(context);
+
     [NativeName("clUnloadCompiler")]
     [Obsolete]
     [SupportedApiProfile(
@@ -35278,9 +49765,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.UnloadCompiler() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[111] is not null and var loadedFnPtr
+                _slots[176] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[111] = nativeContext.LoadFunction("clUnloadCompiler", "opencl")
+                    : _slots[176] = nativeContext.LoadFunction("clUnloadCompiler", "opencl")
             )
         )();
 
@@ -35322,9 +49809,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.UnloadPlatformCompiler(_cl_platform_id* platform) =>
         (
             (delegate* unmanaged<_cl_platform_id*, int>)(
-                _slots[112] is not null and var loadedFnPtr
+                _slots[177] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[112] = nativeContext.LoadFunction("clUnloadPlatformCompiler", "opencl")
+                    : _slots[177] = nativeContext.LoadFunction("clUnloadPlatformCompiler", "opencl")
             )
         )(platform);
 
@@ -35407,9 +49894,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.WaitForEvents(uint num_events, _cl_event** event_list) =>
         (
             (delegate* unmanaged<uint, _cl_event**, int>)(
-                _slots[113] is not null and var loadedFnPtr
+                _slots[178] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[113] = nativeContext.LoadFunction("clWaitForEvents", "opencl")
+                    : _slots[178] = nativeContext.LoadFunction("clWaitForEvents", "opencl")
             )
         )(num_events, event_list);
 

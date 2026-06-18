@@ -14,4 +14,22 @@ namespace Silk.NET.OpenCL;
 public enum DeviceFpAtomicCapabilitiesEXT : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_DEVICE_GLOBAL_FP_ATOMIC_LOAD_STORE_EXT")]
+    GlobalFpAtomicLoadStore = 0x1,
+
+    [NativeName("CL_DEVICE_GLOBAL_FP_ATOMIC_ADD_EXT")]
+    GlobalFpAtomicAdd = 0x2,
+
+    [NativeName("CL_DEVICE_GLOBAL_FP_ATOMIC_MIN_MAX_EXT")]
+    GlobalFpAtomicMinMax = 0x4,
+
+    [NativeName("CL_DEVICE_LOCAL_FP_ATOMIC_LOAD_STORE_EXT")]
+    LocalFpAtomicLoadStore = 0x10000,
+
+    [NativeName("CL_DEVICE_LOCAL_FP_ATOMIC_ADD_EXT")]
+    LocalFpAtomicAdd = 0x20000,
+
+    [NativeName("CL_DEVICE_LOCAL_FP_ATOMIC_MIN_MAX_EXT")]
+    LocalFpAtomicMinMax = 0x40000,
 }

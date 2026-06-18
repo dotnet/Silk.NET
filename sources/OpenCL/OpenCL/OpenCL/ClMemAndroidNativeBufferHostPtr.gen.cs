@@ -3,24 +3,17 @@
 // Ported from the OpenCL headers and corresponding dependencies.
 // Original source is Copyright 2013-2026 The Khronos Group Inc. Licensed under the Apache 2.0 license.
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("cl_mem_migration_flags")]
-[Flags]
-public enum MemMigrationFlags : ulong
+[NativeName("_cl_mem_android_native_buffer_host_ptr")]
+public unsafe partial struct ClMemAndroidNativeBufferHostPtr
 {
-    None = 0x0,
+    [NativeName("ext_host_ptr")]
+    public ClMemExtHostPtr ExtHostPtr;
 
-    [NativeName("CL_MIGRATE_MEM_OBJECT_HOST")]
-    Host = 0x1,
-
-    [NativeName("CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED")]
-    ContentUndefined = 0x2,
-
-    [NativeName("CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
-    HostEXT = 0x1,
+    [NativeName("anb_ptr")]
+    public void* AnbPtr;
 }

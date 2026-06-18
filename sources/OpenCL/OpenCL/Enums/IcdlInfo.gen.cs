@@ -10,4 +10,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_icdl_info")]
-public enum IcdlInfo : uint { }
+public enum IcdlInfo : uint
+{
+    [NativeName("CL_ICDL_OCL_VERSION")]
+    OclVersion = 1,
+
+    [NativeName("CL_ICDL_VERSION")]
+    Version = 2,
+
+    [NativeName("CL_ICDL_NAME")]
+    Name = 3,
+
+    [NativeName("CL_ICDL_VENDOR")]
+    Vendor = 4,
+}

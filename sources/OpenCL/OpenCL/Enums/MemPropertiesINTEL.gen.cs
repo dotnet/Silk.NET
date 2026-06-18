@@ -10,4 +10,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_mem_properties_intel")]
-public enum MemPropertiesINTEL : ulong { }
+public enum MemPropertiesINTEL : ulong
+{
+    [NativeName("CL_MEM_ALLOC_FLAGS_INTEL")]
+    AllocFlags = 16789,
+
+    [NativeName("CL_MEM_ALLOC_BUFFER_LOCATION_INTEL")]
+    AllocBufferLocation = 16798,
+
+    [NativeName("CL_MEM_CHANNEL_INTEL")]
+    Channel = 16915,
+}

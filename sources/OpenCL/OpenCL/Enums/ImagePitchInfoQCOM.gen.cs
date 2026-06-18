@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_image_pitch_info_qcom")]
-public enum ImagePitchInfoQCOM : uint { }
+public enum ImagePitchInfoQCOM : uint
+{
+    [NativeName("CL_IMAGE_ROW_ALIGNMENT_QCOM")]
+    RowAlignment = 16546,
+
+    [NativeName("CL_IMAGE_SLICE_ALIGNMENT_QCOM")]
+    SliceAlignment = 16547,
+}

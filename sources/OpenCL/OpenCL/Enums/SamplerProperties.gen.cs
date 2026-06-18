@@ -10,4 +10,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_sampler_properties")]
-public enum SamplerProperties : ulong { }
+public enum SamplerProperties : ulong
+{
+    [NativeName("CL_SAMPLER_MIP_FILTER_MODE_KHR")]
+    MipFilterModeKHR = 4437,
+
+    [NativeName("CL_SAMPLER_LOD_MIN_KHR")]
+    LodMinKHR = 4438,
+
+    [NativeName("CL_SAMPLER_LOD_MAX_KHR")]
+    LodMaxKHR = 4439,
+}

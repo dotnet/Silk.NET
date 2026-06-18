@@ -14,4 +14,16 @@ namespace Silk.NET.OpenCL;
 public enum DeviceUnifiedSharedMemoryCapabilitiesINTEL : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_UNIFIED_SHARED_MEMORY_ACCESS_INTEL")]
+    Access = 0x1,
+
+    [NativeName("CL_UNIFIED_SHARED_MEMORY_ATOMIC_ACCESS_INTEL")]
+    AtomicAccess = 0x2,
+
+    [NativeName("CL_UNIFIED_SHARED_MEMORY_CONCURRENT_ACCESS_INTEL")]
+    ConcurrentAccess = 0x4,
+
+    [NativeName("CL_UNIFIED_SHARED_MEMORY_CONCURRENT_ATOMIC_ACCESS_INTEL")]
+    ConcurrentAtomicAccess = 0x8,
 }

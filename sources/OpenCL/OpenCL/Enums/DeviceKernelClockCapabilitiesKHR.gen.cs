@@ -14,4 +14,13 @@ namespace Silk.NET.OpenCL;
 public enum DeviceKernelClockCapabilitiesKHR : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_DEVICE_KERNEL_CLOCK_SCOPE_DEVICE_KHR")]
+    Device = 0x1,
+
+    [NativeName("CL_DEVICE_KERNEL_CLOCK_SCOPE_WORK_GROUP_KHR")]
+    WorkGroup = 0x2,
+
+    [NativeName("CL_DEVICE_KERNEL_CLOCK_SCOPE_SUB_GROUP_KHR")]
+    SubGroup = 0x4,
 }

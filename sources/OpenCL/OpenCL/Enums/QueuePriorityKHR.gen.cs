@@ -14,4 +14,13 @@ namespace Silk.NET.OpenCL;
 public enum QueuePriorityKHR : uint
 {
     None = 0x0,
+
+    [NativeName("CL_QUEUE_PRIORITY_HIGH_KHR")]
+    High = 0x1,
+
+    [NativeName("CL_QUEUE_PRIORITY_MED_KHR")]
+    Med = 0x2,
+
+    [NativeName("CL_QUEUE_PRIORITY_LOW_KHR")]
+    Low = 0x4,
 }

@@ -10,4 +10,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_semaphore_type_khr")]
-public enum SemaphoreTypeKHR : uint { }
+public enum SemaphoreTypeKHR : uint
+{
+    [NativeName("CL_SEMAPHORE_TYPE_BINARY_KHR")]
+    Binary = 1,
+}

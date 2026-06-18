@@ -10,4 +10,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_semaphore_properties_khr")]
-public enum SemaphorePropertiesKHR : ulong { }
+public enum SemaphorePropertiesKHR : ulong
+{
+    [NativeName("CL_SEMAPHORE_EXPORT_HANDLE_TYPES_KHR")]
+    ExportHandleTypes = 8255,
+}

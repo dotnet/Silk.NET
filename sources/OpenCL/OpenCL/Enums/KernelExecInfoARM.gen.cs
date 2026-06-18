@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_kernel_exec_info_arm")]
-public enum KernelExecInfoARM : uint { }
+public enum KernelExecInfoARM : uint
+{
+    [NativeName("CL_KERNEL_EXEC_INFO_SVM_PTRS_ARM")]
+    Ptrs = 16568,
+
+    [NativeName("CL_KERNEL_EXEC_INFO_SVM_FINE_GRAIN_SYSTEM_ARM")]
+    FineGrainSystem = 16569,
+}

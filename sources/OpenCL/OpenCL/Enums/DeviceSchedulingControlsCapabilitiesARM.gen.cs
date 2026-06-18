@@ -14,4 +14,28 @@ namespace Silk.NET.OpenCL;
 public enum DeviceSchedulingControlsCapabilitiesARM : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_DEVICE_SCHEDULING_KERNEL_BATCHING_ARM")]
+    KernelBatching = 0x1,
+
+    [NativeName("CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_ARM")]
+    WorkgroupBatchSize = 0x2,
+
+    [NativeName("CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
+    WorkgroupBatchSizeModifier = 0x4,
+
+    [NativeName("CL_DEVICE_SCHEDULING_DEFERRED_FLUSH_ARM")]
+    DeferredFlush = 0x8,
+
+    [NativeName("CL_DEVICE_SCHEDULING_REGISTER_ALLOCATION_ARM")]
+    RegisterAllocation = 0x10,
+
+    [NativeName("CL_DEVICE_SCHEDULING_WARP_THROTTLING_ARM")]
+    WarpThrottling = 0x20,
+
+    [NativeName("CL_DEVICE_SCHEDULING_COMPUTE_UNIT_BATCH_QUEUE_SIZE_ARM")]
+    ComputeUnitBatchQueueSize = 0x40,
+
+    [NativeName("CL_DEVICE_SCHEDULING_COMPUTE_UNIT_LIMIT_ARM")]
+    ComputeUnitLimit = 0x80,
 }

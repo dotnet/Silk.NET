@@ -44,4 +44,10 @@ public enum MemInfo : uint
 
     [NativeName("CL_MEM_PROPERTIES")]
     Properties = 4362,
+
+    [NativeName("CL_MEM_USES_SVM_POINTER_ARM")]
+    UsesSvmPointerARM = 16567,
+
+    [NativeName("CL_MEM_DEVICE_ADDRESS_EXT")]
+    DeviceAddressEXT = 20481,
 }

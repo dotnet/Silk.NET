@@ -14,4 +14,10 @@ namespace Silk.NET.OpenCL;
 public enum ContextSafetyPropertiesIMG : ulong
 {
     None = 0x0,
+
+    [NativeName("CL_CONTEXT_WORKGROUP_PROTECTION_IMG")]
+    WorkgroupProtection = 0x1,
+
+    [NativeName("CL_CONTEXT_ENHANCED_EVENT_EXECUTION_STATUS_IMG")]
+    EnhancedEventExecutionStatus = 0x2,
 }
