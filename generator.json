@@ -389,9 +389,6 @@
           "LOKI",
           "EXT"
         ],
-        "ExcludeVendorSuffixIdentification": [
-          "ALC_INVALID_CONTEXT"
-        ],
         "NonVendorSuffixes": [
           "Direct"
         ],

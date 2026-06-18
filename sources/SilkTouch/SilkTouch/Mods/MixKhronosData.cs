@@ -1641,7 +1641,9 @@ public partial class MixKhronosData(
             + "Groups|IDs|Indexed|Instanced|Pixels|Queries|Status|Tess|Through|Uniforms|Varyings|Weight|Width|Bias|Id|"
             + "Fixed|Pass|Address|Configs|Thread|Subpass|Deferred|Extended|Affix|Annex|Box|Aux|Ex|Index|Vertex|Path|"
             + "Arch|Arith|Afresh|Both|High|Math|Mesh|Sinh|Bench|Brush|Bunch|Crash|Flush|Depth|Latch|Morph|Pinch|"
-            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Supported|Rewind)",
+            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Supported|Rewind|"
+            // CONTEXT is often incorrectly identified as CONT + EXT, where EXT is a vendor suffix
+            + "context|Context|CONTEXT)",
         RegexOptions.RightToLeft
     )]
     private static partial Regex EndingsToNotIdentifyInto();
@@ -2053,14 +2055,18 @@ public partial class MixKhronosData(
                 // Try to identify vendor suffixes
                 foreach (var vendor in job.Vendors)
                 {
-                    if (trimmedName.EndsWith(vendor, vendorSuffixComparison))
+                    if (
+                        trimmedName.EndsWith(vendor, vendorSuffixComparison)
+                        && CanIdentifySuffix(trimmedName, vendor.Length)
+                    )
                     {
+                        var identifiedSuffix = trimmedName[^vendor.Length..];
                         attributeLists = attributeLists.AddNameAffix(
                             NameAffixType.Suffix,
                             "KhronosVendor",
-                            trimmedName[^vendor.Length..]
+                            identifiedSuffix
                         );
-                        trimmedName = trimmedName[..^vendor.Length];
+                        trimmedName = trimmedName[..^identifiedSuffix.Length];
 
                         break;
                     }
@@ -2075,15 +2081,19 @@ public partial class MixKhronosData(
                 // Try to identify non-vendor suffixes
                 foreach (var suffix in config.NonVendorSuffixes)
                 {
-                    if (trimmedName.EndsWith(suffix))
+                    if (
+                        trimmedName.EndsWith(suffix)
+                        && CanIdentifySuffix(trimmedName, suffix.Length)
+                    )
                     {
+                        var identifiedSuffix = trimmedName[^suffix.Length..];
                         attributeLists = attributeLists.AddNameAffix(
                             NameAffixType.Suffix,
                             "KhronosNonVendor",
-                            suffix,
+                            identifiedSuffix,
                             true
                         );
-                        trimmedName = trimmedName[..^suffix.Length];
+                        trimmedName = trimmedName[..^identifiedSuffix.Length];
 
                         break;
                     }
@@ -2171,6 +2181,7 @@ public partial class MixKhronosData(
                 exclusiveVendor == null
                 || !node.Members.All(member =>
                     member.Identifier.Text.EndsWith(exclusiveVendor, vendorSuffixComparison)
+                    && CanIdentifySuffix(member.Identifier.Text, exclusiveVendor.Length)
                 )
             )
             {
@@ -2221,7 +2232,10 @@ public partial class MixKhronosData(
             var containsUnsuffixedMembers = node.Members.Any(member =>
             {
                 var memberName = member.AttributeLists.GetNativeNameOrDefault(member.Identifier);
-                return !job.Vendors.Any(s => memberName.EndsWith(s, vendorSuffixComparison));
+                return !job.Vendors.Any(vendor =>
+                    memberName.EndsWith(vendor, vendorSuffixComparison)
+                    && CanIdentifySuffix(memberName, vendor.Length)
+                );
             });
 
             // We should not identify member suffixes for trimming if the enum type already contains unsuffixed members
@@ -2247,10 +2261,13 @@ public partial class MixKhronosData(
                     [
                         .. node.Members.Select(member =>
                         {
+                            var memberName = member.AttributeLists.GetNativeNameOrDefault(
+                                member.Identifier
+                            );
+
                             if (
-                                member
-                                    .AttributeLists.GetNativeNameOrDefault(member.Identifier)
-                                    .EndsWith(typeVendor, vendorSuffixComparison)
+                                memberName.EndsWith(typeVendor, vendorSuffixComparison)
+                                && CanIdentifySuffix(memberName, typeVendor.Length)
                             )
                             {
                                 // Identify for trimming
