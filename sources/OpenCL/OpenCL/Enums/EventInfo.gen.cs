@@ -25,5 +25,5 @@ public enum EventInfo : uint
     CommandExecutionStatus = 4563,
 
     [NativeName("CL_EVENT_CONTEXT")]
-    ContEXT = 4564,
+    Context = 4564,
 }

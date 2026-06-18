@@ -16,7 +16,7 @@ public enum ProgramInfo : uint
     ReferenceCount = 4448,
 
     [NativeName("CL_PROGRAM_CONTEXT")]
-    ContEXT = 4449,
+    Context = 4449,
 
     [NativeName("CL_PROGRAM_NUM_DEVICES")]
     NumDevices = 4450,

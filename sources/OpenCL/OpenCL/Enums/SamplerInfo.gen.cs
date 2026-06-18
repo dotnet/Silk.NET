@@ -16,7 +16,7 @@ public enum SamplerInfo : uint
     ReferenceCount = 4432,
 
     [NativeName("CL_SAMPLER_CONTEXT")]
-    ContEXT = 4433,
+    Context = 4433,
 
     [NativeName("CL_SAMPLER_NORMALIZED_COORDS")]
     NormalizedCoords = 4434,

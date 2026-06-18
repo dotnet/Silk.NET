@@ -22,7 +22,7 @@ public enum KernelInfo : uint
     ReferenceCount = 4498,
 
     [NativeName("CL_KERNEL_CONTEXT")]
-    ContEXT = 4499,
+    Context = 4499,
 
     [NativeName("CL_KERNEL_PROGRAM")]
     Program = 4500,

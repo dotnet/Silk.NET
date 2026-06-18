@@ -13,7 +13,7 @@ namespace Silk.NET.OpenCL;
 public enum CommandQueueInfo : uint
 {
     [NativeName("CL_QUEUE_CONTEXT")]
-    ContEXT = 4240,
+    Context = 4240,
 
     [NativeName("CL_QUEUE_DEVICE")]
     Device = 4241,

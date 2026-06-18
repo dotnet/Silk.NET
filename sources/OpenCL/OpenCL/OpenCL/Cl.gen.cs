@@ -438,7 +438,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ],
             MinVersion = "1.0"
         )]
-        public static extern _cl_context* CreateContEXT(
+        public static extern _cl_context* CreateContext(
             nint* properties,
             uint num_devices,
             _cl_device_id** devices,
@@ -466,7 +466,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<_cl_context> CreateContEXT(
+        public static Ptr<_cl_context> CreateContext(
             Ref<nint> properties,
             uint num_devices,
             Ref2D<_cl_device_id> devices,
@@ -480,7 +480,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_device_id** __dsl_devices = devices)
             fixed (nint* __dsl_properties = properties)
             {
-                return (_cl_context*)CreateContEXT(
+                return (_cl_context*)CreateContext(
                     __dsl_properties,
                     num_devices,
                     __dsl_devices,
@@ -5518,7 +5518,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ],
             MinVersion = "1.0"
         )]
-        public static extern int ReleaseContEXT(_cl_context* context);
+        public static extern int ReleaseContext(_cl_context* context);
 
         [NativeName("clReleaseContext")]
         [SupportedApiProfile(
@@ -5539,11 +5539,11 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int ReleaseContEXT(Ref<_cl_context> context)
+        public static int ReleaseContext(Ref<_cl_context> context)
         {
             fixed (_cl_context* __dsl_context = context)
             {
-                return (int)ReleaseContEXT(__dsl_context);
+                return (int)ReleaseContext(__dsl_context);
             }
         }
 
@@ -5874,7 +5874,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ],
             MinVersion = "1.0"
         )]
-        public static extern int RetainContEXT(_cl_context* context);
+        public static extern int RetainContext(_cl_context* context);
 
         [NativeName("clRetainContext")]
         [SupportedApiProfile(
@@ -5895,11 +5895,11 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int RetainContEXT(Ref<_cl_context> context)
+        public static int RetainContext(Ref<_cl_context> context)
         {
             fixed (_cl_context* __dsl_context = context)
             {
-                return (int)RetainContEXT(__dsl_context);
+                return (int)RetainContext(__dsl_context);
             }
         }
 
@@ -7207,14 +7207,14 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public _cl_context* CreateContEXT(
+        public _cl_context* CreateContext(
             nint* properties,
             uint num_devices,
             _cl_device_id** devices,
             delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
             void* user_data,
             int* errcode_ret
-        ) => T.CreateContEXT(properties, num_devices, devices, pfn_notify, user_data, errcode_ret);
+        ) => T.CreateContext(properties, num_devices, devices, pfn_notify, user_data, errcode_ret);
 
         [NativeName("clCreateContext")]
         [SupportedApiProfile(
@@ -7235,14 +7235,14 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Ptr<_cl_context> CreateContEXT(
+        public Ptr<_cl_context> CreateContext(
             Ref<nint> properties,
             uint num_devices,
             Ref2D<_cl_device_id> devices,
             delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
-        ) => T.CreateContEXT(properties, num_devices, devices, pfn_notify, user_data, errcode_ret);
+        ) => T.CreateContext(properties, num_devices, devices, pfn_notify, user_data, errcode_ret);
 
         [NativeName("clCreateContextFromType")]
         [SupportedApiProfile(
@@ -12239,7 +12239,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int ReleaseContEXT(_cl_context* context) => T.ReleaseContEXT(context);
+        public int ReleaseContext(_cl_context* context) => T.ReleaseContext(context);
 
         [NativeName("clReleaseContext")]
         [SupportedApiProfile(
@@ -12260,7 +12260,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int ReleaseContEXT(Ref<_cl_context> context) => T.ReleaseContEXT(context);
+        public int ReleaseContext(Ref<_cl_context> context) => T.ReleaseContext(context);
 
         [NativeName("clReleaseDevice")]
         [SupportedApiProfile(
@@ -12573,7 +12573,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int RetainContEXT(_cl_context* context) => T.RetainContEXT(context);
+        public int RetainContext(_cl_context* context) => T.RetainContext(context);
 
         [NativeName("clRetainContext")]
         [SupportedApiProfile(
@@ -12594,7 +12594,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int RetainContEXT(Ref<_cl_context> context) => T.RetainContEXT(context);
+        public int RetainContext(Ref<_cl_context> context) => T.RetainContext(context);
 
         [NativeName("clRetainDevice")]
         [SupportedApiProfile(
@@ -13908,7 +13908,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static _cl_context* CreateContEXT(
+        public static _cl_context* CreateContext(
             nint* properties,
             uint num_devices,
             _cl_device_id** devices,
@@ -13916,7 +13916,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             void* user_data,
             int* errcode_ret
         ) =>
-            Underlying.Value!.CreateContEXT(
+            Underlying.Value!.CreateContext(
                 properties,
                 num_devices,
                 devices,
@@ -13944,7 +13944,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<_cl_context> CreateContEXT(
+        public static Ptr<_cl_context> CreateContext(
             Ref<nint> properties,
             uint num_devices,
             Ref2D<_cl_device_id> devices,
@@ -13958,7 +13958,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (_cl_device_id** __dsl_devices = devices)
             fixed (nint* __dsl_properties = properties)
             {
-                return (_cl_context*)CreateContEXT(
+                return (_cl_context*)CreateContext(
                     __dsl_properties,
                     num_devices,
                     __dsl_devices,
@@ -19779,8 +19779,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int ReleaseContEXT(_cl_context* context) =>
-            Underlying.Value!.ReleaseContEXT(context);
+        public static int ReleaseContext(_cl_context* context) =>
+            Underlying.Value!.ReleaseContext(context);
 
         [NativeName("clReleaseContext")]
         [SupportedApiProfile(
@@ -19801,11 +19801,11 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int ReleaseContEXT(Ref<_cl_context> context)
+        public static int ReleaseContext(Ref<_cl_context> context)
         {
             fixed (_cl_context* __dsl_context = context)
             {
-                return (int)ReleaseContEXT(__dsl_context);
+                return (int)ReleaseContext(__dsl_context);
             }
         }
 
@@ -20166,8 +20166,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int RetainContEXT(_cl_context* context) =>
-            Underlying.Value!.RetainContEXT(context);
+        public static int RetainContext(_cl_context* context) =>
+            Underlying.Value!.RetainContext(context);
 
         [NativeName("clRetainContext")]
         [SupportedApiProfile(
@@ -20188,11 +20188,11 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int RetainContEXT(Ref<_cl_context> context)
+        public static int RetainContext(Ref<_cl_context> context)
         {
             fixed (_cl_context* __dsl_context = context)
             {
-                return (int)RetainContEXT(__dsl_context);
+                return (int)RetainContext(__dsl_context);
             }
         }
 
@@ -22075,7 +22075,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    _cl_context* ICl.CreateContEXT(
+    _cl_context* ICl.CreateContext(
         nint* properties,
         uint num_devices,
         _cl_device_id** devices,
@@ -22115,7 +22115,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static _cl_context* CreateContEXT(
+    public static _cl_context* CreateContext(
         nint* properties,
         uint num_devices,
         _cl_device_id** devices,
@@ -22123,7 +22123,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         void* user_data,
         int* errcode_ret
     ) =>
-        ThisThread.CreateContEXT(
+        ThisThread.CreateContext(
             properties,
             num_devices,
             devices,
@@ -22149,7 +22149,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Ptr<_cl_context> ICl.CreateContEXT(
+    Ptr<_cl_context> ICl.CreateContext(
         Ref<nint> properties,
         uint num_devices,
         Ref2D<_cl_device_id> devices,
@@ -22164,7 +22164,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         fixed (nint* __dsl_properties = properties)
         {
             return (_cl_context*)
-                ((ICl)this).CreateContEXT(
+                ((ICl)this).CreateContext(
                     __dsl_properties,
                     num_devices,
                     __dsl_devices,
@@ -22192,7 +22192,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Ptr<_cl_context> CreateContEXT(
+    public static Ptr<_cl_context> CreateContext(
         Ref<nint> properties,
         uint num_devices,
         Ref2D<_cl_device_id> devices,
@@ -22200,7 +22200,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref user_data,
         Ref<int> errcode_ret
     ) =>
-        ThisThread.CreateContEXT(
+        ThisThread.CreateContext(
             properties,
             num_devices,
             devices,
@@ -32974,7 +32974,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.ReleaseContEXT(_cl_context* context) =>
+    int ICl.ReleaseContext(_cl_context* context) =>
         (
             (delegate* unmanaged<_cl_context*, int>)(
                 _slots[84] is not null and var loadedFnPtr
@@ -33000,7 +33000,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int ReleaseContEXT(_cl_context* context) => ThisThread.ReleaseContEXT(context);
+    public static int ReleaseContext(_cl_context* context) => ThisThread.ReleaseContext(context);
 
     [NativeName("clReleaseContext")]
     [SupportedApiProfile(
@@ -33019,11 +33019,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.ReleaseContEXT(Ref<_cl_context> context)
+    int ICl.ReleaseContext(Ref<_cl_context> context)
     {
         fixed (_cl_context* __dsl_context = context)
         {
-            return (int)((ICl)this).ReleaseContEXT(__dsl_context);
+            return (int)((ICl)this).ReleaseContext(__dsl_context);
         }
     }
 
@@ -33044,8 +33044,8 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int ReleaseContEXT(Ref<_cl_context> context) =>
-        ThisThread.ReleaseContEXT(context);
+    public static int ReleaseContext(Ref<_cl_context> context) =>
+        ThisThread.ReleaseContext(context);
 
     [NativeName("clReleaseDevice")]
     [SupportedApiProfile(
@@ -33683,7 +33683,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.RetainContEXT(_cl_context* context) =>
+    int ICl.RetainContext(_cl_context* context) =>
         (
             (delegate* unmanaged<_cl_context*, int>)(
                 _slots[92] is not null and var loadedFnPtr
@@ -33709,7 +33709,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int RetainContEXT(_cl_context* context) => ThisThread.RetainContEXT(context);
+    public static int RetainContext(_cl_context* context) => ThisThread.RetainContext(context);
 
     [NativeName("clRetainContext")]
     [SupportedApiProfile(
@@ -33728,11 +33728,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.RetainContEXT(Ref<_cl_context> context)
+    int ICl.RetainContext(Ref<_cl_context> context)
     {
         fixed (_cl_context* __dsl_context = context)
         {
-            return (int)((ICl)this).RetainContEXT(__dsl_context);
+            return (int)((ICl)this).RetainContext(__dsl_context);
         }
     }
 
@@ -33753,7 +33753,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int RetainContEXT(Ref<_cl_context> context) => ThisThread.RetainContEXT(context);
+    public static int RetainContext(Ref<_cl_context> context) => ThisThread.RetainContext(context);
 
     [NativeName("clRetainDevice")]
     [SupportedApiProfile(

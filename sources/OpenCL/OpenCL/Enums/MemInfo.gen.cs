@@ -31,7 +31,7 @@ public enum MemInfo : uint
     ReferenceCount = 4357,
 
     [NativeName("CL_MEM_CONTEXT")]
-    ContEXT = 4358,
+    Context = 4358,
 
     [NativeName("CL_MEM_ASSOCIATED_MEMOBJECT")]
     AssociatedMemobject = 4359,
