@@ -2541,7 +2541,7 @@ public partial class MixKhronosData(
                         BaseType = baseType,
 
                         IsDefinitelyBitmask = isBitmask,
-                        ExclusiveVendor = VendorFromString(groupName, vendors),
+                        ExclusiveVendor = VendorFromEnumName(groupName, vendors),
                         Namespace = enumNamespace,
                     };
             }
@@ -2573,7 +2573,7 @@ public partial class MixKhronosData(
                     );
 
                 // Get the vendor (if the enum name ends with a vendor that is).
-                var memberVendor = VendorFromString(memberName, vendors);
+                var memberVendor = VendorFromEnumName(memberName, vendors);
 
                 // Add the enum member to the namespace enum, the main enum group, and its additional OpenGL-style groups
                 var memberGroupNames = new HashSet<string>();
@@ -2798,7 +2798,7 @@ public partial class MixKhronosData(
                 {
                     BaseType = existing.BaseType ?? baseType,
                     IsDefinitelyBitmask = existing.IsDefinitelyBitmask || baseType == "cl_bitfield",
-                    ExclusiveVendor = existing.ExclusiveVendor ?? VendorFromString(name, vendors),
+                    ExclusiveVendor = existing.ExclusiveVendor ?? VendorFromEnumName(name, vendors),
                 }
                 : new EnumGroup()
                 {
@@ -2807,7 +2807,7 @@ public partial class MixKhronosData(
                     BaseType = baseType,
 
                     IsDefinitelyBitmask = baseType == "cl_bitfield",
-                    ExclusiveVendor = VendorFromString(name, vendors),
+                    ExclusiveVendor = VendorFromEnumName(name, vendors),
                 };
         }
 
@@ -2863,7 +2863,7 @@ public partial class MixKhronosData(
                     "Expected \"name\" attribute on <enum> in <require> tag."
                 );
 
-            var thisVendor = VendorFromString(enumName, vendors);
+            var thisVendor = VendorFromEnumName(enumName, vendors);
 
             // If we've already intentionally excluded this enum, don't change that now. L880
             if (topLevelIntentionalExclusions.Contains(enumName))
@@ -2988,7 +2988,13 @@ public partial class MixKhronosData(
         }
     }
 
-    private static string? VendorFromString(string str, HashSet<string> vendors) =>
+    /// <summary>
+    /// Extracts the vendor suffix from an enum type or enum member name.
+    /// </summary>
+    /// <remarks>
+    /// Also handles OpenCL-style names, which are in lower snake case instead of upper snake case.
+    /// </remarks>
+    private static string? VendorFromEnumName(string str, HashSet<string> vendors) =>
         str.LastIndexOf('_') is > 0 and var idx
         && idx < str.Length
         && str[idx..].ToUpper() is var vend
