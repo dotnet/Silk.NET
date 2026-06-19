@@ -2783,31 +2783,27 @@ public partial class MixKhronosData(
 
         // Add empty enums that are defined in the C headers but have no members (yet).
         // This is also used as a type hinting stage.
-        foreach (
-            var enumNode in doc.Elements("registry")
-                .Elements("types")
-                .Elements("type")
-                .Where(e =>
-                    e.Elements("type").SingleOrDefault()?.Value is "cl_bitfield" or "cl_properties"
-                )
-                .Elements("name")
-        )
+        foreach (var typeNode in doc.Elements("registry").Elements("types").Elements("type"))
         {
+            var name = typeNode.Element("name")?.Value;
+            var baseType = typeNode.Element("type")?.Value;
+            if (name is null || (baseType != "cl_bitfield" && baseType != "cl_properties"))
+            {
+                continue;
+            }
+
             // We don't have to do horrible string manipulation here because this ends up in the actual C header, so
             // it's actually correct for once.
-            if (!data.Groups.ContainsKey(enumNode.Value))
+            if (!data.Groups.ContainsKey(name))
             {
-                data.Groups[enumNode.Value] = new EnumGroup()
+                data.Groups[name] = new EnumGroup()
                 {
-                    Name = enumNode.Value,
-                    NativeName = enumNode.Value,
-                    // cl_properties and cl_bitfield are both cl_ulong which is ulong
-                    // We currently use cl_bitfield to represent the backing type of OpenCL enums
-                    // Decision was made here: https://github.com/dotnet/Silk.NET/pull/2534#discussion_r2686840153
-                    BaseType = "cl_bitfield",
+                    Name = name,
+                    NativeName = name,
+                    BaseType = baseType,
 
-                    IsDefinitelyBitmask = enumNode.Parent?.Element("type")?.Value == "cl_bitfield",
-                    ExclusiveVendor = VendorFromString(enumNode.Value, vendors),
+                    IsDefinitelyBitmask = baseType == "cl_bitfield",
+                    ExclusiveVendor = VendorFromString(name, vendors),
                 };
             }
         }
