@@ -2781,8 +2781,8 @@ public partial class MixKhronosData(
             return;
         }
 
-        // Add empty enums that are defined in the C headers but have no members (yet).
-        // This is also used as a type hinting stage.
+        // Update enum type information
+        // This also adds enum defined in the XML, but do not have members yet
         foreach (var typeNode in doc.Elements("registry").Elements("types").Elements("type"))
         {
             var name = typeNode.Element("name")?.Value;
@@ -2792,11 +2792,15 @@ public partial class MixKhronosData(
                 continue;
             }
 
-            // We don't have to do horrible string manipulation here because this ends up in the actual C header, so
-            // it's actually correct for once.
-            if (!data.Groups.ContainsKey(name))
-            {
-                data.Groups[name] = new EnumGroup()
+            // These type names are the same in the XML as they are in the C header, so no string manipulation required
+            data.Groups[name] = data.Groups.TryGetValue(name, out var existing)
+                ? existing with
+                {
+                    BaseType = existing.BaseType ?? baseType,
+                    IsDefinitelyBitmask = existing.IsDefinitelyBitmask || baseType == "cl_bitfield",
+                    ExclusiveVendor = existing.ExclusiveVendor ?? VendorFromString(name, vendors),
+                }
+                : new EnumGroup()
                 {
                     Name = name,
                     NativeName = name,
@@ -2805,7 +2809,6 @@ public partial class MixKhronosData(
                     IsDefinitelyBitmask = baseType == "cl_bitfield",
                     ExclusiveVendor = VendorFromString(name, vendors),
                 };
-            }
         }
 
         void FixupGroupNameForOpenCL(
