@@ -2784,7 +2784,7 @@ public partial class MixKhronosData(
         // Add empty enums that are defined in the C headers but have no members (yet).
         // This is also used as a type hinting stage.
         foreach (
-            var @enum in doc.Elements("registry")
+            var enumNode in doc.Elements("registry")
                 .Elements("types")
                 .Elements("type")
                 .Where(e =>
@@ -2795,19 +2795,19 @@ public partial class MixKhronosData(
         {
             // We don't have to do horrible string manipulation here because this ends up in the actual C header, so
             // it's actually correct for once.
-            if (!data.Groups.ContainsKey(@enum.Value))
+            if (!data.Groups.ContainsKey(enumNode.Value))
             {
-                data.Groups[@enum.Value] = new EnumGroup()
+                data.Groups[enumNode.Value] = new EnumGroup()
                 {
-                    Name = @enum.Value,
-                    NativeName = @enum.Value,
+                    Name = enumNode.Value,
+                    NativeName = enumNode.Value,
                     // cl_properties and cl_bitfield are both cl_ulong which is ulong
                     // We currently use cl_bitfield to represent the backing type of OpenCL enums
                     // Decision was made here: https://github.com/dotnet/Silk.NET/pull/2534#discussion_r2686840153
                     BaseType = "cl_bitfield",
 
-                    IsDefinitelyBitmask = @enum.Parent?.Element("type")?.Value == "cl_bitfield",
-                    ExclusiveVendor = VendorFromString(@enum.Value, vendors),
+                    IsDefinitelyBitmask = enumNode.Parent?.Element("type")?.Value == "cl_bitfield",
+                    ExclusiveVendor = VendorFromString(enumNode.Value, vendors),
                 };
             }
         }
