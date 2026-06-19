@@ -2811,39 +2811,6 @@ public partial class MixKhronosData(
                 };
         }
 
-        void FixupGroupNameForOpenCL(
-            ref string groupName,
-            ref bool isLikelyOpenCL,
-            ref bool isBitmask
-        )
-        {
-            if (groupName.StartsWith("ErrorCodes") && groupName.Contains('.'))
-            {
-                groupName = "ErrorCodes";
-                isLikelyOpenCL = true;
-            }
-            else if (groupName.EndsWith(".flags"))
-            {
-                // NOTE: I've actually gone ahead and disagreed with the original code here because why do we want to
-                // strip flags out of the name? There are only three instances of this in the spec currently:
-                // cl_arm_svm_alloc.flags, cl_arm_device_svm_capabilities.flags, and
-                // cl_intel_advanced_motion_estimation.flags
-                //groupName = groupName[..^".flags".Length];
-                isBitmask = true;
-                isLikelyOpenCL = true;
-            }
-
-            if (groupName.Contains('.'))
-            {
-                logger.LogDebug(
-                    "OpenCL-style group name syntax: \"{}\" (replacing '.' with '_')",
-                    groupName
-                );
-                groupName = groupName.Replace('.', '_');
-                isLikelyOpenCL = true;
-            }
-        }
-
         // Okay so this bit is absolutely freaking bonkers. We're using the <require comment="..."> attribute for
         // meaningful data, which you should literally never do, but in lieu of OpenCL actually annotating their groups
         // properly this will have to do. If there's only human-readable information, we shall automate reading like
@@ -2985,6 +2952,40 @@ public partial class MixKhronosData(
                 // Mark this enum.
                 enumToGroups.Add(groupStr);
             }
+        }
+    }
+
+    private void FixupGroupNameForOpenCL(
+        ref string groupName,
+        ref bool isLikelyOpenCL,
+        ref bool isBitmask
+    )
+    {
+        if (groupName.StartsWith("ErrorCodes") && groupName.Contains('.'))
+        {
+            groupName = "ErrorCodes";
+            isLikelyOpenCL = true;
+        }
+        else if (groupName.EndsWith(".flags"))
+        {
+            // NOTE from Perksey: I've actually gone ahead and disagreed with the original code here because why do we want to
+            // strip flags out of the name? There are only three instances of this in the spec currently:
+            // cl_arm_svm_alloc.flags, cl_arm_device_svm_capabilities.flags, and
+            // cl_intel_advanced_motion_estimation.flags
+
+            // groupName = groupName[..^".flags".Length];
+            isBitmask = true;
+            isLikelyOpenCL = true;
+        }
+
+        if (groupName.Contains('.'))
+        {
+            logger.LogDebug(
+                "OpenCL-style group name syntax: \"{}\" (replacing '.' with '_')",
+                groupName
+            );
+            groupName = groupName.Replace('.', '_');
+            isLikelyOpenCL = true;
         }
     }
 
