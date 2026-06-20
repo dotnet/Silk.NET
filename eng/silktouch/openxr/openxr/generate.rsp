@@ -1,5 +1,7 @@
 @../settings.rsp
 @../remap.rsp
+--exclude
+XR_NULL_HANDLE
 --file
 openxr-openxr.h
 --methodClassName
