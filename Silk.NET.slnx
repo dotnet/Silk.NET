@@ -54,6 +54,9 @@
     <Project Path="sources/OpenAL/OpenAL/Silk.NET.OpenAL.csproj" />
     <Project Path="sources/OpenAL/Soft.Native/Silk.NET.OpenAL.Soft.Native.csproj" />
   </Folder>
+  <Folder Name="/sources/OpenCL/">
+    <Project Path="sources/OpenCL/OpenCL/Silk.NET.OpenCL.csproj" />
+  </Folder>
   <Folder Name="/sources/OpenGL/">
     <Project Path="sources/OpenGL/OpenGL/Silk.NET.OpenGL.csproj" />
   </Folder>
