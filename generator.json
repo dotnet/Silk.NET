@@ -257,7 +257,7 @@
         "ClangScraper",
         "MarkNativeNames",
         "AddApiProfiles",
-        "AddOpaqueStructs",
+        "ExtractHandles",
         "MixKhronosData",
         "TransformHandles",
         "TransformFunctions",
@@ -273,19 +273,6 @@
         ],
         "InputSourceRoot": "sources/OpenCL",
         "InputTestRoot": "tests/OpenCL"
-      },
-      "AddOpaqueStructs": {
-        "Names": [
-          "cl_platform_id",
-          "cl_device_id",
-          "cl_context",
-          "cl_command_queue",
-          "cl_mem",
-          "cl_program",
-          "cl_kernel",
-          "cl_event",
-          "cl_sampler"
-        ]
       },
       "MixKhronosData": {
         "SpecPath": "eng/submodules/opencl-docs/xml/cl.xml",
