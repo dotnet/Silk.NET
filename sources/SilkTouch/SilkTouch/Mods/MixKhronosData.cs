@@ -2959,7 +2959,7 @@ public partial class MixKhronosData(
     /// This normalizes some inconsistencies that the OpenCL group names have compared to the other Khronos XML specs.
     /// </summary>
     /// <remarks>
-    /// Currently only used by <see cref="ReadGroups"/>.
+    /// Currently only intended to be used by <see cref="ReadGroups"/>.
     /// </remarks>
     private void FixupGroupNameForOpenCL(
         ref string groupName,
@@ -3001,7 +3001,7 @@ public partial class MixKhronosData(
     /// <remarks>
     /// Also handles OpenCL-style names, which are in lower snake case instead of upper snake case.
     /// <para/>
-    /// Currently only used by <see cref="ReadGroups"/>.
+    /// Currently only intended to be used by <see cref="ReadGroups"/>.
     /// <see cref="RewriterPhase3"/> has a different implementation that works for both enum and non-enum names.
     /// </remarks>
     private static string? VendorFromEnumName(string str, HashSet<string> vendors) =>
