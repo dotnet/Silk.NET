@@ -2968,12 +2968,24 @@ public partial class MixKhronosData(
         ref bool isBitmask
     )
     {
-        if (groupName.StartsWith("ErrorCodes") && groupName.Contains('.'))
+        // Remove block numbers from the end of group names
+        // This has the effect of merging the different blocks
+        // Examples:
+        // ErrorCodes.0
+        // cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel.2
+        var lastPeriodIndex = groupName.LastIndexOf('.');
+        if (lastPeriodIndex >= 0 && groupName.Length >= lastPeriodIndex + 1)
         {
-            groupName = "ErrorCodes";
             isLikelyOpenCL = true;
+
+            var lastSegment = groupName[(lastPeriodIndex + 1)..];
+            if (lastSegment.All(c => char.IsAsciiDigit(c)))
+            {
+                groupName = groupName[..lastPeriodIndex];
+            }
         }
-        else if (groupName.EndsWith(".flags"))
+
+        if (groupName.EndsWith(".flags"))
         {
             // NOTE from Perksey: I've actually gone ahead and disagreed with the original code here because why do we want to
             // strip flags out of the name? There are only three instances of this in the spec currently:
