@@ -109,6 +109,7 @@
         "BakeSourceSets",
         "AddOpaqueStructs",
         "MixKhronosData",
+        "TransformHandles",
         "TransformFunctions",
         "IdentifySharedPrefixes",
         "PrettifyNames",
@@ -226,6 +227,9 @@
         "AddNoneMemberToFlags": true,
         "RewriteMemberValues": true
       },
+      "TransformHandles": {
+        "UseDsl": true
+      },
       "TransformFunctions": {
         "BoolTypes": {
           "GLboolean": null
@@ -255,6 +259,7 @@
         "AddApiProfiles",
         "AddOpaqueStructs",
         "MixKhronosData",
+        "TransformHandles",
         "TransformFunctions",
         "IdentifySharedPrefixes",
         "PrettifyNames",
@@ -390,6 +395,9 @@
       "TransformEnums": {
         "AddNoneMemberToFlags": true,
         "RewriteMemberValues": true
+      },
+      "TransformHandles": {
+        "UseDsl": true
       },
       "TransformFunctions": {
         "BoolTypes": {
