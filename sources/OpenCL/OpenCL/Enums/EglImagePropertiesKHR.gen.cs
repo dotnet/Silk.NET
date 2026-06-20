@@ -10,8 +10,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_egl_image_properties_khr")]
-public enum EglImagePropertiesKHR : intptr_t
+public enum EglImagePropertiesKHR : long
 {
     [NativeName("CL_EGL_YUV_PLANE_INTEL")]
-    YuvPlaneINTEL = unchecked((intptr_t)0x4107),
+    YuvPlaneINTEL = 16647,
 }

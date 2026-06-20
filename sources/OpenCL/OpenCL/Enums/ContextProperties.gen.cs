@@ -10,29 +10,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_context_properties")]
-public enum ContextProperties : intptr_t
+public enum ContextProperties : long
 {
     [NativeName("CL_CONTEXT_PLATFORM")]
-    ContextPlatform = unchecked((intptr_t)0x1084),
+    ContextPlatform = 4228,
 
     [NativeName("CL_CONTEXT_INTEROP_USER_SYNC")]
-    ContextInteropUserSync = unchecked((intptr_t)0x1085),
+    ContextInteropUserSync = 4229,
 
     [NativeName("CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
-    ContextMemoryInitializeKHR = unchecked((intptr_t)0x2030),
+    ContextMemoryInitializeKHR = 8240,
 
     [NativeName("CL_CONTEXT_TERMINATE_KHR")]
-    ContextTerminateKHR = unchecked((intptr_t)0x2032),
+    ContextTerminateKHR = 8242,
 
     [NativeName("CL_PRINTF_CALLBACK_ARM")]
-    PrintfCallbackARM = unchecked((intptr_t)0x40B0),
+    PrintfCallbackARM = 16560,
 
     [NativeName("CL_PRINTF_BUFFERSIZE_ARM")]
-    PrintfBuffersizeARM = unchecked((intptr_t)0x40B1),
+    PrintfBuffersizeARM = 16561,
 
     [NativeName("CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
-    ContextShowDiagnosticsINTEL = unchecked((intptr_t)0x4106),
+    ContextShowDiagnosticsINTEL = 16646,
 
     [NativeName("CL_CONTEXT_SAFETY_PROPERTIES_IMG")]
-    ContextSafetyPropertiesIMG = unchecked((intptr_t)0x40D9),
+    ContextSafetyPropertiesIMG = 16601,
 }

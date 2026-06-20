@@ -10,14 +10,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_device_partition_property")]
-public enum DevicePartitionProperty : intptr_t
+public enum DevicePartitionProperty : long
 {
     [NativeName("CL_DEVICE_PARTITION_EQUALLY")]
-    Equally = unchecked((intptr_t)0x1086),
+    Equally = 4230,
 
     [NativeName("CL_DEVICE_PARTITION_BY_COUNTS")]
-    ByCounts = unchecked((intptr_t)0x1087),
+    ByCounts = 4231,
 
     [NativeName("CL_DEVICE_PARTITION_BY_AFFINITY_DOMAIN")]
-    ByAffinityDomain = unchecked((intptr_t)0x1088),
+    ByAffinityDomain = 4232,
 }
