@@ -1,1 +1,11 @@
 @../../remap-stdint.rsp
+--remap
+_cl_platform_id=cl_platform_id
+_cl_device_id=cl_device_id
+_cl_context=cl_context
+_cl_command_queue=cl_command_queue
+_cl_mem=cl_mem
+_cl_program=cl_program
+_cl_kernel=cl_kernel
+_cl_event=cl_event
+_cl_sampler=cl_sampler
