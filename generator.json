@@ -274,6 +274,7 @@
         "TypeMap": {
           "cl_bitfield": "ulong",
           "cl_properties": "ulong",
+          "intptr_t": "long",
           "ErrorCodes": "int",
           "cl_affinity_domain_ext": "uint",
           "clCommandExecutionStatus": "uint",
