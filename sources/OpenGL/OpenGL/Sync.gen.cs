@@ -7,4 +7,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NativeName("GLsync")]
 public readonly partial struct Sync { }
