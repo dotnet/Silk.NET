@@ -2985,6 +2985,13 @@ public partial class MixKhronosData(
             }
         }
 
+        // Most of ErrorCodes is handled above with the exception of ErrorCodes.future
+        if (groupName.StartsWith("ErrorCodes") && groupName.Contains('.'))
+        {
+            groupName = "ErrorCodes";
+            isLikelyOpenCL = true;
+        }
+
         if (groupName.EndsWith(".flags"))
         {
             // NOTE from Perksey: I've actually gone ahead and disagreed with the original code here because why do we want to
