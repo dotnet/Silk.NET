@@ -149,7 +149,7 @@ public unsafe partial interface ICl
         [NativeName("clCreateAcceleratorINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
-        static abstract _cl_accelerator_intel* CreateAcceleratorINTEL(
+        static abstract AcceleratorHandleINTEL CreateAcceleratorINTEL(
             ContextHandle context,
             uint accelerator_type,
             nuint descriptor_size,
@@ -160,7 +160,7 @@ public unsafe partial interface ICl
         [NativeName("clCreateAcceleratorINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
-        static abstract Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
+        static abstract AcceleratorHandleINTEL CreateAcceleratorINTEL(
             ContextHandle context,
             uint accelerator_type,
             nuint descriptor_size,
@@ -1075,7 +1075,7 @@ public unsafe partial interface ICl
         [NativeName("clCreateSemaphoreWithPropertiesKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
-        static abstract _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
+        static abstract SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
             ContextHandle context,
             ulong* sema_props,
             int* errcode_ret
@@ -1084,7 +1084,7 @@ public unsafe partial interface ICl
         [NativeName("clCreateSemaphoreWithPropertiesKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
-        static abstract Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
+        static abstract SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
             ContextHandle context,
             Ref<ulong> sema_props,
             Ref<int> errcode_ret
@@ -2592,7 +2592,7 @@ public unsafe partial interface ICl
         static abstract int EnqueueSignalSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            _cl_semaphore_khr** sema_objects,
+            SemaphoreHandleKHR* sema_objects,
             ulong* sema_payload_list,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -2605,7 +2605,7 @@ public unsafe partial interface ICl
         static abstract int EnqueueSignalSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<SemaphoreHandleKHR> sema_objects,
             Ref<ulong> sema_payload_list,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -3168,7 +3168,7 @@ public unsafe partial interface ICl
         static abstract int EnqueueWaitSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            _cl_semaphore_khr** sema_objects,
+            SemaphoreHandleKHR* sema_objects,
             ulong* sema_payload_list,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -3181,7 +3181,7 @@ public unsafe partial interface ICl
         static abstract int EnqueueWaitSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<SemaphoreHandleKHR> sema_objects,
             Ref<ulong> sema_payload_list,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -3438,7 +3438,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
         static abstract int GetAcceleratorInfoINTEL(
-            _cl_accelerator_intel* accelerator,
+            AcceleratorHandleINTEL accelerator,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -3449,7 +3449,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
         static abstract int GetAcceleratorInfoINTEL(
-            Ref<_cl_accelerator_intel> accelerator,
+            AcceleratorHandleINTEL accelerator,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4616,7 +4616,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
         static abstract int GetSemaphoreHandleForTypeKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             DeviceIdHandle device,
             uint handle_type,
             nuint handle_size,
@@ -4632,7 +4632,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
         static abstract int GetSemaphoreHandleForTypeKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             DeviceIdHandle device,
             uint handle_type,
             nuint handle_size,
@@ -4644,7 +4644,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
         static abstract int GetSemaphoreInfoKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4655,7 +4655,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
         static abstract int GetSemaphoreInfoKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4948,7 +4948,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
         static abstract int ReImportSemaphoreSyncFdKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             ulong* reimport_props,
             int fd
         );
@@ -4961,7 +4961,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
         static abstract int ReImportSemaphoreSyncFdKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             Ref<ulong> reimport_props,
             int fd
         );
@@ -4969,12 +4969,7 @@ public unsafe partial interface ICl
         [NativeName("clReleaseAcceleratorINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
-        static abstract int ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator);
-
-        [NativeName("clReleaseAcceleratorINTEL")]
-        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
-        static abstract int ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator);
+        static abstract int ReleaseAcceleratorINTEL(AcceleratorHandleINTEL accelerator);
 
         [NativeName("clReleaseCommandQueue")]
         [SupportedApiProfile(
@@ -5126,22 +5121,12 @@ public unsafe partial interface ICl
         [NativeName("clReleaseSemaphoreKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
-        static abstract int ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object);
-
-        [NativeName("clReleaseSemaphoreKHR")]
-        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
-        static abstract int ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object);
+        static abstract int ReleaseSemaphoreKHR(SemaphoreHandleKHR sema_object);
 
         [NativeName("clRetainAcceleratorINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
-        static abstract int RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator);
-
-        [NativeName("clRetainAcceleratorINTEL")]
-        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
-        static abstract int RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator);
+        static abstract int RetainAcceleratorINTEL(AcceleratorHandleINTEL accelerator);
 
         [NativeName("clRetainCommandQueue")]
         [SupportedApiProfile(
@@ -5293,12 +5278,7 @@ public unsafe partial interface ICl
         [NativeName("clRetainSemaphoreKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
-        static abstract int RetainSemaphoreKHR(_cl_semaphore_khr* sema_object);
-
-        [NativeName("clRetainSemaphoreKHR")]
-        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
-        static abstract int RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object);
+        static abstract int RetainSemaphoreKHR(SemaphoreHandleKHR sema_object);
 
         [NativeName("clSetContentSizeBufferPoCL")]
         [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
@@ -6048,7 +6028,7 @@ public unsafe partial interface ICl
     [NativeName("clCreateAcceleratorINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
-    _cl_accelerator_intel* CreateAcceleratorINTEL(
+    AcceleratorHandleINTEL CreateAcceleratorINTEL(
         ContextHandle context,
         uint accelerator_type,
         nuint descriptor_size,
@@ -6059,7 +6039,7 @@ public unsafe partial interface ICl
     [NativeName("clCreateAcceleratorINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
-    Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
+    AcceleratorHandleINTEL CreateAcceleratorINTEL(
         ContextHandle context,
         uint accelerator_type,
         nuint descriptor_size,
@@ -6930,7 +6910,7 @@ public unsafe partial interface ICl
     [NativeName("clCreateSemaphoreWithPropertiesKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
-    _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
+    SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
         ContextHandle context,
         ulong* sema_props,
         int* errcode_ret
@@ -6939,7 +6919,7 @@ public unsafe partial interface ICl
     [NativeName("clCreateSemaphoreWithPropertiesKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
-    Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
+    SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
         ContextHandle context,
         Ref<ulong> sema_props,
         Ref<int> errcode_ret
@@ -8428,7 +8408,7 @@ public unsafe partial interface ICl
     int EnqueueSignalSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        _cl_semaphore_khr** sema_objects,
+        SemaphoreHandleKHR* sema_objects,
         ulong* sema_payload_list,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -8441,7 +8421,7 @@ public unsafe partial interface ICl
     int EnqueueSignalSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        Ref2D<_cl_semaphore_khr> sema_objects,
+        Ref<SemaphoreHandleKHR> sema_objects,
         Ref<ulong> sema_payload_list,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -8944,7 +8924,7 @@ public unsafe partial interface ICl
     int EnqueueWaitSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        _cl_semaphore_khr** sema_objects,
+        SemaphoreHandleKHR* sema_objects,
         ulong* sema_payload_list,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -8957,7 +8937,7 @@ public unsafe partial interface ICl
     int EnqueueWaitSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        Ref2D<_cl_semaphore_khr> sema_objects,
+        Ref<SemaphoreHandleKHR> sema_objects,
         Ref<ulong> sema_payload_list,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -9214,7 +9194,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
     int GetAcceleratorInfoINTEL(
-        _cl_accelerator_intel* accelerator,
+        AcceleratorHandleINTEL accelerator,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -9225,7 +9205,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
     int GetAcceleratorInfoINTEL(
-        Ref<_cl_accelerator_intel> accelerator,
+        AcceleratorHandleINTEL accelerator,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10366,7 +10346,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
     int GetSemaphoreHandleForTypeKHR(
-        _cl_semaphore_khr* sema_object,
+        SemaphoreHandleKHR sema_object,
         DeviceIdHandle device,
         uint handle_type,
         nuint handle_size,
@@ -10382,7 +10362,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
     int GetSemaphoreHandleForTypeKHR(
-        Ref<_cl_semaphore_khr> sema_object,
+        SemaphoreHandleKHR sema_object,
         DeviceIdHandle device,
         uint handle_type,
         nuint handle_size,
@@ -10394,7 +10374,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
     int GetSemaphoreInfoKHR(
-        _cl_semaphore_khr* sema_object,
+        SemaphoreHandleKHR sema_object,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10405,7 +10385,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
     int GetSemaphoreInfoKHR(
-        Ref<_cl_semaphore_khr> sema_object,
+        SemaphoreHandleKHR sema_object,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10651,7 +10631,7 @@ public unsafe partial interface ICl
         ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
     )]
     [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
-    int ReImportSemaphoreSyncFdKHR(_cl_semaphore_khr* sema_object, ulong* reimport_props, int fd);
+    int ReImportSemaphoreSyncFdKHR(SemaphoreHandleKHR sema_object, ulong* reimport_props, int fd);
 
     [NativeName("clReImportSemaphoreSyncFdKHR")]
     [SupportedApiProfile(
@@ -10661,7 +10641,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
     int ReImportSemaphoreSyncFdKHR(
-        Ref<_cl_semaphore_khr> sema_object,
+        SemaphoreHandleKHR sema_object,
         Ref<ulong> reimport_props,
         int fd
     );
@@ -10669,12 +10649,7 @@ public unsafe partial interface ICl
     [NativeName("clReleaseAcceleratorINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
-    int ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator);
-
-    [NativeName("clReleaseAcceleratorINTEL")]
-    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-    [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
-    int ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator);
+    int ReleaseAcceleratorINTEL(AcceleratorHandleINTEL accelerator);
 
     [NativeName("clReleaseCommandQueue")]
     [SupportedApiProfile(
@@ -10826,22 +10801,12 @@ public unsafe partial interface ICl
     [NativeName("clReleaseSemaphoreKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
-    int ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object);
-
-    [NativeName("clReleaseSemaphoreKHR")]
-    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-    [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
-    int ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object);
+    int ReleaseSemaphoreKHR(SemaphoreHandleKHR sema_object);
 
     [NativeName("clRetainAcceleratorINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
-    int RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator);
-
-    [NativeName("clRetainAcceleratorINTEL")]
-    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-    [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
-    int RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator);
+    int RetainAcceleratorINTEL(AcceleratorHandleINTEL accelerator);
 
     [NativeName("clRetainCommandQueue")]
     [SupportedApiProfile(
@@ -10993,12 +10958,7 @@ public unsafe partial interface ICl
     [NativeName("clRetainSemaphoreKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
-    int RetainSemaphoreKHR(_cl_semaphore_khr* sema_object);
-
-    [NativeName("clRetainSemaphoreKHR")]
-    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-    [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
-    int RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object);
+    int RetainSemaphoreKHR(SemaphoreHandleKHR sema_object);
 
     [NativeName("clSetContentSizeBufferPoCL")]
     [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]

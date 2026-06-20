@@ -207,7 +207,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [NativeName("clCreateAcceleratorINTEL")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateAcceleratorINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        public static extern _cl_accelerator_intel* CreateAcceleratorINTEL(
+        public static extern AcceleratorHandleINTEL CreateAcceleratorINTEL(
             ContextHandle context,
             uint accelerator_type,
             nuint descriptor_size,
@@ -221,7 +221,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
+        public static AcceleratorHandleINTEL CreateAcceleratorINTEL(
             ContextHandle context,
             uint accelerator_type,
             nuint descriptor_size,
@@ -232,7 +232,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_descriptor = descriptor)
             {
-                return (_cl_accelerator_intel*)CreateAcceleratorINTEL(
+                return (AcceleratorHandleINTEL)CreateAcceleratorINTEL(
                     context,
                     accelerator_type,
                     descriptor_size,
@@ -1539,7 +1539,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             EntryPoint = "clCreateSemaphoreWithPropertiesKHR"
         )]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        public static extern _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
+        public static extern SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
             ContextHandle context,
             ulong* sema_props,
             int* errcode_ret
@@ -1551,7 +1551,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
+        public static SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
             ContextHandle context,
             Ref<ulong> sema_props,
             Ref<int> errcode_ret
@@ -1560,7 +1560,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (ulong* __dsl_sema_props = sema_props)
             {
-                return (_cl_semaphore_khr*)CreateSemaphoreWithPropertiesKHR(
+                return (SemaphoreHandleKHR)CreateSemaphoreWithPropertiesKHR(
                     context,
                     __dsl_sema_props,
                     __dsl_errcode_ret
@@ -3783,7 +3783,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern int EnqueueSignalSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            _cl_semaphore_khr** sema_objects,
+            SemaphoreHandleKHR* sema_objects,
             ulong* sema_payload_list,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -3799,7 +3799,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static int EnqueueSignalSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<SemaphoreHandleKHR> sema_objects,
             Ref<ulong> sema_payload_list,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -3809,7 +3809,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (EventHandle* __dsl_event = @event)
             fixed (EventHandle* __dsl_event_wait_list = event_wait_list)
             fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
-            fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+            fixed (SemaphoreHandleKHR* __dsl_sema_objects = sema_objects)
             {
                 return (int)EnqueueSignalSemaphoresKHR(
                     command_queue,
@@ -4643,7 +4643,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern int EnqueueWaitSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            _cl_semaphore_khr** sema_objects,
+            SemaphoreHandleKHR* sema_objects,
             ulong* sema_payload_list,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -4659,7 +4659,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static int EnqueueWaitSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<SemaphoreHandleKHR> sema_objects,
             Ref<ulong> sema_payload_list,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -4669,7 +4669,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (EventHandle* __dsl_event = @event)
             fixed (EventHandle* __dsl_event_wait_list = event_wait_list)
             fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
-            fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+            fixed (SemaphoreHandleKHR* __dsl_sema_objects = sema_objects)
             {
                 return (int)EnqueueWaitSemaphoresKHR(
                     command_queue,
@@ -5030,7 +5030,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetAcceleratorInfoINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         public static extern int GetAcceleratorInfoINTEL(
-            _cl_accelerator_intel* accelerator,
+            AcceleratorHandleINTEL accelerator,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -5044,7 +5044,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetAcceleratorInfoINTEL(
-            Ref<_cl_accelerator_intel> accelerator,
+            AcceleratorHandleINTEL accelerator,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -5053,10 +5053,9 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
             fixed (void* __dsl_param_value = param_value)
-            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
             {
                 return (int)GetAcceleratorInfoINTEL(
-                    __dsl_accelerator,
+                    accelerator,
                     param_name,
                     param_value_size,
                     __dsl_param_value,
@@ -6699,7 +6698,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ImpliesSets = ["cl_khr_semaphore", "CL_VERSION_1_2"]
         )]
         public static extern int GetSemaphoreHandleForTypeKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             DeviceIdHandle device,
             uint handle_type,
             nuint handle_size,
@@ -6718,7 +6717,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetSemaphoreHandleForTypeKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             DeviceIdHandle device,
             uint handle_type,
             nuint handle_size,
@@ -6728,10 +6727,9 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (nuint* __dsl_handle_size_ret = handle_size_ret)
             fixed (void* __dsl_handle_ptr = handle_ptr)
-            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
             {
                 return (int)GetSemaphoreHandleForTypeKHR(
-                    __dsl_sema_object,
+                    sema_object,
                     device,
                     handle_type,
                     handle_size,
@@ -6745,7 +6743,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetSemaphoreInfoKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         public static extern int GetSemaphoreInfoKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -6759,7 +6757,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetSemaphoreInfoKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -6768,10 +6766,9 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
             fixed (void* __dsl_param_value = param_value)
-            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
             {
                 return (int)GetSemaphoreInfoKHR(
-                    __dsl_sema_object,
+                    sema_object,
                     param_name,
                     param_value_size,
                     __dsl_param_value,
@@ -7223,7 +7220,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             ImpliesSets = ["cl_khr_external_semaphore", "cl_khr_semaphore", "CL_VERSION_1_2"]
         )]
         public static extern int ReImportSemaphoreSyncFdKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             ulong* reimport_props,
             int fd
         );
@@ -7239,36 +7236,21 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int ReImportSemaphoreSyncFdKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             Ref<ulong> reimport_props,
             int fd
         )
         {
             fixed (ulong* __dsl_reimport_props = reimport_props)
-            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
             {
-                return (int)ReImportSemaphoreSyncFdKHR(__dsl_sema_object, __dsl_reimport_props, fd);
+                return (int)ReImportSemaphoreSyncFdKHR(sema_object, __dsl_reimport_props, fd);
             }
         }
 
         [NativeName("clReleaseAcceleratorINTEL")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clReleaseAcceleratorINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        public static extern int ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator);
-
-        [NativeName("clReleaseAcceleratorINTEL")]
-        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static int ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
-        {
-            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
-            {
-                return (int)ReleaseAcceleratorINTEL(__dsl_accelerator);
-            }
-        }
+        public static extern int ReleaseAcceleratorINTEL(AcceleratorHandleINTEL accelerator);
 
         [NativeName("clReleaseCommandQueue")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clReleaseCommandQueue")]
@@ -7420,40 +7402,12 @@ public unsafe partial class Cl : ICl, ICl.Static
         [NativeName("clReleaseSemaphoreKHR")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clReleaseSemaphoreKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        public static extern int ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object);
-
-        [NativeName("clReleaseSemaphoreKHR")]
-        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static int ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
-        {
-            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
-            {
-                return (int)ReleaseSemaphoreKHR(__dsl_sema_object);
-            }
-        }
+        public static extern int ReleaseSemaphoreKHR(SemaphoreHandleKHR sema_object);
 
         [NativeName("clRetainAcceleratorINTEL")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clRetainAcceleratorINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        public static extern int RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator);
-
-        [NativeName("clRetainAcceleratorINTEL")]
-        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static int RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
-        {
-            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
-            {
-                return (int)RetainAcceleratorINTEL(__dsl_accelerator);
-            }
-        }
+        public static extern int RetainAcceleratorINTEL(AcceleratorHandleINTEL accelerator);
 
         [NativeName("clRetainCommandQueue")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clRetainCommandQueue")]
@@ -7605,21 +7559,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [NativeName("clRetainSemaphoreKHR")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clRetainSemaphoreKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        public static extern int RetainSemaphoreKHR(_cl_semaphore_khr* sema_object);
-
-        [NativeName("clRetainSemaphoreKHR")]
-        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static int RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
-        {
-            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
-            {
-                return (int)RetainSemaphoreKHR(__dsl_sema_object);
-            }
-        }
+        public static extern int RetainSemaphoreKHR(SemaphoreHandleKHR sema_object);
 
         [NativeName("clSetContentSizeBufferPoCL")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetContentSizeBufferPoCL")]
@@ -8603,7 +8543,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public _cl_accelerator_intel* CreateAcceleratorINTEL(
+        public AcceleratorHandleINTEL CreateAcceleratorINTEL(
             ContextHandle context,
             uint accelerator_type,
             nuint descriptor_size,
@@ -8624,7 +8564,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
+        public AcceleratorHandleINTEL CreateAcceleratorINTEL(
             ContextHandle context,
             uint accelerator_type,
             nuint descriptor_size,
@@ -9807,7 +9747,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
+        public SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
             ContextHandle context,
             ulong* sema_props,
             int* errcode_ret
@@ -9819,7 +9759,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
+        public SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
             ContextHandle context,
             Ref<ulong> sema_props,
             Ref<int> errcode_ret
@@ -12145,7 +12085,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public int EnqueueSignalSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            _cl_semaphore_khr** sema_objects,
+            SemaphoreHandleKHR* sema_objects,
             ulong* sema_payload_list,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -12170,7 +12110,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public int EnqueueSignalSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<SemaphoreHandleKHR> sema_objects,
             Ref<ulong> sema_payload_list,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -13053,7 +12993,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public int EnqueueWaitSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            _cl_semaphore_khr** sema_objects,
+            SemaphoreHandleKHR* sema_objects,
             ulong* sema_payload_list,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -13078,7 +13018,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public int EnqueueWaitSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<SemaphoreHandleKHR> sema_objects,
             Ref<ulong> sema_payload_list,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -13479,7 +13419,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetAcceleratorInfoINTEL(
-            _cl_accelerator_intel* accelerator,
+            AcceleratorHandleINTEL accelerator,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -13500,7 +13440,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetAcceleratorInfoINTEL(
-            Ref<_cl_accelerator_intel> accelerator,
+            AcceleratorHandleINTEL accelerator,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -15173,7 +15113,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetSemaphoreHandleForTypeKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             DeviceIdHandle device,
             uint handle_type,
             nuint handle_size,
@@ -15200,7 +15140,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetSemaphoreHandleForTypeKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             DeviceIdHandle device,
             uint handle_type,
             nuint handle_size,
@@ -15223,7 +15163,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetSemaphoreInfoKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -15244,7 +15184,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetSemaphoreInfoKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -15655,7 +15595,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int ReImportSemaphoreSyncFdKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             ulong* reimport_props,
             int fd
         ) => T.ReImportSemaphoreSyncFdKHR(sema_object, reimport_props, fd);
@@ -15671,7 +15611,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int ReImportSemaphoreSyncFdKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             Ref<ulong> reimport_props,
             int fd
         ) => T.ReImportSemaphoreSyncFdKHR(sema_object, reimport_props, fd);
@@ -15682,16 +15622,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
-            T.ReleaseAcceleratorINTEL(accelerator);
-
-        [NativeName("clReleaseAcceleratorINTEL")]
-        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public int ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator) =>
+        public int ReleaseAcceleratorINTEL(AcceleratorHandleINTEL accelerator) =>
             T.ReleaseAcceleratorINTEL(accelerator);
 
         [NativeName("clReleaseCommandQueue")]
@@ -15875,16 +15806,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
-            T.ReleaseSemaphoreKHR(sema_object);
-
-        [NativeName("clReleaseSemaphoreKHR")]
-        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public int ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object) =>
+        public int ReleaseSemaphoreKHR(SemaphoreHandleKHR sema_object) =>
             T.ReleaseSemaphoreKHR(sema_object);
 
         [NativeName("clRetainAcceleratorINTEL")]
@@ -15893,16 +15815,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
-            T.RetainAcceleratorINTEL(accelerator);
-
-        [NativeName("clRetainAcceleratorINTEL")]
-        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public int RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator) =>
+        public int RetainAcceleratorINTEL(AcceleratorHandleINTEL accelerator) =>
             T.RetainAcceleratorINTEL(accelerator);
 
         [NativeName("clRetainCommandQueue")]
@@ -16086,16 +15999,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int RetainSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
-            T.RetainSemaphoreKHR(sema_object);
-
-        [NativeName("clRetainSemaphoreKHR")]
-        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public int RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object) =>
+        public int RetainSemaphoreKHR(SemaphoreHandleKHR sema_object) =>
             T.RetainSemaphoreKHR(sema_object);
 
         [NativeName("clSetContentSizeBufferPoCL")]
@@ -17061,7 +16965,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static _cl_accelerator_intel* CreateAcceleratorINTEL(
+        public static AcceleratorHandleINTEL CreateAcceleratorINTEL(
             ContextHandle context,
             uint accelerator_type,
             nuint descriptor_size,
@@ -17082,7 +16986,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
+        public static AcceleratorHandleINTEL CreateAcceleratorINTEL(
             ContextHandle context,
             uint accelerator_type,
             nuint descriptor_size,
@@ -17093,7 +16997,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (void* __dsl_descriptor = descriptor)
             {
-                return (_cl_accelerator_intel*)CreateAcceleratorINTEL(
+                return (AcceleratorHandleINTEL)CreateAcceleratorINTEL(
                     context,
                     accelerator_type,
                     descriptor_size,
@@ -18576,7 +18480,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
+        public static SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
             ContextHandle context,
             ulong* sema_props,
             int* errcode_ret
@@ -18588,7 +18492,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
+        public static SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
             ContextHandle context,
             Ref<ulong> sema_props,
             Ref<int> errcode_ret
@@ -18597,7 +18501,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (int* __dsl_errcode_ret = errcode_ret)
             fixed (ulong* __dsl_sema_props = sema_props)
             {
-                return (_cl_semaphore_khr*)CreateSemaphoreWithPropertiesKHR(
+                return (SemaphoreHandleKHR)CreateSemaphoreWithPropertiesKHR(
                     context,
                     __dsl_sema_props,
                     __dsl_errcode_ret
@@ -21244,7 +21148,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static int EnqueueSignalSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            _cl_semaphore_khr** sema_objects,
+            SemaphoreHandleKHR* sema_objects,
             ulong* sema_payload_list,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -21269,7 +21173,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static int EnqueueSignalSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<SemaphoreHandleKHR> sema_objects,
             Ref<ulong> sema_payload_list,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -21279,7 +21183,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (EventHandle* __dsl_event = @event)
             fixed (EventHandle* __dsl_event_wait_list = event_wait_list)
             fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
-            fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+            fixed (SemaphoreHandleKHR* __dsl_sema_objects = sema_objects)
             {
                 return (int)EnqueueSignalSemaphoresKHR(
                     command_queue,
@@ -22277,7 +22181,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static int EnqueueWaitSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            _cl_semaphore_khr** sema_objects,
+            SemaphoreHandleKHR* sema_objects,
             ulong* sema_payload_list,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -22302,7 +22206,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static int EnqueueWaitSemaphoresKHR(
             CommandQueueHandle command_queue,
             uint num_sema_objects,
-            Ref2D<_cl_semaphore_khr> sema_objects,
+            Ref<SemaphoreHandleKHR> sema_objects,
             Ref<ulong> sema_payload_list,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -22312,7 +22216,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             fixed (EventHandle* __dsl_event = @event)
             fixed (EventHandle* __dsl_event_wait_list = event_wait_list)
             fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
-            fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+            fixed (SemaphoreHandleKHR* __dsl_sema_objects = sema_objects)
             {
                 return (int)EnqueueWaitSemaphoresKHR(
                     command_queue,
@@ -22747,7 +22651,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetAcceleratorInfoINTEL(
-            _cl_accelerator_intel* accelerator,
+            AcceleratorHandleINTEL accelerator,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -22768,7 +22672,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetAcceleratorInfoINTEL(
-            Ref<_cl_accelerator_intel> accelerator,
+            AcceleratorHandleINTEL accelerator,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -22777,10 +22681,9 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
             fixed (void* __dsl_param_value = param_value)
-            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
             {
                 return (int)GetAcceleratorInfoINTEL(
-                    __dsl_accelerator,
+                    accelerator,
                     param_name,
                     param_value_size,
                     __dsl_param_value,
@@ -24689,7 +24592,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetSemaphoreHandleForTypeKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             DeviceIdHandle device,
             uint handle_type,
             nuint handle_size,
@@ -24716,7 +24619,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetSemaphoreHandleForTypeKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             DeviceIdHandle device,
             uint handle_type,
             nuint handle_size,
@@ -24726,10 +24629,9 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (nuint* __dsl_handle_size_ret = handle_size_ret)
             fixed (void* __dsl_handle_ptr = handle_ptr)
-            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
             {
                 return (int)GetSemaphoreHandleForTypeKHR(
-                    __dsl_sema_object,
+                    sema_object,
                     device,
                     handle_type,
                     handle_size,
@@ -24746,7 +24648,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetSemaphoreInfoKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -24767,7 +24669,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetSemaphoreInfoKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -24776,10 +24678,9 @@ public unsafe partial class Cl : ICl, ICl.Static
         {
             fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
             fixed (void* __dsl_param_value = param_value)
-            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
             {
                 return (int)GetSemaphoreInfoKHR(
-                    __dsl_sema_object,
+                    sema_object,
                     param_name,
                     param_value_size,
                     __dsl_param_value,
@@ -25295,7 +25196,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int ReImportSemaphoreSyncFdKHR(
-            _cl_semaphore_khr* sema_object,
+            SemaphoreHandleKHR sema_object,
             ulong* reimport_props,
             int fd
         ) => Underlying.Value!.ReImportSemaphoreSyncFdKHR(sema_object, reimport_props, fd);
@@ -25311,15 +25212,14 @@ public unsafe partial class Cl : ICl, ICl.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int ReImportSemaphoreSyncFdKHR(
-            Ref<_cl_semaphore_khr> sema_object,
+            SemaphoreHandleKHR sema_object,
             Ref<ulong> reimport_props,
             int fd
         )
         {
             fixed (ulong* __dsl_reimport_props = reimport_props)
-            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
             {
-                return (int)ReImportSemaphoreSyncFdKHR(__dsl_sema_object, __dsl_reimport_props, fd);
+                return (int)ReImportSemaphoreSyncFdKHR(sema_object, __dsl_reimport_props, fd);
             }
         }
 
@@ -25329,22 +25229,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+        public static int ReleaseAcceleratorINTEL(AcceleratorHandleINTEL accelerator) =>
             Underlying.Value!.ReleaseAcceleratorINTEL(accelerator);
-
-        [NativeName("clReleaseAcceleratorINTEL")]
-        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static int ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
-        {
-            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
-            {
-                return (int)ReleaseAcceleratorINTEL(__dsl_accelerator);
-            }
-        }
 
         [NativeName("clReleaseCommandQueue")]
         [SupportedApiProfile(
@@ -25535,45 +25421,17 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+        public static int ReleaseSemaphoreKHR(SemaphoreHandleKHR sema_object) =>
             Underlying.Value!.ReleaseSemaphoreKHR(sema_object);
 
-        [NativeName("clReleaseSemaphoreKHR")]
-        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static int ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
-        {
-            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
-            {
-                return (int)ReleaseSemaphoreKHR(__dsl_sema_object);
-            }
-        }
-
         [NativeName("clRetainAcceleratorINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+        public static int RetainAcceleratorINTEL(AcceleratorHandleINTEL accelerator) =>
             Underlying.Value!.RetainAcceleratorINTEL(accelerator);
-
-        [NativeName("clRetainAcceleratorINTEL")]
-        [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-        [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static int RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
-        {
-            fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
-            {
-                return (int)RetainAcceleratorINTEL(__dsl_accelerator);
-            }
-        }
 
         [NativeName("clRetainCommandQueue")]
         [SupportedApiProfile(
@@ -25763,22 +25621,8 @@ public unsafe partial class Cl : ICl, ICl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int RetainSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+        public static int RetainSemaphoreKHR(SemaphoreHandleKHR sema_object) =>
             Underlying.Value!.RetainSemaphoreKHR(sema_object);
-
-        [NativeName("clRetainSemaphoreKHR")]
-        [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-        [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static int RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
-        {
-            fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
-            {
-                return (int)RetainSemaphoreKHR(__dsl_sema_object);
-            }
-        }
 
         [NativeName("clSetContentSizeBufferPoCL")]
         [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
@@ -28505,7 +28349,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    _cl_accelerator_intel* ICl.CreateAcceleratorINTEL(
+    AcceleratorHandleINTEL ICl.CreateAcceleratorINTEL(
         ContextHandle context,
         uint accelerator_type,
         nuint descriptor_size,
@@ -28513,7 +28357,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         int* errcode_ret
     ) =>
         (
-            (delegate* unmanaged<ContextHandle, uint, nuint, void*, int*, _cl_accelerator_intel*>)(
+            (delegate* unmanaged<ContextHandle, uint, nuint, void*, int*, AcceleratorHandleINTEL>)(
                 _slots[4] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[4] = nativeContext.LoadFunction("clCreateAcceleratorINTEL", "opencl")
@@ -28524,7 +28368,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static _cl_accelerator_intel* CreateAcceleratorINTEL(
+    public static AcceleratorHandleINTEL CreateAcceleratorINTEL(
         ContextHandle context,
         uint accelerator_type,
         nuint descriptor_size,
@@ -28543,7 +28387,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Ptr<_cl_accelerator_intel> ICl.CreateAcceleratorINTEL(
+    AcceleratorHandleINTEL ICl.CreateAcceleratorINTEL(
         ContextHandle context,
         uint accelerator_type,
         nuint descriptor_size,
@@ -28554,7 +28398,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         fixed (int* __dsl_errcode_ret = errcode_ret)
         fixed (void* __dsl_descriptor = descriptor)
         {
-            return (_cl_accelerator_intel*)
+            return (AcceleratorHandleINTEL)
                 ((ICl)this).CreateAcceleratorINTEL(
                     context,
                     accelerator_type,
@@ -28569,7 +28413,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
+    public static AcceleratorHandleINTEL CreateAcceleratorINTEL(
         ContextHandle context,
         uint accelerator_type,
         nuint descriptor_size,
@@ -31156,13 +31000,13 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    _cl_semaphore_khr* ICl.CreateSemaphoreWithPropertiesKHR(
+    SemaphoreHandleKHR ICl.CreateSemaphoreWithPropertiesKHR(
         ContextHandle context,
         ulong* sema_props,
         int* errcode_ret
     ) =>
         (
-            (delegate* unmanaged<ContextHandle, ulong*, int*, _cl_semaphore_khr*>)(
+            (delegate* unmanaged<ContextHandle, ulong*, int*, SemaphoreHandleKHR>)(
                 _slots[27] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[27] = nativeContext.LoadFunction(
@@ -31176,7 +31020,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
+    public static SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
         ContextHandle context,
         ulong* sema_props,
         int* errcode_ret
@@ -31186,7 +31030,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Ptr<_cl_semaphore_khr> ICl.CreateSemaphoreWithPropertiesKHR(
+    SemaphoreHandleKHR ICl.CreateSemaphoreWithPropertiesKHR(
         ContextHandle context,
         Ref<ulong> sema_props,
         Ref<int> errcode_ret
@@ -31195,7 +31039,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         fixed (int* __dsl_errcode_ret = errcode_ret)
         fixed (ulong* __dsl_sema_props = sema_props)
         {
-            return (_cl_semaphore_khr*)
+            return (SemaphoreHandleKHR)
                 ((ICl)this).CreateSemaphoreWithPropertiesKHR(
                     context,
                     __dsl_sema_props,
@@ -31208,7 +31052,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
+    public static SemaphoreHandleKHR CreateSemaphoreWithPropertiesKHR(
         ContextHandle context,
         Ref<ulong> sema_props,
         Ref<int> errcode_ret
@@ -36375,7 +36219,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.EnqueueSignalSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        _cl_semaphore_khr** sema_objects,
+        SemaphoreHandleKHR* sema_objects,
         ulong* sema_payload_list,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -36385,7 +36229,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             (delegate* unmanaged<
                 CommandQueueHandle,
                 uint,
-                _cl_semaphore_khr**,
+                SemaphoreHandleKHR*,
                 ulong*,
                 uint,
                 EventHandle*,
@@ -36415,7 +36259,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static int EnqueueSignalSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        _cl_semaphore_khr** sema_objects,
+        SemaphoreHandleKHR* sema_objects,
         ulong* sema_payload_list,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -36438,7 +36282,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.EnqueueSignalSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        Ref2D<_cl_semaphore_khr> sema_objects,
+        Ref<SemaphoreHandleKHR> sema_objects,
         Ref<ulong> sema_payload_list,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -36448,7 +36292,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         fixed (EventHandle* __dsl_event = @event)
         fixed (EventHandle* __dsl_event_wait_list = event_wait_list)
         fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
-        fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+        fixed (SemaphoreHandleKHR* __dsl_sema_objects = sema_objects)
         {
             return (int)
                 ((ICl)this).EnqueueSignalSemaphoresKHR(
@@ -36470,7 +36314,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static int EnqueueSignalSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        Ref2D<_cl_semaphore_khr> sema_objects,
+        Ref<SemaphoreHandleKHR> sema_objects,
         Ref<ulong> sema_payload_list,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -38276,7 +38120,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.EnqueueWaitSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        _cl_semaphore_khr** sema_objects,
+        SemaphoreHandleKHR* sema_objects,
         ulong* sema_payload_list,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -38286,7 +38130,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             (delegate* unmanaged<
                 CommandQueueHandle,
                 uint,
-                _cl_semaphore_khr**,
+                SemaphoreHandleKHR*,
                 ulong*,
                 uint,
                 EventHandle*,
@@ -38316,7 +38160,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static int EnqueueWaitSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        _cl_semaphore_khr** sema_objects,
+        SemaphoreHandleKHR* sema_objects,
         ulong* sema_payload_list,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -38339,7 +38183,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.EnqueueWaitSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        Ref2D<_cl_semaphore_khr> sema_objects,
+        Ref<SemaphoreHandleKHR> sema_objects,
         Ref<ulong> sema_payload_list,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -38349,7 +38193,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         fixed (EventHandle* __dsl_event = @event)
         fixed (EventHandle* __dsl_event_wait_list = event_wait_list)
         fixed (ulong* __dsl_sema_payload_list = sema_payload_list)
-        fixed (_cl_semaphore_khr** __dsl_sema_objects = sema_objects)
+        fixed (SemaphoreHandleKHR* __dsl_sema_objects = sema_objects)
         {
             return (int)
                 ((ICl)this).EnqueueWaitSemaphoresKHR(
@@ -38371,7 +38215,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static int EnqueueWaitSemaphoresKHR(
         CommandQueueHandle command_queue,
         uint num_sema_objects,
-        Ref2D<_cl_semaphore_khr> sema_objects,
+        Ref<SemaphoreHandleKHR> sema_objects,
         Ref<ulong> sema_payload_list,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -39234,14 +39078,14 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.GetAcceleratorInfoINTEL(
-        _cl_accelerator_intel* accelerator,
+        AcceleratorHandleINTEL accelerator,
         uint param_name,
         nuint param_value_size,
         void* param_value,
         nuint* param_value_size_ret
     ) =>
         (
-            (delegate* unmanaged<_cl_accelerator_intel*, uint, nuint, void*, nuint*, int>)(
+            (delegate* unmanaged<AcceleratorHandleINTEL, uint, nuint, void*, nuint*, int>)(
                 _slots[86] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[86] = nativeContext.LoadFunction("clGetAcceleratorInfoINTEL", "opencl")
@@ -39253,7 +39097,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetAcceleratorInfoINTEL(
-        _cl_accelerator_intel* accelerator,
+        AcceleratorHandleINTEL accelerator,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -39272,7 +39116,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.GetAcceleratorInfoINTEL(
-        Ref<_cl_accelerator_intel> accelerator,
+        AcceleratorHandleINTEL accelerator,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -39281,11 +39125,10 @@ public unsafe partial class Cl : ICl, ICl.Static
     {
         fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
         fixed (void* __dsl_param_value = param_value)
-        fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
         {
             return (int)
                 ((ICl)this).GetAcceleratorInfoINTEL(
-                    __dsl_accelerator,
+                    accelerator,
                     param_name,
                     param_value_size,
                     __dsl_param_value,
@@ -39299,7 +39142,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetAcceleratorInfoINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetAcceleratorInfoINTEL(
-        Ref<_cl_accelerator_intel> accelerator,
+        AcceleratorHandleINTEL accelerator,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -42795,7 +42638,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.GetSemaphoreHandleForTypeKHR(
-        _cl_semaphore_khr* sema_object,
+        SemaphoreHandleKHR sema_object,
         DeviceIdHandle device,
         uint handle_type,
         nuint handle_size,
@@ -42804,7 +42647,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<
-                _cl_semaphore_khr*,
+                SemaphoreHandleKHR,
                 DeviceIdHandle,
                 uint,
                 nuint,
@@ -42829,7 +42672,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetSemaphoreHandleForTypeKHR(
-        _cl_semaphore_khr* sema_object,
+        SemaphoreHandleKHR sema_object,
         DeviceIdHandle device,
         uint handle_type,
         nuint handle_size,
@@ -42854,7 +42697,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.GetSemaphoreHandleForTypeKHR(
-        Ref<_cl_semaphore_khr> sema_object,
+        SemaphoreHandleKHR sema_object,
         DeviceIdHandle device,
         uint handle_type,
         nuint handle_size,
@@ -42864,11 +42707,10 @@ public unsafe partial class Cl : ICl, ICl.Static
     {
         fixed (nuint* __dsl_handle_size_ret = handle_size_ret)
         fixed (void* __dsl_handle_ptr = handle_ptr)
-        fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
         {
             return (int)
                 ((ICl)this).GetSemaphoreHandleForTypeKHR(
-                    __dsl_sema_object,
+                    sema_object,
                     device,
                     handle_type,
                     handle_size,
@@ -42887,7 +42729,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetSemaphoreHandleForTypeKHR(
-        Ref<_cl_semaphore_khr> sema_object,
+        SemaphoreHandleKHR sema_object,
         DeviceIdHandle device,
         uint handle_type,
         nuint handle_size,
@@ -42908,14 +42750,14 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.GetSemaphoreInfoKHR(
-        _cl_semaphore_khr* sema_object,
+        SemaphoreHandleKHR sema_object,
         uint param_name,
         nuint param_value_size,
         void* param_value,
         nuint* param_value_size_ret
     ) =>
         (
-            (delegate* unmanaged<_cl_semaphore_khr*, uint, nuint, void*, nuint*, int>)(
+            (delegate* unmanaged<SemaphoreHandleKHR, uint, nuint, void*, nuint*, int>)(
                 _slots[117] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[117] = nativeContext.LoadFunction("clGetSemaphoreInfoKHR", "opencl")
@@ -42927,7 +42769,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetSemaphoreInfoKHR(
-        _cl_semaphore_khr* sema_object,
+        SemaphoreHandleKHR sema_object,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -42946,7 +42788,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.GetSemaphoreInfoKHR(
-        Ref<_cl_semaphore_khr> sema_object,
+        SemaphoreHandleKHR sema_object,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -42955,11 +42797,10 @@ public unsafe partial class Cl : ICl, ICl.Static
     {
         fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
         fixed (void* __dsl_param_value = param_value)
-        fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
         {
             return (int)
                 ((ICl)this).GetSemaphoreInfoKHR(
-                    __dsl_sema_object,
+                    sema_object,
                     param_name,
                     param_value_size,
                     __dsl_param_value,
@@ -42973,7 +42814,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreInfoKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetSemaphoreInfoKHR(
-        Ref<_cl_semaphore_khr> sema_object,
+        SemaphoreHandleKHR sema_object,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -43878,12 +43719,12 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.ReImportSemaphoreSyncFdKHR(
-        _cl_semaphore_khr* sema_object,
+        SemaphoreHandleKHR sema_object,
         ulong* reimport_props,
         int fd
     ) =>
         (
-            (delegate* unmanaged<_cl_semaphore_khr*, ulong*, int, int>)(
+            (delegate* unmanaged<SemaphoreHandleKHR, ulong*, int, int>)(
                 _slots[130] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[130] = nativeContext.LoadFunction(
@@ -43902,7 +43743,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int ReImportSemaphoreSyncFdKHR(
-        _cl_semaphore_khr* sema_object,
+        SemaphoreHandleKHR sema_object,
         ulong* reimport_props,
         int fd
     ) => ThisThread.ReImportSemaphoreSyncFdKHR(sema_object, reimport_props, fd);
@@ -43916,16 +43757,15 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.ReImportSemaphoreSyncFdKHR(
-        Ref<_cl_semaphore_khr> sema_object,
+        SemaphoreHandleKHR sema_object,
         Ref<ulong> reimport_props,
         int fd
     )
     {
         fixed (ulong* __dsl_reimport_props = reimport_props)
-        fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
         {
             return (int)
-                ((ICl)this).ReImportSemaphoreSyncFdKHR(__dsl_sema_object, __dsl_reimport_props, fd);
+                ((ICl)this).ReImportSemaphoreSyncFdKHR(sema_object, __dsl_reimport_props, fd);
         }
     }
 
@@ -43938,7 +43778,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [NativeFunction("opencl", EntryPoint = "clReImportSemaphoreSyncFdKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int ReImportSemaphoreSyncFdKHR(
-        Ref<_cl_semaphore_khr> sema_object,
+        SemaphoreHandleKHR sema_object,
         Ref<ulong> reimport_props,
         int fd
     ) => ThisThread.ReImportSemaphoreSyncFdKHR(sema_object, reimport_props, fd);
@@ -43947,9 +43787,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+    int ICl.ReleaseAcceleratorINTEL(AcceleratorHandleINTEL accelerator) =>
         (
-            (delegate* unmanaged<_cl_accelerator_intel*, int>)(
+            (delegate* unmanaged<AcceleratorHandleINTEL, int>)(
                 _slots[131] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[131] = nativeContext.LoadFunction(
@@ -43963,26 +43803,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int ReleaseAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
-        ThisThread.ReleaseAcceleratorINTEL(accelerator);
-
-    [NativeName("clReleaseAcceleratorINTEL")]
-    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-    [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
-    {
-        fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
-        {
-            return (int)((ICl)this).ReleaseAcceleratorINTEL(__dsl_accelerator);
-        }
-    }
-
-    [NativeName("clReleaseAcceleratorINTEL")]
-    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-    [NativeFunction("opencl", EntryPoint = "clReleaseAcceleratorINTEL")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int ReleaseAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator) =>
+    public static int ReleaseAcceleratorINTEL(AcceleratorHandleINTEL accelerator) =>
         ThisThread.ReleaseAcceleratorINTEL(accelerator);
 
     [NativeName("clReleaseCommandQueue")]
@@ -44366,9 +44187,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+    int ICl.ReleaseSemaphoreKHR(SemaphoreHandleKHR sema_object) =>
         (
-            (delegate* unmanaged<_cl_semaphore_khr*, int>)(
+            (delegate* unmanaged<SemaphoreHandleKHR, int>)(
                 _slots[141] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[141] = nativeContext.LoadFunction("clReleaseSemaphoreKHR", "opencl")
@@ -44379,35 +44200,16 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int ReleaseSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
-        ThisThread.ReleaseSemaphoreKHR(sema_object);
-
-    [NativeName("clReleaseSemaphoreKHR")]
-    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-    [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
-    {
-        fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
-        {
-            return (int)((ICl)this).ReleaseSemaphoreKHR(__dsl_sema_object);
-        }
-    }
-
-    [NativeName("clReleaseSemaphoreKHR")]
-    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-    [NativeFunction("opencl", EntryPoint = "clReleaseSemaphoreKHR")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int ReleaseSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object) =>
+    public static int ReleaseSemaphoreKHR(SemaphoreHandleKHR sema_object) =>
         ThisThread.ReleaseSemaphoreKHR(sema_object);
 
     [NativeName("clRetainAcceleratorINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
+    int ICl.RetainAcceleratorINTEL(AcceleratorHandleINTEL accelerator) =>
         (
-            (delegate* unmanaged<_cl_accelerator_intel*, int>)(
+            (delegate* unmanaged<AcceleratorHandleINTEL, int>)(
                 _slots[142] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[142] = nativeContext.LoadFunction("clRetainAcceleratorINTEL", "opencl")
@@ -44418,26 +44220,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int RetainAcceleratorINTEL(_cl_accelerator_intel* accelerator) =>
-        ThisThread.RetainAcceleratorINTEL(accelerator);
-
-    [NativeName("clRetainAcceleratorINTEL")]
-    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-    [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator)
-    {
-        fixed (_cl_accelerator_intel* __dsl_accelerator = accelerator)
-        {
-            return (int)((ICl)this).RetainAcceleratorINTEL(__dsl_accelerator);
-        }
-    }
-
-    [NativeName("clRetainAcceleratorINTEL")]
-    [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
-    [NativeFunction("opencl", EntryPoint = "clRetainAcceleratorINTEL")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int RetainAcceleratorINTEL(Ref<_cl_accelerator_intel> accelerator) =>
+    public static int RetainAcceleratorINTEL(AcceleratorHandleINTEL accelerator) =>
         ThisThread.RetainAcceleratorINTEL(accelerator);
 
     [NativeName("clRetainCommandQueue")]
@@ -44820,9 +44603,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.RetainSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
+    int ICl.RetainSemaphoreKHR(SemaphoreHandleKHR sema_object) =>
         (
-            (delegate* unmanaged<_cl_semaphore_khr*, int>)(
+            (delegate* unmanaged<SemaphoreHandleKHR, int>)(
                 _slots[152] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[152] = nativeContext.LoadFunction("clRetainSemaphoreKHR", "opencl")
@@ -44833,26 +44616,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int RetainSemaphoreKHR(_cl_semaphore_khr* sema_object) =>
-        ThisThread.RetainSemaphoreKHR(sema_object);
-
-    [NativeName("clRetainSemaphoreKHR")]
-    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-    [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int ICl.RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object)
-    {
-        fixed (_cl_semaphore_khr* __dsl_sema_object = sema_object)
-        {
-            return (int)((ICl)this).RetainSemaphoreKHR(__dsl_sema_object);
-        }
-    }
-
-    [NativeName("clRetainSemaphoreKHR")]
-    [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
-    [NativeFunction("opencl", EntryPoint = "clRetainSemaphoreKHR")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int RetainSemaphoreKHR(Ref<_cl_semaphore_khr> sema_object) =>
+    public static int RetainSemaphoreKHR(SemaphoreHandleKHR sema_object) =>
         ThisThread.RetainSemaphoreKHR(sema_object);
 
     [NativeName("clSetContentSizeBufferPoCL")]
