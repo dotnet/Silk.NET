@@ -20,4 +20,19 @@ public enum IntelAdvancedMotionEstimationClMotionDetectDescINTEL : uint
 
     [NativeName("CL_ME_BIDIRECTION_INPUT_MODE_INTEL")]
     BidirectionInputMode = 3,
+
+    [NativeName("CL_ME_BIDIR_WEIGHT_QUARTER_INTEL")]
+    BidirWeightQuarter = 16,
+
+    [NativeName("CL_ME_BIDIR_WEIGHT_THIRD_INTEL")]
+    BidirWeightThird = 21,
+
+    [NativeName("CL_ME_BIDIR_WEIGHT_HALF_INTEL")]
+    BidirWeightHalf = 32,
+
+    [NativeName("CL_ME_BIDIR_WEIGHT_TWO_THIRD_INTEL")]
+    BidirWeightTwoThird = 43,
+
+    [NativeName("CL_ME_BIDIR_WEIGHT_THREE_QUARTER_INTEL")]
+    BidirWeightThreeQuarter = 48,
 }
