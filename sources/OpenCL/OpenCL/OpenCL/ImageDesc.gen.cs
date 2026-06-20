@@ -44,7 +44,7 @@ public unsafe partial struct ImageDesc
 
     [NativeName("buffer")]
     [UnscopedRef]
-    public ref Mem* Buffer
+    public ref MemHandle Buffer
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get { return ref Anonymous.Buffer; }
@@ -52,7 +52,7 @@ public unsafe partial struct ImageDesc
 
     [NativeName("mem_object")]
     [UnscopedRef]
-    public ref Mem* MemObject
+    public ref MemHandle MemObject
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get { return ref Anonymous.MemObject; }
@@ -64,10 +64,10 @@ public unsafe partial struct ImageDesc
     {
         [NativeName("buffer")]
         [FieldOffset(0)]
-        public Mem* Buffer;
+        public MemHandle Buffer;
 
         [NativeName("mem_object")]
         [FieldOffset(0)]
-        public Mem* MemObject;
+        public MemHandle MemObject;
     }
 }

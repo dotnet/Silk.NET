@@ -30,11 +30,11 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clBuildProgram")]
         static abstract int BuildProgram(
-            Program* program,
+            ProgramHandle program,
             uint num_devices,
-            DeviceId** device_list,
+            DeviceIdHandle* device_list,
             sbyte* options,
-            delegate* unmanaged<Program*, void*, void> pfn_notify,
+            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
             void* user_data
         );
 
@@ -55,23 +55,26 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clBuildProgram")]
         static abstract int BuildProgram(
-            Ref<Program> program,
+            ProgramHandle program,
             uint num_devices,
-            Ref2D<DeviceId> device_list,
+            Ref<DeviceIdHandle> device_list,
             Ref<sbyte> options,
-            delegate* unmanaged<Program*, void*, void> pfn_notify,
+            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
             Ref user_data
         );
 
         [NativeName("clCancelCommandsIMG")]
         [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
         [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
-        static abstract int CancelCommandsIMG(Event** event_list, nuint num_events_in_list);
+        static abstract int CancelCommandsIMG(EventHandle* event_list, nuint num_events_in_list);
 
         [NativeName("clCancelCommandsIMG")]
         [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
         [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
-        static abstract int CancelCommandsIMG(Ref2D<Event> event_list, nuint num_events_in_list);
+        static abstract int CancelCommandsIMG(
+            Ref<EventHandle> event_list,
+            nuint num_events_in_list
+        );
 
         [NativeName("clCloneKernel")]
         [SupportedApiProfile(
@@ -80,7 +83,7 @@ public unsafe partial interface ICl
             MinVersion = "2.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clCloneKernel")]
-        static abstract Kernel* CloneKernel(Kernel* source_kernel, int* errcode_ret);
+        static abstract KernelHandle CloneKernel(KernelHandle source_kernel, int* errcode_ret);
 
         [NativeName("clCloneKernel")]
         [SupportedApiProfile(
@@ -89,7 +92,7 @@ public unsafe partial interface ICl
             MinVersion = "2.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clCloneKernel")]
-        static abstract Ptr<Kernel> CloneKernel(Ref<Kernel> source_kernel, Ref<int> errcode_ret);
+        static abstract KernelHandle CloneKernel(KernelHandle source_kernel, Ref<int> errcode_ret);
 
         [NativeName("clCompileProgram")]
         [SupportedApiProfile(
@@ -106,14 +109,14 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clCompileProgram")]
         static abstract int CompileProgram(
-            Program* program,
+            ProgramHandle program,
             uint num_devices,
-            DeviceId** device_list,
+            DeviceIdHandle* device_list,
             sbyte* options,
             uint num_input_headers,
-            Program** input_headers,
+            ProgramHandle* input_headers,
             sbyte** header_include_names,
-            delegate* unmanaged<Program*, void*, void> pfn_notify,
+            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
             void* user_data
         );
 
@@ -132,14 +135,14 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clCompileProgram")]
         static abstract int CompileProgram(
-            Ref<Program> program,
+            ProgramHandle program,
             uint num_devices,
-            Ref2D<DeviceId> device_list,
+            Ref<DeviceIdHandle> device_list,
             Ref<sbyte> options,
             uint num_input_headers,
-            Ref2D<Program> input_headers,
+            Ref<ProgramHandle> input_headers,
             Ref2D<sbyte> header_include_names,
-            delegate* unmanaged<Program*, void*, void> pfn_notify,
+            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
             Ref user_data
         );
 
@@ -147,7 +150,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
         static abstract _cl_accelerator_intel* CreateAcceleratorINTEL(
-            Context* context,
+            ContextHandle context,
             uint accelerator_type,
             nuint descriptor_size,
             void* descriptor,
@@ -158,7 +161,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
         [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
         static abstract Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
-            Ref<Context> context,
+            ContextHandle context,
             uint accelerator_type,
             nuint descriptor_size,
             Ref descriptor,
@@ -181,8 +184,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateBuffer")]
-        static abstract Mem* CreateBuffer(
-            Context* context,
+        static abstract MemHandle CreateBuffer(
+            ContextHandle context,
             ulong flags,
             nuint size,
             void* host_ptr,
@@ -205,8 +208,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateBuffer")]
-        static abstract Ptr<Mem> CreateBuffer(
-            Ref<Context> context,
+        static abstract MemHandle CreateBuffer(
+            ContextHandle context,
             ulong flags,
             nuint size,
             Ref host_ptr,
@@ -216,8 +219,8 @@ public unsafe partial interface ICl
         [NativeName("clCreateBufferWithProperties")]
         [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
         [NativeFunction("opencl", EntryPoint = "clCreateBufferWithProperties")]
-        static abstract Mem* CreateBufferWithProperties(
-            Context* context,
+        static abstract MemHandle CreateBufferWithProperties(
+            ContextHandle context,
             ulong* properties,
             ulong flags,
             nuint size,
@@ -228,8 +231,8 @@ public unsafe partial interface ICl
         [NativeName("clCreateBufferWithProperties")]
         [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
         [NativeFunction("opencl", EntryPoint = "clCreateBufferWithProperties")]
-        static abstract Ptr<Mem> CreateBufferWithProperties(
-            Ref<Context> context,
+        static abstract MemHandle CreateBufferWithProperties(
+            ContextHandle context,
             Ref<ulong> properties,
             ulong flags,
             nuint size,
@@ -240,8 +243,8 @@ public unsafe partial interface ICl
         [NativeName("clCreateBufferWithPropertiesINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
         [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-        static abstract Mem* CreateBufferWithPropertiesINTEL(
-            Context* context,
+        static abstract MemHandle CreateBufferWithPropertiesINTEL(
+            ContextHandle context,
             ulong* properties,
             ulong flags,
             nuint size,
@@ -252,8 +255,8 @@ public unsafe partial interface ICl
         [NativeName("clCreateBufferWithPropertiesINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
         [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-        static abstract Ptr<Mem> CreateBufferWithPropertiesINTEL(
-            Ref<Context> context,
+        static abstract MemHandle CreateBufferWithPropertiesINTEL(
+            ContextHandle context,
             Ref<ulong> properties,
             ulong flags,
             nuint size,
@@ -278,9 +281,9 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateCommandQueue")]
-        static abstract CommandQueue* CreateCommandQueue(
-            Context* context,
-            DeviceId* device,
+        static abstract CommandQueueHandle CreateCommandQueue(
+            ContextHandle context,
+            DeviceIdHandle device,
             ulong properties,
             int* errcode_ret
         );
@@ -302,9 +305,9 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateCommandQueue")]
-        static abstract Ptr<CommandQueue> CreateCommandQueue(
-            Ref<Context> context,
-            Ref<DeviceId> device,
+        static abstract CommandQueueHandle CreateCommandQueue(
+            ContextHandle context,
+            DeviceIdHandle device,
             ulong properties,
             Ref<int> errcode_ret
         );
@@ -322,9 +325,9 @@ public unsafe partial interface ICl
             MinVersion = "2.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithProperties")]
-        static abstract CommandQueue* CreateCommandQueueWithProperties(
-            Context* context,
-            DeviceId* device,
+        static abstract CommandQueueHandle CreateCommandQueueWithProperties(
+            ContextHandle context,
+            DeviceIdHandle device,
             ulong* properties,
             int* errcode_ret
         );
@@ -342,9 +345,9 @@ public unsafe partial interface ICl
             MinVersion = "2.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithProperties")]
-        static abstract Ptr<CommandQueue> CreateCommandQueueWithProperties(
-            Ref<Context> context,
-            Ref<DeviceId> device,
+        static abstract CommandQueueHandle CreateCommandQueueWithProperties(
+            ContextHandle context,
+            DeviceIdHandle device,
             Ref<ulong> properties,
             Ref<int> errcode_ret
         );
@@ -352,9 +355,9 @@ public unsafe partial interface ICl
         [NativeName("clCreateCommandQueueWithPropertiesKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
         [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
-        static abstract CommandQueue* CreateCommandQueueWithPropertiesKHR(
-            Context* context,
-            DeviceId* device,
+        static abstract CommandQueueHandle CreateCommandQueueWithPropertiesKHR(
+            ContextHandle context,
+            DeviceIdHandle device,
             ulong* properties,
             int* errcode_ret
         );
@@ -362,9 +365,9 @@ public unsafe partial interface ICl
         [NativeName("clCreateCommandQueueWithPropertiesKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
         [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
-        static abstract Ptr<CommandQueue> CreateCommandQueueWithPropertiesKHR(
-            Ref<Context> context,
-            Ref<DeviceId> device,
+        static abstract CommandQueueHandle CreateCommandQueueWithPropertiesKHR(
+            ContextHandle context,
+            DeviceIdHandle device,
             Ref<ulong> properties,
             Ref<int> errcode_ret
         );
@@ -385,10 +388,10 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateContext")]
-        static abstract Context* CreateContext(
+        static abstract ContextHandle CreateContext(
             nint* properties,
             uint num_devices,
-            DeviceId** devices,
+            DeviceIdHandle* devices,
             delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
             void* user_data,
             int* errcode_ret
@@ -410,10 +413,10 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateContext")]
-        static abstract Ptr<Context> CreateContext(
+        static abstract ContextHandle CreateContext(
             Ref<nint> properties,
             uint num_devices,
-            Ref2D<DeviceId> devices,
+            Ref<DeviceIdHandle> devices,
             delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
@@ -435,7 +438,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateContextFromType")]
-        static abstract Context* CreateContextFromType(
+        static abstract ContextHandle CreateContextFromType(
             nint* properties,
             ulong device_type,
             delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
@@ -459,7 +462,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateContextFromType")]
-        static abstract Ptr<Context> CreateContextFromType(
+        static abstract ContextHandle CreateContextFromType(
             Ref<nint> properties,
             ulong device_type,
             delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
@@ -481,8 +484,8 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateImage")]
-        static abstract Mem* CreateImage(
-            Context* context,
+        static abstract MemHandle CreateImage(
+            ContextHandle context,
             ulong flags,
             ImageFormat* image_format,
             ImageDesc* image_desc,
@@ -504,8 +507,8 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateImage")]
-        static abstract Ptr<Mem> CreateImage(
-            Ref<Context> context,
+        static abstract MemHandle CreateImage(
+            ContextHandle context,
             ulong flags,
             Ref<ImageFormat> image_format,
             Ref<ImageDesc> image_desc,
@@ -530,8 +533,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateImage2D")]
-        static abstract Mem* CreateImage2D(
-            Context* context,
+        static abstract MemHandle CreateImage2D(
+            ContextHandle context,
             ulong flags,
             ImageFormat* image_format,
             nuint image_width,
@@ -558,8 +561,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateImage2D")]
-        static abstract Ptr<Mem> CreateImage2D(
-            Ref<Context> context,
+        static abstract MemHandle CreateImage2D(
+            ContextHandle context,
             ulong flags,
             Ref<ImageFormat> image_format,
             nuint image_width,
@@ -586,8 +589,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateImage3D")]
-        static abstract Mem* CreateImage3D(
-            Context* context,
+        static abstract MemHandle CreateImage3D(
+            ContextHandle context,
             ulong flags,
             ImageFormat* image_format,
             nuint image_width,
@@ -616,8 +619,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateImage3D")]
-        static abstract Ptr<Mem> CreateImage3D(
-            Ref<Context> context,
+        static abstract MemHandle CreateImage3D(
+            ContextHandle context,
             ulong flags,
             Ref<ImageFormat> image_format,
             nuint image_width,
@@ -632,8 +635,8 @@ public unsafe partial interface ICl
         [NativeName("clCreateImageWithProperties")]
         [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
         [NativeFunction("opencl", EntryPoint = "clCreateImageWithProperties")]
-        static abstract Mem* CreateImageWithProperties(
-            Context* context,
+        static abstract MemHandle CreateImageWithProperties(
+            ContextHandle context,
             ulong* properties,
             ulong flags,
             ImageFormat* image_format,
@@ -645,8 +648,8 @@ public unsafe partial interface ICl
         [NativeName("clCreateImageWithProperties")]
         [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
         [NativeFunction("opencl", EntryPoint = "clCreateImageWithProperties")]
-        static abstract Ptr<Mem> CreateImageWithProperties(
-            Ref<Context> context,
+        static abstract MemHandle CreateImageWithProperties(
+            ContextHandle context,
             Ref<ulong> properties,
             ulong flags,
             Ref<ImageFormat> image_format,
@@ -671,8 +674,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateKernel")]
-        static abstract Kernel* CreateKernel(
-            Program* program,
+        static abstract KernelHandle CreateKernel(
+            ProgramHandle program,
             sbyte* kernel_name,
             int* errcode_ret
         );
@@ -693,8 +696,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateKernel")]
-        static abstract Ptr<Kernel> CreateKernel(
-            Ref<Program> program,
+        static abstract KernelHandle CreateKernel(
+            ProgramHandle program,
             Ref<sbyte> kernel_name,
             Ref<int> errcode_ret
         );
@@ -716,9 +719,9 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateKernelsInProgram")]
         static abstract int CreateKernelsInProgram(
-            Program* program,
+            ProgramHandle program,
             uint num_kernels,
-            Kernel** kernels,
+            KernelHandle* kernels,
             uint* num_kernels_ret
         );
 
@@ -739,9 +742,9 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateKernelsInProgram")]
         static abstract int CreateKernelsInProgram(
-            Ref<Program> program,
+            ProgramHandle program,
             uint num_kernels,
-            Ref2D<Kernel> kernels,
+            Ref<KernelHandle> kernels,
             Ref<uint> num_kernels_ret
         );
 
@@ -758,8 +761,8 @@ public unsafe partial interface ICl
             MinVersion = "2.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreatePipe")]
-        static abstract Mem* CreatePipe(
-            Context* context,
+        static abstract MemHandle CreatePipe(
+            ContextHandle context,
             ulong flags,
             uint pipe_packet_size,
             uint pipe_max_packets,
@@ -780,8 +783,8 @@ public unsafe partial interface ICl
             MinVersion = "2.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreatePipe")]
-        static abstract Ptr<Mem> CreatePipe(
-            Ref<Context> context,
+        static abstract MemHandle CreatePipe(
+            ContextHandle context,
             ulong flags,
             uint pipe_packet_size,
             uint pipe_max_packets,
@@ -805,10 +808,10 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBinary")]
-        static abstract Program* CreateProgramWithBinary(
-            Context* context,
+        static abstract ProgramHandle CreateProgramWithBinary(
+            ContextHandle context,
             uint num_devices,
-            DeviceId** device_list,
+            DeviceIdHandle* device_list,
             nuint* lengths,
             byte** binaries,
             int* binary_status,
@@ -831,10 +834,10 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBinary")]
-        static abstract Ptr<Program> CreateProgramWithBinary(
-            Ref<Context> context,
+        static abstract ProgramHandle CreateProgramWithBinary(
+            ContextHandle context,
             uint num_devices,
-            Ref2D<DeviceId> device_list,
+            Ref<DeviceIdHandle> device_list,
             Ref<nuint> lengths,
             Ref2D<byte> binaries,
             Ref<int> binary_status,
@@ -855,10 +858,10 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        static abstract Program* CreateProgramWithBuiltInKernels(
-            Context* context,
+        static abstract ProgramHandle CreateProgramWithBuiltInKernels(
+            ContextHandle context,
             uint num_devices,
-            DeviceId** device_list,
+            DeviceIdHandle* device_list,
             sbyte* kernel_names,
             int* errcode_ret
         );
@@ -877,10 +880,10 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        static abstract Ptr<Program> CreateProgramWithBuiltInKernels(
-            Ref<Context> context,
+        static abstract ProgramHandle CreateProgramWithBuiltInKernels(
+            ContextHandle context,
             uint num_devices,
-            Ref2D<DeviceId> device_list,
+            Ref<DeviceIdHandle> device_list,
             Ref<sbyte> kernel_names,
             Ref<int> errcode_ret
         );
@@ -892,8 +895,8 @@ public unsafe partial interface ICl
             MinVersion = "2.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithIL")]
-        static abstract Program* CreateProgramWithIL(
-            Context* context,
+        static abstract ProgramHandle CreateProgramWithIL(
+            ContextHandle context,
             void* il,
             nuint length,
             int* errcode_ret
@@ -906,8 +909,8 @@ public unsafe partial interface ICl
             MinVersion = "2.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithIL")]
-        static abstract Ptr<Program> CreateProgramWithIL(
-            Ref<Context> context,
+        static abstract ProgramHandle CreateProgramWithIL(
+            ContextHandle context,
             Ref il,
             nuint length,
             Ref<int> errcode_ret
@@ -916,8 +919,8 @@ public unsafe partial interface ICl
         [NativeName("clCreateProgramWithILKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
-        static abstract Program* CreateProgramWithILKHR(
-            Context* context,
+        static abstract ProgramHandle CreateProgramWithILKHR(
+            ContextHandle context,
             void* il,
             nuint length,
             int* errcode_ret
@@ -926,8 +929,8 @@ public unsafe partial interface ICl
         [NativeName("clCreateProgramWithILKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
-        static abstract Ptr<Program> CreateProgramWithILKHR(
-            Ref<Context> context,
+        static abstract ProgramHandle CreateProgramWithILKHR(
+            ContextHandle context,
             Ref il,
             nuint length,
             Ref<int> errcode_ret
@@ -949,8 +952,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithSource")]
-        static abstract Program* CreateProgramWithSource(
-            Context* context,
+        static abstract ProgramHandle CreateProgramWithSource(
+            ContextHandle context,
             uint count,
             sbyte** strings,
             nuint* lengths,
@@ -973,8 +976,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateProgramWithSource")]
-        static abstract Ptr<Program> CreateProgramWithSource(
-            Ref<Context> context,
+        static abstract ProgramHandle CreateProgramWithSource(
+            ContextHandle context,
             uint count,
             Ref2D<sbyte> strings,
             Ref<nuint> lengths,
@@ -998,8 +1001,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateSampler")]
-        static abstract Sampler* CreateSampler(
-            Context* context,
+        static abstract SamplerHandle CreateSampler(
+            ContextHandle context,
             uint normalized_coords,
             uint addressing_mode,
             uint filter_mode,
@@ -1023,8 +1026,8 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateSampler")]
-        static abstract Ptr<Sampler> CreateSampler(
-            Ref<Context> context,
+        static abstract SamplerHandle CreateSampler(
+            ContextHandle context,
             MaybeBool<uint> normalized_coords,
             uint addressing_mode,
             uint filter_mode,
@@ -1044,8 +1047,8 @@ public unsafe partial interface ICl
             MinVersion = "2.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateSamplerWithProperties")]
-        static abstract Sampler* CreateSamplerWithProperties(
-            Context* context,
+        static abstract SamplerHandle CreateSamplerWithProperties(
+            ContextHandle context,
             ulong* sampler_properties,
             int* errcode_ret
         );
@@ -1063,8 +1066,8 @@ public unsafe partial interface ICl
             MinVersion = "2.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateSamplerWithProperties")]
-        static abstract Ptr<Sampler> CreateSamplerWithProperties(
-            Ref<Context> context,
+        static abstract SamplerHandle CreateSamplerWithProperties(
+            ContextHandle context,
             Ref<ulong> sampler_properties,
             Ref<int> errcode_ret
         );
@@ -1073,7 +1076,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
         static abstract _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
-            Context* context,
+            ContextHandle context,
             ulong* sema_props,
             int* errcode_ret
         );
@@ -1082,7 +1085,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
         static abstract Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
-            Ref<Context> context,
+            ContextHandle context,
             Ref<ulong> sema_props,
             Ref<int> errcode_ret
         );
@@ -1102,8 +1105,8 @@ public unsafe partial interface ICl
             MinVersion = "1.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateSubBuffer")]
-        static abstract Mem* CreateSubBuffer(
-            Mem* buffer,
+        static abstract MemHandle CreateSubBuffer(
+            MemHandle buffer,
             ulong flags,
             uint buffer_create_type,
             void* buffer_create_info,
@@ -1125,8 +1128,8 @@ public unsafe partial interface ICl
             MinVersion = "1.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateSubBuffer")]
-        static abstract Ptr<Mem> CreateSubBuffer(
-            Ref<Mem> buffer,
+        static abstract MemHandle CreateSubBuffer(
+            MemHandle buffer,
             ulong flags,
             uint buffer_create_type,
             Ref buffer_create_info,
@@ -1148,10 +1151,10 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateSubDevices")]
         static abstract int CreateSubDevices(
-            DeviceId* in_device,
+            DeviceIdHandle in_device,
             nint* properties,
             uint num_devices,
-            DeviceId** out_devices,
+            DeviceIdHandle* out_devices,
             uint* num_devices_ret
         );
 
@@ -1170,10 +1173,10 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateSubDevices")]
         static abstract int CreateSubDevices(
-            Ref<DeviceId> in_device,
+            DeviceIdHandle in_device,
             Ref<nint> properties,
             uint num_devices,
-            Ref2D<DeviceId> out_devices,
+            Ref<DeviceIdHandle> out_devices,
             Ref<uint> num_devices_ret
         );
 
@@ -1181,10 +1184,10 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
         [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
         static abstract int CreateSubDevicesEXT(
-            DeviceId* in_device,
+            DeviceIdHandle in_device,
             ulong* properties,
             uint num_entries,
-            DeviceId** out_devices,
+            DeviceIdHandle* out_devices,
             uint* num_devices
         );
 
@@ -1192,10 +1195,10 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
         [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
         static abstract int CreateSubDevicesEXT(
-            Ref<DeviceId> in_device,
+            DeviceIdHandle in_device,
             Ref<ulong> properties,
             uint num_entries,
-            Ref2D<DeviceId> out_devices,
+            Ref<DeviceIdHandle> out_devices,
             Ref<uint> num_devices
         );
 
@@ -1214,7 +1217,7 @@ public unsafe partial interface ICl
             MinVersion = "1.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateUserEvent")]
-        static abstract Event* CreateUserEvent(Context* context, int* errcode_ret);
+        static abstract EventHandle CreateUserEvent(ContextHandle context, int* errcode_ret);
 
         [NativeName("clCreateUserEvent")]
         [SupportedApiProfile(
@@ -1231,14 +1234,14 @@ public unsafe partial interface ICl
             MinVersion = "1.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clCreateUserEvent")]
-        static abstract Ptr<Event> CreateUserEvent(Ref<Context> context, Ref<int> errcode_ret);
+        static abstract EventHandle CreateUserEvent(ContextHandle context, Ref<int> errcode_ret);
 
         [NativeName("clDeviceMemAllocINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
         static abstract void* DeviceMemAllocINTEL(
-            Context* context,
-            DeviceId* device,
+            ContextHandle context,
+            DeviceIdHandle device,
             ulong* properties,
             nuint size,
             uint alignment,
@@ -1249,8 +1252,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
         static abstract Ptr DeviceMemAllocINTEL(
-            Ref<Context> context,
-            Ref<DeviceId> device,
+            ContextHandle context,
+            DeviceIdHandle device,
             Ref<ulong> properties,
             nuint size,
             uint alignment,
@@ -1265,12 +1268,12 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
         static abstract int EnqueueAcquireExternalMemObjectsKHR(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_mem_objects,
-            Mem** mem_objects,
+            MemHandle* mem_objects,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
@@ -1281,36 +1284,36 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
         static abstract int EnqueueAcquireExternalMemObjectsKHR(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_mem_objects,
-            Ref2D<Mem> mem_objects,
+            Ref<MemHandle> mem_objects,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
         [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
         static abstract int EnqueueAcquireGrallocObjectsIMG(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_objects,
-            Mem** mem_objects,
+            MemHandle* mem_objects,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
         [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
         static abstract int EnqueueAcquireGrallocObjectsIMG(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_objects,
-            Ref2D<Mem> mem_objects,
+            Ref<MemHandle> mem_objects,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueBarrier")]
@@ -1330,26 +1333,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueBarrier")]
-        static abstract int EnqueueBarrier(CommandQueue* command_queue);
-
-        [NativeName("clEnqueueBarrier")]
-        [Obsolete]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clEnqueueBarrier")]
-        static abstract int EnqueueBarrier(Ref<CommandQueue> command_queue);
+        static abstract int EnqueueBarrier(CommandQueueHandle command_queue);
 
         [NativeName("clEnqueueBarrierWithWaitList")]
         [SupportedApiProfile(
@@ -1366,10 +1350,10 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueBarrierWithWaitList")]
         static abstract int EnqueueBarrierWithWaitList(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueBarrierWithWaitList")]
@@ -1387,10 +1371,10 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueBarrierWithWaitList")]
         static abstract int EnqueueBarrierWithWaitList(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueCopyBuffer")]
@@ -1410,15 +1394,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBuffer")]
         static abstract int EnqueueCopyBuffer(
-            CommandQueue* command_queue,
-            Mem* src_buffer,
-            Mem* dst_buffer,
+            CommandQueueHandle command_queue,
+            MemHandle src_buffer,
+            MemHandle dst_buffer,
             nuint src_offset,
             nuint dst_offset,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueCopyBuffer")]
@@ -1438,15 +1422,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBuffer")]
         static abstract int EnqueueCopyBuffer(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> src_buffer,
-            Ref<Mem> dst_buffer,
+            CommandQueueHandle command_queue,
+            MemHandle src_buffer,
+            MemHandle dst_buffer,
             nuint src_offset,
             nuint dst_offset,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueCopyBufferRect")]
@@ -1465,9 +1449,9 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBufferRect")]
         static abstract int EnqueueCopyBufferRect(
-            CommandQueue* command_queue,
-            Mem* src_buffer,
-            Mem* dst_buffer,
+            CommandQueueHandle command_queue,
+            MemHandle src_buffer,
+            MemHandle dst_buffer,
             nuint* src_origin,
             nuint* dst_origin,
             nuint* region,
@@ -1476,8 +1460,8 @@ public unsafe partial interface ICl
             nuint dst_row_pitch,
             nuint dst_slice_pitch,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueCopyBufferRect")]
@@ -1496,9 +1480,9 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBufferRect")]
         static abstract int EnqueueCopyBufferRect(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> src_buffer,
-            Ref<Mem> dst_buffer,
+            CommandQueueHandle command_queue,
+            MemHandle src_buffer,
+            MemHandle dst_buffer,
             Ref<nuint> src_origin,
             Ref<nuint> dst_origin,
             Ref<nuint> region,
@@ -1507,8 +1491,8 @@ public unsafe partial interface ICl
             nuint dst_row_pitch,
             nuint dst_slice_pitch,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueCopyBufferToImage")]
@@ -1528,15 +1512,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBufferToImage")]
         static abstract int EnqueueCopyBufferToImage(
-            CommandQueue* command_queue,
-            Mem* src_buffer,
-            Mem* dst_image,
+            CommandQueueHandle command_queue,
+            MemHandle src_buffer,
+            MemHandle dst_image,
             nuint src_offset,
             nuint* dst_origin,
             nuint* region,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueCopyBufferToImage")]
@@ -1556,15 +1540,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBufferToImage")]
         static abstract int EnqueueCopyBufferToImage(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> src_buffer,
-            Ref<Mem> dst_image,
+            CommandQueueHandle command_queue,
+            MemHandle src_buffer,
+            MemHandle dst_image,
             nuint src_offset,
             Ref<nuint> dst_origin,
             Ref<nuint> region,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueCopyImage")]
@@ -1584,15 +1568,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueCopyImage")]
         static abstract int EnqueueCopyImage(
-            CommandQueue* command_queue,
-            Mem* src_image,
-            Mem* dst_image,
+            CommandQueueHandle command_queue,
+            MemHandle src_image,
+            MemHandle dst_image,
             nuint* src_origin,
             nuint* dst_origin,
             nuint* region,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueCopyImage")]
@@ -1612,15 +1596,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueCopyImage")]
         static abstract int EnqueueCopyImage(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> src_image,
-            Ref<Mem> dst_image,
+            CommandQueueHandle command_queue,
+            MemHandle src_image,
+            MemHandle dst_image,
             Ref<nuint> src_origin,
             Ref<nuint> dst_origin,
             Ref<nuint> region,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueCopyImageToBuffer")]
@@ -1640,15 +1624,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueCopyImageToBuffer")]
         static abstract int EnqueueCopyImageToBuffer(
-            CommandQueue* command_queue,
-            Mem* src_image,
-            Mem* dst_buffer,
+            CommandQueueHandle command_queue,
+            MemHandle src_image,
+            MemHandle dst_buffer,
             nuint* src_origin,
             nuint* region,
             nuint dst_offset,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueCopyImageToBuffer")]
@@ -1668,15 +1652,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueCopyImageToBuffer")]
         static abstract int EnqueueCopyImageToBuffer(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> src_image,
-            Ref<Mem> dst_buffer,
+            CommandQueueHandle command_queue,
+            MemHandle src_image,
+            MemHandle dst_buffer,
             Ref<nuint> src_origin,
             Ref<nuint> region,
             nuint dst_offset,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueFillBuffer")]
@@ -1694,15 +1678,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueFillBuffer")]
         static abstract int EnqueueFillBuffer(
-            CommandQueue* command_queue,
-            Mem* buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             void* pattern,
             nuint pattern_size,
             nuint offset,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueFillBuffer")]
@@ -1720,15 +1704,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueFillBuffer")]
         static abstract int EnqueueFillBuffer(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             Ref pattern,
             nuint pattern_size,
             nuint offset,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueFillImage")]
@@ -1746,14 +1730,14 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueFillImage")]
         static abstract int EnqueueFillImage(
-            CommandQueue* command_queue,
-            Mem* image,
+            CommandQueueHandle command_queue,
+            MemHandle image,
             void* fill_color,
             nuint* origin,
             nuint* region,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueFillImage")]
@@ -1771,44 +1755,44 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueFillImage")]
         static abstract int EnqueueFillImage(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> image,
+            CommandQueueHandle command_queue,
+            MemHandle image,
             Ref fill_color,
             Ref<nuint> origin,
             Ref<nuint> region,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueGenerateMipmapIMG")]
         [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
         static abstract int EnqueueGenerateMipmapIMG(
-            CommandQueue* command_queue,
-            Mem* src_image,
-            Mem* dst_image,
+            CommandQueueHandle command_queue,
+            MemHandle src_image,
+            MemHandle dst_image,
             uint mipmap_filter_mode,
             nuint* array_region,
             nuint* mip_region,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueGenerateMipmapIMG")]
         [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
         static abstract int EnqueueGenerateMipmapIMG(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> src_image,
-            Ref<Mem> dst_image,
+            CommandQueueHandle command_queue,
+            MemHandle src_image,
+            MemHandle dst_image,
             uint mipmap_filter_mode,
             Ref<nuint> array_region,
             Ref<nuint> mip_region,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueMapBuffer")]
@@ -1828,15 +1812,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMapBuffer")]
         static abstract void* EnqueueMapBuffer(
-            CommandQueue* command_queue,
-            Mem* buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             uint blocking_map,
             ulong map_flags,
             nuint offset,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event,
+            EventHandle* event_wait_list,
+            EventHandle* @event,
             int* errcode_ret
         );
 
@@ -1857,15 +1841,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMapBuffer")]
         static abstract Ptr EnqueueMapBuffer(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             MaybeBool<uint> blocking_map,
             ulong map_flags,
             nuint offset,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event,
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event,
             Ref<int> errcode_ret
         );
 
@@ -1886,8 +1870,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMapImage")]
         static abstract void* EnqueueMapImage(
-            CommandQueue* command_queue,
-            Mem* image,
+            CommandQueueHandle command_queue,
+            MemHandle image,
             uint blocking_map,
             ulong map_flags,
             nuint* origin,
@@ -1895,8 +1879,8 @@ public unsafe partial interface ICl
             nuint* image_row_pitch,
             nuint* image_slice_pitch,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event,
+            EventHandle* event_wait_list,
+            EventHandle* @event,
             int* errcode_ret
         );
 
@@ -1917,8 +1901,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMapImage")]
         static abstract Ptr EnqueueMapImage(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> image,
+            CommandQueueHandle command_queue,
+            MemHandle image,
             MaybeBool<uint> blocking_map,
             ulong map_flags,
             Ref<nuint> origin,
@@ -1926,8 +1910,8 @@ public unsafe partial interface ICl
             Ref<nuint> image_row_pitch,
             Ref<nuint> image_slice_pitch,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event,
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event,
             Ref<int> errcode_ret
         );
 
@@ -1948,7 +1932,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMarker")]
-        static abstract int EnqueueMarker(CommandQueue* command_queue, Event** @event);
+        static abstract int EnqueueMarker(CommandQueueHandle command_queue, EventHandle* @event);
 
         [NativeName("clEnqueueMarker")]
         [Obsolete]
@@ -1967,27 +1951,9 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMarker")]
-        static abstract int EnqueueMarker(Ref<CommandQueue> command_queue, Ref2D<Event> @event);
-
-        [NativeName("clEnqueueMarkerWithWaitList")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.2"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clEnqueueMarkerWithWaitList")]
-        static abstract int EnqueueMarkerWithWaitList(
-            CommandQueue* command_queue,
-            uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+        static abstract int EnqueueMarker(
+            CommandQueueHandle command_queue,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueMarkerWithWaitList")]
@@ -2005,170 +1971,191 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMarkerWithWaitList")]
         static abstract int EnqueueMarkerWithWaitList(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
+        );
+
+        [NativeName("clEnqueueMarkerWithWaitList")]
+        [SupportedApiProfile(
+            "opencl",
+            [
+                "CL_VERSION_1_2",
+                "CL_VERSION_2_0",
+                "CL_VERSION_2_1",
+                "CL_VERSION_2_2",
+                "CL_VERSION_3_0",
+                "CL_VERSION_3_1",
+            ],
+            MinVersion = "1.2"
+        )]
+        [NativeFunction("opencl", EntryPoint = "clEnqueueMarkerWithWaitList")]
+        static abstract int EnqueueMarkerWithWaitList(
+            CommandQueueHandle command_queue,
+            uint num_events_in_wait_list,
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueMemAdviseINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
         static abstract int EnqueueMemAdviseINTEL(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             void* ptr,
             nuint size,
             uint advice,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueMemAdviseINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
         static abstract int EnqueueMemAdviseINTEL(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             Ref ptr,
             nuint size,
             uint advice,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueMemcpyINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
         static abstract int EnqueueMemcpyINTEL(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint blocking,
             void* dst_ptr,
             void* src_ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueMemcpyINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
         static abstract int EnqueueMemcpyINTEL(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             MaybeBool<uint> blocking,
             Ref dst_ptr,
             Ref src_ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueMemFillINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
         static abstract int EnqueueMemFillINTEL(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             void* dst_ptr,
             void* pattern,
             nuint pattern_size,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueMemFillINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
         static abstract int EnqueueMemFillINTEL(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             Ref dst_ptr,
             Ref pattern,
             nuint pattern_size,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueMemsetINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
         static abstract int EnqueueMemsetINTEL(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             void* dst_ptr,
             int value,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueMemsetINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
         static abstract int EnqueueMemsetINTEL(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             Ref dst_ptr,
             int value,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueMigrateMemINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
         static abstract int EnqueueMigrateMemINTEL(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             void* ptr,
             nuint size,
             ulong flags,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueMigrateMemINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
         static abstract int EnqueueMigrateMemINTEL(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             Ref ptr,
             nuint size,
             ulong flags,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueMigrateMemObjectEXT")]
         [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
         static abstract int EnqueueMigrateMemObjectEXT(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_mem_objects,
-            Mem** mem_objects,
+            MemHandle* mem_objects,
             ulong flags,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueMigrateMemObjectEXT")]
         [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
         static abstract int EnqueueMigrateMemObjectEXT(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_mem_objects,
-            Ref2D<Mem> mem_objects,
+            Ref<MemHandle> mem_objects,
             ulong flags,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueMigrateMemObjects")]
@@ -2186,13 +2173,13 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjects")]
         static abstract int EnqueueMigrateMemObjects(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_mem_objects,
-            Mem** mem_objects,
+            MemHandle* mem_objects,
             ulong flags,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueMigrateMemObjects")]
@@ -2210,13 +2197,13 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjects")]
         static abstract int EnqueueMigrateMemObjects(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_mem_objects,
-            Ref2D<Mem> mem_objects,
+            Ref<MemHandle> mem_objects,
             ulong flags,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueNativeKernel")]
@@ -2236,16 +2223,16 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueNativeKernel")]
         static abstract int EnqueueNativeKernel(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             delegate* unmanaged<void*, void> user_func,
             void* args,
             nuint cb_args,
             uint num_mem_objects,
-            Mem** mem_list,
+            MemHandle* mem_list,
             void** args_mem_loc,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueNativeKernel")]
@@ -2265,16 +2252,16 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueNativeKernel")]
         static abstract int EnqueueNativeKernel(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             delegate* unmanaged<void*, void> user_func,
             Ref args,
             nuint cb_args,
             uint num_mem_objects,
-            Ref2D<Mem> mem_list,
+            Ref<MemHandle> mem_list,
             Ref2D args_mem_loc,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueNDRangeKernel")]
@@ -2294,15 +2281,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueNDRangeKernel")]
         static abstract int EnqueueNDRangeKernel(
-            CommandQueue* command_queue,
-            Kernel* kernel,
+            CommandQueueHandle command_queue,
+            KernelHandle kernel,
             uint work_dim,
             nuint* global_work_offset,
             nuint* global_work_size,
             nuint* local_work_size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueNDRangeKernel")]
@@ -2322,15 +2309,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueNDRangeKernel")]
         static abstract int EnqueueNDRangeKernel(
-            Ref<CommandQueue> command_queue,
-            Ref<Kernel> kernel,
+            CommandQueueHandle command_queue,
+            KernelHandle kernel,
             uint work_dim,
             Ref<nuint> global_work_offset,
             Ref<nuint> global_work_size,
             Ref<nuint> local_work_size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueReadBuffer")]
@@ -2350,15 +2337,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReadBuffer")]
         static abstract int EnqueueReadBuffer(
-            CommandQueue* command_queue,
-            Mem* buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             uint blocking_read,
             nuint offset,
             nuint size,
             void* ptr,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueReadBuffer")]
@@ -2378,15 +2365,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReadBuffer")]
         static abstract int EnqueueReadBuffer(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             MaybeBool<uint> blocking_read,
             nuint offset,
             nuint size,
             Ref ptr,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueReadBufferRect")]
@@ -2405,8 +2392,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReadBufferRect")]
         static abstract int EnqueueReadBufferRect(
-            CommandQueue* command_queue,
-            Mem* buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             uint blocking_read,
             nuint* buffer_origin,
             nuint* host_origin,
@@ -2417,8 +2404,8 @@ public unsafe partial interface ICl
             nuint host_slice_pitch,
             void* ptr,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueReadBufferRect")]
@@ -2437,8 +2424,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReadBufferRect")]
         static abstract int EnqueueReadBufferRect(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             MaybeBool<uint> blocking_read,
             Ref<nuint> buffer_origin,
             Ref<nuint> host_origin,
@@ -2449,38 +2436,38 @@ public unsafe partial interface ICl
             nuint host_slice_pitch,
             Ref ptr,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueReadHostPipeINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
         static abstract int EnqueueReadHostPipeINTEL(
-            CommandQueue* command_queue,
-            Program* program,
+            CommandQueueHandle command_queue,
+            ProgramHandle program,
             sbyte* pipe_symbol,
             uint blocking_read,
             void* ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueReadHostPipeINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
         static abstract int EnqueueReadHostPipeINTEL(
-            Ref<CommandQueue> command_queue,
-            Ref<Program> program,
+            CommandQueueHandle command_queue,
+            ProgramHandle program,
             Ref<sbyte> pipe_symbol,
             MaybeBool<uint> blocking_read,
             Ref ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueReadImage")]
@@ -2500,8 +2487,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReadImage")]
         static abstract int EnqueueReadImage(
-            CommandQueue* command_queue,
-            Mem* image,
+            CommandQueueHandle command_queue,
+            MemHandle image,
             uint blocking_read,
             nuint* origin,
             nuint* region,
@@ -2509,8 +2496,8 @@ public unsafe partial interface ICl
             nuint slice_pitch,
             void* ptr,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueReadImage")]
@@ -2530,8 +2517,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReadImage")]
         static abstract int EnqueueReadImage(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> image,
+            CommandQueueHandle command_queue,
+            MemHandle image,
             MaybeBool<uint> blocking_read,
             Ref<nuint> origin,
             Ref<nuint> region,
@@ -2539,8 +2526,8 @@ public unsafe partial interface ICl
             nuint slice_pitch,
             Ref ptr,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
@@ -2551,12 +2538,12 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
         static abstract int EnqueueReleaseExternalMemObjectsKHR(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_mem_objects,
-            Mem** mem_objects,
+            MemHandle* mem_objects,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
@@ -2567,62 +2554,62 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
         static abstract int EnqueueReleaseExternalMemObjectsKHR(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_mem_objects,
-            Ref2D<Mem> mem_objects,
+            Ref<MemHandle> mem_objects,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
         [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
         static abstract int EnqueueReleaseGrallocObjectsIMG(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_objects,
-            Mem** mem_objects,
+            MemHandle* mem_objects,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
         [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
         static abstract int EnqueueReleaseGrallocObjectsIMG(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_objects,
-            Ref2D<Mem> mem_objects,
+            Ref<MemHandle> mem_objects,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSignalSemaphoresKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
         static abstract int EnqueueSignalSemaphoresKHR(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_sema_objects,
             _cl_semaphore_khr** sema_objects,
             ulong* sema_payload_list,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSignalSemaphoresKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
         static abstract int EnqueueSignalSemaphoresKHR(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_sema_objects,
             Ref2D<_cl_semaphore_khr> sema_objects,
             Ref<ulong> sema_payload_list,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMFree")]
@@ -2639,14 +2626,14 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFree")]
         static abstract int EnqueueSvmFree(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            delegate* unmanaged<CommandQueue*, uint, void**, void*, void> pfn_free_func,
+            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMFree")]
@@ -2663,42 +2650,42 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFree")]
         static abstract int EnqueueSvmFree(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            delegate* unmanaged<CommandQueue*, uint, void**, void*, void> pfn_free_func,
+            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMFreeARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
         static abstract int EnqueueSvmFreeARM(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            delegate* unmanaged<CommandQueue*, uint, void**, void*, void> pfn_free_func,
+            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMFreeARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
         static abstract int EnqueueSvmFreeARM(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            delegate* unmanaged<CommandQueue*, uint, void**, void*, void> pfn_free_func,
+            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMMap")]
@@ -2715,14 +2702,14 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMap")]
         static abstract int EnqueueSvmMap(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint blocking_map,
             ulong flags,
             void* svm_ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMMap")]
@@ -2739,42 +2726,42 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMap")]
         static abstract int EnqueueSvmMap(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             MaybeBool<uint> blocking_map,
             ulong flags,
             Ref svm_ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMMapARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
         static abstract int EnqueueSvmMapARM(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint blocking_map,
             ulong flags,
             void* svm_ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMMapARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
         static abstract int EnqueueSvmMapARM(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             MaybeBool<uint> blocking_map,
             ulong flags,
             Ref svm_ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMMemcpy")]
@@ -2791,14 +2778,14 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpy")]
         static abstract int EnqueueSvmMemcpy(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint blocking_copy,
             void* dst_ptr,
             void* src_ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMMemcpy")]
@@ -2815,42 +2802,42 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpy")]
         static abstract int EnqueueSvmMemcpy(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             MaybeBool<uint> blocking_copy,
             Ref dst_ptr,
             Ref src_ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMMemcpyARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
         static abstract int EnqueueSvmMemcpyARM(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint blocking_copy,
             void* dst_ptr,
             void* src_ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMMemcpyARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
         static abstract int EnqueueSvmMemcpyARM(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             MaybeBool<uint> blocking_copy,
             Ref dst_ptr,
             Ref src_ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMMemFill")]
@@ -2867,14 +2854,14 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFill")]
         static abstract int EnqueueSvmMemFill(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             void* svm_ptr,
             void* pattern,
             nuint pattern_size,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMMemFill")]
@@ -2891,42 +2878,42 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFill")]
         static abstract int EnqueueSvmMemFill(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             Ref svm_ptr,
             Ref pattern,
             nuint pattern_size,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMMemFillARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
         static abstract int EnqueueSvmMemFillARM(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             void* svm_ptr,
             void* pattern,
             nuint pattern_size,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMMemFillARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
         static abstract int EnqueueSvmMemFillARM(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             Ref svm_ptr,
             Ref pattern,
             nuint pattern_size,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMMigrateMem")]
@@ -2937,14 +2924,14 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMigrateMem")]
         static abstract int EnqueueSvmMigrateMem(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
             nuint* sizes,
             ulong flags,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMMigrateMem")]
@@ -2955,14 +2942,14 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMigrateMem")]
         static abstract int EnqueueSvmMigrateMem(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
             Ref<nuint> sizes,
             ulong flags,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMUnmap")]
@@ -2979,11 +2966,11 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmap")]
         static abstract int EnqueueSvmUnmap(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             void* svm_ptr,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMUnmap")]
@@ -3000,33 +2987,33 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmap")]
         static abstract int EnqueueSvmUnmap(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             Ref svm_ptr,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueSVMUnmapARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
         static abstract int EnqueueSvmUnmapARM(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             void* svm_ptr,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueSVMUnmapARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
         static abstract int EnqueueSvmUnmapARM(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             Ref svm_ptr,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueTask")]
@@ -3047,11 +3034,11 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueTask")]
         static abstract int EnqueueTask(
-            CommandQueue* command_queue,
-            Kernel* kernel,
+            CommandQueueHandle command_queue,
+            KernelHandle kernel,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueTask")]
@@ -3072,11 +3059,11 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueTask")]
         static abstract int EnqueueTask(
-            Ref<CommandQueue> command_queue,
-            Ref<Kernel> kernel,
+            CommandQueueHandle command_queue,
+            KernelHandle kernel,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueUnmapMemObject")]
@@ -3096,12 +3083,12 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueUnmapMemObject")]
         static abstract int EnqueueUnmapMemObject(
-            CommandQueue* command_queue,
-            Mem* memobj,
+            CommandQueueHandle command_queue,
+            MemHandle memobj,
             void* mapped_ptr,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueUnmapMemObject")]
@@ -3121,12 +3108,12 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueUnmapMemObject")]
         static abstract int EnqueueUnmapMemObject(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> memobj,
+            CommandQueueHandle command_queue,
+            MemHandle memobj,
             Ref mapped_ptr,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueWaitForEvents")]
@@ -3147,9 +3134,9 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWaitForEvents")]
         static abstract int EnqueueWaitForEvents(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_events,
-            Event** event_list
+            EventHandle* event_list
         );
 
         [NativeName("clEnqueueWaitForEvents")]
@@ -3170,35 +3157,35 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWaitForEvents")]
         static abstract int EnqueueWaitForEvents(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_events,
-            Ref2D<Event> event_list
+            Ref<EventHandle> event_list
         );
 
         [NativeName("clEnqueueWaitSemaphoresKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
         static abstract int EnqueueWaitSemaphoresKHR(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint num_sema_objects,
             _cl_semaphore_khr** sema_objects,
             ulong* sema_payload_list,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueWaitSemaphoresKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
         static abstract int EnqueueWaitSemaphoresKHR(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint num_sema_objects,
             Ref2D<_cl_semaphore_khr> sema_objects,
             Ref<ulong> sema_payload_list,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueWriteBuffer")]
@@ -3218,15 +3205,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWriteBuffer")]
         static abstract int EnqueueWriteBuffer(
-            CommandQueue* command_queue,
-            Mem* buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             uint blocking_write,
             nuint offset,
             nuint size,
             void* ptr,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueWriteBuffer")]
@@ -3246,15 +3233,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWriteBuffer")]
         static abstract int EnqueueWriteBuffer(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             MaybeBool<uint> blocking_write,
             nuint offset,
             nuint size,
             Ref ptr,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueWriteBufferRect")]
@@ -3273,8 +3260,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWriteBufferRect")]
         static abstract int EnqueueWriteBufferRect(
-            CommandQueue* command_queue,
-            Mem* buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             uint blocking_write,
             nuint* buffer_origin,
             nuint* host_origin,
@@ -3285,8 +3272,8 @@ public unsafe partial interface ICl
             nuint host_slice_pitch,
             void* ptr,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueWriteBufferRect")]
@@ -3305,8 +3292,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWriteBufferRect")]
         static abstract int EnqueueWriteBufferRect(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> buffer,
+            CommandQueueHandle command_queue,
+            MemHandle buffer,
             MaybeBool<uint> blocking_write,
             Ref<nuint> buffer_origin,
             Ref<nuint> host_origin,
@@ -3317,38 +3304,38 @@ public unsafe partial interface ICl
             nuint host_slice_pitch,
             Ref ptr,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueWriteHostPipeINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
         static abstract int EnqueueWriteHostPipeINTEL(
-            CommandQueue* command_queue,
-            Program* program,
+            CommandQueueHandle command_queue,
+            ProgramHandle program,
             sbyte* pipe_symbol,
             uint blocking_write,
             void* ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueWriteHostPipeINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
         static abstract int EnqueueWriteHostPipeINTEL(
-            Ref<CommandQueue> command_queue,
-            Ref<Program> program,
+            CommandQueueHandle command_queue,
+            ProgramHandle program,
             Ref<sbyte> pipe_symbol,
             MaybeBool<uint> blocking_write,
             Ref ptr,
             nuint size,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clEnqueueWriteImage")]
@@ -3368,8 +3355,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWriteImage")]
         static abstract int EnqueueWriteImage(
-            CommandQueue* command_queue,
-            Mem* image,
+            CommandQueueHandle command_queue,
+            MemHandle image,
             uint blocking_write,
             nuint* origin,
             nuint* region,
@@ -3377,8 +3364,8 @@ public unsafe partial interface ICl
             nuint input_slice_pitch,
             void* ptr,
             uint num_events_in_wait_list,
-            Event** event_wait_list,
-            Event** @event
+            EventHandle* event_wait_list,
+            EventHandle* @event
         );
 
         [NativeName("clEnqueueWriteImage")]
@@ -3398,8 +3385,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clEnqueueWriteImage")]
         static abstract int EnqueueWriteImage(
-            Ref<CommandQueue> command_queue,
-            Ref<Mem> image,
+            CommandQueueHandle command_queue,
+            MemHandle image,
             MaybeBool<uint> blocking_write,
             Ref<nuint> origin,
             Ref<nuint> region,
@@ -3407,8 +3394,8 @@ public unsafe partial interface ICl
             nuint input_slice_pitch,
             Ref ptr,
             uint num_events_in_wait_list,
-            Ref2D<Event> event_wait_list,
-            Ref2D<Event> @event
+            Ref<EventHandle> event_wait_list,
+            Ref<EventHandle> @event
         );
 
         [NativeName("clFinish")]
@@ -3427,25 +3414,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clFinish")]
-        static abstract int Finish(CommandQueue* command_queue);
-
-        [NativeName("clFinish")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clFinish")]
-        static abstract int Finish(Ref<CommandQueue> command_queue);
+        static abstract int Finish(CommandQueueHandle command_queue);
 
         [NativeName("clFlush")]
         [SupportedApiProfile(
@@ -3463,25 +3432,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clFlush")]
-        static abstract int Flush(CommandQueue* command_queue);
-
-        [NativeName("clFlush")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clFlush")]
-        static abstract int Flush(Ref<CommandQueue> command_queue);
+        static abstract int Flush(CommandQueueHandle command_queue);
 
         [NativeName("clGetAcceleratorInfoINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
@@ -3522,7 +3473,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetCommandQueueInfo")]
         static abstract int GetCommandQueueInfo(
-            CommandQueue* command_queue,
+            CommandQueueHandle command_queue,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -3546,7 +3497,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetCommandQueueInfo")]
         static abstract int GetCommandQueueInfo(
-            Ref<CommandQueue> command_queue,
+            CommandQueueHandle command_queue,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -3570,7 +3521,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetContextInfo")]
         static abstract int GetContextInfo(
-            Context* context,
+            ContextHandle context,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -3594,7 +3545,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetContextInfo")]
         static abstract int GetContextInfo(
-            Ref<Context> context,
+            ContextHandle context,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -3609,7 +3560,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetDeviceAndHostTimer")]
         static abstract int GetDeviceAndHostTimer(
-            DeviceId* device,
+            DeviceIdHandle device,
             ulong* device_timestamp,
             ulong* host_timestamp
         );
@@ -3622,7 +3573,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetDeviceAndHostTimer")]
         static abstract int GetDeviceAndHostTimer(
-            Ref<DeviceId> device,
+            DeviceIdHandle device,
             Ref<ulong> device_timestamp,
             Ref<ulong> host_timestamp
         );
@@ -3644,10 +3595,10 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetDeviceIDs")]
         static abstract int GetDeviceIDs(
-            PlatformId* platform,
+            PlatformIdHandle platform,
             ulong device_type,
             uint num_entries,
-            DeviceId** devices,
+            DeviceIdHandle* devices,
             uint* num_devices
         );
 
@@ -3668,10 +3619,10 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetDeviceIDs")]
         static abstract int GetDeviceIDs(
-            Ref<PlatformId> platform,
+            PlatformIdHandle platform,
             ulong device_type,
             uint num_entries,
-            Ref2D<DeviceId> devices,
+            Ref<DeviceIdHandle> devices,
             Ref<uint> num_devices
         );
 
@@ -3679,7 +3630,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
         [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
         static abstract int GetDeviceImageInfoQCOM(
-            DeviceId* device,
+            DeviceIdHandle device,
             nuint image_width,
             nuint image_height,
             ImageFormat* image_format,
@@ -3693,7 +3644,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
         [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
         static abstract int GetDeviceImageInfoQCOM(
-            Ref<DeviceId> device,
+            DeviceIdHandle device,
             nuint image_width,
             nuint image_height,
             Ref<ImageFormat> image_format,
@@ -3720,7 +3671,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetDeviceInfo")]
         static abstract int GetDeviceInfo(
-            DeviceId* device,
+            DeviceIdHandle device,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -3744,7 +3695,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetDeviceInfo")]
         static abstract int GetDeviceInfo(
-            Ref<DeviceId> device,
+            DeviceIdHandle device,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -3768,7 +3719,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetEventInfo")]
         static abstract int GetEventInfo(
-            Event* @event,
+            EventHandle @event,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -3792,7 +3743,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetEventInfo")]
         static abstract int GetEventInfo(
-            Ref<Event> @event,
+            EventHandle @event,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -3816,7 +3767,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetEventProfilingInfo")]
         static abstract int GetEventProfilingInfo(
-            Event* @event,
+            EventHandle @event,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -3840,7 +3791,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetEventProfilingInfo")]
         static abstract int GetEventProfilingInfo(
-            Ref<Event> @event,
+            EventHandle @event,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -3900,7 +3851,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetExtensionFunctionAddressForPlatform")]
         static abstract void* GetExtensionFunctionAddressForPlatform(
-            PlatformId* platform,
+            PlatformIdHandle platform,
             sbyte* func_name
         );
 
@@ -3919,7 +3870,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetExtensionFunctionAddressForPlatform")]
         static abstract Ptr GetExtensionFunctionAddressForPlatform(
-            Ref<PlatformId> platform,
+            PlatformIdHandle platform,
             Ref<sbyte> func_name
         );
 
@@ -3930,7 +3881,7 @@ public unsafe partial interface ICl
             MinVersion = "2.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clGetHostTimer")]
-        static abstract int GetHostTimer(DeviceId* device, ulong* host_timestamp);
+        static abstract int GetHostTimer(DeviceIdHandle device, ulong* host_timestamp);
 
         [NativeName("clGetHostTimer")]
         [SupportedApiProfile(
@@ -3939,7 +3890,7 @@ public unsafe partial interface ICl
             MinVersion = "2.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clGetHostTimer")]
-        static abstract int GetHostTimer(Ref<DeviceId> device, Ref<ulong> host_timestamp);
+        static abstract int GetHostTimer(DeviceIdHandle device, Ref<ulong> host_timestamp);
 
         [NativeName("clGetICDLoaderInfoOCLICD")]
         [SupportedApiProfile("opencl", ["cl_loader_info"])]
@@ -3978,7 +3929,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetImageInfo")]
         static abstract int GetImageInfo(
-            Mem* image,
+            MemHandle image,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4002,7 +3953,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetImageInfo")]
         static abstract int GetImageInfo(
-            Ref<Mem> image,
+            MemHandle image,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4017,7 +3968,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
         static abstract int GetImageRequirementsInfoEXT(
-            Context* context,
+            ContextHandle context,
             ulong* properties,
             ulong flags,
             ImageFormat* image_format,
@@ -4036,7 +3987,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
         static abstract int GetImageRequirementsInfoEXT(
-            Ref<Context> context,
+            ContextHandle context,
             Ref<ulong> properties,
             ulong flags,
             Ref<ImageFormat> image_format,
@@ -4062,7 +4013,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetKernelArgInfo")]
         static abstract int GetKernelArgInfo(
-            Kernel* kernel,
+            KernelHandle kernel,
             uint arg_indx,
             uint param_name,
             nuint param_value_size,
@@ -4085,7 +4036,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetKernelArgInfo")]
         static abstract int GetKernelArgInfo(
-            Ref<Kernel> kernel,
+            KernelHandle kernel,
             uint arg_indx,
             uint param_name,
             nuint param_value_size,
@@ -4110,7 +4061,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetKernelInfo")]
         static abstract int GetKernelInfo(
-            Kernel* kernel,
+            KernelHandle kernel,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4134,7 +4085,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetKernelInfo")]
         static abstract int GetKernelInfo(
-            Ref<Kernel> kernel,
+            KernelHandle kernel,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4149,8 +4100,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfo")]
         static abstract int GetKernelSubGroupInfo(
-            Kernel* kernel,
-            DeviceId* device,
+            KernelHandle kernel,
+            DeviceIdHandle device,
             uint param_name,
             nuint input_value_size,
             void* input_value,
@@ -4167,8 +4118,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfo")]
         static abstract int GetKernelSubGroupInfo(
-            Ref<Kernel> kernel,
-            Ref<DeviceId> device,
+            KernelHandle kernel,
+            DeviceIdHandle device,
             uint param_name,
             nuint input_value_size,
             Ref input_value,
@@ -4182,8 +4133,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         static abstract int GetKernelSubGroupInfoKHR(
-            Kernel* in_kernel,
-            DeviceId* in_device,
+            KernelHandle in_kernel,
+            DeviceIdHandle in_device,
             uint param_name,
             nuint input_value_size,
             void* input_value,
@@ -4197,8 +4148,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         static abstract int GetKernelSubGroupInfoKHR(
-            Ref<Kernel> in_kernel,
-            Ref<DeviceId> in_device,
+            KernelHandle in_kernel,
+            DeviceIdHandle in_device,
             uint param_name,
             nuint input_value_size,
             Ref input_value,
@@ -4211,8 +4162,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["CL_VERSION_3_1"], MinVersion = "3.1")]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSize")]
         static abstract int GetKernelSuggestedLocalWorkSize(
-            CommandQueue* command_queue,
-            Kernel* kernel,
+            CommandQueueHandle command_queue,
+            KernelHandle kernel,
             uint work_dim,
             nuint* global_work_offset,
             nuint* global_work_size,
@@ -4223,8 +4174,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["CL_VERSION_3_1"], MinVersion = "3.1")]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSize")]
         static abstract int GetKernelSuggestedLocalWorkSize(
-            Ref<CommandQueue> command_queue,
-            Ref<Kernel> kernel,
+            CommandQueueHandle command_queue,
+            KernelHandle kernel,
             uint work_dim,
             Ref<nuint> global_work_offset,
             Ref<nuint> global_work_size,
@@ -4235,8 +4186,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
         static abstract int GetKernelSuggestedLocalWorkSizeKHR(
-            CommandQueue* command_queue,
-            Kernel* kernel,
+            CommandQueueHandle command_queue,
+            KernelHandle kernel,
             uint work_dim,
             nuint* global_work_offset,
             nuint* global_work_size,
@@ -4247,8 +4198,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
         static abstract int GetKernelSuggestedLocalWorkSizeKHR(
-            Ref<CommandQueue> command_queue,
-            Ref<Kernel> kernel,
+            CommandQueueHandle command_queue,
+            KernelHandle kernel,
             uint work_dim,
             Ref<nuint> global_work_offset,
             Ref<nuint> global_work_size,
@@ -4272,8 +4223,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetKernelWorkGroupInfo")]
         static abstract int GetKernelWorkGroupInfo(
-            Kernel* kernel,
-            DeviceId* device,
+            KernelHandle kernel,
+            DeviceIdHandle device,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4297,8 +4248,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetKernelWorkGroupInfo")]
         static abstract int GetKernelWorkGroupInfo(
-            Ref<Kernel> kernel,
-            Ref<DeviceId> device,
+            KernelHandle kernel,
+            DeviceIdHandle device,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4309,7 +4260,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
         static abstract int GetMemAllocInfoINTEL(
-            Context* context,
+            ContextHandle context,
             void* ptr,
             uint param_name,
             nuint param_value_size,
@@ -4321,7 +4272,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
         static abstract int GetMemAllocInfoINTEL(
-            Ref<Context> context,
+            ContextHandle context,
             Ref ptr,
             uint param_name,
             nuint param_value_size,
@@ -4346,7 +4297,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetMemObjectInfo")]
         static abstract int GetMemObjectInfo(
-            Mem* memobj,
+            MemHandle memobj,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4370,7 +4321,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetMemObjectInfo")]
         static abstract int GetMemObjectInfo(
-            Ref<Mem> memobj,
+            MemHandle memobj,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4391,7 +4342,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetPipeInfo")]
         static abstract int GetPipeInfo(
-            Mem* pipe,
+            MemHandle pipe,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4412,7 +4363,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetPipeInfo")]
         static abstract int GetPipeInfo(
-            Ref<Mem> pipe,
+            MemHandle pipe,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4437,7 +4388,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clGetPlatformIDs")]
         static abstract int GetPlatformIDs(
             uint num_entries,
-            PlatformId** platforms,
+            PlatformIdHandle* platforms,
             uint* num_platforms
         );
 
@@ -4459,7 +4410,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clGetPlatformIDs")]
         static abstract int GetPlatformIDs(
             uint num_entries,
-            Ref2D<PlatformId> platforms,
+            Ref<PlatformIdHandle> platforms,
             Ref<uint> num_platforms
         );
 
@@ -4480,7 +4431,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetPlatformInfo")]
         static abstract int GetPlatformInfo(
-            PlatformId* platform,
+            PlatformIdHandle platform,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4504,7 +4455,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetPlatformInfo")]
         static abstract int GetPlatformInfo(
-            Ref<PlatformId> platform,
+            PlatformIdHandle platform,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4528,8 +4479,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetProgramBuildInfo")]
         static abstract int GetProgramBuildInfo(
-            Program* program,
-            DeviceId* device,
+            ProgramHandle program,
+            DeviceIdHandle device,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4553,8 +4504,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetProgramBuildInfo")]
         static abstract int GetProgramBuildInfo(
-            Ref<Program> program,
-            Ref<DeviceId> device,
+            ProgramHandle program,
+            DeviceIdHandle device,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4578,7 +4529,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetProgramInfo")]
         static abstract int GetProgramInfo(
-            Program* program,
+            ProgramHandle program,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4602,7 +4553,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetProgramInfo")]
         static abstract int GetProgramInfo(
-            Ref<Program> program,
+            ProgramHandle program,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4626,7 +4577,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetSamplerInfo")]
         static abstract int GetSamplerInfo(
-            Sampler* sampler,
+            SamplerHandle sampler,
             uint param_name,
             nuint param_value_size,
             void* param_value,
@@ -4650,7 +4601,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetSamplerInfo")]
         static abstract int GetSamplerInfo(
-            Ref<Sampler> sampler,
+            SamplerHandle sampler,
             uint param_name,
             nuint param_value_size,
             Ref param_value,
@@ -4666,7 +4617,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
         static abstract int GetSemaphoreHandleForTypeKHR(
             _cl_semaphore_khr* sema_object,
-            DeviceId* device,
+            DeviceIdHandle device,
             uint handle_type,
             nuint handle_size,
             void* handle_ptr,
@@ -4682,7 +4633,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
         static abstract int GetSemaphoreHandleForTypeKHR(
             Ref<_cl_semaphore_khr> sema_object,
-            Ref<DeviceId> device,
+            DeviceIdHandle device,
             uint handle_type,
             nuint handle_size,
             Ref handle_ptr,
@@ -4728,7 +4679,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetSupportedImageFormats")]
         static abstract int GetSupportedImageFormats(
-            Context* context,
+            ContextHandle context,
             ulong flags,
             uint image_type,
             uint num_entries,
@@ -4753,7 +4704,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clGetSupportedImageFormats")]
         static abstract int GetSupportedImageFormats(
-            Ref<Context> context,
+            ContextHandle context,
             ulong flags,
             uint image_type,
             uint num_entries,
@@ -4765,7 +4716,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
         static abstract void* HostMemAllocINTEL(
-            Context* context,
+            ContextHandle context,
             ulong* properties,
             nuint size,
             uint alignment,
@@ -4776,7 +4727,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
         static abstract Ptr HostMemAllocINTEL(
-            Ref<Context> context,
+            ContextHandle context,
             Ref<ulong> properties,
             nuint size,
             uint alignment,
@@ -4787,7 +4738,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_icd"])]
         [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
         static abstract void* IcdGetFunctionAddressForPlatformKHR(
-            PlatformId* platform,
+            PlatformIdHandle platform,
             sbyte* func_name
         );
 
@@ -4795,7 +4746,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_icd"])]
         [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
         static abstract Ptr IcdGetFunctionAddressForPlatformKHR(
-            Ref<PlatformId> platform,
+            PlatformIdHandle platform,
             Ref<sbyte> func_name
         );
 
@@ -4804,7 +4755,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
         static abstract int IcdGetPlatformIDsKHR(
             uint num_entries,
-            PlatformId** platforms,
+            PlatformIdHandle* platforms,
             uint* num_platforms
         );
 
@@ -4813,7 +4764,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
         static abstract int IcdGetPlatformIDsKHR(
             uint num_entries,
-            Ref2D<PlatformId> platforms,
+            Ref<PlatformIdHandle> platforms,
             Ref<uint> num_platforms
         );
 
@@ -4821,7 +4772,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_icd"])]
         [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
         static abstract int IcdSetPlatformDispatchDataKHR(
-            PlatformId* platform,
+            PlatformIdHandle platform,
             void* dispatch_data
         );
 
@@ -4829,15 +4780,15 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_khr_icd"])]
         [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
         static abstract int IcdSetPlatformDispatchDataKHR(
-            Ref<PlatformId> platform,
+            PlatformIdHandle platform,
             Ref dispatch_data
         );
 
         [NativeName("clImportMemoryARM")]
         [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
         [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
-        static abstract Mem* ImportMemoryARM(
-            Context* context,
+        static abstract MemHandle ImportMemoryARM(
+            ContextHandle context,
             ulong flags,
             nint* properties,
             void* memory,
@@ -4848,8 +4799,8 @@ public unsafe partial interface ICl
         [NativeName("clImportMemoryARM")]
         [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
         [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
-        static abstract Ptr<Mem> ImportMemoryARM(
-            Ref<Context> context,
+        static abstract MemHandle ImportMemoryARM(
+            ContextHandle context,
             ulong flags,
             Ref<nint> properties,
             Ref memory,
@@ -4871,14 +4822,14 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clLinkProgram")]
-        static abstract Program* LinkProgram(
-            Context* context,
+        static abstract ProgramHandle LinkProgram(
+            ContextHandle context,
             uint num_devices,
-            DeviceId** device_list,
+            DeviceIdHandle* device_list,
             sbyte* options,
             uint num_input_programs,
-            Program** input_programs,
-            delegate* unmanaged<Program*, void*, void> pfn_notify,
+            ProgramHandle* input_programs,
+            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
             void* user_data,
             int* errcode_ret
         );
@@ -4897,14 +4848,14 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clLinkProgram")]
-        static abstract Ptr<Program> LinkProgram(
-            Ref<Context> context,
+        static abstract ProgramHandle LinkProgram(
+            ContextHandle context,
             uint num_devices,
-            Ref2D<DeviceId> device_list,
+            Ref<DeviceIdHandle> device_list,
             Ref<sbyte> options,
             uint num_input_programs,
-            Ref2D<Program> input_programs,
-            delegate* unmanaged<Program*, void*, void> pfn_notify,
+            Ref<ProgramHandle> input_programs,
+            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         );
@@ -4972,22 +4923,22 @@ public unsafe partial interface ICl
         [NativeName("clMemBlockingFreeINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
-        static abstract int MemBlockingFreeINTEL(Context* context, void* ptr);
+        static abstract int MemBlockingFreeINTEL(ContextHandle context, void* ptr);
 
         [NativeName("clMemBlockingFreeINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
-        static abstract int MemBlockingFreeINTEL(Ref<Context> context, Ref ptr);
+        static abstract int MemBlockingFreeINTEL(ContextHandle context, Ref ptr);
 
         [NativeName("clMemFreeINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
-        static abstract int MemFreeINTEL(Context* context, void* ptr);
+        static abstract int MemFreeINTEL(ContextHandle context, void* ptr);
 
         [NativeName("clMemFreeINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
-        static abstract int MemFreeINTEL(Ref<Context> context, Ref ptr);
+        static abstract int MemFreeINTEL(ContextHandle context, Ref ptr);
 
         [NativeName("clReImportSemaphoreSyncFdKHR")]
         [SupportedApiProfile(
@@ -5041,25 +4992,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clReleaseCommandQueue")]
-        static abstract int ReleaseCommandQueue(CommandQueue* command_queue);
-
-        [NativeName("clReleaseCommandQueue")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clReleaseCommandQueue")]
-        static abstract int ReleaseCommandQueue(Ref<CommandQueue> command_queue);
+        static abstract int ReleaseCommandQueue(CommandQueueHandle command_queue);
 
         [NativeName("clReleaseContext")]
         [SupportedApiProfile(
@@ -5077,25 +5010,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
-        static abstract int ReleaseContext(Context* context);
-
-        [NativeName("clReleaseContext")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
-        static abstract int ReleaseContext(Ref<Context> context);
+        static abstract int ReleaseContext(ContextHandle context);
 
         [NativeName("clReleaseDevice")]
         [SupportedApiProfile(
@@ -5111,33 +5026,12 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clReleaseDevice")]
-        static abstract int ReleaseDevice(DeviceId* device);
-
-        [NativeName("clReleaseDevice")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.2"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clReleaseDevice")]
-        static abstract int ReleaseDevice(Ref<DeviceId> device);
+        static abstract int ReleaseDevice(DeviceIdHandle device);
 
         [NativeName("clReleaseDeviceEXT")]
         [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
         [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
-        static abstract int ReleaseDeviceEXT(DeviceId* device);
-
-        [NativeName("clReleaseDeviceEXT")]
-        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
-        [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
-        static abstract int ReleaseDeviceEXT(Ref<DeviceId> device);
+        static abstract int ReleaseDeviceEXT(DeviceIdHandle device);
 
         [NativeName("clReleaseEvent")]
         [SupportedApiProfile(
@@ -5155,25 +5049,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clReleaseEvent")]
-        static abstract int ReleaseEvent(Event* @event);
-
-        [NativeName("clReleaseEvent")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clReleaseEvent")]
-        static abstract int ReleaseEvent(Ref<Event> @event);
+        static abstract int ReleaseEvent(EventHandle @event);
 
         [NativeName("clReleaseKernel")]
         [SupportedApiProfile(
@@ -5191,25 +5067,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clReleaseKernel")]
-        static abstract int ReleaseKernel(Kernel* kernel);
-
-        [NativeName("clReleaseKernel")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clReleaseKernel")]
-        static abstract int ReleaseKernel(Ref<Kernel> kernel);
+        static abstract int ReleaseKernel(KernelHandle kernel);
 
         [NativeName("clReleaseMemObject")]
         [SupportedApiProfile(
@@ -5227,25 +5085,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clReleaseMemObject")]
-        static abstract int ReleaseMemObject(Mem* memobj);
-
-        [NativeName("clReleaseMemObject")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clReleaseMemObject")]
-        static abstract int ReleaseMemObject(Ref<Mem> memobj);
+        static abstract int ReleaseMemObject(MemHandle memobj);
 
         [NativeName("clReleaseProgram")]
         [SupportedApiProfile(
@@ -5263,25 +5103,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clReleaseProgram")]
-        static abstract int ReleaseProgram(Program* program);
-
-        [NativeName("clReleaseProgram")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clReleaseProgram")]
-        static abstract int ReleaseProgram(Ref<Program> program);
+        static abstract int ReleaseProgram(ProgramHandle program);
 
         [NativeName("clReleaseSampler")]
         [SupportedApiProfile(
@@ -5299,25 +5121,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clReleaseSampler")]
-        static abstract int ReleaseSampler(Sampler* sampler);
-
-        [NativeName("clReleaseSampler")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clReleaseSampler")]
-        static abstract int ReleaseSampler(Ref<Sampler> sampler);
+        static abstract int ReleaseSampler(SamplerHandle sampler);
 
         [NativeName("clReleaseSemaphoreKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
@@ -5355,25 +5159,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clRetainCommandQueue")]
-        static abstract int RetainCommandQueue(CommandQueue* command_queue);
-
-        [NativeName("clRetainCommandQueue")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clRetainCommandQueue")]
-        static abstract int RetainCommandQueue(Ref<CommandQueue> command_queue);
+        static abstract int RetainCommandQueue(CommandQueueHandle command_queue);
 
         [NativeName("clRetainContext")]
         [SupportedApiProfile(
@@ -5391,25 +5177,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clRetainContext")]
-        static abstract int RetainContext(Context* context);
-
-        [NativeName("clRetainContext")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clRetainContext")]
-        static abstract int RetainContext(Ref<Context> context);
+        static abstract int RetainContext(ContextHandle context);
 
         [NativeName("clRetainDevice")]
         [SupportedApiProfile(
@@ -5425,33 +5193,12 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clRetainDevice")]
-        static abstract int RetainDevice(DeviceId* device);
-
-        [NativeName("clRetainDevice")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.2"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clRetainDevice")]
-        static abstract int RetainDevice(Ref<DeviceId> device);
+        static abstract int RetainDevice(DeviceIdHandle device);
 
         [NativeName("clRetainDeviceEXT")]
         [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
         [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
-        static abstract int RetainDeviceEXT(DeviceId* device);
-
-        [NativeName("clRetainDeviceEXT")]
-        [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
-        [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
-        static abstract int RetainDeviceEXT(Ref<DeviceId> device);
+        static abstract int RetainDeviceEXT(DeviceIdHandle device);
 
         [NativeName("clRetainEvent")]
         [SupportedApiProfile(
@@ -5469,25 +5216,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clRetainEvent")]
-        static abstract int RetainEvent(Event* @event);
-
-        [NativeName("clRetainEvent")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clRetainEvent")]
-        static abstract int RetainEvent(Ref<Event> @event);
+        static abstract int RetainEvent(EventHandle @event);
 
         [NativeName("clRetainKernel")]
         [SupportedApiProfile(
@@ -5505,25 +5234,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clRetainKernel")]
-        static abstract int RetainKernel(Kernel* kernel);
-
-        [NativeName("clRetainKernel")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clRetainKernel")]
-        static abstract int RetainKernel(Ref<Kernel> kernel);
+        static abstract int RetainKernel(KernelHandle kernel);
 
         [NativeName("clRetainMemObject")]
         [SupportedApiProfile(
@@ -5541,25 +5252,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clRetainMemObject")]
-        static abstract int RetainMemObject(Mem* memobj);
-
-        [NativeName("clRetainMemObject")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clRetainMemObject")]
-        static abstract int RetainMemObject(Ref<Mem> memobj);
+        static abstract int RetainMemObject(MemHandle memobj);
 
         [NativeName("clRetainProgram")]
         [SupportedApiProfile(
@@ -5577,25 +5270,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clRetainProgram")]
-        static abstract int RetainProgram(Program* program);
-
-        [NativeName("clRetainProgram")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clRetainProgram")]
-        static abstract int RetainProgram(Ref<Program> program);
+        static abstract int RetainProgram(ProgramHandle program);
 
         [NativeName("clRetainSampler")]
         [SupportedApiProfile(
@@ -5613,25 +5288,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clRetainSampler")]
-        static abstract int RetainSampler(Sampler* sampler);
-
-        [NativeName("clRetainSampler")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_0",
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clRetainSampler")]
-        static abstract int RetainSampler(Ref<Sampler> sampler);
+        static abstract int RetainSampler(SamplerHandle sampler);
 
         [NativeName("clRetainSemaphoreKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
@@ -5646,19 +5303,17 @@ public unsafe partial interface ICl
         [NativeName("clSetContentSizeBufferPoCL")]
         [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
         [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
-        static abstract int SetContentSizeBufferPOCL(Mem* buffer, Mem* content_size_buffer);
-
-        [NativeName("clSetContentSizeBufferPoCL")]
-        [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
-        [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
-        static abstract int SetContentSizeBufferPOCL(Ref<Mem> buffer, Ref<Mem> content_size_buffer);
+        static abstract int SetContentSizeBufferPOCL(
+            MemHandle buffer,
+            MemHandle content_size_buffer
+        );
 
         [NativeName("clSetContextDestructorCallback")]
         [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
         [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
         static abstract int SetContextDestructorCallback(
-            Context* context,
-            delegate* unmanaged<Context*, void*, void> pfn_notify,
+            ContextHandle context,
+            delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
             void* user_data
         );
 
@@ -5666,8 +5321,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
         [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
         static abstract int SetContextDestructorCallback(
-            Ref<Context> context,
-            delegate* unmanaged<Context*, void*, void> pfn_notify,
+            ContextHandle context,
+            delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
             Ref user_data
         );
 
@@ -5679,22 +5334,9 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetDefaultDeviceCommandQueue")]
         static abstract int SetDefaultDeviceCommandQueue(
-            Context* context,
-            DeviceId* device,
-            CommandQueue* command_queue
-        );
-
-        [NativeName("clSetDefaultDeviceCommandQueue")]
-        [SupportedApiProfile(
-            "opencl",
-            ["CL_VERSION_2_1", "CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
-            MinVersion = "2.1"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clSetDefaultDeviceCommandQueue")]
-        static abstract int SetDefaultDeviceCommandQueue(
-            Ref<Context> context,
-            Ref<DeviceId> device,
-            Ref<CommandQueue> command_queue
+            ContextHandle context,
+            DeviceIdHandle device,
+            CommandQueueHandle command_queue
         );
 
         [NativeName("clSetEventCallback")]
@@ -5713,9 +5355,9 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetEventCallback")]
         static abstract int SetEventCallback(
-            Event* @event,
+            EventHandle @event,
             int command_exec_callback_type,
-            delegate* unmanaged<Event*, int, void*, void> pfn_notify,
+            delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
             void* user_data
         );
 
@@ -5735,9 +5377,9 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetEventCallback")]
         static abstract int SetEventCallback(
-            Ref<Event> @event,
+            EventHandle @event,
             int command_exec_callback_type,
-            delegate* unmanaged<Event*, int, void*, void> pfn_notify,
+            delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
             Ref user_data
         );
 
@@ -5758,7 +5400,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetKernelArg")]
         static abstract int SetKernelArg(
-            Kernel* kernel,
+            KernelHandle kernel,
             uint arg_index,
             nuint arg_size,
             void* arg_value
@@ -5781,7 +5423,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetKernelArg")]
         static abstract int SetKernelArg(
-            Ref<Kernel> kernel,
+            KernelHandle kernel,
             uint arg_index,
             nuint arg_size,
             Ref arg_value
@@ -5795,20 +5437,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
         static abstract int SetKernelArgDevicePointerEXT(
-            Kernel* kernel,
-            uint arg_index,
-            ulong arg_value
-        );
-
-        [NativeName("clSetKernelArgDevicePointerEXT")]
-        [SupportedApiProfile(
-            "opencl",
-            ["cl_ext_buffer_device_address"],
-            ImpliesSets = ["CL_VERSION_3_0"]
-        )]
-        [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
-        static abstract int SetKernelArgDevicePointerEXT(
-            Ref<Kernel> kernel,
+            KernelHandle kernel,
             uint arg_index,
             ulong arg_value
         );
@@ -5817,7 +5446,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
         static abstract int SetKernelArgMemPointerINTEL(
-            Kernel* kernel,
+            KernelHandle kernel,
             uint arg_index,
             void* arg_value
         );
@@ -5826,25 +5455,10 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
         static abstract int SetKernelArgMemPointerINTEL(
-            Ref<Kernel> kernel,
+            KernelHandle kernel,
             uint arg_index,
             Ref arg_value
         );
-
-        [NativeName("clSetKernelArgSVMPointer")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "2.0"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointer")]
-        static abstract int SetKernelArgSvmPointer(Kernel* kernel, uint arg_index, void* arg_value);
 
         [NativeName("clSetKernelArgSVMPointer")]
         [SupportedApiProfile(
@@ -5860,7 +5474,26 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointer")]
         static abstract int SetKernelArgSvmPointer(
-            Ref<Kernel> kernel,
+            KernelHandle kernel,
+            uint arg_index,
+            void* arg_value
+        );
+
+        [NativeName("clSetKernelArgSVMPointer")]
+        [SupportedApiProfile(
+            "opencl",
+            [
+                "CL_VERSION_2_0",
+                "CL_VERSION_2_1",
+                "CL_VERSION_2_2",
+                "CL_VERSION_3_0",
+                "CL_VERSION_3_1",
+            ],
+            MinVersion = "2.0"
+        )]
+        [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointer")]
+        static abstract int SetKernelArgSvmPointer(
+            KernelHandle kernel,
             uint arg_index,
             Ref arg_value
         );
@@ -5869,7 +5502,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
         static abstract int SetKernelArgSvmPointerARM(
-            Kernel* kernel,
+            KernelHandle kernel,
             uint arg_index,
             void* arg_value
         );
@@ -5878,7 +5511,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
         static abstract int SetKernelArgSvmPointerARM(
-            Ref<Kernel> kernel,
+            KernelHandle kernel,
             uint arg_index,
             Ref arg_value
         );
@@ -5897,7 +5530,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfo")]
         static abstract int SetKernelExecInfo(
-            Kernel* kernel,
+            KernelHandle kernel,
             uint param_name,
             nuint param_value_size,
             void* param_value
@@ -5917,7 +5550,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfo")]
         static abstract int SetKernelExecInfo(
-            Ref<Kernel> kernel,
+            KernelHandle kernel,
             uint param_name,
             nuint param_value_size,
             Ref param_value
@@ -5927,7 +5560,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
         static abstract int SetKernelExecInfoARM(
-            Kernel* kernel,
+            KernelHandle kernel,
             uint param_name,
             nuint param_value_size,
             void* param_value
@@ -5937,7 +5570,7 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
         static abstract int SetKernelExecInfoARM(
-            Ref<Kernel> kernel,
+            KernelHandle kernel,
             uint param_name,
             nuint param_value_size,
             Ref param_value
@@ -5947,8 +5580,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
         [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
         static abstract int SetMemObjectDestructorAPPLE(
-            Mem* memobj,
-            delegate* unmanaged<Mem*, void*, void> pfn_notify,
+            MemHandle memobj,
+            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
             void* user_data
         );
 
@@ -5956,8 +5589,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
         [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
         static abstract int SetMemObjectDestructorAPPLE(
-            Ref<Mem> memobj,
-            delegate* unmanaged<Mem*, void*, void> pfn_notify,
+            MemHandle memobj,
+            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
             Ref user_data
         );
 
@@ -5977,8 +5610,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorCallback")]
         static abstract int SetMemObjectDestructorCallback(
-            Mem* memobj,
-            delegate* unmanaged<Mem*, void*, void> pfn_notify,
+            MemHandle memobj,
+            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
             void* user_data
         );
 
@@ -5998,20 +5631,15 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorCallback")]
         static abstract int SetMemObjectDestructorCallback(
-            Ref<Mem> memobj,
-            delegate* unmanaged<Mem*, void*, void> pfn_notify,
+            MemHandle memobj,
+            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
             Ref user_data
         );
 
         [NativeName("clSetPerfHintQCOM")]
         [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
         [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
-        static abstract int SetPerfHintQCOM(Context* context, uint perf_hint);
-
-        [NativeName("clSetPerfHintQCOM")]
-        [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
-        [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
-        static abstract int SetPerfHintQCOM(Ref<Context> context, uint perf_hint);
+        static abstract int SetPerfHintQCOM(ContextHandle context, uint perf_hint);
 
         [NativeName("clSetProgramReleaseCallback")]
         [Obsolete]
@@ -6022,8 +5650,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetProgramReleaseCallback")]
         static abstract int SetProgramReleaseCallback(
-            Program* program,
-            delegate* unmanaged<Program*, void*, void> pfn_notify,
+            ProgramHandle program,
+            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
             void* user_data
         );
 
@@ -6036,8 +5664,8 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetProgramReleaseCallback")]
         static abstract int SetProgramReleaseCallback(
-            Ref<Program> program,
-            delegate* unmanaged<Program*, void*, void> pfn_notify,
+            ProgramHandle program,
+            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
             Ref user_data
         );
 
@@ -6049,7 +5677,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetProgramSpecializationConstant")]
         static abstract int SetProgramSpecializationConstant(
-            Program* program,
+            ProgramHandle program,
             uint spec_id,
             nuint spec_size,
             void* spec_value
@@ -6063,7 +5691,7 @@ public unsafe partial interface ICl
         )]
         [NativeFunction("opencl", EntryPoint = "clSetProgramSpecializationConstant")]
         static abstract int SetProgramSpecializationConstant(
-            Ref<Program> program,
+            ProgramHandle program,
             uint spec_id,
             nuint spec_size,
             Ref spec_value
@@ -6084,31 +5712,14 @@ public unsafe partial interface ICl
             MinVersion = "1.1"
         )]
         [NativeFunction("opencl", EntryPoint = "clSetUserEventStatus")]
-        static abstract int SetUserEventStatus(Event* @event, int execution_status);
-
-        [NativeName("clSetUserEventStatus")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_1",
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.1"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clSetUserEventStatus")]
-        static abstract int SetUserEventStatus(Ref<Event> @event, int execution_status);
+        static abstract int SetUserEventStatus(EventHandle @event, int execution_status);
 
         [NativeName("clSharedMemAllocINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
         static abstract void* SharedMemAllocINTEL(
-            Context* context,
-            DeviceId* device,
+            ContextHandle context,
+            DeviceIdHandle device,
             ulong* properties,
             nuint size,
             uint alignment,
@@ -6119,8 +5730,8 @@ public unsafe partial interface ICl
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
         static abstract Ptr SharedMemAllocINTEL(
-            Ref<Context> context,
-            Ref<DeviceId> device,
+            ContextHandle context,
+            DeviceIdHandle device,
             Ref<ulong> properties,
             nuint size,
             uint alignment,
@@ -6140,7 +5751,32 @@ public unsafe partial interface ICl
             MinVersion = "2.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clSVMAlloc")]
-        static abstract void* SvmAlloc(Context* context, ulong flags, nuint size, uint alignment);
+        static abstract Ptr SvmAlloc(
+            ContextHandle context,
+            ulong flags,
+            nuint size,
+            uint alignment
+        );
+
+        [NativeName("clSVMAllocARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+        static abstract Ptr SvmAllocARM(
+            ContextHandle context,
+            ulong flags,
+            nuint size,
+            uint alignment
+        );
+
+        [NativeName("clSVMAllocARM")]
+        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+        [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+        static abstract void* SvmAllocRawARM(
+            ContextHandle context,
+            ulong flags,
+            nuint size,
+            uint alignment
+        );
 
         [NativeName("clSVMAlloc")]
         [SupportedApiProfile(
@@ -6155,23 +5791,8 @@ public unsafe partial interface ICl
             MinVersion = "2.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clSVMAlloc")]
-        static abstract Ptr SvmAlloc(Ref<Context> context, ulong flags, nuint size, uint alignment);
-
-        [NativeName("clSVMAllocARM")]
-        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
-        [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
-        static abstract void* SvmAllocARM(
-            Context* context,
-            ulong flags,
-            nuint size,
-            uint alignment
-        );
-
-        [NativeName("clSVMAllocARM")]
-        [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
-        [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
-        static abstract Ptr SvmAllocARM(
-            Ref<Context> context,
+        static abstract void* SvmAllocRaw(
+            ContextHandle context,
             ulong flags,
             nuint size,
             uint alignment
@@ -6190,7 +5811,7 @@ public unsafe partial interface ICl
             MinVersion = "2.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clSVMFree")]
-        static abstract void SvmFree(Context* context, void* svm_pointer);
+        static abstract void SvmFree(ContextHandle context, void* svm_pointer);
 
         [NativeName("clSVMFree")]
         [SupportedApiProfile(
@@ -6205,27 +5826,22 @@ public unsafe partial interface ICl
             MinVersion = "2.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clSVMFree")]
-        static abstract void SvmFree(Ref<Context> context, Ref svm_pointer);
+        static abstract void SvmFree(ContextHandle context, Ref svm_pointer);
 
         [NativeName("clSVMFreeARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
-        static abstract void SvmFreeARM(Context* context, void* svm_pointer);
+        static abstract void SvmFreeARM(ContextHandle context, void* svm_pointer);
 
         [NativeName("clSVMFreeARM")]
         [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
         [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
-        static abstract void SvmFreeARM(Ref<Context> context, Ref svm_pointer);
+        static abstract void SvmFreeARM(ContextHandle context, Ref svm_pointer);
 
         [NativeName("clTerminateContextKHR")]
         [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
         [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
-        static abstract int TerminateContextKHR(Context* context);
-
-        [NativeName("clTerminateContextKHR")]
-        [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
-        [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
-        static abstract int TerminateContextKHR(Ref<Context> context);
+        static abstract int TerminateContextKHR(ContextHandle context);
 
         [NativeName("clUnloadCompiler")]
         [Obsolete]
@@ -6260,23 +5876,7 @@ public unsafe partial interface ICl
             MinVersion = "1.2"
         )]
         [NativeFunction("opencl", EntryPoint = "clUnloadPlatformCompiler")]
-        static abstract int UnloadPlatformCompiler(PlatformId* platform);
-
-        [NativeName("clUnloadPlatformCompiler")]
-        [SupportedApiProfile(
-            "opencl",
-            [
-                "CL_VERSION_1_2",
-                "CL_VERSION_2_0",
-                "CL_VERSION_2_1",
-                "CL_VERSION_2_2",
-                "CL_VERSION_3_0",
-                "CL_VERSION_3_1",
-            ],
-            MinVersion = "1.2"
-        )]
-        [NativeFunction("opencl", EntryPoint = "clUnloadPlatformCompiler")]
-        static abstract int UnloadPlatformCompiler(Ref<PlatformId> platform);
+        static abstract int UnloadPlatformCompiler(PlatformIdHandle platform);
 
         [NativeName("clWaitForEvents")]
         [SupportedApiProfile(
@@ -6294,7 +5894,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clWaitForEvents")]
-        static abstract int WaitForEvents(uint num_events, Event** event_list);
+        static abstract int WaitForEvents(uint num_events, EventHandle* event_list);
 
         [NativeName("clWaitForEvents")]
         [SupportedApiProfile(
@@ -6312,7 +5912,7 @@ public unsafe partial interface ICl
             MinVersion = "1.0"
         )]
         [NativeFunction("opencl", EntryPoint = "clWaitForEvents")]
-        static abstract int WaitForEvents(uint num_events, Ref2D<Event> event_list);
+        static abstract int WaitForEvents(uint num_events, Ref<EventHandle> event_list);
     }
 
     [NativeName("clBuildProgram")]
@@ -6332,11 +5932,11 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clBuildProgram")]
     int BuildProgram(
-        Program* program,
+        ProgramHandle program,
         uint num_devices,
-        DeviceId** device_list,
+        DeviceIdHandle* device_list,
         sbyte* options,
-        delegate* unmanaged<Program*, void*, void> pfn_notify,
+        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
         void* user_data
     );
 
@@ -6357,23 +5957,23 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clBuildProgram")]
     int BuildProgram(
-        Ref<Program> program,
+        ProgramHandle program,
         uint num_devices,
-        Ref2D<DeviceId> device_list,
+        Ref<DeviceIdHandle> device_list,
         Ref<sbyte> options,
-        delegate* unmanaged<Program*, void*, void> pfn_notify,
+        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
         Ref user_data
     );
 
     [NativeName("clCancelCommandsIMG")]
     [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
     [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
-    int CancelCommandsIMG(Event** event_list, nuint num_events_in_list);
+    int CancelCommandsIMG(EventHandle* event_list, nuint num_events_in_list);
 
     [NativeName("clCancelCommandsIMG")]
     [SupportedApiProfile("opencl", ["cl_img_cancel_command"])]
     [NativeFunction("opencl", EntryPoint = "clCancelCommandsIMG")]
-    int CancelCommandsIMG(Ref2D<Event> event_list, nuint num_events_in_list);
+    int CancelCommandsIMG(Ref<EventHandle> event_list, nuint num_events_in_list);
 
     [NativeName("clCloneKernel")]
     [SupportedApiProfile(
@@ -6382,7 +5982,7 @@ public unsafe partial interface ICl
         MinVersion = "2.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clCloneKernel")]
-    Kernel* CloneKernel(Kernel* source_kernel, int* errcode_ret);
+    KernelHandle CloneKernel(KernelHandle source_kernel, int* errcode_ret);
 
     [NativeName("clCloneKernel")]
     [SupportedApiProfile(
@@ -6391,7 +5991,7 @@ public unsafe partial interface ICl
         MinVersion = "2.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clCloneKernel")]
-    Ptr<Kernel> CloneKernel(Ref<Kernel> source_kernel, Ref<int> errcode_ret);
+    KernelHandle CloneKernel(KernelHandle source_kernel, Ref<int> errcode_ret);
 
     [NativeName("clCompileProgram")]
     [SupportedApiProfile(
@@ -6408,14 +6008,14 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clCompileProgram")]
     int CompileProgram(
-        Program* program,
+        ProgramHandle program,
         uint num_devices,
-        DeviceId** device_list,
+        DeviceIdHandle* device_list,
         sbyte* options,
         uint num_input_headers,
-        Program** input_headers,
+        ProgramHandle* input_headers,
         sbyte** header_include_names,
-        delegate* unmanaged<Program*, void*, void> pfn_notify,
+        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
         void* user_data
     );
 
@@ -6434,14 +6034,14 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clCompileProgram")]
     int CompileProgram(
-        Ref<Program> program,
+        ProgramHandle program,
         uint num_devices,
-        Ref2D<DeviceId> device_list,
+        Ref<DeviceIdHandle> device_list,
         Ref<sbyte> options,
         uint num_input_headers,
-        Ref2D<Program> input_headers,
+        Ref<ProgramHandle> input_headers,
         Ref2D<sbyte> header_include_names,
-        delegate* unmanaged<Program*, void*, void> pfn_notify,
+        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
         Ref user_data
     );
 
@@ -6449,7 +6049,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
     _cl_accelerator_intel* CreateAcceleratorINTEL(
-        Context* context,
+        ContextHandle context,
         uint accelerator_type,
         nuint descriptor_size,
         void* descriptor,
@@ -6460,7 +6060,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
     [NativeFunction("opencl", EntryPoint = "clCreateAcceleratorINTEL")]
     Ptr<_cl_accelerator_intel> CreateAcceleratorINTEL(
-        Ref<Context> context,
+        ContextHandle context,
         uint accelerator_type,
         nuint descriptor_size,
         Ref descriptor,
@@ -6483,7 +6083,13 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateBuffer")]
-    Mem* CreateBuffer(Context* context, ulong flags, nuint size, void* host_ptr, int* errcode_ret);
+    MemHandle CreateBuffer(
+        ContextHandle context,
+        ulong flags,
+        nuint size,
+        void* host_ptr,
+        int* errcode_ret
+    );
 
     [NativeName("clCreateBuffer")]
     [SupportedApiProfile(
@@ -6501,8 +6107,8 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateBuffer")]
-    Ptr<Mem> CreateBuffer(
-        Ref<Context> context,
+    MemHandle CreateBuffer(
+        ContextHandle context,
         ulong flags,
         nuint size,
         Ref host_ptr,
@@ -6512,8 +6118,8 @@ public unsafe partial interface ICl
     [NativeName("clCreateBufferWithProperties")]
     [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
     [NativeFunction("opencl", EntryPoint = "clCreateBufferWithProperties")]
-    Mem* CreateBufferWithProperties(
-        Context* context,
+    MemHandle CreateBufferWithProperties(
+        ContextHandle context,
         ulong* properties,
         ulong flags,
         nuint size,
@@ -6524,8 +6130,8 @@ public unsafe partial interface ICl
     [NativeName("clCreateBufferWithProperties")]
     [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
     [NativeFunction("opencl", EntryPoint = "clCreateBufferWithProperties")]
-    Ptr<Mem> CreateBufferWithProperties(
-        Ref<Context> context,
+    MemHandle CreateBufferWithProperties(
+        ContextHandle context,
         Ref<ulong> properties,
         ulong flags,
         nuint size,
@@ -6536,8 +6142,8 @@ public unsafe partial interface ICl
     [NativeName("clCreateBufferWithPropertiesINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
     [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-    Mem* CreateBufferWithPropertiesINTEL(
-        Context* context,
+    MemHandle CreateBufferWithPropertiesINTEL(
+        ContextHandle context,
         ulong* properties,
         ulong flags,
         nuint size,
@@ -6548,8 +6154,8 @@ public unsafe partial interface ICl
     [NativeName("clCreateBufferWithPropertiesINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_create_buffer_with_properties"])]
     [NativeFunction("opencl", EntryPoint = "clCreateBufferWithPropertiesINTEL")]
-    Ptr<Mem> CreateBufferWithPropertiesINTEL(
-        Ref<Context> context,
+    MemHandle CreateBufferWithPropertiesINTEL(
+        ContextHandle context,
         Ref<ulong> properties,
         ulong flags,
         nuint size,
@@ -6574,9 +6180,9 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateCommandQueue")]
-    CommandQueue* CreateCommandQueue(
-        Context* context,
-        DeviceId* device,
+    CommandQueueHandle CreateCommandQueue(
+        ContextHandle context,
+        DeviceIdHandle device,
         ulong properties,
         int* errcode_ret
     );
@@ -6598,9 +6204,9 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateCommandQueue")]
-    Ptr<CommandQueue> CreateCommandQueue(
-        Ref<Context> context,
-        Ref<DeviceId> device,
+    CommandQueueHandle CreateCommandQueue(
+        ContextHandle context,
+        DeviceIdHandle device,
         ulong properties,
         Ref<int> errcode_ret
     );
@@ -6612,9 +6218,9 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithProperties")]
-    CommandQueue* CreateCommandQueueWithProperties(
-        Context* context,
-        DeviceId* device,
+    CommandQueueHandle CreateCommandQueueWithProperties(
+        ContextHandle context,
+        DeviceIdHandle device,
         ulong* properties,
         int* errcode_ret
     );
@@ -6626,9 +6232,9 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithProperties")]
-    Ptr<CommandQueue> CreateCommandQueueWithProperties(
-        Ref<Context> context,
-        Ref<DeviceId> device,
+    CommandQueueHandle CreateCommandQueueWithProperties(
+        ContextHandle context,
+        DeviceIdHandle device,
         Ref<ulong> properties,
         Ref<int> errcode_ret
     );
@@ -6636,9 +6242,9 @@ public unsafe partial interface ICl
     [NativeName("clCreateCommandQueueWithPropertiesKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
     [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
-    CommandQueue* CreateCommandQueueWithPropertiesKHR(
-        Context* context,
-        DeviceId* device,
+    CommandQueueHandle CreateCommandQueueWithPropertiesKHR(
+        ContextHandle context,
+        DeviceIdHandle device,
         ulong* properties,
         int* errcode_ret
     );
@@ -6646,9 +6252,9 @@ public unsafe partial interface ICl
     [NativeName("clCreateCommandQueueWithPropertiesKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_create_command_queue"])]
     [NativeFunction("opencl", EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
-    Ptr<CommandQueue> CreateCommandQueueWithPropertiesKHR(
-        Ref<Context> context,
-        Ref<DeviceId> device,
+    CommandQueueHandle CreateCommandQueueWithPropertiesKHR(
+        ContextHandle context,
+        DeviceIdHandle device,
         Ref<ulong> properties,
         Ref<int> errcode_ret
     );
@@ -6669,10 +6275,10 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateContext")]
-    Context* CreateContext(
+    ContextHandle CreateContext(
         nint* properties,
         uint num_devices,
-        DeviceId** devices,
+        DeviceIdHandle* devices,
         delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
         void* user_data,
         int* errcode_ret
@@ -6694,10 +6300,10 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateContext")]
-    Ptr<Context> CreateContext(
+    ContextHandle CreateContext(
         Ref<nint> properties,
         uint num_devices,
-        Ref2D<DeviceId> devices,
+        Ref<DeviceIdHandle> devices,
         delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
@@ -6719,7 +6325,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateContextFromType")]
-    Context* CreateContextFromType(
+    ContextHandle CreateContextFromType(
         nint* properties,
         ulong device_type,
         delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
@@ -6743,7 +6349,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateContextFromType")]
-    Ptr<Context> CreateContextFromType(
+    ContextHandle CreateContextFromType(
         Ref<nint> properties,
         ulong device_type,
         delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
@@ -6765,8 +6371,8 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateImage")]
-    Mem* CreateImage(
-        Context* context,
+    MemHandle CreateImage(
+        ContextHandle context,
         ulong flags,
         ImageFormat* image_format,
         ImageDesc* image_desc,
@@ -6788,8 +6394,8 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateImage")]
-    Ptr<Mem> CreateImage(
-        Ref<Context> context,
+    MemHandle CreateImage(
+        ContextHandle context,
         ulong flags,
         Ref<ImageFormat> image_format,
         Ref<ImageDesc> image_desc,
@@ -6814,8 +6420,8 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateImage2D")]
-    Mem* CreateImage2D(
-        Context* context,
+    MemHandle CreateImage2D(
+        ContextHandle context,
         ulong flags,
         ImageFormat* image_format,
         nuint image_width,
@@ -6842,8 +6448,8 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateImage2D")]
-    Ptr<Mem> CreateImage2D(
-        Ref<Context> context,
+    MemHandle CreateImage2D(
+        ContextHandle context,
         ulong flags,
         Ref<ImageFormat> image_format,
         nuint image_width,
@@ -6870,8 +6476,8 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateImage3D")]
-    Mem* CreateImage3D(
-        Context* context,
+    MemHandle CreateImage3D(
+        ContextHandle context,
         ulong flags,
         ImageFormat* image_format,
         nuint image_width,
@@ -6900,8 +6506,8 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateImage3D")]
-    Ptr<Mem> CreateImage3D(
-        Ref<Context> context,
+    MemHandle CreateImage3D(
+        ContextHandle context,
         ulong flags,
         Ref<ImageFormat> image_format,
         nuint image_width,
@@ -6916,8 +6522,8 @@ public unsafe partial interface ICl
     [NativeName("clCreateImageWithProperties")]
     [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
     [NativeFunction("opencl", EntryPoint = "clCreateImageWithProperties")]
-    Mem* CreateImageWithProperties(
-        Context* context,
+    MemHandle CreateImageWithProperties(
+        ContextHandle context,
         ulong* properties,
         ulong flags,
         ImageFormat* image_format,
@@ -6929,8 +6535,8 @@ public unsafe partial interface ICl
     [NativeName("clCreateImageWithProperties")]
     [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
     [NativeFunction("opencl", EntryPoint = "clCreateImageWithProperties")]
-    Ptr<Mem> CreateImageWithProperties(
-        Ref<Context> context,
+    MemHandle CreateImageWithProperties(
+        ContextHandle context,
         Ref<ulong> properties,
         ulong flags,
         Ref<ImageFormat> image_format,
@@ -6955,7 +6561,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateKernel")]
-    Kernel* CreateKernel(Program* program, sbyte* kernel_name, int* errcode_ret);
+    KernelHandle CreateKernel(ProgramHandle program, sbyte* kernel_name, int* errcode_ret);
 
     [NativeName("clCreateKernel")]
     [SupportedApiProfile(
@@ -6973,7 +6579,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateKernel")]
-    Ptr<Kernel> CreateKernel(Ref<Program> program, Ref<sbyte> kernel_name, Ref<int> errcode_ret);
+    KernelHandle CreateKernel(ProgramHandle program, Ref<sbyte> kernel_name, Ref<int> errcode_ret);
 
     [NativeName("clCreateKernelsInProgram")]
     [SupportedApiProfile(
@@ -6992,9 +6598,9 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateKernelsInProgram")]
     int CreateKernelsInProgram(
-        Program* program,
+        ProgramHandle program,
         uint num_kernels,
-        Kernel** kernels,
+        KernelHandle* kernels,
         uint* num_kernels_ret
     );
 
@@ -7015,9 +6621,9 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateKernelsInProgram")]
     int CreateKernelsInProgram(
-        Ref<Program> program,
+        ProgramHandle program,
         uint num_kernels,
-        Ref2D<Kernel> kernels,
+        Ref<KernelHandle> kernels,
         Ref<uint> num_kernels_ret
     );
 
@@ -7028,8 +6634,8 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreatePipe")]
-    Mem* CreatePipe(
-        Context* context,
+    MemHandle CreatePipe(
+        ContextHandle context,
         ulong flags,
         uint pipe_packet_size,
         uint pipe_max_packets,
@@ -7044,8 +6650,8 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreatePipe")]
-    Ptr<Mem> CreatePipe(
-        Ref<Context> context,
+    MemHandle CreatePipe(
+        ContextHandle context,
         ulong flags,
         uint pipe_packet_size,
         uint pipe_max_packets,
@@ -7069,10 +6675,10 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBinary")]
-    Program* CreateProgramWithBinary(
-        Context* context,
+    ProgramHandle CreateProgramWithBinary(
+        ContextHandle context,
         uint num_devices,
-        DeviceId** device_list,
+        DeviceIdHandle* device_list,
         nuint* lengths,
         byte** binaries,
         int* binary_status,
@@ -7095,10 +6701,10 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBinary")]
-    Ptr<Program> CreateProgramWithBinary(
-        Ref<Context> context,
+    ProgramHandle CreateProgramWithBinary(
+        ContextHandle context,
         uint num_devices,
-        Ref2D<DeviceId> device_list,
+        Ref<DeviceIdHandle> device_list,
         Ref<nuint> lengths,
         Ref2D<byte> binaries,
         Ref<int> binary_status,
@@ -7119,10 +6725,10 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
-    Program* CreateProgramWithBuiltInKernels(
-        Context* context,
+    ProgramHandle CreateProgramWithBuiltInKernels(
+        ContextHandle context,
         uint num_devices,
-        DeviceId** device_list,
+        DeviceIdHandle* device_list,
         sbyte* kernel_names,
         int* errcode_ret
     );
@@ -7141,10 +6747,10 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithBuiltInKernels")]
-    Ptr<Program> CreateProgramWithBuiltInKernels(
-        Ref<Context> context,
+    ProgramHandle CreateProgramWithBuiltInKernels(
+        ContextHandle context,
         uint num_devices,
-        Ref2D<DeviceId> device_list,
+        Ref<DeviceIdHandle> device_list,
         Ref<sbyte> kernel_names,
         Ref<int> errcode_ret
     );
@@ -7156,7 +6762,12 @@ public unsafe partial interface ICl
         MinVersion = "2.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithIL")]
-    Program* CreateProgramWithIL(Context* context, void* il, nuint length, int* errcode_ret);
+    ProgramHandle CreateProgramWithIL(
+        ContextHandle context,
+        void* il,
+        nuint length,
+        int* errcode_ret
+    );
 
     [NativeName("clCreateProgramWithIL")]
     [SupportedApiProfile(
@@ -7165,8 +6776,8 @@ public unsafe partial interface ICl
         MinVersion = "2.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithIL")]
-    Ptr<Program> CreateProgramWithIL(
-        Ref<Context> context,
+    ProgramHandle CreateProgramWithIL(
+        ContextHandle context,
         Ref il,
         nuint length,
         Ref<int> errcode_ret
@@ -7175,13 +6786,18 @@ public unsafe partial interface ICl
     [NativeName("clCreateProgramWithILKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
-    Program* CreateProgramWithILKHR(Context* context, void* il, nuint length, int* errcode_ret);
+    ProgramHandle CreateProgramWithILKHR(
+        ContextHandle context,
+        void* il,
+        nuint length,
+        int* errcode_ret
+    );
 
     [NativeName("clCreateProgramWithILKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_il_program"])]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithILKHR")]
-    Ptr<Program> CreateProgramWithILKHR(
-        Ref<Context> context,
+    ProgramHandle CreateProgramWithILKHR(
+        ContextHandle context,
         Ref il,
         nuint length,
         Ref<int> errcode_ret
@@ -7203,8 +6819,8 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithSource")]
-    Program* CreateProgramWithSource(
-        Context* context,
+    ProgramHandle CreateProgramWithSource(
+        ContextHandle context,
         uint count,
         sbyte** strings,
         nuint* lengths,
@@ -7227,8 +6843,8 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateProgramWithSource")]
-    Ptr<Program> CreateProgramWithSource(
-        Ref<Context> context,
+    ProgramHandle CreateProgramWithSource(
+        ContextHandle context,
         uint count,
         Ref2D<sbyte> strings,
         Ref<nuint> lengths,
@@ -7252,8 +6868,8 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateSampler")]
-    Sampler* CreateSampler(
-        Context* context,
+    SamplerHandle CreateSampler(
+        ContextHandle context,
         uint normalized_coords,
         uint addressing_mode,
         uint filter_mode,
@@ -7277,8 +6893,8 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateSampler")]
-    Ptr<Sampler> CreateSampler(
-        Ref<Context> context,
+    SamplerHandle CreateSampler(
+        ContextHandle context,
         MaybeBool<uint> normalized_coords,
         uint addressing_mode,
         uint filter_mode,
@@ -7292,8 +6908,8 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateSamplerWithProperties")]
-    Sampler* CreateSamplerWithProperties(
-        Context* context,
+    SamplerHandle CreateSamplerWithProperties(
+        ContextHandle context,
         ulong* sampler_properties,
         int* errcode_ret
     );
@@ -7305,8 +6921,8 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateSamplerWithProperties")]
-    Ptr<Sampler> CreateSamplerWithProperties(
-        Ref<Context> context,
+    SamplerHandle CreateSamplerWithProperties(
+        ContextHandle context,
         Ref<ulong> sampler_properties,
         Ref<int> errcode_ret
     );
@@ -7315,7 +6931,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
     _cl_semaphore_khr* CreateSemaphoreWithPropertiesKHR(
-        Context* context,
+        ContextHandle context,
         ulong* sema_props,
         int* errcode_ret
     );
@@ -7324,7 +6940,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clCreateSemaphoreWithPropertiesKHR")]
     Ptr<_cl_semaphore_khr> CreateSemaphoreWithPropertiesKHR(
-        Ref<Context> context,
+        ContextHandle context,
         Ref<ulong> sema_props,
         Ref<int> errcode_ret
     );
@@ -7344,8 +6960,8 @@ public unsafe partial interface ICl
         MinVersion = "1.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateSubBuffer")]
-    Mem* CreateSubBuffer(
-        Mem* buffer,
+    MemHandle CreateSubBuffer(
+        MemHandle buffer,
         ulong flags,
         uint buffer_create_type,
         void* buffer_create_info,
@@ -7367,8 +6983,8 @@ public unsafe partial interface ICl
         MinVersion = "1.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateSubBuffer")]
-    Ptr<Mem> CreateSubBuffer(
-        Ref<Mem> buffer,
+    MemHandle CreateSubBuffer(
+        MemHandle buffer,
         ulong flags,
         uint buffer_create_type,
         Ref buffer_create_info,
@@ -7390,10 +7006,10 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateSubDevices")]
     int CreateSubDevices(
-        DeviceId* in_device,
+        DeviceIdHandle in_device,
         nint* properties,
         uint num_devices,
-        DeviceId** out_devices,
+        DeviceIdHandle* out_devices,
         uint* num_devices_ret
     );
 
@@ -7412,10 +7028,10 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateSubDevices")]
     int CreateSubDevices(
-        Ref<DeviceId> in_device,
+        DeviceIdHandle in_device,
         Ref<nint> properties,
         uint num_devices,
-        Ref2D<DeviceId> out_devices,
+        Ref<DeviceIdHandle> out_devices,
         Ref<uint> num_devices_ret
     );
 
@@ -7423,10 +7039,10 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
     [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
     int CreateSubDevicesEXT(
-        DeviceId* in_device,
+        DeviceIdHandle in_device,
         ulong* properties,
         uint num_entries,
-        DeviceId** out_devices,
+        DeviceIdHandle* out_devices,
         uint* num_devices
     );
 
@@ -7434,10 +7050,10 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
     [NativeFunction("opencl", EntryPoint = "clCreateSubDevicesEXT")]
     int CreateSubDevicesEXT(
-        Ref<DeviceId> in_device,
+        DeviceIdHandle in_device,
         Ref<ulong> properties,
         uint num_entries,
-        Ref2D<DeviceId> out_devices,
+        Ref<DeviceIdHandle> out_devices,
         Ref<uint> num_devices
     );
 
@@ -7456,7 +7072,7 @@ public unsafe partial interface ICl
         MinVersion = "1.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateUserEvent")]
-    Event* CreateUserEvent(Context* context, int* errcode_ret);
+    EventHandle CreateUserEvent(ContextHandle context, int* errcode_ret);
 
     [NativeName("clCreateUserEvent")]
     [SupportedApiProfile(
@@ -7473,14 +7089,14 @@ public unsafe partial interface ICl
         MinVersion = "1.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateUserEvent")]
-    Ptr<Event> CreateUserEvent(Ref<Context> context, Ref<int> errcode_ret);
+    EventHandle CreateUserEvent(ContextHandle context, Ref<int> errcode_ret);
 
     [NativeName("clDeviceMemAllocINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
     void* DeviceMemAllocINTEL(
-        Context* context,
-        DeviceId* device,
+        ContextHandle context,
+        DeviceIdHandle device,
         ulong* properties,
         nuint size,
         uint alignment,
@@ -7491,8 +7107,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
     Ptr DeviceMemAllocINTEL(
-        Ref<Context> context,
-        Ref<DeviceId> device,
+        ContextHandle context,
+        DeviceIdHandle device,
         Ref<ulong> properties,
         nuint size,
         uint alignment,
@@ -7503,48 +7119,48 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
     int EnqueueAcquireExternalMemObjectsKHR(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_mem_objects,
-        Mem** mem_objects,
+        MemHandle* mem_objects,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueAcquireExternalMemObjectsKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireExternalMemObjectsKHR")]
     int EnqueueAcquireExternalMemObjectsKHR(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_mem_objects,
-        Ref2D<Mem> mem_objects,
+        Ref<MemHandle> mem_objects,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
     [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
     int EnqueueAcquireGrallocObjectsIMG(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_objects,
-        Mem** mem_objects,
+        MemHandle* mem_objects,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueAcquireGrallocObjectsIMG")]
     [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueAcquireGrallocObjectsIMG")]
     int EnqueueAcquireGrallocObjectsIMG(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_objects,
-        Ref2D<Mem> mem_objects,
+        Ref<MemHandle> mem_objects,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueBarrier")]
@@ -7564,26 +7180,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueBarrier")]
-    int EnqueueBarrier(CommandQueue* command_queue);
-
-    [NativeName("clEnqueueBarrier")]
-    [Obsolete]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clEnqueueBarrier")]
-    int EnqueueBarrier(Ref<CommandQueue> command_queue);
+    int EnqueueBarrier(CommandQueueHandle command_queue);
 
     [NativeName("clEnqueueBarrierWithWaitList")]
     [SupportedApiProfile(
@@ -7600,10 +7197,10 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueBarrierWithWaitList")]
     int EnqueueBarrierWithWaitList(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueBarrierWithWaitList")]
@@ -7621,10 +7218,10 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueBarrierWithWaitList")]
     int EnqueueBarrierWithWaitList(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueCopyBuffer")]
@@ -7644,15 +7241,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBuffer")]
     int EnqueueCopyBuffer(
-        CommandQueue* command_queue,
-        Mem* src_buffer,
-        Mem* dst_buffer,
+        CommandQueueHandle command_queue,
+        MemHandle src_buffer,
+        MemHandle dst_buffer,
         nuint src_offset,
         nuint dst_offset,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueCopyBuffer")]
@@ -7672,15 +7269,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBuffer")]
     int EnqueueCopyBuffer(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> src_buffer,
-        Ref<Mem> dst_buffer,
+        CommandQueueHandle command_queue,
+        MemHandle src_buffer,
+        MemHandle dst_buffer,
         nuint src_offset,
         nuint dst_offset,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueCopyBufferRect")]
@@ -7699,9 +7296,9 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBufferRect")]
     int EnqueueCopyBufferRect(
-        CommandQueue* command_queue,
-        Mem* src_buffer,
-        Mem* dst_buffer,
+        CommandQueueHandle command_queue,
+        MemHandle src_buffer,
+        MemHandle dst_buffer,
         nuint* src_origin,
         nuint* dst_origin,
         nuint* region,
@@ -7710,8 +7307,8 @@ public unsafe partial interface ICl
         nuint dst_row_pitch,
         nuint dst_slice_pitch,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueCopyBufferRect")]
@@ -7730,9 +7327,9 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBufferRect")]
     int EnqueueCopyBufferRect(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> src_buffer,
-        Ref<Mem> dst_buffer,
+        CommandQueueHandle command_queue,
+        MemHandle src_buffer,
+        MemHandle dst_buffer,
         Ref<nuint> src_origin,
         Ref<nuint> dst_origin,
         Ref<nuint> region,
@@ -7741,8 +7338,8 @@ public unsafe partial interface ICl
         nuint dst_row_pitch,
         nuint dst_slice_pitch,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueCopyBufferToImage")]
@@ -7762,15 +7359,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBufferToImage")]
     int EnqueueCopyBufferToImage(
-        CommandQueue* command_queue,
-        Mem* src_buffer,
-        Mem* dst_image,
+        CommandQueueHandle command_queue,
+        MemHandle src_buffer,
+        MemHandle dst_image,
         nuint src_offset,
         nuint* dst_origin,
         nuint* region,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueCopyBufferToImage")]
@@ -7790,15 +7387,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueCopyBufferToImage")]
     int EnqueueCopyBufferToImage(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> src_buffer,
-        Ref<Mem> dst_image,
+        CommandQueueHandle command_queue,
+        MemHandle src_buffer,
+        MemHandle dst_image,
         nuint src_offset,
         Ref<nuint> dst_origin,
         Ref<nuint> region,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueCopyImage")]
@@ -7818,15 +7415,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueCopyImage")]
     int EnqueueCopyImage(
-        CommandQueue* command_queue,
-        Mem* src_image,
-        Mem* dst_image,
+        CommandQueueHandle command_queue,
+        MemHandle src_image,
+        MemHandle dst_image,
         nuint* src_origin,
         nuint* dst_origin,
         nuint* region,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueCopyImage")]
@@ -7846,15 +7443,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueCopyImage")]
     int EnqueueCopyImage(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> src_image,
-        Ref<Mem> dst_image,
+        CommandQueueHandle command_queue,
+        MemHandle src_image,
+        MemHandle dst_image,
         Ref<nuint> src_origin,
         Ref<nuint> dst_origin,
         Ref<nuint> region,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueCopyImageToBuffer")]
@@ -7874,15 +7471,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueCopyImageToBuffer")]
     int EnqueueCopyImageToBuffer(
-        CommandQueue* command_queue,
-        Mem* src_image,
-        Mem* dst_buffer,
+        CommandQueueHandle command_queue,
+        MemHandle src_image,
+        MemHandle dst_buffer,
         nuint* src_origin,
         nuint* region,
         nuint dst_offset,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueCopyImageToBuffer")]
@@ -7902,15 +7499,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueCopyImageToBuffer")]
     int EnqueueCopyImageToBuffer(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> src_image,
-        Ref<Mem> dst_buffer,
+        CommandQueueHandle command_queue,
+        MemHandle src_image,
+        MemHandle dst_buffer,
         Ref<nuint> src_origin,
         Ref<nuint> region,
         nuint dst_offset,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueFillBuffer")]
@@ -7928,15 +7525,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueFillBuffer")]
     int EnqueueFillBuffer(
-        CommandQueue* command_queue,
-        Mem* buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         void* pattern,
         nuint pattern_size,
         nuint offset,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueFillBuffer")]
@@ -7954,15 +7551,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueFillBuffer")]
     int EnqueueFillBuffer(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         Ref pattern,
         nuint pattern_size,
         nuint offset,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueFillImage")]
@@ -7980,14 +7577,14 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueFillImage")]
     int EnqueueFillImage(
-        CommandQueue* command_queue,
-        Mem* image,
+        CommandQueueHandle command_queue,
+        MemHandle image,
         void* fill_color,
         nuint* origin,
         nuint* region,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueFillImage")]
@@ -8005,44 +7602,44 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueFillImage")]
     int EnqueueFillImage(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> image,
+        CommandQueueHandle command_queue,
+        MemHandle image,
         Ref fill_color,
         Ref<nuint> origin,
         Ref<nuint> region,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueGenerateMipmapIMG")]
     [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
     int EnqueueGenerateMipmapIMG(
-        CommandQueue* command_queue,
-        Mem* src_image,
-        Mem* dst_image,
+        CommandQueueHandle command_queue,
+        MemHandle src_image,
+        MemHandle dst_image,
         uint mipmap_filter_mode,
         nuint* array_region,
         nuint* mip_region,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueGenerateMipmapIMG")]
     [SupportedApiProfile("opencl", ["cl_img_generate_mipmap"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueGenerateMipmapIMG")]
     int EnqueueGenerateMipmapIMG(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> src_image,
-        Ref<Mem> dst_image,
+        CommandQueueHandle command_queue,
+        MemHandle src_image,
+        MemHandle dst_image,
         uint mipmap_filter_mode,
         Ref<nuint> array_region,
         Ref<nuint> mip_region,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueMapBuffer")]
@@ -8062,15 +7659,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMapBuffer")]
     void* EnqueueMapBuffer(
-        CommandQueue* command_queue,
-        Mem* buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         uint blocking_map,
         ulong map_flags,
         nuint offset,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event,
+        EventHandle* event_wait_list,
+        EventHandle* @event,
         int* errcode_ret
     );
 
@@ -8091,15 +7688,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMapBuffer")]
     Ptr EnqueueMapBuffer(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         MaybeBool<uint> blocking_map,
         ulong map_flags,
         nuint offset,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event,
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event,
         Ref<int> errcode_ret
     );
 
@@ -8120,8 +7717,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMapImage")]
     void* EnqueueMapImage(
-        CommandQueue* command_queue,
-        Mem* image,
+        CommandQueueHandle command_queue,
+        MemHandle image,
         uint blocking_map,
         ulong map_flags,
         nuint* origin,
@@ -8129,8 +7726,8 @@ public unsafe partial interface ICl
         nuint* image_row_pitch,
         nuint* image_slice_pitch,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event,
+        EventHandle* event_wait_list,
+        EventHandle* @event,
         int* errcode_ret
     );
 
@@ -8151,8 +7748,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMapImage")]
     Ptr EnqueueMapImage(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> image,
+        CommandQueueHandle command_queue,
+        MemHandle image,
         MaybeBool<uint> blocking_map,
         ulong map_flags,
         Ref<nuint> origin,
@@ -8160,8 +7757,8 @@ public unsafe partial interface ICl
         Ref<nuint> image_row_pitch,
         Ref<nuint> image_slice_pitch,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event,
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event,
         Ref<int> errcode_ret
     );
 
@@ -8182,7 +7779,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMarker")]
-    int EnqueueMarker(CommandQueue* command_queue, Event** @event);
+    int EnqueueMarker(CommandQueueHandle command_queue, EventHandle* @event);
 
     [NativeName("clEnqueueMarker")]
     [Obsolete]
@@ -8201,7 +7798,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMarker")]
-    int EnqueueMarker(Ref<CommandQueue> command_queue, Ref2D<Event> @event);
+    int EnqueueMarker(CommandQueueHandle command_queue, Ref<EventHandle> @event);
 
     [NativeName("clEnqueueMarkerWithWaitList")]
     [SupportedApiProfile(
@@ -8218,10 +7815,10 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMarkerWithWaitList")]
     int EnqueueMarkerWithWaitList(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueMarkerWithWaitList")]
@@ -8239,170 +7836,170 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMarkerWithWaitList")]
     int EnqueueMarkerWithWaitList(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueMemAdviseINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
     int EnqueueMemAdviseINTEL(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         void* ptr,
         nuint size,
         uint advice,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueMemAdviseINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMemAdviseINTEL")]
     int EnqueueMemAdviseINTEL(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         Ref ptr,
         nuint size,
         uint advice,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueMemcpyINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
     int EnqueueMemcpyINTEL(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint blocking,
         void* dst_ptr,
         void* src_ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueMemcpyINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMemcpyINTEL")]
     int EnqueueMemcpyINTEL(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         MaybeBool<uint> blocking,
         Ref dst_ptr,
         Ref src_ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueMemFillINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
     int EnqueueMemFillINTEL(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         void* dst_ptr,
         void* pattern,
         nuint pattern_size,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueMemFillINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMemFillINTEL")]
     int EnqueueMemFillINTEL(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         Ref dst_ptr,
         Ref pattern,
         nuint pattern_size,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueMemsetINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
     int EnqueueMemsetINTEL(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         void* dst_ptr,
         int value,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueMemsetINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMemsetINTEL")]
     int EnqueueMemsetINTEL(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         Ref dst_ptr,
         int value,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueMigrateMemINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
     int EnqueueMigrateMemINTEL(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         void* ptr,
         nuint size,
         ulong flags,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueMigrateMemINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemINTEL")]
     int EnqueueMigrateMemINTEL(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         Ref ptr,
         nuint size,
         ulong flags,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueMigrateMemObjectEXT")]
     [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
     int EnqueueMigrateMemObjectEXT(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_mem_objects,
-        Mem** mem_objects,
+        MemHandle* mem_objects,
         ulong flags,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueMigrateMemObjectEXT")]
     [SupportedApiProfile("opencl", ["cl_ext_migrate_memobject"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjectEXT")]
     int EnqueueMigrateMemObjectEXT(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_mem_objects,
-        Ref2D<Mem> mem_objects,
+        Ref<MemHandle> mem_objects,
         ulong flags,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueMigrateMemObjects")]
@@ -8420,13 +8017,13 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjects")]
     int EnqueueMigrateMemObjects(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_mem_objects,
-        Mem** mem_objects,
+        MemHandle* mem_objects,
         ulong flags,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueMigrateMemObjects")]
@@ -8444,13 +8041,13 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueMigrateMemObjects")]
     int EnqueueMigrateMemObjects(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_mem_objects,
-        Ref2D<Mem> mem_objects,
+        Ref<MemHandle> mem_objects,
         ulong flags,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueNativeKernel")]
@@ -8470,16 +8067,16 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueNativeKernel")]
     int EnqueueNativeKernel(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         delegate* unmanaged<void*, void> user_func,
         void* args,
         nuint cb_args,
         uint num_mem_objects,
-        Mem** mem_list,
+        MemHandle* mem_list,
         void** args_mem_loc,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueNativeKernel")]
@@ -8499,16 +8096,16 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueNativeKernel")]
     int EnqueueNativeKernel(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         delegate* unmanaged<void*, void> user_func,
         Ref args,
         nuint cb_args,
         uint num_mem_objects,
-        Ref2D<Mem> mem_list,
+        Ref<MemHandle> mem_list,
         Ref2D args_mem_loc,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueNDRangeKernel")]
@@ -8528,15 +8125,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueNDRangeKernel")]
     int EnqueueNDRangeKernel(
-        CommandQueue* command_queue,
-        Kernel* kernel,
+        CommandQueueHandle command_queue,
+        KernelHandle kernel,
         uint work_dim,
         nuint* global_work_offset,
         nuint* global_work_size,
         nuint* local_work_size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueNDRangeKernel")]
@@ -8556,15 +8153,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueNDRangeKernel")]
     int EnqueueNDRangeKernel(
-        Ref<CommandQueue> command_queue,
-        Ref<Kernel> kernel,
+        CommandQueueHandle command_queue,
+        KernelHandle kernel,
         uint work_dim,
         Ref<nuint> global_work_offset,
         Ref<nuint> global_work_size,
         Ref<nuint> local_work_size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueReadBuffer")]
@@ -8584,15 +8181,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReadBuffer")]
     int EnqueueReadBuffer(
-        CommandQueue* command_queue,
-        Mem* buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         uint blocking_read,
         nuint offset,
         nuint size,
         void* ptr,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueReadBuffer")]
@@ -8612,15 +8209,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReadBuffer")]
     int EnqueueReadBuffer(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         MaybeBool<uint> blocking_read,
         nuint offset,
         nuint size,
         Ref ptr,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueReadBufferRect")]
@@ -8639,8 +8236,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReadBufferRect")]
     int EnqueueReadBufferRect(
-        CommandQueue* command_queue,
-        Mem* buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         uint blocking_read,
         nuint* buffer_origin,
         nuint* host_origin,
@@ -8651,8 +8248,8 @@ public unsafe partial interface ICl
         nuint host_slice_pitch,
         void* ptr,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueReadBufferRect")]
@@ -8671,8 +8268,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReadBufferRect")]
     int EnqueueReadBufferRect(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         MaybeBool<uint> blocking_read,
         Ref<nuint> buffer_origin,
         Ref<nuint> host_origin,
@@ -8683,38 +8280,38 @@ public unsafe partial interface ICl
         nuint host_slice_pitch,
         Ref ptr,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueReadHostPipeINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
     int EnqueueReadHostPipeINTEL(
-        CommandQueue* command_queue,
-        Program* program,
+        CommandQueueHandle command_queue,
+        ProgramHandle program,
         sbyte* pipe_symbol,
         uint blocking_read,
         void* ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueReadHostPipeINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReadHostPipeINTEL")]
     int EnqueueReadHostPipeINTEL(
-        Ref<CommandQueue> command_queue,
-        Ref<Program> program,
+        CommandQueueHandle command_queue,
+        ProgramHandle program,
         Ref<sbyte> pipe_symbol,
         MaybeBool<uint> blocking_read,
         Ref ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueReadImage")]
@@ -8734,8 +8331,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReadImage")]
     int EnqueueReadImage(
-        CommandQueue* command_queue,
-        Mem* image,
+        CommandQueueHandle command_queue,
+        MemHandle image,
         uint blocking_read,
         nuint* origin,
         nuint* region,
@@ -8743,8 +8340,8 @@ public unsafe partial interface ICl
         nuint slice_pitch,
         void* ptr,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueReadImage")]
@@ -8764,8 +8361,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReadImage")]
     int EnqueueReadImage(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> image,
+        CommandQueueHandle command_queue,
+        MemHandle image,
         MaybeBool<uint> blocking_read,
         Ref<nuint> origin,
         Ref<nuint> region,
@@ -8773,82 +8370,82 @@ public unsafe partial interface ICl
         nuint slice_pitch,
         Ref ptr,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
     int EnqueueReleaseExternalMemObjectsKHR(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_mem_objects,
-        Mem** mem_objects,
+        MemHandle* mem_objects,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueReleaseExternalMemObjectsKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_external_memory"], ImpliesSets = ["CL_VERSION_3_0"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseExternalMemObjectsKHR")]
     int EnqueueReleaseExternalMemObjectsKHR(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_mem_objects,
-        Ref2D<Mem> mem_objects,
+        Ref<MemHandle> mem_objects,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
     [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
     int EnqueueReleaseGrallocObjectsIMG(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_objects,
-        Mem** mem_objects,
+        MemHandle* mem_objects,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueReleaseGrallocObjectsIMG")]
     [SupportedApiProfile("opencl", ["cl_img_use_gralloc_ptr"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueReleaseGrallocObjectsIMG")]
     int EnqueueReleaseGrallocObjectsIMG(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_objects,
-        Ref2D<Mem> mem_objects,
+        Ref<MemHandle> mem_objects,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSignalSemaphoresKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
     int EnqueueSignalSemaphoresKHR(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_sema_objects,
         _cl_semaphore_khr** sema_objects,
         ulong* sema_payload_list,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSignalSemaphoresKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSignalSemaphoresKHR")]
     int EnqueueSignalSemaphoresKHR(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_sema_objects,
         Ref2D<_cl_semaphore_khr> sema_objects,
         Ref<ulong> sema_payload_list,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMFree")]
@@ -8859,14 +8456,14 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFree")]
     int EnqueueSvmFree(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        delegate* unmanaged<CommandQueue*, uint, void**, void*, void> pfn_free_func,
+        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMFree")]
@@ -8877,42 +8474,42 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFree")]
     int EnqueueSvmFree(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        delegate* unmanaged<CommandQueue*, uint, void**, void*, void> pfn_free_func,
+        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMFreeARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
     int EnqueueSvmFreeARM(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        delegate* unmanaged<CommandQueue*, uint, void**, void*, void> pfn_free_func,
+        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMFreeARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMFreeARM")]
     int EnqueueSvmFreeARM(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        delegate* unmanaged<CommandQueue*, uint, void**, void*, void> pfn_free_func,
+        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMMap")]
@@ -8923,14 +8520,14 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMap")]
     int EnqueueSvmMap(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint blocking_map,
         ulong flags,
         void* svm_ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMMap")]
@@ -8941,42 +8538,42 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMap")]
     int EnqueueSvmMap(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         MaybeBool<uint> blocking_map,
         ulong flags,
         Ref svm_ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMMapARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
     int EnqueueSvmMapARM(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint blocking_map,
         ulong flags,
         void* svm_ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMMapARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMapARM")]
     int EnqueueSvmMapARM(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         MaybeBool<uint> blocking_map,
         ulong flags,
         Ref svm_ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMMemcpy")]
@@ -8987,14 +8584,14 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpy")]
     int EnqueueSvmMemcpy(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint blocking_copy,
         void* dst_ptr,
         void* src_ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMMemcpy")]
@@ -9005,42 +8602,42 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpy")]
     int EnqueueSvmMemcpy(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         MaybeBool<uint> blocking_copy,
         Ref dst_ptr,
         Ref src_ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMMemcpyARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
     int EnqueueSvmMemcpyARM(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint blocking_copy,
         void* dst_ptr,
         void* src_ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMMemcpyARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemcpyARM")]
     int EnqueueSvmMemcpyARM(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         MaybeBool<uint> blocking_copy,
         Ref dst_ptr,
         Ref src_ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMMemFill")]
@@ -9051,14 +8648,14 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFill")]
     int EnqueueSvmMemFill(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         void* svm_ptr,
         void* pattern,
         nuint pattern_size,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMMemFill")]
@@ -9069,42 +8666,42 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFill")]
     int EnqueueSvmMemFill(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         Ref svm_ptr,
         Ref pattern,
         nuint pattern_size,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMMemFillARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
     int EnqueueSvmMemFillARM(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         void* svm_ptr,
         void* pattern,
         nuint pattern_size,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMMemFillARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMemFillARM")]
     int EnqueueSvmMemFillARM(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         Ref svm_ptr,
         Ref pattern,
         nuint pattern_size,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMMigrateMem")]
@@ -9115,14 +8712,14 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMigrateMem")]
     int EnqueueSvmMigrateMem(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
         nuint* sizes,
         ulong flags,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMMigrateMem")]
@@ -9133,14 +8730,14 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMMigrateMem")]
     int EnqueueSvmMigrateMem(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
         Ref<nuint> sizes,
         ulong flags,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMUnmap")]
@@ -9151,11 +8748,11 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmap")]
     int EnqueueSvmUnmap(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         void* svm_ptr,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMUnmap")]
@@ -9166,33 +8763,33 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmap")]
     int EnqueueSvmUnmap(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         Ref svm_ptr,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueSVMUnmapARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
     int EnqueueSvmUnmapARM(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         void* svm_ptr,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueSVMUnmapARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueSVMUnmapARM")]
     int EnqueueSvmUnmapARM(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         Ref svm_ptr,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueTask")]
@@ -9213,11 +8810,11 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueTask")]
     int EnqueueTask(
-        CommandQueue* command_queue,
-        Kernel* kernel,
+        CommandQueueHandle command_queue,
+        KernelHandle kernel,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueTask")]
@@ -9238,11 +8835,11 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueTask")]
     int EnqueueTask(
-        Ref<CommandQueue> command_queue,
-        Ref<Kernel> kernel,
+        CommandQueueHandle command_queue,
+        KernelHandle kernel,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueUnmapMemObject")]
@@ -9262,12 +8859,12 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueUnmapMemObject")]
     int EnqueueUnmapMemObject(
-        CommandQueue* command_queue,
-        Mem* memobj,
+        CommandQueueHandle command_queue,
+        MemHandle memobj,
         void* mapped_ptr,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueUnmapMemObject")]
@@ -9287,32 +8884,13 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueUnmapMemObject")]
     int EnqueueUnmapMemObject(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> memobj,
+        CommandQueueHandle command_queue,
+        MemHandle memobj,
         Ref mapped_ptr,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
-
-    [NativeName("clEnqueueWaitForEvents")]
-    [Obsolete]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clEnqueueWaitForEvents")]
-    int EnqueueWaitForEvents(CommandQueue* command_queue, uint num_events, Event** event_list);
 
     [NativeName("clEnqueueWaitForEvents")]
     [Obsolete]
@@ -9332,35 +8910,58 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWaitForEvents")]
     int EnqueueWaitForEvents(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_events,
-        Ref2D<Event> event_list
+        EventHandle* event_list
+    );
+
+    [NativeName("clEnqueueWaitForEvents")]
+    [Obsolete]
+    [SupportedApiProfile(
+        "opencl",
+        [
+            "CL_VERSION_1_0",
+            "CL_VERSION_1_1",
+            "CL_VERSION_1_2",
+            "CL_VERSION_2_0",
+            "CL_VERSION_2_1",
+            "CL_VERSION_2_2",
+            "CL_VERSION_3_0",
+            "CL_VERSION_3_1",
+        ],
+        MinVersion = "1.0"
+    )]
+    [NativeFunction("opencl", EntryPoint = "clEnqueueWaitForEvents")]
+    int EnqueueWaitForEvents(
+        CommandQueueHandle command_queue,
+        uint num_events,
+        Ref<EventHandle> event_list
     );
 
     [NativeName("clEnqueueWaitSemaphoresKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
     int EnqueueWaitSemaphoresKHR(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint num_sema_objects,
         _cl_semaphore_khr** sema_objects,
         ulong* sema_payload_list,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueWaitSemaphoresKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWaitSemaphoresKHR")]
     int EnqueueWaitSemaphoresKHR(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint num_sema_objects,
         Ref2D<_cl_semaphore_khr> sema_objects,
         Ref<ulong> sema_payload_list,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueWriteBuffer")]
@@ -9380,15 +8981,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWriteBuffer")]
     int EnqueueWriteBuffer(
-        CommandQueue* command_queue,
-        Mem* buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         uint blocking_write,
         nuint offset,
         nuint size,
         void* ptr,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueWriteBuffer")]
@@ -9408,15 +9009,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWriteBuffer")]
     int EnqueueWriteBuffer(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         MaybeBool<uint> blocking_write,
         nuint offset,
         nuint size,
         Ref ptr,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueWriteBufferRect")]
@@ -9435,8 +9036,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWriteBufferRect")]
     int EnqueueWriteBufferRect(
-        CommandQueue* command_queue,
-        Mem* buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         uint blocking_write,
         nuint* buffer_origin,
         nuint* host_origin,
@@ -9447,8 +9048,8 @@ public unsafe partial interface ICl
         nuint host_slice_pitch,
         void* ptr,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueWriteBufferRect")]
@@ -9467,8 +9068,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWriteBufferRect")]
     int EnqueueWriteBufferRect(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> buffer,
+        CommandQueueHandle command_queue,
+        MemHandle buffer,
         MaybeBool<uint> blocking_write,
         Ref<nuint> buffer_origin,
         Ref<nuint> host_origin,
@@ -9479,38 +9080,38 @@ public unsafe partial interface ICl
         nuint host_slice_pitch,
         Ref ptr,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueWriteHostPipeINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
     int EnqueueWriteHostPipeINTEL(
-        CommandQueue* command_queue,
-        Program* program,
+        CommandQueueHandle command_queue,
+        ProgramHandle program,
         sbyte* pipe_symbol,
         uint blocking_write,
         void* ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueWriteHostPipeINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_program_scope_host_pipe"])]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWriteHostPipeINTEL")]
     int EnqueueWriteHostPipeINTEL(
-        Ref<CommandQueue> command_queue,
-        Ref<Program> program,
+        CommandQueueHandle command_queue,
+        ProgramHandle program,
         Ref<sbyte> pipe_symbol,
         MaybeBool<uint> blocking_write,
         Ref ptr,
         nuint size,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clEnqueueWriteImage")]
@@ -9530,8 +9131,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWriteImage")]
     int EnqueueWriteImage(
-        CommandQueue* command_queue,
-        Mem* image,
+        CommandQueueHandle command_queue,
+        MemHandle image,
         uint blocking_write,
         nuint* origin,
         nuint* region,
@@ -9539,8 +9140,8 @@ public unsafe partial interface ICl
         nuint input_slice_pitch,
         void* ptr,
         uint num_events_in_wait_list,
-        Event** event_wait_list,
-        Event** @event
+        EventHandle* event_wait_list,
+        EventHandle* @event
     );
 
     [NativeName("clEnqueueWriteImage")]
@@ -9560,8 +9161,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clEnqueueWriteImage")]
     int EnqueueWriteImage(
-        Ref<CommandQueue> command_queue,
-        Ref<Mem> image,
+        CommandQueueHandle command_queue,
+        MemHandle image,
         MaybeBool<uint> blocking_write,
         Ref<nuint> origin,
         Ref<nuint> region,
@@ -9569,8 +9170,8 @@ public unsafe partial interface ICl
         nuint input_slice_pitch,
         Ref ptr,
         uint num_events_in_wait_list,
-        Ref2D<Event> event_wait_list,
-        Ref2D<Event> @event
+        Ref<EventHandle> event_wait_list,
+        Ref<EventHandle> @event
     );
 
     [NativeName("clFinish")]
@@ -9589,25 +9190,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clFinish")]
-    int Finish(CommandQueue* command_queue);
-
-    [NativeName("clFinish")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clFinish")]
-    int Finish(Ref<CommandQueue> command_queue);
+    int Finish(CommandQueueHandle command_queue);
 
     [NativeName("clFlush")]
     [SupportedApiProfile(
@@ -9625,25 +9208,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clFlush")]
-    int Flush(CommandQueue* command_queue);
-
-    [NativeName("clFlush")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clFlush")]
-    int Flush(Ref<CommandQueue> command_queue);
+    int Flush(CommandQueueHandle command_queue);
 
     [NativeName("clGetAcceleratorInfoINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_accelerator"])]
@@ -9684,7 +9249,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetCommandQueueInfo")]
     int GetCommandQueueInfo(
-        CommandQueue* command_queue,
+        CommandQueueHandle command_queue,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -9708,7 +9273,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetCommandQueueInfo")]
     int GetCommandQueueInfo(
-        Ref<CommandQueue> command_queue,
+        CommandQueueHandle command_queue,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -9732,7 +9297,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetContextInfo")]
     int GetContextInfo(
-        Context* context,
+        ContextHandle context,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -9756,7 +9321,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetContextInfo")]
     int GetContextInfo(
-        Ref<Context> context,
+        ContextHandle context,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -9770,7 +9335,11 @@ public unsafe partial interface ICl
         MinVersion = "2.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clGetDeviceAndHostTimer")]
-    int GetDeviceAndHostTimer(DeviceId* device, ulong* device_timestamp, ulong* host_timestamp);
+    int GetDeviceAndHostTimer(
+        DeviceIdHandle device,
+        ulong* device_timestamp,
+        ulong* host_timestamp
+    );
 
     [NativeName("clGetDeviceAndHostTimer")]
     [SupportedApiProfile(
@@ -9780,7 +9349,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetDeviceAndHostTimer")]
     int GetDeviceAndHostTimer(
-        Ref<DeviceId> device,
+        DeviceIdHandle device,
         Ref<ulong> device_timestamp,
         Ref<ulong> host_timestamp
     );
@@ -9802,10 +9371,10 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetDeviceIDs")]
     int GetDeviceIDs(
-        PlatformId* platform,
+        PlatformIdHandle platform,
         ulong device_type,
         uint num_entries,
-        DeviceId** devices,
+        DeviceIdHandle* devices,
         uint* num_devices
     );
 
@@ -9826,10 +9395,10 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetDeviceIDs")]
     int GetDeviceIDs(
-        Ref<PlatformId> platform,
+        PlatformIdHandle platform,
         ulong device_type,
         uint num_entries,
-        Ref2D<DeviceId> devices,
+        Ref<DeviceIdHandle> devices,
         Ref<uint> num_devices
     );
 
@@ -9837,7 +9406,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
     [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
     int GetDeviceImageInfoQCOM(
-        DeviceId* device,
+        DeviceIdHandle device,
         nuint image_width,
         nuint image_height,
         ImageFormat* image_format,
@@ -9851,7 +9420,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_qcom_ext_host_ptr"])]
     [NativeFunction("opencl", EntryPoint = "clGetDeviceImageInfoQCOM")]
     int GetDeviceImageInfoQCOM(
-        Ref<DeviceId> device,
+        DeviceIdHandle device,
         nuint image_width,
         nuint image_height,
         Ref<ImageFormat> image_format,
@@ -9878,7 +9447,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetDeviceInfo")]
     int GetDeviceInfo(
-        DeviceId* device,
+        DeviceIdHandle device,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -9902,7 +9471,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetDeviceInfo")]
     int GetDeviceInfo(
-        Ref<DeviceId> device,
+        DeviceIdHandle device,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -9926,7 +9495,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetEventInfo")]
     int GetEventInfo(
-        Event* @event,
+        EventHandle @event,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -9950,7 +9519,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetEventInfo")]
     int GetEventInfo(
-        Ref<Event> @event,
+        EventHandle @event,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -9974,7 +9543,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetEventProfilingInfo")]
     int GetEventProfilingInfo(
-        Event* @event,
+        EventHandle @event,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -9998,7 +9567,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetEventProfilingInfo")]
     int GetEventProfilingInfo(
-        Ref<Event> @event,
+        EventHandle @event,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10057,7 +9626,7 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clGetExtensionFunctionAddressForPlatform")]
-    void* GetExtensionFunctionAddressForPlatform(PlatformId* platform, sbyte* func_name);
+    void* GetExtensionFunctionAddressForPlatform(PlatformIdHandle platform, sbyte* func_name);
 
     [NativeName("clGetExtensionFunctionAddressForPlatform")]
     [SupportedApiProfile(
@@ -10073,7 +9642,7 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clGetExtensionFunctionAddressForPlatform")]
-    Ptr GetExtensionFunctionAddressForPlatform(Ref<PlatformId> platform, Ref<sbyte> func_name);
+    Ptr GetExtensionFunctionAddressForPlatform(PlatformIdHandle platform, Ref<sbyte> func_name);
 
     [NativeName("clGetHostTimer")]
     [SupportedApiProfile(
@@ -10082,7 +9651,7 @@ public unsafe partial interface ICl
         MinVersion = "2.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clGetHostTimer")]
-    int GetHostTimer(DeviceId* device, ulong* host_timestamp);
+    int GetHostTimer(DeviceIdHandle device, ulong* host_timestamp);
 
     [NativeName("clGetHostTimer")]
     [SupportedApiProfile(
@@ -10091,7 +9660,7 @@ public unsafe partial interface ICl
         MinVersion = "2.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clGetHostTimer")]
-    int GetHostTimer(Ref<DeviceId> device, Ref<ulong> host_timestamp);
+    int GetHostTimer(DeviceIdHandle device, Ref<ulong> host_timestamp);
 
     [NativeName("clGetICDLoaderInfoOCLICD")]
     [SupportedApiProfile("opencl", ["cl_loader_info"])]
@@ -10130,7 +9699,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetImageInfo")]
     int GetImageInfo(
-        Mem* image,
+        MemHandle image,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10154,7 +9723,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetImageInfo")]
     int GetImageInfo(
-        Ref<Mem> image,
+        MemHandle image,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10169,7 +9738,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
     int GetImageRequirementsInfoEXT(
-        Context* context,
+        ContextHandle context,
         ulong* properties,
         ulong flags,
         ImageFormat* image_format,
@@ -10188,7 +9757,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetImageRequirementsInfoEXT")]
     int GetImageRequirementsInfoEXT(
-        Ref<Context> context,
+        ContextHandle context,
         Ref<ulong> properties,
         ulong flags,
         Ref<ImageFormat> image_format,
@@ -10214,7 +9783,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetKernelArgInfo")]
     int GetKernelArgInfo(
-        Kernel* kernel,
+        KernelHandle kernel,
         uint arg_indx,
         uint param_name,
         nuint param_value_size,
@@ -10237,7 +9806,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetKernelArgInfo")]
     int GetKernelArgInfo(
-        Ref<Kernel> kernel,
+        KernelHandle kernel,
         uint arg_indx,
         uint param_name,
         nuint param_value_size,
@@ -10262,7 +9831,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetKernelInfo")]
     int GetKernelInfo(
-        Kernel* kernel,
+        KernelHandle kernel,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10286,7 +9855,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetKernelInfo")]
     int GetKernelInfo(
-        Ref<Kernel> kernel,
+        KernelHandle kernel,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10301,8 +9870,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfo")]
     int GetKernelSubGroupInfo(
-        Kernel* kernel,
-        DeviceId* device,
+        KernelHandle kernel,
+        DeviceIdHandle device,
         uint param_name,
         nuint input_value_size,
         void* input_value,
@@ -10319,8 +9888,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfo")]
     int GetKernelSubGroupInfo(
-        Ref<Kernel> kernel,
-        Ref<DeviceId> device,
+        KernelHandle kernel,
+        DeviceIdHandle device,
         uint param_name,
         nuint input_value_size,
         Ref input_value,
@@ -10334,8 +9903,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
     int GetKernelSubGroupInfoKHR(
-        Kernel* in_kernel,
-        DeviceId* in_device,
+        KernelHandle in_kernel,
+        DeviceIdHandle in_device,
         uint param_name,
         nuint input_value_size,
         void* input_value,
@@ -10349,8 +9918,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
     int GetKernelSubGroupInfoKHR(
-        Ref<Kernel> in_kernel,
-        Ref<DeviceId> in_device,
+        KernelHandle in_kernel,
+        DeviceIdHandle in_device,
         uint param_name,
         nuint input_value_size,
         Ref input_value,
@@ -10363,8 +9932,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["CL_VERSION_3_1"], MinVersion = "3.1")]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSize")]
     int GetKernelSuggestedLocalWorkSize(
-        CommandQueue* command_queue,
-        Kernel* kernel,
+        CommandQueueHandle command_queue,
+        KernelHandle kernel,
         uint work_dim,
         nuint* global_work_offset,
         nuint* global_work_size,
@@ -10375,8 +9944,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["CL_VERSION_3_1"], MinVersion = "3.1")]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSize")]
     int GetKernelSuggestedLocalWorkSize(
-        Ref<CommandQueue> command_queue,
-        Ref<Kernel> kernel,
+        CommandQueueHandle command_queue,
+        KernelHandle kernel,
         uint work_dim,
         Ref<nuint> global_work_offset,
         Ref<nuint> global_work_size,
@@ -10387,8 +9956,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
     int GetKernelSuggestedLocalWorkSizeKHR(
-        CommandQueue* command_queue,
-        Kernel* kernel,
+        CommandQueueHandle command_queue,
+        KernelHandle kernel,
         uint work_dim,
         nuint* global_work_offset,
         nuint* global_work_size,
@@ -10399,8 +9968,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_khr_suggested_local_work_size"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSuggestedLocalWorkSizeKHR")]
     int GetKernelSuggestedLocalWorkSizeKHR(
-        Ref<CommandQueue> command_queue,
-        Ref<Kernel> kernel,
+        CommandQueueHandle command_queue,
+        KernelHandle kernel,
         uint work_dim,
         Ref<nuint> global_work_offset,
         Ref<nuint> global_work_size,
@@ -10424,8 +9993,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetKernelWorkGroupInfo")]
     int GetKernelWorkGroupInfo(
-        Kernel* kernel,
-        DeviceId* device,
+        KernelHandle kernel,
+        DeviceIdHandle device,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10449,8 +10018,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetKernelWorkGroupInfo")]
     int GetKernelWorkGroupInfo(
-        Ref<Kernel> kernel,
-        Ref<DeviceId> device,
+        KernelHandle kernel,
+        DeviceIdHandle device,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10461,7 +10030,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
     int GetMemAllocInfoINTEL(
-        Context* context,
+        ContextHandle context,
         void* ptr,
         uint param_name,
         nuint param_value_size,
@@ -10473,7 +10042,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
     int GetMemAllocInfoINTEL(
-        Ref<Context> context,
+        ContextHandle context,
         Ref ptr,
         uint param_name,
         nuint param_value_size,
@@ -10498,7 +10067,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetMemObjectInfo")]
     int GetMemObjectInfo(
-        Mem* memobj,
+        MemHandle memobj,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10522,7 +10091,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetMemObjectInfo")]
     int GetMemObjectInfo(
-        Ref<Mem> memobj,
+        MemHandle memobj,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10537,7 +10106,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetPipeInfo")]
     int GetPipeInfo(
-        Mem* pipe,
+        MemHandle pipe,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10552,7 +10121,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetPipeInfo")]
     int GetPipeInfo(
-        Ref<Mem> pipe,
+        MemHandle pipe,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10575,7 +10144,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clGetPlatformIDs")]
-    int GetPlatformIDs(uint num_entries, PlatformId** platforms, uint* num_platforms);
+    int GetPlatformIDs(uint num_entries, PlatformIdHandle* platforms, uint* num_platforms);
 
     [NativeName("clGetPlatformIDs")]
     [SupportedApiProfile(
@@ -10593,7 +10162,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clGetPlatformIDs")]
-    int GetPlatformIDs(uint num_entries, Ref2D<PlatformId> platforms, Ref<uint> num_platforms);
+    int GetPlatformIDs(uint num_entries, Ref<PlatformIdHandle> platforms, Ref<uint> num_platforms);
 
     [NativeName("clGetPlatformInfo")]
     [SupportedApiProfile(
@@ -10612,7 +10181,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetPlatformInfo")]
     int GetPlatformInfo(
-        PlatformId* platform,
+        PlatformIdHandle platform,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10636,7 +10205,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetPlatformInfo")]
     int GetPlatformInfo(
-        Ref<PlatformId> platform,
+        PlatformIdHandle platform,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10660,8 +10229,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetProgramBuildInfo")]
     int GetProgramBuildInfo(
-        Program* program,
-        DeviceId* device,
+        ProgramHandle program,
+        DeviceIdHandle device,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10685,8 +10254,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetProgramBuildInfo")]
     int GetProgramBuildInfo(
-        Ref<Program> program,
-        Ref<DeviceId> device,
+        ProgramHandle program,
+        DeviceIdHandle device,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10710,7 +10279,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetProgramInfo")]
     int GetProgramInfo(
-        Program* program,
+        ProgramHandle program,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10734,7 +10303,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetProgramInfo")]
     int GetProgramInfo(
-        Ref<Program> program,
+        ProgramHandle program,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10758,7 +10327,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetSamplerInfo")]
     int GetSamplerInfo(
-        Sampler* sampler,
+        SamplerHandle sampler,
         uint param_name,
         nuint param_value_size,
         void* param_value,
@@ -10782,7 +10351,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetSamplerInfo")]
     int GetSamplerInfo(
-        Ref<Sampler> sampler,
+        SamplerHandle sampler,
         uint param_name,
         nuint param_value_size,
         Ref param_value,
@@ -10798,7 +10367,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
     int GetSemaphoreHandleForTypeKHR(
         _cl_semaphore_khr* sema_object,
-        DeviceId* device,
+        DeviceIdHandle device,
         uint handle_type,
         nuint handle_size,
         void* handle_ptr,
@@ -10814,7 +10383,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clGetSemaphoreHandleForTypeKHR")]
     int GetSemaphoreHandleForTypeKHR(
         Ref<_cl_semaphore_khr> sema_object,
-        Ref<DeviceId> device,
+        DeviceIdHandle device,
         uint handle_type,
         nuint handle_size,
         Ref handle_ptr,
@@ -10860,7 +10429,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetSupportedImageFormats")]
     int GetSupportedImageFormats(
-        Context* context,
+        ContextHandle context,
         ulong flags,
         uint image_type,
         uint num_entries,
@@ -10885,7 +10454,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clGetSupportedImageFormats")]
     int GetSupportedImageFormats(
-        Ref<Context> context,
+        ContextHandle context,
         ulong flags,
         uint image_type,
         uint num_entries,
@@ -10897,7 +10466,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
     void* HostMemAllocINTEL(
-        Context* context,
+        ContextHandle context,
         ulong* properties,
         nuint size,
         uint alignment,
@@ -10908,7 +10477,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clHostMemAllocINTEL")]
     Ptr HostMemAllocINTEL(
-        Ref<Context> context,
+        ContextHandle context,
         Ref<ulong> properties,
         nuint size,
         uint alignment,
@@ -10918,42 +10487,42 @@ public unsafe partial interface ICl
     [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_icd"])]
     [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
-    void* IcdGetFunctionAddressForPlatformKHR(PlatformId* platform, sbyte* func_name);
+    void* IcdGetFunctionAddressForPlatformKHR(PlatformIdHandle platform, sbyte* func_name);
 
     [NativeName("clIcdGetFunctionAddressForPlatformKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_icd"])]
     [NativeFunction("opencl", EntryPoint = "clIcdGetFunctionAddressForPlatformKHR")]
-    Ptr IcdGetFunctionAddressForPlatformKHR(Ref<PlatformId> platform, Ref<sbyte> func_name);
+    Ptr IcdGetFunctionAddressForPlatformKHR(PlatformIdHandle platform, Ref<sbyte> func_name);
 
     [NativeName("clIcdGetPlatformIDsKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_icd"])]
     [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
-    int IcdGetPlatformIDsKHR(uint num_entries, PlatformId** platforms, uint* num_platforms);
+    int IcdGetPlatformIDsKHR(uint num_entries, PlatformIdHandle* platforms, uint* num_platforms);
 
     [NativeName("clIcdGetPlatformIDsKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_icd"])]
     [NativeFunction("opencl", EntryPoint = "clIcdGetPlatformIDsKHR")]
     int IcdGetPlatformIDsKHR(
         uint num_entries,
-        Ref2D<PlatformId> platforms,
+        Ref<PlatformIdHandle> platforms,
         Ref<uint> num_platforms
     );
 
     [NativeName("clIcdSetPlatformDispatchDataKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_icd"])]
     [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
-    int IcdSetPlatformDispatchDataKHR(PlatformId* platform, void* dispatch_data);
+    int IcdSetPlatformDispatchDataKHR(PlatformIdHandle platform, void* dispatch_data);
 
     [NativeName("clIcdSetPlatformDispatchDataKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_icd"])]
     [NativeFunction("opencl", EntryPoint = "clIcdSetPlatformDispatchDataKHR")]
-    int IcdSetPlatformDispatchDataKHR(Ref<PlatformId> platform, Ref dispatch_data);
+    int IcdSetPlatformDispatchDataKHR(PlatformIdHandle platform, Ref dispatch_data);
 
     [NativeName("clImportMemoryARM")]
     [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
     [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
-    Mem* ImportMemoryARM(
-        Context* context,
+    MemHandle ImportMemoryARM(
+        ContextHandle context,
         ulong flags,
         nint* properties,
         void* memory,
@@ -10964,8 +10533,8 @@ public unsafe partial interface ICl
     [NativeName("clImportMemoryARM")]
     [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
     [NativeFunction("opencl", EntryPoint = "clImportMemoryARM")]
-    Ptr<Mem> ImportMemoryARM(
-        Ref<Context> context,
+    MemHandle ImportMemoryARM(
+        ContextHandle context,
         ulong flags,
         Ref<nint> properties,
         Ref memory,
@@ -10987,14 +10556,14 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clLinkProgram")]
-    Program* LinkProgram(
-        Context* context,
+    ProgramHandle LinkProgram(
+        ContextHandle context,
         uint num_devices,
-        DeviceId** device_list,
+        DeviceIdHandle* device_list,
         sbyte* options,
         uint num_input_programs,
-        Program** input_programs,
-        delegate* unmanaged<Program*, void*, void> pfn_notify,
+        ProgramHandle* input_programs,
+        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
         void* user_data,
         int* errcode_ret
     );
@@ -11013,14 +10582,14 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clLinkProgram")]
-    Ptr<Program> LinkProgram(
-        Ref<Context> context,
+    ProgramHandle LinkProgram(
+        ContextHandle context,
         uint num_devices,
-        Ref2D<DeviceId> device_list,
+        Ref<DeviceIdHandle> device_list,
         Ref<sbyte> options,
         uint num_input_programs,
-        Ref2D<Program> input_programs,
-        delegate* unmanaged<Program*, void*, void> pfn_notify,
+        Ref<ProgramHandle> input_programs,
+        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
     );
@@ -11058,22 +10627,22 @@ public unsafe partial interface ICl
     [NativeName("clMemBlockingFreeINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
-    int MemBlockingFreeINTEL(Context* context, void* ptr);
+    int MemBlockingFreeINTEL(ContextHandle context, void* ptr);
 
     [NativeName("clMemBlockingFreeINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clMemBlockingFreeINTEL")]
-    int MemBlockingFreeINTEL(Ref<Context> context, Ref ptr);
+    int MemBlockingFreeINTEL(ContextHandle context, Ref ptr);
 
     [NativeName("clMemFreeINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
-    int MemFreeINTEL(Context* context, void* ptr);
+    int MemFreeINTEL(ContextHandle context, void* ptr);
 
     [NativeName("clMemFreeINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clMemFreeINTEL")]
-    int MemFreeINTEL(Ref<Context> context, Ref ptr);
+    int MemFreeINTEL(ContextHandle context, Ref ptr);
 
     [NativeName("clReImportSemaphoreSyncFdKHR")]
     [SupportedApiProfile(
@@ -11123,25 +10692,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseCommandQueue")]
-    int ReleaseCommandQueue(CommandQueue* command_queue);
-
-    [NativeName("clReleaseCommandQueue")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clReleaseCommandQueue")]
-    int ReleaseCommandQueue(Ref<CommandQueue> command_queue);
+    int ReleaseCommandQueue(CommandQueueHandle command_queue);
 
     [NativeName("clReleaseContext")]
     [SupportedApiProfile(
@@ -11159,25 +10710,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
-    int ReleaseContext(Context* context);
-
-    [NativeName("clReleaseContext")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clReleaseContext")]
-    int ReleaseContext(Ref<Context> context);
+    int ReleaseContext(ContextHandle context);
 
     [NativeName("clReleaseDevice")]
     [SupportedApiProfile(
@@ -11193,33 +10726,12 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseDevice")]
-    int ReleaseDevice(DeviceId* device);
-
-    [NativeName("clReleaseDevice")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.2"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clReleaseDevice")]
-    int ReleaseDevice(Ref<DeviceId> device);
+    int ReleaseDevice(DeviceIdHandle device);
 
     [NativeName("clReleaseDeviceEXT")]
     [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
     [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
-    int ReleaseDeviceEXT(DeviceId* device);
-
-    [NativeName("clReleaseDeviceEXT")]
-    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
-    [NativeFunction("opencl", EntryPoint = "clReleaseDeviceEXT")]
-    int ReleaseDeviceEXT(Ref<DeviceId> device);
+    int ReleaseDeviceEXT(DeviceIdHandle device);
 
     [NativeName("clReleaseEvent")]
     [SupportedApiProfile(
@@ -11237,25 +10749,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseEvent")]
-    int ReleaseEvent(Event* @event);
-
-    [NativeName("clReleaseEvent")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clReleaseEvent")]
-    int ReleaseEvent(Ref<Event> @event);
+    int ReleaseEvent(EventHandle @event);
 
     [NativeName("clReleaseKernel")]
     [SupportedApiProfile(
@@ -11273,25 +10767,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseKernel")]
-    int ReleaseKernel(Kernel* kernel);
-
-    [NativeName("clReleaseKernel")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clReleaseKernel")]
-    int ReleaseKernel(Ref<Kernel> kernel);
+    int ReleaseKernel(KernelHandle kernel);
 
     [NativeName("clReleaseMemObject")]
     [SupportedApiProfile(
@@ -11309,25 +10785,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseMemObject")]
-    int ReleaseMemObject(Mem* memobj);
-
-    [NativeName("clReleaseMemObject")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clReleaseMemObject")]
-    int ReleaseMemObject(Ref<Mem> memobj);
+    int ReleaseMemObject(MemHandle memobj);
 
     [NativeName("clReleaseProgram")]
     [SupportedApiProfile(
@@ -11345,25 +10803,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseProgram")]
-    int ReleaseProgram(Program* program);
-
-    [NativeName("clReleaseProgram")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clReleaseProgram")]
-    int ReleaseProgram(Ref<Program> program);
+    int ReleaseProgram(ProgramHandle program);
 
     [NativeName("clReleaseSampler")]
     [SupportedApiProfile(
@@ -11381,25 +10821,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clReleaseSampler")]
-    int ReleaseSampler(Sampler* sampler);
-
-    [NativeName("clReleaseSampler")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clReleaseSampler")]
-    int ReleaseSampler(Ref<Sampler> sampler);
+    int ReleaseSampler(SamplerHandle sampler);
 
     [NativeName("clReleaseSemaphoreKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
@@ -11437,25 +10859,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainCommandQueue")]
-    int RetainCommandQueue(CommandQueue* command_queue);
-
-    [NativeName("clRetainCommandQueue")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clRetainCommandQueue")]
-    int RetainCommandQueue(Ref<CommandQueue> command_queue);
+    int RetainCommandQueue(CommandQueueHandle command_queue);
 
     [NativeName("clRetainContext")]
     [SupportedApiProfile(
@@ -11473,25 +10877,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainContext")]
-    int RetainContext(Context* context);
-
-    [NativeName("clRetainContext")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clRetainContext")]
-    int RetainContext(Ref<Context> context);
+    int RetainContext(ContextHandle context);
 
     [NativeName("clRetainDevice")]
     [SupportedApiProfile(
@@ -11507,33 +10893,12 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainDevice")]
-    int RetainDevice(DeviceId* device);
-
-    [NativeName("clRetainDevice")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.2"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clRetainDevice")]
-    int RetainDevice(Ref<DeviceId> device);
+    int RetainDevice(DeviceIdHandle device);
 
     [NativeName("clRetainDeviceEXT")]
     [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
     [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
-    int RetainDeviceEXT(DeviceId* device);
-
-    [NativeName("clRetainDeviceEXT")]
-    [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
-    [NativeFunction("opencl", EntryPoint = "clRetainDeviceEXT")]
-    int RetainDeviceEXT(Ref<DeviceId> device);
+    int RetainDeviceEXT(DeviceIdHandle device);
 
     [NativeName("clRetainEvent")]
     [SupportedApiProfile(
@@ -11551,25 +10916,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainEvent")]
-    int RetainEvent(Event* @event);
-
-    [NativeName("clRetainEvent")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clRetainEvent")]
-    int RetainEvent(Ref<Event> @event);
+    int RetainEvent(EventHandle @event);
 
     [NativeName("clRetainKernel")]
     [SupportedApiProfile(
@@ -11587,25 +10934,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainKernel")]
-    int RetainKernel(Kernel* kernel);
-
-    [NativeName("clRetainKernel")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clRetainKernel")]
-    int RetainKernel(Ref<Kernel> kernel);
+    int RetainKernel(KernelHandle kernel);
 
     [NativeName("clRetainMemObject")]
     [SupportedApiProfile(
@@ -11623,25 +10952,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainMemObject")]
-    int RetainMemObject(Mem* memobj);
-
-    [NativeName("clRetainMemObject")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clRetainMemObject")]
-    int RetainMemObject(Ref<Mem> memobj);
+    int RetainMemObject(MemHandle memobj);
 
     [NativeName("clRetainProgram")]
     [SupportedApiProfile(
@@ -11659,25 +10970,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainProgram")]
-    int RetainProgram(Program* program);
-
-    [NativeName("clRetainProgram")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clRetainProgram")]
-    int RetainProgram(Ref<Program> program);
+    int RetainProgram(ProgramHandle program);
 
     [NativeName("clRetainSampler")]
     [SupportedApiProfile(
@@ -11695,25 +10988,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clRetainSampler")]
-    int RetainSampler(Sampler* sampler);
-
-    [NativeName("clRetainSampler")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_0",
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.0"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clRetainSampler")]
-    int RetainSampler(Ref<Sampler> sampler);
+    int RetainSampler(SamplerHandle sampler);
 
     [NativeName("clRetainSemaphoreKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_semaphore"], ImpliesSets = ["CL_VERSION_1_2"])]
@@ -11728,19 +11003,14 @@ public unsafe partial interface ICl
     [NativeName("clSetContentSizeBufferPoCL")]
     [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
     [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
-    int SetContentSizeBufferPOCL(Mem* buffer, Mem* content_size_buffer);
-
-    [NativeName("clSetContentSizeBufferPoCL")]
-    [SupportedApiProfile("opencl", ["cl_pocl_content_size"])]
-    [NativeFunction("opencl", EntryPoint = "clSetContentSizeBufferPoCL")]
-    int SetContentSizeBufferPOCL(Ref<Mem> buffer, Ref<Mem> content_size_buffer);
+    int SetContentSizeBufferPOCL(MemHandle buffer, MemHandle content_size_buffer);
 
     [NativeName("clSetContextDestructorCallback")]
     [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
     [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
     int SetContextDestructorCallback(
-        Context* context,
-        delegate* unmanaged<Context*, void*, void> pfn_notify,
+        ContextHandle context,
+        delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
         void* user_data
     );
 
@@ -11748,8 +11018,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
     [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
     int SetContextDestructorCallback(
-        Ref<Context> context,
-        delegate* unmanaged<Context*, void*, void> pfn_notify,
+        ContextHandle context,
+        delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
         Ref user_data
     );
 
@@ -11761,22 +11031,9 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetDefaultDeviceCommandQueue")]
     int SetDefaultDeviceCommandQueue(
-        Context* context,
-        DeviceId* device,
-        CommandQueue* command_queue
-    );
-
-    [NativeName("clSetDefaultDeviceCommandQueue")]
-    [SupportedApiProfile(
-        "opencl",
-        ["CL_VERSION_2_1", "CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
-        MinVersion = "2.1"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clSetDefaultDeviceCommandQueue")]
-    int SetDefaultDeviceCommandQueue(
-        Ref<Context> context,
-        Ref<DeviceId> device,
-        Ref<CommandQueue> command_queue
+        ContextHandle context,
+        DeviceIdHandle device,
+        CommandQueueHandle command_queue
     );
 
     [NativeName("clSetEventCallback")]
@@ -11795,9 +11052,9 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetEventCallback")]
     int SetEventCallback(
-        Event* @event,
+        EventHandle @event,
         int command_exec_callback_type,
-        delegate* unmanaged<Event*, int, void*, void> pfn_notify,
+        delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
         void* user_data
     );
 
@@ -11817,9 +11074,9 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetEventCallback")]
     int SetEventCallback(
-        Ref<Event> @event,
+        EventHandle @event,
         int command_exec_callback_type,
-        delegate* unmanaged<Event*, int, void*, void> pfn_notify,
+        delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
         Ref user_data
     );
 
@@ -11839,7 +11096,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clSetKernelArg")]
-    int SetKernelArg(Kernel* kernel, uint arg_index, nuint arg_size, void* arg_value);
+    int SetKernelArg(KernelHandle kernel, uint arg_index, nuint arg_size, void* arg_value);
 
     [NativeName("clSetKernelArg")]
     [SupportedApiProfile(
@@ -11857,7 +11114,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clSetKernelArg")]
-    int SetKernelArg(Ref<Kernel> kernel, uint arg_index, nuint arg_size, Ref arg_value);
+    int SetKernelArg(KernelHandle kernel, uint arg_index, nuint arg_size, Ref arg_value);
 
     [NativeName("clSetKernelArgDevicePointerEXT")]
     [SupportedApiProfile(
@@ -11866,26 +11123,17 @@ public unsafe partial interface ICl
         ImpliesSets = ["CL_VERSION_3_0"]
     )]
     [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
-    int SetKernelArgDevicePointerEXT(Kernel* kernel, uint arg_index, ulong arg_value);
-
-    [NativeName("clSetKernelArgDevicePointerEXT")]
-    [SupportedApiProfile(
-        "opencl",
-        ["cl_ext_buffer_device_address"],
-        ImpliesSets = ["CL_VERSION_3_0"]
-    )]
-    [NativeFunction("opencl", EntryPoint = "clSetKernelArgDevicePointerEXT")]
-    int SetKernelArgDevicePointerEXT(Ref<Kernel> kernel, uint arg_index, ulong arg_value);
+    int SetKernelArgDevicePointerEXT(KernelHandle kernel, uint arg_index, ulong arg_value);
 
     [NativeName("clSetKernelArgMemPointerINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
-    int SetKernelArgMemPointerINTEL(Kernel* kernel, uint arg_index, void* arg_value);
+    int SetKernelArgMemPointerINTEL(KernelHandle kernel, uint arg_index, void* arg_value);
 
     [NativeName("clSetKernelArgMemPointerINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clSetKernelArgMemPointerINTEL")]
-    int SetKernelArgMemPointerINTEL(Ref<Kernel> kernel, uint arg_index, Ref arg_value);
+    int SetKernelArgMemPointerINTEL(KernelHandle kernel, uint arg_index, Ref arg_value);
 
     [NativeName("clSetKernelArgSVMPointer")]
     [SupportedApiProfile(
@@ -11894,7 +11142,7 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointer")]
-    int SetKernelArgSvmPointer(Kernel* kernel, uint arg_index, void* arg_value);
+    int SetKernelArgSvmPointer(KernelHandle kernel, uint arg_index, void* arg_value);
 
     [NativeName("clSetKernelArgSVMPointer")]
     [SupportedApiProfile(
@@ -11903,17 +11151,17 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointer")]
-    int SetKernelArgSvmPointer(Ref<Kernel> kernel, uint arg_index, Ref arg_value);
+    int SetKernelArgSvmPointer(KernelHandle kernel, uint arg_index, Ref arg_value);
 
     [NativeName("clSetKernelArgSVMPointerARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
-    int SetKernelArgSvmPointerARM(Kernel* kernel, uint arg_index, void* arg_value);
+    int SetKernelArgSvmPointerARM(KernelHandle kernel, uint arg_index, void* arg_value);
 
     [NativeName("clSetKernelArgSVMPointerARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clSetKernelArgSVMPointerARM")]
-    int SetKernelArgSvmPointerARM(Ref<Kernel> kernel, uint arg_index, Ref arg_value);
+    int SetKernelArgSvmPointerARM(KernelHandle kernel, uint arg_index, Ref arg_value);
 
     [NativeName("clSetKernelExecInfo")]
     [SupportedApiProfile(
@@ -11923,7 +11171,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfo")]
     int SetKernelExecInfo(
-        Kernel* kernel,
+        KernelHandle kernel,
         uint param_name,
         nuint param_value_size,
         void* param_value
@@ -11937,7 +11185,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfo")]
     int SetKernelExecInfo(
-        Ref<Kernel> kernel,
+        KernelHandle kernel,
         uint param_name,
         nuint param_value_size,
         Ref param_value
@@ -11947,7 +11195,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
     int SetKernelExecInfoARM(
-        Kernel* kernel,
+        KernelHandle kernel,
         uint param_name,
         nuint param_value_size,
         void* param_value
@@ -11957,7 +11205,7 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clSetKernelExecInfoARM")]
     int SetKernelExecInfoARM(
-        Ref<Kernel> kernel,
+        KernelHandle kernel,
         uint param_name,
         nuint param_value_size,
         Ref param_value
@@ -11967,8 +11215,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
     [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
     int SetMemObjectDestructorAPPLE(
-        Mem* memobj,
-        delegate* unmanaged<Mem*, void*, void> pfn_notify,
+        MemHandle memobj,
+        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
         void* user_data
     );
 
@@ -11976,8 +11224,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
     [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
     int SetMemObjectDestructorAPPLE(
-        Ref<Mem> memobj,
-        delegate* unmanaged<Mem*, void*, void> pfn_notify,
+        MemHandle memobj,
+        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
         Ref user_data
     );
 
@@ -11997,8 +11245,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorCallback")]
     int SetMemObjectDestructorCallback(
-        Mem* memobj,
-        delegate* unmanaged<Mem*, void*, void> pfn_notify,
+        MemHandle memobj,
+        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
         void* user_data
     );
 
@@ -12018,20 +11266,15 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorCallback")]
     int SetMemObjectDestructorCallback(
-        Ref<Mem> memobj,
-        delegate* unmanaged<Mem*, void*, void> pfn_notify,
+        MemHandle memobj,
+        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
         Ref user_data
     );
 
     [NativeName("clSetPerfHintQCOM")]
     [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
     [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
-    int SetPerfHintQCOM(Context* context, uint perf_hint);
-
-    [NativeName("clSetPerfHintQCOM")]
-    [SupportedApiProfile("opencl", ["cl_qcom_perf_hint"])]
-    [NativeFunction("opencl", EntryPoint = "clSetPerfHintQCOM")]
-    int SetPerfHintQCOM(Ref<Context> context, uint perf_hint);
+    int SetPerfHintQCOM(ContextHandle context, uint perf_hint);
 
     [NativeName("clSetProgramReleaseCallback")]
     [Obsolete]
@@ -12042,8 +11285,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetProgramReleaseCallback")]
     int SetProgramReleaseCallback(
-        Program* program,
-        delegate* unmanaged<Program*, void*, void> pfn_notify,
+        ProgramHandle program,
+        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
         void* user_data
     );
 
@@ -12056,8 +11299,8 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetProgramReleaseCallback")]
     int SetProgramReleaseCallback(
-        Ref<Program> program,
-        delegate* unmanaged<Program*, void*, void> pfn_notify,
+        ProgramHandle program,
+        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
         Ref user_data
     );
 
@@ -12069,7 +11312,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetProgramSpecializationConstant")]
     int SetProgramSpecializationConstant(
-        Program* program,
+        ProgramHandle program,
         uint spec_id,
         nuint spec_size,
         void* spec_value
@@ -12083,7 +11326,7 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clSetProgramSpecializationConstant")]
     int SetProgramSpecializationConstant(
-        Ref<Program> program,
+        ProgramHandle program,
         uint spec_id,
         nuint spec_size,
         Ref spec_value
@@ -12104,31 +11347,14 @@ public unsafe partial interface ICl
         MinVersion = "1.1"
     )]
     [NativeFunction("opencl", EntryPoint = "clSetUserEventStatus")]
-    int SetUserEventStatus(Event* @event, int execution_status);
-
-    [NativeName("clSetUserEventStatus")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_1",
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.1"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clSetUserEventStatus")]
-    int SetUserEventStatus(Ref<Event> @event, int execution_status);
+    int SetUserEventStatus(EventHandle @event, int execution_status);
 
     [NativeName("clSharedMemAllocINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
     void* SharedMemAllocINTEL(
-        Context* context,
-        DeviceId* device,
+        ContextHandle context,
+        DeviceIdHandle device,
         ulong* properties,
         nuint size,
         uint alignment,
@@ -12139,8 +11365,8 @@ public unsafe partial interface ICl
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clSharedMemAllocINTEL")]
     Ptr SharedMemAllocINTEL(
-        Ref<Context> context,
-        Ref<DeviceId> device,
+        ContextHandle context,
+        DeviceIdHandle device,
         Ref<ulong> properties,
         nuint size,
         uint alignment,
@@ -12154,7 +11380,17 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clSVMAlloc")]
-    void* SvmAlloc(Context* context, ulong flags, nuint size, uint alignment);
+    Ptr SvmAlloc(ContextHandle context, ulong flags, nuint size, uint alignment);
+
+    [NativeName("clSVMAllocARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+    Ptr SvmAllocARM(ContextHandle context, ulong flags, nuint size, uint alignment);
+
+    [NativeName("clSVMAllocARM")]
+    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
+    [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
+    void* SvmAllocRawARM(ContextHandle context, ulong flags, nuint size, uint alignment);
 
     [NativeName("clSVMAlloc")]
     [SupportedApiProfile(
@@ -12163,17 +11399,7 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clSVMAlloc")]
-    Ptr SvmAlloc(Ref<Context> context, ulong flags, nuint size, uint alignment);
-
-    [NativeName("clSVMAllocARM")]
-    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
-    [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
-    void* SvmAllocARM(Context* context, ulong flags, nuint size, uint alignment);
-
-    [NativeName("clSVMAllocARM")]
-    [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
-    [NativeFunction("opencl", EntryPoint = "clSVMAllocARM")]
-    Ptr SvmAllocARM(Ref<Context> context, ulong flags, nuint size, uint alignment);
+    void* SvmAllocRaw(ContextHandle context, ulong flags, nuint size, uint alignment);
 
     [NativeName("clSVMFree")]
     [SupportedApiProfile(
@@ -12182,7 +11408,7 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clSVMFree")]
-    void SvmFree(Context* context, void* svm_pointer);
+    void SvmFree(ContextHandle context, void* svm_pointer);
 
     [NativeName("clSVMFree")]
     [SupportedApiProfile(
@@ -12191,27 +11417,22 @@ public unsafe partial interface ICl
         MinVersion = "2.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clSVMFree")]
-    void SvmFree(Ref<Context> context, Ref svm_pointer);
+    void SvmFree(ContextHandle context, Ref svm_pointer);
 
     [NativeName("clSVMFreeARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
-    void SvmFreeARM(Context* context, void* svm_pointer);
+    void SvmFreeARM(ContextHandle context, void* svm_pointer);
 
     [NativeName("clSVMFreeARM")]
     [SupportedApiProfile("opencl", ["cl_arm_shared_virtual_memory"])]
     [NativeFunction("opencl", EntryPoint = "clSVMFreeARM")]
-    void SvmFreeARM(Ref<Context> context, Ref svm_pointer);
+    void SvmFreeARM(ContextHandle context, Ref svm_pointer);
 
     [NativeName("clTerminateContextKHR")]
     [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
     [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
-    int TerminateContextKHR(Context* context);
-
-    [NativeName("clTerminateContextKHR")]
-    [SupportedApiProfile("opencl", ["cl_khr_terminate_context"])]
-    [NativeFunction("opencl", EntryPoint = "clTerminateContextKHR")]
-    int TerminateContextKHR(Ref<Context> context);
+    int TerminateContextKHR(ContextHandle context);
 
     [NativeName("clUnloadCompiler")]
     [Obsolete]
@@ -12246,23 +11467,7 @@ public unsafe partial interface ICl
         MinVersion = "1.2"
     )]
     [NativeFunction("opencl", EntryPoint = "clUnloadPlatformCompiler")]
-    int UnloadPlatformCompiler(PlatformId* platform);
-
-    [NativeName("clUnloadPlatformCompiler")]
-    [SupportedApiProfile(
-        "opencl",
-        [
-            "CL_VERSION_1_2",
-            "CL_VERSION_2_0",
-            "CL_VERSION_2_1",
-            "CL_VERSION_2_2",
-            "CL_VERSION_3_0",
-            "CL_VERSION_3_1",
-        ],
-        MinVersion = "1.2"
-    )]
-    [NativeFunction("opencl", EntryPoint = "clUnloadPlatformCompiler")]
-    int UnloadPlatformCompiler(Ref<PlatformId> platform);
+    int UnloadPlatformCompiler(PlatformIdHandle platform);
 
     [NativeName("clWaitForEvents")]
     [SupportedApiProfile(
@@ -12280,7 +11485,7 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clWaitForEvents")]
-    int WaitForEvents(uint num_events, Event** event_list);
+    int WaitForEvents(uint num_events, EventHandle* event_list);
 
     [NativeName("clWaitForEvents")]
     [SupportedApiProfile(
@@ -12298,5 +11503,5 @@ public unsafe partial interface ICl
         MinVersion = "1.0"
     )]
     [NativeFunction("opencl", EntryPoint = "clWaitForEvents")]
-    int WaitForEvents(uint num_events, Ref2D<Event> event_list);
+    int WaitForEvents(uint num_events, Ref<EventHandle> event_list);
 }
