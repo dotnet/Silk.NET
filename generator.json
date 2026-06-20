@@ -273,7 +273,8 @@
         "Namespace": "Silk.NET.OpenCL",
         "TypeMap": {
           "cl_bitfield": "ulong",
-          "cl_properties": "ulong"
+          "cl_properties": "ulong",
+          "ErrorCodes": "int"
         },
         "IdentifyEnumMemberImpliedVendors": true
       },
