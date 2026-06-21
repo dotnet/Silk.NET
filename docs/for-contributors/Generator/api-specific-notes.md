@@ -16,9 +16,13 @@ characteristics with other bindings.
 
 Currently empty.
 
-## Khronos-like Bindings
+## Khronos Bindings
 
 These are APIs managed either by Khronos or APIs managed in a similar way to the official Khronos APIs.
+These use the `MixKhronosData` mod and come with an XML spec.
+
+Be aware that the XML spec links point to the latest version. Silk's repo may be using an older version of these XML
+files.
 
 ### OpenAL
 
