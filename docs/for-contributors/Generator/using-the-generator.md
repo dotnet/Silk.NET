@@ -66,7 +66,7 @@ Note that these files can be stored anywhere since the SilkTouch configuration l
 generator looks for these response files.
 
 > To read more about ClangSharpPInvokeGenerator's command line arguments, a good option is to install the tool directly
-> and use `--help` to display its command line documentation.
+> and use the `--help` option to display its command line documentation.
 >
 > ```sh
 > dotnet tool install --global ClangSharpPInvokeGenerator
@@ -235,6 +235,28 @@ corresponding `ProjectReference` or `PackageReference`. Also ensure the `AllowUn
 
 For the solution file, both `.sln` and `.slnx` file formats are supported. This is because we defer to Roslyn and
 MSBuild under the hood.
+
+### Running the Generator
+
+The generator can be run directly from source using the following command:
+
+```sh
+dotnet run --project sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj -c Release -- generator.json --only SDL
+```
+
+You may use the `--help` option to display additional information about available options.
+
+```
+dotnet run --project sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj -c Release -- --help
+```
+
+Some notable options include the `--only` and `--skip` options. `--only` lets you specify the exact jobs to run.
+`--skip` is the opposite and lets you specify the jobs to skip. If `--only` and `--skip` is specified for the same job,
+`--skip` takes precedence.
+
+Warning: There are currently some generator bugs associated with running multiple jobs in the same process. We recommend
+that you use `--only` to ensure that only one job is executed per process. Running multiple processes in parallel is
+fine.
 
 ### Generated Bindings Output
 
