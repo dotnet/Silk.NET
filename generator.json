@@ -299,6 +299,7 @@
           "cl_intel_advanced_motion_estimation.skip_block_type": "uint",
           "cl_intel_advanced_motion_estimation.device_me_version": "uint",
           "cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel": "uint",
+          "cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel.2": "uint",
           "cl_intel_device_side_avc_motion_estimation.version": "uint",
           "cl_intel_device_side_avc_motion_estimation.major": "uint",
           "cl_intel_device_side_avc_motion_estimation.minor": "uint",

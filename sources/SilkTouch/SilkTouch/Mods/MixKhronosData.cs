@@ -3089,21 +3089,6 @@ public partial class MixKhronosData(
             isLikelyOpenCL = true;
         }
 
-        // Remove block numbers from the end of group names
-        // This currently only affects cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel.2
-        // ErrorCodes is handled above since "ErrorCodes.future" does not match this pattern
-        var lastPeriodIndex = groupName.LastIndexOf('.');
-        if (lastPeriodIndex >= 0 && groupName.Length >= lastPeriodIndex + 1)
-        {
-            isLikelyOpenCL = true;
-
-            var lastSegment = groupName[(lastPeriodIndex + 1)..];
-            if (lastSegment.All(char.IsAsciiDigit))
-            {
-                groupName = groupName[..lastPeriodIndex];
-            }
-        }
-
         if (groupName.EndsWith(".flags"))
         {
             // NOTE from Perksey: I've actually gone ahead and disagreed with the original code here because why do we want to
