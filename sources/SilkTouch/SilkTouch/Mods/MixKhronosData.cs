@@ -2981,6 +2981,92 @@ public partial class MixKhronosData(
                 enumToGroups.Add(groupName);
             }
         }
+
+        // Post-process the OpenCL group names
+        // This is to cleanup names like cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel
+        //
+        // This is safe because all enums for OpenCL are introduced by MixKhronosData and not from ClangScraper.
+        // If any of the relevant enums end up being output by ClangScraper due to a change in the OpenCL headers,
+        // the renaming part of this block needs to be applied as a symbol-based rename instead.
+        // This rename should happen after the other enums added by GetMissingEnums are added as documents.
+        {
+            // Hardcoding because we know this is OpenCL
+            // We also make a lot of assumptions about the format of the relevant names
+            const string globalPrefix = "cl_";
+
+            // Filter for relevant names
+            var groups = data
+                .Groups.Values.Where(group =>
+                    group.NativeName.Contains('.')
+                    && group.NativeName.StartsWith(globalPrefix)
+                    && group.NativeName.All(c => !char.IsUpper(c))
+                )
+                .ToList();
+
+            var groupsToRename = new Dictionary<string, string>();
+            foreach (var group in groups)
+            {
+                // Split into sections
+                var sections = group.NativeName.Split('.');
+
+                // Remove global prefix from each section
+                for (var i = 0; i < sections.Length; i++)
+                {
+                    ref var section = ref sections[i];
+                    if (section.StartsWith(globalPrefix))
+                    {
+                        section = section[globalPrefix.Length..];
+                    }
+                }
+
+                // Look for vendor prefixes/suffixes in each section and remove them
+                // Assume that names will not have two different vendors
+                string? identifiedVendor = null;
+                foreach (var vendor in data.Vendors)
+                {
+                    var lowercaseVendor = vendor.ToLower();
+                    for (var i = 0; i < sections.Length; i++)
+                    {
+                        ref var section = ref sections[i];
+                        if (section.StartsWith(lowercaseVendor))
+                        {
+                            identifiedVendor = vendor;
+                            section = section[(lowercaseVendor.Length + 1)..];
+                        }
+
+                        if (section.EndsWith(lowercaseVendor))
+                        {
+                            identifiedVendor = vendor;
+                            section = section[..^(lowercaseVendor.Length + 1)];
+                        }
+                    }
+                }
+
+                // Assemble new name
+                var newName = $"{globalPrefix}{string.Join('_', sections)}";
+                if (identifiedVendor != null)
+                {
+                    newName = $"{newName}_{identifiedVendor.ToLowerInvariant()}";
+                }
+
+                groupsToRename[group.Name] = newName;
+            }
+
+            // Apply renames
+            foreach (var (oldName, newName) in groupsToRename)
+            {
+                data.Groups[newName] = data.Groups[oldName] with { Name = newName };
+                data.Groups.Remove(oldName);
+
+                foreach (var groupMapping in data.EnumsToGroups.Values)
+                {
+                    if (groupMapping.Remove(oldName))
+                    {
+                        groupMapping.Add(newName);
+                    }
+                }
+            }
+        }
     }
 
     /// <summary>
