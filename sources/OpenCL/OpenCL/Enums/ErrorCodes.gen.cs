@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("ErrorCodes.0")]
+[NativeName("ErrorCodes")]
 public enum ErrorCodes : int
 {
     [NativeName("CL_SUCCESS")]
