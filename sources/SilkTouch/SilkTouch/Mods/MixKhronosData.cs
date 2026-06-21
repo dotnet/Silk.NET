@@ -1718,18 +1718,18 @@ public partial class MixKhronosData(
             {
                 if (!AlreadyPresentGroups.Contains(groupName))
                 {
-                    var baseType = groupInfo.BaseType ?? groupName;
+                    var baseType = groupInfo.BaseType ?? groupInfo.NativeName;
                     while (job.TypeMap.TryGetValue(baseType, out var ty))
                     {
                         baseType = ty;
                     }
 
-                    if (baseType == groupName)
+                    if (baseType == groupInfo.NativeName)
                     {
                         logger?.LogError(
                             "Enum \"{}\" has no base type. Please add TypeMap entry to the configuration. "
                                 + "This enum group will be skipped.",
-                            groupName
+                            groupInfo.NativeName
                         );
                         continue;
                     }
