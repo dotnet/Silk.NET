@@ -35,6 +35,17 @@ public partial class MixKhronosData(
     internal ConcurrentDictionary<string, JobData> Jobs = new();
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
+    private class NameAffixes
+    {
+        public const string KhronosFunctionDataType = "KhronosFunctionDataType";
+        public const string KhronosHandleType = "KhronosHandleType";
+        public const string KhronosImpliedVendor = "KhronosImpliedVendor";
+        public const string KhronosNamespaceEnum = "KhronosNamespaceEnum";
+        public const string KhronosNonExclusiveVendor = "KhronosNonExclusiveVendor";
+        public const string KhronosNonVendor = "KhronosNonVendor";
+        public const string KhronosVendor = "KhronosVendor";
+    }
+
     internal class JobData
     {
         /// <summary>
@@ -2051,7 +2062,12 @@ public partial class MixKhronosData(
                 {
                     trimmedName = trimmedName[..^handleSuffix.Length];
                     attributeLists = attributeLists
-                        .AddNameAffix(NameAffixType.Suffix, "KhronosHandleType", handleSuffix, true)
+                        .AddNameAffix(
+                            NameAffixType.Suffix,
+                            NameAffixes.KhronosHandleType,
+                            handleSuffix,
+                            true
+                        )
                         .WithNativeName(trimmedName);
                 }
             }
@@ -2069,7 +2085,7 @@ public partial class MixKhronosData(
                         var identifiedSuffix = trimmedName[^vendor.Length..];
                         attributeLists = attributeLists.AddNameAffix(
                             NameAffixType.Suffix,
-                            "KhronosVendor",
+                            NameAffixes.KhronosVendor,
                             identifiedSuffix
                         );
                         trimmedName = trimmedName[..^identifiedSuffix.Length];
@@ -2095,7 +2111,7 @@ public partial class MixKhronosData(
                         var identifiedSuffix = trimmedName[^suffix.Length..];
                         attributeLists = attributeLists.AddNameAffix(
                             NameAffixType.Suffix,
-                            "KhronosNonVendor",
+                            NameAffixes.KhronosNonVendor,
                             identifiedSuffix,
                             true
                         );
@@ -2115,7 +2131,7 @@ public partial class MixKhronosData(
                     var identifiedSuffix = trimmedName[match.Index..];
                     attributeLists = attributeLists.AddNameAffix(
                         NameAffixType.Suffix,
-                        "KhronosFunctionDataType",
+                        NameAffixes.KhronosFunctionDataType,
                         identifiedSuffix,
                         true
                     );
@@ -2166,7 +2182,7 @@ public partial class MixKhronosData(
                 nativeTypeName.EndsWith(s, vendorSuffixComparison)
             );
             var hasTypeSuffix = typeVendor != null;
-            var vendorAffixType = "KhronosVendor";
+            var vendorAffixType = NameAffixes.KhronosVendor;
 
             // Identify the namespace enum
             // Eg: GLEnum, ALEnum
@@ -2175,7 +2191,7 @@ public partial class MixKhronosData(
                 node = node.WithAttributeLists(
                     node.AttributeLists.AddNameAffix(
                         NameAffixType.Prefix,
-                        "KhronosNamespaceEnum",
+                        NameAffixes.KhronosNamespaceEnum,
                         groupInfo.Namespace
                     )
                 );
@@ -2214,7 +2230,7 @@ public partial class MixKhronosData(
                 if (isVendorMismatch && isSafeToTrimType)
                 {
                     // Identify the affix as a non exclusive vendor since it isn't actually exclusive
-                    vendorAffixType = "KhronosNonExclusiveVendor";
+                    vendorAffixType = NameAffixes.KhronosNonExclusiveVendor;
 
                     // Assume that non exclusive vendor suffixes are trimmed
                     hasTypeSuffix = false;
@@ -2280,7 +2296,7 @@ public partial class MixKhronosData(
                                 return member.WithAttributeLists(
                                     member.AttributeLists.AddNameAffix(
                                         NameAffixType.Suffix,
-                                        "KhronosImpliedVendor",
+                                        NameAffixes.KhronosImpliedVendor,
                                         member.Identifier.Text[^typeVendor.Length..],
                                         true
                                     )
