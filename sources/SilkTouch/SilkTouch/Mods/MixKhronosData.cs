@@ -67,6 +67,7 @@ public partial class MixKhronosData(
         /// <remarks>
         /// This is OpenGL and OpenCL specific.
         /// </remarks>
+        // TODO: Due to historical reasons, this is keyed by the managed name of the enum. We should use the native name as the key instead since the native name does not change.
         public Dictionary<string, EnumGroup> Groups { get; } = [];
 
         /// <summary>
