@@ -170,7 +170,7 @@ public partial class MixKhronosData(
         /// For example, VkFlags and VkFlags64 for Vulkan.
         /// </summary>
         /// <remarks>
-        /// This mainly affects remappings.
+        /// This mainly affects the auto-injected ClangSharp remappings.
         /// If some flags types are showing as integral types instead of their proper type, make sure this property is configured.
         /// </remarks>
         public string[] FlagsTypes { get; init; } = [];
