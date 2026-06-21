@@ -3134,13 +3134,12 @@ public partial class MixKhronosData(
     /// Also handles OpenCL-style names, which are in lower snake case instead of upper snake case.
     /// <para/>
     /// Currently only intended to be used by <see cref="ReadGroups"/>.
-    /// <see cref="RewriterPhase3"/> has a different implementation that works for both enum and non-enum names.
+    /// <see cref="RewriterPhase3"/> has an implementation that works for both enum and non-enum names, but behaves differently.
     /// </remarks>
-    private static string? VendorFromEnumName(string str, HashSet<string> vendors) =>
-        str.LastIndexOf('_') is > 0 and var idx
-        && idx < str.Length
-        && str[idx..].ToUpper() is var vend
-        && vendors.Contains(vend)
-            ? vend
+    private static string? VendorFromEnumName(string name, HashSet<string> vendors) =>
+        name.LastIndexOf('_') is > 0 and var idx
+        && name[idx..].ToUpper() is var vendor
+        && vendors.Contains(vendor)
+            ? vendor
             : null;
 }
