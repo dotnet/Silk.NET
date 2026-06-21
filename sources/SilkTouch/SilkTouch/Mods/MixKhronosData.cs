@@ -1700,12 +1700,12 @@ public partial class MixKhronosData(
     private class RewriterPhase1(JobData job, ILogger logger) : CSharpSyntaxRewriter
     {
         /// <summary>
-        /// Tracks enum groups that already exist in the project, prior to the generation of missing enums.
+        /// Tracks enum groups that already exist in the project by their native name, prior to the generation of missing enums.
         /// </summary>
         public HashSet<string> AlreadyPresentGroups { get; } = [];
 
         /// <summary>
-        /// Tracks enums that exist in the project.
+        /// Tracks enums that exist in the project by their native name.
         /// Note that this includes any enum, including enums not present in <see cref="MixKhronosData.JobData.Groups"/>.
         /// </summary>
         public HashSet<string> AllKnownEnums { get; } = [];
@@ -1715,27 +1715,27 @@ public partial class MixKhronosData(
             var results = new List<(string FilePath, SyntaxNode Node)>();
 
             // Generate initial syntax trees
-            foreach (var (groupName, groupInfo) in job.Groups)
+            foreach (var group in job.Groups.Values)
             {
-                if (!AlreadyPresentGroups.Contains(groupName))
+                if (!AlreadyPresentGroups.Contains(group.NativeName))
                 {
-                    var baseType = groupInfo.BaseType ?? groupInfo.NativeName;
+                    var baseType = group.BaseType ?? group.NativeName;
                     while (job.TypeMap.TryGetValue(baseType, out var ty))
                     {
                         baseType = ty;
                     }
 
-                    if (baseType == groupInfo.NativeName)
+                    if (baseType == group.NativeName)
                     {
                         logger?.LogError(
                             "Enum \"{}\" has no base type. Please add TypeMap entry to the configuration. "
                                 + "This enum group will be skipped.",
-                            groupInfo.NativeName
+                            group.NativeName
                         );
                         continue;
                     }
 
-                    var ns = groupInfo
+                    var ns = group
                         .Enums.Select(x => x.NamespaceFromSyntaxNode())
                         .Distinct()
                         .Select((x, i) => (x, i))
@@ -1751,23 +1751,23 @@ public partial class MixKhronosData(
                         logger?.LogError(
                             "Enum \"{}\" has no namespace. Please add Namespace to the configuration. "
                                 + "This enum group will be skipped.",
-                            groupName
+                            group.NativeName
                         );
                         continue;
                     }
 
-                    AllKnownEnums.Add(groupName);
+                    AllKnownEnums.Add(group.NativeName);
 
                     var attributes = SingletonList(
                         AttributeList([Attribute(IdentifierName("Transformed"))])
                     );
-                    attributes = attributes.WithNativeName(groupInfo.NativeName);
+                    attributes = attributes.WithNativeName(group.NativeName);
 
                     var baseTypeSyntax = ParseTypeName(baseType);
 
                     results.Add(
                         (
-                            $"Enums/{groupName}.gen.cs",
+                            $"Enums/{group.Name}.gen.cs",
                             CompilationUnit()
                                 .WithMembers(
                                     SingletonList<MemberDeclarationSyntax>(
@@ -1776,7 +1776,7 @@ public partial class MixKhronosData(
                                             )
                                             .WithMembers(
                                                 SingletonList<MemberDeclarationSyntax>(
-                                                    EnumDeclaration(groupName)
+                                                    EnumDeclaration(group.Name)
                                                         .WithModifiers(
                                                             TokenList(
                                                                 Token(SyntaxKind.PublicKeyword)
@@ -1790,7 +1790,7 @@ public partial class MixKhronosData(
                                                         )
                                                         .WithMembers(
                                                             SeparatedList(
-                                                                groupInfo.Enums.Select(x =>
+                                                                group.Enums.Select(x =>
                                                                     EnumMemberDeclaration(
                                                                             x.Identifier.ToString()
                                                                         )
@@ -1835,7 +1835,7 @@ public partial class MixKhronosData(
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             // Track which enums already exist
-            var identifier = node.Identifier.ToString();
+            var identifier = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
             identifier = identifier.Replace("FlagBits", "Flags");
 
             AllKnownEnums.Add(identifier);
