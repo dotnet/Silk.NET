@@ -2180,7 +2180,7 @@ public partial class MixKhronosData(
             var groupInfo = job.Groups.GetValueOrDefault(managedTypeName);
 
             var typeVendor = job.Vendors.FirstOrDefault(s =>
-                nativeTypeName.EndsWith(s, vendorSuffixComparison)
+                managedTypeName.EndsWith(s, vendorSuffixComparison)
             );
             var hasTypeSuffix = typeVendor != null;
             var vendorAffixType = NameAffixes.KhronosVendor;
@@ -2245,7 +2245,7 @@ public partial class MixKhronosData(
                     node.AttributeLists.AddNameAffix(
                         NameAffixType.Suffix,
                         vendorAffixType,
-                        nativeTypeName[^typeVendor.Length..],
+                        managedTypeName[^typeVendor.Length..],
                         true
                     )
                 );
@@ -2254,7 +2254,7 @@ public partial class MixKhronosData(
             // Check if the enum contains unsuffixed members
             var containsUnsuffixedMembers = node.Members.Any(member =>
             {
-                var memberName = member.AttributeLists.GetNativeNameOrDefault(member.Identifier);
+                var memberName = member.Identifier.Text;
                 return !job.Vendors.Any(vendor =>
                     memberName.EndsWith(vendor, vendorSuffixComparison)
                     && CanIdentifySuffix(memberName, vendor.Length)
@@ -2284,9 +2284,7 @@ public partial class MixKhronosData(
                     [
                         .. node.Members.Select(member =>
                         {
-                            var memberName = member.AttributeLists.GetNativeNameOrDefault(
-                                member.Identifier
-                            );
+                            var memberName = member.Identifier.Text;
 
                             if (
                                 memberName.EndsWith(typeVendor, vendorSuffixComparison)
