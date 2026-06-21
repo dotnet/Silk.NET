@@ -2536,7 +2536,12 @@ public partial class MixKhronosData(
             // https://github.com/dotnet/Silk.NET/blob/d8919600/src/Core/Silk.NET.BuildTools/Converters/Readers/OpenCLReader.cs#L855-L870
             if (!anyNamespaced && groupName is not null && !topLevelIntentionalExclusion)
             {
-                FixupGroupNameForOpenCL(ref groupName, ref isLikelyOpenCL, ref isBitmask);
+                FixupGroupNameForOpenCL(
+                    ref groupName,
+                    ref nativeName,
+                    ref isLikelyOpenCL,
+                    ref isBitmask
+                );
             }
 
             // Initialize the group before enum members are parsed below
@@ -2935,23 +2940,29 @@ public partial class MixKhronosData(
             {
                 // Just in case.
                 var tempVar = false;
-                var groupStr = group;
-                FixupGroupNameForOpenCL(ref groupStr, ref isLikelyOpenCL, ref tempVar);
+                var groupName = group;
+                var nativeName = group;
+                FixupGroupNameForOpenCL(
+                    ref groupName,
+                    ref nativeName,
+                    ref isLikelyOpenCL,
+                    ref tempVar
+                );
 
                 // Update the group info if it doesn't exist.
-                if (data.Groups.TryGetValue(groupStr, out var groupInfo))
+                if (data.Groups.TryGetValue(groupName, out var groupInfo))
                 {
                     if (thisVendor is not null && groupInfo.ExclusiveVendor != thisVendor)
                     {
-                        data.Groups[groupStr] = groupInfo with { ExclusiveVendor = null };
+                        data.Groups[groupName] = groupInfo with { ExclusiveVendor = null };
                     }
                 }
                 else
                 {
-                    data.Groups[groupStr] = new EnumGroup()
+                    data.Groups[groupName] = new EnumGroup()
                     {
-                        Name = groupStr,
-                        NativeName = groupStr,
+                        Name = groupName,
+                        NativeName = nativeName ?? groupName,
 
                         IsDefinitelyBitmask =
                             (typeStr is not null && typeStr.Contains("bitfield"))
@@ -2967,7 +2978,7 @@ public partial class MixKhronosData(
                 }
 
                 // Mark this enum.
-                enumToGroups.Add(groupStr);
+                enumToGroups.Add(groupName);
             }
         }
     }
@@ -2980,32 +2991,32 @@ public partial class MixKhronosData(
     /// </remarks>
     private void FixupGroupNameForOpenCL(
         ref string groupName,
+        ref string? nativeName,
         ref bool isLikelyOpenCL,
         ref bool isBitmask
     )
     {
+        // Merge all ErrorCodes blocks
+        if (groupName.StartsWith("ErrorCodes") && groupName.Contains('.'))
+        {
+            groupName = "ErrorCodes";
+            nativeName = "ErrorCodes";
+            isLikelyOpenCL = true;
+        }
+
         // Remove block numbers from the end of group names
-        // This has the effect of merging the different blocks
-        // Examples:
-        // ErrorCodes.0
-        // cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel.2
+        // This currently only affects cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel.2
+        // ErrorCodes is handled above since "ErrorCodes.future" does not match this pattern
         var lastPeriodIndex = groupName.LastIndexOf('.');
         if (lastPeriodIndex >= 0 && groupName.Length >= lastPeriodIndex + 1)
         {
             isLikelyOpenCL = true;
 
             var lastSegment = groupName[(lastPeriodIndex + 1)..];
-            if (lastSegment.All(c => char.IsAsciiDigit(c)))
+            if (lastSegment.All(char.IsAsciiDigit))
             {
                 groupName = groupName[..lastPeriodIndex];
             }
-        }
-
-        // Most of ErrorCodes is handled above with the exception of ErrorCodes.future
-        if (groupName.StartsWith("ErrorCodes") && groupName.Contains('.'))
-        {
-            groupName = "ErrorCodes";
-            isLikelyOpenCL = true;
         }
 
         if (groupName.EndsWith(".flags"))
