@@ -16,7 +16,6 @@ public partial class Vk
 
     static Vk()
     {
-        LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
         LoaderInterface.RegisterAlternativeName("vulkan", "vulkan-1");
         LoaderInterface.RegisterAlternativeName("vulkan", "MoltenVK");
     }
