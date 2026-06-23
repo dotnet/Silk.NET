@@ -2982,12 +2982,13 @@ public partial class MixKhronosData(
         }
 
         // Post-process the OpenCL group names
-        // This is to cleanup names like cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel
         //
-        // This is safe because all enums for OpenCL are introduced by MixKhronosData and not from ClangScraper.
-        // If any of the relevant enums end up being output by ClangScraper due to a change in the OpenCL headers,
-        // the renaming part of this block needs to be applied as a symbol-based rename instead.
-        // This rename should happen after the other enums added by GetMissingEnums are added as documents.
+        // This targets names like cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel,
+        // which becomes cl_advanced_motion_estimation_motion_detect_desc_intel after transformation.
+        //
+        // We can do this transformation here because these enum types
+        // will never be output by ClangScraper due to the naming scheme.
+        // This has the benefit of avoiding a symbol-based rename later.
         {
             // Hardcoding because we know this is OpenCL
             // We also make a lot of assumptions about the format of the relevant names
