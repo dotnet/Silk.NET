@@ -23,11 +23,18 @@ public partial class Vk
 
     public unsafe partial class DllImport
     {
-        public static partial Result CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceHandle* pInstance)
-            => CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
+        public static partial Result CreateInstance(
+            InstanceCreateInfo* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            InstanceHandle* pInstance
+        ) => CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
 
-        public static partial Result CreateDevice(PhysicalDeviceHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceHandle* pDevice)
-            => CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
+        public static partial Result CreateDevice(
+            PhysicalDeviceHandle physicalDevice,
+            DeviceCreateInfo* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            DeviceHandle* pDevice
+        ) => CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
     }
 
     public partial class StaticWrapper<T>
@@ -139,7 +146,12 @@ public partial class Vk
         return vk;
     }
 
-    unsafe Result IVk.CreateDevice(PhysicalDeviceHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceHandle* pDevice)
+    unsafe Result IVk.CreateDevice(
+        PhysicalDeviceHandle physicalDevice,
+        DeviceCreateInfo* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        DeviceHandle* pDevice
+    )
     {
         var result = CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
         if (result == Result.Success)
@@ -150,7 +162,11 @@ public partial class Vk
         return result;
     }
 
-    unsafe Result IVk.CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceHandle* pInstance)
+    unsafe Result IVk.CreateInstance(
+        InstanceCreateInfo* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        InstanceHandle* pInstance
+    )
     {
         var result = CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
         if (result == Result.Success)
@@ -189,17 +205,13 @@ public partial class Vk
         }
 
         [UnmanagedCallersOnly]
-        private static unsafe void* GetDeviceProcAddr(DeviceHandle device, sbyte* pName)
-        {
-            return DllImport.GetDeviceProcAddr(device, pName);
-        }
+        private static unsafe void* GetDeviceProcAddr(DeviceHandle device, sbyte* pName) =>
+            DllImport.GetDeviceProcAddr(device, pName);
 
         [UnmanagedCallersOnly]
-        private static unsafe void* GetInstanceProcAddr(InstanceHandle instance, sbyte* pName)
-        {
-            return DllImport.GetInstanceProcAddr(instance, pName);
-        }
+        private static unsafe void* GetInstanceProcAddr(InstanceHandle instance, sbyte* pName) =>
+            DllImport.GetInstanceProcAddr(instance, pName);
 
-        public void Dispose() {}
+        public void Dispose() { }
     }
 }
