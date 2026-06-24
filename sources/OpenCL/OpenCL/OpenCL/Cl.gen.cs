@@ -27126,7 +27126,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_IMPORT_MEMORY_WHOLE_ALLOCATION_ARM")]
-    [SupportedApiProfile("opencl", ["cl_arm_import_memory"])]
+    [SupportedApiProfile(
+        "opencl",
+        ["cl_arm_import_memory_android_hardware_buffer"],
+        ImpliesSets = ["cl_arm_import_memory"]
+    )]
     public const nuint ImportMemoryWholeAllocationARM = (18446744073709551615U);
 
     [NativeName("CL_ARM_SHARED_VIRTUAL_MEMORY_EXTENSION_NAME")]
