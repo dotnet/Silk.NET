@@ -208,10 +208,10 @@ public class PrettifyNames(
         var typeNames = newNames.GetValueOrDefault("", []);
         var typeNamesLongestFirst = typeNames.OrderByDescending(x => x.Key.Length).ToArray();
 
-        var documentPaths = proj
-            .Documents.Select(d => d.RelativePath())
-            .Where(d => d != null)
-            .ToHashSet();
+        var documentPaths = new HashSet<string?>(
+            proj.Documents.Select(d => d.RelativePath()).Where(d => d != null),
+            StringComparer.OrdinalIgnoreCase // Also handle casing differences
+        );
 
         foreach (var docId in proj.DocumentIds)
         {
