@@ -2498,8 +2498,7 @@ public partial class MixKhronosData(
             // Vulkan/OpenXR/OpenCL enum name
             if (!anyNamespaced)
             {
-                // Trim is to handle "cl_platform_command_buffer_capabilities_khr " and similar OpenCL enums that have trailing spaces in their name
-                groupName ??= block.Attribute("name")?.Value.Trim();
+                groupName ??= block.Attribute("name")?.Value;
             }
 
             // Vulkan/OpenXR enum name
