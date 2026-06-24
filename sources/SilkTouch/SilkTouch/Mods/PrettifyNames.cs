@@ -253,7 +253,10 @@ public class PrettifyNames(
             if (!documentPaths.Add(newPath))
             {
                 logger.LogError(
-                    $"{originalName} -> {doc.Name} failed to rename file as a file already exists at {newPath}"
+                    "Refusing to rename doc from {OldName} to {NewNew} since another document already exists at {Path}",
+                    originalName,
+                    doc.Name,
+                    newPath
                 );
 
                 continue;
