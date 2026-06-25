@@ -51,19 +51,14 @@ public static class UnsafeNumericValueExtensions
             }
 #endif
 
-            if (sizeof(T) == sizeof(TTo))
+            if (sizeof(T) == sizeof(TTo) || (BitConverter.IsLittleEndian && sizeof(TTo) < sizeof(T)))
             {
                 return Unsafe.ReadUnaligned<TTo>(&value);
             }
 
-            if (BitConverter.IsLittleEndian && sizeof(TTo) < sizeof(T))
-            {
-                return Unsafe.ReadUnaligned<TTo>(&value);
-            }
-
+            TTo result = default;
+            var dst = (byte*)&result;
             var src = (byte*)&value;
-            Unsafe.SkipInit(out TTo result);
-            var dst = (byte*)Unsafe.AsPointer(ref result);
 
             var minSize = Math.Min(sizeof(TTo), sizeof(T));
             if (!BitConverter.IsLittleEndian)
@@ -73,21 +68,7 @@ public static class UnsafeNumericValueExtensions
                 dst += sizeof(TTo) - minSize;
             }
 
-            var sizeDelta = sizeof(TTo) - sizeof(T);
-            if (sizeDelta > 0)
-            {
-                var zeroStartPtr = dst;
-                if (BitConverter.IsLittleEndian) // JIT turns this into a constant, removing this as a branch
-                {
-                    // only zero "tail" bytes that were widened
-                    zeroStartPtr += sizeof(T);
-                }
-
-                Unsafe.InitBlockUnaligned(startAddress: zeroStartPtr, value: 0, (uint)sizeDelta);
-            }
-
-            Unsafe.CopyBlockUnaligned(destination: dst, source: src, byteCount: (uint)minSize);
-
+            Unsafe.CopyBlock(destination: dst, source: src, byteCount: unchecked((uint)minSize));
             return result;
         }
 
