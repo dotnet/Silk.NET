@@ -190,11 +190,11 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
         // init current joystick state
         var buttonCount = NativeBackend.GetNumJoystickButtons(joystickHandle);
-        var uniqueJoyButtonCount = Math.Max(EnumInfo<JoystickButton>.UniqueValues.Count, (int)GamepadButton.Count);
+        var uniqueJoyButtonCount = Math.Max(EnumInfo<JoystickButton>.UniqueNamedValues.Count, (int)GamepadButton.Count);
         _rawButtonState = new Button<JoystickButton>[uniqueJoyButtonCount + buttonCount];
 
         var axisCount = NativeBackend.GetNumJoystickAxes(joystickHandle);
-        _rawAxisState = new float[EnumInfo<JoystickAxis>.UniqueValues.Count + axisCount];
+        _rawAxisState = new float[EnumInfo<JoystickAxis>.UniqueNamedValues.Count + axisCount];
 
         var hatCount = NativeBackend.GetNumJoystickHats(joystickHandle);
         _rawHatState = new Vector2[hatCount];

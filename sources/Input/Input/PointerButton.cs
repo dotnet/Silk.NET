@@ -181,6 +181,4 @@ public enum PointerButton
     /// The thirty-second button.
     /// </summary>
     Button32,
-
-    // BEFORE ADDING MORE BUTTONS, ENSURE YOU CHANGE InputMarshal TO ACCOUNT FOR THE NEW MAX
 }

@@ -11,8 +11,6 @@ namespace Silk.NET.Input;
 /// </summary>
 public enum KeyName
 {
-    // BEFORE ADDING ANYTHING TO THIS FILE MAKE SURE YOU REALISE THAT InputMarshal RELIES ON ASSUMPTIONS ON THE VALUES
-
     // These values are from usage page 0x07 (USB keyboard page).
     /// <summary>
     /// A key that was not recognised.
@@ -435,8 +433,6 @@ public enum KeyName
     /// <summary>The "volume down" key.</summary>
     VolumeDown = 129,
 
-    // BEFORE ADDING ANYTHING TO THIS FILE MAKE SURE YOU REALISE THAT InputMarshal RELIES ON ASSUMPTIONS ON THE VALUES
-
     /// <summary>The "comma" key on the keypad.</summary>
     KeypadComma = 133,
 
@@ -540,8 +536,6 @@ public enum KeyName
     /// Functions" (GA23-03320-02, May 1989)
     /// </remarks>
     ExtendSelect = 164,
-
-    // BEFORE ADDING ANYTHING TO THIS FILE MAKE SURE YOU REALISE THAT InputMarshal RELIES ON ASSUMPTIONS ON THE VALUES
 
     /// <summary>The "00" key on the keypad.</summary>
     Keypad00 = 176,
@@ -685,8 +679,6 @@ public enum KeyName
     /// <summary>The "hexadecimal" key on the keypad.</summary>
     KeypadHexadecimal = 221,
 
-    // BEFORE ADDING ANYTHING TO THIS FILE MAKE SURE YOU REALISE THAT InputMarshal RELIES ON ASSUMPTIONS ON THE VALUES
-
     /// <summary>The left "control" key.</summary>
     ControlLeft = 224,
 
@@ -712,7 +704,6 @@ public enum KeyName
     SuperRight = 231,
 
     // 232-256..... wtf?
-    // BEFORE ADDING ANYTHING TO THIS FILE MAKE SURE YOU REALISE THAT InputMarshal RELIES ON ASSUMPTIONS ON THE VALUES
 
     /// <summary>The "mode" key.</summary>
     Mode = 257,
@@ -805,8 +796,6 @@ public enum KeyName
     /// <summary>The "bookmarks" application key.</summary>
     ApplicationBookmarks = 286,
 
-    // BEFORE ADDING ANYTHING TO THIS FILE MAKE SURE YOU REALISE THAT InputMarshal RELIES ON ASSUMPTIONS ON THE VALUES
-
     // 501-512 is reserved for non-standard (i.e. not from an industry-standard HID page) keys.
     /// <summary>The left soft key e.g. the left button on a mobile phone.</summary>
     /// <remarks>This is not from an industry-standard HID page.</remarks>
@@ -823,6 +812,4 @@ public enum KeyName
     /// <summary>The "end call" key.</summary>
     /// <remarks>This is not from an industry-standard HID page.</remarks>
     EndCall = 504,
-
-    // BEFORE ADDING ANYTHING TO THIS FILE MAKE SURE YOU REALISE THAT InputMarshal RELIES ON ASSUMPTIONS ON THE VALUES
 }

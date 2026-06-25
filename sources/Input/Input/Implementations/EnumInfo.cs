@@ -1,8 +1,9 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Reflection;
-using System.Runtime.CompilerServices;
+
+using System.Collections.Frozen;
+using System.Numerics;
 
 namespace Silk.NET.Input;
 
@@ -26,7 +27,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// In the case of multiple enum entries with the same numerical value, this makes no guarantees about
     /// which version ends up here.
     /// </summary>
-    public static readonly IReadOnlyList<T> UniqueValues;
+    public static readonly IReadOnlyList<T> UniqueNamedValues;
 
     /// <summary>
     /// The value with the highest numerical value
@@ -45,8 +46,14 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
     private static readonly T[] _allValuesOrdered;
     private static readonly Dictionary<T, int> _numericallyDistinctIndices;
-    private static readonly ulong[] _allEnumValuesRaw;
+    private static readonly ulong[] _allEnumValuesDistinctRaw;
     private static readonly bool _unnamedAreIndexable;
+#pragma warning disable CS0414 // Field is assigned but its value is never used
+    // todo - do we want this information? can this speed up or improve conversion methods?
+    private static readonly bool _isSignedBackingType;
+#pragma warning restore CS0414 // Field is assigned but its value is never used
+
+    private const int MAX_CAPACITY = 256;
 
     static unsafe EnumInfo()
     {
@@ -71,65 +78,69 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         }
 
         var underlyingType = UnderlyingType;
-        T[] vals;
-        T[] all;
+        var all = Enum.GetValues<T>().Where(x => !IsIgnored(x)).ToArray();
+        var numericallyDistinct = all.DistinctBy(UnsafeNumericValueExtensions.ConvertBitwiseUnsafe<T, ulong>).ToArray();
         if (underlyingType == typeof(int))
         {
-            all = OrderedValues<int>(false);
-            vals = OrderedValues<int>(true);
-            _allEnumValuesRaw = vals.Select(x => (ulong)*(uint*)&x).ToArray();
+            SortValues<int>(numericallyDistinct);
+            _allEnumValuesDistinctRaw = numericallyDistinct.Select(x => (ulong)*(uint*)&x).ToArray();
+            SortValues<int>(all);
+            _isSignedBackingType = true;
         }
         else if (underlyingType == typeof(uint))
         {
-            all = OrderedValues<uint>(false);
-            vals = OrderedValues<uint>(true);
-            _allEnumValuesRaw = vals.Select(x => (ulong)*(uint*)&x).ToArray();
-        }
-        else if (underlyingType == typeof(byte))
-        {
-            all = OrderedValues<byte>(false);
-            vals = OrderedValues<byte>(true);
-            _allEnumValuesRaw = vals.Select(x => (ulong)*(byte*)&x).ToArray();
+            SortValues<uint>(numericallyDistinct);
+            _allEnumValuesDistinctRaw = numericallyDistinct.Select(x => (ulong)*(uint*)&x).ToArray();
+            SortValues<uint>(all);
         }
         else if (underlyingType == typeof(sbyte))
         {
-            all = OrderedValues<sbyte>(false);
-            vals = OrderedValues<sbyte>(true);
-            _allEnumValuesRaw = vals.Select(x => (ulong)*(byte*)&x).ToArray();
+            SortValues<sbyte>(numericallyDistinct);
+            _allEnumValuesDistinctRaw = numericallyDistinct.Select(x => (ulong)*(byte*)&x).ToArray();
+            SortValues<sbyte>(all);
+            _isSignedBackingType = true;
+        }
+        else if (underlyingType == typeof(byte))
+        {
+            SortValues<byte>(numericallyDistinct);
+            _allEnumValuesDistinctRaw = numericallyDistinct.Select(x => (ulong)*(byte*)&x).ToArray();
+            SortValues<byte>(all);
         }
         else if (underlyingType == typeof(short))
         {
-            all = OrderedValues<short>(false);
-            vals = OrderedValues<short>(true);
-            _allEnumValuesRaw = vals.Select(x => (ulong)*(ushort*)&x).ToArray();
+            SortValues<short>(numericallyDistinct);
+            _allEnumValuesDistinctRaw = numericallyDistinct.Select(x => (ulong)*(ushort*)&x).ToArray();
+            SortValues<short>(all);
+            _isSignedBackingType = true;
         }
         else if (underlyingType == typeof(ushort))
         {
-            all = OrderedValues<ushort>(false);
-            vals = OrderedValues<ushort>(true);
-            _allEnumValuesRaw = vals.Select(x => (ulong)*(ushort*)&x).ToArray();
+            SortValues<ushort>(numericallyDistinct);
+            _allEnumValuesDistinctRaw = numericallyDistinct.Select(x => (ulong)*(ushort*)&x).ToArray();
+            SortValues<ushort>(all);
         }
         else if (underlyingType == typeof(long))
         {
-            all = OrderedValues<long>(false);
-            vals = OrderedValues<long>(true);
-            _allEnumValuesRaw = vals.Select(x => *(ulong*)&x).ToArray();
+            SortValues<long>(numericallyDistinct);
+            _allEnumValuesDistinctRaw = numericallyDistinct.Select(x => *(ulong*)&x).ToArray();
+            SortValues<long>(all);
+            _isSignedBackingType = true;
         }
         else if (underlyingType == typeof(ulong))
         {
-            all = OrderedValues<ulong>(false);
-            vals = OrderedValues<ulong>(true);
-            _allEnumValuesRaw = vals.Select(x => *(ulong*)&x).ToArray();
+            SortValues<ulong>(numericallyDistinct);
+            _allEnumValuesDistinctRaw = numericallyDistinct.Select(x => *(ulong*)&x).ToArray();
+            SortValues<ulong>(all);
         }
         else
         {
             throw new InvalidOperationException("Enum provided uses an unknown numeric base??");
         }
 
-        var dict = new Dictionary<T, int>(vals.Length);
-        for (var index = 0; index < vals.Length; index++)
+        var dict = new Dictionary<T, int>(numericallyDistinct.Length);
+        for (var index = 0; index < numericallyDistinct.Length; index++)
         {
-            var enumVal = vals[index];
+            var enumVal = numericallyDistinct[index];
 
             // get attribute and check for ignore
 
@@ -137,10 +148,28 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         }
 
         _allValuesOrdered = all;
-        UniqueValues = vals;
+        UniqueNamedValues = numericallyDistinct;
         _numericallyDistinctIndices = dict;
         MinValue = AllValuesOrdered[0];
         MaxValue = AllValuesOrdered[^1];
+
+        return;
+
+        static bool IsIgnored(T value)
+        {
+            var field = value.GetType().GetField(value.ToString());
+            return field is not null &&
+                   System.Reflection.CustomAttributeExtensions.GetCustomAttribute<OrderedIndexIgnoreAttribute>(field) is not
+                       null;
+        }
+
+        // sort by increasing order
+        static void SortValues<TNumber>(T[] allValues) where TNumber : unmanaged, IComparable<TNumber> =>
+            allValues.StableSort((a, b) => {
+                var aNumber = a.ConvertBitwiseUnsafe<T, TNumber>();
+                var bNumber = b.ConvertBitwiseUnsafe<T, TNumber>();
+                return aNumber.CompareTo(bNumber);
+            });
     }
 
 #pragma warning disable ST0006 ST0007 ST0008 ST0009
@@ -167,53 +196,34 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
             return -1;
         }
 
-        var rawValue = value.Convert<T, int>();
+        var rawValue = value.ConvertBitwiseUnsafe<T, int>();
 
         // todo - don't rely on joystickButton's unknown - find the MinValue
-        var minKnownVal = _allEnumValuesRaw[0].Convert<ulong, int>();
+        var minKnownVal = _allEnumValuesDistinctRaw[0].ConvertBitwiseUnsafe<ulong, int>();
         if (rawValue < 0 || rawValue >= minKnownVal)
         {
             return -1;
         }
 
-        return _allValuesOrdered.Length + rawValue;
-    }
-
-
-    private static T[] OrderedValues<TNumber>(bool byNumericValue)
-        where TNumber : unmanaged, IComparable<TNumber>
-    {
-        // numerically distinct numbers
-        var allValues = Enum.GetValues<T>().Where(x => !IsIgnored(x)).ToArray();
-
-        if (byNumericValue)
+        var idx = _allValuesOrdered.Length + rawValue;
+        if (_numericallyDistinctIndices.Count < MAX_CAPACITY)
         {
-            allValues = allValues.DistinctBy(UnsafeNumericValueExtensions.Convert<T, TNumber>).ToArray();
+#if DEBUG
+            System.Diagnostics.Debug.Assert(_numericallyDistinctIndices.TryAdd(value, idx));
+#else
+            _ = _numericallyDistinctIndices.TryAdd(value, idx);
+#endif
         }
 
-        // sort by increasing order
-        allValues.AsSpan().StableSort((a, b) => {
-            var aNumber = a.Convert<T, TNumber>();
-            var bNumber = b.Convert<T, TNumber>();
-            return aNumber.CompareTo(bNumber);
-        });
-
-        return allValues;
+        return idx;
     }
+
 
 #pragma warning restore ST0006 ST0007 ST0008 ST0009
 
-    private static bool IsIgnored(T value)
-    {
-        var attr = value.GetType().GetField(value.ToString())?.GetCustomAttribute<OrderedIndexIgnoreAttribute>();
-        return attr is not null;
-    }
-
-    public static unsafe bool HasValue(int value) => _allEnumValuesRaw.Contains(*(uint*)&value);
-
     public static unsafe T ValueOfIndex(int index)
     {
-        var value = _allEnumValuesRaw[index];
+        var value = _allEnumValuesDistinctRaw[index];
         return *(T*)&value;
     }
 }

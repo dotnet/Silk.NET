@@ -14,26 +14,30 @@ namespace Silk.NET.Input;
 public readonly record struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
     where T : unmanaged, Enum
 {
-    private readonly Func<int, int> _indexMap;
     internal readonly IReadOnlyList<Button<T>> List;
 
     /// <summary>
     /// A constructor for an input list that takes in:
     /// </summary>
     /// <param name="buttonList">A list of buttons that will be indexed</param>
-    /// <param name="indexMap">A pre-built mapping function, if required,
-    /// used for iterating through the button list in order, regardless of the backend's internal button order.</param>
-    public ButtonReadOnlyList(IReadOnlyList<Button<T>> buttonList, Func<int, int>? indexMap = null)
+    public ButtonReadOnlyList(IReadOnlyList<Button<T>> buttonList)
     {
         List = buttonList;
-        _indexMap = indexMap ?? (i => i);
     }
 
     /// <summary>
     /// Gets the state for the button with the given name.
     /// </summary>
     /// <param name="name">The button name.</param>
-    public Button<T> this[T name] => List[name.Index()];
+    public Button<T> this[T name]
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => List[name.Index()];
+    }
+    
+    /// <inheritdoc />
+    /// <remarks>Useful when used with pre-cached index calculations for hot paths</remarks>
+    public Button<T> this[int index] => List[index];
 
     /// <inheritdoc />
     public IEnumerator<Button<T>> GetEnumerator() => List.GetEnumerator();
@@ -43,8 +47,6 @@ public readonly record struct ButtonReadOnlyList<T> : IReadOnlyList<Button<T>>
     /// <inheritdoc />
     public int Count => List.Count;
 
-    /// <inheritdoc />
-    public Button<T> this[int index] => List[_indexMap(index)];
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal IReadOnlyList<Button<T>> CreateListCopy() => List.ToArray();

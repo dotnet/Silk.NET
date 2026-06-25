@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -23,37 +26,26 @@ public class KeyboardState
     {
         get
         {
-            // todo - optimize?
             var state = KeyModifiers.None;
-            if(Keys[KeyName.ControlLeft])
-                state |= KeyModifiers.ControlLeft;
 
-            if(Keys[KeyName.ControlRight])
-                state |= KeyModifiers.ControlRight;
-
-            if(Keys[KeyName.AltLeft])
-                state |= KeyModifiers.AltLeft;
-
-            if(Keys[KeyName.AltRight])
-                state |= KeyModifiers.AltRight;
-
-            if(Keys[KeyName.ShiftLeft])
-                state |= KeyModifiers.ShiftLeft;
-
-            if(Keys[KeyName.ShiftRight])
-                state |= KeyModifiers.ShiftRight;
-
-            if(Keys[KeyName.SuperLeft])
-                state |= KeyModifiers.SuperLeft;
-
-            if(Keys[KeyName.SuperRight])
-                state |= KeyModifiers.SuperRight;
+            Debug.Assert(_modifierIndices.Length == _modifierValues.Length && _modifierValues.Length == _modifierCount);
+            for (var i = 0; i < _modifierCount; ++i)
+            {
+                if(_rawKeys[_modifierIndices[i]].IsDown)
+                {
+                    state |= _modifierValues[i];
+                }
+            }
 
             if(_capsLockActive())
+            {
                 state |= KeyModifiers.CapsLock;
+            }
 
             if(_numLockActive())
+            {
                 state |= KeyModifiers.NumLock;
+            }
 
             return state;
         }
@@ -69,10 +61,23 @@ public class KeyboardState
     public KeyboardState(IReadOnlyList<Button<KeyName>> keys, Func<bool> capsLockActive, Func<bool> numLockActive)
     {
         Keys = new ButtonReadOnlyList<KeyName>(keys);
+        _rawKeys = keys;
         _capsLockActive = capsLockActive;
         _numLockActive = numLockActive;
     }
 
+    private const int _modifierCount = 8;
+    private static readonly int[] _modifierIndices = [
+        KeyName.ControlLeft.Index(), KeyName.ControlRight.Index(), KeyName.AltLeft.Index(), KeyName.AltRight.Index(),
+        KeyName.ShiftLeft.Index(), KeyName.ShiftRight.Index(), KeyName.SuperLeft.Index(), KeyName.SuperRight.Index()
+    ];
+
+    private static readonly KeyModifiers[] _modifierValues = [
+        KeyModifiers.ControlLeft, KeyModifiers.ControlRight, KeyModifiers.AltLeft, KeyModifiers.AltRight,
+        KeyModifiers.ShiftLeft, KeyModifiers.ShiftRight, KeyModifiers.SuperLeft, KeyModifiers.SuperRight
+    ];
+
+    private IReadOnlyList<Button<KeyName>> _rawKeys;
     private readonly Func<bool> _numLockActive;
     private readonly Func<bool> _capsLockActive;
 }

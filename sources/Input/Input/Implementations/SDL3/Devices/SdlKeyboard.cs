@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using Silk.NET.Input.KeyHandling;
 using Silk.NET.SDL;
 
@@ -298,23 +299,22 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
-        public int Count => _keyPressures.Length;
-
-        public Button<KeyName> this[int index] => GetButton(EnumInfo<KeyName>.ValueOfIndex(index), index);
-        public Button<KeyName> this[KeyName key] => GetButton(key, EnumInfo<KeyName>.ValueIndexOf(key));
-
-        private Button<KeyName> GetButton(KeyName key) => GetButton(key, EnumInfo<KeyName>.ValueIndexOf(key));
-        private Button<KeyName> GetButton(KeyName key, int index)
+        public int Count
         {
-            if (index >= _keyPressures.Length)
-            {
-                Array.Resize(ref _keyPressures, index + 1);
-            }
-
-            return CreateButton(key, _keyPressures[index]);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => _keyPressures.Length;
         }
 
-        private static Button<KeyName> CreateButton(KeyName key, byte pressure) => new(key, pressure > 0, pressure * _pressureMultiplier);
+        public Button<KeyName> this[int index] => GetButton(EnumInfo<KeyName>.ValueOfIndex(index), index);
+
+        public Button<KeyName> this[KeyName key] => GetButton(key, EnumInfo<KeyName>.ValueIndexOf(key));
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private Button<KeyName> GetButton(KeyName key, int index)
+        {
+            var pressureInt = index < _keyPressures.Length ? _keyPressures[index] : 0u;
+            return new Button<KeyName>(key, pressureInt > 0, pressureInt * _pressureMultiplier);
+        }
 
         public static bool IsDefined(KeyName keyName) => true;
     }

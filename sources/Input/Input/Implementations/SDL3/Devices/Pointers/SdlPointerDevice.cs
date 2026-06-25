@@ -21,9 +21,9 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
         _unboundedPointerTarget = unboundedPointerTarget;
         _unboundedTargetList = [unboundedPointerTarget];
         _allTargets.AddRange(_unboundedTargetList);
-        for (var i = 0; i < EnumInfo<PointerButton>.UniqueValues.Count; i++)
+        for (var i = 0; i < EnumInfo<PointerButton>.UniqueNamedValues.Count; i++)
         {
-            var button = EnumInfo<PointerButton>.UniqueValues[i];
+            var button = EnumInfo<PointerButton>.UniqueNamedValues[i];
             _buttons.Add(new Button<PointerButton>(button, false, 0f));
         }
     }
@@ -51,7 +51,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
     }
 
 
-    private readonly List<Button<PointerButton>> _buttons = new(EnumInfo<PointerButton>.UniqueValues.Count);
+    private readonly List<Button<PointerButton>> _buttons = new(EnumInfo<PointerButton>.UniqueNamedValues.Count);
     protected ButtonReadOnlyList<PointerButton> Buttons => new(_buttons);
     protected InputReadOnlyList<TargetPoint> Points => new(_points);
     private readonly List<TargetPoint> _points = [];

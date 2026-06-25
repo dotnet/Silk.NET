@@ -56,7 +56,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 
     private void ApplyMouseButtonState(SdlMouseInputFlags mouseState, ulong nowSdl, long now)
     {
-        foreach (var pointerButtonName in EnumInfo<PointerButton>.UniqueValues)
+        foreach (var pointerButtonName in EnumInfo<PointerButton>.UniqueNamedValues)
         {
             if (mouseState.Has(pointerButtonName))
             {

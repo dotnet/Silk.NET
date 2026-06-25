@@ -111,8 +111,6 @@ public enum JoystickButton // todo : should we include XInput, PSX, and Nintendo
     /// The leftmost button of the D-Pad button cluster.
     /// </summary>
     DPadLeft,
-
-    // BEFORE ADDING A NEW ITEM MAKE SURE YOU CHANGE LastJoystickButton IN InputMarshal
 }
 
 /// <summary>
