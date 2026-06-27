@@ -198,7 +198,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Matrix4x4InvertProjectionTest()
         {
-            Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView(1, 1.333f, 0.1f, 666);
+            Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfViewRH(1, 1.333f, 0.1f, 666);
 
             Matrix4X4<float> actual;
             Assert.True(Matrix4X4.Invert(mtx, out actual));
@@ -810,7 +810,7 @@ namespace Silk.NET.Maths.Tests
             expected.M43 = -37.0820961f;
             expected.M44 = 1.0f;
 
-            Matrix4X4<float> actual = Matrix4X4.CreateLookAt(cameraPosition, cameraTarget, cameraUpVector);
+            Matrix4X4<float> actual = Matrix4X4.CreateLookAtRH(cameraPosition, cameraTarget, cameraUpVector);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateLookAt did not return the expected value.");
         }
 
@@ -870,7 +870,7 @@ namespace Silk.NET.Maths.Tests
             expected.M44 = 1.0f;
 
             Matrix4X4<float> actual;
-            actual = Matrix4X4.CreateOrthographic(width, height, zNearPlane, zFarPlane);
+            actual = Matrix4X4.CreateOrthographicRH(width, height, zNearPlane, zFarPlane);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateOrtho did not return the expected value.");
         }
 
@@ -895,7 +895,7 @@ namespace Silk.NET.Maths.Tests
             expected.M44 = 1.0f;
 
             Matrix4X4<float> actual;
-            actual = Matrix4X4.CreateOrthographicOffCenter(left, right, bottom, top, zNearPlane, zFarPlane);
+            actual = Matrix4X4.CreateOrthographicOffCenterRH(left, right, bottom, top, zNearPlane, zFarPlane);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateOrthoOffCenter did not return the expected value.");
         }
 
@@ -916,7 +916,7 @@ namespace Silk.NET.Maths.Tests
             expected.M43 = -1.50225341f;
 
             Matrix4X4<float> actual;
-            actual = Matrix4X4.CreatePerspective(width, height, zNearPlane, zFarPlane);
+            actual = Matrix4X4.CreatePerspectiveRH(width, height, zNearPlane, zFarPlane);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreatePerspective did not return the expected value.");
         }
 
@@ -932,7 +932,7 @@ namespace Silk.NET.Maths.Tests
                 float zNearPlane = 0.0f;
                 float zFarPlane = 0.0f;
 
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspective(width, height, zNearPlane, zFarPlane);
+                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveRH(width, height, zNearPlane, zFarPlane);
             });
         }
 
@@ -943,7 +943,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspective<float>(10, 10, -10, 10);
+                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveRH<float>(10, 10, -10, 10);
             });
         }
 
@@ -954,7 +954,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspective<float>(10, 10, 10, -10);
+                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveRH<float>(10, 10, 10, -10);
             });
         }
 
@@ -975,7 +975,7 @@ namespace Silk.NET.Maths.Tests
             expected.M43 = -1.50225341f;
             Matrix4X4<float> actual;
 
-            actual = Matrix4X4.CreatePerspectiveFieldOfView(fieldOfView, aspectRatio, zNearPlane, zFarPlane);
+            actual = Matrix4X4.CreatePerspectiveFieldOfViewRH(fieldOfView, aspectRatio, zNearPlane, zFarPlane);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreatePerspectiveFieldOfView did not return the expected value.");
         }
 
@@ -986,7 +986,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView<float>(-1, 1, 1, 10);
+                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfViewRH<float>(-1, 1, 1, 10);
             });
         }
 
@@ -997,7 +997,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView(MathHelper.Pi + 0.01f, 1, 1, 10);
+                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfViewRH(MathHelper.Pi + 0.01f, 1, 1, 10);
             });
         }
 
@@ -1008,7 +1008,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, 1, -1, 10);
+                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfViewRH(MathHelper.PiOver4, 1, -1, 10);
             });
         }
 
@@ -1019,7 +1019,7 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, 1, 1, -10);
+                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfViewRH(MathHelper.PiOver4, 1, 1, -10);
             });
         }
 
@@ -1044,7 +1044,7 @@ namespace Silk.NET.Maths.Tests
             expected.M43 = -1.50225341f;
 
             Matrix4X4<float> actual;
-            actual = Matrix4X4.CreatePerspectiveOffCenter(left, right, bottom, top, zNearPlane, zFarPlane);
+            actual = Matrix4X4.CreatePerspectiveOffCenterRH(left, right, bottom, top, zNearPlane, zFarPlane);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreatePerspectiveOffCenter did not return the expected value.");
         }
 
@@ -1056,7 +1056,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 float left = 10.0f, right = 90.0f, bottom = 20.0f, top = 180.0f;
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveOffCenter(left, right, bottom, top, -1, 10);
+                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveOffCenterRH(left, right, bottom, top, -1, 10);
             });
         }
 
@@ -1068,7 +1068,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 float left = 10.0f, right = 90.0f, bottom = 20.0f, top = 180.0f;
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveOffCenter(left, right, bottom, top, 1, -10);
+                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveOffCenterRH(left, right, bottom, top, 1, -10);
             });
         }
 
@@ -1734,7 +1734,7 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> cameraPosition = new Vector3D<float>(3.0f, 4.0f, 5.0f);
             Vector3D<float> objectPosition = cameraPosition + placeDirection * 10.0f;
             Matrix4X4<float> expected = expectedRotation * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateBillboard(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateBillboardRH(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateBillboard did not return the expected value.");
         }
 
@@ -1865,7 +1865,7 @@ namespace Silk.NET.Maths.Tests
 
             // Doesn't pass camera face direction. CreateBillboard uses new Vector3D<float>f(0, 0, -1) direction. Result must be same as 180 degrees rotate along y-axis.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(180.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateBillboard(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, 1));
+            Matrix4X4<float> actual = Matrix4X4.CreateBillboardRH(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, 1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateBillboard did not return the expected value.");
         }
 
@@ -1880,7 +1880,7 @@ namespace Silk.NET.Maths.Tests
 
             // Passes Vector3D<float>f.Right as camera face direction. Result must be same as -90 degrees rotate along y-axis.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateBillboard(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(1, 0, 0));
+            Matrix4X4<float> actual = Matrix4X4.CreateBillboardRH(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(1, 0, 0));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateBillboard did not return the expected value.");
         }
 
@@ -1889,16 +1889,16 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> cameraPosition = new Vector3D<float>(3.0f, 4.0f, 5.0f);
             Vector3D<float> objectPosition = cameraPosition + placeDirection * 10.0f;
             Matrix4X4<float> expected = expectedRotation * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
 
             // When you move camera along rotateAxis, result must be same.
             cameraPosition += rotateAxis * 10.0f;
-            actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
 
             cameraPosition -= rotateAxis * 30.0f;
-            actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2029,7 +2029,7 @@ namespace Silk.NET.Maths.Tests
 
             // Doesn't pass camera face direction. CreateConstrainedBillboard uses new Vector3D<float>f(0, 0, -1) direction. Result must be same as 180 degrees rotate along y-axis.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(180.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, 1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(0, 0, 1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2044,7 +2044,7 @@ namespace Silk.NET.Maths.Tests
 
             // Passes Vector3D<float>f.Right as camera face direction. Result must be same as -90 degrees rotate along y-axis.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(1, 0, 0), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, cameraUpVector, new Vector3D<float>(1, 0, 0), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2060,7 +2060,7 @@ namespace Silk.NET.Maths.Tests
 
             // In this case, CreateConstrainedBillboard picks new Vector3D<float>f(0, 0, -1) as object forward vector.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(180.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2076,7 +2076,7 @@ namespace Silk.NET.Maths.Tests
 
             // In this case, CreateConstrainedBillboard picks new Vector3D<float>f(1, 0, 0) as object forward vector.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationX(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateRotationZ(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2092,7 +2092,7 @@ namespace Silk.NET.Maths.Tests
 
             // User passes correct objectForwardVector.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(180.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2108,7 +2108,7 @@ namespace Silk.NET.Maths.Tests
 
             // User passes correct objectForwardVector.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationY(MathHelper.ToRadians(180.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 1, 0));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 1, 0));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2124,7 +2124,7 @@ namespace Silk.NET.Maths.Tests
 
             // In this case, CreateConstrainedBillboard picks Vector3D<float>f.Right as object forward vector.
             Matrix4X4<float> expected = Matrix4X4.CreateRotationX(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateRotationZ(MathHelper.ToRadians(-90.0f)) * Matrix4X4.CreateTranslation(objectPosition);
-            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboard(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
+            Matrix4X4<float> actual = Matrix4X4.CreateConstrainedBillboardRH(objectPosition, cameraPosition, rotateAxis, new Vector3D<float>(0, 0, -1), new Vector3D<float>(0, 0, -1));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4X4<float>.CreateConstrainedBillboard did not return the expected value.");
         }
 
@@ -2506,7 +2506,7 @@ namespace Silk.NET.Maths.Tests
         public void PerspectiveFarPlaneAtInfinityTest()
         {
             var nearPlaneDistance = 0.125f;
-            var m = Matrix4X4.CreatePerspective(1.0f, 1.0f, nearPlaneDistance, float.PositiveInfinity);
+            var m = Matrix4X4.CreatePerspectiveRH(1.0f, 1.0f, nearPlaneDistance, float.PositiveInfinity);
             Assert.Equal(-1.0f, m.M33);
             Assert.Equal(-nearPlaneDistance, m.M43);
         }
@@ -2515,7 +2515,7 @@ namespace Silk.NET.Maths.Tests
         public void PerspectiveFieldOfViewFarPlaneAtInfinityTest()
         {
             var nearPlaneDistance = 0.125f;
-            var m = Matrix4X4.CreatePerspectiveFieldOfView(MathHelper.ToRadians(60.0f), 1.5f, nearPlaneDistance, float.PositiveInfinity);
+            var m = Matrix4X4.CreatePerspectiveFieldOfViewRH(MathHelper.ToRadians(60.0f), 1.5f, nearPlaneDistance, float.PositiveInfinity);
             Assert.Equal(-1.0f, m.M33);
             Assert.Equal(-nearPlaneDistance, m.M43);
         }
@@ -2524,7 +2524,7 @@ namespace Silk.NET.Maths.Tests
         public void PerspectiveOffCenterFarPlaneAtInfinityTest()
         {
             var nearPlaneDistance = 0.125f;
-            var m = Matrix4X4.CreatePerspectiveOffCenter(0.0f, 0.0f, 1.0f, 1.0f, nearPlaneDistance, float.PositiveInfinity);
+            var m = Matrix4X4.CreatePerspectiveOffCenterRH(0.0f, 0.0f, 1.0f, 1.0f, nearPlaneDistance, float.PositiveInfinity);
             Assert.Equal(-1.0f, m.M33);
             Assert.Equal(-nearPlaneDistance, m.M43);
         }

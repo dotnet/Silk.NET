@@ -39,7 +39,7 @@ namespace Silk.NET.Maths
         /// <param name="cameraUpVector">The up vector of the camera.</param>
         /// <param name="cameraForwardVector">The forward vector of the camera.</param>
         /// <returns>The created billboard matrix</returns>
-        public static Matrix3X3<T> CreateBillboard<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
+        public static Matrix3X3<T> CreateBillboardRH<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
             where T : INumber<T>, IRootFunctions<T>
         {
             Vector3D<T> zaxis = objectPosition - cameraPosition;

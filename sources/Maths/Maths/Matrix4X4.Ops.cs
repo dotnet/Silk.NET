@@ -54,7 +54,7 @@ namespace Silk.NET.Maths
         /// <param name="cameraUpVector">The up vector of the camera.</param>
         /// <param name="cameraForwardVector">The forward vector of the camera.</param>
         /// <returns>The created billboard matrix</returns>
-        public static Matrix4X4<T> CreateBillboard<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
+        public static Matrix4X4<T> CreateBillboardRH<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
             where T : INumber<T>, IRootFunctions<T>
         {
             Vector3D<T> zaxis = objectPosition - cameraPosition;
@@ -86,7 +86,7 @@ namespace Silk.NET.Maths
         /// <param name="cameraForwardVector">Forward vector of the camera.</param>
         /// <param name="objectForwardVector">Forward vector of the object.</param>
         /// <returns>The created billboard matrix.</returns>
-        public static Matrix4X4<T> CreateConstrainedBillboard<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> rotateAxis, Vector3D<T> cameraForwardVector, Vector3D<T> objectForwardVector)
+        public static Matrix4X4<T> CreateConstrainedBillboardRH<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> rotateAxis, Vector3D<T> cameraForwardVector, Vector3D<T> objectForwardVector)
             where T : INumber<T>, IRootFunctions<T>
         {
             // Treat the case when object and camera positions are too close.
@@ -246,7 +246,7 @@ namespace Silk.NET.Maths
         /// <param name="cameraTarget">The target towards which the camera is pointing.</param>
         /// <param name="cameraUpVector">The direction that is "up" from the camera's point of view.</param>
         /// <returns>The view matrix.</returns>
-        public static Matrix4X4<T> CreateLookAt<T>(Vector3D<T> cameraPosition, Vector3D<T> cameraTarget, Vector3D<T> cameraUpVector)
+        public static Matrix4X4<T> CreateLookAtRH<T>(Vector3D<T> cameraPosition, Vector3D<T> cameraTarget, Vector3D<T> cameraUpVector)
             where T : IRootFunctions<T>
         {
             Vector3D<T> zaxis = Vector3D.Normalize(cameraPosition - cameraTarget);
@@ -280,7 +280,7 @@ namespace Silk.NET.Maths
         /// <param name="zNearPlane">Minimum Z-value of the view volume.</param>
         /// <param name="zFarPlane">Maximum Z-value of the view volume.</param>
         /// <returns>The orthographic projection matrix.</returns>
-        public static Matrix4X4<T> CreateOrthographic<T>(T width, T height, T zNearPlane, T zFarPlane)
+        public static Matrix4X4<T> CreateOrthographicRH<T>(T width, T height, T zNearPlane, T zFarPlane)
             where T : INumberBase<T>
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
@@ -301,7 +301,7 @@ namespace Silk.NET.Maths
         /// <param name="zNearPlane">Minimum Z-value of the view volume.</param>
         /// <param name="zFarPlane">Maximum Z-value of the view volume.</param>
         /// <returns>The orthographic projection matrix.</returns>
-        public static Matrix4X4<T> CreateOrthographicOffCenter<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane)
+        public static Matrix4X4<T> CreateOrthographicOffCenterRH<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane)
             where T : INumberBase<T>
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
@@ -325,7 +325,7 @@ namespace Silk.NET.Maths
         /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
         /// <param name="farPlaneDistance">Distance to the far view plane.</param>
         /// <returns>The perspective projection matrix.</returns>
-        public static Matrix4X4<T> CreatePerspective<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance)
+        public static Matrix4X4<T> CreatePerspectiveRH<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance)
             where T : INumber<T>
         {
             if (!(nearPlaneDistance > T.Zero))
@@ -361,7 +361,7 @@ namespace Silk.NET.Maths
         /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
         /// <param name="farPlaneDistance">Distance to the far view plane.</param>
         /// <returns>The perspective projection matrix.</returns>
-        public static Matrix4X4<T> CreatePerspectiveFieldOfView<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
+        public static Matrix4X4<T> CreatePerspectiveFieldOfViewRH<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
             where T : INumber<T>, ITrigonometricFunctions<T>
         {
             if (!(fieldOfView > T.Zero) || (fieldOfView >= T.Pi))
@@ -403,7 +403,7 @@ namespace Silk.NET.Maths
         /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
         /// <param name="farPlaneDistance">Distance to of the far view plane.</param>
         /// <returns>The perspective projection matrix.</returns>
-        public static Matrix4X4<T> CreatePerspectiveOffCenter<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance)
+        public static Matrix4X4<T> CreatePerspectiveOffCenterRH<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance)
             where T : INumber<T>
         {
             if (!(nearPlaneDistance > T.Zero))

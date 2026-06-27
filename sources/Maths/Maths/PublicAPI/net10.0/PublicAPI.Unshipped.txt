@@ -733,7 +733,7 @@ static Silk.NET.Maths.Matrix2X2<T>.operator -(Silk.NET.Maths.Matrix2X2<T> left, 
 static Silk.NET.Maths.Matrix2X2<T>.operator -(Silk.NET.Maths.Matrix2X2<T> value) -> Silk.NET.Maths.Matrix2X2<T>
 static Silk.NET.Maths.Matrix2X2<T>.operator ==(Silk.NET.Maths.Matrix2X2<T> left, Silk.NET.Maths.Matrix2X2<T> right) -> bool
 static Silk.NET.Maths.Matrix2X3.Add<T>(Silk.NET.Maths.Matrix2X3<T> left, Silk.NET.Maths.Matrix2X3<T> right) -> Silk.NET.Maths.Matrix2X3<T>
-static Silk.NET.Maths.Matrix2X3.CreateBillboard<T>(Silk.NET.Maths.Vector3D<T> objectPosition, Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraUpVector, Silk.NET.Maths.Vector3D<T> cameraForwardVector) -> Silk.NET.Maths.Matrix2X3<T>
+static Silk.NET.Maths.Matrix2X3.CreateBillboardRH<T>(Silk.NET.Maths.Vector3D<T> objectPosition, Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraUpVector, Silk.NET.Maths.Vector3D<T> cameraForwardVector) -> Silk.NET.Maths.Matrix2X3<T>
 static Silk.NET.Maths.Matrix2X3.CreateFromAxisAngle<T>(Silk.NET.Maths.Vector3D<T> axis, T angle) -> Silk.NET.Maths.Matrix2X3<T>
 static Silk.NET.Maths.Matrix2X3.CreateFromQuaternion<T>(Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Matrix2X3<T>
 static Silk.NET.Maths.Matrix2X3.CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll) -> Silk.NET.Maths.Matrix2X3<T>
@@ -915,7 +915,7 @@ static Silk.NET.Maths.Matrix3X2<T>.operator -(Silk.NET.Maths.Matrix3X2<T> left, 
 static Silk.NET.Maths.Matrix3X2<T>.operator -(Silk.NET.Maths.Matrix3X2<T> value) -> Silk.NET.Maths.Matrix3X2<T>
 static Silk.NET.Maths.Matrix3X2<T>.operator ==(Silk.NET.Maths.Matrix3X2<T> left, Silk.NET.Maths.Matrix3X2<T> right) -> bool
 static Silk.NET.Maths.Matrix3X3.Add<T>(Silk.NET.Maths.Matrix3X3<T> left, Silk.NET.Maths.Matrix3X3<T> right) -> Silk.NET.Maths.Matrix3X3<T>
-static Silk.NET.Maths.Matrix3X3.CreateBillboard<T>(Silk.NET.Maths.Vector3D<T> objectPosition, Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraUpVector, Silk.NET.Maths.Vector3D<T> cameraForwardVector) -> Silk.NET.Maths.Matrix3X3<T>
+static Silk.NET.Maths.Matrix3X3.CreateBillboardRH<T>(Silk.NET.Maths.Vector3D<T> objectPosition, Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraUpVector, Silk.NET.Maths.Vector3D<T> cameraForwardVector) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X3.CreateFromAxisAngle<T>(Silk.NET.Maths.Vector3D<T> axis, T angle) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X3.CreateFromQuaternion<T>(Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X3.CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll) -> Silk.NET.Maths.Matrix3X3<T>
@@ -1148,20 +1148,20 @@ static Silk.NET.Maths.Matrix4X3<T>.operator -(Silk.NET.Maths.Matrix4X3<T> left, 
 static Silk.NET.Maths.Matrix4X3<T>.operator -(Silk.NET.Maths.Matrix4X3<T> value) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3<T>.operator ==(Silk.NET.Maths.Matrix4X3<T> left, Silk.NET.Maths.Matrix4X3<T> right) -> bool
 static Silk.NET.Maths.Matrix4X4.Add<T>(Silk.NET.Maths.Matrix4X4<T> left, Silk.NET.Maths.Matrix4X4<T> right) -> Silk.NET.Maths.Matrix4X4<T>
-static Silk.NET.Maths.Matrix4X4.CreateBillboard<T>(Silk.NET.Maths.Vector3D<T> objectPosition, Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraUpVector, Silk.NET.Maths.Vector3D<T> cameraForwardVector) -> Silk.NET.Maths.Matrix4X4<T>
-static Silk.NET.Maths.Matrix4X4.CreateConstrainedBillboard<T>(Silk.NET.Maths.Vector3D<T> objectPosition, Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> rotateAxis, Silk.NET.Maths.Vector3D<T> cameraForwardVector, Silk.NET.Maths.Vector3D<T> objectForwardVector) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateBillboardRH<T>(Silk.NET.Maths.Vector3D<T> objectPosition, Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraUpVector, Silk.NET.Maths.Vector3D<T> cameraForwardVector) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateConstrainedBillboardRH<T>(Silk.NET.Maths.Vector3D<T> objectPosition, Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> rotateAxis, Silk.NET.Maths.Vector3D<T> cameraForwardVector, Silk.NET.Maths.Vector3D<T> objectForwardVector) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateFromAffine<T>(Silk.NET.Maths.Matrix3X2<T> value) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateFromAxisAngle<T>(Silk.NET.Maths.Vector3D<T> axis, T angle) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateFromHomogenous<T>(Silk.NET.Maths.Matrix3X3<T> value) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateFromLinear<T>(Silk.NET.Maths.Matrix3X3<T> value) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateFromQuaternion<T>(Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll) -> Silk.NET.Maths.Matrix4X4<T>
-static Silk.NET.Maths.Matrix4X4.CreateLookAt<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraTarget, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X4<T>
-static Silk.NET.Maths.Matrix4X4.CreateOrthographic<T>(T width, T height, T zNearPlane, T zFarPlane) -> Silk.NET.Maths.Matrix4X4<T>
-static Silk.NET.Maths.Matrix4X4.CreateOrthographicOffCenter<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane) -> Silk.NET.Maths.Matrix4X4<T>
-static Silk.NET.Maths.Matrix4X4.CreatePerspective<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance) -> Silk.NET.Maths.Matrix4X4<T>
-static Silk.NET.Maths.Matrix4X4.CreatePerspectiveFieldOfView<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance) -> Silk.NET.Maths.Matrix4X4<T>
-static Silk.NET.Maths.Matrix4X4.CreatePerspectiveOffCenter<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateLookAtRH<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraTarget, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateOrthographicRH<T>(T width, T height, T zNearPlane, T zFarPlane) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateOrthographicOffCenterRH<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreatePerspectiveRH<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreatePerspectiveFieldOfViewRH<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreatePerspectiveOffCenterRH<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateReflection<T>(Silk.NET.Maths.Plane<T> value) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateRotationX<T>(T radians) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateRotationX<T>(T radians, Silk.NET.Maths.Vector3D<T> centerPoint) -> Silk.NET.Maths.Matrix4X4<T>
