@@ -141,7 +141,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         {
             case PenAxis.Pressure:
             {
-                AddOrUpdatePoint(null, null, new Vector3(evt.X, evt.Y, 0), evt.Value, null, null, true, evt.Timestamp, timestamp);
+                AddOrUpdatePoint(null, evt.WindowID, new Vector3(evt.X, evt.Y, 0), evt.Value, null, null, true, evt.Timestamp, timestamp);
                 break;
             }
             case PenAxis.Xtilt:

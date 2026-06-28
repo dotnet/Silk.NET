@@ -36,7 +36,8 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
 
         while (idx >= _buttons.Count)
         {
-            _buttons.Add(new Button<PointerButton>(PointerButton.Unknown, false, 0f));
+            var buttonName = EnumInfo<PointerButton>.ValueOfIndex(_buttons.Count);
+            _buttons.Add(new Button<PointerButton>(buttonName, false, 0f));
         }
 
         ref var myButton = ref CollectionsMarshal.AsSpan(_buttons)[idx];
