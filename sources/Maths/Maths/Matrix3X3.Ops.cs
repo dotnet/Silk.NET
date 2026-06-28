@@ -60,6 +60,33 @@ namespace Silk.NET.Maths
             return new(xaxis, yaxis, zaxis);
         }
 
+        /// <summary>Creates a spherical billboard that rotates around a specified object position.</summary>
+        /// <param name="objectPosition">Position of the object the billboard will rotate around.</param>
+        /// <param name="cameraPosition">Position of the camera.</param>
+        /// <param name="cameraUpVector">The up vector of the camera.</param>
+        /// <param name="cameraForwardVector">The forward vector of the camera.</param>
+        /// <returns>The created billboard matrix</returns>
+        public static Matrix3X3<T> CreateBillboardLH<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            Vector3D<T> zaxis = cameraPosition - objectPosition;
+            var norm = zaxis.LengthSquared;
+
+            if (!(norm >= T.CreateTruncating(BillboardEpsilon)))
+            {
+                zaxis = cameraForwardVector;
+            }
+            else
+            {
+                zaxis = Vector3D.Multiply(zaxis, T.One / T.Sqrt(norm));
+            }
+
+            Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
+            Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
+
+            return new(xaxis, yaxis, zaxis);
+        }
+
         /// <summary>Creates a matrix that rotates around an arbitrary vector.</summary>
         /// <param name="axis">The axis to rotate around.</param>
         /// <param name="angle">The angle to rotate around the given axis, in radians.</param>

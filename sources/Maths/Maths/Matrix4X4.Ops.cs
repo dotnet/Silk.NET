@@ -79,6 +79,37 @@ namespace Silk.NET.Maths
                 new(objectPosition, T.One));
         }
 
+        /// <summary>Creates a spherical billboard that rotates around a specified object position.</summary>
+        /// <param name="objectPosition">Position of the object the billboard will rotate around.</param>
+        /// <param name="cameraPosition">Position of the camera.</param>
+        /// <param name="cameraUpVector">The up vector of the camera.</param>
+        /// <param name="cameraForwardVector">The forward vector of the camera.</param>
+        /// <returns>The created billboard matrix</returns>
+        public static Matrix4X4<T> CreateBillboardLH<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            Vector3D<T> zaxis = cameraPosition - objectPosition;
+            var norm = zaxis.LengthSquared;
+
+            if (!(norm >= T.CreateTruncating(BillboardEpsilon)))
+            {
+                zaxis = cameraForwardVector;
+            }
+            else
+            {
+                zaxis = Vector3D.Multiply(zaxis, T.One / T.Sqrt(norm));
+            }
+
+            Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
+            Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
+
+            return new(
+                new(xaxis, T.Zero),
+                new(yaxis, T.Zero),
+                new(zaxis, T.Zero),
+                new(objectPosition, T.One));
+        }
+
         /// <summary>Creates a cylindrical billboard that rotates around a specified axis.</summary>
         /// <param name="objectPosition">Position of the object the billboard will rotate around.</param>
         /// <param name="cameraPosition">Position of the camera.</param>
@@ -121,6 +152,67 @@ namespace Silk.NET.Maths
                     zaxis =
                         T.Abs(rotateAxis.Z) > T.CreateTruncating(BillboardMinAngle)
                             ? new Vector3D<T>(T.One, T.Zero, T.Zero)
+                            : new Vector3D<T>(T.Zero, T.Zero, -T.One);
+                }
+
+                xaxis = Vector3D.Normalize(Vector3D.Cross(rotateAxis, zaxis));
+                zaxis = Vector3D.Normalize(Vector3D.Cross(xaxis, rotateAxis));
+            }
+            else
+            {
+                xaxis = Vector3D.Normalize(Vector3D.Cross(rotateAxis, faceDir));
+                zaxis = Vector3D.Normalize(Vector3D.Cross(xaxis, yaxis));
+            }
+
+            return new(
+                new(xaxis, T.Zero),
+                new(yaxis, T.Zero),
+                new(zaxis, T.Zero),
+                new(objectPosition, T.One));
+        }
+
+        /// <summary>Creates a cylindrical billboard that rotates around a specified axis.</summary>
+        /// <param name="objectPosition">Position of the object the billboard will rotate around.</param>
+        /// <param name="cameraPosition">Position of the camera.</param>
+        /// <param name="rotateAxis">Axis to rotate the billboard around.</param>
+        /// <param name="cameraForwardVector">Forward vector of the camera.</param>
+        /// <param name="objectForwardVector">Forward vector of the object.</param>
+        /// <returns>The created billboard matrix.</returns>
+        public static Matrix4X4<T> CreateConstrainedBillboardLH<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> rotateAxis, Vector3D<T> cameraForwardVector, Vector3D<T> objectForwardVector)
+            where T : INumber<T>, IRootFunctions<T>
+        {
+            // Treat the case when object and camera positions are too close.
+            Vector3D<T> faceDir = cameraPosition - objectPosition;
+            T norm = faceDir.LengthSquared;
+
+            if (!(norm >= T.CreateTruncating(BillboardEpsilon)))
+            {
+                faceDir = cameraForwardVector;
+            }
+            else
+            {
+                faceDir = Vector3D.Multiply(faceDir, T.One / T.Sqrt(norm));
+            }
+
+            Vector3D<T> yaxis = rotateAxis;
+            Vector3D<T> xaxis;
+            Vector3D<T> zaxis;
+
+            // Treat the case when angle between faceDir and rotateAxis is too close to 0.
+            T dot = Vector3D.Dot(rotateAxis, faceDir);
+
+            if (T.Abs(dot) > T.CreateTruncating(BillboardMinAngle))
+            {
+                zaxis = -objectForwardVector;
+
+                // Make sure passed values are useful for compute.
+                dot = Vector3D.Dot(rotateAxis, zaxis);
+
+                if (T.Abs(dot) > T.CreateTruncating(BillboardMinAngle))
+                {
+                    zaxis =
+                        T.Abs(rotateAxis.Z) > T.CreateTruncating(BillboardMinAngle)
+                            ? new Vector3D<T>(-T.One, T.Zero, T.Zero)
                             : new Vector3D<T>(T.Zero, T.Zero, -T.One);
                 }
 
@@ -274,6 +366,39 @@ namespace Silk.NET.Maths
             return result;
         }
 
+        /// <summary>Creates a view matrix.</summary>
+        /// <param name="cameraPosition">The position of the camera.</param>
+        /// <param name="cameraTarget">The target towards which the camera is pointing.</param>
+        /// <param name="cameraUpVector">The direction that is "up" from the camera's point of view.</param>
+        /// <returns>The view matrix.</returns>
+        public static Matrix4X4<T> CreateLookAtLH<T>(Vector3D<T> cameraPosition, Vector3D<T> cameraTarget, Vector3D<T> cameraUpVector)
+            where T : IRootFunctions<T>
+        {
+            Vector3D<T> zaxis = Vector3D.Normalize(cameraTarget - cameraPosition);
+            Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
+            Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
+
+            Matrix4X4<T> result = Matrix4X4<T>.Identity;
+
+            result.M11 = xaxis.X;
+            result.M12 = yaxis.X;
+            result.M13 = zaxis.X;
+
+            result.M21 = xaxis.Y;
+            result.M22 = yaxis.Y;
+            result.M23 = zaxis.Y;
+
+            result.M31 = xaxis.Z;
+            result.M32 = yaxis.Z;
+            result.M33 = zaxis.Z;
+
+            result.M41 = -Vector3D.Dot(xaxis, cameraPosition);
+            result.M42 = -Vector3D.Dot(yaxis, cameraPosition);
+            result.M43 = -Vector3D.Dot(zaxis, cameraPosition);
+
+            return result;
+        }
+
         /// <summary>Creates an orthographic perspective matrix from the given view volume dimensions.</summary>
         /// <param name="width">Width of the view volume.</param>
         /// <param name="height">Height of the view volume.</param>
@@ -285,10 +410,31 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
+            var range = T.One / (zNearPlane - zFarPlane);
             result.M11 = T.CreateTruncating(2) / width;
             result.M22 = T.CreateTruncating(2) / height;
-            result.M33 = T.One / (zNearPlane - zFarPlane);
-            result.M43 = zNearPlane / (zNearPlane - zFarPlane);
+            result.M33 = range;
+            result.M43 = range * zNearPlane;
+
+            return result;
+        }
+
+        /// <summary>Creates an orthographic perspective matrix from the given view volume dimensions.</summary>
+        /// <param name="width">Width of the view volume.</param>
+        /// <param name="height">Height of the view volume.</param>
+        /// <param name="zNearPlane">Minimum Z-value of the view volume.</param>
+        /// <param name="zFarPlane">Maximum Z-value of the view volume.</param>
+        /// <returns>The orthographic projection matrix.</returns>
+        public static Matrix4X4<T> CreateOrthographicLH<T>(T width, T height, T zNearPlane, T zFarPlane)
+            where T : INumberBase<T>
+        {
+            Matrix4X4<T> result = Matrix4X4<T>.Identity;
+
+            var range = T.One / (zFarPlane - zNearPlane);
+            result.M11 = T.CreateTruncating(2) / width;
+            result.M22 = T.CreateTruncating(2) / height;
+            result.M33 = range;
+            result.M43 = -range * zNearPlane;
 
             return result;
         }
@@ -306,15 +452,49 @@ namespace Silk.NET.Maths
         {
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
-            result.M11 = T.CreateTruncating(2) / (right - left);
+            var reciprocalWidth = T.One / (right - left);
+            var reciprocalHeight = T.One / (top - bottom);
+            var range = T.One / (zNearPlane - zFarPlane);
 
-            result.M22 = T.CreateTruncating(2) / (top - bottom);
+            result.M11 = reciprocalWidth + reciprocalWidth;
 
-            result.M33 = T.One / (zNearPlane - zFarPlane);
+            result.M22 = reciprocalHeight + reciprocalHeight;
 
-            result.M41 = (left + right) / (left - right);
-            result.M42 = (top + bottom) / (bottom - top);
-            result.M43 = zNearPlane / (zNearPlane - zFarPlane);
+            result.M33 = range;
+
+            result.M41 = -(left + right) * reciprocalWidth;
+            result.M42 = -(top + bottom) * reciprocalHeight;
+            result.M43 = range * zNearPlane;
+
+            return result;
+        }
+
+        /// <summary>Builds a customized, orthographic projection matrix.</summary>
+        /// <param name="left">Minimum X-value of the view volume.</param>
+        /// <param name="right">Maximum X-value of the view volume.</param>
+        /// <param name="bottom">Minimum Y-value of the view volume.</param>
+        /// <param name="top">Maximum Y-value of the view volume.</param>
+        /// <param name="zNearPlane">Minimum Z-value of the view volume.</param>
+        /// <param name="zFarPlane">Maximum Z-value of the view volume.</param>
+        /// <returns>The orthographic projection matrix.</returns>
+        public static Matrix4X4<T> CreateOrthographicOffCenterLH<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane)
+            where T : INumberBase<T>
+        {
+            Matrix4X4<T> result = Matrix4X4<T>.Identity;
+
+            var reciprocalWidth = T.One / (right - left);
+            var reciprocalHeight = T.One / (top - bottom);
+            var range = T.One / (zFarPlane - zNearPlane);
+
+            result.M11 = reciprocalWidth + reciprocalWidth;
+
+            result.M22 = reciprocalHeight + reciprocalHeight;
+
+            result.M33 = range;
+
+            result.M41 = -(left + right) * reciprocalWidth;
+            result.M42 = -(top + bottom) * reciprocalHeight;
+            result.M43 = -range * zNearPlane;
 
             return result;
         }
@@ -351,6 +531,42 @@ namespace Silk.NET.Maths
 
             result.M41 = result.M42 = result.M44 = T.Zero;
             result.M43 = nearPlaneDistance * negFarRange;
+
+            return result;
+        }
+
+        /// <summary>Creates a perspective projection matrix from the given view volume dimensions.</summary>
+        /// <param name="width">Width of the view volume at the near view plane.</param>
+        /// <param name="height">Height of the view volume at the near view plane.</param>
+        /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
+        /// <param name="farPlaneDistance">Distance to the far view plane.</param>
+        /// <returns>The perspective projection matrix.</returns>
+        public static Matrix4X4<T> CreatePerspectiveLH<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance)
+            where T : INumber<T>
+        {
+            if (!(nearPlaneDistance > T.Zero))
+                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
+
+            if (!(farPlaneDistance > T.Zero))
+                throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
+
+            Matrix4X4<T> result = default;
+
+            result.M11 = T.CreateTruncating(2) * nearPlaneDistance / width;
+            result.M12 = result.M13 = result.M14 = T.Zero;
+
+            result.M22 = T.CreateTruncating(2) * nearPlaneDistance / height;
+            result.M21 = result.M23 = result.M24 = T.Zero;
+
+            T negFarRange = T.IsPositiveInfinity(farPlaneDistance)
+                ? T.One
+                : farPlaneDistance / (farPlaneDistance - nearPlaneDistance);
+            result.M33 = negFarRange;
+            result.M31 = result.M32 = T.Zero;
+            result.M34 = -T.One;
+
+            result.M41 = result.M42 = result.M44 = T.Zero;
+            result.M43 = -nearPlaneDistance * negFarRange;
 
             return result;
         }
@@ -395,6 +611,46 @@ namespace Silk.NET.Maths
             return result;
         }
 
+        /// <summary>Creates a perspective projection matrix based on a field of view, aspect ratio, and near and far view plane distances.</summary>
+        /// <param name="fieldOfView">Field of view in the y direction, in radians.</param>
+        /// <param name="aspectRatio">Aspect ratio, defined as view space width divided by height.</param>
+        /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
+        /// <param name="farPlaneDistance">Distance to the far view plane.</param>
+        /// <returns>The perspective projection matrix.</returns>
+        public static Matrix4X4<T> CreatePerspectiveFieldOfViewLH<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
+            where T : INumber<T>, ITrigonometricFunctions<T>
+        {
+            if (!(fieldOfView > T.Zero) || (fieldOfView >= T.Pi))
+                throw new ArgumentOutOfRangeException(nameof(fieldOfView));
+
+            if (!(nearPlaneDistance > T.Zero))
+                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
+
+            if (!(farPlaneDistance > T.Zero))
+                throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
+
+            T yScale = T.One / T.Tan(fieldOfView / T.CreateTruncating(2));
+            T xScale = yScale / aspectRatio;
+
+            Matrix4X4<T> result = default;
+
+            result.M11 = xScale;
+            result.M12 = result.M13 = result.M14 = T.Zero;
+
+            result.M22 = yScale;
+            result.M21 = result.M23 = result.M24 = T.Zero;
+
+            result.M31 = result.M32 = T.Zero;
+            T negFarRange = T.IsPositiveInfinity(farPlaneDistance) ? T.One : farPlaneDistance / (farPlaneDistance - nearPlaneDistance);
+            result.M33 = negFarRange;
+            result.M34 = -T.One;
+
+            result.M41 = result.M42 = result.M44 = T.Zero;
+            result.M43 = -nearPlaneDistance * negFarRange;
+
+            return result;
+        }
+
         /// <summary>Creates a customized, perspective projection matrix.</summary>
         /// <param name="left">Minimum x-value of the view volume at the near view plane.</param>
         /// <param name="right">Maximum x-value of the view volume at the near view plane.</param>
@@ -427,6 +683,43 @@ namespace Silk.NET.Maths
             result.M34 = -T.One;
 
             result.M43 = nearPlaneDistance * negFarRange;
+            result.M41 = result.M42 = result.M44 = T.Zero;
+
+            return result;
+        }
+
+        /// <summary>Creates a customized, perspective projection matrix.</summary>
+        /// <param name="left">Minimum x-value of the view volume at the near view plane.</param>
+        /// <param name="right">Maximum x-value of the view volume at the near view plane.</param>
+        /// <param name="bottom">Minimum y-value of the view volume at the near view plane.</param>
+        /// <param name="top">Maximum y-value of the view volume at the near view plane.</param>
+        /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
+        /// <param name="farPlaneDistance">Distance to of the far view plane.</param>
+        /// <returns>The perspective projection matrix.</returns>
+        public static Matrix4X4<T> CreatePerspectiveOffCenterLH<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance)
+            where T : INumber<T>
+        {
+            if (!(nearPlaneDistance > T.Zero))
+                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
+
+            if (!(farPlaneDistance > T.Zero))
+                throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
+
+            Matrix4X4<T> result = default;
+
+            result.M11 = T.CreateTruncating(2) * nearPlaneDistance / (right - left);
+            result.M12 = result.M13 = result.M14 = T.Zero;
+
+            result.M22 = T.CreateTruncating(2) * nearPlaneDistance / (top - bottom);
+            result.M21 = result.M23 = result.M24 = T.Zero;
+
+            result.M31 = (left + right) / (right - left);
+            result.M32 = (top + bottom) / (top - bottom);
+            T negFarRange = T.IsPositiveInfinity(farPlaneDistance) ? T.One : farPlaneDistance / (farPlaneDistance - nearPlaneDistance);
+            result.M33 = negFarRange;
+            result.M34 = -T.One;
+
+            result.M43 = -nearPlaneDistance * negFarRange;
             result.M41 = result.M42 = result.M44 = T.Zero;
 
             return result;
