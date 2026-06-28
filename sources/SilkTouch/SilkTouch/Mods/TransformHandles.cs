@@ -15,21 +15,24 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Identifies handle types by finding pointers to empty structs or missing types.
+/// Identifies handle types by finding pointers to empty structs.
 /// In general, a handle type is a struct that wraps an underlying opaque pointer (or some other underlying value).
 /// These handle types are then transformed by making the struct wrap the underlying pointer and
 /// reducing the dimension of pointers referencing that handle type by one.
 /// </summary>
 /// <example>
 /// Given an empty struct, <c>struct VkBuffer</c>, and all usages of that struct are through a pointer,
-/// <c>VkBuffer*</c>, usages of that pointer will be replaced by <c>VkBufferHandle</c>. For a 2-dimensional pointer,
-/// <c>VkBuffer**</c>, the resulting replacement is <c>VkBufferHandle*</c>.
+/// <c>VkBuffer*</c>, usages of that pointer will be replaced by <c>VkBuffer</c>. For a 2-dimensional pointer,
+/// <c>VkBuffer**</c>, the resulting replacement is <c>VkBuffer*</c>.
 /// </example>
+/// <remarks>
+/// The `Handle` suffix is not applied until <see cref="PrettifyNames"/> executes.
+/// </remarks>
 [ModConfiguration<Config>]
 public class TransformHandles(
     IOptionsSnapshot<TransformHandles.Config> config,
     ILogger<TransformHandles> logger
-) : Mod
+) : IMod
 {
     /// <summary>
     /// The configuration for the <see cref="TransformHandles"/> mod.
@@ -43,10 +46,8 @@ public class TransformHandles(
     }
 
     /// <inheritdoc />
-    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        await base.ExecuteAsync(ctx, ct);
-
         var cfg = config.Get(ctx.JobKey);
         var project = ctx.SourceProject;
         if (project == null)
@@ -248,6 +249,22 @@ public class TransformHandles(
                         Token(SyntaxKind.ReadOnlyKeyword),
                         Token(SyntaxKind.UnsafeKeyword),
                         Token(SyntaxKind.PartialKeyword)
+                    )
+                )
+                .WithBaseList(
+                    BaseList(
+                        SingletonSeparatedList<BaseTypeSyntax>(
+                            SimpleBaseType(
+                                GenericName(Identifier("IEquatable"))
+                                    .WithTypeArgumentList(
+                                        TypeArgumentList(
+                                            SingletonSeparatedList<TypeSyntax>(
+                                                IdentifierName(structName)
+                                            )
+                                        )
+                                    )
+                            )
+                        )
                     )
                 );
         }

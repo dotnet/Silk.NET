@@ -29,7 +29,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineDepthStencilStateCreateInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -86,7 +86,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint DepthTestEnable;
+    public MaybeBool<uint> DepthTestEnable;
 
     [NativeName("depthWriteEnable")]
     [SupportedApiProfile(
@@ -105,7 +105,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint DepthWriteEnable;
+    public MaybeBool<uint> DepthWriteEnable;
 
     [NativeName("depthCompareOp")]
     [SupportedApiProfile(
@@ -143,7 +143,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint DepthBoundsTestEnable;
+    public MaybeBool<uint> DepthBoundsTestEnable;
 
     [NativeName("stencilTestEnable")]
     [SupportedApiProfile(
@@ -162,7 +162,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint StencilTestEnable;
+    public MaybeBool<uint> StencilTestEnable;
 
     [NativeName("front")]
     [SupportedApiProfile(
@@ -239,4 +239,22 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
         MinVersion = "1.0"
     )]
     public float MaxDepthBounds;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
+    public PipelineDepthStencilStateCreateInfo() { }
 }

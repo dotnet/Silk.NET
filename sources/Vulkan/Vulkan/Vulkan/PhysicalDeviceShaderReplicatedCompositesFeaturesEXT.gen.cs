@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceShaderReplicatedCompositesFeaturesEXT
             "VK_EXT_shader_replicated_composites+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderReplicatedCompositesFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,5 +42,15 @@ public unsafe partial struct PhysicalDeviceShaderReplicatedCompositesFeaturesEXT
             "VK_EXT_shader_replicated_composites+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderReplicatedComposites;
+    public MaybeBool<uint> ShaderReplicatedComposites;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_replicated_composites"],
+        ImpliesSets = [
+            "VK_EXT_shader_replicated_composites+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_replicated_composites+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceShaderReplicatedCompositesFeaturesEXT() { }
 }

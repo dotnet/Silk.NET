@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceShaderFloat8FeaturesEXT
             "VK_EXT_shader_float8+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderFloat8FeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceShaderFloat8FeaturesEXT
             "VK_EXT_shader_float8+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderFloat8;
+    public MaybeBool<uint> ShaderFloat8;
 
     [NativeName("shaderFloat8CooperativeMatrix")]
     [SupportedApiProfile(
@@ -54,5 +54,15 @@ public unsafe partial struct PhysicalDeviceShaderFloat8FeaturesEXT
             "VK_EXT_shader_float8+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderFloat8CooperativeMatrix;
+    public MaybeBool<uint> ShaderFloat8CooperativeMatrix;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_float8"],
+        ImpliesSets = [
+            "VK_EXT_shader_float8+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_float8+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceShaderFloat8FeaturesEXT() { }
 }

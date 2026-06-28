@@ -21,7 +21,8 @@ public unsafe partial struct PhysicalDevicePipelineCacheIncrementalModeFeaturesS
             "VK_SEC_pipeline_cache_incremental_mode+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDevicePipelineCacheIncrementalModeFeaturesSEC;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +44,15 @@ public unsafe partial struct PhysicalDevicePipelineCacheIncrementalModeFeaturesS
             "VK_SEC_pipeline_cache_incremental_mode+VK_VERSION_1_1",
         ]
     )]
-    public uint PipelineCacheIncrementalMode;
+    public MaybeBool<uint> PipelineCacheIncrementalMode;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_SEC_pipeline_cache_incremental_mode"],
+        ImpliesSets = [
+            "VK_SEC_pipeline_cache_incremental_mode+VK_KHR_get_physical_device_properties2",
+            "VK_SEC_pipeline_cache_incremental_mode+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDevicePipelineCacheIncrementalModeFeaturesSEC() { }
 }

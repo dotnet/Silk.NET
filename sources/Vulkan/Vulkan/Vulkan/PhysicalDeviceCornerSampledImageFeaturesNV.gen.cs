@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceCornerSampledImageFeaturesNV
             "VK_NV_corner_sampled_image+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCornerSampledImageFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceCornerSampledImageFeaturesNV
             "VK_NV_corner_sampled_image+VK_VERSION_1_1",
         ]
     )]
-    public uint CornerSampledImage;
+    public MaybeBool<uint> CornerSampledImage;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_corner_sampled_image"],
+        ImpliesSets = [
+            "VK_NV_corner_sampled_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_corner_sampled_image+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceCornerSampledImageFeaturesNV() { }
 }

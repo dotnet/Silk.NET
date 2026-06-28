@@ -18,7 +18,7 @@ public unsafe partial struct DisplayPresentInfoKHR
         ["VK_KHR_display_swapchain"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_swapchain"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DisplayPresentInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -50,5 +50,12 @@ public unsafe partial struct DisplayPresentInfoKHR
         ["VK_KHR_display_swapchain"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_swapchain"]
     )]
-    public uint Persistent;
+    public MaybeBool<uint> Persistent;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_display_swapchain"],
+        ImpliesSets = ["VK_KHR_display", "VK_KHR_swapchain"]
+    )]
+    public DisplayPresentInfoKHR() { }
 }

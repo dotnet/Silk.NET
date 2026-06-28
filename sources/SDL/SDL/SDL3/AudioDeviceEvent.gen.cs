@@ -23,7 +23,7 @@ public partial struct AudioDeviceEvent
     public uint Which;
 
     [NativeName("recording")]
-    public byte Recording;
+    public MaybeBool<byte> Recording;
 
     [NativeName("padding1")]
     public byte Padding1;

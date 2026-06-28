@@ -915,6 +915,28 @@ public enum ObjectType : uint
     )]
     IndirectCommandsLayoutNV = 1000277000,
 
+    [NativeName("VK_OBJECT_TYPE_CUDA_MODULE_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cuda_kernel_launch"],
+        ImpliesSets = [
+            "VK_NV_cuda_kernel_launch+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cuda_kernel_launch+VK_VERSION_1_1",
+        ]
+    )]
+    CudaModuleNV = 1000307000,
+
+    [NativeName("VK_OBJECT_TYPE_CUDA_FUNCTION_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cuda_kernel_launch"],
+        ImpliesSets = [
+            "VK_NV_cuda_kernel_launch+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cuda_kernel_launch+VK_VERSION_1_1",
+        ]
+    )]
+    CudaFunctionNV = 1000307001,
+
     [NativeName("VK_OBJECT_TYPE_BUFFER_COLLECTION_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",

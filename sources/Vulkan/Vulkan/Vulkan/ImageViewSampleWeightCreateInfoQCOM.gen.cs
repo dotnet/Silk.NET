@@ -20,7 +20,7 @@ public unsafe partial struct ImageViewSampleWeightCreateInfoQCOM
             "VK_QCOM_image_processing+VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ImageViewSampleWeightCreateInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -65,4 +65,14 @@ public unsafe partial struct ImageViewSampleWeightCreateInfoQCOM
         ]
     )]
     public uint NumPhases;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing+VK_KHR_format_feature_flags2",
+            "VK_QCOM_image_processing+VK_VERSION_1_3",
+        ]
+    )]
+    public ImageViewSampleWeightCreateInfoQCOM() { }
 }

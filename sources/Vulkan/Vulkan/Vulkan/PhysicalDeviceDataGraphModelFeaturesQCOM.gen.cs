@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceDataGraphModelFeaturesQCOM
         ["VK_QCOM_data_graph_model"],
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDataGraphModelFeaturesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,5 +34,12 @@ public unsafe partial struct PhysicalDeviceDataGraphModelFeaturesQCOM
         ["VK_QCOM_data_graph_model"],
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
-    public uint DataGraphModel;
+    public MaybeBool<uint> DataGraphModel;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_data_graph_model"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    public PhysicalDeviceDataGraphModelFeaturesQCOM() { }
 }

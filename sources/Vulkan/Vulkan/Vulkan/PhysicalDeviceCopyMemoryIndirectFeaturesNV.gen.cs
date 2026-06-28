@@ -22,7 +22,7 @@ public unsafe partial struct PhysicalDeviceCopyMemoryIndirectFeaturesNV
             "VK_VERSION_1_2",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCopyMemoryIndirectFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -46,5 +46,16 @@ public unsafe partial struct PhysicalDeviceCopyMemoryIndirectFeaturesNV
             "VK_VERSION_1_2",
         ]
     )]
-    public uint IndirectCopy;
+    public MaybeBool<uint> IndirectCopy;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_copy_memory_indirect"],
+        ImpliesSets = [
+            "VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    public PhysicalDeviceCopyMemoryIndirectFeaturesNV() { }
 }

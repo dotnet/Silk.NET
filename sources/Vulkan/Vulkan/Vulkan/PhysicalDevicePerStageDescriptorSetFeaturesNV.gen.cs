@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDevicePerStageDescriptorSetFeaturesNV
             "VK_NV_per_stage_descriptor_set+VK_VERSION_1_4",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePerStageDescriptorSetFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDevicePerStageDescriptorSetFeaturesNV
             "VK_NV_per_stage_descriptor_set+VK_VERSION_1_4",
         ]
     )]
-    public uint PerStageDescriptorSet;
+    public MaybeBool<uint> PerStageDescriptorSet;
 
     [NativeName("dynamicPipelineLayout")]
     [SupportedApiProfile(
@@ -54,5 +54,15 @@ public unsafe partial struct PhysicalDevicePerStageDescriptorSetFeaturesNV
             "VK_NV_per_stage_descriptor_set+VK_VERSION_1_4",
         ]
     )]
-    public uint DynamicPipelineLayout;
+    public MaybeBool<uint> DynamicPipelineLayout;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_per_stage_descriptor_set"],
+        ImpliesSets = [
+            "VK_NV_per_stage_descriptor_set+VK_KHR_maintenance6",
+            "VK_NV_per_stage_descriptor_set+VK_VERSION_1_4",
+        ]
+    )]
+    public PhysicalDevicePerStageDescriptorSetFeaturesNV() { }
 }

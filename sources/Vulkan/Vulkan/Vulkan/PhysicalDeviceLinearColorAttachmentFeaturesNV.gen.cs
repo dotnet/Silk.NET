@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceLinearColorAttachmentFeaturesNV
             "VK_NV_linear_color_attachment+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceLinearColorAttachmentFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceLinearColorAttachmentFeaturesNV
             "VK_NV_linear_color_attachment+VK_VERSION_1_1",
         ]
     )]
-    public uint LinearColorAttachment;
+    public MaybeBool<uint> LinearColorAttachment;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_linear_color_attachment"],
+        ImpliesSets = [
+            "VK_NV_linear_color_attachment+VK_KHR_get_physical_device_properties2",
+            "VK_NV_linear_color_attachment+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceLinearColorAttachmentFeaturesNV() { }
 }

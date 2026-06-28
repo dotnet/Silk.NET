@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDevicePciBusInfoPropertiesEXT
             "VK_EXT_pci_bus_info+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePciBusInfoPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -76,4 +76,14 @@ public unsafe partial struct PhysicalDevicePciBusInfoPropertiesEXT
         ]
     )]
     public uint PciFunction;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pci_bus_info"],
+        ImpliesSets = [
+            "VK_EXT_pci_bus_info+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_pci_bus_info+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDevicePciBusInfoPropertiesEXT() { }
 }

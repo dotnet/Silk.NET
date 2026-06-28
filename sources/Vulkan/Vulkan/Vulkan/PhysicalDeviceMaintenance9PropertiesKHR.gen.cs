@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceMaintenance9PropertiesKHR
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMaintenance9PropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceMaintenance9PropertiesKHR
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    public uint Image2DViewOf3DSparse;
+    public MaybeBool<uint> Image2DViewOf3DSparse;
 
     [NativeName("defaultVertexAttributeValue")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct PhysicalDeviceMaintenance9PropertiesKHR
         ]
     )]
     public DefaultVertexAttributeValueKHR DefaultVertexAttributeValue;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance9"],
+        ImpliesSets = [
+            "VK_KHR_maintenance9+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance9+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceMaintenance9PropertiesKHR() { }
 }

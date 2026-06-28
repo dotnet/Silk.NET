@@ -14,7 +14,7 @@ public unsafe partial struct DisplaySurfaceCreateInfoKHR
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.DisplaySurfaceCreateInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
@@ -51,4 +51,7 @@ public unsafe partial struct DisplaySurfaceCreateInfoKHR
     [NativeName("imageExtent")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Extent2D ImageExtent;
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
+    public DisplaySurfaceCreateInfoKHR() { }
 }

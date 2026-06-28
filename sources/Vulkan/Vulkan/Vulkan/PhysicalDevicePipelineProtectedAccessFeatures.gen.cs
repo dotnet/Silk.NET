@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDevicePipelineProtectedAccessFeatures
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePipelineProtectedAccessFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -29,5 +29,12 @@ public unsafe partial struct PhysicalDevicePipelineProtectedAccessFeatures
 
     [NativeName("pipelineProtectedAccess")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint PipelineProtectedAccess;
+    public MaybeBool<uint> PipelineProtectedAccess;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public PhysicalDevicePipelineProtectedAccessFeatures() { }
 }

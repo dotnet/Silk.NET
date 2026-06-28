@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceYcbcrDegammaFeaturesQCOM
             "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceYcbcrDegammaFeaturesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceYcbcrDegammaFeaturesQCOM
             "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
         ]
     )]
-    public uint YcbcrDegamma;
+    public MaybeBool<uint> YcbcrDegamma;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_ycbcr_degamma"],
+        ImpliesSets = [
+            "VK_QCOM_ycbcr_degamma+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_ycbcr_degamma+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceYcbcrDegammaFeaturesQCOM() { }
 }

@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceTileMemoryHeapFeaturesQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceTileMemoryHeapFeaturesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,5 +42,15 @@ public unsafe partial struct PhysicalDeviceTileMemoryHeapFeaturesQCOM
             "VK_VERSION_1_1",
         ]
     )]
-    public uint TileMemoryHeap;
+    public MaybeBool<uint> TileMemoryHeap;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_memory_heap"],
+        ImpliesSets = [
+            "VK_KHR_get_memory_requirements2+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceTileMemoryHeapFeaturesQCOM() { }
 }

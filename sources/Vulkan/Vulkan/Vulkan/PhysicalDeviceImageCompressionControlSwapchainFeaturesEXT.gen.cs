@@ -18,7 +18,8 @@ public unsafe partial struct PhysicalDeviceImageCompressionControlSwapchainFeatu
         ["VK_EXT_image_compression_control_swapchain"],
         ImpliesSets = ["VK_EXT_image_compression_control"]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,5 +35,12 @@ public unsafe partial struct PhysicalDeviceImageCompressionControlSwapchainFeatu
         ["VK_EXT_image_compression_control_swapchain"],
         ImpliesSets = ["VK_EXT_image_compression_control"]
     )]
-    public uint ImageCompressionControlSwapchain;
+    public MaybeBool<uint> ImageCompressionControlSwapchain;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_image_compression_control_swapchain"],
+        ImpliesSets = ["VK_EXT_image_compression_control"]
+    )]
+    public PhysicalDeviceImageCompressionControlSwapchainFeaturesEXT() { }
 }

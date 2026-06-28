@@ -14,7 +14,7 @@ public unsafe partial struct FilterCubicImageViewImageFormatPropertiesEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.FilterCubicImageViewImageFormatPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
@@ -22,9 +22,12 @@ public unsafe partial struct FilterCubicImageViewImageFormatPropertiesEXT
 
     [NativeName("filterCubic")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
-    public uint FilterCubic;
+    public MaybeBool<uint> FilterCubic;
 
     [NativeName("filterCubicMinmax")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
-    public uint FilterCubicMinmax;
+    public MaybeBool<uint> FilterCubicMinmax;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
+    public FilterCubicImageViewImageFormatPropertiesEXT() { }
 }

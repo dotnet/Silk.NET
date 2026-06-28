@@ -31,7 +31,7 @@ public unsafe partial struct PhysicalDeviceVariablePointersFeatures
         ],
         MinVersion = "1.1"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVariablePointersFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -56,9 +56,29 @@ public unsafe partial struct PhysicalDeviceVariablePointersFeatures
 
     [NativeName("variablePointersStorageBuffer")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint VariablePointersStorageBuffer;
+    public MaybeBool<uint> VariablePointersStorageBuffer;
 
     [NativeName("variablePointers")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint VariablePointers;
+    public MaybeBool<uint> VariablePointers;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    public PhysicalDeviceVariablePointersFeatures() { }
 }

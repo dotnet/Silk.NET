@@ -27,7 +27,7 @@ public unsafe partial struct PhysicalDeviceTextureCompressionAstchdrFeatures
         ],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceTextureCompressionAstcHdrFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,5 +55,21 @@ public unsafe partial struct PhysicalDeviceTextureCompressionAstchdrFeatures
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    public uint TextureCompressionAstcHdr;
+    public MaybeBool<uint> TextureCompressionAstcHdr;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    public PhysicalDeviceTextureCompressionAstchdrFeatures() { }
 }

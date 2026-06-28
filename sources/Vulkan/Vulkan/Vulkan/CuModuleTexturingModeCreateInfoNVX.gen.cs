@@ -14,7 +14,7 @@ public unsafe partial struct CuModuleTexturingModeCreateInfoNVX
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.CuModuleTexturingModeCreateInfoNVX;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
@@ -22,5 +22,8 @@ public unsafe partial struct CuModuleTexturingModeCreateInfoNVX
 
     [NativeName("use64bitTexturing")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public uint Use64BitTexturing;
+    public MaybeBool<uint> Use64BitTexturing;
+
+    [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
+    public CuModuleTexturingModeCreateInfoNVX() { }
 }

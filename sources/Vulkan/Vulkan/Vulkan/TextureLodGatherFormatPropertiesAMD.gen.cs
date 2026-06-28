@@ -21,7 +21,7 @@ public unsafe partial struct TextureLodGatherFormatPropertiesAMD
             "VK_AMD_texture_gather_bias_lod+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.TextureLodGatherFormatPropertiesAMD;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct TextureLodGatherFormatPropertiesAMD
             "VK_AMD_texture_gather_bias_lod+VK_VERSION_1_1",
         ]
     )]
-    public uint SupportsTextureGatherLodBiasAMD;
+    public MaybeBool<uint> SupportsTextureGatherLodBiasAMD;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_texture_gather_bias_lod"],
+        ImpliesSets = [
+            "VK_AMD_texture_gather_bias_lod+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_texture_gather_bias_lod+VK_VERSION_1_1",
+        ]
+    )]
+    public TextureLodGatherFormatPropertiesAMD() { }
 }

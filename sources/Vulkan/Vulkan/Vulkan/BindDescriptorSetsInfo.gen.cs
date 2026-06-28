@@ -18,7 +18,7 @@ public unsafe partial struct BindDescriptorSetsInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.BindDescriptorSetsInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -83,4 +83,11 @@ public unsafe partial struct BindDescriptorSetsInfo
         MinVersion = "1.4"
     )]
     public uint* PDynamicOffsets;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public BindDescriptorSetsInfo() { }
 }

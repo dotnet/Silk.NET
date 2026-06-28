@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_AudioStream")]
-public readonly unsafe partial struct AudioStreamHandle
+public readonly unsafe partial struct AudioStreamHandle : IEquatable<AudioStreamHandle>
 {
     public readonly void* Handle;
 

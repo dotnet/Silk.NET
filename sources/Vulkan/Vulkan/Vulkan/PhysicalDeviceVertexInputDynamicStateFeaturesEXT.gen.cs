@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceVertexInputDynamicStateFeaturesEXT
             "VK_EXT_vertex_input_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVertexInputDynamicStateFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceVertexInputDynamicStateFeaturesEXT
             "VK_EXT_vertex_input_dynamic_state+VK_VERSION_1_1",
         ]
     )]
-    public uint VertexInputDynamicState;
+    public MaybeBool<uint> VertexInputDynamicState;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_vertex_input_dynamic_state"],
+        ImpliesSets = [
+            "VK_EXT_vertex_input_dynamic_state+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_vertex_input_dynamic_state+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceVertexInputDynamicStateFeaturesEXT() { }
 }

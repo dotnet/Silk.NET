@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderAtomicFloatFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderBufferFloat32Atomics;
+    public MaybeBool<uint> ShaderBufferFloat32Atomics;
 
     [NativeName("shaderBufferFloat32AtomicAdd")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderBufferFloat32AtomicAdd;
+    public MaybeBool<uint> ShaderBufferFloat32AtomicAdd;
 
     [NativeName("shaderBufferFloat64Atomics")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderBufferFloat64Atomics;
+    public MaybeBool<uint> ShaderBufferFloat64Atomics;
 
     [NativeName("shaderBufferFloat64AtomicAdd")]
     [SupportedApiProfile(
@@ -76,7 +76,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderBufferFloat64AtomicAdd;
+    public MaybeBool<uint> ShaderBufferFloat64AtomicAdd;
 
     [NativeName("shaderSharedFloat32Atomics")]
     [SupportedApiProfile(
@@ -87,7 +87,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderSharedFloat32Atomics;
+    public MaybeBool<uint> ShaderSharedFloat32Atomics;
 
     [NativeName("shaderSharedFloat32AtomicAdd")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderSharedFloat32AtomicAdd;
+    public MaybeBool<uint> ShaderSharedFloat32AtomicAdd;
 
     [NativeName("shaderSharedFloat64Atomics")]
     [SupportedApiProfile(
@@ -109,7 +109,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderSharedFloat64Atomics;
+    public MaybeBool<uint> ShaderSharedFloat64Atomics;
 
     [NativeName("shaderSharedFloat64AtomicAdd")]
     [SupportedApiProfile(
@@ -120,7 +120,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public uint ShaderSharedFloat64AtomicAdd;
+    public MaybeBool<uint> ShaderSharedFloat64AtomicAdd;
 
     [NativeName("shaderImageFloat32Atomics")]
     [SupportedApiProfile(
@@ -135,7 +135,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
         ],
         RequireAll = true
     )]
-    public uint ShaderImageFloat32Atomics;
+    public MaybeBool<uint> ShaderImageFloat32Atomics;
 
     [NativeName("shaderImageFloat32AtomicAdd")]
     [SupportedApiProfile(
@@ -150,7 +150,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
         ],
         RequireAll = true
     )]
-    public uint ShaderImageFloat32AtomicAdd;
+    public MaybeBool<uint> ShaderImageFloat32AtomicAdd;
 
     [NativeName("sparseImageFloat32Atomics")]
     [SupportedApiProfile(
@@ -161,7 +161,7 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public uint SparseImageFloat32Atomics;
+    public MaybeBool<uint> SparseImageFloat32Atomics;
 
     [NativeName("sparseImageFloat32AtomicAdd")]
     [SupportedApiProfile(
@@ -172,5 +172,15 @@ public unsafe partial struct PhysicalDeviceShaderAtomicFloatFeaturesEXT
             "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
         ]
     )]
-    public uint SparseImageFloat32AtomicAdd;
+    public MaybeBool<uint> SparseImageFloat32AtomicAdd;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_atomic_float"],
+        ImpliesSets = [
+            "VK_EXT_shader_atomic_float+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_atomic_float+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceShaderAtomicFloatFeaturesEXT() { }
 }

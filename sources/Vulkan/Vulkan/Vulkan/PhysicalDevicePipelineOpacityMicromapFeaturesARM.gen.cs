@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDevicePipelineOpacityMicromapFeaturesARM
         ["VK_ARM_pipeline_opacity_micromap"],
         ImpliesSets = ["VK_EXT_opacity_micromap"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePipelineOpacityMicromapFeaturesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,5 +34,12 @@ public unsafe partial struct PhysicalDevicePipelineOpacityMicromapFeaturesARM
         ["VK_ARM_pipeline_opacity_micromap"],
         ImpliesSets = ["VK_EXT_opacity_micromap"]
     )]
-    public uint PipelineOpacityMicromap;
+    public MaybeBool<uint> PipelineOpacityMicromap;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_pipeline_opacity_micromap"],
+        ImpliesSets = ["VK_EXT_opacity_micromap"]
+    )]
+    public PhysicalDevicePipelineOpacityMicromapFeaturesARM() { }
 }

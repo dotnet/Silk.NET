@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
             "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceUnifiedImageLayoutsFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
             "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
         ]
     )]
-    public uint UnifiedImageLayouts;
+    public MaybeBool<uint> UnifiedImageLayouts;
 
     [NativeName("unifiedImageLayoutsVideo")]
     [SupportedApiProfile(
@@ -53,5 +53,15 @@ public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
             "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
         ]
     )]
-    public uint UnifiedImageLayoutsVideo;
+    public MaybeBool<uint> UnifiedImageLayoutsVideo;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_unified_image_layouts"],
+        ImpliesSets = [
+            "VK_KHR_unified_image_layouts+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_unified_image_layouts+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceUnifiedImageLayoutsFeaturesKHR() { }
 }

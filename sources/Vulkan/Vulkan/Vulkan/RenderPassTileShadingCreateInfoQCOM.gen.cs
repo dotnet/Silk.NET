@@ -20,7 +20,7 @@ public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.RenderPassTileShadingCreateInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,4 +54,14 @@ public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
         ]
     )]
     public Extent2D TileApronSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_shading"],
+        ImpliesSets = [
+            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
+        ]
+    )]
+    public RenderPassTileShadingCreateInfoQCOM() { }
 }

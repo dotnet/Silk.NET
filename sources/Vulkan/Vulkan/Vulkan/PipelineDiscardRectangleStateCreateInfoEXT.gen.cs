@@ -20,7 +20,7 @@ public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineDiscardRectangleStateCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -76,4 +76,14 @@ public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
         ]
     )]
     public Rect2D* PDiscardRectangles;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_discard_rectangles"],
+        ImpliesSets = [
+            "VK_EXT_discard_rectangles+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_discard_rectangles+VK_VERSION_1_1",
+        ]
+    )]
+    public PipelineDiscardRectangleStateCreateInfoEXT() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceCommandBufferInheritanceFeaturesNV
             "VK_NV_command_buffer_inheritance+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCommandBufferInheritanceFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceCommandBufferInheritanceFeaturesNV
             "VK_NV_command_buffer_inheritance+VK_VERSION_1_1",
         ]
     )]
-    public uint CommandBufferInheritance;
+    public MaybeBool<uint> CommandBufferInheritance;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_command_buffer_inheritance"],
+        ImpliesSets = [
+            "VK_NV_command_buffer_inheritance+VK_KHR_get_physical_device_properties2",
+            "VK_NV_command_buffer_inheritance+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceCommandBufferInheritanceFeaturesNV() { }
 }

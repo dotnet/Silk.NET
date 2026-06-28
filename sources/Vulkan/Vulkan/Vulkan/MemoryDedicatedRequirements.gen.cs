@@ -34,7 +34,7 @@ public unsafe partial struct MemoryDedicatedRequirements
         ],
         MinVersion = "1.1"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MemoryDedicatedRequirements;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -84,7 +84,7 @@ public unsafe partial struct MemoryDedicatedRequirements
         ],
         MinVersion = "1.1"
     )]
-    public uint PrefersDedicatedAllocation;
+    public MaybeBool<uint> PrefersDedicatedAllocation;
 
     [NativeName("requiresDedicatedAllocation")]
     [SupportedApiProfile(
@@ -109,5 +109,29 @@ public unsafe partial struct MemoryDedicatedRequirements
         ],
         MinVersion = "1.1"
     )]
-    public uint RequiresDedicatedAllocation;
+    public MaybeBool<uint> RequiresDedicatedAllocation;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    public MemoryDedicatedRequirements() { }
 }

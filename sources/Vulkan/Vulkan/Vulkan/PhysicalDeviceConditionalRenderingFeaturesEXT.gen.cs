@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceConditionalRenderingFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public uint ConditionalRendering;
+    public MaybeBool<uint> ConditionalRendering;
 
     [NativeName("inheritedConditionalRendering")]
     [SupportedApiProfile(
@@ -54,5 +54,15 @@ public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    public uint InheritedConditionalRendering;
+    public MaybeBool<uint> InheritedConditionalRendering;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering"],
+        ImpliesSets = [
+            "VK_EXT_conditional_rendering+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conditional_rendering+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceConditionalRenderingFeaturesEXT() { }
 }

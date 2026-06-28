@@ -20,7 +20,7 @@ public unsafe partial struct ExternalMemoryAcquireUnmodifiedEXT
             "VK_EXT_external_memory_acquire_unmodified+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ExternalMemoryAcquireUnmodifiedEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,5 +42,15 @@ public unsafe partial struct ExternalMemoryAcquireUnmodifiedEXT
             "VK_EXT_external_memory_acquire_unmodified+VK_VERSION_1_1",
         ]
     )]
-    public uint AcquireUnmodifiedMemory;
+    public MaybeBool<uint> AcquireUnmodifiedMemory;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_external_memory_acquire_unmodified"],
+        ImpliesSets = [
+            "VK_EXT_external_memory_acquire_unmodified+VK_KHR_external_memory",
+            "VK_EXT_external_memory_acquire_unmodified+VK_VERSION_1_1",
+        ]
+    )]
+    public ExternalMemoryAcquireUnmodifiedEXT() { }
 }

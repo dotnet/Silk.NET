@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceMemoryPriorityFeaturesEXT
             "VK_EXT_memory_priority+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMemoryPriorityFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,5 +42,15 @@ public unsafe partial struct PhysicalDeviceMemoryPriorityFeaturesEXT
             "VK_EXT_memory_priority+VK_VERSION_1_1",
         ]
     )]
-    public uint MemoryPriority;
+    public MaybeBool<uint> MemoryPriority;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_memory_priority"],
+        ImpliesSets = [
+            "VK_EXT_memory_priority+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_memory_priority+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceMemoryPriorityFeaturesEXT() { }
 }

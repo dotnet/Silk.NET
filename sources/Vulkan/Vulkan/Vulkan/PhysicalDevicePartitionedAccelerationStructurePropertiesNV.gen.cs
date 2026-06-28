@@ -18,7 +18,8 @@ public unsafe partial struct PhysicalDevicePartitionedAccelerationStructurePrope
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDevicePartitionedAccelerationStructurePropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +36,11 @@ public unsafe partial struct PhysicalDevicePartitionedAccelerationStructurePrope
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
     public uint MaxPartitionCount;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public PhysicalDevicePartitionedAccelerationStructurePropertiesNV() { }
 }

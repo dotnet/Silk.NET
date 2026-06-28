@@ -11,7 +11,7 @@ namespace Silk.NET.SDL;
 public unsafe partial struct AssertData
 {
     [NativeName("always_ignore")]
-    public byte AlwaysIgnore;
+    public MaybeBool<byte> AlwaysIgnore;
 
     [NativeName("trigger_count")]
     public uint TriggerCount;

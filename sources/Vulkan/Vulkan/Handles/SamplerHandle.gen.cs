@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkSampler")]
-public readonly unsafe partial struct SamplerHandle
+public readonly unsafe partial struct SamplerHandle : IEquatable<SamplerHandle>
 {
     public readonly void* Handle;
 

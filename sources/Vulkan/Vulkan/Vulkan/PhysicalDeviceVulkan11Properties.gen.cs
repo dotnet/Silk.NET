@@ -31,7 +31,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVulkan1x1Properties;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -157,7 +157,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public uint DeviceLuidValid;
+    public MaybeBool<uint> DeviceLuidValid;
 
     [NativeName("subgroupSize")]
     [SupportedApiProfile(
@@ -241,7 +241,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public uint SubgroupQuadOperationsInAllStages;
+    public MaybeBool<uint> SubgroupQuadOperationsInAllStages;
 
     [NativeName("pointClippingBehavior")]
     [SupportedApiProfile(
@@ -325,7 +325,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         ],
         MinVersion = "1.2"
     )]
-    public uint ProtectedNoFault;
+    public MaybeBool<uint> ProtectedNoFault;
 
     [NativeName("maxPerSetDescriptors")]
     [SupportedApiProfile(
@@ -368,4 +368,24 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
         MinVersion = "1.2"
     )]
     public ulong MaxMemoryAllocationSize;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceVulkan11Properties() { }
 }

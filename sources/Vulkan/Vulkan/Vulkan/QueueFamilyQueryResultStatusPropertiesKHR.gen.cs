@@ -18,7 +18,7 @@ public unsafe partial struct QueueFamilyQueryResultStatusPropertiesKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.QueueFamilyQueryResultStatusPropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,5 +34,12 @@ public unsafe partial struct QueueFamilyQueryResultStatusPropertiesKHR
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public uint QueryResultStatusSupport;
+    public MaybeBool<uint> QueryResultStatusSupport;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_queue"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
+    )]
+    public QueueFamilyQueryResultStatusPropertiesKHR() { }
 }

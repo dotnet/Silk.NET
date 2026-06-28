@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
             "VK_EXT_fragment_shader_interlock+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceFragmentShaderInterlockFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
             "VK_EXT_fragment_shader_interlock+VK_VERSION_1_1",
         ]
     )]
-    public uint FragmentShaderSampleInterlock;
+    public MaybeBool<uint> FragmentShaderSampleInterlock;
 
     [NativeName("fragmentShaderPixelInterlock")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
             "VK_EXT_fragment_shader_interlock+VK_VERSION_1_1",
         ]
     )]
-    public uint FragmentShaderPixelInterlock;
+    public MaybeBool<uint> FragmentShaderPixelInterlock;
 
     [NativeName("fragmentShaderShadingRateInterlock")]
     [SupportedApiProfile(
@@ -65,5 +65,15 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
             "VK_EXT_fragment_shader_interlock+VK_VERSION_1_1",
         ]
     )]
-    public uint FragmentShaderShadingRateInterlock;
+    public MaybeBool<uint> FragmentShaderShadingRateInterlock;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_fragment_shader_interlock"],
+        ImpliesSets = [
+            "VK_EXT_fragment_shader_interlock+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_fragment_shader_interlock+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceFragmentShaderInterlockFeaturesEXT() { }
 }

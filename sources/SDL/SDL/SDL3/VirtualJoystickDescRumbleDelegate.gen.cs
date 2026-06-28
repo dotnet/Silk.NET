@@ -6,5 +6,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace Silk.NET.SDL;
+
 [NativeName("SDL_VirtualJoystickDesc_Rumble")]
 public unsafe delegate byte VirtualJoystickDescRumbleDelegate(void* arg0, ushort arg1, ushort arg2);

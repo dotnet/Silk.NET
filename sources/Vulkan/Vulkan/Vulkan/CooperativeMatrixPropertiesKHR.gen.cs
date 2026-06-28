@@ -21,7 +21,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CooperativeMatrixPropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -120,7 +120,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public uint SaturatingAccumulation;
+    public MaybeBool<uint> SaturatingAccumulation;
 
     [NativeName("scope")]
     [SupportedApiProfile(
@@ -132,4 +132,14 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
         ]
     )]
     public ScopeKHR Scope;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_cooperative_matrix"],
+        ImpliesSets = [
+            "VK_KHR_cooperative_matrix+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
+        ]
+    )]
+    public CooperativeMatrixPropertiesKHR() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineViewportShadingRateImageStateCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    public uint ShadingRateImageEnable;
+    public MaybeBool<uint> ShadingRateImageEnable;
 
     [NativeName("viewportCount")]
     [SupportedApiProfile(
@@ -66,4 +66,14 @@ public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
         ]
     )]
     public ShadingRatePaletteNV* PShadingRatePalettes;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_shading_rate_image"],
+        ImpliesSets = [
+            "VK_NV_shading_rate_image+VK_KHR_get_physical_device_properties2",
+            "VK_NV_shading_rate_image+VK_VERSION_1_1",
+        ]
+    )]
+    public PipelineViewportShadingRateImageStateCreateInfoNV() { }
 }

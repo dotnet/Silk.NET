@@ -29,7 +29,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineMultisampleStateCreateInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -105,7 +105,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint SampleShadingEnable;
+    public MaybeBool<uint> SampleShadingEnable;
 
     [NativeName("minSampleShading")]
     [SupportedApiProfile(
@@ -162,7 +162,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint AlphaToCoverageEnable;
+    public MaybeBool<uint> AlphaToCoverageEnable;
 
     [NativeName("alphaToOneEnable")]
     [SupportedApiProfile(
@@ -181,5 +181,23 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint AlphaToOneEnable;
+    public MaybeBool<uint> AlphaToOneEnable;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
+    public PipelineMultisampleStateCreateInfo() { }
 }

@@ -13,7 +13,7 @@ public unsafe partial struct TensorFormatPropertiesARM
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.TensorFormatPropertiesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
@@ -26,4 +26,7 @@ public unsafe partial struct TensorFormatPropertiesARM
     [NativeName("linearTilingTensorFeatures")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public FormatFeatureFlags2 LinearTilingTensorFeatures;
+
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
+    public TensorFormatPropertiesARM() { }
 }

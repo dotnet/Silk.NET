@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCooperativeVectorPropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public uint CooperativeVectorTrainingFloat16Accumulation;
+    public MaybeBool<uint> CooperativeVectorTrainingFloat16Accumulation;
 
     [NativeName("cooperativeVectorTrainingFloat32Accumulation")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public uint CooperativeVectorTrainingFloat32Accumulation;
+    public MaybeBool<uint> CooperativeVectorTrainingFloat32Accumulation;
 
     [NativeName("maxCooperativeVectorComponents")]
     [SupportedApiProfile(
@@ -77,4 +77,14 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
         ]
     )]
     public uint MaxCooperativeVectorComponents;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceCooperativeVectorPropertiesNV() { }
 }

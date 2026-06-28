@@ -20,7 +20,7 @@ public unsafe partial struct MicromapBuildInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MicromapBuildInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -153,4 +153,14 @@ public unsafe partial struct MicromapBuildInfoEXT
         ]
     )]
     public ulong TriangleArrayStride;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    public MicromapBuildInfoEXT() { }
 }

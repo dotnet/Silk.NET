@@ -20,7 +20,8 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapLayeredPropertiesVA
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,4 +44,14 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapLayeredPropertiesVA
         ]
     )]
     public uint MaxFragmentDensityMapLayers;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_fragment_density_map_layered"],
+        ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
+            "VK_EXT_fragment_density_map+VK_VERSION_1_4",
+        ]
+    )]
+    public PhysicalDeviceFragmentDensityMapLayeredPropertiesVALVE() { }
 }

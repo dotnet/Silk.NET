@@ -41,6 +41,9 @@ public enum PipelineCreateFlags2 : ulong
     [NativeName("VK_PIPELINE_CREATE_2_PROTECTED_ACCESS_ONLY_BIT")]
     ProtectedAccessOnlyBit = 0x40000000,
 
+    [NativeName("VK_PIPELINE_CREATE_2_EXECUTION_GRAPH_BIT_AMDX")]
+    ExecutionGraphBitAMDX = 0x100000000,
+
     [NativeName("VK_PIPELINE_CREATE_2_RAY_TRACING_SKIP_BUILT_IN_PRIMITIVES_BIT_KHR")]
     RayTracingSkipBuiltInPrimitivesBitKHR = 0x1000,
 

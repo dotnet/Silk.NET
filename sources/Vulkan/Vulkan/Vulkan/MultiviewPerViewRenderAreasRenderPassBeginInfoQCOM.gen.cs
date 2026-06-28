@@ -19,7 +19,7 @@ public unsafe partial struct MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
             "VK_QCOM_multiview_per_view_render_areas+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -53,4 +53,14 @@ public unsafe partial struct MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
         ]
     )]
     public Rect2D* PPerViewRenderAreas;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_render_areas"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_render_areas+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_render_areas+VK_VERSION_1_1",
+        ]
+    )]
+    public MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM() { }
 }

@@ -20,7 +20,7 @@ public unsafe partial struct MicromapBuildSizesInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MicromapBuildSizesInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -64,5 +64,15 @@ public unsafe partial struct MicromapBuildSizesInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public uint Discardable;
+    public MaybeBool<uint> Discardable;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    public MicromapBuildSizesInfoEXT() { }
 }

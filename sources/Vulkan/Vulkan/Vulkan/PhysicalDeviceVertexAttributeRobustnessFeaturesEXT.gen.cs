@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceVertexAttributeRobustnessFeaturesEXT
             "VK_EXT_vertex_attribute_robustness+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVertexAttributeRobustnessFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceVertexAttributeRobustnessFeaturesEXT
             "VK_EXT_vertex_attribute_robustness+VK_VERSION_1_1",
         ]
     )]
-    public uint VertexAttributeRobustness;
+    public MaybeBool<uint> VertexAttributeRobustness;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_vertex_attribute_robustness"],
+        ImpliesSets = [
+            "VK_EXT_vertex_attribute_robustness+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_vertex_attribute_robustness+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceVertexAttributeRobustnessFeaturesEXT() { }
 }

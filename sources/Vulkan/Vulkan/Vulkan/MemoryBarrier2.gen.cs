@@ -26,7 +26,7 @@ public unsafe partial struct MemoryBarrier2
         ],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MemoryBarrier2;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -112,4 +112,20 @@ public unsafe partial struct MemoryBarrier2
         MinVersion = "1.3"
     )]
     public AccessFlags2 DstAccessMask;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    public MemoryBarrier2() { }
 }

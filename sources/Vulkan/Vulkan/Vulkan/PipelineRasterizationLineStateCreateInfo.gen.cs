@@ -18,7 +18,7 @@ public unsafe partial struct PipelineRasterizationLineStateCreateInfo
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineRasterizationLineStateCreateInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public unsafe partial struct PipelineRasterizationLineStateCreateInfo
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public uint StippledLineEnable;
+    public MaybeBool<uint> StippledLineEnable;
 
     [NativeName("lineStippleFactor")]
     [SupportedApiProfile(
@@ -59,4 +59,11 @@ public unsafe partial struct PipelineRasterizationLineStateCreateInfo
         MinVersion = "1.4"
     )]
     public ushort LineStipplePattern;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public PipelineRasterizationLineStateCreateInfo() { }
 }

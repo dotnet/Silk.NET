@@ -29,7 +29,7 @@ public unsafe partial struct GpuDepthStencilTargetInfo
     public GpuStoreOp StencilStoreOp;
 
     [NativeName("cycle")]
-    public byte Cycle;
+    public MaybeBool<byte> Cycle;
 
     [NativeName("clear_stencil")]
     public byte ClearStencil;

@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR
         ["VK_KHR_present_mode_fifo_latest_ready"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,5 +34,12 @@ public unsafe partial struct PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR
         ["VK_EXT_present_mode_fifo_latest_ready"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public uint PresentModeFifoLatestReady;
+    public MaybeBool<uint> PresentModeFifoLatestReady;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_mode_fifo_latest_ready"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
+    public PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR() { }
 }

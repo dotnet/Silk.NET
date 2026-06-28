@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceAstcDecodeFeaturesEXT
             "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceAstcDecodeFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceAstcDecodeFeaturesEXT
             "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
         ]
     )]
-    public uint DecodeModeSharedExponent;
+    public MaybeBool<uint> DecodeModeSharedExponent;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_astc_decode_mode"],
+        ImpliesSets = [
+            "VK_EXT_astc_decode_mode+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_astc_decode_mode+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceAstcDecodeFeaturesEXT() { }
 }

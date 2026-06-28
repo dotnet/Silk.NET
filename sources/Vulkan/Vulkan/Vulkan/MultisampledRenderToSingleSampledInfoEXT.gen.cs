@@ -17,7 +17,7 @@ public unsafe partial struct MultisampledRenderToSingleSampledInfoEXT
         ["VK_EXT_multisampled_render_to_single_sampled"],
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.MultisampledRenderToSingleSampledInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -33,7 +33,7 @@ public unsafe partial struct MultisampledRenderToSingleSampledInfoEXT
         ["VK_EXT_multisampled_render_to_single_sampled"],
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
-    public uint MultisampledRenderToSingleSampledEnable;
+    public MaybeBool<uint> MultisampledRenderToSingleSampledEnable;
 
     [NativeName("rasterizationSamples")]
     [SupportedApiProfile(
@@ -42,4 +42,11 @@ public unsafe partial struct MultisampledRenderToSingleSampledInfoEXT
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
     public SampleCountFlags RasterizationSamples;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_single_sampled"],
+        ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
+    )]
+    public MultisampledRenderToSingleSampledInfoEXT() { }
 }

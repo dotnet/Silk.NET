@@ -28,7 +28,7 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevice8BitStorageFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.2"
     )]
-    public uint StorageBuffer8BitAccess;
+    public MaybeBool<uint> StorageBuffer8BitAccess;
 
     [NativeName("uniformAndStorageBuffer8BitAccess")]
     [SupportedApiProfile(
@@ -72,7 +72,7 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
         ],
         MinVersion = "1.2"
     )]
-    public uint UniformAndStorageBuffer8BitAccess;
+    public MaybeBool<uint> UniformAndStorageBuffer8BitAccess;
 
     [NativeName("storagePushConstant8")]
     [SupportedApiProfile(
@@ -90,5 +90,22 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
         ],
         MinVersion = "1.2"
     )]
-    public uint StoragePushConstant8;
+    public MaybeBool<uint> StoragePushConstant8;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDevice8BitStorageFeatures() { }
 }

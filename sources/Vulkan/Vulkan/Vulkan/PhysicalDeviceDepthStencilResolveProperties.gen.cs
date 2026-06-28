@@ -25,7 +25,7 @@ public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDepthStencilResolveProperties;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -85,7 +85,7 @@ public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint IndependentResolveNone;
+    public MaybeBool<uint> IndependentResolveNone;
 
     [NativeName("independentResolve")]
     [SupportedApiProfile(
@@ -100,5 +100,19 @@ public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint IndependentResolve;
+    public MaybeBool<uint> IndependentResolve;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceDepthStencilResolveProperties() { }
 }

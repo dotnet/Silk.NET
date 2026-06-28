@@ -23,7 +23,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
         ],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceHostImageCopyProperties;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -114,5 +114,17 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
         ],
         MinVersion = "1.4"
     )]
-    public uint IdenticalMemoryTypeRequirements;
+    public MaybeBool<uint> IdenticalMemoryTypeRequirements;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.4"
+    )]
+    public PhysicalDeviceHostImageCopyProperties() { }
 }

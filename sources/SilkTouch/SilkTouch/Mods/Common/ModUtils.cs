@@ -160,17 +160,24 @@ public static class ModUtils
         GetMethodDiscriminator(param.Modifiers, param.Type);
 
     /// <summary>
-    /// Gets the relative path for this document.
+    /// Gets the path relative to the document's project path for the specified document.
     /// </summary>
     /// <param name="doc">The document.</param>
     /// <returns>The relative path.</returns>
     public static string? RelativePath(this Document doc)
     {
-        if (
-            doc.FilePath is null
-            || doc.Project.FilePath is null
-            || Path.GetDirectoryName(doc.Project.FilePath) is not { Length: > 0 } dir
-        )
+        if (doc.FilePath is null)
+        {
+            return default;
+        }
+
+        // Handle projects with no path by simply returning the document path
+        if (doc.Project.FilePath is null)
+        {
+            return doc.FilePath;
+        }
+
+        if (Path.GetDirectoryName(doc.Project.FilePath) is not { Length: > 0 } dir)
         {
             return default;
         }
@@ -507,25 +514,4 @@ public static class ModUtils
                 or SyntaxKind.ShortKeyword
                 or SyntaxKind.ByteKeyword
                 or SyntaxKind.SByteKeyword;
-
-    /// <summary>
-    /// Gets all of the identifiers within the given identifiable member syntax.
-    /// </summary>
-    /// <param name="syn">The member with the identifiers.</param>
-    /// <returns>The identifiers.</returns>
-    public static IEnumerable<string> MemberIdentifiers(this MemberDeclarationSyntax syn) =>
-        syn switch
-        {
-            BaseFieldDeclarationSyntax fld => fld.Declaration.Variables.Select(x =>
-                x.Identifier.ToString()
-            ),
-            MethodDeclarationSyntax meth => [meth.Identifier.ToString()],
-            BaseNamespaceDeclarationSyntax nsd => [nsd.Name.ToString()],
-            EventDeclarationSyntax ev => [ev.Identifier.ToString()],
-            PropertyDeclarationSyntax prop => [prop.Identifier.ToString()],
-            BaseTypeDeclarationSyntax typ => [typ.Identifier.ToString()],
-            DelegateDeclarationSyntax del => [del.Identifier.ToString()],
-            EnumMemberDeclarationSyntax em => [em.Identifier.ToString()],
-            _ => [],
-        };
 }

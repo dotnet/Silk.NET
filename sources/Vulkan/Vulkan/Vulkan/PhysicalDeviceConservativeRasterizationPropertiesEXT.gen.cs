@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceConservativeRasterizationPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -75,7 +75,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint PrimitiveUnderestimation;
+    public MaybeBool<uint> PrimitiveUnderestimation;
 
     [NativeName("conservativePointAndLineRasterization")]
     [SupportedApiProfile(
@@ -86,7 +86,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint ConservativePointAndLineRasterization;
+    public MaybeBool<uint> ConservativePointAndLineRasterization;
 
     [NativeName("degenerateTrianglesRasterized")]
     [SupportedApiProfile(
@@ -97,7 +97,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint DegenerateTrianglesRasterized;
+    public MaybeBool<uint> DegenerateTrianglesRasterized;
 
     [NativeName("degenerateLinesRasterized")]
     [SupportedApiProfile(
@@ -108,7 +108,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint DegenerateLinesRasterized;
+    public MaybeBool<uint> DegenerateLinesRasterized;
 
     [NativeName("fullyCoveredFragmentShaderInputVariable")]
     [SupportedApiProfile(
@@ -119,7 +119,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint FullyCoveredFragmentShaderInputVariable;
+    public MaybeBool<uint> FullyCoveredFragmentShaderInputVariable;
 
     [NativeName("conservativeRasterizationPostDepthCoverage")]
     [SupportedApiProfile(
@@ -130,5 +130,15 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint ConservativeRasterizationPostDepthCoverage;
+    public MaybeBool<uint> ConservativeRasterizationPostDepthCoverage;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conservative_rasterization"],
+        ImpliesSets = [
+            "VK_EXT_conservative_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceConservativeRasterizationPropertiesEXT() { }
 }

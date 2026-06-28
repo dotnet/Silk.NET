@@ -23,7 +23,7 @@ public unsafe partial struct PresentWait2InfoKHR
             "VK_KHR_swapchain",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PresentWait2InfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -61,4 +61,16 @@ public unsafe partial struct PresentWait2InfoKHR
         ]
     )]
     public ulong Timeout;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_wait2"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_surface",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    public PresentWait2InfoKHR() { }
 }

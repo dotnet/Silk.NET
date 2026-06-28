@@ -19,7 +19,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 [ModConfiguration<Configuration>]
 public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Configuration> config)
-    : Mod
+    : IMod
 {
     /// <summary>
     /// This was from the original NameTrimmer code
@@ -55,7 +55,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
     }
 
     /// <inheritdoc />
-    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var configuration = config.Get(ctx.JobKey);
         var project = ctx.SourceProject;

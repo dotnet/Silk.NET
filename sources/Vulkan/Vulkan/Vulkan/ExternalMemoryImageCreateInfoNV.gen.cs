@@ -18,7 +18,7 @@ public unsafe partial struct ExternalMemoryImageCreateInfoNV
         ["VK_NV_external_memory"],
         ImpliesSets = ["VK_NV_external_memory_capabilities"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.ExternalMemoryImageCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -35,4 +35,11 @@ public unsafe partial struct ExternalMemoryImageCreateInfoNV
         ImpliesSets = ["VK_NV_external_memory_capabilities"]
     )]
     public ExternalMemoryHandleTypeFlagsNV HandleTypes;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_external_memory"],
+        ImpliesSets = ["VK_NV_external_memory_capabilities"]
+    )]
+    public ExternalMemoryImageCreateInfoNV() { }
 }

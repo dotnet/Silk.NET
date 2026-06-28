@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkVideoSessionParametersKHR")]
 public readonly unsafe partial struct VideoSessionParametersHandleKHR
+    : IEquatable<VideoSessionParametersHandleKHR>
 {
     public readonly void* Handle;
 

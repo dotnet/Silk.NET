@@ -17,7 +17,8 @@ public unsafe partial struct AccelerationStructureGeometryLinearSweptSpheresData
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.AccelerationStructureGeometryLinearSweptSpheresDataNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -114,4 +115,11 @@ public unsafe partial struct AccelerationStructureGeometryLinearSweptSpheresData
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
     public RayTracingLssPrimitiveEndCapsModeNV EndCapsMode;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_linear_swept_spheres"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
+    public AccelerationStructureGeometryLinearSweptSpheresDataNV() { }
 }

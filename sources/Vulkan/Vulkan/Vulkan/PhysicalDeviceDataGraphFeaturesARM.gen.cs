@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDataGraphFeaturesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,7 +34,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public uint DataGraph;
+    public MaybeBool<uint> DataGraph;
 
     [NativeName("dataGraphUpdateAfterBind")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public uint DataGraphUpdateAfterBind;
+    public MaybeBool<uint> DataGraphUpdateAfterBind;
 
     [NativeName("dataGraphSpecializationConstants")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public uint DataGraphSpecializationConstants;
+    public MaybeBool<uint> DataGraphSpecializationConstants;
 
     [NativeName("dataGraphDescriptorBuffer")]
     [SupportedApiProfile(
@@ -58,7 +58,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public uint DataGraphDescriptorBuffer;
+    public MaybeBool<uint> DataGraphDescriptorBuffer;
 
     [NativeName("dataGraphShaderModule")]
     [SupportedApiProfile(
@@ -66,5 +66,12 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public uint DataGraphShaderModule;
+    public MaybeBool<uint> DataGraphShaderModule;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph"],
+        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+    )]
+    public PhysicalDeviceDataGraphFeaturesARM() { }
 }

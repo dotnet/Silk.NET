@@ -17,7 +17,7 @@ public unsafe partial struct SubpassResolvePerformanceQueryEXT
         ["VK_EXT_multisampled_render_to_single_sampled"],
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SubpassResolvePerformanceQueryEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -33,5 +33,12 @@ public unsafe partial struct SubpassResolvePerformanceQueryEXT
         ["VK_EXT_multisampled_render_to_single_sampled"],
         ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
     )]
-    public uint Optimal;
+    public MaybeBool<uint> Optimal;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_single_sampled"],
+        ImpliesSets = ["VK_KHR_create_renderpass2+VK_KHR_depth_stencil_resolve", "VK_VERSION_1_2"]
+    )]
+    public SubpassResolvePerformanceQueryEXT() { }
 }

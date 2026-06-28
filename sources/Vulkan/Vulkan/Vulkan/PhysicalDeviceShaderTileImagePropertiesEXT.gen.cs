@@ -14,7 +14,7 @@ public unsafe partial struct PhysicalDeviceShaderTileImagePropertiesEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderTileImagePropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
@@ -22,13 +22,16 @@ public unsafe partial struct PhysicalDeviceShaderTileImagePropertiesEXT
 
     [NativeName("shaderTileImageCoherentReadAccelerated")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderTileImageCoherentReadAccelerated;
+    public MaybeBool<uint> ShaderTileImageCoherentReadAccelerated;
 
     [NativeName("shaderTileImageReadSampleFromPixelRateInvocation")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderTileImageReadSampleFromPixelRateInvocation;
+    public MaybeBool<uint> ShaderTileImageReadSampleFromPixelRateInvocation;
 
     [NativeName("shaderTileImageReadFromHelperInvocation")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderTileImageReadFromHelperInvocation;
+    public MaybeBool<uint> ShaderTileImageReadFromHelperInvocation;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
+    public PhysicalDeviceShaderTileImagePropertiesEXT() { }
 }

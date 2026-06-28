@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderFeaturesHUAWEI
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceClusterCullingShaderFeaturesHUAWEI;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderFeaturesHUAWEI
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public uint ClustercullingShader;
+    public MaybeBool<uint> ClustercullingShader;
 
     [NativeName("multiviewClusterCullingShader")]
     [SupportedApiProfile(
@@ -54,5 +54,15 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderFeaturesHUAWEI
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public uint MultiviewClusterCullingShader;
+    public MaybeBool<uint> MultiviewClusterCullingShader;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_HUAWEI_cluster_culling_shader"],
+        ImpliesSets = [
+            "VK_HUAWEI_cluster_culling_shader+VK_KHR_get_physical_device_properties2",
+            "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceClusterCullingShaderFeaturesHUAWEI() { }
 }

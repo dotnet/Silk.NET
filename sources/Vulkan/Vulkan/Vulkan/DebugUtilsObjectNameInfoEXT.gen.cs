@@ -13,7 +13,7 @@ public unsafe partial struct DebugUtilsObjectNameInfoEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.DebugUtilsObjectNameInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
@@ -30,4 +30,7 @@ public unsafe partial struct DebugUtilsObjectNameInfoEXT
     [NativeName("pObjectName")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public sbyte* PObjectName;
+
+    [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
+    public DebugUtilsObjectNameInfoEXT() { }
 }

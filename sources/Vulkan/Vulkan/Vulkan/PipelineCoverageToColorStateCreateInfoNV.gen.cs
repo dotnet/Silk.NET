@@ -14,7 +14,7 @@ public unsafe partial struct PipelineCoverageToColorStateCreateInfoNV
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineCoverageToColorStateCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
@@ -26,9 +26,12 @@ public unsafe partial struct PipelineCoverageToColorStateCreateInfoNV
 
     [NativeName("coverageToColorEnable")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
-    public uint CoverageToColorEnable;
+    public MaybeBool<uint> CoverageToColorEnable;
 
     [NativeName("coverageToColorLocation")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
     public uint CoverageToColorLocation;
+
+    [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
+    public PipelineCoverageToColorStateCreateInfoNV() { }
 }

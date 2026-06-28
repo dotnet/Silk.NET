@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceLineRasterizationProperties
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceLineRasterizationProperties;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,4 +34,11 @@ public unsafe partial struct PhysicalDeviceLineRasterizationProperties
         MinVersion = "1.4"
     )]
     public uint LineSubPixelPrecisionBits;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public PhysicalDeviceLineRasterizationProperties() { }
 }

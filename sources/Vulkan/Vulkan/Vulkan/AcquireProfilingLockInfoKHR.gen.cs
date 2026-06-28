@@ -21,7 +21,7 @@ public unsafe partial struct AcquireProfilingLockInfoKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.AcquireProfilingLockInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct AcquireProfilingLockInfoKHR
         ]
     )]
     public ulong Timeout;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_performance_query"],
+        ImpliesSets = [
+            "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_performance_query+VK_VERSION_1_1",
+        ]
+    )]
+    public AcquireProfilingLockInfoKHR() { }
 }

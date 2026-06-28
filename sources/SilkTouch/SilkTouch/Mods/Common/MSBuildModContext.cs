@@ -1,24 +1,19 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using System.Buffers;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.IO.Hashing;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using CSharpier;
+using CSharpier.Core;
+using CSharpier.Core.CSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using EndOfLine = CSharpier.EndOfLine;
+using EndOfLine = CSharpier.Core.EndOfLine;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -309,7 +304,7 @@ internal class MSBuildModContext(
     )
     {
         var normalizedRoot = root.NormalizeWhitespace();
-        var result = await CodeFormatter.FormatAsync(normalizedRoot.SyntaxTree, _opts, ct);
-        return !result.CompilationErrors.Any() ? result.Code : normalizedRoot.ToFullString();
+        var result = await CSharpFormatter.FormatAsync(normalizedRoot.SyntaxTree, _opts, ct);
+        return !result.ErrorDiagnostics.Any() ? result.Code : normalizedRoot.ToFullString();
     }
 }

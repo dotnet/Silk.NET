@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_BlendMode")]
 public enum BlendMode : uint
 {
     None = 0,

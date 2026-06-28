@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceTileShadingPropertiesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceTileShadingPropertiesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceTileShadingPropertiesQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public uint PreferNonCoherent;
+    public MaybeBool<uint> PreferNonCoherent;
 
     [NativeName("tileGranularity")]
     [SupportedApiProfile(
@@ -77,4 +77,14 @@ public unsafe partial struct PhysicalDeviceTileShadingPropertiesQCOM
         ]
     )]
     public Extent2D MaxTileShadingRate;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_shading"],
+        ImpliesSets = [
+            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
+        ]
+    )]
+    public PhysicalDeviceTileShadingPropertiesQCOM() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceSampleLocationsPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -87,5 +87,15 @@ public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public uint VariableSampleLocations;
+    public MaybeBool<uint> VariableSampleLocations;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sample_locations+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceSampleLocationsPropertiesEXT() { }
 }

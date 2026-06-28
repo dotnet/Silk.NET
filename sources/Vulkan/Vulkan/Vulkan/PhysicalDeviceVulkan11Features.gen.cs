@@ -31,7 +31,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVulkan1x1Features;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -60,7 +60,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public uint StorageBuffer16BitAccess;
+    public MaybeBool<uint> StorageBuffer16BitAccess;
 
     [NativeName("uniformAndStorageBuffer16BitAccess")]
     [SupportedApiProfile(
@@ -81,7 +81,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public uint UniformAndStorageBuffer16BitAccess;
+    public MaybeBool<uint> UniformAndStorageBuffer16BitAccess;
 
     [NativeName("storagePushConstant16")]
     [SupportedApiProfile(
@@ -102,7 +102,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public uint StoragePushConstant16;
+    public MaybeBool<uint> StoragePushConstant16;
 
     [NativeName("storageInputOutput16")]
     [SupportedApiProfile(
@@ -123,7 +123,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public uint StorageInputOutput16;
+    public MaybeBool<uint> StorageInputOutput16;
 
     [NativeName("multiview")]
     [SupportedApiProfile(
@@ -131,7 +131,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public uint Multiview;
+    public MaybeBool<uint> Multiview;
 
     [NativeName("multiviewGeometryShader")]
     [SupportedApiProfile(
@@ -152,7 +152,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public uint MultiviewGeometryShader;
+    public MaybeBool<uint> MultiviewGeometryShader;
 
     [NativeName("multiviewTessellationShader")]
     [SupportedApiProfile(
@@ -173,15 +173,15 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public uint MultiviewTessellationShader;
+    public MaybeBool<uint> MultiviewTessellationShader;
 
     [NativeName("variablePointersStorageBuffer")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint VariablePointersStorageBuffer;
+    public MaybeBool<uint> VariablePointersStorageBuffer;
 
     [NativeName("variablePointers")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint VariablePointers;
+    public MaybeBool<uint> VariablePointers;
 
     [NativeName("protectedMemory")]
     [SupportedApiProfile(
@@ -202,11 +202,11 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ],
         MinVersion = "1.2"
     )]
-    public uint ProtectedMemory;
+    public MaybeBool<uint> ProtectedMemory;
 
     [NativeName("samplerYcbcrConversion")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint SamplerYcbcrConversion;
+    public MaybeBool<uint> SamplerYcbcrConversion;
 
     [NativeName("shaderDrawParameters")]
     [SupportedApiProfile(
@@ -214,5 +214,25 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public uint ShaderDrawParameters;
+    public MaybeBool<uint> ShaderDrawParameters;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceVulkan11Features() { }
 }

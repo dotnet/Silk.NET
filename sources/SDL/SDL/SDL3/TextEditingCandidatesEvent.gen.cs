@@ -33,7 +33,7 @@ public unsafe partial struct TextEditingCandidatesEvent
     public int SelectedCandidate;
 
     [NativeName("horizontal")]
-    public byte Horizontal;
+    public MaybeBool<byte> Horizontal;
 
     [NativeName("padding1")]
     public byte Padding1;

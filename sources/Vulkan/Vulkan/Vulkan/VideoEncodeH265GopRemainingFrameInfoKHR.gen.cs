@@ -17,7 +17,7 @@ public unsafe partial struct VideoEncodeH265GopRemainingFrameInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeH265GopRemainingFrameInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -33,7 +33,7 @@ public unsafe partial struct VideoEncodeH265GopRemainingFrameInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseGopRemainingFrames;
+    public MaybeBool<uint> UseGopRemainingFrames;
 
     [NativeName("gopRemainingI")]
     [SupportedApiProfile(
@@ -58,4 +58,11 @@ public unsafe partial struct VideoEncodeH265GopRemainingFrameInfoKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     public uint GopRemainingB;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h265"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeH265GopRemainingFrameInfoKHR() { }
 }

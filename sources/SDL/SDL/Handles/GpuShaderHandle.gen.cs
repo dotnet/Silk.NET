@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_GPUShader")]
-public readonly unsafe partial struct GpuShaderHandle
+public readonly unsafe partial struct GpuShaderHandle : IEquatable<GpuShaderHandle>
 {
     public readonly void* Handle;
 

@@ -13,7 +13,7 @@ public unsafe partial struct PhysicalDeviceMaintenance8FeaturesKHR
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMaintenance8FeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
@@ -21,5 +21,8 @@ public unsafe partial struct PhysicalDeviceMaintenance8FeaturesKHR
 
     [NativeName("maintenance8")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public uint Maintenance8;
+    public MaybeBool<uint> Maintenance8;
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
+    public PhysicalDeviceMaintenance8FeaturesKHR() { }
 }

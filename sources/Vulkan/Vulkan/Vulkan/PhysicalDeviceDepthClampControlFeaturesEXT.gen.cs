@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceDepthClampControlFeaturesEXT
             "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDepthClampControlFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceDepthClampControlFeaturesEXT
             "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
         ]
     )]
-    public uint DepthClampControl;
+    public MaybeBool<uint> DepthClampControl;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_clamp_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_clamp_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceDepthClampControlFeaturesEXT() { }
 }

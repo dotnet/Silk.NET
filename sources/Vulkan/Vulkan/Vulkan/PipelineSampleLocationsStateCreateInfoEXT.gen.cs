@@ -21,7 +21,7 @@ public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineSampleLocationsStateCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT
             "VK_EXT_sample_locations+VK_VERSION_1_1",
         ]
     )]
-    public uint SampleLocationsEnable;
+    public MaybeBool<uint> SampleLocationsEnable;
 
     [NativeName("sampleLocationsInfo")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT
         ]
     )]
     public SampleLocationsInfoEXT SampleLocationsInfo;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sample_locations+VK_VERSION_1_1",
+        ]
+    )]
+    public PipelineSampleLocationsStateCreateInfoEXT() { }
 }

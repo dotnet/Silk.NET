@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPositionFetchFeaturesKHR
         ["VK_KHR_ray_tracing_position_fetch"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceRayTracingPositionFetchFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -33,5 +33,12 @@ public unsafe partial struct PhysicalDeviceRayTracingPositionFetchFeaturesKHR
         ["VK_KHR_ray_tracing_position_fetch"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint RayTracingPositionFetch;
+    public MaybeBool<uint> RayTracingPositionFetch;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_position_fetch"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public PhysicalDeviceRayTracingPositionFetchFeaturesKHR() { }
 }

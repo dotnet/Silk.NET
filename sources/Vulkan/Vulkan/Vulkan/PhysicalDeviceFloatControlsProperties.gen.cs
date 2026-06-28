@@ -28,7 +28,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceFloatControlsProperties;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -100,7 +100,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderSignedZeroInfNanPreserveFloat16;
+    public MaybeBool<uint> ShaderSignedZeroInfNanPreserveFloat16;
 
     [NativeName("shaderSignedZeroInfNanPreserveFloat32")]
     [SupportedApiProfile(
@@ -118,7 +118,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderSignedZeroInfNanPreserveFloat32;
+    public MaybeBool<uint> ShaderSignedZeroInfNanPreserveFloat32;
 
     [NativeName("shaderSignedZeroInfNanPreserveFloat64")]
     [SupportedApiProfile(
@@ -136,7 +136,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderSignedZeroInfNanPreserveFloat64;
+    public MaybeBool<uint> ShaderSignedZeroInfNanPreserveFloat64;
 
     [NativeName("shaderDenormPreserveFloat16")]
     [SupportedApiProfile(
@@ -154,7 +154,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderDenormPreserveFloat16;
+    public MaybeBool<uint> ShaderDenormPreserveFloat16;
 
     [NativeName("shaderDenormPreserveFloat32")]
     [SupportedApiProfile(
@@ -172,7 +172,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderDenormPreserveFloat32;
+    public MaybeBool<uint> ShaderDenormPreserveFloat32;
 
     [NativeName("shaderDenormPreserveFloat64")]
     [SupportedApiProfile(
@@ -190,7 +190,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderDenormPreserveFloat64;
+    public MaybeBool<uint> ShaderDenormPreserveFloat64;
 
     [NativeName("shaderDenormFlushToZeroFloat16")]
     [SupportedApiProfile(
@@ -208,7 +208,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderDenormFlushToZeroFloat16;
+    public MaybeBool<uint> ShaderDenormFlushToZeroFloat16;
 
     [NativeName("shaderDenormFlushToZeroFloat32")]
     [SupportedApiProfile(
@@ -226,7 +226,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderDenormFlushToZeroFloat32;
+    public MaybeBool<uint> ShaderDenormFlushToZeroFloat32;
 
     [NativeName("shaderDenormFlushToZeroFloat64")]
     [SupportedApiProfile(
@@ -244,7 +244,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderDenormFlushToZeroFloat64;
+    public MaybeBool<uint> ShaderDenormFlushToZeroFloat64;
 
     [NativeName("shaderRoundingModeRTEFloat16")]
     [SupportedApiProfile(
@@ -262,7 +262,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRteFloat16;
+    public MaybeBool<uint> ShaderRoundingModeRteFloat16;
 
     [NativeName("shaderRoundingModeRTEFloat32")]
     [SupportedApiProfile(
@@ -280,7 +280,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRteFloat32;
+    public MaybeBool<uint> ShaderRoundingModeRteFloat32;
 
     [NativeName("shaderRoundingModeRTEFloat64")]
     [SupportedApiProfile(
@@ -298,7 +298,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRteFloat64;
+    public MaybeBool<uint> ShaderRoundingModeRteFloat64;
 
     [NativeName("shaderRoundingModeRTZFloat16")]
     [SupportedApiProfile(
@@ -316,7 +316,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRtzFloat16;
+    public MaybeBool<uint> ShaderRoundingModeRtzFloat16;
 
     [NativeName("shaderRoundingModeRTZFloat32")]
     [SupportedApiProfile(
@@ -334,7 +334,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRtzFloat32;
+    public MaybeBool<uint> ShaderRoundingModeRtzFloat32;
 
     [NativeName("shaderRoundingModeRTZFloat64")]
     [SupportedApiProfile(
@@ -352,5 +352,22 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint ShaderRoundingModeRtzFloat64;
+    public MaybeBool<uint> ShaderRoundingModeRtzFloat64;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceFloatControlsProperties() { }
 }

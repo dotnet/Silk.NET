@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceTilePropertiesFeaturesQCOM
             "VK_QCOM_tile_properties+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceTilePropertiesFeaturesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,5 +42,15 @@ public unsafe partial struct PhysicalDeviceTilePropertiesFeaturesQCOM
             "VK_QCOM_tile_properties+VK_VERSION_1_1",
         ]
     )]
-    public uint TileProperties;
+    public MaybeBool<uint> TileProperties;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_properties"],
+        ImpliesSets = [
+            "VK_QCOM_tile_properties+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_tile_properties+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceTilePropertiesFeaturesQCOM() { }
 }

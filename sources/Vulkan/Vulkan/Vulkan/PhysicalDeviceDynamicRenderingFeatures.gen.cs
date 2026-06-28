@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceDynamicRenderingFeatures
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDynamicRenderingFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -29,5 +29,12 @@ public unsafe partial struct PhysicalDeviceDynamicRenderingFeatures
 
     [NativeName("dynamicRendering")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint DynamicRendering;
+    public MaybeBool<uint> DynamicRendering;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    public PhysicalDeviceDynamicRenderingFeatures() { }
 }

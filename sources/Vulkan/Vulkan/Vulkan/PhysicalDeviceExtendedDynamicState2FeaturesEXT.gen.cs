@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceExtendedDynamicState2FeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState2;
+    public MaybeBool<uint> ExtendedDynamicState2;
 
     [NativeName("extendedDynamicState2LogicOp")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState2LogicOp;
+    public MaybeBool<uint> ExtendedDynamicState2LogicOp;
 
     [NativeName("extendedDynamicState2PatchControlPoints")]
     [SupportedApiProfile(
@@ -65,5 +65,15 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
             "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedDynamicState2PatchControlPoints;
+    public MaybeBool<uint> ExtendedDynamicState2PatchControlPoints;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_extended_dynamic_state2"],
+        ImpliesSets = [
+            "VK_EXT_extended_dynamic_state2+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_extended_dynamic_state2+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceExtendedDynamicState2FeaturesEXT() { }
 }

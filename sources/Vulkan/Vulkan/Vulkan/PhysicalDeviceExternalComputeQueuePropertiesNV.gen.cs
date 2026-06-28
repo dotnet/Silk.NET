@@ -13,7 +13,7 @@ public unsafe partial struct PhysicalDeviceExternalComputeQueuePropertiesNV
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceExternalComputeQueuePropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
@@ -26,4 +26,7 @@ public unsafe partial struct PhysicalDeviceExternalComputeQueuePropertiesNV
     [NativeName("maxExternalQueues")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     public uint MaxExternalQueues;
+
+    [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
+    public PhysicalDeviceExternalComputeQueuePropertiesNV() { }
 }

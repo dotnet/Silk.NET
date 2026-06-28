@@ -17,7 +17,7 @@ public unsafe partial struct PipelineRenderingCreateInfo
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineRenderingCreateInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -66,4 +66,11 @@ public unsafe partial struct PipelineRenderingCreateInfo
         MinVersion = "1.3"
     )]
     public Format StencilAttachmentFormat;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
+        MinVersion = "1.3"
+    )]
+    public PipelineRenderingCreateInfo() { }
 }

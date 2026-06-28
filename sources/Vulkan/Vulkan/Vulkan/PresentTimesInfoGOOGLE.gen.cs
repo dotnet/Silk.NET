@@ -17,7 +17,7 @@ public unsafe partial struct PresentTimesInfoGOOGLE
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PresentTimesInfoGOOGLE;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,4 +42,11 @@ public unsafe partial struct PresentTimesInfoGOOGLE
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
     public PresentTimeGOOGLE* PTimes;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_GOOGLE_display_timing"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
+    public PresentTimesInfoGOOGLE() { }
 }

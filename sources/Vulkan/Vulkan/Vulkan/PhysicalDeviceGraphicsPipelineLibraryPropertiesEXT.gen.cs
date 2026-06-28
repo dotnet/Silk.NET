@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    public uint GraphicsPipelineLibraryFastLinking;
+    public MaybeBool<uint> GraphicsPipelineLibraryFastLinking;
 
     [NativeName("graphicsPipelineLibraryIndependentInterpolationDecoration")]
     [SupportedApiProfile(
@@ -53,5 +53,15 @@ public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    public uint GraphicsPipelineLibraryIndependentInterpolationDecoration;
+    public MaybeBool<uint> GraphicsPipelineLibraryIndependentInterpolationDecoration;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_graphics_pipeline_library"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_library+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_library+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT() { }
 }

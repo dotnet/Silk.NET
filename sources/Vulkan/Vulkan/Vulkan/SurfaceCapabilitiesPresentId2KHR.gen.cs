@@ -18,7 +18,7 @@ public unsafe partial struct SurfaceCapabilitiesPresentId2KHR
         ["VK_KHR_present_id2"],
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SurfaceCapabilitiesPresentId2KHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,5 +34,12 @@ public unsafe partial struct SurfaceCapabilitiesPresentId2KHR
         ["VK_KHR_present_id2"],
         ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
     )]
-    public uint PresentId2Supported;
+    public MaybeBool<uint> PresentId2Supported;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_present_id2"],
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface", "VK_KHR_swapchain"]
+    )]
+    public SurfaceCapabilitiesPresentId2KHR() { }
 }

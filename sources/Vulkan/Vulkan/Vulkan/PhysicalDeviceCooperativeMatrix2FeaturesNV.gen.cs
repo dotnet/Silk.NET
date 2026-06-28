@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceCooperativeMatrix2FeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,7 +34,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public uint CooperativeMatrixWorkgroupScope;
+    public MaybeBool<uint> CooperativeMatrixWorkgroupScope;
 
     [NativeName("cooperativeMatrixFlexibleDimensions")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public uint CooperativeMatrixFlexibleDimensions;
+    public MaybeBool<uint> CooperativeMatrixFlexibleDimensions;
 
     [NativeName("cooperativeMatrixReductions")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public uint CooperativeMatrixReductions;
+    public MaybeBool<uint> CooperativeMatrixReductions;
 
     [NativeName("cooperativeMatrixConversions")]
     [SupportedApiProfile(
@@ -58,7 +58,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public uint CooperativeMatrixConversions;
+    public MaybeBool<uint> CooperativeMatrixConversions;
 
     [NativeName("cooperativeMatrixPerElementOperations")]
     [SupportedApiProfile(
@@ -66,7 +66,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public uint CooperativeMatrixPerElementOperations;
+    public MaybeBool<uint> CooperativeMatrixPerElementOperations;
 
     [NativeName("cooperativeMatrixTensorAddressing")]
     [SupportedApiProfile(
@@ -74,7 +74,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public uint CooperativeMatrixTensorAddressing;
+    public MaybeBool<uint> CooperativeMatrixTensorAddressing;
 
     [NativeName("cooperativeMatrixBlockLoads")]
     [SupportedApiProfile(
@@ -82,5 +82,12 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public uint CooperativeMatrixBlockLoads;
+    public MaybeBool<uint> CooperativeMatrixBlockLoads;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public PhysicalDeviceCooperativeMatrix2FeaturesNV() { }
 }

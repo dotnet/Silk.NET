@@ -14,7 +14,7 @@ public unsafe partial struct SwapchainCreateInfoKHR
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.SwapchainCreateInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -78,9 +78,12 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeName("clipped")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public uint Clipped;
+    public MaybeBool<uint> Clipped;
 
     [NativeName("oldSwapchain")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     public SwapchainHandleKHR OldSwapchain;
+
+    [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
+    public SwapchainCreateInfoKHR() { }
 }

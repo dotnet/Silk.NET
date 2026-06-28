@@ -1,0 +1,5 @@
+﻿// Test.gen.cs
+public struct Test
+{
+    public static Utf8String Text => "Hello world!"u8;
+}

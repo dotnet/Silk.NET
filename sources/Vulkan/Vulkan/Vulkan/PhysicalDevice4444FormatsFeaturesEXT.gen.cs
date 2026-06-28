@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDevice4444FormatsFeaturesEXT
             "VK_EXT_4444_formats+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevice4444FormatsFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDevice4444FormatsFeaturesEXT
             "VK_EXT_4444_formats+VK_VERSION_1_1",
         ]
     )]
-    public uint FormatA4R4G4B4;
+    public MaybeBool<uint> FormatA4R4G4B4;
 
     [NativeName("formatA4B4G4R4")]
     [SupportedApiProfile(
@@ -54,5 +54,15 @@ public unsafe partial struct PhysicalDevice4444FormatsFeaturesEXT
             "VK_EXT_4444_formats+VK_VERSION_1_1",
         ]
     )]
-    public uint FormatA4B4G4R4;
+    public MaybeBool<uint> FormatA4B4G4R4;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_4444_formats"],
+        ImpliesSets = [
+            "VK_EXT_4444_formats+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_4444_formats+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDevice4444FormatsFeaturesEXT() { }
 }

@@ -1,4 +1,5 @@
-﻿[NameAffix("Suffix", "Test", "ShouldBeInOutputName")]
+﻿// SDL.gen.cs
+[NameAffix("Suffix", "Test", "ShouldBeInOutputName")]
 public struct GamepadBindingShouldBeInOutputName
 {
 }

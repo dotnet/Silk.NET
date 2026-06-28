@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDevicePresentMeteringFeaturesNV
             "VK_NV_present_metering+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePresentMeteringFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDevicePresentMeteringFeaturesNV
             "VK_NV_present_metering+VK_VERSION_1_1",
         ]
     )]
-    public uint PresentMetering;
+    public MaybeBool<uint> PresentMetering;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_present_metering"],
+        ImpliesSets = [
+            "VK_NV_present_metering+VK_KHR_get_physical_device_properties2",
+            "VK_NV_present_metering+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDevicePresentMeteringFeaturesNV() { }
 }

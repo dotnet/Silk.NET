@@ -120,6 +120,11 @@ public partial class MixKhronosData(
         /// This was added for Vulkan Flags/FlagBits remappings.
         /// </remarks>
         public Dictionary<string, string> AdditionalTypeRemappings = [];
+
+        /// <summary>
+        /// A mapping from struct type to information about the structure type member.
+        /// </summary>
+        public Dictionary<string, StructureTypeMember> StructureTypeMembers = [];
     }
 
     /// <summary>
@@ -145,6 +150,12 @@ public partial class MixKhronosData(
         /// A map of native type names to C# type names. This is mostly used for determining enum backing types.
         /// </summary>
         public Dictionary<string, string>? TypeMap { get; init; }
+
+        /// <summary>
+        /// The structure type enums used by the API.
+        /// Eg: VkStructureType for Vulkan
+        /// </summary>
+        public HashSet<string> StructureTypes { get; init; } = [];
 
         /// <summary>
         /// The base type used for flags/bitmask enums.
@@ -342,6 +353,58 @@ public partial class MixKhronosData(
 
             job.AdditionalTypeRemappings[mapFrom] = mapTo;
         }
+
+        // Gather information about struct structure type enums
+        if (currentConfig.StructureTypes.Count != 0)
+        {
+            foreach (
+                var typeElement in xml.Elements("registry")
+                    .Elements("types")
+                    .Elements("type")
+                    .Where(x => x.Attribute("category")?.Value == "struct")
+            )
+            {
+                var structName = typeElement.Attribute("name")?.Value;
+                if (structName == null)
+                {
+                    continue;
+                }
+
+                foreach (var memberElement in typeElement.Elements("member"))
+                {
+                    var memberType = memberElement.Element("type")?.Value;
+                    if (memberType == null)
+                    {
+                        continue;
+                    }
+
+                    if (currentConfig.StructureTypes.Contains(memberType))
+                    {
+                        var memberName = memberElement.Element("name")?.Value;
+                        if (memberName == null)
+                        {
+                            continue;
+                        }
+
+                        var memberValue = memberElement.Attribute("values")?.Value;
+                        if (memberValue == null)
+                        {
+                            continue;
+                        }
+
+                        job.StructureTypeMembers.Add(
+                            structName,
+                            new StructureTypeMember()
+                            {
+                                Name = memberName,
+                                Type = memberType,
+                                Value = memberValue,
+                            }
+                        );
+                    }
+                }
+            }
+        }
     }
 
     /// <inheritdoc />
@@ -402,6 +465,18 @@ public partial class MixKhronosData(
             ).Project;
         }
 
+        // Rewrite phase 4
+        var rewriter4 = new RewriterPhase4(jobData);
+        foreach (var docId in proj.DocumentIds)
+        {
+            var doc =
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            proj = doc.WithSyntaxRoot(
+                rewriter4.Visit(await doc.GetSyntaxRootAsync(ct))
+                    ?? throw new InvalidOperationException("Visit returned null.")
+            ).Project;
+        }
+
         // Rename documents to account for FlagBits/Flags differences
         foreach (var docId in proj.DocumentIds)
         {
@@ -439,6 +514,13 @@ public partial class MixKhronosData(
             .ToList();
 
         return Task.FromResult(rsps);
+    }
+
+    internal record struct StructureTypeMember
+    {
+        public string Name;
+        public string Type;
+        public string Value;
     }
 
     /// <summary>
@@ -1620,11 +1702,7 @@ public partial class MixKhronosData(
                     var attributes = SingletonList(
                         AttributeList([Attribute(IdentifierName("Transformed"))])
                     );
-
-                    if (groupInfo.NativeName != null)
-                    {
-                        attributes = attributes.WithNativeName(groupInfo.NativeName);
-                    }
+                    attributes = attributes.WithNativeName(groupInfo.NativeName);
 
                     var baseTypeSyntax = ParseTypeName(baseType);
 
@@ -1903,9 +1981,6 @@ public partial class MixKhronosData(
     /// <summary>
     /// This rewriter identifies and extracts vendor extension suffixes into [NameSuffix] attributes.
     /// </summary>
-    /// <remarks>
-    /// Yes, this is a 3rd rewriter.
-    /// </remarks>
     private class RewriterPhase3(JobData job, Configuration config) : CSharpSyntaxRewriter
     {
         private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(
@@ -2187,6 +2262,87 @@ public partial class MixKhronosData(
             node.WithAttributeLists(
                 ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false, node)
             );
+    }
+
+    /// <summary>
+    /// This rewriter adds default field values for structure type members.
+    /// </summary>
+    private class RewriterPhase4(JobData job) : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            var structNativeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
+            if (
+                !job.StructureTypeMembers.TryGetValue(structNativeName, out var structureTypeMember)
+            )
+            {
+                return node;
+            }
+
+            // Structs need to have a constructor if we use field initializers
+            var hasConstructor = false;
+            var initializerAdded = false;
+            var members = new List<MemberDeclarationSyntax>();
+            foreach (var memberNode in node.Members)
+            {
+                hasConstructor |= memberNode is ConstructorDeclarationSyntax;
+                if (memberNode is not FieldDeclarationSyntax memberFieldNode)
+                {
+                    members.Add(memberNode);
+                    continue;
+                }
+
+                var memberNativeName = memberFieldNode.AttributeLists.GetNativeNameOrDefault(
+                    memberFieldNode.Declaration.Variables.First().Identifier
+                );
+
+                if (memberNativeName != structureTypeMember.Name)
+                {
+                    members.Add(memberNode);
+                    continue;
+                }
+
+                // Don't replace the default value if one is already provided
+                if (memberFieldNode.Declaration.Variables.First().Initializer != null)
+                {
+                    return node;
+                }
+
+                var initializer = EqualsValueClause(
+                    MemberAccessExpression(
+                        SyntaxKind.SimpleMemberAccessExpression,
+                        IdentifierName(structureTypeMember.Type),
+                        IdentifierName(structureTypeMember.Value)
+                    )
+                );
+
+                initializerAdded = true;
+                members.Add(
+                    memberFieldNode.WithDeclaration(
+                        memberFieldNode.Declaration.WithVariables(
+                            [
+                                .. memberFieldNode.Declaration.Variables.Select(variable =>
+                                    variable.WithInitializer(initializer)
+                                ),
+                            ]
+                        )
+                    )
+                );
+            }
+
+            if (initializerAdded && !hasConstructor)
+            {
+                members.Add(
+                    ConstructorDeclaration(node.Identifier)
+                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                        .WithBody(Block())
+                );
+            }
+
+            node = node.WithMembers([.. members]);
+
+            return node;
+        }
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]

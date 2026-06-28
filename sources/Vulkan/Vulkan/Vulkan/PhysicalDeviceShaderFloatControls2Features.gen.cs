@@ -17,7 +17,7 @@ public unsafe partial struct PhysicalDeviceShaderFloatControls2Features
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderFloatControls2Features;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -29,5 +29,12 @@ public unsafe partial struct PhysicalDeviceShaderFloatControls2Features
 
     [NativeName("shaderFloatControls2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
-    public uint ShaderFloatControls2;
+    public MaybeBool<uint> ShaderFloatControls2;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public PhysicalDeviceShaderFloatControls2Features() { }
 }

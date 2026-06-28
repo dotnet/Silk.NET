@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
         ["VK_EXT_pageable_device_local_memory"],
         ImpliesSets = ["VK_EXT_memory_priority"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,5 +34,12 @@ public unsafe partial struct PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
         ["VK_EXT_pageable_device_local_memory"],
         ImpliesSets = ["VK_EXT_memory_priority"]
     )]
-    public uint PageableDeviceLocalMemory;
+    public MaybeBool<uint> PageableDeviceLocalMemory;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_pageable_device_local_memory"],
+        ImpliesSets = ["VK_EXT_memory_priority"]
+    )]
+    public PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT() { }
 }

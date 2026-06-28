@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesEXT
             "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMutableDescriptorTypeFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -40,5 +40,15 @@ public unsafe partial struct PhysicalDeviceMutableDescriptorTypeFeaturesEXT
         ["VK_VALVE_mutable_descriptor_type"],
         ImpliesSets = ["VK_KHR_maintenance3"]
     )]
-    public uint MutableDescriptorType;
+    public MaybeBool<uint> MutableDescriptorType;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_mutable_descriptor_type"],
+        ImpliesSets = [
+            "VK_EXT_mutable_descriptor_type+VK_KHR_maintenance3",
+            "VK_EXT_mutable_descriptor_type+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceMutableDescriptorTypeFeaturesEXT() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV
             "VK_NV_extended_sparse_address_space+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV
             "VK_NV_extended_sparse_address_space+VK_VERSION_1_1",
         ]
     )]
-    public uint ExtendedSparseAddressSpace;
+    public MaybeBool<uint> ExtendedSparseAddressSpace;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_extended_sparse_address_space"],
+        ImpliesSets = [
+            "VK_NV_extended_sparse_address_space+VK_KHR_get_physical_device_properties2",
+            "VK_NV_extended_sparse_address_space+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceExtendedSparseAddressSpaceFeaturesNV() { }
 }

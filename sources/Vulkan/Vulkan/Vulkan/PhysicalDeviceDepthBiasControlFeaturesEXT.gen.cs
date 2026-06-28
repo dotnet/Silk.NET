@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDepthBiasControlFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public uint DepthBiasControl;
+    public MaybeBool<uint> DepthBiasControl;
 
     [NativeName("leastRepresentableValueForceUnormRepresentation")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public uint LeastRepresentableValueForceUnormRepresentation;
+    public MaybeBool<uint> LeastRepresentableValueForceUnormRepresentation;
 
     [NativeName("floatRepresentation")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public uint FloatRepresentation;
+    public MaybeBool<uint> FloatRepresentation;
 
     [NativeName("depthBiasExact")]
     [SupportedApiProfile(
@@ -76,5 +76,15 @@ public unsafe partial struct PhysicalDeviceDepthBiasControlFeaturesEXT
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    public uint DepthBiasExact;
+    public MaybeBool<uint> DepthBiasExact;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_depth_bias_control"],
+        ImpliesSets = [
+            "VK_EXT_depth_bias_control+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_depth_bias_control+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceDepthBiasControlFeaturesEXT() { }
 }

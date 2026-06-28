@@ -17,7 +17,7 @@ public unsafe partial struct VideoEncodeAv1PictureInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeAv1PictureInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -73,7 +73,7 @@ public unsafe partial struct VideoEncodeAv1PictureInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint PrimaryReferenceCdfOnly;
+    public MaybeBool<uint> PrimaryReferenceCdfOnly;
 
     [NativeName("generateObuExtensionHeader")]
     [SupportedApiProfile(
@@ -81,5 +81,12 @@ public unsafe partial struct VideoEncodeAv1PictureInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint GenerateObuExtensionHeader;
+    public MaybeBool<uint> GenerateObuExtensionHeader;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_av1"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeAv1PictureInfoKHR() { }
 }

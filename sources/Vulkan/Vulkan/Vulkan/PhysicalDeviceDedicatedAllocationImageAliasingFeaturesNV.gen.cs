@@ -21,7 +21,8 @@ public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeatu
             "VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +44,15 @@ public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeatu
             "VK_VERSION_1_1",
         ]
     )]
-    public uint DedicatedAllocationImageAliasing;
+    public MaybeBool<uint> DedicatedAllocationImageAliasing;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_dedicated_allocation_image_aliasing"],
+        ImpliesSets = [
+            "VK_KHR_dedicated_allocation+VK_KHR_get_physical_device_properties2",
+            "VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV() { }
 }

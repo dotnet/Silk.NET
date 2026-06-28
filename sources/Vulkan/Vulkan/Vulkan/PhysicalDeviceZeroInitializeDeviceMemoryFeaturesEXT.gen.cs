@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT
             "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT
             "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
         ]
     )]
-    public uint ZeroInitializeDeviceMemory;
+    public MaybeBool<uint> ZeroInitializeDeviceMemory;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_zero_initialize_device_memory"],
+        ImpliesSets = [
+            "VK_EXT_zero_initialize_device_memory+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_zero_initialize_device_memory+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceZeroInitializeDeviceMemoryFeaturesEXT() { }
 }

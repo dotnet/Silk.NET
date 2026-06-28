@@ -18,7 +18,7 @@ public unsafe partial struct VideoEncodeH264SessionCreateInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeH264SessionCreateInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,7 +34,7 @@ public unsafe partial struct VideoEncodeH264SessionCreateInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseMaxLevelIdc;
+    public MaybeBool<uint> UseMaxLevelIdc;
 
     [NativeName("maxLevelIdc")]
     [SupportedApiProfile(
@@ -43,4 +43,11 @@ public unsafe partial struct VideoEncodeH264SessionCreateInfoKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     public StdVideoH264LevelIdc MaxLevelIdc;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h264"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeH264SessionCreateInfoKHR() { }
 }

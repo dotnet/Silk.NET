@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceRelaxedLineRasterizationFeaturesIMG
             "VK_IMG_relaxed_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceRelaxedLineRasterizationFeaturesIMG;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,5 +42,15 @@ public unsafe partial struct PhysicalDeviceRelaxedLineRasterizationFeaturesIMG
             "VK_IMG_relaxed_line_rasterization+VK_VERSION_1_1",
         ]
     )]
-    public uint RelaxedLineRasterization;
+    public MaybeBool<uint> RelaxedLineRasterization;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_IMG_relaxed_line_rasterization"],
+        ImpliesSets = [
+            "VK_IMG_relaxed_line_rasterization+VK_KHR_get_physical_device_properties2",
+            "VK_IMG_relaxed_line_rasterization+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceRelaxedLineRasterizationFeaturesIMG() { }
 }

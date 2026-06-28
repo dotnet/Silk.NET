@@ -1,4 +1,5 @@
-﻿public class AL
+﻿// AL.gen.cs
+public class AL
 {
     [NameAffix("Prefix", "SharedPrefix", "al")]
     [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]

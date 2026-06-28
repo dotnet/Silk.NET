@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM
             "VK_QCOM_multiview_per_view_viewports+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM
             "VK_QCOM_multiview_per_view_viewports+VK_VERSION_1_1",
         ]
     )]
-    public uint MultiviewPerViewViewports;
+    public MaybeBool<uint> MultiviewPerViewViewports;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_multiview_per_view_viewports"],
+        ImpliesSets = [
+            "VK_QCOM_multiview_per_view_viewports+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_multiview_per_view_viewports+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM() { }
 }

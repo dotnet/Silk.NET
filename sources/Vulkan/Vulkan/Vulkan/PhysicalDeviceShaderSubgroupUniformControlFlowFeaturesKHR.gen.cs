@@ -18,7 +18,8 @@ public unsafe partial struct PhysicalDeviceShaderSubgroupUniformControlFlowFeatu
         ["VK_KHR_shader_subgroup_uniform_control_flow"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,5 +35,12 @@ public unsafe partial struct PhysicalDeviceShaderSubgroupUniformControlFlowFeatu
         ["VK_KHR_shader_subgroup_uniform_control_flow"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public uint ShaderSubgroupUniformControlFlow;
+    public MaybeBool<uint> ShaderSubgroupUniformControlFlow;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_subgroup_uniform_control_flow"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
+    public PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR() { }
 }

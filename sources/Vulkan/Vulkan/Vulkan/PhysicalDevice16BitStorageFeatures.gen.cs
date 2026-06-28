@@ -31,7 +31,7 @@ public unsafe partial struct PhysicalDevice16BitStorageFeatures
         ],
         MinVersion = "1.1"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevice16BitStorageFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -60,7 +60,7 @@ public unsafe partial struct PhysicalDevice16BitStorageFeatures
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
         MinVersion = "1.1"
     )]
-    public uint StorageBuffer16BitAccess;
+    public MaybeBool<uint> StorageBuffer16BitAccess;
 
     [NativeName("uniformAndStorageBuffer16BitAccess")]
     [SupportedApiProfile(
@@ -81,7 +81,7 @@ public unsafe partial struct PhysicalDevice16BitStorageFeatures
         ],
         MinVersion = "1.1"
     )]
-    public uint UniformAndStorageBuffer16BitAccess;
+    public MaybeBool<uint> UniformAndStorageBuffer16BitAccess;
 
     [NativeName("storagePushConstant16")]
     [SupportedApiProfile(
@@ -102,7 +102,7 @@ public unsafe partial struct PhysicalDevice16BitStorageFeatures
         ],
         MinVersion = "1.1"
     )]
-    public uint StoragePushConstant16;
+    public MaybeBool<uint> StoragePushConstant16;
 
     [NativeName("storageInputOutput16")]
     [SupportedApiProfile(
@@ -123,5 +123,25 @@ public unsafe partial struct PhysicalDevice16BitStorageFeatures
         ],
         MinVersion = "1.1"
     )]
-    public uint StorageInputOutput16;
+    public MaybeBool<uint> StorageInputOutput16;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.1"
+    )]
+    public PhysicalDevice16BitStorageFeatures() { }
 }

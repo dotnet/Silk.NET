@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,5 +42,15 @@ public unsafe partial struct PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    public uint Ycbcr2Plane444Formats;
+    public MaybeBool<uint> Ycbcr2Plane444Formats;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_ycbcr_2plane_444_formats"],
+        ImpliesSets = [
+            "VK_EXT_ycbcr_2plane_444_formats+VK_KHR_sampler_ycbcr_conversion",
+            "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT() { }
 }

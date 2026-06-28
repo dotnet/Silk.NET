@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkDescriptorSet")]
-public readonly unsafe partial struct DescriptorSetHandle
+public readonly unsafe partial struct DescriptorSetHandle : IEquatable<DescriptorSetHandle>
 {
     public readonly void* Handle;
 

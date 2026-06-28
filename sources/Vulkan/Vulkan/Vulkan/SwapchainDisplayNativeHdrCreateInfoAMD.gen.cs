@@ -21,7 +21,7 @@ public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD
             "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SwapchainDisplayNativeHdrCreateInfoAMD;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD
             "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
         ]
     )]
-    public uint LocalDimmingEnable;
+    public MaybeBool<uint> LocalDimmingEnable;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_display_native_hdr"],
+        ImpliesSets = [
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_get_surface_capabilities2+VK_KHR_swapchain+VK_VERSION_1_1",
+        ]
+    )]
+    public SwapchainDisplayNativeHdrCreateInfoAMD() { }
 }

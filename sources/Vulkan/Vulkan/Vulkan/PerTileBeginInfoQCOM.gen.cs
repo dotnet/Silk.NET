@@ -20,7 +20,7 @@ public unsafe partial struct PerTileBeginInfoQCOM
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PerTileBeginInfoQCOM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -32,4 +32,14 @@ public unsafe partial struct PerTileBeginInfoQCOM
         ]
     )]
     public void* PNext;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_tile_shading"],
+        ImpliesSets = [
+            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
+        ]
+    )]
+    public PerTileBeginInfoQCOM() { }
 }

@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePipelineBinaryPropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public uint PipelineBinaryInternalCache;
+    public MaybeBool<uint> PipelineBinaryInternalCache;
 
     [NativeName("pipelineBinaryInternalCacheControl")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public uint PipelineBinaryInternalCacheControl;
+    public MaybeBool<uint> PipelineBinaryInternalCacheControl;
 
     [NativeName("pipelineBinaryPrefersInternalCache")]
     [SupportedApiProfile(
@@ -64,7 +64,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public uint PipelineBinaryPrefersInternalCache;
+    public MaybeBool<uint> PipelineBinaryPrefersInternalCache;
 
     [NativeName("pipelineBinaryPrecompiledInternalCache")]
     [SupportedApiProfile(
@@ -75,7 +75,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public uint PipelineBinaryPrecompiledInternalCache;
+    public MaybeBool<uint> PipelineBinaryPrecompiledInternalCache;
 
     [NativeName("pipelineBinaryCompressedData")]
     [SupportedApiProfile(
@@ -86,5 +86,15 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public uint PipelineBinaryCompressedData;
+    public MaybeBool<uint> PipelineBinaryCompressedData;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
+    public PhysicalDevicePipelineBinaryPropertiesKHR() { }
 }

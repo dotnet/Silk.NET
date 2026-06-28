@@ -17,7 +17,7 @@ public unsafe partial struct PipelineRobustnessCreateInfo
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
         MinVersion = "1.4"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineRobustnessCreateInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -58,4 +58,11 @@ public unsafe partial struct PipelineRobustnessCreateInfo
         MinVersion = "1.4"
     )]
     public PipelineRobustnessImageBehavior Images;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        MinVersion = "1.4"
+    )]
+    public PipelineRobustnessCreateInfo() { }
 }

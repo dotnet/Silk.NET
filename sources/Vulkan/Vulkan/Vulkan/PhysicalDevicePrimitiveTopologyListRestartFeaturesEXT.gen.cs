@@ -21,7 +21,8 @@ public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesE
             "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +44,7 @@ public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesE
             "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
         ]
     )]
-    public uint PrimitiveTopologyListRestart;
+    public MaybeBool<uint> PrimitiveTopologyListRestart;
 
     [NativeName("primitiveTopologyPatchListRestart")]
     [SupportedApiProfile(
@@ -54,5 +55,15 @@ public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesE
             "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
         ]
     )]
-    public uint PrimitiveTopologyPatchListRestart;
+    public MaybeBool<uint> PrimitiveTopologyPatchListRestart;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_primitive_topology_list_restart"],
+        ImpliesSets = [
+            "VK_EXT_primitive_topology_list_restart+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_primitive_topology_list_restart+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT() { }
 }

@@ -22,7 +22,7 @@ public partial struct PipelineExecutableStatisticValueKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public uint B32;
+    public MaybeBool<uint> B32;
 
     [NativeName("i64")]
     [FieldOffset(0)]

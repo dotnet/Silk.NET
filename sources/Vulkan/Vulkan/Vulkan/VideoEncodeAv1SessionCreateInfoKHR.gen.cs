@@ -18,7 +18,7 @@ public unsafe partial struct VideoEncodeAv1SessionCreateInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeAv1SessionCreateInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,7 +34,7 @@ public unsafe partial struct VideoEncodeAv1SessionCreateInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint UseMaxLevel;
+    public MaybeBool<uint> UseMaxLevel;
 
     [NativeName("maxLevel")]
     [SupportedApiProfile(
@@ -43,4 +43,11 @@ public unsafe partial struct VideoEncodeAv1SessionCreateInfoKHR
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
     public StdVideoAv1Level MaxLevel;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_av1"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeAv1SessionCreateInfoKHR() { }
 }

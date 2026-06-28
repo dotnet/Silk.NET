@@ -14,7 +14,7 @@ public unsafe partial struct PipelineCoverageModulationStateCreateInfoNV
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineCoverageModulationStateCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
@@ -30,7 +30,7 @@ public unsafe partial struct PipelineCoverageModulationStateCreateInfoNV
 
     [NativeName("coverageModulationTableEnable")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    public uint CoverageModulationTableEnable;
+    public MaybeBool<uint> CoverageModulationTableEnable;
 
     [NativeName("coverageModulationTableCount")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
@@ -39,4 +39,7 @@ public unsafe partial struct PipelineCoverageModulationStateCreateInfoNV
     [NativeName("pCoverageModulationTable")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
     public float* PCoverageModulationTable;
+
+    [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
+    public PipelineCoverageModulationStateCreateInfoNV() { }
 }

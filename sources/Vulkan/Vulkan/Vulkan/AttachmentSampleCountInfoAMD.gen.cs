@@ -20,7 +20,7 @@ public unsafe partial struct AttachmentSampleCountInfoAMD
             "VK_AMD_mixed_attachment_samples+VK_VERSION_1_3",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.AttachmentSampleCountInfoAMD;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -61,4 +61,13 @@ public unsafe partial struct AttachmentSampleCountInfoAMD
         ]
     )]
     public SampleCountFlags DepthStencilAttachmentSamples;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_AMD_mixed_attachment_samples+VK_KHR_dynamic_rendering",
+            "VK_AMD_mixed_attachment_samples+VK_VERSION_1_3",
+        ]
+    )]
+    public AttachmentSampleCountInfoAMD() { }
 }

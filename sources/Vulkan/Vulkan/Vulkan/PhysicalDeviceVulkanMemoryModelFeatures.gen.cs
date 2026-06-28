@@ -30,7 +30,7 @@ public unsafe partial struct PhysicalDeviceVulkanMemoryModelFeatures
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceVulkanMemoryModelFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,11 +55,11 @@ public unsafe partial struct PhysicalDeviceVulkanMemoryModelFeatures
 
     [NativeName("vulkanMemoryModel")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint VulkanMemoryModel;
+    public MaybeBool<uint> VulkanMemoryModel;
 
     [NativeName("vulkanMemoryModelDeviceScope")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint VulkanMemoryModelDeviceScope;
+    public MaybeBool<uint> VulkanMemoryModelDeviceScope;
 
     [NativeName("vulkanMemoryModelAvailabilityVisibilityChains")]
     [SupportedApiProfile(
@@ -80,5 +80,25 @@ public unsafe partial struct PhysicalDeviceVulkanMemoryModelFeatures
         ],
         MinVersion = "1.2"
     )]
-    public uint VulkanMemoryModelAvailabilityVisibilityChains;
+    public MaybeBool<uint> VulkanMemoryModelAvailabilityVisibilityChains;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceVulkanMemoryModelFeatures() { }
 }

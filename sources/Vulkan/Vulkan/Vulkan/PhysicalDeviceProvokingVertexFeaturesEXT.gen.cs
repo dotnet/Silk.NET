@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceProvokingVertexFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    public uint ProvokingVertexLast;
+    public MaybeBool<uint> ProvokingVertexLast;
 
     [NativeName("transformFeedbackPreservesProvokingVertex")]
     [SupportedApiProfile(
@@ -54,5 +54,15 @@ public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    public uint TransformFeedbackPreservesProvokingVertex;
+    public MaybeBool<uint> TransformFeedbackPreservesProvokingVertex;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_provoking_vertex"],
+        ImpliesSets = [
+            "VK_EXT_provoking_vertex+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_provoking_vertex+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceProvokingVertexFeaturesEXT() { }
 }

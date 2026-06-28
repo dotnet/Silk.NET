@@ -18,7 +18,8 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,7 +35,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public uint DeviceGeneratedCompute;
+    public MaybeBool<uint> DeviceGeneratedCompute;
 
     [NativeName("deviceGeneratedComputePipelines")]
     [SupportedApiProfile(
@@ -42,7 +43,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public uint DeviceGeneratedComputePipelines;
+    public MaybeBool<uint> DeviceGeneratedComputePipelines;
 
     [NativeName("deviceGeneratedComputeCaptureReplay")]
     [SupportedApiProfile(
@@ -50,5 +51,12 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
         ["VK_NV_device_generated_commands_compute"],
         ImpliesSets = ["VK_NV_device_generated_commands"]
     )]
-    public uint DeviceGeneratedComputeCaptureReplay;
+    public MaybeBool<uint> DeviceGeneratedComputeCaptureReplay;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_device_generated_commands_compute"],
+        ImpliesSets = ["VK_NV_device_generated_commands"]
+    )]
+    public PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV() { }
 }

@@ -18,7 +18,7 @@ public unsafe partial struct SurfaceCapabilities2EXT
         ["VK_EXT_display_surface_counter"],
         ImpliesSets = ["VK_KHR_display"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SurfaceCapabilities2EXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -115,4 +115,11 @@ public unsafe partial struct SurfaceCapabilities2EXT
         ImpliesSets = ["VK_KHR_display"]
     )]
     public SurfaceCounterFlagsEXT SupportedSurfaceCounters;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_display_surface_counter"],
+        ImpliesSets = ["VK_KHR_display"]
+    )]
+    public SurfaceCapabilities2EXT() { }
 }

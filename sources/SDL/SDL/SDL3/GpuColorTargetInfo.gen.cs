@@ -38,10 +38,10 @@ public unsafe partial struct GpuColorTargetInfo
     public uint ResolveLayer;
 
     [NativeName("cycle")]
-    public byte Cycle;
+    public MaybeBool<byte> Cycle;
 
     [NativeName("cycle_resolve_texture")]
-    public byte CycleResolveTexture;
+    public MaybeBool<byte> CycleResolveTexture;
 
     [NativeName("padding1")]
     public byte Padding1;

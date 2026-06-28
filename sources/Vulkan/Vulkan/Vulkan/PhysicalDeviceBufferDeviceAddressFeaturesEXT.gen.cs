@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeaturesEXT
             "VK_EXT_buffer_device_address+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceBufferDeviceAddressFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -36,7 +36,7 @@ public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeaturesEXT
 
     [NativeName("bufferDeviceAddress")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint BufferDeviceAddress;
+    public MaybeBool<uint> BufferDeviceAddress;
 
     [NativeName("bufferDeviceAddressCaptureReplay")]
     [SupportedApiProfile(
@@ -47,7 +47,7 @@ public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeaturesEXT
             "VK_EXT_buffer_device_address+VK_VERSION_1_1",
         ]
     )]
-    public uint BufferDeviceAddressCaptureReplay;
+    public MaybeBool<uint> BufferDeviceAddressCaptureReplay;
 
     [NativeName("bufferDeviceAddressMultiDevice")]
     [SupportedApiProfile(
@@ -58,5 +58,15 @@ public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeaturesEXT
             "VK_EXT_buffer_device_address+VK_VERSION_1_1",
         ]
     )]
-    public uint BufferDeviceAddressMultiDevice;
+    public MaybeBool<uint> BufferDeviceAddressMultiDevice;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_buffer_device_address"],
+        ImpliesSets = [
+            "VK_EXT_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_buffer_device_address+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceBufferDeviceAddressFeaturesEXT() { }
 }

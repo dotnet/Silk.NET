@@ -13,7 +13,7 @@ public unsafe partial struct PhysicalDeviceTensorFeaturesARM
 {
     [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceTensorFeaturesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
@@ -21,25 +21,28 @@ public unsafe partial struct PhysicalDeviceTensorFeaturesARM
 
     [NativeName("tensorNonPacked")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint TensorNonPacked;
+    public MaybeBool<uint> TensorNonPacked;
 
     [NativeName("shaderTensorAccess")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderTensorAccess;
+    public MaybeBool<uint> ShaderTensorAccess;
 
     [NativeName("shaderStorageTensorArrayDynamicIndexing")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderStorageTensorArrayDynamicIndexing;
+    public MaybeBool<uint> ShaderStorageTensorArrayDynamicIndexing;
 
     [NativeName("shaderStorageTensorArrayNonUniformIndexing")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint ShaderStorageTensorArrayNonUniformIndexing;
+    public MaybeBool<uint> ShaderStorageTensorArrayNonUniformIndexing;
 
     [NativeName("descriptorBindingStorageTensorUpdateAfterBind")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint DescriptorBindingStorageTensorUpdateAfterBind;
+    public MaybeBool<uint> DescriptorBindingStorageTensorUpdateAfterBind;
 
     [NativeName("tensors")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
-    public uint Tensors;
+    public MaybeBool<uint> Tensors;
+
+    [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
+    public PhysicalDeviceTensorFeaturesARM() { }
 }

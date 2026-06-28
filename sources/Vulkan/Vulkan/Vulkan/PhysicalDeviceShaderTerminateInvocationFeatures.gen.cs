@@ -25,7 +25,7 @@ public unsafe partial struct PhysicalDeviceShaderTerminateInvocationFeatures
         ],
         MinVersion = "1.3"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderTerminateInvocationFeatures;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -44,5 +44,19 @@ public unsafe partial struct PhysicalDeviceShaderTerminateInvocationFeatures
 
     [NativeName("shaderTerminateInvocation")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
-    public uint ShaderTerminateInvocation;
+    public MaybeBool<uint> ShaderTerminateInvocation;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.3"
+    )]
+    public PhysicalDeviceShaderTerminateInvocationFeatures() { }
 }

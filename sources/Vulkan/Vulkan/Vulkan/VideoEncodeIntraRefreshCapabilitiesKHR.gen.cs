@@ -17,7 +17,7 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeIntraRefreshCapabilitiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint PartitionIndependentIntraRefreshRegions;
+    public MaybeBool<uint> PartitionIndependentIntraRefreshRegions;
 
     [NativeName("nonRectangularIntraRefreshRegions")]
     [SupportedApiProfile(
@@ -65,5 +65,12 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
         ["VK_KHR_video_encode_intra_refresh"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint NonRectangularIntraRefreshRegions;
+    public MaybeBool<uint> NonRectangularIntraRefreshRegions;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_intra_refresh"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeIntraRefreshCapabilitiesKHR() { }
 }

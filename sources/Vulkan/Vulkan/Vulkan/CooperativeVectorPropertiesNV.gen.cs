@@ -21,7 +21,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.CooperativeVectorPropertiesNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -98,5 +98,15 @@ public unsafe partial struct CooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public uint Transpose;
+    public MaybeBool<uint> Transpose;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_vector"],
+        ImpliesSets = [
+            "VK_NV_cooperative_vector+VK_KHR_get_physical_device_properties2",
+            "VK_NV_cooperative_vector+VK_VERSION_1_1",
+        ]
+    )]
+    public CooperativeVectorPropertiesNV() { }
 }

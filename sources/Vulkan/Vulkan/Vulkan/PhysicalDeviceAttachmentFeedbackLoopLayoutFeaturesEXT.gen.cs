@@ -20,7 +20,8 @@ public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesE
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,5 +43,15 @@ public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesE
             "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
         ]
     )]
-    public uint AttachmentFeedbackLoopLayout;
+    public MaybeBool<uint> AttachmentFeedbackLoopLayout;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_attachment_feedback_loop_layout"],
+        ImpliesSets = [
+            "VK_EXT_attachment_feedback_loop_layout+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_attachment_feedback_loop_layout+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceAttachmentFeedbackLoopLayoutFeaturesEXT() { }
 }

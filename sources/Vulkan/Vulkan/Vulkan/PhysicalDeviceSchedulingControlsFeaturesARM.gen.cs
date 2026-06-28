@@ -16,7 +16,7 @@ public unsafe partial struct PhysicalDeviceSchedulingControlsFeaturesARM
         ["VK_ARM_scheduling_controls"],
         ImpliesSets = ["VK_ARM_shader_core_builtins"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceSchedulingControlsFeaturesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -32,5 +32,12 @@ public unsafe partial struct PhysicalDeviceSchedulingControlsFeaturesARM
         ["VK_ARM_scheduling_controls"],
         ImpliesSets = ["VK_ARM_shader_core_builtins"]
     )]
-    public uint SchedulingControls;
+    public MaybeBool<uint> SchedulingControls;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_scheduling_controls"],
+        ImpliesSets = ["VK_ARM_shader_core_builtins"]
+    )]
+    public PhysicalDeviceSchedulingControlsFeaturesARM() { }
 }

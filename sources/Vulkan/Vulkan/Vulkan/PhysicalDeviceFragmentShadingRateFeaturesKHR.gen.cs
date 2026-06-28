@@ -22,7 +22,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceFragmentShadingRateFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public uint PipelineFragmentShadingRate;
+    public MaybeBool<uint> PipelineFragmentShadingRate;
 
     [NativeName("primitiveFragmentShadingRate")]
     [SupportedApiProfile(
@@ -59,7 +59,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"],
         RequireAll = true
     )]
-    public uint PrimitiveFragmentShadingRate;
+    public MaybeBool<uint> PrimitiveFragmentShadingRate;
 
     [NativeName("attachmentFragmentShadingRate")]
     [SupportedApiProfile(
@@ -71,5 +71,16 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateFeaturesKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public uint AttachmentFragmentShadingRate;
+    public MaybeBool<uint> AttachmentFragmentShadingRate;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_fragment_shading_rate"],
+        ImpliesSets = [
+            "VK_KHR_create_renderpass2+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_create_renderpass2+VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+        ]
+    )]
+    public PhysicalDeviceFragmentShadingRateFeaturesKHR() { }
 }

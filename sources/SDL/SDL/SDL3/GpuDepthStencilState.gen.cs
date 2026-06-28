@@ -23,13 +23,13 @@ public partial struct GpuDepthStencilState
     public byte WriteMask;
 
     [NativeName("enable_depth_test")]
-    public byte EnableDepthTest;
+    public MaybeBool<byte> EnableDepthTest;
 
     [NativeName("enable_depth_write")]
-    public byte EnableDepthWrite;
+    public MaybeBool<byte> EnableDepthWrite;
 
     [NativeName("enable_stencil_test")]
-    public byte EnableStencilTest;
+    public MaybeBool<byte> EnableStencilTest;
 
     [NativeName("padding1")]
     public byte Padding1;

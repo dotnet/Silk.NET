@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceDrmPropertiesEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public uint HasPrimary;
+    public MaybeBool<uint> HasPrimary;
 
     [NativeName("hasRender")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
             "VK_EXT_physical_device_drm+VK_VERSION_1_1",
         ]
     )]
-    public uint HasRender;
+    public MaybeBool<uint> HasRender;
 
     [NativeName("primaryMajor")]
     [SupportedApiProfile(
@@ -99,4 +99,14 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
         ]
     )]
     public long RenderMinor;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_physical_device_drm"],
+        ImpliesSets = [
+            "VK_EXT_physical_device_drm+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_physical_device_drm+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceDrmPropertiesEXT() { }
 }

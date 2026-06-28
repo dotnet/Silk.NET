@@ -18,7 +18,7 @@ public unsafe partial struct PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR
         ["VK_KHR_shader_maximal_reconvergence"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,5 +34,12 @@ public unsafe partial struct PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR
         ["VK_KHR_shader_maximal_reconvergence"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    public uint ShaderMaximalReconvergence;
+    public MaybeBool<uint> ShaderMaximalReconvergence;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_maximal_reconvergence"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
+    public PhysicalDeviceShaderMaximalReconvergenceFeaturesKHR() { }
 }

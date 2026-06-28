@@ -1,4 +1,5 @@
-﻿[NameAffix("Suffix", "KhronosVendor", "NV")]
+﻿// OcclusionQueryParameterNameNV.gen.cs
+[NameAffix("Suffix", "KhronosVendor", "NV")]
 public enum OcclusionQueryParameterNameNV
 {
     [NameAffix("Suffix", "KhronosImpliedVendor", "NV")]

@@ -21,7 +21,7 @@ public unsafe partial struct PipelineBinaryHandlesInfoKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineBinaryHandlesInfoKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct PipelineBinaryHandlesInfoKHR
         ]
     )]
     public PipelineBinaryHandleKHR* PPipelineBinaries;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
+    public PipelineBinaryHandlesInfoKHR() { }
 }

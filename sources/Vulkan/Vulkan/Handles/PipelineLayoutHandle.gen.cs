@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkPipelineLayout")]
-public readonly unsafe partial struct PipelineLayoutHandle
+public readonly unsafe partial struct PipelineLayoutHandle : IEquatable<PipelineLayoutHandle>
 {
     public readonly void* Handle;
 

@@ -1,4 +1,5 @@
-﻿[NameAffix("Prefix", "SharedPrefix", "VkPresent")]
+﻿// Vk.gen.cs
+[NameAffix("Prefix", "SharedPrefix", "VkPresent")]
 public enum VkPresentModeKHR
 {
 }

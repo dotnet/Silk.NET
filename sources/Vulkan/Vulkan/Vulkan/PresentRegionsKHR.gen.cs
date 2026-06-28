@@ -17,7 +17,7 @@ public unsafe partial struct PresentRegionsKHR
         ["VK_KHR_incremental_present"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PresentRegionsKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,4 +42,11 @@ public unsafe partial struct PresentRegionsKHR
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
     public PresentRegionKHR* PRegions;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_incremental_present"],
+        ImpliesSets = ["VK_KHR_swapchain"]
+    )]
+    public PresentRegionsKHR() { }
 }

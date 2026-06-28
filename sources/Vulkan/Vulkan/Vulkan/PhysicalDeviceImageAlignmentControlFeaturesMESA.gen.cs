@@ -21,7 +21,7 @@ public unsafe partial struct PhysicalDeviceImageAlignmentControlFeaturesMESA
             "VK_MESA_image_alignment_control+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceImageAlignmentControlFeaturesMESA;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct PhysicalDeviceImageAlignmentControlFeaturesMESA
             "VK_MESA_image_alignment_control+VK_VERSION_1_1",
         ]
     )]
-    public uint ImageAlignmentControl;
+    public MaybeBool<uint> ImageAlignmentControl;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_MESA_image_alignment_control"],
+        ImpliesSets = [
+            "VK_MESA_image_alignment_control+VK_KHR_get_physical_device_properties2",
+            "VK_MESA_image_alignment_control+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDeviceImageAlignmentControlFeaturesMESA() { }
 }

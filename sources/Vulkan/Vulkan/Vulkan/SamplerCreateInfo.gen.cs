@@ -34,7 +34,7 @@ public unsafe partial struct SamplerCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SamplerCreateInfo;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -274,7 +274,7 @@ public unsafe partial struct SamplerCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint AnisotropyEnable;
+    public MaybeBool<uint> AnisotropyEnable;
 
     [NativeName("maxAnisotropy")]
     [SupportedApiProfile(
@@ -322,7 +322,7 @@ public unsafe partial struct SamplerCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint CompareEnable;
+    public MaybeBool<uint> CompareEnable;
 
     [NativeName("compareOp")]
     [SupportedApiProfile(
@@ -429,5 +429,28 @@ public unsafe partial struct SamplerCreateInfo
         ],
         MinVersion = "1.0"
     )]
-    public uint UnnormalizedCoordinates;
+    public MaybeBool<uint> UnnormalizedCoordinates;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_0",
+            "VK_COMPUTE_VERSION_1_1",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_0",
+            "VK_GRAPHICS_VERSION_1_1",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_0",
+            "VK_VERSION_1_1",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.0"
+    )]
+    public SamplerCreateInfo() { }
 }

@@ -21,7 +21,7 @@ public unsafe partial struct DevicePipelineBinaryInternalCacheControlKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.DevicePipelineBinaryInternalCacheControlKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +43,15 @@ public unsafe partial struct DevicePipelineBinaryInternalCacheControlKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public uint DisableInternalCache;
+    public MaybeBool<uint> DisableInternalCache;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_binary"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
+            "VK_KHR_pipeline_binary+VK_VERSION_1_4",
+        ]
+    )]
+    public DevicePipelineBinaryInternalCacheControlKHR() { }
 }

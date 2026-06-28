@@ -28,7 +28,7 @@ public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
         ],
         MinVersion = "1.2"
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDeviceSamplerFilterMinmaxProperties;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -64,7 +64,7 @@ public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint FilterMinmaxSingleComponentFormats;
+    public MaybeBool<uint> FilterMinmaxSingleComponentFormats;
 
     [NativeName("filterMinmaxImageComponentMapping")]
     [SupportedApiProfile(
@@ -82,5 +82,22 @@ public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
         ],
         MinVersion = "1.2"
     )]
-    public uint FilterMinmaxImageComponentMapping;
+    public MaybeBool<uint> FilterMinmaxImageComponentMapping;
+
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    public PhysicalDeviceSamplerFilterMinmaxProperties() { }
 }

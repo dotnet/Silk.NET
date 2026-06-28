@@ -21,7 +21,7 @@ public unsafe partial struct PipelineRasterizationStateStreamCreateInfoEXT
             "VK_EXT_transform_feedback+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PipelineRasterizationStateStreamCreateInfoEXT;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -55,4 +55,14 @@ public unsafe partial struct PipelineRasterizationStateStreamCreateInfoEXT
         ]
     )]
     public uint RasterizationStream;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback"],
+        ImpliesSets = [
+            "VK_EXT_transform_feedback+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_transform_feedback+VK_VERSION_1_1",
+        ]
+    )]
+    public PipelineRasterizationStateStreamCreateInfoEXT() { }
 }

@@ -18,7 +18,7 @@ public unsafe partial struct PartitionedAccelerationStructureFlagsNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PartitionedAccelerationStructureFlagsNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -34,5 +34,12 @@ public unsafe partial struct PartitionedAccelerationStructureFlagsNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint EnablePartitionTranslation;
+    public MaybeBool<uint> EnablePartitionTranslation;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_partitioned_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"]
+    )]
+    public PartitionedAccelerationStructureFlagsNV() { }
 }

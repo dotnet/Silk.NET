@@ -21,7 +21,8 @@ public unsafe partial struct PhysicalDevicePipelineExecutablePropertiesFeaturesK
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.PhysicalDevicePipelineExecutablePropertiesFeaturesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -43,5 +44,15 @@ public unsafe partial struct PhysicalDevicePipelineExecutablePropertiesFeaturesK
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public uint PipelineExecutableInfo;
+    public MaybeBool<uint> PipelineExecutableInfo;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_pipeline_executable_properties"],
+        ImpliesSets = [
+            "VK_KHR_pipeline_executable_properties+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDevicePipelineExecutablePropertiesFeaturesKHR() { }
 }

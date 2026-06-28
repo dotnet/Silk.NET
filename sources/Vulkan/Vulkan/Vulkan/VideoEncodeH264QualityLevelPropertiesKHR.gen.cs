@@ -18,7 +18,7 @@ public unsafe partial struct VideoEncodeH264QualityLevelPropertiesKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.VideoEncodeH264QualityLevelPropertiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -98,5 +98,12 @@ public unsafe partial struct VideoEncodeH264QualityLevelPropertiesKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint PreferredStdEntropyCodingModeFlag;
+    public MaybeBool<uint> PreferredStdEntropyCodingModeFlag;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_h264"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    public VideoEncodeH264QualityLevelPropertiesKHR() { }
 }

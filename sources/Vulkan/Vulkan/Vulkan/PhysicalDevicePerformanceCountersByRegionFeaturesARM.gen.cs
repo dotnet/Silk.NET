@@ -20,7 +20,7 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionFeaturesAR
             "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.PhysicalDevicePerformanceCountersByRegionFeaturesARM;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -42,5 +42,15 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionFeaturesAR
             "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
-    public uint PerformanceCountersByRegion;
+    public MaybeBool<uint> PerformanceCountersByRegion;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_performance_counters_by_region"],
+        ImpliesSets = [
+            "VK_ARM_performance_counters_by_region+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
+        ]
+    )]
+    public PhysicalDevicePerformanceCountersByRegionFeaturesARM() { }
 }

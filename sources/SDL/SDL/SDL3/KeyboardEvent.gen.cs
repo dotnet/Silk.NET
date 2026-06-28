@@ -39,8 +39,8 @@ public partial struct KeyboardEvent
     public ushort Raw;
 
     [NativeName("down")]
-    public byte Down;
+    public MaybeBool<byte> Down;
 
     [NativeName("repeat")]
-    public byte Repeat;
+    public MaybeBool<byte> Repeat;
 }

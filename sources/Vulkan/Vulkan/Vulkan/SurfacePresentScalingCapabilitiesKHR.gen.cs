@@ -21,7 +21,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    public StructureType SType;
+    public StructureType SType = StructureType.SurfacePresentScalingCapabilitiesKHR;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -88,4 +88,14 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
         ]
     )]
     public Extent2D MaxScaledImageExtent;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_surface_maintenance1"],
+        ImpliesSets = [
+            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
+            "VK_KHR_surface_maintenance1+VK_KHR_surface",
+        ]
+    )]
+    public SurfacePresentScalingCapabilitiesKHR() { }
 }

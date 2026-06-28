@@ -19,7 +19,8 @@ public unsafe partial struct RayTracingPipelineClusterAccelerationStructureCreat
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public StructureType SType;
+    public StructureType SType =
+        StructureType.RayTracingPipelineClusterAccelerationStructureCreateInfoNV;
 
     [NativeName("pNext")]
     [SupportedApiProfile(
@@ -37,5 +38,13 @@ public unsafe partial struct RayTracingPipelineClusterAccelerationStructureCreat
         ImpliesSets = ["VK_KHR_acceleration_structure"],
         RequireAll = true
     )]
-    public uint AllowClusterAccelerationStructure;
+    public MaybeBool<uint> AllowClusterAccelerationStructure;
+
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_ray_tracing_pipeline", "VK_NV_cluster_acceleration_structure"],
+        ImpliesSets = ["VK_KHR_acceleration_structure"],
+        RequireAll = true
+    )]
+    public RayTracingPipelineClusterAccelerationStructureCreateInfoNV() { }
 }
