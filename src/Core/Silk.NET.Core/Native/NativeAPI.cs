@@ -20,6 +20,13 @@ namespace Silk.NET.Core.Native
             Context = ctx;
         }
 
+        public override void Dispose()
+        {
+            Context.Dispose();
+            
+            base.Dispose();
+        }
+
         /// <summary>
         /// Whether or not an extension is present. This function might not be valid for some APIs.
         /// </summary>
