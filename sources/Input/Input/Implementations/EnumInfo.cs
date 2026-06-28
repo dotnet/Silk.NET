@@ -4,6 +4,7 @@
 
 using System.Collections.Frozen;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
 
@@ -225,5 +226,11 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     {
         var value = _allEnumValuesDistinctRaw[index];
         return *(T*)&value;
+    }
+
+    public static bool HasValue(int button)
+    {
+        var asUint = Unsafe.As<int, uint>(ref button);
+        return _allEnumValuesDistinctRaw.Contains(asUint);
     }
 }
