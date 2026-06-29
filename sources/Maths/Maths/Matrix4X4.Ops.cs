@@ -368,6 +368,39 @@ namespace Silk.NET.Maths
 
         /// <summary>Creates a view matrix.</summary>
         /// <param name="cameraPosition">The position of the camera.</param>
+        /// <param name="cameraForwardVector">The direction along which the camera is pointing.</param>
+        /// <param name="cameraUpVector">The direction that is "up" from the camera's point of view.</param>
+        /// <returns>The view matrix.</returns>
+        public static Matrix4X4<T> CreateLookToRH<T>(Vector3D<T> cameraPosition, Vector3D<T> cameraForwardVector, Vector3D<T> cameraUpVector)
+            where T : IRootFunctions<T>
+        {
+            Vector3D<T> zaxis = Vector3D.Normalize(cameraForwardVector);
+            Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
+            Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
+
+            Matrix4X4<T> result = Matrix4X4<T>.Identity;
+
+            result.M11 = xaxis.X;
+            result.M12 = yaxis.X;
+            result.M13 = zaxis.X;
+
+            result.M21 = xaxis.Y;
+            result.M22 = yaxis.Y;
+            result.M23 = zaxis.Y;
+
+            result.M31 = xaxis.Z;
+            result.M32 = yaxis.Z;
+            result.M33 = zaxis.Z;
+
+            result.M41 = -Vector3D.Dot(xaxis, cameraPosition);
+            result.M42 = -Vector3D.Dot(yaxis, cameraPosition);
+            result.M43 = -Vector3D.Dot(zaxis, cameraPosition);
+
+            return result;
+        }
+
+        /// <summary>Creates a view matrix.</summary>
+        /// <param name="cameraPosition">The position of the camera.</param>
         /// <param name="cameraTarget">The target towards which the camera is pointing.</param>
         /// <param name="cameraUpVector">The direction that is "up" from the camera's point of view.</param>
         /// <returns>The view matrix.</returns>
@@ -375,6 +408,39 @@ namespace Silk.NET.Maths
             where T : IRootFunctions<T>
         {
             Vector3D<T> zaxis = Vector3D.Normalize(cameraTarget - cameraPosition);
+            Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
+            Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
+
+            Matrix4X4<T> result = Matrix4X4<T>.Identity;
+
+            result.M11 = xaxis.X;
+            result.M12 = yaxis.X;
+            result.M13 = zaxis.X;
+
+            result.M21 = xaxis.Y;
+            result.M22 = yaxis.Y;
+            result.M23 = zaxis.Y;
+
+            result.M31 = xaxis.Z;
+            result.M32 = yaxis.Z;
+            result.M33 = zaxis.Z;
+
+            result.M41 = -Vector3D.Dot(xaxis, cameraPosition);
+            result.M42 = -Vector3D.Dot(yaxis, cameraPosition);
+            result.M43 = -Vector3D.Dot(zaxis, cameraPosition);
+
+            return result;
+        }
+
+        /// <summary>Creates a view matrix.</summary>
+        /// <param name="cameraPosition">The position of the camera.</param>
+        /// <param name="cameraForwardVector">The direction along which the camera is pointing.</param>
+        /// <param name="cameraUpVector">The direction that is "up" from the camera's point of view.</param>
+        /// <returns>The view matrix.</returns>
+        public static Matrix4X4<T> CreateLookToLH<T>(Vector3D<T> cameraPosition, Vector3D<T> cameraForwardVector, Vector3D<T> cameraUpVector)
+            where T : IRootFunctions<T>
+        {
+            Vector3D<T> zaxis = Vector3D.Normalize(cameraForwardVector);
             Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
             Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
 

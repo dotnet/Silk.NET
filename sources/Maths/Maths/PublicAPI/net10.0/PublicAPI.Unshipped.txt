@@ -1107,6 +1107,8 @@ static Silk.NET.Maths.Matrix4X3.CreateFromQuaternion<T>(Silk.NET.Maths.Quaternio
 static Silk.NET.Maths.Matrix4X3.CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.CreateLookAtLH<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraTarget, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.CreateLookAtRH<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraTarget, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X3<T>
+static Silk.NET.Maths.Matrix4X3.CreateLookToLH<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraForwardVector, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X3<T>
+static Silk.NET.Maths.Matrix4X3.CreateLookToRH<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraForwardVector, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.CreateOrthographicLH<T>(T width, T height, T zNearPlane, T zFarPlane) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.CreateOrthographicOffCenterLH<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.CreateOrthographicOffCenterRH<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane) -> Silk.NET.Maths.Matrix4X3<T>
@@ -1202,6 +1204,8 @@ static Silk.NET.Maths.Matrix4X4.CreateFromQuaternion<T>(Silk.NET.Maths.Quaternio
 static Silk.NET.Maths.Matrix4X4.CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateLookAtLH<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraTarget, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateLookAtRH<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraTarget, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateLookToLH<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraForwardVector, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateLookToRH<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraForwardVector, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateOrthographicLH<T>(T width, T height, T zNearPlane, T zFarPlane) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateOrthographicRH<T>(T width, T height, T zNearPlane, T zFarPlane) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateOrthographicOffCenterLH<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane) -> Silk.NET.Maths.Matrix4X4<T>
