@@ -12,6 +12,7 @@ namespace Silk.NET.Maths
     {
         private const float BillboardEpsilon = 1e-4f;
         private const float BillboardMinAngle = 1.0f - (0.1f * (MathF.PI / 180.0f)); // 0.1 degrees
+        private const float DecomposeEpsilon = 0.0001f;
 
         /// <summary>Constructs a <see cref="Matrix4X3{T}"/> from the given <see cref="Matrix3X2{T}"/>.</summary>
         /// <param name="value">The source <see cref="Matrix3X2{T}"/>.</param>
@@ -1071,6 +1072,195 @@ namespace Silk.NET.Maths
             result.M41 = position.X;
             result.M42 = position.Y;
             result.M43 = position.Z;
+
+            return result;
+        }
+
+        /// <summary>Attempts to extract the scale, translation, and rotation components from the given scale/rotation/translation matrix.
+        /// If successful, the out parameters will contained the extracted values.</summary>
+        /// <param name="matrix">The source matrix.</param>
+        /// <param name="scale">The scaling component of the transformation matrix.</param>
+        /// <param name="rotation">The rotation component of the transformation matrix.</param>
+        /// <param name="translation">The translation component of the transformation matrix</param>
+        /// <returns><c>true</c> if the source matrix was successfully decomposed; <c>false</c> otherwise.</returns>
+        public static bool Decompose<T>(Matrix4X3<T> matrix, out Vector3D<T> scale, out Quaternion<T> rotation, out Vector3D<T> translation)
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
+        {
+            bool result = true;
+            scale = default;
+
+            Vector3D<T>[] vectorBasis = new Vector3D<T>[3];
+            Matrix3X3<T> canonicalBasis = Matrix3X3<T>.Identity;
+            Matrix4X4<T> matTemp;
+
+            translation = new Vector3D<T>(
+                matrix.M41,
+                matrix.M42,
+                matrix.M43);
+
+            matTemp = new Matrix4X4<T>(
+                matrix.M11, matrix.M12, matrix.M13, T.Zero,
+                matrix.M21, matrix.M22, matrix.M23, T.Zero,
+                matrix.M31, matrix.M32, matrix.M33, T.Zero,
+                T.Zero, T.Zero, T.Zero, T.One);
+
+            T x = scale.X = matTemp.Row1.Length;
+            T y = scale.Y = matTemp.Row2.Length;
+            T z = scale.Z = matTemp.Row3.Length;
+
+            int a, b, c;
+            if (!(x >= y))
+            {
+                if (!(y >= z))
+                {
+                    a = 2;
+                    b = 1;
+                    c = 0;
+                }
+                else
+                {
+                    a = 1;
+
+                    if (!(x >= z))
+                    {
+                        b = 2;
+                        c = 0;
+                    }
+                    else
+                    {
+                        b = 0;
+                        c = 2;
+                    }
+                }
+            }
+            else
+            {
+                if (!(x >= z))
+                {
+                    a = 2;
+                    b = 0;
+                    c = 1;
+                }
+                else
+                {
+                    a = 0;
+
+                    if (!(y >= z))
+                    {
+                        b = 2;
+                        c = 1;
+                    }
+                    else
+                    {
+                        b = 1;
+                        c = 2;
+                    }
+                }
+            }
+
+            T eps = T.CreateTruncating(DecomposeEpsilon);
+
+            if (!(scale[a] >= eps))
+            {
+                var normalA = canonicalBasis[a];
+                matTemp[a][0] = normalA[0];
+                matTemp[a][1] = normalA[1];
+                matTemp[a][2] = normalA[2];
+            }
+
+            matTemp[a] = matTemp[a].Normalize();
+
+            if (!(scale[b] >= eps))
+            {
+                int cc;
+                T absX, absY, absZ;
+
+                absX = T.Abs(matTemp[a].X);
+                absY = T.Abs(matTemp[a].Y);
+                absZ = T.Abs(matTemp[a].Z);
+
+                if (!(absX >= absY))
+                {
+                    if (!(absY >= absZ))
+                    {
+                        cc = 0;
+                    }
+                    else
+                    {
+                        if (!(absX >= absZ))
+                        {
+                            cc = 0;
+                        }
+                        else
+                        {
+                            cc = 2;
+                        }
+                    }
+                }
+                else
+                {
+                    if (!(absX >= absZ))
+                    {
+                        cc = 1;
+                    }
+                    else
+                    {
+                        if (!(absY >= absZ))
+                        {
+                            cc = 1;
+                        }
+                        else
+                        {
+                            cc = 2;
+                        }
+                    }
+                }
+
+                var normalB = Vector3D.Cross((Vector3D<T>)matTemp[a], canonicalBasis[cc]);
+                matTemp[b][0] = normalB[0];
+                matTemp[b][1] = normalB[1];
+                matTemp[b][2] = normalB[2];
+            }
+
+            matTemp[b] = matTemp[b].Normalize();
+
+            if (!(scale[c] >= eps))
+            {
+                var normalC = Vector3D.Cross((Vector3D<T>)matTemp[a], (Vector3D<T>)matTemp[b]);
+                matTemp[c][0] = normalC[0];
+                matTemp[c][1] = normalC[1];
+                matTemp[c][2] = normalC[2];
+            }
+
+            matTemp[c] = matTemp[c].Normalize();
+
+            T det = matTemp.GetDeterminant();
+
+            // use Kramer's rule to check for handedness of coordinate system
+            if (!(det >= T.Zero))
+            {
+                // switch coordinate system by negating the scale and inverting the basis vector on the x-axis
+                scale[a] = -scale[a];
+                matTemp[a][0] = -matTemp[a][0];
+                matTemp[a][1] = -matTemp[a][1];
+                matTemp[a][2] = -matTemp[a][2];
+                det = -det;
+            }
+
+            det = det - T.One;
+            det = det * det;
+
+            if (!(eps >= det))
+            {
+                // Non-SRT matrix encountered
+                rotation = Quaternion<T>.Identity;
+                result = false;
+            }
+            else
+            {
+                // generate the quaternion from the matrix
+                rotation = Quaternion<T>.CreateFromRotationMatrix(matTemp);
+            }
 
             return result;
         }

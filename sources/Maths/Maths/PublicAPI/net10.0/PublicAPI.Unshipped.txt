@@ -929,6 +929,7 @@ static Silk.NET.Maths.Matrix3X3.CreateRotationZ<T>(T radians) -> Silk.NET.Maths.
 static Silk.NET.Maths.Matrix3X3.CreateScale<T>(Silk.NET.Maths.Vector3D<T> scales) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X3.CreateScale<T>(T scale) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X3.CreateScale<T>(T xScale, T yScale, T zScale) -> Silk.NET.Maths.Matrix3X3<T>
+static Silk.NET.Maths.Matrix3X3.Decompose<T>(Silk.NET.Maths.Matrix3X3<T> matrix, out Silk.NET.Maths.Vector3D<T> scale, out Silk.NET.Maths.Quaternion<T> rotation) -> bool
 static Silk.NET.Maths.Matrix3X3.Lerp<T>(Silk.NET.Maths.Matrix3X3<T> value1, Silk.NET.Maths.Matrix3X3<T> value2, T amount) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X3.Multiply<T>(Silk.NET.Maths.Matrix2X3<T> left, Silk.NET.Maths.Matrix3X3<T> right) -> Silk.NET.Maths.Matrix2X3<T>
 static Silk.NET.Maths.Matrix3X3.Multiply<T>(Silk.NET.Maths.Matrix3X3<T> left, Silk.NET.Maths.Matrix3X2<T> right) -> Silk.NET.Maths.Matrix3X2<T>
@@ -1132,6 +1133,7 @@ static Silk.NET.Maths.Matrix4X3.CreateScale<T>(T xScale, T yScale, T zScale, Sil
 static Silk.NET.Maths.Matrix4X3.CreateTranslation<T>(Silk.NET.Maths.Vector3D<T> position) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.CreateTranslation<T>(T xPosition, T yPosition, T zPosition) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.CreateWorld<T>(Silk.NET.Maths.Vector3D<T> position, Silk.NET.Maths.Vector3D<T> forward, Silk.NET.Maths.Vector3D<T> up) -> Silk.NET.Maths.Matrix4X3<T>
+static Silk.NET.Maths.Matrix4X3.Decompose<T>(Silk.NET.Maths.Matrix4X3<T> matrix, out Silk.NET.Maths.Vector3D<T> scale, out Silk.NET.Maths.Quaternion<T> rotation, out Silk.NET.Maths.Vector3D<T> translation) -> bool
 static Silk.NET.Maths.Matrix4X3.Lerp<T>(Silk.NET.Maths.Matrix4X3<T> value1, Silk.NET.Maths.Matrix4X3<T> value2, T amount) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.Multiply<T>(Silk.NET.Maths.Matrix2X4<T> left, Silk.NET.Maths.Matrix4X3<T> right) -> Silk.NET.Maths.Matrix2X3<T>
 static Silk.NET.Maths.Matrix4X3.Multiply<T>(Silk.NET.Maths.Matrix3X4<T> left, Silk.NET.Maths.Matrix4X3<T> right) -> Silk.NET.Maths.Matrix3X3<T>
