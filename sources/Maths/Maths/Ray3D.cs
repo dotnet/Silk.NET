@@ -83,9 +83,23 @@ namespace Silk.NET.Maths
         /// <param name="distance">The distance along the ray.</param>
         /// <returns>A point at a distance along the ray.</returns>
         public readonly Vector3D<T> GetPoint(T distance)
-        {
-            return Origin + (Direction * distance);
-        }
+            => Origin + (Direction * distance);
+
+        /// <summary>Scales the Ray.</summary>
+        /// <param name="value">The ray to scale.</param>
+        /// <param name="scale">The scaling factor to apply.</param>
+        /// <returns>The scaled Ray.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Ray2D<T> Scale(Ray2D<T> value, T scale)
+            => new(value.Origin * scale, value.Direction * scale);
+
+        /// <summary>Translates the Ray.</summary>
+        /// <param name="value">The ray to translate.</param>
+        /// <param name="translation">The translation to apply.</param>
+        /// <returns>The scaled Ray.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Ray2D<T> Translate(Ray2D<T> value, Vector2D<T> translation)
+            => new(value.Origin + translation, value.Direction);
 
         /// <summary>Returns a boolean indicating whether the given Ray3D is equal to this Ray3D instance.</summary>
         /// <param name="other">The Ray3D to compare this instance to.</param>

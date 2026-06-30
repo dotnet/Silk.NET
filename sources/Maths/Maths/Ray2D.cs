@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -78,8 +79,24 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance along the ray.</param>
         /// <returns>A point at a distance along the ray.</returns>
-        public readonly Vector2D<T> GetPoint(T distance) =>
-            Origin + (Direction * distance);
+        public readonly Vector2D<T> GetPoint(T distance)
+            => Origin + (Direction * distance);
+
+        /// <summary>Scales the Ray.</summary>
+        /// <param name="value">The ray to scale.</param>
+        /// <param name="scale">The scaling factor to apply.</param>
+        /// <returns>The scaled Ray.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Ray2D<T> Scale(Ray2D<T> value, T scale)
+            => new(value.Origin * scale, value.Direction * scale);
+
+        /// <summary>Translates the Ray.</summary>
+        /// <param name="value">The ray to translate.</param>
+        /// <param name="translation">The translation to apply.</param>
+        /// <returns>The scaled Ray.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Ray2D<T> Translate(Ray2D<T> value, Vector2D<T> translation)
+            => new(value.Origin + translation, value.Direction);
 
         /// <summary>Returns a boolean indicating whether the given Ray2D is equal to this Ray2D instance.</summary>
         /// <param name="other">The Ray2D to compare this instance to.</param>
