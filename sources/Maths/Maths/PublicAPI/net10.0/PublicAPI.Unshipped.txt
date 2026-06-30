@@ -1403,6 +1403,7 @@ static Silk.NET.Maths.Quaternion<T>.Zero.get -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Ray2D.GetDistanceToLine<T>(this Silk.NET.Maths.Ray2D<T> line, Silk.NET.Maths.Vector2D<T> point) -> T
 static Silk.NET.Maths.Ray2D.GetDistanceToRay<T>(this Silk.NET.Maths.Ray2D<T> ray, Silk.NET.Maths.Vector2D<T> point) -> T
 static Silk.NET.Maths.Ray2D.GetDistanceToSegment<T>(this Silk.NET.Maths.Ray2D<T> segment, Silk.NET.Maths.Vector2D<T> point) -> T
+static Silk.NET.Maths.Ray2D.Normalize<T>(Silk.NET.Maths.Ray2D<T> value) -> Silk.NET.Maths.Ray2D<T>
 static Silk.NET.Maths.Ray2D<T>.operator !=(Silk.NET.Maths.Ray2D<T> left, Silk.NET.Maths.Ray2D<T> right) -> bool
 static Silk.NET.Maths.Ray2D<T>.operator ==(Silk.NET.Maths.Ray2D<T> left, Silk.NET.Maths.Ray2D<T> right) -> bool
 static Silk.NET.Maths.Ray2D<T>.Scale(Silk.NET.Maths.Ray2D<T> value, T scale) -> Silk.NET.Maths.Ray2D<T>
@@ -1410,6 +1411,7 @@ static Silk.NET.Maths.Ray2D<T>.Translate(Silk.NET.Maths.Ray2D<T> value, Silk.NET
 static Silk.NET.Maths.Ray3D.GetDistanceToLine<T>(this Silk.NET.Maths.Ray3D<T> line, Silk.NET.Maths.Vector3D<T> point) -> T
 static Silk.NET.Maths.Ray3D.GetDistanceToRay<T>(this Silk.NET.Maths.Ray3D<T> ray, Silk.NET.Maths.Vector3D<T> point) -> T
 static Silk.NET.Maths.Ray3D.GetDistanceToSegment<T>(this Silk.NET.Maths.Ray3D<T> segment, Silk.NET.Maths.Vector3D<T> point) -> T
+static Silk.NET.Maths.Ray3D.Normalize<T>(Silk.NET.Maths.Ray3D<T> value) -> Silk.NET.Maths.Ray3D<T>
 static Silk.NET.Maths.Ray3D<T>.operator !=(Silk.NET.Maths.Ray3D<T> left, Silk.NET.Maths.Ray3D<T> right) -> bool
 static Silk.NET.Maths.Ray3D<T>.operator ==(Silk.NET.Maths.Ray3D<T> left, Silk.NET.Maths.Ray3D<T> right) -> bool
 static Silk.NET.Maths.Ray3D<T>.Scale(Silk.NET.Maths.Ray2D<T> value, T scale) -> Silk.NET.Maths.Ray2D<T>

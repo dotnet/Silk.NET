@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Maths
 {
@@ -16,6 +17,7 @@ namespace Silk.NET.Maths
         /// <param name="line">The line.</param>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
+        [MethodImpl((MethodImplOptions)768)]
         public static T GetDistanceToLine<T>(this Ray3D<T> line, Vector3D<T> point)
             where T : INumberBase<T>, IRootFunctions<T>
         {
@@ -31,6 +33,7 @@ namespace Silk.NET.Maths
         /// <param name="ray">The ray.</param>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
+        [MethodImpl((MethodImplOptions)768)]
         public static T GetDistanceToRay<T>(this Ray3D<T> ray, Vector3D<T> point)
             where T : INumber<T>, IRootFunctions<T>
         {
@@ -46,6 +49,7 @@ namespace Silk.NET.Maths
         /// <param name="segment">The segment.</param>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
+        [MethodImpl((MethodImplOptions)768)]
         public static T GetDistanceToSegment<T>(this Ray3D<T> segment, Vector3D<T> point)
             where T : INumber<T>, IRootFunctions<T>
         {
@@ -54,5 +58,13 @@ namespace Silk.NET.Maths
             var h = T.Clamp(Vector3D.Dot(pa, ba) / Vector3D.Dot(ba, ba), T.Zero, T.One);
             return (pa - ba * h).Length;
         }
+
+        /// <summary>Normalizes the Ray.</summary>
+        /// <param name="value">The ray to normalize.</param>
+        /// <returns>The normalized Ray.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Ray3D<T> Normalize<T>(Ray3D<T> value)
+            where T : INumberBase<T>, IRootFunctions<T>
+            => new(value.Origin, Vector3D.Normalize(value.Direction));
     }
 }
