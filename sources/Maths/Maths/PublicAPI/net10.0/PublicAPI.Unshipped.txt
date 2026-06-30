@@ -1134,6 +1134,8 @@ static Silk.NET.Maths.Matrix4X3.CreateScale<T>(T xScale, T yScale, T zScale) -> 
 static Silk.NET.Maths.Matrix4X3.CreateScale<T>(T xScale, T yScale, T zScale, Silk.NET.Maths.Vector3D<T> centerPoint) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.CreateTranslation<T>(Silk.NET.Maths.Vector3D<T> position) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.CreateTranslation<T>(T xPosition, T yPosition, T zPosition) -> Silk.NET.Maths.Matrix4X3<T>
+static Silk.NET.Maths.Matrix4X3.CreateViewportLH<T>(T x, T y, T width, T height, T minDepth, T maxDepth) -> Silk.NET.Maths.Matrix4X3<T>
+static Silk.NET.Maths.Matrix4X3.CreateViewportRH<T>(T x, T y, T width, T height, T minDepth, T maxDepth) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.CreateWorld<T>(Silk.NET.Maths.Vector3D<T> position, Silk.NET.Maths.Vector3D<T> forward, Silk.NET.Maths.Vector3D<T> up) -> Silk.NET.Maths.Matrix4X3<T>
 static Silk.NET.Maths.Matrix4X3.Decompose<T>(Silk.NET.Maths.Matrix4X3<T> matrix, out Silk.NET.Maths.Vector3D<T> scale, out Silk.NET.Maths.Quaternion<T> rotation, out Silk.NET.Maths.Vector3D<T> translation) -> bool
 static Silk.NET.Maths.Matrix4X3.Lerp<T>(Silk.NET.Maths.Matrix4X3<T> value1, Silk.NET.Maths.Matrix4X3<T> value2, T amount) -> Silk.NET.Maths.Matrix4X3<T>
@@ -1232,6 +1234,8 @@ static Silk.NET.Maths.Matrix4X4.CreateScale<T>(T xScale, T yScale, T zScale, Sil
 static Silk.NET.Maths.Matrix4X4.CreateShadow<T>(Silk.NET.Maths.Vector3D<T> lightDirection, Silk.NET.Maths.Plane<T> plane) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateTranslation<T>(Silk.NET.Maths.Vector3D<T> position) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateTranslation<T>(T xPosition, T yPosition, T zPosition) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateViewportLH<T>(T x, T y, T width, T height, T minDepth, T maxDepth) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateViewportRH<T>(T x, T y, T width, T height, T minDepth, T maxDepth) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateWorld<T>(Silk.NET.Maths.Vector3D<T> position, Silk.NET.Maths.Vector3D<T> forward, Silk.NET.Maths.Vector3D<T> up) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.Decompose<T>(Silk.NET.Maths.Matrix4X4<T> matrix, out Silk.NET.Maths.Vector3D<T> scale, out Silk.NET.Maths.Quaternion<T> rotation, out Silk.NET.Maths.Vector3D<T> translation) -> bool
 static Silk.NET.Maths.Matrix4X4.Invert<T>(Silk.NET.Maths.Matrix4X4<T> matrix, out Silk.NET.Maths.Matrix4X4<T> result) -> bool

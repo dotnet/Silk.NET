@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Maths
 {
@@ -1139,6 +1140,64 @@ namespace Silk.NET.Maths
             result.M42 = position.Y;
             result.M43 = position.Z;
 
+            return result;
+        }
+
+        /// <summary>Creates a right-handed viewport matrix from the specified parameters.</summary>
+        /// <param name="x">X coordinate of the viewport upper left corner.</param>
+        /// <param name="y">Y coordinate of the viewport upper left corner.</param>
+        /// <param name="width">Viewport width.</param>
+        /// <param name="height">Viewport height.</param>
+        /// <param name="minDepth">Viewport minimum depth.</param>
+        /// <param name="maxDepth">Viewport maximum depth.</param>
+        /// <returns>The right-handed viewport matrix.</returns>
+        /// <remarks>
+        /// Viewport matrix
+        /// |   width / 2   |        0       |          0          |
+        /// |       0       |   -height / 2  |          0          |
+        /// |       0       |        0       | minDepth - maxDepth |
+        /// | x + width / 2 | y + height / 2 |       minDepth      |
+        /// </remarks>        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix4X3<T> CreateViewportRH<T>(T x, T y, T width, T height, T minDepth, T maxDepth)
+            where T : INumberBase<T>
+        {
+            // From: https://github.com/dotnet/dotnet/blob/main/src/runtime/src/libraries/System.Private.CoreLib/src/System/Numerics/Matrix4x4.Impl.cs
+            Matrix4X3<T> result;
+            result.Row4 = new Vector3D<T>(width, height, T.Zero) / T.CreateTruncating(2);
+            result.Row1 = new Vector3D<T>(result.Row4.X, T.Zero, T.Zero);
+            result.Row2 = new Vector3D<T>(T.Zero, -result.Row4.Y, T.Zero);
+            result.Row3 = new Vector3D<T>(T.Zero, T.Zero, minDepth - maxDepth);
+            result.Row4 += new Vector3D<T>(x, y, minDepth);
+            return result;
+        }
+
+        /// <summary>Creates a left-handed viewport matrix from the specified parameters.</summary>
+        /// <param name="x">X coordinate of the viewport upper left corner.</param>
+        /// <param name="y">Y coordinate of the viewport upper left corner.</param>
+        /// <param name="width">Viewport width.</param>
+        /// <param name="height">Viewport height.</param>
+        /// <param name="minDepth">Viewport minimum depth.</param>
+        /// <param name="maxDepth">Viewport maximum depth.</param>
+        /// <returns>The left-handed viewport matrix.</returns>
+        /// <remarks>
+        /// Viewport matrix
+        /// |   width / 2   |        0       |          0          |
+        /// |       0       |   -height / 2  |          0          |
+        /// |       0       |        0       | maxDepth - minDepth |
+        /// | x + width / 2 | y + height / 2 |       minDepth      |
+        /// </remarks>        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix4X3<T> CreateViewportLH<T>(T x, T y, T width, T height, T minDepth, T maxDepth)
+            where T : INumberBase<T>
+        {
+            // From: https://github.com/dotnet/dotnet/blob/main/src/runtime/src/libraries/System.Private.CoreLib/src/System/Numerics/Matrix4x4.Impl.cs
+            Matrix4X3<T> result;
+            result.Row4 = new Vector3D<T>(width, height, T.Zero) / T.CreateTruncating(2);
+            result.Row1 = new Vector3D<T>(result.Row4.X, T.Zero, T.Zero);
+            result.Row2 = new Vector3D<T>(T.Zero, -result.Row4.Y, T.Zero);
+            result.Row3 = new Vector3D<T>(T.Zero, T.Zero, maxDepth - minDepth);
+            result.Row4 += new Vector3D<T>(x, y, minDepth);
             return result;
         }
 
