@@ -68,6 +68,46 @@ namespace Silk.NET.Maths
             where T : INumberBase<T>
             => Vector3D.Dot(plane.Normal, value);
 
+        /// <summary>
+        /// Calculates the distance to the nearest edge from the point.
+        /// </summary>
+        /// <param name="plane">The plane.</param>
+        /// <param name="point">The point.</param>
+        /// <returns>The distance.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public T GetDistanceToEdge<T>(this Plane<T> plane, Vector3D<T> point)
+            where T : INumberBase<T>
+            => T.Abs(GetSignedDistanceToEdge(plane, point));
+
+        /// <summary>
+        /// Calculates the distance to the nearest edge from the point.
+        /// </summary>
+        /// <param name="plane">The plane.</param>
+        /// <param name="point">The point.</param>
+        /// <returns>The distance.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public T GetSignedDistanceToEdge<T>(this Plane<T> plane, Vector3D<T> point)
+            where T : INumberBase<T>
+            => T.Abs(Vector3D.Dot(plane.Normal, point) + plane.Distance);
+
+        /// <summary>Scales the Plane.</summary>
+        /// <param name="value">The plane to scale.</param>
+        /// <param name="scale">The scaling factor to apply.</param>
+        /// <returns>The scaled Plane.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Plane<T> Scale<T>(Plane<T> value, T scale)
+            where T : INumberBase<T>
+            => new(value.Normal, value.Distance * scale);
+
+        /// <summary>Translates the Plane.</summary>
+        /// <param name="value">The plane to translate.</param>
+        /// <param name="translation">The translation to apply.</param>
+        /// <returns>The scaled Plane.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Plane<T> Translate<T>(Plane<T> value, Vector3D<T> translation)
+            where T : INumberBase<T>
+            => new(value.Normal, value.Distance - Vector3D.Dot(value.Normal, translation));
+
         /// <summary>Normalizes the Plane.</summary>
         /// <param name="value">The plane to normalize.</param>
         /// <returns>The normalized Plane.</returns>

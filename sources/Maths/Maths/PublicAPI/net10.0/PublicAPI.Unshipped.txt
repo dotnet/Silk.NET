@@ -456,6 +456,8 @@ Silk.NET.Maths.Matrix5X4<T>.Row5 -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix5X4<T>.this[int row, int column].get -> T
 Silk.NET.Maths.Matrix5X4<T>.this[int row].get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Plane
+Silk.NET.Maths.Plane.GetDistanceToEdge<T>(this Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths.Vector3D<T> point) -> T
+Silk.NET.Maths.Plane.GetSignedDistanceToEdge<T>(this Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths.Vector3D<T> point) -> T
 Silk.NET.Maths.Plane<T>
 Silk.NET.Maths.Plane<T>.As<TOther>() -> Silk.NET.Maths.Plane<TOther>
 Silk.NET.Maths.Plane<T>.Distance -> T
@@ -1354,8 +1356,10 @@ static Silk.NET.Maths.Plane.Dot<T>(Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths
 static Silk.NET.Maths.Plane.DotCoordinate<T>(Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths.Vector3D<T> value) -> T
 static Silk.NET.Maths.Plane.DotNormal<T>(Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths.Vector3D<T> value) -> T
 static Silk.NET.Maths.Plane.Normalize<T>(Silk.NET.Maths.Plane<T> value) -> Silk.NET.Maths.Plane<T>
+static Silk.NET.Maths.Plane.Scale<T>(Silk.NET.Maths.Plane<T> value, T scale) -> Silk.NET.Maths.Plane<T>
 static Silk.NET.Maths.Plane.Transform<T>(Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Plane<T>
 static Silk.NET.Maths.Plane.Transform<T>(Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths.Quaternion<T> rotation) -> Silk.NET.Maths.Plane<T>
+static Silk.NET.Maths.Plane.Translate<T>(Silk.NET.Maths.Plane<T> value, Silk.NET.Maths.Vector3D<T> translation) -> Silk.NET.Maths.Plane<T>
 static Silk.NET.Maths.Plane<T>.explicit operator Silk.NET.Maths.Plane<byte>(Silk.NET.Maths.Plane<T> from) -> Silk.NET.Maths.Plane<byte>
 static Silk.NET.Maths.Plane<T>.explicit operator Silk.NET.Maths.Plane<decimal>(Silk.NET.Maths.Plane<T> from) -> Silk.NET.Maths.Plane<decimal>
 static Silk.NET.Maths.Plane<T>.explicit operator Silk.NET.Maths.Plane<double>(Silk.NET.Maths.Plane<T> from) -> Silk.NET.Maths.Plane<double>
