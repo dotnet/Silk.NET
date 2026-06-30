@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Maths
 {
@@ -528,6 +529,50 @@ namespace Silk.NET.Maths
             where T : INumberBase<T>
         {
             return new(matrix.Column1, matrix.Column2, matrix.Column3);
+        }
+
+        /// <summary>Attempts to calculate the inverse of the given matrix. If successful, result will contain the inverted matrix.</summary>
+        /// <param name="matrix">The source matrix to invert.</param>
+        /// <param name="result">If successful, contains the inverted matrix.</param>
+        /// <returns><c>true</c> if the source matrix could be inverted; <c>false</c> otherwise.</returns>
+        ///
+        [MethodImpl((MethodImplOptions)768)]
+        public static bool Invert<T>(Matrix3X3<T> matrix, out Matrix3X3<T> result)
+            where T : IFloatingPointIeee754<T>
+        {
+            T a = matrix.M11, b = matrix.M12, c = matrix.M13;
+            T d = matrix.M21, e = matrix.M22, f = matrix.M23;
+            T g = matrix.M31, h = matrix.M32, i = matrix.M33;
+
+            T a11 = (e * i) - (f * h);
+            T a12 = (d * i) - (f * g);
+            T a13 = (d * h) - (e * g);
+
+            T det = (a * a11) - (b * a12) + (c * a13);
+
+            if (!(T.Abs(det) >= T.Epsilon))
+            {
+                result = default;
+                return false;
+            }
+
+            T invDet = T.One / det;
+
+            result = default;
+
+            result.M11 = a11 * invDet;
+            result.M21 = -(a12 * invDet);
+            result.M31 = a13 * invDet;
+
+            result.M12 = -(((b * i) - (c * h)) * invDet);
+            result.M22 = ((a * i) - (c * g)) * invDet;
+            result.M32 = -(((a * h) - (b * g)) * invDet);
+
+            result.M13 = ((b * f) - (c * e)) * invDet;
+            result.M23 = -(((a * f) - (c * d)) * invDet);
+            result.M33 = ((a * e) - (b * d)) * invDet;
+
+            return true;
         }
     }
 }

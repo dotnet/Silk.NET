@@ -357,6 +357,7 @@ Silk.NET.Maths.Matrix4X3<T>.Column1.get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X3<T>.Column2.get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X3<T>.Column3.get -> Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Matrix4X3<T>.Equals(Silk.NET.Maths.Matrix4X3<T> other) -> bool
+Silk.NET.Maths.Matrix4X3<T>.GetDeterminant() -> T
 Silk.NET.Maths.Matrix4X3<T>.IsIdentity.get -> bool
 Silk.NET.Maths.Matrix4X3<T>.M11.get -> T
 Silk.NET.Maths.Matrix4X3<T>.M12.get -> T
@@ -688,6 +689,7 @@ static Silk.NET.Maths.Extents3D.GetDistanceToInterior<TSelf, TPoint>(this TSelf 
 static Silk.NET.Maths.Extents3D.GetSignedDistanceToEdge<TSelf, TPoint>(this TSelf region, Silk.NET.Maths.Vector3D<TPoint> point) -> TPoint
 static Silk.NET.Maths.Extents3D.Intersects<T1, T2, TPoint>(T1 a, T2 b) -> bool
 static Silk.NET.Maths.Matrix2X2.Add<T>(Silk.NET.Maths.Matrix2X2<T> left, Silk.NET.Maths.Matrix2X2<T> right) -> Silk.NET.Maths.Matrix2X2<T>
+static Silk.NET.Maths.Matrix2X2.Invert<T>(Silk.NET.Maths.Matrix2X2<T> matrix, out Silk.NET.Maths.Matrix2X2<T> result) -> bool
 static Silk.NET.Maths.Matrix2X2.Lerp<T>(Silk.NET.Maths.Matrix2X2<T> value1, Silk.NET.Maths.Matrix2X2<T> value2, T amount) -> Silk.NET.Maths.Matrix2X2<T>
 static Silk.NET.Maths.Matrix2X2.Multiply<T>(Silk.NET.Maths.Matrix2X2<T> left, Silk.NET.Maths.Matrix2X2<T> right) -> Silk.NET.Maths.Matrix2X2<T>
 static Silk.NET.Maths.Matrix2X2.Multiply<T>(Silk.NET.Maths.Matrix2X2<T> left, Silk.NET.Maths.Matrix2X3<T> right) -> Silk.NET.Maths.Matrix2X3<T>
@@ -934,6 +936,7 @@ static Silk.NET.Maths.Matrix3X3.CreateScale<T>(Silk.NET.Maths.Vector3D<T> scales
 static Silk.NET.Maths.Matrix3X3.CreateScale<T>(T scale) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X3.CreateScale<T>(T xScale, T yScale, T zScale) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X3.Decompose<T>(Silk.NET.Maths.Matrix3X3<T> matrix, out Silk.NET.Maths.Vector3D<T> scale, out Silk.NET.Maths.Quaternion<T> rotation) -> bool
+static Silk.NET.Maths.Matrix3X3.Invert<T>(Silk.NET.Maths.Matrix3X3<T> matrix, out Silk.NET.Maths.Matrix3X3<T> result) -> bool
 static Silk.NET.Maths.Matrix3X3.Lerp<T>(Silk.NET.Maths.Matrix3X3<T> value1, Silk.NET.Maths.Matrix3X3<T> value2, T amount) -> Silk.NET.Maths.Matrix3X3<T>
 static Silk.NET.Maths.Matrix3X3.Multiply<T>(Silk.NET.Maths.Matrix2X3<T> left, Silk.NET.Maths.Matrix3X3<T> right) -> Silk.NET.Maths.Matrix2X3<T>
 static Silk.NET.Maths.Matrix3X3.Multiply<T>(Silk.NET.Maths.Matrix3X3<T> left, Silk.NET.Maths.Matrix3X2<T> right) -> Silk.NET.Maths.Matrix3X2<T>

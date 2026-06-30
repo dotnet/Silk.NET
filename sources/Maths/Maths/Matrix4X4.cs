@@ -50,8 +50,8 @@ namespace Silk.NET.Maths
 
             return (a * ((f * kp_lo) - (g * jp_ln) + (h * jo_kn)))
                  - (b * ((e * kp_lo) - (g * ip_lm) + (h * io_km)))
-                + ((c * ((e * jp_ln) - (f * ip_lm) + (h * in_jm)))
-                 - (d * ((e * jo_kn) - (f * io_km) + (g * in_jm))));
+                 + (c * ((e * jp_ln) - (f * ip_lm) + (h * in_jm)))
+                 - (d * ((e * jo_kn) - (f * io_km) + (g * in_jm)));
         }
     }
 }
