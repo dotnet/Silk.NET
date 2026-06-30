@@ -75,7 +75,7 @@ namespace Silk.NET.Maths
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public T GetDistanceToEdge<T>(this Plane<T> plane, Vector3D<T> point)
+        public static T GetDistanceToEdge<T>(this Plane<T> plane, Vector3D<T> point)
             where T : INumberBase<T>
             => T.Abs(GetSignedDistanceToEdge(plane, point));
 
@@ -86,7 +86,7 @@ namespace Silk.NET.Maths
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public T GetSignedDistanceToEdge<T>(this Plane<T> plane, Vector3D<T> point)
+        public static T GetSignedDistanceToEdge<T>(this Plane<T> plane, Vector3D<T> point)
             where T : INumberBase<T>
             => T.Abs(Vector3D.Dot(plane.Normal, point) + plane.Distance);
 
