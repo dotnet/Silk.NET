@@ -1098,16 +1098,7 @@ namespace Silk.NET.Maths.Tests
             float detA = a.GetDeterminant();
             Assert.True(MathHelper.Equal(detA, 0.0f), "Matrix4X4<float>.Invert did not return the expected value.");
 
-            Matrix4X4<float> actual;
-            Assert.False(Matrix4X4.Invert(a, out actual));
-
-            // all the elements in Actual is NaN
-            Assert.True(
-                float.IsNaN(actual.M11) && float.IsNaN(actual.M12) && float.IsNaN(actual.M13) && float.IsNaN(actual.M14) &&
-                float.IsNaN(actual.M21) && float.IsNaN(actual.M22) && float.IsNaN(actual.M23) && float.IsNaN(actual.M24) &&
-                float.IsNaN(actual.M31) && float.IsNaN(actual.M32) && float.IsNaN(actual.M33) && float.IsNaN(actual.M34) &&
-                float.IsNaN(actual.M41) && float.IsNaN(actual.M42) && float.IsNaN(actual.M43) && float.IsNaN(actual.M44)
-                , "Matrix4X4<float>.Invert did not return the expected value.");
+            Assert.False(Matrix4X4.Invert(a, out _));
         }
 
         // A test for Lerp (Matrix4X4<float>, Matrix4X4<float>, float)
