@@ -11,6 +11,14 @@ namespace Silk.NET.Maths
     /// </summary>
     public static class Plane
     {
+        /// <summary>Creates a Plane that contains the given point and is perpendicular to the given normal.</summary>
+        /// <param name="point">The point defining the Plane.</param>
+        /// <param name="normal">The normal of the Plane.</param>
+        /// <returns>The Plane containing the three points.</returns>
+        public static Plane<T> CreateFromPointNormal<T>(Vector3D<T> point, Vector3D<T> normal)
+            where T : IRootFunctions<T>
+            => new Plane<T>(normal, -Vector3D.Dot(normal, point));
+
         /// <summary>Creates a Plane that contains the three given points.</summary>
         /// <param name="point1">The first point defining the Plane.</param>
         /// <param name="point2">The second point defining the Plane.</param>
@@ -60,45 +68,17 @@ namespace Silk.NET.Maths
             where T : INumberBase<T>
             => Vector3D.Dot(plane.Normal, value);
 
-        private const float NormalizeEpsilon = 1.192092896e-07f; // smallest such that 1.0+NormalizeEpsilon != 1.0
-
-        /// <summary>Creates a new Plane whose normal vector is the source Plane's normal vector normalized.</summary>
-        /// <param name="value">The source Plane.</param>
+        /// <summary>Normalizes the Plane.</summary>
+        /// <param name="value">The plane to normalize.</param>
         /// <returns>The normalized Plane.</returns>
         [MethodImpl((MethodImplOptions)768)]
         public static Plane<T> Normalize<T>(Plane<T> value)
-            where T : INumber<T>, IRootFunctions<T>
+            where T : INumberBase<T>, IRootFunctions<T>
         {
-            /*if (Vector.IsHardwareAccelerated)
-            {
-                T normalLengthSquared = value.Normal.LengthSquared();
-                if (MathF.Abs(normalLengthSquared - 1.0f) < NormalizeEpsilon)
-                {
-                    // It already normalized, so we don't need to farther process.
-                    return value;
-                }
-                T normalLength = MathF.Sqrt(normalLengthSquared);
-                return new Plane(
-                    value.Normal / normalLength,
-                    value.D / normalLength);
-            }
-            else*/
-            {
-                T f = (value.Normal.X * value.Normal.X) + (value.Normal.Y * value.Normal.Y) + (value.Normal.Z * value.Normal.Z);
-
-                if (!(T.Abs(f - T.One) >= T.CreateTruncating(NormalizeEpsilon)))
-                {
-                    return value; // It already normalized, so we don't need to further process.
-                }
-
-                T fInv = T.One / T.Sqrt(f);
-
-                return new(
-                    value.Normal.X * fInv,
-                    value.Normal.Y * fInv,
-                    value.Normal.Z * fInv,
-                    value.Distance * fInv);
-            }
+            var fInv = T.One / value.Normal.Length;
+            return new(
+                value.Normal * fInv,
+                value.Distance * fInv);
         }
 
         /// <summary>Transforms a normalized Plane by a Matrix.</summary>
