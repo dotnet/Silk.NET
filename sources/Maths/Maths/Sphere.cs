@@ -143,6 +143,22 @@ namespace Silk.NET.Maths
         public readonly Sphere<T> GetTranslated(Vector3D<T> distance) =>
             new(Center + distance, Radius);
 
+        /// <summary>
+        /// Determines whether a points lies within the sphere.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>A value indicating whether the point lies within the sphere.</returns>
+        public bool Intersects(Vector3D<T> point) =>
+            GetSignedDistanceToEdge(point) <= T.Zero;
+
+        /// <summary>
+        /// Determines whether two spheres intersect.
+        /// </summary>
+        /// <param name="other">The other sphere.</param>
+        /// <returns>A value indicating whether spheres contain any intersecting points.</returns>
+        public bool Intersects(Sphere<T> other) =>
+            Intersects(other.Center) || other.Intersects(Center);
+
         /// <summary>Returns a boolean indicating whether the given Sphere is equal to this Sphere instance.</summary>
         /// <param name="other">The Sphere to compare this instance to.</param>
         /// <returns><c>true</c> if the other Sphere is equal to this instance; <c>false</c> otherwise.</returns>

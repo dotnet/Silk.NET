@@ -148,6 +148,22 @@ namespace Silk.NET.Maths
         public readonly Circle<T> GetTranslated(Vector2D<T> distance) =>
             new(Center + distance, Radius);
 
+        /// <summary>
+        /// Determines whether a points lies within the circle.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>A value indicating whether the point lies within the circle.</returns>
+        public bool Intersects(Vector2D<T> point) =>
+            GetSignedDistanceToEdge(point) <= T.Zero;
+
+        /// <summary>
+        /// Determines whether two circles intersect.
+        /// </summary>
+        /// <param name="other">The other circle.</param>
+        /// <returns>A value indicating whether circles contain any intersecting points.</returns>
+        public bool Intersects(Circle<T> other) =>
+            Intersects(other.Center) || other.Intersects(Center);
+
         /// <summary>Returns a boolean indicating whether the given Circle is equal to this Circle instance.</summary>
         /// <param name="other">The Circle to compare this instance to.</param>
         /// <returns><c>true</c> if the other Circle is equal to this instance; <c>false</c> otherwise.</returns>
