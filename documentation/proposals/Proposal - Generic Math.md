@@ -60,15 +60,14 @@ For each vector struct, the following requirements **must** fulfill the followin
 - A deconstruct method for detupling
 - An implicit conversion from a value tuple of the same size.
 - Define static CreateChecked, CreateSaturating, and CreateTruncating which converts other vector types to this type
-  - Try variants of these methods should also be defined which out the resulting vector and return a bool representing success or failure of the operation.
 - Define Transform static methods which take a Matrix of higher dimensionality assuming 1 in for the final missing component and 0 for the rest (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
 - Define `VectorND<T> * MatrixNXM` operators where N is the same for both Vector and Matrix, but M is any number
   - These operators should function like Transform, but without needed assumptions
 - Define TransformNormal static methods which take a Matrix of higher dimensionality assuming 0 in for all missing components (Vector 2 can use `Matrix2Xn`, `Matrix3Xn`, and `Matrix4Xn`) and return a vector containing the output (type should match the outer type e.g. `Vector2D.Transform(Matrix4X4)` returns `Vector2D`)
 - For types implementing `IBinaryNumber<T>`
-    - `BitwiseAnd`, `BitwiseOr`, and `BitwiseXor` static methods defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
-    - `BitwiseAnd`, `BitwiseOr`, and `BitwiseXor` static methods operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
-    - `BitwiseNot` static method defined which negates the bits of the vector components. (BitwiseComplement?)
+    - `BitwiseAnd`, `BitwiseOr`, and `ExclusiveOr` static methods defined between two vectors which returns a vector which has had these operators applied on a component-wise basis.
+    - `BitwiseAnd`, `BitwiseOr`, and `ExclusiveOr` static methods operators defined between a vectors and a scalar value that matches the generic type which returns a vector which has had these operators applied on a component-wise basis with the scalar.
+    - `OnesComplement` static method defined which negates the bits of the vector components. (BitwiseComplement?)
 - A Normalize extension method which divides all components by the length of the vector, when `T` implements `IRootFunctions<T>`
 - A Reflect static method which takes a normal vector and reflects the vector over the normal
 - The following static Vector properties which have the given value for all components
@@ -240,6 +239,10 @@ Matrix structs **must** fulfill the following requirements:
   - Decompose (separate out any transformations)
 - For Matrix3X2 include a CreateSkew static function
 - For Matrix3X3, Matrix4X3, and Matrix4X4 include the following static functions
+  - CreateFromAffineXY
+    - Projects the Y coordinate onto the Y axis.
+  - CreateFromAffineXZ
+    - Projects the Y coordinate onto the Z axis.
   - CreateFromAxisAngle
   - CreateFromQuaternion
   - Transform
@@ -283,18 +286,13 @@ A Quaternion struct **must** be defined and match the following requirements:
 - Define `+`, `-`, `*`, and `/` between two Quaternions
 - Define `*` with `T` multiplying each component by the scalar value returning a new quaternion
 - Define unary `~`
-- A Dot function which takes another Quaternion and returns its the dotproduct between them
-  - A static implementation of this function **must** be available
+- A static Dot function which takes another Quaternion and returns its the dotproduct between them
 - A LengthSquared property which returns the dot product of the quaternion with itself
 - A Length property which returns the Square Root of LengthSquared
-- An Invert function inverts the Quaternion
-  - a static Inverse function **must** be available but it returns the inverse rather than affecting the original
-- A Normalize function which normalizes the Quaternion
-  - A static implemenation of this function must be available but returns the normalized Quaternion rather than affecting the original
-- A Concatenate function which takes another Quaternion and concatenates it with this quaternion
-  - A static implementation of this function **must** be available but it returns a new Quaternion rather than affecting the originals
-- A Conjugate function which returns the conjugate of this quaternion
-  - A static implementation of this function **must** be available
+- A static Invert function which inverts the Quaternion
+- A static Normalize function which normalizes the Quaternion
+- A static Concatenate function which takes two Quaternions and concatenates them
+- A static Conjugate function which returns the conjugate of a quaternion
 - A static CreateFromAxisAngle function which takes in a `Vector3D<T>` and an angle and returns a Quaternion representing that rotation
 - A static CreateFromRotationMatrix function which takes either a Matrix3X3 or Matrix4X4 and returns a Quaternion representing that rotation
 - A static CreateFromYawPitchRoll which takes either each components separately or in a `Vector3D<T>` and outputs a Quaternion representing that rotation
@@ -306,25 +304,27 @@ A Quaternion struct **must** be defined and match the following requirements:
 # Geometric Types
 
 The following Geometric Types are defined:
-- Box
+- Box2
+- Box3
 - Circle
 - Plane
 - Ray2
 - Ray3
-- Rectangle
+- Rect2
+- Rect3
 - Sphere
 
 Each type **must** include the following:
 - Intersect functions with both another instance of the type and a point
-- GetDistanceToNearest(Point,Edge,etc) functions **must** be available for a given point
+- Get(Signed)Distance(ToEdge,ToInterior) functions **must** be available for a given point when applicable
 - For all but the rays and planes, GetInflated function that takes a point and returns the scaled object that is closest to the original and contains the given point
 - Include Scale and Translation transformation functions
-- For Box and Rectangle the following Vector properties **must** be defined
+- For Box and Rectangle the following Vector properties **must** be defined via interface
   - Min
   - Max
   - Center
   - Size
-- For Planes and Rays, Normalize functions
+- For Planes and Rays, static Normalize functions
 - For Planes include the following static functions
   - CreateFromVerticies
   - CreateFromPointNormal
@@ -375,3 +375,13 @@ Each type **must** include the following:
     - We will remove instance extension methods and add them back later if we still want them.
     - We visited Length/LengthSquared as properties instead of .NET
 - Approved notwithstanding instance extension method and Atan2(Memberwise, Scalar) removal
+
+## 19/04/2026
+
+[Video](https://www.youtube.com/live/CUF52it-fSg?t=2160s)
+
+- Decided we wouldn't have the extra matrix constructors.
+  - Deciede to keep one set of overloads: CreateFromAffineXZ
+- Standardize on IBinaryNumber naming.
+- Decided to use Box2D, Box3D, Rect2D, Rect3D and an interface for extents.
+- Reconfirmed the naming of `VectorND` and `MatrixNXM`.
