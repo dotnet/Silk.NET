@@ -238,17 +238,15 @@ Matrix structs **must** fulfill the following requirements:
   - CreateScale
   - Decompose (separate out any transformations)
 - For Matrix3X2 include a CreateSkew static function
-- For Matrix3X3
-  - CreateFromAffineXY
-    - Projects the Y coordinate onto the Y axis.
-  - CreateFromAffineXZ
-    - Projects the Y coordinate onto the Z axis.
 - For Matrix3X3, Matrix4X3, and Matrix4X4 include the following static functions
   - CreateFromAxisAngle
   - CreateFromQuaternion
   - Transform
     - from a Quaternion
   - CreateFromYawPitchRoll
+- For Matrix4X4
+  - CreateFromAffine (For 3x2 and 3x3 matrices)
+  - CreateFromHomogenous
 - For Matrix4X3 and Matrix4X4 include the following static functions
   - CreateConstrainedBillboardLH
   - CreateConstrainedBillboardRH
