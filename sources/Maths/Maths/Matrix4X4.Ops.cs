@@ -28,7 +28,7 @@ namespace Silk.NET.Maths
 
         /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix3X3{T}"/>.</summary>
         /// <param name="value">The source <see cref="Matrix3X3{T}"/>.</param>
-        public static Matrix4X4<T> CreateFromLinear<T>(Matrix3X3<T> value)
+        public static Matrix4X4<T> CreateFromAffine<T>(Matrix3X3<T> value)
             where T : INumber<T> => new
             (
                 new(value.M11, value.M12, value.M13, T.Zero),
@@ -39,7 +39,7 @@ namespace Silk.NET.Maths
 
         /// <summary>Constructs a <see cref="Matrix4X4{T}"/> from the given <see cref="Matrix3X3{T}"/>.</summary>
         /// <param name="value">The source <see cref="Matrix3X3{T}"/>.</param>
-        public static Matrix4X4<T> CreateFromHomogenous<T>(Matrix3X3<T> value)
+        public static Matrix4X4<T> CreateFromHomogeneous<T>(Matrix3X3<T> value)
             where T : INumber<T> => new
             (
                 new(value.M11, value.M12, T.Zero, value.M13),

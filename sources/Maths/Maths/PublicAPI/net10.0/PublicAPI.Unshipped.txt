@@ -1205,9 +1205,9 @@ static Silk.NET.Maths.Matrix4X4.CreateBillboardRH<T>(Silk.NET.Maths.Vector3D<T> 
 static Silk.NET.Maths.Matrix4X4.CreateConstrainedBillboardLH<T>(Silk.NET.Maths.Vector3D<T> objectPosition, Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> rotateAxis, Silk.NET.Maths.Vector3D<T> cameraForwardVector, Silk.NET.Maths.Vector3D<T> objectForwardVector) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateConstrainedBillboardRH<T>(Silk.NET.Maths.Vector3D<T> objectPosition, Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> rotateAxis, Silk.NET.Maths.Vector3D<T> cameraForwardVector, Silk.NET.Maths.Vector3D<T> objectForwardVector) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateFromAffine<T>(Silk.NET.Maths.Matrix3X2<T> value) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateFromAffine<T>(Silk.NET.Maths.Matrix3X3<T> value) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateFromAxisAngle<T>(Silk.NET.Maths.Vector3D<T> axis, T angle) -> Silk.NET.Maths.Matrix4X4<T>
-static Silk.NET.Maths.Matrix4X4.CreateFromHomogenous<T>(Silk.NET.Maths.Matrix3X3<T> value) -> Silk.NET.Maths.Matrix4X4<T>
-static Silk.NET.Maths.Matrix4X4.CreateFromLinear<T>(Silk.NET.Maths.Matrix3X3<T> value) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.CreateFromHomogeneous<T>(Silk.NET.Maths.Matrix3X3<T> value) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateFromQuaternion<T>(Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateLookAtLH<T>(Silk.NET.Maths.Vector3D<T> cameraPosition, Silk.NET.Maths.Vector3D<T> cameraTarget, Silk.NET.Maths.Vector3D<T> cameraUpVector) -> Silk.NET.Maths.Matrix4X4<T>
