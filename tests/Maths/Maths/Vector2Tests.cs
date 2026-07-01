@@ -522,10 +522,10 @@ namespace Silk.NET.Maths.Tests
             Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
 
             Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+                Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Vector2D<float> expected = Vector2D.Transform(v, m);
             Vector2D<float> actual = Vector2D.Transform(v, q);

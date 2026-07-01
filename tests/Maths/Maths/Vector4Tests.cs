@@ -626,10 +626,10 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
 
             Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+                Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Vector4D<float> expected = Vector4D.Transform(v, m);
             Vector4D<float> actual;
@@ -645,10 +645,10 @@ namespace Silk.NET.Maths.Tests
             Vector4D<float> v = new Vector4D<float>(1.0f, 2.0f, 3.0f, 0.0f);
 
             Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+                Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Vector4D<float> expected = Vector4D.Transform(v, m);
             Vector4D<float> actual = Vector4D.Transform(v, q);
@@ -695,10 +695,10 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
 
             Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+                Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Vector4D<float> expected = Vector4D.Transform(v, m);
             Vector4D<float> actual = Vector4D.Transform(v, q);
@@ -739,10 +739,10 @@ namespace Silk.NET.Maths.Tests
             Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
 
             Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+                Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Vector4D<float> expected = Vector4D.Transform(v, m);
             Vector4D<float> actual = Vector4D.Transform(v, q);

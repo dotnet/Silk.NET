@@ -299,7 +299,7 @@ namespace Silk.NET.Maths.Tests
                 Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f))
                 * Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f))
                 * Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Plane<float> expected = new Plane<float>();
             float x = target.Normal.X,

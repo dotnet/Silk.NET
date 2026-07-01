@@ -318,7 +318,7 @@ namespace Silk.NET.Maths
         public static Matrix4X3<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
-            var q = Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
+            var q = Quaternion.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
         }
 
@@ -1384,7 +1384,7 @@ namespace Silk.NET.Maths
             else
             {
                 // generate the quaternion from the matrix
-                rotation = Quaternion<T>.CreateFromRotationMatrix(matTemp);
+                rotation = Quaternion.CreateFromRotationMatrix(matTemp);
             }
 
             return result;

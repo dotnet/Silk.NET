@@ -155,7 +155,7 @@ namespace Silk.NET.Maths
         public static Matrix2X3<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
-            var q = Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
+            var q = Quaternion.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
         }
 

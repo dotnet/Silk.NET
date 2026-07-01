@@ -468,17 +468,16 @@ Silk.NET.Maths.Plane<T>.Plane() -> void
 Silk.NET.Maths.Plane<T>.Plane(Silk.NET.Maths.Vector3D<T> normal, T distance) -> void
 Silk.NET.Maths.Plane<T>.Plane(Silk.NET.Maths.Vector4D<T> value) -> void
 Silk.NET.Maths.Plane<T>.Plane(T x, T y, T z, T distance) -> void
+Silk.NET.Maths.Quaternion
 Silk.NET.Maths.Quaternion<T>
 Silk.NET.Maths.Quaternion<T>.Angle.get -> T
 Silk.NET.Maths.Quaternion<T>.As<TOther>() -> Silk.NET.Maths.Quaternion<TOther>
 Silk.NET.Maths.Quaternion<T>.AsSpan() -> System.Span<T>
 Silk.NET.Maths.Quaternion<T>.Axis -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Quaternion<T>.Equals(Silk.NET.Maths.Quaternion<T> other) -> bool
-Silk.NET.Maths.Quaternion<T>.Invert() -> void
 Silk.NET.Maths.Quaternion<T>.IsIdentity.get -> bool
 Silk.NET.Maths.Quaternion<T>.Length.get -> T
 Silk.NET.Maths.Quaternion<T>.LengthSquared.get -> T
-Silk.NET.Maths.Quaternion<T>.Normalize() -> void
 Silk.NET.Maths.Quaternion<T>.Quaternion() -> void
 Silk.NET.Maths.Quaternion<T>.Quaternion(Silk.NET.Maths.Vector3D<T> axis, T w) -> void
 Silk.NET.Maths.Quaternion<T>.Quaternion(Silk.NET.Maths.Vector4D<T> components) -> void
@@ -1382,21 +1381,22 @@ static Silk.NET.Maths.Plane<T>.explicit operator Silk.NET.Maths.Plane<ushort>(Si
 static Silk.NET.Maths.Plane<T>.explicit operator System.Numerics.Plane(Silk.NET.Maths.Plane<T> from) -> System.Numerics.Plane
 static Silk.NET.Maths.Plane<T>.operator !=(Silk.NET.Maths.Plane<T> left, Silk.NET.Maths.Plane<T> right) -> bool
 static Silk.NET.Maths.Plane<T>.operator ==(Silk.NET.Maths.Plane<T> left, Silk.NET.Maths.Plane<T> right) -> bool
-static Silk.NET.Maths.Quaternion<T>.Concatenate(Silk.NET.Maths.Quaternion<T> first, Silk.NET.Maths.Quaternion<T> second) -> Silk.NET.Maths.Quaternion<T>
-static Silk.NET.Maths.Quaternion<T>.Conjugate(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>
-static Silk.NET.Maths.Quaternion<T>.CreateFromAxisAngle(Silk.NET.Maths.Vector3D<T> axis, T angle) -> Silk.NET.Maths.Quaternion<T>
-static Silk.NET.Maths.Quaternion<T>.CreateFromRotationMatrix(Silk.NET.Maths.Matrix3X3<T> matrix) -> Silk.NET.Maths.Quaternion<T>
-static Silk.NET.Maths.Quaternion<T>.CreateFromRotationMatrix(Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Quaternion<T>
-static Silk.NET.Maths.Quaternion<T>.CreateFromYawPitchRoll(T yaw, T pitch, T roll) -> Silk.NET.Maths.Quaternion<T>
-static Silk.NET.Maths.Quaternion<T>.Dot(Silk.NET.Maths.Quaternion<T> quaternion1, Silk.NET.Maths.Quaternion<T> quaternion2) -> T
+static Silk.NET.Maths.Quaternion.Concatenate<T>(Silk.NET.Maths.Quaternion<T> first, Silk.NET.Maths.Quaternion<T> second) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion.Conjugate<T>(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion.CreateFromAxisAngle<T>(Silk.NET.Maths.Vector3D<T> axis, T angle) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion.CreateFromRotationMatrix<T>(Silk.NET.Maths.Matrix3X3<T> matrix) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion.CreateFromRotationMatrix<T>(Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion.CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion.Dot<T>(Silk.NET.Maths.Quaternion<T> quaternion1, Silk.NET.Maths.Quaternion<T> quaternion2) -> T
+static Silk.NET.Maths.Quaternion.Invert<T>(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion.Lerp<T>(Silk.NET.Maths.Quaternion<T> value1, Silk.NET.Maths.Quaternion<T> value2, T amount) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion.Normalize<T>(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion.Slerp<T>(Silk.NET.Maths.Quaternion<T> value1, Silk.NET.Maths.Quaternion<T> value2, T amount) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.explicit operator checked Silk.NET.Maths.Quaternion<T>(System.Numerics.Quaternion from) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.explicit operator checked System.Numerics.Quaternion(Silk.NET.Maths.Quaternion<T> from) -> System.Numerics.Quaternion
 static Silk.NET.Maths.Quaternion<T>.explicit operator Silk.NET.Maths.Quaternion<T>(System.Numerics.Quaternion from) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.explicit operator System.Numerics.Quaternion(Silk.NET.Maths.Quaternion<T> from) -> System.Numerics.Quaternion
 static Silk.NET.Maths.Quaternion<T>.Identity.get -> Silk.NET.Maths.Quaternion<T>
-static Silk.NET.Maths.Quaternion<T>.Inverse(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>
-static Silk.NET.Maths.Quaternion<T>.Lerp(Silk.NET.Maths.Quaternion<T> value1, Silk.NET.Maths.Quaternion<T> value2, T amount) -> Silk.NET.Maths.Quaternion<T>
-static Silk.NET.Maths.Quaternion<T>.Normalize(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.operator !=(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> bool
 static Silk.NET.Maths.Quaternion<T>.operator *(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.operator *(Silk.NET.Maths.Quaternion<T> left, T right) -> Silk.NET.Maths.Quaternion<T>
@@ -1405,7 +1405,6 @@ static Silk.NET.Maths.Quaternion<T>.operator -(Silk.NET.Maths.Quaternion<T> valu
 static Silk.NET.Maths.Quaternion<T>.operator -(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.operator /(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.operator ==(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> bool
-static Silk.NET.Maths.Quaternion<T>.Slerp(Silk.NET.Maths.Quaternion<T> value1, Silk.NET.Maths.Quaternion<T> value2, T amount) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.Zero.get -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Ray2D.GetDistanceToLine<T>(this Silk.NET.Maths.Ray2D<T> line, Silk.NET.Maths.Vector2D<T> point) -> T
 static Silk.NET.Maths.Ray2D.GetDistanceToRay<T>(this Silk.NET.Maths.Ray2D<T> ray, Silk.NET.Maths.Vector2D<T> point) -> T
