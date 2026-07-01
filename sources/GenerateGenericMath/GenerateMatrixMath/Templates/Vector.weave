@@ -1,0 +1,533 @@
+@namespace GenerateMatrixMath
+@encode Encode
+@using System.Reflection
+@using GenerateMatrixMath.Model
+@model Vector
+{{
+    var size = model.Size;
+    var fields = Vector.VectorFieldNames.Take(size);
+    var thisType = new { Name = "Vector", model.Size };
+    var numericsName = "Vector" + model.Size;
+    var generateNumericsCast = model.NumericsTypes.Any(t => t.Name == numericsName);
+}}
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+namespace Silk.NET.Maths
+{
+    using System.Collections;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Numerics;
+    using System.Runtime.CompilerServices;
+    using System.Runtime.InteropServices;
+    using System.Text;
+
+    /// <summary>A structure encapsulating a {{= size}}D vector.</summary>
+    public partial struct {{@Name thisType}}<T> :
+        IEquatable<{{@Name thisType}}<T>>,
+        IReadOnlyList<T>,
+        IFormattable,
+        IParsable<{{@Name thisType}}<T>>,
+        ISpanFormattable,
+        ISpanParsable<{{@Name thisType}}<T>>,
+        IUtf8SpanFormattable,
+        IUtf8SpanParsable<{{@Name thisType}}<T>>
+        where T : INumberBase<T>
+    {
+        /// <summary>Gets a vector whose {{= size}} elements are equal to one.</summary>
+        public static {{@Name thisType}}<T> One
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => new(T.One);
+        }
+
+        /// <summary>Returns a vector whose {{= size}} elements are equal to zero.</summary>
+        public static {{@Name thisType}}<T> Zero
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => new(T.Zero);
+        }
+
+        {{each i in Enumerable.Range(0, size)}}
+            /// <summary>Gets the vector ({{each j in Enumerable.Range(0, size)}}{{if i == j}}1{{else}}0{{/if}}{{delimit}}, {{/each}}).</summary>
+            public static {{@Name thisType}}<T> Unit{{= Vector.VectorFieldNames[i]}}
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get => new({{each j in Enumerable.Range(0, size)}}{{if i == j}}T.One{{else}}T.Zero{{/if}}{{delimit}}, {{/each}});
+            }
+
+        {{/each}}
+        {{each f in fields}}
+            /// <summary>The {{= f}} component of the vector.</summary>
+            public T {{= f}};
+
+        {{/each}}
+        /// <summary>The number of elements in the vector.</summary>
+        public int Count => {{= size}};
+
+        /// <inheritdoc/>
+        T IReadOnlyList<T>.this[int index] => this[index];
+
+        ///<summary>Gets the component at the specified index: {{each i in Enumerable.Range(0, size)}}{{= i}} = {{= Vector.VectorFieldNames[i]}}{{delimit}}, {{/each}}. </summary>
+        [UnscopedRef]
+        public ref T this[int index]
+        {
+            get
+            {
+                switch (index)
+                {
+                    {{each i in Enumerable.Range(0, size)}}
+                        case {{= i}}:
+                            return ref {{= Vector.VectorFieldNames[i]}};
+                    {{/each}}
+                }
+
+                throw new ArgumentOutOfRangeException(nameof(index));
+            }
+        }
+
+        /// <summary>Initializes all components of the vector to the same value.</summary>
+        public {{@Name thisType}}(T value) => ({{each f in fields}}{{= f}}{{delimit}}, {{/each}}) = ({{each f in fields}}value{{delimit}}, {{/each}});
+
+        /// <summary>Initializes the vector with individual component values.</summary>
+        public {{@Name thisType}}({{each f in fields}}T {{= f.ToLower()}}{{delimit}}, {{/each}}) => ({{each f in fields}}{{= f}}{{delimit}}, {{/each}}) = ({{each f in fields}}{{= f.ToLower()}}{{delimit}}, {{/each}});
+
+        {{each s in model.Sizes.Where(s => s < size)}}
+            {{
+                var otherType = new { Name = "Vector", Size = s };
+            }}
+            /// <summary> Initializes the vector using a <see cref="{{@Name otherType}}{T}"/> for the initial elements, and the specified {{if size - s == 1}}component{{else}}components{{/if}} for the remainder. </summary>
+            public {{@Name thisType}}({{@Name otherType}}<T> other, {{each f in fields.Skip(s)}}T {{= f.ToLower()}}{{delimit}}, {{/each}}) => ({{each f in fields}}{{= f}}{{delimit}}, {{/each}}) = ({{each i in Enumerable.Range(0, size)}}{{ var f = Vector.VectorFieldNames[i]; }}{{if i < s}}other.{{= f}}{{else}}{{= f.ToLower()}}{{/if}}{{delimit}}, {{/each}});
+
+        {{/each}}
+        /// <summary>Initializes the vector from a span of {{= size}} values.</summary>
+        public {{@Name thisType}}(ReadOnlySpan<T> values)
+        {
+            if (values.Length != {{= size}})
+                throw new ArgumentException("Input span must contain exactly {{= size}} elements.", nameof(values));
+
+            {{each i in Enumerable.Range(0, size)}}
+                {{= Vector.VectorFieldNames[i]}} = values[{{= i}}];
+            {{/each}}
+        }
+
+        /// <inheritdoc/>
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        /// <summary> Returns an enumerator that iterates through the vector components.</summary>
+        public IEnumerator<T> GetEnumerator()
+        {
+            {{each field in fields}}
+                yield return {{= field}};
+            {{/each}}
+        }
+
+        /// <summary>Copies the components of the vector to the specified array starting at index 0.</summary>
+        public void CopyTo(T[] array) => CopyTo(array, 0);
+
+        /// <summary>Copies the components of the vector to the specified array starting at the given index.</summary>
+        public void CopyTo(T[] array, int startIndex)
+        {
+            if (array == null)
+                throw new ArgumentNullException(nameof(array));
+            if (startIndex < 0 || startIndex + {{= size}} > array.Length)
+                throw new ArgumentOutOfRangeException(nameof(startIndex));
+
+            {{each i in Enumerable.Range(0, size)}}
+                array[startIndex{{if i != 0}} + {{= i}}{{/if}}] = {{= Vector.VectorFieldNames[i]}};
+            {{/each}}
+        }
+
+        /// <summary>Copies the components of the vector to the specified span starting at index 0.</summary>
+        public void CopyTo(Span<T> span) => CopyTo(span, 0);
+
+        /// <summary>Copies the components of the vector to the specified span starting at the given index.</summary>
+        public void CopyTo(Span<T> span, int startIndex)
+        {
+            if (startIndex < 0 || startIndex + {{= size}} > span.Length)
+                throw new ArgumentOutOfRangeException(nameof(startIndex));
+
+            {{each i in Enumerable.Range(0, size)}}
+                span[startIndex{{if i != 0}} + {{= i}}{{/if}}] = {{= Vector.VectorFieldNames[i]}};
+            {{/each}}
+        }
+
+        /// <summary>Returns a span over the vector components.</summary>
+        public Span<T> AsSpan() => MemoryMarshal.CreateSpan(ref {{= Vector.VectorFieldNames[0]}}, {{= size}});
+
+        /// <summary>Formats the vector as a string.</summary>
+        /// <returns>The string representation.</returns>
+        public override string ToString() =>
+            $"<{{each f in fields}}{{= "{" }}{{= f}}{{= "}"}}{{delimit}}, {{/each}}>";
+
+        /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
+        /// <returns>The string representation.</returns>
+        public string ToString(string? format, IFormatProvider? formatProvider = null) =>
+            $"<{{each f in fields}}{{= "{" }}{{= f}}.ToString(format, formatProvider){{= "}"}}{{delimit}}, {{/each}}>";
+
+        /// <summary>Parses a string to a <see cref="{{@Name thisType}}{T}"/> instance.</summary>
+        public static {{@Name thisType}}<T> Parse(string s, IFormatProvider? provider) => Parse(s.AsSpan(), provider);
+
+        /// <summary>Parses a span to a <see cref="{{@Name thisType}}{T}"/> instance.</summary>
+        public static {{@Name thisType}}<T> Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
+        {
+            if (!TryParse(s, provider, out var result))
+                throw new FormatException("Invalid format for {{@Name thisType}}.");
+
+            return result;
+        }
+
+        /// <summary>Formats the vector as a UTF-8 string using the specified format and format provider.</summary>
+        public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
+        {
+            {{each f in fields}}
+                Span<char> {{= f.ToLower()}}Buffer = stackalloc char[64];
+            {{/each}}
+
+            if ({{each f in fields}}!{{= f}}.TryFormat({{= f.ToLower()}}Buffer, out int {{= f.ToLower()}}Chars, format, provider){{delimit}}||
+                {{/each}})
+            {
+                bytesWritten = 0;
+                return false;
+            }
+
+            int estimatedSize = {{each f in fields}}Encoding.UTF8.GetByteCount({{= f.ToLower()}}Buffer[..{{= f.ToLower()}}Chars]) +
+                                {{/each}}Encoding.UTF8.GetByteCount("<, >");
+
+            if (utf8Destination.Length < estimatedSize)
+            {
+                bytesWritten = 0;
+                return false;
+            }
+
+            int totalBytes = 0;
+
+            totalBytes += Encoding.UTF8.GetBytes("<", utf8Destination[totalBytes..]);
+            {{each f in fields}}
+                totalBytes += Encoding.UTF8.GetBytes({{= f.ToLower()}}Buffer[..{{= f.ToLower()}}Chars], utf8Destination[totalBytes..]);
+            {{delimit}}
+                totalBytes += Encoding.UTF8.GetBytes(", ", utf8Destination[totalBytes..]);
+            {{/each}}
+            totalBytes += Encoding.UTF8.GetBytes(">", utf8Destination[totalBytes..]);
+
+            bytesWritten = totalBytes;
+            return true;
+        }
+
+        /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
+        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
+        {
+            {{each f in fields}}
+                Span<char> {{= f.ToLower()}}Buffer = stackalloc char[64];
+            {{/each}}
+
+            if ({{each f in fields}}!{{= f}}.TryFormat({{= f.ToLower()}}Buffer, out int {{= f.ToLower()}}Chars, format, provider){{delimit}} ||
+                {{/each}})
+            {
+                charsWritten = 0;
+                return false;
+            }
+
+            int requiredLength = 1 + {{each f in fields}}{{= f.ToLower()}}Chars{{delimit}} + 2 + {{/each}} + 1;
+
+            if (destination.Length < requiredLength)
+            {
+                charsWritten = 0;
+                return false;
+            }
+
+            int pos = 0;
+            destination[pos++] = '<';
+
+            {{each f in fields}}
+                {{= f.ToLower()}}Buffer[..{{= f.ToLower()}}Chars].CopyTo(destination[pos..]);
+                pos += {{= f.ToLower()}}Chars;
+
+            {{delimit}}
+                destination[pos++] = ',';
+                destination[pos++] = ' ';
+
+            {{/each}}
+            destination[pos++] = '>';
+
+            charsWritten = pos;
+            return true;
+        }
+
+        /// <summary>Tries to parse a span to a <see cref="{{@Name thisType}}{T}"/> instance.</summary>
+        public static bool TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, [MaybeNullWhen(false)] out {{@Name thisType}}<T> result)
+        {
+            result = default;
+
+            s = s.Trim();
+            if (s.Length < {{= 2 + (size - 1) * 2}} || s[0] != '<' || s[^1] != '>')
+                return false;
+
+            s = s[1..^1]; // Remove < and >
+
+            int commaX = s.IndexOf(',');
+            if (commaX < 0)
+                return false;
+            {{each i in Enumerable.Range(1, size - 2)}}
+
+                ReadOnlySpan<char> remainder{{= i}} = s.Slice(comma{{= Vector.VectorFieldNames[i - 1]}} + 1);
+                int comma{{= Vector.VectorFieldNames[i]}}Relative = remainder{{= i}}.IndexOf(',');
+                if (comma{{= Vector.VectorFieldNames[i]}}Relative < 0)
+                    return false;
+                int comma{{= Vector.VectorFieldNames[i]}} = comma{{= Vector.VectorFieldNames[i - 1]}} + 1 + comma{{= Vector.VectorFieldNames[i]}}Relative;
+            {{/each}}
+
+            ReadOnlySpan<char> xSpan = s[..commaX].Trim();
+            {{each i in Enumerable.Range(1, size - 1)}}
+                ReadOnlySpan<char> {{= Vector.VectorFieldNames[i].ToLower()}}Span = s[(comma{{= Vector.VectorFieldNames[i - 1]}} + 1)..{{if i < size - 1}}comma{{= Vector.VectorFieldNames[i]}}{{/if}}].Trim();
+            {{/each}}
+
+            if ({{each f in fields}}T.TryParse({{= f.ToLower()}}Span, provider, out var {{= f.ToLower()}}){{delimit}} &&
+                {{/each}})
+            {
+                result = new {{@Name thisType}}<T>({{each f in fields}}{{= f.ToLower()}}{{delimit}}, {{/each}});
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>Parses a UTF-8 span to a <see cref="{{@Name thisType}}{T}"/> instance.</summary>
+        public static {{@Name thisType}}<T> Parse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider)
+        {
+            int charCount = Encoding.UTF8.GetCharCount(utf8Text);
+            Span<char> charBuffer = charCount <= 128 ? stackalloc char[charCount] : new char[charCount];
+            Encoding.UTF8.GetChars(utf8Text, charBuffer);
+            return Parse(charBuffer, provider);
+        }
+
+        /// <summary>Tries to parse a UTF-8 span to a <see cref="{{@Name thisType}}{T}"/> instance.</summary>
+        public static bool TryParse(ReadOnlySpan<byte> utf8Text, IFormatProvider? provider, [MaybeNullWhen(false)] out {{@Name thisType}}<T> result)
+        {
+            int charCount = Encoding.UTF8.GetCharCount(utf8Text);
+            Span<char> charBuffer = charCount <= 128 ? stackalloc char[charCount] : new char[charCount];
+            Encoding.UTF8.GetChars(utf8Text, charBuffer);
+            return TryParse(charBuffer, provider, out result);
+        }
+
+        /// <summary>Tries to parse a string to a <see cref="{{@Name thisType}}{T}"/> instance.</summary>
+        public static bool TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out {{@Name thisType}}<T> result) =>
+            TryParse(s.AsSpan(), provider, out result);
+
+        /// <summary>Parses a span to a <see cref="{{@Name thisType}}{T}"/> instance.</summary>
+        static {{@Name thisType}}<T> ISpanParsable<{{@Name thisType}}<T>>.Parse(ReadOnlySpan<char> s, IFormatProvider? provider) =>
+            Parse(s, provider);
+
+        /// <summary>Parses a string to a <see cref="{{@Name thisType}}{T}"/> instance.</summary>
+        static {{@Name thisType}}<T> IParsable<{{@Name thisType}}<T>>.Parse(string s, IFormatProvider? provider) =>
+            Parse(s, provider);
+
+        /// <summary>Tries to parse a span to a <see cref="{{@Name thisType}}{T}"/> instance.</summary>
+        static bool ISpanParsable<{{@Name thisType}}<T>>.TryParse(ReadOnlySpan<char> s, IFormatProvider? provider, [MaybeNullWhen(false)] out {{@Name thisType}}<T> result) =>
+            TryParse(s, provider, out result);
+
+        /// <summary>Tries to parse a string to a <see cref="{{@Name thisType}}{T}"/> instance.</summary>
+        static bool IParsable<{{@Name thisType}}<T>>.TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out {{@Name thisType}}<T> result) =>
+            TryParse(s, provider, out result);
+
+        /// <inheridoc/>
+        public override bool Equals(object? obj) => obj is {{@Name thisType}}<T> other && Equals(other);
+
+        /// <inheridoc/>
+        public bool Equals({{@Name thisType}}<T> other) =>
+            {{each f in fields}}{{= f}}.Equals(other.{{= f}}){{delimit}} &&
+            {{/each}};
+
+        /// <summary>Returns a boolean indicating whether the given two vectors are equal.</summary>
+        /// <param name="left">The first vector to compare.</param>
+        /// <param name="right">The second vector to compare.</param>
+        /// <returns><c>true</c> if the given vectors are equal; <c>false</c> otherwise.</returns>
+        public static bool operator ==({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+            {{each f in fields}}left.{{= f}} == right.{{= f}}{{delimit}} &&
+            {{/each}};
+
+        /// <summary>Returns a boolean indicating whether the given two vectors are not equal.</summary>
+        /// <param name="left">The first vector to compare.</param>
+        /// <param name="right">The second vector to compare.</param>
+        /// <returns><c>true</c> if the given vectors are not equal; <c>false</c> otherwise.</returns>
+        public static bool operator !=({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+            {{each f in fields}}left.{{= f}} != right.{{= f}}{{delimit}} ||
+            {{/each}};
+
+        /// <inheridoc/>
+        public override int GetHashCode() => HashCode.Combine({{each f in fields}}{{= f}}{{delimit}}, {{/each}});
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static {{@Name thisType}}<T> CreateChecked<TOther>({{@Name thisType}}<TOther> source)
+            where TOther : INumberBase<TOther> =>
+            new({{each f in fields}}T.CreateChecked(source.{{= f}}){{delimit}}, {{/each}});
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static {{@Name thisType}}<T> CreateSaturating<TOther>({{@Name thisType}}<TOther> source)
+            where TOther : INumberBase<TOther> =>
+            new({{each f in fields}}T.CreateSaturating(source.{{= f}}){{delimit}}, {{/each}});
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public static {{@Name thisType}}<T> CreateTruncating<TOther>({{@Name thisType}}<TOther> source)
+            where TOther : INumberBase<TOther> =>
+            new({{each f in fields}}T.CreateTruncating(source.{{= f}}){{delimit}}, {{/each}});
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
+        public {{@Name thisType}}<TOther> As<TOther>()
+            where TOther : INumberBase<TOther> =>
+            {{@Name thisType}}<TOther>.CreateTruncating(this);
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public {{@Name thisType}}<TOther> AsChecked<TOther>()
+            where TOther : INumberBase<TOther> =>
+            {{@Name thisType}}<TOther>.CreateChecked(this);
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public {{@Name thisType}}<TOther> AsSaturating<TOther>()
+            where TOther : INumberBase<TOther> =>
+            {{@Name thisType}}<TOther>.CreateSaturating(this);
+
+        /// <summary>Converts the components of this vector to another type.</summary>
+        public {{@Name thisType}}<TOther> AsTruncating<TOther>()
+            where TOther : INumberBase<TOther> =>
+            {{@Name thisType}}<TOther>.CreateTruncating(this);
+
+        /// <summary>Implicitly casts a <see cref="ValueTuple{{= "{"}}{{each f in fields}}T{{delimit}}, {{/each}}{{= "}"}}"/> to a <see cref="{{@Name thisType}}{T}"/>.</summary>
+        public static implicit operator {{@Name thisType}}<T>(({{each f in fields}}T {{= f}}{{delimit}}, {{/each}}) value) =>
+            new({{each f in fields}}value.{{= f}}{{delimit}}, {{/each}});
+
+        /// <summary>Implicitly casts a <see cref="{{@Name thisType}}{T}"/> to a <see cref="ValueTuple{{= "{"}}{{each f in fields}}T{{delimit}}, {{/each}}{{= "}"}}"/>.</summary>
+        public static implicit operator ({{each f in fields}}T {{= f}}{{delimit}}, {{/each}})({{@Name thisType}}<T> value) =>
+            ({{each f in fields}}value.{{= f}}{{delimit}}, {{/each}});
+
+        {{each smaller in model.Sizes.Where(s => s < size)}}
+            {{
+                var smallerType = new { Name = "Vector", Size = smaller };
+            }}
+            /// <summary>Explicitly casts a <see cref="{{@Name thisType}}{T}"/> to a <see cref="{{@Name smallerType}}{T}"/> .</summary>
+            public static explicit operator {{@Name smallerType}}<T>({{@Name thisType}}<T> value) =>
+                new({{each f in Vector.VectorFieldNames.Take(smaller)}}value.{{= f}}{{delimit}}, {{/each}});
+
+            /// <summary>Explicitly casts a <see cref="{{@Name smallerType}}{T}"/> to a <see cref="{{@Name thisType}}{T}"/>.</summary>
+            public static explicit operator {{@Name thisType}}<T>({{@Name smallerType}}<T> value) =>
+                new({{each i in Enumerable.Range(1, size)}}{{if i <= smaller}}value.{{= Vector.VectorFieldNames[i - 1]}}{{else}}T.Zero{{/if}}{{delimit}}, {{/each}});
+
+        {{/each}}
+        /// <summary>Returns the given vector.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The source vector.</returns>
+        public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> vector) =>
+            vector;
+
+        /// <summary>Negates a given vector.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The negated vector.</returns>
+        public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> vector) =>
+            new({{each f in fields}}-vector.{{= f}}{{delimit}}, {{/each}});
+
+        /// <summary>Adds two vectors together.</summary>
+        /// <param name="left">The first source vector.</param>
+        /// <param name="right">The second source vector.</param>
+        /// <returns>The summed vector.</returns>
+        public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+            new({{each f in fields}}left.{{= f}} + right.{{= f}}{{delimit}}, {{/each}});
+
+        /// <summary>Subtracts the second vector from the first.</summary>
+        /// <param name="left">The first source vector.</param>
+        /// <param name="right">The second source vector.</param>
+        /// <returns>The difference vector.</returns>
+        public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+            new({{each f in fields}}left.{{= f}} - right.{{= f}}{{delimit}}, {{/each}});
+
+        /// <summary>Multiplies two vectors together.</summary>
+        /// <param name="left">The first source vector.</param>
+        /// <param name="right">The second source vector.</param>
+        /// <returns>The product vector.</returns>
+        public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+            new({{each f in fields}}left.{{= f}} * right.{{= f}}{{delimit}}, {{/each}});
+
+        /// <summary>Divides the first vector by the second.</summary>
+        /// <param name="left">The first source vector.</param>
+        /// <param name="right">The second source vector.</param>
+        /// <returns>The vector resulting from the division.</returns>
+        public static {{@Name thisType}}<T> operator /({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+            new({{each f in fields}}left.{{= f}} / right.{{= f}}{{delimit}}, {{/each}});
+
+        /// <summary>Adds a scalar to the components of a vector.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="scalar">The scalar value.</param>
+        /// <returns>The offset vector.</returns>
+        public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> vector, T scalar) =>
+            new({{each f in fields}}vector.{{= f}} + scalar{{delimit}}, {{/each}});
+
+        /// <summary>Subtracts a scalar from the components of a vector.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="scalar">The scalar value.</param>
+        /// <returns>The offset vector.</returns>
+        public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> vector, T scalar) =>
+            new({{each f in fields}}vector.{{= f}} - scalar{{delimit}}, {{/each}});
+
+        /// <summary>Multiplies a vector by the given scalar.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="scalar">The scalar value.</param>
+        /// <returns>The scaled vector.</returns>
+        public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> vector, T scalar) =>
+            new({{each f in fields}}vector.{{= f}} * scalar{{delimit}}, {{/each}});
+
+        /// <summary>Multiplies a vector by the given scalar.</summary>
+        /// <param name="scalar">The scalar value.</param>
+        /// <param name="vector">The source vector.</param>
+        /// <returns>The scaled vector.</returns>
+        public static {{@Name thisType}}<T> operator *(T scalar, {{@Name thisType}}<T> vector) =>
+            new({{each f in fields}}scalar * vector.{{= f}}{{delimit}}, {{/each}});
+
+        /// <summary>Divides the vector by the given scalar.</summary>
+        /// <param name="vector">The source vector.</param>
+        /// <param name="scalar">The scalar value.</param>
+        /// <returns>The result of the division.</returns>
+        public static {{@Name thisType}}<T> operator /({{@Name thisType}}<T> vector, T scalar) =>
+            new({{each f in fields}}vector.{{= f}} / scalar{{delimit}}, {{/each}});
+
+        {{if generateNumericsCast}}
+            /// <summary>Converts a <see cref="{{= numericsName}}"/> to a <see cref="{{@Name thisType}}{T}"/>.</summary>
+            public static explicit operator {{@Name thisType}}<T>({{= numericsName}} from) =>
+                new({{each f in fields}}T.CreateTruncating(from.{{= f}}){{delimit}}, {{/each}});
+
+            /// <summary>Converts a <see cref="{{= numericsName}}"/> to a <see cref="{{@Name thisType}}{T}"/>.</summary>
+            public static explicit operator checked {{@Name thisType}}<T>({{= numericsName}} from) =>
+                new({{each f in fields}}T.CreateChecked(from.{{= f}}){{delimit}}, {{/each}});
+
+            /// <summary>Converts a <see cref="{{@Name thisType}}{T}"/> to <see cref="{{= numericsName}}"/>.</summary>
+            public static explicit operator {{= numericsName}}({{@Name thisType}}<T> from) =>
+                new({{each f in fields}}float.CreateTruncating(from.{{= f}}){{delimit}}, {{/each}});
+
+            /// <summary>Converts a <see cref="{{@Name thisType}}{T}"/> to <see cref="{{= numericsName}}"/>.</summary>
+            public static explicit operator checked {{= numericsName}}({{@Name thisType}}<T> from) =>
+                new({{each f in fields}}float.CreateChecked(from.{{= f}}){{delimit}}, {{/each}});
+
+        {{/if}}
+        {{each type in model.Casts}}
+            {{
+                var typeName = type.ToCSharpString();
+            }}
+            /// <summary>
+            /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="{{= typeName}}"/>.
+            /// </summary>
+            /// <param name="from">The source vector.</param>
+            /// <returns>The <see cref="{{= typeName}}"/> vector.</returns>
+            public static explicit operator {{@Name thisType}}<{{= typeName}}>({{@Name thisType}}<T> from) =>
+                {{@Name thisType}}<{{= typeName}}>.CreateTruncating(from);
+
+            /// <summary>
+            /// Converts a vector of <typeparamref name="T"/> into one with an underlying type of <see cref="{{= typeName}}"/>.
+            /// </summary>
+            /// <param name="from">The source vector.</param>
+            /// <returns>The <see cref="{{= typeName}}"/> vector.</returns>
+            public static explicit operator checked {{@Name thisType}}<{{= typeName}}>({{@Name thisType}}<T> from) =>
+                {{@Name thisType}}<{{= typeName}}>.CreateChecked(from);
+        {{delimit}}
+
+        {{/each}}
+    }
+}

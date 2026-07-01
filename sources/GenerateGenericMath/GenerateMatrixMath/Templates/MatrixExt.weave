@@ -1,0 +1,125 @@
+@namespace GenerateMatrixMath
+@using GenerateMatrixMath.Model
+@model Matrix
+{{
+    var size = model.Size;
+    var rows = Enumerable.Range(1, size.Rows);
+    var cols = Enumerable.Range(1, size.Columns);
+    var cells = (from r in rows
+                 from c in cols
+                 select new { Row = r, Column = c }).Select((v, i) => new { v.Row, v.Column, Index = i });
+    var rowsWithCells =
+        from c in cells
+        group c by c.Row;
+
+    var thisType = new { Name = "Matrix", model.Size };
+    var rowType = new { Name = "Vector", Size = size.Columns };
+    var columnType = new { Name = "Vector", Size = size.Rows };
+}}
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+namespace Silk.NET.Maths
+{
+    using System.Numerics;
+
+    /// <summary>
+    /// Methods for working with <see cref="{{@Name thisType}}{T}"/>.
+    /// </summary>
+    public static partial class {{@Name thisType}}
+    {
+        /// <summary>Linearly interpolates between the corresponding values of two matrices.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <param name="amount">The relative weight of the second source matrix.</param>
+        /// <returns>The interpolated matrix.</returns>
+        public static {{@Name thisType}}<T> Lerp<T>({{@Name thisType}}<T> value1, {{@Name thisType}}<T> value2, T amount)
+            where T : IFloatingPointIeee754<T> =>
+            new({{each r in rows}}{{@Name rowType}}.Lerp(value1.Row{{= r}}, value2.Row{{= r}}, amount){{delimit}},
+                {{/each}});
+
+        /// <summary>Adds two matrices together.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the addition.</returns>
+        public static {{@Name thisType}}<T> Add<T>({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            where T : INumberBase<T> =>
+            left + right;
+
+        /// <summary>Returns a negated copy of the specified matrix.</summary>
+        /// <param name="value">The source matrix.</param>
+        /// <returns>The negated matrix.</returns>
+        public static {{@Name thisType}}<T> Negate<T>({{@Name thisType}}<T> value)
+            where T : INumberBase<T> =>
+            -value;
+
+        /// <summary>Subtracts the second matrix from the first.</summary>
+        /// <param name="left">The first source matrix.</param>
+        /// <param name="right">The second source matrix.</param>
+        /// <returns>The result of the subtraction.</returns>
+        public static {{@Name thisType}}<T> Subtract<T>({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            where T : INumberBase<T> =>
+            left - right;
+
+        /// <summary>Multiplies a matrix by a scalar value.</summary>
+        /// <param name="left">The source matrix.</param>
+        /// <param name="right">The scaling factor.</param>
+        /// <returns>The scaled matrix.</returns>
+        public static {{@Name thisType}}<T> Multiply<T>({{@Name thisType}}<T> left, T right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        /// <summary>Multiplies a matrix by a scalar value.</summary>
+        /// <param name="left">The scaling factor.</param>
+        /// <param name="right">The source matrix.</param>
+        /// <returns>The scaled matrix.</returns>
+        public static {{@Name thisType}}<T> Multiply<T>(T left, {{@Name thisType}}<T> right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        {{if size.Columns < 5 && size.Rows < 5}}
+            {{
+                var outputType = new { Name = "Vector", Size = size.Columns };
+            }}
+            /// <summary>Multiplies a matrix by another matrix.</summary>
+            /// <param name="rowVector">The first source matrix, expressed as a row vector.</param>
+            /// <param name="matrix">The second source matrix.</param>
+            /// <returns>The result of the multiplication as a column vector.</returns>
+            public static {{@Name outputType}}<T> Multiply<T>({{@Name columnType}}<T> rowVector, {{@Name thisType}}<T> matrix)
+                where T : INumberBase<T> =>
+                rowVector * matrix;
+
+        {{/if}}
+        {{if size.Rows < 5}}
+            {{
+                var outputType = new { Name = "Vector", Size = size.Rows };
+            }}
+            /// <summary>Multiplies a matrix by another matrix.</summary>
+            /// <param name="matrix">The first source matrix.</param>
+            /// <param name="columnVector">The second source matrix, expressed as a column vector.</param>
+            /// <returns>The result of the multiplication as a row vector.</returns>
+            public static {{@Name outputType}}<T> Multiply<T>({{@Name thisType}}<T> matrix, {{@Name rowType}}<T> columnVector)
+                where T : INumberBase<T> =>
+                matrix * columnVector;
+
+        {{/if}}
+        {{each mul in model.MultiplyFunctions}}
+            {{
+                var middleSize = mul.Left.Columns;
+                var outputSize = new Dimension(mul.Left.Rows, mul.Right.Columns);
+                var outputType = new { Name = "Matrix", Size = outputSize };
+                var leftType = new { Name = "Matrix", Size = mul.Left };
+                var rightType = new { Name = "Matrix", Size = mul.Right };
+            }}
+            /// <summary>Multiplies a matrix by another matrix.</summary>
+            /// <param name="left">The first source matrix.</param>
+            /// <param name="right">The second source matrix.</param>
+            /// <returns>The result of the multiplication.</returns>
+            public static {{@Name outputType}}<T> Multiply<T>({{@Name leftType}}<T> left, {{@Name rightType}}<T> right)
+                where T : INumberBase<T> =>
+                left * right;
+        {{delimit}}
+
+        {{/each}}
+    }
+}
