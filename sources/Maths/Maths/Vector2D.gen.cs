@@ -20,7 +20,7 @@ namespace Silk.NET.Maths
         ISpanParsable<Vector2D<T>>,
         IUtf8SpanFormattable,
         IUtf8SpanParsable<Vector2D<T>>
-        where T : INumberBase<T>
+        where T : INumberBase<T>, IUtf8SpanFormattable
     {
         /// <summary>Gets a vector whose 2 elements are equal to one.</summary>
         public static Vector2D<T> One
@@ -162,74 +162,66 @@ namespace Silk.NET.Maths
         /// <summary>Formats the vector as a UTF-8 string using the specified format and format provider.</summary>
         public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
         {
-            Span<char> xBuffer = stackalloc char[64];
-            Span<char> yBuffer = stackalloc char[64];
-
-            if (!X.TryFormat(xBuffer, out int xChars, format, provider)||
-                !Y.TryFormat(yBuffer, out int yChars, format, provider))
+            ValueUtf8StringBuilder vsb = new ValueUtf8StringBuilder(provider, utf8Destination);
+            if (!vsb.AppendLiteral("<"u8))
             {
-                bytesWritten = 0;
+                bytesWritten = vsb.BytesWritten;
                 return false;
             }
-
-            int estimatedSize = Encoding.UTF8.GetByteCount(xBuffer[..xChars]) +
-                                Encoding.UTF8.GetByteCount(yBuffer[..yChars]) +
-                                Encoding.UTF8.GetByteCount("<, >");
-
-            if (utf8Destination.Length < estimatedSize)
+            if (!vsb.AppendFormatted(X, format))
             {
-                bytesWritten = 0;
+                bytesWritten = vsb.BytesWritten;
                 return false;
             }
-
-            int totalBytes = 0;
-
-            totalBytes += Encoding.UTF8.GetBytes("<", utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(xBuffer[..xChars], utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(", ", utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(yBuffer[..yChars], utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(">", utf8Destination[totalBytes..]);
-
-            bytesWritten = totalBytes;
+            if (!vsb.AppendLiteral(", "u8))
+            {
+                bytesWritten = vsb.BytesWritten;
+                return false;
+            }
+            if (!vsb.AppendFormatted(Y, format))
+            {
+                bytesWritten = vsb.BytesWritten;
+                return false;
+            }
+            if (!vsb.AppendLiteral(">"u8))
+            {
+                bytesWritten = vsb.BytesWritten;
+                return false;
+            }
+            bytesWritten = vsb.BytesWritten;
             return true;
         }
 
         /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
         public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
         {
-            Span<char> xBuffer = stackalloc char[64];
-            Span<char> yBuffer = stackalloc char[64];
-
-            if (!X.TryFormat(xBuffer, out int xChars, format, provider) ||
-                !Y.TryFormat(yBuffer, out int yChars, format, provider))
+            ValueStringBuilder vsb = new ValueStringBuilder(provider, destination);
+            if (!vsb.AppendLiteral("<"))
             {
-                charsWritten = 0;
+                charsWritten = vsb.CharsWritten;
                 return false;
             }
-
-            int requiredLength = 1 + xChars + 2 + yChars + 1;
-
-            if (destination.Length < requiredLength)
+            if (!vsb.AppendFormatted(X, format))
             {
-                charsWritten = 0;
+                charsWritten = vsb.CharsWritten;
                 return false;
             }
-
-            int pos = 0;
-            destination[pos++] = '<';
-
-            xBuffer[..xChars].CopyTo(destination[pos..]);
-            pos += xChars;
-
-            destination[pos++] = ',';
-            destination[pos++] = ' ';
-
-            yBuffer[..yChars].CopyTo(destination[pos..]);
-            pos += yChars;
-
-            destination[pos++] = '>';
-
-            charsWritten = pos;
+            if (!vsb.AppendLiteral(", "))
+            {
+                charsWritten = vsb.CharsWritten;
+                return false;
+            }
+            if (!vsb.AppendFormatted(Y, format))
+            {
+                charsWritten = vsb.CharsWritten;
+                return false;
+            }
+            if (!vsb.AppendLiteral(">"))
+            {
+                charsWritten = vsb.CharsWritten;
+                return false;
+            }
+            charsWritten = vsb.CharsWritten;
             return true;
         }
 

@@ -4,6 +4,7 @@
 using System;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Text;
 using Xunit;
 
 namespace Silk.NET.Maths.Tests
@@ -94,6 +95,56 @@ namespace Silk.NET.Maths.Tests
                 , "<{1:c}{0} {2:c}{0} {3:c}>"
                 , separator, 2, 3, 3.3);
             Assert.Equal(expectedv3formatted, v3strformatted);
+        }
+
+        [Fact]
+        public void Vector3TryFormatCharTest()
+        {
+            CultureInfo enUsCultureInfo = new CultureInfo("en-US");
+            Vector3D<float> v1 = new Vector3D<float>(2.0f, 3.0f, 3.3f);
+
+            Span<char> dest = stackalloc char[128];
+            bool result = v1.TryFormat(dest, out int charsWritten, "G", enUsCultureInfo);
+            Assert.True(result);
+            string actual = dest[..charsWritten].ToString();
+            string separator = enUsCultureInfo.NumberFormat.NumberGroupSeparator;
+            string expected = string.Format(enUsCultureInfo, "<{1:G}{0} {2:G}{0} {3:G}>", separator, 2, 3, 3.3);
+            Assert.Equal(expected, actual);
+
+            result = v1.TryFormat(dest, out charsWritten, "c", enUsCultureInfo);
+            Assert.True(result);
+            actual = dest[..charsWritten].ToString();
+            expected = string.Format(enUsCultureInfo, "<{1:c}{0} {2:c}{0} {3:c}>", separator, 2, 3, 3.3);
+            Assert.Equal(expected, actual);
+
+            Span<char> smallDest = stackalloc char[3];
+            result = v1.TryFormat(smallDest, out charsWritten, "G", enUsCultureInfo);
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void Vector3TryFormatUtf8Test()
+        {
+            CultureInfo enUsCultureInfo = new CultureInfo("en-US");
+            Vector3D<float> v1 = new Vector3D<float>(2.0f, 3.0f, 3.3f);
+
+            Span<byte> dest = stackalloc byte[128];
+            bool result = v1.TryFormat(dest, out int bytesWritten, "G", enUsCultureInfo);
+            Assert.True(result);
+            string separator = enUsCultureInfo.NumberFormat.NumberGroupSeparator;
+            string expected = string.Format(enUsCultureInfo, "<{1:G}{0} {2:G}{0} {3:G}>", separator, 2, 3, 3.3);
+            byte[] expectedBytes = Encoding.UTF8.GetBytes(expected);
+            Assert.True(dest[..bytesWritten].SequenceEqual(expectedBytes));
+
+            result = v1.TryFormat(dest, out bytesWritten, "c", enUsCultureInfo);
+            Assert.True(result);
+            expected = string.Format(enUsCultureInfo, "<{1:c}{0} {2:c}{0} {3:c}>", separator, 2, 3, 3.3);
+            expectedBytes = Encoding.UTF8.GetBytes(expected);
+            Assert.True(dest[..bytesWritten].SequenceEqual(expectedBytes));
+
+            Span<byte> smallDest = stackalloc byte[3];
+            result = v1.TryFormat(smallDest, out bytesWritten, "G", enUsCultureInfo);
+            Assert.False(result);
         }
 
         // A test for Cross (Vector3D<float>f, Vector3D<float>f)
