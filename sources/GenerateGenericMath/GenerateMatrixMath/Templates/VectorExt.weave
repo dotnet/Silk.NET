@@ -17,6 +17,7 @@
 namespace Silk.NET.Maths
 {
     using System.Numerics;
+    using System.Runtime.CompilerServices;
     using System.Runtime.Intrinsics;
 
     /// <summary>
@@ -29,7 +30,19 @@ namespace Silk.NET.Maths
             where TSelf : IRootFunctions<TSelf>
         {
             /// <summary>Gets the length of the vector.</summary>
-            public TSelf Length => TSelf.Sqrt(vector.LengthSquared);
+            {{if generateNumericsCast}}
+                public TSelf Length
+                {
+                    get
+                    {
+                        if (typeof(TSelf) == typeof(float))
+                            return Unsafe.BitCast<float, TSelf>(Unsafe.BitCast<{{@Name thisType}}<TSelf>, {{= numericsName}}>(vector).Length());
+                        return TSelf.Sqrt(vector.LengthSquared);
+                    }
+                }
+            {{else}}
+                public TSelf Length => TSelf.Sqrt(vector.LengthSquared);
+            {{/if}}
         }
 
         /// <summary>Extensions for vectors with elements implementing <see cref="INumberBase{TSelf}"/>.</summary>
@@ -37,7 +50,19 @@ namespace Silk.NET.Maths
             where TSelf : INumberBase<TSelf>
         {
             /// <summary>Gets the length squared of the vector.</summary>
-            public TSelf LengthSquared => {{@Name thisType}}.Dot(vector, vector);
+            {{if generateNumericsCast}}
+                public TSelf LengthSquared
+                {
+                    get
+                    {
+                        if (typeof(TSelf) == typeof(float))
+                            return Unsafe.BitCast<float, TSelf>(Unsafe.BitCast<{{@Name thisType}}<TSelf>, {{= numericsName}}>(vector).LengthSquared());
+                        return {{@Name thisType}}.Dot(vector, vector);
+                    }
+                }
+            {{else}}
+                public TSelf LengthSquared => {{@Name thisType}}.Dot(vector, vector);
+            {{/if}}
         }
 
         /// <summary>Extensions for vectors with elements implementing <see cref="IBitwiseOperators{TSelf, TSelf, TSelf}"/>.</summary>
@@ -127,41 +152,93 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Computes the dot product of two vectors.</summary>
-        public static T Dot<T>({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
-            where T : INumberBase<T> =>
-            {{each f in fields}}left.{{= f}} * right.{{= f}}{{delimit}} + {{/each}};
+        {{if generateNumericsCast}}
+            public static T Dot<T>({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+                where T : INumberBase<T>
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<float, T>({{= numericsName}}.Dot(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left), Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right)));
+                return {{each f in fields}}left.{{= f}} * right.{{= f}}{{delimit}} + {{/each}};
+            }
+        {{else}}
+            public static T Dot<T>({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+                where T : INumberBase<T> =>
+                {{each f in fields}}left.{{= f}} * right.{{= f}}{{delimit}} + {{/each}};
+        {{/if}}
 
         /// <summary>Reflects a vector over a normal vector.</summary>
+        {{if generateNumericsCast && size < 4}}
+            public static {{@Name thisType}}<T> Reflect<T>({{@Name thisType}}<T> vector, {{@Name thisType}}<T> normal)
+                where T : INumberBase<T>
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>({{= numericsName}}.Reflect(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(vector), Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(normal)));
+                T dot = Dot(vector, normal);
+                return vector - (normal * (dot + dot));
+            }
+        {{else}}
         public static {{@Name thisType}}<T> Reflect<T>({{@Name thisType}}<T> vector, {{@Name thisType}}<T> normal)
             where T : INumberBase<T>
         {
             T dot = Dot(vector, normal);
             return vector - (normal * (dot + dot));
         }
+        {{/if}}
 
         /// <summary>Normalizes a vector.</summary>
-        public static {{@Name thisType}}<T> Normalize<T>(this {{@Name thisType}}<T> vector)
-            where T : IRootFunctions<T> =>
-            vector / vector.Length;
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> Normalize<T>(this {{@Name thisType}}<T> vector)
+                where T : IRootFunctions<T>
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>({{= numericsName}}.Normalize(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(vector)));
+                return vector / vector.Length;
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> Normalize<T>(this {{@Name thisType}}<T> vector)
+                where T : IRootFunctions<T> =>
+                vector / vector.Length;
+        {{/if}}
 
         /// <summary>Returns the Euclidean distance between the two given points.</summary>
         /// <param name="start">The starting point.</param>
         /// <param name="end">The ending point.</param>
         /// <returns>The distance.</returns>
-        public static T Distance<T>({{@Name thisType}}<T> start, {{@Name thisType}}<T> end)
-            where T : IRootFunctions<T> =>
-            T.Sqrt(DistanceSquared(start, end));
+        {{if generateNumericsCast}}
+            public static T Distance<T>({{@Name thisType}}<T> start, {{@Name thisType}}<T> end)
+                where T : IRootFunctions<T>
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<float, T>({{= numericsName}}.Distance(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(start), Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(end)));
+                return T.Sqrt(DistanceSquared(start, end));
+            }
+        {{else}}
+            public static T Distance<T>({{@Name thisType}}<T> start, {{@Name thisType}}<T> end)
+                where T : IRootFunctions<T> =>
+                T.Sqrt(DistanceSquared(start, end));
+        {{/if}}
 
         /// <summary>Returns the Euclidean distance squared between the two given points.</summary>
         /// <param name="start">The starting point.</param>
         /// <param name="end">The ending point.</param>
         /// <returns>The distance squared.</returns>
-        public static T DistanceSquared<T>({{@Name thisType}}<T> start, {{@Name thisType}}<T> end)
-            where T : INumberBase<T>
-        {
-            var difference = end - start;
-            return Dot(difference, difference);
-        }
+        {{if generateNumericsCast}}
+            public static T DistanceSquared<T>({{@Name thisType}}<T> start, {{@Name thisType}}<T> end)
+                where T : INumberBase<T>
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<float, T>({{= numericsName}}.DistanceSquared(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(start), Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(end)));
+                var difference = end - start;
+                return Dot(difference, difference);
+            }
+        {{else}}
+            public static T DistanceSquared<T>({{@Name thisType}}<T> start, {{@Name thisType}}<T> end)
+                where T : INumberBase<T>
+            {
+                var difference = end - start;
+                return Dot(difference, difference);
+            }
+        {{/if}}
 
         /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Round(TSelf)"/> to each member of the vector and converts to integer.</summary>
         public static {{@Name thisType}}<int> RoundToInt<T>({{@Name thisType}}<T> vector)
