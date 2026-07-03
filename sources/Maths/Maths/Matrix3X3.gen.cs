@@ -6,6 +6,7 @@ namespace Silk.NET.Maths
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
+    using System.Runtime.CompilerServices;
     using System.Runtime.Serialization;
 
     /// <summary>A structure encapsulating a 3x3 matrix.</summary>

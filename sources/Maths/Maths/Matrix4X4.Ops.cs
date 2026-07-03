@@ -57,6 +57,16 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateBillboardRH<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
             where T : INumber<T>, IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateBillboard(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(objectPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraUpVector),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraForwardVector)
+                ));
+            }
+
             Vector3D<T> zaxis = objectPosition - cameraPosition;
             var norm = zaxis.LengthSquared;
 
@@ -88,6 +98,16 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateBillboardLH<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> cameraUpVector, Vector3D<T> cameraForwardVector)
             where T : INumber<T>, IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateBillboardLeftHanded(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(objectPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraUpVector),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraForwardVector)
+                ));
+            }
+
             Vector3D<T> zaxis = cameraPosition - objectPosition;
             var norm = zaxis.LengthSquared;
 
@@ -120,6 +140,17 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateConstrainedBillboardRH<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> rotateAxis, Vector3D<T> cameraForwardVector, Vector3D<T> objectForwardVector)
             where T : INumber<T>, IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateConstrainedBillboard(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(objectPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(rotateAxis),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraForwardVector),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(objectForwardVector)
+                ));
+            }
+
             // Treat the case when object and camera positions are too close.
             Vector3D<T> faceDir = objectPosition - cameraPosition;
             T norm = faceDir.LengthSquared;
@@ -181,6 +212,17 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateConstrainedBillboardLH<T>(Vector3D<T> objectPosition, Vector3D<T> cameraPosition, Vector3D<T> rotateAxis, Vector3D<T> cameraForwardVector, Vector3D<T> objectForwardVector)
             where T : INumber<T>, IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateConstrainedBillboardLeftHanded(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(objectPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(rotateAxis),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraForwardVector),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(objectForwardVector)
+                ));
+            }
+
             // Treat the case when object and camera positions are too close.
             Vector3D<T> faceDir = cameraPosition - objectPosition;
             T norm = faceDir.LengthSquared;
@@ -239,6 +281,14 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateFromAxisAngle<T>(Vector3D<T> axis, T angle)
             where T : ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateFromAxisAngle(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(axis),
+                    Unsafe.BitCast<T, float>(angle)
+                ));
+            }
+
             // a: angle
             // x, y, z: unit vector for axis.
             //
@@ -292,6 +342,13 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateFromQuaternion<T>(Quaternion<T> quaternion)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateFromQuaternion(
+                    Unsafe.BitCast<Quaternion<T>, System.Numerics.Quaternion>(quaternion)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             T xx = quaternion.X * quaternion.X;
@@ -329,6 +386,15 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateFromYawPitchRoll(
+                    Unsafe.BitCast<T, float>(yaw),
+                    Unsafe.BitCast<T, float>(pitch),
+                    Unsafe.BitCast<T, float>(roll)
+                ));
+            }
+
             var q = Quaternion.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
         }
@@ -341,6 +407,15 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateLookAtRH<T>(Vector3D<T> cameraPosition, Vector3D<T> cameraTarget, Vector3D<T> cameraUpVector)
             where T : IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateLookAt(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraTarget),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraUpVector)
+                ));
+            }
+
             Vector3D<T> zaxis = Vector3D.Normalize(cameraPosition - cameraTarget);
             Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
             Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
@@ -374,6 +449,15 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateLookToRH<T>(Vector3D<T> cameraPosition, Vector3D<T> cameraForwardVector, Vector3D<T> cameraUpVector)
             where T : IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateLookTo(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraForwardVector),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraUpVector)
+                ));
+            }
+
             Vector3D<T> zaxis = Vector3D.Normalize(cameraForwardVector);
             Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
             Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
@@ -407,6 +491,15 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateLookAtLH<T>(Vector3D<T> cameraPosition, Vector3D<T> cameraTarget, Vector3D<T> cameraUpVector)
             where T : IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateLookAtLeftHanded(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraTarget),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraUpVector)
+                ));
+            }
+
             Vector3D<T> zaxis = Vector3D.Normalize(cameraTarget - cameraPosition);
             Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
             Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
@@ -440,6 +533,15 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateLookToLH<T>(Vector3D<T> cameraPosition, Vector3D<T> cameraForwardVector, Vector3D<T> cameraUpVector)
             where T : IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateLookToLeftHanded(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraPosition),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraForwardVector),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(cameraUpVector)
+                ));
+            }
+
             Vector3D<T> zaxis = Vector3D.Normalize(cameraForwardVector);
             Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(cameraUpVector, zaxis));
             Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
@@ -474,6 +576,16 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateOrthographicRH<T>(T width, T height, T zNearPlane, T zFarPlane)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateOrthographic(
+                    Unsafe.BitCast<T, float>(width),
+                    Unsafe.BitCast<T, float>(height),
+                    Unsafe.BitCast<T, float>(zNearPlane),
+                    Unsafe.BitCast<T, float>(zFarPlane)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             var range = T.One / (zNearPlane - zFarPlane);
@@ -494,6 +606,16 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateOrthographicLH<T>(T width, T height, T zNearPlane, T zFarPlane)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateOrthographicLeftHanded(
+                    Unsafe.BitCast<T, float>(width),
+                    Unsafe.BitCast<T, float>(height),
+                    Unsafe.BitCast<T, float>(zNearPlane),
+                    Unsafe.BitCast<T, float>(zFarPlane)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             var range = T.One / (zFarPlane - zNearPlane);
@@ -516,6 +638,18 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateOrthographicOffCenterRH<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateOrthographicOffCenter(
+                    Unsafe.BitCast<T, float>(left),
+                    Unsafe.BitCast<T, float>(right),
+                    Unsafe.BitCast<T, float>(bottom),
+                    Unsafe.BitCast<T, float>(top),
+                    Unsafe.BitCast<T, float>(zNearPlane),
+                    Unsafe.BitCast<T, float>(zFarPlane)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             var reciprocalWidth = T.One / (right - left);
@@ -546,6 +680,18 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateOrthographicOffCenterLH<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateOrthographicOffCenterLeftHanded(
+                    Unsafe.BitCast<T, float>(left),
+                    Unsafe.BitCast<T, float>(right),
+                    Unsafe.BitCast<T, float>(bottom),
+                    Unsafe.BitCast<T, float>(top),
+                    Unsafe.BitCast<T, float>(zNearPlane),
+                    Unsafe.BitCast<T, float>(zFarPlane)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             var reciprocalWidth = T.One / (right - left);
@@ -574,6 +720,16 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreatePerspectiveRH<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance)
             where T : INumber<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreatePerspective(
+                    Unsafe.BitCast<T, float>(width),
+                    Unsafe.BitCast<T, float>(height),
+                    Unsafe.BitCast<T, float>(nearPlaneDistance),
+                    Unsafe.BitCast<T, float>(farPlaneDistance)
+                ));
+            }
+
             if (!(nearPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
@@ -610,6 +766,16 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreatePerspectiveLH<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance)
             where T : INumber<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreatePerspectiveLeftHanded(
+                    Unsafe.BitCast<T, float>(width),
+                    Unsafe.BitCast<T, float>(height),
+                    Unsafe.BitCast<T, float>(nearPlaneDistance),
+                    Unsafe.BitCast<T, float>(farPlaneDistance)
+                ));
+            }
+
             if (!(nearPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
@@ -646,6 +812,16 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreatePerspectiveFieldOfViewRH<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
             where T : INumber<T>, ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreatePerspectiveFieldOfView(
+                    Unsafe.BitCast<T, float>(fieldOfView),
+                    Unsafe.BitCast<T, float>(aspectRatio),
+                    Unsafe.BitCast<T, float>(nearPlaneDistance),
+                    Unsafe.BitCast<T, float>(farPlaneDistance)
+                ));
+            }
+
             if (!(fieldOfView > T.Zero) || (fieldOfView >= T.Pi))
                 throw new ArgumentOutOfRangeException(nameof(fieldOfView));
 
@@ -686,6 +862,16 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreatePerspectiveFieldOfViewLH<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
             where T : INumber<T>, ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreatePerspectiveFieldOfViewLeftHanded(
+                    Unsafe.BitCast<T, float>(fieldOfView),
+                    Unsafe.BitCast<T, float>(aspectRatio),
+                    Unsafe.BitCast<T, float>(nearPlaneDistance),
+                    Unsafe.BitCast<T, float>(farPlaneDistance)
+                ));
+            }
+
             if (!(fieldOfView > T.Zero) || (fieldOfView >= T.Pi))
                 throw new ArgumentOutOfRangeException(nameof(fieldOfView));
 
@@ -728,6 +914,18 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreatePerspectiveOffCenterRH<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance)
             where T : INumber<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreatePerspectiveOffCenter(
+                    Unsafe.BitCast<T, float>(left),
+                    Unsafe.BitCast<T, float>(right),
+                    Unsafe.BitCast<T, float>(bottom),
+                    Unsafe.BitCast<T, float>(top),
+                    Unsafe.BitCast<T, float>(nearPlaneDistance),
+                    Unsafe.BitCast<T, float>(farPlaneDistance)
+                ));
+            }
+
             if (!(nearPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
@@ -765,6 +963,18 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreatePerspectiveOffCenterLH<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance)
             where T : INumber<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreatePerspectiveOffCenterLeftHanded(
+                    Unsafe.BitCast<T, float>(left),
+                    Unsafe.BitCast<T, float>(right),
+                    Unsafe.BitCast<T, float>(bottom),
+                    Unsafe.BitCast<T, float>(top),
+                    Unsafe.BitCast<T, float>(nearPlaneDistance),
+                    Unsafe.BitCast<T, float>(farPlaneDistance)
+                ));
+            }
+
             if (!(nearPlaneDistance > T.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
@@ -797,6 +1007,13 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateReflection<T>(Plane<T> value)
             where T : INumber<T>, IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateReflection(
+                    Unsafe.BitCast<Plane<T>, System.Numerics.Plane>(value)
+                ));
+            }
+
             value = Plane.Normalize(value);
 
             T a = value.Normal.X;
@@ -834,6 +1051,13 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateRotationX<T>(T radians)
             where T : ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateRotationX(
+                    Unsafe.BitCast<T, float>(radians)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             T c = T.Cos(radians);
@@ -859,6 +1083,14 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateRotationX<T>(T radians, Vector3D<T> centerPoint)
             where T : ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateRotationX(
+                    Unsafe.BitCast<T, float>(radians),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(centerPoint)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             T c = T.Cos(radians);
@@ -888,6 +1120,13 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateRotationY<T>(T radians)
             where T : ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateRotationY(
+                    Unsafe.BitCast<T, float>(radians)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             T c = T.Cos(radians);
@@ -912,6 +1151,14 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateRotationY<T>(T radians, Vector3D<T> centerPoint)
             where T : ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateRotationY(
+                    Unsafe.BitCast<T, float>(radians),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(centerPoint)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             T c = T.Cos(radians);
@@ -940,6 +1187,13 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateRotationZ<T>(T radians)
             where T : ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateRotationZ(
+                    Unsafe.BitCast<T, float>(radians)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             T c = T.Cos(radians);
@@ -964,6 +1218,14 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateRotationZ<T>(T radians, Vector3D<T> centerPoint)
             where T : ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateRotationZ(
+                    Unsafe.BitCast<T, float>(radians),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(centerPoint)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             T c = T.Cos(radians);
@@ -994,6 +1256,15 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateScale<T>(T xScale, T yScale, T zScale)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateScale(
+                    Unsafe.BitCast<T, float>(xScale),
+                    Unsafe.BitCast<T, float>(yScale),
+                    Unsafe.BitCast<T, float>(zScale)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
             result.M11 = xScale;
             result.M22 = yScale;
@@ -1010,6 +1281,16 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateScale<T>(T xScale, T yScale, T zScale, Vector3D<T> centerPoint)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateScale(
+                    Unsafe.BitCast<T, float>(xScale),
+                    Unsafe.BitCast<T, float>(yScale),
+                    Unsafe.BitCast<T, float>(zScale),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(centerPoint)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             T tx = centerPoint.X * (T.One - xScale);
@@ -1031,6 +1312,13 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateScale<T>(Vector3D<T> scales)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateScale(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(scales)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
             result.M11 = scales.X;
             result.M22 = scales.Y;
@@ -1045,6 +1333,14 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateScale<T>(Vector3D<T> scales, Vector3D<T> centerPoint)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateScale(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(scales),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(centerPoint)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             T tx = centerPoint.X * (T.One - scales.X);
@@ -1066,6 +1362,13 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateScale<T>(T scale)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateScale(
+                    Unsafe.BitCast<T, float>(scale)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             result.M11 = scale;
@@ -1082,6 +1385,14 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateScale<T>(T scale, Vector3D<T> centerPoint)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateScale(
+                    Unsafe.BitCast<T, float>(scale),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(centerPoint)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
 
             T tx = centerPoint.X * (T.One - scale);
@@ -1106,6 +1417,14 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateShadow<T>(Vector3D<T> lightDirection, Plane<T> plane)
             where T : INumber<T>, IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateShadow(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(lightDirection),
+                    Unsafe.BitCast<Plane<T>, System.Numerics.Plane>(plane)
+                ));
+            }
+
             Plane<T> p = Plane.Normalize(plane);
 
             T dot = (p.Normal.X * lightDirection.X) + (p.Normal.Y * lightDirection.Y) + (p.Normal.Z * lightDirection.Z);
@@ -1142,6 +1461,13 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateTranslation<T>(Vector3D<T> position)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateTranslation(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(position)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
             result.M41 = position.X;
             result.M42 = position.Y;
@@ -1157,6 +1483,15 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateTranslation<T>(T xPosition, T yPosition, T zPosition)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateTranslation(
+                    Unsafe.BitCast<T, float>(xPosition),
+                    Unsafe.BitCast<T, float>(yPosition),
+                    Unsafe.BitCast<T, float>(zPosition)
+                ));
+            }
+
             Matrix4X4<T> result = Matrix4X4<T>.Identity;
             result.M41 = xPosition;
             result.M42 = yPosition;
@@ -1172,6 +1507,15 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateWorld<T>(Vector3D<T> position, Vector3D<T> forward, Vector3D<T> up)
             where T : IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateWorld(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(position),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(forward),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(up)
+                ));
+            }
+
             Vector3D<T> zaxis = Vector3D.Normalize(-forward);
             Vector3D<T> xaxis = Vector3D.Normalize(Vector3D.Cross(up, zaxis));
             Vector3D<T> yaxis = Vector3D.Cross(zaxis, xaxis);
@@ -1216,6 +1560,18 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateViewportRH<T>(T x, T y, T width, T height, T minDepth, T maxDepth)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateViewport(
+                    Unsafe.BitCast<T, float>(x),
+                    Unsafe.BitCast<T, float>(y),
+                    Unsafe.BitCast<T, float>(width),
+                    Unsafe.BitCast<T, float>(height),
+                    Unsafe.BitCast<T, float>(minDepth),
+                    Unsafe.BitCast<T, float>(maxDepth)
+                ));
+            }
+
             // From: https://github.com/dotnet/dotnet/blob/main/src/runtime/src/libraries/System.Private.CoreLib/src/System/Numerics/Matrix4x4.Impl.cs
             Matrix4X4<T> result;
             result.Row4 = new Vector4D<T>(width, height, T.Zero, T.Zero) / T.CreateTruncating(2);
@@ -1245,6 +1601,18 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateViewportLH<T>(T x, T y, T width, T height, T minDepth, T maxDepth)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.CreateViewportLeftHanded(
+                    Unsafe.BitCast<T, float>(x),
+                    Unsafe.BitCast<T, float>(y),
+                    Unsafe.BitCast<T, float>(width),
+                    Unsafe.BitCast<T, float>(height),
+                    Unsafe.BitCast<T, float>(minDepth),
+                    Unsafe.BitCast<T, float>(maxDepth)
+                ));
+            }
+
             // From: https://github.com/dotnet/dotnet/blob/main/src/runtime/src/libraries/System.Private.CoreLib/src/System/Numerics/Matrix4x4.Impl.cs
             Matrix4X4<T> result;
             result.Row4 = new Vector4D<T>(width, height, T.Zero, T.Zero) / T.CreateTruncating(2);
@@ -1264,6 +1632,15 @@ namespace Silk.NET.Maths
         public static bool Invert<T>(Matrix4X4<T> matrix, out Matrix4X4<T> result)
             where T : IFloatingPointIeee754<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                result = default;
+                return Matrix4x4.Invert(
+                    Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(matrix),
+                    out Unsafe.As<Matrix4X4<T>, Matrix4x4>(ref result)
+                );
+            }
+
             //                                       -1
             // If you have matrix M, inverse Matrix M   can compute
             //
@@ -1450,6 +1827,19 @@ namespace Silk.NET.Maths
         public static bool Decompose<T>(Matrix4X4<T> matrix, out Vector3D<T> scale, out Quaternion<T> rotation, out Vector3D<T> translation)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                scale = default;
+                rotation = default;
+                translation = default;
+                return Matrix4x4.Decompose(
+                    Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(matrix),
+                    out Unsafe.As<Vector3D<T>, Vector3>(ref scale),
+                    out Unsafe.As<Quaternion<T>, System.Numerics.Quaternion>(ref rotation),
+                    out Unsafe.As<Vector3D<T>, Vector3>(ref translation)
+                );
+            }
+
             bool result = true;
             scale = default;
 
@@ -1636,6 +2026,14 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> Transform<T>(Matrix4X4<T> value, Quaternion<T> rotation)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.Transform(
+                    Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(value),
+                    Unsafe.BitCast<Quaternion<T>, System.Numerics.Quaternion>(rotation)
+                ));
+            }
+
             // Compute rotation matrix.
             T x2 = rotation.X + rotation.X;
             T y2 = rotation.Y + rotation.Y;
@@ -1681,6 +2079,13 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> Transpose<T>(Matrix4X4<T> matrix)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Matrix4x4.Transpose(
+                    Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(matrix)
+                ));
+            }
+
             return new(matrix.Column1, matrix.Column2, matrix.Column3, matrix.Column4);
         }
     }

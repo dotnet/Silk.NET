@@ -17,7 +17,9 @@ namespace Silk.NET.Maths
         /// <returns>The Plane containing the three points.</returns>
         public static Plane<T> CreateFromPointNormal<T>(Vector3D<T> point, Vector3D<T> normal)
             where T : IRootFunctions<T>
-            => new Plane<T>(normal, -Vector3D.Dot(normal, point));
+        {
+            return new Plane<T>(normal, -Vector3D.Dot(normal, point));
+        }
 
         /// <summary>Creates a Plane that contains the three given points.</summary>
         /// <param name="point1">The first point defining the Plane.</param>
@@ -28,6 +30,15 @@ namespace Silk.NET.Maths
         public static Plane<T> CreateFromVertices<T>(Vector3D<T> point1, Vector3D<T> point2, Vector3D<T> point3)
             where T : IRootFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<System.Numerics.Plane, Plane<T>>(System.Numerics.Plane.CreateFromVertices(
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(point1),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(point2),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(point3)
+                ));
+            }
+
             var a = point2 - point1;
             var b = point3 - point1;
 
@@ -48,7 +59,18 @@ namespace Silk.NET.Maths
         [MethodImpl((MethodImplOptions)768)]
         public static T Dot<T>(Plane<T> plane, Vector4D<T> value)
             where T : INumberBase<T>
-            => (plane.Normal.X * value.X) + (plane.Normal.Y * value.Y) + (plane.Normal.Z * value.Z) + (plane.Distance * value.W);
+        {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<float, T>(System.Numerics.Plane.Dot(
+                    Unsafe.BitCast<Plane<T>, System.Numerics.Plane>(plane),
+                    Unsafe.BitCast<Vector4D<T>, Vector4>(value)
+                ));
+            }
+
+            return (plane.Normal.X * value.X) + (plane.Normal.Y * value.Y) + (plane.Normal.Z * value.Z) +
+                   (plane.Distance * value.W);
+        }
 
         /// <summary>Returns the dot product of a specified Vector3D and the normal vector of this Plane plus the distance (D) value of the Plane.</summary>
         /// <param name="plane">The plane.</param>
@@ -57,7 +79,17 @@ namespace Silk.NET.Maths
         [MethodImpl((MethodImplOptions)768)]
         public static T DotCoordinate<T>(Plane<T> plane, Vector3D<T> value)
             where T : INumberBase<T>
-            => Vector3D.Dot(plane.Normal, value) + plane.Distance;
+        {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<float, T>(System.Numerics.Plane.DotCoordinate(
+                    Unsafe.BitCast<Plane<T>, System.Numerics.Plane>(plane),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(value)
+                ));
+            }
+
+            return Vector3D.Dot(plane.Normal, value) + plane.Distance;
+        }
 
         /// <summary>Returns the dot product of a specified Vector3D and the Normal vector of this Plane.</summary>
         /// <param name="plane">The plane.</param>
@@ -66,7 +98,17 @@ namespace Silk.NET.Maths
         [MethodImpl((MethodImplOptions)768)]
         public static T DotNormal<T>(Plane<T> plane, Vector3D<T> value)
             where T : INumberBase<T>
-            => Vector3D.Dot(plane.Normal, value);
+        {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<float, T>(System.Numerics.Plane.DotNormal(
+                    Unsafe.BitCast<Plane<T>, System.Numerics.Plane>(plane),
+                    Unsafe.BitCast<Vector3D<T>, Vector3>(value)
+                ));
+            }
+
+            return Vector3D.Dot(plane.Normal, value);
+        }
 
         /// <summary>
         /// Calculates the distance to the nearest edge from the point.
@@ -77,7 +119,9 @@ namespace Silk.NET.Maths
         [MethodImpl((MethodImplOptions)768)]
         public static T GetDistanceToEdge<T>(this Plane<T> plane, Vector3D<T> point)
             where T : INumberBase<T>
-            => T.Abs(GetSignedDistanceToEdge(plane, point));
+        {
+            return T.Abs(GetSignedDistanceToEdge(plane, point));
+        }
 
         /// <summary>
         /// Calculates the distance to the nearest edge from the point.
@@ -130,6 +174,14 @@ namespace Silk.NET.Maths
         public static Plane<T> Transform<T>(Plane<T> plane, Matrix4X4<T> matrix)
             where T : IFloatingPointIeee754<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<System.Numerics.Plane, Plane<T>>(System.Numerics.Plane.Transform(
+                    Unsafe.BitCast<Plane<T>, System.Numerics.Plane>(plane),
+                    Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(matrix)
+                ));
+            }
+
             Matrix4X4.Invert(matrix, out Matrix4X4<T> m);
 
             T x = plane.Normal.X, y = plane.Normal.Y, z = plane.Normal.Z, w = plane.Distance;
@@ -150,6 +202,14 @@ namespace Silk.NET.Maths
         public static Plane<T> Transform<T>(Plane<T> plane, Quaternion<T> rotation)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<System.Numerics.Plane, Plane<T>>(System.Numerics.Plane.Transform(
+                    Unsafe.BitCast<Plane<T>, System.Numerics.Plane>(plane),
+                    Unsafe.BitCast<Quaternion<T>, System.Numerics.Quaternion>(rotation)
+                ));
+            }
+
             // Compute rotation matrix.
             T x2 = rotation.X + rotation.X;
             T y2 = rotation.Y + rotation.Y;

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Maths
 {
@@ -18,6 +19,13 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateRotation<T>(T radians)
             where T : IFloatingPointIeee754<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateRotation(
+                    Unsafe.BitCast<T, float>(radians)
+                ));
+            }
+
             radians = T.Ieee754Remainder(radians, T.Tau);
 
             T c, s;
@@ -76,6 +84,14 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateRotation<T>(T radians, Vector2D<T> centerPoint)
             where T : IFloatingPointIeee754<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateRotation(
+                    Unsafe.BitCast<T, float>(radians),
+                    Unsafe.BitCast<Vector2D<T>, Vector2>(centerPoint)
+                ));
+            }
+
             radians = T.Ieee754Remainder(radians, T.Tau);
 
             T c, s;
@@ -132,6 +148,13 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateScale<T>(Vector2D<T> scales)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateScale(
+                    Unsafe.BitCast<Vector2D<T>, Vector2>(scales)
+                ));
+            }
+
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M11 = scales.X;
@@ -147,6 +170,14 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateScale<T>(T xScale, T yScale)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateScale(
+                    Unsafe.BitCast<T, float>(xScale),
+                    Unsafe.BitCast<T, float>(yScale)
+                ));
+            }
+
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M11 = xScale;
@@ -163,6 +194,15 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateScale<T>(T xScale, T yScale, Vector2D<T> centerPoint)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateScale(
+                    Unsafe.BitCast<T, float>(xScale),
+                    Unsafe.BitCast<T, float>(yScale),
+                    Unsafe.BitCast<Vector2D<T>, Vector2>(centerPoint)
+                ));
+            }
+
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             T tx = centerPoint.X * (T.One - xScale);
@@ -183,6 +223,14 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateScale<T>(Vector2D<T> scales, Vector2D<T> centerPoint)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateScale(
+                    Unsafe.BitCast<Vector2D<T>, Vector2>(scales),
+                    Unsafe.BitCast<Vector2D<T>, Vector2>(centerPoint)
+                ));
+            }
+
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             T tx = centerPoint.X * (T.One - scales.X);
@@ -202,6 +250,13 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateScale<T>(T scale)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateScale(
+                    Unsafe.BitCast<T, float>(scale)
+                ));
+            }
+
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M11 = scale;
@@ -217,6 +272,14 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateScale<T>(T scale, Vector2D<T> centerPoint)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateScale(
+                    Unsafe.BitCast<T, float>(scale),
+                    Unsafe.BitCast<Vector2D<T>, Vector2>(centerPoint)
+                ));
+            }
+
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             T tx = centerPoint.X * (T.One - scale);
@@ -237,6 +300,14 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateSkew<T>(T radiansX, T radiansY)
             where T : ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateSkew(
+                    Unsafe.BitCast<T, float>(radiansX),
+                    Unsafe.BitCast<T, float>(radiansY)
+                ));
+            }
+
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             T xTan = T.Tan(radiansX);
@@ -256,6 +327,15 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateSkew<T>(T radiansX, T radiansY, Vector2D<T> centerPoint)
             where T : ITrigonometricFunctions<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateSkew(
+                    Unsafe.BitCast<T, float>(radiansX),
+                    Unsafe.BitCast<T, float>(radiansY),
+                    Unsafe.BitCast<Vector2D<T>, Vector2>(centerPoint)
+                ));
+            }
+
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             T xTan = T.Tan(radiansX);
@@ -279,6 +359,13 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateTranslation<T>(Vector2D<T> position)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateTranslation(
+                    Unsafe.BitCast<Vector2D<T>, Vector2>(position)
+                ));
+            }
+
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M31 = position.X;
@@ -294,6 +381,14 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> CreateTranslation<T>(T xPosition, T yPosition)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                return Unsafe.BitCast<Matrix3x2, Matrix3X2<T>>(Matrix3x2.CreateTranslation(
+                    Unsafe.BitCast<T, float>(xPosition),
+                    Unsafe.BitCast<T, float>(yPosition)
+                ));
+            }
+
             Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M31 = xPosition;
@@ -309,6 +404,15 @@ namespace Silk.NET.Maths
         public static bool Invert<T>(Matrix3X2<T> matrix, out Matrix3X2<T> result)
             where T : IFloatingPointIeee754<T>
         {
+            if (typeof(T) == typeof(float))
+            {
+                result = default;
+                return Matrix3x2.Invert(
+                    Unsafe.BitCast<Matrix3X2<T>, Matrix3x2>(matrix),
+                    out Unsafe.As<Matrix3X2<T>, Matrix3x2>(ref result)
+                );
+            }
+
             T det = (matrix.M11 * matrix.M22) - (matrix.M21 * matrix.M12);
 
             if (!(T.Abs(det) >= T.Epsilon))

@@ -429,71 +429,111 @@ namespace Silk.NET.Maths
         /// <summary>Negates a given vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <returns>The negated vector.</returns>
-        public static Vector3D<T> operator -(Vector3D<T> vector) =>
-            new(-vector.X, -vector.Y, -vector.Z);
+        public static Vector3D<T> operator -(Vector3D<T> vector)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(-Unsafe.BitCast<Vector3D<T>, Vector3>(vector));
+            return new(-vector.X, -vector.Y, -vector.Z);
+        }
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The summed vector.</returns>
-        public static Vector3D<T> operator +(Vector3D<T> left, Vector3D<T> right) =>
-            new(left.X + right.X, left.Y + right.Y, left.Z + right.Z);
+        public static Vector3D<T> operator +(Vector3D<T> left, Vector3D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Unsafe.BitCast<Vector3D<T>, Vector3>(left) + Unsafe.BitCast<Vector3D<T>, Vector3>(right));
+            return new(left.X + right.X, left.Y + right.Y, left.Z + right.Z);
+        }
 
         /// <summary>Subtracts the second vector from the first.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The difference vector.</returns>
-        public static Vector3D<T> operator -(Vector3D<T> left, Vector3D<T> right) =>
-            new(left.X - right.X, left.Y - right.Y, left.Z - right.Z);
+        public static Vector3D<T> operator -(Vector3D<T> left, Vector3D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Unsafe.BitCast<Vector3D<T>, Vector3>(left) - Unsafe.BitCast<Vector3D<T>, Vector3>(right));
+            return new(left.X - right.X, left.Y - right.Y, left.Z - right.Z);
+        }
 
         /// <summary>Multiplies two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The product vector.</returns>
-        public static Vector3D<T> operator *(Vector3D<T> left, Vector3D<T> right) =>
-            new(left.X * right.X, left.Y * right.Y, left.Z * right.Z);
+        public static Vector3D<T> operator *(Vector3D<T> left, Vector3D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Unsafe.BitCast<Vector3D<T>, Vector3>(left) * Unsafe.BitCast<Vector3D<T>, Vector3>(right));
+            return new(left.X * right.X, left.Y * right.Y, left.Z * right.Z);
+        }
 
         /// <summary>Divides the first vector by the second.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The vector resulting from the division.</returns>
-        public static Vector3D<T> operator /(Vector3D<T> left, Vector3D<T> right) =>
-            new(left.X / right.X, left.Y / right.Y, left.Z / right.Z);
+        public static Vector3D<T> operator /(Vector3D<T> left, Vector3D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Unsafe.BitCast<Vector3D<T>, Vector3>(left) / Unsafe.BitCast<Vector3D<T>, Vector3>(right));
+            return new(left.X / right.X, left.Y / right.Y, left.Z / right.Z);
+        }
 
         /// <summary>Adds a scalar to the components of a vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The offset vector.</returns>
-        public static Vector3D<T> operator +(Vector3D<T> vector, T scalar) =>
-            new(vector.X + scalar, vector.Y + scalar, vector.Z + scalar);
+        public static Vector3D<T> operator +(Vector3D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Unsafe.BitCast<Vector3D<T>, Vector3>(vector) + new Vector3(Unsafe.BitCast<T, float>(scalar)));
+            return new(vector.X + scalar, vector.Y + scalar, vector.Z + scalar);
+        }
 
         /// <summary>Subtracts a scalar from the components of a vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The offset vector.</returns>
-        public static Vector3D<T> operator -(Vector3D<T> vector, T scalar) =>
-            new(vector.X - scalar, vector.Y - scalar, vector.Z - scalar);
+        public static Vector3D<T> operator -(Vector3D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Unsafe.BitCast<Vector3D<T>, Vector3>(vector) - new Vector3(Unsafe.BitCast<T, float>(scalar)));
+            return new(vector.X - scalar, vector.Y - scalar, vector.Z - scalar);
+        }
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The scaled vector.</returns>
-        public static Vector3D<T> operator *(Vector3D<T> vector, T scalar) =>
-            new(vector.X * scalar, vector.Y * scalar, vector.Z * scalar);
+        public static Vector3D<T> operator *(Vector3D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Unsafe.BitCast<Vector3D<T>, Vector3>(vector) * Unsafe.BitCast<T, float>(scalar));
+            return new(vector.X * scalar, vector.Y * scalar, vector.Z * scalar);
+        }
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="scalar">The scalar value.</param>
         /// <param name="vector">The source vector.</param>
         /// <returns>The scaled vector.</returns>
-        public static Vector3D<T> operator *(T scalar, Vector3D<T> vector) =>
-            new(scalar * vector.X, scalar * vector.Y, scalar * vector.Z);
+        public static Vector3D<T> operator *(T scalar, Vector3D<T> vector)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Unsafe.BitCast<T, float>(scalar) * Unsafe.BitCast<Vector3D<T>, Vector3>(vector));
+            return new(scalar * vector.X, scalar * vector.Y, scalar * vector.Z);
+        }
 
         /// <summary>Divides the vector by the given scalar.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The result of the division.</returns>
-        public static Vector3D<T> operator /(Vector3D<T> vector, T scalar) =>
-            new(vector.X / scalar, vector.Y / scalar, vector.Z / scalar);
+        public static Vector3D<T> operator /(Vector3D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Unsafe.BitCast<Vector3D<T>, Vector3>(vector) / Unsafe.BitCast<T, float>(scalar));
+            return new(vector.X / scalar, vector.Y / scalar, vector.Z / scalar);
+        }
 
         /// <summary>Converts a <see cref="Vector3"/> to a <see cref="Vector3D{T}"/>.</summary>
         public static explicit operator Vector3D<T>(Vector3 from) =>

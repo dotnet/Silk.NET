@@ -6,6 +6,7 @@ namespace Silk.NET.Maths
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
+    using System.Runtime.CompilerServices;
     using System.Runtime.Serialization;
 
     /// <summary>A structure encapsulating a 4x4 matrix.</summary>
@@ -257,70 +258,98 @@ namespace Silk.NET.Maths
         /// <param name="left">The first matrix to compare.</param>
         /// <param name="right">The second matrix to compare.</param>
         /// <returns><c>true</c> if the given matrices are equal; <c>false</c> otherwise.</returns>
-        public static bool operator ==(Matrix4X4<T> left, Matrix4X4<T> right) =>
-            left.Row1 == right.Row1 &&
+        public static bool operator ==(Matrix4X4<T> left, Matrix4X4<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(left) == Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(right);
+            return left.Row1 == right.Row1 &&
             left.Row2 == right.Row2 &&
             left.Row3 == right.Row3 &&
             left.Row4 == right.Row4;
+        }
 
         /// <summary>Returns a boolean indicating whether the given two matrices are not equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
         /// <param name="right">The second matrix to compare.</param>
         /// <returns><c>true</c> if the given matrices are not equal; <c>false</c> otherwise.</returns>
-        public static bool operator !=(Matrix4X4<T> left, Matrix4X4<T> right) =>
-            left.Row1 != right.Row1 ||
+        public static bool operator !=(Matrix4X4<T> left, Matrix4X4<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(left) != Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(right);
+            return left.Row1 != right.Row1 ||
             left.Row2 != right.Row2 ||
             left.Row3 != right.Row3 ||
             left.Row4 != right.Row4;
+        }
 
         /// <summary>Adds two matrices together.</summary>
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
         /// <returns>The result of the addition.</returns>
-        public static Matrix4X4<T> operator +(Matrix4X4<T> left, Matrix4X4<T> right) =>
-            new(left.Row1 + right.Row1,
+        public static Matrix4X4<T> operator +(Matrix4X4<T> left, Matrix4X4<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(left) + Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(right));
+            return new(left.Row1 + right.Row1,
                 left.Row2 + right.Row2,
                 left.Row3 + right.Row3,
                 left.Row4 + right.Row4);
+        }
 
         /// <summary>Subtracts the second matrix from the first.</summary>
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
         /// <returns>The result of the subtraction.</returns>
-        public static Matrix4X4<T> operator -(Matrix4X4<T> left, Matrix4X4<T> right) =>
-            new(left.Row1 - right.Row1,
+        public static Matrix4X4<T> operator -(Matrix4X4<T> left, Matrix4X4<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(left) - Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(right));
+            return new(left.Row1 - right.Row1,
                 left.Row2 - right.Row2,
                 left.Row3 - right.Row3,
                 left.Row4 - right.Row4);
+        }
 
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
-        public static Matrix4X4<T> operator -(Matrix4X4<T> value) =>
-            new(-value.Row1,
+        public static Matrix4X4<T> operator -(Matrix4X4<T> value)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(-Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(value));
+            return new(-value.Row1,
                 -value.Row2,
                 -value.Row3,
                 -value.Row4);
+        }
 
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="left">The scaling factor.</param>
         /// <param name="right">The source matrix.</param>
         /// <returns>The scaled matrix.</returns>
-        public static Matrix4X4<T> operator *(T left, Matrix4X4<T> right) =>
-            new(left * right.Row1,
+        public static Matrix4X4<T> operator *(T left, Matrix4X4<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(right) * Unsafe.BitCast<T, float>(left));
+            return new(left * right.Row1,
                 left * right.Row2,
                 left * right.Row3,
                 left * right.Row4);
+        }
 
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="left">The source matrix.</param>
         /// <param name="right">The scaling factor.</param>
         /// <returns>The scaled matrix.</returns>
-        public static Matrix4X4<T> operator *(Matrix4X4<T> left, T right) =>
-            new(left.Row1 * right,
+        public static Matrix4X4<T> operator *(Matrix4X4<T> left, T right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Matrix4x4, Matrix4X4<T>>(Unsafe.BitCast<Matrix4X4<T>, Matrix4x4>(left) * Unsafe.BitCast<T, float>(right));
+            return new(left.Row1 * right,
                 left.Row2 * right,
                 left.Row3 * right,
                 left.Row4 * right);
+        }
 
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="rowVector">The first source matrix, expressed as a row vector.</param>

@@ -371,71 +371,111 @@ namespace Silk.NET.Maths
         /// <summary>Negates a given vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <returns>The negated vector.</returns>
-        public static Vector2D<T> operator -(Vector2D<T> vector) =>
-            new(-vector.X, -vector.Y);
+        public static Vector2D<T> operator -(Vector2D<T> vector)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(-Unsafe.BitCast<Vector2D<T>, Vector2>(vector));
+            return new(-vector.X, -vector.Y);
+        }
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The summed vector.</returns>
-        public static Vector2D<T> operator +(Vector2D<T> left, Vector2D<T> right) =>
-            new(left.X + right.X, left.Y + right.Y);
+        public static Vector2D<T> operator +(Vector2D<T> left, Vector2D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(left) + Unsafe.BitCast<Vector2D<T>, Vector2>(right));
+            return new(left.X + right.X, left.Y + right.Y);
+        }
 
         /// <summary>Subtracts the second vector from the first.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The difference vector.</returns>
-        public static Vector2D<T> operator -(Vector2D<T> left, Vector2D<T> right) =>
-            new(left.X - right.X, left.Y - right.Y);
+        public static Vector2D<T> operator -(Vector2D<T> left, Vector2D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(left) - Unsafe.BitCast<Vector2D<T>, Vector2>(right));
+            return new(left.X - right.X, left.Y - right.Y);
+        }
 
         /// <summary>Multiplies two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The product vector.</returns>
-        public static Vector2D<T> operator *(Vector2D<T> left, Vector2D<T> right) =>
-            new(left.X * right.X, left.Y * right.Y);
+        public static Vector2D<T> operator *(Vector2D<T> left, Vector2D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(left) * Unsafe.BitCast<Vector2D<T>, Vector2>(right));
+            return new(left.X * right.X, left.Y * right.Y);
+        }
 
         /// <summary>Divides the first vector by the second.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The vector resulting from the division.</returns>
-        public static Vector2D<T> operator /(Vector2D<T> left, Vector2D<T> right) =>
-            new(left.X / right.X, left.Y / right.Y);
+        public static Vector2D<T> operator /(Vector2D<T> left, Vector2D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(left) / Unsafe.BitCast<Vector2D<T>, Vector2>(right));
+            return new(left.X / right.X, left.Y / right.Y);
+        }
 
         /// <summary>Adds a scalar to the components of a vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The offset vector.</returns>
-        public static Vector2D<T> operator +(Vector2D<T> vector, T scalar) =>
-            new(vector.X + scalar, vector.Y + scalar);
+        public static Vector2D<T> operator +(Vector2D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(vector) + new Vector2(Unsafe.BitCast<T, float>(scalar)));
+            return new(vector.X + scalar, vector.Y + scalar);
+        }
 
         /// <summary>Subtracts a scalar from the components of a vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The offset vector.</returns>
-        public static Vector2D<T> operator -(Vector2D<T> vector, T scalar) =>
-            new(vector.X - scalar, vector.Y - scalar);
+        public static Vector2D<T> operator -(Vector2D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(vector) - new Vector2(Unsafe.BitCast<T, float>(scalar)));
+            return new(vector.X - scalar, vector.Y - scalar);
+        }
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The scaled vector.</returns>
-        public static Vector2D<T> operator *(Vector2D<T> vector, T scalar) =>
-            new(vector.X * scalar, vector.Y * scalar);
+        public static Vector2D<T> operator *(Vector2D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(vector) * Unsafe.BitCast<T, float>(scalar));
+            return new(vector.X * scalar, vector.Y * scalar);
+        }
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="scalar">The scalar value.</param>
         /// <param name="vector">The source vector.</param>
         /// <returns>The scaled vector.</returns>
-        public static Vector2D<T> operator *(T scalar, Vector2D<T> vector) =>
-            new(scalar * vector.X, scalar * vector.Y);
+        public static Vector2D<T> operator *(T scalar, Vector2D<T> vector)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<T, float>(scalar) * Unsafe.BitCast<Vector2D<T>, Vector2>(vector));
+            return new(scalar * vector.X, scalar * vector.Y);
+        }
 
         /// <summary>Divides the vector by the given scalar.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The result of the division.</returns>
-        public static Vector2D<T> operator /(Vector2D<T> vector, T scalar) =>
-            new(vector.X / scalar, vector.Y / scalar);
+        public static Vector2D<T> operator /(Vector2D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(vector) / Unsafe.BitCast<T, float>(scalar));
+            return new(vector.X / scalar, vector.Y / scalar);
+        }
 
         /// <summary>Converts a <see cref="Vector2"/> to a <see cref="Vector2D{T}"/>.</summary>
         public static explicit operator Vector2D<T>(Vector2 from) =>

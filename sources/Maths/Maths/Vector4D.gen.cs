@@ -487,71 +487,111 @@ namespace Silk.NET.Maths
         /// <summary>Negates a given vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <returns>The negated vector.</returns>
-        public static Vector4D<T> operator -(Vector4D<T> vector) =>
-            new(-vector.X, -vector.Y, -vector.Z, -vector.W);
+        public static Vector4D<T> operator -(Vector4D<T> vector)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector4, Vector4D<T>>(-Unsafe.BitCast<Vector4D<T>, Vector4>(vector));
+            return new(-vector.X, -vector.Y, -vector.Z, -vector.W);
+        }
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The summed vector.</returns>
-        public static Vector4D<T> operator +(Vector4D<T> left, Vector4D<T> right) =>
-            new(left.X + right.X, left.Y + right.Y, left.Z + right.Z, left.W + right.W);
+        public static Vector4D<T> operator +(Vector4D<T> left, Vector4D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector4, Vector4D<T>>(Unsafe.BitCast<Vector4D<T>, Vector4>(left) + Unsafe.BitCast<Vector4D<T>, Vector4>(right));
+            return new(left.X + right.X, left.Y + right.Y, left.Z + right.Z, left.W + right.W);
+        }
 
         /// <summary>Subtracts the second vector from the first.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The difference vector.</returns>
-        public static Vector4D<T> operator -(Vector4D<T> left, Vector4D<T> right) =>
-            new(left.X - right.X, left.Y - right.Y, left.Z - right.Z, left.W - right.W);
+        public static Vector4D<T> operator -(Vector4D<T> left, Vector4D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector4, Vector4D<T>>(Unsafe.BitCast<Vector4D<T>, Vector4>(left) - Unsafe.BitCast<Vector4D<T>, Vector4>(right));
+            return new(left.X - right.X, left.Y - right.Y, left.Z - right.Z, left.W - right.W);
+        }
 
         /// <summary>Multiplies two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The product vector.</returns>
-        public static Vector4D<T> operator *(Vector4D<T> left, Vector4D<T> right) =>
-            new(left.X * right.X, left.Y * right.Y, left.Z * right.Z, left.W * right.W);
+        public static Vector4D<T> operator *(Vector4D<T> left, Vector4D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector4, Vector4D<T>>(Unsafe.BitCast<Vector4D<T>, Vector4>(left) * Unsafe.BitCast<Vector4D<T>, Vector4>(right));
+            return new(left.X * right.X, left.Y * right.Y, left.Z * right.Z, left.W * right.W);
+        }
 
         /// <summary>Divides the first vector by the second.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The vector resulting from the division.</returns>
-        public static Vector4D<T> operator /(Vector4D<T> left, Vector4D<T> right) =>
-            new(left.X / right.X, left.Y / right.Y, left.Z / right.Z, left.W / right.W);
+        public static Vector4D<T> operator /(Vector4D<T> left, Vector4D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector4, Vector4D<T>>(Unsafe.BitCast<Vector4D<T>, Vector4>(left) / Unsafe.BitCast<Vector4D<T>, Vector4>(right));
+            return new(left.X / right.X, left.Y / right.Y, left.Z / right.Z, left.W / right.W);
+        }
 
         /// <summary>Adds a scalar to the components of a vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The offset vector.</returns>
-        public static Vector4D<T> operator +(Vector4D<T> vector, T scalar) =>
-            new(vector.X + scalar, vector.Y + scalar, vector.Z + scalar, vector.W + scalar);
+        public static Vector4D<T> operator +(Vector4D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector4, Vector4D<T>>(Unsafe.BitCast<Vector4D<T>, Vector4>(vector) + new Vector4(Unsafe.BitCast<T, float>(scalar)));
+            return new(vector.X + scalar, vector.Y + scalar, vector.Z + scalar, vector.W + scalar);
+        }
 
         /// <summary>Subtracts a scalar from the components of a vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The offset vector.</returns>
-        public static Vector4D<T> operator -(Vector4D<T> vector, T scalar) =>
-            new(vector.X - scalar, vector.Y - scalar, vector.Z - scalar, vector.W - scalar);
+        public static Vector4D<T> operator -(Vector4D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector4, Vector4D<T>>(Unsafe.BitCast<Vector4D<T>, Vector4>(vector) - new Vector4(Unsafe.BitCast<T, float>(scalar)));
+            return new(vector.X - scalar, vector.Y - scalar, vector.Z - scalar, vector.W - scalar);
+        }
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The scaled vector.</returns>
-        public static Vector4D<T> operator *(Vector4D<T> vector, T scalar) =>
-            new(vector.X * scalar, vector.Y * scalar, vector.Z * scalar, vector.W * scalar);
+        public static Vector4D<T> operator *(Vector4D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector4, Vector4D<T>>(Unsafe.BitCast<Vector4D<T>, Vector4>(vector) * Unsafe.BitCast<T, float>(scalar));
+            return new(vector.X * scalar, vector.Y * scalar, vector.Z * scalar, vector.W * scalar);
+        }
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="scalar">The scalar value.</param>
         /// <param name="vector">The source vector.</param>
         /// <returns>The scaled vector.</returns>
-        public static Vector4D<T> operator *(T scalar, Vector4D<T> vector) =>
-            new(scalar * vector.X, scalar * vector.Y, scalar * vector.Z, scalar * vector.W);
+        public static Vector4D<T> operator *(T scalar, Vector4D<T> vector)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector4, Vector4D<T>>(Unsafe.BitCast<T, float>(scalar) * Unsafe.BitCast<Vector4D<T>, Vector4>(vector));
+            return new(scalar * vector.X, scalar * vector.Y, scalar * vector.Z, scalar * vector.W);
+        }
 
         /// <summary>Divides the vector by the given scalar.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The result of the division.</returns>
-        public static Vector4D<T> operator /(Vector4D<T> vector, T scalar) =>
-            new(vector.X / scalar, vector.Y / scalar, vector.Z / scalar, vector.W / scalar);
+        public static Vector4D<T> operator /(Vector4D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector4, Vector4D<T>>(Unsafe.BitCast<Vector4D<T>, Vector4>(vector) / Unsafe.BitCast<T, float>(scalar));
+            return new(vector.X / scalar, vector.Y / scalar, vector.Z / scalar, vector.W / scalar);
+        }
 
         /// <summary>Converts a <see cref="Vector4"/> to a <see cref="Vector4D{T}"/>.</summary>
         public static explicit operator Vector4D<T>(Vector4 from) =>

@@ -4,6 +4,7 @@
 namespace Silk.NET.Maths
 {
     using System.Numerics;
+    using System.Runtime.CompilerServices;
 
     /// <summary>
     /// Methods for working with <see cref="Matrix2X3{T}"/>.

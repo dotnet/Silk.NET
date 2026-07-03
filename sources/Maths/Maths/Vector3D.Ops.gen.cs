@@ -4,6 +4,7 @@
 namespace Silk.NET.Maths
 {
     using System.Numerics;
+    using System.Runtime.CompilerServices;
     using System.Runtime.Intrinsics;
 
     /// <summary>
@@ -16,7 +17,15 @@ namespace Silk.NET.Maths
             where TSelf : IRootFunctions<TSelf>
         {
             /// <summary>Gets the length of the vector.</summary>
-            public TSelf Length => TSelf.Sqrt(vector.LengthSquared);
+            public TSelf Length
+            {
+                get
+                {
+                    if (typeof(TSelf) == typeof(float))
+                        return Unsafe.BitCast<float, TSelf>(Unsafe.BitCast<Vector3D<TSelf>, Vector3>(vector).Length());
+                    return TSelf.Sqrt(vector.LengthSquared);
+                }
+            }
         }
 
         /// <summary>Extensions for vectors with elements implementing <see cref="INumberBase{TSelf}"/>.</summary>
@@ -24,7 +33,15 @@ namespace Silk.NET.Maths
             where TSelf : INumberBase<TSelf>
         {
             /// <summary>Gets the length squared of the vector.</summary>
-            public TSelf LengthSquared => Vector3D.Dot(vector, vector);
+            public TSelf LengthSquared
+            {
+                get
+                {
+                    if (typeof(TSelf) == typeof(float))
+                        return Unsafe.BitCast<float, TSelf>(Unsafe.BitCast<Vector3D<TSelf>, Vector3>(vector).LengthSquared());
+                    return Vector3D.Dot(vector, vector);
+                }
+            }
         }
 
         /// <summary>Extensions for vectors with elements implementing <see cref="IBitwiseOperators{TSelf, TSelf, TSelf}"/>.</summary>
@@ -158,29 +175,43 @@ namespace Silk.NET.Maths
 
         /// <summary>Computes the dot product of two vectors.</summary>
         public static T Dot<T>(Vector3D<T> left, Vector3D<T> right)
-            where T : INumberBase<T> =>
-            left.X * right.X + left.Y * right.Y + left.Z * right.Z;
+            where T : INumberBase<T>
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<float, T>(Vector3.Dot(Unsafe.BitCast<Vector3D<T>, Vector3>(left), Unsafe.BitCast<Vector3D<T>, Vector3>(right)));
+            return left.X * right.X + left.Y * right.Y + left.Z * right.Z;
+        }
 
         /// <summary>Reflects a vector over a normal vector.</summary>
         public static Vector3D<T> Reflect<T>(Vector3D<T> vector, Vector3D<T> normal)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Vector3.Reflect(Unsafe.BitCast<Vector3D<T>, Vector3>(vector), Unsafe.BitCast<Vector3D<T>, Vector3>(normal)));
             T dot = Dot(vector, normal);
             return vector - (normal * (dot + dot));
         }
 
         /// <summary>Normalizes a vector.</summary>
         public static Vector3D<T> Normalize<T>(this Vector3D<T> vector)
-            where T : IRootFunctions<T> =>
-            vector / vector.Length;
+            where T : IRootFunctions<T>
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector3, Vector3D<T>>(Vector3.Normalize(Unsafe.BitCast<Vector3D<T>, Vector3>(vector)));
+            return vector / vector.Length;
+        }
 
         /// <summary>Returns the Euclidean distance between the two given points.</summary>
         /// <param name="start">The starting point.</param>
         /// <param name="end">The ending point.</param>
         /// <returns>The distance.</returns>
         public static T Distance<T>(Vector3D<T> start, Vector3D<T> end)
-            where T : IRootFunctions<T> =>
-            T.Sqrt(DistanceSquared(start, end));
+            where T : IRootFunctions<T>
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<float, T>(Vector3.Distance(Unsafe.BitCast<Vector3D<T>, Vector3>(start), Unsafe.BitCast<Vector3D<T>, Vector3>(end)));
+            return T.Sqrt(DistanceSquared(start, end));
+        }
 
         /// <summary>Returns the Euclidean distance squared between the two given points.</summary>
         /// <param name="start">The starting point.</param>
@@ -189,6 +220,8 @@ namespace Silk.NET.Maths
         public static T DistanceSquared<T>(Vector3D<T> start, Vector3D<T> end)
             where T : INumberBase<T>
         {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<float, T>(Vector3.DistanceSquared(Unsafe.BitCast<Vector3D<T>, Vector3>(start), Unsafe.BitCast<Vector3D<T>, Vector3>(end)));
             var difference = end - start;
             return Dot(difference, difference);
         }
