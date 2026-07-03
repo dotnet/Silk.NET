@@ -100,7 +100,8 @@ namespace Silk.NET.Maths
                         return ref W;
                 }
 
-                throw new ArgumentOutOfRangeException(nameof(index));
+                ThrowHelpers.ArgumentOutOfRangeException_index();
+                return ref X; // Unreachable, but required to satisfy the compiler.
             }
         }
 
@@ -120,7 +121,7 @@ namespace Silk.NET.Maths
         public Vector4D(ReadOnlySpan<T> values)
         {
             if (values.Length != 4)
-                throw new ArgumentException("Input span must contain exactly 4 elements.", nameof(values));
+                ThrowHelpers.ArgumentException_InputSpanTooSmall_4();
 
             X = values[0];
             Y = values[1];
@@ -147,9 +148,9 @@ namespace Silk.NET.Maths
         public void CopyTo(T[] array, int startIndex)
         {
             if (array == null)
-                throw new ArgumentNullException(nameof(array));
+                ThrowHelpers.ArgumentNullException_array();
             if (startIndex < 0 || startIndex + 4 > array.Length)
-                throw new ArgumentOutOfRangeException(nameof(startIndex));
+                ThrowHelpers.ArgumentOutOfRangeException_startIndex();
 
             array[startIndex] = X;
             array[startIndex + 1] = Y;
@@ -164,7 +165,7 @@ namespace Silk.NET.Maths
         public void CopyTo(Span<T> span, int startIndex)
         {
             if (startIndex < 0 || startIndex + 4 > span.Length)
-                throw new ArgumentOutOfRangeException(nameof(startIndex));
+                ThrowHelpers.ArgumentOutOfRangeException_startIndex();
 
             span[startIndex] = X;
             span[startIndex + 1] = Y;
@@ -192,7 +193,7 @@ namespace Silk.NET.Maths
         public static Vector4D<T> Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
         {
             if (!TryParse(s, provider, out var result))
-                throw new FormatException("Invalid format for Vector4D.");
+                ThrowHelpers.FormatException_InvalidFormatVector4D();
 
             return result;
         }

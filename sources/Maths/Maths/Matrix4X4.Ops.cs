@@ -731,10 +731,10 @@ namespace Silk.NET.Maths
             }
 
             if (!(nearPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_nearPlaneDistance();
 
             if (!(farPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_farPlaneDistance();
 
             Matrix4X4<T> result = default;
 
@@ -777,10 +777,10 @@ namespace Silk.NET.Maths
             }
 
             if (!(nearPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_nearPlaneDistance();
 
             if (!(farPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_farPlaneDistance();
 
             Matrix4X4<T> result = default;
 
@@ -823,13 +823,13 @@ namespace Silk.NET.Maths
             }
 
             if (!(fieldOfView > T.Zero) || (fieldOfView >= T.Pi))
-                throw new ArgumentOutOfRangeException(nameof(fieldOfView));
+                ThrowHelpers.ArgumentOutOfRangeException_fieldOfView();
 
             if (!(nearPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_nearPlaneDistance();
 
             if (!(farPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_farPlaneDistance();
 
             T yScale = T.One / T.Tan(fieldOfView / T.CreateTruncating(2));
             T xScale = yScale / aspectRatio;
@@ -873,13 +873,13 @@ namespace Silk.NET.Maths
             }
 
             if (!(fieldOfView > T.Zero) || (fieldOfView >= T.Pi))
-                throw new ArgumentOutOfRangeException(nameof(fieldOfView));
+                ThrowHelpers.ArgumentOutOfRangeException_fieldOfView();
 
             if (!(nearPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_nearPlaneDistance();
 
             if (!(farPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_farPlaneDistance();
 
             T yScale = T.One / T.Tan(fieldOfView / T.CreateTruncating(2));
             T xScale = yScale / aspectRatio;
@@ -927,10 +927,10 @@ namespace Silk.NET.Maths
             }
 
             if (!(nearPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_nearPlaneDistance();
 
             if (!(farPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_farPlaneDistance();
 
             Matrix4X4<T> result = default;
 
@@ -976,10 +976,10 @@ namespace Silk.NET.Maths
             }
 
             if (!(nearPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_nearPlaneDistance();
 
             if (!(farPlaneDistance > T.Zero))
-                throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
+                ThrowHelpers.ArgumentOutOfRangeException_farPlaneDistance();
 
             Matrix4X4<T> result = default;
 

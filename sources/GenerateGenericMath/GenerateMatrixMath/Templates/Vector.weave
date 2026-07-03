@@ -82,7 +82,8 @@ namespace Silk.NET.Maths
                     {{/each}}
                 }
 
-                throw new ArgumentOutOfRangeException(nameof(index));
+                ThrowHelpers.ArgumentOutOfRangeException_index();
+                return ref {{= Vector.VectorFieldNames[0]}}; // Unreachable, but required to satisfy the compiler.
             }
         }
 
@@ -104,7 +105,7 @@ namespace Silk.NET.Maths
         public {{@Name thisType}}(ReadOnlySpan<T> values)
         {
             if (values.Length != {{= size}})
-                throw new ArgumentException("Input span must contain exactly {{= size}} elements.", nameof(values));
+                ThrowHelpers.ArgumentException_InputSpanTooSmall_{{= size}}();
 
             {{each i in Enumerable.Range(0, size)}}
                 {{= Vector.VectorFieldNames[i]}} = values[{{= i}}];
@@ -129,9 +130,9 @@ namespace Silk.NET.Maths
         public void CopyTo(T[] array, int startIndex)
         {
             if (array == null)
-                throw new ArgumentNullException(nameof(array));
+                ThrowHelpers.ArgumentNullException_array();
             if (startIndex < 0 || startIndex + {{= size}} > array.Length)
-                throw new ArgumentOutOfRangeException(nameof(startIndex));
+                ThrowHelpers.ArgumentOutOfRangeException_startIndex();
 
             {{each i in Enumerable.Range(0, size)}}
                 array[startIndex{{if i != 0}} + {{= i}}{{/if}}] = {{= Vector.VectorFieldNames[i]}};
@@ -145,7 +146,7 @@ namespace Silk.NET.Maths
         public void CopyTo(Span<T> span, int startIndex)
         {
             if (startIndex < 0 || startIndex + {{= size}} > span.Length)
-                throw new ArgumentOutOfRangeException(nameof(startIndex));
+                ThrowHelpers.ArgumentOutOfRangeException_startIndex();
 
             {{each i in Enumerable.Range(0, size)}}
                 span[startIndex{{if i != 0}} + {{= i}}{{/if}}] = {{= Vector.VectorFieldNames[i]}};
@@ -172,7 +173,7 @@ namespace Silk.NET.Maths
         public static {{@Name thisType}}<T> Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
         {
             if (!TryParse(s, provider, out var result))
-                throw new FormatException("Invalid format for {{@Name thisType}}.");
+                ThrowHelpers.FormatException_InvalidFormat{{@Name thisType}}();
 
             return result;
         }

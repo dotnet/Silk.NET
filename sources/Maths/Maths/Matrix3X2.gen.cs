@@ -85,7 +85,8 @@ namespace Silk.NET.Maths
                         return ref Row3;
                 }
 
-                throw new IndexOutOfRangeException();
+                ThrowHelpers.IndexOutOfRangeException();
+                return ref Row1; // Unreachable, but required to satisfy the compiler.
             }
         }
 
