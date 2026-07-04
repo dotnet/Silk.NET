@@ -20,7 +20,7 @@ namespace Silk.NET.Maths
         ISpanParsable<Vector2D<T>>,
         IUtf8SpanFormattable,
         IUtf8SpanParsable<Vector2D<T>>
-        where T : INumberBase<T>
+        where T : INumberBase<T>, IUtf8SpanFormattable
     {
         /// <summary>Gets a vector whose 2 elements are equal to one.</summary>
         public static Vector2D<T> One
@@ -76,7 +76,8 @@ namespace Silk.NET.Maths
                         return ref Y;
                 }
 
-                throw new ArgumentOutOfRangeException(nameof(index));
+                ThrowHelpers.ArgumentOutOfRangeException_index();
+                return ref X; // Unreachable, but required to satisfy the compiler.
             }
         }
 
@@ -90,7 +91,7 @@ namespace Silk.NET.Maths
         public Vector2D(ReadOnlySpan<T> values)
         {
             if (values.Length != 2)
-                throw new ArgumentException("Input span must contain exactly 2 elements.", nameof(values));
+                ThrowHelpers.ArgumentException_InputSpanTooSmall_2();
 
             X = values[0];
             Y = values[1];
@@ -113,9 +114,9 @@ namespace Silk.NET.Maths
         public void CopyTo(T[] array, int startIndex)
         {
             if (array == null)
-                throw new ArgumentNullException(nameof(array));
+                ThrowHelpers.ArgumentNullException_array();
             if (startIndex < 0 || startIndex + 2 > array.Length)
-                throw new ArgumentOutOfRangeException(nameof(startIndex));
+                ThrowHelpers.ArgumentOutOfRangeException_startIndex();
 
             array[startIndex] = X;
             array[startIndex + 1] = Y;
@@ -128,7 +129,7 @@ namespace Silk.NET.Maths
         public void CopyTo(Span<T> span, int startIndex)
         {
             if (startIndex < 0 || startIndex + 2 > span.Length)
-                throw new ArgumentOutOfRangeException(nameof(startIndex));
+                ThrowHelpers.ArgumentOutOfRangeException_startIndex();
 
             span[startIndex] = X;
             span[startIndex + 1] = Y;
@@ -154,7 +155,7 @@ namespace Silk.NET.Maths
         public static Vector2D<T> Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
         {
             if (!TryParse(s, provider, out var result))
-                throw new FormatException("Invalid format for Vector2D.");
+                ThrowHelpers.FormatException_InvalidFormatVector2D();
 
             return result;
         }
@@ -162,74 +163,66 @@ namespace Silk.NET.Maths
         /// <summary>Formats the vector as a UTF-8 string using the specified format and format provider.</summary>
         public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
         {
-            Span<char> xBuffer = stackalloc char[64];
-            Span<char> yBuffer = stackalloc char[64];
-
-            if (!X.TryFormat(xBuffer, out int xChars, format, provider)||
-                !Y.TryFormat(yBuffer, out int yChars, format, provider))
+            ValueUtf8StringBuilder vsb = new ValueUtf8StringBuilder(provider, utf8Destination);
+            if (!vsb.AppendLiteral("<"u8))
             {
-                bytesWritten = 0;
+                bytesWritten = vsb.BytesWritten;
                 return false;
             }
-
-            int estimatedSize = Encoding.UTF8.GetByteCount(xBuffer[..xChars]) +
-                                Encoding.UTF8.GetByteCount(yBuffer[..yChars]) +
-                                Encoding.UTF8.GetByteCount("<, >");
-
-            if (utf8Destination.Length < estimatedSize)
+            if (!vsb.AppendFormatted(X, format))
             {
-                bytesWritten = 0;
+                bytesWritten = vsb.BytesWritten;
                 return false;
             }
-
-            int totalBytes = 0;
-
-            totalBytes += Encoding.UTF8.GetBytes("<", utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(xBuffer[..xChars], utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(", ", utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(yBuffer[..yChars], utf8Destination[totalBytes..]);
-            totalBytes += Encoding.UTF8.GetBytes(">", utf8Destination[totalBytes..]);
-
-            bytesWritten = totalBytes;
+            if (!vsb.AppendLiteral(", "u8))
+            {
+                bytesWritten = vsb.BytesWritten;
+                return false;
+            }
+            if (!vsb.AppendFormatted(Y, format))
+            {
+                bytesWritten = vsb.BytesWritten;
+                return false;
+            }
+            if (!vsb.AppendLiteral(">"u8))
+            {
+                bytesWritten = vsb.BytesWritten;
+                return false;
+            }
+            bytesWritten = vsb.BytesWritten;
             return true;
         }
 
         /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
         public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
         {
-            Span<char> xBuffer = stackalloc char[64];
-            Span<char> yBuffer = stackalloc char[64];
-
-            if (!X.TryFormat(xBuffer, out int xChars, format, provider) ||
-                !Y.TryFormat(yBuffer, out int yChars, format, provider))
+            ValueStringBuilder vsb = new ValueStringBuilder(provider, destination);
+            if (!vsb.AppendLiteral("<"))
             {
-                charsWritten = 0;
+                charsWritten = vsb.CharsWritten;
                 return false;
             }
-
-            int requiredLength = 1 + xChars + 2 + yChars + 1;
-
-            if (destination.Length < requiredLength)
+            if (!vsb.AppendFormatted(X, format))
             {
-                charsWritten = 0;
+                charsWritten = vsb.CharsWritten;
                 return false;
             }
-
-            int pos = 0;
-            destination[pos++] = '<';
-
-            xBuffer[..xChars].CopyTo(destination[pos..]);
-            pos += xChars;
-
-            destination[pos++] = ',';
-            destination[pos++] = ' ';
-
-            yBuffer[..yChars].CopyTo(destination[pos..]);
-            pos += yChars;
-
-            destination[pos++] = '>';
-
-            charsWritten = pos;
+            if (!vsb.AppendLiteral(", "))
+            {
+                charsWritten = vsb.CharsWritten;
+                return false;
+            }
+            if (!vsb.AppendFormatted(Y, format))
+            {
+                charsWritten = vsb.CharsWritten;
+                return false;
+            }
+            if (!vsb.AppendLiteral(">"))
+            {
+                charsWritten = vsb.CharsWritten;
+                return false;
+            }
+            charsWritten = vsb.CharsWritten;
             return true;
         }
 
@@ -379,71 +372,111 @@ namespace Silk.NET.Maths
         /// <summary>Negates a given vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <returns>The negated vector.</returns>
-        public static Vector2D<T> operator -(Vector2D<T> vector) =>
-            new(-vector.X, -vector.Y);
+        public static Vector2D<T> operator -(Vector2D<T> vector)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(-Unsafe.BitCast<Vector2D<T>, Vector2>(vector));
+            return new(-vector.X, -vector.Y);
+        }
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The summed vector.</returns>
-        public static Vector2D<T> operator +(Vector2D<T> left, Vector2D<T> right) =>
-            new(left.X + right.X, left.Y + right.Y);
+        public static Vector2D<T> operator +(Vector2D<T> left, Vector2D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(left) + Unsafe.BitCast<Vector2D<T>, Vector2>(right));
+            return new(left.X + right.X, left.Y + right.Y);
+        }
 
         /// <summary>Subtracts the second vector from the first.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The difference vector.</returns>
-        public static Vector2D<T> operator -(Vector2D<T> left, Vector2D<T> right) =>
-            new(left.X - right.X, left.Y - right.Y);
+        public static Vector2D<T> operator -(Vector2D<T> left, Vector2D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(left) - Unsafe.BitCast<Vector2D<T>, Vector2>(right));
+            return new(left.X - right.X, left.Y - right.Y);
+        }
 
         /// <summary>Multiplies two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The product vector.</returns>
-        public static Vector2D<T> operator *(Vector2D<T> left, Vector2D<T> right) =>
-            new(left.X * right.X, left.Y * right.Y);
+        public static Vector2D<T> operator *(Vector2D<T> left, Vector2D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(left) * Unsafe.BitCast<Vector2D<T>, Vector2>(right));
+            return new(left.X * right.X, left.Y * right.Y);
+        }
 
         /// <summary>Divides the first vector by the second.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The vector resulting from the division.</returns>
-        public static Vector2D<T> operator /(Vector2D<T> left, Vector2D<T> right) =>
-            new(left.X / right.X, left.Y / right.Y);
+        public static Vector2D<T> operator /(Vector2D<T> left, Vector2D<T> right)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(left) / Unsafe.BitCast<Vector2D<T>, Vector2>(right));
+            return new(left.X / right.X, left.Y / right.Y);
+        }
 
         /// <summary>Adds a scalar to the components of a vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The offset vector.</returns>
-        public static Vector2D<T> operator +(Vector2D<T> vector, T scalar) =>
-            new(vector.X + scalar, vector.Y + scalar);
+        public static Vector2D<T> operator +(Vector2D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(vector) + new Vector2(Unsafe.BitCast<T, float>(scalar)));
+            return new(vector.X + scalar, vector.Y + scalar);
+        }
 
         /// <summary>Subtracts a scalar from the components of a vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The offset vector.</returns>
-        public static Vector2D<T> operator -(Vector2D<T> vector, T scalar) =>
-            new(vector.X - scalar, vector.Y - scalar);
+        public static Vector2D<T> operator -(Vector2D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(vector) - new Vector2(Unsafe.BitCast<T, float>(scalar)));
+            return new(vector.X - scalar, vector.Y - scalar);
+        }
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The scaled vector.</returns>
-        public static Vector2D<T> operator *(Vector2D<T> vector, T scalar) =>
-            new(vector.X * scalar, vector.Y * scalar);
+        public static Vector2D<T> operator *(Vector2D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(vector) * Unsafe.BitCast<T, float>(scalar));
+            return new(vector.X * scalar, vector.Y * scalar);
+        }
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="scalar">The scalar value.</param>
         /// <param name="vector">The source vector.</param>
         /// <returns>The scaled vector.</returns>
-        public static Vector2D<T> operator *(T scalar, Vector2D<T> vector) =>
-            new(scalar * vector.X, scalar * vector.Y);
+        public static Vector2D<T> operator *(T scalar, Vector2D<T> vector)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<T, float>(scalar) * Unsafe.BitCast<Vector2D<T>, Vector2>(vector));
+            return new(scalar * vector.X, scalar * vector.Y);
+        }
 
         /// <summary>Divides the vector by the given scalar.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The result of the division.</returns>
-        public static Vector2D<T> operator /(Vector2D<T> vector, T scalar) =>
-            new(vector.X / scalar, vector.Y / scalar);
+        public static Vector2D<T> operator /(Vector2D<T> vector, T scalar)
+        {
+            if (typeof(T) == typeof(float))
+                return Unsafe.BitCast<Vector2, Vector2D<T>>(Unsafe.BitCast<Vector2D<T>, Vector2>(vector) / Unsafe.BitCast<T, float>(scalar));
+            return new(vector.X / scalar, vector.Y / scalar);
+        }
 
         /// <summary>Converts a <see cref="Vector2"/> to a <see cref="Vector2D{T}"/>.</summary>
         public static explicit operator Vector2D<T>(Vector2 from) =>

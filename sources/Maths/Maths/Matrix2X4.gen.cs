@@ -6,6 +6,7 @@ namespace Silk.NET.Maths
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
+    using System.Runtime.CompilerServices;
     using System.Runtime.Serialization;
 
     /// <summary>A structure encapsulating a 2x4 matrix.</summary>
@@ -96,7 +97,8 @@ namespace Silk.NET.Maths
                         return ref Row2;
                 }
 
-                throw new IndexOutOfRangeException();
+                ThrowHelpers.IndexOutOfRangeException();
+                return ref Row1; // Unreachable, but required to satisfy the compiler.
             }
         }
 

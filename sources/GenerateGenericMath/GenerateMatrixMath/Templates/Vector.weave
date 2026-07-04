@@ -32,7 +32,7 @@ namespace Silk.NET.Maths
         ISpanParsable<{{@Name thisType}}<T>>,
         IUtf8SpanFormattable,
         IUtf8SpanParsable<{{@Name thisType}}<T>>
-        where T : INumberBase<T>
+        where T : INumberBase<T>, IUtf8SpanFormattable
     {
         /// <summary>Gets a vector whose {{= size}} elements are equal to one.</summary>
         public static {{@Name thisType}}<T> One
@@ -82,7 +82,8 @@ namespace Silk.NET.Maths
                     {{/each}}
                 }
 
-                throw new ArgumentOutOfRangeException(nameof(index));
+                ThrowHelpers.ArgumentOutOfRangeException_index();
+                return ref {{= Vector.VectorFieldNames[0]}}; // Unreachable, but required to satisfy the compiler.
             }
         }
 
@@ -104,7 +105,7 @@ namespace Silk.NET.Maths
         public {{@Name thisType}}(ReadOnlySpan<T> values)
         {
             if (values.Length != {{= size}})
-                throw new ArgumentException("Input span must contain exactly {{= size}} elements.", nameof(values));
+                ThrowHelpers.ArgumentException_InputSpanTooSmall_{{= size}}();
 
             {{each i in Enumerable.Range(0, size)}}
                 {{= Vector.VectorFieldNames[i]}} = values[{{= i}}];
@@ -129,9 +130,9 @@ namespace Silk.NET.Maths
         public void CopyTo(T[] array, int startIndex)
         {
             if (array == null)
-                throw new ArgumentNullException(nameof(array));
+                ThrowHelpers.ArgumentNullException_array();
             if (startIndex < 0 || startIndex + {{= size}} > array.Length)
-                throw new ArgumentOutOfRangeException(nameof(startIndex));
+                ThrowHelpers.ArgumentOutOfRangeException_startIndex();
 
             {{each i in Enumerable.Range(0, size)}}
                 array[startIndex{{if i != 0}} + {{= i}}{{/if}}] = {{= Vector.VectorFieldNames[i]}};
@@ -145,7 +146,7 @@ namespace Silk.NET.Maths
         public void CopyTo(Span<T> span, int startIndex)
         {
             if (startIndex < 0 || startIndex + {{= size}} > span.Length)
-                throw new ArgumentOutOfRangeException(nameof(startIndex));
+                ThrowHelpers.ArgumentOutOfRangeException_startIndex();
 
             {{each i in Enumerable.Range(0, size)}}
                 span[startIndex{{if i != 0}} + {{= i}}{{/if}}] = {{= Vector.VectorFieldNames[i]}};
@@ -172,7 +173,7 @@ namespace Silk.NET.Maths
         public static {{@Name thisType}}<T> Parse(ReadOnlySpan<char> s, IFormatProvider? provider)
         {
             if (!TryParse(s, provider, out var result))
-                throw new FormatException("Invalid format for {{@Name thisType}}.");
+                ThrowHelpers.FormatException_InvalidFormat{{@Name thisType}}();
 
             return result;
         }
@@ -180,77 +181,62 @@ namespace Silk.NET.Maths
         /// <summary>Formats the vector as a UTF-8 string using the specified format and format provider.</summary>
         public bool TryFormat(Span<byte> utf8Destination, out int bytesWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
         {
-            {{each f in fields}}
-                Span<char> {{= f.ToLower()}}Buffer = stackalloc char[64];
-            {{/each}}
-
-            if ({{each f in fields}}!{{= f}}.TryFormat({{= f.ToLower()}}Buffer, out int {{= f.ToLower()}}Chars, format, provider){{delimit}}||
-                {{/each}})
+            ValueUtf8StringBuilder vsb = new ValueUtf8StringBuilder(provider, utf8Destination);
+            if (!vsb.AppendLiteral("<"u8))
             {
-                bytesWritten = 0;
+                bytesWritten = vsb.BytesWritten;
                 return false;
             }
-
-            int estimatedSize = {{each f in fields}}Encoding.UTF8.GetByteCount({{= f.ToLower()}}Buffer[..{{= f.ToLower()}}Chars]) +
-                                {{/each}}Encoding.UTF8.GetByteCount("<, >");
-
-            if (utf8Destination.Length < estimatedSize)
-            {
-                bytesWritten = 0;
-                return false;
-            }
-
-            int totalBytes = 0;
-
-            totalBytes += Encoding.UTF8.GetBytes("<", utf8Destination[totalBytes..]);
             {{each f in fields}}
-                totalBytes += Encoding.UTF8.GetBytes({{= f.ToLower()}}Buffer[..{{= f.ToLower()}}Chars], utf8Destination[totalBytes..]);
+                if (!vsb.AppendFormatted({{= f}}, format))
+                {
+                    bytesWritten = vsb.BytesWritten;
+                    return false;
+                }
             {{delimit}}
-                totalBytes += Encoding.UTF8.GetBytes(", ", utf8Destination[totalBytes..]);
+                if (!vsb.AppendLiteral(", "u8))
+                {
+                    bytesWritten = vsb.BytesWritten;
+                    return false;
+                }
             {{/each}}
-            totalBytes += Encoding.UTF8.GetBytes(">", utf8Destination[totalBytes..]);
-
-            bytesWritten = totalBytes;
+            if (!vsb.AppendLiteral(">"u8))
+            {
+                bytesWritten = vsb.BytesWritten;
+                return false;
+            }
+            bytesWritten = vsb.BytesWritten;
             return true;
         }
 
         /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
         public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
         {
-            {{each f in fields}}
-                Span<char> {{= f.ToLower()}}Buffer = stackalloc char[64];
-            {{/each}}
-
-            if ({{each f in fields}}!{{= f}}.TryFormat({{= f.ToLower()}}Buffer, out int {{= f.ToLower()}}Chars, format, provider){{delimit}} ||
-                {{/each}})
+            ValueStringBuilder vsb = new ValueStringBuilder(provider, destination);
+            if (!vsb.AppendLiteral("<"))
             {
-                charsWritten = 0;
+                charsWritten = vsb.CharsWritten;
                 return false;
             }
-
-            int requiredLength = 1 + {{each f in fields}}{{= f.ToLower()}}Chars{{delimit}} + 2 + {{/each}} + 1;
-
-            if (destination.Length < requiredLength)
-            {
-                charsWritten = 0;
-                return false;
-            }
-
-            int pos = 0;
-            destination[pos++] = '<';
-
             {{each f in fields}}
-                {{= f.ToLower()}}Buffer[..{{= f.ToLower()}}Chars].CopyTo(destination[pos..]);
-                pos += {{= f.ToLower()}}Chars;
-
+                if (!vsb.AppendFormatted({{= f}}, format))
+                {
+                    charsWritten = vsb.CharsWritten;
+                    return false;
+                }
             {{delimit}}
-                destination[pos++] = ',';
-                destination[pos++] = ' ';
-
+                if (!vsb.AppendLiteral(", "))
+                {
+                    charsWritten = vsb.CharsWritten;
+                    return false;
+                }
             {{/each}}
-            destination[pos++] = '>';
-
-            charsWritten = pos;
+            if (!vsb.AppendLiteral(">"))
+            {
+                charsWritten = vsb.CharsWritten;
+                return false;
+            }
+            charsWritten = vsb.CharsWritten;
             return true;
         }
 
@@ -423,71 +409,161 @@ namespace Silk.NET.Maths
         /// <summary>Negates a given vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <returns>The negated vector.</returns>
-        public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> vector) =>
-            new({{each f in fields}}-vector.{{= f}}{{delimit}}, {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> vector)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(-Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(vector));
+                return new({{each f in fields}}-vector.{{= f}}{{delimit}}, {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> vector) =>
+                new({{each f in fields}}-vector.{{= f}}{{delimit}}, {{/each}});
+        {{/if}}
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The summed vector.</returns>
-        public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
-            new({{each f in fields}}left.{{= f}} + right.{{= f}}{{delimit}}, {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left) + Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right));
+                return new({{each f in fields}}left.{{= f}} + right.{{= f}}{{delimit}}, {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+                new({{each f in fields}}left.{{= f}} + right.{{= f}}{{delimit}}, {{/each}});
+        {{/if}}
 
         /// <summary>Subtracts the second vector from the first.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The difference vector.</returns>
-        public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
-            new({{each f in fields}}left.{{= f}} - right.{{= f}}{{delimit}}, {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left) - Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right));
+                return new({{each f in fields}}left.{{= f}} - right.{{= f}}{{delimit}}, {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+                new({{each f in fields}}left.{{= f}} - right.{{= f}}{{delimit}}, {{/each}});
+        {{/if}}
 
         /// <summary>Multiplies two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The product vector.</returns>
-        public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
-            new({{each f in fields}}left.{{= f}} * right.{{= f}}{{delimit}}, {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left) * Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right));
+                return new({{each f in fields}}left.{{= f}} * right.{{= f}}{{delimit}}, {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+                new({{each f in fields}}left.{{= f}} * right.{{= f}}{{delimit}}, {{/each}});
+        {{/if}}
 
         /// <summary>Divides the first vector by the second.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The vector resulting from the division.</returns>
-        public static {{@Name thisType}}<T> operator /({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
-            new({{each f in fields}}left.{{= f}} / right.{{= f}}{{delimit}}, {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator /({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left) / Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right));
+                return new({{each f in fields}}left.{{= f}} / right.{{= f}}{{delimit}}, {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator /({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+                new({{each f in fields}}left.{{= f}} / right.{{= f}}{{delimit}}, {{/each}});
+        {{/if}}
 
         /// <summary>Adds a scalar to the components of a vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The offset vector.</returns>
-        public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> vector, T scalar) =>
-            new({{each f in fields}}vector.{{= f}} + scalar{{delimit}}, {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> vector, T scalar)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(vector) + new {{= numericsName}}(Unsafe.BitCast<T, float>(scalar)));
+                return new({{each f in fields}}vector.{{= f}} + scalar{{delimit}}, {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> vector, T scalar) =>
+                new({{each f in fields}}vector.{{= f}} + scalar{{delimit}}, {{/each}});
+        {{/if}}
 
         /// <summary>Subtracts a scalar from the components of a vector.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The offset vector.</returns>
-        public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> vector, T scalar) =>
-            new({{each f in fields}}vector.{{= f}} - scalar{{delimit}}, {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> vector, T scalar)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(vector) - new {{= numericsName}}(Unsafe.BitCast<T, float>(scalar)));
+                return new({{each f in fields}}vector.{{= f}} - scalar{{delimit}}, {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> vector, T scalar) =>
+                new({{each f in fields}}vector.{{= f}} - scalar{{delimit}}, {{/each}});
+        {{/if}}
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The scaled vector.</returns>
-        public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> vector, T scalar) =>
-            new({{each f in fields}}vector.{{= f}} * scalar{{delimit}}, {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> vector, T scalar)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(vector) * Unsafe.BitCast<T, float>(scalar));
+                return new({{each f in fields}}vector.{{= f}} * scalar{{delimit}}, {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> vector, T scalar) =>
+                new({{each f in fields}}vector.{{= f}} * scalar{{delimit}}, {{/each}});
+        {{/if}}
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="scalar">The scalar value.</param>
         /// <param name="vector">The source vector.</param>
         /// <returns>The scaled vector.</returns>
-        public static {{@Name thisType}}<T> operator *(T scalar, {{@Name thisType}}<T> vector) =>
-            new({{each f in fields}}scalar * vector.{{= f}}{{delimit}}, {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator *(T scalar, {{@Name thisType}}<T> vector)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<T, float>(scalar) * Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(vector));
+                return new({{each f in fields}}scalar * vector.{{= f}}{{delimit}}, {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator *(T scalar, {{@Name thisType}}<T> vector) =>
+                new({{each f in fields}}scalar * vector.{{= f}}{{delimit}}, {{/each}});
+        {{/if}}
 
         /// <summary>Divides the vector by the given scalar.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="scalar">The scalar value.</param>
         /// <returns>The result of the division.</returns>
-        public static {{@Name thisType}}<T> operator /({{@Name thisType}}<T> vector, T scalar) =>
-            new({{each f in fields}}vector.{{= f}} / scalar{{delimit}}, {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator /({{@Name thisType}}<T> vector, T scalar)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(vector) / Unsafe.BitCast<T, float>(scalar));
+                return new({{each f in fields}}vector.{{= f}} / scalar{{delimit}}, {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator /({{@Name thisType}}<T> vector, T scalar) =>
+                new({{each f in fields}}vector.{{= f}} / scalar{{delimit}}, {{/each}});
+        {{/if}}
 
         {{if generateNumericsCast}}
             /// <summary>Converts a <see cref="{{= numericsName}}"/> to a <see cref="{{@Name thisType}}{T}"/>.</summary>

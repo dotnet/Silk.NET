@@ -7,7 +7,7 @@ namespace GenerateMatrixMath
 {
     internal static class RoslynExtensions
     {
-        public static string ToCSharpString(this Type type, string[] usingNamespaces = null, Assembly[] usingAssemblies = null, SymbolDisplayFormat symbolDisplayFormat = null)
+        public static string ToCSharpString(this Type type, string[]? usingNamespaces = null, Assembly[]? usingAssemblies = null, SymbolDisplayFormat? symbolDisplayFormat = null)
         {
             var compilationUnit = SyntaxFactory.CompilationUnit();
             if (usingNamespaces != null)
@@ -21,19 +21,21 @@ namespace GenerateMatrixMath
                     SyntaxFactory.UsingDirective(SyntaxFactory.IdentifierName("System")));
             }
 
+#pragma warning disable IL3000
             MetadataReference[] metadataReferences;
             if (usingAssemblies != null)
             {
-                metadataReferences = Array.ConvertAll(usingAssemblies, u => MetadataReference.CreateFromFile(u.Location));
+                metadataReferences =
+                    Array.ConvertAll(usingAssemblies, u => MetadataReference.CreateFromFile(u.Location));
             }
             else
             {
-                metadataReferences = new[]
-                {
-                MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
-                MetadataReference.CreateFromFile(type.Assembly.Location)
-            };
+                metadataReferences = new[] {
+                    MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
+                    MetadataReference.CreateFromFile(type.Assembly.Location)
+                };
             }
+#pragma warning restore IL3000
 
             var typeName = SyntaxFactory.ParseTypeName(type.ToFullyQualifiedName());
 
@@ -43,8 +45,8 @@ namespace GenerateMatrixMath
                         SyntaxFactory.VariableDeclarator(
                             SyntaxFactory.Identifier("field")))));
             compilationUnit = compilationUnit.AddMembers(
-                SyntaxFactory.ClassDeclaration("MyClass").AddMembers(
-                    field))
+                    SyntaxFactory.ClassDeclaration("MyClass").AddMembers(
+                        field))
                 .NormalizeWhitespace();
 
             var tree = compilationUnit.SyntaxTree;
@@ -57,7 +59,7 @@ namespace GenerateMatrixMath
                 .Members.OfType<FieldDeclarationSyntax>().Single()
                 .Declaration.Type);
 
-            return typeSymbol.Type.ToDisplayString(symbolDisplayFormat ?? new SymbolDisplayFormat(
+            return typeSymbol.Type!.ToDisplayString(symbolDisplayFormat ?? new SymbolDisplayFormat(
                 typeQualificationStyle: SymbolDisplayTypeQualificationStyle.NameAndContainingTypes,
                 genericsOptions: SymbolDisplayGenericsOptions.IncludeTypeParameters,
                 miscellaneousOptions: SymbolDisplayMiscellaneousOptions.UseSpecialTypes));
@@ -68,21 +70,22 @@ namespace GenerateMatrixMath
             switch (type)
             {
                 case { IsGenericParameter: true }: return type.Name;
-                case { IsArray: true }: return type.GetElementType().ToFullyQualifiedName() + "[]";
-                case { IsPointer: true }: return type.GetElementType().ToFullyQualifiedName() + "*";
-                case { IsByRef: true }: return type.GetElementType().ToFullyQualifiedName() + "&";
-                case { IsGenericType: false }: return string.IsNullOrEmpty(type.FullName) ? type.Name : type.FullName.Replace('+', '.');
+                case { IsArray: true }: return type.GetElementType()?.ToFullyQualifiedName() + "[]";
+                case { IsPointer: true }: return type.GetElementType()?.ToFullyQualifiedName() + "*";
+                case { IsByRef: true }: return type.GetElementType()?.ToFullyQualifiedName() + "&";
+                case { IsGenericType: false }:
+                    return string.IsNullOrEmpty(type.FullName) ? type.Name : type.FullName.Replace('+', '.');
                 default:
-                    var fullName = type.GetGenericTypeDefinition().FullName;
+                    var fullName = type.GetGenericTypeDefinition().FullName ?? "";
                     var backTickIndex = fullName.IndexOf('`');
                     if (backTickIndex > 0)
                     {
                         fullName = fullName.Substring(0, backTickIndex);
                     }
 
-                    return fullName.Replace('+', '.') + "<" + string.Join(", ", type.GetGenericArguments().Select(ToFullyQualifiedName)) + ">";
+                    return fullName.Replace('+', '.') + "<" +
+                           string.Join(", ", type.GetGenericArguments().Select(ToFullyQualifiedName)) + ">";
             }
-            ;
         }
     }
 }

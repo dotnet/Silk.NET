@@ -26,6 +26,7 @@ namespace Silk.NET.Maths
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Numerics;
+    using System.Runtime.CompilerServices;
     using System.Runtime.Serialization;
 
     /// <summary>A structure encapsulating a {{= size}} matrix.</summary>
@@ -85,7 +86,8 @@ namespace Silk.NET.Maths
                     {{/each}}
                 }
 
-                throw new IndexOutOfRangeException();
+                ThrowHelpers.IndexOutOfRangeException();
+                return ref Row1; // Unreachable, but required to satisfy the compiler.
             }
         }
 
@@ -186,56 +188,126 @@ namespace Silk.NET.Maths
         /// <param name="left">The first matrix to compare.</param>
         /// <param name="right">The second matrix to compare.</param>
         /// <returns><c>true</c> if the given matrices are equal; <c>false</c> otherwise.</returns>
-        public static bool operator ==({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
-            {{each r in rows}}left.Row{{= r}} == right.Row{{= r}}{{delimit}} &&
-            {{/each}};
+        {{if generateNumericsCast}}
+            public static bool operator ==({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left) == Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right);
+                return {{each r in rows}}left.Row{{= r}} == right.Row{{= r}}{{delimit}} &&
+                {{/each}};
+            }
+        {{else}}
+            public static bool operator ==({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+                {{each r in rows}}left.Row{{= r}} == right.Row{{= r}}{{delimit}} &&
+                {{/each}};
+        {{/if}}
 
         /// <summary>Returns a boolean indicating whether the given two matrices are not equal.</summary>
         /// <param name="left">The first matrix to compare.</param>
         /// <param name="right">The second matrix to compare.</param>
         /// <returns><c>true</c> if the given matrices are not equal; <c>false</c> otherwise.</returns>
-        public static bool operator !=({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
-            {{each r in rows}}left.Row{{= r}} != right.Row{{= r}}{{delimit}} ||
-            {{/each}};
+        {{if generateNumericsCast}}
+            public static bool operator !=({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left) != Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right);
+                return {{each r in rows}}left.Row{{= r}} != right.Row{{= r}}{{delimit}} ||
+                {{/each}};
+            }
+        {{else}}
+            public static bool operator !=({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+                {{each r in rows}}left.Row{{= r}} != right.Row{{= r}}{{delimit}} ||
+                {{/each}};
+        {{/if}}
 
         /// <summary>Adds two matrices together.</summary>
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
         /// <returns>The result of the addition.</returns>
-        public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
-            new({{each r in rows}}left.Row{{= r}} + right.Row{{= r}}{{delimit}},
-                {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left) + Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right));
+                return new({{each r in rows}}left.Row{{= r}} + right.Row{{= r}}{{delimit}},
+                    {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator +({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+                new({{each r in rows}}left.Row{{= r}} + right.Row{{= r}}{{delimit}},
+                    {{/each}});
+        {{/if}}
 
         /// <summary>Subtracts the second matrix from the first.</summary>
         /// <param name="left">The first source matrix.</param>
         /// <param name="right">The second source matrix.</param>
         /// <returns>The result of the subtraction.</returns>
-        public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
-            new({{each r in rows}}left.Row{{= r}} - right.Row{{= r}}{{delimit}},
-                {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left) - Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right));
+                return new({{each r in rows}}left.Row{{= r}} - right.Row{{= r}}{{delimit}},
+                    {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> left, {{@Name thisType}}<T> right) =>
+                new({{each r in rows}}left.Row{{= r}} - right.Row{{= r}}{{delimit}},
+                    {{/each}});
+        {{/if}}
 
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
-        public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> value) =>
-            new({{each r in rows}}-value.Row{{= r}}{{delimit}},
-                {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> value)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(-Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(value));
+                return new({{each r in rows}}-value.Row{{= r}}{{delimit}},
+                    {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator -({{@Name thisType}}<T> value) =>
+                new({{each r in rows}}-value.Row{{= r}}{{delimit}},
+                    {{/each}});
+        {{/if}}
 
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="left">The scaling factor.</param>
         /// <param name="right">The source matrix.</param>
         /// <returns>The scaled matrix.</returns>
-        public static {{@Name thisType}}<T> operator *(T left, {{@Name thisType}}<T> right) =>
-            new({{each r in rows}}left * right.Row{{= r}}{{delimit}},
-                {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator *(T left, {{@Name thisType}}<T> right)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right) * Unsafe.BitCast<T, float>(left));
+                return new({{each r in rows}}left * right.Row{{= r}}{{delimit}},
+                    {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator *(T left, {{@Name thisType}}<T> right) =>
+                new({{each r in rows}}left * right.Row{{= r}}{{delimit}},
+                    {{/each}});
+        {{/if}}
 
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="left">The source matrix.</param>
         /// <param name="right">The scaling factor.</param>
         /// <returns>The scaled matrix.</returns>
-        public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> left, T right) =>
-            new({{each r in rows}}left.Row{{= r}} * right{{delimit}},
-                {{/each}});
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> left, T right)
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left) * Unsafe.BitCast<T, float>(right));
+                return new({{each r in rows}}left.Row{{= r}} * right{{delimit}},
+                    {{/each}});
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> operator *({{@Name thisType}}<T> left, T right) =>
+                new({{each r in rows}}left.Row{{= r}} * right{{delimit}},
+                    {{/each}});
+        {{/if}}
 
         {{if size.Columns < 5 && size.Rows < 5}}
             {{

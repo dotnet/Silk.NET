@@ -48,7 +48,7 @@
             };
 
             var outputPaths = new[] {
-                @"C:\Users\otac0n\Projects\Silk.NET\sources\Maths\Maths\",
+                @"W:\projects\Silk.NET\sources\Maths\Maths\",
             };
 
             var dims = new HashSet<Dimension>();
