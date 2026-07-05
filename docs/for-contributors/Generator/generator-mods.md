@@ -170,6 +170,9 @@ provide cross-platform bindings.
 - Enums use `uint` as their backing type on Linux instead of `int` like on Windows. Silk handles this by using
   `TransformEnums` to "coerce" the backing types to their Windows equivalents when possible.
 
+- C `long` is output as C# `long` on Windows and C# `nint` on Linux. Silk handles this by generating bindings on Windows
+  where possible.
+
 Note: There may be other differences not yet documented here. In the case new differences are discovered, please
 update this section. API-specific differences should not be documented here and should be documented in the
 [API-Specific Notes](api-specific-notes.md) document.
