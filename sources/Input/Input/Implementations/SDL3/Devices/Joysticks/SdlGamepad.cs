@@ -19,7 +19,6 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     public SdlJoystick Joystick { get; }
 
 
-    // todo - do we want this to be an actual unique device? or should it have the same "unique id" as the joystick?
     private SdlGamepad(SdlJoystick joystick, nint uniqueId) : base(joystick.Backend, uniqueId, joystick.SdlDeviceId)
     {
         Joystick = joystick;
@@ -31,7 +30,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     // the hope is that doing it this way makes it more straightforward to manage input remapping with other backends or
     // adapt to unknown controllers in the future, despite being an unnecessary translation step at the moment.
     // hopefully this allows us to mimic SDL's mapping system for non-sdl input backends.
-    // todo - abstract the remapping logic into a separate class that can be injected into non-sdl backends
+    // todo (low prio) - abstract the remapping logic into a separate class that can be injected into non-sdl backends
     private void Remap(GamepadHandle gamepadHandle, long timestamp, ulong sdlTimestamp)
     {
         var bindings = new Dictionary<int, GamepadBinding>();
@@ -115,35 +114,30 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
         NativeBackend.Free(mappings);
         _bindings = bindings.ToFrozenDictionary();
+        var joystickHandle = Joystick.JoystickHandle;
 
         // update with default states
         // doing this here lets us pre-populate our axes for consumers to know what buttons are present
         for (var i = 0; i < buttonBindingsCount; ++i)
         {
             var which = buttonBindings[i];
-            var on = NativeBackend.GetJoystickButton(Joystick.JoystickHandle, which);
+            var on = NativeBackend.GetJoystickButton(joystickHandle, which);
             UpdateFromJoyButton(which, on, sdlTimestamp, timestamp);
         }
 
         for(var i = 0; i < axisBindingsCount; ++i)
         {
             var which = axisBindings[i];
-
-            short state = 0;
-            if (NativeBackend.GetJoystickAxisInitialState(Joystick.JoystickHandle, which, &state) != 0)
-            {
-                InputLog.Error("Failed to get initial axis state");
-            }
-
+            var state = NativeBackend.GetJoystickAxis(joystickHandle, which);
             UpdateFromJoyAxis(which, state, sdlTimestamp, timestamp);
         }
 
         for (var i = 0; i < hatBindingListCount; ++i)
         {
-            // todo: grab actual state from sdl if it's available?)
             var which = hatBindings[i];
             Debug.Assert(_hatBindings[which] != null);
-            UpdateFromJoyHat(which, SdlJoystick.HatState.Centered, sdlTimestamp, timestamp);
+            var value = NativeBackend.GetJoystickHat(joystickHandle, which);
+            UpdateFromJoyHat(which, (SdlJoystick.HatState)value, sdlTimestamp, timestamp);
         }
 
         return;
@@ -154,8 +148,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             {
                 case GamepadBindingType.Axis:
                 case GamepadBindingType.Button:
-                    bindings.Add(id, binding);
-                    return true;
+                    return bindings.TryAdd(id, binding);
                 default:
                     return false;
             }
@@ -193,7 +186,6 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
     {
-        // var joystickHandle = Joystick.JoystickHandle;
         var gamepadHandle = NativeBackend.OpenGamepad((uint)SdlDeviceId);
         if (gamepadHandle.Handle == null)
         {
@@ -204,29 +196,17 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         Remap(gamepadHandle, timestamp, sdlTimestamp);
         _state = new GamepadState(Joystick.RawButtonState, Joystick.RawAxisState);
 
-        // int count = -1;
-        // var mapping = NativeBackend.GetGamepadBindings(gamepadHandle, &count);
-        // Remap();
-
-        //List<Button<JoystickButton>> buttons = new();
-
-        //for (var i = 0; i < count; i++)
-        //{
-        //    ref var bind = ref *mapping[i];
-        //    bind.
-        //    _state = new GamepadState(Joystick.RawButtonState, Joystick.RawAxisState);
-        //}
-
-        // NativeBackend.Free(mapping);
-
         Joystick.AddDeviceMapping(this);
     }
+
+    /// <summary>
+    /// Executes rumbles that were dispatched from <see cref="SdlRumble"/>
+    /// </summary>
+    public void ExecuteRumble() => _rumbler?.ExecuteRumble();
 
     protected override void Release()
     {
         Joystick.RemoveDeviceMapping(this);
-
-        // todo: does this close the joystick as well?
         NativeBackend.CloseGamepad(_gamepadHandle);
     }
     private GamepadState _state;
@@ -549,7 +529,6 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
                 GamepadButton.DpadDown => JoystickButton.DPadDown,
                 GamepadButton.DpadLeft => JoystickButton.DPadLeft,
                 GamepadButton.DpadRight => JoystickButton.DPadRight,
-                // TODO not exposed today
                 _ => (JoystickButton)buttonIndex
             };
     }

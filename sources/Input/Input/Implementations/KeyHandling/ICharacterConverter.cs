@@ -14,7 +14,7 @@ internal interface ICharacterConverter
     public bool TryConvert(KeyName key, KeyModifiers modifiers, [NotNullWhen(true)] out char? c);
 }
 
-internal class DummyCharConverter : ICharacterConverter
+internal sealed class DummyCharConverter : ICharacterConverter
 {
     // todo - proper VK key support for various languages and layouts
     public bool TryConvert(KeyName key, KeyModifiers modifiers, [NotNullWhen(true)] out char? c)

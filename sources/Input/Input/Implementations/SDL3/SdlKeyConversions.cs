@@ -86,14 +86,20 @@ internal static class SdlKeyConversions
     /// </summary>
     /// <param name="key">The name of the key you would like to get an Sdl key id for</param>
     /// <param name="sdl">Sdl backend instance</param>
-    /// <param name="asKeyEvent">Will this key be used in a key event?</param>
+    /// <param name="applyModifiers">Corresponds to `key_event` in
+    /// <see cref="ISdl.GetKeyFromScancode(Scancode, ushort, byte)"/> - will this key be used in a key event?</param>
     /// <param name="modState">The current modifier key state</param>
     /// <returns>The sdl key id</returns>
-    public static uint KeyNameToSdl(KeyName key, ISdl sdl, bool asKeyEvent, ushort? modState = null)
+    /// <remarks>
+    /// QUESTION: should 'asKeyEvent' be true?
+    /// could it being true interfere with localization of inputs?
+    /// Documentation: <see href="https://wiki.libsdl.org/SDL3/SDL_GetKeyFromScancode#remarks"/>
+    /// </remarks>
+    public static uint KeyNameToSdl(KeyName key, ISdl sdl, bool applyModifiers, ushort? modState = null)
     {
         modState ??= sdl.GetModState();
         var scanCode = (uint)key;
-        var asKeyEventByte = asKeyEvent ? (byte)1 : (byte)0;
+        var asKeyEventByte = applyModifiers ? (byte)1 : (byte)0;
         return sdl.GetKeyFromScancode((Scancode)scanCode, modState.Value, asKeyEventByte);
     }
 

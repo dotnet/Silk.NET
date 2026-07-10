@@ -69,15 +69,14 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     public bool TryGetKeyName(KeyName key, [NotNullWhen(true)] out string? name)
     {
-        // todo: should 'asKeyEvent' be true?
         var sdlKey = SdlKeyConversions.KeyNameToSdl(key, NativeBackend, true, _modState);
         var namePtr = NativeBackend.GetKeyName(sdlKey);
         name = namePtr.ReadToString();
         return !string.IsNullOrWhiteSpace(name);
     }
 
-
-    // todo - there should be a backend-independent way to do this text input handling via KeyboardState?
+    // todo (LOW PRIO) - there should be a backend-independent way to do this text input
+    //  handling via KeyboardState events? see TextRecorder class
     public void BeginInput()
     {
         var sdlWindow = Backend.FocusedWindow;

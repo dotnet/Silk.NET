@@ -9,9 +9,6 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 
 internal static class PointerTargetExtensions
 {
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static bool AppliesTo(this IPointerDevice device, IPointerTarget target) => device.Targets.Contains(target);
-
     extension(IPointerTarget target)
     {
         /// <summary>

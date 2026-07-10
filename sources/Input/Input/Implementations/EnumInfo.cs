@@ -50,11 +50,11 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     private static readonly ulong[] _allEnumValuesDistinctRaw;
     private static readonly bool _unnamedAreIndexable;
 #pragma warning disable CS0414 // Field is assigned but its value is never used
-    // todo - do we want this information? can this speed up or improve conversion methods?
+    // QUESTION - do we want this information? can this speed up or improve conversion methods?
     private static readonly bool _isSignedBackingType;
 #pragma warning restore CS0414 // Field is assigned but its value is never used
 
-    private const int MAX_CAPACITY = 256;
+    private const int _maxCapacity = 256;
 
     static unsafe EnumInfo()
     {
@@ -199,7 +199,6 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
 
         var rawValue = value.ConvertBitwiseUnsafe<T, int>();
 
-        // todo - don't rely on joystickButton's unknown - find the MinValue
         var minKnownVal = _allEnumValuesDistinctRaw[0].ConvertBitwiseUnsafe<ulong, int>();
         if (rawValue < 0 || rawValue >= minKnownVal)
         {
@@ -207,7 +206,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         }
 
         var idx = _allValuesOrdered.Length + rawValue;
-        if (_numericallyDistinctIndices.Count < MAX_CAPACITY)
+        if (_numericallyDistinctIndices.Count < _maxCapacity)
         {
 #if DEBUG
             System.Diagnostics.Debug.Assert(_numericallyDistinctIndices.TryAdd(value, idx));

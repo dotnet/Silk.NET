@@ -88,6 +88,15 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
     #region Sdl Events
 
+    public void AddBallEvent(byte ballIdx, short ballEventXrel, short ballEventYrel, ulong ballEventTimestamp, long timestamp)
+    {
+        // TODO - implement ball events.
+        //  There are two options for implementation:
+        //   1. treat this the same way we would treat a pointer that's locked to the center of the window - deltas only
+        //   2. treat this as joystick input, with velocity indicating absolute position of the joystick
+        InputLog.Debug("Ball events not implemented");
+    }
+
     public void AddHatEvent(int hatIdx, byte hatInput, ulong sdlTimestamp, long timestamp)
     {
         var hatState = (HatState)hatInput;
@@ -247,4 +256,5 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     internal required ISdlEventQueue<JoystickHatMoveEvent> HatEvents { get; init; }
 
     ButtonReadOnlyList<JoystickButton> IButtonDevice<JoystickButton>.State => State.Buttons;
+
 }

@@ -99,11 +99,11 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 
     MouseState IMouse.State => _state;
 
-    // todo (maybe): pair with simulated touch device if simulated touch events occur
+    // QUESTION: pair with simulated touch device if simulated touch events occur?
     // though, we can probably only pair if there is *one* mouse - multiple mice
     // would make it difficult to pair, as simulated touch input does not specify the mouse
     // it comes from
-    public int? TouchId { get; private set; }
+    // public int? TouchId { get; private set; }
 
     private bool IsMouseRelative
     {
@@ -137,7 +137,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     /// <param name="position">The window-relative position of the mouse</param>
     /// <returns>True if success, but see the below remarks</returns>
     /// <remarks>
-    /// todo: this is the most straightforward way to do window-relative movement,
+    /// todo (LOW PRIO): this is the most straightforward way to do window-relative movement,
     /// but we don't actually get any information about whether or not
     /// it succeeds. The SDL documentation seems to suggest that it "just works" as opposed to their global mouse warp
     /// method, which provides a success result. instead of translating this "global" position to a window-specific one,

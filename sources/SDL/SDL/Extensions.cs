@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.SDL;
 
 public partial class Sdl
@@ -9,8 +11,9 @@ public partial class Sdl
     {
         if (GetError().ReadToString() is { Length: > 0 } str)
         {
-            static void Throw(string str) => throw new SdlException(str);
-            Throw(str);
+            var exception = new SdlException(str);
+            ClearError();
+            throw exception;
         }
     }
 }
@@ -21,25 +24,9 @@ public static class Extensions
     {
         if (sdl.GetError().ReadToString() is { Length: > 0 } str)
         {
-            static void Throw(string str) => throw new SdlException(str);
-            Throw(str);
+            var exception = new SdlException(str);
             sdl.ClearError();
-        }
-    }
-
-    public static void ThrowSdlError(this bool ec)
-    {
-        if (!ec)
-        {
-            Sdl.ThrowError();
-        }
-    }
-
-    public static void ThrowSdlError(this bool ec, ISdl sdl)
-    {
-        if (!ec)
-        {
-            sdl.ThrowError();
+            throw exception;
         }
     }
 }

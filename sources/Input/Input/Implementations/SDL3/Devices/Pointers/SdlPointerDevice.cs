@@ -75,23 +75,26 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
 
         void RepopulateActiveTargets()
         {
-            // todo - optimize target collection population
+            // todo- pointer target removal from AllTargets when they are destroyed
             _activeTargets.Clear();
-            foreach (var point in _points)
+            for (var index = 0; index < _points.Count; index++)
             {
-                if (!_activeTargets.Contains(point.Target!))
+                var point = _points[index];
+                var target = point.Target!;
+                if (!_activeTargets.Contains(target))
                 {
-                    _activeTargets.Add(point.Target!);
-                    if (!_allTargets.Contains(point.Target!))
-                    {
-                        _allTargets.Add(point.Target!);
-                    }
+                    _activeTargets.Add(target);
+                }
+
+                if (!_allTargets.Contains(target))
+                {
+                    _allTargets.Add(target);
                 }
             }
         }
     }
 
-    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget target, uint touchId,
+    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget? target, uint touchId,
         in Vector3? positionOnTarget,
         Ray3D<float>? ray, float? pressure, out TargetPoint? oldPoint)
     {
@@ -345,7 +348,9 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     protected void SetGripPressure(float pressure, ulong sdlTimestamp, long timestamp)
     {
-        // todo - use only the given events to update the state? is that possible? keyboard character input would probably be a problem..
+        // todo (LOW PRIO) -
+        //  use only the given events to update the state of each input device later based on their event queues?
+        //  is that possible? keyboard character input would probably be a problem..
         State.GripPressure = pressure;
         GripEvents.Enqueue(new PointerGripChangedEvent(this, timestamp, pressure, pressure - State.GripPressure),
             sdlTimestamp);

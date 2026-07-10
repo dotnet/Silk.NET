@@ -6,13 +6,17 @@ namespace Silk.NET.Input;
 /// Enumerates the buttons of a joystick.
 /// </summary>
 [OrderedIndexUsage]
-public enum JoystickButton // todo : should we include XInput, PSX, and Nintendo button names here?
+public enum JoystickButton // question: should we include XInput, PSX, and Nintendo button names here?
 {
+    // warning: if you intend to add additional buttons here, make sure you check SdlGamepad.UpdateButton method
+    // so we can properly map it to our input backend
+    // please note that all named JoystickButton values must be defined as greater than `Unknown` value
+
     /// <summary>
     /// The button was not recognised.
     /// </summary>
-    /// <remarks>This is defined as such a large number such that unknown buttons can still be a JoystickButton,
-    /// and we can define up to <see cref="ushort.MaxValue"/> predefined unique joystick buttons.
+    /// <remarks>This is defined as such a large number such that unknown buttons can still be a JoystickButton.
+    /// we can still define up to <see cref="ushort.MaxValue"/> predefined, named unique joystick buttons here.
     /// </remarks>
     [OrderedIndexIgnore]
     Unknown = JoystickAxis.Unknown,

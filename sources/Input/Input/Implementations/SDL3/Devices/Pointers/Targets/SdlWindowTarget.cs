@@ -16,8 +16,8 @@ internal sealed class SdlWindowTarget : SdlBoundedPointerTarget, ISdlBoundedPoin
 
     protected override Box3D<float> CalculateBounds()
     {
-        var bounds2d = SdlBoundedPointerTarget.CalculateWindowBounds(Backend.Sdl, Handle);
-        return new Box3D<float>(bounds2d.Min.X, bounds2d.Min.Y, 0, bounds2d.Max.X, bounds2d.Max.Y, 1);
+        var bounds2D = CalculateWindowBounds(Backend.Sdl, Handle);
+        return new Box3D<float>(bounds2D.Min.X, bounds2D.Min.Y, 0, bounds2D.Max.X, bounds2D.Max.Y, 1);
     }
 
     public uint Id { get; }

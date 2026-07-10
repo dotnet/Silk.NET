@@ -56,7 +56,7 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
             }
 
             // todo: cursor hotspot, not supported by sdl?
-            handle = _sdl.CreateColorCursor(_customCursorSurface, 0, 0);
+            handle = _sdl.CreateColorCursor(surface: _customCursorSurface, hot_x: 0, hot_y: 0);
         }
         else if (style == _handleStyle)
         {
@@ -131,7 +131,7 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
             CursorStyles.VResize
         ];
 
-        // todo: is it necessary to check for the Default style? can some platforms just not support any cursor?
+        // QUESTION: is it necessary to check for the Default style? can some platforms just not support any cursor?
         // if so, the result of this evaluation will still report that "Default" is available..
         // lest we make it nullable... nah i'll leave it to the Sdl gods for now
         var successfulStyles = CursorStyles.Default;
@@ -154,6 +154,9 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
         return successfulStyles;
     }
 
+    // TODO we can't query support for these cursor modes, but should we try-it-and-see to be accurate?
+    // TODO if you're using one input context for all windows, there is no way to specify a window for
+    //  grabbed cursor mode
     public CursorModes SupportedModes =>
         CursorModes.Normal | CursorModes.Confined | CursorModes.Unbounded;
 

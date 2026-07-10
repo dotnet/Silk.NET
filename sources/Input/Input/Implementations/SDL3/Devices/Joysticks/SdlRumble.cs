@@ -58,19 +58,28 @@ internal unsafe class SdlRumble : IReadOnlyList<IMotor>
     private void SetRumble01(int motor, float value) =>
         SetRumble01(motor, (ushort)(value * ushort.MaxValue), _motorFrequencies);
 
+    public void ExecuteRumble()
+    {
+        for(var i = 0; i < _rumbleRequests.Count; i++)
+        {
+            var request = _rumbleRequests[i];
+            _setRumble(_nativeBackend, _handle, request.Left, request.Right);
+        }
+
+        _rumbleRequests.Clear();
+    }
+
     private void SetRumble01(int motor, ushort value, ushort[] motorFrequencies)
     {
         // todo - use Haptics API instead?
-        // todo - dispatch this to the correct input thread
-
-        // TODO this entire API needs to be redesigned as right now this is literally only ever going to be useful if it's
-        // just left or right. The original intention was that this would be useful for things like 3D haptics, but what did
-        // I know. The SDL people seem to have done a good job with their haptic API, let's see what we can do with it.
-        // For now, this has the same implementation as it always has.
+        //  this entire API needs to be redesigned as right now this is literally only ever going to be useful if it's
+        //  just left or right. The original intention was that this would be useful for things like 3D haptics, but what did
+        //  I (Perksey) know. The SDL people seem to have done a good job with their haptic API, let's see what we can do with it.
         var valueShort = value;
         motorFrequencies[motor] = valueShort;
         var left = motorFrequencies[0];
         var right = motorFrequencies[1];
+        _rumbleRequests.Add(new RumbleRequest(left, right));
         _setRumble(_nativeBackend, _handle, left, right);
     }
 
@@ -103,6 +112,9 @@ internal unsafe class SdlRumble : IReadOnlyList<IMotor>
             backend.ThrowError();
         }
     }
+
+    private readonly record struct RumbleRequest(ushort Left, ushort Right);
+    private readonly List<RumbleRequest> _rumbleRequests = new();
 
     private readonly SetRumbleDelegate _setRumble;
     private readonly void* _handle;

@@ -28,8 +28,7 @@ internal partial class SdlInputBackend : IInputBackend
 
     public IReadOnlyList<IInputDevice> Devices => _eventProcessingArgs.Devices;
 
-    // todo - properly implement window focus tracking
-    public WindowHandle? FocusedWindow { get; private set; }
+    public WindowHandle? FocusedWindow => _eventProcessingArgs.FocusedWindow;
 
     public readonly ICursorConfiguration CursorConfiguration;
 
@@ -48,6 +47,23 @@ internal partial class SdlInputBackend : IInputBackend
             throw new ArgumentNullException(nameof(info), "No SDL instance was provided or found.");
         }
 
+        _getDisplayHandles = GetDisplayHandles;
+        _getWindowHandles = GetWindowHandles;
+        _getWindowId = GetWindowId;
+        _getDisplayId = GetDisplayId;
+
+        var ptr = new EventFilter(OnEvent);
+        if (!Sdl.AddEventWatch(ptr, (Ref)nullptr))
+        {
+            Sdl.ThrowError();
+        }
+
+        Id = (nint)ptr.Handle;
+        CursorConfiguration = new SdlCursor(Sdl);
+        InitializeEventQueue(out _silkEvents);
+        _eventProcessingArgs = new ProcessEventArgs(this, _silkEvents.ConnectionSdlEvents);
+
+
         if (info.Window == nullptr)
         {
             var focusedWindow = Sdl.GetMouseFocus();
@@ -61,25 +77,8 @@ internal partial class SdlInputBackend : IInputBackend
                 throw new ArgumentNullException(nameof(info), "No window was provided and no window had focus.");
             }
 
-            FocusedWindow = focusedWindow;
+            _eventProcessingArgs.FocusedWindow = focusedWindow;
         }
-
-        _getDisplayHandles = GetDisplayHandles;
-        _getWindowHandles = GetWindowHandles;
-        _getWindowId = GetWindowId;
-        _getDisplayId = GetDisplayId;
-
-        var ptr = new EventFilter(OnEvent);
-        // TODO overload resolution priority?
-        if (!Sdl.AddEventWatch(ptr, (Ref)nullptr))
-        {
-            Sdl.ThrowError();
-        }
-
-        Id = (nint)ptr.Handle;
-        CursorConfiguration = new SdlCursor(Sdl);
-        InitializeEventQueue(out _silkEvents);
-        _eventProcessingArgs = new ProcessEventArgs(this, _silkEvents.ConnectionSdlEvents);
 
 
         if (!Sdl.InitSubSystem(SdlInitFlags))
@@ -172,21 +171,6 @@ internal partial class SdlInputBackend : IInputBackend
         }
     }
 
-    // [UnmanagedCallersOnly]
-    // private static unsafe void CleanupRoot(void* _, void* value)
-    // {
-    //     var gch = GCHandle.FromIntPtr((nint)value);
-    //     (gch.Target as SdlBackendRoot)?.Dispose();
-    //     gch.Free();
-    // }
-    // public SdlBackendRoot Root { get; }
-
-
-    // TODO we can't query support for these modes, but should we try-it-and-see to be accurate?
-
-    // TODO if you're using one input context for all windows, there is no way to specify a window for grabbed cursor mode
-
-
     // This is complicated, as the input proposal mandates that nothing happens until Update is called (so the events
     // can be received on the given actor) but to also track logical events that happen between calls (i.e. from a
     // timestamp perspective). Compound this with the fact that the user might do something silly like make multiple
@@ -206,7 +190,7 @@ internal partial class SdlInputBackend : IInputBackend
             return;
         }
 
-        // todo - do we want this before or after the event processing? or should
+        // QUESTION - do we want this before or after the event processing? or should
         // it always just be done in the same way as other input events? e.g. via events
         // windows can change without input events being processed... but who cares? as long as the devices
         // have the latest information when they're updated, we should be good?
@@ -233,8 +217,15 @@ internal partial class SdlInputBackend : IInputBackend
 
         _pumpedSdlEventsSorted.Clear();
 
-        foreach (var device in _eventProcessingArgs.Devices)
+        var devices = _eventProcessingArgs.Devices;
+        for (var index = 0; index < devices.Count; index++)
         {
+            var device = devices[index];
+            if (device is SdlGamepad gamepad)
+            {
+                gamepad.ExecuteRumble();
+            }
+
             if (device is INeedFinalizationEachFrame needer)
             {
                 needer.FinalizeUpdate();
@@ -254,6 +245,13 @@ internal partial class SdlInputBackend : IInputBackend
         return 1;
     }
 
+    /// <summary>
+    /// Interprets SDL events to apply to our input devices
+    /// </summary>
+    /// <param name="evt"></param>
+    /// <param name="timestamp"></param>
+    /// <param name="processEventArgs"></param>
+    /// <seealso href="https://wiki.libsdl.org/SDL3/SDL_EventType"/>
     private static void ProcessEvent(in Event evt, long timestamp, ref ProcessEventArgs processEventArgs)
     {
         var backend = processEventArgs.Backend;
@@ -384,8 +382,7 @@ internal partial class SdlInputBackend : IInputBackend
                         joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value, evt.Jaxis.Timestamp, timestamp);
                         break;
                     case EventType.JoystickBallMotion:
-                        // todo: ball events?
-                        InputLog.Debug("Ball input detected");
+                        joystick.AddBallEvent(evt.Jball.Ball, evt.Jball.Xrel, evt.Jball.Yrel, evt.Jball.Timestamp, timestamp);
                         break;
                     case EventType.JoystickHatMotion:
                         joystick.AddHatEvent(evt.Jhat.Hat, evt.Jhat.Value, evt.Jhat.Timestamp, timestamp);
@@ -504,9 +501,9 @@ internal partial class SdlInputBackend : IInputBackend
             }
 
             // Display & window (pointer target) events ----------------------------
-            // todo - update pointer targets list based on add/remove?
-            //  unless the way we currently collect them is sufficient
-            // (see PopulatePointerTargets in SdlInputBackend.Targets.cs)
+            // todo - update pointer targets - probably for windows, not displays, except for unbounded targets?
+            //  what about the event where a window/display moves, but a pointer does not? do we force-update the
+            //  pointer device too to get the updated position? probably not.. hopefully SDL handles that internally
             case EventType.DisplayOrientation:
             case EventType.DisplayAdded:
             case EventType.DisplayRemoved:
@@ -522,15 +519,57 @@ internal partial class SdlInputBackend : IInputBackend
                         bounds.Max.ToSystem()
                     );
 
+                // var id = evt.Display.DisplayID;
+
                 InputLog.Debug($"Display bounds changed: {x.BoundedPointerTargetUpdate}");
                 break;
             }
+            case EventType.WindowMouseEnter:
+                break;
             case EventType.WindowMouseLeave
                 : // do we need to do anything? we should probably track the current window of the pointer
             {
                 //var x = (QueuedEventType.MouseExitedWindow, timestamp);
                 break;
             }
+            case EventType.WindowMoved:
+                break;
+            case EventType.WindowMinimized:
+                break;
+            case EventType.WindowFocusGained:
+                processEventArgs.FocusedWindow = processEventArgs.Backend.Sdl.GetWindowFromID(evt.Window.WindowID);
+                break;
+            case EventType.WindowFocusLost:
+                processEventArgs.FocusedWindow = null;
+                break;
+            case EventType.WindowLeaveFullscreen:
+                break;
+            case EventType.WindowEnterFullscreen:
+                break;
+            case EventType.WindowExposed:
+                break;
+            case EventType.WindowHidden:
+                break;
+            case EventType.WindowDestroyed:
+                break;
+            case EventType.WindowShown:
+                break;
+
+            // window scaling changes:
+            case EventType.WindowSafeAreaChanged:
+                break;
+            case EventType.WindowResized:
+                break;
+            case EventType.WindowRestored:
+                break;
+            case EventType.WindowMaximized:
+                break;
+            case EventType.WindowPixelSizeChanged:
+                break;
+            case EventType.WindowDisplayChanged:
+                break;
+            case EventType.WindowDisplayScaleChanged:
+                break;
         }
 
         #endregion
@@ -661,6 +700,7 @@ internal partial class SdlInputBackend : IInputBackend
     {
         public readonly SdlInputBackend Backend;
         public readonly IReadOnlyList<SdlDevice> Devices => _devices;
+        public WindowHandle? FocusedWindow;
         public readonly List<SdlWindowTarget> SdlWindowTargets;
         public readonly List<SdlDisplayTarget> SdlDisplayTargets;
         public ulong PreviousTimestamp;

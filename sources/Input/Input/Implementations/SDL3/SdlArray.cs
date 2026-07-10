@@ -10,7 +10,7 @@ namespace Silk.NET.Input.SDL3;
 
 // note - this probably doesn't need to be a ref struct, but is bc that's the extents
 // of the struct's current use cases
-// todo - can this struct be represented as a NativeArray<T, TBackend> where TBackend has a
+// LONG-TERM DOM-SPECIFIC TO-DO - can this struct be represented as a NativeArray<T, TBackend> where TBackend has a
 //  Free(void*) or Free(void*, int) method?
 internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArray<T>>, IReadOnlyList<T> where T : unmanaged
 {
@@ -100,20 +100,8 @@ internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArr
 
     public ref T this[uint index]
     {
-        get
-        {
-            if (_ptr.Native == null)
-            {
-                throw new NullReferenceException();
-            }
-
-            if (Count <= index)
-            {
-                throw new IndexOutOfRangeException(nameof(index));
-            }
-
-            return ref _ptr.Native[index];
-        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => ref this[(int)index];
     }
 
     public bool Equals(SdlArray<T> other) => this == other;
