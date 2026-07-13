@@ -50,7 +50,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             return;
         }
 
-        Span<int> buttonBindings  = stackalloc int[bindingsCount];
+        Span<int> buttonBindings = stackalloc int[bindingsCount];
         Span<int> axisBindings = stackalloc int[bindingsCount];
         Span<int> hatBindings = stackalloc int[bindingsCount];
         var buttonBindingsCount = 0;
@@ -74,6 +74,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
                     {
                         buttonBindings[buttonBindingsCount++] = binding.Input.Button;
                     }
+
                     break;
                 }
                 case GamepadBindingType.Axis:
@@ -125,7 +126,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             UpdateFromJoyButton(which, on, sdlTimestamp, timestamp);
         }
 
-        for(var i = 0; i < axisBindingsCount; ++i)
+        for (var i = 0; i < axisBindingsCount; ++i)
         {
             var which = axisBindings[i];
             var state = NativeBackend.GetJoystickAxis(joystickHandle, which);
@@ -156,7 +157,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     }
 
 
-    private enum InputType {Axis, Button}
+    private enum InputType { Axis, Button }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static int InputIndexToMappingIndex(int index, InputType type)
@@ -209,6 +210,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         Joystick.RemoveDeviceMapping(this);
         NativeBackend.CloseGamepad(_gamepadHandle);
     }
+
     private GamepadState _state;
 
     #region IGamepad
@@ -223,7 +225,8 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     #endregion
 
-    public static SdlGamepad? CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext context)
+    public static SdlGamepad? CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp,
+        SdlInputBackend backend, SilkEventContext context)
     {
         if (!backend.TryGetOrCreateDevice<SdlJoystick>(sdlDeviceId, timestamp, sdlTimestamp, out var joystick))
         {
@@ -259,6 +262,17 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         return sdlGamepad;
     }
 
+    /// <summary>
+    /// Updates the internal state of based on the given SDL <see cref="GamepadAxis"/> input event and joystick mapping
+    /// information
+    /// </summary>
+    /// <param name="gAxis"></param>
+    /// <param name="value"></param>
+    /// <param name="min"></param>
+    /// <param name="max"></param>
+    /// <param name="sdlTimestamp"></param>
+    /// <param name="timestamp"></param>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
     private void UpdateGamepadAxis(GamepadAxis gAxis, int value, int min, int max, ulong sdlTimestamp, long timestamp)
     {
         var lower = Math.Min(min, max);
@@ -269,6 +283,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         UpdateGamepadAxis(gAxis, mappedValue, sdlTimestamp, timestamp);
 
         return;
+
         static float NormalizeInRange(int current, int rangeMin, int rangeMax)
         {
             if (rangeMin == rangeMax)
@@ -279,73 +294,91 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             var normalized = (current - rangeMin) / (float)(rangeMax - rangeMin);
             return Math.Clamp(normalized, 0f, 1f);
         }
-    }
 
-    private void UpdateGamepadAxis(GamepadAxis gAxis, float mappedValue, ulong sdlTimestamp, long timestamp)
-    {
-        switch (gAxis)
+        void UpdateGamepadAxis(GamepadAxis gAxis, float mappedValue, ulong sdlTimestamp, long timestamp)
         {
-            case GamepadAxis.Invalid:
-                return;
-            case GamepadAxis.Leftx or GamepadAxis.Lefty or GamepadAxis.Rightx or GamepadAxis.Righty:
+            switch (gAxis)
             {
-                var axis = ToJoystickAxis(gAxis);
-                var axes = GetJoystickAxis2(axis);
-                var xIndex = axes.X.Index();
-                var yIndex = axes.Y.Index();
-                var previous = Joystick.GetAxisStateByIndex2D(xIndex, yIndex);
-
-                if (Joystick.UpdateRawAxisState(axis, mappedValue, sdlTimestamp, timestamp, out _))
+                case GamepadAxis.Invalid:
+                    return;
+                case GamepadAxis.Leftx or GamepadAxis.Lefty or GamepadAxis.Rightx or GamepadAxis.Righty:
                 {
-                    var latest = Joystick.GetAxisStateByIndex2D(xIndex, yIndex);
-                    ThumbstickEvents.Enqueue(new GamepadThumbstickMoveEvent(Gamepad: this,
-                        Timestamp: timestamp,
-                        Value: latest,
-                        Delta: latest - previous), sdlTimestamp);
+                    var axis = ToJoystickAxis(gAxis);
+                    var axes = GetJoystickAxis2(axis);
+                    var xIndex = axes.X.Index();
+                    var yIndex = axes.Y.Index();
+                    var previous = Joystick.GetAxisStateByIndex2D(xIndex, yIndex);
 
-                    ToSplitPair(axis, out var minusAxis, out var plusAxis);
-                    var split = SdlJoystick.SplitValue(mappedValue);
-                    Joystick.UpdateRawAxisState(minusAxis, split.X, sdlTimestamp, timestamp, out _);
-                    Joystick.UpdateRawAxisState(plusAxis, split.Y, sdlTimestamp, timestamp, out _);
+                    if (Joystick.UpdateRawAxisState(axis, mappedValue, sdlTimestamp, timestamp, out _))
+                    {
+                        var latest = Joystick.GetAxisStateByIndex2D(xIndex, yIndex);
+
+                        // Processed Axes
+                        ThumbstickEvents.Enqueue(new GamepadThumbstickMoveEvent(Gamepad: this,
+                            Timestamp: timestamp,
+                            Value: latest,
+                            Delta: latest - previous), sdlTimestamp);
+
+                        ToSplitPair(axis, out var minusAxis, out var plusAxis);
+                        var split = SdlJoystick.SplitValue(mappedValue);
+                        Joystick.UpdateRawAxisState(minusAxis, split.X, sdlTimestamp, timestamp, out _);
+                        Joystick.UpdateRawAxisState(plusAxis, split.Y, sdlTimestamp, timestamp, out _);
+                    }
+
+                    break;
                 }
-
-                break;
-
-            }
-            case GamepadAxis.LeftTrigger or GamepadAxis.RightTrigger:
-            {
-                if (Joystick.UpdateRawAxisState(ToJoystickAxis(gAxis), mappedValue, sdlTimestamp, timestamp, out var moveEvt))
+                case GamepadAxis.LeftTrigger or GamepadAxis.RightTrigger:
                 {
-                    TriggerEvents.Enqueue(new GamepadTriggerMoveEvent(this, moveEvt.Timestamp, moveEvt.Axis,
-                        moveEvt.Value, moveEvt.Delta), sdlTimestamp);
+                    if (Joystick.UpdateRawAxisState(ToJoystickAxis(gAxis), mappedValue, sdlTimestamp, timestamp,
+                            out var moveEvt))
+                    {
+                        TriggerEvents.Enqueue(new GamepadTriggerMoveEvent(this, moveEvt.Timestamp, moveEvt.Axis,
+                            moveEvt.Value, moveEvt.Delta), sdlTimestamp);
+                    }
+
+                    break;
                 }
-
-                break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(gAxis), gAxis, null);
             }
-            default:
-                throw new ArgumentOutOfRangeException(nameof(gAxis), gAxis, null);
-        }
 
-        return;
+            return;
 
-        static JoystickAxis ToJoystickAxis(GamepadAxis gamepadAxis) => gamepadAxis switch {
-            GamepadAxis.Leftx => JoystickAxis.LeftX,
-            GamepadAxis.Lefty => JoystickAxis.LeftY,
-            GamepadAxis.Rightx => JoystickAxis.RightX,
-            GamepadAxis.Righty => JoystickAxis.RightY,
-            GamepadAxis.LeftTrigger => JoystickAxis.LeftTrigger,
-            GamepadAxis.RightTrigger => JoystickAxis.RightTrigger,
-            _ => throw new ArgumentOutOfRangeException(nameof(gamepadAxis), gamepadAxis, null)
-        };
-
-        static (JoystickAxis X, JoystickAxis Y) GetJoystickAxis2(JoystickAxis axis) =>
-            axis switch {
-                JoystickAxis.LeftX or JoystickAxis.LeftY => (JoystickAxis.LeftX, JoystickAxis.LeftY),
-                JoystickAxis.RightX or JoystickAxis.RightY => (JoystickAxis.RightX, JoystickAxis.RightY),
-                _ => throw new ArgumentOutOfRangeException(nameof(axis), axis, null)
+            // SDL -> Silk.NET
+            static JoystickAxis ToJoystickAxis(GamepadAxis gamepadAxis) => gamepadAxis switch {
+                GamepadAxis.Leftx => JoystickAxis.LeftX,
+                GamepadAxis.Lefty => JoystickAxis.LeftY,
+                GamepadAxis.Rightx => JoystickAxis.RightX,
+                GamepadAxis.Righty => JoystickAxis.RightY,
+                GamepadAxis.LeftTrigger => JoystickAxis.LeftTrigger,
+                GamepadAxis.RightTrigger => JoystickAxis.RightTrigger,
+                _ => throw new ArgumentOutOfRangeException(nameof(gamepadAxis), gamepadAxis, null)
             };
+
+            static (JoystickAxis X, JoystickAxis Y) GetJoystickAxis2(JoystickAxis axis) =>
+                axis switch {
+                    JoystickAxis.LeftX or JoystickAxis.LeftY => (JoystickAxis.LeftX, JoystickAxis.LeftY),
+                    JoystickAxis.RightX or JoystickAxis.RightY => (JoystickAxis.RightX, JoystickAxis.RightY),
+                    _ => throw new ArgumentOutOfRangeException(nameof(axis), axis, null)
+                };
+        }
     }
 
+
+    /// <summary>
+    /// Provides the correct axis names from the given <see cref="JoystickAxis"/> to split it from being a larger
+    /// axis (e.g. <see cref="JoystickAxis.LeftX"/>) into a more specific set of names that describe their positive and
+    /// negative values separately (e.g. <see cref="JoystickAxis.MinusLeftX"/> and <see cref="JoystickAxis.PlusLeftX"/>).
+    /// </summary>
+    /// <param name="axis">The axis to split, </param>
+    /// <param name="splitMinus">The resulting axis name for the negative value of the given axis.</param>
+    /// <param name="splitPlus">The resulting axis name for the positive value of the given axis.</param>
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// This method only supports named axes that have a positive and
+    /// negative variants named as well. <br/><br/>
+    /// <see cref="JoystickAxis.LeftX"/>, <see cref="JoystickAxis.RightX"/>, <see cref="JoystickAxis.LeftY"/>,
+    /// and <see cref="JoystickAxis.RightY"/>.
+    /// </exception>
     private static void ToSplitPair(JoystickAxis axis, out JoystickAxis splitMinus, out JoystickAxis splitPlus)
     {
         switch (axis)
@@ -373,6 +406,13 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     #region ISdlJoystick
 
+    /// <summary>
+    /// Takes the button press from our joystick and updates the internal state of the gamepad accordingly.
+    /// </summary>
+    /// <param name="buttonIdx">The index/id of the button, from SDL.</param>
+    /// <param name="down">Whether the button was pressed or released.</param>
+    /// <param name="sdlTimestamp">The timestamp of the event from SDL.</param>
+    /// <param name="timestamp">The timestamp from <see cref="InputContext"/>.</param>
     public void UpdateFromJoyButton(int buttonIdx, bool down, ulong sdlTimestamp, long timestamp)
     {
         if (!_bindings.TryGetValue(InputIndexToMappingIndex(buttonIdx, InputType.Button), out var binding))
@@ -403,6 +443,14 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         }
     }
 
+    /// <summary>
+    /// Takes axis input from SDL's joystick and updates the internal state of the gamepad accordingly.
+    /// </summary>
+    /// <param name="axis">The index/id of the axis, from SDL.</param>
+    /// <param name="joystickInput">The value of the axis from SDL. If this is intended to be a mapped input, this
+    /// should be the axis of your binding's output.</param>
+    /// <param name="sdlTimestamp">The timestamp of the event from SDL.</param>
+    /// <param name="timestamp">The timestamp from <see cref="InputContext"/>.</param>
     public void UpdateFromJoyAxis(int axis, short joystickInput, ulong sdlTimestamp, long timestamp)
     {
         if (!_bindings.TryGetValue(InputIndexToMappingIndex(axis, InputType.Axis), out var binding))
@@ -423,12 +471,14 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
                 ref readonly var outputAxis = ref output->Axis;
                 var outputRaw = MapNormalizedToRange(inputPercent, outputAxis.AxisMin, outputAxis.AxisMax);
-                UpdateGamepadAxis(output->Axis.Axis, outputRaw, outputAxis.AxisMin, outputAxis.AxisMax, sdlTimestamp, timestamp);
+                UpdateGamepadAxis(output->Axis.Axis, outputRaw, outputAxis.AxisMin, outputAxis.AxisMax, sdlTimestamp,
+                    timestamp);
                 break;
             }
             case GamepadBindingType.Button:
             {
-                UpdateButton(output->Button, IsInPressedRange(joystickInput, input->AxisMin, input->AxisMax), sdlTimestamp, timestamp);
+                UpdateButton(output->Button, IsInPressedRange(joystickInput, input->AxisMin, input->AxisMax),
+                    sdlTimestamp, timestamp);
                 break;
             }
         }
@@ -465,6 +515,13 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         }
     }
 
+    /// <summary>
+    /// Takes hat input from SDL and updates the internal state of the gamepad accordingly.
+    /// </summary>
+    /// <param name="hatIdx">The index/id of the hat, from SDL.</param>
+    /// <param name="hatState">The state of the hat from SDL.</param>
+    /// <param name="sdlTimestamp">The timestamp of the event from SDL.</param>
+    /// <param name="timestamp">The timestamp from <see cref="InputContext"/>.</param>
     public void UpdateFromJoyHat(int hatIdx, SdlJoystick.HatState hatState, ulong sdlTimestamp, long timestamp)
     {
         if (_hatBindings.Count <= hatIdx)
@@ -506,6 +563,13 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     #endregion
 
+    /// <summary>
+    /// Final registration of a button press into the gamepad's internal state.
+    /// </summary>
+    /// <param name="button">The button that was pressed.</param>
+    /// <param name="value">Whether the button was pressed or released.</param>
+    /// <param name="sdlTimestamp">The timestamp of the event from SDL.</param>
+    /// <param name="timestamp">The timestamp from <see cref="InputContext"/>.</param>
     private void UpdateButton(GamepadButton button, bool value, ulong sdlTimestamp, long timestamp)
     {
         var asJoystickButton = AsJoystickButton(button);
