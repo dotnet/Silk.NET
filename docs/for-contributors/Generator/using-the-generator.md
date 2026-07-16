@@ -65,8 +65,8 @@ files). These response files store command line arguments to be passed into Clan
 Note that these files can be stored anywhere since the SilkTouch configuration lets you configure where the SilkTouch
 generator looks for these response files.
 
-> To read more about ClangSharpPInvokeGenerator's command line arguments, a good option is to install the tool directly
-> and use the `--help` option to display its command line documentation.
+> To read more about ClangSharpPInvokeGenerator's command line arguments, you can either refer to
+> [ClangSharp's README](https://github.com/dotnet/ClangSharp) or install the tool locally:
 >
 > ```sh
 > dotnet tool install --global ClangSharpPInvokeGenerator
