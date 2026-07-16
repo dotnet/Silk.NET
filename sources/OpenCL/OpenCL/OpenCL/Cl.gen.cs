@@ -26629,7 +26629,7 @@ public unsafe partial class Cl : ICl, ICl.Static
 
     [NativeName("CL_ICD2_TAG_KHR")]
     [SupportedApiProfile("opencl", ["cl_khr_icd"])]
-    public const nint Icd2TagKHR = unchecked((nint)(0x4F50454E434C3331));
+    public static nint Icd2TagKHR => unchecked((nint)(0x4F50454E434C3331));
 
     [NativeName("CL_KHR_ICD_UNLOADABLE_EXTENSION_NAME")]
     public static ReadOnlySpan<byte> KhrIcdUnloadableExtensionName => "cl_khr_icd_unloadable"u8;
@@ -27131,7 +27131,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         ["cl_arm_import_memory_android_hardware_buffer"],
         ImpliesSets = ["cl_arm_import_memory"]
     )]
-    public const nuint ImportMemoryWholeAllocationARM = (18446744073709551615U);
+    public static nuint ImportMemoryWholeAllocationARM => unchecked((nuint)(18446744073709551615U));
 
     [NativeName("CL_ARM_SHARED_VIRTUAL_MEMORY_EXTENSION_NAME")]
     public static ReadOnlySpan<byte> ArmSharedVirtualMemoryExtensionName =>
