@@ -32,4 +32,7 @@ public enum KernelWorkGroupInfo : uint
 
     [NativeName("CL_KERNEL_SPILL_MEM_SIZE_INTEL")]
     SpillMemSizeINTEL = 16649,
+
+    [NativeName("CL_KERNEL_ALLOCATIONS_INFO_INTEL")]
+    AllocationsInfoINTEL = 16986,
 }
