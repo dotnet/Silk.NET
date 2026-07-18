@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -14,4 +13,4 @@ namespace Silk.NET.Input;
 /// <param name="Previous">The previous state of the key.</param>
 /// <param name="IsRepeat">Whether this is an event that has been repeated at an implementation-defined rate.</param>
 /// <param name="Modifiers">The active key modifiers at the time the event was raised.</param>
-public readonly record struct KeyChangedEvent(IKeyboard Keyboard, long Timestamp, Button<KeyName> Key, Button<KeyName> Previous, bool IsRepeat, KeyModifiers Modifiers) : ITimestampedEvent;
+public readonly record struct KeyChangedEvent(IKeyboard Keyboard, long Timestamp, Button<KeyName> Key, Button<KeyName> Previous, bool IsRepeat, KeyModifiers Modifiers);

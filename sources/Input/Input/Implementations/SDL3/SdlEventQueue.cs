@@ -7,7 +7,7 @@ using Silk.NET.Input.SDL3.Devices.Pointers;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlEventQueue<T> : ISdlEventQueue<T> where T : struct
+internal class InputEventQueue<T> : IInputEventQueue<T> where T : struct
 {
     private T[] _events = GC.AllocateUninitializedArray<T>(8);
     private ulong[] _sdlTimestamps = new ulong[8];
@@ -61,13 +61,13 @@ internal class SdlEventQueue<T> : ISdlEventQueue<T> where T : struct
     }
 }
 
-internal sealed class GenericEventQueue : SdlEventQueue<GenericEvent>
+internal sealed class GenericEventQueue : InputEventQueue<GenericEvent>
 {
-    private readonly SdlTimestampCalculator.Basis _basis;
-    public GenericEventQueue(SdlTimestampCalculator.Basis basis) => _basis = basis;
+    private readonly SdlTimestampCalculator.TimeBasis _basis;
+    public GenericEventQueue(SdlTimestampCalculator.TimeBasis basis) => _basis = basis;
 
 
-    public unsafe void ConsumeOther<T>(in SdlEventQueue<T> queue) where T : struct, ITimestampedEvent
+    public unsafe void ConsumeOther<T>(in InputEventQueue<T> queue) where T : struct
     {
         var q = queue.Consume();
         for (var i = 0; i < q.Count; i++)
@@ -114,17 +114,12 @@ internal sealed class GenericEventQueue : SdlEventQueue<GenericEvent>
     }
 }
 
-internal interface ISdlEventQueue<T> where T : struct
+internal interface IInputEventQueue<T> where T : struct
 {
     public void Enqueue(in T item, ulong sdlTimestamp);
 }
 
 internal readonly record struct GenericEvent(nint EventPtr, Type Type)
 {
-    public unsafe T Value<T>() => Unsafe.AsRef<T>((void*)EventPtr);
-}
-
-internal interface ITimestampedEvent
-{
-    public long Timestamp { get; }
+    public unsafe ref T Value<T>() => ref Unsafe.AsRef<T>((void*)EventPtr);
 }

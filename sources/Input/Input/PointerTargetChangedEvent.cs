@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Silk.NET.Input.SDL3;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Input;
@@ -25,4 +24,7 @@ namespace Silk.NET.Input;
 /// The new <see cref="IPointerTarget.Bounds"/> of the target. This may be the same as <see cref="OldBounds"/> if there
 /// has been no change.
 /// </param>
-public readonly record struct PointerTargetChangedEvent(IPointerDevice Pointer, long Timestamp, IPointerTarget Target, bool? IsAdded, Box3D<float> OldBounds, Box3D<float> NewBounds) : ITimestampedEvent;
+// QUESTION: Is this event intended to be updated on a per-device basis, where events are raised for each device's targets independently?
+//  that would create a lot of duplicate events, which could be fine...
+// TODO: implement - currently these events are not raised
+public readonly record struct PointerTargetChangedEvent(IPointerDevice Pointer, long Timestamp, IPointerTarget Target, bool? IsAdded, Box3D<float> OldBounds, Box3D<float> NewBounds);

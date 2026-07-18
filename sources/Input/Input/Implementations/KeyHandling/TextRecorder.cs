@@ -4,7 +4,6 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using Silk.NET.Input.SDL3;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.KeyHandling;

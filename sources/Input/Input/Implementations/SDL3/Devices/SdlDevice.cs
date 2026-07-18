@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using Silk.NET.Input.SDL3.Devices.Pointers;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;

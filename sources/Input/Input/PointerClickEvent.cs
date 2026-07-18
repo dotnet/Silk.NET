@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -15,4 +14,4 @@ namespace Silk.NET.Input;
 /// validate if such a point was available.
 /// </param>
 /// <param name="Button">The button that was pressed and released in succession.</param>
-public readonly record struct PointerClickEvent(IPointerDevice Pointer, long Timestamp, TargetPoint Point, PointerButton Button) : ITimestampedEvent;
+public readonly record struct PointerClickEvent(IPointerDevice Pointer, long Timestamp, TargetPoint Point, PointerButton Button);

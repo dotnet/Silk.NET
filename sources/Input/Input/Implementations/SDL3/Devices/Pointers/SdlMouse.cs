@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
@@ -49,7 +48,8 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 
 
         // var pressure = _state.Buttons[PointerButton.Primary].Pressure;
-        AddOrUpdatePoint(null, windowId, new Vector3(x, y, 0), null, DownState, null, true, sdlTimestamp, timestamp);
+        Backend.TryGetPointerTargetForWindow(windowId, out var target);
+        AddOrUpdatePoint(null, target, new Vector3(x, y, 0), null, DownState, null, true, sdlTimestamp, timestamp);
         // var point = _unboundedPointerTarget.GetPoint(this, 0);
     }
 
@@ -69,7 +69,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         (SdlMouseInputFlags)NativeBackend.GetMouseState((float*)Unsafe.AsPointer(ref x),
             (float*)Unsafe.AsPointer(ref y));
 
-    public static SdlMouse CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlMouse CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         var deviceName = backend.Sdl.GetMouseNameForID((uint)sdlDeviceId);
         nint uniqueId = 0;
@@ -80,12 +80,12 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 
         var mouse =
             new SdlMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, backend.CursorConfiguration) {
-                ScrollEvents = silkEvents.MouseScrollSdlEvents,
-                PointEvents = silkEvents.PointChangedSdlEvents,
-                ClickEvents = silkEvents.PointerClickSdlEvents,
-                ButtonEvents = silkEvents.PointerButtonSdlEvents,
-                GripEvents = silkEvents.PointerGripChangedSdlEvents,
-                TargetEvents = silkEvents.PointerTargetChangedSdlEvents
+                ScrollEvents = silkEvents.MouseScrollInputEvents,
+                PointEvents = silkEvents.PointChangedInputEvents,
+                ClickEvents = silkEvents.PointerClickInputEvents,
+                ButtonEvents = silkEvents.PointerButtonInputEvents,
+                GripEvents = silkEvents.PointerGripChangedInputEvents,
+                TargetEvents = silkEvents.PointerTargetChangedInputEvents
             };
 
         return mouse;
@@ -184,9 +184,16 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     /// </summary>
     public bool NeedsPump { get; private set; }
 
-    public void AddMotion(in MouseMotionEvent evtMotion, long timestamp) =>
-        AddOrUpdatePoint(null, evtMotion.WindowID, new Vector3(evtMotion.X, evtMotion.Y, 0), 1, null, null,
+    public void AddMotion(in MouseMotionEvent evtMotion, long timestamp)
+    {
+        if (!Backend.TryGetPointerTargetForWindow(evtMotion.WindowID, out var target))
+        {
+            throw new InvalidOperationException("Failed to get pointer target for window");
+        }
+
+        AddOrUpdatePoint(null, target, new Vector3(evtMotion.X, evtMotion.Y, 0), 1, null, null,
             evtMotion.WindowID != 0, evtMotion.Timestamp, timestamp);
+    }
 
 
     public void AddButtonEvent(in MouseButtonEvent evtButton, long timestamp)

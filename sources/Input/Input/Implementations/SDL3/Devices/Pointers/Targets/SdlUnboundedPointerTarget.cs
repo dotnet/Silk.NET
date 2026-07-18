@@ -5,6 +5,7 @@ using Silk.NET.Maths;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 
+// todo - test that "unbounded" behavior is correct
 internal class SdlUnboundedPointerTarget(SdlInputBackend backend) : IPointerTarget
 {
     private static readonly Box3D<float> _bounds = new(

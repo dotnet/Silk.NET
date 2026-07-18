@@ -5,73 +5,76 @@ using Silk.NET.Input.SDL3.Devices.Pointers;
 
 namespace Silk.NET.Input.SDL3;
 
+/// <summary>
+/// A class used to collect all of the input events from all of our input dvices.
+/// </summary>
 internal class SilkEventContext
 {
-    public ISdlEventQueue<ButtonChangedEvent<JoystickButton>> ButtonChangedSdlEvents => _buttonChangedSdlEvents;
+    public IInputEventQueue<ButtonChangedEvent<JoystickButton>> ButtonChangedInputEvents => _buttonChangedInputEvents;
 
-    public ISdlEventQueue<ConnectionEvent> ConnectionSdlEvents => _connectionSdlEvents;
+    public IInputEventQueue<ConnectionEvent> ConnectionInputEvents => _connectionInputEvents;
 
-    public ISdlEventQueue<KeyChangedEvent> KeyChangedSdlEvents => _keyChangedSdlEvents;
+    public IInputEventQueue<KeyChangedEvent> KeyChangedInputEvents => _keyChangedInputEvents;
 
-    public ISdlEventQueue<GamepadThumbstickMoveEvent> GamepadThumbstickMoveSdlEvents =>
-        _gamepadThumbstickMoveSdlEvents;
+    public IInputEventQueue<GamepadThumbstickMoveEvent> GamepadThumbstickMoveInputEvents =>
+        _gamepadThumbstickMoveInputEvents;
 
-    public ISdlEventQueue<GamepadTriggerMoveEvent> GamepadTriggerMoveSdlEvents => _gamepadTriggerMoveSdlEvents;
+    public IInputEventQueue<GamepadTriggerMoveEvent> GamepadTriggerMoveInputEvents => _gamepadTriggerMoveInputEvents;
 
-    public ISdlEventQueue<JoystickAxisMoveEvent> JoystickAxisMoveSdlEvents => _joystickAxisMoveSdlEvents;
+    public IInputEventQueue<JoystickAxisMoveEvent> JoystickAxisMoveInputEvents => _joystickAxisMoveInputEvents;
 
-    public ISdlEventQueue<JoystickHatMoveEvent> JoystickHatMoveSdlEvents => _joystickHatMoveSdlEvents;
+    public IInputEventQueue<JoystickHatMoveEvent> JoystickHatMoveInputEvents => _joystickHatMoveInputEvents;
 
-    public ISdlEventQueue<KeyCharEvent> KeyCharSdlEvents => _keyCharSdlEvents;
+    public IInputEventQueue<KeyCharEvent> KeyCharInputEvents => _keyCharInputEvents;
 
-    public ISdlEventQueue<MouseScrollEvent> MouseScrollSdlEvents => _mouseScrollSdlEvents;
+    public IInputEventQueue<MouseScrollEvent> MouseScrollInputEvents => _mouseScrollInputEvents;
 
-    public ISdlEventQueue<PointChangedEvent> PointChangedSdlEvents => _pointChangedSdlEvents;
+    public IInputEventQueue<PointChangedEvent> PointChangedInputEvents => _pointChangedInputEvents;
 
-    public ISdlEventQueue<PointerClickEvent> PointerClickSdlEvents => _pointerClickSdlEvents;
+    public IInputEventQueue<PointerClickEvent> PointerClickInputEvents => _pointerClickInputEvents;
 
-    public ISdlEventQueue<PointerGripChangedEvent> PointerGripChangedSdlEvents => _pointerGripChangedSdlEvents;
+    public IInputEventQueue<PointerGripChangedEvent> PointerGripChangedInputEvents => _pointerGripChangedInputEvents;
 
-    public ISdlEventQueue<PointerTargetChangedEvent> PointerTargetChangedSdlEvents =>
-        _pointerTargetChangedSdlEvents;
+    public IInputEventQueue<PointerTargetChangedEvent> PointerTargetChangedInputEvents =>
+        _pointerTargetChangedInputEvents;
 
-    public ISdlEventQueue<ButtonChangedEvent<PointerButton>> PointerButtonSdlEvents => _pointerButtonSdlEvents;
+    public IInputEventQueue<ButtonChangedEvent<PointerButton>> PointerButtonInputEvents => _pointerButtonInputEvents;
 
-    private readonly SdlEventQueue<ButtonChangedEvent<JoystickButton>> _buttonChangedSdlEvents = new();
-    private readonly SdlEventQueue<ConnectionEvent> _connectionSdlEvents = new();
-    private readonly SdlEventQueue<KeyChangedEvent> _keyChangedSdlEvents = new();
-    private readonly SdlEventQueue<GamepadThumbstickMoveEvent> _gamepadThumbstickMoveSdlEvents = new();
-    private readonly SdlEventQueue<GamepadTriggerMoveEvent> _gamepadTriggerMoveSdlEvents = new();
-    private readonly SdlEventQueue<JoystickAxisMoveEvent> _joystickAxisMoveSdlEvents = new();
-    private readonly SdlEventQueue<JoystickHatMoveEvent> _joystickHatMoveSdlEvents = new();
-    private readonly SdlEventQueue<KeyCharEvent> _keyCharSdlEvents = new();
-    private readonly SdlEventQueue<MouseScrollEvent> _mouseScrollSdlEvents = new();
-    private readonly SdlEventQueue<PointChangedEvent> _pointChangedSdlEvents = new();
-    private readonly SdlEventQueue<PointerClickEvent> _pointerClickSdlEvents = new();
-    private readonly SdlEventQueue<ButtonChangedEvent<PointerButton>> _pointerButtonSdlEvents = new();
-    private readonly SdlEventQueue<PointerGripChangedEvent> _pointerGripChangedSdlEvents = new();
-    private readonly SdlEventQueue<PointerTargetChangedEvent> _pointerTargetChangedSdlEvents = new();
+    private readonly InputEventQueue<ButtonChangedEvent<JoystickButton>> _buttonChangedInputEvents = new();
+    private readonly InputEventQueue<ConnectionEvent> _connectionInputEvents = new();
+    private readonly InputEventQueue<KeyChangedEvent> _keyChangedInputEvents = new();
+    private readonly InputEventQueue<GamepadThumbstickMoveEvent> _gamepadThumbstickMoveInputEvents = new();
+    private readonly InputEventQueue<GamepadTriggerMoveEvent> _gamepadTriggerMoveInputEvents = new();
+    private readonly InputEventQueue<JoystickAxisMoveEvent> _joystickAxisMoveInputEvents = new();
+    private readonly InputEventQueue<JoystickHatMoveEvent> _joystickHatMoveInputEvents = new();
+    private readonly InputEventQueue<KeyCharEvent> _keyCharInputEvents = new();
+    private readonly InputEventQueue<MouseScrollEvent> _mouseScrollInputEvents = new();
+    private readonly InputEventQueue<PointChangedEvent> _pointChangedInputEvents = new();
+    private readonly InputEventQueue<PointerClickEvent> _pointerClickInputEvents = new();
+    private readonly InputEventQueue<ButtonChangedEvent<PointerButton>> _pointerButtonInputEvents = new();
+    private readonly InputEventQueue<PointerGripChangedEvent> _pointerGripChangedInputEvents = new();
+    private readonly InputEventQueue<PointerTargetChangedEvent> _pointerTargetChangedInputEvents = new();
     private readonly GenericEventQueue _orderedSdlEvents;
 
-    public SilkEventContext(SdlTimestampCalculator.Basis basis) =>
+    public SilkEventContext(SdlTimestampCalculator.TimeBasis basis) =>
         _orderedSdlEvents = new GenericEventQueue(basis);
 
     public void RaiseEvents(params Span<IInputHandler> handlers)
     {
-        _orderedSdlEvents.ConsumeOther(_buttonChangedSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_connectionSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_keyChangedSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_gamepadThumbstickMoveSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_gamepadTriggerMoveSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_joystickAxisMoveSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_joystickHatMoveSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_keyCharSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_mouseScrollSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_pointChangedSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_pointerClickSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_pointerGripChangedSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_pointerTargetChangedSdlEvents);
-        _orderedSdlEvents.ConsumeOther(_pointerButtonSdlEvents);
+        _orderedSdlEvents.ConsumeOther(_buttonChangedInputEvents);
+        _orderedSdlEvents.ConsumeOther(_connectionInputEvents);
+        _orderedSdlEvents.ConsumeOther(_keyChangedInputEvents);
+        _orderedSdlEvents.ConsumeOther(_gamepadThumbstickMoveInputEvents);
+        _orderedSdlEvents.ConsumeOther(_gamepadTriggerMoveInputEvents);
+        _orderedSdlEvents.ConsumeOther(_joystickAxisMoveInputEvents);
+        _orderedSdlEvents.ConsumeOther(_joystickHatMoveInputEvents);
+        _orderedSdlEvents.ConsumeOther(_keyCharInputEvents);
+        _orderedSdlEvents.ConsumeOther(_mouseScrollInputEvents);
+        _orderedSdlEvents.ConsumeOther(_pointChangedInputEvents);
+        _orderedSdlEvents.ConsumeOther(_pointerClickInputEvents);
+        _orderedSdlEvents.ConsumeOther(_pointerGripChangedInputEvents);
+        _orderedSdlEvents.ConsumeOther(_pointerTargetChangedInputEvents);
+        _orderedSdlEvents.ConsumeOther(_pointerButtonInputEvents);
 
         var genericEvents = _orderedSdlEvents.ConsumeAndSortSelf();
 
@@ -80,8 +83,10 @@ internal class SilkEventContext
             return;
         }
 
-        foreach (var evt in genericEvents)
+        // todo (low prio) - surely there could be a better way to do this...
+        for (var index = 0; index < genericEvents.Length; index++)
         {
+            ref readonly var evt = ref genericEvents[index];
             if (evt.Type == typeof(PointChangedEvent))
             {
                 RaiseEvent(handlers, evt.Value<PointChangedEvent>());
@@ -151,7 +156,7 @@ internal class SilkEventContext
         return;
 
         static void RaiseEvent<TItem>(Span<IInputHandler> handlers, in TItem evt)
-            where TItem : struct, ITimestampedEvent
+            where TItem : struct
         {
             for (var index = 0; index < handlers.Length; index++)
             {

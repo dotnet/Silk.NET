@@ -20,7 +20,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         State = new PointerState(Buttons, Points);
     }
 
-    public static SdlPen CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlPen CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         nint uniqueId = 0;
 
@@ -52,12 +52,12 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         SdlPen Create()
         {
             return new SdlPen(backend, uniqueId, sdlDeviceId, name.ReadToString(), backend.UnboundedPointerTarget) {
-                ScrollEvents = silkEvents.MouseScrollSdlEvents,
-                PointEvents = silkEvents.PointChangedSdlEvents,
-                ClickEvents = silkEvents.PointerClickSdlEvents,
-                ButtonEvents = silkEvents.PointerButtonSdlEvents,
-                GripEvents = silkEvents.PointerGripChangedSdlEvents,
-                TargetEvents = silkEvents.PointerTargetChangedSdlEvents
+                ScrollEvents = silkEvents.MouseScrollInputEvents,
+                PointEvents = silkEvents.PointChangedInputEvents,
+                ClickEvents = silkEvents.PointerClickInputEvents,
+                ButtonEvents = silkEvents.PointerButtonInputEvents,
+                GripEvents = silkEvents.PointerGripChangedInputEvents,
+                TargetEvents = silkEvents.PointerTargetChangedInputEvents
             };
         }
     }
@@ -102,17 +102,20 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void MotionEvent(in PenMotionEvent evt, long timestamp) => MotionEvent(evt.WindowID, evt.X, evt.Y, evt.Timestamp, timestamp);
 
-    private void MotionEvent(in uint windowId, float x, float y, ulong sdlTimestamp, long timestamp) =>
+    private void MotionEvent(in uint windowId, float x, float y, ulong sdlTimestamp, long timestamp)
+    {
+        Backend.TryGetPointerTargetForWindow(windowId, out var target);
         AddOrUpdatePoint(
             touchId: null,
-            windowId: windowId == 0 ? null : windowId,
+            target: target,
             pos: new Vector3(x, y, 0),
             pressure: null,
             isDown: null,
             ray: null,
-            isPositionInWindowSpace: true,
+            isPositionInTargetSpace: true,
             sdlTimestamp: sdlTimestamp,
             timestamp: timestamp);
+    }
 
     public void ButtonEvent(in PenButtonEvent evt, long timestamp)
     {
@@ -140,31 +143,32 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
 
     public void AxisEvent(in PenAxisEvent evt, long timestamp)
     {
+        Backend.TryGetPointerTargetForWindow(evt.WindowID, out var target);
         switch (evt.Axis)
         {
             case PenAxis.Pressure:
             {
-                AddOrUpdatePoint(null, evt.WindowID, new Vector3(evt.X, evt.Y, 0), evt.Value, null, null, true, evt.Timestamp, timestamp);
+                AddOrUpdatePoint(null, target, new Vector3(evt.X, evt.Y, 0), evt.Value, null, null, true, evt.Timestamp, timestamp);
                 break;
             }
             case PenAxis.Xtilt:
             {
-                UpdatePointRay(null, evt.Value, null, null, distance: null, evt.Timestamp, timestamp);
+                UpdatePointRay(null, target, evt.Value, null, null, distance: null, evt.Timestamp, timestamp);
                 break;
             }
             case PenAxis.Ytilt:
             {
-                UpdatePointRay(null, null, evt.Value, null, distance: null, evt.Timestamp, timestamp);
+                UpdatePointRay(null, target, null, evt.Value, null, distance: null, evt.Timestamp, timestamp);
                 break;
             }
             case PenAxis.Distance:
             {
-                UpdatePointRay(null, null, null, null, distance: evt.Value, evt.Timestamp, timestamp);
+                UpdatePointRay(null, target, null, null, null, distance: evt.Value, evt.Timestamp, timestamp);
                 break;
             }
             case PenAxis.Rotation: // barrel rotation
             {
-                UpdatePointRay(null, null, null, evt.Value, distance: null, evt.Timestamp, timestamp);
+                UpdatePointRay(null, target, null, null, evt.Value, distance: null, evt.Timestamp, timestamp);
                 break;
             }
             case PenAxis.Slider:

@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -11,4 +10,4 @@ namespace Silk.NET.Input;
 /// The timestamp (as retrieved from <see cref="Stopwatch.GetTimestamp"/>) at which the event occurred.
 /// </param>
 /// <param name="IsConnected">Whether the device has connected (<c>true</c>) or disconnected (<c>false</c>).</param>
-public readonly record struct ConnectionEvent(IInputDevice Device, long Timestamp, bool IsConnected) : ITimestampedEvent;
+public readonly record struct ConnectionEvent(IInputDevice Device, long Timestamp, bool IsConnected);

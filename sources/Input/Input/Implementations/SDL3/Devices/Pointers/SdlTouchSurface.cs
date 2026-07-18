@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
@@ -20,7 +21,9 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 /// </summary>
 internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, IPointerDevice
 {
-    public static SdlTouchSurface CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext silkEvents)
+    // todo - touch surfaces need to stick around forever?
+    public static SdlTouchSurface CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated,
+        SdlInputBackend backend, SilkEventContext silkEvents)
     {
         var namePtr = backend.Sdl.GetTouchDeviceName(sdlDeviceId);
 
@@ -29,6 +32,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
         {
             return Create();
         }
+
         if (backend.AttemptUniqueId(namePtr, ref uniqueId))
         {
             return Create();
@@ -41,20 +45,19 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
         SdlTouchSurface Create()
         {
             // https://wiki.libsdl.org/SDL3/SDL_MOUSE_TOUCHID
-            // todo - did i get this right ?? (dom)
-            const ulong simulatedId = ulong.MaxValue;
-            //const ulong simulatedId = (1UL << 63) & 1UL;
-            //const ulong simulatedId = (1UL << 31) & 1UL;
-            var isSimulated = sdlDeviceId == simulatedId;
-            var deviceType = backend.Sdl.GetTouchDeviceType(sdlDeviceId);
+
+            // SDL would probably return Invalid itself since our simulated devices are providing fake IDs.
+            // that being said, it feels like code smell to ask SDL about something it knows nothing about, so if
+            // we're simulated (all-C#-side), we just don't bother asking SDL.
+            var deviceType = isSimulated ? TouchDeviceType.Invalid : backend.Sdl.GetTouchDeviceType(sdlDeviceId);
             return new SdlTouchSurface(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, deviceType,
                 isSimulated) {
-                ScrollEvents = silkEvents.MouseScrollSdlEvents,
-                PointEvents = silkEvents.PointChangedSdlEvents,
-                ClickEvents = silkEvents.PointerClickSdlEvents,
-                ButtonEvents = silkEvents.PointerButtonSdlEvents,
-                GripEvents = silkEvents.PointerGripChangedSdlEvents,
-                TargetEvents = silkEvents.PointerTargetChangedSdlEvents
+                ScrollEvents = silkEvents.MouseScrollInputEvents,
+                PointEvents = silkEvents.PointChangedInputEvents,
+                ClickEvents = silkEvents.PointerClickInputEvents,
+                ButtonEvents = silkEvents.PointerButtonInputEvents,
+                GripEvents = silkEvents.PointerGripChangedInputEvents,
+                TargetEvents = silkEvents.PointerTargetChangedInputEvents
             };
         }
     }
@@ -79,57 +82,74 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
 
     protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
     {
-
     }
 
-    protected override void Release() => InputLog.Debug("Releasing touch device, but touch devices have no special release logic.");
+    protected override void Release() =>
+        InputLog.Debug("Releasing touch device, but touch devices have no special release logic.");
 
     public override PointerState State { get; }
 
     protected override bool OnePointOnly => false;
     private readonly TouchDeviceType _type;
 
-    private SdlTouchSurface(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unbounded, TouchDeviceType type, bool isSimulated) : base(backend, uniqueId, sdlDeviceId, unbounded)
+    private SdlTouchSurface(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unbounded,
+        TouchDeviceType type, bool isSimulated) : base(backend, uniqueId, sdlDeviceId, unbounded)
     {
         _type = type;
         IsSimulated = isSimulated;
-        if (type == TouchDeviceType.Invalid)
+        if (type == TouchDeviceType.Invalid && !isSimulated)
         {
-            throw new ArgumentException("Invalid touch device type");
+            InputLog.Error("Invalid touch device type");
         }
 
         State = new PointerState(Buttons, Points);
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Event(in TouchFingerEvent finger, SdlInputBackend.FingerEventType fingerType, long timestamp)
     {
-        var position = new Vector3(finger.X, finger.Y, 0);
-        var fingerId = (uint)(finger.TouchID % int.MaxValue);
-        var whichWindowId = finger.WindowID;
-        if (Backend.TryGetPointerTargetForWindow(whichWindowId, out var target))
+        Vector3 position = new Vector3(finger.X, finger.Y, 0);
+        if (Backend.TryGetPointerTargetForWindow(finger.WindowID, out var target))
         {
             position *= target.Bounds.Size.ToSystem();
         }
         else
         {
-            throw new InvalidOperationException($"Touch device {this} has no target with window id {whichWindowId}");
+            throw new InvalidOperationException($"Touch device {this} has no target with window id {finger.WindowID}");
         }
 
-        switch (fingerType)
+        Event(
+            fingerId: (uint)(finger.TouchID % int.MaxValue),
+            target: target,
+            position: position,
+            eventType: fingerType,
+            pressure: finger.Pressure,
+            sdlTimestamp: finger.Timestamp,
+            timestamp: timestamp,
+            isPositionInWindowSpace: true);
+    }
+
+    public void Event(uint fingerId, IPointerTarget? target, Vector3 position, SdlInputBackend.FingerEventType eventType,
+        float pressure, ulong sdlTimestamp, long timestamp, bool isPositionInWindowSpace)
+    {
+        switch (eventType)
         {
             case SdlInputBackend.FingerEventType.Motion:
-                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, null, null, true, finger.Timestamp, timestamp);
+                AddOrUpdatePoint(fingerId, target, position, pressure, null, null, isPositionInWindowSpace, sdlTimestamp,
+                    timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Down:
-                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, true, null, true, finger.Timestamp, timestamp);
+                AddOrUpdatePoint(fingerId, target, position, pressure, true, null, isPositionInWindowSpace, sdlTimestamp,
+                    timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Up:
-                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, false, null, true, finger.Timestamp, timestamp);
+                AddOrUpdatePoint(fingerId, target, position, pressure, false, null, isPositionInWindowSpace, sdlTimestamp,
+                    timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Canceled:
                 break;
             default:
-                throw new ArgumentOutOfRangeException(nameof(fingerType), fingerType, null);
+                throw new ArgumentOutOfRangeException(nameof(eventType), eventType, null);
         }
     }
 }

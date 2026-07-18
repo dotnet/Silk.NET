@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using System.Numerics;
-using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -16,4 +15,4 @@ namespace Silk.NET.Input;
 /// <param name="Delta">
 /// The change in <see cref="WheelPosition"/> as a result of this event represented as a number of ratchets.
 /// </param>
-public readonly record struct MouseScrollEvent(IMouse Mouse, long Timestamp, TargetPoint Point, Vector2 WheelPosition, Vector2 Delta) : ITimestampedEvent;
+public readonly record struct MouseScrollEvent(IMouse Mouse, long Timestamp, TargetPoint Point, Vector2 WheelPosition, Vector2 Delta);

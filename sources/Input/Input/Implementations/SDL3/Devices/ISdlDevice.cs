@@ -9,7 +9,7 @@ namespace Silk.NET.Input.SDL3;
 /// <typeparam name="T"></typeparam>
 internal interface ISdlDevice<out T> : IInputDevice where T : SdlDevice
 {
-    public static abstract T? CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext context);
+    public static abstract T? CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SilkEventContext context);
 }
 
 internal interface INeedFinalizationEachFrame

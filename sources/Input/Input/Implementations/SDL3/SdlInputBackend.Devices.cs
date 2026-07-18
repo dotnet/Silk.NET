@@ -4,12 +4,13 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
+using Silk.NET.Input.SDL3.Devices.Pointers;
 
 namespace Silk.NET.Input.SDL3;
 
 internal partial class SdlInputBackend
 {
-    internal bool TryGetOrCreateDevice<T>(ulong id, long timestamp, ulong sdlTimestamp, [NotNullWhen(true)] out T? device)
+    internal bool TryGetOrCreateDevice<T>(ulong id, long timestamp, ulong sdlTimestamp, [NotNullWhen(true)] out T? device, bool isSimulated = false)
         where T : SdlDevice, ISdlDevice<T>
     {
         // If we already have a device with this ID, return it.
@@ -25,7 +26,7 @@ internal partial class SdlInputBackend
 
         try
         {
-            device = T.CreateDevice(id, timestamp, sdlTimestamp, this, _silkEvents);
+            device = T.CreateDevice(id, timestamp, sdlTimestamp, isSimulated, this, _silkEvents);
         }
         catch (Exception e)
         {
@@ -81,5 +82,18 @@ internal partial class SdlInputBackend
                 d.RefreshSdlId();
             }
         }
+    }
+
+    public bool TryGetVirtualTouchpad(nint ownerId, int touchpadId, in Maths.Box3D<float> bounds, ulong sdlTimestamp, long timestamp, [NotNullWhen(true)] out SdlTouchSurface? device)
+    {
+        var hash = HashCode.Combine(ownerId, touchpadId);
+        ulong id = Unsafe.As<int, uint>(ref hash);
+        if (!TryGetOrCreateDevice(id, timestamp, sdlTimestamp, out device, isSimulated: true))
+        {
+            return false;
+        }
+
+        device.UpdateFalseTarget(bounds);
+        return true;
     }
 }

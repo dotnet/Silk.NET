@@ -1,6 +1,4 @@
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -24,4 +22,4 @@ public readonly record struct PointChangedEvent(
     long Timestamp,
     TargetPoint? OldPoint,
     TargetPoint? NewPoint
-) : ITimestampedEvent;
+);

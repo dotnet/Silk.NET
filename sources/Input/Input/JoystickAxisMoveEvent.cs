@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -13,4 +12,4 @@ namespace Silk.NET.Input;
 /// <param name="Axis">The index of the axis being moved.</param>
 /// <param name="Value">The new value of the axis, typically between <c>0.0</c> and <c>1.0</c>.</param>
 /// <param name="Delta">The change in <see cref="Value"/> as a result of this event.</param>
-public readonly record struct JoystickAxisMoveEvent(IJoystick Joystick, long Timestamp, int Axis, float Value, float Delta) : ITimestampedEvent;
+public readonly record struct JoystickAxisMoveEvent(IJoystick Joystick, long Timestamp, int Axis, float Value, float Delta);

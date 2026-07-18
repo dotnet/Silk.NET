@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using System.Numerics;
-using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -19,4 +18,4 @@ namespace Silk.NET.Input;
 /// TODO: this should probably include a thumbstick/axis identifier, right? At least left/right?
 ///  see <see cref="GamepadTriggerMoveEvent"/>, which has an Axis field
 /// </remarks>
-public readonly record struct GamepadThumbstickMoveEvent(IGamepad Gamepad, long Timestamp, Vector2 Value, Vector2 Delta) : ITimestampedEvent;
+public readonly record struct GamepadThumbstickMoveEvent(IGamepad Gamepad, long Timestamp, Vector2 Value, Vector2 Delta);

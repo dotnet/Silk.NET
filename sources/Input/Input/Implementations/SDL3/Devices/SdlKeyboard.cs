@@ -22,7 +22,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     private bool _hasUpdates;
 
-    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         var namePtr = backend.Sdl.GetKeyboardNameForID((uint)sdlDeviceId);
 
@@ -36,14 +36,14 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
             if (backend.AttemptUniqueId(namePtr, ref uniqueId))
             {
                 return new SdlKeyboard(sdlDeviceId, uniqueId, backend) {
-                    KeyChangedEvents = silkEvents.KeyChangedSdlEvents, KeyCharEvents = silkEvents.KeyCharSdlEvents
+                    KeyChangedEvents = silkEvents.KeyChangedInputEvents, KeyCharEvents = silkEvents.KeyCharInputEvents
                 };
             }
         }
 
         uniqueId = SdlInputBackend.FallbackUniqueId<SdlKeyboard>(sdlDeviceId, uniqueId);
         return new SdlKeyboard(sdlDeviceId, uniqueId, backend) {
-            KeyChangedEvents = silkEvents.KeyChangedSdlEvents, KeyCharEvents = silkEvents.KeyCharSdlEvents
+            KeyChangedEvents = silkEvents.KeyChangedInputEvents, KeyCharEvents = silkEvents.KeyCharInputEvents
         };
     }
 
@@ -137,33 +137,20 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         _hasUpdates = true;
         var keyName = SdlKeyConversions.ScancodeToKeyName(key.Scancode); // SdlToKeyName(key.Which);
 
-        if (ButtonStates.IsDefined(keyName))
-        {
-            var isDown = key.Down != 0;
-            var button = _keyStates[keyName];
-            var stateChanged = button.IsDown != isDown;
-            var isRepeat = key.Repeat != 0;
-            _keyStates.SetKeyState(keyName, key.Down);
+        var isDown = key.Down != 0;
+        var button = _keyStates[keyName];
+        var stateChanged = button.IsDown != isDown;
+        var isRepeat = key.Repeat != 0;
+        _keyStates.SetKeyState(keyName, key.Down);
 
-            var shouldRecord = _textRecordState != TextRecorderState.None &&
-                               ((stateChanged && isDown) || (!stateChanged && isRepeat));
-            if (shouldRecord)
+        var shouldRecord = _textRecordState != TextRecorderState.None &&
+                           ((stateChanged && isDown) || (!stateChanged && isRepeat));
+        if (shouldRecord)
+        {
+            _textRecorder ??= new TextRecorder(null);
+            if(_textRecorder.AddKeyStroke(keyName, this, out var newChar))
             {
-                _textRecorder ??= new TextRecorder(null);
-                if(_textRecorder.AddKeyStroke(keyName, this, out var newChar))
-                {
-                    KeyCharEvents.Enqueue(new KeyCharEvent(this, timestamp, newChar.Value), key.Timestamp);
-                }
-                else
-                {
-                    KeyChangedEvents.Enqueue(new KeyChangedEvent(
-                        Keyboard: this,
-                        Timestamp: timestamp,
-                        Key: _keyStates[keyName],
-                        Previous: button,
-                        Modifiers: State.Modifiers,
-                        IsRepeat: isRepeat), key.Timestamp);
-                }
+                KeyCharEvents.Enqueue(new KeyCharEvent(this, timestamp, newChar.Value), key.Timestamp);
             }
             else
             {
@@ -175,6 +162,16 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
                     Modifiers: State.Modifiers,
                     IsRepeat: isRepeat), key.Timestamp);
             }
+        }
+        else
+        {
+            KeyChangedEvents.Enqueue(new KeyChangedEvent(
+                Keyboard: this,
+                Timestamp: timestamp,
+                Key: _keyStates[keyName],
+                Previous: button,
+                Modifiers: State.Modifiers,
+                IsRepeat: isRepeat), key.Timestamp);
         }
     }
 
@@ -262,8 +259,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
     private ushort _modState;
     private const float _pressureMultiplier = 1f / 255f;
     private readonly ButtonStates _keyStates;
-    internal required ISdlEventQueue<KeyChangedEvent> KeyChangedEvents;
-    internal required ISdlEventQueue<KeyCharEvent> KeyCharEvents;
+    internal required IInputEventQueue<KeyChangedEvent> KeyChangedEvents;
+    internal required IInputEventQueue<KeyCharEvent> KeyCharEvents;
 
     private class ButtonStates : IReadOnlyList<Button<KeyName>>
     {
@@ -314,7 +311,5 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
             var pressureInt = index < _keyPressures.Length ? _keyPressures[index] : 0u;
             return new Button<KeyName>(key, pressureInt > 0, pressureInt * _pressureMultiplier);
         }
-
-        public static bool IsDefined(KeyName keyName) => true;
     }
 }

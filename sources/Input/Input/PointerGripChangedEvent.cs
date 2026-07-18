@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -16,4 +15,4 @@ namespace Silk.NET.Input;
 /// device and <c>1.0</c> is the maximum amount of pressure measurable by the device.
 /// </param>
 /// <param name="Delta">The change in <see cref="GripPressure"/> from its previous value.</param>
-public readonly record struct PointerGripChangedEvent(IPointerDevice Pointer, long Timestamp, float GripPressure, float Delta): ITimestampedEvent;
+public readonly record struct PointerGripChangedEvent(IPointerDevice Pointer, long Timestamp, float GripPressure, float Delta);

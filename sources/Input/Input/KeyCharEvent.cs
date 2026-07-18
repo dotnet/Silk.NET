@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -11,4 +10,4 @@ namespace Silk.NET.Input;
 /// The timestamp (as retrieved from <see cref="Stopwatch.GetTimestamp"/>) at which the event occurred.
 /// </param>
 /// <param name="Character">The character that was typed. A <c>null</c> character denotes a backspace.</param>
-public readonly record struct KeyCharEvent(IKeyboard Keyboard, long Timestamp, char? Character) : ITimestampedEvent;
+public readonly record struct KeyCharEvent(IKeyboard Keyboard, long Timestamp, char? Character);

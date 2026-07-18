@@ -40,29 +40,36 @@ internal partial class SdlInputBackend : IInputBackend
     {
         Sdl = info.Sdl ?? SDL.Sdl.Instance;
 
-
-
         if (Sdl == null)
         {
             throw new ArgumentNullException(nameof(info), "No SDL instance was provided or found.");
         }
 
+        // pre-allocate callbacks
         _getDisplayHandles = GetDisplayHandles;
         _getWindowHandles = GetWindowHandles;
         _getWindowId = GetWindowId;
         _getDisplayId = GetDisplayId;
 
+        // subscribe to SDL events
         var ptr = new EventFilter(OnEvent);
         if (!Sdl.AddEventWatch(ptr, (Ref)nullptr))
         {
             Sdl.ThrowError();
         }
 
+        // set our context ID according to our unique event filter handle
         Id = (nint)ptr.Handle;
-        CursorConfiguration = new SdlCursor(Sdl);
-        InitializeEventQueue(out _silkEvents);
-        _eventProcessingArgs = new ProcessEventArgs(this, _silkEvents.ConnectionSdlEvents);
 
+        // create cursor
+        CursorConfiguration = new SdlCursor(Sdl);
+        var timeBasis = SdlTimestampCalculator.GetHighPrecisionTimeBasis(iterationCount: 4);
+
+        // create our event queue
+        _silkEvents = new SilkEventContext(timeBasis);
+
+        // create our runtime event processing data structure - convenient for encapsulation purposes
+        _eventProcessingArgs = new ProcessEventArgs(this, _silkEvents.ConnectionInputEvents, [], [], []);
 
         if (info.Window == nullptr)
         {
@@ -79,7 +86,6 @@ internal partial class SdlInputBackend : IInputBackend
 
             _eventProcessingArgs.FocusedWindow = focusedWindow;
         }
-
 
         if (!Sdl.InitSubSystem(SdlInitFlags))
         {
@@ -136,39 +142,6 @@ internal partial class SdlInputBackend : IInputBackend
         // // Register ourselves with the root.
         // Root.Backends.Add(this, null);
         // Id = (nint)Root.EventFilter.Handle + Root.Backends.Count() - 1;
-
-        return;
-        static void InitializeEventQueue(out SilkEventContext context)
-        {
-            // Create our event queue with maximal timestamp accuracy
-
-            // The SDL timestamps deal in nanoseconds, so we take multiple measurements to get the most accurate
-            // relationship between SDL and Stopwatch timeestamps
-            const byte measurementCount = 4;
-            Span<SdlTimestampCalculator.Basis> calibrations = stackalloc SdlTimestampCalculator.Basis[measurementCount];
-            for (byte i = 0; i < measurementCount; i++)
-            {
-                long nowTimestamp;
-                ulong nowSdl;
-
-                // alternate the order in which we do it, so we get a more accurate average that is not influenced
-                // as much by the time it takes to acquire each type of measurement
-                if (i % 2 == 0)
-                {
-                    nowTimestamp = Stopwatch.GetTimestamp();
-                    nowSdl = Silk.NET.SDL.Sdl.GetTicksNS();
-                }
-                else
-                {
-                    nowSdl = Silk.NET.SDL.Sdl.GetTicksNS();
-                    nowTimestamp = Stopwatch.GetTimestamp();
-                }
-
-                calibrations[i] = new SdlTimestampCalculator.Basis(nowSdl, nowTimestamp);
-            }
-
-            context = new SilkEventContext(calibrations.Average());
-        }
     }
 
     // This is complicated, as the input proposal mandates that nothing happens until Update is called (so the events
@@ -352,10 +325,26 @@ internal partial class SdlInputBackend : IInputBackend
 
                     // todo - sensor + touchpad
                     case EventType.GamepadTouchpadDown:
+                        gamepad.AddTouchpadEvent(evt.Gtouchpad, down: true, timestamp);
+                        break;
                     case EventType.GamepadTouchpadMotion:
+                        gamepad.AddTouchpadEvent(evt.Gtouchpad, down: null, timestamp);
+                        break;
                     case EventType.GamepadTouchpadUp:
+                        gamepad.AddTouchpadEvent(evt.Gtouchpad, down: false, timestamp);
+                        break;
                     case EventType.GamepadSensorUpdate:
+                        gamepad.AddSensorEvent(evt.Gsensor, timestamp);
+                        break;
                     case EventType.GamepadUpdateComplete:
+                        // ignore
+                        break;
+                    /* // todo: pending updated SDL3 bindings?
+                    case EventType.GamepadCapsenseTouch:
+                        break;
+                    case EventType.GamepadCapsenseRelease:
+                        break;
+                        */
                     case EventType.GamepadSteamHandleUpdated:
                     {
 #if DEBUG
@@ -696,6 +685,9 @@ internal partial class SdlInputBackend : IInputBackend
 
     }
 
+    /// <summary>
+    /// A struct containing all the data required for processing SDL events.
+    /// </summary>
     private struct ProcessEventArgs
     {
         public readonly SdlInputBackend Backend;
@@ -705,16 +697,23 @@ internal partial class SdlInputBackend : IInputBackend
         public readonly List<SdlDisplayTarget> SdlDisplayTargets;
         public ulong PreviousTimestamp;
         private readonly List<SdlDevice> _devices;
-        private readonly ISdlEventQueue<ConnectionEvent> _connectionEventQueue;
+        private readonly IInputEventQueue<ConnectionEvent> _connectionEventQueue;
         private readonly HashSet<nint> _deviceRegistry = [];
 
-        public ProcessEventArgs(SdlInputBackend backend, ISdlEventQueue<ConnectionEvent> connectionEventQueue)
+        /// <param name="backend">The SDL input backend that these args are for</param>
+        /// <param name="connectionEventQueue">The event queue for connection events</param>
+        /// <param name="sdlDevices">A list of sdl devices. If not provided, a new list will be allocated.</param>
+        /// <param name="sdlWindowTargets">A list of sdl window targets. If not provided, a new list will be allocated.</param>
+        /// <param name="sdlDisplayTargets">A list of sdl display targets. If not provided, a new list will be allocated.</param>
+        public ProcessEventArgs(SdlInputBackend backend, IInputEventQueue<ConnectionEvent> connectionEventQueue,
+            List<SdlDevice>? sdlDevices = null, List<SdlWindowTarget>? sdlWindowTargets = null,
+            List<SdlDisplayTarget>? sdlDisplayTargets = null)
         {
             Backend = backend;
             PreviousTimestamp = ulong.MinValue;
-            _devices = [];
-            SdlWindowTargets = [];
-            SdlDisplayTargets = [];
+            _devices = sdlDevices ?? [];
+            SdlWindowTargets = sdlWindowTargets ?? [];
+            SdlDisplayTargets = sdlDisplayTargets ?? [];
             _connectionEventQueue = connectionEventQueue;
         }
 

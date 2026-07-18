@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -19,4 +18,4 @@ public readonly record struct ButtonChangedEvent<T>(
     Button<T> Button,
     Button<T> Previous
 )
-    : ITimestampedEvent where T : unmanaged, Enum;
+    where T : unmanaged, Enum;

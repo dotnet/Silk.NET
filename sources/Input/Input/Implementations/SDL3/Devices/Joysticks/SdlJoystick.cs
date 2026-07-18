@@ -13,7 +13,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     private JoystickType _joystickType;
     internal JoystickHandle JoystickHandle { get; private set; }
 
-    public static SdlJoystick CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlJoystick CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         nint uniqueId = 0;
 
@@ -48,9 +48,9 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
             SilkEventContext context)
         {
             return new SdlJoystick(sdlDeviceId, uniqueId, sdlInputBackend) {
-                ButtonEvents = context.ButtonChangedSdlEvents,
-                AxisEvents = context.JoystickAxisMoveSdlEvents,
-                HatEvents = context.JoystickHatMoveSdlEvents
+                ButtonEvents = context.ButtonChangedInputEvents,
+                AxisEvents = context.JoystickAxisMoveInputEvents,
+                HatEvents = context.JoystickHatMoveInputEvents
             };
         }
     }
@@ -251,9 +251,9 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     internal const short DigitalThreshold = short.MaxValue / 8;
 
     // events
-    internal required ISdlEventQueue<ButtonChangedEvent<JoystickButton>> ButtonEvents { get; init; }
-    internal required ISdlEventQueue<JoystickAxisMoveEvent> AxisEvents { get; init; }
-    internal required ISdlEventQueue<JoystickHatMoveEvent> HatEvents { get; init; }
+    internal required IInputEventQueue<ButtonChangedEvent<JoystickButton>> ButtonEvents { get; init; }
+    internal required IInputEventQueue<JoystickAxisMoveEvent> AxisEvents { get; init; }
+    internal required IInputEventQueue<JoystickHatMoveEvent> HatEvents { get; init; }
 
     ButtonReadOnlyList<JoystickButton> IButtonDevice<JoystickButton>.State => State.Buttons;
 
