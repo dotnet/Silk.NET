@@ -12,6 +12,15 @@ public partial class Cl
         "CurrentPlatform cannot be changed once set, use another API object for additional platforms. For more "
         + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
 
+    static Cl()
+    {
+        LoaderInterface.RegisterAlternativeName("opencl", "OpenCL");
+        LoaderInterface.RegisterAlternativeName(
+            "opencl",
+            "/System/Library/Frameworks/OpenCL.framework/OpenCL"
+        );
+    }
+
     public partial class StaticWrapper<T>
     {
         public PlatformIdHandle CurrentPlatform
