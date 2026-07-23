@@ -10,8 +10,6 @@ public partial class Xr
         "CurrentInstance cannot be changed once set, use another API object for additional instances. For more "
         + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
 
-    static Xr() => LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
-
     public unsafe partial class DllImport
     {
         public static partial Result CreateInstance(
