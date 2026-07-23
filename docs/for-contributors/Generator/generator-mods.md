@@ -111,6 +111,9 @@ Stateless APIs are typically accessed through static methods, while stateful API
 objects. More information on this can be found in the
 [Static vs Instance Bindings](../../silk.net/static-vs-instance-bindings.md) document.
 
+`[DllImport]` is used over `[LibraryImport]` because `[LibraryImport]`'s source generator ends up using `[DllImport]`
+in its generated code.
+
 Usage recommendations:
 
 (TODO: To be added)
