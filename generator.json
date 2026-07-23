@@ -346,7 +346,7 @@
           {
             "Kind": "ThisThread",
             "IsDefault": true,
-            "GenerateMakeCurrentPartial": true
+            "GenerateFactoryPartial": true
           }
         ]
       },
