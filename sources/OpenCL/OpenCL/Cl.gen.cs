@@ -20,9 +20,11 @@ partial class Cl(INativeContext nativeContext) : IDisposable
 
     public partial class ThisThread : ICl.Static
     {
-        public static ThreadLocal<ICl> Underlying { get; } = new();
+        public static ThreadLocal<ICl> Underlying { get; } = new(ContextFactory);
 
-        public static partial void MakeCurrent(ICl ctx);
+        public static void MakeCurrent(ICl ctx) => Underlying.Value = ctx;
+
+        private static partial ICl ContextFactory();
     }
 
     private readonly unsafe void*[] _slots = new void*[179];
