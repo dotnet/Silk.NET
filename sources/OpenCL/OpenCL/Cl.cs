@@ -41,7 +41,7 @@ public partial class Cl
 
     public partial class ThisThread
     {
-        public static partial void MakeCurrent(ICl ctx) => Underlying.Value = ctx;
+        private static partial ICl ContextFactory() => Create();
     }
 
     public PlatformIdHandle CurrentPlatform
