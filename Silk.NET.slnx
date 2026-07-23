@@ -17,6 +17,9 @@
   <Folder Name="/examples/CSharp/OpenAL/">
     <Project Path="examples/CSharp/OpenAL/Tutorial001.HelloSound/OpenAL.Tutorial001.HelloSound.csproj" />
   </Folder>
+    <Folder Name="/examples/CSharp/OpenCL/">
+        <Project Path="examples/CSharp/OpenCL/Tutorial001.SimpleKernel/OpenCL.Tutorial001.SimpleKernel.csproj" />
+    </Folder>
   <Folder Name="/examples/CSharp/SDL/">
     <Project Path="examples/CSharp/SDL/Tutorial001.HelloWindow/SDL.Tutorial001.HelloWindow.csproj" />
   </Folder>
