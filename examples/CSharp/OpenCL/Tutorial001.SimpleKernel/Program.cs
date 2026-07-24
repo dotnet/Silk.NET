@@ -74,7 +74,8 @@ internal unsafe class Program
 
         // Load API
         _ = Cl.Create(); // TODO: This is a hack for running the static constructor for Cl
-        var cl = new Cl.StaticWrapper<Cl.DllImport>(); // TODO: OpenCL is a bit weird. The non-extension functions can be DllImported, but the extension functions cannot. Not sure how to handle this properly yet.
+        // TODO: OpenCL is a bit weird. The non-extension functions can be DllImported, but the extension functions cannot (see clGetExtensionFunctionAddressForPlatform). Not sure how to handle this properly yet. Probably something to do with DefaultNativeContext?
+        var cl = new Cl.StaticWrapper<Cl.DllImport>();
 
         // Initialize host data
         var hostData1 = new int[_elementCount];
@@ -140,7 +141,7 @@ internal unsafe class Program
         var context = cl.CreateContextFromType(
             properties.AsRef(),
             (ulong)DeviceType.Gpu, // TODO:  Shouldn't need a cast
-            null, // TODO: This parameter's type should be an extracted pfn
+            null,
             nullptr,
             errorCode.AsRef()
         );
@@ -195,16 +196,7 @@ internal unsafe class Program
         );
         CheckError(errorCode);
 
-        CheckError(
-            cl.BuildProgram(
-                program,
-                0,
-                nullptr,
-                nullptr,
-                null, // TODO: pfn
-                nullptr
-            )
-        );
+        CheckError(cl.BuildProgram(program, 0, nullptr, nullptr, null, nullptr));
 
         var kernelName = "VectorAdd"u8;
         var kernel = cl.CreateKernel(
@@ -222,7 +214,7 @@ internal unsafe class Program
 
         nuint workgroupSize = _elementCount;
         CheckError(
-            cl.EnqueueNDRangeKernel( // TODO: This is actually better than Silk 2, believe it or not. No complaints.
+            cl.EnqueueNDRangeKernel(
                 commandQueue,
                 kernel,
                 1,
