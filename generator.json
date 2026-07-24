@@ -258,6 +258,8 @@
         "MarkNativeNames",
         "AddApiProfiles",
         "ExtractHandles",
+        "ExtractNestedTypes",
+        "ExtractFunctionPointers",
         "MixKhronosData",
         "TransformHandles",
         "TransformFunctions",
