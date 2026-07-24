@@ -434,11 +434,7 @@ public class MixKhronosDataTests
             {
                 ["OpenGL"] = new MixKhronosData.JobData
                 {
-                    Configuration = new MixKhronosData.Configuration()
-                    {
-                        IdentifyEnumTypeNonExclusiveVendors = true,
-                    },
-                    Vendors = ["ARB"],
+                    Configuration = new MixKhronosData.Configuration(),
                     Groups =
                     {
                         {
@@ -458,8 +454,7 @@ public class MixKhronosDataTests
 
         await mixKhronosData.ExecuteAsync(context);
 
-        // The ARB suffix on the type name should be identified as KhronosNonExclusiveVendor
-        // This is because the enum group contains core enums
+        // The GL suffix on the type name should be identified as KhronosNamespaceEnum
         await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 }

@@ -1834,21 +1834,23 @@ public partial class MixKhronosData(
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
+            var nativeName = node
+                .AttributeLists.GetNativeNameOrDefault(node.Identifier)
+                .Replace("FlagBits", "Flags");
+
+            var managedName = node.Identifier.Text.Replace("FlagBits", "Flags");
+
             // Track which enums already exist
-            var identifier = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
-            identifier = identifier.Replace("FlagBits", "Flags");
-
-            AllKnownEnums.Add(identifier);
-
+            AllKnownEnums.Add(nativeName);
             if (
-                job.Groups.TryGetValue(identifier, out _)
+                job.Groups.TryGetValue(nativeName, out _)
                 && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
             )
             {
-                AlreadyPresentGroups.Add(identifier);
+                AlreadyPresentGroups.Add(nativeName);
             }
 
-            return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(identifier)));
+            return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(managedName)));
         }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
