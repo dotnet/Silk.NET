@@ -9,18 +9,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("_cl_queue_family_properties_intel")]
-public partial struct QueueFamilyPropertiesINTEL
+[NativeName("_name_e__FixedBuffer")]
+[InlineArray(64)]
+public partial struct QueueFamilyPropertiesINTELName
 {
-    [NativeName("properties")]
-    public ulong Properties;
-
-    [NativeName("capabilities")]
-    public ulong Capabilities;
-
-    [NativeName("count")]
-    public uint Count;
-
-    [NativeName("name")]
-    public QueueFamilyPropertiesINTELName Name;
+    [NativeName("e0")]
+    public sbyte E0;
 }

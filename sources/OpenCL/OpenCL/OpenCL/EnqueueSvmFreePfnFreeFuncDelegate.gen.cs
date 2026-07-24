@@ -9,18 +9,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("_cl_queue_family_properties_intel")]
-public partial struct QueueFamilyPropertiesINTEL
-{
-    [NativeName("properties")]
-    public ulong Properties;
-
-    [NativeName("capabilities")]
-    public ulong Capabilities;
-
-    [NativeName("count")]
-    public uint Count;
-
-    [NativeName("name")]
-    public QueueFamilyPropertiesINTELName Name;
-}
+[NativeName("clEnqueueSVMFree_pfn_free_func")]
+public unsafe delegate void EnqueueSvmFreePfnFreeFuncDelegate(
+    CommandQueueHandle arg0,
+    uint arg1,
+    void** arg2,
+    void* arg3
+);

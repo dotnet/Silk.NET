@@ -34,7 +34,7 @@ public unsafe partial interface ICl
             uint num_devices,
             DeviceIdHandle* device_list,
             sbyte* options,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            BuildProgramPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -59,7 +59,7 @@ public unsafe partial interface ICl
             uint num_devices,
             Ref<DeviceIdHandle> device_list,
             Ref<sbyte> options,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            BuildProgramPfnNotify pfn_notify,
             Ref user_data
         );
 
@@ -116,7 +116,7 @@ public unsafe partial interface ICl
             uint num_input_headers,
             ProgramHandle* input_headers,
             sbyte** header_include_names,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            CompileProgramPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -142,7 +142,7 @@ public unsafe partial interface ICl
             uint num_input_headers,
             Ref<ProgramHandle> input_headers,
             Ref2D<sbyte> header_include_names,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            CompileProgramPfnNotify pfn_notify,
             Ref user_data
         );
 
@@ -392,7 +392,7 @@ public unsafe partial interface ICl
             nint* properties,
             uint num_devices,
             DeviceIdHandle* devices,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextPfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         );
@@ -417,7 +417,7 @@ public unsafe partial interface ICl
             Ref<nint> properties,
             uint num_devices,
             Ref<DeviceIdHandle> devices,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextPfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         );
@@ -441,7 +441,7 @@ public unsafe partial interface ICl
         static abstract ContextHandle CreateContextFromType(
             nint* properties,
             ulong device_type,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextFromTypePfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         );
@@ -465,7 +465,7 @@ public unsafe partial interface ICl
         static abstract ContextHandle CreateContextFromType(
             Ref<nint> properties,
             ulong device_type,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextFromTypePfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         );
@@ -2224,7 +2224,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clEnqueueNativeKernel")]
         static abstract int EnqueueNativeKernel(
             CommandQueueHandle command_queue,
-            delegate* unmanaged<void*, void> user_func,
+            EnqueueNativeKernelUserFunc user_func,
             void* args,
             nuint cb_args,
             uint num_mem_objects,
@@ -2253,7 +2253,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clEnqueueNativeKernel")]
         static abstract int EnqueueNativeKernel(
             CommandQueueHandle command_queue,
-            delegate* unmanaged<void*, void> user_func,
+            EnqueueNativeKernelUserFunc user_func,
             Ref args,
             nuint cb_args,
             uint num_mem_objects,
@@ -2629,7 +2629,7 @@ public unsafe partial interface ICl
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreePfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -2653,7 +2653,7 @@ public unsafe partial interface ICl
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreePfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -2667,7 +2667,7 @@ public unsafe partial interface ICl
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -2681,7 +2681,7 @@ public unsafe partial interface ICl
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -4829,7 +4829,7 @@ public unsafe partial interface ICl
             sbyte* options,
             uint num_input_programs,
             ProgramHandle* input_programs,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            LinkProgramPfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         );
@@ -4855,7 +4855,7 @@ public unsafe partial interface ICl
             Ref<sbyte> options,
             uint num_input_programs,
             Ref<ProgramHandle> input_programs,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            LinkProgramPfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         );
@@ -5293,7 +5293,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
         static abstract int SetContextDestructorCallback(
             ContextHandle context,
-            delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+            SetContextDestructorCallbackPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -5302,7 +5302,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
         static abstract int SetContextDestructorCallback(
             ContextHandle context,
-            delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+            SetContextDestructorCallbackPfnNotify pfn_notify,
             Ref user_data
         );
 
@@ -5337,7 +5337,7 @@ public unsafe partial interface ICl
         static abstract int SetEventCallback(
             EventHandle @event,
             int command_exec_callback_type,
-            delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+            SetEventCallbackPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -5359,7 +5359,7 @@ public unsafe partial interface ICl
         static abstract int SetEventCallback(
             EventHandle @event,
             int command_exec_callback_type,
-            delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+            SetEventCallbackPfnNotify pfn_notify,
             Ref user_data
         );
 
@@ -5561,7 +5561,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
         static abstract int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorApplePfnNotify pfn_notify,
             void* user_data
         );
 
@@ -5570,7 +5570,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
         static abstract int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorApplePfnNotify pfn_notify,
             Ref user_data
         );
 
@@ -5591,7 +5591,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorCallback")]
         static abstract int SetMemObjectDestructorCallback(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorCallbackPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -5612,7 +5612,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorCallback")]
         static abstract int SetMemObjectDestructorCallback(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorCallbackPfnNotify pfn_notify,
             Ref user_data
         );
 
@@ -5631,7 +5631,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSetProgramReleaseCallback")]
         static abstract int SetProgramReleaseCallback(
             ProgramHandle program,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            SetProgramReleaseCallbackPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -5645,7 +5645,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSetProgramReleaseCallback")]
         static abstract int SetProgramReleaseCallback(
             ProgramHandle program,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            SetProgramReleaseCallbackPfnNotify pfn_notify,
             Ref user_data
         );
 
@@ -5916,7 +5916,7 @@ public unsafe partial interface ICl
         uint num_devices,
         DeviceIdHandle* device_list,
         sbyte* options,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        BuildProgramPfnNotify pfn_notify,
         void* user_data
     );
 
@@ -5941,7 +5941,7 @@ public unsafe partial interface ICl
         uint num_devices,
         Ref<DeviceIdHandle> device_list,
         Ref<sbyte> options,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        BuildProgramPfnNotify pfn_notify,
         Ref user_data
     );
 
@@ -5995,7 +5995,7 @@ public unsafe partial interface ICl
         uint num_input_headers,
         ProgramHandle* input_headers,
         sbyte** header_include_names,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        CompileProgramPfnNotify pfn_notify,
         void* user_data
     );
 
@@ -6021,7 +6021,7 @@ public unsafe partial interface ICl
         uint num_input_headers,
         Ref<ProgramHandle> input_headers,
         Ref2D<sbyte> header_include_names,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        CompileProgramPfnNotify pfn_notify,
         Ref user_data
     );
 
@@ -6259,7 +6259,7 @@ public unsafe partial interface ICl
         nint* properties,
         uint num_devices,
         DeviceIdHandle* devices,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextPfnNotify pfn_notify,
         void* user_data,
         int* errcode_ret
     );
@@ -6284,7 +6284,7 @@ public unsafe partial interface ICl
         Ref<nint> properties,
         uint num_devices,
         Ref<DeviceIdHandle> devices,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextPfnNotify pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
     );
@@ -6308,7 +6308,7 @@ public unsafe partial interface ICl
     ContextHandle CreateContextFromType(
         nint* properties,
         ulong device_type,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextFromTypePfnNotify pfn_notify,
         void* user_data,
         int* errcode_ret
     );
@@ -6332,7 +6332,7 @@ public unsafe partial interface ICl
     ContextHandle CreateContextFromType(
         Ref<nint> properties,
         ulong device_type,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextFromTypePfnNotify pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
     );
@@ -8048,7 +8048,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clEnqueueNativeKernel")]
     int EnqueueNativeKernel(
         CommandQueueHandle command_queue,
-        delegate* unmanaged<void*, void> user_func,
+        EnqueueNativeKernelUserFunc user_func,
         void* args,
         nuint cb_args,
         uint num_mem_objects,
@@ -8077,7 +8077,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clEnqueueNativeKernel")]
     int EnqueueNativeKernel(
         CommandQueueHandle command_queue,
-        delegate* unmanaged<void*, void> user_func,
+        EnqueueNativeKernelUserFunc user_func,
         Ref args,
         nuint cb_args,
         uint num_mem_objects,
@@ -8439,7 +8439,7 @@ public unsafe partial interface ICl
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreePfnFreeFunc pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -8457,7 +8457,7 @@ public unsafe partial interface ICl
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreePfnFreeFunc pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -8471,7 +8471,7 @@ public unsafe partial interface ICl
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -8485,7 +8485,7 @@ public unsafe partial interface ICl
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -10543,7 +10543,7 @@ public unsafe partial interface ICl
         sbyte* options,
         uint num_input_programs,
         ProgramHandle* input_programs,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        LinkProgramPfnNotify pfn_notify,
         void* user_data,
         int* errcode_ret
     );
@@ -10569,7 +10569,7 @@ public unsafe partial interface ICl
         Ref<sbyte> options,
         uint num_input_programs,
         Ref<ProgramHandle> input_programs,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        LinkProgramPfnNotify pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
     );
@@ -10970,7 +10970,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
     int SetContextDestructorCallback(
         ContextHandle context,
-        delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+        SetContextDestructorCallbackPfnNotify pfn_notify,
         void* user_data
     );
 
@@ -10979,7 +10979,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSetContextDestructorCallback")]
     int SetContextDestructorCallback(
         ContextHandle context,
-        delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+        SetContextDestructorCallbackPfnNotify pfn_notify,
         Ref user_data
     );
 
@@ -11014,7 +11014,7 @@ public unsafe partial interface ICl
     int SetEventCallback(
         EventHandle @event,
         int command_exec_callback_type,
-        delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+        SetEventCallbackPfnNotify pfn_notify,
         void* user_data
     );
 
@@ -11036,7 +11036,7 @@ public unsafe partial interface ICl
     int SetEventCallback(
         EventHandle @event,
         int command_exec_callback_type,
-        delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+        SetEventCallbackPfnNotify pfn_notify,
         Ref user_data
     );
 
@@ -11176,7 +11176,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
     int SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorApplePfnNotify pfn_notify,
         void* user_data
     );
 
@@ -11185,7 +11185,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
     int SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorApplePfnNotify pfn_notify,
         Ref user_data
     );
 
@@ -11206,7 +11206,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorCallback")]
     int SetMemObjectDestructorCallback(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorCallbackPfnNotify pfn_notify,
         void* user_data
     );
 
@@ -11227,7 +11227,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorCallback")]
     int SetMemObjectDestructorCallback(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorCallbackPfnNotify pfn_notify,
         Ref user_data
     );
 
@@ -11246,7 +11246,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSetProgramReleaseCallback")]
     int SetProgramReleaseCallback(
         ProgramHandle program,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        SetProgramReleaseCallbackPfnNotify pfn_notify,
         void* user_data
     );
 
@@ -11260,7 +11260,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSetProgramReleaseCallback")]
     int SetProgramReleaseCallback(
         ProgramHandle program,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        SetProgramReleaseCallbackPfnNotify pfn_notify,
         Ref user_data
     );
 

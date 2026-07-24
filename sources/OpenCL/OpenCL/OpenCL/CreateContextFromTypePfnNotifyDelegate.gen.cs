@@ -9,18 +9,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("_cl_queue_family_properties_intel")]
-public partial struct QueueFamilyPropertiesINTEL
-{
-    [NativeName("properties")]
-    public ulong Properties;
-
-    [NativeName("capabilities")]
-    public ulong Capabilities;
-
-    [NativeName("count")]
-    public uint Count;
-
-    [NativeName("name")]
-    public QueueFamilyPropertiesINTELName Name;
-}
+[NativeName("clCreateContextFromType_pfn_notify")]
+public unsafe delegate void CreateContextFromTypePfnNotifyDelegate(
+    sbyte* arg0,
+    void* arg1,
+    nuint arg2,
+    void* arg3
+);

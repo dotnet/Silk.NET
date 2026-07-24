@@ -40,7 +40,7 @@ public unsafe partial struct ImageDesc
     public uint NumSamples;
 
     [NativeName("Anonymous")]
-    public AnonymousEUnion Anonymous;
+    public ImageDescAnonymous Anonymous;
 
     [NativeName("buffer")]
     [UnscopedRef]
@@ -56,18 +56,5 @@ public unsafe partial struct ImageDesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get { return ref Anonymous.MemObject; }
-    }
-
-    [NativeName("_Anonymous_e__Union")]
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct AnonymousEUnion
-    {
-        [NativeName("buffer")]
-        [FieldOffset(0)]
-        public MemHandle Buffer;
-
-        [NativeName("mem_object")]
-        [FieldOffset(0)]
-        public MemHandle MemObject;
     }
 }

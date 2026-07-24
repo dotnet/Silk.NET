@@ -9,18 +9,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("_cl_queue_family_properties_intel")]
-public partial struct QueueFamilyPropertiesINTEL
+[NativeName("_Anonymous_e__Union")]
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct ImageDescAnonymous
 {
-    [NativeName("properties")]
-    public ulong Properties;
+    [NativeName("buffer")]
+    [FieldOffset(0)]
+    public MemHandle Buffer;
 
-    [NativeName("capabilities")]
-    public ulong Capabilities;
-
-    [NativeName("count")]
-    public uint Count;
-
-    [NativeName("name")]
-    public QueueFamilyPropertiesINTELName Name;
+    [NativeName("mem_object")]
+    [FieldOffset(0)]
+    public MemHandle MemObject;
 }

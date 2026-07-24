@@ -33,7 +33,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_devices,
             DeviceIdHandle* device_list,
             sbyte* options,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            BuildProgramPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -61,7 +61,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_devices,
             Ref<DeviceIdHandle> device_list,
             Ref<sbyte> options,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            BuildProgramPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -151,7 +151,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_input_headers,
             ProgramHandle* input_headers,
             sbyte** header_include_names,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            CompileProgramPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -180,7 +180,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_input_headers,
             Ref<ProgramHandle> input_headers,
             Ref2D<sbyte> header_include_names,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            CompileProgramPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -574,7 +574,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             nint* properties,
             uint num_devices,
             DeviceIdHandle* devices,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextPfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         );
@@ -602,7 +602,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<nint> properties,
             uint num_devices,
             Ref<DeviceIdHandle> devices,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextPfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         )
@@ -642,7 +642,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern ContextHandle CreateContextFromType(
             nint* properties,
             ulong device_type,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextFromTypePfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         );
@@ -669,7 +669,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static ContextHandle CreateContextFromType(
             Ref<nint> properties,
             ulong device_type,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextFromTypePfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         )
@@ -3227,7 +3227,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static extern int EnqueueNativeKernel(
             CommandQueueHandle command_queue,
-            delegate* unmanaged<void*, void> user_func,
+            EnqueueNativeKernelUserFunc user_func,
             void* args,
             nuint cb_args,
             uint num_mem_objects,
@@ -3259,7 +3259,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int EnqueueNativeKernel(
             CommandQueueHandle command_queue,
-            delegate* unmanaged<void*, void> user_func,
+            EnqueueNativeKernelUserFunc user_func,
             Ref args,
             nuint cb_args,
             uint num_mem_objects,
@@ -3840,7 +3840,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreePfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -3867,7 +3867,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreePfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -3899,7 +3899,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -3916,7 +3916,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -7027,7 +7027,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             sbyte* options,
             uint num_input_programs,
             ProgramHandle* input_programs,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            LinkProgramPfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         );
@@ -7056,7 +7056,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<sbyte> options,
             uint num_input_programs,
             Ref<ProgramHandle> input_programs,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            LinkProgramPfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         )
@@ -7574,7 +7574,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
         public static extern int SetContextDestructorCallback(
             ContextHandle context,
-            delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+            SetContextDestructorCallbackPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -7586,7 +7586,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetContextDestructorCallback(
             ContextHandle context,
-            delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+            SetContextDestructorCallbackPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -7627,7 +7627,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern int SetEventCallback(
             EventHandle @event,
             int command_exec_callback_type,
-            delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+            SetEventCallbackPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -7652,7 +7652,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static int SetEventCallback(
             EventHandle @event,
             int command_exec_callback_type,
-            delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+            SetEventCallbackPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -7925,7 +7925,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
         public static extern int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorApplePfnNotify pfn_notify,
             void* user_data
         );
 
@@ -7937,7 +7937,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorApplePfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -7964,7 +7964,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static extern int SetMemObjectDestructorCallback(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorCallbackPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -7988,7 +7988,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetMemObjectDestructorCallback(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorCallbackPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -8013,7 +8013,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static extern int SetProgramReleaseCallback(
             ProgramHandle program,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            SetProgramReleaseCallbackPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -8030,7 +8030,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetProgramReleaseCallback(
             ProgramHandle program,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            SetProgramReleaseCallbackPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -8381,7 +8381,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_devices,
             DeviceIdHandle* device_list,
             sbyte* options,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            BuildProgramPfnNotify pfn_notify,
             void* user_data
         ) => T.BuildProgram(program, num_devices, device_list, options, pfn_notify, user_data);
 
@@ -8409,7 +8409,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_devices,
             Ref<DeviceIdHandle> device_list,
             Ref<sbyte> options,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            BuildProgramPfnNotify pfn_notify,
             Ref user_data
         ) => T.BuildProgram(program, num_devices, device_list, options, pfn_notify, user_data);
 
@@ -8482,7 +8482,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_input_headers,
             ProgramHandle* input_headers,
             sbyte** header_include_names,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            CompileProgramPfnNotify pfn_notify,
             void* user_data
         ) =>
             T.CompileProgram(
@@ -8522,7 +8522,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_input_headers,
             Ref<ProgramHandle> input_headers,
             Ref2D<sbyte> header_include_names,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            CompileProgramPfnNotify pfn_notify,
             Ref user_data
         ) =>
             T.CompileProgram(
@@ -8858,7 +8858,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             nint* properties,
             uint num_devices,
             DeviceIdHandle* devices,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextPfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         ) => T.CreateContext(properties, num_devices, devices, pfn_notify, user_data, errcode_ret);
@@ -8886,7 +8886,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<nint> properties,
             uint num_devices,
             Ref<DeviceIdHandle> devices,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextPfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         ) => T.CreateContext(properties, num_devices, devices, pfn_notify, user_data, errcode_ret);
@@ -8913,7 +8913,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public ContextHandle CreateContextFromType(
             nint* properties,
             ulong device_type,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextFromTypePfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         ) => T.CreateContextFromType(properties, device_type, pfn_notify, user_data, errcode_ret);
@@ -8940,7 +8940,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public ContextHandle CreateContextFromType(
             Ref<nint> properties,
             ulong device_type,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextFromTypePfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         ) => T.CreateContextFromType(properties, device_type, pfn_notify, user_data, errcode_ret);
@@ -11489,7 +11489,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int EnqueueNativeKernel(
             CommandQueueHandle command_queue,
-            delegate* unmanaged<void*, void> user_func,
+            EnqueueNativeKernelUserFunc user_func,
             void* args,
             nuint cb_args,
             uint num_mem_objects,
@@ -11533,7 +11533,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int EnqueueNativeKernel(
             CommandQueueHandle command_queue,
-            delegate* unmanaged<void*, void> user_func,
+            EnqueueNativeKernelUserFunc user_func,
             Ref args,
             nuint cb_args,
             uint num_mem_objects,
@@ -12146,7 +12146,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreePfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -12183,7 +12183,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreePfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -12210,7 +12210,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -12237,7 +12237,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -15416,7 +15416,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             sbyte* options,
             uint num_input_programs,
             ProgramHandle* input_programs,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            LinkProgramPfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         ) =>
@@ -15456,7 +15456,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<sbyte> options,
             uint num_input_programs,
             Ref<ProgramHandle> input_programs,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            LinkProgramPfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         ) =>
@@ -16019,7 +16019,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetContextDestructorCallback(
             ContextHandle context,
-            delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+            SetContextDestructorCallbackPfnNotify pfn_notify,
             void* user_data
         ) => T.SetContextDestructorCallback(context, pfn_notify, user_data);
 
@@ -16031,7 +16031,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetContextDestructorCallback(
             ContextHandle context,
-            delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+            SetContextDestructorCallbackPfnNotify pfn_notify,
             Ref user_data
         ) => T.SetContextDestructorCallback(context, pfn_notify, user_data);
 
@@ -16072,7 +16072,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public int SetEventCallback(
             EventHandle @event,
             int command_exec_callback_type,
-            delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+            SetEventCallbackPfnNotify pfn_notify,
             void* user_data
         ) => T.SetEventCallback(@event, command_exec_callback_type, pfn_notify, user_data);
 
@@ -16097,7 +16097,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public int SetEventCallback(
             EventHandle @event,
             int command_exec_callback_type,
-            delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+            SetEventCallbackPfnNotify pfn_notify,
             Ref user_data
         ) => T.SetEventCallback(@event, command_exec_callback_type, pfn_notify, user_data);
 
@@ -16332,7 +16332,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorApplePfnNotify pfn_notify,
             void* user_data
         ) => T.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 
@@ -16344,7 +16344,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorApplePfnNotify pfn_notify,
             Ref user_data
         ) => T.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 
@@ -16368,7 +16368,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetMemObjectDestructorCallback(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorCallbackPfnNotify pfn_notify,
             void* user_data
         ) => T.SetMemObjectDestructorCallback(memobj, pfn_notify, user_data);
 
@@ -16392,7 +16392,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetMemObjectDestructorCallback(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorCallbackPfnNotify pfn_notify,
             Ref user_data
         ) => T.SetMemObjectDestructorCallback(memobj, pfn_notify, user_data);
 
@@ -16418,7 +16418,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetProgramReleaseCallback(
             ProgramHandle program,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            SetProgramReleaseCallbackPfnNotify pfn_notify,
             void* user_data
         ) => T.SetProgramReleaseCallback(program, pfn_notify, user_data);
 
@@ -16435,7 +16435,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetProgramReleaseCallback(
             ProgramHandle program,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            SetProgramReleaseCallbackPfnNotify pfn_notify,
             Ref user_data
         ) => T.SetProgramReleaseCallback(program, pfn_notify, user_data);
 
@@ -16761,7 +16761,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_devices,
             DeviceIdHandle* device_list,
             sbyte* options,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            BuildProgramPfnNotify pfn_notify,
             void* user_data
         ) =>
             Underlying.Value!.BuildProgram(
@@ -16797,7 +16797,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_devices,
             Ref<DeviceIdHandle> device_list,
             Ref<sbyte> options,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            BuildProgramPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -16895,7 +16895,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_input_headers,
             ProgramHandle* input_headers,
             sbyte** header_include_names,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            CompileProgramPfnNotify pfn_notify,
             void* user_data
         ) =>
             Underlying.Value!.CompileProgram(
@@ -16935,7 +16935,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             uint num_input_headers,
             Ref<ProgramHandle> input_headers,
             Ref2D<sbyte> header_include_names,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            CompileProgramPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -17376,7 +17376,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             nint* properties,
             uint num_devices,
             DeviceIdHandle* devices,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextPfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         ) =>
@@ -17412,7 +17412,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<nint> properties,
             uint num_devices,
             Ref<DeviceIdHandle> devices,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextPfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         )
@@ -17455,7 +17455,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static ContextHandle CreateContextFromType(
             nint* properties,
             ulong device_type,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextFromTypePfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         ) =>
@@ -17489,7 +17489,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static ContextHandle CreateContextFromType(
             Ref<nint> properties,
             ulong device_type,
-            delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+            CreateContextFromTypePfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         )
@@ -20486,7 +20486,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int EnqueueNativeKernel(
             CommandQueueHandle command_queue,
-            delegate* unmanaged<void*, void> user_func,
+            EnqueueNativeKernelUserFunc user_func,
             void* args,
             nuint cb_args,
             uint num_mem_objects,
@@ -20530,7 +20530,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int EnqueueNativeKernel(
             CommandQueueHandle command_queue,
-            delegate* unmanaged<void*, void> user_func,
+            EnqueueNativeKernelUserFunc user_func,
             Ref args,
             nuint cb_args,
             uint num_mem_objects,
@@ -21217,7 +21217,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreePfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -21254,7 +21254,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreePfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -21289,7 +21289,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -21316,7 +21316,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -24972,7 +24972,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             sbyte* options,
             uint num_input_programs,
             ProgramHandle* input_programs,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            LinkProgramPfnNotify pfn_notify,
             void* user_data,
             int* errcode_ret
         ) =>
@@ -25012,7 +25012,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             Ref<sbyte> options,
             uint num_input_programs,
             Ref<ProgramHandle> input_programs,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            LinkProgramPfnNotify pfn_notify,
             Ref user_data,
             Ref<int> errcode_ret
         )
@@ -25643,7 +25643,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetContextDestructorCallback(
             ContextHandle context,
-            delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+            SetContextDestructorCallbackPfnNotify pfn_notify,
             void* user_data
         ) => Underlying.Value!.SetContextDestructorCallback(context, pfn_notify, user_data);
 
@@ -25655,7 +25655,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetContextDestructorCallback(
             ContextHandle context,
-            delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+            SetContextDestructorCallbackPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -25702,7 +25702,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static int SetEventCallback(
             EventHandle @event,
             int command_exec_callback_type,
-            delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+            SetEventCallbackPfnNotify pfn_notify,
             void* user_data
         ) =>
             Underlying.Value!.SetEventCallback(
@@ -25733,7 +25733,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static int SetEventCallback(
             EventHandle @event,
             int command_exec_callback_type,
-            delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+            SetEventCallbackPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -26036,7 +26036,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorApplePfnNotify pfn_notify,
             void* user_data
         ) => Underlying.Value!.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 
@@ -26048,7 +26048,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorApplePfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -26078,7 +26078,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetMemObjectDestructorCallback(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorCallbackPfnNotify pfn_notify,
             void* user_data
         ) => Underlying.Value!.SetMemObjectDestructorCallback(memobj, pfn_notify, user_data);
 
@@ -26102,7 +26102,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetMemObjectDestructorCallback(
             MemHandle memobj,
-            delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+            SetMemObjectDestructorCallbackPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -26134,7 +26134,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetProgramReleaseCallback(
             ProgramHandle program,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            SetProgramReleaseCallbackPfnNotify pfn_notify,
             void* user_data
         ) => Underlying.Value!.SetProgramReleaseCallback(program, pfn_notify, user_data);
 
@@ -26151,7 +26151,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetProgramReleaseCallback(
             ProgramHandle program,
-            delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+            SetProgramReleaseCallbackPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -27965,7 +27965,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint num_devices,
         DeviceIdHandle* device_list,
         sbyte* options,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        BuildProgramPfnNotify pfn_notify,
         void* user_data
     ) =>
         (
@@ -27974,7 +27974,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                 uint,
                 DeviceIdHandle*,
                 sbyte*,
-                delegate* unmanaged<ProgramHandle, void*, void>,
+                BuildProgramPfnNotify,
                 void*,
                 int>)(
                 _slots[0] is not null and var loadedFnPtr
@@ -28005,7 +28005,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint num_devices,
         DeviceIdHandle* device_list,
         sbyte* options,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        BuildProgramPfnNotify pfn_notify,
         void* user_data
     ) => ThisThread.BuildProgram(program, num_devices, device_list, options, pfn_notify, user_data);
 
@@ -28031,7 +28031,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint num_devices,
         Ref<DeviceIdHandle> device_list,
         Ref<sbyte> options,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        BuildProgramPfnNotify pfn_notify,
         Ref user_data
     )
     {
@@ -28073,7 +28073,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint num_devices,
         Ref<DeviceIdHandle> device_list,
         Ref<sbyte> options,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        BuildProgramPfnNotify pfn_notify,
         Ref user_data
     ) => ThisThread.BuildProgram(program, num_devices, device_list, options, pfn_notify, user_data);
 
@@ -28194,7 +28194,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint num_input_headers,
         ProgramHandle* input_headers,
         sbyte** header_include_names,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        CompileProgramPfnNotify pfn_notify,
         void* user_data
     ) =>
         (
@@ -28206,7 +28206,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                 uint,
                 ProgramHandle*,
                 sbyte**,
-                delegate* unmanaged<ProgramHandle, void*, void>,
+                CompileProgramPfnNotify,
                 void*,
                 int>)(
                 _slots[3] is not null and var loadedFnPtr
@@ -28248,7 +28248,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint num_input_headers,
         ProgramHandle* input_headers,
         sbyte** header_include_names,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        CompileProgramPfnNotify pfn_notify,
         void* user_data
     ) =>
         ThisThread.CompileProgram(
@@ -28286,7 +28286,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint num_input_headers,
         Ref<ProgramHandle> input_headers,
         Ref2D<sbyte> header_include_names,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        CompileProgramPfnNotify pfn_notify,
         Ref user_data
     )
     {
@@ -28334,7 +28334,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         uint num_input_headers,
         Ref<ProgramHandle> input_headers,
         Ref2D<sbyte> header_include_names,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        CompileProgramPfnNotify pfn_notify,
         Ref user_data
     ) =>
         ThisThread.CompileProgram(
@@ -29020,7 +29020,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         nint* properties,
         uint num_devices,
         DeviceIdHandle* devices,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextPfnNotify pfn_notify,
         void* user_data,
         int* errcode_ret
     ) =>
@@ -29029,7 +29029,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                 nint*,
                 uint,
                 DeviceIdHandle*,
-                delegate* unmanaged<sbyte*, void*, nuint, void*, void>,
+                CreateContextPfnNotify,
                 void*,
                 int*,
                 ContextHandle>)(
@@ -29060,7 +29060,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         nint* properties,
         uint num_devices,
         DeviceIdHandle* devices,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextPfnNotify pfn_notify,
         void* user_data,
         int* errcode_ret
     ) =>
@@ -29094,7 +29094,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<nint> properties,
         uint num_devices,
         Ref<DeviceIdHandle> devices,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextPfnNotify pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
     )
@@ -29137,7 +29137,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<nint> properties,
         uint num_devices,
         Ref<DeviceIdHandle> devices,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextPfnNotify pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
     ) =>
@@ -29170,7 +29170,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     ContextHandle ICl.CreateContextFromType(
         nint* properties,
         ulong device_type,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextFromTypePfnNotify pfn_notify,
         void* user_data,
         int* errcode_ret
     ) =>
@@ -29178,7 +29178,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             (delegate* unmanaged<
                 nint*,
                 ulong,
-                delegate* unmanaged<sbyte*, void*, nuint, void*, void>,
+                CreateContextFromTypePfnNotify,
                 void*,
                 int*,
                 ContextHandle>)(
@@ -29208,7 +29208,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static ContextHandle CreateContextFromType(
         nint* properties,
         ulong device_type,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextFromTypePfnNotify pfn_notify,
         void* user_data,
         int* errcode_ret
     ) =>
@@ -29240,7 +29240,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     ContextHandle ICl.CreateContextFromType(
         Ref<nint> properties,
         ulong device_type,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextFromTypePfnNotify pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
     )
@@ -29280,7 +29280,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static ContextHandle CreateContextFromType(
         Ref<nint> properties,
         ulong device_type,
-        delegate* unmanaged<sbyte*, void*, nuint, void*, void> pfn_notify,
+        CreateContextFromTypePfnNotify pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
     ) =>
@@ -34886,7 +34886,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.EnqueueNativeKernel(
         CommandQueueHandle command_queue,
-        delegate* unmanaged<void*, void> user_func,
+        EnqueueNativeKernelUserFunc user_func,
         void* args,
         nuint cb_args,
         uint num_mem_objects,
@@ -34899,7 +34899,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         (
             (delegate* unmanaged<
                 CommandQueueHandle,
-                delegate* unmanaged<void*, void>,
+                EnqueueNativeKernelUserFunc,
                 void*,
                 nuint,
                 uint,
@@ -34945,7 +34945,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int EnqueueNativeKernel(
         CommandQueueHandle command_queue,
-        delegate* unmanaged<void*, void> user_func,
+        EnqueueNativeKernelUserFunc user_func,
         void* args,
         nuint cb_args,
         uint num_mem_objects,
@@ -34987,7 +34987,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.EnqueueNativeKernel(
         CommandQueueHandle command_queue,
-        delegate* unmanaged<void*, void> user_func,
+        EnqueueNativeKernelUserFunc user_func,
         Ref args,
         nuint cb_args,
         uint num_mem_objects,
@@ -35039,7 +35039,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int EnqueueNativeKernel(
         CommandQueueHandle command_queue,
-        delegate* unmanaged<void*, void> user_func,
+        EnqueueNativeKernelUserFunc user_func,
         Ref args,
         nuint cb_args,
         uint num_mem_objects,
@@ -36346,7 +36346,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreePfnFreeFunc pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -36357,7 +36357,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                 CommandQueueHandle,
                 uint,
                 void**,
-                delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void>,
+                EnqueueSvmFreePfnFreeFunc,
                 void*,
                 uint,
                 EventHandle*,
@@ -36390,7 +36390,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreePfnFreeFunc pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -36419,7 +36419,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreePfnFreeFunc pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -36457,7 +36457,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreePfnFreeFunc pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -36482,7 +36482,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -36493,7 +36493,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                 CommandQueueHandle,
                 uint,
                 void**,
-                delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void>,
+                EnqueueSvmFreeArmPfnFreeFunc,
                 void*,
                 uint,
                 EventHandle*,
@@ -36522,7 +36522,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -36547,7 +36547,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -36581,7 +36581,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn_free_func,
+        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -43289,7 +43289,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         sbyte* options,
         uint num_input_programs,
         ProgramHandle* input_programs,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        LinkProgramPfnNotify pfn_notify,
         void* user_data,
         int* errcode_ret
     ) =>
@@ -43301,7 +43301,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                 sbyte*,
                 uint,
                 ProgramHandle*,
-                delegate* unmanaged<ProgramHandle, void*, void>,
+                LinkProgramPfnNotify,
                 void*,
                 int*,
                 ProgramHandle>)(
@@ -43343,7 +43343,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         sbyte* options,
         uint num_input_programs,
         ProgramHandle* input_programs,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        LinkProgramPfnNotify pfn_notify,
         void* user_data,
         int* errcode_ret
     ) =>
@@ -43381,7 +43381,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<sbyte> options,
         uint num_input_programs,
         Ref<ProgramHandle> input_programs,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        LinkProgramPfnNotify pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
     )
@@ -43429,7 +43429,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<sbyte> options,
         uint num_input_programs,
         Ref<ProgramHandle> input_programs,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        LinkProgramPfnNotify pfn_notify,
         Ref user_data,
         Ref<int> errcode_ret
     ) =>
@@ -44652,15 +44652,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.SetContextDestructorCallback(
         ContextHandle context,
-        delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+        SetContextDestructorCallbackPfnNotify pfn_notify,
         void* user_data
     ) =>
         (
-            (delegate* unmanaged<
-                ContextHandle,
-                delegate* unmanaged<ContextHandle, void*, void>,
-                void*,
-                int>)(
+            (delegate* unmanaged<ContextHandle, SetContextDestructorCallbackPfnNotify, void*, int>)(
                 _slots[154] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[154] = nativeContext.LoadFunction(
@@ -44676,7 +44672,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetContextDestructorCallback(
         ContextHandle context,
-        delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+        SetContextDestructorCallbackPfnNotify pfn_notify,
         void* user_data
     ) => ThisThread.SetContextDestructorCallback(context, pfn_notify, user_data);
 
@@ -44686,7 +44682,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.SetContextDestructorCallback(
         ContextHandle context,
-        delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+        SetContextDestructorCallbackPfnNotify pfn_notify,
         Ref user_data
     )
     {
@@ -44703,7 +44699,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetContextDestructorCallback(
         ContextHandle context,
-        delegate* unmanaged<ContextHandle, void*, void> pfn_notify,
+        SetContextDestructorCallbackPfnNotify pfn_notify,
         Ref user_data
     ) => ThisThread.SetContextDestructorCallback(context, pfn_notify, user_data);
 
@@ -44764,16 +44760,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetEventCallback(
         EventHandle @event,
         int command_exec_callback_type,
-        delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+        SetEventCallbackPfnNotify pfn_notify,
         void* user_data
     ) =>
         (
-            (delegate* unmanaged<
-                EventHandle,
-                int,
-                delegate* unmanaged<EventHandle, int, void*, void>,
-                void*,
-                int>)(
+            (delegate* unmanaged<EventHandle, int, SetEventCallbackPfnNotify, void*, int>)(
                 _slots[156] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[156] = nativeContext.LoadFunction("clSetEventCallback", "opencl")
@@ -44799,7 +44790,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static int SetEventCallback(
         EventHandle @event,
         int command_exec_callback_type,
-        delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+        SetEventCallbackPfnNotify pfn_notify,
         void* user_data
     ) => ThisThread.SetEventCallback(@event, command_exec_callback_type, pfn_notify, user_data);
 
@@ -44822,7 +44813,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetEventCallback(
         EventHandle @event,
         int command_exec_callback_type,
-        delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+        SetEventCallbackPfnNotify pfn_notify,
         Ref user_data
     )
     {
@@ -44857,7 +44848,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static int SetEventCallback(
         EventHandle @event,
         int command_exec_callback_type,
-        delegate* unmanaged<EventHandle, int, void*, void> pfn_notify,
+        SetEventCallbackPfnNotify pfn_notify,
         Ref user_data
     ) => ThisThread.SetEventCallback(@event, command_exec_callback_type, pfn_notify, user_data);
 
@@ -45296,15 +45287,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorApplePfnNotify pfn_notify,
         void* user_data
     ) =>
         (
-            (delegate* unmanaged<
-                MemHandle,
-                delegate* unmanaged<MemHandle, void*, void>,
-                void*,
-                int>)(
+            (delegate* unmanaged<MemHandle, SetMemObjectDestructorApplePfnNotify, void*, int>)(
                 _slots[164] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[164] = nativeContext.LoadFunction(
@@ -45320,7 +45307,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorApplePfnNotify pfn_notify,
         void* user_data
     ) => ThisThread.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 
@@ -45330,7 +45317,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorApplePfnNotify pfn_notify,
         Ref user_data
     )
     {
@@ -45347,7 +45334,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorApplePfnNotify pfn_notify,
         Ref user_data
     ) => ThisThread.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 
@@ -45369,15 +45356,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.SetMemObjectDestructorCallback(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorCallbackPfnNotify pfn_notify,
         void* user_data
     ) =>
         (
-            (delegate* unmanaged<
-                MemHandle,
-                delegate* unmanaged<MemHandle, void*, void>,
-                void*,
-                int>)(
+            (delegate* unmanaged<MemHandle, SetMemObjectDestructorCallbackPfnNotify, void*, int>)(
                 _slots[165] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[165] = nativeContext.LoadFunction(
@@ -45405,7 +45388,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetMemObjectDestructorCallback(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorCallbackPfnNotify pfn_notify,
         void* user_data
     ) => ThisThread.SetMemObjectDestructorCallback(memobj, pfn_notify, user_data);
 
@@ -45427,7 +45410,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.SetMemObjectDestructorCallback(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorCallbackPfnNotify pfn_notify,
         Ref user_data
     )
     {
@@ -45456,7 +45439,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetMemObjectDestructorCallback(
         MemHandle memobj,
-        delegate* unmanaged<MemHandle, void*, void> pfn_notify,
+        SetMemObjectDestructorCallbackPfnNotify pfn_notify,
         Ref user_data
     ) => ThisThread.SetMemObjectDestructorCallback(memobj, pfn_notify, user_data);
 
@@ -45491,15 +45474,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.SetProgramReleaseCallback(
         ProgramHandle program,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        SetProgramReleaseCallbackPfnNotify pfn_notify,
         void* user_data
     ) =>
         (
-            (delegate* unmanaged<
-                ProgramHandle,
-                delegate* unmanaged<ProgramHandle, void*, void>,
-                void*,
-                int>)(
+            (delegate* unmanaged<ProgramHandle, SetProgramReleaseCallbackPfnNotify, void*, int>)(
                 _slots[167] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[167] = nativeContext.LoadFunction(
@@ -45520,7 +45499,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetProgramReleaseCallback(
         ProgramHandle program,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        SetProgramReleaseCallbackPfnNotify pfn_notify,
         void* user_data
     ) => ThisThread.SetProgramReleaseCallback(program, pfn_notify, user_data);
 
@@ -45535,7 +45514,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.SetProgramReleaseCallback(
         ProgramHandle program,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        SetProgramReleaseCallbackPfnNotify pfn_notify,
         Ref user_data
     )
     {
@@ -45556,7 +45535,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetProgramReleaseCallback(
         ProgramHandle program,
-        delegate* unmanaged<ProgramHandle, void*, void> pfn_notify,
+        SetProgramReleaseCallbackPfnNotify pfn_notify,
         Ref user_data
     ) => ThisThread.SetProgramReleaseCallback(program, pfn_notify, user_data);
 

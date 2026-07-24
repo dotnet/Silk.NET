@@ -15,13 +15,5 @@ public partial struct NameVersionKHR
     public uint Version;
 
     [NativeName("name")]
-    public NameEFixedBuffer Name;
-
-    [NativeName("_name_e__FixedBuffer")]
-    [InlineArray(64)]
-    public partial struct NameEFixedBuffer
-    {
-        [NativeName("e0")]
-        public sbyte E0;
-    }
+    public NameVersionKHRName Name;
 }
