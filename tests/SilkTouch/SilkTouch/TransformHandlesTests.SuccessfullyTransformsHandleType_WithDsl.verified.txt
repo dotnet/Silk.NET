@@ -1,5 +1,4 @@
 ﻿// Vk.gen.cs
-[NativeName("VkInstance_T")]
 [NameAffix("Suffix", "HandleType", "Handle")]
 public readonly unsafe partial struct VkInstance_T : IEquatable<VkInstance_T>
 {
