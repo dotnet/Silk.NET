@@ -42,22 +42,19 @@ public static class NameAffixer
                     continue;
                 }
 
+                var affixType = type == "Prefix" ? NameAffixType.Prefix : NameAffixType.Suffix;
+
                 if (
                     argumentList.Arguments[2].Expression is LiteralExpressionSyntax
                     {
-                        Token.Value: string affix
+                        Token.Value: string affix,
                     }
                 )
                 {
                     affixes =
                     [
                         .. affixes,
-                        new NameAffix(
-                            type == "Prefix" ? NameAffixType.Prefix : NameAffixType.Suffix,
-                            category,
-                            affix,
-                            declarationOrder
-                        ),
+                        new NameAffix(affixType, category, affix, declarationOrder),
                     ];
 
                     declarationOrder++;
@@ -66,14 +63,7 @@ public static class NameAffixer
                     argumentList.Arguments[2].Expression is InvocationExpressionSyntax
                     {
                         Expression: IdentifierNameSyntax { Identifier.ValueText: "nameof" },
-                        ArgumentList.Arguments: [
-                            {
-                                Expression: IdentifierNameSyntax
-                                {
-                                    Identifier.ValueText: var referencedAffix,
-                                },
-                            },
-                        ],
+                        ArgumentList.Arguments: [{ Expression: var nameofExpression }],
                     }
                 )
                 {
@@ -81,9 +71,9 @@ public static class NameAffixer
                     [
                         .. affixes,
                         new NameAffix(
-                            type == "Prefix" ? NameAffixType.Prefix : NameAffixType.Suffix,
+                            affixType,
                             category,
-                            referencedAffix,
+                            nameofExpression.ToString(),
                             declarationOrder,
                             true
                         ),
@@ -211,7 +201,7 @@ public static class NameAffixer
                     )
                 )
                 .WithArgumentList(
-                    ArgumentList(SingletonSeparatedList(Argument(IdentifierName(referencedAffix))))
+                    ArgumentList(SingletonSeparatedList(Argument(ParseTypeName(referencedAffix))))
                 )
         );
 
@@ -250,13 +240,17 @@ public static class NameAffixer
 
         foreach (var affix in affixes)
         {
+            var affixValue = affix.Affix.LastIndexOf('.') is var index and >= 0
+                ? affix.Affix[(index + 1)..]
+                : affix.Affix;
+
             if (affix.Type == NameAffixType.Prefix)
             {
-                name = affix.Affix + name;
+                name = affixValue + name;
             }
             else
             {
-                name += affix.Affix;
+                name += affixValue;
             }
         }
 
@@ -318,9 +312,13 @@ public static class NameAffixer
                 for (var i = 0; i < nameAffixes.Length; i++)
                 {
                     var affix = nameAffixes[i];
-                    if (isPrefix ? name.StartsWith(affix.Affix) : name.EndsWith(affix.Affix))
+                    var affixValue = affix.Affix.LastIndexOf('.') is var index and >= 0
+                        ? affix.Affix[(index + 1)..]
+                        : affix.Affix;
+
+                    if (isPrefix ? name.StartsWith(affixValue) : name.EndsWith(affixValue))
                     {
-                        name = isPrefix ? name[affix.Affix.Length..] : name[..^affix.Affix.Length];
+                        name = isPrefix ? name[affixValue.Length..] : name[..^affixValue.Length];
 
                         nameAffixes = RemoveAt(nameAffixes, i);
                         removedAffix = true;
