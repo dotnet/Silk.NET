@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubgroupFeatureFlagBits")]
+[NativeName("VkSubgroupFeatureFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum SubgroupFeatureFlags : uint

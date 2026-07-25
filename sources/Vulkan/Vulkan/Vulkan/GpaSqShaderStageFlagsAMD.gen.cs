@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGpaSqShaderStageFlagBitsAMD")]
+[NativeName("VkGpaSqShaderStageFlagsAMD")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum GpaSqShaderStageFlagsAMD : uint

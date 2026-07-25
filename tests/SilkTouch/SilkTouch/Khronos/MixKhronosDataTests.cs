@@ -438,7 +438,7 @@ public class MixKhronosDataTests
                     Groups =
                     {
                         {
-                            "GLEnum",
+                            "GLenum",
                             new MixKhronosData.EnumGroup()
                             {
                                 Name = "GLEnum",

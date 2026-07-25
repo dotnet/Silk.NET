@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkQueueFlagBits")]
+[NativeName("VkQueueFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum QueueFlags : uint

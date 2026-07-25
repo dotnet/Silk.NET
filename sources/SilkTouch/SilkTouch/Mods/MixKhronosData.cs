@@ -54,7 +54,7 @@ public partial class MixKhronosData(
         public required Configuration Configuration { get; init; }
 
         /// <summary>
-        /// A mapping of enum native names to group names.
+        /// A mapping from enum native names to group native names.
         /// </summary>
         /// <remarks>
         /// This is OpenGL and OpenCL specific.
@@ -62,16 +62,15 @@ public partial class MixKhronosData(
         public Dictionary<string, HashSet<string>> EnumsToGroups { get; } = [];
 
         /// <summary>
-        /// A mapping of group names to constant declarators.
+        /// A mapping from group native names to constant declarators.
         /// </summary>
         /// <remarks>
         /// This is OpenGL and OpenCL specific.
         /// </remarks>
-        // TODO: Due to historical reasons, this is keyed by the managed name of the enum. We should use the native name as the key instead since the native name does not change.
         public Dictionary<string, EnumGroup> Groups { get; } = [];
 
         /// <summary>
-        /// A mapping of feature/extension names to whether they're a feature or not and their API set dependencies for
+        /// A mapping from feature/extension names to whether they're a feature or not and their API set dependencies for
         /// each profile/variant.
         /// </summary>
         /// <remarks>
@@ -85,7 +84,7 @@ public partial class MixKhronosData(
         > ApiSets { get; set; } = [];
 
         /// <summary>
-        /// A mapping of native names to their supported API profile attributes.
+        /// A mapping from native names to their supported API profile attributes.
         /// </summary>
         public Dictionary<
             string,
@@ -590,6 +589,7 @@ public partial class MixKhronosData(
         /// </summary>
         public bool IsMaybeBitmask { get; init; }
 
+        // TODO: Do we really need this?
         /// <summary>
         /// The identified exclusive vendor for the group. Eg: NV.
         /// </summary>
@@ -1850,7 +1850,10 @@ public partial class MixKhronosData(
                 AlreadyPresentGroups.Add(nativeName);
             }
 
-            return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(managedName)));
+            return base.VisitEnumDeclaration(
+                node.WithIdentifier(Identifier(managedName))
+                    .WithAttributeLists(node.AttributeLists.WithNativeName(nativeName))
+            );
         }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
@@ -1918,7 +1921,7 @@ public partial class MixKhronosData(
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            var identifier = node.Identifier.ToString();
+            var nativeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
 
             if (node.Members.Any(m => job.DeprecatedAliases.Contains(m.Identifier.ValueText)))
             {
@@ -1933,7 +1936,7 @@ public partial class MixKhronosData(
             }
 
             if (
-                job.Groups.TryGetValue(identifier, out var group)
+                job.Groups.TryGetValue(nativeName, out var group)
                 && (group.IsDefinitelyBitmask || group.IsMaybeBitmask)
             )
             {
@@ -2179,7 +2182,7 @@ public partial class MixKhronosData(
             var nativeTypeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
             var managedTypeName = node.Identifier.Text;
 
-            var groupInfo = job.Groups.GetValueOrDefault(managedTypeName);
+            var groupInfo = job.Groups.GetValueOrDefault(nativeTypeName);
 
             var typeVendor = job.Vendors.FirstOrDefault(s =>
                 managedTypeName.EndsWith(s, vendorSuffixComparison)
@@ -2464,6 +2467,7 @@ public partial class MixKhronosData(
             var baseType = enumNamespace != null ? $"{enumNamespace}enum" : null;
 
             string? namespaceGroupName = null;
+            string? namespaceGroupNativeName = null;
             if (enumNamespace != null)
             {
                 if (!enumNamespace.All(char.IsUpper))
@@ -2471,30 +2475,31 @@ public partial class MixKhronosData(
                     // Use the namespace name directly if it is not all uppercase
                     // Eg: WGLLayerPlaneMask
                     namespaceGroupName = enumNamespace;
+                    namespaceGroupNativeName = enumNamespace;
                 }
                 else
                 {
                     // Otherwise, suffix the name with -Enum
                     // Eg: GLEnum, ALEnum, WGLEnum
                     namespaceGroupName = $"{enumNamespace}Enum";
+                    namespaceGroupNativeName = $"{enumNamespace}enum";
                 }
             }
 
             // Create a group for the namespace as well i.e. GLEnum, WGLEnum, etc
-            if (namespaceGroupName is not null)
+            if (
+                namespaceGroupName != null
+                && namespaceGroupNativeName != null
+                && !data.Groups.ContainsKey(namespaceGroupNativeName)
+            )
             {
-                if (!data.Groups.TryGetValue(namespaceGroupName, out var namespaceGroup))
+                data.Groups[namespaceGroupNativeName] = new EnumGroup()
                 {
-                    namespaceGroup = new EnumGroup()
-                    {
-                        Name = namespaceGroupName,
-                        NativeName = $"{enumNamespace}enum",
-                        BaseType = baseType,
-                        Namespace = enumNamespace,
-                    };
-
-                    data.Groups[namespaceGroupName] = namespaceGroup;
-                }
+                    Name = namespaceGroupName,
+                    NativeName = namespaceGroupNativeName,
+                    BaseType = baseType,
+                    Namespace = enumNamespace,
+                };
             }
 
             // Vulkan/OpenXR/OpenCL enum name
@@ -2522,7 +2527,7 @@ public partial class MixKhronosData(
             // from occurring on the top-level intentional exclusions because they're special numbers/constants.
             var topLevelIntentionalExclusion =
                 groupName != null
-                && namespaceGroupName == null
+                && namespaceGroupNativeName == null
                 && IsIntentionalExclusion(groupName);
             static bool IsIntentionalExclusion(string groupName) =>
                 groupName.StartsWith("Constants") // these are constants
@@ -2549,9 +2554,10 @@ public partial class MixKhronosData(
             // 1. The native name is correct
             // 2. Whether the enum is a bitmask is correct
             // 3. Empty groups are recorded properly
-            if (groupName != null && !IsUngroupable(groupName))
+            nativeName ??= groupName;
+            if (groupName != null && nativeName != null && !IsUngroupable(nativeName))
             {
-                data.Groups[groupName] = data.Groups.TryGetValue(groupName, out var group)
+                data.Groups[nativeName] = data.Groups.TryGetValue(nativeName, out var group)
                     ? group with
                     {
                         IsDefinitelyBitmask = isBitmask,
@@ -2559,7 +2565,7 @@ public partial class MixKhronosData(
                     : new EnumGroup()
                     {
                         Name = groupName,
-                        NativeName = nativeName ?? groupName,
+                        NativeName = nativeName,
                         BaseType = baseType,
 
                         IsDefinitelyBitmask = isBitmask,
@@ -2599,14 +2605,14 @@ public partial class MixKhronosData(
 
                 // Add the enum member to the namespace enum, the main enum group, and its additional OpenGL-style groups
                 var memberGroupNames = new HashSet<string>();
-                if (namespaceGroupName != null)
+                if (namespaceGroupNativeName != null)
                 {
-                    memberGroupNames.Add(namespaceGroupName);
+                    memberGroupNames.Add(namespaceGroupNativeName);
                 }
 
                 if (groupName != null)
                 {
-                    memberGroupNames.Add(groupName);
+                    memberGroupNames.Add(nativeName ?? groupName);
                 }
 
                 if (additionalGroups != null)
@@ -2949,20 +2955,22 @@ public partial class MixKhronosData(
                     ref tempVar
                 );
 
+                nativeName ??= groupName;
+
                 // Update the group info if it doesn't exist.
-                if (data.Groups.TryGetValue(groupName, out var groupInfo))
+                if (data.Groups.TryGetValue(nativeName, out var groupInfo))
                 {
                     if (thisVendor is not null && groupInfo.ExclusiveVendor != thisVendor)
                     {
-                        data.Groups[groupName] = groupInfo with { ExclusiveVendor = null };
+                        data.Groups[nativeName] = groupInfo with { ExclusiveVendor = null };
                     }
                 }
                 else
                 {
-                    data.Groups[groupName] = new EnumGroup()
+                    data.Groups[nativeName] = new EnumGroup()
                     {
-                        Name = groupName,
-                        NativeName = nativeName ?? groupName,
+                        Name = nativeName,
+                        NativeName = nativeName,
 
                         IsDefinitelyBitmask =
                             (typeStr is not null && typeStr.Contains("bitfield"))
@@ -2978,7 +2986,7 @@ public partial class MixKhronosData(
                 }
 
                 // Mark this enum.
-                enumToGroups.Add(groupName);
+                enumToGroups.Add(nativeName);
             }
         }
 
@@ -3004,7 +3012,9 @@ public partial class MixKhronosData(
                 )
                 .ToList();
 
+            // Mapping from native name to new managed name
             var groupsToRename = new Dictionary<string, string>();
+
             foreach (var group in groups)
             {
                 // Split into sections
@@ -3050,22 +3060,13 @@ public partial class MixKhronosData(
                     newName = $"{newName}_{identifiedVendor.ToLowerInvariant()}";
                 }
 
-                groupsToRename[group.Name] = newName;
+                groupsToRename[group.NativeName] = newName;
             }
 
             // Apply renames
-            foreach (var (oldName, newName) in groupsToRename)
+            foreach (var (nativeName, newManagedName) in groupsToRename)
             {
-                data.Groups[newName] = data.Groups[oldName] with { Name = newName };
-                data.Groups.Remove(oldName);
-
-                foreach (var groupMapping in data.EnumsToGroups.Values)
-                {
-                    if (groupMapping.Remove(oldName))
-                    {
-                        groupMapping.Add(newName);
-                    }
-                }
+                data.Groups[nativeName] = data.Groups[nativeName] with { Name = newManagedName };
             }
         }
     }

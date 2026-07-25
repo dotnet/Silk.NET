@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSwapchainCreateFlagBitsKHR")]
+[NativeName("VkSwapchainCreateFlagsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum SwapchainCreateFlagsKHR : uint

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDataGraphOpticalFlowImageUsageFlagBitsARM")]
+[NativeName("VkDataGraphOpticalFlowImageUsageFlagsARM")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum DataGraphOpticalFlowImageUsageFlagsARM : uint

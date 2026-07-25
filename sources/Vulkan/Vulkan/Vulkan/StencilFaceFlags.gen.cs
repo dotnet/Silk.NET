@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkStencilFaceFlagBits")]
+[NativeName("VkStencilFaceFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum StencilFaceFlags : uint

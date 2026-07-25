@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDataGraphTOSAQualityFlagBitsARM")]
+[NativeName("VkDataGraphTOSAQualityFlagsARM")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum DataGraphTosaQualityFlagsARM : uint

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPresentStageFlagBitsEXT")]
+[NativeName("VkPresentStageFlagsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum PresentStageFlagsEXT : uint

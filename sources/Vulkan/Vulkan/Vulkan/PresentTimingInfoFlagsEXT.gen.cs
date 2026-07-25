@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPresentTimingInfoFlagBitsEXT")]
+[NativeName("VkPresentTimingInfoFlagsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum PresentTimingInfoFlagsEXT : uint

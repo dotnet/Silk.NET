@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceDiagnosticsConfigFlagBitsNV")]
+[NativeName("VkDeviceDiagnosticsConfigFlagsNV")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum DeviceDiagnosticsConfigFlagsNV : uint

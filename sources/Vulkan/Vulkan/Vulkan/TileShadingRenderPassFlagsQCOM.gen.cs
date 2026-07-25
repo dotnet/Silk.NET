@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkTileShadingRenderPassFlagBitsQCOM")]
+[NativeName("VkTileShadingRenderPassFlagsQCOM")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum TileShadingRenderPassFlagsQCOM : uint
