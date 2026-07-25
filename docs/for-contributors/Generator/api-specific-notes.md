@@ -24,6 +24,13 @@ These use the `MixKhronosData` mod and come with an XML spec.
 Be aware that the XML spec links point to the latest version. Silk's repo may be using an older version of these XML
 files.
 
+---
+
+For APIs that use the `Flags/FlagBits` pattern, the `Flags` version of the name is use for both the native name and
+managed name. This is because the XML data uses the `Flags` version to provide base type data. There was a time where
+we preferred the `FlagBits` version instead for the `[NativeName]` attribute. This is because searching for the
+`FlagBits` version online brings up a more useful documentation page.
+
 ### OpenAL
 
 Spec file used: https://raw.githubusercontent.com/kcat/openal-soft/master/registry/xml/al.xml
