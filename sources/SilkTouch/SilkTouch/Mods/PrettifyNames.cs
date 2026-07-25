@@ -689,13 +689,14 @@ public class PrettifyNames(
                             continue;
                         }
 
-                        var referencedMemberOriginalName = affix.Affix;
+                        var reference = affix.Affix;
                         if (
                             TryResolveName(
                                 context,
                                 scope,
-                                referencedMemberOriginalName,
-                                out var referencedMemberScope,
+                                reference,
+                                out var memberScope,
+                                out var memberName,
                                 out _,
                                 out var isInFinalSet
                             )
@@ -706,10 +707,7 @@ public class PrettifyNames(
                             // Names from the final set should therefore not affect the processing order
                             if (!isInFinalSet)
                             {
-                                var referencedMemberKey = new MemberKey(
-                                    referencedMemberScope,
-                                    referencedMemberOriginalName
-                                );
+                                var referencedMemberKey = new MemberKey(memberScope, memberName);
                                 if (
                                     !notifyDependantByKey.TryGetValue(
                                         referencedMemberKey,
@@ -944,6 +942,7 @@ public class PrettifyNames(
                             scope,
                             affixValue,
                             out _,
+                            out _,
                             out var referencedMemberValue,
                             out _
                         )
@@ -998,63 +997,87 @@ public class PrettifyNames(
         /// Tries the resolve the current output name of the referenced member from the current scope.
         /// </summary>
         /// <param name="context">The name processor context. Used during the name resolution process.</param>
-        /// <param name="referenceScope">The scope from which the reference was made. The reference scope and its parent scopes will be used during the resolution process.</param>
-        /// <param name="referencedMember">The original name of the member being referenced.</param>
-        /// <param name="referencedMemberScope">The scope in which the referenced member was found.</param>
-        /// <param name="referencedMemberValue">The current output name of the member being referenced.</param>
+        /// <param name="resolutionScope">The scope from which the reference was made. The reference scope and its parent scopes will be used during the resolution process.</param>
+        /// <param name="reference">The reference to resolve a member for. Can be qualified.</param>
+        /// <param name="memberScope">The scope in which the referenced member was found.</param>
+        /// <param name="memberName">The current name of the referenced member.</param>
+        /// <param name="memberValue">The current output name of the member being referenced.</param>
         /// <param name="isInFinalSet">Whether the referenced member was found in the final set.</param>
         private bool TryResolveName(
             NameProcessorContext context,
-            string referenceScope,
-            string referencedMember,
-            [NotNullWhen(true)] out string? referencedMemberScope,
-            [NotNullWhen(true)] out string? referencedMemberValue,
+            string resolutionScope,
+            string reference,
+            [NotNullWhen(true)] out string? memberScope,
+            [NotNullWhen(true)] out string? memberName,
+            [NotNullWhen(true)] out string? memberValue,
             out bool isInFinalSet
         )
         {
-            var currentScope = referenceScope;
+            // referencedMember can be in the format ContainingType.Member
+            // This splits the qualifier out
+            string referenceScope;
+            string referenceName;
+            if (reference.IndexOf('.') is var index and >= 0)
+            {
+                referenceScope = reference[..index];
+                referenceName = reference[(index + 1)..];
+            }
+            else
+            {
+                referenceScope = "";
+                referenceName = reference;
+            }
+
             while (true)
             {
+                var testScope =
+                    resolutionScope != "" && referenceScope != ""
+                        ? $"{resolutionScope}.{referenceScope}"
+                        : $"{resolutionScope}{referenceScope}";
+
                 // Try resolve from working set
                 if (
-                    context.Names.TryGetValue(currentScope, out var workingScopeMembers)
+                    context.Names.TryGetValue(testScope, out var workingScopeMembers)
                     && workingScopeMembers.TryGetValue(
-                        referencedMember,
+                        referenceName,
                         out var referencedCandidateNames
                     )
                 )
                 {
-                    referencedMemberScope = currentScope;
-                    referencedMemberValue = referencedCandidateNames.Primary;
+                    memberScope = testScope;
+                    memberName = referenceName;
+                    memberValue = referencedCandidateNames.Primary;
                     isInFinalSet = false;
                     return true;
                 }
 
                 // Try resolve from final set
                 if (
-                    context.FinalNames.TryGetValue(currentScope, out var finalScopeMembers)
-                    && finalScopeMembers.TryGetValue(referencedMember, out var referencedFinalName)
+                    context.FinalNames.TryGetValue(testScope, out var finalScopeMembers)
+                    && finalScopeMembers.TryGetValue(referenceName, out var referencedFinalName)
                 )
                 {
-                    referencedMemberScope = currentScope;
-                    referencedMemberValue = referencedFinalName;
+                    memberScope = testScope;
+                    memberName = referenceName;
+                    memberValue = referencedFinalName;
                     isInFinalSet = true;
                     return true;
                 }
 
                 // Try to go up a scope
                 // This currently does not handle nested scopes
-                if (currentScope != "")
+                if (resolutionScope != "")
                 {
-                    currentScope = "";
+                    resolutionScope = "";
                     continue;
                 }
 
                 break;
             }
 
-            referencedMemberScope = null;
-            referencedMemberValue = null;
+            memberScope = null;
+            memberName = null;
+            memberValue = null;
             isInFinalSet = false;
             return false;
         }

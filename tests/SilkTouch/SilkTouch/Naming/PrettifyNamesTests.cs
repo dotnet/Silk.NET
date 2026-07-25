@@ -300,8 +300,6 @@ public class PrettifyNamesTests
     [Test]
     public async Task SuccessfullyUsesReferencedAffixes_FromParentScope()
     {
-        // Note that at time of writing, no nested scopes are supported
-        // This means that the only valid scope is the global scope
         var project = TestUtils
             .CreateTestProject()
             .AddDocument(
@@ -328,6 +326,40 @@ public class PrettifyNamesTests
 
         // A should become ASuffix
         // B should become BASuffix
+        await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
+    }
+
+    [Test]
+    public async Task SuccessfullyUsesReferencedAffixes_FromQualifiedScope()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                [NameAffix("Suffix", "Test", nameof(B.C))]
+                public struct A { }
+
+                public struct B
+                {
+                    [NameAffix("Suffix", "Test", "Suffix")]
+                    public static int C;
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // A should become ACSuffix
+        // C should become CSuffix
         await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
 
