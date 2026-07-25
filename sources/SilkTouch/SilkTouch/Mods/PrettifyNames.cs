@@ -706,18 +706,18 @@ public class PrettifyNames(
                             // Names from the final set should therefore not affect the processing order
                             if (!isInFinalSet)
                             {
-                                var referencedMemberkey = new MemberKey(
+                                var referencedMemberKey = new MemberKey(
                                     referencedMemberScope,
                                     referencedMemberOriginalName
                                 );
                                 if (
                                     !notifyDependantByKey.TryGetValue(
-                                        referencedMemberkey,
+                                        referencedMemberKey,
                                         out var dependants
                                     )
                                 )
                                 {
-                                    notifyDependantByKey[referencedMemberkey] = dependants = [];
+                                    notifyDependantByKey[referencedMemberKey] = dependants = [];
                                 }
 
                                 dependants.Add(new MemberKey(scope, member));
