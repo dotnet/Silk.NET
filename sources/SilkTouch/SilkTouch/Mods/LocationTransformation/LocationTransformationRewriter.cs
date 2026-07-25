@@ -295,7 +295,8 @@ public class LocationTransformationRewriter : CSharpSyntaxRewriter
             return node;
         }
 
-        var symbol = _semanticModel.GetSymbolInfo(node).Symbol;
+        var symbolInfo = _semanticModel.GetSymbolInfo(node);
+        var symbol = symbolInfo.Symbol ?? symbolInfo.CandidateSymbols.FirstOrDefault();
         ReportSymbol(node, symbol);
 
         return base.VisitIdentifierName(node)!;
