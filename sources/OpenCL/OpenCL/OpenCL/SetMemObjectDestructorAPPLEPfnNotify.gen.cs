@@ -10,26 +10,26 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("clSetMemObjectDestructorAPPLE_pfn_notify")]
-public readonly unsafe struct SetMemObjectDestructorApplePfnNotify : IDisposable
+public readonly unsafe struct SetMemObjectDestructorAPPLEPfnNotify : IDisposable
 {
     private readonly void* Pointer;
     public delegate* unmanaged<MemHandle, void*, void> Handle =>
         (delegate* unmanaged<MemHandle, void*, void>)Pointer;
 
-    public SetMemObjectDestructorApplePfnNotify(delegate* unmanaged<MemHandle, void*, void> ptr) =>
+    public SetMemObjectDestructorAPPLEPfnNotify(delegate* unmanaged<MemHandle, void*, void> ptr) =>
         Pointer = ptr;
 
-    public SetMemObjectDestructorApplePfnNotify(
-        SetMemObjectDestructorApplePfnNotifyDelegate proc
+    public SetMemObjectDestructorAPPLEPfnNotify(
+        SetMemObjectDestructorAPPLEPfnNotifyDelegate proc
     ) => Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
 
-    public static implicit operator SetMemObjectDestructorApplePfnNotify(
+    public static implicit operator SetMemObjectDestructorAPPLEPfnNotify(
         delegate* unmanaged<MemHandle, void*, void> pfn
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<MemHandle, void*, void>(
-        SetMemObjectDestructorApplePfnNotify pfn
+        SetMemObjectDestructorAPPLEPfnNotify pfn
     ) => (delegate* unmanaged<MemHandle, void*, void>)pfn.Pointer;
 }

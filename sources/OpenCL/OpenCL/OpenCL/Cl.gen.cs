@@ -3899,7 +3899,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+            EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -3916,7 +3916,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+            EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -7925,7 +7925,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         [SupportedApiProfile("opencl", ["cl_APPLE_SetMemObjectDestructor"])]
         public static extern int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            SetMemObjectDestructorApplePfnNotify pfn_notify,
+            SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -7937,7 +7937,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            SetMemObjectDestructorApplePfnNotify pfn_notify,
+            SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -12210,7 +12210,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+            EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -12237,7 +12237,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+            EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -16332,7 +16332,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            SetMemObjectDestructorApplePfnNotify pfn_notify,
+            SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
             void* user_data
         ) => T.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 
@@ -16344,7 +16344,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            SetMemObjectDestructorApplePfnNotify pfn_notify,
+            SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
             Ref user_data
         ) => T.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 
@@ -21289,7 +21289,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+            EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -21316,7 +21316,7 @@ public unsafe partial class Cl : ICl, ICl.Static
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+            EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -26036,7 +26036,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            SetMemObjectDestructorApplePfnNotify pfn_notify,
+            SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
             void* user_data
         ) => Underlying.Value!.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 
@@ -26048,7 +26048,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public static int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            SetMemObjectDestructorApplePfnNotify pfn_notify,
+            SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
             Ref user_data
         )
         {
@@ -36482,7 +36482,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+        EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -36493,7 +36493,7 @@ public unsafe partial class Cl : ICl, ICl.Static
                 CommandQueueHandle,
                 uint,
                 void**,
-                EnqueueSvmFreeArmPfnFreeFunc,
+                EnqueueSvmFreeARMPfnFreeFunc,
                 void*,
                 uint,
                 EventHandle*,
@@ -36522,7 +36522,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+        EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -36547,7 +36547,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+        EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -36581,7 +36581,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+        EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -45287,11 +45287,11 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        SetMemObjectDestructorApplePfnNotify pfn_notify,
+        SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
         void* user_data
     ) =>
         (
-            (delegate* unmanaged<MemHandle, SetMemObjectDestructorApplePfnNotify, void*, int>)(
+            (delegate* unmanaged<MemHandle, SetMemObjectDestructorAPPLEPfnNotify, void*, int>)(
                 _slots[164] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[164] = nativeContext.LoadFunction(
@@ -45307,7 +45307,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        SetMemObjectDestructorApplePfnNotify pfn_notify,
+        SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
         void* user_data
     ) => ThisThread.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 
@@ -45317,7 +45317,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int ICl.SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        SetMemObjectDestructorApplePfnNotify pfn_notify,
+        SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
         Ref user_data
     )
     {
@@ -45334,7 +45334,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        SetMemObjectDestructorApplePfnNotify pfn_notify,
+        SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
         Ref user_data
     ) => ThisThread.SetMemObjectDestructorAPPLE(memobj, pfn_notify, user_data);
 

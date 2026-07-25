@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenCL;
 
-[NativeName("clSetMemObjectDestructorAPPLE_pfn_notify")]
-public unsafe delegate void SetMemObjectDestructorApplePfnNotifyDelegate(
-    MemHandle arg0,
-    void* arg1
+[NativeName("clEnqueueSVMFreeARM_pfn_free_func")]
+public unsafe delegate void EnqueueSvmFreeARMPfnFreeFuncDelegate(
+    CommandQueueHandle arg0,
+    uint arg1,
+    void** arg2,
+    void* arg3
 );

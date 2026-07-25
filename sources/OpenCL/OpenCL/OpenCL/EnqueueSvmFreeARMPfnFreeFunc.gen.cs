@@ -10,22 +10,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("clEnqueueSVMFreeARM_pfn_free_func")]
-public readonly unsafe struct EnqueueSvmFreeArmPfnFreeFunc : IDisposable
+public readonly unsafe struct EnqueueSvmFreeARMPfnFreeFunc : IDisposable
 {
     private readonly void* Pointer;
     public delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> Handle =>
         (delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void>)Pointer;
 
-    public EnqueueSvmFreeArmPfnFreeFunc(
+    public EnqueueSvmFreeARMPfnFreeFunc(
         delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> ptr
     ) => Pointer = ptr;
 
-    public EnqueueSvmFreeArmPfnFreeFunc(EnqueueSvmFreeArmPfnFreeFuncDelegate proc) =>
+    public EnqueueSvmFreeARMPfnFreeFunc(EnqueueSvmFreeARMPfnFreeFuncDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
 
-    public static implicit operator EnqueueSvmFreeArmPfnFreeFunc(
+    public static implicit operator EnqueueSvmFreeARMPfnFreeFunc(
         delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void> pfn
     ) => new(pfn);
 
@@ -34,6 +34,6 @@ public readonly unsafe struct EnqueueSvmFreeArmPfnFreeFunc : IDisposable
         uint,
         void**,
         void*,
-        void>(EnqueueSvmFreeArmPfnFreeFunc pfn) =>
+        void>(EnqueueSvmFreeARMPfnFreeFunc pfn) =>
         (delegate* unmanaged<CommandQueueHandle, uint, void**, void*, void>)pfn.Pointer;
 }

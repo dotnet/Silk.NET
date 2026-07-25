@@ -2667,7 +2667,7 @@ public unsafe partial interface ICl
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             void** svm_pointers,
-            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+            EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
             void* user_data,
             uint num_events_in_wait_list,
             EventHandle* event_wait_list,
@@ -2681,7 +2681,7 @@ public unsafe partial interface ICl
             CommandQueueHandle command_queue,
             uint num_svm_pointers,
             Ref2D svm_pointers,
-            EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+            EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
             Ref user_data,
             uint num_events_in_wait_list,
             Ref<EventHandle> event_wait_list,
@@ -5561,7 +5561,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
         static abstract int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            SetMemObjectDestructorApplePfnNotify pfn_notify,
+            SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
             void* user_data
         );
 
@@ -5570,7 +5570,7 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
         static abstract int SetMemObjectDestructorAPPLE(
             MemHandle memobj,
-            SetMemObjectDestructorApplePfnNotify pfn_notify,
+            SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
             Ref user_data
         );
 
@@ -8471,7 +8471,7 @@ public unsafe partial interface ICl
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         void** svm_pointers,
-        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+        EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
         void* user_data,
         uint num_events_in_wait_list,
         EventHandle* event_wait_list,
@@ -8485,7 +8485,7 @@ public unsafe partial interface ICl
         CommandQueueHandle command_queue,
         uint num_svm_pointers,
         Ref2D svm_pointers,
-        EnqueueSvmFreeArmPfnFreeFunc pfn_free_func,
+        EnqueueSvmFreeARMPfnFreeFunc pfn_free_func,
         Ref user_data,
         uint num_events_in_wait_list,
         Ref<EventHandle> event_wait_list,
@@ -11176,7 +11176,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
     int SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        SetMemObjectDestructorApplePfnNotify pfn_notify,
+        SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
         void* user_data
     );
 
@@ -11185,7 +11185,7 @@ public unsafe partial interface ICl
     [NativeFunction("opencl", EntryPoint = "clSetMemObjectDestructorAPPLE")]
     int SetMemObjectDestructorAPPLE(
         MemHandle memobj,
-        SetMemObjectDestructorApplePfnNotify pfn_notify,
+        SetMemObjectDestructorAPPLEPfnNotify pfn_notify,
         Ref user_data
     );
 
