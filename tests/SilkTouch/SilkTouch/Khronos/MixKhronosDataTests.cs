@@ -94,17 +94,22 @@ public class MixKhronosDataTests
     }
 
     [Test, TestCaseSource(nameof(EnumTestCases))]
-    public Task EnumsToGroups(string file, object data) =>
-        Verifier
+    public Task EnumsToGroups(string file, object data)
+    {
+        var jobData = (MixKhronosData.JobData)data;
+        return Verifier
             .Verify(
                 string.Join(
                     '\n',
-                    ((MixKhronosData.JobData)data)
+                    jobData
                         .EnumsToGroups.OrderBy(x => x.Key)
-                        .Select(x => $"{x.Key} = {string.Join(", ", x.Value.Order())}")
+                        .Select(x =>
+                            $"{x.Key} = {string.Join(", ", x.Value.Select(x => jobData.Groups[x].Name).Order())}"
+                        )
                 )
             )
             .UseFileName($"{nameof(MixKhronosDataTests)}.{nameof(EnumsToGroups)}.{file}");
+    }
 
     [Test, TestCaseSource(nameof(TestCases))]
     public Task ApiSets(string file, object data) =>
@@ -156,14 +161,14 @@ public class MixKhronosDataTests
                 constituents.Add(token.NativeName);
             }
         }
-        var newGroups = ((MixKhronosData.JobData)data).Groups.ToDictionary(
-            x => x.Key,
-            _ => new HashSet<string>()
-        );
-        foreach (var (enumName, groupNames) in ((MixKhronosData.JobData)data).EnumsToGroups)
+
+        var jobData = (MixKhronosData.JobData)data;
+        var newGroups = jobData.Groups.Values.ToDictionary(x => x.Name, _ => new HashSet<string>());
+        foreach (var (enumName, groupNativeNames) in jobData.EnumsToGroups)
         {
-            foreach (var groupName in groupNames)
+            foreach (var groupNativeName in groupNativeNames)
             {
+                var groupName = jobData.Groups[groupNativeName].Name;
                 if (newGroups.TryGetValue(groupName, out var constituents))
                 {
                     constituents.Add(enumName);
