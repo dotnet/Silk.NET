@@ -24,12 +24,12 @@
 ## Introduction
 
 The managed chaining methodology use
-the [`Silk.NET.Vulkan.Chain` abstract class](../../src/Vulkan/Silk.NET.Vulkan/Chain.cs) and its descendents. Similar to
+the [`Silk.NET.Vulkan.Chain` abstract class](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/Chain.cs) and its descendents. Similar to
 the [`System.Tuple` class](https://docs.microsoft.com/en-us/dotnet/api/system.tuple?view=net-6.0), these are
-[auto-generated](../../src/Vulkan/Silk.NET.Vulkan/Chain.gen.tt) and take the form `Chain<TChain>`, `Chain<TChain, T1>`
+[auto-generated](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/Chain.g.tt) and take the form `Chain<TChain>`, `Chain<TChain, T1>`
 , `Chain<TChain, T1>`
 , ..., `Chain<TChain, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15>`; supporting chains of length 1
-to 16 (including the head). The generated code can be seen [here](../../src/Vulkan/Silk.NET.Vulkan/Chain.gen.cs).
+to 16 (including the head). The generated code can be seen [here](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/Chain.g.cs).
 
 ### Type Constraints
 
