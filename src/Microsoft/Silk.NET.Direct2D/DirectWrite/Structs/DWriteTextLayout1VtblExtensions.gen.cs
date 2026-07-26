@@ -160,7 +160,7 @@ public unsafe static class DWriteTextLayout1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTrimming(this ComPtr<IDWriteTextLayout1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Trimming trimmingOptions, IDWriteInlineObject* trimmingSign)
+    public static unsafe int SetTrimming(this ComPtr<IDWriteTextLayout1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Trimming trimmingOptions, IDWriteInlineObject* trimmingSign)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -172,7 +172,7 @@ public unsafe static class DWriteTextLayout1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTrimming(this ComPtr<IDWriteTextLayout1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Trimming trimmingOptions, ref IDWriteInlineObject trimmingSign)
+    public static int SetTrimming(this ComPtr<IDWriteTextLayout1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Trimming trimmingOptions, ref IDWriteInlineObject trimmingSign)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -593,7 +593,7 @@ public unsafe static class DWriteTextLayout1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFontFamilyName(this ComPtr<IDWriteTextLayout1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFamilyName, TextRange textRange)
+    public static int SetFontFamilyName(this ComPtr<IDWriteTextLayout1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFamilyName, TextRange textRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -742,7 +742,7 @@ public unsafe static class DWriteTextLayout1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetLocaleName(this ComPtr<IDWriteTextLayout1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, TextRange textRange)
+    public static int SetLocaleName(this ComPtr<IDWriteTextLayout1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, TextRange textRange)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1849,7 +1849,7 @@ public unsafe static class DWriteTextLayout1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTrimming<TI0>(this ComPtr<IDWriteTextLayout1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Trimming trimmingOptions, ComPtr<TI0> trimmingSign) where TI0 : unmanaged, IComVtbl<IDWriteInlineObject>, IComVtbl<TI0>
+    public static int SetTrimming<TI0>(this ComPtr<IDWriteTextLayout1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Trimming trimmingOptions, ComPtr<TI0> trimmingSign) where TI0 : unmanaged, IComVtbl<IDWriteInlineObject>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

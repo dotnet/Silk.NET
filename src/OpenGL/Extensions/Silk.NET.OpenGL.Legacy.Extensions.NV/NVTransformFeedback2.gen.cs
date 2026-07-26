@@ -30,13 +30,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void DeleteTransformFeedbacks([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids);
 
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
-        public partial void DeleteTransformFeedbacks([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint ids);
+        public partial void DeleteTransformFeedbacks([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint ids);
 
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteTransformFeedbacks([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] TransformFeedback* ids);
 
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV", Convention = CallingConvention.Winapi)]
-        public partial void DeleteTransformFeedbacks([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TransformFeedback ids);
+        public partial void DeleteTransformFeedbacks([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TransformFeedback ids);
 
         [NativeApi(EntryPoint = "glDrawTransformFeedbackNV", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedback([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id);

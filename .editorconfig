@@ -41,6 +41,7 @@ dotnet_diagnostic.RS0017.severity = error
 
 # we should care more about this one day
 dotnet_diagnostic.RS0041.severity = warning
+dotnet_diagnostic.RS1042.severity = none
 
 # public api warnings silk.net doesn't care about
 dotnet_diagnostic.RS0026.severity = none  # Don't add multiple public overloads with optional parameters

@@ -280,7 +280,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetField(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField)
+    public static unsafe int GetField(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -292,7 +292,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetField(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField)
+    public static unsafe int GetField(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -359,7 +359,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetField<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField) where T0 : unmanaged
+    public static unsafe int GetField<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -374,7 +374,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetField<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField) where T0 : unmanaged
+    public static int GetField<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -471,7 +471,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField, void** ppvDataCArray)
+    public static unsafe int GetFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField, void** ppvDataCArray)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -483,7 +483,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField, ref void* ppvDataCArray)
+    public static unsafe int GetFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField, ref void* ppvDataCArray)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -498,7 +498,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField, void** ppvDataCArray)
+    public static unsafe int GetFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField, void** ppvDataCArray)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -513,7 +513,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField, ref void* ppvDataCArray)
+    public static unsafe int GetFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField, ref void* ppvDataCArray)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -647,7 +647,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField, void** ppvDataCArray) where T0 : unmanaged
+    public static unsafe int GetFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField, void** ppvDataCArray) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -662,7 +662,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField, ref void* ppvDataCArray) where T0 : unmanaged
+    public static unsafe int GetFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField, ref void* ppvDataCArray) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -680,7 +680,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField, void** ppvDataCArray) where T0 : unmanaged
+    public static unsafe int GetFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField, void** ppvDataCArray) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -698,7 +698,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField, ref void* ppvDataCArray) where T0 : unmanaged
+    public static unsafe int GetFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField, ref void* ppvDataCArray) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -808,7 +808,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PutField(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField)
+    public static unsafe int PutField(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -820,7 +820,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PutField(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField)
+    public static unsafe int PutField(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -887,7 +887,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PutField<T0>(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField) where T0 : unmanaged
+    public static unsafe int PutField<T0>(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -902,7 +902,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int PutField<T0>(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField) where T0 : unmanaged
+    public static int PutField<T0>(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -972,7 +972,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PutFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField)
+    public static unsafe int PutFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -984,7 +984,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PutFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField)
+    public static unsafe int PutFieldNoCopy(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1051,7 +1051,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PutFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField) where T0 : unmanaged
+    public static unsafe int PutFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1066,7 +1066,7 @@ public unsafe static class RecordInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int PutFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField) where T0 : unmanaged
+    public static int PutFieldNoCopy<T0>(this ComPtr<IRecordInfo> thisVtbl, uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;

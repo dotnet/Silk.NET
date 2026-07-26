@@ -199,7 +199,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color)
+        public readonly int SetColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -237,7 +237,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetId([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id)
+        public readonly int SetId([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id)
         {
             var @this = (ID2D1SvgPaint*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

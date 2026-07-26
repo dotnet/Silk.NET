@@ -12,25 +12,25 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPipelineRobustnessImageBehaviorEXT")]
     public enum PipelineRobustnessImageBehaviorEXT : int
     {
-        [Obsolete("Deprecated in favour of \"DeviceDefaultExt\"")]
-        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT_EXT")]
-        PipelineRobustnessImageBehaviorDeviceDefaultExt = 0,
-        [Obsolete("Deprecated in favour of \"DisabledExt\"")]
-        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED_EXT")]
-        PipelineRobustnessImageBehaviorDisabledExt = 1,
-        [Obsolete("Deprecated in favour of \"RobustImageAccessExt\"")]
-        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_EXT")]
-        PipelineRobustnessImageBehaviorRobustImageAccessExt = 2,
-        [Obsolete("Deprecated in favour of \"RobustImageAccess2Ext\"")]
-        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2_EXT")]
-        PipelineRobustnessImageBehaviorRobustImageAccess2Ext = 3,
-        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT_EXT")]
-        DeviceDefaultExt = 0,
-        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED_EXT")]
-        DisabledExt = 1,
-        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_EXT")]
-        RobustImageAccessExt = 2,
-        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2_EXT")]
-        RobustImageAccess2Ext = 3,
+        [Obsolete("Deprecated in favour of \"DeviceDefault\"")]
+        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT")]
+        PipelineRobustnessImageBehaviorDeviceDefault = 0,
+        [Obsolete("Deprecated in favour of \"Disabled\"")]
+        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED")]
+        PipelineRobustnessImageBehaviorDisabled = 1,
+        [Obsolete("Deprecated in favour of \"RobustImageAccess\"")]
+        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS")]
+        PipelineRobustnessImageBehaviorRobustImageAccess = 2,
+        [Obsolete("Deprecated in favour of \"RobustImageAccess2\"")]
+        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2")]
+        PipelineRobustnessImageBehaviorRobustImageAccess2 = 3,
+        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT")]
+        DeviceDefault = 0,
+        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED")]
+        Disabled = 1,
+        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS")]
+        RobustImageAccess = 2,
+        [NativeName("Name", "VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2")]
+        RobustImageAccess2 = 3,
     }
 }

@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-android</TargetFramework>
+    <TargetFramework>net8.0-android</TargetFramework>
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
     <OutputType>Exe</OutputType>
     <RuntimeIdentifiers>android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>

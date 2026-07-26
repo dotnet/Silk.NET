@@ -135,7 +135,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -159,7 +159,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -183,7 +183,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -207,7 +207,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -591,7 +591,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ResizeTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc pNewTargetParameters)
+        public readonly int ResizeTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc pNewTargetParameters)
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -786,7 +786,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Present1(uint SyncInterval, uint PresentFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PresentParameters pPresentParameters)
+        public readonly int Present1(uint SyncInterval, uint PresentFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PresentParameters pPresentParameters)
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -837,7 +837,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBackgroundColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in D3Dcolorvalue pColor)
+        public readonly int SetBackgroundColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly D3Dcolorvalue pColor)
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1005,7 +1005,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetMatrixTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix3X2F pMatrix)
+        public readonly int SetMatrixTransform([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix3X2F pMatrix)
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1086,7 +1086,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ResizeBuffers1(uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppPresentQueue)
+        public readonly unsafe int ResizeBuffers1(uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppPresentQueue)
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1098,7 +1098,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ResizeBuffers1(uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown** ppPresentQueue)
+        public readonly unsafe int ResizeBuffers1(uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown** ppPresentQueue)
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1110,7 +1110,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ResizeBuffers1(uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppPresentQueue)
+        public readonly unsafe int ResizeBuffers1(uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppPresentQueue)
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1234,7 +1234,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ResizeBuffers1<TI0>(uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppPresentQueue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int ResizeBuffers1<TI0>(uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppPresentQueue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGISwapChain3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

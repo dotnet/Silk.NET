@@ -30,11 +30,11 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetMemoryZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pZirconHandle);
+        public unsafe partial Result GetMemoryZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pZirconHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
-        public partial Result GetMemoryZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pZirconHandle);
+        public partial Result GetMemoryZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pZirconHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryZirconHandlePropertiesFUCHSIA", Convention = CallingConvention.Winapi)]

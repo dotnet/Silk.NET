@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.PhysicalDeviceRayTracingInvocationReorderPropertiesNV,
             void* pNext = null,
-            RayTracingInvocationReorderModeNV? rayTracingInvocationReorderReorderingHint = null
+            RayTracingInvocationReorderModeEXT? rayTracingInvocationReorderReorderingHint = null
         ) : this()
         {
             if (sType is not null)
@@ -53,10 +53,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkRayTracingInvocationReorderModeNV")]
-        [NativeName("Type.Name", "VkRayTracingInvocationReorderModeNV")]
+        [NativeName("Type", "VkRayTracingInvocationReorderModeEXT")]
+        [NativeName("Type.Name", "VkRayTracingInvocationReorderModeEXT")]
         [NativeName("Name", "rayTracingInvocationReorderReorderingHint")]
-        public RayTracingInvocationReorderModeNV RayTracingInvocationReorderReorderingHint;
+        public RayTracingInvocationReorderModeEXT RayTracingInvocationReorderReorderingHint;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

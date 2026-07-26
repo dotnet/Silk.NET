@@ -109,7 +109,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetStartPoint(this ComPtr<ID2D1Ink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkPoint startPoint)
+    public static void SetStartPoint(this ComPtr<ID2D1Ink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkPoint startPoint)
     {
         var @this = thisVtbl.Handle;
         fixed (InkPoint* startPointPtr = &startPoint)
@@ -139,7 +139,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddSegments(this ComPtr<ID2D1Ink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkBezierSegment segments, uint segmentsCount)
+    public static int AddSegments(this ComPtr<ID2D1Ink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkBezierSegment segments, uint segmentsCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -169,7 +169,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSegments(this ComPtr<ID2D1Ink> thisVtbl, uint startSegment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkBezierSegment segments, uint segmentsCount)
+    public static int SetSegments(this ComPtr<ID2D1Ink> thisVtbl, uint startSegment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkBezierSegment segments, uint segmentsCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -190,7 +190,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSegmentAtEnd(this ComPtr<ID2D1Ink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkBezierSegment segment)
+    public static int SetSegmentAtEnd(this ComPtr<ID2D1Ink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkBezierSegment segment)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -253,7 +253,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -265,7 +265,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -307,7 +307,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -322,7 +322,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -361,7 +361,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -373,7 +373,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -415,7 +415,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -430,7 +430,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -553,7 +553,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StreamAsGeometry<TI0, TI1>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+    public static int StreamAsGeometry<TI0, TI1>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -569,7 +569,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -609,7 +609,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -657,7 +657,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static unsafe int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -673,7 +673,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

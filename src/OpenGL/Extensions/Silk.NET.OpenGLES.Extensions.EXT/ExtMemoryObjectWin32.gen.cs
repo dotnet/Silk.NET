@@ -36,13 +36,13 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe partial void ImportMemoryWin32Name([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* name);
 
         [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT", Convention = CallingConvention.Winapi)]
-        public partial void ImportMemoryWin32Name<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 name) where T0 : unmanaged;
+        public partial void ImportMemoryWin32Name<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 name) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImportMemoryWin32Name([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ExternalHandleType handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* name);
 
         [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT", Convention = CallingConvention.Winapi)]
-        public partial void ImportMemoryWin32Name<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ExternalHandleType handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 name) where T0 : unmanaged;
+        public partial void ImportMemoryWin32Name<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ExternalHandleType handleType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 name) where T0 : unmanaged;
 
         public unsafe T0 ImportMemoryWin32Handle<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint memory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT handleType) where T0 : unmanaged
         {

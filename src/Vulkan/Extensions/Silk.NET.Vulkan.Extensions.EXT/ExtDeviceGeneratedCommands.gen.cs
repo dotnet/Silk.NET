@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdExecuteGeneratedCommandsEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdExecuteGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 isPreprocessed, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GeneratedCommandsInfoEXT pGeneratedCommandsInfo);
+        public partial void CmdExecuteGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 isPreprocessed, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GeneratedCommandsInfoEXT pGeneratedCommandsInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPreprocessGeneratedCommandsEXT", Convention = CallingConvention.Winapi)]
@@ -34,7 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPreprocessGeneratedCommandsEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdPreprocessGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GeneratedCommandsInfoEXT pGeneratedCommandsInfo, [Count(Count = 0)] CommandBuffer stateCommandBuffer);
+        public partial void CmdPreprocessGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GeneratedCommandsInfoEXT pGeneratedCommandsInfo, [Count(Count = 0)] CommandBuffer stateCommandBuffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutEXT", Convention = CallingConvention.Winapi)]
@@ -46,27 +46,27 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] IndirectCommandsLayoutCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectCommandsLayoutEXT* pIndirectCommandsLayout);
+        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] IndirectCommandsLayoutCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectCommandsLayoutEXT* pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] IndirectCommandsLayoutCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectCommandsLayoutEXT pIndirectCommandsLayout);
+        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] IndirectCommandsLayoutCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectCommandsLayoutEXT pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IndirectCommandsLayoutCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectCommandsLayoutEXT* pIndirectCommandsLayout);
+        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IndirectCommandsLayoutCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectCommandsLayoutEXT* pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IndirectCommandsLayoutCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectCommandsLayoutEXT pIndirectCommandsLayout);
+        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IndirectCommandsLayoutCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectCommandsLayoutEXT pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IndirectCommandsLayoutCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectCommandsLayoutEXT* pIndirectCommandsLayout);
+        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IndirectCommandsLayoutCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectCommandsLayoutEXT* pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IndirectCommandsLayoutCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectCommandsLayoutEXT pIndirectCommandsLayout);
+        public partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IndirectCommandsLayoutCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectCommandsLayoutEXT pIndirectCommandsLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectExecutionSetEXT", Convention = CallingConvention.Winapi)]
@@ -78,27 +78,27 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectExecutionSetEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] IndirectExecutionSetCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectExecutionSetEXT* pIndirectExecutionSet);
+        public unsafe partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] IndirectExecutionSetCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectExecutionSetEXT* pIndirectExecutionSet);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectExecutionSetEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] IndirectExecutionSetCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectExecutionSetEXT pIndirectExecutionSet);
+        public unsafe partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] IndirectExecutionSetCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectExecutionSetEXT pIndirectExecutionSet);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectExecutionSetEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IndirectExecutionSetCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectExecutionSetEXT* pIndirectExecutionSet);
+        public unsafe partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IndirectExecutionSetCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectExecutionSetEXT* pIndirectExecutionSet);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectExecutionSetEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IndirectExecutionSetCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectExecutionSetEXT pIndirectExecutionSet);
+        public unsafe partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IndirectExecutionSetCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectExecutionSetEXT pIndirectExecutionSet);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectExecutionSetEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IndirectExecutionSetCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectExecutionSetEXT* pIndirectExecutionSet);
+        public unsafe partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IndirectExecutionSetCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] IndirectExecutionSetEXT* pIndirectExecutionSet);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectExecutionSetEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in IndirectExecutionSetCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectExecutionSetEXT pIndirectExecutionSet);
+        public partial Result CreateIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly IndirectExecutionSetCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out IndirectExecutionSetEXT pIndirectExecutionSet);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyIndirectCommandsLayoutEXT", Convention = CallingConvention.Winapi)]
@@ -106,7 +106,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyIndirectCommandsLayoutEXT", Convention = CallingConvention.Winapi)]
-        public partial void DestroyIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectCommandsLayoutEXT indirectCommandsLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial void DestroyIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectCommandsLayoutEXT indirectCommandsLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyIndirectExecutionSetEXT", Convention = CallingConvention.Winapi)]
@@ -114,7 +114,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyIndirectExecutionSetEXT", Convention = CallingConvention.Winapi)]
-        public partial void DestroyIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectExecutionSetEXT indirectExecutionSet, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial void DestroyIndirectExecutionSet([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectExecutionSetEXT indirectExecutionSet, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsEXT", Convention = CallingConvention.Winapi)]
@@ -127,12 +127,12 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GeneratedCommandsMemoryRequirementsInfoEXT pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+        public unsafe partial void GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GeneratedCommandsMemoryRequirementsInfoEXT pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GeneratedCommandsMemoryRequirementsInfoEXT pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
+        public partial void GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GeneratedCommandsMemoryRequirementsInfoEXT pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUpdateIndirectExecutionSetPipelineEXT", Convention = CallingConvention.Winapi)]
@@ -140,7 +140,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUpdateIndirectExecutionSetPipelineEXT", Convention = CallingConvention.Winapi)]
-        public partial void UpdateIndirectExecutionSetPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectExecutionSetEXT indirectExecutionSet, [Count(Count = 0)] uint executionSetWriteCount, [Count(Parameter = "executionSetWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WriteIndirectExecutionSetPipelineEXT pExecutionSetWrites);
+        public partial void UpdateIndirectExecutionSetPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectExecutionSetEXT indirectExecutionSet, [Count(Count = 0)] uint executionSetWriteCount, [Count(Parameter = "executionSetWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WriteIndirectExecutionSetPipelineEXT pExecutionSetWrites);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUpdateIndirectExecutionSetShaderEXT", Convention = CallingConvention.Winapi)]
@@ -148,7 +148,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUpdateIndirectExecutionSetShaderEXT", Convention = CallingConvention.Winapi)]
-        public partial void UpdateIndirectExecutionSetShader([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectExecutionSetEXT indirectExecutionSet, [Count(Count = 0)] uint executionSetWriteCount, [Count(Parameter = "executionSetWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WriteIndirectExecutionSetShaderEXT pExecutionSetWrites);
+        public partial void UpdateIndirectExecutionSetShader([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectExecutionSetEXT indirectExecutionSet, [Count(Count = 0)] uint executionSetWriteCount, [Count(Parameter = "executionSetWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WriteIndirectExecutionSetShaderEXT pExecutionSetWrites);
 
         /// <summary>To be documented.</summary>
         public unsafe void UpdateIndirectExecutionSetPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectExecutionSetEXT indirectExecutionSet, [Count(Parameter = "executionSetWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WriteIndirectExecutionSetPipelineEXT> pExecutionSetWrites)
@@ -175,7 +175,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        public unsafe MemoryRequirements2 GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GeneratedCommandsMemoryRequirementsInfoEXT pInfo)
+        public unsafe MemoryRequirements2 GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GeneratedCommandsMemoryRequirementsInfoEXT pInfo)
         {
             // NonKhrReturnTypeOverloader
             GetGeneratedCommandsMemoryRequirements(device, in pInfo, out MemoryRequirements2 silkRet);

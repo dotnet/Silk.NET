@@ -26,7 +26,7 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetSystemNotificationsML", Convention = CallingConvention.Winapi)]
-        public partial Result SetSystemNotificationsML([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SystemNotificationsSetInfoML info);
+        public partial Result SetSystemNotificationsML([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SystemNotificationsSetInfoML info);
 
         public MLSystemNotifications(INativeContext ctx)
             : base(ctx)

@@ -202,7 +202,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobFromFile(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
+    public static unsafe int CreateBlobFromFile(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobFromFile(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
+    public static unsafe int CreateBlobFromFile(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -229,7 +229,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobFromFile(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
+    public static unsafe int CreateBlobFromFile(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -244,7 +244,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobFromFile(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+    public static unsafe int CreateBlobFromFile(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -339,7 +339,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingFromPinned<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+    public static unsafe int CreateBlobWithEncodingFromPinned<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -351,7 +351,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingFromPinned<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+    public static unsafe int CreateBlobWithEncodingFromPinned<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -387,7 +387,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingOnHeapCopy<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+    public static unsafe int CreateBlobWithEncodingOnHeapCopy<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -399,7 +399,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingOnHeapCopy<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+    public static unsafe int CreateBlobWithEncodingOnHeapCopy<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -462,7 +462,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingOnMalloc<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+    public static unsafe int CreateBlobWithEncodingOnMalloc<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -474,7 +474,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingOnMalloc<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+    public static unsafe int CreateBlobWithEncodingOnMalloc<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -489,7 +489,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingOnMalloc<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+    public static unsafe int CreateBlobWithEncodingOnMalloc<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -504,7 +504,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingOnMalloc<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+    public static unsafe int CreateBlobWithEncodingOnMalloc<T0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -808,7 +808,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobFromFile<TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, uint* codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static unsafe int CreateBlobFromFile<TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, uint* codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -832,7 +832,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBlobFromFile<TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, ref uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static int CreateBlobFromFile<TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, ref uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -896,7 +896,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBlobWithEncodingFromPinned<T0, TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static int CreateBlobWithEncodingFromPinned<T0, TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -928,7 +928,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBlobWithEncodingOnHeapCopy<T0, TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static int CreateBlobWithEncodingOnHeapCopy<T0, TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -992,7 +992,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBlobWithEncodingOnMalloc<T0, TI0, TI1>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref ComPtr<TI1> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+    public static int CreateBlobWithEncodingOnMalloc<T0, TI0, TI1>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref ComPtr<TI1> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1008,7 +1008,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlobWithEncodingOnMalloc<T0, TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+    public static unsafe int CreateBlobWithEncodingOnMalloc<T0, TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1024,7 +1024,7 @@ public unsafe static class DxcLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBlobWithEncodingOnMalloc<T0, TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+    public static int CreateBlobWithEncodingOnMalloc<T0, TI0>(this ComPtr<IDxcLibrary> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

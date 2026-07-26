@@ -48,8 +48,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "NumNodeInputs")]
         public uint NumNodeInputs;
 
-        [NativeName("Type", "D3D12_NODE_CPU_INPUT *")]
-        [NativeName("Type.Name", "D3D12_NODE_CPU_INPUT *")]
+        [NativeName("Type", "const D3D12_NODE_CPU_INPUT *")]
+        [NativeName("Type.Name", "const D3D12_NODE_CPU_INPUT *")]
         [NativeName("Name", "pNodeInputs")]
         public NodeCpuInput* PNodeInputs;
 

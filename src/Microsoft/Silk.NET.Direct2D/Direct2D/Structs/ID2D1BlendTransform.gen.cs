@@ -149,7 +149,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetDescription([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BlendDescription description)
+        public readonly void SetDescription([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BlendDescription description)
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BlendDescription* descriptionPtr = &description)

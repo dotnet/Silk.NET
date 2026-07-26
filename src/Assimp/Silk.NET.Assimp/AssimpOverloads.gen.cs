@@ -465,7 +465,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 118, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFile(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFile, uint pFlags)
         {
             // SpanOverloader
@@ -473,7 +473,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 142, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 143, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileEx(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFile, uint pFlags, Span<FileIO> pFS)
         {
             // SpanOverloader
@@ -481,7 +481,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 142, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 143, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileEx(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFile, uint pFlags, FileIO* pFS)
         {
             // SpanOverloader
@@ -489,7 +489,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 142, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 143, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileEx(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFile, uint pFlags, Span<FileIO> pFS)
         {
             // SpanOverloader
@@ -497,7 +497,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 142, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 143, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileEx(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, Span<FileIO> pFS)
         {
             // SpanOverloader
@@ -505,7 +505,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 164, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -513,7 +513,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 164, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFile, uint pFlags, Span<FileIO> pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
@@ -521,7 +521,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 164, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pFile, uint pFlags, Span<FileIO> pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -529,7 +529,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 164, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
@@ -537,7 +537,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 164, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -545,7 +545,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 164, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFile, uint pFlags, Span<FileIO> pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
@@ -553,7 +553,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 164, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pFile, uint pFlags, Span<FileIO> pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -561,7 +561,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 164, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -569,7 +569,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 164, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, Span<FileIO> pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
@@ -577,7 +577,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 163, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 164, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileExWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, Span<FileIO> pFS, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -585,7 +585,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 200, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 202, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemory(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pHint)
         {
             // SpanOverloader
@@ -593,7 +593,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 200, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 202, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemory(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint)
         {
             // SpanOverloader
@@ -601,7 +601,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 200, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 202, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemory(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pHint)
         {
             // SpanOverloader
@@ -609,7 +609,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 200, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 202, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemory(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint)
         {
             // SpanOverloader
@@ -617,7 +617,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 200, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 202, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemory(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pHint)
         {
             // SpanOverloader
@@ -625,7 +625,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -633,7 +633,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
@@ -641,7 +641,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -649,7 +649,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -657,7 +657,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
@@ -665,7 +665,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -673,7 +673,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
@@ -681,7 +681,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -689,7 +689,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
@@ -697,7 +697,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -705,7 +705,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -713,7 +713,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PropertyStore* pProps)
         {
             // SpanOverloader
@@ -721,7 +721,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -729,7 +729,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 234, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 236, Column 36 in cimport.h")]
         public static unsafe Scene* ImportFileFromMemoryWithProperties(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PropertyStore> pProps)
         {
             // SpanOverloader
@@ -737,7 +737,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 256, Column 36 in cimport.h")]
+        [NativeName("Src", "Line 258, Column 36 in cimport.h")]
         public static unsafe Scene* ApplyPostProcessing(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Scene> pScene, uint pFlags)
         {
             // SpanOverloader
@@ -745,7 +745,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 280, Column 33 in cimport.h")]
+        [NativeName("Src", "Line 282, Column 33 in cimport.h")]
         public static unsafe LogStream GetPredefinedLogStream(this Assimp thisApi, DefaultLogStream pStreams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> file)
         {
             // SpanOverloader
@@ -753,7 +753,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 294, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 296, Column 17 in cimport.h")]
         public static unsafe void AttachLogStream(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<LogStream> stream)
         {
             // SpanOverloader
@@ -761,7 +761,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 315, Column 28 in cimport.h")]
+        [NativeName("Src", "Line 317, Column 28 in cimport.h")]
         public static unsafe Return DetachLogStream(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<LogStream> stream)
         {
             // SpanOverloader
@@ -769,7 +769,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 334, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 336, Column 17 in cimport.h")]
         public static unsafe void ReleaseImport(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Scene> pScene)
         {
             // SpanOverloader
@@ -777,7 +777,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 353, Column 19 in cimport.h")]
+        [NativeName("Src", "Line 355, Column 19 in cimport.h")]
         public static unsafe int IsExtensionSupported(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szExtension)
         {
             // SpanOverloader
@@ -785,7 +785,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 364, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 366, Column 17 in cimport.h")]
         public static unsafe void GetExtensionList(this Assimp thisApi, Span<AssimpString> szOut)
         {
             // SpanOverloader
@@ -793,7 +793,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 372, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 374, Column 17 in cimport.h")]
         public static unsafe void GetMemoryRequirements(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pIn, Span<MemoryInfo> @in)
         {
             // SpanOverloader
@@ -801,7 +801,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 372, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 374, Column 17 in cimport.h")]
         public static unsafe void GetMemoryRequirements(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Scene> pIn, MemoryInfo* @in)
         {
             // SpanOverloader
@@ -809,7 +809,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 372, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 374, Column 17 in cimport.h")]
         public static unsafe void GetMemoryRequirements(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Scene> pIn, Span<MemoryInfo> @in)
         {
             // SpanOverloader
@@ -817,7 +817,39 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 388, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 383, Column 38 in cimport.h")]
+        public static unsafe Texture* GetEmbeddedTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Scene* pIn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> filename)
+        {
+            // SpanOverloader
+            return thisApi.GetEmbeddedTexture(pIn, in filename.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 383, Column 38 in cimport.h")]
+        public static unsafe Texture* GetEmbeddedTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Scene> pIn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* filename)
+        {
+            // SpanOverloader
+            return thisApi.GetEmbeddedTexture(in pIn.GetPinnableReference(), filename);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 383, Column 38 in cimport.h")]
+        public static unsafe Texture* GetEmbeddedTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Scene> pIn, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> filename)
+        {
+            // SpanOverloader
+            return thisApi.GetEmbeddedTexture(in pIn.GetPinnableReference(), in filename.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 383, Column 38 in cimport.h")]
+        public static unsafe Texture* GetEmbeddedTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Scene> pIn, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename)
+        {
+            // SpanOverloader
+            return thisApi.GetEmbeddedTexture(in pIn.GetPinnableReference(), filename);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 397, Column 17 in cimport.h")]
         public static unsafe void ReleasePropertyStore(this Assimp thisApi, Span<PropertyStore> p)
         {
             // SpanOverloader
@@ -825,7 +857,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 402, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 411, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyInteger(this Assimp thisApi, PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, int value)
         {
             // SpanOverloader
@@ -833,7 +865,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 402, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 411, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyInteger(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, int value)
         {
             // SpanOverloader
@@ -841,7 +873,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 402, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 411, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyInteger(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, int value)
         {
             // SpanOverloader
@@ -849,7 +881,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 402, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 411, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyInteger(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, int value)
         {
             // SpanOverloader
@@ -857,7 +889,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 419, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 428, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyFloat(this Assimp thisApi, PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, float value)
         {
             // SpanOverloader
@@ -865,7 +897,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 419, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 428, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyFloat(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, float value)
         {
             // SpanOverloader
@@ -873,7 +905,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 419, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 428, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyFloat(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, float value)
         {
             // SpanOverloader
@@ -881,7 +913,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 419, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 428, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyFloat(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, float value)
         {
             // SpanOverloader
@@ -889,7 +921,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 436, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 445, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyString(this Assimp thisApi, PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpString> st)
         {
             // SpanOverloader
@@ -897,7 +929,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 436, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 445, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyString(this Assimp thisApi, PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpString* st)
         {
             // SpanOverloader
@@ -905,7 +937,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 436, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 445, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyString(this Assimp thisApi, PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpString> st)
         {
             // SpanOverloader
@@ -913,7 +945,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 436, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 445, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyString(this Assimp thisApi, PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpString> st)
         {
             // SpanOverloader
@@ -921,7 +953,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 436, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 445, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyString(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpString* st)
         {
             // SpanOverloader
@@ -929,7 +961,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 436, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 445, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyString(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpString> st)
         {
             // SpanOverloader
@@ -937,7 +969,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 436, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 445, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyString(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpString* st)
         {
             // SpanOverloader
@@ -945,7 +977,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 436, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 445, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyString(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpString> st)
         {
             // SpanOverloader
@@ -953,7 +985,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 436, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 445, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyString(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpString* st)
         {
             // SpanOverloader
@@ -961,7 +993,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 436, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 445, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyString(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpString> st)
         {
             // SpanOverloader
@@ -969,7 +1001,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 453, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 462, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -977,7 +1009,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 453, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 462, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat)
         {
             // SpanOverloader
@@ -985,7 +1017,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 453, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 462, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -993,7 +1025,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 453, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 462, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, PropertyStore* store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -1001,7 +1033,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 453, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 462, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat)
         {
             // SpanOverloader
@@ -1009,7 +1041,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 453, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 462, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -1017,7 +1049,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 453, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 462, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat)
         {
             // SpanOverloader
@@ -1025,7 +1057,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 453, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 462, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -1033,7 +1065,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 453, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 462, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat)
         {
             // SpanOverloader
@@ -1041,7 +1073,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 453, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 462, Column 17 in cimport.h")]
         public static unsafe void SetImportPropertyMatrix(this Assimp thisApi, Span<PropertyStore> store, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -1049,7 +1081,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 464, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 473, Column 17 in cimport.h")]
         public static unsafe void CreateQuaternionFromMatrix(this Assimp thisApi, AssimpQuaternion* quat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
@@ -1057,7 +1089,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 464, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 473, Column 17 in cimport.h")]
         public static unsafe void CreateQuaternionFromMatrix(this Assimp thisApi, Span<AssimpQuaternion> quat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* mat)
         {
             // SpanOverloader
@@ -1065,7 +1097,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 464, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 473, Column 17 in cimport.h")]
         public static unsafe void CreateQuaternionFromMatrix(this Assimp thisApi, Span<AssimpQuaternion> quat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
@@ -1073,7 +1105,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -1081,7 +1113,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, Span<AssimpQuaternion> rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -1089,7 +1121,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, Span<AssimpQuaternion> rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -1097,7 +1129,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -1105,7 +1137,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, AssimpQuaternion* rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -1113,7 +1145,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, Span<AssimpQuaternion> rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -1121,7 +1153,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, Span<AssimpQuaternion> rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -1129,7 +1161,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -1137,7 +1169,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -1145,7 +1177,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, Span<AssimpQuaternion> rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -1153,7 +1185,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, Span<AssimpQuaternion> rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -1161,7 +1193,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -1169,7 +1201,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, AssimpQuaternion* rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -1177,7 +1209,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, Span<AssimpQuaternion> rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -1185,7 +1217,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 478, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 487, Column 17 in cimport.h")]
         public static unsafe void DecomposeMatrix(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, Span<AssimpQuaternion> rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -1193,7 +1225,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 488, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 497, Column 17 in cimport.h")]
         public static unsafe void TransposeMatrix4(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -1201,7 +1233,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 495, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 504, Column 17 in cimport.h")]
         public static unsafe void TransposeMatrix3(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
@@ -1209,7 +1241,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 503, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 512, Column 17 in cimport.h")]
         public static unsafe void TransformVecByMatrix3(this Assimp thisApi, System.Numerics.Vector3* vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
@@ -1217,7 +1249,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 503, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 512, Column 17 in cimport.h")]
         public static unsafe void TransformVecByMatrix3(this Assimp thisApi, Span<System.Numerics.Vector3> vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* mat)
         {
             // SpanOverloader
@@ -1225,7 +1257,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 503, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 512, Column 17 in cimport.h")]
         public static unsafe void TransformVecByMatrix3(this Assimp thisApi, Span<System.Numerics.Vector3> vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
@@ -1233,7 +1265,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 512, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 521, Column 17 in cimport.h")]
         public static unsafe void TransformVecByMatrix4(this Assimp thisApi, System.Numerics.Vector3* vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -1241,7 +1273,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 512, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 521, Column 17 in cimport.h")]
         public static unsafe void TransformVecByMatrix4(this Assimp thisApi, Span<System.Numerics.Vector3> vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat)
         {
             // SpanOverloader
@@ -1249,7 +1281,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 512, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 521, Column 17 in cimport.h")]
         public static unsafe void TransformVecByMatrix4(this Assimp thisApi, Span<System.Numerics.Vector3> vec, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -1257,7 +1289,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 521, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 530, Column 17 in cimport.h")]
         public static unsafe void MultiplyMatrix4(this Assimp thisApi, System.Numerics.Matrix4x4* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> src)
         {
             // SpanOverloader
@@ -1265,7 +1297,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 521, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 530, Column 17 in cimport.h")]
         public static unsafe void MultiplyMatrix4(this Assimp thisApi, Span<System.Numerics.Matrix4x4> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* src)
         {
             // SpanOverloader
@@ -1273,7 +1305,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 521, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 530, Column 17 in cimport.h")]
         public static unsafe void MultiplyMatrix4(this Assimp thisApi, Span<System.Numerics.Matrix4x4> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> src)
         {
             // SpanOverloader
@@ -1281,7 +1313,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 530, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 539, Column 17 in cimport.h")]
         public static unsafe void MultiplyMatrix3(this Assimp thisApi, Silk.NET.Maths.Matrix3X3<float>* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> src)
         {
             // SpanOverloader
@@ -1289,7 +1321,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 530, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 539, Column 17 in cimport.h")]
         public static unsafe void MultiplyMatrix3(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* src)
         {
             // SpanOverloader
@@ -1297,7 +1329,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 530, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 539, Column 17 in cimport.h")]
         public static unsafe void MultiplyMatrix3(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> src)
         {
             // SpanOverloader
@@ -1305,7 +1337,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 538, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 547, Column 17 in cimport.h")]
         public static unsafe void IdentityMatrix3(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
@@ -1313,7 +1345,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 545, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 554, Column 17 in cimport.h")]
         public static unsafe void IdentityMatrix4(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -1321,7 +1353,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 570, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 579, Column 16 in cimport.h")]
         public static unsafe int Vector2AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> b)
         {
             // SpanOverloader
@@ -1329,7 +1361,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 570, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 579, Column 16 in cimport.h")]
         public static unsafe int Vector2AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* b)
         {
             // SpanOverloader
@@ -1337,7 +1369,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 570, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 579, Column 16 in cimport.h")]
         public static unsafe int Vector2AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> b)
         {
             // SpanOverloader
@@ -1345,7 +1377,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 582, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 591, Column 16 in cimport.h")]
         public static unsafe int Vector2AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> b, float epsilon)
         {
             // SpanOverloader
@@ -1353,7 +1385,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 582, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 591, Column 16 in cimport.h")]
         public static unsafe int Vector2AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* b, float epsilon)
         {
             // SpanOverloader
@@ -1361,7 +1393,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 582, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 591, Column 16 in cimport.h")]
         public static unsafe int Vector2AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> b, float epsilon)
         {
             // SpanOverloader
@@ -1369,7 +1401,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 592, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 601, Column 17 in cimport.h")]
         public static unsafe void Vector2Add(this Assimp thisApi, System.Numerics.Vector2* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> src)
         {
             // SpanOverloader
@@ -1377,7 +1409,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 592, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 601, Column 17 in cimport.h")]
         public static unsafe void Vector2Add(this Assimp thisApi, Span<System.Numerics.Vector2> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* src)
         {
             // SpanOverloader
@@ -1385,7 +1417,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 592, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 601, Column 17 in cimport.h")]
         public static unsafe void Vector2Add(this Assimp thisApi, Span<System.Numerics.Vector2> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> src)
         {
             // SpanOverloader
@@ -1393,7 +1425,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 601, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 610, Column 17 in cimport.h")]
         public static unsafe void Vector2Subtract(this Assimp thisApi, System.Numerics.Vector2* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> src)
         {
             // SpanOverloader
@@ -1401,7 +1433,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 601, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 610, Column 17 in cimport.h")]
         public static unsafe void Vector2Subtract(this Assimp thisApi, Span<System.Numerics.Vector2> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* src)
         {
             // SpanOverloader
@@ -1409,7 +1441,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 601, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 610, Column 17 in cimport.h")]
         public static unsafe void Vector2Subtract(this Assimp thisApi, Span<System.Numerics.Vector2> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> src)
         {
             // SpanOverloader
@@ -1417,7 +1449,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 610, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 619, Column 17 in cimport.h")]
         public static unsafe void Vector2Scale(this Assimp thisApi, Span<System.Numerics.Vector2> dst, float s)
         {
             // SpanOverloader
@@ -1425,7 +1457,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 620, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 629, Column 17 in cimport.h")]
         public static unsafe void Vector2SymMul(this Assimp thisApi, System.Numerics.Vector2* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> other)
         {
             // SpanOverloader
@@ -1433,7 +1465,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 620, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 629, Column 17 in cimport.h")]
         public static unsafe void Vector2SymMul(this Assimp thisApi, Span<System.Numerics.Vector2> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* other)
         {
             // SpanOverloader
@@ -1441,7 +1473,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 620, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 629, Column 17 in cimport.h")]
         public static unsafe void Vector2SymMul(this Assimp thisApi, Span<System.Numerics.Vector2> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> other)
         {
             // SpanOverloader
@@ -1449,7 +1481,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 629, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 638, Column 17 in cimport.h")]
         public static unsafe void Vector2DivideByScalar(this Assimp thisApi, Span<System.Numerics.Vector2> dst, float s)
         {
             // SpanOverloader
@@ -1457,7 +1489,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 639, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 648, Column 17 in cimport.h")]
         public static unsafe void Vector2DivideByVector(this Assimp thisApi, System.Numerics.Vector2* dst, Span<System.Numerics.Vector2> v)
         {
             // SpanOverloader
@@ -1465,7 +1497,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 639, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 648, Column 17 in cimport.h")]
         public static unsafe void Vector2DivideByVector(this Assimp thisApi, Span<System.Numerics.Vector2> dst, System.Numerics.Vector2* v)
         {
             // SpanOverloader
@@ -1473,7 +1505,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 639, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 648, Column 17 in cimport.h")]
         public static unsafe void Vector2DivideByVector(this Assimp thisApi, Span<System.Numerics.Vector2> dst, Span<System.Numerics.Vector2> v)
         {
             // SpanOverloader
@@ -1481,7 +1513,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 647, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 656, Column 20 in cimport.h")]
         public static unsafe float Vector2Length(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> v)
         {
             // SpanOverloader
@@ -1489,7 +1521,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 654, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 663, Column 20 in cimport.h")]
         public static unsafe float Vector2SquareLength(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> v)
         {
             // SpanOverloader
@@ -1497,7 +1529,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 661, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 670, Column 17 in cimport.h")]
         public static unsafe void Vector2Negate(this Assimp thisApi, Span<System.Numerics.Vector2> dst)
         {
             // SpanOverloader
@@ -1505,7 +1537,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 670, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 679, Column 20 in cimport.h")]
         public static unsafe float Vector2DotProduct(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> b)
         {
             // SpanOverloader
@@ -1513,7 +1545,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 670, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 679, Column 20 in cimport.h")]
         public static unsafe float Vector2DotProduct(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* b)
         {
             // SpanOverloader
@@ -1521,7 +1553,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 670, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 679, Column 20 in cimport.h")]
         public static unsafe float Vector2DotProduct(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> b)
         {
             // SpanOverloader
@@ -1529,7 +1561,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 678, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 687, Column 17 in cimport.h")]
         public static unsafe void Vector2Normalize(this Assimp thisApi, Span<System.Numerics.Vector2> v)
         {
             // SpanOverloader
@@ -1537,7 +1569,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 688, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 697, Column 16 in cimport.h")]
         public static unsafe int Vector3AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b)
         {
             // SpanOverloader
@@ -1545,7 +1577,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 688, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 697, Column 16 in cimport.h")]
         public static unsafe int Vector3AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b)
         {
             // SpanOverloader
@@ -1553,7 +1585,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 688, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 697, Column 16 in cimport.h")]
         public static unsafe int Vector3AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b)
         {
             // SpanOverloader
@@ -1561,7 +1593,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 700, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 709, Column 16 in cimport.h")]
         public static unsafe int Vector3AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b, float epsilon)
         {
             // SpanOverloader
@@ -1569,7 +1601,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 700, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 709, Column 16 in cimport.h")]
         public static unsafe int Vector3AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b, float epsilon)
         {
             // SpanOverloader
@@ -1577,7 +1609,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 700, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 709, Column 16 in cimport.h")]
         public static unsafe int Vector3AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b, float epsilon)
         {
             // SpanOverloader
@@ -1585,7 +1617,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 713, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 722, Column 16 in cimport.h")]
         public static unsafe int Vector3LessThan(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b)
         {
             // SpanOverloader
@@ -1593,7 +1625,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 713, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 722, Column 16 in cimport.h")]
         public static unsafe int Vector3LessThan(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b)
         {
             // SpanOverloader
@@ -1601,7 +1633,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 713, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 722, Column 16 in cimport.h")]
         public static unsafe int Vector3LessThan(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b)
         {
             // SpanOverloader
@@ -1609,7 +1641,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 722, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 731, Column 17 in cimport.h")]
         public static unsafe void Vector3Add(this Assimp thisApi, System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> src)
         {
             // SpanOverloader
@@ -1617,7 +1649,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 722, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 731, Column 17 in cimport.h")]
         public static unsafe void Vector3Add(this Assimp thisApi, Span<System.Numerics.Vector3> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* src)
         {
             // SpanOverloader
@@ -1625,7 +1657,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 722, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 731, Column 17 in cimport.h")]
         public static unsafe void Vector3Add(this Assimp thisApi, Span<System.Numerics.Vector3> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> src)
         {
             // SpanOverloader
@@ -1633,7 +1665,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 731, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 740, Column 17 in cimport.h")]
         public static unsafe void Vector3Subtract(this Assimp thisApi, System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> src)
         {
             // SpanOverloader
@@ -1641,7 +1673,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 731, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 740, Column 17 in cimport.h")]
         public static unsafe void Vector3Subtract(this Assimp thisApi, Span<System.Numerics.Vector3> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* src)
         {
             // SpanOverloader
@@ -1649,7 +1681,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 731, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 740, Column 17 in cimport.h")]
         public static unsafe void Vector3Subtract(this Assimp thisApi, Span<System.Numerics.Vector3> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> src)
         {
             // SpanOverloader
@@ -1657,7 +1689,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 740, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 749, Column 17 in cimport.h")]
         public static unsafe void Vector3Scale(this Assimp thisApi, Span<System.Numerics.Vector3> dst, float s)
         {
             // SpanOverloader
@@ -1665,7 +1697,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 750, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 759, Column 17 in cimport.h")]
         public static unsafe void Vector3SymMul(this Assimp thisApi, System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> other)
         {
             // SpanOverloader
@@ -1673,7 +1705,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 750, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 759, Column 17 in cimport.h")]
         public static unsafe void Vector3SymMul(this Assimp thisApi, Span<System.Numerics.Vector3> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* other)
         {
             // SpanOverloader
@@ -1681,7 +1713,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 750, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 759, Column 17 in cimport.h")]
         public static unsafe void Vector3SymMul(this Assimp thisApi, Span<System.Numerics.Vector3> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> other)
         {
             // SpanOverloader
@@ -1689,7 +1721,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 759, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 768, Column 17 in cimport.h")]
         public static unsafe void Vector3DivideByScalar(this Assimp thisApi, Span<System.Numerics.Vector3> dst, float s)
         {
             // SpanOverloader
@@ -1697,7 +1729,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 769, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 778, Column 17 in cimport.h")]
         public static unsafe void Vector3DivideByVector(this Assimp thisApi, System.Numerics.Vector3* dst, Span<System.Numerics.Vector3> v)
         {
             // SpanOverloader
@@ -1705,7 +1737,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 769, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 778, Column 17 in cimport.h")]
         public static unsafe void Vector3DivideByVector(this Assimp thisApi, Span<System.Numerics.Vector3> dst, System.Numerics.Vector3* v)
         {
             // SpanOverloader
@@ -1713,7 +1745,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 769, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 778, Column 17 in cimport.h")]
         public static unsafe void Vector3DivideByVector(this Assimp thisApi, Span<System.Numerics.Vector3> dst, Span<System.Numerics.Vector3> v)
         {
             // SpanOverloader
@@ -1721,7 +1753,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 777, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 786, Column 20 in cimport.h")]
         public static unsafe float Vector3Length(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> v)
         {
             // SpanOverloader
@@ -1729,7 +1761,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 784, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 793, Column 20 in cimport.h")]
         public static unsafe float Vector3SquareLength(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> v)
         {
             // SpanOverloader
@@ -1737,7 +1769,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 791, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 800, Column 17 in cimport.h")]
         public static unsafe void Vector3Negate(this Assimp thisApi, Span<System.Numerics.Vector3> dst)
         {
             // SpanOverloader
@@ -1745,7 +1777,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 800, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 809, Column 20 in cimport.h")]
         public static unsafe float Vector3DotProduct(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b)
         {
             // SpanOverloader
@@ -1753,7 +1785,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 800, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 809, Column 20 in cimport.h")]
         public static unsafe float Vector3DotProduct(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b)
         {
             // SpanOverloader
@@ -1761,7 +1793,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 800, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 809, Column 20 in cimport.h")]
         public static unsafe float Vector3DotProduct(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b)
         {
             // SpanOverloader
@@ -1769,7 +1801,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 811, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 820, Column 17 in cimport.h")]
         public static unsafe void Vector3CrossProduct(this Assimp thisApi, System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b)
         {
             // SpanOverloader
@@ -1777,7 +1809,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 811, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 820, Column 17 in cimport.h")]
         public static unsafe void Vector3CrossProduct(this Assimp thisApi, System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b)
         {
             // SpanOverloader
@@ -1785,7 +1817,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 811, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 820, Column 17 in cimport.h")]
         public static unsafe void Vector3CrossProduct(this Assimp thisApi, System.Numerics.Vector3* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b)
         {
             // SpanOverloader
@@ -1793,7 +1825,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 811, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 820, Column 17 in cimport.h")]
         public static unsafe void Vector3CrossProduct(this Assimp thisApi, Span<System.Numerics.Vector3> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b)
         {
             // SpanOverloader
@@ -1801,7 +1833,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 811, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 820, Column 17 in cimport.h")]
         public static unsafe void Vector3CrossProduct(this Assimp thisApi, Span<System.Numerics.Vector3> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b)
         {
             // SpanOverloader
@@ -1809,7 +1841,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 811, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 820, Column 17 in cimport.h")]
         public static unsafe void Vector3CrossProduct(this Assimp thisApi, Span<System.Numerics.Vector3> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* b)
         {
             // SpanOverloader
@@ -1817,7 +1849,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 811, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 820, Column 17 in cimport.h")]
         public static unsafe void Vector3CrossProduct(this Assimp thisApi, Span<System.Numerics.Vector3> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> b)
         {
             // SpanOverloader
@@ -1825,7 +1857,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 820, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 829, Column 17 in cimport.h")]
         public static unsafe void Vector3Normalize(this Assimp thisApi, Span<System.Numerics.Vector3> v)
         {
             // SpanOverloader
@@ -1833,7 +1865,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 827, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 836, Column 17 in cimport.h")]
         public static unsafe void Vector3NormalizeSafe(this Assimp thisApi, Span<System.Numerics.Vector3> v)
         {
             // SpanOverloader
@@ -1841,7 +1873,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 835, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 844, Column 17 in cimport.h")]
         public static unsafe void Vector3RotateByQuaternion(this Assimp thisApi, System.Numerics.Vector3* v, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> q)
         {
             // SpanOverloader
@@ -1849,7 +1881,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 835, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 844, Column 17 in cimport.h")]
         public static unsafe void Vector3RotateByQuaternion(this Assimp thisApi, Span<System.Numerics.Vector3> v, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* q)
         {
             // SpanOverloader
@@ -1857,7 +1889,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 835, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 844, Column 17 in cimport.h")]
         public static unsafe void Vector3RotateByQuaternion(this Assimp thisApi, Span<System.Numerics.Vector3> v, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> q)
         {
             // SpanOverloader
@@ -1865,7 +1897,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 844, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 853, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromMatrix4(this Assimp thisApi, Silk.NET.Maths.Matrix3X3<float>* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -1873,7 +1905,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 844, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 853, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromMatrix4(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat)
         {
             // SpanOverloader
@@ -1881,7 +1913,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 844, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 853, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromMatrix4(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -1889,7 +1921,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 853, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 862, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromQuaternion(this Assimp thisApi, Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> q)
         {
             // SpanOverloader
@@ -1897,7 +1929,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 853, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 862, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromQuaternion(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* q)
         {
             // SpanOverloader
@@ -1905,7 +1937,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 853, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 862, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromQuaternion(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> q)
         {
             // SpanOverloader
@@ -1913,7 +1945,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 864, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 873, Column 16 in cimport.h")]
         public static unsafe int Matrix3AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> b)
         {
             // SpanOverloader
@@ -1921,7 +1953,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 864, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 873, Column 16 in cimport.h")]
         public static unsafe int Matrix3AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* b)
         {
             // SpanOverloader
@@ -1929,7 +1961,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 864, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 873, Column 16 in cimport.h")]
         public static unsafe int Matrix3AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> b)
         {
             // SpanOverloader
@@ -1937,7 +1969,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 876, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 885, Column 16 in cimport.h")]
         public static unsafe int Matrix3AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> b, float epsilon)
         {
             // SpanOverloader
@@ -1945,7 +1977,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 876, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 885, Column 16 in cimport.h")]
         public static unsafe int Matrix3AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* b, float epsilon)
         {
             // SpanOverloader
@@ -1953,7 +1985,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 876, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 885, Column 16 in cimport.h")]
         public static unsafe int Matrix3AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> b, float epsilon)
         {
             // SpanOverloader
@@ -1961,7 +1993,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 885, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 894, Column 17 in cimport.h")]
         public static unsafe void Matrix3Inverse(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
@@ -1969,7 +2001,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 892, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 901, Column 20 in cimport.h")]
         public static unsafe float Matrix3Determinant(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
@@ -1977,7 +2009,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 900, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 909, Column 17 in cimport.h")]
         public static unsafe void Matrix3RotationZ(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, float angle)
         {
             // SpanOverloader
@@ -1985,7 +2017,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 910, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 919, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromRotationAroundAxis(this Assimp thisApi, Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> axis, float angle)
         {
             // SpanOverloader
@@ -1993,7 +2025,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 910, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 919, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromRotationAroundAxis(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* axis, float angle)
         {
             // SpanOverloader
@@ -2001,7 +2033,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 910, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 919, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromRotationAroundAxis(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> axis, float angle)
         {
             // SpanOverloader
@@ -2009,7 +2041,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 920, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 929, Column 17 in cimport.h")]
         public static unsafe void Matrix3Translation(this Assimp thisApi, Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> translation)
         {
             // SpanOverloader
@@ -2017,7 +2049,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 920, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 929, Column 17 in cimport.h")]
         public static unsafe void Matrix3Translation(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector2* translation)
         {
             // SpanOverloader
@@ -2025,7 +2057,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 920, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 929, Column 17 in cimport.h")]
         public static unsafe void Matrix3Translation(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector2> translation)
         {
             // SpanOverloader
@@ -2033,7 +2065,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 930, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 939, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromTo(this Assimp thisApi, Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> to)
         {
             // SpanOverloader
@@ -2041,7 +2073,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 930, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 939, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromTo(this Assimp thisApi, Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to)
         {
             // SpanOverloader
@@ -2049,7 +2081,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 930, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 939, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromTo(this Assimp thisApi, Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> to)
         {
             // SpanOverloader
@@ -2057,7 +2089,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 930, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 939, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromTo(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to)
         {
             // SpanOverloader
@@ -2065,7 +2097,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 930, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 939, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromTo(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> to)
         {
             // SpanOverloader
@@ -2073,7 +2105,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 930, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 939, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromTo(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to)
         {
             // SpanOverloader
@@ -2081,7 +2113,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 930, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 939, Column 17 in cimport.h")]
         public static unsafe void Matrix3FromTo(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> to)
         {
             // SpanOverloader
@@ -2089,7 +2121,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 940, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 949, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromMatrix3(this Assimp thisApi, System.Numerics.Matrix4x4* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
@@ -2097,7 +2129,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 940, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 949, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromMatrix3(this Assimp thisApi, Span<System.Numerics.Matrix4x4> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* mat)
         {
             // SpanOverloader
@@ -2105,7 +2137,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 940, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 949, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromMatrix3(this Assimp thisApi, Span<System.Numerics.Matrix4x4> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
@@ -2113,7 +2145,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2121,7 +2153,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2129,7 +2161,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2137,7 +2169,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2145,7 +2177,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2153,7 +2185,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2161,7 +2193,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2169,7 +2201,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2177,7 +2209,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2185,7 +2217,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2193,7 +2225,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2201,7 +2233,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2209,7 +2241,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2217,7 +2249,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2225,7 +2257,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 951, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 960, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromScalingQuaternionPosition(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> scaling, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> rotation, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2233,7 +2265,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 962, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 971, Column 17 in cimport.h")]
         public static unsafe void Matrix4Add(this Assimp thisApi, System.Numerics.Matrix4x4* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> src)
         {
             // SpanOverloader
@@ -2241,7 +2273,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 962, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 971, Column 17 in cimport.h")]
         public static unsafe void Matrix4Add(this Assimp thisApi, Span<System.Numerics.Matrix4x4> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* src)
         {
             // SpanOverloader
@@ -2249,7 +2281,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 962, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 971, Column 17 in cimport.h")]
         public static unsafe void Matrix4Add(this Assimp thisApi, Span<System.Numerics.Matrix4x4> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> src)
         {
             // SpanOverloader
@@ -2257,7 +2289,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 973, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 982, Column 16 in cimport.h")]
         public static unsafe int Matrix4AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> b)
         {
             // SpanOverloader
@@ -2265,7 +2297,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 973, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 982, Column 16 in cimport.h")]
         public static unsafe int Matrix4AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* b)
         {
             // SpanOverloader
@@ -2273,7 +2305,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 973, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 982, Column 16 in cimport.h")]
         public static unsafe int Matrix4AreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> b)
         {
             // SpanOverloader
@@ -2281,7 +2313,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 985, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 994, Column 16 in cimport.h")]
         public static unsafe int Matrix4AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> b, float epsilon)
         {
             // SpanOverloader
@@ -2289,7 +2321,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 985, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 994, Column 16 in cimport.h")]
         public static unsafe int Matrix4AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* b, float epsilon)
         {
             // SpanOverloader
@@ -2297,7 +2329,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 985, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 994, Column 16 in cimport.h")]
         public static unsafe int Matrix4AreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> b, float epsilon)
         {
             // SpanOverloader
@@ -2305,7 +2337,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 994, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1003, Column 17 in cimport.h")]
         public static unsafe void Matrix4Inverse(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -2313,7 +2345,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1002, Column 18 in cimport.h")]
+        [NativeName("Src", "Line 1011, Column 20 in cimport.h")]
         public static unsafe float Matrix4Determinant(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -2321,7 +2353,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1011, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 1020, Column 16 in cimport.h")]
         public static unsafe int Matrix4IsIdentity(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat)
         {
             // SpanOverloader
@@ -2329,7 +2361,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2337,7 +2369,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2345,7 +2377,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2353,7 +2385,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2361,7 +2393,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2369,7 +2401,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2377,7 +2409,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2385,7 +2417,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2393,7 +2425,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2401,7 +2433,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2409,7 +2441,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2417,7 +2449,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2425,7 +2457,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2433,7 +2465,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2441,7 +2473,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1032, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingEulerAnglesPosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2449,7 +2481,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2457,7 +2489,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, Span<float> angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2465,7 +2497,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, Span<float> angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2473,7 +2505,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> axis, float* angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2481,7 +2513,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> axis, float* angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2489,7 +2521,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> axis, Span<float> angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2497,7 +2529,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> axis, Span<float> angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2505,7 +2537,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2513,7 +2545,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* axis, float* angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2521,7 +2553,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* axis, Span<float> angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2529,7 +2561,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* axis, Span<float> angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2537,7 +2569,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> axis, float* angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2545,7 +2577,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> axis, float* angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2553,7 +2585,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> axis, Span<float> angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2561,7 +2593,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> axis, Span<float> angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2569,7 +2601,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2577,7 +2609,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2585,7 +2617,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, Span<float> angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2593,7 +2625,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, Span<float> angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2601,7 +2633,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> axis, float* angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2609,7 +2641,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> axis, float* angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2617,7 +2649,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> axis, Span<float> angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2625,7 +2657,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, System.Numerics.Vector3* scaling, Span<System.Numerics.Vector3> axis, Span<float> angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2633,7 +2665,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2641,7 +2673,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* axis, float* angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2649,7 +2681,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* axis, Span<float> angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2657,7 +2689,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, System.Numerics.Vector3* axis, Span<float> angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2665,7 +2697,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> axis, float* angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2673,7 +2705,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> axis, float* angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2681,7 +2713,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> axis, Span<float> angle, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2689,7 +2721,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1040, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1049, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeIntoScalingAxisAnglePosition(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<System.Numerics.Vector3> scaling, Span<System.Numerics.Vector3> axis, Span<float> angle, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2697,7 +2729,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1064, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeNoScaling(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, AssimpQuaternion* rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2705,7 +2737,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1064, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeNoScaling(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<AssimpQuaternion> rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2713,7 +2745,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1064, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeNoScaling(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Matrix4x4* mat, Span<AssimpQuaternion> rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2721,7 +2753,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1064, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeNoScaling(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, AssimpQuaternion* rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2729,7 +2761,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1064, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeNoScaling(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, AssimpQuaternion* rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2737,7 +2769,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1064, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeNoScaling(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<AssimpQuaternion> rotation, System.Numerics.Vector3* position)
         {
             // SpanOverloader
@@ -2745,7 +2777,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1055, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1064, Column 17 in cimport.h")]
         public static unsafe void Matrix4DecomposeNoScaling(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> mat, Span<AssimpQuaternion> rotation, Span<System.Numerics.Vector3> position)
         {
             // SpanOverloader
@@ -2753,7 +2785,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1067, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1076, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromEulerAngles(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, float x, float y, float z)
         {
             // SpanOverloader
@@ -2761,7 +2793,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1076, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1085, Column 17 in cimport.h")]
         public static unsafe void Matrix4RotationX(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, float angle)
         {
             // SpanOverloader
@@ -2769,7 +2801,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1085, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1094, Column 17 in cimport.h")]
         public static unsafe void Matrix4RotationY(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, float angle)
         {
             // SpanOverloader
@@ -2777,7 +2809,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1094, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1103, Column 17 in cimport.h")]
         public static unsafe void Matrix4RotationZ(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, float angle)
         {
             // SpanOverloader
@@ -2785,7 +2817,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1104, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1113, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromRotationAroundAxis(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> axis, float angle)
         {
             // SpanOverloader
@@ -2793,7 +2825,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1104, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1113, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromRotationAroundAxis(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* axis, float angle)
         {
             // SpanOverloader
@@ -2801,7 +2833,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1104, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1113, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromRotationAroundAxis(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> axis, float angle)
         {
             // SpanOverloader
@@ -2809,7 +2841,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1114, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1123, Column 17 in cimport.h")]
         public static unsafe void Matrix4Translation(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> translation)
         {
             // SpanOverloader
@@ -2817,7 +2849,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1114, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1123, Column 17 in cimport.h")]
         public static unsafe void Matrix4Translation(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* translation)
         {
             // SpanOverloader
@@ -2825,7 +2857,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1114, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1123, Column 17 in cimport.h")]
         public static unsafe void Matrix4Translation(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> translation)
         {
             // SpanOverloader
@@ -2833,7 +2865,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1123, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1132, Column 17 in cimport.h")]
         public static unsafe void Matrix4Scaling(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> scaling)
         {
             // SpanOverloader
@@ -2841,7 +2873,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1123, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1132, Column 17 in cimport.h")]
         public static unsafe void Matrix4Scaling(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* scaling)
         {
             // SpanOverloader
@@ -2849,7 +2881,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1123, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1132, Column 17 in cimport.h")]
         public static unsafe void Matrix4Scaling(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> scaling)
         {
             // SpanOverloader
@@ -2857,7 +2889,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1142, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromTo(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> to)
         {
             // SpanOverloader
@@ -2865,7 +2897,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1142, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromTo(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to)
         {
             // SpanOverloader
@@ -2873,7 +2905,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1142, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromTo(this Assimp thisApi, System.Numerics.Matrix4x4* mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> to)
         {
             // SpanOverloader
@@ -2881,7 +2913,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1142, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromTo(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to)
         {
             // SpanOverloader
@@ -2889,7 +2921,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1142, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromTo(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> to)
         {
             // SpanOverloader
@@ -2897,7 +2929,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1142, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromTo(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* to)
         {
             // SpanOverloader
@@ -2905,7 +2937,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1133, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1142, Column 17 in cimport.h")]
         public static unsafe void Matrix4FromTo(this Assimp thisApi, Span<System.Numerics.Matrix4x4> mat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> from, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> to)
         {
             // SpanOverloader
@@ -2913,7 +2945,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1145, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1154, Column 17 in cimport.h")]
         public static unsafe void QuaternionFromEulerAngles(this Assimp thisApi, Span<AssimpQuaternion> q, float x, float y, float z)
         {
             // SpanOverloader
@@ -2921,7 +2953,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1155, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1164, Column 17 in cimport.h")]
         public static unsafe void QuaternionFromAxisAngle(this Assimp thisApi, AssimpQuaternion* q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> axis, float angle)
         {
             // SpanOverloader
@@ -2929,7 +2961,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1155, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1164, Column 17 in cimport.h")]
         public static unsafe void QuaternionFromAxisAngle(this Assimp thisApi, Span<AssimpQuaternion> q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* axis, float angle)
         {
             // SpanOverloader
@@ -2937,7 +2969,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1155, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1164, Column 17 in cimport.h")]
         public static unsafe void QuaternionFromAxisAngle(this Assimp thisApi, Span<AssimpQuaternion> q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> axis, float angle)
         {
             // SpanOverloader
@@ -2945,7 +2977,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1166, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1175, Column 17 in cimport.h")]
         public static unsafe void QuaternionFromNormalizedQuaternion(this Assimp thisApi, AssimpQuaternion* q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> normalized)
         {
             // SpanOverloader
@@ -2953,7 +2985,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1166, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1175, Column 17 in cimport.h")]
         public static unsafe void QuaternionFromNormalizedQuaternion(this Assimp thisApi, Span<AssimpQuaternion> q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] System.Numerics.Vector3* normalized)
         {
             // SpanOverloader
@@ -2961,7 +2993,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1166, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1175, Column 17 in cimport.h")]
         public static unsafe void QuaternionFromNormalizedQuaternion(this Assimp thisApi, Span<AssimpQuaternion> q, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<System.Numerics.Vector3> normalized)
         {
             // SpanOverloader
@@ -2969,7 +3001,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1177, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 1186, Column 16 in cimport.h")]
         public static unsafe int QuaternionAreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> b)
         {
             // SpanOverloader
@@ -2977,7 +3009,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1177, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 1186, Column 16 in cimport.h")]
         public static unsafe int QuaternionAreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* b)
         {
             // SpanOverloader
@@ -2985,7 +3017,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1177, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 1186, Column 16 in cimport.h")]
         public static unsafe int QuaternionAreEqual(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> b)
         {
             // SpanOverloader
@@ -2993,7 +3025,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1189, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 1198, Column 16 in cimport.h")]
         public static unsafe int QuaternionAreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> b, float epsilon)
         {
             // SpanOverloader
@@ -3001,7 +3033,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1189, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 1198, Column 16 in cimport.h")]
         public static unsafe int QuaternionAreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* b, float epsilon)
         {
             // SpanOverloader
@@ -3009,7 +3041,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1189, Column 16 in cimport.h")]
+        [NativeName("Src", "Line 1198, Column 16 in cimport.h")]
         public static unsafe int QuaternionAreEqualEpsilon(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> a, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> b, float epsilon)
         {
             // SpanOverloader
@@ -3017,7 +3049,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1198, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1207, Column 17 in cimport.h")]
         public static unsafe void QuaternionNormalize(this Assimp thisApi, Span<AssimpQuaternion> q)
         {
             // SpanOverloader
@@ -3025,7 +3057,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1206, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1215, Column 17 in cimport.h")]
         public static unsafe void QuaternionConjugate(this Assimp thisApi, Span<AssimpQuaternion> q)
         {
             // SpanOverloader
@@ -3033,7 +3065,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1214, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1223, Column 17 in cimport.h")]
         public static unsafe void QuaternionMultiply(this Assimp thisApi, AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> q)
         {
             // SpanOverloader
@@ -3041,7 +3073,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1214, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1223, Column 17 in cimport.h")]
         public static unsafe void QuaternionMultiply(this Assimp thisApi, Span<AssimpQuaternion> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* q)
         {
             // SpanOverloader
@@ -3049,7 +3081,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1214, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1223, Column 17 in cimport.h")]
         public static unsafe void QuaternionMultiply(this Assimp thisApi, Span<AssimpQuaternion> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> q)
         {
             // SpanOverloader
@@ -3057,7 +3089,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1234, Column 17 in cimport.h")]
         public static unsafe void QuaternionInterpolate(this Assimp thisApi, AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> end, float factor)
         {
             // SpanOverloader
@@ -3065,7 +3097,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1234, Column 17 in cimport.h")]
         public static unsafe void QuaternionInterpolate(this Assimp thisApi, AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* end, float factor)
         {
             // SpanOverloader
@@ -3073,7 +3105,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1234, Column 17 in cimport.h")]
         public static unsafe void QuaternionInterpolate(this Assimp thisApi, AssimpQuaternion* dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> end, float factor)
         {
             // SpanOverloader
@@ -3081,7 +3113,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1234, Column 17 in cimport.h")]
         public static unsafe void QuaternionInterpolate(this Assimp thisApi, Span<AssimpQuaternion> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* end, float factor)
         {
             // SpanOverloader
@@ -3089,7 +3121,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1234, Column 17 in cimport.h")]
         public static unsafe void QuaternionInterpolate(this Assimp thisApi, Span<AssimpQuaternion> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> end, float factor)
         {
             // SpanOverloader
@@ -3097,7 +3129,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1234, Column 17 in cimport.h")]
         public static unsafe void QuaternionInterpolate(this Assimp thisApi, Span<AssimpQuaternion> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AssimpQuaternion* end, float factor)
         {
             // SpanOverloader
@@ -3105,7 +3137,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1225, Column 17 in cimport.h")]
+        [NativeName("Src", "Line 1234, Column 17 in cimport.h")]
         public static unsafe void QuaternionInterpolate(this Assimp thisApi, Span<AssimpQuaternion> dst, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AssimpQuaternion> end, float factor)
         {
             // SpanOverloader
@@ -3113,7 +3145,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 28 in material.h")]
+        [NativeName("Src", "Line 1522, Column 28 in material.h")]
         public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut)
         {
             // SpanOverloader
@@ -3121,15 +3153,15 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 28 in material.h")]
-        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut)
+        [NativeName("Src", "Line 1522, Column 28 in material.h")]
+        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MaterialProperty* pPropOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialProperty(pMat, in pKey.GetPinnableReference(), type, index, in pPropOut);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 28 in material.h")]
+        [NativeName("Src", "Line 1522, Column 28 in material.h")]
         public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut)
         {
             // SpanOverloader
@@ -3137,15 +3169,15 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 28 in material.h")]
-        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut)
+        [NativeName("Src", "Line 1522, Column 28 in material.h")]
+        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MaterialProperty* pPropOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialProperty(in pMat.GetPinnableReference(), pKey, type, index, in pPropOut);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 28 in material.h")]
+        [NativeName("Src", "Line 1522, Column 28 in material.h")]
         public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut)
         {
             // SpanOverloader
@@ -3153,15 +3185,15 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 28 in material.h")]
-        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut)
+        [NativeName("Src", "Line 1522, Column 28 in material.h")]
+        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MaterialProperty* pPropOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialProperty(in pMat.GetPinnableReference(), in pKey.GetPinnableReference(), type, index, in pPropOut);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 28 in material.h")]
+        [NativeName("Src", "Line 1522, Column 28 in material.h")]
         public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] MaterialProperty** pPropOut)
         {
             // SpanOverloader
@@ -3169,15 +3201,15 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1477, Column 28 in material.h")]
-        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MaterialProperty* pPropOut)
+        [NativeName("Src", "Line 1522, Column 28 in material.h")]
+        public static unsafe Return GetMaterialProperty(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MaterialProperty* pPropOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialProperty(in pMat.GetPinnableReference(), pKey, type, index, in pPropOut);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3185,7 +3217,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<float> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3193,7 +3225,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3201,7 +3233,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, float* pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3209,7 +3241,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, float* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3217,7 +3249,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<float> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3225,7 +3257,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3233,7 +3265,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3241,7 +3273,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<float> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3249,7 +3281,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3257,7 +3289,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3265,7 +3297,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3273,7 +3305,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<float> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3281,7 +3313,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3289,7 +3321,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, float* pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3297,7 +3329,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, float* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3305,7 +3337,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<float> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3313,7 +3345,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3321,7 +3353,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3329,7 +3361,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3337,7 +3369,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<float> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3345,7 +3377,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1510, Column 28 in material.h")]
+        [NativeName("Src", "Line 1555, Column 28 in material.h")]
         public static unsafe Return GetMaterialFloatArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3353,7 +3385,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3361,7 +3393,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<int> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3369,7 +3401,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<int> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3377,7 +3409,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, int* pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3385,7 +3417,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, int* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3393,7 +3425,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<int> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3401,7 +3433,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<int> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3409,7 +3441,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3417,7 +3449,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<int> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3425,7 +3457,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<int> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3433,7 +3465,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3441,7 +3473,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3449,7 +3481,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<int> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3457,7 +3489,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<int> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3465,7 +3497,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, int* pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3473,7 +3505,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, int* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3481,7 +3513,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<int> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3489,7 +3521,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<int> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3497,7 +3529,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3505,7 +3537,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3513,7 +3545,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<int> pOut, uint* pMax)
         {
             // SpanOverloader
@@ -3521,7 +3553,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1550, Column 28 in material.h")]
+        [NativeName("Src", "Line 1595, Column 28 in material.h")]
         public static unsafe Return GetMaterialIntegerArray(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<int> pOut, Span<uint> pMax)
         {
             // SpanOverloader
@@ -3529,7 +3561,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 28 in material.h")]
+        [NativeName("Src", "Line 1620, Column 28 in material.h")]
         public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<System.Numerics.Vector4> pOut)
         {
             // SpanOverloader
@@ -3537,7 +3569,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 28 in material.h")]
+        [NativeName("Src", "Line 1620, Column 28 in material.h")]
         public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, System.Numerics.Vector4* pOut)
         {
             // SpanOverloader
@@ -3545,7 +3577,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 28 in material.h")]
+        [NativeName("Src", "Line 1620, Column 28 in material.h")]
         public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<System.Numerics.Vector4> pOut)
         {
             // SpanOverloader
@@ -3553,7 +3585,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 28 in material.h")]
+        [NativeName("Src", "Line 1620, Column 28 in material.h")]
         public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<System.Numerics.Vector4> pOut)
         {
             // SpanOverloader
@@ -3561,7 +3593,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 28 in material.h")]
+        [NativeName("Src", "Line 1620, Column 28 in material.h")]
         public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, System.Numerics.Vector4* pOut)
         {
             // SpanOverloader
@@ -3569,7 +3601,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 28 in material.h")]
+        [NativeName("Src", "Line 1620, Column 28 in material.h")]
         public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<System.Numerics.Vector4> pOut)
         {
             // SpanOverloader
@@ -3577,7 +3609,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 28 in material.h")]
+        [NativeName("Src", "Line 1620, Column 28 in material.h")]
         public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, System.Numerics.Vector4* pOut)
         {
             // SpanOverloader
@@ -3585,7 +3617,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 28 in material.h")]
+        [NativeName("Src", "Line 1620, Column 28 in material.h")]
         public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<System.Numerics.Vector4> pOut)
         {
             // SpanOverloader
@@ -3593,7 +3625,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 28 in material.h")]
+        [NativeName("Src", "Line 1620, Column 28 in material.h")]
         public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, System.Numerics.Vector4* pOut)
         {
             // SpanOverloader
@@ -3601,7 +3633,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1575, Column 28 in material.h")]
+        [NativeName("Src", "Line 1620, Column 28 in material.h")]
         public static unsafe Return GetMaterialColor(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<System.Numerics.Vector4> pOut)
         {
             // SpanOverloader
@@ -3609,7 +3641,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 28 in material.h")]
+        [NativeName("Src", "Line 1631, Column 28 in material.h")]
         public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
@@ -3617,7 +3649,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 28 in material.h")]
+        [NativeName("Src", "Line 1631, Column 28 in material.h")]
         public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, UVTransform* pOut)
         {
             // SpanOverloader
@@ -3625,7 +3657,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 28 in material.h")]
+        [NativeName("Src", "Line 1631, Column 28 in material.h")]
         public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
@@ -3633,7 +3665,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 28 in material.h")]
+        [NativeName("Src", "Line 1631, Column 28 in material.h")]
         public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
@@ -3641,7 +3673,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 28 in material.h")]
+        [NativeName("Src", "Line 1631, Column 28 in material.h")]
         public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, UVTransform* pOut)
         {
             // SpanOverloader
@@ -3649,7 +3681,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 28 in material.h")]
+        [NativeName("Src", "Line 1631, Column 28 in material.h")]
         public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
@@ -3657,7 +3689,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 28 in material.h")]
+        [NativeName("Src", "Line 1631, Column 28 in material.h")]
         public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, UVTransform* pOut)
         {
             // SpanOverloader
@@ -3665,7 +3697,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 28 in material.h")]
+        [NativeName("Src", "Line 1631, Column 28 in material.h")]
         public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
@@ -3673,7 +3705,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 28 in material.h")]
+        [NativeName("Src", "Line 1631, Column 28 in material.h")]
         public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, UVTransform* pOut)
         {
             // SpanOverloader
@@ -3681,7 +3713,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1586, Column 28 in material.h")]
+        [NativeName("Src", "Line 1631, Column 28 in material.h")]
         public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
@@ -3689,7 +3721,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 28 in material.h")]
+        [NativeName("Src", "Line 1642, Column 28 in material.h")]
         public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<AssimpString> pOut)
         {
             // SpanOverloader
@@ -3697,7 +3729,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 28 in material.h")]
+        [NativeName("Src", "Line 1642, Column 28 in material.h")]
         public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, AssimpString* pOut)
         {
             // SpanOverloader
@@ -3705,7 +3737,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 28 in material.h")]
+        [NativeName("Src", "Line 1642, Column 28 in material.h")]
         public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<AssimpString> pOut)
         {
             // SpanOverloader
@@ -3713,7 +3745,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 28 in material.h")]
+        [NativeName("Src", "Line 1642, Column 28 in material.h")]
         public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<AssimpString> pOut)
         {
             // SpanOverloader
@@ -3721,7 +3753,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 28 in material.h")]
+        [NativeName("Src", "Line 1642, Column 28 in material.h")]
         public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, AssimpString* pOut)
         {
             // SpanOverloader
@@ -3729,7 +3761,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 28 in material.h")]
+        [NativeName("Src", "Line 1642, Column 28 in material.h")]
         public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pKey, uint type, uint index, Span<AssimpString> pOut)
         {
             // SpanOverloader
@@ -3737,7 +3769,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 28 in material.h")]
+        [NativeName("Src", "Line 1642, Column 28 in material.h")]
         public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, AssimpString* pOut)
         {
             // SpanOverloader
@@ -3745,7 +3777,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 28 in material.h")]
+        [NativeName("Src", "Line 1642, Column 28 in material.h")]
         public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pKey, uint type, uint index, Span<AssimpString> pOut)
         {
             // SpanOverloader
@@ -3753,7 +3785,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 28 in material.h")]
+        [NativeName("Src", "Line 1642, Column 28 in material.h")]
         public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, AssimpString* pOut)
         {
             // SpanOverloader
@@ -3761,7 +3793,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1597, Column 28 in material.h")]
+        [NativeName("Src", "Line 1642, Column 28 in material.h")]
         public static unsafe Return GetMaterialString(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, Span<AssimpString> pOut)
         {
             // SpanOverloader
@@ -3769,7 +3801,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1610, Column 25 in material.h")]
+        [NativeName("Src", "Line 1655, Column 25 in material.h")]
         public static unsafe uint GetMaterialTextureCount(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> pMat, TextureType type)
         {
             // SpanOverloader
@@ -3777,7 +3809,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3785,7 +3817,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3793,7 +3825,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3801,7 +3833,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3809,7 +3841,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3817,7 +3849,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3825,7 +3857,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3833,7 +3865,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3841,7 +3873,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3849,7 +3881,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3857,7 +3889,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3865,7 +3897,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3873,7 +3905,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3881,7 +3913,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3889,7 +3921,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3897,7 +3929,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3905,7 +3937,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3913,7 +3945,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3921,7 +3953,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3929,7 +3961,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3937,7 +3969,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3945,7 +3977,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3953,7 +3985,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3961,7 +3993,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3969,7 +4001,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3977,7 +4009,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -3985,7 +4017,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -3993,7 +4025,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4001,7 +4033,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4009,7 +4041,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4017,7 +4049,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4025,7 +4057,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4033,7 +4065,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4041,7 +4073,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4049,7 +4081,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4057,7 +4089,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4065,7 +4097,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4073,7 +4105,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4081,7 +4113,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4089,7 +4121,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4097,7 +4129,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4105,7 +4137,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4113,7 +4145,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4121,7 +4153,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4129,7 +4161,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4137,7 +4169,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4145,7 +4177,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4153,7 +4185,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4161,7 +4193,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4169,7 +4201,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4177,7 +4209,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4185,7 +4217,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4193,7 +4225,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4201,7 +4233,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4209,7 +4241,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4217,7 +4249,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4225,7 +4257,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4233,7 +4265,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4241,7 +4273,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4249,7 +4281,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4257,7 +4289,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4265,7 +4297,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4273,7 +4305,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4281,7 +4313,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4289,7 +4321,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4297,7 +4329,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4305,7 +4337,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4313,7 +4345,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4321,7 +4353,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4329,7 +4361,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4337,7 +4369,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4345,7 +4377,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4353,7 +4385,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4361,7 +4393,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4369,7 +4401,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4377,7 +4409,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4385,7 +4417,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4393,7 +4425,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4401,7 +4433,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4409,7 +4441,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4417,7 +4449,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4425,7 +4457,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4433,7 +4465,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4441,7 +4473,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4449,7 +4481,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4457,7 +4489,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4465,7 +4497,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4473,7 +4505,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4481,7 +4513,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4489,7 +4521,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4497,7 +4529,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4505,7 +4537,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4513,7 +4545,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4521,7 +4553,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4529,7 +4561,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4537,7 +4569,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4545,7 +4577,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4553,7 +4585,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4561,7 +4593,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4569,7 +4601,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4577,7 +4609,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4585,7 +4617,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4593,7 +4625,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4601,7 +4633,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4609,7 +4641,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4617,7 +4649,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4625,7 +4657,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4633,7 +4665,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4641,7 +4673,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4649,7 +4681,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4657,7 +4689,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4665,7 +4697,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4673,7 +4705,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4681,7 +4713,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4689,7 +4721,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4697,7 +4729,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4705,7 +4737,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4713,7 +4745,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4721,7 +4753,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4729,7 +4761,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4737,7 +4769,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4745,7 +4777,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4753,7 +4785,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4761,7 +4793,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4769,7 +4801,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4777,7 +4809,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4785,7 +4817,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Material* mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4793,7 +4825,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4801,7 +4833,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4809,7 +4841,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4817,7 +4849,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4825,7 +4857,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4833,7 +4865,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4841,7 +4873,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4849,7 +4881,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4857,7 +4889,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4865,7 +4897,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4873,7 +4905,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4881,7 +4913,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4889,7 +4921,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4897,7 +4929,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4905,7 +4937,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4913,7 +4945,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4921,7 +4953,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4929,7 +4961,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4937,7 +4969,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4945,7 +4977,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4953,7 +4985,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4961,7 +4993,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4969,7 +5001,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4977,7 +5009,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -4985,7 +5017,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -4993,7 +5025,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5001,7 +5033,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5009,7 +5041,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5017,7 +5049,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5025,7 +5057,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5033,7 +5065,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5041,7 +5073,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5049,7 +5081,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5057,7 +5089,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5065,7 +5097,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5073,7 +5105,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5081,7 +5113,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5089,7 +5121,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5097,7 +5129,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5105,7 +5137,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5113,7 +5145,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5121,7 +5153,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5129,7 +5161,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5137,7 +5169,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5145,7 +5177,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5153,7 +5185,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5161,7 +5193,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5169,7 +5201,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5177,7 +5209,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5185,7 +5217,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5193,7 +5225,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5201,7 +5233,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5209,7 +5241,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5217,7 +5249,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5225,7 +5257,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5233,7 +5265,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5241,7 +5273,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5249,7 +5281,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5257,7 +5289,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5265,7 +5297,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5273,7 +5305,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5281,7 +5313,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5289,7 +5321,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5297,7 +5329,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, AssimpString* path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5305,7 +5337,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5313,7 +5345,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5321,7 +5353,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5329,7 +5361,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5337,7 +5369,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5345,7 +5377,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5353,7 +5385,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5361,7 +5393,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5369,7 +5401,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5377,7 +5409,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5385,7 +5417,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5393,7 +5425,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5401,7 +5433,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5409,7 +5441,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5417,7 +5449,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5425,7 +5457,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5433,7 +5465,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5441,7 +5473,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5449,7 +5481,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5457,7 +5489,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5465,7 +5497,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5473,7 +5505,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5481,7 +5513,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5489,7 +5521,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5497,7 +5529,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5505,7 +5537,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5513,7 +5545,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5521,7 +5553,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5529,7 +5561,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5537,7 +5569,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5545,7 +5577,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5553,7 +5585,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, TextureMapping* mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5561,7 +5593,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5569,7 +5601,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5577,7 +5609,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5585,7 +5617,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5593,7 +5625,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5601,7 +5633,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5609,7 +5641,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5617,7 +5649,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5625,7 +5657,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5633,7 +5665,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5641,7 +5673,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5649,7 +5681,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5657,7 +5689,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5665,7 +5697,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5673,7 +5705,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5681,7 +5713,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, uint* uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5689,7 +5721,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5697,7 +5729,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5705,7 +5737,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5713,7 +5745,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5721,7 +5753,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5729,7 +5761,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5737,7 +5769,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5745,7 +5777,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, float* blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5753,7 +5785,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5761,7 +5793,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5769,7 +5801,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5777,7 +5809,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, TextureOp* op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5785,7 +5817,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5793,7 +5825,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, TextureMapMode* mapmode, Span<uint> flags)
         {
             // SpanOverloader
@@ -5801,7 +5833,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, uint* flags)
         {
             // SpanOverloader
@@ -5809,7 +5841,7 @@ namespace Silk.NET.Assimp
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1651, Column 21 in material.h")]
+        [NativeName("Src", "Line 1696, Column 21 in material.h")]
         public static unsafe Return GetMaterialTexture(this Assimp thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags)
         {
             // SpanOverloader

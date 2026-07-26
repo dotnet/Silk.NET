@@ -9,44 +9,41 @@
     <!-- Core properties -->
     <PropertyGroup>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <LangVersion>10</LangVersion>
+        <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET Mobile Update
+            Silk.NET Winter 2025 Update
 
-            - Added production-ready iOS support - wrap your Program.cs/IView code with SilkMobile.RunApp and run as-is!
-            - Added the ability to programmatically focus a window using IWindow.Focus(). (thanks @mayatskiy/@Arugin)
-            - Added a helper for custom IO in Assimp.
-            - Added a ToString implementation for Vulkan handles to display the handle value.
-            - Added some missing Flags attributes to enums, reducing the number of bitwise operation warnings on enums.
-            - Updated to Vulkan 1.3.300.
-            - Updated to OpenXR 1.1.42.
-            - Updated to SDL 2.30.8.
-            - Updated to MoltenVK 1.2.11.
-            - Updated to DXVK 2.4.1.
-            - Updated to OpenAL Soft 1.23.1.
-            - Updated to shaderc 2024.3.
-            - Updated to Assimp 5.4.1.
+            - Added missing GenerateBoundingBoxes flag in Assimp. (thanks @LittleCodingFox) 
+            - Added full coverage of AV1 and VP9 support in Vulkan Video bindings.
+            - Updated to Direct3D 12 Agility SDK 1.618.5.
+            - Updated to DirectStorage 1.3.0.
+            - Updated to Windows SDK 10.26100.
+            - Updated to Vulkan 1.4.336.
+            - Updated to OpenXR 1.1.54.
+            - Updated to Assimp 6.0.2.
+            - Updated to MoltenVK 1.4.1.
+            - Updated to OpenAL Soft 1.24.3.
+            - Updated to latest ANGLE.
             - Updated to latest OpenGL specifications.
             - Updated to latest OpenCL specifications.
-            - Updated to ImGui.NET 1.90.8.1. (thanks @matt-edmondson)
-            - Updated DirectX/Windows bindings to 10.0.26100.0.
-            - Updated WebGPU/wgpu/dawn bindings.
-            - Updated SPIR-V Reflect, Cross, Headers, and Tools to their latest Vulkan 1.3.296 version.
-            - Updated ANGLE binaries for macOS. (thanks @ramezgerges/Uno Platform)
-            - Improved native binary packaging. (thanks @joskuijpers, @alexrp)
-            - Fixed Android 14/API 34 RECEIVER_EXPORTED/RECEIVER_NOT_EXPORTED errors.
-            - Fixed WGPU binaries being out of sync with the bindings API surface and crashing as a result.
-            - Fixed MultiNativeContext reporting present symbols as missing, affecting WGL, OpenAL, and Vulkan in some cases.
-            - Fixed native packages not correctly applying when being referenced transitively on .NET Framework and .NET 6+ mobile.
-            - Fixed windows being stuck when minimising where a recursive call to DoEvents in callbacks is used.
-            - Fixed changes to the standard cursor type not being accurately reflected on the GLFW backend.
-            - Fixed Silk.NET.Core not checking its own directory for native binaries.
-            - Fixed an ImGui memory leak. (thanks @rbertels)
-            - Fixed being unable to obtain Wayland window pointers when GLFW is compiled with both X11 and Wayland.
+            - Updated to SDL 2.32.10 binaries.
+            - Updated dependency versions, reducing the number of overrides required to satisfy vulnerability scans.
+            - Removed manual `[RequiresLocationAttribute] in` in favour `ref readonly`.
+            - Fixed UTF-8 string marshalling for a specific OpenGL ShaderSource overload.
+            - Fixed erroneous mapping of the LeftDown joystick hat on the GLFW backend. (thanks @Spacelord-XaN)
+            - Fixed string SilkMarshal methods not respecting the platform-native definition of wide characters. (thanks @Exanite)
+            - Fixed PtrToStringArray ignoring encoding parameter. (thanks @Exanite)
+            - Fixed Android native library duplication, resulting in Android build failures.
+            - Fixed a marshalling exception when calling DelegateToPtr in some circumstances. (primarily NativeAOT, thanks @aquagoose)
+            - Fixed UTF-8 characters not being accepted in OpenAL bindings. (thanks @Morilli)
+            - Fixed native libraries not loading property on Pop!_OS. (thanks @WNP78)
+            - Fixed inconsistencies and bugs across matrices of different sizes. (thanks @otac0n)
+            - Fixed NullReferenceException in WGL. (thanks @Morilli)
+            - Fixed unknown key names resulting in an ImGui extension crash. (thanks @Tweety-Lab)
+            - Fixed a minor memory leak in GlfwPlatform/SdlPlatform IsApplicable checks. (thanks @Aragas)
             - Miscellaneous bugfixes and improvements.
 
-            Special thanks to Stride for sponsoring this 2.X update and our contributors for their contributions and continued interest in the project.
             The Silk.NET team are hard at work on 3.0, with 2.X updates continuing with the support of contributors and sponsors.
             Learn more at https://github.com/dotnet/Silk.NET
         </PackageReleaseNotes>
@@ -56,7 +53,7 @@
         <RepositoryUrl>https://github.com/dotnet/Silk.NET.git</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
-        <VersionPrefix>2.22.0</VersionPrefix>
+        <VersionPrefix>2.23.0</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.

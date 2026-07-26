@@ -253,7 +253,7 @@ public unsafe static class DWriteFontFaceReference1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnqueueCharacterDownloadRequest(this ComPtr<IDWriteFontFaceReference1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char characters, uint characterCount)
+    public static int EnqueueCharacterDownloadRequest(this ComPtr<IDWriteFontFaceReference1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char characters, uint characterCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -285,7 +285,7 @@ public unsafe static class DWriteFontFaceReference1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnqueueGlyphDownloadRequest(this ComPtr<IDWriteFontFaceReference1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, uint glyphCount)
+    public static int EnqueueGlyphDownloadRequest(this ComPtr<IDWriteFontFaceReference1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, uint glyphCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

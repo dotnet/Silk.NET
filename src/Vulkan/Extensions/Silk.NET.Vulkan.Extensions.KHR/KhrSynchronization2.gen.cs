@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPipelineBarrier2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdPipelineBarrier2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DependencyInfo pDependencyInfo);
+        public partial void CmdPipelineBarrier2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdResetEvent2KHR", Convention = CallingConvention.Winapi)]
@@ -38,7 +38,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetEvent2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DependencyInfo pDependencyInfo);
+        public partial void CmdSetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWaitEvents2KHR", Convention = CallingConvention.Winapi)]
@@ -46,15 +46,15 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWaitEvents2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DependencyInfo pDependencyInfos);
+        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWaitEvents2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Event pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfos);
+        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWaitEvents2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Event pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DependencyInfo pDependencyInfos);
+        public partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteTimestamp2KHR", Convention = CallingConvention.Winapi)]
@@ -66,7 +66,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueueSubmit2KHR", Convention = CallingConvention.Winapi)]
-        public partial Result QueueSubmit2([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Parameter = "submitCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SubmitInfo2 pSubmits, [Count(Count = 0)] Fence fence);
+        public partial Result QueueSubmit2([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Parameter = "submitCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SubmitInfo2 pSubmits, [Count(Count = 0)] Fence fence);
 
         /// <summary>To be documented.</summary>
         public unsafe void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfos)

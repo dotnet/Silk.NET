@@ -30,11 +30,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetFenceWin32HandleKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetFenceWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FenceGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pHandle);
+        public unsafe partial Result GetFenceWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FenceGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetFenceWin32HandleKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetFenceWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FenceGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pHandle);
+        public partial Result GetFenceWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FenceGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkImportFenceWin32HandleKHR", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkImportFenceWin32HandleKHR", Convention = CallingConvention.Winapi)]
-        public partial Result ImportFenceWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImportFenceWin32HandleInfoKHR pImportFenceWin32HandleInfo);
+        public partial Result ImportFenceWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImportFenceWin32HandleInfoKHR pImportFenceWin32HandleInfo);
 
         public KhrExternalFenceWin32(INativeContext ctx)
             : base(ctx)

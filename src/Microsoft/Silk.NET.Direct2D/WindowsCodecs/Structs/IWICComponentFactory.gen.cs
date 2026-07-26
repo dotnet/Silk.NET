@@ -135,7 +135,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -147,7 +147,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -162,7 +162,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -174,7 +174,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -189,7 +189,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -204,7 +204,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -247,7 +247,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -261,7 +261,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+        public readonly unsafe int CreateDecoderFromFilename([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -299,7 +299,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromStream(Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+        public readonly unsafe int CreateDecoderFromStream(Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -311,7 +311,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromStream(Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+        public readonly unsafe int CreateDecoderFromStream(Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -353,7 +353,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromStream(ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+        public readonly unsafe int CreateDecoderFromStream(ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -368,7 +368,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromStream(ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+        public readonly unsafe int CreateDecoderFromStream(ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -407,7 +407,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFileHandle(nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
+        public readonly unsafe int CreateDecoderFromFileHandle(nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, DecodeOptions metadataOptions, IWICBitmapDecoder** ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -419,7 +419,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFileHandle(nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
+        public readonly unsafe int CreateDecoderFromFileHandle(nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -503,7 +503,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoder(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, IWICBitmapDecoder** ppIDecoder)
+        public readonly unsafe int CreateDecoder(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, IWICBitmapDecoder** ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -515,7 +515,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoder(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICBitmapDecoder* ppIDecoder)
+        public readonly unsafe int CreateDecoder(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICBitmapDecoder* ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -557,7 +557,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoder(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, IWICBitmapDecoder** ppIDecoder)
+        public readonly unsafe int CreateDecoder(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, IWICBitmapDecoder** ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -572,7 +572,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoder(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICBitmapDecoder* ppIDecoder)
+        public readonly unsafe int CreateDecoder(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICBitmapDecoder* ppIDecoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -611,7 +611,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEncoder(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, IWICBitmapEncoder** ppIEncoder)
+        public readonly unsafe int CreateEncoder(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, IWICBitmapEncoder** ppIEncoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -623,7 +623,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEncoder(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICBitmapEncoder* ppIEncoder)
+        public readonly unsafe int CreateEncoder(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICBitmapEncoder* ppIEncoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -665,7 +665,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEncoder(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, IWICBitmapEncoder** ppIEncoder)
+        public readonly unsafe int CreateEncoder(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, IWICBitmapEncoder** ppIEncoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -680,7 +680,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEncoder(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICBitmapEncoder* ppIEncoder)
+        public readonly unsafe int CreateEncoder(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICBitmapEncoder* ppIEncoder)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1468,7 +1468,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueryWriter(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter)
+        public readonly unsafe int CreateQueryWriter(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1480,7 +1480,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueryWriter(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICMetadataQueryWriter* ppIQueryWriter)
+        public readonly unsafe int CreateQueryWriter(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICMetadataQueryWriter* ppIQueryWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1522,7 +1522,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueryWriter(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter)
+        public readonly unsafe int CreateQueryWriter(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1537,7 +1537,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueryWriter(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICMetadataQueryWriter* ppIQueryWriter)
+        public readonly unsafe int CreateQueryWriter(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICMetadataQueryWriter* ppIQueryWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1576,7 +1576,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueryWriterFromReader(IWICMetadataQueryReader* pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter)
+        public readonly unsafe int CreateQueryWriterFromReader(IWICMetadataQueryReader* pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1588,7 +1588,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueryWriterFromReader(IWICMetadataQueryReader* pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICMetadataQueryWriter* ppIQueryWriter)
+        public readonly unsafe int CreateQueryWriterFromReader(IWICMetadataQueryReader* pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICMetadataQueryWriter* ppIQueryWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1630,7 +1630,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueryWriterFromReader(ref IWICMetadataQueryReader pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter)
+        public readonly unsafe int CreateQueryWriterFromReader(ref IWICMetadataQueryReader pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, IWICMetadataQueryWriter** ppIQueryWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1645,7 +1645,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueryWriterFromReader(ref IWICMetadataQueryReader pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICMetadataQueryWriter* ppIQueryWriter)
+        public readonly unsafe int CreateQueryWriterFromReader(ref IWICMetadataQueryReader pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICMetadataQueryWriter* ppIQueryWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1711,7 +1711,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, IWICMetadataReader** ppIReader)
+        public readonly unsafe int CreateMetadataReader(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, IWICMetadataReader** ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1723,7 +1723,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, ref IWICMetadataReader* ppIReader)
+        public readonly unsafe int CreateMetadataReader(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, ref IWICMetadataReader* ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1738,7 +1738,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, IWICMetadataReader** ppIReader)
+        public readonly unsafe int CreateMetadataReader(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, IWICMetadataReader** ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1753,7 +1753,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref IWICMetadataReader* ppIReader)
+        public readonly unsafe int CreateMetadataReader(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref IWICMetadataReader* ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1831,7 +1831,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, IWICMetadataReader** ppIReader)
+        public readonly unsafe int CreateMetadataReader(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, IWICMetadataReader** ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1846,7 +1846,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, ref IWICMetadataReader* ppIReader)
+        public readonly unsafe int CreateMetadataReader(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, ref IWICMetadataReader* ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1864,7 +1864,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, IWICMetadataReader** ppIReader)
+        public readonly unsafe int CreateMetadataReader(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, IWICMetadataReader** ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1882,7 +1882,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref IWICMetadataReader* ppIReader)
+        public readonly unsafe int CreateMetadataReader(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref IWICMetadataReader* ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1951,7 +1951,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, IWICMetadataReader** ppIReader)
+        public readonly unsafe int CreateMetadataReaderFromContainer(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, IWICMetadataReader** ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1963,7 +1963,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, ref IWICMetadataReader* ppIReader)
+        public readonly unsafe int CreateMetadataReaderFromContainer(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, ref IWICMetadataReader* ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1978,7 +1978,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, IWICMetadataReader** ppIReader)
+        public readonly unsafe int CreateMetadataReaderFromContainer(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, IWICMetadataReader** ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1993,7 +1993,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref IWICMetadataReader* ppIReader)
+        public readonly unsafe int CreateMetadataReaderFromContainer(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref IWICMetadataReader* ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2071,7 +2071,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, IWICMetadataReader** ppIReader)
+        public readonly unsafe int CreateMetadataReaderFromContainer(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, IWICMetadataReader** ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2086,7 +2086,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, ref IWICMetadataReader* ppIReader)
+        public readonly unsafe int CreateMetadataReaderFromContainer(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, Silk.NET.Core.Win32Extras.IStream* pIStream, ref IWICMetadataReader* ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2104,7 +2104,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, IWICMetadataReader** ppIReader)
+        public readonly unsafe int CreateMetadataReaderFromContainer(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, IWICMetadataReader** ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2122,7 +2122,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref IWICMetadataReader* ppIReader)
+        public readonly unsafe int CreateMetadataReaderFromContainer(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref IWICMetadataReader* ppIReader)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2164,7 +2164,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataWriter(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwMetadataOptions, IWICMetadataWriter** ppIWriter)
+        public readonly unsafe int CreateMetadataWriter(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwMetadataOptions, IWICMetadataWriter** ppIWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2176,7 +2176,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataWriter(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwMetadataOptions, ref IWICMetadataWriter* ppIWriter)
+        public readonly unsafe int CreateMetadataWriter(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwMetadataOptions, ref IWICMetadataWriter* ppIWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2218,7 +2218,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataWriter(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwMetadataOptions, IWICMetadataWriter** ppIWriter)
+        public readonly unsafe int CreateMetadataWriter(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwMetadataOptions, IWICMetadataWriter** ppIWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2233,7 +2233,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataWriter(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwMetadataOptions, ref IWICMetadataWriter* ppIWriter)
+        public readonly unsafe int CreateMetadataWriter(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwMetadataOptions, ref IWICMetadataWriter* ppIWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2272,7 +2272,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataWriterFromReader(IWICMetadataReader* pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, IWICMetadataWriter** ppIWriter)
+        public readonly unsafe int CreateMetadataWriterFromReader(IWICMetadataReader* pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, IWICMetadataWriter** ppIWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2284,7 +2284,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataWriterFromReader(IWICMetadataReader* pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICMetadataWriter* ppIWriter)
+        public readonly unsafe int CreateMetadataWriterFromReader(IWICMetadataReader* pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICMetadataWriter* ppIWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2326,7 +2326,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataWriterFromReader(ref IWICMetadataReader pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, IWICMetadataWriter** ppIWriter)
+        public readonly unsafe int CreateMetadataWriterFromReader(ref IWICMetadataReader pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, IWICMetadataWriter** ppIWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2341,7 +2341,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataWriterFromReader(ref IWICMetadataReader pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICMetadataWriter* ppIWriter)
+        public readonly unsafe int CreateMetadataWriterFromReader(ref IWICMetadataReader pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICMetadataWriter* ppIWriter)
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2520,7 +2520,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateDecoderFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2528,7 +2528,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateDecoderFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2536,7 +2536,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateDecoderFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+        public readonly int CreateDecoderFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2552,7 +2552,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateDecoderFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+        public readonly int CreateDecoderFromFilename<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wzFilename, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwDesiredAccess, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2576,7 +2576,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateDecoderFromStream<TI0, TI1>(ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI1> ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI1>
+        public readonly int CreateDecoderFromStream<TI0, TI1>(ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI1> ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI1>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2584,7 +2584,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoderFromStream<TI0>(ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int CreateDecoderFromStream<TI0>(ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, DecodeOptions metadataOptions, ref IWICBitmapDecoder* ppIDecoder) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2600,7 +2600,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateDecoderFromStream<TI0>(ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+        public readonly int CreateDecoderFromStream<TI0>(ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2616,7 +2616,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateDecoderFromFileHandle<TI0>(nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+        public readonly int CreateDecoderFromFileHandle<TI0>(nuint hFile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, DecodeOptions metadataOptions, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2650,7 +2650,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDecoder<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateDecoder<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2667,7 +2667,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateDecoder<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
+        public readonly int CreateDecoder<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref ComPtr<TI0> ppIDecoder) where TI0 : unmanaged, IComVtbl<IWICBitmapDecoder>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2684,7 +2684,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEncoder<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref ComPtr<TI0> ppIEncoder) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateEncoder<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref ComPtr<TI0> ppIEncoder) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2701,7 +2701,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateEncoder<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref ComPtr<TI0> ppIEncoder) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
+        public readonly int CreateEncoder<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref ComPtr<TI0> ppIEncoder) where TI0 : unmanaged, IComVtbl<IWICBitmapEncoder>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2990,7 +2990,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueryWriter<TI0>(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref ComPtr<TI0> ppIQueryWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataQueryWriter>, IComVtbl<TI0>
+        public readonly unsafe int CreateQueryWriter<TI0>(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref ComPtr<TI0> ppIQueryWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataQueryWriter>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3007,7 +3007,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateQueryWriter<TI0>(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref ComPtr<TI0> ppIQueryWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataQueryWriter>, IComVtbl<TI0>
+        public readonly int CreateQueryWriter<TI0>(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref ComPtr<TI0> ppIQueryWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataQueryWriter>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3032,7 +3032,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateQueryWriterFromReader<TI0, TI1>(ComPtr<TI0> pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref ComPtr<TI1> ppIQueryWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataQueryReader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataQueryWriter>, IComVtbl<TI1>
+        public readonly int CreateQueryWriterFromReader<TI0, TI1>(ComPtr<TI0> pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref ComPtr<TI1> ppIQueryWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataQueryReader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataQueryWriter>, IComVtbl<TI1>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3040,7 +3040,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueryWriterFromReader<TI0>(ComPtr<TI0> pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICMetadataQueryWriter* ppIQueryWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataQueryReader>, IComVtbl<TI0>
+        public readonly unsafe int CreateQueryWriterFromReader<TI0>(ComPtr<TI0> pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICMetadataQueryWriter* ppIQueryWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataQueryReader>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3057,7 +3057,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateQueryWriterFromReader<TI0>(ref IWICMetadataQueryReader pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref ComPtr<TI0> ppIQueryWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataQueryWriter>, IComVtbl<TI0>
+        public readonly int CreateQueryWriterFromReader<TI0>(ref IWICMetadataQueryReader pIQueryReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref ComPtr<TI0> ppIQueryWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataQueryWriter>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3089,7 +3089,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader<TI0, TI1>(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref ComPtr<TI1> ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI1>
+        public readonly unsafe int CreateMetadataReader<TI0, TI1>(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref ComPtr<TI1> ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI1>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3097,7 +3097,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader<TI0>(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref IWICMetadataReader* ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int CreateMetadataReader<TI0>(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref IWICMetadataReader* ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3105,7 +3105,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader<TI0>(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref ComPtr<TI0> ppIReader) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0>
+        public readonly unsafe int CreateMetadataReader<TI0>(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref ComPtr<TI0> ppIReader) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3137,7 +3137,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateMetadataReader<TI0, TI1>(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref ComPtr<TI1> ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI1>
+        public readonly int CreateMetadataReader<TI0, TI1>(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref ComPtr<TI1> ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI1>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3145,7 +3145,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReader<TI0>(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref IWICMetadataReader* ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int CreateMetadataReader<TI0>(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref IWICMetadataReader* ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3153,7 +3153,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateMetadataReader<TI0>(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref ComPtr<TI0> ppIReader) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0>
+        public readonly int CreateMetadataReader<TI0>(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref ComPtr<TI0> ppIReader) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3185,7 +3185,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer<TI0, TI1>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref ComPtr<TI1> ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI1>
+        public readonly unsafe int CreateMetadataReaderFromContainer<TI0, TI1>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref ComPtr<TI1> ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI1>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3193,7 +3193,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref IWICMetadataReader* ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int CreateMetadataReaderFromContainer<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref IWICMetadataReader* ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3201,7 +3201,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref ComPtr<TI0> ppIReader) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0>
+        public readonly unsafe int CreateMetadataReaderFromContainer<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref ComPtr<TI0> ppIReader) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3233,7 +3233,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateMetadataReaderFromContainer<TI0, TI1>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref ComPtr<TI1> ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI1>
+        public readonly int CreateMetadataReaderFromContainer<TI0, TI1>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref ComPtr<TI1> ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI1>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3241,7 +3241,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataReaderFromContainer<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref IWICMetadataReader* ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int CreateMetadataReaderFromContainer<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ComPtr<TI0> pIStream, ref IWICMetadataReader* ppIReader) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3249,7 +3249,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateMetadataReaderFromContainer<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref ComPtr<TI0> ppIReader) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0>
+        public readonly int CreateMetadataReaderFromContainer<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwOptions, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref ComPtr<TI0> ppIReader) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3265,7 +3265,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataWriter<TI0>(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwMetadataOptions, ref ComPtr<TI0> ppIWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
+        public readonly unsafe int CreateMetadataWriter<TI0>(Guid* guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwMetadataOptions, ref ComPtr<TI0> ppIWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3281,7 +3281,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateMetadataWriter<TI0>(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, uint dwMetadataOptions, ref ComPtr<TI0> ppIWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
+        public readonly int CreateMetadataWriter<TI0>(ref Guid guidMetadataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, uint dwMetadataOptions, ref ComPtr<TI0> ppIWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3306,7 +3306,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateMetadataWriterFromReader<TI0, TI1>(ComPtr<TI0> pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref ComPtr<TI1> ppIWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI1>
+        public readonly int CreateMetadataWriterFromReader<TI0, TI1>(ComPtr<TI0> pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref ComPtr<TI1> ppIWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI1>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3314,7 +3314,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMetadataWriterFromReader<TI0>(ComPtr<TI0> pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref IWICMetadataWriter* ppIWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0>
+        public readonly unsafe int CreateMetadataWriterFromReader<TI0>(ComPtr<TI0> pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref IWICMetadataWriter* ppIWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataReader>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -3331,7 +3331,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateMetadataWriterFromReader<TI0>(ref IWICMetadataReader pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref ComPtr<TI0> ppIWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
+        public readonly int CreateMetadataWriterFromReader<TI0>(ref IWICMetadataReader pIReader, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref ComPtr<TI0> ppIWriter) where TI0 : unmanaged, IComVtbl<IWICMetadataWriter>, IComVtbl<TI0>
         {
             var @this = (IWICComponentFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

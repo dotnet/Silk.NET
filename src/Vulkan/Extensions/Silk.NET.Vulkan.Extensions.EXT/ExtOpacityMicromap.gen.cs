@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkBuildMicromapsEXT", Convention = CallingConvention.Winapi)]
-        public partial Result BuildMicromap([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapBuildInfoEXT pInfos);
+        public partial Result BuildMicromap([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapBuildInfoEXT pInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildMicromapsEXT", Convention = CallingConvention.Winapi)]
@@ -34,7 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildMicromapsEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdBuildMicromap([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapBuildInfoEXT pInfos);
+        public partial void CmdBuildMicromap([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapBuildInfoEXT pInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyMemoryToMicromapEXT", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyMemoryToMicromapEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyMemoryToMicromap([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyMemoryToMicromapInfoEXT pInfo);
+        public partial void CmdCopyMemoryToMicromap([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyMemoryToMicromapInfoEXT pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyMicromapEXT", Convention = CallingConvention.Winapi)]
@@ -50,7 +50,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyMicromapEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyMicromap([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyMicromapInfoEXT pInfo);
+        public partial void CmdCopyMicromap([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyMicromapInfoEXT pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyMicromapToMemoryEXT", Convention = CallingConvention.Winapi)]
@@ -58,7 +58,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyMicromapToMemoryEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyMicromapToMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyMicromapToMemoryInfoEXT pInfo);
+        public partial void CmdCopyMicromapToMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyMicromapToMemoryInfoEXT pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteMicromapsPropertiesEXT", Convention = CallingConvention.Winapi)]
@@ -66,7 +66,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteMicromapsPropertiesEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdWriteMicromapsProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapEXT pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery);
+        public partial void CmdWriteMicromapsProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapEXT pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyMemoryToMicromapEXT", Convention = CallingConvention.Winapi)]
@@ -74,7 +74,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyMemoryToMicromapEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CopyMemoryToMicromap([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyMemoryToMicromapInfoEXT pInfo);
+        public partial Result CopyMemoryToMicromap([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyMemoryToMicromapInfoEXT pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyMicromapEXT", Convention = CallingConvention.Winapi)]
@@ -82,7 +82,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyMicromapEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CopyMicromap([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyMicromapInfoEXT pInfo);
+        public partial Result CopyMicromap([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyMicromapInfoEXT pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyMicromapToMemoryEXT", Convention = CallingConvention.Winapi)]
@@ -90,7 +90,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyMicromapToMemoryEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CopyMicromapToMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyMicromapToMemoryInfoEXT pInfo);
+        public partial Result CopyMicromapToMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyMicromapToMemoryInfoEXT pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateMicromapEXT", Convention = CallingConvention.Winapi)]
@@ -102,27 +102,27 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateMicromapEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MicromapCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MicromapEXT* pMicromap);
+        public unsafe partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MicromapCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MicromapEXT* pMicromap);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateMicromapEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MicromapCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MicromapEXT pMicromap);
+        public unsafe partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MicromapCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MicromapEXT pMicromap);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateMicromapEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MicromapEXT* pMicromap);
+        public unsafe partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MicromapEXT* pMicromap);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateMicromapEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MicromapEXT pMicromap);
+        public unsafe partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MicromapEXT pMicromap);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateMicromapEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MicromapEXT* pMicromap);
+        public unsafe partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MicromapEXT* pMicromap);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateMicromapEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MicromapEXT pMicromap);
+        public partial Result CreateMicromap([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MicromapEXT pMicromap);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyMicromapEXT", Convention = CallingConvention.Winapi)]
@@ -130,7 +130,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyMicromapEXT", Convention = CallingConvention.Winapi)]
-        public partial void DestroyMicromap([Count(Count = 0)] Device device, [Count(Count = 0)] MicromapEXT micromap, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial void DestroyMicromap([Count(Count = 0)] Device device, [Count(Count = 0)] MicromapEXT micromap, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMicromapCompatibilityEXT", Convention = CallingConvention.Winapi)]
@@ -142,11 +142,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMicromapCompatibilityEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDeviceMicromapCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapVersionInfoEXT pVersionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureCompatibilityKHR* pCompatibility);
+        public unsafe partial void GetDeviceMicromapCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapVersionInfoEXT pVersionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AccelerationStructureCompatibilityKHR* pCompatibility);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMicromapCompatibilityEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetDeviceMicromapCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapVersionInfoEXT pVersionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureCompatibilityKHR pCompatibility);
+        public partial void GetDeviceMicromapCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapVersionInfoEXT pVersionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AccelerationStructureCompatibilityKHR pCompatibility);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMicromapBuildSizesEXT", Convention = CallingConvention.Winapi)]
@@ -159,12 +159,12 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMicromapBuildSizesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetMicromapBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapBuildInfoEXT pBuildInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MicromapBuildSizesInfoEXT* pSizeInfo);
+        public unsafe partial void GetMicromapBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapBuildInfoEXT pBuildInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MicromapBuildSizesInfoEXT* pSizeInfo);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.MicromapBuildSizesInfoExt);")]
         [NativeApi(EntryPoint = "vkGetMicromapBuildSizesEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetMicromapBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapBuildInfoEXT pBuildInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MicromapBuildSizesInfoEXT pSizeInfo);
+        public partial void GetMicromapBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapBuildInfoEXT pBuildInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MicromapBuildSizesInfoEXT pSizeInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWriteMicromapsPropertiesEXT", Convention = CallingConvention.Winapi)]
@@ -176,11 +176,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWriteMicromapsPropertiesEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result WriteMicromapsProperties([Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapEXT pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride);
+        public unsafe partial Result WriteMicromapsProperties([Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapEXT pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWriteMicromapsPropertiesEXT", Convention = CallingConvention.Winapi)]
-        public partial Result WriteMicromapsProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapEXT pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
+        public partial Result WriteMicromapsProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] uint micromapCount, [Count(Parameter = "micromapCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapEXT pMicromaps, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         public unsafe Result BuildMicromap([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MicromapBuildInfoEXT> pInfos)
@@ -233,7 +233,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe AccelerationStructureCompatibilityKHR GetDeviceMicromapCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapVersionInfoEXT pVersionInfo)
+        public unsafe AccelerationStructureCompatibilityKHR GetDeviceMicromapCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapVersionInfoEXT pVersionInfo)
         {
             // NonKhrReturnTypeOverloader
             GetDeviceMicromapCompatibility(device, in pVersionInfo, out AccelerationStructureCompatibilityKHR silkRet);
@@ -251,7 +251,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.MicromapBuildSizesInfoExt);")]
-        public unsafe MicromapBuildSizesInfoEXT GetMicromapBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MicromapBuildInfoEXT pBuildInfo)
+        public unsafe MicromapBuildSizesInfoEXT GetMicromapBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MicromapBuildInfoEXT pBuildInfo)
         {
             // NonKhrReturnTypeOverloader
             GetMicromapBuildSizes(device, buildType, in pBuildInfo, out MicromapBuildSizesInfoEXT silkRet);

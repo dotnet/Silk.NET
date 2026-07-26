@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCalibratedTimestampInfoEXT")]
     [NativeName("AliasOf", "VkCalibratedTimestampInfoKHR")]
-    public unsafe partial struct CalibratedTimestampInfoEXT : IChainable
+    public unsafe partial struct CalibratedTimestampInfoEXT : IChainStart
     {
         public CalibratedTimestampInfoEXT
         (
@@ -70,6 +70,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref CalibratedTimestampInfoEXT Chain(
+            out CalibratedTimestampInfoEXT capture)
+        {
+            capture = new CalibratedTimestampInfoEXT(StructureType.CalibratedTimestampInfoKhr);
+            return ref capture;
         }
     }
 }

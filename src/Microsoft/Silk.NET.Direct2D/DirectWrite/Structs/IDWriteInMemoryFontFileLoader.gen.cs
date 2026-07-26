@@ -135,7 +135,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStreamFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) where T0 : unmanaged
+        public readonly unsafe int CreateStreamFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) where T0 : unmanaged
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -147,7 +147,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStreamFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileStream* fontFileStream) where T0 : unmanaged
+        public readonly unsafe int CreateStreamFromKey<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileStream* fontFileStream) where T0 : unmanaged
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -210,7 +210,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, Silk.NET.Core.Native.IUnknown* ownerObject, IDWriteFontFile** fontFile) where T0 : unmanaged
+        public readonly unsafe int CreateInMemoryFontFileReference<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, Silk.NET.Core.Native.IUnknown* ownerObject, IDWriteFontFile** fontFile) where T0 : unmanaged
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -222,7 +222,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, Silk.NET.Core.Native.IUnknown* ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged
+        public readonly unsafe int CreateInMemoryFontFileReference<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, Silk.NET.Core.Native.IUnknown* ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -237,7 +237,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, IDWriteFontFile** fontFile) where T0 : unmanaged
+        public readonly unsafe int CreateInMemoryFontFileReference<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, IDWriteFontFile** fontFile) where T0 : unmanaged
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -252,7 +252,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged
+        public readonly unsafe int CreateInMemoryFontFileReference<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -330,7 +330,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, Silk.NET.Core.Native.IUnknown* ownerObject, IDWriteFontFile** fontFile) where T0 : unmanaged
+        public readonly unsafe int CreateInMemoryFontFileReference<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, Silk.NET.Core.Native.IUnknown* ownerObject, IDWriteFontFile** fontFile) where T0 : unmanaged
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -345,7 +345,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, Silk.NET.Core.Native.IUnknown* ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged
+        public readonly unsafe int CreateInMemoryFontFileReference<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, Silk.NET.Core.Native.IUnknown* ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -363,7 +363,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, IDWriteFontFile** fontFile) where T0 : unmanaged
+        public readonly unsafe int CreateInMemoryFontFileReference<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, IDWriteFontFile** fontFile) where T0 : unmanaged
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -381,7 +381,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged
+        public readonly unsafe int CreateInMemoryFontFileReference<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -428,7 +428,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateStreamFromKey<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
+        public readonly int CreateStreamFromKey<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -468,7 +468,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateInMemoryFontFileReference<T0, TI0, TI1, TI2>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ComPtr<TI1> ownerObject, ref ComPtr<TI2> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI2>
+        public readonly int CreateInMemoryFontFileReference<T0, TI0, TI1, TI2>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ComPtr<TI1> ownerObject, ref ComPtr<TI2> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI2>
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -476,7 +476,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0, TI0, TI1>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ComPtr<TI1> ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1>
+        public readonly unsafe int CreateInMemoryFontFileReference<T0, TI0, TI1>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ComPtr<TI1> ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI1>
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -484,7 +484,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateInMemoryFontFileReference<T0, TI0, TI1>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, ref ComPtr<TI1> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
+        public readonly int CreateInMemoryFontFileReference<T0, TI0, TI1>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, ref ComPtr<TI1> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -492,7 +492,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0, TI0>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
+        public readonly unsafe int CreateInMemoryFontFileReference<T0, TI0>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -524,7 +524,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateInMemoryFontFileReference<T0, TI0, TI1>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ComPtr<TI0> ownerObject, ref ComPtr<TI1> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
+        public readonly int CreateInMemoryFontFileReference<T0, TI0, TI1>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ComPtr<TI0> ownerObject, ref ComPtr<TI1> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -532,7 +532,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInMemoryFontFileReference<T0, TI0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ComPtr<TI0> ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int CreateInMemoryFontFileReference<T0, TI0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ComPtr<TI0> ownerObject, ref IDWriteFontFile* fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -540,7 +540,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateInMemoryFontFileReference<T0, TI0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, ref ComPtr<TI0> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+        public readonly int CreateInMemoryFontFileReference<T0, TI0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontData, uint fontDataSize, ref Silk.NET.Core.Native.IUnknown ownerObject, ref ComPtr<TI0> fontFile) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
         {
             var @this = (IDWriteInMemoryFontFileLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

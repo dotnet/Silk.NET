@@ -27,10 +27,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
+        public unsafe partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
+        public partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* @params);
@@ -45,10 +45,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out double @params);
 
         [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] double* @params);
+        public unsafe partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] double* @params);
 
         [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV", Convention = CallingConvention.Winapi)]
-        public partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out double @params);
+        public partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out double @params);
 
         [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.Out)] double* @params);
@@ -60,7 +60,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float w);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4fNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float w);
+        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float w);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4fNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float w);
@@ -69,25 +69,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float v);
+        public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
+        public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float v);
+        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float v);
+        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4dNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double w);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4dNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double w);
+        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double w);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4dNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] double w);
@@ -96,19 +96,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double v);
+        public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* v);
+        public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double v);
+        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
-        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double v);
+        public partial void ProgramNamedParameter4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double v);
 
         public unsafe float GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name)
         {
@@ -117,7 +117,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return silkRet;
         }
 
-        public unsafe float GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name)
+        public unsafe float GetProgramNamedParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint len, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name)
         {
             // NonKhrReturnTypeOverloader
             GetProgramNamedParameter(id, len, in name, out float silkRet);

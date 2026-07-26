@@ -466,7 +466,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, int* exists)
+    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -478,7 +478,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, ref int exists)
+    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -493,7 +493,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, int* exists)
+    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -508,7 +508,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, ref int exists)
+    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -642,7 +642,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, int* exists)
+    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -657,7 +657,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, ref int exists)
+    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -675,7 +675,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, int* exists)
+    public static unsafe int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -693,7 +693,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, ref int exists)
+    public static int GetBaseline(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -978,7 +978,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags)
+    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -990,7 +990,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags)
+    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1005,7 +1005,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags)
+    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1020,7 +1020,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags)
+    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1154,7 +1154,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags)
+    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1169,7 +1169,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags)
+    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1187,7 +1187,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags)
+    public static unsafe int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1205,7 +1205,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags)
+    public static int GetTypographicFeatures(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1715,7 +1715,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBaseline<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, int* exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+    public static unsafe int GetBaseline<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, int* exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1731,7 +1731,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBaseline<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, ref int exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+    public static unsafe int GetBaseline<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, ref int exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1747,7 +1747,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBaseline<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, int* exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+    public static unsafe int GetBaseline<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, int* exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1763,7 +1763,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBaseline<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, ref int exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+    public static int GetBaseline<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, ref int exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2091,7 +2091,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypographicFeatures<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+    public static unsafe int GetTypographicFeatures<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2107,7 +2107,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypographicFeatures<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+    public static unsafe int GetTypographicFeatures<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2123,7 +2123,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTypographicFeatures<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+    public static unsafe int GetTypographicFeatures<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2139,7 +2139,7 @@ public unsafe static class DWriteTextAnalyzer2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetTypographicFeatures<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+    public static int GetTypographicFeatures<TI0>(this ComPtr<IDWriteTextAnalyzer2> thisVtbl, ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

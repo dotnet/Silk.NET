@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdEncodeVideoKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdEncodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoEncodeInfoKHR pEncodeInfo);
+        public partial void CmdEncodeVideo([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoEncodeInfoKHR pEncodeInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetEncodedVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
@@ -62,35 +62,35 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetEncodedVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetEncodedVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] void* pData);
+        public unsafe partial Result GetEncodedVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetEncodedVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetEncodedVideoSessionParameters<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+        public unsafe partial Result GetEncodedVideoSessionParameters<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetEncodedVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetEncodedVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
+        public unsafe partial Result GetEncodedVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetEncodedVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetEncodedVideoSessionParameters<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+        public unsafe partial Result GetEncodedVideoSessionParameters<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] VideoEncodeSessionParametersFeedbackInfoKHR* pFeedbackInfo, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetEncodedVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetEncodedVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] ref VideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] void* pData);
+        public unsafe partial Result GetEncodedVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] ref VideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetEncodedVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetEncodedVideoSessionParameters<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] ref VideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+        public unsafe partial Result GetEncodedVideoSessionParameters<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] ref VideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetEncodedVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetEncodedVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] ref VideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
+        public unsafe partial Result GetEncodedVideoSessionParameters([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] ref VideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetEncodedVideoSessionParametersKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetEncodedVideoSessionParameters<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] ref VideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+        public partial Result GetEncodedVideoSessionParameters<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoEncodeSessionParametersGetInfoKHR pVideoSessionParametersInfo, [Count(Count = 0)] ref VideoEncodeSessionParametersFeedbackInfoKHR pFeedbackInfo, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR", Convention = CallingConvention.Winapi)]
@@ -103,12 +103,12 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceVideoEncodeQualityLevelProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceVideoEncodeQualityLevelInfoKHR pQualityLevelInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoEncodeQualityLevelPropertiesKHR* pQualityLevelProperties);
+        public unsafe partial Result GetPhysicalDeviceVideoEncodeQualityLevelProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceVideoEncodeQualityLevelInfoKHR pQualityLevelInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] VideoEncodeQualityLevelPropertiesKHR* pQualityLevelProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pQualityLevelProperties = new(StructureType.VideoEncodeQualityLevelPropertiesKhr);")]
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceVideoEncodeQualityLevelProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceVideoEncodeQualityLevelInfoKHR pQualityLevelInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoEncodeQualityLevelPropertiesKHR pQualityLevelProperties);
+        public partial Result GetPhysicalDeviceVideoEncodeQualityLevelProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceVideoEncodeQualityLevelInfoKHR pQualityLevelInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out VideoEncodeQualityLevelPropertiesKHR pQualityLevelProperties);
 
         public KhrVideoEncodeQueue(INativeContext ctx)
             : base(ctx)

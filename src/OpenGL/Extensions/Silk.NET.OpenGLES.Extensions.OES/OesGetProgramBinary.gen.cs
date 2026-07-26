@@ -48,7 +48,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         public unsafe partial void ProgramBinary([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int length);
 
         [NativeApi(EntryPoint = "glProgramBinaryOES", Convention = CallingConvention.Winapi)]
-        public partial void ProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int length) where T0 : unmanaged;
+        public partial void ProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] OES binaryFormat, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 binary, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int length) where T0 : unmanaged;
 
         public unsafe void GetProgramBinary<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] OES* binaryFormat, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
         {

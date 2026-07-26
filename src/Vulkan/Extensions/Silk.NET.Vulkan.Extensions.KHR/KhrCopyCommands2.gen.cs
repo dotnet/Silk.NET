@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBlitImage2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdBlitImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BlitImageInfo2 pBlitImageInfo);
+        public partial void CmdBlitImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BlitImageInfo2 pBlitImageInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyBuffer2KHR", Convention = CallingConvention.Winapi)]
@@ -34,7 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyBuffer2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyBufferInfo2 pCopyBufferInfo);
+        public partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyBufferInfo2 pCopyBufferInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2KHR", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyBufferToImageInfo2 pCopyBufferToImageInfo);
+        public partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyBufferToImageInfo2 pCopyBufferToImageInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyImage2KHR", Convention = CallingConvention.Winapi)]
@@ -50,7 +50,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyImage2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyImageInfo2 pCopyImageInfo);
+        public partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyImageInfo2 pCopyImageInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2KHR", Convention = CallingConvention.Winapi)]
@@ -58,7 +58,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyImageToBufferInfo2 pCopyImageToBufferInfo);
+        public partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyImageToBufferInfo2 pCopyImageToBufferInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdResolveImage2KHR", Convention = CallingConvention.Winapi)]
@@ -66,7 +66,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdResolveImage2KHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdResolveImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ResolveImageInfo2 pResolveImageInfo);
+        public partial void CmdResolveImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ResolveImageInfo2 pResolveImageInfo);
 
         public KhrCopyCommands2(INativeContext ctx)
             : base(ctx)

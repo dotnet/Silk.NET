@@ -159,7 +159,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, void** ppstgOpen)
+        public readonly unsafe int CreateStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, void** ppstgOpen)
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -171,7 +171,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, ref void* ppstgOpen)
+        public readonly unsafe int CreateStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, ref void* ppstgOpen)
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -186,7 +186,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, void** ppstgOpen)
+        public readonly unsafe int CreateStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, void** ppstgOpen)
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, ref void* ppstgOpen)
+        public readonly unsafe int CreateStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, ref void* ppstgOpen)
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -323,7 +323,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, void** ppstgOpen)
+        public readonly unsafe int OpenStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, void** ppstgOpen)
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -335,7 +335,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, ref void* ppstgOpen)
+        public readonly unsafe int OpenStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, ref void* ppstgOpen)
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -350,7 +350,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, void** ppstgOpen)
+        public readonly unsafe int OpenStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, void** ppstgOpen)
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -365,7 +365,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, ref void* ppstgOpen)
+        public readonly unsafe int OpenStorageEx([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, ref void* ppstgOpen)
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -457,7 +457,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateStorageEx<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, out ComPtr<TI0> ppstgOpen) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int CreateStorageEx<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, out ComPtr<TI0> ppstgOpen) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -484,7 +484,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int OpenStorageEx<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, out ComPtr<TI0> ppstgOpen) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int OpenStorageEx<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, out ComPtr<TI0> ppstgOpen) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -520,7 +520,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> CreateStorageEx<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> CreateStorageEx<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -547,7 +547,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> OpenStorageEx<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> OpenStorageEx<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IOplockStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader

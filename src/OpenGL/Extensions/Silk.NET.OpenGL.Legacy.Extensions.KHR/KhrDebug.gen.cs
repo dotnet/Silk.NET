@@ -24,61 +24,61 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void DebugMessageCallback([Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProc callback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* userParam);
 
         [NativeApi(EntryPoint = "glDebugMessageCallback", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProc callback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 userParam) where T0 : unmanaged;
+        public partial void DebugMessageCallback<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProc callback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 userParam) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
+        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
+        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
+        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
+        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
+        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
+        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
+        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
+        public partial void DebugMessageControl([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint ids, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public unsafe partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte buf);
+        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buf);
@@ -87,7 +87,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte buf);
+        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buf);
@@ -96,7 +96,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte buf);
+        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buf);
@@ -105,7 +105,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte buf);
+        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buf);
@@ -114,7 +114,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte buf);
+        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buf);
@@ -123,7 +123,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte buf);
+        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buf);
@@ -132,7 +132,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte buf);
+        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buf);
@@ -141,7 +141,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
-        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte buf);
+        public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert", Convention = CallingConvention.Winapi)]
         public partial void DebugMessageInsert([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSeverity severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buf);
@@ -2505,22 +2505,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void GetObjectPtrLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label);
 
         [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* label) where T0 : unmanaged;
+        public unsafe partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out byte label) where T0 : unmanaged;
+        public unsafe partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out byte label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label) where T0 : unmanaged;
+        public unsafe partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* label) where T0 : unmanaged;
+        public unsafe partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] byte* label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
-        public partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out byte label) where T0 : unmanaged;
+        public partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out byte label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetObjectPtrLabel", Convention = CallingConvention.Winapi)]
-        public partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label) where T0 : unmanaged;
+        public partial void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string label) where T0 : unmanaged;
 
         [System.Obsolete("Deprecated in version ")]
         [NativeApi(EntryPoint = "glGetPointerv", Convention = CallingConvention.Winapi)]
@@ -2542,7 +2542,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void ObjectLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label);
 
         [NativeApi(EntryPoint = "glObjectLabel", Convention = CallingConvention.Winapi)]
-        public partial void ObjectLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte label);
+        public partial void ObjectLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte label);
 
         [NativeApi(EntryPoint = "glObjectLabel", Convention = CallingConvention.Winapi)]
         public partial void ObjectLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
@@ -2551,7 +2551,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void ObjectLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] ObjectIdentifier identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label);
 
         [NativeApi(EntryPoint = "glObjectLabel", Convention = CallingConvention.Winapi)]
-        public partial void ObjectLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] ObjectIdentifier identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte label);
+        public partial void ObjectLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] ObjectIdentifier identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte label);
 
         [NativeApi(EntryPoint = "glObjectLabel", Convention = CallingConvention.Winapi)]
         public partial void ObjectLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] ObjectIdentifier identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
@@ -2560,19 +2560,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void ObjectPtrLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label);
 
         [NativeApi(EntryPoint = "glObjectPtrLabel", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ObjectPtrLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte label);
+        public unsafe partial void ObjectPtrLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte label);
 
         [NativeApi(EntryPoint = "glObjectPtrLabel", Convention = CallingConvention.Winapi)]
         public unsafe partial void ObjectPtrLabel([Flow(Silk.NET.Core.Native.FlowDirection.In)] void* ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label);
 
         [NativeApi(EntryPoint = "glObjectPtrLabel", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label) where T0 : unmanaged;
+        public unsafe partial void ObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glObjectPtrLabel", Convention = CallingConvention.Winapi)]
-        public partial void ObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte label) where T0 : unmanaged;
+        public partial void ObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glObjectPtrLabel", Convention = CallingConvention.Winapi)]
-        public partial void ObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label) where T0 : unmanaged;
+        public partial void ObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glPopDebugGroup", Convention = CallingConvention.Winapi)]
         public partial void PopDebugGroup();
@@ -2581,7 +2581,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void PushDebugGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* message);
 
         [NativeApi(EntryPoint = "glPushDebugGroup", Convention = CallingConvention.Winapi)]
-        public partial void PushDebugGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte message);
+        public partial void PushDebugGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte message);
 
         [NativeApi(EntryPoint = "glPushDebugGroup", Convention = CallingConvention.Winapi)]
         public partial void PushDebugGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] KHR source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
@@ -2590,7 +2590,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public unsafe partial void PushDebugGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* message);
 
         [NativeApi(EntryPoint = "glPushDebugGroup", Convention = CallingConvention.Winapi)]
-        public partial void PushDebugGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte message);
+        public partial void PushDebugGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte message);
 
         [NativeApi(EntryPoint = "glPushDebugGroup", Convention = CallingConvention.Winapi)]
         public partial void PushDebugGroup([Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugSource source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message);
@@ -7275,25 +7275,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
             GetObjectPtrLabel(ptr, (uint) label.Length, out length, out label.GetPinnableReference());
         }
 
-        public unsafe void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
+        public unsafe void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
             GetObjectPtrLabel(in ptr, (uint) label.Length, length, out label.GetPinnableReference());
         }
 
-        public unsafe void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> label) where T0 : unmanaged
+        public unsafe void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> label) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
             GetObjectPtrLabel(in ptr, (uint) label.Length, length, out label.GetPinnableReference());
         }
 
-        public unsafe void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
+        public unsafe void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
             GetObjectPtrLabel(in ptr, (uint) label.Length, out length, out label.GetPinnableReference());
         }
 
-        public unsafe void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> label) where T0 : unmanaged
+        public unsafe void GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<string> label) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
             GetObjectPtrLabel(in ptr, (uint) label.Length, out length, out label.GetPinnableReference());
@@ -7359,14 +7359,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
             return silkRet;
         }
 
-        public unsafe byte GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length) where T0 : unmanaged
+        public unsafe byte GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* length) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             GetObjectPtrLabel(in ptr, bufSize, length, out byte silkRet);
             return silkRet;
         }
 
-        public unsafe byte GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length) where T0 : unmanaged
+        public unsafe byte GetObjectPtrLabel<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 ptr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint length) where T0 : unmanaged
         {
             // NonKhrReturnTypeOverloader
             GetObjectPtrLabel(in ptr, bufSize, out length, out byte silkRet);

@@ -30,11 +30,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] uint* pImageIndex);
+        public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] uint* pImageIndex);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
-        public partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] ref uint pImageIndex);
+        public partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] ref uint pImageIndex);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDispatchBaseKHR", Convention = CallingConvention.Winapi)]

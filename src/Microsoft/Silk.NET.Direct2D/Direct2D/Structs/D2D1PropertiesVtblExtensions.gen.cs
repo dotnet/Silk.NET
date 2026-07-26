@@ -153,7 +153,7 @@ public unsafe static class D2D1PropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetPropertyIndex(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name)
+    public static uint GetPropertyIndex(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
@@ -185,7 +185,7 @@ public unsafe static class D2D1PropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataSize)
+    public static unsafe int SetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -208,7 +208,7 @@ public unsafe static class D2D1PropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataSize)
+    public static unsafe int SetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -220,7 +220,7 @@ public unsafe static class D2D1PropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataSize)
+    public static int SetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -235,7 +235,7 @@ public unsafe static class D2D1PropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static int SetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -260,7 +260,7 @@ public unsafe static class D2D1PropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataSize)
+    public static int SetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -296,7 +296,7 @@ public unsafe static class D2D1PropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValue(this ComPtr<ID2D1Properties> thisVtbl, uint index, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataSize)
+    public static int SetValue(this ComPtr<ID2D1Properties> thisVtbl, uint index, PropertyType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -351,7 +351,7 @@ public unsafe static class D2D1PropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, byte* data, uint dataSize)
+    public static unsafe int GetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -363,7 +363,7 @@ public unsafe static class D2D1PropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, ref byte data, uint dataSize)
+    public static int GetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, ref byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -378,7 +378,7 @@ public unsafe static class D2D1PropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static int GetValueByName(this ComPtr<ID2D1Properties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

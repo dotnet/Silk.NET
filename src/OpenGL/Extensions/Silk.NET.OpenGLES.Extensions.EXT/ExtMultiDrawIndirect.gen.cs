@@ -24,37 +24,37 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe partial void MultiDrawArraysIndirect([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirectEXT", Convention = CallingConvention.Winapi)]
-        public partial void MultiDrawArraysIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
+        public partial void MultiDrawArraysIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirectEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArraysIndirect([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirectEXT", Convention = CallingConvention.Winapi)]
-        public partial void MultiDrawArraysIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
+        public partial void MultiDrawArraysIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectEXT", Convention = CallingConvention.Winapi)]
-        public partial void MultiDrawElementsIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
+        public partial void MultiDrawElementsIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectEXT", Convention = CallingConvention.Winapi)]
-        public partial void MultiDrawElementsIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
+        public partial void MultiDrawElementsIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectEXT", Convention = CallingConvention.Winapi)]
-        public partial void MultiDrawElementsIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
+        public partial void MultiDrawElementsIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectEXT", Convention = CallingConvention.Winapi)]
-        public partial void MultiDrawElementsIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
+        public partial void MultiDrawElementsIndirect<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType mode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 indirect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint drawcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         public ExtMultiDrawIndirect(INativeContext ctx)
             : base(ctx)

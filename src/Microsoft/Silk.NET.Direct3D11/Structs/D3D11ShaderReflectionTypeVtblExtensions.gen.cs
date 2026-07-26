@@ -58,7 +58,7 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Name)
+    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;

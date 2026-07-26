@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdBeginDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsLabelEXT pLabelInfo);
+        public partial void CmdBeginDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdEndDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
@@ -38,7 +38,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdInsertDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdInsertDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsLabelEXT pLabelInfo);
+        public partial void CmdInsertDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
@@ -50,27 +50,27 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
+        public partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
@@ -78,7 +78,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyDebugUtilsMessengerEXT", Convention = CallingConvention.Winapi)]
-        public partial void DestroyDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessengerEXT messenger, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial void DestroyDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessengerEXT messenger, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueueBeginDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
@@ -86,7 +86,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueueBeginDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
-        public partial void QueueBeginDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsLabelEXT pLabelInfo);
+        public partial void QueueBeginDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueueEndDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
@@ -98,7 +98,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueueInsertDebugUtilsLabelEXT", Convention = CallingConvention.Winapi)]
-        public partial void QueueInsertDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsLabelEXT pLabelInfo);
+        public partial void QueueInsertDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSetDebugUtilsObjectNameEXT", Convention = CallingConvention.Winapi)]
@@ -106,7 +106,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSetDebugUtilsObjectNameEXT", Convention = CallingConvention.Winapi)]
-        public partial Result SetDebugUtilsObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsObjectNameInfoEXT pNameInfo);
+        public partial Result SetDebugUtilsObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsObjectNameInfoEXT pNameInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSetDebugUtilsObjectTagEXT", Convention = CallingConvention.Winapi)]
@@ -114,7 +114,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSetDebugUtilsObjectTagEXT", Convention = CallingConvention.Winapi)]
-        public partial Result SetDebugUtilsObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsObjectTagInfoEXT pTagInfo);
+        public partial Result SetDebugUtilsObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsObjectTagInfoEXT pTagInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSubmitDebugUtilsMessageEXT", Convention = CallingConvention.Winapi)]
@@ -122,7 +122,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSubmitDebugUtilsMessageEXT", Convention = CallingConvention.Winapi)]
-        public partial void SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugUtilsMessengerCallbackDataEXT pCallbackData);
+        public partial void SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugUtilsMessengerCallbackDataEXT pCallbackData);
 
         public ExtDebugUtils(INativeContext ctx)
             : base(ctx)

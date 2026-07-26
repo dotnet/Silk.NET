@@ -22,7 +22,8 @@ namespace Silk.NET.Assimp
         public VectorKey
         (
             double? mTime = null,
-            System.Numerics.Vector3? mValue = null
+            System.Numerics.Vector3? mValue = null,
+            AnimInterpolation? mInterpolation = null
         ) : this()
         {
             if (mTime is not null)
@@ -33,6 +34,11 @@ namespace Silk.NET.Assimp
             if (mValue is not null)
             {
                 MValue = mValue.Value;
+            }
+
+            if (mInterpolation is not null)
+            {
+                MInterpolation = mInterpolation.Value;
             }
         }
 
@@ -46,5 +52,10 @@ namespace Silk.NET.Assimp
         [NativeName("Type.Name", "aiVector3D")]
         [NativeName("Name", "mValue")]
         public System.Numerics.Vector3 MValue;
+
+        [NativeName("Type", "aiAnimInterpolation")]
+        [NativeName("Type.Name", "aiAnimInterpolation")]
+        [NativeName("Name", "mInterpolation")]
+        public AnimInterpolation MInterpolation;
     }
 }

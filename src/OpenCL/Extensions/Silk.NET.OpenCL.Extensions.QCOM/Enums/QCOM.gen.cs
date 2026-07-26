@@ -49,6 +49,22 @@ namespace Silk.NET.OpenCL.Extensions.QCOM
         SliceAlignment = 0x40A3,
         [NativeName("Name", "CL_IMAGE_SLICE_ALIGNMENT_QCOM")]
         ImageSliceAlignmentQCom = 0x40A3,
+        [NativeName("Name", "CL_PERF_HINT_HIGH_QCOM")]
+        High = 0x40C3,
+        [NativeName("Name", "CL_PERF_HINT_HIGH_QCOM")]
+        PerfHintHighQCom = 0x40C3,
+        [NativeName("Name", "CL_PERF_HINT_NORMAL_QCOM")]
+        Normal = 0x40C4,
+        [NativeName("Name", "CL_PERF_HINT_NORMAL_QCOM")]
+        PerfHintNormalQCom = 0x40C4,
+        [NativeName("Name", "CL_PERF_HINT_LOW_QCOM")]
+        Low = 0x40C5,
+        [NativeName("Name", "CL_PERF_HINT_LOW_QCOM")]
+        PerfHintLowQCom = 0x40C5,
+        [NativeName("Name", "CL_CONTEXT_PERF_HINT_QCOM")]
+        PerfHintQCom = 0x40C2,
+        [NativeName("Name", "CL_CONTEXT_PERF_HINT_QCOM")]
+        ContextPerfHintQCom = 0x40C2,
         [NativeName("Name", "CL_DEVICE_EXT_MEM_PADDING_IN_BYTES_QCOM")]
         ExtMemPaddingInBytesQCom = 0x40A0,
         [NativeName("Name", "CL_DEVICE_EXT_MEM_PADDING_IN_BYTES_QCOM")]

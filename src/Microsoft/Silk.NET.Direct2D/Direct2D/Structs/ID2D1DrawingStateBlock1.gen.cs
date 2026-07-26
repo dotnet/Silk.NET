@@ -158,7 +158,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetDescription([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DrawingStateDescription stateDescription)
+        public readonly void SetDescription([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DrawingStateDescription stateDescription)
         {
             var @this = (ID2D1DrawingStateBlock1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DrawingStateDescription* stateDescriptionPtr = &stateDescription)

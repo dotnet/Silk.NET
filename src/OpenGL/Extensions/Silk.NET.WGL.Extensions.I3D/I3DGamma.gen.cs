@@ -54,31 +54,31 @@ namespace Silk.NET.WGL.Extensions.I3D
         public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puBlue);
 
         [NativeApi(EntryPoint = "wglSetGammaTableI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puBlue);
+        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puBlue);
 
         [NativeApi(EntryPoint = "wglSetGammaTableI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puBlue);
+        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puBlue);
 
         [NativeApi(EntryPoint = "wglSetGammaTableI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puBlue);
+        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puBlue);
 
         [NativeApi(EntryPoint = "wglSetGammaTableI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puBlue);
+        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puBlue);
 
         [NativeApi(EntryPoint = "wglSetGammaTableI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puBlue);
+        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puBlue);
 
         [NativeApi(EntryPoint = "wglSetGammaTableI3D", Convention = CallingConvention.Winapi)]
-        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puBlue);
+        public unsafe partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* puBlue);
 
         [NativeApi(EntryPoint = "wglSetGammaTableI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort puBlue);
+        public partial Silk.NET.Core.Bool32 SetGammaTableI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iEntries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puRed, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puGreen, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort puBlue);
 
         [NativeApi(EntryPoint = "wglSetGammaTableParametersI3D", Convention = CallingConvention.Winapi)]
         public unsafe partial Silk.NET.Core.Bool32 SetGammaTableParametersI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* piValue);
 
         [NativeApi(EntryPoint = "wglSetGammaTableParametersI3D", Convention = CallingConvention.Winapi)]
-        public partial Silk.NET.Core.Bool32 SetGammaTableParametersI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int piValue);
+        public partial Silk.NET.Core.Bool32 SetGammaTableParametersI3D([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hDC, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int iAttribute, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int piValue);
 
         public I3DGamma(INativeContext ctx)
             : base(ctx)

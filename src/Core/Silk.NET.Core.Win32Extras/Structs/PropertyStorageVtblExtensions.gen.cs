@@ -367,7 +367,7 @@ public unsafe static class PropertyStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -379,7 +379,7 @@ public unsafe static class PropertyStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -391,7 +391,7 @@ public unsafe static class PropertyStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -406,7 +406,7 @@ public unsafe static class PropertyStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -418,7 +418,7 @@ public unsafe static class PropertyStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -433,7 +433,7 @@ public unsafe static class PropertyStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -448,7 +448,7 @@ public unsafe static class PropertyStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static int SetTimes(this ComPtr<IPropertyStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

@@ -198,7 +198,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, uint* index, int* exists)
+        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, uint* index, int* exists)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -210,7 +210,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, uint* index, ref int exists)
+        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, uint* index, ref int exists)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -225,7 +225,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, ref uint index, int* exists)
+        public readonly unsafe int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, ref uint index, int* exists)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -240,7 +240,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, ref uint index, ref int exists)
+        public readonly int FindFamilyName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, ref uint index, ref int exists)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -404,7 +404,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
+        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -416,7 +416,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
+        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -431,7 +431,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
+        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -443,7 +443,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
+        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -458,7 +458,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
+        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -473,7 +473,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
+        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -516,7 +516,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
+        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontList2** fontList)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -530,7 +530,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
+        public readonly unsafe int GetMatchingFonts([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontList2* fontList)
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -622,7 +622,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
+        public readonly unsafe int GetMatchingFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -630,7 +630,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
+        public readonly unsafe int GetMatchingFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FontAxisValue* fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -638,7 +638,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMatchingFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
+        public readonly int GetMatchingFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -654,7 +654,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMatchingFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
+        public readonly int GetMatchingFonts<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string familyName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontList) where TI0 : unmanaged, IComVtbl<IDWriteFontList2>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontCollection3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

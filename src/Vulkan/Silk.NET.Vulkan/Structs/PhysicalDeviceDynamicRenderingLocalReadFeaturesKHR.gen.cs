@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDynamicRenderingLocalReadFeaturesKHR")]
+    [NativeName("AliasOf", "VkPhysicalDeviceDynamicRenderingLocalReadFeatures")]
     public unsafe partial struct PhysicalDeviceDynamicRenderingLocalReadFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceDynamicRenderingLocalReadFeaturesKHR
         (
-            StructureType? sType = StructureType.PhysicalDeviceDynamicRenderingLocalReadFeaturesKhr,
+            StructureType? sType = StructureType.PhysicalDeviceDynamicRenderingLocalReadFeatures,
             void* pNext = null,
             Bool32? dynamicRenderingLocalRead = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceDynamicRenderingLocalReadFeaturesKhr;
+            return SType = StructureType.PhysicalDeviceDynamicRenderingLocalReadFeatures;
         }
 
         /// <inheritdoc />

@@ -133,7 +133,7 @@ public unsafe static class DStorageCompressionCodecVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompressBuffer<T0>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, void* compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged
+    public static unsafe int CompressBuffer<T0>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, void* compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class DStorageCompressionCodecVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompressBuffer<T0>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, void* compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged
+    public static unsafe int CompressBuffer<T0>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, void* compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class DStorageCompressionCodecVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CompressBuffer<T0, T1>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T1 compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int CompressBuffer<T0, T1>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T1 compressedBuffer, nuint compressedBufferSize, nuint* compressedDataSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class DStorageCompressionCodecVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CompressBuffer<T0, T1>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T1 compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged where T1 : unmanaged
+    public static int CompressBuffer<T0, T1>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 uncompressedData, nuint uncompressedDataSize, Compression compressionSetting, ref T1 compressedBuffer, nuint compressedBufferSize, ref nuint compressedDataSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -241,7 +241,7 @@ public unsafe static class DStorageCompressionCodecVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecompressBuffer<T0>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged
+    public static unsafe int DecompressBuffer<T0>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -253,7 +253,7 @@ public unsafe static class DStorageCompressionCodecVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecompressBuffer<T0>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged
+    public static unsafe int DecompressBuffer<T0>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 compressedData, nuint compressedDataSize, void* uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -268,7 +268,7 @@ public unsafe static class DStorageCompressionCodecVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecompressBuffer<T0, T1>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 compressedData, nuint compressedDataSize, ref T1 uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int DecompressBuffer<T0, T1>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 compressedData, nuint compressedDataSize, ref T1 uncompressedBuffer, nuint uncompressedBufferSize, nuint* uncompressedDataSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -283,7 +283,7 @@ public unsafe static class DStorageCompressionCodecVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecompressBuffer<T0, T1>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 compressedData, nuint compressedDataSize, ref T1 uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged where T1 : unmanaged
+    public static int DecompressBuffer<T0, T1>(this ComPtr<IDStorageCompressionCodec> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 compressedData, nuint compressedDataSize, ref T1 uncompressedBuffer, nuint uncompressedBufferSize, ref nuint uncompressedDataSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;

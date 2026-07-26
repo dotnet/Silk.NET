@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVertexAttributeDivisorPropertiesKHR")]
+    [NativeName("AliasOf", "VkPhysicalDeviceVertexAttributeDivisorProperties")]
     public unsafe partial struct PhysicalDeviceVertexAttributeDivisorPropertiesKHR : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceVertexAttributeDivisorPropertiesKHR
         (
-            StructureType? sType = StructureType.PhysicalDeviceVertexAttributeDivisorPropertiesKhr,
+            StructureType? sType = StructureType.PhysicalDeviceVertexAttributeDivisorProperties,
             void* pNext = null,
             uint? maxVertexAttribDivisor = null,
             Bool32? supportsNonZeroFirstInstance = null
@@ -72,7 +73,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceVertexAttributeDivisorPropertiesKhr;
+            return SType = StructureType.PhysicalDeviceVertexAttributeDivisorProperties;
         }
 
         /// <inheritdoc />

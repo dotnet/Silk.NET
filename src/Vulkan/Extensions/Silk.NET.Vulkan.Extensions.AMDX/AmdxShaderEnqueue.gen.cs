@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.AMDX
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDispatchGraphAMDX", Convention = CallingConvention.Winapi)]
-        public partial void CmdDispatchGraph([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DispatchGraphCountInfoAMDX pCountInfo);
+        public partial void CmdDispatchGraph([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DispatchGraphCountInfoAMDX pCountInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDispatchGraphIndirectAMDX", Convention = CallingConvention.Winapi)]
@@ -34,7 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.AMDX
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDispatchGraphIndirectAMDX", Convention = CallingConvention.Winapi)]
-        public partial void CmdDispatchGraphIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DispatchGraphCountInfoAMDX pCountInfo);
+        public partial void CmdDispatchGraphIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ulong scratch, [Count(Count = 0)] ulong scratchSize, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DispatchGraphCountInfoAMDX pCountInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDispatchGraphIndirectCountAMDX", Convention = CallingConvention.Winapi)]
@@ -54,27 +54,27 @@ namespace Silk.NET.Vulkan.Extensions.AMDX
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateExecutionGraphPipelinesAMDX", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
+        public unsafe partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateExecutionGraphPipelinesAMDX", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
+        public unsafe partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateExecutionGraphPipelinesAMDX", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ExecutionGraphPipelineCreateInfoAMDX pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
+        public unsafe partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ExecutionGraphPipelineCreateInfoAMDX pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateExecutionGraphPipelinesAMDX", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ExecutionGraphPipelineCreateInfoAMDX pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
+        public unsafe partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ExecutionGraphPipelineCreateInfoAMDX pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateExecutionGraphPipelinesAMDX", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ExecutionGraphPipelineCreateInfoAMDX pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
+        public unsafe partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ExecutionGraphPipelineCreateInfoAMDX pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateExecutionGraphPipelinesAMDX", Convention = CallingConvention.Winapi)]
-        public partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ExecutionGraphPipelineCreateInfoAMDX pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
+        public partial Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ExecutionGraphPipelineCreateInfoAMDX pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetExecutionGraphPipelineNodeIndexAMDX", Convention = CallingConvention.Winapi)]
@@ -86,11 +86,11 @@ namespace Silk.NET.Vulkan.Extensions.AMDX
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetExecutionGraphPipelineNodeIndexAMDX", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetExecutionGraphPipelineNodeIndex([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline executionGraph, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineShaderStageNodeCreateInfoAMDX pNodeInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pNodeIndex);
+        public unsafe partial Result GetExecutionGraphPipelineNodeIndex([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline executionGraph, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineShaderStageNodeCreateInfoAMDX pNodeInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* pNodeIndex);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetExecutionGraphPipelineNodeIndexAMDX", Convention = CallingConvention.Winapi)]
-        public partial Result GetExecutionGraphPipelineNodeIndex([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline executionGraph, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineShaderStageNodeCreateInfoAMDX pNodeInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pNodeIndex);
+        public partial Result GetExecutionGraphPipelineNodeIndex([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline executionGraph, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineShaderStageNodeCreateInfoAMDX pNodeInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint pNodeIndex);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetExecutionGraphPipelineScratchSizeAMDX", Convention = CallingConvention.Winapi)]
@@ -109,7 +109,7 @@ namespace Silk.NET.Vulkan.Extensions.AMDX
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
+        public unsafe Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ExecutionGraphPipelineCreateInfoAMDX* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
         {
             // ImplicitCountSpanOverloader
             return CreateExecutionGraphPipelines(device, pipelineCache, (uint) pPipelines.Length, pCreateInfos, in pAllocator, out pPipelines.GetPinnableReference());
@@ -130,14 +130,14 @@ namespace Silk.NET.Vulkan.Extensions.AMDX
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ExecutionGraphPipelineCreateInfoAMDX> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
+        public unsafe Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ExecutionGraphPipelineCreateInfoAMDX> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
         {
             // ImplicitCountSpanOverloader
             return CreateExecutionGraphPipelines(device, pipelineCache, (uint) pCreateInfos.Length, in pCreateInfos.GetPinnableReference(), in pAllocator, pPipelines);
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ExecutionGraphPipelineCreateInfoAMDX> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
+        public unsafe Result CreateExecutionGraphPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ExecutionGraphPipelineCreateInfoAMDX> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
         {
             // ImplicitCountSpanOverloader
             return CreateExecutionGraphPipelines(device, pipelineCache, (uint) pPipelines.Length, in pCreateInfos.GetPinnableReference(), in pAllocator, out pPipelines.GetPinnableReference());

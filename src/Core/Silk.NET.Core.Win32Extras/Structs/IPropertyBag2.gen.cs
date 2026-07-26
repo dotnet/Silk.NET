@@ -516,7 +516,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, Silk.NET.Core.Native.IUnknown* pUnkObject, IErrorLog* pErrLog)
+        public readonly unsafe int LoadObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, Silk.NET.Core.Native.IUnknown* pUnkObject, IErrorLog* pErrLog)
         {
             var @this = (IPropertyBag2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -528,7 +528,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, Silk.NET.Core.Native.IUnknown* pUnkObject, ref IErrorLog pErrLog)
+        public readonly unsafe int LoadObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, Silk.NET.Core.Native.IUnknown* pUnkObject, ref IErrorLog pErrLog)
         {
             var @this = (IPropertyBag2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -543,7 +543,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, IErrorLog* pErrLog)
+        public readonly unsafe int LoadObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, IErrorLog* pErrLog)
         {
             var @this = (IPropertyBag2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -558,7 +558,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, ref IErrorLog pErrLog)
+        public readonly int LoadObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, ref IErrorLog pErrLog)
         {
             var @this = (IPropertyBag2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -729,7 +729,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadObject<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, ComPtr<TI0> pUnkObject, ComPtr<TI1> pErrLog) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI1>
+        public readonly int LoadObject<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, ComPtr<TI0> pUnkObject, ComPtr<TI1> pErrLog) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI1>
         {
             var @this = (IPropertyBag2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -737,7 +737,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadObject<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, ComPtr<TI0> pUnkObject, ref IErrorLog pErrLog) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int LoadObject<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, ComPtr<TI0> pUnkObject, ref IErrorLog pErrLog) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IPropertyBag2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -745,7 +745,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadObject<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, ComPtr<TI0> pErrLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
+        public readonly int LoadObject<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, ComPtr<TI0> pErrLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
         {
             var @this = (IPropertyBag2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

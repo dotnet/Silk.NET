@@ -520,12 +520,12 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7726, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapShortNameToGuid", Convention = CallingConvention.StdCall)]
-        public unsafe partial int MapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, Guid* pguid);
+        public unsafe partial int MapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzName, Guid* pguid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7726, Column 16 in wincodec.h")]
         [NativeApi(EntryPoint = "WICMapShortNameToGuid", Convention = CallingConvention.StdCall)]
-        public partial int MapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, ref Guid pguid);
+        public partial int MapShortNameToGuid([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzName, ref Guid pguid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 7726, Column 16 in wincodec.h")]
@@ -825,7 +825,7 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8517, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawRemoteSetToneCurveProxy(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurvePoint aPoints);
+        public unsafe partial int IWICDevelopRawRemoteSetToneCurveProxy(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RawToneCurvePoint aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8517, Column 43 in wincodec.h")]
@@ -835,7 +835,7 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8517, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_Remote_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICDevelopRawRemoteSetToneCurveProxy(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurvePoint aPoints);
+        public partial int IWICDevelopRawRemoteSetToneCurveProxy(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RawToneCurvePoint aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8523, Column 17 in wincodec.h")]
@@ -3069,7 +3069,7 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9344, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawSetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurve pToneCurve);
+        public unsafe partial int IWICDevelopRawSetToneCurveProxy(IWICDevelopRaw* This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RawToneCurve pToneCurve);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9344, Column 41 in wincodec.h")]
@@ -3079,7 +3079,7 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9344, Column 41 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Proxy", Convention = CallingConvention.StdCall)]
-        public partial int IWICDevelopRawSetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurve pToneCurve);
+        public partial int IWICDevelopRawSetToneCurveProxy(ref IWICDevelopRaw This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RawToneCurve pToneCurve);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9351, Column 43 in wincodec.h")]
@@ -3089,7 +3089,7 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9351, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public unsafe partial int IWICDevelopRawSetToneCurveStub(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurvePoint aPoints);
+        public unsafe partial int IWICDevelopRawSetToneCurveStub(IWICDevelopRaw* This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RawToneCurvePoint aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9351, Column 43 in wincodec.h")]
@@ -3099,7 +3099,7 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9351, Column 43 in wincodec.h")]
         [NativeApi(EntryPoint = "IWICDevelopRaw_SetToneCurve_Stub", Convention = CallingConvention.StdCall)]
-        public partial int IWICDevelopRawSetToneCurveStub(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurvePoint aPoints);
+        public partial int IWICDevelopRawSetToneCurveStub(ref IWICDevelopRaw This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RawToneCurvePoint aPoints);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9356, Column 41 in wincodec.h")]
@@ -3484,22 +3484,22 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
@@ -3524,22 +3524,22 @@ namespace Silk.NET.WindowsCodecs
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, Silk.NET.Core.Win32Extras.IStream* pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
+        public unsafe partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, Guid* pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
         [NativeApi(EntryPoint = "WICMatchMetadataContent", Convention = CallingConvention.StdCall)]
-        public partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
+        public partial int MatchMetadataContent(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ref Silk.NET.Core.Win32Extras.IStream pIStream, ref Guid pguidMetadataFormat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2409, Column 16 in wincodecsdk.h")]
@@ -4479,7 +4479,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 8517, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawRemoteSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurvePoint aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawRemoteSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RawToneCurvePoint aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawRemoteSetToneCurveProxy((IWICDevelopRaw*) This.Handle, cPoints, in aPoints);
@@ -5387,7 +5387,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9344, Column 41 in wincodec.h")]
-        public unsafe int IWICDevelopRawSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurve pToneCurve) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawSetToneCurveProxy<TI0>(ComPtr<TI0> This, uint cbToneCurveSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RawToneCurve pToneCurve) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawSetToneCurveProxy((IWICDevelopRaw*) This.Handle, cbToneCurveSize, in pToneCurve);
@@ -5403,7 +5403,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 9351, Column 43 in wincodec.h")]
-        public unsafe int IWICDevelopRawSetToneCurveStub<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RawToneCurvePoint aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
+        public unsafe int IWICDevelopRawSetToneCurveStub<TI0>(ComPtr<TI0> This, uint cPoints, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RawToneCurvePoint aPoints) where TI0 : unmanaged, IComVtbl<IWICDevelopRaw>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return IWICDevelopRawSetToneCurveStub((IWICDevelopRaw*) This.Handle, cPoints, in aPoints);
@@ -5587,7 +5587,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
-        public unsafe int MatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return MatchMetadataContent(guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, pguidMetadataFormat);
@@ -5595,7 +5595,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
-        public unsafe int MatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(Guid* guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return MatchMetadataContent(guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, ref pguidMetadataFormat);
@@ -5619,7 +5619,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
-        public unsafe int MatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ComPtr<TI0> pIStream, Guid* pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return MatchMetadataContent(ref guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, pguidMetadataFormat);
@@ -5627,7 +5627,7 @@ namespace Silk.NET.WindowsCodecs
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2403, Column 16 in wincodecsdk.h")]
-        public unsafe int MatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public unsafe int MatchMetadataContent<TI0>(ref Guid guidContainerFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidVendor, ComPtr<TI0> pIStream, ref Guid pguidMetadataFormat) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return MatchMetadataContent(ref guidContainerFormat, in pguidVendor, (Silk.NET.Core.Win32Extras.IStream*) pIStream.Handle, ref pguidMetadataFormat);

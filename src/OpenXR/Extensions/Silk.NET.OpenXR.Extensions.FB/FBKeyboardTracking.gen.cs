@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.FB
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateKeyboardSpaceFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateKeyboardSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in KeyboardSpaceCreateInfoFB createInfo, [Count(Count = 0)] Space* keyboardSpace);
+        public unsafe partial Result CreateKeyboardSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly KeyboardSpaceCreateInfoFB createInfo, [Count(Count = 0)] Space* keyboardSpace);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateKeyboardSpaceFB", Convention = CallingConvention.Winapi)]
-        public partial Result CreateKeyboardSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in KeyboardSpaceCreateInfoFB createInfo, [Count(Count = 0)] ref Space keyboardSpace);
+        public partial Result CreateKeyboardSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly KeyboardSpaceCreateInfoFB createInfo, [Count(Count = 0)] ref Space keyboardSpace);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrQuerySystemTrackedKeyboardFB", Convention = CallingConvention.Winapi)]
@@ -46,11 +46,11 @@ namespace Silk.NET.OpenXR.Extensions.FB
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrQuerySystemTrackedKeyboardFB", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result QuerySystemTrackedKeyboardFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in KeyboardTrackingQueryFB queryInfo, [Count(Count = 0)] KeyboardTrackingDescriptionFB* keyboard);
+        public unsafe partial Result QuerySystemTrackedKeyboardFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly KeyboardTrackingQueryFB queryInfo, [Count(Count = 0)] KeyboardTrackingDescriptionFB* keyboard);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrQuerySystemTrackedKeyboardFB", Convention = CallingConvention.Winapi)]
-        public partial Result QuerySystemTrackedKeyboardFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in KeyboardTrackingQueryFB queryInfo, [Count(Count = 0)] ref KeyboardTrackingDescriptionFB keyboard);
+        public partial Result QuerySystemTrackedKeyboardFB([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly KeyboardTrackingQueryFB queryInfo, [Count(Count = 0)] ref KeyboardTrackingDescriptionFB keyboard);
 
         public FBKeyboardTracking(INativeContext ctx)
             : base(ctx)

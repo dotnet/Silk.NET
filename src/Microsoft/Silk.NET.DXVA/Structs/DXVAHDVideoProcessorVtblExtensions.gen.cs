@@ -94,7 +94,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVideoProcessBltState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetVideoProcessBltState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -136,7 +136,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVideoProcessStreamState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetVideoProcessStreamState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -178,7 +178,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HDStreamData pStreams)
+    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HDStreamData pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HDStreamData pStreams)
+    public static int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HDStreamData pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

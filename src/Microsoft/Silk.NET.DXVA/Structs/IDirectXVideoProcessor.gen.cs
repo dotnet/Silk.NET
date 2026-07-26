@@ -456,7 +456,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -468,7 +468,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -483,7 +483,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -495,7 +495,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -510,7 +510,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -525,7 +525,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -570,7 +570,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -585,7 +585,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -603,7 +603,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -618,7 +618,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -636,7 +636,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -654,7 +654,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
+        public readonly unsafe int VideoProcessBlt(ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoProcessBltParams pBltParams, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
         {
             var @this = (IDirectXVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

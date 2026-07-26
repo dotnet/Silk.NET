@@ -30,7 +30,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBindDescriptorBuffersEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdBindDescriptorBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint bufferCount, [Count(Parameter = "bufferCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DescriptorBufferBindingInfoEXT pBindingInfos);
+        public partial void CmdBindDescriptorBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint bufferCount, [Count(Parameter = "bufferCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorBufferBindingInfoEXT pBindingInfos);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDescriptorBufferOffsetsEXT", Convention = CallingConvention.Winapi)]
@@ -38,15 +38,15 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDescriptorBufferOffsetsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetDescriptorBufferOffsets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint setCount, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pBufferIndices, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ulong pOffsets);
+        public unsafe partial void CmdSetDescriptorBufferOffsets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint setCount, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pBufferIndices, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong pOffsets);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDescriptorBufferOffsetsEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetDescriptorBufferOffsets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint setCount, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pBufferIndices, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets);
+        public unsafe partial void CmdSetDescriptorBufferOffsets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint setCount, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pBufferIndices, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDescriptorBufferOffsetsEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetDescriptorBufferOffsets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint setCount, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pBufferIndices, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ulong pOffsets);
+        public partial void CmdSetDescriptorBufferOffsets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint setCount, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pBufferIndices, [Count(Parameter = "setCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong pOffsets);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
@@ -58,11 +58,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetAccelerationStructureOpaqueCaptureDescriptorData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AccelerationStructureCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] void* pData);
+        public unsafe partial Result GetAccelerationStructureOpaqueCaptureDescriptorData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AccelerationStructureCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetAccelerationStructureOpaqueCaptureDescriptorData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AccelerationStructureCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
+        public partial Result GetAccelerationStructureOpaqueCaptureDescriptorData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AccelerationStructureCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
@@ -74,11 +74,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetBufferOpaqueCaptureDescriptorData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] void* pData);
+        public unsafe partial Result GetBufferOpaqueCaptureDescriptorData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetBufferOpaqueCaptureDescriptorData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
+        public partial Result GetBufferOpaqueCaptureDescriptorData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDescriptorEXT", Convention = CallingConvention.Winapi)]
@@ -90,11 +90,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDescriptorEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDescriptor([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DescriptorGetInfoEXT pDescriptorInfo, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pDescriptor);
+        public unsafe partial void GetDescriptor([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorGetInfoEXT pDescriptorInfo, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pDescriptor);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDescriptorEXT", Convention = CallingConvention.Winapi)]
-        public partial void GetDescriptor<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DescriptorGetInfoEXT pDescriptorInfo, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pDescriptor) where T0 : unmanaged;
+        public partial void GetDescriptor<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorGetInfoEXT pDescriptorInfo, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pDescriptor) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutBindingOffsetEXT", Convention = CallingConvention.Winapi)]
@@ -122,11 +122,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetImageOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetImageOpaqueCaptureDescriptorData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] void* pData);
+        public unsafe partial Result GetImageOpaqueCaptureDescriptorData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetImageOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetImageOpaqueCaptureDescriptorData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
+        public partial Result GetImageOpaqueCaptureDescriptorData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
@@ -138,11 +138,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetImageViewOpaqueCaptureDescriptorData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageViewCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] void* pData);
+        public unsafe partial Result GetImageViewOpaqueCaptureDescriptorData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageViewCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetImageViewOpaqueCaptureDescriptorData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageViewCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
+        public partial Result GetImageViewOpaqueCaptureDescriptorData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageViewCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSamplerOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
@@ -154,11 +154,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSamplerOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSamplerOpaqueCaptureDescriptorData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SamplerCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] void* pData);
+        public unsafe partial Result GetSamplerOpaqueCaptureDescriptorData([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSamplerOpaqueCaptureDescriptorDataEXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetSamplerOpaqueCaptureDescriptorData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SamplerCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
+        public partial Result GetSamplerOpaqueCaptureDescriptorData<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerCaptureDescriptorDataInfoEXT pInfo, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         public unsafe void CmdBindDescriptorBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "bufferCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorBufferBindingInfoEXT> pBindingInfos)
@@ -196,7 +196,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void GetDescriptor<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DescriptorGetInfoEXT pDescriptorInfo, [Count(Parameter = "dataSize")] Span<T0> pDescriptor) where T0 : unmanaged
+        public unsafe void GetDescriptor<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorGetInfoEXT pDescriptorInfo, [Count(Parameter = "dataSize")] Span<T0> pDescriptor) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
             GetDescriptor(device, in pDescriptorInfo, (nuint) ((pDescriptor.Length) * Unsafe.SizeOf<T0>()), ref pDescriptor.GetPinnableReference());

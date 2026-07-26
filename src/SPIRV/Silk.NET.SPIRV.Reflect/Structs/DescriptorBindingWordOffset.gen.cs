@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SPIRV.Reflect
 {
-    [NativeName("Name", "__AnonymousRecord_spirv_reflect_L502_C3")]
+    [NativeName("Name", "__AnonymousRecord_spirv_reflect_L507_C3")]
     public unsafe partial struct DescriptorBindingWordOffset
     {
         public DescriptorBindingWordOffset

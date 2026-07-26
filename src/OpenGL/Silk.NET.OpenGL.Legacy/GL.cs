@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using System.Text;
 using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
@@ -184,7 +185,7 @@ namespace Silk.NET.OpenGL.Legacy
         {
             unsafe
             {
-                int length = @string.Length;
+                int length = Encoding.UTF8.GetByteCount(@string);
                 ShaderSource((uint)shader, 1, new string[] { @string }, &length);
             }
         }

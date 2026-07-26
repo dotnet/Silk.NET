@@ -33,24 +33,44 @@ namespace Silk.NET.SPIRV
         PeelCountMask = 0x80,
         [NativeName("Name", "SpvLoopControlPartialCountMask")]
         PartialCountMask = 0x100,
+        [NativeName("Name", "SpvLoopControlInitiationIntervalALTERAMask")]
+        InitiationIntervalAlteraMask = 0x10000,
         [NativeName("Name", "SpvLoopControlInitiationIntervalINTELMask")]
         InitiationIntervalIntelMask = 0x10000,
+        [NativeName("Name", "SpvLoopControlMaxConcurrencyALTERAMask")]
+        MaxConcurrencyAlteraMask = 0x20000,
         [NativeName("Name", "SpvLoopControlMaxConcurrencyINTELMask")]
         MaxConcurrencyIntelMask = 0x20000,
+        [NativeName("Name", "SpvLoopControlDependencyArrayALTERAMask")]
+        DependencyArrayAlteraMask = 0x40000,
         [NativeName("Name", "SpvLoopControlDependencyArrayINTELMask")]
         DependencyArrayIntelMask = 0x40000,
+        [NativeName("Name", "SpvLoopControlPipelineEnableALTERAMask")]
+        PipelineEnableAlteraMask = 0x80000,
         [NativeName("Name", "SpvLoopControlPipelineEnableINTELMask")]
         PipelineEnableIntelMask = 0x80000,
+        [NativeName("Name", "SpvLoopControlLoopCoalesceALTERAMask")]
+        LoopCoalesceAlteraMask = 0x100000,
         [NativeName("Name", "SpvLoopControlLoopCoalesceINTELMask")]
         LoopCoalesceIntelMask = 0x100000,
+        [NativeName("Name", "SpvLoopControlMaxInterleavingALTERAMask")]
+        MaxInterleavingAlteraMask = 0x200000,
         [NativeName("Name", "SpvLoopControlMaxInterleavingINTELMask")]
         MaxInterleavingIntelMask = 0x200000,
+        [NativeName("Name", "SpvLoopControlSpeculatedIterationsALTERAMask")]
+        SpeculatedIterationsAlteraMask = 0x400000,
         [NativeName("Name", "SpvLoopControlSpeculatedIterationsINTELMask")]
         SpeculatedIterationsIntelMask = 0x400000,
+        [NativeName("Name", "SpvLoopControlNoFusionALTERAMask")]
+        NoFusionAlteraMask = 0x800000,
         [NativeName("Name", "SpvLoopControlNoFusionINTELMask")]
         NoFusionIntelMask = 0x800000,
+        [NativeName("Name", "SpvLoopControlLoopCountALTERAMask")]
+        LoopCountAlteraMask = 0x1000000,
         [NativeName("Name", "SpvLoopControlLoopCountINTELMask")]
         LoopCountIntelMask = 0x1000000,
+        [NativeName("Name", "SpvLoopControlMaxReinvocationDelayALTERAMask")]
+        MaxReinvocationDelayAlteraMask = 0x2000000,
         [NativeName("Name", "SpvLoopControlMaxReinvocationDelayINTELMask")]
         MaxReinvocationDelayIntelMask = 0x2000000,
     }

@@ -202,7 +202,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -274,7 +274,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char Name)
+    public static int SetName(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -417,7 +417,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pKey, uint KeySize, void* pValue, uint* pValueSize) where T0 : unmanaged
+    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pKey, uint KeySize, void* pValue, uint* pValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -429,7 +429,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pKey, uint KeySize, void* pValue, ref uint pValueSize) where T0 : unmanaged
+    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pKey, uint KeySize, void* pValue, ref uint pValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -444,7 +444,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pKey, uint KeySize, ref T1 pValue, uint* pValueSize) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pKey, uint KeySize, ref T1 pValue, uint* pValueSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -459,7 +459,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pKey, uint KeySize, ref T1 pValue, ref uint pValueSize) where T0 : unmanaged where T1 : unmanaged
+    public static int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pKey, uint KeySize, ref T1 pValue, ref uint pValueSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -486,7 +486,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pKey, uint KeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pValue, uint ValueSize) where T0 : unmanaged
+    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pKey, uint KeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pValue, uint ValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -498,7 +498,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pKey, uint KeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pValue, uint ValueSize) where T0 : unmanaged
+    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pKey, uint KeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pValue, uint ValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -510,7 +510,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StoreValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pKey, uint KeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pValue, uint ValueSize) where T0 : unmanaged where T1 : unmanaged
+    public static int StoreValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pKey, uint KeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T1 pValue, uint ValueSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;

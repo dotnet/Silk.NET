@@ -9,11 +9,16 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SPIRV
 {
+    [Flags]
     [NativeName("Name", "SpvInitializationModeQualifier_")]
     public enum InitializationModeQualifier : int
     {
+        [NativeName("Name", "SpvInitializationModeQualifierInitOnDeviceReprogramALTERA")]
+        InitOnDeviceReprogramAltera = 0x0,
         [NativeName("Name", "SpvInitializationModeQualifierInitOnDeviceReprogramINTEL")]
         InitOnDeviceReprogramIntel = 0x0,
+        [NativeName("Name", "SpvInitializationModeQualifierInitOnDeviceResetALTERA")]
+        InitOnDeviceResetAltera = 0x1,
         [NativeName("Name", "SpvInitializationModeQualifierInitOnDeviceResetINTEL")]
         InitOnDeviceResetIntel = 0x1,
         [NativeName("Name", "SpvInitializationModeQualifierMax")]

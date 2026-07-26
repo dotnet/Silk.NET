@@ -121,7 +121,7 @@ public unsafe static class D3D12DebugDevice2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugDevice2> thisVtbl, DebugDeviceParameterType Type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint DataSize) where T0 : unmanaged
+    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugDevice2> thisVtbl, DebugDeviceParameterType Type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint DataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;

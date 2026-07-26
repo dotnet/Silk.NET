@@ -17,17 +17,18 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyMemoryToImageInfoEXT")]
+    [NativeName("AliasOf", "VkCopyMemoryToImageInfo")]
     public unsafe partial struct CopyMemoryToImageInfoEXT : IChainable
     {
         public CopyMemoryToImageInfoEXT
         (
-            StructureType? sType = StructureType.CopyMemoryToImageInfoExt,
+            StructureType? sType = StructureType.CopyMemoryToImageInfo,
             void* pNext = null,
-            HostImageCopyFlagsEXT? flags = null,
+            HostImageCopyFlags? flags = null,
             Image? dstImage = null,
             ImageLayout? dstImageLayout = null,
             uint? regionCount = null,
-            MemoryToImageCopyEXT* pRegions = null
+            MemoryToImageCopy* pRegions = null
         ) : this()
         {
             if (sType is not null)
@@ -77,10 +78,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkHostImageCopyFlagsEXT")]
-        [NativeName("Type.Name", "VkHostImageCopyFlagsEXT")]
+        [NativeName("Type", "VkHostImageCopyFlags")]
+        [NativeName("Type.Name", "VkHostImageCopyFlags")]
         [NativeName("Name", "flags")]
-        public HostImageCopyFlagsEXT Flags;
+        public HostImageCopyFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkImage")]
         [NativeName("Type.Name", "VkImage")]
@@ -97,15 +98,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "regionCount")]
         public uint RegionCount;
 /// <summary></summary>
-        [NativeName("Type", "VkMemoryToImageCopyEXT*")]
-        [NativeName("Type.Name", "VkMemoryToImageCopyEXT")]
+        [NativeName("Type", "VkMemoryToImageCopy*")]
+        [NativeName("Type.Name", "VkMemoryToImageCopy")]
         [NativeName("Name", "pRegions")]
-        public MemoryToImageCopyEXT* PRegions;
+        public MemoryToImageCopy* PRegions;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.CopyMemoryToImageInfoExt;
+            return SType = StructureType.CopyMemoryToImageInfo;
         }
 
         /// <inheritdoc />

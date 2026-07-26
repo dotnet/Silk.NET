@@ -30,49 +30,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void BufferData([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB usage);
 
         [NativeApi(EntryPoint = "glBufferDataARB", Convention = CallingConvention.Winapi)]
-        public partial void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB usage) where T0 : unmanaged;
+        public partial void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferDataARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferData([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage);
 
         [NativeApi(EntryPoint = "glBufferDataARB", Convention = CallingConvention.Winapi)]
-        public partial void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
+        public partial void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferDataARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferData([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB usage);
 
         [NativeApi(EntryPoint = "glBufferDataARB", Convention = CallingConvention.Winapi)]
-        public partial void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB usage) where T0 : unmanaged;
+        public partial void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferDataARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferData([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage);
 
         [NativeApi(EntryPoint = "glBufferDataARB", Convention = CallingConvention.Winapi)]
-        public partial void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
+        public partial void BufferData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferSubDataARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferSubData([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glBufferSubDataARB", Convention = CallingConvention.Winapi)]
-        public partial void BufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data) where T0 : unmanaged;
+        public partial void BufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferSubDataARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void BufferSubData([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glBufferSubDataARB", Convention = CallingConvention.Winapi)]
-        public partial void BufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data) where T0 : unmanaged;
+        public partial void BufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferTargetARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDeleteBuffersARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* buffers);
 
         [NativeApi(EntryPoint = "glDeleteBuffersARB", Convention = CallingConvention.Winapi)]
-        public partial void DeleteBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint buffers);
+        public partial void DeleteBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint buffers);
 
         [NativeApi(EntryPoint = "glDeleteBuffersARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* buffers);
 
         [NativeApi(EntryPoint = "glDeleteBuffersARB", Convention = CallingConvention.Winapi)]
-        public partial void DeleteBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Buffer buffers);
+        public partial void DeleteBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer buffers);
 
         [NativeApi(EntryPoint = "glGenBuffersARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenBuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* buffers);

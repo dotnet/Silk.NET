@@ -216,7 +216,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDesignGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, uint glyphCount, GlyphMetrics* glyphMetrics, Silk.NET.Core.Bool32 isSideways)
+    public static unsafe int GetDesignGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, uint glyphCount, GlyphMetrics* glyphMetrics, Silk.NET.Core.Bool32 isSideways)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -228,7 +228,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesignGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, uint glyphCount, ref GlyphMetrics glyphMetrics, Silk.NET.Core.Bool32 isSideways)
+    public static int GetDesignGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, uint glyphCount, ref GlyphMetrics glyphMetrics, Silk.NET.Core.Bool32 isSideways)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -264,7 +264,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphIndicesA(this ComPtr<IDWriteFontFace2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint codePoints, uint codePointCount, ushort* glyphIndices)
+    public static unsafe int GetGlyphIndicesA(this ComPtr<IDWriteFontFace2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint codePoints, uint codePointCount, ushort* glyphIndices)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -276,7 +276,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGlyphIndicesA(this ComPtr<IDWriteFontFace2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint codePoints, uint codePointCount, ref ushort glyphIndices)
+    public static int GetGlyphIndicesA(this ComPtr<IDWriteFontFace2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint codePoints, uint codePointCount, ref ushort glyphIndices)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -399,7 +399,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, uint* tableSize, void** tableContext, int* exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, uint* tableSize, void** tableContext, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -411,7 +411,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, uint* tableSize, void** tableContext, ref int exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, uint* tableSize, void** tableContext, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -426,7 +426,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, uint* tableSize, ref void* tableContext, int* exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, uint* tableSize, ref void* tableContext, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -441,7 +441,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, uint* tableSize, ref void* tableContext, ref int exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, uint* tableSize, ref void* tableContext, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -459,7 +459,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, ref uint tableSize, void** tableContext, int* exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, ref uint tableSize, void** tableContext, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -474,7 +474,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, ref uint tableSize, void** tableContext, ref int exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, ref uint tableSize, void** tableContext, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -492,7 +492,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, ref uint tableSize, ref void* tableContext, int* exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, ref uint tableSize, ref void* tableContext, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -510,7 +510,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, ref uint tableSize, ref void* tableContext, ref int exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, ref uint tableSize, ref void* tableContext, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -569,7 +569,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -581,7 +581,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -596,7 +596,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -608,7 +608,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -623,7 +623,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -638,7 +638,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -656,7 +656,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -668,7 +668,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -683,7 +683,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -698,7 +698,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -716,7 +716,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -731,7 +731,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] GlyphOffset* glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -749,7 +749,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -767,7 +767,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
+    public static int GetGlyphRunOutline(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float glyphAdvances, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GlyphOffset glyphOffsets, uint glyphCount, Silk.NET.Core.Bool32 isSideways, Silk.NET.Core.Bool32 isRightToLeft, ref Silk.NET.Direct2D.ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -857,7 +857,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, FontMetrics* fontFaceMetrics)
+    public static unsafe int GetGdiCompatibleMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, FontMetrics* fontFaceMetrics)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -869,7 +869,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGdiCompatibleMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, ref FontMetrics fontFaceMetrics)
+    public static int GetGdiCompatibleMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, ref FontMetrics fontFaceMetrics)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -905,7 +905,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, uint glyphCount, GlyphMetrics* glyphMetrics, Silk.NET.Core.Bool32 isSideways)
+    public static unsafe int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, uint glyphCount, GlyphMetrics* glyphMetrics, Silk.NET.Core.Bool32 isSideways)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -917,7 +917,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, uint glyphCount, ref GlyphMetrics glyphMetrics, Silk.NET.Core.Bool32 isSideways)
+    public static unsafe int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, uint glyphCount, ref GlyphMetrics glyphMetrics, Silk.NET.Core.Bool32 isSideways)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -932,7 +932,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, uint glyphCount, GlyphMetrics* glyphMetrics, Silk.NET.Core.Bool32 isSideways)
+    public static unsafe int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, uint glyphCount, GlyphMetrics* glyphMetrics, Silk.NET.Core.Bool32 isSideways)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -944,7 +944,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, uint glyphCount, ref GlyphMetrics glyphMetrics, Silk.NET.Core.Bool32 isSideways)
+    public static unsafe int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, uint glyphCount, ref GlyphMetrics glyphMetrics, Silk.NET.Core.Bool32 isSideways)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -959,7 +959,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, uint glyphCount, GlyphMetrics* glyphMetrics, Silk.NET.Core.Bool32 isSideways)
+    public static unsafe int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, uint glyphCount, GlyphMetrics* glyphMetrics, Silk.NET.Core.Bool32 isSideways)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -974,7 +974,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, uint glyphCount, ref GlyphMetrics glyphMetrics, Silk.NET.Core.Bool32 isSideways)
+    public static int GetGdiCompatibleGlyphMetrics(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, uint glyphCount, ref GlyphMetrics glyphMetrics, Silk.NET.Core.Bool32 isSideways)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1087,7 +1087,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDesignGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, int* glyphAdvances, Silk.NET.Core.Bool32 isSideways)
+    public static unsafe int GetDesignGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, int* glyphAdvances, Silk.NET.Core.Bool32 isSideways)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1099,7 +1099,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDesignGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, ref int glyphAdvances, Silk.NET.Core.Bool32 isSideways)
+    public static int GetDesignGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, ref int glyphAdvances, Silk.NET.Core.Bool32 isSideways)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1135,7 +1135,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, int* glyphAdvances)
+    public static unsafe int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, int* glyphAdvances)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1147,7 +1147,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, ref int glyphAdvances)
+    public static unsafe int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Matrix* transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, ref int glyphAdvances)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1162,7 +1162,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, int* glyphAdvances)
+    public static unsafe int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, int* glyphAdvances)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1174,7 +1174,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, ref int glyphAdvances)
+    public static unsafe int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* glyphIndices, ref int glyphAdvances)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1189,7 +1189,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, int* glyphAdvances)
+    public static unsafe int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, int* glyphAdvances)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1204,7 +1204,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, ref int glyphAdvances)
+    public static int GetGdiCompatibleGlyphAdvances(this ComPtr<IDWriteFontFace2> thisVtbl, float emSize, float pixelsPerDip, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix transform, Silk.NET.Core.Bool32 useGdiNatural, Silk.NET.Core.Bool32 isSideways, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, ref int glyphAdvances)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1243,7 +1243,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetKerningPairAdjustments(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, int* glyphAdvanceAdjustments)
+    public static unsafe int GetKerningPairAdjustments(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, int* glyphAdvanceAdjustments)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1255,7 +1255,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetKerningPairAdjustments(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, ref int glyphAdvanceAdjustments)
+    public static int GetKerningPairAdjustments(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, ref int glyphAdvanceAdjustments)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1300,7 +1300,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVerticalGlyphVariants(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort nominalGlyphIndices, ushort* verticalGlyphIndices)
+    public static unsafe int GetVerticalGlyphVariants(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort nominalGlyphIndices, ushort* verticalGlyphIndices)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1312,7 +1312,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetVerticalGlyphVariants(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort nominalGlyphIndices, ref ushort verticalGlyphIndices)
+    public static int GetVerticalGlyphVariants(this ComPtr<IDWriteFontFace2> thisVtbl, uint glyphCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort nominalGlyphIndices, ref ushort verticalGlyphIndices)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1545,7 +1545,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, uint* tableSize, void** tableContext, Span<int> exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, uint* tableSize, void** tableContext, Span<int> exists)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1553,7 +1553,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, uint* tableSize, ref void* tableContext, Span<int> exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, uint* tableSize, ref void* tableContext, Span<int> exists)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1561,7 +1561,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, Span<uint> tableSize, void** tableContext, int* exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, Span<uint> tableSize, void** tableContext, int* exists)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1569,7 +1569,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, Span<uint> tableSize, void** tableContext, Span<int> exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, Span<uint> tableSize, void** tableContext, Span<int> exists)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1577,7 +1577,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, Span<uint> tableSize, ref void* tableContext, int* exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, Span<uint> tableSize, ref void* tableContext, int* exists)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1585,7 +1585,7 @@ public unsafe static class DWriteFontFace2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* tableData, Span<uint> tableSize, ref void* tableContext, Span<int> exists)
+    public static unsafe int TryGetFontTable(this ComPtr<IDWriteFontFace2> thisVtbl, uint openTypeTableTag, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* tableData, Span<uint> tableSize, ref void* tableContext, Span<int> exists)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

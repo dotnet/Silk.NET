@@ -109,6 +109,11 @@ partial class Build
                         return (object) x.Substring(idx + 1, x.Length - idx - 1);
                     }
                 );
+
+                if (!ProcessedMsbuildPropertiesValue.ContainsKey("SilkNukeBuild"))
+                {
+                    ProcessedMsbuildPropertiesValue["SilkNukeBuild"] = "true";
+                }
             }
 
             return ProcessedMsbuildPropertiesValue;

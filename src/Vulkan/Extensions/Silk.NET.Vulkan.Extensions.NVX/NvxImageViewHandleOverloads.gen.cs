@@ -31,6 +31,13 @@ namespace Silk.NET.Vulkan.Extensions.NVX
             return thisApi.GetImageViewHandle(device, in pInfo.GetPinnableReference());
         }
 
+        /// <summary>To be documented.</summary>
+        public static unsafe ulong GetImageViewHandle64(this NvxImageViewHandle thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageViewHandleInfoNVX> pInfo)
+        {
+            // SpanOverloader
+            return thisApi.GetImageViewHandle64(device, in pInfo.GetPinnableReference());
+        }
+
     }
 }
 

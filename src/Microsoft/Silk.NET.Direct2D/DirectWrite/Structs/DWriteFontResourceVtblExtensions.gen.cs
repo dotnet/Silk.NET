@@ -283,7 +283,7 @@ public unsafe static class DWriteFontResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFace(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontFace5** fontFace)
+    public static unsafe int CreateFontFace(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontFace5** fontFace)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -295,7 +295,7 @@ public unsafe static class DWriteFontResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFace(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontFace5* fontFace)
+    public static unsafe int CreateFontFace(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontFace5* fontFace)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -331,7 +331,7 @@ public unsafe static class DWriteFontResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference)
+    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -343,7 +343,7 @@ public unsafe static class DWriteFontResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontFaceReference1* fontFaceReference)
+    public static unsafe int CreateFontFaceReference(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref IDWriteFontFaceReference1* fontFaceReference)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -463,7 +463,7 @@ public unsafe static class DWriteFontResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFace<TI0>(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontFace) where TI0 : unmanaged, IComVtbl<IDWriteFontFace5>, IComVtbl<TI0>
+    public static int CreateFontFace<TI0>(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontFace) where TI0 : unmanaged, IComVtbl<IDWriteFontFace5>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -495,7 +495,7 @@ public unsafe static class DWriteFontResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFaceReference<TI0>(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference1>, IComVtbl<TI0>
+    public static int CreateFontFaceReference<TI0>(this ComPtr<IDWriteFontResource> thisVtbl, FontSimulations fontSimulations, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FontAxisValue fontAxisValues, uint fontAxisValueCount, ref ComPtr<TI0> fontFaceReference) where TI0 : unmanaged, IComVtbl<IDWriteFontFaceReference1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

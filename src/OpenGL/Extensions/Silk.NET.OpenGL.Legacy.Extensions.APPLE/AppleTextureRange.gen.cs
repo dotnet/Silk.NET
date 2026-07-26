@@ -30,7 +30,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         public unsafe partial void TextureRange([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glTextureRangeAPPLE", Convention = CallingConvention.Winapi)]
-        public partial void TextureRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pointer) where T0 : unmanaged;
+        public partial void TextureRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pointer) where T0 : unmanaged;
 
         public unsafe void TextureRange<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] APPLE target, [Count(Parameter = "length"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
         {

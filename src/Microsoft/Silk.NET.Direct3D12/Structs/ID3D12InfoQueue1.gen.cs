@@ -503,7 +503,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddMessage(MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pDescription)
+        public readonly int AddMessage(MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pDescription)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -535,7 +535,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddApplicationMessage(MessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pDescription)
+        public readonly int AddApplicationMessage(MessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pDescription)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

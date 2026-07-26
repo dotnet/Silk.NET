@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDecompressMemoryNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdDecompressMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint decompressRegionCount, [Count(Parameter = "decompressRegionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DecompressMemoryRegionNV pDecompressMemoryRegions);
+        public partial void CmdDecompressMemory([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint decompressRegionCount, [Count(Parameter = "decompressRegionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DecompressMemoryRegionNV pDecompressMemoryRegions);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDecompressMemoryIndirectCountNV", Convention = CallingConvention.Winapi)]

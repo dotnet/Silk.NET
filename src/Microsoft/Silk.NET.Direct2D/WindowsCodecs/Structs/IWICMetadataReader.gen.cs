@@ -303,7 +303,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -315,7 +315,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -330,7 +330,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -342,7 +342,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -357,7 +357,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+        public readonly unsafe int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
         {
             var @this = (IWICMetadataReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -372,7 +372,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+        public readonly int GetValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
         {
             var @this = (IWICMetadataReader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

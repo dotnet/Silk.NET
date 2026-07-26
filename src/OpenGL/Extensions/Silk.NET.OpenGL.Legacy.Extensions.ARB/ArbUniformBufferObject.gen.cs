@@ -87,10 +87,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformsiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
+        public unsafe partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformsiv", Convention = CallingConvention.Winapi)]
-        public partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
+        public partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformsiv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
@@ -99,10 +99,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformsiv", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
+        public unsafe partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformsiv", Convention = CallingConvention.Winapi)]
-        public partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
+        public partial void GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetIntegeri_v", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetInteger([Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* data);
@@ -120,7 +120,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial uint GetUniformBlockIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* uniformBlockName);
 
         [NativeApi(EntryPoint = "glGetUniformBlockIndex", Convention = CallingConvention.Winapi)]
-        public partial uint GetUniformBlockIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte uniformBlockName);
+        public partial uint GetUniformBlockIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte uniformBlockName);
 
         [NativeApi(EntryPoint = "glGetUniformBlockIndex", Convention = CallingConvention.Winapi)]
         public partial uint GetUniformBlockIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string uniformBlockName);
@@ -132,10 +132,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void GetUniformIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** uniformNames, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uniformIndices);
 
         [NativeApi(EntryPoint = "glGetUniformIndices", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetUniformIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* uniformNames, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* uniformIndices);
+        public unsafe partial void GetUniformIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* uniformNames, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* uniformIndices);
 
         [NativeApi(EntryPoint = "glGetUniformIndices", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetUniformIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* uniformNames, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uniformIndices);
+        public unsafe partial void GetUniformIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* uniformNames, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint uniformIndices);
 
         [NativeApi(EntryPoint = "glUniformBlockBinding", Convention = CallingConvention.Winapi)]
         public partial void UniformBlockBinding([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformBlockIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformBlockBinding);
@@ -279,7 +279,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return silkRet;
         }
 
-        public unsafe int GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname)
+        public unsafe int GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB pname)
         {
             // NonKhrReturnTypeOverloader
             GetActiveUniforms(program, uniformCount, in uniformIndices, pname, out int silkRet);
@@ -293,7 +293,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return silkRet;
         }
 
-        public unsafe int GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UniformPName pname)
+        public unsafe int GetActiveUniforms([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint uniformIndices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UniformPName pname)
         {
             // NonKhrReturnTypeOverloader
             GetActiveUniforms(program, uniformCount, in uniformIndices, pname, out int silkRet);
@@ -321,7 +321,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return silkRet;
         }
 
-        public unsafe uint GetUniformIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* uniformNames)
+        public unsafe uint GetUniformIndices([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* uniformNames)
         {
             // NonKhrReturnTypeOverloader
             GetUniformIndices(program, uniformCount, in uniformNames, out uint silkRet);

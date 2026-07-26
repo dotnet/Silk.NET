@@ -28,6 +28,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"ForceNonOpaque\"")]
         [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_FORCE_NON_OPAQUE")]
         RaytracingInstanceFlagForceNonOpaque = 0x8,
+        [Obsolete("Deprecated in favour of \"ForceOmm2State\"")]
+        [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_FORCE_OMM_2_STATE")]
+        RaytracingInstanceFlagForceOmm2State = 0x10,
+        [Obsolete("Deprecated in favour of \"DisableOmms\"")]
+        [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_DISABLE_OMMS")]
+        RaytracingInstanceFlagDisableOmms = 0x20,
         [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_TRIANGLE_CULL_DISABLE")]
@@ -38,5 +44,9 @@ namespace Silk.NET.Direct3D12
         ForceOpaque = 0x4,
         [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_FORCE_NON_OPAQUE")]
         ForceNonOpaque = 0x8,
+        [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_FORCE_OMM_2_STATE")]
+        ForceOmm2State = 0x10,
+        [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_DISABLE_OMMS")]
+        DisableOmms = 0x20,
     }
 }

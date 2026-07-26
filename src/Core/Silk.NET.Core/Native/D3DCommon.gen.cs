@@ -160,6 +160,12 @@ namespace Silk.NET.Core.Native
         [NativeName("Type", "unsigned long long")]
         [NativeName("Name", "D3D_SHADER_FEATURE_EXTENDED_COMMAND_INFO")]
         public const ulong D3DShaderFeatureExtendedCommandInfo = unchecked((ulong) 0x100000000);
+        [NativeName("Type", "unsigned long long")]
+        [NativeName("Name", "D3D_OPT_SHADER_FEATURE_USES_DERIVATIVES")]
+        public const ulong D3DOptShaderFeatureUsesDerivatives = unchecked((ulong) 0x10000000000);
+        [NativeName("Type", "unsigned long long")]
+        [NativeName("Name", "D3D_OPT_SHADER_FEATURE_REQUIRES_GROUP")]
+        public const ulong D3DOptShaderFeatureRequiresGroup = unchecked((ulong) 0x20000000000);
         [NativeName("Type", "int")]
         [NativeName("Name", "D3D_COMPONENT_MASK_X")]
         public const int D3DComponentMaskX = unchecked((int) 0x1);

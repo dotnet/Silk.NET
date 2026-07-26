@@ -65,10 +65,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Executable = 0x1,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_EXECUTABLE_KHR")]
         CommandBufferStateExecutableKhr = 0x1,
-        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_PENDING_KHR")]
-        Pending = 0x2,
-        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_PENDING_KHR")]
-        CommandBufferStatePendingKhr = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_FINALIZED_KHR")]
+        Finalized = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_STATE_FINALIZED_KHR")]
+        CommandBufferStateFinalizedKhr = 0x2,
         [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_DISPATCH_CONFIG_KHR")]
         StructureTypeMutableDispatchConfig = 0x0,
         [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_DISPATCH_CONFIG_KHR")]
@@ -127,10 +127,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         CommandBufferCapabilityDeviceSideEnqueueKhr = 0x2,
         [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_SIMULTANEOUS_USE_KHR")]
         CommandBufferCapabilitySimultaneousUseKhr = 0x4,
-        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_OUT_OF_ORDER_KHR")]
-        OutOfOrder = 0x8,
-        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_OUT_OF_ORDER_KHR")]
-        CommandBufferCapabilityOutOfOrderKhr = 0x8,
         [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_MULTIPLE_QUEUE_KHR")]
         MultipleQueue = 0x10,
         [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_MULTIPLE_QUEUE_KHR")]
@@ -179,6 +175,14 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         OpaqueWin32Name = 0x2069,
         [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_OPAQUE_WIN32_NAME_KHR")]
         ExternalMemoryHandleOpaqueWin32NameKhr = 0x2069,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_ANDROID_HARDWARE_BUFFER_KHR")]
+        AndroidHardwareBuffer = 0x2070,
+        [NativeName("Name", "CL_EXTERNAL_MEMORY_HANDLE_ANDROID_HARDWARE_BUFFER_KHR")]
+        ExternalMemoryHandleAndroidHardwareBufferKhr = 0x2070,
+        [NativeName("Name", "CL_SEMAPHORE_HANDLE_D3D12_FENCE_KHR")]
+        D3D12Fence = 0x2059,
+        [NativeName("Name", "CL_SEMAPHORE_HANDLE_D3D12_FENCE_KHR")]
+        SemaphoreHandleD3D12FenceKhr = 0x2059,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_OPAQUE_FD_KHR")]
         SemaphoreHandleOpaqueFDKhr = 0x2055,
         [NativeName("Name", "CL_SEMAPHORE_HANDLE_SYNC_FD_KHR")]
@@ -377,6 +381,124 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Binary = 0x1,
         [NativeName("Name", "CL_SEMAPHORE_TYPE_BINARY_KHR")]
         SemaphoreTypeBinaryKhr = 0x1,
+        [NativeName("Name", "CL_SVM_ALLOC_ACCESS_HOST_NOREAD_KHR")]
+        HostNoread = 0x1,
+        [NativeName("Name", "CL_SVM_ALLOC_ACCESS_HOST_NOREAD_KHR")]
+        SvmAllocAccessHostNoreadKhr = 0x1,
+        [NativeName("Name", "CL_SVM_ALLOC_ACCESS_HOST_NOWRITE_KHR")]
+        HostNowrite = 0x2,
+        [NativeName("Name", "CL_SVM_ALLOC_ACCESS_HOST_NOWRITE_KHR")]
+        SvmAllocAccessHostNowriteKhr = 0x2,
+        [NativeName("Name", "CL_SVM_ALLOC_ACCESS_DEVICE_NOREAD_KHR")]
+        DeviceNoread = 0x100,
+        [NativeName("Name", "CL_SVM_ALLOC_ACCESS_DEVICE_NOREAD_KHR")]
+        SvmAllocAccessDeviceNoreadKhr = 0x100,
+        [NativeName("Name", "CL_SVM_ALLOC_ACCESS_DEVICE_NOWRITE_KHR")]
+        DeviceNowrite = 0x200,
+        [NativeName("Name", "CL_SVM_ALLOC_ACCESS_DEVICE_NOWRITE_KHR")]
+        SvmAllocAccessDeviceNowriteKhr = 0x200,
+        [NativeName("Name", "CL_SVM_ALLOC_EXTERNAL_MEMORY_DMA_BUF_VIRTUAL_ADDRESS_IMG")]
+        ExternalMemoryDmaBufVirtualAddressImg = 0x4220,
+        [NativeName("Name", "CL_SVM_ALLOC_EXTERNAL_MEMORY_DMA_BUF_VIRTUAL_ADDRESS_IMG")]
+        SvmAllocExternalMemoryDmaBufVirtualAddressImg = 0x4220,
+        [NativeName("Name", "CL_SVM_ALLOC_EXTERNAL_MEMORY_DMA_BUF_IMG")]
+        ExternalMemoryDmaBufImg = 0x4221,
+        [NativeName("Name", "CL_SVM_ALLOC_EXTERNAL_MEMORY_DMA_BUF_IMG")]
+        SvmAllocExternalMemoryDmaBufImg = 0x4221,
+        [NativeName("Name", "CL_SVM_ALLOC_ASSOCIATED_DEVICE_HANDLE_KHR")]
+        AssociatedDeviceHandle = 0x2078,
+        [NativeName("Name", "CL_SVM_ALLOC_ASSOCIATED_DEVICE_HANDLE_KHR")]
+        SvmAllocAssociatedDeviceHandleKhr = 0x2078,
+        [NativeName("Name", "CL_SVM_ALLOC_ACCESS_FLAGS_KHR")]
+        AccessFlags = 0x2079,
+        [NativeName("Name", "CL_SVM_ALLOC_ACCESS_FLAGS_KHR")]
+        SvmAllocAccessFlagsKhr = 0x2079,
+        [NativeName("Name", "CL_SVM_ALLOC_ALIGNMENT_KHR")]
+        Alignment = 0x207A,
+        [NativeName("Name", "CL_SVM_ALLOC_ALIGNMENT_KHR")]
+        SvmAllocAlignmentKhr = 0x207A,
+        [NativeName("Name", "CL_SVM_CAPABILITY_SINGLE_ADDRESS_SPACE_KHR")]
+        SingleAddressSpace = 0x1,
+        [NativeName("Name", "CL_SVM_CAPABILITY_SINGLE_ADDRESS_SPACE_KHR")]
+        SvmCapabilitySingleAddressSpaceKhr = 0x1,
+        [NativeName("Name", "CL_SVM_CAPABILITY_SYSTEM_ALLOCATED_KHR")]
+        SystemAllocated = 0x2,
+        [NativeName("Name", "CL_SVM_CAPABILITY_SYSTEM_ALLOCATED_KHR")]
+        SvmCapabilitySystemAllocatedKhr = 0x2,
+        [NativeName("Name", "CL_SVM_CAPABILITY_DEVICE_OWNED_KHR")]
+        DeviceOwned = 0x4,
+        [NativeName("Name", "CL_SVM_CAPABILITY_DEVICE_OWNED_KHR")]
+        SvmCapabilityDeviceOwnedKhr = 0x4,
+        [NativeName("Name", "CL_SVM_CAPABILITY_DEVICE_UNASSOCIATED_KHR")]
+        DeviceUnassociated = 0x8,
+        [NativeName("Name", "CL_SVM_CAPABILITY_DEVICE_UNASSOCIATED_KHR")]
+        SvmCapabilityDeviceUnassociatedKhr = 0x8,
+        [NativeName("Name", "CL_SVM_CAPABILITY_CONTEXT_ACCESS_KHR")]
+        ContextAccess = 0x10,
+        [NativeName("Name", "CL_SVM_CAPABILITY_CONTEXT_ACCESS_KHR")]
+        SvmCapabilityContextAccessKhr = 0x10,
+        [NativeName("Name", "CL_SVM_CAPABILITY_HOST_OWNED_KHR")]
+        HostOwned = 0x20,
+        [NativeName("Name", "CL_SVM_CAPABILITY_HOST_OWNED_KHR")]
+        SvmCapabilityHostOwnedKhr = 0x20,
+        [NativeName("Name", "CL_SVM_CAPABILITY_HOST_READ_KHR")]
+        HostRead = 0x40,
+        [NativeName("Name", "CL_SVM_CAPABILITY_HOST_READ_KHR")]
+        SvmCapabilityHostReadKhr = 0x40,
+        [NativeName("Name", "CL_SVM_CAPABILITY_HOST_WRITE_KHR")]
+        HostWrite = 0x80,
+        [NativeName("Name", "CL_SVM_CAPABILITY_HOST_WRITE_KHR")]
+        SvmCapabilityHostWriteKhr = 0x80,
+        [NativeName("Name", "CL_SVM_CAPABILITY_HOST_MAP_KHR")]
+        HostMap = 0x100,
+        [NativeName("Name", "CL_SVM_CAPABILITY_HOST_MAP_KHR")]
+        SvmCapabilityHostMapKhr = 0x100,
+        [NativeName("Name", "CL_SVM_CAPABILITY_DEVICE_READ_KHR")]
+        DeviceRead = 0x200,
+        [NativeName("Name", "CL_SVM_CAPABILITY_DEVICE_READ_KHR")]
+        SvmCapabilityDeviceReadKhr = 0x200,
+        [NativeName("Name", "CL_SVM_CAPABILITY_DEVICE_WRITE_KHR")]
+        DeviceWrite = 0x400,
+        [NativeName("Name", "CL_SVM_CAPABILITY_DEVICE_WRITE_KHR")]
+        SvmCapabilityDeviceWriteKhr = 0x400,
+        [NativeName("Name", "CL_SVM_CAPABILITY_DEVICE_ATOMIC_ACCESS_KHR")]
+        DeviceAtomicAccess = 0x800,
+        [NativeName("Name", "CL_SVM_CAPABILITY_DEVICE_ATOMIC_ACCESS_KHR")]
+        SvmCapabilityDeviceAtomicAccessKhr = 0x800,
+        [NativeName("Name", "CL_SVM_CAPABILITY_CONCURRENT_ACCESS_KHR")]
+        ConcurrentAccess = 0x1000,
+        [NativeName("Name", "CL_SVM_CAPABILITY_CONCURRENT_ACCESS_KHR")]
+        SvmCapabilityConcurrentAccessKhr = 0x1000,
+        [NativeName("Name", "CL_SVM_CAPABILITY_CONCURRENT_ATOMIC_ACCESS_KHR")]
+        ConcurrentAtomicAccess = 0x2000,
+        [NativeName("Name", "CL_SVM_CAPABILITY_CONCURRENT_ATOMIC_ACCESS_KHR")]
+        SvmCapabilityConcurrentAtomicAccessKhr = 0x2000,
+        [NativeName("Name", "CL_SVM_CAPABILITY_INDIRECT_ACCESS_KHR")]
+        IndirectAccess = 0x4000,
+        [NativeName("Name", "CL_SVM_CAPABILITY_INDIRECT_ACCESS_KHR")]
+        SvmCapabilityIndirectAccessKhr = 0x4000,
+        [NativeName("Name", "CL_SVM_INFO_TYPE_INDEX_KHR")]
+        TypeIndex = 0x2088,
+        [NativeName("Name", "CL_SVM_INFO_TYPE_INDEX_KHR")]
+        SvmInfoTypeIndexKhr = 0x2088,
+        [NativeName("Name", "CL_SVM_INFO_CAPABILITIES_KHR")]
+        Capabilities = 0x2089,
+        [NativeName("Name", "CL_SVM_INFO_CAPABILITIES_KHR")]
+        SvmInfoCapabilitiesKhr = 0x2089,
+        [NativeName("Name", "CL_SVM_INFO_PROPERTIES_KHR")]
+        SvmInfoPropertiesKhr = 0x208A,
+        [NativeName("Name", "CL_SVM_INFO_ACCESS_FLAGS_KHR")]
+        SvmInfoAccessFlagsKhr = 0x208B,
+        [NativeName("Name", "CL_SVM_INFO_BASE_PTR_KHR")]
+        BasePtr = 0x419B,
+        [NativeName("Name", "CL_SVM_INFO_BASE_PTR_KHR")]
+        SvmInfoBasePtrKhr = 0x419B,
+        [NativeName("Name", "CL_SVM_INFO_SIZE_KHR")]
+        Size = 0x419C,
+        [NativeName("Name", "CL_SVM_INFO_SIZE_KHR")]
+        SvmInfoSizeKhr = 0x419C,
+        [NativeName("Name", "CL_SVM_INFO_ASSOCIATED_DEVICE_HANDLE_KHR")]
+        SvmInfoAssociatedDeviceHandleKhr = 0x419D,
         [NativeName("Name", "CL_COMMAND_ACQUIRE_D3D10_OBJECTS_KHR")]
         AcquireD3D10ObjectsKhr = 0x4017,
         [NativeName("Name", "CL_COMMAND_ACQUIRE_D3D10_OBJECTS_KHR")]
@@ -547,6 +669,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         CommandBufferCapabilitiesKhr = 0x12A9,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
         DeviceCommandBufferCapabilitiesKhr = 0x12A9,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SUPPORTED_QUEUE_PROPERTIES_KHR")]
+        CommandBufferSupportedQueuePropertiesKhr = 0x129A,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SUPPORTED_QUEUE_PROPERTIES_KHR")]
+        DeviceCommandBufferSupportedQueuePropertiesKhr = 0x129A,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
         CommandBufferRequiredQueuePropertiesKhr = 0x12AA,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
@@ -567,6 +693,22 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         KernelClockCapabilitiesKhr = 0x1076,
         [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
         DeviceKernelClockCapabilitiesKhr = 0x1076,
+        [NativeName("Name", "CL_DEVICE_SPIRV_EXTENDED_INSTRUCTION_SETS_KHR")]
+        SpirvExtendedInstructionSetsKhr = 0x12B9,
+        [NativeName("Name", "CL_DEVICE_SPIRV_EXTENDED_INSTRUCTION_SETS_KHR")]
+        DeviceSpirvExtendedInstructionSetsKhr = 0x12B9,
+        [NativeName("Name", "CL_DEVICE_SPIRV_EXTENSIONS_KHR")]
+        SpirvExtensionsKhr = 0x12BA,
+        [NativeName("Name", "CL_DEVICE_SPIRV_EXTENSIONS_KHR")]
+        DeviceSpirvExtensionsKhr = 0x12BA,
+        [NativeName("Name", "CL_DEVICE_SPIRV_CAPABILITIES_KHR")]
+        SpirvCapabilitiesKhr = 0x12BB,
+        [NativeName("Name", "CL_DEVICE_SPIRV_CAPABILITIES_KHR")]
+        DeviceSpirvCapabilitiesKhr = 0x12BB,
+        [NativeName("Name", "CL_DEVICE_SVM_TYPE_CAPABILITIES_KHR")]
+        SvmTypeCapabilitiesKhr = 0x1077,
+        [NativeName("Name", "CL_DEVICE_SVM_TYPE_CAPABILITIES_KHR")]
+        DeviceSvmTypeCapabilitiesKhr = 0x1077,
         [NativeName("Name", "CL_INVALID_D3D10_DEVICE_KHR")]
         InvalidD3D10DeviceKhr = unchecked((int) 0xFFFFFFFFFFFFFC16),
         [NativeName("Name", "CL_INVALID_D3D10_RESOURCE_KHR")]
@@ -623,6 +765,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DX9MediaPlaneKhr = 0x202A,
         [NativeName("Name", "CL_IMAGE_DX9_MEDIA_PLANE_KHR")]
         ImageDX9MediaPlaneKhr = 0x202A,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_SVM_INDIRECT_ACCESS_KHR")]
+        SvmIndirectAccessKhr = 0x11BB,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_SVM_INDIRECT_ACCESS_KHR")]
+        KernelExecInfoSvmIndirectAccessKhr = 0x11BB,
         [NativeName("Name", "CL_KERNEL_MAX_SUB_GROUP_SIZE_FOR_NDRANGE_KHR")]
         MaxSubGroupSizeForNdrangeKhr = 0x2033,
         [NativeName("Name", "CL_KERNEL_MAX_SUB_GROUP_SIZE_FOR_NDRANGE_KHR")]
@@ -669,16 +815,14 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         PlatformExternalMemoryImportHandleTypesKhr = 0x2044,
         [NativeName("Name", "CL_PLATFORM_COMMAND_BUFFER_CAPABILITIES_KHR")]
         PlatformCommandBufferCapabilitiesKhr = 0x908,
+        [NativeName("Name", "CL_PLATFORM_SVM_TYPE_CAPABILITIES_KHR")]
+        PlatformSvmTypeCapabilitiesKhr = 0x909,
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
         ILKhr = 0x1169,
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
         ProgramILKhr = 0x1169,
         [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
-        PriorityKhr = 0x1096,
-        [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
         QueuePriorityKhr = 0x1096,
-        [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
-        ThrottleKhr = 0x1097,
         [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
         QueueThrottleKhr = 0x1097,
         [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]

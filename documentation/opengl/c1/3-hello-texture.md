@@ -60,7 +60,7 @@ If we try to run our program now...
 ![A really messed up quad!](/images/opengl/chapter1/lesson3/messed-up-quad.png)
 
 Well, that doesn't look like the quad we were expecting. This is because we have updated the vertex buffer we're passing to the vertex shader,
-but haven't updated anything else such as our vertex layout definition. Luckily, it's very easy to modify the the example vertex layout
+but haven't updated anything else such as our vertex layout definition. Luckily, it's very easy to modify the example vertex layout
 shown in the previous tutorial to work with our new texture coordinates.
 
 In our `VertexAttribPointer` calls, we declared an `aPosition` attribute with a size of 3 floats and a stride of 12 bytes (`3 * sizeof(float)` equals 12).

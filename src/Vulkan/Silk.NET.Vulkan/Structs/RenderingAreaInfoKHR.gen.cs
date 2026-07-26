@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingAreaInfoKHR")]
+    [NativeName("AliasOf", "VkRenderingAreaInfo")]
     public unsafe partial struct RenderingAreaInfoKHR : IChainable
     {
         public RenderingAreaInfoKHR
         (
-            StructureType? sType = StructureType.RenderingAreaInfoKhr,
+            StructureType? sType = StructureType.RenderingAreaInfo,
             void* pNext = null,
             uint? viewMask = null,
             uint? colorAttachmentCount = null,
@@ -105,7 +106,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.RenderingAreaInfoKhr;
+            return SType = StructureType.RenderingAreaInfo;
         }
 
         /// <inheritdoc />

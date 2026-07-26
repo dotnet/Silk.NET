@@ -144,6 +144,18 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"D3D12Options21\"")]
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS21")]
         FeatureD3D12Options21 = 0x35,
+        [Obsolete("Deprecated in favour of \"D3D12TightAlignment\"")]
+        [NativeName("Name", "D3D12_FEATURE_D3D12_TIGHT_ALIGNMENT")]
+        FeatureD3D12TightAlignment = 0x36,
+        [Obsolete("Deprecated in favour of \"ApplicationSpecificDriverState\"")]
+        [NativeName("Name", "D3D12_FEATURE_APPLICATION_SPECIFIC_DRIVER_STATE")]
+        FeatureApplicationSpecificDriverState = 0x38,
+        [Obsolete("Deprecated in favour of \"BytecodeBypassHashSupported\"")]
+        [NativeName("Name", "D3D12_FEATURE_BYTECODE_BYPASS_HASH_SUPPORTED")]
+        FeatureBytecodeBypassHashSupported = 0x39,
+        [Obsolete("Deprecated in favour of \"ShaderCacheAbiSupport\"")]
+        [NativeName("Name", "D3D12_FEATURE_SHADER_CACHE_ABI_SUPPORT")]
+        FeatureShaderCacheAbiSupport = 0x3D,
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS")]
         D3D12Options = 0x0,
         [NativeName("Name", "D3D12_FEATURE_ARCHITECTURE")]
@@ -232,5 +244,13 @@ namespace Silk.NET.Direct3D12
         HardwareCopy = 0x34,
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS21")]
         D3D12Options21 = 0x35,
+        [NativeName("Name", "D3D12_FEATURE_D3D12_TIGHT_ALIGNMENT")]
+        D3D12TightAlignment = 0x36,
+        [NativeName("Name", "D3D12_FEATURE_APPLICATION_SPECIFIC_DRIVER_STATE")]
+        ApplicationSpecificDriverState = 0x38,
+        [NativeName("Name", "D3D12_FEATURE_BYTECODE_BYPASS_HASH_SUPPORTED")]
+        BytecodeBypassHashSupported = 0x39,
+        [NativeName("Name", "D3D12_FEATURE_SHADER_CACHE_ABI_SUPPORT")]
+        ShaderCacheAbiSupport = 0x3D,
     }
 }

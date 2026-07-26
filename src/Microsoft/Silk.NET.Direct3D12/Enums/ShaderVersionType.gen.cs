@@ -57,6 +57,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"AmplificationShader\"")]
         [NativeName("Name", "D3D12_SHVER_AMPLIFICATION_SHADER")]
         ShverAmplificationShader = 0xE,
+        [Obsolete("Deprecated in favour of \"NodeShader\"")]
+        [NativeName("Name", "D3D12_SHVER_NODE_SHADER")]
+        ShverNodeShader = 0xF,
         [Obsolete("Deprecated in favour of \"Reserved0\"")]
         [NativeName("Name", "D3D12_SHVER_RESERVED0")]
         ShverReserved0 = 0xFFF0,
@@ -90,6 +93,8 @@ namespace Silk.NET.Direct3D12
         MeshShader = 0xD,
         [NativeName("Name", "D3D12_SHVER_AMPLIFICATION_SHADER")]
         AmplificationShader = 0xE,
+        [NativeName("Name", "D3D12_SHVER_NODE_SHADER")]
+        NodeShader = 0xF,
         [NativeName("Name", "D3D12_SHVER_RESERVED0")]
         Reserved0 = 0xFFF0,
     }

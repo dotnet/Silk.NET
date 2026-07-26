@@ -32,5 +32,7 @@ namespace Silk.NET.SPIRV.Reflect
         WineVkd3DShaderCompiler = 0x12,
         [NativeName("Name", "SPV_REFLECT_GENERATOR_CLAY_CLAY_SHADER_COMPILER")]
         ClayClayShaderCompiler = 0x13,
+        [NativeName("Name", "SPV_REFLECT_GENERATOR_SLANG_SHADER_COMPILER")]
+        SlangShaderCompiler = 0x28,
     }
 }

@@ -58,7 +58,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Name)
+    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionConstantBuffer* ret = default;
@@ -111,7 +111,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Name)
+    public static unsafe ID3D11ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionVariable* ret = default;
@@ -155,7 +155,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Name, ShaderInputBindDesc* pDesc)
+    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte Name, ShaderInputBindDesc* pDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -167,7 +167,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte Name, ref ShaderInputBindDesc pDesc)
+    public static int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte Name, ref ShaderInputBindDesc pDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

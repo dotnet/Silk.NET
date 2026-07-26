@@ -76,13 +76,43 @@ namespace Silk.NET.OpenXR
         EnvironmentDepthProviderMeta = 1000291000,
         [NativeName("Name", "XR_OBJECT_TYPE_ENVIRONMENT_DEPTH_SWAPCHAIN_META")]
         EnvironmentDepthSwapchainMeta = 1000291001,
+        [NativeName("Name", "XR_OBJECT_TYPE_RENDER_MODEL_EXT")]
+        RenderModelExt = 1000300000,
+        [NativeName("Name", "XR_OBJECT_TYPE_RENDER_MODEL_ASSET_EXT")]
+        RenderModelAssetExt = 1000300001,
         [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_HTC")]
         PassthroughHtc = 1000317000,
         [NativeName("Name", "XR_OBJECT_TYPE_BODY_TRACKER_HTC")]
         BodyTrackerHtc = 1000320000,
+        [NativeName("Name", "XR_OBJECT_TYPE_BODY_TRACKER_BD")]
+        BodyTrackerBD = 1000385000,
+        [NativeName("Name", "XR_OBJECT_TYPE_FACE_TRACKER_BD")]
+        FaceTrackerBD = 1000386000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SENSE_DATA_PROVIDER_BD")]
+        SenseDataProviderBD = 1000389000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SENSE_DATA_SNAPSHOT_BD")]
+        SenseDataSnapshotBD = 1000389001,
+        [NativeName("Name", "XR_OBJECT_TYPE_ANCHOR_BD")]
+        AnchorBD = 1000389002,
         [NativeName("Name", "XR_OBJECT_TYPE_PLANE_DETECTOR_EXT")]
         PlaneDetectorExt = 1000429000,
+        [NativeName("Name", "XR_OBJECT_TYPE_TRACKABLE_TRACKER_ANDROID")]
+        TrackableTrackerAndroid = 1000455001,
+        [NativeName("Name", "XR_OBJECT_TYPE_DEVICE_ANCHOR_PERSISTENCE_ANDROID")]
+        DeviceAnchorPersistenceAndroid = 1000457000,
+        [NativeName("Name", "XR_OBJECT_TYPE_FACE_TRACKER_ANDROID")]
+        FaceTrackerAndroid = 1000458000,
         [NativeName("Name", "XR_OBJECT_TYPE_WORLD_MESH_DETECTOR_ML")]
         WorldMeshDetectorML = 1000474000,
+        [NativeName("Name", "XR_OBJECT_TYPE_FACIAL_EXPRESSION_CLIENT_ML")]
+        FacialExpressionClientML = 1000482000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ENTITY_EXT")]
+        SpatialEntityExt = 1000740000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_CONTEXT_EXT")]
+        SpatialContextExt = 1000740001,
+        [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_SNAPSHOT_EXT")]
+        SpatialSnapshotExt = 1000740002,
+        [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_PERSISTENCE_CONTEXT_EXT")]
+        SpatialPersistenceContextExt = 1000763000,
     }
 }

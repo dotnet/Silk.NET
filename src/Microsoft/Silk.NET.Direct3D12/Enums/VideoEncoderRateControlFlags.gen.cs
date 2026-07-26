@@ -40,6 +40,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"EnableQualityVSSpeed\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_QUALITY_VS_SPEED")]
         VideoEncoderRateControlFlagEnableQualityVSSpeed = 0x80,
+        [Obsolete("Deprecated in favour of \"EnableSpatialAdaptiveQP\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_SPATIAL_ADAPTIVE_QP")]
+        VideoEncoderRateControlFlagEnableSpatialAdaptiveQP = 0x100,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_DELTA_QP")]
@@ -58,5 +61,7 @@ namespace Silk.NET.Direct3D12
         EnableExtension1Support = 0x40,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_QUALITY_VS_SPEED")]
         EnableQualityVSSpeed = 0x80,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_RATE_CONTROL_FLAG_ENABLE_SPATIAL_ADAPTIVE_QP")]
+        EnableSpatialAdaptiveQP = 0x100,
     }
 }

@@ -63,7 +63,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterCreateDevice")]
-        public unsafe partial Device* AdapterCreateDevice(Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceDescriptor descriptor);
+        public unsafe partial Device* AdapterCreateDevice(Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3781, Column 24 in dawn-webgpu.h")]
@@ -93,12 +93,12 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3786, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterRequestDevice")]
-        public unsafe partial void AdapterRequestDevice(Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceDescriptor descriptor, PfnRequestDeviceCallback callback, void* userdata);
+        public unsafe partial void AdapterRequestDevice(Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceDescriptor descriptor, PfnRequestDeviceCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3786, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterRequestDevice")]
-        public unsafe partial void AdapterRequestDevice<T0>(Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceDescriptor descriptor, PfnRequestDeviceCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void AdapterRequestDevice<T0>(Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceDescriptor descriptor, PfnRequestDeviceCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3787, Column 24 in dawn-webgpu.h")]
@@ -108,7 +108,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3787, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterRequestDevice2")]
-        public unsafe partial Future AdapterRequestDevice2(Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceDescriptor options, RequestDeviceCallbackInfo2 callbackInfo);
+        public unsafe partial Future AdapterRequestDevice2(Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceDescriptor options, RequestDeviceCallbackInfo2 callbackInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3788, Column 24 in dawn-webgpu.h")]
@@ -118,7 +118,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3788, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuAdapterRequestDeviceF")]
-        public unsafe partial Future AdapterRequestDeviceF(Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceDescriptor options, RequestDeviceCallbackInfo callbackInfo);
+        public unsafe partial Future AdapterRequestDeviceF(Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceDescriptor options, RequestDeviceCallbackInfo callbackInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3789, Column 18 in dawn-webgpu.h")]
@@ -168,7 +168,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3830, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderInjectValidationError")]
-        public unsafe partial void CommandEncoderInjectValidationError(CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte message);
+        public unsafe partial void CommandEncoderInjectValidationError(CommandEncoder* commandEncoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3830, Column 18 in dawn-webgpu.h")]
@@ -183,7 +183,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3836, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuCommandEncoderWriteBuffer")]
-        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, ulong size);
+        public unsafe partial void CommandEncoderWriteBuffer(CommandEncoder* commandEncoder, Buffer* buffer, ulong bufferOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, ulong size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3836, Column 18 in dawn-webgpu.h")]
@@ -223,12 +223,12 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3867, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateComputePipelineAsync")]
-        public unsafe partial void DeviceCreateComputePipelineAsync(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineDescriptor descriptor, PfnCreateComputePipelineAsyncCallback callback, void* userdata);
+        public unsafe partial void DeviceCreateComputePipelineAsync(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineDescriptor descriptor, PfnCreateComputePipelineAsyncCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3867, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateComputePipelineAsync")]
-        public unsafe partial void DeviceCreateComputePipelineAsync<T0>(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineDescriptor descriptor, PfnCreateComputePipelineAsyncCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void DeviceCreateComputePipelineAsync<T0>(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineDescriptor descriptor, PfnCreateComputePipelineAsyncCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3868, Column 24 in dawn-webgpu.h")]
@@ -238,7 +238,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3868, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateComputePipelineAsyncF")]
-        public unsafe partial Future DeviceCreateComputePipelineAsyncF(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineDescriptor descriptor, CreateComputePipelineAsyncCallbackInfo callbackInfo);
+        public unsafe partial Future DeviceCreateComputePipelineAsyncF(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineDescriptor descriptor, CreateComputePipelineAsyncCallbackInfo callbackInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3869, Column 24 in dawn-webgpu.h")]
@@ -248,7 +248,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3869, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorBuffer")]
-        public unsafe partial Buffer* DeviceCreateErrorBuffer(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferDescriptor descriptor);
+        public unsafe partial Buffer* DeviceCreateErrorBuffer(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3870, Column 33 in dawn-webgpu.h")]
@@ -263,7 +263,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3871, Column 30 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorShaderModule")]
-        public unsafe partial ShaderModule* DeviceCreateErrorShaderModule(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleDescriptor* descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte errorMessage);
+        public unsafe partial ShaderModule* DeviceCreateErrorShaderModule(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleDescriptor* descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte errorMessage);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3871, Column 30 in dawn-webgpu.h")]
@@ -273,17 +273,17 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3871, Column 30 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorShaderModule")]
-        public unsafe partial ShaderModule* DeviceCreateErrorShaderModule(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ShaderModuleDescriptor descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* errorMessage);
+        public unsafe partial ShaderModule* DeviceCreateErrorShaderModule(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleDescriptor descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* errorMessage);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3871, Column 30 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorShaderModule")]
-        public unsafe partial ShaderModule* DeviceCreateErrorShaderModule(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ShaderModuleDescriptor descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte errorMessage);
+        public unsafe partial ShaderModule* DeviceCreateErrorShaderModule(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleDescriptor descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte errorMessage);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3871, Column 30 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorShaderModule")]
-        public unsafe partial ShaderModule* DeviceCreateErrorShaderModule(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ShaderModuleDescriptor descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errorMessage);
+        public unsafe partial ShaderModule* DeviceCreateErrorShaderModule(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleDescriptor descriptor, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errorMessage);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3872, Column 25 in dawn-webgpu.h")]
@@ -293,7 +293,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3872, Column 25 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateErrorTexture")]
-        public unsafe partial Texture* DeviceCreateErrorTexture(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureDescriptor descriptor);
+        public unsafe partial Texture* DeviceCreateErrorTexture(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3873, Column 33 in dawn-webgpu.h")]
@@ -303,7 +303,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3873, Column 33 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateExternalTexture")]
-        public unsafe partial ExternalTextureImpl* DeviceCreateExternalTexture(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ExternalTextureDescriptor externalTextureDescriptor);
+        public unsafe partial ExternalTextureImpl* DeviceCreateExternalTexture(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ExternalTextureDescriptor externalTextureDescriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3878, Column 18 in dawn-webgpu.h")]
@@ -318,12 +318,12 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3878, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateRenderPipelineAsync")]
-        public unsafe partial void DeviceCreateRenderPipelineAsync(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderPipelineDescriptor descriptor, PfnCreateRenderPipelineAsyncCallback callback, void* userdata);
+        public unsafe partial void DeviceCreateRenderPipelineAsync(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPipelineDescriptor descriptor, PfnCreateRenderPipelineAsyncCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3878, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateRenderPipelineAsync")]
-        public unsafe partial void DeviceCreateRenderPipelineAsync<T0>(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderPipelineDescriptor descriptor, PfnCreateRenderPipelineAsyncCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void DeviceCreateRenderPipelineAsync<T0>(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPipelineDescriptor descriptor, PfnCreateRenderPipelineAsyncCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3879, Column 24 in dawn-webgpu.h")]
@@ -333,7 +333,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3879, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateRenderPipelineAsyncF")]
-        public unsafe partial Future DeviceCreateRenderPipelineAsyncF(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderPipelineDescriptor descriptor, CreateRenderPipelineAsyncCallbackInfo callbackInfo);
+        public unsafe partial Future DeviceCreateRenderPipelineAsyncF(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPipelineDescriptor descriptor, CreateRenderPipelineAsyncCallbackInfo callbackInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3882, Column 27 in dawn-webgpu.h")]
@@ -343,7 +343,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3882, Column 27 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceCreateSwapChain")]
-        public unsafe partial SwapChain* DeviceCreateSwapChain(Device* device, Surface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapChainDescriptor descriptor);
+        public unsafe partial SwapChain* DeviceCreateSwapChain(Device* device, Surface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapChainDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3886, Column 18 in dawn-webgpu.h")]
@@ -353,7 +353,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3886, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceForceLoss")]
-        public unsafe partial void DeviceForceLoss(Device* device, DeviceLostReason type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte message);
+        public unsafe partial void DeviceForceLoss(Device* device, DeviceLostReason type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3886, Column 18 in dawn-webgpu.h")]
@@ -378,7 +378,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3892, Column 36 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceImportSharedBufferMemory")]
-        public unsafe partial SharedBufferMemoryImpl* DeviceImportSharedBufferMemory(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedBufferMemoryDescriptor descriptor);
+        public unsafe partial SharedBufferMemoryImpl* DeviceImportSharedBufferMemory(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedBufferMemoryDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3893, Column 29 in dawn-webgpu.h")]
@@ -388,7 +388,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3893, Column 29 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceImportSharedFence")]
-        public unsafe partial SharedFenceImpl* DeviceImportSharedFence(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedFenceDescriptor descriptor);
+        public unsafe partial SharedFenceImpl* DeviceImportSharedFence(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedFenceDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3894, Column 37 in dawn-webgpu.h")]
@@ -398,7 +398,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3894, Column 37 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceImportSharedTextureMemory")]
-        public unsafe partial SharedTextureMemoryImpl* DeviceImportSharedTextureMemory(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedTextureMemoryDescriptor descriptor);
+        public unsafe partial SharedTextureMemoryImpl* DeviceImportSharedTextureMemory(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedTextureMemoryDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3895, Column 18 in dawn-webgpu.h")]
@@ -408,7 +408,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3895, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceInjectError")]
-        public unsafe partial void DeviceInjectError(Device* device, ErrorType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte message);
+        public unsafe partial void DeviceInjectError(Device* device, ErrorType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte message);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3895, Column 18 in dawn-webgpu.h")]
@@ -458,7 +458,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3905, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuDeviceValidateTextureDescriptor")]
-        public unsafe partial void DeviceValidateTextureDescriptor(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureDescriptor descriptor);
+        public unsafe partial void DeviceValidateTextureDescriptor(Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3906, Column 18 in dawn-webgpu.h")]
@@ -488,7 +488,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3913, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuExternalTextureSetLabel")]
-        public unsafe partial void ExternalTextureSetLabel(ExternalTextureImpl* externalTexture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte label);
+        public unsafe partial void ExternalTextureSetLabel(ExternalTextureImpl* externalTexture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3913, Column 18 in dawn-webgpu.h")]
@@ -528,12 +528,12 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3922, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuInstanceRequestAdapter")]
-        public unsafe partial void InstanceRequestAdapter(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RequestAdapterOptions options, PfnRequestAdapterCallback callback, void* userdata);
+        public unsafe partial void InstanceRequestAdapter(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RequestAdapterOptions options, PfnRequestAdapterCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3922, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuInstanceRequestAdapter")]
-        public unsafe partial void InstanceRequestAdapter<T0>(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RequestAdapterOptions options, PfnRequestAdapterCallback callback, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void InstanceRequestAdapter<T0>(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RequestAdapterOptions options, PfnRequestAdapterCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3923, Column 24 in dawn-webgpu.h")]
@@ -543,7 +543,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3923, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuInstanceRequestAdapter2")]
-        public unsafe partial Future InstanceRequestAdapter2(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RequestAdapterOptions options, RequestAdapterCallbackInfo2 callbackInfo);
+        public unsafe partial Future InstanceRequestAdapter2(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RequestAdapterOptions options, RequestAdapterCallbackInfo2 callbackInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3924, Column 24 in dawn-webgpu.h")]
@@ -553,7 +553,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3924, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuInstanceRequestAdapterF")]
-        public unsafe partial Future InstanceRequestAdapterF(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RequestAdapterOptions options, RequestAdapterCallbackInfo callbackInfo);
+        public unsafe partial Future InstanceRequestAdapterF(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RequestAdapterOptions options, RequestAdapterCallbackInfo callbackInfo);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3925, Column 28 in dawn-webgpu.h")]
@@ -588,77 +588,77 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyExternalTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3943, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyExternalTextureForBrowser")]
-        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyExternalTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyExternalTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
@@ -668,77 +668,77 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageCopyTexture* destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent3D* copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyTextureForBrowserOptions* options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3944, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueCopyTextureForBrowser")]
-        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CopyTextureForBrowserOptions options);
+        public unsafe partial void QueueCopyTextureForBrowser(Queue* queue, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture source, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageCopyTexture destination, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent3D copySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3945, Column 18 in dawn-webgpu.h")]
@@ -823,7 +823,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4021, Column 22 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuSharedBufferMemoryBeginAccess")]
-        public unsafe partial Silk.NET.Core.Bool32 SharedBufferMemoryBeginAccess(SharedBufferMemoryImpl* sharedBufferMemory, Buffer* buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedBufferMemoryBeginAccessDescriptor descriptor);
+        public unsafe partial Silk.NET.Core.Bool32 SharedBufferMemoryBeginAccess(SharedBufferMemoryImpl* sharedBufferMemory, Buffer* buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedBufferMemoryBeginAccessDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4022, Column 24 in dawn-webgpu.h")]
@@ -833,7 +833,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4022, Column 24 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuSharedBufferMemoryCreateBuffer")]
-        public unsafe partial Buffer* SharedBufferMemoryCreateBuffer(SharedBufferMemoryImpl* sharedBufferMemory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferDescriptor descriptor);
+        public unsafe partial Buffer* SharedBufferMemoryCreateBuffer(SharedBufferMemoryImpl* sharedBufferMemory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4023, Column 22 in dawn-webgpu.h")]
@@ -868,7 +868,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4026, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuSharedBufferMemorySetLabel")]
-        public unsafe partial void SharedBufferMemorySetLabel(SharedBufferMemoryImpl* sharedBufferMemory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte label);
+        public unsafe partial void SharedBufferMemorySetLabel(SharedBufferMemoryImpl* sharedBufferMemory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4026, Column 18 in dawn-webgpu.h")]
@@ -913,7 +913,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4036, Column 22 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuSharedTextureMemoryBeginAccess")]
-        public unsafe partial Silk.NET.Core.Bool32 SharedTextureMemoryBeginAccess(SharedTextureMemoryImpl* sharedTextureMemory, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SharedTextureMemoryBeginAccessDescriptor descriptor);
+        public unsafe partial Silk.NET.Core.Bool32 SharedTextureMemoryBeginAccess(SharedTextureMemoryImpl* sharedTextureMemory, Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SharedTextureMemoryBeginAccessDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4037, Column 25 in dawn-webgpu.h")]
@@ -923,7 +923,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4037, Column 25 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuSharedTextureMemoryCreateTexture")]
-        public unsafe partial Texture* SharedTextureMemoryCreateTexture(SharedTextureMemoryImpl* sharedTextureMemory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureDescriptor descriptor);
+        public unsafe partial Texture* SharedTextureMemoryCreateTexture(SharedTextureMemoryImpl* sharedTextureMemory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4038, Column 22 in dawn-webgpu.h")]
@@ -958,7 +958,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4041, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuSharedTextureMemorySetLabel")]
-        public unsafe partial void SharedTextureMemorySetLabel(SharedTextureMemoryImpl* sharedTextureMemory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte label);
+        public unsafe partial void SharedTextureMemorySetLabel(SharedTextureMemoryImpl* sharedTextureMemory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte label);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4041, Column 18 in dawn-webgpu.h")]
@@ -1013,7 +1013,7 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4063, Column 29 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuTextureCreateErrorView")]
-        public unsafe partial TextureView* TextureCreateErrorView(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TextureViewDescriptor descriptor);
+        public unsafe partial TextureView* TextureCreateErrorView(Texture* texture, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TextureViewDescriptor descriptor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 4075, Column 18 in dawn-webgpu.h")]

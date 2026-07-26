@@ -17,14 +17,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrDynamicRenderingLocalReadOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetRenderingAttachmentLocation(this KhrDynamicRenderingLocalRead thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingAttachmentLocationInfoKHR> pLocationInfo)
+        public static unsafe void CmdSetRenderingAttachmentLocation(this KhrDynamicRenderingLocalRead thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingAttachmentLocationInfo> pLocationInfo)
         {
             // SpanOverloader
             thisApi.CmdSetRenderingAttachmentLocation(commandBuffer, in pLocationInfo.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetRenderingInputAttachmentIndices(this KhrDynamicRenderingLocalRead thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingInputAttachmentIndexInfoKHR> pInputAttachmentIndexInfo)
+        public static unsafe void CmdSetRenderingInputAttachmentIndices(this KhrDynamicRenderingLocalRead thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingInputAttachmentIndexInfo> pInputAttachmentIndexInfo)
         {
             // SpanOverloader
             thisApi.CmdSetRenderingInputAttachmentIndices(commandBuffer, in pInputAttachmentIndexInfo.GetPinnableReference());

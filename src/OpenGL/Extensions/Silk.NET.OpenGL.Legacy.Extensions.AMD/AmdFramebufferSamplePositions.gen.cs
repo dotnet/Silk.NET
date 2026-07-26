@@ -24,13 +24,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         public unsafe partial void FramebufferSamplePositions([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferSamplePositions([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float values);
+        public partial void FramebufferSamplePositions([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float values);
 
         [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void FramebufferSamplePositions([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
-        public partial void FramebufferSamplePositions([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float values);
+        public partial void FramebufferSamplePositions([Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float values);
 
         [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* values);
@@ -66,7 +66,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         public unsafe partial void NamedFramebufferSamplePositions([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glNamedFramebufferSamplePositionsfvAMD", Convention = CallingConvention.Winapi)]
-        public partial void NamedFramebufferSamplePositions([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float values);
+        public partial void NamedFramebufferSamplePositions([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float values);
 
         public unsafe float GetFramebufferParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint numsamples, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint pixelindex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size)
         {

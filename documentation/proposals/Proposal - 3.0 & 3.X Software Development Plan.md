@@ -13,10 +13,14 @@
 
 # Silk.NET 3.0
 
+## Roadmap
+
+Follow the development [here.](https://github.com/dotnet/Silk.NET/issues/209)
+
 ## Goals of 3.0
 
 The key tenets of 3.0 are **portability**, **maintainability**, **usability**, and **performance**. To this end, the following objectives have been identified:
-- Use .NET 6 - the first version of modern .NET to run on the majority of our desired target platforms
+- Use the latest .NET LTS at time of release 
     - (tenet: portability) 
 - Allow Silk.NET's rich abstractions to be integrated into other frameworks rather than being completely standalone.
     - WPF, WinForms, MAUI, Avalonia (tenet: usability) 
@@ -29,7 +33,7 @@ The key tenets of 3.0 are **portability**, **maintainability**, **usability**, a
 - Redesign our input library to work in multiple scenarios and environments, as well as be less prone to breaking changes.
     - For more information, see [the Multi-Backend Input proposal](Proposal%20-%20Multi-Backend%20Input.md). (tenet: usability)
 
-Silk.NET 3.0 presents us with an opportunity to rethink the entire library taking into account everything we've learnt over the past 2 years of the project's development.
+Silk.NET 3.0 presents us with an opportunity to rethink the entire library taking into account everything we've learnt over the past couple of years of the project's development.
 
 ## Development Roadmap
 
@@ -44,7 +48,7 @@ Before we can do anything, we need to get our brand new generators up and runnin
 - The Overloader works as a minimum viable product. It doesn't necessarily implement all overloads specified yet.
 - Windowing and Input are implemented for desktop platforms, and have received initial testing.
 - No development on Maths for this preview.
-- Exclusive support for .NET 6
+- Exclusive support for the latest .NET LTS
 
 3.0 Preview 1 is not a production-ready preview and is very experimental.
 

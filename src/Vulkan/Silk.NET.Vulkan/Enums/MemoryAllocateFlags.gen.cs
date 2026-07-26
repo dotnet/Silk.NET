@@ -15,30 +15,35 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"MaskBit\"")]
+        [Obsolete("Deprecated in favour of \"DeviceMaskBit\"")]
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT")]
         MemoryAllocateDeviceMaskBit = 1,
-        [Obsolete("Deprecated in favour of \"AddressBitKhr\"")]
+        [Obsolete("Deprecated in favour of \"DeviceAddressBitKhr\"")]
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_BIT_KHR")]
         MemoryAllocateDeviceAddressBitKhr = 2,
-        [Obsolete("Deprecated in favour of \"AddressCaptureReplayBitKhr\"")]
+        [Obsolete("Deprecated in favour of \"DeviceAddressCaptureReplayBitKhr\"")]
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
         MemoryAllocateDeviceAddressCaptureReplayBitKhr = 4,
-        [Obsolete("Deprecated in favour of \"AddressBit\"")]
+        [Obsolete("Deprecated in favour of \"ZeroInitializeBitExt\"")]
+        [NativeName("Name", "VK_MEMORY_ALLOCATE_ZERO_INITIALIZE_BIT_EXT")]
+        MemoryAllocateZeroInitializeBitExt = 8,
+        [Obsolete("Deprecated in favour of \"DeviceAddressBit\"")]
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_BIT")]
         MemoryAllocateDeviceAddressBit = 2,
-        [Obsolete("Deprecated in favour of \"AddressCaptureReplayBit\"")]
+        [Obsolete("Deprecated in favour of \"DeviceAddressCaptureReplayBit\"")]
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT")]
         MemoryAllocateDeviceAddressCaptureReplayBit = 4,
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT")]
-        MaskBit = 1,
+        DeviceMaskBit = 1,
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_BIT_KHR")]
-        AddressBitKhr = 2,
+        DeviceAddressBitKhr = 2,
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
-        AddressCaptureReplayBitKhr = 4,
+        DeviceAddressCaptureReplayBitKhr = 4,
+        [NativeName("Name", "VK_MEMORY_ALLOCATE_ZERO_INITIALIZE_BIT_EXT")]
+        ZeroInitializeBitExt = 8,
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_BIT")]
-        AddressBit = 2,
+        DeviceAddressBit = 2,
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT")]
-        AddressCaptureReplayBit = 4,
+        DeviceAddressCaptureReplayBit = 4,
     }
 }

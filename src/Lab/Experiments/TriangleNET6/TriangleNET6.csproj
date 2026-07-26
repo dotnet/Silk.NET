@@ -2,15 +2,15 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFrameworks>net6.0;net6.0-android</TargetFrameworks>
-        <TargetFrameworks Condition="!$([MSBuild]::IsOsPlatform('Linux'))">$(TargetFrameworks);net6.0-ios</TargetFrameworks>
+        <TargetFrameworks>net6.0;net8.0-android</TargetFrameworks>
+        <TargetFrameworks Condition="!$([MSBuild]::IsOsPlatform('Linux'))">$(TargetFrameworks);net8.0-ios</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>preview</LangVersion>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
-        <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0-android'">android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
-        <TrimMode Condition="'$(TargetFramework)' != 'net6.0-android'">full</TrimMode>
-        <LinkMode Condition="'$(TargetFramework)' != 'net6.0-android'">Full</LinkMode>
-        <PublishTrimmed Condition="'$(TargetFramework)' != 'net6.0-android'">true</PublishTrimmed>
+        <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net8.0-android'">android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
+        <TrimMode Condition="'$(TargetFramework)' != 'net8.0-android'">full</TrimMode>
+        <LinkMode Condition="'$(TargetFramework)' != 'net8.0-android'">Full</LinkMode>
+        <PublishTrimmed Condition="'$(TargetFramework)' != 'net8.0-android'">true</PublishTrimmed>
     </PropertyGroup>
 
     <ItemGroup>
@@ -26,7 +26,7 @@
     </ItemGroup>
     
     <!-- Android -->
-    <ItemGroup Condition="'$(TargetFramework)' != 'net6.0-android'">
+    <ItemGroup Condition="'$(TargetFramework)' != 'net8.0-android'">
         <Compile Remove="\MainActivity.cs" />
     </ItemGroup>
 

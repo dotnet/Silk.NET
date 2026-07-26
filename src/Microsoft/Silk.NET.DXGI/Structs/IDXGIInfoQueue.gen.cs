@@ -518,7 +518,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pDescription)
+        public readonly int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -550,7 +550,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddApplicationMessage(InfoQueueMessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pDescription)
+        public readonly int AddApplicationMessage(InfoQueueMessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

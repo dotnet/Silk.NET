@@ -106,7 +106,7 @@ public unsafe static class DWriteFontCollectionLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEnumeratorFromKey<T0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator) where T0 : unmanaged
+    public static unsafe int CreateEnumeratorFromKey<T0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DWriteFontCollectionLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEnumeratorFromKey<T0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged
+    public static unsafe int CreateEnumeratorFromKey<T0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class DWriteFontCollectionLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEnumeratorFromKey<T0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator) where T0 : unmanaged
+    public static unsafe int CreateEnumeratorFromKey<T0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class DWriteFontCollectionLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEnumeratorFromKey<T0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged
+    public static unsafe int CreateEnumeratorFromKey<T0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -242,7 +242,7 @@ public unsafe static class DWriteFontCollectionLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateEnumeratorFromKey<T0, TI0, TI1>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref ComPtr<TI1> fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFileEnumerator>, IComVtbl<TI1>
+    public static int CreateEnumeratorFromKey<T0, TI0, TI1>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref ComPtr<TI1> fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFileEnumerator>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -258,7 +258,7 @@ public unsafe static class DWriteFontCollectionLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEnumeratorFromKey<T0, TI0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
+    public static unsafe int CreateEnumeratorFromKey<T0, TI0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -298,7 +298,7 @@ public unsafe static class DWriteFontCollectionLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateEnumeratorFromKey<T0, TI0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref ComPtr<TI0> fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileEnumerator>, IComVtbl<TI0>
+    public static int CreateEnumeratorFromKey<T0, TI0>(this ComPtr<IDWriteFontCollectionLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref ComPtr<TI0> fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

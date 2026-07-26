@@ -94,7 +94,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -117,7 +117,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -129,7 +129,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -144,7 +144,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -169,7 +169,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -208,7 +208,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -237,7 +237,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -252,7 +252,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -270,7 +270,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -301,7 +301,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -334,7 +334,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -346,7 +346,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -361,7 +361,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -375,7 +375,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -390,7 +390,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -408,7 +408,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -425,7 +425,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -439,7 +439,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -456,7 +456,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -472,7 +472,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -487,7 +487,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -505,7 +505,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -522,7 +522,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -540,7 +540,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -561,7 +561,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -581,7 +581,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -598,7 +598,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -618,7 +618,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -637,7 +637,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -649,7 +649,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -664,7 +664,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -678,7 +678,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -693,7 +693,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -711,7 +711,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -728,7 +728,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -742,7 +742,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -759,7 +759,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -775,7 +775,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -790,7 +790,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -808,7 +808,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -825,7 +825,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -843,7 +843,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -864,7 +864,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -884,7 +884,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -901,7 +901,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -921,7 +921,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -940,7 +940,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -955,7 +955,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -973,7 +973,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -990,7 +990,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1008,7 +1008,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1029,7 +1029,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1049,7 +1049,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1066,7 +1066,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1086,7 +1086,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1105,7 +1105,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1123,7 +1123,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1144,7 +1144,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1164,7 +1164,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1185,7 +1185,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1209,7 +1209,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1232,7 +1232,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1252,7 +1252,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1275,7 +1275,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1384,7 +1384,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1404,7 +1404,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1432,7 +1432,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1452,7 +1452,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1460,7 +1460,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1480,7 +1480,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1488,7 +1488,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1508,7 +1508,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1536,7 +1536,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1556,7 +1556,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1604,7 +1604,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1644,7 +1644,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1664,7 +1664,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1684,7 +1684,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1724,7 +1724,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1764,7 +1764,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1772,7 +1772,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1780,7 +1780,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1788,7 +1788,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1796,7 +1796,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1804,7 +1804,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1812,7 +1812,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1820,7 +1820,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1828,7 +1828,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1836,7 +1836,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1844,7 +1844,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1852,7 +1852,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1860,7 +1860,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1868,7 +1868,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1876,7 +1876,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1884,7 +1884,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1892,7 +1892,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1900,7 +1900,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1908,7 +1908,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1916,7 +1916,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1924,7 +1924,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1932,7 +1932,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1940,7 +1940,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] UnicodeRange* ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1948,7 +1948,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1968,7 +1968,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1976,7 +1976,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1996,7 +1996,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2004,7 +2004,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2024,7 +2024,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2032,7 +2032,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2052,7 +2052,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2060,7 +2060,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2080,7 +2080,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2088,7 +2088,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2108,7 +2108,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2116,7 +2116,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2136,7 +2136,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2144,7 +2144,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2164,7 +2164,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2172,7 +2172,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2192,7 +2192,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2200,7 +2200,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2220,7 +2220,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2240,7 +2240,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2260,7 +2260,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2280,7 +2280,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2300,7 +2300,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2320,7 +2320,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2340,7 +2340,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale)
+    public static int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2360,7 +2360,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] targetFamilyNamesSa, uint targetFamilyNamesCount, ref IDWriteFontCollection fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2380,7 +2380,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2388,7 +2388,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2396,7 +2396,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2404,7 +2404,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2412,7 +2412,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2420,7 +2420,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2428,7 +2428,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2436,7 +2436,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2444,7 +2444,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2452,7 +2452,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2460,7 +2460,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2468,7 +2468,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2476,7 +2476,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2484,7 +2484,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2492,7 +2492,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2500,7 +2500,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2508,7 +2508,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, IDWriteFontCollection* fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2516,7 +2516,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
+    public static unsafe int AddMapping<TI0>(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UnicodeRange ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, ComPtr<TI0> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale) where TI0 : unmanaged, IComVtbl<IDWriteFontCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2524,7 +2524,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2532,7 +2532,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2540,7 +2540,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2548,7 +2548,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2556,7 +2556,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2564,7 +2564,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2572,7 +2572,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2580,7 +2580,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2588,7 +2588,7 @@ public unsafe static class DWriteFontFallbackBuilderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
+    public static unsafe int AddMapping(this ComPtr<IDWriteFontFallbackBuilder> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<UnicodeRange> ranges, uint rangesCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* targetFamilyNames, uint targetFamilyNamesCount, Span<IDWriteFontCollection> fontCollection, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string localeName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseFamilyName, float scale)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

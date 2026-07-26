@@ -33,9 +33,9 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public string NativeName { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public string ProfileName { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public Version ProfileVersion { get; set; }
 
         /// <summary>
