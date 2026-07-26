@@ -11,6 +11,10 @@ on:
       - "ci/**"
       - "develop/**"
       - "main"
+
+permissions:
+  contents: read
+
 jobs:
   Build:
     if: github.repository == 'dotnet/Silk.NET'

@@ -10,6 +10,10 @@ on:
       - build/nuke/Native/Core.cs
       - build/nuke/Native/Shaderc.cs
       - .github/workflows/shaderc.yml
+
+permissions:
+  contents: read
+
 jobs:
   Build:
     if: github.repository == 'dotnet/Silk.NET'
