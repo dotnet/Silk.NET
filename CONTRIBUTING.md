@@ -5,25 +5,82 @@ You can contribute to Silk.NET with issues and PRs. Simply filing issues for pro
 ## Considerations
 The Silk.NET team will merge changes that improve the library significantly. We will not merge changes that have narrowly-defined benefits, or are breaking in some way. All contributions must also follow all other guidelines outlined in this document.
 
-## DOs and DON'Ts
+### The TLDR
+
 Please:
-- **DO** talk to us in #team-talk in the Discord or open a discussion issue if your contribution is sizeable.
+- **DO** talk to us in #team-talk in the Discord or open a discussion about your contribution
 - **DO** keep the discussions around contributions focused. If you have another matter to discuss, rather than creating a massive tangent in the current discussion, open up a new one.
 - **DO** follow the code of conduct if discussing on GitHub and/or the Discord #rules if discussing on Discord.
+- **DON'T** use AI for your contribution without reading and understanding the nuance of doing so captured in this document.
+- **DON'T** use AI in such a way that removes you as the human contributor from the process of understanding the code you're reading/writing, making technical decisions, documenting your contribution, and/or responding to the team/review comments.
 - **DON'T** make PRs that don't directly affect the end user, such as style changes. These are best done as part of a PR related to the area in question. Documentation is fine (and encouraged!), as this is useful to the end user.
 - **DON'T** commit code you didn't write without following its license and following our guidelines for doing so in the Contributor License Agreement. If you are unable to license some code, don't commit it.
 - **DON'T** surprise us with big pull requests or big API changes without talking to us first!
 - **DON'T** make PRs for legal or administrative documents, such as the license, file headers, or code of conduct. If you see something off, let us know and we'll change it.
+ 
+### Unannounced Contributions (including AI "drive-by" contributions)
 
-## Breaking changes
-Contributions must maintain API signature and behavioral compatibility. Contributions that include breaking changes will be rejected. There are exceptions to this, such as if the contribution is made against a major/breaking version branch (such as `2.0` instead of `master`), however this is subject to the team's approval. At risk of sounding like a broken record, talk to us about your idea first!
+You **MUST NOT** submit unannounced sizeable contributions without first discussing it with the Silk.NET team.
 
-### Generated bindings
-Sometimes upstream specification changes happen while working on your contribution. Unfortunately, we are not in control of breaking changes created by the upstream spec sources, and if one happens while working on your contribution it is not a cause for concern.
+**This includes both AI-generated contributions and non-AI-generated contributions.**
 
-If your contribution affects binder output, let us know by commenting on the pull request. If the change isn't as a result of your modifications to the BuildTools (if any), it is recommended that you don't commit the .gen.cs files and instead do this in a separate PR.
+Silk.NET is vehemently against AI "drive-by" contributions (i.e. where a large amount of work has been submitted by someone unfamiliar to the team), and we will reject any PR where we suspect this is the case. The simple way to avoid this is to talk to us before contributing anything sizeable.
 
-## Suggested workflow
+#### What is "sizeable"?
+
+Sizeable means any of the following:
+- Affects tens of files or over a thousand lines of code.
+- Affects the public API surface in a way that has not been approved through the [proposals process](documentation/proposals/README.md) if applicable.
+
+Generally speaking, a pull request that addresses an open issue (that, ideally, is marked as "help wanted", but we acknowledge that this might not always be the case) can be worked on without first consulting the Silk.NET team, provided it does not meet any of the above criteria.
+
+#### What is "unannounced"
+
+We would much rather you announce that you're working on something to us before you work on it (so we can plan maintainer workload and also guide you through any existing ideas that the team may have on what you're about to work on), but you **MUST** do so if it meets any of the above "sizeable" criteria. 
+
+You **MUST** talk to us in #team-talk in the Discord, post an issue comment, and/or open a discussion issue if your contribution is sizeable (and **SHOULD** do so even if that isn't the case)
+
+### Use of AI
+
+When you're working on a contribution, you **MUST** be responsible and accountable for every line of code that you are contributing.
+
+You **MUST** be able to reason for, understand, and defend all technical aspects of your contribution. At the same time, you **MUST** be able to acknowledge and understand any review comments, and make informed decisions on how to action them.
+
+All technical decisions **MUST** be your own, and informed by your own understanding and ideally input from the Silk.NET team. AI can be used well for ideation (e.g. as a "sounding board"), but must be done so with sufficient understanding of the context to know when the AI is leading you astray. For the avoidance of doubt, the Silk.NET team can also be used in this way, and in fact we encourage this more than the AI alternative - we're always happy to lend time to help you help us with your contribution! 
+
+Note that the above guidelines also apply for contributions where AI isn't used - if you don't understand what you've written or can't defend it, chances are we won't either.
+
+You **MUST** declare all AI usage, regardless of whether it is for code completion, review/comprehension, or generation of the contribution.
+
+AI generated documentation **MUST** be agreed with the Silk.NET team on a case-by-case basis. We will reject any pull request that contains AI-generated documentation that hasn't been explicitly approved by us ahead of time.
+
+### Human Communication
+
+As a general rule, even if AI is writing your code, we are still collaborating with you, not the AI.
+
+To this end, AI-generated descriptions, comments, or other forms of communication **MUST NOT** be used. If you have met the AI usage guideline, you don't need them.
+AI-assisted translations or edits **MAY** be used in communication, but only where the original words prior to translation are your own. 
+
+Silk.NET welcomes contributors with a diverse array of personalities, backgrounds, technical opinions/tastes, and way of working.
+Effective self-expression is a key component of effective collaboration with us, we want to talk to a real human and that involves getting a feeling for your conduct/"voice".
+This helps everyone understand where everyone's coming from, and helps establish middle-grounds in the event of differing opinions.
+
+You **MUST** follow the [Code of Conduct](CODE_OF_CONDUCT.md) at all times.
+
+You **SHOULD** communicate with the Silk.NET team using the #team-talk channel in our Discord, or via GitHub Discussions.
+Where you are discussing a potential contribution, you **SHOULD** also discuss the mechanisms with which you intend to author your contribution (i.e. usage of AI tools) so we can be on the same page on what to expect. To be clear, we aren't going to force you into a specific way of working, but we want to manage our own expectations as well as ensure these guidelines are being followed. 
+
+### Intellectual Property
+
+You **MUST NOT** use third party code without declaring it as per our Contributor License Agreement and ensuring the license is compatible with ours.
+If you are ever in doubt, you **MUST** discuss this with the Silk.NET team. The .NET Foundation owns Silk.NET's intellectual property, and is by extension the risk owner of any potential infringements.
+We can liase with the Foundation as needed. 
+
+As per the "use of AI" section, you **MUST** declare any code that has been generated by AI. This does not automatically preclude the usage of AI-generated code on intellectual property grounds, rather it just manages the Silk.NET team's expectations. 
+
+We understand AI usage is a sensitive issue from an intellectual property perspective. Large language models are known to make use of publicly-accessible material, however this does not automatically make the content licensable in an MIT-compatible way. The .NET Foundation has not established a stance on the intellectual property impact of AI usage, and in the advent of widespread LLM availability it has become the modus operandi for many software companies, teams, and individuals to make use of LLM output in copyrighted works in line with that LLM's terms and conditions. It is unknowable what materials (IP incumbered or not) were used in the production of specific output, whether that output is sufficiently transformative in the eyes of the law, and whether it is the LLM provider or the Foundation that owns the risk of infringement. We will follow industry trends/legal precedence in this stance as they develop.
+
+#### Early Pull Requests
 Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-blend/pull-request-first-f6bb667a9b6). Please don't wait until you're done to open a PR!
 
 1. Install [Git](https://git-scm.com/downloads) and the [.NET Core SDK](https://www.microsoft.com/net/download)
@@ -33,6 +90,14 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 1. Open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
 1. Make your commits in small, incremental steps with clear descriptions.
 1. Tag a maintainer when you're done and ask for a review!
+
+## Breaking changes
+Contributions must maintain API signature and behavioral compatibility. Contributions that include breaking changes will be rejected. There are exceptions to this, such as if the contribution is made against a major/breaking version branch (such as `2.0` instead of `master`), however this is subject to the team's approval. At risk of sounding like a broken record, talk to us about your idea first!
+
+### Generated bindings
+Sometimes upstream specification changes happen while working on your contribution. Unfortunately, we are not in control of breaking changes created by the upstream spec sources, and if one happens while working on your contribution it is not a cause for concern.
+
+If your contribution affects binder output, let us know by commenting on the pull request. If the change isn't as a result of your modifications to the BuildTools (if any), it is recommended that you don't commit the .gen.cs files and instead do this in a separate PR.
 
 ## Working with our large solution
 
