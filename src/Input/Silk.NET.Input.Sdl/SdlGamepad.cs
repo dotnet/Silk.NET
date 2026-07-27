@@ -128,14 +128,14 @@ namespace Silk.NET.Input.Sdl
                         }
                         case GameControllerAxis.ControllerAxisTriggerleft:
                         {
-                            TriggerMoved?.Invoke
-                                (this, _triggers[0] = new Trigger(0, (float) @event.Caxis.Value / short.MaxValue));
+                            var trigger0 = _triggers[0] = new Trigger(0, (float) @event.Caxis.Value / short.MaxValue);
+                            TriggerMoved?.Invoke(this, trigger0);
                             break;
                         }
                         case GameControllerAxis.ControllerAxisTriggerright:
                         {
-                            TriggerMoved?.Invoke
-                                (this, _triggers[1] = new Trigger(1, (float) @event.Caxis.Value / short.MaxValue));
+                            var trigger1 = _triggers[1] = new Trigger(1, (float) @event.Caxis.Value / short.MaxValue);
+                            TriggerMoved?.Invoke(this, trigger1);
                             break;
                         }
                     }
@@ -145,15 +145,15 @@ namespace Silk.NET.Input.Sdl
                 case EventType.Controllerbuttondown:
                 {
                     var ogBtn = _buttons[@event.Cbutton.Button];
-                    ButtonDown?.Invoke
-                        (this, _buttons[@event.Cbutton.Button] = new Button(ogBtn.Name, ogBtn.Index, true));
+                    var newBtn = _buttons[@event.Cbutton.Button] = new Button(ogBtn.Name, ogBtn.Index, true);
+                    ButtonDown?.Invoke(this, newBtn);
                     break;
                 }
                 case EventType.Controllerbuttonup:
                 {
                     var ogBtn = _buttons[@event.Cbutton.Button];
-                    ButtonUp?.Invoke
-                        (this, _buttons[@event.Cbutton.Button] = new Button(ogBtn.Name, ogBtn.Index, false));
+                    var newBtn = _buttons[@event.Cbutton.Button] = new Button(ogBtn.Name, ogBtn.Index, false);
+                    ButtonUp?.Invoke(this, newBtn);
                     break;
                 }
                 case EventType.Controllerdeviceadded:
