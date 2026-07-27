@@ -243,8 +243,15 @@ Name affix categories:
   delegate representation of a function pointer type to distinguish the delegate type from the struct type for extracted
   function pointers.
 
-- `FunctionPointerParent` - This is a prefix used by the delegate representation of a function pointer type. This is
-  used to ensure that the delegate type always uses the current name of its struct counterpart as part of its own name.
+- `FunctionPointerNameFallbackParent` - This is a prefix used by the struct representation of a function pointer type.
+  This is used in cases where a "fallback" name is used since there is no other native name available. For example, if
+  an unmanaged delegate was extracted from a method parameter, the method name and parameter name are joined together.
+  This prefix references the method name to ensure that the struct type uses the final name of the method as part of
+  its own name during name prettification.
+
+- `FunctionPointerParent` - This is a prefix used by the delegate representation of a function pointer type. This
+  prefix references the name of its struct counterpart to ensure that the delegate type uses the final name of its
+  struct counterpart as part of its own name during name prettification.
 
 These affixes are usually left unconfigured in `PrettifyNames`.
 
@@ -322,8 +329,8 @@ Examples for how `ExtractNestedTypes` works can be found in the `ExtractNestedTy
 Name affix categories:
 
 - `NestedStructParent` - This is a prefix that references the name of the type that the extracted type was previously
-  nested in. This is used to ensure that the extracted type always uses the current name of its original "parent" type
-  as part of its own name.
+  nested in. This ensures the extracted type uses the final name of its original "parent" type as part of its own name
+  during name prettification.
 
 These affixes are usually left unconfigured in `PrettifyNames`.
 
