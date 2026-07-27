@@ -386,10 +386,16 @@ public struct GamepadBindingInput;
 public struct GamepadBindingInputAxis;
 ```
 
-Limitation: Only simple references are allowed because references are resolved manually by `PrettifyNames` and not by
-Roslyn. For example, `nameof(GamepadBinding.Member)` will not work because member access expressions are not handled.
-Currently, only identifiers that exist in the current scope or parent scope can be referenced. That said, this should be
-enough for most use cases.
+Or from the OpenCL bindings:
+```cs
+[NameAffix("Prefix", "FunctionPointerNameFallbackParent", nameof(Cl.EnqueueSvmFreeARM))]
+public struct EnqueueSvmFreeArmPfnFreFunc;
+
+public class Cl
+{
+    public int EnqueueSvmFreeARM();
+}
+```
 
 ## Symbol-based Renamer
 
