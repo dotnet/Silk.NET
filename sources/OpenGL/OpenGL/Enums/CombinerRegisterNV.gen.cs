@@ -17,17 +17,17 @@ public enum CombinerRegisterNV : uint
     Texture1ARB = 33985,
 
     [NativeName("GL_PRIMARY_COLOR_NV")]
-    PrimaryColorNV = 34092,
+    PrimaryColor = 34092,
 
     [NativeName("GL_SECONDARY_COLOR_NV")]
-    SecondaryColorNV = 34093,
+    SecondaryColor = 34093,
 
     [NativeName("GL_SPARE0_NV")]
-    Spare0NV = 34094,
+    Spare0 = 34094,
 
     [NativeName("GL_SPARE1_NV")]
-    Spare1NV = 34095,
+    Spare1 = 34095,
 
     [NativeName("GL_DISCARD_NV")]
-    DiscardNV = 34096,
+    Discard = 34096,
 }

@@ -170,7 +170,6 @@
           "PathCoordType": "byte"
         },
         "IdentifyFunctionDataTypes": true,
-        "IdentifyEnumTypeNonExclusiveVendors": true,
         "IdentifyEnumMemberImpliedVendors": true
       },
       "AddVTables": {
@@ -214,9 +213,6 @@
           },
           "KhronosImpliedVendor": {
             "Remove": true
-          },
-          "KhronosNonExclusiveVendor": {
-            "Remove": false
           },
           "SharedPrefix": {
             "Remove": true
