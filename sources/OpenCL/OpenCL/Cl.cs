@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
 
 namespace Silk.NET.OpenCL;
@@ -93,6 +92,8 @@ public partial class Cl
 
     private class NativeContext : INativeContext
     {
+        private readonly DefaultNativeContext _context = new();
+
         public Cl Cl { get; set; } = null!;
         private ICl Icl => Cl;
 
@@ -100,19 +101,18 @@ public partial class Cl
         {
             if (functionName == "clGetExtensionFunctionAddressForPlatform")
             {
-                return (delegate* unmanaged<PlatformIdHandle, sbyte*, void*>)
-                    &GetExtensionFunctionAddressForPlatform;
+                return _context.LoadFunction(functionName, libraryNameHint);
             }
 
-            return Icl.GetExtensionFunctionAddressForPlatform(Cl.CurrentPlatform, functionName);
+            var ptr = Icl.GetExtensionFunctionAddressForPlatform(Cl.CurrentPlatform, functionName);
+            if (ptr != nullptr)
+            {
+                return ptr;
+            }
+
+            return _context.LoadFunction(functionName, libraryNameHint);
         }
 
-        [UnmanagedCallersOnly]
-        private static unsafe void* GetExtensionFunctionAddressForPlatform(
-            PlatformIdHandle instance,
-            sbyte* name
-        ) => DllImport.GetExtensionFunctionAddressForPlatform(instance, name);
-
-        public void Dispose() { }
+        public void Dispose() => _context.Dispose();
     }
 }

@@ -73,9 +73,7 @@ internal unsafe class Program
         // TODO: Exanite: These might not represent actual problems, but I want to document these so we can address them later.
 
         // Load API
-        _ = Cl.Create(); // TODO: This is a hack for running the static constructor for Cl
-        // TODO: OpenCL is a bit weird. The non-extension functions can be DllImported, but the extension functions cannot (see clGetExtensionFunctionAddressForPlatform). Not sure how to handle this properly yet. Probably something to do with DefaultNativeContext?
-        var cl = new Cl.StaticWrapper<Cl.DllImport>();
+        var cl = Cl.Create();
 
         // Initialize host data
         var hostData1 = new int[_elementCount];
