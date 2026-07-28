@@ -73,7 +73,7 @@ internal unsafe class Program
         // TODO: Exanite: These might not represent actual problems, but I want to document these so we can address them later.
 
         // Load API
-        var cl = Cl.Create();
+        var cl = Cl.Create(); // TODO: This should be disposable
 
         // Initialize host data
         var hostData1 = new int[_elementCount];
