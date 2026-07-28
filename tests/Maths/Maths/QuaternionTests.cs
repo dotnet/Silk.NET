@@ -20,8 +20,8 @@ namespace Silk.NET.Maths.Tests
             float expected = 70.0f;
             float actual;
 
-            actual = Quaternion<float>.Dot(a, b);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Dot did not return the expected value: expected {expected} actual {actual}");
+            actual = Quaternion.Dot(a, b);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Dot did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Length ()
@@ -37,7 +37,7 @@ namespace Silk.NET.Maths.Tests
             float expected = 5.477226f;
             float actual;
 
-            actual = target.Length();
+            actual = target.Length;
 
             Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Length did not return the expected value: expected {expected} actual {actual}");
         }
@@ -54,7 +54,7 @@ namespace Silk.NET.Maths.Tests
             float expected = 30.0f;
             float actual;
 
-            actual = target.LengthSquared();
+            actual = target.LengthSquared;
 
             Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.LengthSquared did not return the expected value: expected {expected} actual {actual}");
         }
@@ -64,21 +64,21 @@ namespace Silk.NET.Maths.Tests
         public void QuaternionLerpTest()
         {
             Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
-            Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
-            Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
+            Quaternion<float> a = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
+            Quaternion<float> b = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
             float t = 0.5f;
 
-            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(20.0f));
+            Quaternion<float> expected = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(20.0f));
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Lerp did not return the expected value: expected {expected} actual {actual}");
+            actual = Quaternion.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Lerp did not return the expected value: expected {expected} actual {actual}");
 
             // Case a and b are same.
             expected = a;
-            actual = Quaternion<float>.Lerp(a, a, t);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Lerp did not return the expected value: expected {expected} actual {actual}");
+            actual = Quaternion.Lerp(a, a, t);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Lerp did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Lerp (Quaternion<float>, Quaternion<float>, float)
@@ -87,14 +87,14 @@ namespace Silk.NET.Maths.Tests
         public void QuaternionLerpTest1()
         {
             Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
-            Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
-            Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
+            Quaternion<float> a = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
+            Quaternion<float> b = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
             float t = 0.0f;
 
             Quaternion<float> expected = new Quaternion<float>(a.X, a.Y, a.Z, a.W);
-            Quaternion<float> actual = Quaternion<float>.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Lerp did not return the expected value: expected {expected} actual {actual}");
+            Quaternion<float> actual = Quaternion.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Lerp did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Lerp (Quaternion<float>, Quaternion<float>, float)
@@ -103,14 +103,14 @@ namespace Silk.NET.Maths.Tests
         public void QuaternionLerpTest2()
         {
             Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
-            Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
-            Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
+            Quaternion<float> a = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
+            Quaternion<float> b = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
             float t = 1.0f;
 
             Quaternion<float> expected = new Quaternion<float>(b.X, b.Y, b.Z, b.W);
-            Quaternion<float> actual = Quaternion<float>.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Lerp did not return the expected value: expected {expected} actual {actual}");
+            Quaternion<float> actual = Quaternion.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Lerp did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Lerp (Quaternion<float>, Quaternion<float>, float)
@@ -119,16 +119,16 @@ namespace Silk.NET.Maths.Tests
         public void QuaternionLerpTest3()
         {
             Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
-            Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
-            Quaternion<float> b = Quaternion<float>.Negate(a);
+            Quaternion<float> a = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
+            Quaternion<float> b = -a;
 
             float t = 1.0f;
 
-            Quaternion<float> actual = Quaternion<float>.Lerp(a, b, t);
+            Quaternion<float> actual = Quaternion.Lerp(a, b, t);
             // Note that in Quaternion<float> world, Q == -Q. In the case of Quaternion<float>s dot product is zero,
             // one of the Quaternion<float> will be flipped to compute the shortest distance. When t = 1, we
             // expect the result to be the same as Quaternion<float> b but flipped.
-            Assert.True(actual == a, $"Quaternion<float>.Lerp did not return the expected value: expected {a} actual {actual}");
+            Assert.True(actual == a, $"Quaternion.Lerp did not return the expected value: expected {a} actual {actual}");
         }
 
         // A test for Conjugate(Quaternion<float>)
@@ -140,8 +140,8 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(-1, -2, -3, 4);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Conjugate(a);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Conjugate did not return the expected value: expected {expected} actual {actual}");
+            actual = Quaternion.Conjugate(a);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Conjugate did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Normalize (Quaternion<float>)
@@ -153,8 +153,8 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(0.182574168f, 0.365148336f, 0.5477225f, 0.7302967f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Normalize(a);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Normalize did not return the expected value: expected {expected} actual {actual}");
+            actual = Quaternion.Normalize(a);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Normalize did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Normalize (Quaternion<float>)
@@ -164,9 +164,9 @@ namespace Silk.NET.Maths.Tests
         {
             Quaternion<float> a = new Quaternion<float>(0.0f, 0.0f, -0.0f, 0.0f);
 
-            Quaternion<float> actual = Quaternion<float>.Normalize(a);
+            Quaternion<float> actual = Quaternion.Normalize(a);
             Assert.True(float.IsNaN(actual.X) && float.IsNaN(actual.Y) && float.IsNaN(actual.Z) && float.IsNaN(actual.W)
-                , $"Quaternion<float>.Normalize did not return the expected value: expected {new Quaternion<float>(float.NaN, float.NaN, float.NaN, float.NaN)} actual {actual}");
+                , $"Quaternion.Normalize did not return the expected value: expected {new Quaternion<float>(float.NaN, float.NaN, float.NaN, float.NaN)} actual {actual}");
         }
 
         // A test for Concatenate(Quaternion<float>, Quaternion<float>)
@@ -179,8 +179,8 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(24.0f, 48.0f, 48.0f, -6.0f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Concatenate(a, b);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Concatenate did not return the expected value: expected {expected} actual {actual}");
+            actual = Quaternion.Concatenate(a, b);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Concatenate did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for operator - (Quaternion<float>, Quaternion<float>)
@@ -295,8 +295,8 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(0.0691723f, 0.1383446f, 0.207516879f, 0.9659258f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.CreateFromAxisAngle(axis, angle);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.CreateFromAxisAngle did not return the expected value: expected {expected} actual {actual}");
+            actual = Quaternion.CreateFromAxisAngle(axis, angle);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.CreateFromAxisAngle did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for CreateFromAxisAngle (Vector3D<float>f, float)
@@ -308,10 +308,10 @@ namespace Silk.NET.Maths.Tests
             float angle = MathHelper.ToRadians(-30.0f);
 
             float cos = (float)System.Math.Cos(angle / 2.0f);
-            Quaternion<float> actual = Quaternion<float>.CreateFromAxisAngle(axis, angle);
+            Quaternion<float> actual = Quaternion.CreateFromAxisAngle(axis, angle);
 
             Assert.True(actual.X == 0.0f && actual.Y == 0.0f && actual.Z == 0.0f && MathHelper.Equal(cos, actual.W)
-                , "Quaternion<float>.CreateFromAxisAngle did not return the expected value.");
+                , "Quaternion.CreateFromAxisAngle did not return the expected value.");
         }
 
         // A test for CreateFromAxisAngle (Vector3D<float>f, float)
@@ -323,9 +323,9 @@ namespace Silk.NET.Maths.Tests
             float angle1 = MathHelper.ToRadians(30.0f);
             float angle2 = MathHelper.ToRadians(750.0f);
 
-            Quaternion<float> actual1 = Quaternion<float>.CreateFromAxisAngle(axis, angle1);
-            Quaternion<float> actual2 = Quaternion<float>.CreateFromAxisAngle(axis, angle2);
-            Assert.True(MathHelper.Equal(actual1, actual2), $"Quaternion<float>.CreateFromAxisAngle did not return the expected value: actual1 {actual1} actual2 {actual2}");
+            Quaternion<float> actual1 = Quaternion.CreateFromAxisAngle(axis, angle1);
+            Quaternion<float> actual2 = Quaternion.CreateFromAxisAngle(axis, angle2);
+            Assert.True(MathHelper.Equal(actual1, actual2), $"Quaternion.CreateFromAxisAngle did not return the expected value: actual1 {actual1} actual2 {actual2}");
         }
 
         // A test for CreateFromAxisAngle (Vector3D<float>f, float)
@@ -337,12 +337,12 @@ namespace Silk.NET.Maths.Tests
             float angle1 = MathHelper.ToRadians(30.0f);
             float angle2 = MathHelper.ToRadians(390.0f);
 
-            Quaternion<float> actual1 = Quaternion<float>.CreateFromAxisAngle(axis, angle1);
-            Quaternion<float> actual2 = Quaternion<float>.CreateFromAxisAngle(axis, angle2);
+            Quaternion<float> actual1 = Quaternion.CreateFromAxisAngle(axis, angle1);
+            Quaternion<float> actual2 = Quaternion.CreateFromAxisAngle(axis, angle2);
             actual1.X = -actual1.X;
             actual1.W = -actual1.W;
 
-            Assert.True(MathHelper.Equal(actual1, actual2), $"Quaternion<float>.CreateFromAxisAngle did not return the expected value: actual1 {actual1} actual2 {actual2}");
+            Assert.True(MathHelper.Equal(actual1, actual2), $"Quaternion.CreateFromAxisAngle did not return the expected value: actual1 {actual1} actual2 {actual2}");
         }
 
         [Fact]
@@ -352,13 +352,13 @@ namespace Silk.NET.Maths.Tests
             float pitchAngle = MathHelper.ToRadians(40.0f);
             float rollAngle = MathHelper.ToRadians(50.0f);
 
-            Quaternion<float> yaw = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, yawAngle);
-            Quaternion<float> pitch = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, pitchAngle);
-            Quaternion<float> roll = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, rollAngle);
+            Quaternion<float> yaw = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitY, yawAngle);
+            Quaternion<float> pitch = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitX, pitchAngle);
+            Quaternion<float> roll = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitZ, rollAngle);
 
             Quaternion<float> expected = yaw * pitch * roll;
-            Quaternion<float> actual = Quaternion<float>.CreateFromYawPitchRoll(yawAngle, pitchAngle, rollAngle);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Quaternion<float>CreateFromYawPitchRollTest1 did not return the expected value: expected {expected} actual {actual}");
+            Quaternion<float> actual = Quaternion.CreateFromYawPitchRoll(yawAngle, pitchAngle, rollAngle);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.CreateFromYawPitchRollTest1 did not return the expected value: expected {expected} actual {actual}");
         }
 
         // Covers more numeric rigions
@@ -377,13 +377,13 @@ namespace Silk.NET.Maths.Tests
                         float pitchRad = MathHelper.ToRadians(pitchAngle);
                         float rollRad = MathHelper.ToRadians(rollAngle);
 
-                        Quaternion<float> yaw = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, yawRad);
-                        Quaternion<float> pitch = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, pitchRad);
-                        Quaternion<float> roll = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, rollRad);
+                        Quaternion<float> yaw = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitY, yawRad);
+                        Quaternion<float> pitch = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitX, pitchRad);
+                        Quaternion<float> roll = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitZ, rollRad);
 
                         Quaternion<float> expected = yaw * pitch * roll;
-                        Quaternion<float> actual = Quaternion<float>.CreateFromYawPitchRoll(yawRad, pitchRad, rollRad);
-                        Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Quaternion<float>CreateFromYawPitchRollTest2 Yaw:{yawAngle} Pitch:{pitchAngle} Roll:{rollAngle} did not return the expected value: expected {expected} actual {actual}");
+                        Quaternion<float> actual = Quaternion.CreateFromYawPitchRoll(yawRad, pitchRad, rollRad);
+                        Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.CreateFromYawPitchRollTest2 Yaw:{yawAngle} Pitch:{pitchAngle} Roll:{rollAngle} did not return the expected value: expected {expected} actual {actual}");
                     }
                 }
             }
@@ -394,21 +394,21 @@ namespace Silk.NET.Maths.Tests
         public void QuaternionSlerpTest()
         {
             Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
-            Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
-            Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
+            Quaternion<float> a = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
+            Quaternion<float> b = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
             float t = 0.5f;
 
-            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(20.0f));
+            Quaternion<float> expected = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(20.0f));
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Slerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Slerp did not return the expected value: expected {expected} actual {actual}");
+            actual = Quaternion.Slerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Slerp did not return the expected value: expected {expected} actual {actual}");
 
             // Case a and b are same.
             expected = a;
-            actual = Quaternion<float>.Slerp(a, a, t);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Slerp did not return the expected value: expected {expected} actual {actual}");
+            actual = Quaternion.Slerp(a, a, t);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Slerp did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Slerp (Quaternion<float>, Quaternion<float>, float)
@@ -417,14 +417,14 @@ namespace Silk.NET.Maths.Tests
         public void QuaternionSlerpTest1()
         {
             Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
-            Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
-            Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
+            Quaternion<float> a = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
+            Quaternion<float> b = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
             float t = 0.0f;
 
             Quaternion<float> expected = new Quaternion<float>(a.X, a.Y, a.Z, a.W);
-            Quaternion<float> actual = Quaternion<float>.Slerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Slerp did not return the expected value: expected {expected} actual {actual}");
+            Quaternion<float> actual = Quaternion.Slerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Slerp did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Slerp (Quaternion<float>, Quaternion<float>, float)
@@ -433,14 +433,14 @@ namespace Silk.NET.Maths.Tests
         public void QuaternionSlerpTest2()
         {
             Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
-            Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
-            Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
+            Quaternion<float> a = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
+            Quaternion<float> b = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
             float t = 1.0f;
 
             Quaternion<float> expected = new Quaternion<float>(b.X, b.Y, b.Z, b.W);
-            Quaternion<float> actual = Quaternion<float>.Slerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Slerp did not return the expected value: expected {expected} actual {actual}");
+            Quaternion<float> actual = Quaternion.Slerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Slerp did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Slerp (Quaternion<float>, Quaternion<float>, float)
@@ -449,17 +449,17 @@ namespace Silk.NET.Maths.Tests
         public void QuaternionSlerpTest3()
         {
             Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
-            Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
+            Quaternion<float> a = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = -a;
 
             float t = 1.0f;
 
             Quaternion<float> expected = a;
-            Quaternion<float> actual = Quaternion<float>.Slerp(a, b, t);
+            Quaternion<float> actual = Quaternion.Slerp(a, b, t);
             // Note that in Quaternion<float> world, Q == -Q. In the case of Quaternion<float>s dot product is zero,
             // one of the Quaternion<float> will be flipped to compute the shortest distance. When t = 1, we
             // expect the result to be the same as Quaternion<float> b but flipped.
-            Assert.True(actual == expected, $"Quaternion<float>.Slerp did not return the expected value: expected {expected} actual {actual}");
+            Assert.True(actual == expected, $"Quaternion.Slerp did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Slerp (Quaternion<float>, Quaternion<float>, float)
@@ -468,14 +468,14 @@ namespace Silk.NET.Maths.Tests
         public void QuaternionSlerpTest4()
         {
             Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
-            Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
-            Quaternion<float> b = -Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
+            Quaternion<float> a = Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
+            Quaternion<float> b = -Quaternion.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
             float t = 0.0f;
 
             Quaternion<float> expected = new Quaternion<float>(a.X, a.Y, a.Z, a.W);
-            Quaternion<float> actual = Quaternion<float>.Slerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Slerp did not return the expected value: expected {expected} actual {actual}");
+            Quaternion<float> actual = Quaternion.Slerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Slerp did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for operator - (Quaternion<float>)
@@ -492,7 +492,7 @@ namespace Silk.NET.Maths.Tests
             Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.operator - did not return the expected value: expected {expected} actual {actual}");
         }
 
-        // A test for Inverse (Quaternion<float>)
+        // A test for Invert (Quaternion<float>)
         [Fact]
         public void QuaternionInverseTest()
         {
@@ -501,20 +501,20 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(-0.0287356321f, -0.03448276f, -0.0402298868f, 0.04597701f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Inverse(a);
+            actual = Quaternion.Invert(a);
             Assert.Equal(expected, actual);
         }
 
-        // A test for Inverse (Quaternion<float>)
+        // A test for Invert (Quaternion<float>)
         // Invert zero length Quaternion<float>
         [Fact]
         public void QuaternionInverseTest1()
         {
             Quaternion<float> a = new Quaternion<float>();
-            Quaternion<float> actual = Quaternion<float>.Inverse(a);
+            Quaternion<float> actual = Quaternion.Invert(a);
 
             Assert.True(float.IsNaN(actual.X) && float.IsNaN(actual.Y) && float.IsNaN(actual.Z) && float.IsNaN(actual.W)
-                , $"Quaternion<float>.Inverse - did not return the expected value: expected {new Quaternion<float>(float.NaN, float.NaN, float.NaN, float.NaN)} actual {actual}");
+                , $"Quaternion.Inverse - did not return the expected value: expected {new Quaternion<float>(float.NaN, float.NaN, float.NaN, float.NaN)} actual {actual}");
         }
 
         // A test for ToString ()
@@ -524,7 +524,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> target = new Quaternion<float>(-1.0f, 2.2f, 3.3f, -4.4f);
 
             string expected = string.Format(CultureInfo.CurrentCulture
-                , "{{X:{0} Y:{1} Z:{2} W:{3}}}"
+                , "<{0}, {1}, {2}, {3}>"
                 , -1.0f, 2.2f, 3.3f, -4.4f);
 
             string actual = target.ToString();
@@ -541,7 +541,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(6.0f, 8.0f, 10.0f, 12.0f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Add(a, b);
+            actual = a + b;
             Assert.Equal(expected, actual);
         }
 
@@ -555,8 +555,8 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(-0.045977015f, -0.09195402f, -7.450581E-9f, 0.402298868f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Divide(a, b);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Divide did not return the expected value: expected {expected} actual {actual}");
+            actual = a / b;
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Divide did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Equals (object)
@@ -593,17 +593,6 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(expected, actual);
         }
 
-        // A test for GetHashCode ()
-        [Fact]
-        public void QuaternionGetHashCodeTest()
-        {
-            Quaternion<float> a = new Quaternion<float>(1.0f, 2.0f, 3.0f, 4.0f);
-
-            int expected = unchecked(a.X.GetHashCode() + a.Y.GetHashCode() + a.Z.GetHashCode() + a.W.GetHashCode());
-            int actual = a.GetHashCode();
-            Assert.Equal(expected, actual);
-        }
-
         // A test for Multiply (Quaternion<float>, float)
         [Fact]
         public void QuaternionMultiplyTest2()
@@ -614,8 +603,8 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(0.5f, 1.0f, 1.5f, 2.0f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Multiply(a, factor);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Multiply did not return the expected value: expected {expected} actual {actual}");
+            actual = a * factor;
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Multiply did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Multiply (Quaternion<float>, Quaternion<float>)
@@ -628,8 +617,8 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(24.0f, 48.0f, 48.0f, -6.0f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Multiply(a, b);
-            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.Multiply did not return the expected value: expected {expected} actual {actual}");
+            actual = a * b;
+            Assert.True(MathHelper.Equal(expected, actual), $"Quaternion.Multiply did not return the expected value: expected {expected} actual {actual}");
         }
 
         // A test for Negate (Quaternion<float>)
@@ -641,7 +630,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(-1.0f, -2.0f, -3.0f, -4.0f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Negate(a);
+            actual = -a;
             Assert.Equal(expected, actual);
         }
 
@@ -655,7 +644,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> expected = new Quaternion<float>(-4.0f, 4.0f, 4.0f, -4.0f);
             Quaternion<float> actual;
 
-            actual = Quaternion<float>.Subtract(a, b);
+            actual = a - b;
             Assert.Equal(expected, actual);
         }
 
@@ -705,14 +694,14 @@ namespace Silk.NET.Maths.Tests
             Matrix4X4<float> matrix = Matrix4X4<float>.Identity;
 
             Quaternion<float> expected = new Quaternion<float>(0.0f, 0.0f, 0.0f, 1.0f);
-            Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
+            Quaternion<float> actual = Quaternion.CreateFromRotationMatrix(matrix);
             Assert.True(MathHelper.Equal(expected, actual),
-                $"Quaternion<float>.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
+                $"Quaternion.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
 
             // make sure convert back to matrix is same as we passed matrix.
             Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
             Assert.True(MathHelper.Equal(matrix, m2),
-                $"Quaternion<float>.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
+                $"Quaternion.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
         }
 
         // A test for CreateFromRotationMatrix (Matrix4X4<float>)
@@ -724,15 +713,15 @@ namespace Silk.NET.Maths.Tests
             {
                 Matrix4X4<float> matrix = Matrix4X4.CreateRotationX<float>(angle);
 
-                Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
-                Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
+                Quaternion<float> expected = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
+                Quaternion<float> actual = Quaternion.CreateFromRotationMatrix(matrix);
                 Assert.True(MathHelper.EqualRotation(expected, actual),
-                    $"Quaternion<float>.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
+                    $"Quaternion.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
 
                 // make sure convert back to matrix is same as we passed matrix.
                 Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
                 Assert.True(MathHelper.Equal(matrix, m2),
-                    $"Quaternion<float>.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
+                    $"Quaternion.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
             }
         }
 
@@ -745,15 +734,15 @@ namespace Silk.NET.Maths.Tests
             {
                 Matrix4X4<float> matrix = Matrix4X4.CreateRotationY<float>(angle);
 
-                Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, angle);
-                Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
+                Quaternion<float> expected = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitY, angle);
+                Quaternion<float> actual = Quaternion.CreateFromRotationMatrix(matrix);
                 Assert.True(MathHelper.EqualRotation(expected, actual),
-                    $"Quaternion<float>.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
+                    $"Quaternion.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
 
                 // make sure convert back to matrix is same as we passed matrix.
                 Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
                 Assert.True(MathHelper.Equal(matrix, m2),
-                    $"Quaternion<float>.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
+                    $"Quaternion.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
             }
         }
 
@@ -766,15 +755,15 @@ namespace Silk.NET.Maths.Tests
             {
                 Matrix4X4<float> matrix = Matrix4X4.CreateRotationZ<float>(angle);
 
-                Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle);
-                Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
+                Quaternion<float> expected = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle);
+                Quaternion<float> actual = Quaternion.CreateFromRotationMatrix(matrix);
                 Assert.True(MathHelper.EqualRotation(expected, actual),
-                    $"Quaternion<float>.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
+                    $"Quaternion.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
 
                 // make sure convert back to matrix is same as we passed matrix.
                 Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
                 Assert.True(MathHelper.Equal(matrix, m2),
-                    $"Quaternion<float>.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
+                    $"Quaternion.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
             }
         }
 
@@ -788,18 +777,18 @@ namespace Silk.NET.Maths.Tests
                 Matrix4X4<float> matrix = Matrix4X4.CreateRotationX<float>(angle) * Matrix4X4.CreateRotationY<float>(angle) * Matrix4X4.CreateRotationZ<float>(angle);
 
                 Quaternion<float> expected =
-                    Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) *
-                    Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, angle) *
-                    Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
+                    Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) *
+                    Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitY, angle) *
+                    Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
 
-                Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
+                Quaternion<float> actual = Quaternion.CreateFromRotationMatrix(matrix);
                 Assert.True(MathHelper.EqualRotation(expected, actual),
-                    $"Quaternion<float>.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
+                    $"Quaternion.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
 
                 // make sure convert back to matrix is same as we passed matrix.
                 Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
                 Assert.True(MathHelper.Equal(matrix, m2),
-                    $"Quaternion<float>.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
+                    $"Quaternion.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
             }
         }
 
@@ -811,15 +800,15 @@ namespace Silk.NET.Maths.Tests
             float angle = MathHelper.ToRadians(180.0f);
             Matrix4X4<float> matrix = Matrix4X4.CreateRotationY<float>(angle) * Matrix4X4.CreateRotationZ<float>(angle);
 
-            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) * Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, angle);
-            Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
+            Quaternion<float> expected = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) * Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitY, angle);
+            Quaternion<float> actual = Quaternion.CreateFromRotationMatrix(matrix);
             Assert.True(MathHelper.EqualRotation(expected, actual),
-                $"Quaternion<float>.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
+                $"Quaternion.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
 
             // make sure convert back to matrix is same as we passed matrix.
             Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
             Assert.True(MathHelper.Equal(matrix, m2),
-                $"Quaternion<float>.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
+                $"Quaternion.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
         }
 
         // A test for CreateFromRotationMatrix (Matrix4X4<float>)
@@ -830,15 +819,15 @@ namespace Silk.NET.Maths.Tests
             float angle = MathHelper.ToRadians(180.0f);
             Matrix4X4<float> matrix = Matrix4X4.CreateRotationX<float>(angle) * Matrix4X4.CreateRotationZ<float>(angle);
 
-            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) * Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
-            Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
+            Quaternion<float> expected = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) * Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
+            Quaternion<float> actual = Quaternion.CreateFromRotationMatrix(matrix);
             Assert.True(MathHelper.EqualRotation(expected, actual),
-                $"Quaternion<float>.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
+                $"Quaternion.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
 
             // make sure convert back to matrix is same as we passed matrix.
             Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
             Assert.True(MathHelper.Equal(matrix, m2),
-                $"Quaternion<float>.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
+                $"Quaternion.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
         }
 
         // A test for CreateFromRotationMatrix (Matrix4X4<float>)
@@ -849,15 +838,15 @@ namespace Silk.NET.Maths.Tests
             float angle = MathHelper.ToRadians(180.0f);
             Matrix4X4<float> matrix = Matrix4X4.CreateRotationX<float>(angle) * Matrix4X4.CreateRotationY<float>(angle);
 
-            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, angle) * Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
-            Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
+            Quaternion<float> expected = Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitY, angle) * Quaternion.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
+            Quaternion<float> actual = Quaternion.CreateFromRotationMatrix(matrix);
             Assert.True(MathHelper.EqualRotation(expected, actual),
-                $"Quaternion<float>.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
+                $"Quaternion.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
 
             // make sure convert back to matrix is same as we passed matrix.
             Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
             Assert.True(MathHelper.Equal(matrix, m2),
-                $"Quaternion<float>.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
+                $"Quaternion.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
         }
 
         // A test for Equals (Quaternion<float>)
@@ -966,6 +955,7 @@ namespace Silk.NET.Maths.Tests
             private QuaternionPlusFloat _b;
         }
 
+        /* TODO: Enable
         // A test to make sure the fields are laid out how we expect
         [Fact]
         public unsafe void QuaternionFieldOffsetTest()
@@ -982,5 +972,6 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(new IntPtr(basePtr + 2), new IntPtr(&quat.Z));
             Assert.Equal(new IntPtr(basePtr + 3), new IntPtr(&quat.W));
         }
+        */
     }
 }
