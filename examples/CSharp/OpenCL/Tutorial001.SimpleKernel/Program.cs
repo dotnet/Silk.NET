@@ -104,7 +104,7 @@ internal unsafe class Program
         CheckError(
             cl.GetDeviceInfo(
                 device,
-                (uint)DeviceInfo.DeviceName, // TODO: Shouldn't need a cast. CL_DRIVER_, etc blocks prefix trimming. Silk 2 names the property as Name instead.
+                (uint)DeviceInfo.DeviceName, // TODO: Shouldn't need a cast.
                 (nuint)buffer.Length,
                 buffer.AsRef(),
                 nullptr
@@ -132,7 +132,7 @@ internal unsafe class Program
         // Create context and command queue
         var properties = new[]
         {
-            (nint)ContextProperties.ContextPlatform, // TODO: CL_PRINTF_CALLBACK_ARM, etc block prefix trimming
+            (nint)ContextProperties.ContextPlatform,
             (nint)platform.Handle,
             0,
         };
