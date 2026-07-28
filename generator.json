@@ -216,7 +216,7 @@
             "Remove": true
           },
           "KhronosNonExclusiveVendor": {
-            "Remove": true
+            "Remove": false
           },
           "SharedPrefix": {
             "Remove": true
