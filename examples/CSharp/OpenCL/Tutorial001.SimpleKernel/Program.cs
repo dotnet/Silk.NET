@@ -73,7 +73,9 @@ internal unsafe class Program
         // TODO: Exanite: These might not represent actual problems, but I want to document these so we can address them later.
 
         // Load API
+        // TODO: These todos apply to all Silk bindings.
         // TODO: Consider making INativeContext public. It's nice for debugging.
+        // TODO: Consider returning the concrete class instead of the interface. Having to cast to access Cl.CurrentPlatform is annoying.
         var cl = Cl.Create(); // TODO: This should be disposable
 
         // Initialize host data
