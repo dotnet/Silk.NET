@@ -73,6 +73,7 @@ internal unsafe class Program
         // TODO: Exanite: These might not represent actual problems, but I want to document these so we can address them later.
 
         // Load API
+        // TODO: Consider making INativeContext public. It's nice for debugging.
         var cl = Cl.Create(); // TODO: This should be disposable
 
         // Initialize host data
