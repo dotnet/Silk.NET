@@ -27,7 +27,7 @@ partial class Cl(INativeContext nativeContext) : IDisposable
         private static partial ICl ContextFactory();
     }
 
-    private readonly unsafe void*[] _slots = new void*[179];
+    private readonly unsafe void*[] _slots = new void*[183];
 
     public static ICl Create(INativeContext ctx) => new Cl(ctx);
 

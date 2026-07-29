@@ -1773,6 +1773,11 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clDeinitLayer")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clDeinitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        public static extern int DeinitLayer();
+
         [NativeName("clDeviceMemAllocINTEL")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clDeviceMemAllocINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
@@ -6213,6 +6218,41 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clGetLayerInfo")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetLayerInfo")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        public static extern int GetLayerInfo(
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetLayerInfo")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetLayerInfo(
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            {
+                return (int)GetLayerInfo(
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
         [NativeName("clGetMemAllocInfoINTEL")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetMemAllocInfoINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
@@ -7002,6 +7042,80 @@ public unsafe partial class Cl : ICl, ICl.Static
                     __dsl_memory,
                     size,
                     __dsl_errcode_ret
+                );
+            }
+        }
+
+        [NativeName("clInitLayer")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clInitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        public static extern int InitLayer(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            uint* num_entries_ret,
+            IcdDispatchHandle* layer_dispatch_ret
+        );
+
+        [NativeName("clInitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int InitLayer(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            Ref<uint> num_entries_ret,
+            Ref<IcdDispatchHandle> layer_dispatch_ret
+        )
+        {
+            fixed (IcdDispatchHandle* __dsl_layer_dispatch_ret = layer_dispatch_ret)
+            fixed (uint* __dsl_num_entries_ret = num_entries_ret)
+            {
+                return (int)InitLayer(
+                    num_entries,
+                    target_dispatch,
+                    __dsl_num_entries_ret,
+                    __dsl_layer_dispatch_ret
+                );
+            }
+        }
+
+        [NativeName("clInitLayerWithProperties")]
+        [DllImport("opencl", ExactSpelling = true, EntryPoint = "clInitLayerWithProperties")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        public static extern int InitLayerWithProperties(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            uint* num_entries_ret,
+            IcdDispatchHandle* layer_dispatch_ret,
+            ulong* properties
+        );
+
+        [NativeName("clInitLayerWithProperties")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int InitLayerWithProperties(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            Ref<uint> num_entries_ret,
+            Ref<IcdDispatchHandle> layer_dispatch_ret,
+            Ref<ulong> properties
+        )
+        {
+            fixed (ulong* __dsl_properties = properties)
+            fixed (IcdDispatchHandle* __dsl_layer_dispatch_ret = layer_dispatch_ret)
+            fixed (uint* __dsl_num_entries_ret = num_entries_ret)
+            {
+                return (int)InitLayerWithProperties(
+                    num_entries,
+                    target_dispatch,
+                    __dsl_num_entries_ret,
+                    __dsl_layer_dispatch_ret,
+                    __dsl_properties
                 );
             }
         }
@@ -9936,6 +10050,14 @@ public unsafe partial class Cl : ICl, ICl.Static
         )]
         public EventHandle CreateUserEvent(ContextHandle context, Ref<int> errcode_ret) =>
             T.CreateUserEvent(context, errcode_ret);
+
+        [NativeName("clDeinitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clDeinitLayer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int DeinitLayer() => T.DeinitLayer();
 
         [NativeName("clDeviceMemAllocINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
@@ -14614,6 +14736,32 @@ public unsafe partial class Cl : ICl, ICl.Static
                 param_value_size_ret
             );
 
+        [NativeName("clGetLayerInfo")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetLayerInfo(
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) => T.GetLayerInfo(param_name, param_value_size, param_value, param_value_size_ret);
+
+        [NativeName("clGetLayerInfo")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetLayerInfo(
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        ) => T.GetLayerInfo(param_name, param_value_size, param_value, param_value_size_ret);
+
         [NativeName("clGetMemAllocInfoINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
@@ -15391,6 +15539,74 @@ public unsafe partial class Cl : ICl, ICl.Static
             nuint size,
             Ref<int> errcode_ret
         ) => T.ImportMemoryARM(context, flags, properties, memory, size, errcode_ret);
+
+        [NativeName("clInitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int InitLayer(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            uint* num_entries_ret,
+            IcdDispatchHandle* layer_dispatch_ret
+        ) => T.InitLayer(num_entries, target_dispatch, num_entries_ret, layer_dispatch_ret);
+
+        [NativeName("clInitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int InitLayer(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            Ref<uint> num_entries_ret,
+            Ref<IcdDispatchHandle> layer_dispatch_ret
+        ) => T.InitLayer(num_entries, target_dispatch, num_entries_ret, layer_dispatch_ret);
+
+        [NativeName("clInitLayerWithProperties")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int InitLayerWithProperties(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            uint* num_entries_ret,
+            IcdDispatchHandle* layer_dispatch_ret,
+            ulong* properties
+        ) =>
+            T.InitLayerWithProperties(
+                num_entries,
+                target_dispatch,
+                num_entries_ret,
+                layer_dispatch_ret,
+                properties
+            );
+
+        [NativeName("clInitLayerWithProperties")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int InitLayerWithProperties(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            Ref<uint> num_entries_ret,
+            Ref<IcdDispatchHandle> layer_dispatch_ret,
+            Ref<ulong> properties
+        ) =>
+            T.InitLayerWithProperties(
+                num_entries,
+                target_dispatch,
+                num_entries_ret,
+                layer_dispatch_ret,
+                properties
+            );
 
         [NativeName("clLinkProgram")]
         [SupportedApiProfile(
@@ -18747,6 +18963,14 @@ public unsafe partial class Cl : ICl, ICl.Static
                 return (EventHandle)CreateUserEvent(context, __dsl_errcode_ret);
             }
         }
+
+        [NativeName("clDeinitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clDeinitLayer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int DeinitLayer() => Underlying.Value!.DeinitLayer();
 
         [NativeName("clDeviceMemAllocINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
@@ -24029,6 +24253,50 @@ public unsafe partial class Cl : ICl, ICl.Static
             }
         }
 
+        [NativeName("clGetLayerInfo")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetLayerInfo(
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        ) =>
+            Underlying.Value!.GetLayerInfo(
+                param_name,
+                param_value_size,
+                param_value,
+                param_value_size_ret
+            );
+
+        [NativeName("clGetLayerInfo")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetLayerInfo(
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        )
+        {
+            fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+            fixed (void* __dsl_param_value = param_value)
+            {
+                return (int)GetLayerInfo(
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+            }
+        }
+
         [NativeName("clGetMemAllocInfoINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
@@ -24944,6 +25212,99 @@ public unsafe partial class Cl : ICl, ICl.Static
                     __dsl_memory,
                     size,
                     __dsl_errcode_ret
+                );
+            }
+        }
+
+        [NativeName("clInitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int InitLayer(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            uint* num_entries_ret,
+            IcdDispatchHandle* layer_dispatch_ret
+        ) =>
+            Underlying.Value!.InitLayer(
+                num_entries,
+                target_dispatch,
+                num_entries_ret,
+                layer_dispatch_ret
+            );
+
+        [NativeName("clInitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int InitLayer(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            Ref<uint> num_entries_ret,
+            Ref<IcdDispatchHandle> layer_dispatch_ret
+        )
+        {
+            fixed (IcdDispatchHandle* __dsl_layer_dispatch_ret = layer_dispatch_ret)
+            fixed (uint* __dsl_num_entries_ret = num_entries_ret)
+            {
+                return (int)InitLayer(
+                    num_entries,
+                    target_dispatch,
+                    __dsl_num_entries_ret,
+                    __dsl_layer_dispatch_ret
+                );
+            }
+        }
+
+        [NativeName("clInitLayerWithProperties")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int InitLayerWithProperties(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            uint* num_entries_ret,
+            IcdDispatchHandle* layer_dispatch_ret,
+            ulong* properties
+        ) =>
+            Underlying.Value!.InitLayerWithProperties(
+                num_entries,
+                target_dispatch,
+                num_entries_ret,
+                layer_dispatch_ret,
+                properties
+            );
+
+        [NativeName("clInitLayerWithProperties")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int InitLayerWithProperties(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            Ref<uint> num_entries_ret,
+            Ref<IcdDispatchHandle> layer_dispatch_ret,
+            Ref<ulong> properties
+        )
+        {
+            fixed (ulong* __dsl_properties = properties)
+            fixed (IcdDispatchHandle* __dsl_layer_dispatch_ret = layer_dispatch_ret)
+            fixed (uint* __dsl_num_entries_ret = num_entries_ret)
+            {
+                return (int)InitLayerWithProperties(
+                    num_entries,
+                    target_dispatch,
+                    __dsl_num_entries_ret,
+                    __dsl_layer_dispatch_ret,
+                    __dsl_properties
                 );
             }
         }
@@ -26524,6 +26885,9 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
     }
 
+    [NativeName("CL_TARGET_OPENCL_VERSION")]
+    public const int TargetOpenclVersion = 310;
+
     [NativeName("CL_NAME_VERSION_MAX_NAME_SIZE")]
     [SupportedApiProfile("opencl", ["CL_VERSION_3_0", "CL_VERSION_3_1"], MinVersion = "3.0")]
     public const int NameVersionMaxNameSize = 64;
@@ -27942,6 +28306,24 @@ public unsafe partial class Cl : ICl, ICl.Static
         | (((0) & ((1 << (10)) - 1)) << (12))
         | ((5) & ((1 << (12)) - 1))
     );
+
+    [NativeName("CL_LOADER_LAYERS_EXTENSION_NAME")]
+    public static ReadOnlySpan<byte> LoaderLayersExtensionName => "cl_loader_layers"u8;
+
+    [NativeName("CL_LOADER_LAYERS_EXTENSION_VERSION")]
+    public const int LoaderLayersExtensionVersion = (
+        (((1) & ((1 << (10)) - 1)) << ((10) + (12)))
+        | (((0) & ((1 << (10)) - 1)) << (12))
+        | ((1) & ((1 << (12)) - 1))
+    );
+
+    [NativeName("CL_LAYER_API_VERSION_100")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    public const int LayerApiVersion100 = 100;
+
+    [NativeName("CL_LAYER_PROPERTIES_LIST_END")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    public const ulong LayerPropertiesListEnd = ((ulong)(0));
 
     [NativeName("clBuildProgram")]
     [SupportedApiProfile(
@@ -31492,6 +31874,25 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static EventHandle CreateUserEvent(ContextHandle context, Ref<int> errcode_ret) =>
         ThisThread.CreateUserEvent(context, errcode_ret);
 
+    [NativeName("clDeinitLayer")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clDeinitLayer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.DeinitLayer() =>
+        (
+            (delegate* unmanaged<int>)(
+                _slots[32] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[32] = nativeContext.LoadFunction("clDeinitLayer", "opencl")
+            )
+        )();
+
+    [NativeName("clDeinitLayer")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clDeinitLayer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int DeinitLayer() => ThisThread.DeinitLayer();
+
     [NativeName("clDeviceMemAllocINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
@@ -31506,9 +31907,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, DeviceIdHandle, ulong*, nuint, uint, int*, void*>)(
-                _slots[32] is not null and var loadedFnPtr
+                _slots[33] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[32] = nativeContext.LoadFunction("clDeviceMemAllocINTEL", "opencl")
+                    : _slots[33] = nativeContext.LoadFunction("clDeviceMemAllocINTEL", "opencl")
             )
         )(context, device, properties, size, alignment, errcode_ret);
 
@@ -31587,9 +31988,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[33] is not null and var loadedFnPtr
+                _slots[34] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[33] = nativeContext.LoadFunction(
+                    : _slots[34] = nativeContext.LoadFunction(
                         "clEnqueueAcquireExternalMemObjectsKHR",
                         "opencl"
                     )
@@ -31695,9 +32096,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[34] is not null and var loadedFnPtr
+                _slots[35] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[34] = nativeContext.LoadFunction(
+                    : _slots[35] = nativeContext.LoadFunction(
                         "clEnqueueAcquireGrallocObjectsIMG",
                         "opencl"
                     )
@@ -31803,9 +32204,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.EnqueueBarrier(CommandQueueHandle command_queue) =>
         (
             (delegate* unmanaged<CommandQueueHandle, int>)(
-                _slots[35] is not null and var loadedFnPtr
+                _slots[36] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[35] = nativeContext.LoadFunction("clEnqueueBarrier", "opencl")
+                    : _slots[36] = nativeContext.LoadFunction("clEnqueueBarrier", "opencl")
             )
         )(command_queue);
 
@@ -31853,9 +32254,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<CommandQueueHandle, uint, EventHandle*, EventHandle*, int>)(
-                _slots[36] is not null and var loadedFnPtr
+                _slots[37] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[36] = nativeContext.LoadFunction(
+                    : _slots[37] = nativeContext.LoadFunction(
                         "clEnqueueBarrierWithWaitList",
                         "opencl"
                     )
@@ -31993,9 +32394,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[37] is not null and var loadedFnPtr
+                _slots[38] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[37] = nativeContext.LoadFunction("clEnqueueCopyBuffer", "opencl")
+                    : _slots[38] = nativeContext.LoadFunction("clEnqueueCopyBuffer", "opencl")
             )
         )(
             command_queue,
@@ -32183,9 +32584,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[38] is not null and var loadedFnPtr
+                _slots[39] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[38] = nativeContext.LoadFunction("clEnqueueCopyBufferRect", "opencl")
+                    : _slots[39] = nativeContext.LoadFunction("clEnqueueCopyBufferRect", "opencl")
             )
         )(
             command_queue,
@@ -32394,9 +32795,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[39] is not null and var loadedFnPtr
+                _slots[40] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[39] = nativeContext.LoadFunction(
+                    : _slots[40] = nativeContext.LoadFunction(
                         "clEnqueueCopyBufferToImage",
                         "opencl"
                     )
@@ -32582,9 +32983,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[40] is not null and var loadedFnPtr
+                _slots[41] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[40] = nativeContext.LoadFunction("clEnqueueCopyImage", "opencl")
+                    : _slots[41] = nativeContext.LoadFunction("clEnqueueCopyImage", "opencl")
             )
         )(
             command_queue,
@@ -32768,9 +33169,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[41] is not null and var loadedFnPtr
+                _slots[42] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[41] = nativeContext.LoadFunction(
+                    : _slots[42] = nativeContext.LoadFunction(
                         "clEnqueueCopyImageToBuffer",
                         "opencl"
                     )
@@ -32954,9 +33355,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[42] is not null and var loadedFnPtr
+                _slots[43] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[42] = nativeContext.LoadFunction("clEnqueueFillBuffer", "opencl")
+                    : _slots[43] = nativeContext.LoadFunction("clEnqueueFillBuffer", "opencl")
             )
         )(
             command_queue,
@@ -33128,9 +33529,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[43] is not null and var loadedFnPtr
+                _slots[44] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[43] = nativeContext.LoadFunction("clEnqueueFillImage", "opencl")
+                    : _slots[44] = nativeContext.LoadFunction("clEnqueueFillImage", "opencl")
             )
         )(
             command_queue,
@@ -33288,9 +33689,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[44] is not null and var loadedFnPtr
+                _slots[45] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[44] = nativeContext.LoadFunction(
+                    : _slots[45] = nativeContext.LoadFunction(
                         "clEnqueueGenerateMipmapIMG",
                         "opencl"
                     )
@@ -33439,9 +33840,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 int*,
                 void*>)(
-                _slots[45] is not null and var loadedFnPtr
+                _slots[46] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[45] = nativeContext.LoadFunction("clEnqueueMapBuffer", "opencl")
+                    : _slots[46] = nativeContext.LoadFunction("clEnqueueMapBuffer", "opencl")
             )
         )(
             command_queue,
@@ -33636,9 +34037,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 int*,
                 void*>)(
-                _slots[46] is not null and var loadedFnPtr
+                _slots[47] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[46] = nativeContext.LoadFunction("clEnqueueMapImage", "opencl")
+                    : _slots[47] = nativeContext.LoadFunction("clEnqueueMapImage", "opencl")
             )
         )(
             command_queue,
@@ -33826,9 +34227,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.EnqueueMarker(CommandQueueHandle command_queue, EventHandle* @event) =>
         (
             (delegate* unmanaged<CommandQueueHandle, EventHandle*, int>)(
-                _slots[47] is not null and var loadedFnPtr
+                _slots[48] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[47] = nativeContext.LoadFunction("clEnqueueMarker", "opencl")
+                    : _slots[48] = nativeContext.LoadFunction("clEnqueueMarker", "opencl")
             )
         )(command_queue, @event);
 
@@ -33923,9 +34324,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<CommandQueueHandle, uint, EventHandle*, EventHandle*, int>)(
-                _slots[48] is not null and var loadedFnPtr
+                _slots[49] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[48] = nativeContext.LoadFunction(
+                    : _slots[49] = nativeContext.LoadFunction(
                         "clEnqueueMarkerWithWaitList",
                         "opencl"
                     )
@@ -34046,9 +34447,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[49] is not null and var loadedFnPtr
+                _slots[50] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[49] = nativeContext.LoadFunction("clEnqueueMemAdviseINTEL", "opencl")
+                    : _slots[50] = nativeContext.LoadFunction("clEnqueueMemAdviseINTEL", "opencl")
             )
         )(command_queue, ptr, size, advice, num_events_in_wait_list, event_wait_list, @event);
 
@@ -34154,9 +34555,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[50] is not null and var loadedFnPtr
+                _slots[51] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[50] = nativeContext.LoadFunction("clEnqueueMemcpyINTEL", "opencl")
+                    : _slots[51] = nativeContext.LoadFunction("clEnqueueMemcpyINTEL", "opencl")
             )
         )(
             command_queue,
@@ -34278,9 +34679,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[51] is not null and var loadedFnPtr
+                _slots[52] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[51] = nativeContext.LoadFunction("clEnqueueMemFillINTEL", "opencl")
+                    : _slots[52] = nativeContext.LoadFunction("clEnqueueMemFillINTEL", "opencl")
             )
         )(
             command_queue,
@@ -34400,9 +34801,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[52] is not null and var loadedFnPtr
+                _slots[53] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[52] = nativeContext.LoadFunction("clEnqueueMemsetINTEL", "opencl")
+                    : _slots[53] = nativeContext.LoadFunction("clEnqueueMemsetINTEL", "opencl")
             )
         )(command_queue, dst_ptr, value, size, num_events_in_wait_list, event_wait_list, @event);
 
@@ -34506,9 +34907,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[53] is not null and var loadedFnPtr
+                _slots[54] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[53] = nativeContext.LoadFunction("clEnqueueMigrateMemINTEL", "opencl")
+                    : _slots[54] = nativeContext.LoadFunction("clEnqueueMigrateMemINTEL", "opencl")
             )
         )(command_queue, ptr, size, flags, num_events_in_wait_list, event_wait_list, @event);
 
@@ -34612,9 +35013,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[54] is not null and var loadedFnPtr
+                _slots[55] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[54] = nativeContext.LoadFunction(
+                    : _slots[55] = nativeContext.LoadFunction(
                         "clEnqueueMigrateMemObjectEXT",
                         "opencl"
                     )
@@ -34740,9 +35141,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[55] is not null and var loadedFnPtr
+                _slots[56] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[55] = nativeContext.LoadFunction(
+                    : _slots[56] = nativeContext.LoadFunction(
                         "clEnqueueMigrateMemObjects",
                         "opencl"
                     )
@@ -34909,9 +35310,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[56] is not null and var loadedFnPtr
+                _slots[57] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[56] = nativeContext.LoadFunction("clEnqueueNativeKernel", "opencl")
+                    : _slots[57] = nativeContext.LoadFunction("clEnqueueNativeKernel", "opencl")
             )
         )(
             command_queue,
@@ -35102,9 +35503,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[57] is not null and var loadedFnPtr
+                _slots[58] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[57] = nativeContext.LoadFunction("clEnqueueNDRangeKernel", "opencl")
+                    : _slots[58] = nativeContext.LoadFunction("clEnqueueNDRangeKernel", "opencl")
             )
         )(
             command_queue,
@@ -35288,9 +35689,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[58] is not null and var loadedFnPtr
+                _slots[59] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[58] = nativeContext.LoadFunction("clEnqueueReadBuffer", "opencl")
+                    : _slots[59] = nativeContext.LoadFunction("clEnqueueReadBuffer", "opencl")
             )
         )(
             command_queue,
@@ -35481,9 +35882,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[59] is not null and var loadedFnPtr
+                _slots[60] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[59] = nativeContext.LoadFunction("clEnqueueReadBufferRect", "opencl")
+                    : _slots[60] = nativeContext.LoadFunction("clEnqueueReadBufferRect", "opencl")
             )
         )(
             command_queue,
@@ -35687,9 +36088,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[60] is not null and var loadedFnPtr
+                _slots[61] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[60] = nativeContext.LoadFunction(
+                    : _slots[61] = nativeContext.LoadFunction(
                         "clEnqueueReadHostPipeINTEL",
                         "opencl"
                     )
@@ -35840,9 +36241,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[61] is not null and var loadedFnPtr
+                _slots[62] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[61] = nativeContext.LoadFunction("clEnqueueReadImage", "opencl")
+                    : _slots[62] = nativeContext.LoadFunction("clEnqueueReadImage", "opencl")
             )
         )(
             command_queue,
@@ -36021,9 +36422,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[62] is not null and var loadedFnPtr
+                _slots[63] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[62] = nativeContext.LoadFunction(
+                    : _slots[63] = nativeContext.LoadFunction(
                         "clEnqueueReleaseExternalMemObjectsKHR",
                         "opencl"
                     )
@@ -36129,9 +36530,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[63] is not null and var loadedFnPtr
+                _slots[64] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[63] = nativeContext.LoadFunction(
+                    : _slots[64] = nativeContext.LoadFunction(
                         "clEnqueueReleaseGrallocObjectsIMG",
                         "opencl"
                     )
@@ -36239,9 +36640,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[64] is not null and var loadedFnPtr
+                _slots[65] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[64] = nativeContext.LoadFunction(
+                    : _slots[65] = nativeContext.LoadFunction(
                         "clEnqueueSignalSemaphoresKHR",
                         "opencl"
                     )
@@ -36363,9 +36764,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[65] is not null and var loadedFnPtr
+                _slots[66] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[65] = nativeContext.LoadFunction("clEnqueueSVMFree", "opencl")
+                    : _slots[66] = nativeContext.LoadFunction("clEnqueueSVMFree", "opencl")
             )
         )(
             command_queue,
@@ -36499,9 +36900,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[66] is not null and var loadedFnPtr
+                _slots[67] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[66] = nativeContext.LoadFunction("clEnqueueSVMFreeARM", "opencl")
+                    : _slots[67] = nativeContext.LoadFunction("clEnqueueSVMFreeARM", "opencl")
             )
         )(
             command_queue,
@@ -36627,9 +37028,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[67] is not null and var loadedFnPtr
+                _slots[68] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[67] = nativeContext.LoadFunction("clEnqueueSVMMap", "opencl")
+                    : _slots[68] = nativeContext.LoadFunction("clEnqueueSVMMap", "opencl")
             )
         )(
             command_queue,
@@ -36762,9 +37163,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[68] is not null and var loadedFnPtr
+                _slots[69] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[68] = nativeContext.LoadFunction("clEnqueueSVMMapARM", "opencl")
+                    : _slots[69] = nativeContext.LoadFunction("clEnqueueSVMMapARM", "opencl")
             )
         )(
             command_queue,
@@ -36889,9 +37290,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[69] is not null and var loadedFnPtr
+                _slots[70] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[69] = nativeContext.LoadFunction("clEnqueueSVMMemcpy", "opencl")
+                    : _slots[70] = nativeContext.LoadFunction("clEnqueueSVMMemcpy", "opencl")
             )
         )(
             command_queue,
@@ -37025,9 +37426,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[70] is not null and var loadedFnPtr
+                _slots[71] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[70] = nativeContext.LoadFunction("clEnqueueSVMMemcpyARM", "opencl")
+                    : _slots[71] = nativeContext.LoadFunction("clEnqueueSVMMemcpyARM", "opencl")
             )
         )(
             command_queue,
@@ -37153,9 +37554,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[71] is not null and var loadedFnPtr
+                _slots[72] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[71] = nativeContext.LoadFunction("clEnqueueSVMMemFill", "opencl")
+                    : _slots[72] = nativeContext.LoadFunction("clEnqueueSVMMemFill", "opencl")
             )
         )(
             command_queue,
@@ -37289,9 +37690,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[72] is not null and var loadedFnPtr
+                _slots[73] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[72] = nativeContext.LoadFunction("clEnqueueSVMMemFillARM", "opencl")
+                    : _slots[73] = nativeContext.LoadFunction("clEnqueueSVMMemFillARM", "opencl")
             )
         )(
             command_queue,
@@ -37417,9 +37818,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[73] is not null and var loadedFnPtr
+                _slots[74] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[73] = nativeContext.LoadFunction("clEnqueueSVMMigrateMem", "opencl")
+                    : _slots[74] = nativeContext.LoadFunction("clEnqueueSVMMigrateMem", "opencl")
             )
         )(
             command_queue,
@@ -37545,9 +37946,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<CommandQueueHandle, void*, uint, EventHandle*, EventHandle*, int>)(
-                _slots[74] is not null and var loadedFnPtr
+                _slots[75] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[74] = nativeContext.LoadFunction("clEnqueueSVMUnmap", "opencl")
+                    : _slots[75] = nativeContext.LoadFunction("clEnqueueSVMUnmap", "opencl")
             )
         )(command_queue, svm_ptr, num_events_in_wait_list, event_wait_list, @event);
 
@@ -37641,9 +38042,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<CommandQueueHandle, void*, uint, EventHandle*, EventHandle*, int>)(
-                _slots[75] is not null and var loadedFnPtr
+                _slots[76] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[75] = nativeContext.LoadFunction("clEnqueueSVMUnmapARM", "opencl")
+                    : _slots[76] = nativeContext.LoadFunction("clEnqueueSVMUnmapARM", "opencl")
             )
         )(command_queue, svm_ptr, num_events_in_wait_list, event_wait_list, @event);
 
@@ -37745,9 +38146,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[76] is not null and var loadedFnPtr
+                _slots[77] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[76] = nativeContext.LoadFunction("clEnqueueTask", "opencl")
+                    : _slots[77] = nativeContext.LoadFunction("clEnqueueTask", "opencl")
             )
         )(command_queue, kernel, num_events_in_wait_list, event_wait_list, @event);
 
@@ -37891,9 +38292,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[77] is not null and var loadedFnPtr
+                _slots[78] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[77] = nativeContext.LoadFunction("clEnqueueUnmapMemObject", "opencl")
+                    : _slots[78] = nativeContext.LoadFunction("clEnqueueUnmapMemObject", "opencl")
             )
         )(command_queue, memobj, mapped_ptr, num_events_in_wait_list, event_wait_list, @event);
 
@@ -38032,9 +38433,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<CommandQueueHandle, uint, EventHandle*, int>)(
-                _slots[78] is not null and var loadedFnPtr
+                _slots[79] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[78] = nativeContext.LoadFunction("clEnqueueWaitForEvents", "opencl")
+                    : _slots[79] = nativeContext.LoadFunction("clEnqueueWaitForEvents", "opencl")
             )
         )(command_queue, num_events, event_list);
 
@@ -38140,9 +38541,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[79] is not null and var loadedFnPtr
+                _slots[80] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[79] = nativeContext.LoadFunction(
+                    : _slots[80] = nativeContext.LoadFunction(
                         "clEnqueueWaitSemaphoresKHR",
                         "opencl"
                     )
@@ -38275,9 +38676,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[80] is not null and var loadedFnPtr
+                _slots[81] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[80] = nativeContext.LoadFunction("clEnqueueWriteBuffer", "opencl")
+                    : _slots[81] = nativeContext.LoadFunction("clEnqueueWriteBuffer", "opencl")
             )
         )(
             command_queue,
@@ -38468,9 +38869,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[81] is not null and var loadedFnPtr
+                _slots[82] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[81] = nativeContext.LoadFunction("clEnqueueWriteBufferRect", "opencl")
+                    : _slots[82] = nativeContext.LoadFunction("clEnqueueWriteBufferRect", "opencl")
             )
         )(
             command_queue,
@@ -38674,9 +39075,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[82] is not null and var loadedFnPtr
+                _slots[83] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[82] = nativeContext.LoadFunction(
+                    : _slots[83] = nativeContext.LoadFunction(
                         "clEnqueueWriteHostPipeINTEL",
                         "opencl"
                     )
@@ -38827,9 +39228,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 EventHandle*,
                 EventHandle*,
                 int>)(
-                _slots[83] is not null and var loadedFnPtr
+                _slots[84] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[83] = nativeContext.LoadFunction("clEnqueueWriteImage", "opencl")
+                    : _slots[84] = nativeContext.LoadFunction("clEnqueueWriteImage", "opencl")
             )
         )(
             command_queue,
@@ -39007,9 +39408,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.Finish(CommandQueueHandle command_queue) =>
         (
             (delegate* unmanaged<CommandQueueHandle, int>)(
-                _slots[84] is not null and var loadedFnPtr
+                _slots[85] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[84] = nativeContext.LoadFunction("clFinish", "opencl")
+                    : _slots[85] = nativeContext.LoadFunction("clFinish", "opencl")
             )
         )(command_queue);
 
@@ -39052,9 +39453,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.Flush(CommandQueueHandle command_queue) =>
         (
             (delegate* unmanaged<CommandQueueHandle, int>)(
-                _slots[85] is not null and var loadedFnPtr
+                _slots[86] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[85] = nativeContext.LoadFunction("clFlush", "opencl")
+                    : _slots[86] = nativeContext.LoadFunction("clFlush", "opencl")
             )
         )(command_queue);
 
@@ -39090,9 +39491,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<AcceleratorHandleINTEL, uint, nuint, void*, nuint*, int>)(
-                _slots[86] is not null and var loadedFnPtr
+                _slots[87] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[86] = nativeContext.LoadFunction("clGetAcceleratorInfoINTEL", "opencl")
+                    : _slots[87] = nativeContext.LoadFunction("clGetAcceleratorInfoINTEL", "opencl")
             )
         )(accelerator, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -39186,9 +39587,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<CommandQueueHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[87] is not null and var loadedFnPtr
+                _slots[88] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[87] = nativeContext.LoadFunction("clGetCommandQueueInfo", "opencl")
+                    : _slots[88] = nativeContext.LoadFunction("clGetCommandQueueInfo", "opencl")
             )
         )(command_queue, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -39321,9 +39722,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[88] is not null and var loadedFnPtr
+                _slots[89] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[88] = nativeContext.LoadFunction("clGetContextInfo", "opencl")
+                    : _slots[89] = nativeContext.LoadFunction("clGetContextInfo", "opencl")
             )
         )(context, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -39445,9 +39846,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<DeviceIdHandle, ulong*, ulong*, int>)(
-                _slots[89] is not null and var loadedFnPtr
+                _slots[90] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[89] = nativeContext.LoadFunction("clGetDeviceAndHostTimer", "opencl")
+                    : _slots[90] = nativeContext.LoadFunction("clGetDeviceAndHostTimer", "opencl")
             )
         )(device, device_timestamp, host_timestamp);
 
@@ -39531,9 +39932,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<PlatformIdHandle, ulong, uint, DeviceIdHandle*, uint*, int>)(
-                _slots[90] is not null and var loadedFnPtr
+                _slots[91] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[90] = nativeContext.LoadFunction("clGetDeviceIDs", "opencl")
+                    : _slots[91] = nativeContext.LoadFunction("clGetDeviceIDs", "opencl")
             )
         )(platform, device_type, num_entries, devices, num_devices);
 
@@ -39651,9 +40052,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 nuint*,
                 int>)(
-                _slots[91] is not null and var loadedFnPtr
+                _slots[92] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[91] = nativeContext.LoadFunction("clGetDeviceImageInfoQCOM", "opencl")
+                    : _slots[92] = nativeContext.LoadFunction("clGetDeviceImageInfoQCOM", "opencl")
             )
         )(
             device,
@@ -39775,9 +40176,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<DeviceIdHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[92] is not null and var loadedFnPtr
+                _slots[93] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[92] = nativeContext.LoadFunction("clGetDeviceInfo", "opencl")
+                    : _slots[93] = nativeContext.LoadFunction("clGetDeviceInfo", "opencl")
             )
         )(device, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -39910,9 +40311,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<EventHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[93] is not null and var loadedFnPtr
+                _slots[94] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[93] = nativeContext.LoadFunction("clGetEventInfo", "opencl")
+                    : _slots[94] = nativeContext.LoadFunction("clGetEventInfo", "opencl")
             )
         )(@event, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -40045,9 +40446,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<EventHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[94] is not null and var loadedFnPtr
+                _slots[95] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[94] = nativeContext.LoadFunction("clGetEventProfilingInfo", "opencl")
+                    : _slots[95] = nativeContext.LoadFunction("clGetEventProfilingInfo", "opencl")
             )
         )(@event, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -40175,9 +40576,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void* ICl.GetExtensionFunctionAddress(sbyte* func_name) =>
         (
             (delegate* unmanaged<sbyte*, void*>)(
-                _slots[95] is not null and var loadedFnPtr
+                _slots[96] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[95] = nativeContext.LoadFunction(
+                    : _slots[96] = nativeContext.LoadFunction(
                         "clGetExtensionFunctionAddress",
                         "opencl"
                     )
@@ -40270,9 +40671,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void* ICl.GetExtensionFunctionAddressForPlatform(PlatformIdHandle platform, sbyte* func_name) =>
         (
             (delegate* unmanaged<PlatformIdHandle, sbyte*, void*>)(
-                _slots[96] is not null and var loadedFnPtr
+                _slots[97] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[96] = nativeContext.LoadFunction(
+                    : _slots[97] = nativeContext.LoadFunction(
                         "clGetExtensionFunctionAddressForPlatform",
                         "opencl"
                     )
@@ -40354,9 +40755,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.GetHostTimer(DeviceIdHandle device, ulong* host_timestamp) =>
         (
             (delegate* unmanaged<DeviceIdHandle, ulong*, int>)(
-                _slots[97] is not null and var loadedFnPtr
+                _slots[98] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[97] = nativeContext.LoadFunction("clGetHostTimer", "opencl")
+                    : _slots[98] = nativeContext.LoadFunction("clGetHostTimer", "opencl")
             )
         )(device, host_timestamp);
 
@@ -40410,9 +40811,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<uint, nuint, void*, nuint*, int>)(
-                _slots[98] is not null and var loadedFnPtr
+                _slots[99] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[98] = nativeContext.LoadFunction("clGetICDLoaderInfoOCLICD", "opencl")
+                    : _slots[99] = nativeContext.LoadFunction("clGetICDLoaderInfoOCLICD", "opencl")
             )
         )(param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -40500,9 +40901,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<MemHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[99] is not null and var loadedFnPtr
+                _slots[100] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[99] = nativeContext.LoadFunction("clGetImageInfo", "opencl")
+                    : _slots[100] = nativeContext.LoadFunction("clGetImageInfo", "opencl")
             )
         )(image, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -40640,9 +41041,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 nuint*,
                 int>)(
-                _slots[100] is not null and var loadedFnPtr
+                _slots[101] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[100] = nativeContext.LoadFunction(
+                    : _slots[101] = nativeContext.LoadFunction(
                         "clGetImageRequirementsInfoEXT",
                         "opencl"
                     )
@@ -40787,9 +41188,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<KernelHandle, uint, uint, nuint, void*, nuint*, int>)(
-                _slots[101] is not null and var loadedFnPtr
+                _slots[102] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[101] = nativeContext.LoadFunction("clGetKernelArgInfo", "opencl")
+                    : _slots[102] = nativeContext.LoadFunction("clGetKernelArgInfo", "opencl")
             )
         )(kernel, arg_indx, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -40922,9 +41323,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<KernelHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[102] is not null and var loadedFnPtr
+                _slots[103] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[102] = nativeContext.LoadFunction("clGetKernelInfo", "opencl")
+                    : _slots[103] = nativeContext.LoadFunction("clGetKernelInfo", "opencl")
             )
         )(kernel, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -41060,9 +41461,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 nuint*,
                 int>)(
-                _slots[103] is not null and var loadedFnPtr
+                _slots[104] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[103] = nativeContext.LoadFunction("clGetKernelSubGroupInfo", "opencl")
+                    : _slots[104] = nativeContext.LoadFunction("clGetKernelSubGroupInfo", "opencl")
             )
         )(
             kernel,
@@ -41196,9 +41597,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 nuint*,
                 int>)(
-                _slots[104] is not null and var loadedFnPtr
+                _slots[105] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[104] = nativeContext.LoadFunction(
+                    : _slots[105] = nativeContext.LoadFunction(
                         "clGetKernelSubGroupInfoKHR",
                         "opencl"
                     )
@@ -41321,9 +41722,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 nuint*,
                 nuint*,
                 int>)(
-                _slots[105] is not null and var loadedFnPtr
+                _slots[106] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[105] = nativeContext.LoadFunction(
+                    : _slots[106] = nativeContext.LoadFunction(
                         "clGetKernelSuggestedLocalWorkSize",
                         "opencl"
                     )
@@ -41429,9 +41830,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 nuint*,
                 nuint*,
                 int>)(
-                _slots[106] is not null and var loadedFnPtr
+                _slots[107] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[106] = nativeContext.LoadFunction(
+                    : _slots[107] = nativeContext.LoadFunction(
                         "clGetKernelSuggestedLocalWorkSizeKHR",
                         "opencl"
                     )
@@ -41543,9 +41944,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<KernelHandle, DeviceIdHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[107] is not null and var loadedFnPtr
+                _slots[108] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[107] = nativeContext.LoadFunction("clGetKernelWorkGroupInfo", "opencl")
+                    : _slots[108] = nativeContext.LoadFunction("clGetKernelWorkGroupInfo", "opencl")
             )
         )(kernel, device, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -41658,6 +42059,70 @@ public unsafe partial class Cl : ICl, ICl.Static
             param_value_size_ret
         );
 
+    [NativeName("clGetLayerInfo")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetLayerInfo(
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) =>
+        (
+            (delegate* unmanaged<uint, nuint, void*, nuint*, int>)(
+                _slots[109] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[109] = nativeContext.LoadFunction("clGetLayerInfo", "opencl")
+            )
+        )(param_name, param_value_size, param_value, param_value_size_ret);
+
+    [NativeName("clGetLayerInfo")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetLayerInfo(
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    ) => ThisThread.GetLayerInfo(param_name, param_value_size, param_value, param_value_size_ret);
+
+    [NativeName("clGetLayerInfo")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.GetLayerInfo(
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    )
+    {
+        fixed (nuint* __dsl_param_value_size_ret = param_value_size_ret)
+        fixed (void* __dsl_param_value = param_value)
+        {
+            return (int)
+                ((ICl)this).GetLayerInfo(
+                    param_name,
+                    param_value_size,
+                    __dsl_param_value,
+                    __dsl_param_value_size_ret
+                );
+        }
+    }
+
+    [NativeName("clGetLayerInfo")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int GetLayerInfo(
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    ) => ThisThread.GetLayerInfo(param_name, param_value_size, param_value, param_value_size_ret);
+
     [NativeName("clGetMemAllocInfoINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
@@ -41672,9 +42137,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, void*, uint, nuint, void*, nuint*, int>)(
-                _slots[108] is not null and var loadedFnPtr
+                _slots[110] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[108] = nativeContext.LoadFunction("clGetMemAllocInfoINTEL", "opencl")
+                    : _slots[110] = nativeContext.LoadFunction("clGetMemAllocInfoINTEL", "opencl")
             )
         )(context, ptr, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -41775,9 +42240,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<MemHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[109] is not null and var loadedFnPtr
+                _slots[111] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[109] = nativeContext.LoadFunction("clGetMemObjectInfo", "opencl")
+                    : _slots[111] = nativeContext.LoadFunction("clGetMemObjectInfo", "opencl")
             )
         )(memobj, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -41901,9 +42366,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<MemHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[110] is not null and var loadedFnPtr
+                _slots[112] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[110] = nativeContext.LoadFunction("clGetPipeInfo", "opencl")
+                    : _slots[112] = nativeContext.LoadFunction("clGetPipeInfo", "opencl")
             )
         )(pipe, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -42003,9 +42468,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.GetPlatformIDs(uint num_entries, PlatformIdHandle* platforms, uint* num_platforms) =>
         (
             (delegate* unmanaged<uint, PlatformIdHandle*, uint*, int>)(
-                _slots[111] is not null and var loadedFnPtr
+                _slots[113] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[111] = nativeContext.LoadFunction("clGetPlatformIDs", "opencl")
+                    : _slots[113] = nativeContext.LoadFunction("clGetPlatformIDs", "opencl")
             )
         )(num_entries, platforms, num_platforms);
 
@@ -42112,9 +42577,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<PlatformIdHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[112] is not null and var loadedFnPtr
+                _slots[114] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[112] = nativeContext.LoadFunction("clGetPlatformInfo", "opencl")
+                    : _slots[114] = nativeContext.LoadFunction("clGetPlatformInfo", "opencl")
             )
         )(platform, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -42248,9 +42713,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ProgramHandle, DeviceIdHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[113] is not null and var loadedFnPtr
+                _slots[115] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[113] = nativeContext.LoadFunction("clGetProgramBuildInfo", "opencl")
+                    : _slots[115] = nativeContext.LoadFunction("clGetProgramBuildInfo", "opencl")
             )
         )(program, device, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -42389,9 +42854,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ProgramHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[114] is not null and var loadedFnPtr
+                _slots[116] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[114] = nativeContext.LoadFunction("clGetProgramInfo", "opencl")
+                    : _slots[116] = nativeContext.LoadFunction("clGetProgramInfo", "opencl")
             )
         )(program, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -42524,9 +42989,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<SamplerHandle, uint, nuint, void*, nuint*, int>)(
-                _slots[115] is not null and var loadedFnPtr
+                _slots[117] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[115] = nativeContext.LoadFunction("clGetSamplerInfo", "opencl")
+                    : _slots[117] = nativeContext.LoadFunction("clGetSamplerInfo", "opencl")
             )
         )(sampler, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -42658,9 +43123,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 nuint*,
                 int>)(
-                _slots[116] is not null and var loadedFnPtr
+                _slots[118] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[116] = nativeContext.LoadFunction(
+                    : _slots[118] = nativeContext.LoadFunction(
                         "clGetSemaphoreHandleForTypeKHR",
                         "opencl"
                     )
@@ -42762,9 +43227,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<SemaphoreHandleKHR, uint, nuint, void*, nuint*, int>)(
-                _slots[117] is not null and var loadedFnPtr
+                _slots[119] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[117] = nativeContext.LoadFunction("clGetSemaphoreInfoKHR", "opencl")
+                    : _slots[119] = nativeContext.LoadFunction("clGetSemaphoreInfoKHR", "opencl")
             )
         )(sema_object, param_name, param_value_size, param_value, param_value_size_ret);
 
@@ -42859,9 +43324,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, ulong, uint, uint, ImageFormat*, uint*, int>)(
-                _slots[118] is not null and var loadedFnPtr
+                _slots[120] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[118] = nativeContext.LoadFunction(
+                    : _slots[120] = nativeContext.LoadFunction(
                         "clGetSupportedImageFormats",
                         "opencl"
                     )
@@ -42990,9 +43455,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, ulong*, nuint, uint, int*, void*>)(
-                _slots[119] is not null and var loadedFnPtr
+                _slots[121] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[119] = nativeContext.LoadFunction("clHostMemAllocINTEL", "opencl")
+                    : _slots[121] = nativeContext.LoadFunction("clHostMemAllocINTEL", "opencl")
             )
         )(context, properties, size, alignment, errcode_ret);
 
@@ -43053,9 +43518,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void* ICl.IcdGetFunctionAddressForPlatformKHR(PlatformIdHandle platform, sbyte* func_name) =>
         (
             (delegate* unmanaged<PlatformIdHandle, sbyte*, void*>)(
-                _slots[120] is not null and var loadedFnPtr
+                _slots[122] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[120] = nativeContext.LoadFunction(
+                    : _slots[122] = nativeContext.LoadFunction(
                         "clIcdGetFunctionAddressForPlatformKHR",
                         "opencl"
                     )
@@ -43104,9 +43569,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<uint, PlatformIdHandle*, uint*, int>)(
-                _slots[121] is not null and var loadedFnPtr
+                _slots[123] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[121] = nativeContext.LoadFunction("clIcdGetPlatformIDsKHR", "opencl")
+                    : _slots[123] = nativeContext.LoadFunction("clIcdGetPlatformIDsKHR", "opencl")
             )
         )(num_entries, platforms, num_platforms);
 
@@ -43155,9 +43620,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.IcdSetPlatformDispatchDataKHR(PlatformIdHandle platform, void* dispatch_data) =>
         (
             (delegate* unmanaged<PlatformIdHandle, void*, int>)(
-                _slots[122] is not null and var loadedFnPtr
+                _slots[124] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[122] = nativeContext.LoadFunction(
+                    : _slots[124] = nativeContext.LoadFunction(
                         "clIcdSetPlatformDispatchDataKHR",
                         "opencl"
                     )
@@ -43206,9 +43671,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, ulong, nint*, void*, nuint, int*, MemHandle>)(
-                _slots[123] is not null and var loadedFnPtr
+                _slots[125] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[123] = nativeContext.LoadFunction("clImportMemoryARM", "opencl")
+                    : _slots[125] = nativeContext.LoadFunction("clImportMemoryARM", "opencl")
             )
         )(context, flags, properties, memory, size, errcode_ret);
 
@@ -43267,6 +43732,157 @@ public unsafe partial class Cl : ICl, ICl.Static
         Ref<int> errcode_ret
     ) => ThisThread.ImportMemoryARM(context, flags, properties, memory, size, errcode_ret);
 
+    [NativeName("clInitLayer")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.InitLayer(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        uint* num_entries_ret,
+        IcdDispatchHandle* layer_dispatch_ret
+    ) =>
+        (
+            (delegate* unmanaged<uint, IcdDispatchHandle, uint*, IcdDispatchHandle*, int>)(
+                _slots[126] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[126] = nativeContext.LoadFunction("clInitLayer", "opencl")
+            )
+        )(num_entries, target_dispatch, num_entries_ret, layer_dispatch_ret);
+
+    [NativeName("clInitLayer")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int InitLayer(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        uint* num_entries_ret,
+        IcdDispatchHandle* layer_dispatch_ret
+    ) => ThisThread.InitLayer(num_entries, target_dispatch, num_entries_ret, layer_dispatch_ret);
+
+    [NativeName("clInitLayer")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.InitLayer(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        Ref<uint> num_entries_ret,
+        Ref<IcdDispatchHandle> layer_dispatch_ret
+    )
+    {
+        fixed (IcdDispatchHandle* __dsl_layer_dispatch_ret = layer_dispatch_ret)
+        fixed (uint* __dsl_num_entries_ret = num_entries_ret)
+        {
+            return (int)
+                ((ICl)this).InitLayer(
+                    num_entries,
+                    target_dispatch,
+                    __dsl_num_entries_ret,
+                    __dsl_layer_dispatch_ret
+                );
+        }
+    }
+
+    [NativeName("clInitLayer")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int InitLayer(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        Ref<uint> num_entries_ret,
+        Ref<IcdDispatchHandle> layer_dispatch_ret
+    ) => ThisThread.InitLayer(num_entries, target_dispatch, num_entries_ret, layer_dispatch_ret);
+
+    [NativeName("clInitLayerWithProperties")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.InitLayerWithProperties(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        uint* num_entries_ret,
+        IcdDispatchHandle* layer_dispatch_ret,
+        ulong* properties
+    ) =>
+        (
+            (delegate* unmanaged<uint, IcdDispatchHandle, uint*, IcdDispatchHandle*, ulong*, int>)(
+                _slots[127] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[127] = nativeContext.LoadFunction(
+                        "clInitLayerWithProperties",
+                        "opencl"
+                    )
+            )
+        )(num_entries, target_dispatch, num_entries_ret, layer_dispatch_ret, properties);
+
+    [NativeName("clInitLayerWithProperties")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int InitLayerWithProperties(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        uint* num_entries_ret,
+        IcdDispatchHandle* layer_dispatch_ret,
+        ulong* properties
+    ) =>
+        ThisThread.InitLayerWithProperties(
+            num_entries,
+            target_dispatch,
+            num_entries_ret,
+            layer_dispatch_ret,
+            properties
+        );
+
+    [NativeName("clInitLayerWithProperties")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    int ICl.InitLayerWithProperties(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        Ref<uint> num_entries_ret,
+        Ref<IcdDispatchHandle> layer_dispatch_ret,
+        Ref<ulong> properties
+    )
+    {
+        fixed (ulong* __dsl_properties = properties)
+        fixed (IcdDispatchHandle* __dsl_layer_dispatch_ret = layer_dispatch_ret)
+        fixed (uint* __dsl_num_entries_ret = num_entries_ret)
+        {
+            return (int)
+                ((ICl)this).InitLayerWithProperties(
+                    num_entries,
+                    target_dispatch,
+                    __dsl_num_entries_ret,
+                    __dsl_layer_dispatch_ret,
+                    __dsl_properties
+                );
+        }
+    }
+
+    [NativeName("clInitLayerWithProperties")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static int InitLayerWithProperties(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        Ref<uint> num_entries_ret,
+        Ref<IcdDispatchHandle> layer_dispatch_ret,
+        Ref<ulong> properties
+    ) =>
+        ThisThread.InitLayerWithProperties(
+            num_entries,
+            target_dispatch,
+            num_entries_ret,
+            layer_dispatch_ret,
+            properties
+        );
+
     [NativeName("clLinkProgram")]
     [SupportedApiProfile(
         "opencl",
@@ -43305,9 +43921,9 @@ public unsafe partial class Cl : ICl, ICl.Static
                 void*,
                 int*,
                 ProgramHandle>)(
-                _slots[124] is not null and var loadedFnPtr
+                _slots[128] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[124] = nativeContext.LoadFunction("clLinkProgram", "opencl")
+                    : _slots[128] = nativeContext.LoadFunction("clLinkProgram", "opencl")
             )
         )(
             context,
@@ -43457,9 +44073,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, void*, nuint, void*, void>)(
-                _slots[125] is not null and var loadedFnPtr
+                _slots[129] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[125] = nativeContext.LoadFunction(
+                    : _slots[129] = nativeContext.LoadFunction(
                         "clLogMessagesToStderrAPPLE",
                         "opencl"
                     )
@@ -43519,9 +44135,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, void*, nuint, void*, void>)(
-                _slots[126] is not null and var loadedFnPtr
+                _slots[130] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[126] = nativeContext.LoadFunction(
+                    : _slots[130] = nativeContext.LoadFunction(
                         "clLogMessagesToStdoutAPPLE",
                         "opencl"
                     )
@@ -43581,9 +44197,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<sbyte*, void*, nuint, void*, void>)(
-                _slots[127] is not null and var loadedFnPtr
+                _slots[131] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[127] = nativeContext.LoadFunction(
+                    : _slots[131] = nativeContext.LoadFunction(
                         "clLogMessagesToSystemLogAPPLE",
                         "opencl"
                     )
@@ -43643,9 +44259,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.MemBlockingFreeINTEL(ContextHandle context, void* ptr) =>
         (
             (delegate* unmanaged<ContextHandle, void*, int>)(
-                _slots[128] is not null and var loadedFnPtr
+                _slots[132] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[128] = nativeContext.LoadFunction("clMemBlockingFreeINTEL", "opencl")
+                    : _slots[132] = nativeContext.LoadFunction("clMemBlockingFreeINTEL", "opencl")
             )
         )(context, ptr);
 
@@ -43682,9 +44298,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.MemFreeINTEL(ContextHandle context, void* ptr) =>
         (
             (delegate* unmanaged<ContextHandle, void*, int>)(
-                _slots[129] is not null and var loadedFnPtr
+                _slots[133] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[129] = nativeContext.LoadFunction("clMemFreeINTEL", "opencl")
+                    : _slots[133] = nativeContext.LoadFunction("clMemFreeINTEL", "opencl")
             )
         )(context, ptr);
 
@@ -43729,9 +44345,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<SemaphoreHandleKHR, ulong*, int, int>)(
-                _slots[130] is not null and var loadedFnPtr
+                _slots[134] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[130] = nativeContext.LoadFunction(
+                    : _slots[134] = nativeContext.LoadFunction(
                         "clReImportSemaphoreSyncFdKHR",
                         "opencl"
                     )
@@ -43794,9 +44410,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseAcceleratorINTEL(AcceleratorHandleINTEL accelerator) =>
         (
             (delegate* unmanaged<AcceleratorHandleINTEL, int>)(
-                _slots[131] is not null and var loadedFnPtr
+                _slots[135] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[131] = nativeContext.LoadFunction(
+                    : _slots[135] = nativeContext.LoadFunction(
                         "clReleaseAcceleratorINTEL",
                         "opencl"
                     )
@@ -43830,9 +44446,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseCommandQueue(CommandQueueHandle command_queue) =>
         (
             (delegate* unmanaged<CommandQueueHandle, int>)(
-                _slots[132] is not null and var loadedFnPtr
+                _slots[136] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[132] = nativeContext.LoadFunction("clReleaseCommandQueue", "opencl")
+                    : _slots[136] = nativeContext.LoadFunction("clReleaseCommandQueue", "opencl")
             )
         )(command_queue);
 
@@ -43876,9 +44492,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseContext(ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, int>)(
-                _slots[133] is not null and var loadedFnPtr
+                _slots[137] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[133] = nativeContext.LoadFunction("clReleaseContext", "opencl")
+                    : _slots[137] = nativeContext.LoadFunction("clReleaseContext", "opencl")
             )
         )(context);
 
@@ -43919,9 +44535,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseDevice(DeviceIdHandle device) =>
         (
             (delegate* unmanaged<DeviceIdHandle, int>)(
-                _slots[134] is not null and var loadedFnPtr
+                _slots[138] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[134] = nativeContext.LoadFunction("clReleaseDevice", "opencl")
+                    : _slots[138] = nativeContext.LoadFunction("clReleaseDevice", "opencl")
             )
         )(device);
 
@@ -43949,9 +44565,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseDeviceEXT(DeviceIdHandle device) =>
         (
             (delegate* unmanaged<DeviceIdHandle, int>)(
-                _slots[135] is not null and var loadedFnPtr
+                _slots[139] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[135] = nativeContext.LoadFunction("clReleaseDeviceEXT", "opencl")
+                    : _slots[139] = nativeContext.LoadFunction("clReleaseDeviceEXT", "opencl")
             )
         )(device);
 
@@ -43982,9 +44598,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseEvent(EventHandle @event) =>
         (
             (delegate* unmanaged<EventHandle, int>)(
-                _slots[136] is not null and var loadedFnPtr
+                _slots[140] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[136] = nativeContext.LoadFunction("clReleaseEvent", "opencl")
+                    : _slots[140] = nativeContext.LoadFunction("clReleaseEvent", "opencl")
             )
         )(@event);
 
@@ -44027,9 +44643,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseKernel(KernelHandle kernel) =>
         (
             (delegate* unmanaged<KernelHandle, int>)(
-                _slots[137] is not null and var loadedFnPtr
+                _slots[141] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[137] = nativeContext.LoadFunction("clReleaseKernel", "opencl")
+                    : _slots[141] = nativeContext.LoadFunction("clReleaseKernel", "opencl")
             )
         )(kernel);
 
@@ -44072,9 +44688,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseMemObject(MemHandle memobj) =>
         (
             (delegate* unmanaged<MemHandle, int>)(
-                _slots[138] is not null and var loadedFnPtr
+                _slots[142] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[138] = nativeContext.LoadFunction("clReleaseMemObject", "opencl")
+                    : _slots[142] = nativeContext.LoadFunction("clReleaseMemObject", "opencl")
             )
         )(memobj);
 
@@ -44117,9 +44733,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseProgram(ProgramHandle program) =>
         (
             (delegate* unmanaged<ProgramHandle, int>)(
-                _slots[139] is not null and var loadedFnPtr
+                _slots[143] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[139] = nativeContext.LoadFunction("clReleaseProgram", "opencl")
+                    : _slots[143] = nativeContext.LoadFunction("clReleaseProgram", "opencl")
             )
         )(program);
 
@@ -44162,9 +44778,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseSampler(SamplerHandle sampler) =>
         (
             (delegate* unmanaged<SamplerHandle, int>)(
-                _slots[140] is not null and var loadedFnPtr
+                _slots[144] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[140] = nativeContext.LoadFunction("clReleaseSampler", "opencl")
+                    : _slots[144] = nativeContext.LoadFunction("clReleaseSampler", "opencl")
             )
         )(sampler);
 
@@ -44194,9 +44810,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.ReleaseSemaphoreKHR(SemaphoreHandleKHR sema_object) =>
         (
             (delegate* unmanaged<SemaphoreHandleKHR, int>)(
-                _slots[141] is not null and var loadedFnPtr
+                _slots[145] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[141] = nativeContext.LoadFunction("clReleaseSemaphoreKHR", "opencl")
+                    : _slots[145] = nativeContext.LoadFunction("clReleaseSemaphoreKHR", "opencl")
             )
         )(sema_object);
 
@@ -44214,9 +44830,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainAcceleratorINTEL(AcceleratorHandleINTEL accelerator) =>
         (
             (delegate* unmanaged<AcceleratorHandleINTEL, int>)(
-                _slots[142] is not null and var loadedFnPtr
+                _slots[146] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[142] = nativeContext.LoadFunction("clRetainAcceleratorINTEL", "opencl")
+                    : _slots[146] = nativeContext.LoadFunction("clRetainAcceleratorINTEL", "opencl")
             )
         )(accelerator);
 
@@ -44247,9 +44863,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainCommandQueue(CommandQueueHandle command_queue) =>
         (
             (delegate* unmanaged<CommandQueueHandle, int>)(
-                _slots[143] is not null and var loadedFnPtr
+                _slots[147] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[143] = nativeContext.LoadFunction("clRetainCommandQueue", "opencl")
+                    : _slots[147] = nativeContext.LoadFunction("clRetainCommandQueue", "opencl")
             )
         )(command_queue);
 
@@ -44293,9 +44909,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainContext(ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, int>)(
-                _slots[144] is not null and var loadedFnPtr
+                _slots[148] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[144] = nativeContext.LoadFunction("clRetainContext", "opencl")
+                    : _slots[148] = nativeContext.LoadFunction("clRetainContext", "opencl")
             )
         )(context);
 
@@ -44336,9 +44952,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainDevice(DeviceIdHandle device) =>
         (
             (delegate* unmanaged<DeviceIdHandle, int>)(
-                _slots[145] is not null and var loadedFnPtr
+                _slots[149] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[145] = nativeContext.LoadFunction("clRetainDevice", "opencl")
+                    : _slots[149] = nativeContext.LoadFunction("clRetainDevice", "opencl")
             )
         )(device);
 
@@ -44366,9 +44982,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainDeviceEXT(DeviceIdHandle device) =>
         (
             (delegate* unmanaged<DeviceIdHandle, int>)(
-                _slots[146] is not null and var loadedFnPtr
+                _slots[150] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[146] = nativeContext.LoadFunction("clRetainDeviceEXT", "opencl")
+                    : _slots[150] = nativeContext.LoadFunction("clRetainDeviceEXT", "opencl")
             )
         )(device);
 
@@ -44398,9 +45014,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainEvent(EventHandle @event) =>
         (
             (delegate* unmanaged<EventHandle, int>)(
-                _slots[147] is not null and var loadedFnPtr
+                _slots[151] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[147] = nativeContext.LoadFunction("clRetainEvent", "opencl")
+                    : _slots[151] = nativeContext.LoadFunction("clRetainEvent", "opencl")
             )
         )(@event);
 
@@ -44443,9 +45059,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainKernel(KernelHandle kernel) =>
         (
             (delegate* unmanaged<KernelHandle, int>)(
-                _slots[148] is not null and var loadedFnPtr
+                _slots[152] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[148] = nativeContext.LoadFunction("clRetainKernel", "opencl")
+                    : _slots[152] = nativeContext.LoadFunction("clRetainKernel", "opencl")
             )
         )(kernel);
 
@@ -44488,9 +45104,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainMemObject(MemHandle memobj) =>
         (
             (delegate* unmanaged<MemHandle, int>)(
-                _slots[149] is not null and var loadedFnPtr
+                _slots[153] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[149] = nativeContext.LoadFunction("clRetainMemObject", "opencl")
+                    : _slots[153] = nativeContext.LoadFunction("clRetainMemObject", "opencl")
             )
         )(memobj);
 
@@ -44533,9 +45149,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainProgram(ProgramHandle program) =>
         (
             (delegate* unmanaged<ProgramHandle, int>)(
-                _slots[150] is not null and var loadedFnPtr
+                _slots[154] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[150] = nativeContext.LoadFunction("clRetainProgram", "opencl")
+                    : _slots[154] = nativeContext.LoadFunction("clRetainProgram", "opencl")
             )
         )(program);
 
@@ -44578,9 +45194,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainSampler(SamplerHandle sampler) =>
         (
             (delegate* unmanaged<SamplerHandle, int>)(
-                _slots[151] is not null and var loadedFnPtr
+                _slots[155] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[151] = nativeContext.LoadFunction("clRetainSampler", "opencl")
+                    : _slots[155] = nativeContext.LoadFunction("clRetainSampler", "opencl")
             )
         )(sampler);
 
@@ -44610,9 +45226,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.RetainSemaphoreKHR(SemaphoreHandleKHR sema_object) =>
         (
             (delegate* unmanaged<SemaphoreHandleKHR, int>)(
-                _slots[152] is not null and var loadedFnPtr
+                _slots[156] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[152] = nativeContext.LoadFunction("clRetainSemaphoreKHR", "opencl")
+                    : _slots[156] = nativeContext.LoadFunction("clRetainSemaphoreKHR", "opencl")
             )
         )(sema_object);
 
@@ -44630,9 +45246,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetContentSizeBufferPOCL(MemHandle buffer, MemHandle content_size_buffer) =>
         (
             (delegate* unmanaged<MemHandle, MemHandle, int>)(
-                _slots[153] is not null and var loadedFnPtr
+                _slots[157] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[153] = nativeContext.LoadFunction(
+                    : _slots[157] = nativeContext.LoadFunction(
                         "clSetContentSizeBufferPoCL",
                         "opencl"
                     )
@@ -44657,9 +45273,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, SetContextDestructorCallbackPfnNotify, void*, int>)(
-                _slots[154] is not null and var loadedFnPtr
+                _slots[158] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[154] = nativeContext.LoadFunction(
+                    : _slots[158] = nativeContext.LoadFunction(
                         "clSetContextDestructorCallback",
                         "opencl"
                     )
@@ -44718,9 +45334,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, DeviceIdHandle, CommandQueueHandle, int>)(
-                _slots[155] is not null and var loadedFnPtr
+                _slots[159] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[155] = nativeContext.LoadFunction(
+                    : _slots[159] = nativeContext.LoadFunction(
                         "clSetDefaultDeviceCommandQueue",
                         "opencl"
                     )
@@ -44765,9 +45381,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<EventHandle, int, SetEventCallbackPfnNotify, void*, int>)(
-                _slots[156] is not null and var loadedFnPtr
+                _slots[160] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[156] = nativeContext.LoadFunction("clSetEventCallback", "opencl")
+                    : _slots[160] = nativeContext.LoadFunction("clSetEventCallback", "opencl")
             )
         )(@event, command_exec_callback_type, pfn_notify, user_data);
 
@@ -44872,9 +45488,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetKernelArg(KernelHandle kernel, uint arg_index, nuint arg_size, void* arg_value) =>
         (
             (delegate* unmanaged<KernelHandle, uint, nuint, void*, int>)(
-                _slots[157] is not null and var loadedFnPtr
+                _slots[161] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[157] = nativeContext.LoadFunction("clSetKernelArg", "opencl")
+                    : _slots[161] = nativeContext.LoadFunction("clSetKernelArg", "opencl")
             )
         )(kernel, arg_index, arg_size, arg_value);
 
@@ -44962,9 +45578,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetKernelArgDevicePointerEXT(KernelHandle kernel, uint arg_index, ulong arg_value) =>
         (
             (delegate* unmanaged<KernelHandle, uint, ulong, int>)(
-                _slots[158] is not null and var loadedFnPtr
+                _slots[162] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[158] = nativeContext.LoadFunction(
+                    : _slots[162] = nativeContext.LoadFunction(
                         "clSetKernelArgDevicePointerEXT",
                         "opencl"
                     )
@@ -44992,9 +45608,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetKernelArgMemPointerINTEL(KernelHandle kernel, uint arg_index, void* arg_value) =>
         (
             (delegate* unmanaged<KernelHandle, uint, void*, int>)(
-                _slots[159] is not null and var loadedFnPtr
+                _slots[163] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[159] = nativeContext.LoadFunction(
+                    : _slots[163] = nativeContext.LoadFunction(
                         "clSetKernelArgMemPointerINTEL",
                         "opencl"
                     )
@@ -45044,9 +45660,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetKernelArgSvmPointer(KernelHandle kernel, uint arg_index, void* arg_value) =>
         (
             (delegate* unmanaged<KernelHandle, uint, void*, int>)(
-                _slots[160] is not null and var loadedFnPtr
+                _slots[164] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[160] = nativeContext.LoadFunction("clSetKernelArgSVMPointer", "opencl")
+                    : _slots[164] = nativeContext.LoadFunction("clSetKernelArgSVMPointer", "opencl")
             )
         )(kernel, arg_index, arg_value);
 
@@ -45098,9 +45714,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetKernelArgSvmPointerARM(KernelHandle kernel, uint arg_index, void* arg_value) =>
         (
             (delegate* unmanaged<KernelHandle, uint, void*, int>)(
-                _slots[161] is not null and var loadedFnPtr
+                _slots[165] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[161] = nativeContext.LoadFunction(
+                    : _slots[165] = nativeContext.LoadFunction(
                         "clSetKernelArgSVMPointerARM",
                         "opencl"
                     )
@@ -45155,9 +45771,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<KernelHandle, uint, nuint, void*, int>)(
-                _slots[162] is not null and var loadedFnPtr
+                _slots[166] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[162] = nativeContext.LoadFunction("clSetKernelExecInfo", "opencl")
+                    : _slots[166] = nativeContext.LoadFunction("clSetKernelExecInfo", "opencl")
             )
         )(kernel, param_name, param_value_size, param_value);
 
@@ -45230,9 +45846,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<KernelHandle, uint, nuint, void*, int>)(
-                _slots[163] is not null and var loadedFnPtr
+                _slots[167] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[163] = nativeContext.LoadFunction("clSetKernelExecInfoARM", "opencl")
+                    : _slots[167] = nativeContext.LoadFunction("clSetKernelExecInfoARM", "opencl")
             )
         )(kernel, param_name, param_value_size, param_value);
 
@@ -45292,9 +45908,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<MemHandle, SetMemObjectDestructorAPPLEPfnNotify, void*, int>)(
-                _slots[164] is not null and var loadedFnPtr
+                _slots[168] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[164] = nativeContext.LoadFunction(
+                    : _slots[168] = nativeContext.LoadFunction(
                         "clSetMemObjectDestructorAPPLE",
                         "opencl"
                     )
@@ -45361,9 +45977,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<MemHandle, SetMemObjectDestructorCallbackPfnNotify, void*, int>)(
-                _slots[165] is not null and var loadedFnPtr
+                _slots[169] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[165] = nativeContext.LoadFunction(
+                    : _slots[169] = nativeContext.LoadFunction(
                         "clSetMemObjectDestructorCallback",
                         "opencl"
                     )
@@ -45450,9 +46066,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetPerfHintQCOM(ContextHandle context, uint perf_hint) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int>)(
-                _slots[166] is not null and var loadedFnPtr
+                _slots[170] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[166] = nativeContext.LoadFunction("clSetPerfHintQCOM", "opencl")
+                    : _slots[170] = nativeContext.LoadFunction("clSetPerfHintQCOM", "opencl")
             )
         )(context, perf_hint);
 
@@ -45479,9 +46095,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ProgramHandle, SetProgramReleaseCallbackPfnNotify, void*, int>)(
-                _slots[167] is not null and var loadedFnPtr
+                _slots[171] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[167] = nativeContext.LoadFunction(
+                    : _slots[171] = nativeContext.LoadFunction(
                         "clSetProgramReleaseCallback",
                         "opencl"
                     )
@@ -45555,9 +46171,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ProgramHandle, uint, nuint, void*, int>)(
-                _slots[168] is not null and var loadedFnPtr
+                _slots[172] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[168] = nativeContext.LoadFunction(
+                    : _slots[172] = nativeContext.LoadFunction(
                         "clSetProgramSpecializationConstant",
                         "opencl"
                     )
@@ -45640,9 +46256,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.SetUserEventStatus(EventHandle @event, int execution_status) =>
         (
             (delegate* unmanaged<EventHandle, int, int>)(
-                _slots[169] is not null and var loadedFnPtr
+                _slots[173] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[169] = nativeContext.LoadFunction("clSetUserEventStatus", "opencl")
+                    : _slots[173] = nativeContext.LoadFunction("clSetUserEventStatus", "opencl")
             )
         )(@event, execution_status);
 
@@ -45679,9 +46295,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) =>
         (
             (delegate* unmanaged<ContextHandle, DeviceIdHandle, ulong*, nuint, uint, int*, void*>)(
-                _slots[170] is not null and var loadedFnPtr
+                _slots[174] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[170] = nativeContext.LoadFunction("clSharedMemAllocINTEL", "opencl")
+                    : _slots[174] = nativeContext.LoadFunction("clSharedMemAllocINTEL", "opencl")
             )
         )(context, device, properties, size, alignment, errcode_ret);
 
@@ -45782,9 +46398,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void* ICl.SvmAllocRawARM(ContextHandle context, ulong flags, nuint size, uint alignment) =>
         (
             (delegate* unmanaged<ContextHandle, ulong, nuint, uint, void*>)(
-                _slots[172] is not null and var loadedFnPtr
+                _slots[176] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[172] = nativeContext.LoadFunction("clSVMAllocARM", "opencl")
+                    : _slots[176] = nativeContext.LoadFunction("clSVMAllocARM", "opencl")
             )
         )(context, flags, size, alignment);
 
@@ -45810,9 +46426,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void* ICl.SvmAllocRaw(ContextHandle context, ulong flags, nuint size, uint alignment) =>
         (
             (delegate* unmanaged<ContextHandle, ulong, nuint, uint, void*>)(
-                _slots[171] is not null and var loadedFnPtr
+                _slots[175] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[171] = nativeContext.LoadFunction("clSVMAlloc", "opencl")
+                    : _slots[175] = nativeContext.LoadFunction("clSVMAlloc", "opencl")
             )
         )(context, flags, size, alignment);
 
@@ -45842,9 +46458,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void ICl.SvmFree(ContextHandle context, void* svm_pointer) =>
         (
             (delegate* unmanaged<ContextHandle, void*, void>)(
-                _slots[173] is not null and var loadedFnPtr
+                _slots[177] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[173] = nativeContext.LoadFunction("clSVMFree", "opencl")
+                    : _slots[177] = nativeContext.LoadFunction("clSVMFree", "opencl")
             )
         )(context, svm_pointer);
 
@@ -45893,9 +46509,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     void ICl.SvmFreeARM(ContextHandle context, void* svm_pointer) =>
         (
             (delegate* unmanaged<ContextHandle, void*, void>)(
-                _slots[174] is not null and var loadedFnPtr
+                _slots[178] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[174] = nativeContext.LoadFunction("clSVMFreeARM", "opencl")
+                    : _slots[178] = nativeContext.LoadFunction("clSVMFreeARM", "opencl")
             )
         )(context, svm_pointer);
 
@@ -45932,9 +46548,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.TerminateContextKHR(ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, int>)(
-                _slots[175] is not null and var loadedFnPtr
+                _slots[179] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[175] = nativeContext.LoadFunction("clTerminateContextKHR", "opencl")
+                    : _slots[179] = nativeContext.LoadFunction("clTerminateContextKHR", "opencl")
             )
         )(context);
 
@@ -45966,9 +46582,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.UnloadCompiler() =>
         (
             (delegate* unmanaged<int>)(
-                _slots[176] is not null and var loadedFnPtr
+                _slots[180] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[176] = nativeContext.LoadFunction("clUnloadCompiler", "opencl")
+                    : _slots[180] = nativeContext.LoadFunction("clUnloadCompiler", "opencl")
             )
         )();
 
@@ -46010,9 +46626,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.UnloadPlatformCompiler(PlatformIdHandle platform) =>
         (
             (delegate* unmanaged<PlatformIdHandle, int>)(
-                _slots[177] is not null and var loadedFnPtr
+                _slots[181] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[177] = nativeContext.LoadFunction("clUnloadPlatformCompiler", "opencl")
+                    : _slots[181] = nativeContext.LoadFunction("clUnloadPlatformCompiler", "opencl")
             )
         )(platform);
 
@@ -46054,9 +46670,9 @@ public unsafe partial class Cl : ICl, ICl.Static
     int ICl.WaitForEvents(uint num_events, EventHandle* event_list) =>
         (
             (delegate* unmanaged<uint, EventHandle*, int>)(
-                _slots[178] is not null and var loadedFnPtr
+                _slots[182] is not null and var loadedFnPtr
                     ? loadedFnPtr
-                    : _slots[178] = nativeContext.LoadFunction("clWaitForEvents", "opencl")
+                    : _slots[182] = nativeContext.LoadFunction("clWaitForEvents", "opencl")
             )
         )(num_events, event_list);
 

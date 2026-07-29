@@ -1236,6 +1236,11 @@ public unsafe partial interface ICl
         [NativeFunction("opencl", EntryPoint = "clCreateUserEvent")]
         static abstract EventHandle CreateUserEvent(ContextHandle context, Ref<int> errcode_ret);
 
+        [NativeName("clDeinitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clDeinitLayer")]
+        static abstract int DeinitLayer();
+
         [NativeName("clDeviceMemAllocINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clDeviceMemAllocINTEL")]
@@ -4256,6 +4261,26 @@ public unsafe partial interface ICl
             Ref<nuint> param_value_size_ret
         );
 
+        [NativeName("clGetLayerInfo")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+        static abstract int GetLayerInfo(
+            uint param_name,
+            nuint param_value_size,
+            void* param_value,
+            nuint* param_value_size_ret
+        );
+
+        [NativeName("clGetLayerInfo")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+        static abstract int GetLayerInfo(
+            uint param_name,
+            nuint param_value_size,
+            Ref param_value,
+            Ref<nuint> param_value_size_ret
+        );
+
         [NativeName("clGetMemAllocInfoINTEL")]
         [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
         [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
@@ -4806,6 +4831,48 @@ public unsafe partial interface ICl
             Ref memory,
             nuint size,
             Ref<int> errcode_ret
+        );
+
+        [NativeName("clInitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+        static abstract int InitLayer(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            uint* num_entries_ret,
+            IcdDispatchHandle* layer_dispatch_ret
+        );
+
+        [NativeName("clInitLayer")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+        static abstract int InitLayer(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            Ref<uint> num_entries_ret,
+            Ref<IcdDispatchHandle> layer_dispatch_ret
+        );
+
+        [NativeName("clInitLayerWithProperties")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+        static abstract int InitLayerWithProperties(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            uint* num_entries_ret,
+            IcdDispatchHandle* layer_dispatch_ret,
+            ulong* properties
+        );
+
+        [NativeName("clInitLayerWithProperties")]
+        [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+        [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+        static abstract int InitLayerWithProperties(
+            uint num_entries,
+            IcdDispatchHandle target_dispatch,
+            Ref<uint> num_entries_ret,
+            Ref<IcdDispatchHandle> layer_dispatch_ret,
+            Ref<ulong> properties
         );
 
         [NativeName("clLinkProgram")]
@@ -7070,6 +7137,11 @@ public unsafe partial interface ICl
     )]
     [NativeFunction("opencl", EntryPoint = "clCreateUserEvent")]
     EventHandle CreateUserEvent(ContextHandle context, Ref<int> errcode_ret);
+
+    [NativeName("clDeinitLayer")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clDeinitLayer")]
+    int DeinitLayer();
 
     [NativeName("clDeviceMemAllocINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
@@ -10006,6 +10078,26 @@ public unsafe partial interface ICl
         Ref<nuint> param_value_size_ret
     );
 
+    [NativeName("clGetLayerInfo")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+    int GetLayerInfo(
+        uint param_name,
+        nuint param_value_size,
+        void* param_value,
+        nuint* param_value_size_ret
+    );
+
+    [NativeName("clGetLayerInfo")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clGetLayerInfo")]
+    int GetLayerInfo(
+        uint param_name,
+        nuint param_value_size,
+        Ref param_value,
+        Ref<nuint> param_value_size_ret
+    );
+
     [NativeName("clGetMemAllocInfoINTEL")]
     [SupportedApiProfile("opencl", ["cl_intel_unified_shared_memory"])]
     [NativeFunction("opencl", EntryPoint = "clGetMemAllocInfoINTEL")]
@@ -10520,6 +10612,48 @@ public unsafe partial interface ICl
         Ref memory,
         nuint size,
         Ref<int> errcode_ret
+    );
+
+    [NativeName("clInitLayer")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+    int InitLayer(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        uint* num_entries_ret,
+        IcdDispatchHandle* layer_dispatch_ret
+    );
+
+    [NativeName("clInitLayer")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayer")]
+    int InitLayer(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        Ref<uint> num_entries_ret,
+        Ref<IcdDispatchHandle> layer_dispatch_ret
+    );
+
+    [NativeName("clInitLayerWithProperties")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+    int InitLayerWithProperties(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        uint* num_entries_ret,
+        IcdDispatchHandle* layer_dispatch_ret,
+        ulong* properties
+    );
+
+    [NativeName("clInitLayerWithProperties")]
+    [SupportedApiProfile("opencl", ["cl_loader_layers"])]
+    [NativeFunction("opencl", EntryPoint = "clInitLayerWithProperties")]
+    int InitLayerWithProperties(
+        uint num_entries,
+        IcdDispatchHandle target_dispatch,
+        Ref<uint> num_entries_ret,
+        Ref<IcdDispatchHandle> layer_dispatch_ret,
+        Ref<ulong> properties
     );
 
     [NativeName("clLinkProgram")]

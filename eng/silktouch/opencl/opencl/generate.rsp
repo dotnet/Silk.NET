@@ -15,3 +15,6 @@ Silk.NET.OpenCL
 --traverse
 ../../../submodules/opencl-headers/CL/cl.h
 ../../../submodules/opencl-headers/CL/cl_ext.h
+../../../submodules/opencl-headers/CL/cl_function_types.h
+../../../submodules/opencl-headers/CL/cl_layer.h
+../../../submodules/opencl-headers/CL/cl_version.h

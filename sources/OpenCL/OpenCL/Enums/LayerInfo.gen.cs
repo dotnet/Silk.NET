@@ -10,4 +10,11 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenCL;
 
 [NativeName("cl_layer_info")]
-public enum LayerInfo : uint { }
+public enum LayerInfo : uint
+{
+    [NativeName("CL_LAYER_API_VERSION")]
+    ApiVersion = 16960,
+
+    [NativeName("CL_LAYER_NAME")]
+    Name = 16961,
+}
