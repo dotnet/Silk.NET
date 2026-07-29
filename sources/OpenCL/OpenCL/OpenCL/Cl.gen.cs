@@ -3,6 +3,7 @@
 // Ported from the OpenCL headers and corresponding dependencies.
 // Original source is Copyright 2013-2026 The Khronos Group Inc. Licensed under the Apache 2.0 license.
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -396,7 +397,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clCreateCommandQueue")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateCommandQueue")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -419,7 +419,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
         [NativeName("clCreateCommandQueue")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -755,7 +754,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clCreateImage2D")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateImage2D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -782,7 +780,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
         [NativeName("clCreateImage2D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -831,7 +828,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clCreateImage3D")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateImage3D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -860,7 +856,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
         [NativeName("clCreateImage3D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1417,7 +1412,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clCreateSampler")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clCreateSampler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1441,7 +1435,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
         [NativeName("clCreateSampler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1921,7 +1914,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clEnqueueBarrier")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueBarrier")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -2764,7 +2756,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clEnqueueMarker")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueMarker")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -2785,7 +2776,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
         [NativeName("clEnqueueMarker")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -4455,7 +4445,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clEnqueueTask")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueTask")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -4479,7 +4468,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
         [NativeName("clEnqueueTask")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -4589,7 +4577,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clEnqueueWaitForEvents")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clEnqueueWaitForEvents")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -4611,7 +4598,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
         [NativeName("clEnqueueWaitForEvents")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -5543,7 +5529,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clGetExtensionFunctionAddress")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetExtensionFunctionAddress")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -5561,7 +5546,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         public static extern void* GetExtensionFunctionAddress(sbyte* func_name);
 
         [NativeName("clGetExtensionFunctionAddress")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -6011,7 +5995,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clGetKernelSubGroupInfoKHR")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clGetKernelSubGroupInfoKHR")]
-        [Obsolete]
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         public static extern int GetKernelSubGroupInfoKHR(
             KernelHandle in_kernel,
@@ -6025,7 +6008,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
         [NativeName("clGetKernelSubGroupInfoKHR")]
-        [Obsolete]
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         [MethodImpl(
@@ -8119,7 +8101,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clSetProgramReleaseCallback")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clSetProgramReleaseCallback")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -8132,7 +8113,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
         [NativeName("clSetProgramReleaseCallback")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -8389,7 +8369,6 @@ public unsafe partial class Cl : ICl, ICl.Static
 
         [NativeName("clUnloadCompiler")]
         [DllImport("opencl", ExactSpelling = true, EntryPoint = "clUnloadCompiler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -8824,7 +8803,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clCreateCommandQueue")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -8851,7 +8829,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) => T.CreateCommandQueue(context, device, properties, errcode_ret);
 
         [NativeName("clCreateCommandQueue")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -9112,7 +9089,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) => T.CreateImage(context, flags, image_format, image_desc, host_ptr, errcode_ret);
 
         [NativeName("clCreateImage2D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -9153,7 +9129,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clCreateImage2D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -9194,7 +9169,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clCreateImage3D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -9239,7 +9213,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clCreateImage3D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -9756,7 +9729,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) => T.CreateProgramWithSource(context, count, strings, lengths, errcode_ret);
 
         [NativeName("clCreateSampler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -9784,7 +9756,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) => T.CreateSampler(context, normalized_coords, addressing_mode, filter_mode, errcode_ret);
 
         [NativeName("clCreateSampler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -10190,7 +10161,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clEnqueueBarrier")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -11105,7 +11075,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clEnqueueMarker")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -11128,7 +11097,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             T.EnqueueMarker(command_queue, @event);
 
         [NativeName("clEnqueueMarker")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -12927,7 +12895,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clEnqueueTask")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -12955,7 +12922,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) => T.EnqueueTask(command_queue, kernel, num_events_in_wait_list, event_wait_list, @event);
 
         [NativeName("clEnqueueTask")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -13055,7 +13021,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clEnqueueWaitForEvents")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -13081,7 +13046,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) => T.EnqueueWaitForEvents(command_queue, num_events, event_list);
 
         [NativeName("clEnqueueWaitForEvents")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -14045,7 +14009,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clGetExtensionFunctionAddress")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -14068,7 +14031,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             T.GetExtensionFunctionAddress(func_name);
 
         [NativeName("clGetExtensionFunctionAddress")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -14517,7 +14479,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clGetKernelSubGroupInfoKHR")]
-        [Obsolete]
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         [MethodImpl(
@@ -14545,7 +14506,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clGetKernelSubGroupInfoKHR")]
-        [Obsolete]
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         [MethodImpl(
@@ -16622,7 +16582,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             T.SetPerfHintQCOM(context, perf_hint);
 
         [NativeName("clSetProgramReleaseCallback")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -16639,7 +16598,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) => T.SetProgramReleaseCallback(program, pfn_notify, user_data);
 
         [NativeName("clSetProgramReleaseCallback")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -16865,7 +16823,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         public int TerminateContextKHR(ContextHandle context) => T.TerminateContextKHR(context);
 
         [NativeName("clUnloadCompiler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -17397,7 +17354,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
 
         [NativeName("clCreateCommandQueue")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -17424,7 +17380,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) => Underlying.Value!.CreateCommandQueue(context, device, properties, errcode_ret);
 
         [NativeName("clCreateCommandQueue")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -17801,7 +17756,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
 
         [NativeName("clCreateImage2D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -17842,7 +17796,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clCreateImage2D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -17890,7 +17843,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
 
         [NativeName("clCreateImage3D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -17935,7 +17887,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clCreateImage3D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -18560,7 +18511,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
 
         [NativeName("clCreateSampler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -18595,7 +18545,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clCreateSampler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -19139,7 +19088,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
 
         [NativeName("clEnqueueBarrier")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -20142,7 +20090,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
 
         [NativeName("clEnqueueMarker")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -20165,7 +20112,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             Underlying.Value!.EnqueueMarker(command_queue, @event);
 
         [NativeName("clEnqueueMarker")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -22184,7 +22130,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
 
         [NativeName("clEnqueueTask")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -22219,7 +22164,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clEnqueueTask")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -22339,7 +22283,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
 
         [NativeName("clEnqueueWaitForEvents")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -22365,7 +22308,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) => Underlying.Value!.EnqueueWaitForEvents(command_queue, num_events, event_list);
 
         [NativeName("clEnqueueWaitForEvents")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -23465,7 +23407,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
 
         [NativeName("clGetExtensionFunctionAddress")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -23488,7 +23429,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             Underlying.Value!.GetExtensionFunctionAddress(func_name);
 
         [NativeName("clGetExtensionFunctionAddress")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -24007,7 +23947,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         }
 
         [NativeName("clGetKernelSubGroupInfoKHR")]
-        [Obsolete]
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         [MethodImpl(
@@ -24035,7 +23974,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             );
 
         [NativeName("clGetKernelSubGroupInfoKHR")]
-        [Obsolete]
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         [MethodImpl(
@@ -26483,7 +26421,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             Underlying.Value!.SetPerfHintQCOM(context, perf_hint);
 
         [NativeName("clSetProgramReleaseCallback")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -26500,7 +26437,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ) => Underlying.Value!.SetProgramReleaseCallback(program, pfn_notify, user_data);
 
         [NativeName("clSetProgramReleaseCallback")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -26794,7 +26730,6 @@ public unsafe partial class Cl : ICl, ICl.Static
             Underlying.Value!.TerminateContextKHR(context);
 
         [NativeName("clUnloadCompiler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -27495,7 +27430,7 @@ public unsafe partial class Cl : ICl, ICl.Static
         ["cl_arm_import_memory_android_hardware_buffer"],
         ImpliesSets = ["cl_arm_import_memory"]
     )]
-    public static nuint ImportMemoryWholeAllocationARM => unchecked((nuint)(18446744073709551615U));
+    public const ulong ImportMemoryWholeAllocationARM = 0xffffffffffffffffUL;
 
     [NativeName("CL_ARM_SHARED_VIRTUAL_MEMORY_EXTENSION_NAME")]
     public static ReadOnlySpan<byte> ArmSharedVirtualMemoryExtensionName =>
@@ -29118,7 +29053,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clCreateCommandQueue")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -29150,7 +29084,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         )(context, device, properties, errcode_ret);
 
     [NativeName("clCreateCommandQueue")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -29175,7 +29108,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) => ThisThread.CreateCommandQueue(context, device, properties, errcode_ret);
 
     [NativeName("clCreateCommandQueue")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -29207,7 +29139,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     }
 
     [NativeName("clCreateCommandQueue")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -29802,7 +29733,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) => ThisThread.CreateImage(context, flags, image_format, image_desc, host_ptr, errcode_ret);
 
     [NativeName("clCreateImage2D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -29856,7 +29786,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clCreateImage2D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -29895,7 +29824,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clCreateImage2D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -29942,7 +29870,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     }
 
     [NativeName("clCreateImage2D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -29981,7 +29908,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clCreateImage3D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -30041,7 +29967,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clCreateImage3D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -30084,7 +30009,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clCreateImage3D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -30135,7 +30059,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     }
 
     [NativeName("clCreateImage3D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -31167,7 +31090,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) => ThisThread.CreateProgramWithSource(context, count, strings, lengths, errcode_ret);
 
     [NativeName("clCreateSampler")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -31200,7 +31122,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         )(context, normalized_coords, addressing_mode, filter_mode, errcode_ret);
 
     [NativeName("clCreateSampler")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -31233,7 +31154,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clCreateSampler")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -31272,7 +31192,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     }
 
     [NativeName("clCreateSampler")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -32184,7 +32103,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clEnqueueBarrier")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -32211,7 +32129,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         )(command_queue);
 
     [NativeName("clEnqueueBarrier")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -34207,7 +34124,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clEnqueueMarker")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -34234,7 +34150,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         )(command_queue, @event);
 
     [NativeName("clEnqueueMarker")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -34255,7 +34170,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ThisThread.EnqueueMarker(command_queue, @event);
 
     [NativeName("clEnqueueMarker")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -34281,7 +34195,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     }
 
     [NativeName("clEnqueueMarker")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -38114,7 +38027,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clEnqueueTask")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -38153,7 +38065,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         )(command_queue, kernel, num_events_in_wait_list, event_wait_list, @event);
 
     [NativeName("clEnqueueTask")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -38186,7 +38097,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clEnqueueTask")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -38226,7 +38136,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     }
 
     [NativeName("clEnqueueTask")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -38409,7 +38318,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clEnqueueWaitForEvents")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -38440,7 +38348,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         )(command_queue, num_events, event_list);
 
     [NativeName("clEnqueueWaitForEvents")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -38464,7 +38371,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) => ThisThread.EnqueueWaitForEvents(command_queue, num_events, event_list);
 
     [NativeName("clEnqueueWaitForEvents")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -38495,7 +38401,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     }
 
     [NativeName("clEnqueueWaitForEvents")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -40556,7 +40461,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clGetExtensionFunctionAddress")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -40586,7 +40490,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         )(func_name);
 
     [NativeName("clGetExtensionFunctionAddress")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -40607,7 +40510,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ThisThread.GetExtensionFunctionAddress(func_name);
 
     [NativeName("clGetExtensionFunctionAddress")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -40633,7 +40535,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     }
 
     [NativeName("clGetExtensionFunctionAddress")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -41572,7 +41473,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clGetKernelSubGroupInfoKHR")]
-    [Obsolete]
     [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -41616,7 +41516,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clGetKernelSubGroupInfoKHR")]
-    [Obsolete]
     [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -41642,7 +41541,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         );
 
     [NativeName("clGetKernelSubGroupInfoKHR")]
-    [Obsolete]
     [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -41676,7 +41574,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     }
 
     [NativeName("clGetKernelSubGroupInfoKHR")]
-    [Obsolete]
     [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -46080,7 +45977,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ThisThread.SetPerfHintQCOM(context, perf_hint);
 
     [NativeName("clSetProgramReleaseCallback")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -46105,7 +46001,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         )(program, pfn_notify, user_data);
 
     [NativeName("clSetProgramReleaseCallback")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -46120,7 +46015,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     ) => ThisThread.SetProgramReleaseCallback(program, pfn_notify, user_data);
 
     [NativeName("clSetProgramReleaseCallback")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -46141,7 +46035,6 @@ public unsafe partial class Cl : ICl, ICl.Static
     }
 
     [NativeName("clSetProgramReleaseCallback")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -46562,7 +46455,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         ThisThread.TerminateContextKHR(context);
 
     [NativeName("clUnloadCompiler")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -46589,7 +46481,6 @@ public unsafe partial class Cl : ICl, ICl.Static
         )();
 
     [NativeName("clUnloadCompiler")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [

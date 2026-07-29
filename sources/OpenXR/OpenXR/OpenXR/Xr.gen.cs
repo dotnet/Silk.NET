@@ -5961,7 +5961,7 @@ public unsafe partial class Xr : IXr, IXr.Static
         ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
         MinVersion = "1.0"
     )]
-    public static nuint MaxEventDataSize => unchecked((nuint)((uint)(sizeof(EventDataBuffer))));
+    public static ulong MaxEventDataSize => sizeof(EventDataBuffer);
 
     [NativeName("XR_EXTENSION_ENUM_BASE")]
     [SupportedApiProfile(

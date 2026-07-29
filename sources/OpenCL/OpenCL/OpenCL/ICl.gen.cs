@@ -265,7 +265,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateCommandQueue")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -289,7 +288,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateCommandQueue")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -517,7 +515,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateImage2D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -545,7 +542,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateImage2D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -573,7 +569,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateImage3D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -603,7 +598,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateImage3D")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -985,7 +979,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateSampler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1010,7 +1003,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clCreateSampler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1322,7 +1314,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueBarrier")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1921,7 +1912,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueMarker")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -1940,7 +1930,6 @@ public unsafe partial interface ICl
         static abstract int EnqueueMarker(CommandQueueHandle command_queue, EventHandle* @event);
 
         [NativeName("clEnqueueMarker")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3022,7 +3011,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueTask")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3047,7 +3035,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueTask")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3122,7 +3109,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueWaitForEvents")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3145,7 +3131,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clEnqueueWaitForEvents")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3804,7 +3789,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clGetExtensionFunctionAddress")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -3823,7 +3807,6 @@ public unsafe partial interface ICl
         static abstract void* GetExtensionFunctionAddress(sbyte* func_name);
 
         [NativeName("clGetExtensionFunctionAddress")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -4134,7 +4117,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clGetKernelSubGroupInfoKHR")]
-        [Obsolete]
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         static abstract int GetKernelSubGroupInfoKHR(
@@ -4149,7 +4131,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clGetKernelSubGroupInfoKHR")]
-        [Obsolete]
         [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
         [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
         static abstract int GetKernelSubGroupInfoKHR(
@@ -5689,7 +5670,6 @@ public unsafe partial interface ICl
         static abstract int SetPerfHintQCOM(ContextHandle context, uint perf_hint);
 
         [NativeName("clSetProgramReleaseCallback")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -5703,7 +5683,6 @@ public unsafe partial interface ICl
         );
 
         [NativeName("clSetProgramReleaseCallback")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -5891,7 +5870,6 @@ public unsafe partial interface ICl
         static abstract int TerminateContextKHR(ContextHandle context);
 
         [NativeName("clUnloadCompiler")]
-        [Obsolete]
         [SupportedApiProfile(
             "opencl",
             [
@@ -6211,7 +6189,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateCommandQueue")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6235,7 +6212,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateCommandQueue")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6451,7 +6427,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateImage2D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6479,7 +6454,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateImage2D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6507,7 +6481,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateImage3D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6537,7 +6510,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateImage3D")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6899,7 +6871,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateSampler")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -6924,7 +6895,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clCreateSampler")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -7216,7 +7186,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueBarrier")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -7815,7 +7784,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueMarker")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -7834,7 +7802,6 @@ public unsafe partial interface ICl
     int EnqueueMarker(CommandQueueHandle command_queue, EventHandle* @event);
 
     [NativeName("clEnqueueMarker")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -8845,7 +8812,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueTask")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -8870,7 +8836,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueTask")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -8945,7 +8910,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueWaitForEvents")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -8968,7 +8932,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clEnqueueWaitForEvents")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -9627,7 +9590,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clGetExtensionFunctionAddress")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -9646,7 +9608,6 @@ public unsafe partial interface ICl
     void* GetExtensionFunctionAddress(sbyte* func_name);
 
     [NativeName("clGetExtensionFunctionAddress")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
@@ -9951,7 +9912,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clGetKernelSubGroupInfoKHR")]
-    [Obsolete]
     [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
     int GetKernelSubGroupInfoKHR(
@@ -9966,7 +9926,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clGetKernelSubGroupInfoKHR")]
-    [Obsolete]
     [SupportedApiProfile("opencl", ["cl_khr_subgroups"])]
     [NativeFunction("opencl", EntryPoint = "clGetKernelSubGroupInfoKHR")]
     int GetKernelSubGroupInfoKHR(
@@ -11371,7 +11330,6 @@ public unsafe partial interface ICl
     int SetPerfHintQCOM(ContextHandle context, uint perf_hint);
 
     [NativeName("clSetProgramReleaseCallback")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -11385,7 +11343,6 @@ public unsafe partial interface ICl
     );
 
     [NativeName("clSetProgramReleaseCallback")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         ["CL_VERSION_2_2", "CL_VERSION_3_0", "CL_VERSION_3_1"],
@@ -11529,7 +11486,6 @@ public unsafe partial interface ICl
     int TerminateContextKHR(ContextHandle context);
 
     [NativeName("clUnloadCompiler")]
-    [Obsolete]
     [SupportedApiProfile(
         "opencl",
         [
