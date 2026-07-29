@@ -76,6 +76,7 @@ internal unsafe class Program
         // TODO: These todos apply to all Silk bindings.
         // TODO: Consider making INativeContext public. It's nice for debugging.
         // TODO: Consider returning the concrete class instead of the interface. Having to cast to access Cl.CurrentPlatform is annoying.
+        // TODO: I liked how INativeContext only required the function name in Silk 2. Silk 3 is currently `LoadFunction(functionName, libraryNameHint)`.
         var cl = Cl.Create(); // TODO: This should be disposable
 
         // Initialize host data
