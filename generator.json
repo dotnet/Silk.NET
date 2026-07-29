@@ -353,9 +353,18 @@
         ]
       },
       "IdentifySharedPrefixes": {
-        "GlobalPrefixHints": ["cl", "_cl"]
+        "GlobalPrefixHints": ["cl", "_cl"],
+        "PrefixOverrides": {
+          "cl_device_info": "CL_DEVICE",
+          "cl_context_properties": "CL_CONTEXT"
+        }
       },
       "PrettifyNames": {
+        "NameOverrides": {
+          "CL_DRIVER_VERSION": "DriverVersion",
+          "CL_DRIVER_UUID": "DriverUuid",
+          "CL_DRIVER_UUID_KHR": "DriverUuidKHR"
+        },
         "Affixes": {
           "HandleType": {
             "Order": 1

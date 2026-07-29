@@ -105,7 +105,7 @@ internal unsafe class Program
         CheckError(
             cl.GetDeviceInfo(
                 device,
-                (uint)DeviceInfo.DeviceName, // TODO: Shouldn't need a cast.
+                (uint)DeviceInfo.Name, // TODO: Shouldn't need a cast.
                 (nuint)buffer.Length,
                 buffer.AsRef(),
                 nullptr
@@ -131,12 +131,7 @@ internal unsafe class Program
         Console.WriteLine($"Driver version: {driverVersion}");
 
         // Create context and command queue
-        var properties = new[]
-        {
-            (nint)ContextProperties.ContextPlatform,
-            (nint)platform.Handle,
-            0,
-        };
+        var properties = new[] { (nint)ContextProperties.Platform, (nint)platform.Handle, 0 };
 
         var errorCode = default(int);
         var context = cl.CreateContextFromType(

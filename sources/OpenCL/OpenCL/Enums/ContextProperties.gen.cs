@@ -13,16 +13,16 @@ namespace Silk.NET.OpenCL;
 public enum ContextProperties : long
 {
     [NativeName("CL_CONTEXT_PLATFORM")]
-    ContextPlatform = 4228,
+    Platform = 4228,
 
     [NativeName("CL_CONTEXT_INTEROP_USER_SYNC")]
-    ContextInteropUserSync = 4229,
+    InteropUserSync = 4229,
 
     [NativeName("CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
-    ContextMemoryInitializeKHR = 8240,
+    MemoryInitializeKHR = 8240,
 
     [NativeName("CL_CONTEXT_TERMINATE_KHR")]
-    ContextTerminateKHR = 8242,
+    TerminateKHR = 8242,
 
     [NativeName("CL_PRINTF_CALLBACK_ARM")]
     PrintfCallbackARM = 16560,
@@ -31,8 +31,8 @@ public enum ContextProperties : long
     PrintfBuffersizeARM = 16561,
 
     [NativeName("CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
-    ContextShowDiagnosticsINTEL = 16646,
+    ShowDiagnosticsINTEL = 16646,
 
     [NativeName("CL_CONTEXT_SAFETY_PROPERTIES_IMG")]
-    ContextSafetyPropertiesIMG = 16601,
+    SafetyPropertiesIMG = 16601,
 }
