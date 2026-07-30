@@ -589,7 +589,6 @@ public partial class MixKhronosData(
         /// </summary>
         public bool IsMaybeBitmask { get; init; }
 
-        // TODO: Do we really need this?
         /// <summary>
         /// The identified exclusive vendor for the group. Eg: NV.
         /// </summary>
