@@ -219,10 +219,6 @@ Usage recommendations:
 
 This mod should be used when the API being bound makes use of the pre-C99 enum pattern described above.
 
-This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
-mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
-being generated.
-
 ### ExtractFunctionPointers
 
 Mod categories: Creation
@@ -259,10 +255,6 @@ Usage recommendations:
 
 This mod should be used when a set of bindings contains unmanaged delegates annotated with `[NativeTypeName]`
 attributes.
-
-This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
-mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
-being generated.
 
 ### ExtractHandles
 
@@ -310,10 +302,6 @@ Furthermore, this mod should be used alongside `TransformHandles` so that the ha
 user-friendly version. `ExtractHandles` should be positioned before `TransformHandles` and any other mods that might use
 its results in the mod order.
 
-This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
-mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
-being generated.
-
 ### ExtractNestedTypes
 
 Mod categories: Creation
@@ -340,10 +328,6 @@ This mod must be used before `PrettifyNames` when using `PrettifyNames` and ther
 bindings. This is because `PrettifyNames` does not handle nesting when renaming identifiers. Other mods may have similar
 restrictions. This restriction is generally because nesting increases complexity, and as such, mods are written with the
 assumption that nested types are extracted beforehand.
-
-This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
-mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
-being generated.
 
 ### IdentifySharedPrefixes
 
