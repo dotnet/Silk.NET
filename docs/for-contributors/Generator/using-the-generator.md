@@ -21,8 +21,8 @@ There are three main things to configure:
 
 2. ClangSharpPInvokeGenerator - This is the [`eng/silktouch`](https://github.com/dotnet/Silk.NET/tree/develop/3.0/eng/silktouch) folder.
 
-3. C# Project File - This is your typical `.csproj` file and add it to your solution before running the SilkTouch
-   generator.
+3. C# Project File - This is your typical `.csproj` file and needs to be added to your solution before running the
+   SilkTouch generator.
 
 Both are organized by native API.
 
