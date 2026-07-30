@@ -335,6 +335,9 @@
           "cl_semaphore_type": "uint",
           "cl_kernel_workgroup_info": "uint"
         },
+        "Vendors": [
+          "ALTERA"
+        ],
         "IdentifyEnumMemberImpliedVendors": true
       },
       "AddVTables": {
