@@ -30,5 +30,5 @@ public partial struct ApplicationInfo
 
     [NativeName("apiVersion")]
     [SupportedApiProfile("openxr")]
-    public Version ApiVersion;
+    public ulong ApiVersion;
 }

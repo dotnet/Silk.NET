@@ -26,7 +26,7 @@ public unsafe partial struct ApiLayerProperties
 
     [NativeName("specVersion")]
     [SupportedApiProfile("openxr")]
-    public Version SpecVersion;
+    public ulong SpecVersion;
 
     [NativeName("layerVersion")]
     [SupportedApiProfile("openxr")]

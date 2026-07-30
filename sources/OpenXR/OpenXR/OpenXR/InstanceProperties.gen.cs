@@ -22,7 +22,7 @@ public unsafe partial struct InstanceProperties
 
     [NativeName("runtimeVersion")]
     [SupportedApiProfile("openxr")]
-    public Version RuntimeVersion;
+    public ulong RuntimeVersion;
 
     [NativeName("runtimeName")]
     [SupportedApiProfile("openxr")]
