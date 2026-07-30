@@ -359,7 +359,9 @@
         "GlobalPrefixHints": ["cl", "_cl"],
         "PrefixOverrides": {
           "cl_device_info": "CL_DEVICE",
-          "cl_context_properties": "CL_CONTEXT"
+          "cl_context_properties": "CL_CONTEXT",
+          "cl_device_integer_dot_product_capabilities": "CL_DEVICE_INTEGER_DOT_PRODUCT",
+          "cl_device_integer_dot_product_capabilities_khr": "CL_DEVICE_INTEGER_DOT_PRODUCT"
         }
       },
       "PrettifyNames": {

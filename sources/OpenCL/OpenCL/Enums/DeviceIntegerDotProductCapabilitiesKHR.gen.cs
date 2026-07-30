@@ -16,8 +16,8 @@ public enum DeviceIntegerDotProductCapabilitiesKHR : ulong
     None = 0x0,
 
     [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_PACKED_KHR")]
-    BitPacked = 0x1,
+    Input4x8BitPacked = 0x1,
 
     [NativeName("CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_KHR")]
-    Bit = 0x2,
+    Input4x8Bit = 0x2,
 }
