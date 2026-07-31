@@ -14,13 +14,13 @@ public enum PerfSettingsNotificationLevelEXT : uint
 {
     [NativeName("XR_PERF_SETTINGS_NOTIF_LEVEL_NORMAL_EXT")]
     [SupportedApiProfile("openxr", ["XR_EXT_performance_settings", "XR_EXT_thermal_query"])]
-    NotifLevelNormal = 0,
+    Normal = 0,
 
     [NativeName("XR_PERF_SETTINGS_NOTIF_LEVEL_WARNING_EXT")]
     [SupportedApiProfile("openxr", ["XR_EXT_performance_settings", "XR_EXT_thermal_query"])]
-    NotifLevelWarning = 25,
+    Warning = 25,
 
     [NativeName("XR_PERF_SETTINGS_NOTIF_LEVEL_IMPAIRED_EXT")]
     [SupportedApiProfile("openxr", ["XR_EXT_performance_settings", "XR_EXT_thermal_query"])]
-    NotifLevelImpaired = 75,
+    Impaired = 75,
 }
