@@ -18,7 +18,7 @@ public enum SceneMarkerQRCodeSymbolTypeMSFT : uint
         ["XR_MSFT_scene_marker"],
         ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
     )]
-    QrCodeSymbolTypeQrCode = 1,
+    QrCode = 1,
 
     [NativeName("XR_SCENE_MARKER_QR_CODE_SYMBOL_TYPE_MICRO_QR_CODE_MSFT")]
     [SupportedApiProfile(
@@ -26,5 +26,5 @@ public enum SceneMarkerQRCodeSymbolTypeMSFT : uint
         ["XR_MSFT_scene_marker"],
         ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
     )]
-    QrCodeSymbolTypeMicroQrCode = 2,
+    MicroQrCode = 2,
 }
