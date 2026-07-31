@@ -14,7 +14,7 @@ public unsafe partial struct SessionCreateInfoOverlayEXTX
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
-    public StructureType Type = StructureType.TypeSessionCreateInfoOverlayEXTX;
+    public StructureType Type = StructureType.SessionCreateInfoOverlayEXTX;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]

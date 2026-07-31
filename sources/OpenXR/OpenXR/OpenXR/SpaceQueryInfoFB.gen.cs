@@ -18,7 +18,7 @@ public unsafe partial struct SpaceQueryInfoFB
         ["XR_FB_spatial_entity_query"],
         ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSpaceQueryInfoFB;
+    public StructureType Type = StructureType.SpaceQueryInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

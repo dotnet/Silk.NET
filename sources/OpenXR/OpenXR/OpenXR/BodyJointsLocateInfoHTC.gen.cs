@@ -14,7 +14,7 @@ public unsafe partial struct BodyJointsLocateInfoHTC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTC_body_tracking"])]
-    public StructureType Type = StructureType.TypeBodyJointsLocateInfoHTC;
+    public StructureType Type = StructureType.BodyJointsLocateInfoHTC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTC_body_tracking"])]

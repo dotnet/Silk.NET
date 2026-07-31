@@ -18,8 +18,7 @@ public unsafe partial struct SpatialCapabilityConfigurationObjectTrackingANDROID
         ["XR_ANDROID_spatial_object_tracking"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type =
-        StructureType.TypeSpatialCapabilityConfigurationObjectTrackingANDROID;
+    public StructureType Type = StructureType.SpatialCapabilityConfigurationObjectTrackingANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

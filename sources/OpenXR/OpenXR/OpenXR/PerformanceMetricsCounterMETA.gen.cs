@@ -14,7 +14,7 @@ public unsafe partial struct PerformanceMetricsCounterMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_performance_metrics"])]
-    public StructureType Type = StructureType.TypePerformanceMetricsCounterMETA;
+    public StructureType Type = StructureType.PerformanceMetricsCounterMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_performance_metrics"])]

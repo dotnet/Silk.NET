@@ -14,8 +14,7 @@ public unsafe partial struct SimultaneousHandsAndControllersTrackingPauseInfoMET
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]
-    public StructureType Type =
-        StructureType.TypeSimultaneousHandsAndControllersTrackingPauseInfoMETA;
+    public StructureType Type = StructureType.SimultaneousHandsAndControllersTrackingPauseInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]

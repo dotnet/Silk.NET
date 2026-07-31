@@ -14,7 +14,7 @@ public unsafe partial struct EventDataVirtualKeyboardCommitTextMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
-    public StructureType Type = StructureType.TypeEventDataVirtualKeyboardCommitTextMETA;
+    public StructureType Type = StructureType.EventDataVirtualKeyboardCommitTextMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]

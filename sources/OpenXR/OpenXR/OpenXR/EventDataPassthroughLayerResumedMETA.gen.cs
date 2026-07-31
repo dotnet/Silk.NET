@@ -18,7 +18,7 @@ public unsafe partial struct EventDataPassthroughLayerResumedMETA
         ["XR_META_passthrough_layer_resumed_event"],
         ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeEventDataPassthroughLayerResumedMETA;
+    public StructureType Type = StructureType.EventDataPassthroughLayerResumedMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

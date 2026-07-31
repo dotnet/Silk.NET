@@ -14,7 +14,7 @@ public unsafe partial struct SystemAnchorPropertiesHTC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
-    public StructureType Type = StructureType.TypeSystemAnchorPropertiesHTC;
+    public StructureType Type = StructureType.SystemAnchorPropertiesHTC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]

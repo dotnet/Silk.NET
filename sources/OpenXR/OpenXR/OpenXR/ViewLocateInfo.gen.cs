@@ -14,7 +14,7 @@ public unsafe partial struct ViewLocateInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeViewLocateInfo;
+    public StructureType Type = StructureType.ViewLocateInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

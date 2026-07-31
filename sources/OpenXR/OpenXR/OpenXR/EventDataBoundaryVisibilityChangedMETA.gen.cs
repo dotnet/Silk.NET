@@ -14,7 +14,7 @@ public unsafe partial struct EventDataBoundaryVisibilityChangedMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_boundary_visibility"])]
-    public StructureType Type = StructureType.TypeEventDataBoundaryVisibilityChangedMETA;
+    public StructureType Type = StructureType.EventDataBoundaryVisibilityChangedMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_boundary_visibility"])]

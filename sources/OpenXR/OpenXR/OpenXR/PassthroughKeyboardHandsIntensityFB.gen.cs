@@ -18,7 +18,7 @@ public unsafe partial struct PassthroughKeyboardHandsIntensityFB
         ["XR_FB_passthrough_keyboard_hands"],
         ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypePassthroughKeyboardHandsIntensityFB;
+    public StructureType Type = StructureType.PassthroughKeyboardHandsIntensityFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

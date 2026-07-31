@@ -14,7 +14,7 @@ public unsafe partial struct SpaceUserCreateInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity_user"])]
-    public StructureType Type = StructureType.TypeSpaceUserCreateInfoFB;
+    public StructureType Type = StructureType.SpaceUserCreateInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity_user"])]

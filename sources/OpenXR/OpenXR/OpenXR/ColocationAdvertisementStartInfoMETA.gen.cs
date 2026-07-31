@@ -14,7 +14,7 @@ public unsafe partial struct ColocationAdvertisementStartInfoMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]
-    public StructureType Type = StructureType.TypeColocationAdvertisementStartInfoMETA;
+    public StructureType Type = StructureType.ColocationAdvertisementStartInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]

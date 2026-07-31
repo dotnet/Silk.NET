@@ -14,7 +14,7 @@ public unsafe partial struct ViveTrackerPathsHTCX
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTCX_vive_tracker_interaction"])]
-    public StructureType Type = StructureType.TypeViveTrackerPathsHTCX;
+    public StructureType Type = StructureType.ViveTrackerPathsHTCX;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTCX_vive_tracker_interaction"])]

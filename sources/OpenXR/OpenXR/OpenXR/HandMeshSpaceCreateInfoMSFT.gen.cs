@@ -18,7 +18,7 @@ public unsafe partial struct HandMeshSpaceCreateInfoMSFT
         ["XR_MSFT_hand_tracking_mesh"],
         ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeHandMeshSpaceCreateInfoMSFT;
+    public StructureType Type = StructureType.HandMeshSpaceCreateInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile(

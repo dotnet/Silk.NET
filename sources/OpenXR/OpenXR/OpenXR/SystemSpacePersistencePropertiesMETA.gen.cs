@@ -14,7 +14,7 @@ public unsafe partial struct SystemSpacePersistencePropertiesMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]
-    public StructureType Type = StructureType.TypeSystemSpacePersistencePropertiesMETA;
+    public StructureType Type = StructureType.SystemSpacePersistencePropertiesMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]

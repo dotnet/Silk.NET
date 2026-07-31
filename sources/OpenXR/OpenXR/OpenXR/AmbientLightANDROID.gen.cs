@@ -14,7 +14,7 @@ public unsafe partial struct AmbientLightANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
-    public StructureType Type = StructureType.TypeAmbientLightANDROID;
+    public StructureType Type = StructureType.AmbientLightANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]

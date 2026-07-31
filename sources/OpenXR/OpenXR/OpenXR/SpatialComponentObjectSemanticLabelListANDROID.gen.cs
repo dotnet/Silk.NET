@@ -18,7 +18,7 @@ public unsafe partial struct SpatialComponentObjectSemanticLabelListANDROID
         ["XR_ANDROID_spatial_object_tracking"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialComponentObjectSemanticLabelListANDROID;
+    public StructureType Type = StructureType.SpatialComponentObjectSemanticLabelListANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

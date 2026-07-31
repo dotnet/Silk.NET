@@ -18,7 +18,7 @@ public unsafe partial struct FuturePollResultProgressBD
         ["XR_BD_future_progress"],
         ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeFuturePollResultProgressBD;
+    public StructureType Type = StructureType.FuturePollResultProgressBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -18,7 +18,7 @@ public unsafe partial struct EventDataSpaceListSaveCompleteFB
         ["XR_FB_spatial_entity_storage_batch"],
         ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeEventDataSpaceListSaveCompleteFB;
+    public StructureType Type = StructureType.EventDataSpaceListSaveCompleteFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

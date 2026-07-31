@@ -14,7 +14,7 @@ public unsafe partial struct SceneMeshIndicesUint32MSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
-    public StructureType Type = StructureType.TypeSceneMeshIndicesUint32MSFT;
+    public StructureType Type = StructureType.SceneMeshIndicesUint32MSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]

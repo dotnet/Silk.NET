@@ -14,7 +14,7 @@ public unsafe partial struct EventDataPerfSettingsEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
-    public StructureType Type = StructureType.TypeEventDataPerfSettingsEXT;
+    public StructureType Type = StructureType.EventDataPerfSettingsEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]

@@ -14,7 +14,7 @@ public unsafe partial struct HapticPcmVibrationFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]
-    public StructureType Type = StructureType.TypeHapticPcmVibrationFB;
+    public StructureType Type = StructureType.HapticPcmVibrationFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]

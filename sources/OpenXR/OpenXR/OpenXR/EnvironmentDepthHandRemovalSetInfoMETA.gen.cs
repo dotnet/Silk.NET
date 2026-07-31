@@ -14,7 +14,7 @@ public unsafe partial struct EnvironmentDepthHandRemovalSetInfoMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
-    public StructureType Type = StructureType.TypeEnvironmentDepthHandRemovalSetInfoMETA;
+    public StructureType Type = StructureType.EnvironmentDepthHandRemovalSetInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]

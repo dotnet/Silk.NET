@@ -14,7 +14,7 @@ public unsafe partial struct VirtualKeyboardAnimationStateMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
-    public StructureType Type = StructureType.TypeVirtualKeyboardAnimationStateMETA;
+    public StructureType Type = StructureType.VirtualKeyboardAnimationStateMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]

@@ -14,7 +14,7 @@ public unsafe partial struct PassthroughCreateInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
-    public StructureType Type = StructureType.TypePassthroughCreateInfoFB;
+    public StructureType Type = StructureType.PassthroughCreateInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]

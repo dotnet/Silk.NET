@@ -14,7 +14,7 @@ public unsafe partial struct EventDataViveTrackerConnectedHTCX
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTCX_vive_tracker_interaction"])]
-    public StructureType Type = StructureType.TypeEventDataViveTrackerConnectedHTCX;
+    public StructureType Type = StructureType.EventDataViveTrackerConnectedHTCX;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTCX_vive_tracker_interaction"])]

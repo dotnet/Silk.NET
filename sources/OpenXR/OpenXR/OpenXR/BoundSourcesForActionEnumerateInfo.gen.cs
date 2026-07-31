@@ -14,7 +14,7 @@ public unsafe partial struct BoundSourcesForActionEnumerateInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeBoundSourcesForActionEnumerateInfo;
+    public StructureType Type = StructureType.BoundSourcesForActionEnumerateInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

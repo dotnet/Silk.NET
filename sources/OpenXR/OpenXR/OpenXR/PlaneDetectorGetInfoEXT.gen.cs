@@ -14,7 +14,7 @@ public unsafe partial struct PlaneDetectorGetInfoEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
-    public StructureType Type = StructureType.TypePlaneDetectorGetInfoEXT;
+    public StructureType Type = StructureType.PlaneDetectorGetInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]

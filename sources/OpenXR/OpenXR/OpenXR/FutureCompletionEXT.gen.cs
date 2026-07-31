@@ -14,7 +14,7 @@ public unsafe partial struct FutureCompletionEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeFutureCompletionEXT;
+    public StructureType Type = StructureType.FutureCompletionEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_future"])]

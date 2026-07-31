@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerAlphaBlendFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
-    public StructureType Type = StructureType.TypeCompositionLayerAlphaBlendFB;
+    public StructureType Type = StructureType.CompositionLayerAlphaBlendFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]

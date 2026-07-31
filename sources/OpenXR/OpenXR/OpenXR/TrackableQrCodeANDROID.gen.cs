@@ -18,7 +18,7 @@ public unsafe partial struct TrackableQrCodeANDROID
         ["XR_ANDROID_trackables_qr_code"],
         ImpliesSets = ["XR_ANDROID_trackables"]
     )]
-    public StructureType Type = StructureType.TypeTrackableQrCodeANDROID;
+    public StructureType Type = StructureType.TrackableQrCodeANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

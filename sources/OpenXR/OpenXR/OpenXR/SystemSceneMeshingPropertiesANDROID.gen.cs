@@ -14,7 +14,7 @@ public unsafe partial struct SystemSceneMeshingPropertiesANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
-    public StructureType Type = StructureType.TypeSystemSceneMeshingPropertiesANDROID;
+    public StructureType Type = StructureType.SystemSceneMeshingPropertiesANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]

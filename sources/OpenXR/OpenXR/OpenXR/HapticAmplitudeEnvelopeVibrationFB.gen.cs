@@ -14,7 +14,7 @@ public unsafe partial struct HapticAmplitudeEnvelopeVibrationFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_haptic_amplitude_envelope"])]
-    public StructureType Type = StructureType.TypeHapticAmplitudeEnvelopeVibrationFB;
+    public StructureType Type = StructureType.HapticAmplitudeEnvelopeVibrationFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_haptic_amplitude_envelope"])]

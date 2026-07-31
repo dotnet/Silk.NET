@@ -18,7 +18,7 @@ public unsafe partial struct SystemSpatialAnchorSharingPropertiesBD
         ["XR_BD_spatial_anchor_sharing"],
         ImpliesSets = ["XR_BD_spatial_anchor"]
     )]
-    public StructureType Type = StructureType.TypeSystemSpatialAnchorSharingPropertiesBD;
+    public StructureType Type = StructureType.SystemSpatialAnchorSharingPropertiesBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

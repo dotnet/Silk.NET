@@ -18,7 +18,7 @@ public unsafe partial struct SpaceTriangleMeshGetInfoMETA
         ["XR_META_spatial_entity_mesh"],
         ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSpaceTriangleMeshGetInfoMETA;
+    public StructureType Type = StructureType.SpaceTriangleMeshGetInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

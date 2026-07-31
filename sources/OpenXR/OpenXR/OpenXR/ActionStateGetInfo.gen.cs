@@ -14,7 +14,7 @@ public unsafe partial struct ActionStateGetInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeActionStateGetInfo;
+    public StructureType Type = StructureType.ActionStateGetInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

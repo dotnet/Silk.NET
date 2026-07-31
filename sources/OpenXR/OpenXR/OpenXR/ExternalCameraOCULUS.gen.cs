@@ -14,7 +14,7 @@ public unsafe partial struct ExternalCameraOCULUS
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
-    public StructureType Type = StructureType.TypeExternalCameraOCULUS;
+    public StructureType Type = StructureType.ExternalCameraOCULUS;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]

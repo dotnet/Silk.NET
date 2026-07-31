@@ -14,7 +14,7 @@ public unsafe partial struct SystemPassthroughPropertiesFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
-    public StructureType Type = StructureType.TypeSystemPassthroughPropertiesFB;
+    public StructureType Type = StructureType.SystemPassthroughPropertiesFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]

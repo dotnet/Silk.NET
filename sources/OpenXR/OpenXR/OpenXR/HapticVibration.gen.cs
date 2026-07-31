@@ -18,7 +18,7 @@ public unsafe partial struct HapticVibration
         ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
         MinVersion = "1.0"
     )]
-    public StructureType Type = StructureType.TypeHapticVibration;
+    public StructureType Type = StructureType.HapticVibration;
 
     [NativeName("next")]
     [SupportedApiProfile(

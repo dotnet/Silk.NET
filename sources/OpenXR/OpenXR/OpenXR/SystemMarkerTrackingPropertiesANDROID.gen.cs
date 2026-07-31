@@ -18,7 +18,7 @@ public unsafe partial struct SystemMarkerTrackingPropertiesANDROID
         ["XR_ANDROID_trackables_marker"],
         ImpliesSets = ["XR_ANDROID_trackables"]
     )]
-    public StructureType Type = StructureType.TypeSystemMarkerTrackingPropertiesANDROID;
+    public StructureType Type = StructureType.SystemMarkerTrackingPropertiesANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

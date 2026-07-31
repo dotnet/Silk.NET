@@ -14,7 +14,7 @@ public unsafe partial struct SystemUserPresencePropertiesEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_user_presence"])]
-    public StructureType Type = StructureType.TypeSystemUserPresencePropertiesEXT;
+    public StructureType Type = StructureType.SystemUserPresencePropertiesEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_user_presence"])]

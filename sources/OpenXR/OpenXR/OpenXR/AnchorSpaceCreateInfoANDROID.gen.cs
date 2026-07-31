@@ -14,7 +14,7 @@ public unsafe partial struct AnchorSpaceCreateInfoANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
-    public StructureType Type = StructureType.TypeAnchorSpaceCreateInfoANDROID;
+    public StructureType Type = StructureType.AnchorSpaceCreateInfoANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]

@@ -14,7 +14,7 @@ public unsafe partial struct ActionSetCreateInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeActionSetCreateInfo;
+    public StructureType Type = StructureType.ActionSetCreateInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

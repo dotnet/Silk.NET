@@ -18,7 +18,7 @@ public unsafe partial struct SpaceSaveInfoFB
         ["XR_FB_spatial_entity_storage"],
         ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSpaceSaveInfoFB;
+    public StructureType Type = StructureType.SpaceSaveInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

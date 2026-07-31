@@ -18,7 +18,7 @@ public unsafe partial struct SpatialCapabilityConfigurationDepthRaycastANDROID
         ["XR_ANDROID_spatial_discovery_raycast"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialCapabilityConfigurationDepthRaycastANDROID;
+    public StructureType Type = StructureType.SpatialCapabilityConfigurationDepthRaycastANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

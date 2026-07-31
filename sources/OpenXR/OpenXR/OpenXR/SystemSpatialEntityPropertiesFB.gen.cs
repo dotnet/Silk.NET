@@ -14,7 +14,7 @@ public unsafe partial struct SystemSpatialEntityPropertiesFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
-    public StructureType Type = StructureType.TypeSystemSpatialEntityPropertiesFB;
+    public StructureType Type = StructureType.SystemSpatialEntityPropertiesFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]

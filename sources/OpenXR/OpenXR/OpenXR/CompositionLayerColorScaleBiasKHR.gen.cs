@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerColorScaleBiasKHR
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_color_scale_bias"])]
-    public StructureType Type = StructureType.TypeCompositionLayerColorScaleBiasKHR;
+    public StructureType Type = StructureType.CompositionLayerColorScaleBiasKHR;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_color_scale_bias"])]

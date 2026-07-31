@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerProjectionView
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeCompositionLayerProjectionView;
+    public StructureType Type = StructureType.CompositionLayerProjectionView;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

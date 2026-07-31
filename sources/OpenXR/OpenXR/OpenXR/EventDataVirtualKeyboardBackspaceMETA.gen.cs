@@ -14,7 +14,7 @@ public unsafe partial struct EventDataVirtualKeyboardBackspaceMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
-    public StructureType Type = StructureType.TypeEventDataVirtualKeyboardBackspaceMETA;
+    public StructureType Type = StructureType.EventDataVirtualKeyboardBackspaceMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]

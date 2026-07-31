@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerSecureContentFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_composition_layer_secure_content"])]
-    public StructureType Type = StructureType.TypeCompositionLayerSecureContentFB;
+    public StructureType Type = StructureType.CompositionLayerSecureContentFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_composition_layer_secure_content"])]

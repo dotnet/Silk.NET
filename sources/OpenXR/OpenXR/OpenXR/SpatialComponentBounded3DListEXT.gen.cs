@@ -14,7 +14,7 @@ public unsafe partial struct SpatialComponentBounded3DListEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeSpatialComponentBounded3DListEXT;
+    public StructureType Type = StructureType.SpatialComponentBounded3DListEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]

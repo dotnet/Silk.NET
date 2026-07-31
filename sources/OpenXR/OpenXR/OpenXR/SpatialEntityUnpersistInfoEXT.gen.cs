@@ -18,7 +18,7 @@ public unsafe partial struct SpatialEntityUnpersistInfoEXT
         ["XR_EXT_spatial_persistence_operations"],
         ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
     )]
-    public StructureType Type = StructureType.TypeSpatialEntityUnpersistInfoEXT;
+    public StructureType Type = StructureType.SpatialEntityUnpersistInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

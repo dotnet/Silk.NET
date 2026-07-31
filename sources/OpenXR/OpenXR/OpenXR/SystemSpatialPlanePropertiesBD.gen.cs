@@ -18,7 +18,7 @@ public unsafe partial struct SystemSpatialPlanePropertiesBD
         ["XR_BD_spatial_plane"],
         ImpliesSets = ["XR_BD_spatial_sensing"]
     )]
-    public StructureType Type = StructureType.TypeSystemSpatialPlanePropertiesBD;
+    public StructureType Type = StructureType.SystemSpatialPlanePropertiesBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

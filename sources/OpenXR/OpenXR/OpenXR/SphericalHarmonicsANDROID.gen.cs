@@ -14,7 +14,7 @@ public unsafe partial struct SphericalHarmonicsANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
-    public StructureType Type = StructureType.TypeSphericalHarmonicsANDROID;
+    public StructureType Type = StructureType.SphericalHarmonicsANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]

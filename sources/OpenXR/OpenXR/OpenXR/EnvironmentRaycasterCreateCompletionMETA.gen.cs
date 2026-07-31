@@ -18,7 +18,7 @@ public unsafe partial struct EnvironmentRaycasterCreateCompletionMETA
         ["XR_META_environment_raycast"],
         ImpliesSets = ["XR_EXT_future"]
     )]
-    public StructureType Type = StructureType.TypeEnvironmentRaycasterCreateCompletionMETA;
+    public StructureType Type = StructureType.EnvironmentRaycasterCreateCompletionMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerCubeKHR
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_cube"])]
-    public StructureType Type = StructureType.TypeCompositionLayerCubeKHR;
+    public StructureType Type = StructureType.CompositionLayerCubeKHR;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_cube"])]

@@ -14,8 +14,7 @@ public unsafe partial struct SystemSimultaneousHandsAndControllersPropertiesMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]
-    public StructureType Type =
-        StructureType.TypeSystemSimultaneousHandsAndControllersPropertiesMETA;
+    public StructureType Type = StructureType.SystemSimultaneousHandsAndControllersPropertiesMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]

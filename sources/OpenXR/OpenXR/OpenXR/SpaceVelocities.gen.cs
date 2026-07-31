@@ -14,7 +14,7 @@ public unsafe partial struct SpaceVelocities
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
-    public StructureType Type = StructureType.TypeSpaceVelocities;
+    public StructureType Type = StructureType.SpaceVelocities;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]

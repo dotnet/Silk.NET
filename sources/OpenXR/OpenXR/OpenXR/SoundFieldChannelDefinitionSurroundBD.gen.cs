@@ -14,7 +14,7 @@ public unsafe partial struct SoundFieldChannelDefinitionSurroundBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
-    public StructureType Type = StructureType.TypeSoundFieldChannelDefinitionSurroundBD;
+    public StructureType Type = StructureType.SoundFieldChannelDefinitionSurroundBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]

@@ -14,7 +14,7 @@ public unsafe partial struct SceneCaptureRequestInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_scene_capture"])]
-    public StructureType Type = StructureType.TypeSceneCaptureRequestInfoFB;
+    public StructureType Type = StructureType.SceneCaptureRequestInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_scene_capture"])]

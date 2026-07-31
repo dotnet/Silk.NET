@@ -14,7 +14,7 @@ public unsafe partial struct EyeGazesFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
-    public StructureType Type = StructureType.TypeEyeGazesFB;
+    public StructureType Type = StructureType.EyeGazesFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]

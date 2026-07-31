@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerDepthTestFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_composition_layer_depth_test"])]
-    public StructureType Type = StructureType.TypeCompositionLayerDepthTestFB;
+    public StructureType Type = StructureType.CompositionLayerDepthTestFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_composition_layer_depth_test"])]

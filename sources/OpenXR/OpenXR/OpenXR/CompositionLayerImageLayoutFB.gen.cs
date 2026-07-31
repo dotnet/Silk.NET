@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerImageLayoutFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_composition_layer_image_layout"])]
-    public StructureType Type = StructureType.TypeCompositionLayerImageLayoutFB;
+    public StructureType Type = StructureType.CompositionLayerImageLayoutFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_composition_layer_image_layout"])]

@@ -14,7 +14,7 @@ public unsafe partial struct ExtensionProperties
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeExtensionProperties;
+    public StructureType Type = StructureType.ExtensionProperties;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

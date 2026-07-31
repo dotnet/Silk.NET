@@ -14,7 +14,7 @@ public unsafe partial struct InputSourceLocalizedNameGetInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeInputSourceLocalizedNameGetInfo;
+    public StructureType Type = StructureType.InputSourceLocalizedNameGetInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

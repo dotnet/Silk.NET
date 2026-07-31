@@ -14,7 +14,7 @@ public unsafe partial struct LoaderInitInfoPropertiesEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_loader_init_properties"])]
-    public StructureType Type = StructureType.TypeLoaderInitInfoPropertiesEXT;
+    public StructureType Type = StructureType.LoaderInitInfoPropertiesEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_loader_init_properties"])]

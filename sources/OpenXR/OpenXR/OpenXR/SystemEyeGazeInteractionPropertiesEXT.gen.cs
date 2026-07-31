@@ -14,7 +14,7 @@ public unsafe partial struct SystemEyeGazeInteractionPropertiesEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_eye_gaze_interaction"])]
-    public StructureType Type = StructureType.TypeSystemEyeGazeInteractionPropertiesEXT;
+    public StructureType Type = StructureType.SystemEyeGazeInteractionPropertiesEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_eye_gaze_interaction"])]

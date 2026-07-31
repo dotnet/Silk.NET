@@ -18,7 +18,7 @@ public unsafe partial struct InteractionRenderModelIdsEnumerateInfoEXT
         ["XR_EXT_interaction_render_model"],
         ImpliesSets = ["XR_EXT_render_model"]
     )]
-    public StructureType Type = StructureType.TypeInteractionRenderModelIdsEnumerateInfoEXT;
+    public StructureType Type = StructureType.InteractionRenderModelIdsEnumerateInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -14,7 +14,7 @@ public unsafe partial struct SystemRenderModelPropertiesFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
-    public StructureType Type = StructureType.TypeSystemRenderModelPropertiesFB;
+    public StructureType Type = StructureType.SystemRenderModelPropertiesFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_render_model"])]

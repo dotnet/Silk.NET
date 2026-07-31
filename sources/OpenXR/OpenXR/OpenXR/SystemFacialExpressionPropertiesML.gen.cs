@@ -14,7 +14,7 @@ public unsafe partial struct SystemFacialExpressionPropertiesML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
-    public StructureType Type = StructureType.TypeSystemFacialExpressionPropertiesML;
+    public StructureType Type = StructureType.SystemFacialExpressionPropertiesML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]

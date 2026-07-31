@@ -14,7 +14,7 @@ public unsafe partial struct SystemFacialSimulationPropertiesBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
-    public StructureType Type = StructureType.TypeSystemFacialSimulationPropertiesBD;
+    public StructureType Type = StructureType.SystemFacialSimulationPropertiesBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]

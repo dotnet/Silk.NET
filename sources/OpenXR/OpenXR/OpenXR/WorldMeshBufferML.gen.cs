@@ -14,7 +14,7 @@ public unsafe partial struct WorldMeshBufferML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeWorldMeshBufferML;
+    public StructureType Type = StructureType.WorldMeshBufferML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]

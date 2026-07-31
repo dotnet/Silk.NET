@@ -14,7 +14,7 @@ public unsafe partial struct SpatialGraphNodeBindingPropertiesGetInfoMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
-    public StructureType Type = StructureType.TypeSpatialGraphNodeBindingPropertiesGetInfoMSFT;
+    public StructureType Type = StructureType.SpatialGraphNodeBindingPropertiesGetInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]

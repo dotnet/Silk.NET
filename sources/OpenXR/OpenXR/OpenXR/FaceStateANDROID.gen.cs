@@ -14,7 +14,7 @@ public unsafe partial struct FaceStateANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_face_tracking"])]
-    public StructureType Type = StructureType.TypeFaceStateANDROID;
+    public StructureType Type = StructureType.FaceStateANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_face_tracking"])]

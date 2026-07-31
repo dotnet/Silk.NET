@@ -14,7 +14,7 @@ public unsafe partial struct PassthroughCreateInfoHTC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
-    public StructureType Type = StructureType.TypePassthroughCreateInfoHTC;
+    public StructureType Type = StructureType.PassthroughCreateInfoHTC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]

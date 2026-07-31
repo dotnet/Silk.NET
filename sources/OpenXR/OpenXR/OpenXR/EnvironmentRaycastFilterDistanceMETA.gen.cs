@@ -18,7 +18,7 @@ public unsafe partial struct EnvironmentRaycastFilterDistanceMETA
         ["XR_META_environment_raycast"],
         ImpliesSets = ["XR_EXT_future"]
     )]
-    public StructureType Type = StructureType.TypeEnvironmentRaycastFilterDistanceMETA;
+    public StructureType Type = StructureType.EnvironmentRaycastFilterDistanceMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

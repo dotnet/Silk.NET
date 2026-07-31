@@ -18,7 +18,7 @@ public unsafe partial struct SceneMarkerTypeFilterMSFT
         ["XR_MSFT_scene_marker"],
         ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSceneMarkerTypeFilterMSFT;
+    public StructureType Type = StructureType.SceneMarkerTypeFilterMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile(

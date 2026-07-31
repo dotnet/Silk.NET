@@ -14,7 +14,7 @@ public unsafe partial struct FaceTrackerCreateInfo2FB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
-    public StructureType Type = StructureType.TypeFaceTrackerCreateInfo2FB;
+    public StructureType Type = StructureType.FaceTrackerCreateInfo2FB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]

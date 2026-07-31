@@ -18,7 +18,7 @@ public unsafe partial struct RenderModelStateGetInfoEXT
         ["XR_EXT_render_model"],
         ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
     )]
-    public StructureType Type = StructureType.TypeRenderModelStateGetInfoEXT;
+    public StructureType Type = StructureType.RenderModelStateGetInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -14,7 +14,7 @@ public unsafe partial struct EventDataSpaceSetStatusCompleteFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
-    public StructureType Type = StructureType.TypeEventDataSpaceSetStatusCompleteFB;
+    public StructureType Type = StructureType.EventDataSpaceSetStatusCompleteFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]

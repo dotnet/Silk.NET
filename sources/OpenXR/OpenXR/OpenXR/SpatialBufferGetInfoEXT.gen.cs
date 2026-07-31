@@ -14,7 +14,7 @@ public unsafe partial struct SpatialBufferGetInfoEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeSpatialBufferGetInfoEXT;
+    public StructureType Type = StructureType.SpatialBufferGetInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]

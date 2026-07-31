@@ -14,7 +14,7 @@ public unsafe partial struct InteractionProfileAnalogThresholdVALVE
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]
-    public StructureType Type = StructureType.TypeInteractionProfileAnalogThresholdVALVE;
+    public StructureType Type = StructureType.InteractionProfileAnalogThresholdVALVE;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]

@@ -14,7 +14,7 @@ public unsafe partial struct InteractionProfileState
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeInteractionProfileState;
+    public StructureType Type = StructureType.InteractionProfileState;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

@@ -14,7 +14,7 @@ public unsafe partial struct DebugUtilsLabelEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
-    public StructureType Type = StructureType.TypeDebugUtilsLabelEXT;
+    public StructureType Type = StructureType.DebugUtilsLabelEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]

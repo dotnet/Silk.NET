@@ -18,7 +18,7 @@ public unsafe partial struct SenseDataFilterSemanticBD
         ["XR_BD_spatial_sensing"],
         ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSenseDataFilterSemanticBD;
+    public StructureType Type = StructureType.SenseDataFilterSemanticBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

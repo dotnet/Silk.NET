@@ -14,7 +14,7 @@ public unsafe partial struct EventDataEyeCalibrationChangedML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
-    public StructureType Type = StructureType.TypeEventDataEyeCalibrationChangedML;
+    public StructureType Type = StructureType.EventDataEyeCalibrationChangedML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]

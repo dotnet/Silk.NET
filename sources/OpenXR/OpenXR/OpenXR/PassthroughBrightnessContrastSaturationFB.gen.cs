@@ -14,7 +14,7 @@ public unsafe partial struct PassthroughBrightnessContrastSaturationFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
-    public StructureType Type = StructureType.TypePassthroughBrightnessContrastSaturationFB;
+    public StructureType Type = StructureType.PassthroughBrightnessContrastSaturationFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]

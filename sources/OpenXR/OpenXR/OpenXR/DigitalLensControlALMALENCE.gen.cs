@@ -14,7 +14,7 @@ public unsafe partial struct DigitalLensControlALMALENCE
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeDigitalLensControlALMALENCE;
+    public StructureType Type = StructureType.DigitalLensControlALMALENCE;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

@@ -18,7 +18,7 @@ public unsafe partial struct SpatialCapabilityConfigurationMicroQrCodeEXT
         ["XR_EXT_spatial_marker_tracking"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialCapabilityConfigurationMicroQrCodeEXT;
+    public StructureType Type = StructureType.SpatialCapabilityConfigurationMicroQrCodeEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

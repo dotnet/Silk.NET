@@ -14,7 +14,7 @@ public unsafe partial struct EyeGazeSampleTimeEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_eye_gaze_interaction"])]
-    public StructureType Type = StructureType.TypeEyeGazeSampleTimeEXT;
+    public StructureType Type = StructureType.EyeGazeSampleTimeEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_eye_gaze_interaction"])]

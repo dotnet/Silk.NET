@@ -14,7 +14,7 @@ public unsafe partial struct PlaneDetectorPolygonBufferEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
-    public StructureType Type = StructureType.TypePlaneDetectorPolygonBufferEXT;
+    public StructureType Type = StructureType.PlaneDetectorPolygonBufferEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]

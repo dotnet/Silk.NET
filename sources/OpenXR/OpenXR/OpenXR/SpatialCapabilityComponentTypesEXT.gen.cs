@@ -14,7 +14,7 @@ public unsafe partial struct SpatialCapabilityComponentTypesEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeSpatialCapabilityComponentTypesEXT;
+    public StructureType Type = StructureType.SpatialCapabilityComponentTypesEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]

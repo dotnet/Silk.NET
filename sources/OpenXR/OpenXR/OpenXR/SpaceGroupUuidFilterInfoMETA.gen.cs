@@ -18,7 +18,7 @@ public unsafe partial struct SpaceGroupUuidFilterInfoMETA
         ["XR_FB_spatial_entity_query", "XR_META_spatial_entity_group_sharing"],
         RequireAll = true
     )]
-    public StructureType Type = StructureType.TypeSpaceGroupUuidFilterInfoMETA;
+    public StructureType Type = StructureType.SpaceGroupUuidFilterInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

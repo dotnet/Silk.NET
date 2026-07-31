@@ -14,7 +14,7 @@ public unsafe partial struct VirtualKeyboardCreateInfoMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
-    public StructureType Type = StructureType.TypeVirtualKeyboardCreateInfoMETA;
+    public StructureType Type = StructureType.VirtualKeyboardCreateInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]

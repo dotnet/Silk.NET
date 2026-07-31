@@ -18,7 +18,7 @@ public unsafe partial struct SpatialAnchorParentANDROID
         ["XR_ANDROID_spatial_entity_bound_anchor"],
         ImpliesSets = ["XR_EXT_spatial_anchor"]
     )]
-    public StructureType Type = StructureType.TypeSpatialAnchorParentANDROID;
+    public StructureType Type = StructureType.SpatialAnchorParentANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

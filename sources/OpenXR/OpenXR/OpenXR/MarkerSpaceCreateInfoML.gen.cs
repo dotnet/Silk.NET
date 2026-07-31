@@ -14,7 +14,7 @@ public unsafe partial struct MarkerSpaceCreateInfoML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
-    public StructureType Type = StructureType.TypeMarkerSpaceCreateInfoML;
+    public StructureType Type = StructureType.MarkerSpaceCreateInfoML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]

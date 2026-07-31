@@ -14,7 +14,7 @@ public unsafe partial struct SystemSpatialMeshPropertiesBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_mesh"], ImpliesSets = ["XR_BD_spatial_sensing"])]
-    public StructureType Type = StructureType.TypeSystemSpatialMeshPropertiesBD;
+    public StructureType Type = StructureType.SystemSpatialMeshPropertiesBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_mesh"], ImpliesSets = ["XR_BD_spatial_sensing"])]

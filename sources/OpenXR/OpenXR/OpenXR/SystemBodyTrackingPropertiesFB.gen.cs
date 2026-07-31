@@ -14,7 +14,7 @@ public unsafe partial struct SystemBodyTrackingPropertiesFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
-    public StructureType Type = StructureType.TypeSystemBodyTrackingPropertiesFB;
+    public StructureType Type = StructureType.SystemBodyTrackingPropertiesFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]

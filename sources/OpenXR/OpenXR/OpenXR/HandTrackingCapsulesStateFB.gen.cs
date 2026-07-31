@@ -18,7 +18,7 @@ public unsafe partial struct HandTrackingCapsulesStateFB
         ["XR_FB_hand_tracking_capsules"],
         ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeHandTrackingCapsulesStateFB;
+    public StructureType Type = StructureType.HandTrackingCapsulesStateFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

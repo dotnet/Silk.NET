@@ -18,7 +18,7 @@ public unsafe partial struct PersistedAnchorSpaceCreateInfoANDROID
         ["XR_ANDROID_device_anchor_persistence"],
         ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_uuid"]
     )]
-    public StructureType Type = StructureType.TypePersistedAnchorSpaceCreateInfoANDROID;
+    public StructureType Type = StructureType.PersistedAnchorSpaceCreateInfoANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

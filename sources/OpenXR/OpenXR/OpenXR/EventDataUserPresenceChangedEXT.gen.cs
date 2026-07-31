@@ -14,7 +14,7 @@ public unsafe partial struct EventDataUserPresenceChangedEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_user_presence"])]
-    public StructureType Type = StructureType.TypeEventDataUserPresenceChangedEXT;
+    public StructureType Type = StructureType.EventDataUserPresenceChangedEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_user_presence"])]

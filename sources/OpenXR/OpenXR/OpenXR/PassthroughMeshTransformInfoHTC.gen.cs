@@ -14,7 +14,7 @@ public unsafe partial struct PassthroughMeshTransformInfoHTC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
-    public StructureType Type = StructureType.TypePassthroughMeshTransformInfoHTC;
+    public StructureType Type = StructureType.PassthroughMeshTransformInfoHTC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]

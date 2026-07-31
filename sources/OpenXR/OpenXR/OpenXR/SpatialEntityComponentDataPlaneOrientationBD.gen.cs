@@ -18,7 +18,7 @@ public unsafe partial struct SpatialEntityComponentDataPlaneOrientationBD
         ["XR_BD_spatial_plane"],
         ImpliesSets = ["XR_BD_spatial_sensing"]
     )]
-    public StructureType Type = StructureType.TypeSpatialEntityComponentDataPlaneOrientationBD;
+    public StructureType Type = StructureType.SpatialEntityComponentDataPlaneOrientationBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

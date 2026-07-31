@@ -14,7 +14,7 @@ public unsafe partial struct SessionCreateInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeSessionCreateInfo;
+    public StructureType Type = StructureType.SessionCreateInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

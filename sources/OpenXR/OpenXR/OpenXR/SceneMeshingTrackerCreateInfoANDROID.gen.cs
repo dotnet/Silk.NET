@@ -14,7 +14,7 @@ public unsafe partial struct SceneMeshingTrackerCreateInfoANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
-    public StructureType Type = StructureType.TypeSceneMeshingTrackerCreateInfoANDROID;
+    public StructureType Type = StructureType.SceneMeshingTrackerCreateInfoANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]

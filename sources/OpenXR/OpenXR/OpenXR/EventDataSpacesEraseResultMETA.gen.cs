@@ -14,7 +14,7 @@ public unsafe partial struct EventDataSpacesEraseResultMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]
-    public StructureType Type = StructureType.TypeEventDataSpacesEraseResultMETA;
+    public StructureType Type = StructureType.EventDataSpacesEraseResultMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]

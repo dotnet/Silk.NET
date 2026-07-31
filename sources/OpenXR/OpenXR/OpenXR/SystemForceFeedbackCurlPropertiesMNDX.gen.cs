@@ -18,7 +18,7 @@ public unsafe partial struct SystemForceFeedbackCurlPropertiesMNDX
         ["XR_MNDX_force_feedback_curl"],
         ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSystemForceFeedbackCurlPropertiesMNDX;
+    public StructureType Type = StructureType.SystemForceFeedbackCurlPropertiesMNDX;
 
     [NativeName("next")]
     [SupportedApiProfile(

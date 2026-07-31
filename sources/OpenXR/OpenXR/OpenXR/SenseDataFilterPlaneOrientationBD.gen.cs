@@ -18,7 +18,7 @@ public unsafe partial struct SenseDataFilterPlaneOrientationBD
         ["XR_BD_spatial_plane"],
         ImpliesSets = ["XR_BD_spatial_sensing"]
     )]
-    public StructureType Type = StructureType.TypeSenseDataFilterPlaneOrientationBD;
+    public StructureType Type = StructureType.SenseDataFilterPlaneOrientationBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

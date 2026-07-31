@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerReprojectionInfoMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_composition_layer_reprojection"])]
-    public StructureType Type = StructureType.TypeCompositionLayerReprojectionInfoMSFT;
+    public StructureType Type = StructureType.CompositionLayerReprojectionInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_composition_layer_reprojection"])]

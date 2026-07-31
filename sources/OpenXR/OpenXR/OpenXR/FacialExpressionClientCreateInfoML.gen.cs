@@ -14,7 +14,7 @@ public unsafe partial struct FacialExpressionClientCreateInfoML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
-    public StructureType Type = StructureType.TypeFacialExpressionClientCreateInfoML;
+    public StructureType Type = StructureType.FacialExpressionClientCreateInfoML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]

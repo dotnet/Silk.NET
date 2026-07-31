@@ -14,7 +14,7 @@ public unsafe partial struct EventDataPassthroughStateChangedFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
-    public StructureType Type = StructureType.TypeEventDataPassthroughStateChangedFB;
+    public StructureType Type = StructureType.EventDataPassthroughStateChangedFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]

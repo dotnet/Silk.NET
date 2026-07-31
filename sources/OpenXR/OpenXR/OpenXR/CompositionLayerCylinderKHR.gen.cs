@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerCylinderKHR
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_cylinder"])]
-    public StructureType Type = StructureType.TypeCompositionLayerCylinderKHR;
+    public StructureType Type = StructureType.CompositionLayerCylinderKHR;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_cylinder"])]

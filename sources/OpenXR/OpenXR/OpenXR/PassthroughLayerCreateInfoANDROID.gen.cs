@@ -14,7 +14,7 @@ public unsafe partial struct PassthroughLayerCreateInfoANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
-    public StructureType Type = StructureType.TypePassthroughLayerCreateInfoANDROID;
+    public StructureType Type = StructureType.PassthroughLayerCreateInfoANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]

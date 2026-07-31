@@ -14,7 +14,7 @@ public unsafe partial struct PassthroughColorMapMonoToRgbaFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
-    public StructureType Type = StructureType.TypePassthroughColorMapMonoToRgbaFB;
+    public StructureType Type = StructureType.PassthroughColorMapMonoToRgbaFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]

@@ -18,7 +18,7 @@ public unsafe partial struct InteractionRenderModelTopLevelUserPathGetInfoEXT
         ["XR_EXT_interaction_render_model"],
         ImpliesSets = ["XR_EXT_render_model"]
     )]
-    public StructureType Type = StructureType.TypeInteractionRenderModelTopLevelUserPathGetInfoEXT;
+    public StructureType Type = StructureType.InteractionRenderModelTopLevelUserPathGetInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

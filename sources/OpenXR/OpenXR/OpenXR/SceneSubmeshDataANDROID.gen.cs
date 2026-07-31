@@ -14,7 +14,7 @@ public unsafe partial struct SceneSubmeshDataANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
-    public StructureType Type = StructureType.TypeSceneSubmeshDataANDROID;
+    public StructureType Type = StructureType.SceneSubmeshDataANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]

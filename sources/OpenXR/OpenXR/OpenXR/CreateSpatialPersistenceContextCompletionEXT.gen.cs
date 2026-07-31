@@ -18,7 +18,7 @@ public unsafe partial struct CreateSpatialPersistenceContextCompletionEXT
         ["XR_EXT_spatial_persistence"],
         ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeCreateSpatialPersistenceContextCompletionEXT;
+    public StructureType Type = StructureType.CreateSpatialPersistenceContextCompletionEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -18,7 +18,7 @@ public unsafe partial struct SystemPropertiesBodyTrackingCalibrationMETA
         ["XR_META_body_tracking_calibration"],
         ImpliesSets = ["XR_FB_body_tracking"]
     )]
-    public StructureType Type = StructureType.TypeSystemPropertiesBodyTrackingCalibrationMETA;
+    public StructureType Type = StructureType.SystemPropertiesBodyTrackingCalibrationMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

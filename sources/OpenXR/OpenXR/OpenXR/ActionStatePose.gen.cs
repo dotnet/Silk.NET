@@ -12,7 +12,7 @@ public unsafe partial struct ActionStatePose
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeActionStatePose;
+    public StructureType Type = StructureType.ActionStatePose;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

@@ -14,7 +14,7 @@ public unsafe partial struct FacialExpressionsHTC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
-    public StructureType Type = StructureType.TypeFacialExpressionsHTC;
+    public StructureType Type = StructureType.FacialExpressionsHTC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]

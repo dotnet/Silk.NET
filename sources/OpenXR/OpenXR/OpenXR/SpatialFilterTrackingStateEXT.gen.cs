@@ -14,7 +14,7 @@ public unsafe partial struct SpatialFilterTrackingStateEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeSpatialFilterTrackingStateEXT;
+    public StructureType Type = StructureType.SpatialFilterTrackingStateEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]

@@ -14,7 +14,7 @@ public unsafe partial struct ApiLayerProperties
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeApiLayerProperties;
+    public StructureType Type = StructureType.ApiLayerProperties;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

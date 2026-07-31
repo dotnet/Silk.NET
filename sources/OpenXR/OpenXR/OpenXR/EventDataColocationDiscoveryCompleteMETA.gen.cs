@@ -14,7 +14,7 @@ public unsafe partial struct EventDataColocationDiscoveryCompleteMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]
-    public StructureType Type = StructureType.TypeEventDataColocationDiscoveryCompleteMETA;
+    public StructureType Type = StructureType.EventDataColocationDiscoveryCompleteMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]

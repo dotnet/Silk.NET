@@ -14,7 +14,7 @@ public unsafe partial struct EventDataDisplayRefreshRateChangedFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_display_refresh_rate"])]
-    public StructureType Type = StructureType.TypeEventDataDisplayRefreshRateChangedFB;
+    public StructureType Type = StructureType.EventDataDisplayRefreshRateChangedFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_display_refresh_rate"])]

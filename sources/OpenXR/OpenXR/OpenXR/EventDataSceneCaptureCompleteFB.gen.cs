@@ -14,7 +14,7 @@ public unsafe partial struct EventDataSceneCaptureCompleteFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_scene_capture"])]
-    public StructureType Type = StructureType.TypeEventDataSceneCaptureCompleteFB;
+    public StructureType Type = StructureType.EventDataSceneCaptureCompleteFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_scene_capture"])]

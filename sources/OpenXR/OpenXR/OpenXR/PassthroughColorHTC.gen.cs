@@ -14,7 +14,7 @@ public unsafe partial struct PassthroughColorHTC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
-    public StructureType Type = StructureType.TypePassthroughColorHTC;
+    public StructureType Type = StructureType.PassthroughColorHTC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]

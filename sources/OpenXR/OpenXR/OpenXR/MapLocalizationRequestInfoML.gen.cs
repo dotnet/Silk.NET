@@ -18,7 +18,7 @@ public unsafe partial struct MapLocalizationRequestInfoML
         ["XR_ML_localization_map"],
         ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeMapLocalizationRequestInfoML;
+    public StructureType Type = StructureType.MapLocalizationRequestInfoML;
 
     [NativeName("next")]
     [SupportedApiProfile(

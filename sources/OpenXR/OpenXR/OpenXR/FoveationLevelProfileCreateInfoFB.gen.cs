@@ -18,7 +18,7 @@ public unsafe partial struct FoveationLevelProfileCreateInfoFB
         ["XR_FB_foveation_configuration"],
         ImpliesSets = ["XR_FB_foveation", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeFoveationLevelProfileCreateInfoFB;
+    public StructureType Type = StructureType.FoveationLevelProfileCreateInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

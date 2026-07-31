@@ -14,7 +14,7 @@ public unsafe partial struct EventDataSpatialDiscoveryRecommendedEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeEventDataSpatialDiscoveryRecommendedEXT;
+    public StructureType Type = StructureType.EventDataSpatialDiscoveryRecommendedEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]

@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerPassthroughHTC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
-    public StructureType Type = StructureType.TypeCompositionLayerPassthroughHTC;
+    public StructureType Type = StructureType.CompositionLayerPassthroughHTC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]

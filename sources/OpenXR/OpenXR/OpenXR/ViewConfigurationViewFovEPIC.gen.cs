@@ -14,7 +14,7 @@ public unsafe partial struct ViewConfigurationViewFovEPIC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EPIC_view_configuration_fov"])]
-    public StructureType Type = StructureType.TypeViewConfigurationViewFovEPIC;
+    public StructureType Type = StructureType.ViewConfigurationViewFovEPIC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EPIC_view_configuration_fov"])]

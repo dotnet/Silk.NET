@@ -14,7 +14,7 @@ public unsafe partial struct ActionStateFloat
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeActionStateFloat;
+    public StructureType Type = StructureType.ActionStateFloat;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

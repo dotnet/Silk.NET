@@ -18,7 +18,7 @@ public unsafe partial struct EventDataSpaceEraseCompleteFB
         ["XR_FB_spatial_entity_storage"],
         ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeEventDataSpaceEraseCompleteFB;
+    public StructureType Type = StructureType.EventDataSpaceEraseCompleteFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

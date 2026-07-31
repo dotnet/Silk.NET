@@ -14,7 +14,7 @@ public unsafe partial struct RaycastInfoANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]
-    public StructureType Type = StructureType.TypeRaycastInfoANDROID;
+    public StructureType Type = StructureType.RaycastInfoANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]

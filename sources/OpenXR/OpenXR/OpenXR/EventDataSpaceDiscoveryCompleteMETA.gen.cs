@@ -14,7 +14,7 @@ public unsafe partial struct EventDataSpaceDiscoveryCompleteMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
-    public StructureType Type = StructureType.TypeEventDataSpaceDiscoveryCompleteMETA;
+    public StructureType Type = StructureType.EventDataSpaceDiscoveryCompleteMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]

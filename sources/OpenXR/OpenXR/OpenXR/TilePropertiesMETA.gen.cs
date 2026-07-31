@@ -14,7 +14,7 @@ public unsafe partial struct TilePropertiesMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_tile_properties_hint"])]
-    public StructureType Type = StructureType.TypeTilePropertiesMETA;
+    public StructureType Type = StructureType.TilePropertiesMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_tile_properties_hint"])]

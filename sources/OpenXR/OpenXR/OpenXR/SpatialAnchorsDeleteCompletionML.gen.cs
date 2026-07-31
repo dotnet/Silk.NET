@@ -18,7 +18,7 @@ public unsafe partial struct SpatialAnchorsDeleteCompletionML
         ["XR_ML_spatial_anchors_storage"],
         ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
     )]
-    public StructureType Type = StructureType.TypeSpatialAnchorsDeleteCompletionML;
+    public StructureType Type = StructureType.SpatialAnchorsDeleteCompletionML;
 
     [NativeName("next")]
     [SupportedApiProfile(

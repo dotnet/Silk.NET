@@ -14,7 +14,7 @@ public unsafe partial struct CreateSpatialAnchorsCompletionML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeCreateSpatialAnchorsCompletionML;
+    public StructureType Type = StructureType.CreateSpatialAnchorsCompletionML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]

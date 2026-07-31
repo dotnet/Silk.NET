@@ -18,7 +18,7 @@ public unsafe partial struct SystemFoveatedRenderingPropertiesVARJO
         ["XR_VARJO_foveated_rendering"],
         ImpliesSets = ["XR_VARJO_quad_views", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSystemFoveatedRenderingPropertiesVARJO;
+    public StructureType Type = StructureType.SystemFoveatedRenderingPropertiesVARJO;
 
     [NativeName("next")]
     [SupportedApiProfile(

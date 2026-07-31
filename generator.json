@@ -636,7 +636,8 @@
         "GlobalPrefixHints": ["PFN_xr", "xr"],
         "PrefixOverrides": {
           "XrPerfSettingsNotificationLevelEXT": "XR_PERF_SETTINGS_NOTIF_LEVEL",
-          "XrSceneMarkerQRCodeSymbolTypeMSFT": "XR_SCENE_MARKER_QR_CODE_SYMBOL_TYPE"
+          "XrSceneMarkerQRCodeSymbolTypeMSFT": "XR_SCENE_MARKER_QR_CODE_SYMBOL_TYPE",
+          "XrStructureType": "XR_TYPE"
         }
       },
       "PrettifyNames": {

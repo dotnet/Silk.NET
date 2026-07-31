@@ -18,7 +18,7 @@ public unsafe partial struct SpatialAnchorPersistInfoBD
         ["XR_BD_spatial_anchor"],
         ImpliesSets = ["XR_BD_spatial_sensing"]
     )]
-    public StructureType Type = StructureType.TypeSpatialAnchorPersistInfoBD;
+    public StructureType Type = StructureType.SpatialAnchorPersistInfoBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

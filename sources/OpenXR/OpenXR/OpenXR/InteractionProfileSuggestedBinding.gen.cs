@@ -14,7 +14,7 @@ public unsafe partial struct InteractionProfileSuggestedBinding
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeInteractionProfileSuggestedBinding;
+    public StructureType Type = StructureType.InteractionProfileSuggestedBinding;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

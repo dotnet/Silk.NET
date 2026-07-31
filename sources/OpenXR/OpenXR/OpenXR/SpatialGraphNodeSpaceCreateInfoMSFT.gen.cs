@@ -12,7 +12,7 @@ public unsafe partial struct SpatialGraphNodeSpaceCreateInfoMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
-    public StructureType Type = StructureType.TypeSpatialGraphNodeSpaceCreateInfoMSFT;
+    public StructureType Type = StructureType.SpatialGraphNodeSpaceCreateInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]

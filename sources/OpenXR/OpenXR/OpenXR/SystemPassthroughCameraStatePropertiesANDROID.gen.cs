@@ -14,7 +14,7 @@ public unsafe partial struct SystemPassthroughCameraStatePropertiesANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_passthrough_camera_state"])]
-    public StructureType Type = StructureType.TypeSystemPassthroughCameraStatePropertiesANDROID;
+    public StructureType Type = StructureType.SystemPassthroughCameraStatePropertiesANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_passthrough_camera_state"])]

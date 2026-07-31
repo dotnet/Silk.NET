@@ -18,7 +18,7 @@ public unsafe partial struct StationaryReferenceSpaceGenerationIdResultEXT
         ["XR_EXT_stationary_reference_space"],
         ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeStationaryReferenceSpaceGenerationIdResultEXT;
+    public StructureType Type = StructureType.StationaryReferenceSpaceGenerationIdResultEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

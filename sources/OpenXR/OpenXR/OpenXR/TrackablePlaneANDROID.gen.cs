@@ -14,7 +14,7 @@ public unsafe partial struct TrackablePlaneANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
-    public StructureType Type = StructureType.TypeTrackablePlaneANDROID;
+    public StructureType Type = StructureType.TrackablePlaneANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]

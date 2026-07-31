@@ -14,7 +14,7 @@ public unsafe partial struct BodyJointsLocateInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
-    public StructureType Type = StructureType.TypeBodyJointsLocateInfoFB;
+    public StructureType Type = StructureType.BodyJointsLocateInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]

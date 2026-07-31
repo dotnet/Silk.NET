@@ -14,7 +14,7 @@ public unsafe partial struct FaceExpressionWeightsFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
-    public StructureType Type = StructureType.TypeFaceExpressionWeightsFB;
+    public StructureType Type = StructureType.FaceExpressionWeightsFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]

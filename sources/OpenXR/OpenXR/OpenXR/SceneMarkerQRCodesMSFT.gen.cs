@@ -18,7 +18,7 @@ public unsafe partial struct SceneMarkerQRCodesMSFT
         ["XR_MSFT_scene_marker"],
         ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSceneMarkerQrCodesMSFT;
+    public StructureType Type = StructureType.SceneMarkerQrCodesMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -14,7 +14,7 @@ public unsafe partial struct SystemSpatialEntityGroupSharingPropertiesMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_group_sharing"])]
-    public StructureType Type = StructureType.TypeSystemSpatialEntityGroupSharingPropertiesMETA;
+    public StructureType Type = StructureType.SystemSpatialEntityGroupSharingPropertiesMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_group_sharing"])]

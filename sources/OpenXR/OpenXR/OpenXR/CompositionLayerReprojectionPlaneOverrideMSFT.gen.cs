@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerReprojectionPlaneOverrideMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_composition_layer_reprojection"])]
-    public StructureType Type = StructureType.TypeCompositionLayerReprojectionPlaneOverrideMSFT;
+    public StructureType Type = StructureType.CompositionLayerReprojectionPlaneOverrideMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_composition_layer_reprojection"])]

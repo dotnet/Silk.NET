@@ -14,7 +14,7 @@ public unsafe partial struct SystemNotificationsSetInfoML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_system_notifications"])]
-    public StructureType Type = StructureType.TypeSystemNotificationsSetInfoML;
+    public StructureType Type = StructureType.SystemNotificationsSetInfoML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_system_notifications"])]

@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerPassthroughFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
-    public StructureType Type = StructureType.TypeCompositionLayerPassthroughFB;
+    public StructureType Type = StructureType.CompositionLayerPassthroughFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]

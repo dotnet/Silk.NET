@@ -18,7 +18,7 @@ public unsafe partial struct SpatialAnchorPersistenceInfoMSFT
         ["XR_MSFT_spatial_anchor_persistence"],
         ImpliesSets = ["XR_MSFT_spatial_anchor", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSpatialAnchorPersistenceInfoMSFT;
+    public StructureType Type = StructureType.SpatialAnchorPersistenceInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile(

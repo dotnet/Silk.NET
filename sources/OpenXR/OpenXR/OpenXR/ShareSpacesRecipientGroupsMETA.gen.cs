@@ -18,7 +18,7 @@ public unsafe partial struct ShareSpacesRecipientGroupsMETA
         ["XR_META_spatial_entity_group_sharing", "XR_META_spatial_entity_sharing"],
         RequireAll = true
     )]
-    public StructureType Type = StructureType.TypeShareSpacesRecipientGroupsMETA;
+    public StructureType Type = StructureType.ShareSpacesRecipientGroupsMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

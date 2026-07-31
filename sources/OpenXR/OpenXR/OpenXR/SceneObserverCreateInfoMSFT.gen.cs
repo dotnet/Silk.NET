@@ -14,7 +14,7 @@ public unsafe partial struct SceneObserverCreateInfoMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
-    public StructureType Type = StructureType.TypeSceneObserverCreateInfoMSFT;
+    public StructureType Type = StructureType.SceneObserverCreateInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]

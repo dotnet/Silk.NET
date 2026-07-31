@@ -14,7 +14,7 @@ public unsafe partial struct EnvironmentDepthSwapchainStateMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
-    public StructureType Type = StructureType.TypeEnvironmentDepthSwapchainStateMETA;
+    public StructureType Type = StructureType.EnvironmentDepthSwapchainStateMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]

@@ -18,7 +18,7 @@ public unsafe partial struct SpatialEntityAnchorCreateInfoBD
         ["XR_BD_spatial_sensing"],
         ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSpatialEntityAnchorCreateInfoBD;
+    public StructureType Type = StructureType.SpatialEntityAnchorCreateInfoBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

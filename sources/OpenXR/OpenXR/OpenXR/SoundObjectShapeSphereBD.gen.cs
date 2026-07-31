@@ -14,7 +14,7 @@ public unsafe partial struct SoundObjectShapeSphereBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
-    public StructureType Type = StructureType.TypeSoundObjectShapeSphereBD;
+    public StructureType Type = StructureType.SoundObjectShapeSphereBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]

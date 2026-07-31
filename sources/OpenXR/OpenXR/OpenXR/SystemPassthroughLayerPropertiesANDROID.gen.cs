@@ -14,7 +14,7 @@ public unsafe partial struct SystemPassthroughLayerPropertiesANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
-    public StructureType Type = StructureType.TypeSystemPassthroughLayerPropertiesANDROID;
+    public StructureType Type = StructureType.SystemPassthroughLayerPropertiesANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]

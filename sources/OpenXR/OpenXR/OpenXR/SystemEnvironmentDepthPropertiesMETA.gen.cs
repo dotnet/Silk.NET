@@ -14,7 +14,7 @@ public unsafe partial struct SystemEnvironmentDepthPropertiesMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
-    public StructureType Type = StructureType.TypeSystemEnvironmentDepthPropertiesMETA;
+    public StructureType Type = StructureType.SystemEnvironmentDepthPropertiesMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]

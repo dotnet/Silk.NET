@@ -14,7 +14,7 @@ public unsafe partial struct SwapchainCreateInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeSwapchainCreateInfo;
+    public StructureType Type = StructureType.SwapchainCreateInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

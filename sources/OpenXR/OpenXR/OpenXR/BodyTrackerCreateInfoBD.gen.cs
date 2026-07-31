@@ -14,7 +14,7 @@ public unsafe partial struct BodyTrackerCreateInfoBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_body_tracking"])]
-    public StructureType Type = StructureType.TypeBodyTrackerCreateInfoBD;
+    public StructureType Type = StructureType.BodyTrackerCreateInfoBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_body_tracking"])]

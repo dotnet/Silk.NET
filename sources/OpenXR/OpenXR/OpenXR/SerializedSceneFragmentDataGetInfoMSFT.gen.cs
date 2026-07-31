@@ -18,7 +18,7 @@ public unsafe partial struct SerializedSceneFragmentDataGetInfoMSFT
         ["XR_MSFT_scene_understanding_serialization"],
         ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSerializedSceneFragmentDataGetInfoMSFT;
+    public StructureType Type = StructureType.SerializedSceneFragmentDataGetInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile(

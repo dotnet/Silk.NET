@@ -14,7 +14,7 @@ public unsafe partial struct RecommendedLayerResolutionGetInfoMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_recommended_layer_resolution"])]
-    public StructureType Type = StructureType.TypeRecommendedLayerResolutionGetInfoMETA;
+    public StructureType Type = StructureType.RecommendedLayerResolutionGetInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_recommended_layer_resolution"])]

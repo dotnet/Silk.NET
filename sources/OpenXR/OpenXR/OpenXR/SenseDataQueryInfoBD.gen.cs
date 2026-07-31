@@ -18,7 +18,7 @@ public unsafe partial struct SenseDataQueryInfoBD
         ["XR_BD_spatial_sensing"],
         ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSenseDataQueryInfoBD;
+    public StructureType Type = StructureType.SenseDataQueryInfoBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

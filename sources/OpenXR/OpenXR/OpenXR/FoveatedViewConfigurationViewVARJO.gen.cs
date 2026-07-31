@@ -18,7 +18,7 @@ public unsafe partial struct FoveatedViewConfigurationViewVARJO
         ["XR_VARJO_foveated_rendering"],
         ImpliesSets = ["XR_VARJO_quad_views", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeFoveatedViewConfigurationViewVARJO;
+    public StructureType Type = StructureType.FoveatedViewConfigurationViewVARJO;
 
     [NativeName("next")]
     [SupportedApiProfile(

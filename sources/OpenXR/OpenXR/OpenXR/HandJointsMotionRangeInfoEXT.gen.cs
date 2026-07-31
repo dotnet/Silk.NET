@@ -18,7 +18,7 @@ public unsafe partial struct HandJointsMotionRangeInfoEXT
         ["XR_EXT_hand_joints_motion_range"],
         ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeHandJointsMotionRangeInfoEXT;
+    public StructureType Type = StructureType.HandJointsMotionRangeInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

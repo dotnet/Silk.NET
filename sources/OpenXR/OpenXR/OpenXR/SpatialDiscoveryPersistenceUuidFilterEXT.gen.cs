@@ -18,7 +18,7 @@ public unsafe partial struct SpatialDiscoveryPersistenceUuidFilterEXT
         ["XR_EXT_spatial_persistence"],
         ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialDiscoveryPersistenceUuidFilterEXT;
+    public StructureType Type = StructureType.SpatialDiscoveryPersistenceUuidFilterEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

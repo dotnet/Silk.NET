@@ -14,7 +14,7 @@ public unsafe partial struct HandTrackerCreateInfoEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
-    public StructureType Type = StructureType.TypeHandTrackerCreateInfoEXT;
+    public StructureType Type = StructureType.HandTrackerCreateInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]

@@ -14,7 +14,7 @@ public unsafe partial struct ReferenceSpaceCreateInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeReferenceSpaceCreateInfo;
+    public StructureType Type = StructureType.ReferenceSpaceCreateInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

@@ -18,7 +18,7 @@ public unsafe partial struct ShareSpacesInfoMETA
         ["XR_META_spatial_entity_sharing"],
         ImpliesSets = ["XR_FB_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeShareSpacesInfoMETA;
+    public StructureType Type = StructureType.ShareSpacesInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

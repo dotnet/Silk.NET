@@ -14,7 +14,7 @@ public unsafe partial struct KeyboardSpaceCreateInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
-    public StructureType Type = StructureType.TypeKeyboardSpaceCreateInfoFB;
+    public StructureType Type = StructureType.KeyboardSpaceCreateInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]

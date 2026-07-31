@@ -14,7 +14,7 @@ public unsafe partial struct SpatialEntityFromIdCreateInfoEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeSpatialEntityFromIdCreateInfoEXT;
+    public StructureType Type = StructureType.SpatialEntityFromIdCreateInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]

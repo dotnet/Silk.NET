@@ -14,7 +14,7 @@ public unsafe partial struct SessionActionSetsAttachInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeSessionActionSetsAttachInfo;
+    public StructureType Type = StructureType.SessionActionSetsAttachInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

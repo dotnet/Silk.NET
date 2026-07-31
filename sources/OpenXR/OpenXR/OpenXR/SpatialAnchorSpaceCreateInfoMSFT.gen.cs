@@ -14,7 +14,7 @@ public unsafe partial struct SpatialAnchorSpaceCreateInfoMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeSpatialAnchorSpaceCreateInfoMSFT;
+    public StructureType Type = StructureType.SpatialAnchorSpaceCreateInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

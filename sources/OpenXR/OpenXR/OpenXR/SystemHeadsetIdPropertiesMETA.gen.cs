@@ -14,7 +14,7 @@ public unsafe partial struct SystemHeadsetIdPropertiesMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_headset_id"])]
-    public StructureType Type = StructureType.TypeSystemHeadsetIdPropertiesMETA;
+    public StructureType Type = StructureType.SystemHeadsetIdPropertiesMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_headset_id"])]

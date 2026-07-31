@@ -14,7 +14,7 @@ public unsafe partial struct FoveationApplyInfoHTC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
-    public StructureType Type = StructureType.TypeFoveationApplyInfoHTC;
+    public StructureType Type = StructureType.FoveationApplyInfoHTC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]

@@ -18,7 +18,7 @@ public unsafe partial struct SpatialComponentPlaneAlignmentListEXT
         ["XR_EXT_spatial_plane_tracking"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialComponentPlaneAlignmentListEXT;
+    public StructureType Type = StructureType.SpatialComponentPlaneAlignmentListEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

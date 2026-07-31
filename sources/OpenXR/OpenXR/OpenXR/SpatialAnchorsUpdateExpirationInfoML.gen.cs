@@ -18,7 +18,7 @@ public unsafe partial struct SpatialAnchorsUpdateExpirationInfoML
         ["XR_ML_spatial_anchors_storage"],
         ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
     )]
-    public StructureType Type = StructureType.TypeSpatialAnchorsUpdateExpirationInfoML;
+    public StructureType Type = StructureType.SpatialAnchorsUpdateExpirationInfoML;
 
     [NativeName("next")]
     [SupportedApiProfile(

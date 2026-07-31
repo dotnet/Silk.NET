@@ -14,7 +14,7 @@ public unsafe partial struct ControllerModelPropertiesMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_controller_model"])]
-    public StructureType Type = StructureType.TypeControllerModelPropertiesMSFT;
+    public StructureType Type = StructureType.ControllerModelPropertiesMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_controller_model"])]

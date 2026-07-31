@@ -18,7 +18,7 @@ public unsafe partial struct SpatialEntityComponentDataBoundingBox3DBD
         ["XR_BD_spatial_sensing"],
         ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSpatialEntityComponentDataBoundingBox3DBD;
+    public StructureType Type = StructureType.SpatialEntityComponentDataBoundingBox3DBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

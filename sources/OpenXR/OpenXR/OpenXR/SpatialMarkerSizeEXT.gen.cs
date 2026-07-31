@@ -18,7 +18,7 @@ public unsafe partial struct SpatialMarkerSizeEXT
         ["XR_EXT_spatial_marker_tracking"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialMarkerSizeEXT;
+    public StructureType Type = StructureType.SpatialMarkerSizeEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

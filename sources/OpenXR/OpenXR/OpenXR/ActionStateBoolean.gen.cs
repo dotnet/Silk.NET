@@ -14,7 +14,7 @@ public unsafe partial struct ActionStateBoolean
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeActionStateBoolean;
+    public StructureType Type = StructureType.ActionStateBoolean;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

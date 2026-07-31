@@ -14,7 +14,7 @@ public unsafe partial struct LipExpressionDataBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
-    public StructureType Type = StructureType.TypeLipExpressionDataBD;
+    public StructureType Type = StructureType.LipExpressionDataBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]

@@ -14,7 +14,7 @@ public unsafe partial struct EventDataBuffer
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeEventDataBuffer;
+    public StructureType Type = StructureType.EventDataBuffer;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

@@ -18,7 +18,7 @@ public unsafe partial struct SystemSpatialScenePropertiesBD
         ["XR_BD_spatial_scene"],
         ImpliesSets = ["XR_BD_spatial_sensing"]
     )]
-    public StructureType Type = StructureType.TypeSystemSpatialScenePropertiesBD;
+    public StructureType Type = StructureType.SystemSpatialScenePropertiesBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -14,7 +14,7 @@ public unsafe partial struct TriangleMeshCreateInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_triangle_mesh"])]
-    public StructureType Type = StructureType.TypeTriangleMeshCreateInfoFB;
+    public StructureType Type = StructureType.TriangleMeshCreateInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_triangle_mesh"])]

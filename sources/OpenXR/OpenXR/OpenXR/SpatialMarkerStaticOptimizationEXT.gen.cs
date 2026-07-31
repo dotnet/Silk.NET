@@ -18,7 +18,7 @@ public unsafe partial struct SpatialMarkerStaticOptimizationEXT
         ["XR_EXT_spatial_marker_tracking"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialMarkerStaticOptimizationEXT;
+    public StructureType Type = StructureType.SpatialMarkerStaticOptimizationEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

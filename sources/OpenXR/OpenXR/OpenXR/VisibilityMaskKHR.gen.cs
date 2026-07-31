@@ -14,7 +14,7 @@ public unsafe partial struct VisibilityMaskKHR
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
-    public StructureType Type = StructureType.TypeVisibilityMaskKHR;
+    public StructureType Type = StructureType.VisibilityMaskKHR;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]

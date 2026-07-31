@@ -14,7 +14,7 @@ public unsafe partial struct DebugUtilsObjectNameInfoEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
-    public StructureType Type = StructureType.TypeDebugUtilsObjectNameInfoEXT;
+    public StructureType Type = StructureType.DebugUtilsObjectNameInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]

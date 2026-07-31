@@ -14,7 +14,7 @@ public unsafe partial struct EventDataMainSessionVisibilityChangedEXTX
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
-    public StructureType Type = StructureType.TypeEventDataMainSessionVisibilityChangedEXTX;
+    public StructureType Type = StructureType.EventDataMainSessionVisibilityChangedEXTX;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]

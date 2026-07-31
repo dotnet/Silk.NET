@@ -22,7 +22,7 @@ public unsafe partial struct RoomMeshMETA
             "XR_VERSION_1_0",
         ]
     )]
-    public StructureType Type = StructureType.TypeRoomMeshMETA;
+    public StructureType Type = StructureType.RoomMeshMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

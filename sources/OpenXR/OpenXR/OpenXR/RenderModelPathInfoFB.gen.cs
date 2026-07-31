@@ -14,7 +14,7 @@ public unsafe partial struct RenderModelPathInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
-    public StructureType Type = StructureType.TypeRenderModelPathInfoFB;
+    public StructureType Type = StructureType.RenderModelPathInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_render_model"])]

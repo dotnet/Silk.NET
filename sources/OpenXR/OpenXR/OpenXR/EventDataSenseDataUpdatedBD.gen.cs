@@ -18,7 +18,7 @@ public unsafe partial struct EventDataSenseDataUpdatedBD
         ["XR_BD_spatial_sensing"],
         ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeEventDataSenseDataUpdatedBD;
+    public StructureType Type = StructureType.EventDataSenseDataUpdatedBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

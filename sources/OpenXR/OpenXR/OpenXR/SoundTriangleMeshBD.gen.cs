@@ -14,7 +14,7 @@ public unsafe partial struct SoundTriangleMeshBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
-    public StructureType Type = StructureType.TypeSoundTriangleMeshBD;
+    public StructureType Type = StructureType.SoundTriangleMeshBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]

@@ -14,7 +14,7 @@ public unsafe partial struct GeometryInstanceCreateInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
-    public StructureType Type = StructureType.TypeGeometryInstanceCreateInfoFB;
+    public StructureType Type = StructureType.GeometryInstanceCreateInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]

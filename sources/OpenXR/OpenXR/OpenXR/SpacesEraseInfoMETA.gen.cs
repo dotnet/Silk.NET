@@ -14,7 +14,7 @@ public unsafe partial struct SpacesEraseInfoMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]
-    public StructureType Type = StructureType.TypeSpacesEraseInfoMETA;
+    public StructureType Type = StructureType.SpacesEraseInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]

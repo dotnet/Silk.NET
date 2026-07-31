@@ -14,7 +14,7 @@ public unsafe partial struct ViewConfigurationDepthRangeEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_depth_range"])]
-    public StructureType Type = StructureType.TypeViewConfigurationDepthRangeEXT;
+    public StructureType Type = StructureType.ViewConfigurationDepthRangeEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_depth_range"])]

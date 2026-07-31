@@ -14,7 +14,7 @@ public unsafe partial struct PassthroughPreferencesMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_passthrough_preferences"])]
-    public StructureType Type = StructureType.TypePassthroughPreferencesMETA;
+    public StructureType Type = StructureType.PassthroughPreferencesMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_passthrough_preferences"])]

@@ -16,7 +16,7 @@ public unsafe partial struct SwapchainCreateInfoFoveationFB
         ["XR_FB_foveation"],
         ImpliesSets = ["XR_FB_swapchain_update_state", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSwapchainCreateInfoFoveationFB;
+    public StructureType Type = StructureType.SwapchainCreateInfoFoveationFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

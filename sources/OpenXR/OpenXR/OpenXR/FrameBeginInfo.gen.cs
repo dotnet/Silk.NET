@@ -14,7 +14,7 @@ public unsafe partial struct FrameBeginInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeFrameBeginInfo;
+    public StructureType Type = StructureType.FrameBeginInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

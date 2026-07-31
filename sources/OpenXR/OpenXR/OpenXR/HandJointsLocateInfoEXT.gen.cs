@@ -14,7 +14,7 @@ public unsafe partial struct HandJointsLocateInfoEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
-    public StructureType Type = StructureType.TypeHandJointsLocateInfoEXT;
+    public StructureType Type = StructureType.HandJointsLocateInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]

@@ -14,7 +14,7 @@ public unsafe partial struct SwapchainImageAcquireInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeSwapchainImageAcquireInfo;
+    public StructureType Type = StructureType.SwapchainImageAcquireInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

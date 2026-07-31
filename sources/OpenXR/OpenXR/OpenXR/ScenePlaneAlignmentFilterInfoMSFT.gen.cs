@@ -14,7 +14,7 @@ public unsafe partial struct ScenePlaneAlignmentFilterInfoMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
-    public StructureType Type = StructureType.TypeScenePlaneAlignmentFilterInfoMSFT;
+    public StructureType Type = StructureType.ScenePlaneAlignmentFilterInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]

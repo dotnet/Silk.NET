@@ -14,7 +14,7 @@ public unsafe partial struct SpatialAnchorsCreateInfoFromPoseML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeSpatialAnchorsCreateInfoFromPoseML;
+    public StructureType Type = StructureType.SpatialAnchorsCreateInfoFromPoseML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]

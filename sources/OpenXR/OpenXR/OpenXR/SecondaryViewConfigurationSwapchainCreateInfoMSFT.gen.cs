@@ -14,7 +14,7 @@ public unsafe partial struct SecondaryViewConfigurationSwapchainCreateInfoMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_secondary_view_configuration"])]
-    public StructureType Type = StructureType.TypeSecondaryViewConfigurationSwapchainCreateInfoMSFT;
+    public StructureType Type = StructureType.SecondaryViewConfigurationSwapchainCreateInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_secondary_view_configuration"])]

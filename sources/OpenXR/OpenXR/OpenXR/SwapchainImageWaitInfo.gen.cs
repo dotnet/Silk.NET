@@ -14,7 +14,7 @@ public unsafe partial struct SwapchainImageWaitInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeSwapchainImageWaitInfo;
+    public StructureType Type = StructureType.SwapchainImageWaitInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

@@ -14,7 +14,7 @@ public unsafe partial struct FuturePollInfoEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeFuturePollInfoEXT;
+    public StructureType Type = StructureType.FuturePollInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_future"])]

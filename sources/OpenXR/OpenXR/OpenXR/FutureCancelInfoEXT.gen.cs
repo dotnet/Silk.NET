@@ -14,7 +14,7 @@ public unsafe partial struct FutureCancelInfoEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeFutureCancelInfoEXT;
+    public StructureType Type = StructureType.FutureCancelInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_future"])]

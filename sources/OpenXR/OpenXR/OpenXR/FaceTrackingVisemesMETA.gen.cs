@@ -18,7 +18,7 @@ public unsafe partial struct FaceTrackingVisemesMETA
         ["XR_META_face_tracking_visemes"],
         ImpliesSets = ["XR_FB_face_tracking2", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeFaceTrackingVisemesMETA;
+    public StructureType Type = StructureType.FaceTrackingVisemesMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

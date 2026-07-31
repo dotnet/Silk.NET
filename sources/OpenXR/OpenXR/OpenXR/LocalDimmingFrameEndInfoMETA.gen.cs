@@ -14,7 +14,7 @@ public unsafe partial struct LocalDimmingFrameEndInfoMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_local_dimming"])]
-    public StructureType Type = StructureType.TypeLocalDimmingFrameEndInfoMETA;
+    public StructureType Type = StructureType.LocalDimmingFrameEndInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_local_dimming"])]

@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerSpaceWarpInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_space_warp"])]
-    public StructureType Type = StructureType.TypeCompositionLayerSpaceWarpInfoFB;
+    public StructureType Type = StructureType.CompositionLayerSpaceWarpInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_space_warp"])]

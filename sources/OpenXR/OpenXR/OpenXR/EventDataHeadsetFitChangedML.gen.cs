@@ -14,7 +14,7 @@ public unsafe partial struct EventDataHeadsetFitChangedML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
-    public StructureType Type = StructureType.TypeEventDataHeadsetFitChangedML;
+    public StructureType Type = StructureType.EventDataHeadsetFitChangedML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]

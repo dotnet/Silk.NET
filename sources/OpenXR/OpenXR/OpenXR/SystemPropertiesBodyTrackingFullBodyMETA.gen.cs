@@ -16,7 +16,7 @@ public unsafe partial struct SystemPropertiesBodyTrackingFullBodyMETA
         ["XR_META_body_tracking_full_body"],
         ImpliesSets = ["XR_FB_body_tracking"]
     )]
-    public StructureType Type = StructureType.TypeSystemPropertiesBodyTrackingFullBodyMETA;
+    public StructureType Type = StructureType.SystemPropertiesBodyTrackingFullBodyMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -14,7 +14,7 @@ public unsafe partial struct SystemMarkerTrackingPropertiesVARJO
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
-    public StructureType Type = StructureType.TypeSystemMarkerTrackingPropertiesVARJO;
+    public StructureType Type = StructureType.SystemMarkerTrackingPropertiesVARJO;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]

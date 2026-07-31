@@ -18,7 +18,7 @@ public unsafe partial struct TrackableObjectConfigurationANDROID
         ["XR_ANDROID_trackables_object"],
         ImpliesSets = ["XR_ANDROID_trackables"]
     )]
-    public StructureType Type = StructureType.TypeTrackableObjectConfigurationANDROID;
+    public StructureType Type = StructureType.TrackableObjectConfigurationANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

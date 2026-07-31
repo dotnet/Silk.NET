@@ -18,7 +18,7 @@ public unsafe partial struct EventDataImageTrackingLostANDROID
         ["XR_ANDROID_trackables_image"],
         ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
     )]
-    public StructureType Type = StructureType.TypeEventDataImageTrackingLostANDROID;
+    public StructureType Type = StructureType.EventDataImageTrackingLostANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

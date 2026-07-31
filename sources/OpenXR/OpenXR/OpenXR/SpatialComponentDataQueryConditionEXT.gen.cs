@@ -14,7 +14,7 @@ public unsafe partial struct SpatialComponentDataQueryConditionEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeSpatialComponentDataQueryConditionEXT;
+    public StructureType Type = StructureType.SpatialComponentDataQueryConditionEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]

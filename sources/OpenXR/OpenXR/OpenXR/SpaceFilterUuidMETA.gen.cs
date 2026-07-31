@@ -12,7 +12,7 @@ public unsafe partial struct SpaceFilterUuidMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
-    public StructureType Type = StructureType.TypeSpaceFilterUuidMETA;
+    public StructureType Type = StructureType.SpaceFilterUuidMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]

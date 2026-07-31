@@ -18,7 +18,7 @@ public unsafe partial struct SpatialComponentPlaneSemanticLabelListEXT
         ["XR_EXT_spatial_plane_tracking"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialComponentPlaneSemanticLabelListEXT;
+    public StructureType Type = StructureType.SpatialComponentPlaneSemanticLabelListEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

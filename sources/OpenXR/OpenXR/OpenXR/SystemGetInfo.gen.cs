@@ -14,7 +14,7 @@ public unsafe partial struct SystemGetInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeSystemGetInfo;
+    public StructureType Type = StructureType.SystemGetInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

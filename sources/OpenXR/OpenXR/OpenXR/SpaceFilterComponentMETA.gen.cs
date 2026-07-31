@@ -14,7 +14,7 @@ public unsafe partial struct SpaceFilterComponentMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
-    public StructureType Type = StructureType.TypeSpaceFilterComponentMETA;
+    public StructureType Type = StructureType.SpaceFilterComponentMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]

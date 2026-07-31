@@ -14,7 +14,7 @@ public unsafe partial struct ActiveActionSetPrioritiesEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_active_action_set_priority"])]
-    public StructureType Type = StructureType.TypeActiveActionSetPrioritiesEXT;
+    public StructureType Type = StructureType.ActiveActionSetPrioritiesEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_active_action_set_priority"])]

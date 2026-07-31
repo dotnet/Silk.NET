@@ -18,7 +18,7 @@ public unsafe partial struct FoveationEyeTrackedStateMETA
         ["XR_META_foveation_eye_tracked"],
         ImpliesSets = ["XR_FB_foveation", "XR_FB_foveation_configuration", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeFoveationEyeTrackedStateMETA;
+    public StructureType Type = StructureType.FoveationEyeTrackedStateMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

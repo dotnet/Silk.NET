@@ -14,7 +14,7 @@ public unsafe partial struct FrameWaitInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeFrameWaitInfo;
+    public StructureType Type = StructureType.FrameWaitInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

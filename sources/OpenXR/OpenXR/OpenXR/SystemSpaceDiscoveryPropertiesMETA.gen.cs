@@ -14,7 +14,7 @@ public unsafe partial struct SystemSpaceDiscoveryPropertiesMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
-    public StructureType Type = StructureType.TypeSystemSpaceDiscoveryPropertiesMETA;
+    public StructureType Type = StructureType.SystemSpaceDiscoveryPropertiesMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]

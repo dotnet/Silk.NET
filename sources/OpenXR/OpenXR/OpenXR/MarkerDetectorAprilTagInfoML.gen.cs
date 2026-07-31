@@ -14,7 +14,7 @@ public unsafe partial struct MarkerDetectorAprilTagInfoML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
-    public StructureType Type = StructureType.TypeMarkerDetectorAprilTagInfoML;
+    public StructureType Type = StructureType.MarkerDetectorAprilTagInfoML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]

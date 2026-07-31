@@ -14,7 +14,7 @@ public unsafe partial struct PerformanceMetricsStateANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
-    public StructureType Type = StructureType.TypePerformanceMetricsStateANDROID;
+    public StructureType Type = StructureType.PerformanceMetricsStateANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]

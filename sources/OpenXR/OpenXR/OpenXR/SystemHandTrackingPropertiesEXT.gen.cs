@@ -14,7 +14,7 @@ public unsafe partial struct SystemHandTrackingPropertiesEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
-    public StructureType Type = StructureType.TypeSystemHandTrackingPropertiesEXT;
+    public StructureType Type = StructureType.SystemHandTrackingPropertiesEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]

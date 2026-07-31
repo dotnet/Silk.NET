@@ -14,7 +14,7 @@ public unsafe partial struct HapticParametricPropertiesEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
-    public StructureType Type = StructureType.TypeHapticParametricPropertiesEXT;
+    public StructureType Type = StructureType.HapticParametricPropertiesEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]

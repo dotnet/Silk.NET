@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerDepthInfoKHR
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_depth"])]
-    public StructureType Type = StructureType.TypeCompositionLayerDepthInfoKHR;
+    public StructureType Type = StructureType.CompositionLayerDepthInfoKHR;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_depth"])]

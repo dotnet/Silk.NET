@@ -18,7 +18,7 @@ public unsafe partial struct SharedSpatialAnchorDownloadInfoBD
         ["XR_BD_spatial_anchor_sharing"],
         ImpliesSets = ["XR_BD_spatial_anchor"]
     )]
-    public StructureType Type = StructureType.TypeSharedSpatialAnchorDownloadInfoBD;
+    public StructureType Type = StructureType.SharedSpatialAnchorDownloadInfoBD;
 
     [NativeName("next")]
     [SupportedApiProfile(

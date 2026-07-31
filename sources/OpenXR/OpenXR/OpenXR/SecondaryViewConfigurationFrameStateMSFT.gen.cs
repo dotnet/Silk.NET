@@ -14,7 +14,7 @@ public unsafe partial struct SecondaryViewConfigurationFrameStateMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_secondary_view_configuration"])]
-    public StructureType Type = StructureType.TypeSecondaryViewConfigurationFrameStateMSFT;
+    public StructureType Type = StructureType.SecondaryViewConfigurationFrameStateMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_secondary_view_configuration"])]

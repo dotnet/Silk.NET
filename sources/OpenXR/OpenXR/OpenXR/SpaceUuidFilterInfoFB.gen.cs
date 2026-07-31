@@ -18,7 +18,7 @@ public unsafe partial struct SpaceUuidFilterInfoFB
         ["XR_FB_spatial_entity_query"],
         ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSpaceUuidFilterInfoFB;
+    public StructureType Type = StructureType.SpaceUuidFilterInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

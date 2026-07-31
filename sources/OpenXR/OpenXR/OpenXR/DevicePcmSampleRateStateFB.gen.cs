@@ -14,7 +14,7 @@ public unsafe partial struct DevicePcmSampleRateStateFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]
-    public StructureType Type = StructureType.TypeDevicePcmSampleRateStateFB;
+    public StructureType Type = StructureType.DevicePcmSampleRateStateFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]

@@ -14,7 +14,7 @@ public unsafe partial struct ViewConfigurationView
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeViewConfigurationView;
+    public StructureType Type = StructureType.ViewConfigurationView;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

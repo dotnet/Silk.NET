@@ -14,7 +14,7 @@ public unsafe partial struct EventDataViewConfigurationViewsChangedEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_views_change"])]
-    public StructureType Type = StructureType.TypeEventDataViewConfigurationViewsChangedEXT;
+    public StructureType Type = StructureType.EventDataViewConfigurationViewsChangedEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_views_change"])]

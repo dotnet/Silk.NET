@@ -14,7 +14,7 @@ public unsafe partial struct MarkerSpaceCreateInfoVARJO
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
-    public StructureType Type = StructureType.TypeMarkerSpaceCreateInfoVARJO;
+    public StructureType Type = StructureType.MarkerSpaceCreateInfoVARJO;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]

@@ -14,7 +14,7 @@ public unsafe partial struct ActionsSyncInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeActionsSyncInfo;
+    public StructureType Type = StructureType.ActionsSyncInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

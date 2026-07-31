@@ -18,7 +18,7 @@ public unsafe partial struct InteractionRenderModelSubactionPathInfoEXT
         ["XR_EXT_interaction_render_model"],
         ImpliesSets = ["XR_EXT_render_model"]
     )]
-    public StructureType Type = StructureType.TypeInteractionRenderModelSubactionPathInfoEXT;
+    public StructureType Type = StructureType.InteractionRenderModelSubactionPathInfoEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

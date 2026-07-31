@@ -14,7 +14,7 @@ public unsafe partial struct SpaceLocation
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeSpaceLocation;
+    public StructureType Type = StructureType.SpaceLocation;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

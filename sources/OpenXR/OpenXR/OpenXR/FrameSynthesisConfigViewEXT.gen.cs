@@ -14,7 +14,7 @@ public unsafe partial struct FrameSynthesisConfigViewEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_frame_synthesis"])]
-    public StructureType Type = StructureType.TypeFrameSynthesisConfigViewEXT;
+    public StructureType Type = StructureType.FrameSynthesisConfigViewEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_frame_synthesis"])]

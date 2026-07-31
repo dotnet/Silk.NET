@@ -18,7 +18,7 @@ public unsafe partial struct CompositionLayerProjection
         ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
         MinVersion = "1.0"
     )]
-    public StructureType Type = StructureType.TypeCompositionLayerProjection;
+    public StructureType Type = StructureType.CompositionLayerProjection;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -18,7 +18,7 @@ public unsafe partial struct SpatialCapabilityConfigurationArucoMarkerEXT
         ["XR_EXT_spatial_marker_tracking"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialCapabilityConfigurationArucoMarkerEXT;
+    public StructureType Type = StructureType.SpatialCapabilityConfigurationArucoMarkerEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

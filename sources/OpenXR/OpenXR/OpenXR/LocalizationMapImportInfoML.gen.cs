@@ -18,7 +18,7 @@ public unsafe partial struct LocalizationMapImportInfoML
         ["XR_ML_localization_map"],
         ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeLocalizationMapImportInfoML;
+    public StructureType Type = StructureType.LocalizationMapImportInfoML;
 
     [NativeName("next")]
     [SupportedApiProfile(

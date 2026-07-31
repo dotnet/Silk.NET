@@ -18,7 +18,7 @@ public unsafe partial struct PassthroughColorLutCreateInfoMETA
         ["XR_META_passthrough_color_lut"],
         ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypePassthroughColorLutCreateInfoMETA;
+    public StructureType Type = StructureType.PassthroughColorLutCreateInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -22,7 +22,7 @@ public unsafe partial struct SpaceRoomMeshGetInfoMETA
             "XR_VERSION_1_0",
         ]
     )]
-    public StructureType Type = StructureType.TypeSpaceRoomMeshGetInfoMETA;
+    public StructureType Type = StructureType.SpaceRoomMeshGetInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

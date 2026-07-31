@@ -14,7 +14,7 @@ public unsafe partial struct FacialExpressionBlendShapeGetInfoML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
-    public StructureType Type = StructureType.TypeFacialExpressionBlendShapeGetInfoML;
+    public StructureType Type = StructureType.FacialExpressionBlendShapeGetInfoML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]

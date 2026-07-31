@@ -18,7 +18,7 @@ public unsafe partial struct SemanticLabelsFB
         ["XR_FB_scene"],
         ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeSemanticLabelsFB;
+    public StructureType Type = StructureType.SemanticLabelsFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

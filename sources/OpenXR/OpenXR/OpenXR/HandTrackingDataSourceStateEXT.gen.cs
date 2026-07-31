@@ -18,7 +18,7 @@ public unsafe partial struct HandTrackingDataSourceStateEXT
         ["XR_EXT_hand_tracking_data_source"],
         ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeHandTrackingDataSourceStateEXT;
+    public StructureType Type = StructureType.HandTrackingDataSourceStateEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

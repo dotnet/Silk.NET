@@ -14,7 +14,7 @@ public unsafe partial struct FrameState
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeFrameState;
+    public StructureType Type = StructureType.FrameState;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

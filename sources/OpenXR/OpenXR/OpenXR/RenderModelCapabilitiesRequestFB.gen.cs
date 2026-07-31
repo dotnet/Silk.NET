@@ -14,7 +14,7 @@ public unsafe partial struct RenderModelCapabilitiesRequestFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
-    public StructureType Type = StructureType.TypeRenderModelCapabilitiesRequestFB;
+    public StructureType Type = StructureType.RenderModelCapabilitiesRequestFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_render_model"])]

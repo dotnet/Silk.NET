@@ -14,7 +14,7 @@ public unsafe partial struct CompositionLayerEquirect2KHR
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
-    public StructureType Type = StructureType.TypeCompositionLayerEquirect2KHR;
+    public StructureType Type = StructureType.CompositionLayerEquirect2KHR;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]

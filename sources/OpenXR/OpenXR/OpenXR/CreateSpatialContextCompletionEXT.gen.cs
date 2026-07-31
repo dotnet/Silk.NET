@@ -14,7 +14,7 @@ public unsafe partial struct CreateSpatialContextCompletionEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
-    public StructureType Type = StructureType.TypeCreateSpatialContextCompletionEXT;
+    public StructureType Type = StructureType.CreateSpatialContextCompletionEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]

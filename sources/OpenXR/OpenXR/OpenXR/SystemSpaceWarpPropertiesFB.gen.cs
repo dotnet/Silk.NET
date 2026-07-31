@@ -14,7 +14,7 @@ public unsafe partial struct SystemSpaceWarpPropertiesFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_space_warp"])]
-    public StructureType Type = StructureType.TypeSystemSpaceWarpPropertiesFB;
+    public StructureType Type = StructureType.SystemSpaceWarpPropertiesFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_space_warp"])]

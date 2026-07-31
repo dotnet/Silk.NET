@@ -14,7 +14,7 @@ public unsafe partial struct SpatialAnchorCreateInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
-    public StructureType Type = StructureType.TypeSpatialAnchorCreateInfoFB;
+    public StructureType Type = StructureType.SpatialAnchorCreateInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]

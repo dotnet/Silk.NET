@@ -14,7 +14,7 @@ public unsafe partial struct DirectionalLightANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
-    public StructureType Type = StructureType.TypeDirectionalLightANDROID;
+    public StructureType Type = StructureType.DirectionalLightANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]

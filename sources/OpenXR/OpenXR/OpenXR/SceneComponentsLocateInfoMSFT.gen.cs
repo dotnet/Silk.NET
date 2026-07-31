@@ -14,7 +14,7 @@ public unsafe partial struct SceneComponentsLocateInfoMSFT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
-    public StructureType Type = StructureType.TypeSceneComponentsLocateInfoMSFT;
+    public StructureType Type = StructureType.SceneComponentsLocateInfoMSFT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]

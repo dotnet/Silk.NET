@@ -14,7 +14,7 @@ public unsafe partial struct InstanceProperties
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeInstanceProperties;
+    public StructureType Type = StructureType.InstanceProperties;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

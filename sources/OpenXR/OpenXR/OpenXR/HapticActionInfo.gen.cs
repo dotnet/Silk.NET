@@ -14,7 +14,7 @@ public unsafe partial struct HapticActionInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeHapticActionInfo;
+    public StructureType Type = StructureType.HapticActionInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

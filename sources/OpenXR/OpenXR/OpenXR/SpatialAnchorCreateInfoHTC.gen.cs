@@ -14,7 +14,7 @@ public unsafe partial struct SpatialAnchorCreateInfoHTC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
-    public StructureType Type = StructureType.TypeSpatialAnchorCreateInfoHTC;
+    public StructureType Type = StructureType.SpatialAnchorCreateInfoHTC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]

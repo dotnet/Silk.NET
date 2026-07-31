@@ -14,7 +14,7 @@ public unsafe partial struct UserCalibrationEnableEventsInfoML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
-    public StructureType Type = StructureType.TypeUserCalibrationEnableEventsInfoML;
+    public StructureType Type = StructureType.UserCalibrationEnableEventsInfoML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]

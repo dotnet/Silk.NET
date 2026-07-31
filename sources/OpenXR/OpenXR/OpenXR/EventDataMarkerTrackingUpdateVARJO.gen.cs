@@ -14,7 +14,7 @@ public unsafe partial struct EventDataMarkerTrackingUpdateVARJO
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
-    public StructureType Type = StructureType.TypeEventDataMarkerTrackingUpdateVARJO;
+    public StructureType Type = StructureType.EventDataMarkerTrackingUpdateVARJO;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]

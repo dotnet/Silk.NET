@@ -14,7 +14,7 @@ public unsafe partial struct VirtualKeyboardTextContextChangeInfoMETA
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
-    public StructureType Type = StructureType.TypeVirtualKeyboardTextContextChangeInfoMETA;
+    public StructureType Type = StructureType.VirtualKeyboardTextContextChangeInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]

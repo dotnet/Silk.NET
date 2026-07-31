@@ -18,7 +18,7 @@ public unsafe partial struct SpatialComponentPolygon2DListEXT
         ["XR_EXT_spatial_plane_tracking"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialComponentPolygon2DListEXT;
+    public StructureType Type = StructureType.SpatialComponentPolygon2DListEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

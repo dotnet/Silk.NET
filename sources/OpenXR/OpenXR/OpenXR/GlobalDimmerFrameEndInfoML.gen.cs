@@ -14,7 +14,7 @@ public unsafe partial struct GlobalDimmerFrameEndInfoML
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ML_global_dimmer"])]
-    public StructureType Type = StructureType.TypeGlobalDimmerFrameEndInfoML;
+    public StructureType Type = StructureType.GlobalDimmerFrameEndInfoML;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ML_global_dimmer"])]

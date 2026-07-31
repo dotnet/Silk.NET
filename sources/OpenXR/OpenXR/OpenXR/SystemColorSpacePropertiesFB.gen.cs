@@ -14,7 +14,7 @@ public unsafe partial struct SystemColorSpacePropertiesFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_color_space"])]
-    public StructureType Type = StructureType.TypeSystemColorSpacePropertiesFB;
+    public StructureType Type = StructureType.SystemColorSpacePropertiesFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_color_space"])]

@@ -18,7 +18,7 @@ public unsafe partial struct Boundary2DFB
         ["XR_FB_scene"],
         ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeBoundary2DFB;
+    public StructureType Type = StructureType.Boundary2DFB;
 
     [NativeName("next")]
     [SupportedApiProfile(

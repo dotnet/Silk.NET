@@ -18,7 +18,7 @@ public unsafe partial struct SpatialCapabilityConfigurationAprilTagEXT
         ["XR_EXT_spatial_marker_tracking"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialCapabilityConfigurationAprilTagEXT;
+    public StructureType Type = StructureType.SpatialCapabilityConfigurationAprilTagEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

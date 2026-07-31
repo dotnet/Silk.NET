@@ -14,7 +14,7 @@ public unsafe partial struct FacialTrackerCreateInfoHTC
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
-    public StructureType Type = StructureType.TypeFacialTrackerCreateInfoHTC;
+    public StructureType Type = StructureType.FacialTrackerCreateInfoHTC;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]

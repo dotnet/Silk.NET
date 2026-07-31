@@ -14,7 +14,7 @@ public unsafe partial struct SoundObstacleMaterialConfigBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
-    public StructureType Type = StructureType.TypeSoundObstacleMaterialConfigBD;
+    public StructureType Type = StructureType.SoundObstacleMaterialConfigBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]

@@ -14,7 +14,7 @@ public unsafe partial struct FacialSimulationDataGetInfoBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
-    public StructureType Type = StructureType.TypeFacialSimulationDataGetInfoBD;
+    public StructureType Type = StructureType.FacialSimulationDataGetInfoBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]

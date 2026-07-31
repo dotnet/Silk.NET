@@ -14,7 +14,7 @@ public unsafe partial struct BatteryStateDisplayEXT
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_EXT_interaction_profile_battery_state_display"])]
-    public StructureType Type = StructureType.TypeBatteryStateDisplayEXT;
+    public StructureType Type = StructureType.BatteryStateDisplayEXT;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_EXT_interaction_profile_battery_state_display"])]

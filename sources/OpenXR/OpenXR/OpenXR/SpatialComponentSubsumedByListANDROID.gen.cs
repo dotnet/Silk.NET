@@ -18,7 +18,7 @@ public unsafe partial struct SpatialComponentSubsumedByListANDROID
         ["XR_ANDROID_spatial_component_subsumed_by"],
         ImpliesSets = ["XR_EXT_spatial_entity", "XR_EXT_spatial_plane_tracking"]
     )]
-    public StructureType Type = StructureType.TypeSpatialComponentSubsumedByListANDROID;
+    public StructureType Type = StructureType.SpatialComponentSubsumedByListANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

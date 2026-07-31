@@ -14,7 +14,7 @@ public unsafe partial struct EyesANDROID
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
-    public StructureType Type = StructureType.TypeEyesANDROID;
+    public StructureType Type = StructureType.EyesANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]

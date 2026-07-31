@@ -14,7 +14,7 @@ public unsafe partial struct SpaceComponentStatusSetInfoFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
-    public StructureType Type = StructureType.TypeSpaceComponentStatusSetInfoFB;
+    public StructureType Type = StructureType.SpaceComponentStatusSetInfoFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]

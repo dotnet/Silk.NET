@@ -18,7 +18,7 @@ public unsafe partial struct InteractionProfileDpadBindingEXT
         ["XR_EXT_dpad_binding"],
         ImpliesSets = ["XR_KHR_binding_modification", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeInteractionProfileDpadBindingEXT;
+    public StructureType Type = StructureType.InteractionProfileDpadBindingEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

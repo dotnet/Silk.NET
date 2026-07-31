@@ -18,7 +18,7 @@ public unsafe partial struct SpatialAnchorSpaceFromIdCreateInfoANDROID
         ["XR_ANDROID_spatial_anchor_space"],
         ImpliesSets = ["XR_EXT_spatial_anchor"]
     )]
-    public StructureType Type = StructureType.TypeSpatialAnchorSpaceFromIdCreateInfoANDROID;
+    public StructureType Type = StructureType.SpatialAnchorSpaceFromIdCreateInfoANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

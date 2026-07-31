@@ -18,7 +18,7 @@ public unsafe partial struct EnvironmentRaycastHitGetInfoMETA
         ["XR_META_environment_raycast"],
         ImpliesSets = ["XR_EXT_future"]
     )]
-    public StructureType Type = StructureType.TypeEnvironmentRaycastHitGetInfoMETA;
+    public StructureType Type = StructureType.EnvironmentRaycastHitGetInfoMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

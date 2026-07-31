@@ -14,7 +14,7 @@ public unsafe partial struct InstanceCreateInfo
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeInstanceCreateInfo;
+    public StructureType Type = StructureType.InstanceCreateInfo;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

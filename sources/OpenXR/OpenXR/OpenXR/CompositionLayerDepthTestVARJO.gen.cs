@@ -18,7 +18,7 @@ public unsafe partial struct CompositionLayerDepthTestVARJO
         ["XR_VARJO_composition_layer_depth_test"],
         ImpliesSets = ["XR_KHR_composition_layer_depth", "XR_VERSION_1_0"]
     )]
-    public StructureType Type = StructureType.TypeCompositionLayerDepthTestVARJO;
+    public StructureType Type = StructureType.CompositionLayerDepthTestVARJO;
 
     [NativeName("next")]
     [SupportedApiProfile(

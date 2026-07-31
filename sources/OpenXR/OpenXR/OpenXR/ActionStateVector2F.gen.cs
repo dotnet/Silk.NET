@@ -14,7 +14,7 @@ public unsafe partial struct ActionStateVector2F
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeActionStateVector2F;
+    public StructureType Type = StructureType.ActionStateVector2F;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

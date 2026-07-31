@@ -20,7 +20,7 @@ public unsafe partial struct RoomMeshFaceIndicesMETA
             "XR_VERSION_1_0",
         ]
     )]
-    public StructureType Type = StructureType.TypeRoomMeshFaceIndicesMETA;
+    public StructureType Type = StructureType.RoomMeshFaceIndicesMETA;
 
     [NativeName("next")]
     [SupportedApiProfile(

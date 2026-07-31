@@ -14,7 +14,7 @@ public unsafe partial struct KeyboardTrackingQueryFB
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
-    public StructureType Type = StructureType.TypeKeyboardTrackingQueryFB;
+    public StructureType Type = StructureType.KeyboardTrackingQueryFB;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]

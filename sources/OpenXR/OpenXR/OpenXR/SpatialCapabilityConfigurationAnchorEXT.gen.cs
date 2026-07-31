@@ -18,7 +18,7 @@ public unsafe partial struct SpatialCapabilityConfigurationAnchorEXT
         ["XR_EXT_spatial_anchor"],
         ImpliesSets = ["XR_EXT_spatial_entity"]
     )]
-    public StructureType Type = StructureType.TypeSpatialCapabilityConfigurationAnchorEXT;
+    public StructureType Type = StructureType.SpatialCapabilityConfigurationAnchorEXT;
 
     [NativeName("next")]
     [SupportedApiProfile(

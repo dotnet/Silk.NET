@@ -14,7 +14,7 @@ public unsafe partial struct SoundObjectDistanceAttenuationCurveBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
-    public StructureType Type = StructureType.TypeSoundObjectDistanceAttenuationCurveBD;
+    public StructureType Type = StructureType.SoundObjectDistanceAttenuationCurveBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]

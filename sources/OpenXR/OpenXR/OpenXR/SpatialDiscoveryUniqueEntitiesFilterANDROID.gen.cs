@@ -18,7 +18,7 @@ public unsafe partial struct SpatialDiscoveryUniqueEntitiesFilterANDROID
         ["XR_ANDROID_spatial_component_subsumed_by"],
         ImpliesSets = ["XR_EXT_spatial_entity", "XR_EXT_spatial_plane_tracking"]
     )]
-    public StructureType Type = StructureType.TypeSpatialDiscoveryUniqueEntitiesFilterANDROID;
+    public StructureType Type = StructureType.SpatialDiscoveryUniqueEntitiesFilterANDROID;
 
     [NativeName("next")]
     [SupportedApiProfile(

@@ -14,7 +14,7 @@ public unsafe partial struct ViewState
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr")]
-    public StructureType Type = StructureType.TypeViewState;
+    public StructureType Type = StructureType.ViewState;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr")]

@@ -14,7 +14,7 @@ public unsafe partial struct SoundObjectDirectivityCardioidBD
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
-    public StructureType Type = StructureType.TypeSoundObjectDirectivityCardioidBD;
+    public StructureType Type = StructureType.SoundObjectDirectivityCardioidBD;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]

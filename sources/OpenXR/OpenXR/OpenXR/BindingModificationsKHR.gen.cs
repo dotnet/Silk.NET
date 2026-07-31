@@ -14,7 +14,7 @@ public unsafe partial struct BindingModificationsKHR
 {
     [NativeName("type")]
     [SupportedApiProfile("openxr", ["XR_KHR_binding_modification"])]
-    public StructureType Type = StructureType.TypeBindingModificationsKHR;
+    public StructureType Type = StructureType.BindingModificationsKHR;
 
     [NativeName("next")]
     [SupportedApiProfile("openxr", ["XR_KHR_binding_modification"])]
