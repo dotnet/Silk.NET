@@ -5961,6 +5961,7 @@ public unsafe partial class Xr : IXr, IXr.Static
         ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
         MinVersion = "1.0"
     )]
+    // TODO: The below is a manual fix for https://github.com/dotnet/ClangSharp/issues/836
     public static ulong MaxEventDataSize => (ulong)sizeof(EventDataBuffer);
 
     [NativeName("XR_EXTENSION_ENUM_BASE")]
