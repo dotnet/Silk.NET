@@ -68,11 +68,14 @@ public class AddOpaqueStructs(
             return Task.CompletedTask;
         }
 
-        foreach (var name in cfg.Names ?? Array.Empty<string>())
+        foreach (var fullyQualifiedName in cfg.Names ?? Array.Empty<string>())
         {
-            var qualified = name.LastIndexOf('.');
+            var lastPeriodIndex = fullyQualifiedName.LastIndexOf('.');
             var ns =
-                qualified != -1 ? ModUtils.NamespaceIntoIdentifierName(name.AsSpan()[..qualified])
+                lastPeriodIndex != -1
+                    ? ModUtils.NamespaceIntoIdentifierName(
+                        fullyQualifiedName.AsSpan()[..lastPeriodIndex]
+                    )
                 : _defaultNamespaces.TryGetValue(ctx.JobKey, out var def)
                     ? ModUtils.NamespaceIntoIdentifierName(def)
                 : null;
@@ -81,21 +84,27 @@ public class AddOpaqueStructs(
                 logger.LogWarning(
                     "Couldn't resolve namespace for opaque struct \"{0}\" - consider fully qualifying the type in the "
                         + "config",
-                    name
+                    fullyQualifiedName
                 );
                 continue;
             }
 
-            var fname = $"{name[(qualified + 1)..]}.gen.cs";
+            var name = fullyQualifiedName[(lastPeriodIndex + 1)..];
+            var fileName = $"{name}.gen.cs";
             proj = proj.AddDocument(
-                fname,
+                fileName,
                 CompilationUnit()
                     .WithMembers(
                         SingletonList<MemberDeclarationSyntax>(
                             FileScopedNamespaceDeclaration(ns)
                                 .WithMembers(
                                     SingletonList<MemberDeclarationSyntax>(
-                                        StructDeclaration(name[(qualified + 1)..])
+                                        StructDeclaration(name)
+                                            .WithAttributeLists(
+                                                new SyntaxList<AttributeListSyntax>().WithNativeName(
+                                                    name
+                                                )
+                                            )
                                             .WithModifiers(
                                                 TokenList(
                                                     Token(SyntaxKind.PublicKeyword),
@@ -107,7 +116,7 @@ public class AddOpaqueStructs(
                                 )
                         )
                     ),
-                filePath: proj.FullPath(fname)
+                filePath: proj.FullPath(fileName)
             ).Project;
         }
 

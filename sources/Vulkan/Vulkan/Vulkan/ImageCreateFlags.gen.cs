@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageCreateFlagBits")]
+[NativeName("VkImageCreateFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum ImageCreateFlags : uint
@@ -345,6 +345,20 @@ public enum ImageCreateFlags : uint
     )]
     CreateCornerSampledBitNV = 0x2000,
 
+    [NativeName("VK_IMAGE_CREATE_DESCRIPTOR_HEAP_CAPTURE_REPLAY_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    CreateDescriptorHeapCaptureReplayBitEXT = 0x10000,
+
     [NativeName("VK_IMAGE_CREATE_SAMPLE_LOCATIONS_COMPATIBLE_DEPTH_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -366,19 +380,6 @@ public enum ImageCreateFlags : uint
         ]
     )]
     CreateSubsampledBitEXT = 0x4000,
-
-    [NativeName("VK_IMAGE_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_buffer"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
-            "VK_KHR_synchronization2+VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    CreateDescriptorBufferCaptureReplayBitEXT = 0x10000,
 
     [NativeName("VK_IMAGE_CREATE_MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_BIT_EXT")]
     [SupportedApiProfile(
@@ -424,6 +425,17 @@ public enum ImageCreateFlags : uint
     )]
     CreateFragmentDensityMapOffsetBitEXT = 0x8000,
 
+    [NativeName("VK_IMAGE_CREATE_ALIAS_SINGLE_LAYER_DESCRIPTOR_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
+    CreateAliasSingleLayerDescriptorBitKHR = 0x400000,
+
     [NativeName("VK_IMAGE_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -459,6 +471,19 @@ public enum ImageCreateFlags : uint
     [NativeName("VK_IMAGE_CREATE_ALIAS_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
     CreateAliasBitKHR = CreateAliasBit,
+
+    [NativeName("VK_IMAGE_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    CreateDescriptorBufferCaptureReplayBitEXT = CreateDescriptorHeapCaptureReplayBitEXT,
 
     [NativeName("VK_IMAGE_CREATE_FRAGMENT_DENSITY_MAP_OFFSET_BIT_QCOM")]
     [SupportedApiProfile(

@@ -15,10 +15,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public StructureType SType = StructureType.PhysicalDeviceTileShadingFeaturesQCOM;
 
@@ -26,10 +23,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public void* PNext;
 
@@ -37,10 +31,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShading;
 
@@ -48,10 +39,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingFragmentStage;
 
@@ -59,10 +47,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingColorAttachments;
 
@@ -70,10 +55,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingDepthAttachments;
 
@@ -81,10 +63,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingStencilAttachments;
 
@@ -92,10 +71,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingInputAttachments;
 
@@ -103,10 +79,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingSampledAttachments;
 
@@ -114,10 +87,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingPerTileDraw;
 
@@ -125,10 +95,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingPerTileDispatch;
 
@@ -136,10 +103,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingDispatchTile;
 
@@ -147,10 +111,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingApron;
 
@@ -158,10 +119,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingAnisotropicApron;
 
@@ -169,10 +127,7 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingAtomicOps;
 
@@ -180,20 +135,14 @@ public unsafe partial struct PhysicalDeviceTileShadingFeaturesQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public MaybeBool<uint> TileShadingImageProcessing;
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public PhysicalDeviceTileShadingFeaturesQCOM() { }
 }

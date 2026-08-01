@@ -35,6 +35,17 @@ public partial class MixKhronosData(
     internal ConcurrentDictionary<string, JobData> Jobs = new();
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
+    private class NameAffixes
+    {
+        public const string KhronosFunctionDataType = "KhronosFunctionDataType";
+        public const string KhronosHandleType = "KhronosHandleType";
+        public const string KhronosImpliedVendor = "KhronosImpliedVendor";
+        public const string KhronosNamespaceEnum = "KhronosNamespaceEnum";
+        public const string KhronosNonExclusiveVendor = "KhronosNonExclusiveVendor";
+        public const string KhronosNonVendor = "KhronosNonVendor";
+        public const string KhronosVendor = "KhronosVendor";
+    }
+
     internal class JobData
     {
         /// <summary>
@@ -43,7 +54,7 @@ public partial class MixKhronosData(
         public required Configuration Configuration { get; init; }
 
         /// <summary>
-        /// A mapping of enum native names to group names.
+        /// A mapping from enum native names to group native names.
         /// </summary>
         /// <remarks>
         /// This is OpenGL and OpenCL specific.
@@ -51,7 +62,7 @@ public partial class MixKhronosData(
         public Dictionary<string, HashSet<string>> EnumsToGroups { get; } = [];
 
         /// <summary>
-        /// A mapping of group names to constant declarators.
+        /// A mapping from group native names to constant declarators.
         /// </summary>
         /// <remarks>
         /// This is OpenGL and OpenCL specific.
@@ -59,7 +70,7 @@ public partial class MixKhronosData(
         public Dictionary<string, EnumGroup> Groups { get; } = [];
 
         /// <summary>
-        /// A mapping of feature/extension names to whether they're a feature or not and their API set dependencies for
+        /// A mapping from feature/extension names to whether they're a feature or not and their API set dependencies for
         /// each profile/variant.
         /// </summary>
         /// <remarks>
@@ -73,7 +84,7 @@ public partial class MixKhronosData(
         > ApiSets { get; set; } = [];
 
         /// <summary>
-        /// A mapping of native names to their supported API profile attributes.
+        /// A mapping from native names to their supported API profile attributes.
         /// </summary>
         public Dictionary<
             string,
@@ -125,6 +136,14 @@ public partial class MixKhronosData(
         /// A mapping from struct type to information about the structure type member.
         /// </summary>
         public Dictionary<string, StructureTypeMember> StructureTypeMembers = [];
+
+        /// <summary>
+        /// Whether the API is determined to be likely in OpenCL's style.
+        /// </summary>
+        /// <remarks>
+        /// OpenCL differs strongly from the rest of the Khronos APIs so this is used to special case some functionality.
+        /// </remarks>
+        public bool IsLikelyOpenCL { get; set; } = false;
     }
 
     /// <summary>
@@ -162,7 +181,7 @@ public partial class MixKhronosData(
         /// For example, VkFlags and VkFlags64 for Vulkan.
         /// </summary>
         /// <remarks>
-        /// This mainly affects remappings.
+        /// This mainly affects the auto-injected ClangSharp remappings.
         /// If some flags types are showing as integral types instead of their proper type, make sure this property is configured.
         /// </remarks>
         public string[] FlagsTypes { get; init; } = [];
@@ -454,15 +473,23 @@ public partial class MixKhronosData(
         }
 
         // Rewrite phase 3
-        var rewriter3 = new RewriterPhase3(jobData, currentConfig);
-        foreach (var docId in proj.DocumentIds)
         {
-            var doc =
-                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
-            proj = doc.WithSyntaxRoot(
-                rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))
-                    ?? throw new InvalidOperationException("Visit returned null.")
-            ).Project;
+            // OpenCL uses lower snake case names
+            var vendorSuffixComparison = jobData.IsLikelyOpenCL
+                ? StringComparison.OrdinalIgnoreCase
+                : StringComparison.Ordinal;
+
+            var rewriter3 = new RewriterPhase3(jobData, currentConfig, vendorSuffixComparison);
+            foreach (var docId in proj.DocumentIds)
+            {
+                var doc =
+                    proj.GetDocument(docId)
+                    ?? throw new InvalidOperationException("Document missing");
+                proj = doc.WithSyntaxRoot(
+                    rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))
+                        ?? throw new InvalidOperationException("Visit returned null.")
+                ).Project;
+            }
         }
 
         // Rewrite phase 4
@@ -1604,29 +1631,60 @@ public partial class MixKhronosData(
     }
 
     /// <summary>
-    /// This regex matches against known OpenGL function endings, picking them out from function names.
+    /// This regex matches against known OpenGL function data type suffixes.
     /// It is comprised of two parts - the main matching set (here, the main capturing group), and a negative
     /// lookbehind workaround for difficult-to-match names. The primary set matches the actual function ending,
     /// while the lookbehind asserts that the ending match will not overreach into the end of a word.
     /// </summary>
     // NOTE: LET THIS BE A LESSON! Do NOT add x (fixed) here, these will frequently conflict with integer overloads.
     [GeneratedRegex("(?<!xe)([fdh]v?|u?[isb](64)?v?|v|i_v|fi|hi)$")]
-    private static partial Regex EndingsToTrim();
+    private static partial Regex FunctionDataTypesToIdentify();
 
     /// <summary>
-    /// This regex acts like a whitelist for endings that could have been matched in some way by the main
-    /// expression, but should be exempt from trimming altogether.
+    /// This regex is used by <see cref="CanIdentifySuffix"/> to identify cases where suffix identification
+    /// might have identified more than it should have.
     /// </summary>
-    // Rewindv is to prevent Rewindv from being trimmed as Rewin
-    // TODO: Consider replacing this with something that prevents a list of words from being trimmed into instead of not being trimmed at all
+    /// <remarks>
+    /// This is configured to return rightmost matches first because we only care about the last match.
+    /// </remarks>
     [GeneratedRegex(
-        "(sh|ib|[tdrey]s|(?<![A-Z])[eE]n[vd]|bled|Attrib|Access|Boolean|Coord|Depth|Feedbacks|Finish|Flag|"
+        // Note: This first line has the end specifier ($)
+        "((sh|ib|[tdrey]s|(?<![A-Z])[eE]n[vd]|bled)$)|"
+            // The rest are words that we don't want to accidentally identify into
+            + "(Attrib|Access|Boolean|Coord|Depth|Feedbacks|Finish|Flag|"
             + "Groups|IDs|Indexed|Instanced|Pixels|Queries|Status|Tess|Through|Uniforms|Varyings|Weight|Width|Bias|Id|"
             + "Fixed|Pass|Address|Configs|Thread|Subpass|Deferred|Extended|Affix|Annex|Box|Aux|Ex|Index|Vertex|Path|"
             + "Arch|Arith|Afresh|Both|High|Math|Mesh|Sinh|Bench|Brush|Bunch|Crash|Flush|Depth|Latch|Morph|Pinch|"
-            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Supported|Rewind|Rewindv)$"
+            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Supported|Rewind|"
+            // CONTEXT is often incorrectly identified as CONT + EXT, where EXT is a vendor suffix
+            + "context|Context|CONTEXT)",
+        RegexOptions.RightToLeft
     )]
-    private static partial Regex EndingsNotToTrim();
+    private static partial Regex EndingsToNotIdentifyInto();
+
+    /// <summary>
+    /// Returns whether the identified suffix can be identified by
+    /// checking against the <see cref="EndingsToNotIdentifyInto"/> regex.
+    /// </summary>
+    /// <remarks>
+    /// This is currently used when identifying function data types and vendor suffixes.
+    /// </remarks>
+    private static bool CanIdentifySuffix(string name, int identifiedSuffixLength)
+    {
+        var match = EndingsToNotIdentifyInto().Match(name);
+        if (!match.Success)
+        {
+            return true;
+        }
+
+        // End of matched region must be before the suffix
+        if (match.Index + match.Length <= name.Length - identifiedSuffixLength)
+        {
+            return true;
+        }
+
+        return false;
+    }
 
     /// <summary>
     /// This rewriter focuses on adding missing enums.
@@ -1641,12 +1699,12 @@ public partial class MixKhronosData(
     private class RewriterPhase1(JobData job, ILogger logger) : CSharpSyntaxRewriter
     {
         /// <summary>
-        /// Tracks enum groups that already exist in the project, prior to the generation of missing enums.
+        /// Tracks enum groups that already exist in the project by their native name, prior to the generation of missing enums.
         /// </summary>
         public HashSet<string> AlreadyPresentGroups { get; } = [];
 
         /// <summary>
-        /// Tracks enums that exist in the project.
+        /// Tracks enums that exist in the project by their native name.
         /// Note that this includes any enum, including enums not present in <see cref="MixKhronosData.JobData.Groups"/>.
         /// </summary>
         public HashSet<string> AllKnownEnums { get; } = [];
@@ -1656,27 +1714,27 @@ public partial class MixKhronosData(
             var results = new List<(string FilePath, SyntaxNode Node)>();
 
             // Generate initial syntax trees
-            foreach (var (groupName, groupInfo) in job.Groups)
+            foreach (var group in job.Groups.Values)
             {
-                if (!AlreadyPresentGroups.Contains(groupName))
+                if (!AlreadyPresentGroups.Contains(group.NativeName))
                 {
-                    var baseType = groupInfo.BaseType ?? groupName;
+                    var baseType = group.BaseType ?? group.NativeName;
                     while (job.TypeMap.TryGetValue(baseType, out var ty))
                     {
                         baseType = ty;
                     }
 
-                    if (baseType == groupName)
+                    if (baseType == group.NativeName)
                     {
                         logger?.LogError(
                             "Enum \"{}\" has no base type. Please add TypeMap entry to the configuration. "
                                 + "This enum group will be skipped.",
-                            groupName
+                            group.NativeName
                         );
                         continue;
                     }
 
-                    var ns = groupInfo
+                    var ns = group
                         .Enums.Select(x => x.NamespaceFromSyntaxNode())
                         .Distinct()
                         .Select((x, i) => (x, i))
@@ -1692,23 +1750,23 @@ public partial class MixKhronosData(
                         logger?.LogError(
                             "Enum \"{}\" has no namespace. Please add Namespace to the configuration. "
                                 + "This enum group will be skipped.",
-                            groupName
+                            group.NativeName
                         );
                         continue;
                     }
 
-                    AllKnownEnums.Add(groupName);
+                    AllKnownEnums.Add(group.NativeName);
 
                     var attributes = SingletonList(
                         AttributeList([Attribute(IdentifierName("Transformed"))])
                     );
-                    attributes = attributes.WithNativeName(groupInfo.NativeName);
+                    attributes = attributes.WithNativeName(group.NativeName);
 
                     var baseTypeSyntax = ParseTypeName(baseType);
 
                     results.Add(
                         (
-                            $"Enums/{groupName}.gen.cs",
+                            $"Enums/{group.Name}.gen.cs",
                             CompilationUnit()
                                 .WithMembers(
                                     SingletonList<MemberDeclarationSyntax>(
@@ -1717,7 +1775,7 @@ public partial class MixKhronosData(
                                             )
                                             .WithMembers(
                                                 SingletonList<MemberDeclarationSyntax>(
-                                                    EnumDeclaration(groupName)
+                                                    EnumDeclaration(group.Name)
                                                         .WithModifiers(
                                                             TokenList(
                                                                 Token(SyntaxKind.PublicKeyword)
@@ -1731,7 +1789,7 @@ public partial class MixKhronosData(
                                                         )
                                                         .WithMembers(
                                                             SeparatedList(
-                                                                groupInfo.Enums.Select(x =>
+                                                                group.Enums.Select(x =>
                                                                     EnumMemberDeclaration(
                                                                             x.Identifier.ToString()
                                                                         )
@@ -1775,21 +1833,26 @@ public partial class MixKhronosData(
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
+            var nativeName = node
+                .AttributeLists.GetNativeNameOrDefault(node.Identifier)
+                .Replace("FlagBits", "Flags");
+
+            var managedName = node.Identifier.Text.Replace("FlagBits", "Flags");
+
             // Track which enums already exist
-            var identifier = node.Identifier.ToString();
-            identifier = identifier.Replace("FlagBits", "Flags");
-
-            AllKnownEnums.Add(identifier);
-
+            AllKnownEnums.Add(nativeName);
             if (
-                job.Groups.TryGetValue(identifier, out _)
+                job.Groups.TryGetValue(nativeName, out _)
                 && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
             )
             {
-                AlreadyPresentGroups.Add(identifier);
+                AlreadyPresentGroups.Add(nativeName);
             }
 
-            return base.VisitEnumDeclaration(node.WithIdentifier(Identifier(identifier)));
+            return base.VisitEnumDeclaration(
+                node.WithIdentifier(Identifier(managedName))
+                    .WithAttributeLists(node.AttributeLists.WithNativeName(nativeName))
+            );
         }
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
@@ -1857,7 +1920,7 @@ public partial class MixKhronosData(
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            var identifier = node.Identifier.ToString();
+            var nativeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
 
             if (node.Members.Any(m => job.DeprecatedAliases.Contains(m.Identifier.ValueText)))
             {
@@ -1872,7 +1935,7 @@ public partial class MixKhronosData(
             }
 
             if (
-                job.Groups.TryGetValue(identifier, out var group)
+                job.Groups.TryGetValue(nativeName, out var group)
                 && (group.IsDefinitelyBitmask || group.IsMaybeBitmask)
             )
             {
@@ -1981,7 +2044,11 @@ public partial class MixKhronosData(
     /// <summary>
     /// This rewriter identifies and extracts vendor extension suffixes into [NameSuffix] attributes.
     /// </summary>
-    private class RewriterPhase3(JobData job, Configuration config) : CSharpSyntaxRewriter
+    private class RewriterPhase3(
+        JobData job,
+        Configuration config,
+        StringComparison vendorSuffixComparison
+    ) : CSharpSyntaxRewriter
     {
         private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(
             SyntaxList<AttributeListSyntax> attributeLists,
@@ -2000,7 +2067,12 @@ public partial class MixKhronosData(
                 {
                     trimmedName = trimmedName[..^handleSuffix.Length];
                     attributeLists = attributeLists
-                        .AddNameAffix(NameAffixType.Suffix, "KhronosHandleType", handleSuffix, true)
+                        .AddNameAffix(
+                            NameAffixType.Suffix,
+                            NameAffixes.KhronosHandleType,
+                            handleSuffix,
+                            true
+                        )
                         .WithNativeName(trimmedName);
                 }
             }
@@ -2010,14 +2082,18 @@ public partial class MixKhronosData(
                 // Try to identify vendor suffixes
                 foreach (var vendor in job.Vendors)
                 {
-                    if (trimmedName.EndsWith(vendor))
+                    if (
+                        trimmedName.EndsWith(vendor, vendorSuffixComparison)
+                        && CanIdentifySuffix(trimmedName, vendor.Length)
+                    )
                     {
+                        var identifiedSuffix = trimmedName[^vendor.Length..];
                         attributeLists = attributeLists.AddNameAffix(
                             NameAffixType.Suffix,
-                            "KhronosVendor",
-                            vendor
+                            NameAffixes.KhronosVendor,
+                            identifiedSuffix
                         );
-                        trimmedName = trimmedName[..^vendor.Length];
+                        trimmedName = trimmedName[..^identifiedSuffix.Length];
 
                         break;
                     }
@@ -2032,38 +2108,39 @@ public partial class MixKhronosData(
                 // Try to identify non-vendor suffixes
                 foreach (var suffix in config.NonVendorSuffixes)
                 {
-                    if (trimmedName.EndsWith(suffix))
+                    if (
+                        trimmedName.EndsWith(suffix)
+                        && CanIdentifySuffix(trimmedName, suffix.Length)
+                    )
                     {
+                        var identifiedSuffix = trimmedName[^suffix.Length..];
                         attributeLists = attributeLists.AddNameAffix(
                             NameAffixType.Suffix,
-                            "KhronosNonVendor",
-                            suffix,
+                            NameAffixes.KhronosNonVendor,
+                            identifiedSuffix,
                             true
                         );
-                        trimmedName = trimmedName[..^suffix.Length];
+                        trimmedName = trimmedName[..^identifiedSuffix.Length];
 
                         break;
                     }
                 }
 
                 // Try to identify data type suffixes
-                if (config.IdentifyFunctionDataTypes)
+                if (
+                    config.IdentifyFunctionDataTypes
+                    && FunctionDataTypesToIdentify().Match(trimmedName) is { Success: true } match
+                    && CanIdentifySuffix(trimmedName, match.Length)
+                )
                 {
-                    if (
-                        EndingsToTrim().Match(trimmedName) is { Success: true } match // Check if we end in a data type suffix
-                        && !EndingsNotToTrim().IsMatch(trimmedName)
-                    ) // Check if the ending is excluded
-                    {
-                        var dataTypeSuffix = trimmedName[match.Index..];
-                        trimmedName = trimmedName[..match.Index];
-
-                        attributeLists = attributeLists.AddNameAffix(
-                            NameAffixType.Suffix,
-                            "KhronosFunctionDataType",
-                            dataTypeSuffix,
-                            true
-                        );
-                    }
+                    var identifiedSuffix = trimmedName[match.Index..];
+                    attributeLists = attributeLists.AddNameAffix(
+                        NameAffixType.Suffix,
+                        NameAffixes.KhronosFunctionDataType,
+                        identifiedSuffix,
+                        true
+                    );
+                    trimmedName = trimmedName[..^identifiedSuffix.Length];
                 }
             }
 
@@ -2104,11 +2181,13 @@ public partial class MixKhronosData(
             var nativeTypeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
             var managedTypeName = node.Identifier.Text;
 
-            var groupInfo = job.Groups.GetValueOrDefault(managedTypeName);
+            var groupInfo = job.Groups.GetValueOrDefault(nativeTypeName);
 
-            var typeVendor = job.Vendors.FirstOrDefault(nativeTypeName.EndsWith);
+            var typeVendor = job.Vendors.FirstOrDefault(s =>
+                managedTypeName.EndsWith(s, vendorSuffixComparison)
+            );
             var hasTypeSuffix = typeVendor != null;
-            var vendorAffixType = "KhronosVendor";
+            var vendorAffixType = NameAffixes.KhronosVendor;
 
             // Identify the namespace enum
             // Eg: GLEnum, ALEnum
@@ -2117,7 +2196,7 @@ public partial class MixKhronosData(
                 node = node.WithAttributeLists(
                     node.AttributeLists.AddNameAffix(
                         NameAffixType.Prefix,
-                        "KhronosNamespaceEnum",
+                        NameAffixes.KhronosNamespaceEnum,
                         groupInfo.Namespace
                     )
                 );
@@ -2127,7 +2206,10 @@ public partial class MixKhronosData(
             var exclusiveVendor = groupInfo?.ExclusiveVendor ?? typeVendor;
             if (
                 exclusiveVendor == null
-                || !node.Members.All(member => member.Identifier.Text.EndsWith(exclusiveVendor))
+                || !node.Members.All(member =>
+                    member.Identifier.Text.EndsWith(exclusiveVendor, vendorSuffixComparison)
+                    && CanIdentifySuffix(member.Identifier.Text, exclusiveVendor.Length)
+                )
             )
             {
                 // Not all enum members share the exclusive vendor
@@ -2153,7 +2235,7 @@ public partial class MixKhronosData(
                 if (isVendorMismatch && isSafeToTrimType)
                 {
                     // Identify the affix as a non exclusive vendor since it isn't actually exclusive
-                    vendorAffixType = "KhronosNonExclusiveVendor";
+                    vendorAffixType = NameAffixes.KhronosNonExclusiveVendor;
 
                     // Assume that non exclusive vendor suffixes are trimmed
                     hasTypeSuffix = false;
@@ -2167,7 +2249,7 @@ public partial class MixKhronosData(
                     node.AttributeLists.AddNameAffix(
                         NameAffixType.Suffix,
                         vendorAffixType,
-                        typeVendor,
+                        managedTypeName[^typeVendor.Length..],
                         true
                     )
                 );
@@ -2176,13 +2258,11 @@ public partial class MixKhronosData(
             // Check if the enum contains unsuffixed members
             var containsUnsuffixedMembers = node.Members.Any(member =>
             {
-                var memberName = member.AttributeLists.GetNativeNameOrDefault(member.Identifier);
-                if (job.Vendors.FirstOrDefault(memberName.EndsWith) == null)
-                {
-                    return true;
-                }
-
-                return false;
+                var memberName = member.Identifier.Text;
+                return !job.Vendors.Any(vendor =>
+                    memberName.EndsWith(vendor, vendorSuffixComparison)
+                    && CanIdentifySuffix(memberName, vendor.Length)
+                );
             });
 
             // We should not identify member suffixes for trimming if the enum type already contains unsuffixed members
@@ -2208,18 +2288,19 @@ public partial class MixKhronosData(
                     [
                         .. node.Members.Select(member =>
                         {
+                            var memberName = member.Identifier.Text;
+
                             if (
-                                member
-                                    .AttributeLists.GetNativeNameOrDefault(member.Identifier)
-                                    .EndsWith(typeVendor)
+                                memberName.EndsWith(typeVendor, vendorSuffixComparison)
+                                && CanIdentifySuffix(memberName, typeVendor.Length)
                             )
                             {
                                 // Identify for trimming
                                 return member.WithAttributeLists(
                                     member.AttributeLists.AddNameAffix(
                                         NameAffixType.Suffix,
-                                        "KhronosImpliedVendor",
-                                        typeVendor,
+                                        NameAffixes.KhronosImpliedVendor,
+                                        member.Identifier.Text[^typeVendor.Length..],
                                         true
                                     )
                                 );
@@ -2369,7 +2450,7 @@ public partial class MixKhronosData(
         // this information will mostly be used to enhance the enums scraped from the headers (eg: native name and bitmask information).
         var anyNamespaced =
             doc.Element("registry")?.Elements("enums").Attributes("namespace").Any() ?? false;
-        var likelyOpenCL = false; // OpenCL specific
+        var isLikelyOpenCL = false; // OpenCL specific
         var topLevelIntentionalExclusions = new HashSet<string>(); // OpenCL specific
 
         // Parse enum groups
@@ -2385,6 +2466,7 @@ public partial class MixKhronosData(
             var baseType = enumNamespace != null ? $"{enumNamespace}enum" : null;
 
             string? namespaceGroupName = null;
+            string? namespaceGroupNativeName = null;
             if (enumNamespace != null)
             {
                 if (!enumNamespace.All(char.IsUpper))
@@ -2392,30 +2474,31 @@ public partial class MixKhronosData(
                     // Use the namespace name directly if it is not all uppercase
                     // Eg: WGLLayerPlaneMask
                     namespaceGroupName = enumNamespace;
+                    namespaceGroupNativeName = enumNamespace;
                 }
                 else
                 {
                     // Otherwise, suffix the name with -Enum
                     // Eg: GLEnum, ALEnum, WGLEnum
                     namespaceGroupName = $"{enumNamespace}Enum";
+                    namespaceGroupNativeName = $"{enumNamespace}enum";
                 }
             }
 
             // Create a group for the namespace as well i.e. GLEnum, WGLEnum, etc
-            if (namespaceGroupName is not null)
+            if (
+                namespaceGroupName != null
+                && namespaceGroupNativeName != null
+                && !data.Groups.ContainsKey(namespaceGroupNativeName)
+            )
             {
-                if (!data.Groups.TryGetValue(namespaceGroupName, out var namespaceGroup))
+                data.Groups[namespaceGroupNativeName] = new EnumGroup()
                 {
-                    namespaceGroup = new EnumGroup()
-                    {
-                        Name = namespaceGroupName,
-                        NativeName = $"{enumNamespace}enum",
-                        BaseType = baseType,
-                        Namespace = enumNamespace,
-                    };
-
-                    data.Groups[namespaceGroupName] = namespaceGroup;
-                }
+                    Name = namespaceGroupName,
+                    NativeName = namespaceGroupNativeName,
+                    BaseType = baseType,
+                    Namespace = enumNamespace,
+                };
             }
 
             // Vulkan/OpenXR/OpenCL enum name
@@ -2428,7 +2511,9 @@ public partial class MixKhronosData(
             groupName = groupName?.Replace("FlagBits", "Flags");
             nativeName ??= groupName;
 
-            // Skip Vulkan API Constants since it is not an enum
+            // Skip constants since these aren't enums
+            // This was originally added to handle Vulkan's "API Constants" block
+            // Apparently OpenXR does not use any special annotation, so this misses that
             if (block.Attribute("type")?.Value == "constants")
             {
                 continue;
@@ -2441,7 +2526,7 @@ public partial class MixKhronosData(
             // from occurring on the top-level intentional exclusions because they're special numbers/constants.
             var topLevelIntentionalExclusion =
                 groupName != null
-                && namespaceGroupName == null
+                && namespaceGroupNativeName == null
                 && IsIntentionalExclusion(groupName);
             static bool IsIntentionalExclusion(string groupName) =>
                 groupName.StartsWith("Constants") // these are constants
@@ -2455,7 +2540,12 @@ public partial class MixKhronosData(
             // https://github.com/dotnet/Silk.NET/blob/d8919600/src/Core/Silk.NET.BuildTools/Converters/Readers/OpenCLReader.cs#L855-L870
             if (!anyNamespaced && groupName is not null && !topLevelIntentionalExclusion)
             {
-                FixupGroupNameForOpenCL(ref groupName, ref likelyOpenCL, ref isBitmask);
+                FixupGroupNameForOpenCL(
+                    ref groupName,
+                    ref nativeName,
+                    ref isLikelyOpenCL,
+                    ref isBitmask
+                );
             }
 
             // Initialize the group before enum members are parsed below
@@ -2463,9 +2553,10 @@ public partial class MixKhronosData(
             // 1. The native name is correct
             // 2. Whether the enum is a bitmask is correct
             // 3. Empty groups are recorded properly
-            if (groupName != null && !IsUngroupable(groupName))
+            nativeName ??= groupName;
+            if (groupName != null && nativeName != null && !IsUngroupable(nativeName))
             {
-                data.Groups[groupName] = data.Groups.TryGetValue(groupName, out var group)
+                data.Groups[nativeName] = data.Groups.TryGetValue(nativeName, out var group)
                     ? group with
                     {
                         IsDefinitelyBitmask = isBitmask,
@@ -2473,11 +2564,11 @@ public partial class MixKhronosData(
                     : new EnumGroup()
                     {
                         Name = groupName,
-                        NativeName = nativeName ?? groupName,
+                        NativeName = nativeName,
                         BaseType = baseType,
 
                         IsDefinitelyBitmask = isBitmask,
-                        ExclusiveVendor = VendorFromString(groupName, vendors),
+                        ExclusiveVendor = VendorFromEnumName(groupName, vendors),
                         Namespace = enumNamespace,
                     };
             }
@@ -2509,18 +2600,18 @@ public partial class MixKhronosData(
                     );
 
                 // Get the vendor (if the enum name ends with a vendor that is).
-                var memberVendor = VendorFromString(memberName, vendors);
+                var memberVendor = VendorFromEnumName(memberName, vendors);
 
                 // Add the enum member to the namespace enum, the main enum group, and its additional OpenGL-style groups
                 var memberGroupNames = new HashSet<string>();
-                if (namespaceGroupName != null)
+                if (namespaceGroupNativeName != null)
                 {
-                    memberGroupNames.Add(namespaceGroupName);
+                    memberGroupNames.Add(namespaceGroupNativeName);
                 }
 
                 if (groupName != null)
                 {
-                    memberGroupNames.Add(groupName);
+                    memberGroupNames.Add(nativeName ?? groupName);
                 }
 
                 if (additionalGroups != null)
@@ -2579,6 +2670,30 @@ public partial class MixKhronosData(
                     .Concat(x.Attribute("name")?.Value is { Length: > 0 } alias ? [alias] : [])
             )
             .ToHashSet();
+
+        // Gather symbol data for symbol lookups when reading function annotations
+        // This was added to handle OpenXR's XML spec
+        var symbolMap = new Dictionary<string, string>();
+        {
+            var nodes = doc.Elements("registry").Elements("enums").Elements("enum");
+            nodes = nodes.Concat(
+                doc.Elements("registry")
+                    .Elements("extensions")
+                    .Elements("extension")
+                    .Elements("require")
+                    .Elements("enum")
+            );
+
+            foreach (var node in nodes)
+            {
+                var name = node.Attribute("name")?.Value;
+                var value = node.Attribute("value")?.Value;
+                if (name != null && value != null)
+                {
+                    symbolMap[name] = value;
+                }
+            }
+        }
 
         // Read the annotations from the functions
         foreach (var func in doc.Elements("registry").Elements("commands").Elements("command"))
@@ -2639,7 +2754,7 @@ public partial class MixKhronosData(
                 var indirection = element?.Value.AsSpan().GetIndirectionLevels() ?? 0;
                 Span<bool> mutability = stackalloc bool[indirection + 1];
                 var outerCount = 0;
-                element?.Value.AsSpan().GetTypeDetails(mutability, out outerCount);
+                element?.Value.AsSpan().GetTypeDetails(mutability, out outerCount, symbolMap);
                 if (
                     (grp is not null && data.Groups.ContainsKey(grp))
                     || handle is not null
@@ -2687,73 +2802,40 @@ public partial class MixKhronosData(
         }
 
         // The relative sanity of the other specs stops here.
-        if (!likelyOpenCL)
+        data.IsLikelyOpenCL = isLikelyOpenCL;
+        if (!isLikelyOpenCL)
         {
             return;
         }
 
-        // Add empty enums that are defined in the C headers but have no members (yet).
-        // This is also used as a type hinting stage.
-        foreach (
-            var @enum in doc.Elements("registry")
-                .Elements("types")
-                .Elements("type")
-                .Where(e =>
-                    e.Elements("type").SingleOrDefault()?.Value is "cl_bitfield" or "cl_properties"
-                )
-                .Elements("name")
-        )
+        // Update enum type information
+        // This also adds enum defined in the XML, but do not have members yet
+        foreach (var typeNode in doc.Elements("registry").Elements("types").Elements("type"))
         {
-            // We don't have to do horrible string manipulation here because this ends up in the actual C header, so
-            // it's actually correct for once.
-            if (!data.Groups.ContainsKey(@enum.Value))
+            var name = typeNode.Element("name")?.Value;
+            var baseType = typeNode.Element("type")?.Value;
+            if (name is null || (baseType != "cl_bitfield" && baseType != "cl_properties"))
             {
-                data.Groups[@enum.Value] = new EnumGroup()
+                continue;
+            }
+
+            // These type names are the same in the XML as they are in the C header, so no string manipulation required
+            data.Groups[name] = data.Groups.TryGetValue(name, out var existing)
+                ? existing with
                 {
-                    Name = @enum.Value,
-                    NativeName = @enum.Value,
-                    // cl_properties and cl_bitfield are both cl_ulong which is ulong
-                    // We currently use cl_bitfield to represent the backing type of OpenCL enums
-                    // Decision was made here: https://github.com/dotnet/Silk.NET/pull/2534#discussion_r2686840153
-                    BaseType = "cl_bitfield",
+                    BaseType = existing.BaseType ?? baseType,
+                    IsDefinitelyBitmask = existing.IsDefinitelyBitmask || baseType == "cl_bitfield",
+                    ExclusiveVendor = existing.ExclusiveVendor ?? VendorFromEnumName(name, vendors),
+                }
+                : new EnumGroup()
+                {
+                    Name = name,
+                    NativeName = name,
+                    BaseType = baseType,
 
-                    IsDefinitelyBitmask = @enum.Parent?.Element("type")?.Value == "cl_bitfield",
-                    ExclusiveVendor = VendorFromString(@enum.Value, vendors),
+                    IsDefinitelyBitmask = baseType == "cl_bitfield",
+                    ExclusiveVendor = VendorFromEnumName(name, vendors),
                 };
-            }
-        }
-
-        void FixupGroupNameForOpenCL(
-            ref string groupName,
-            ref bool isLikelyOpenCL,
-            ref bool isBitmask
-        )
-        {
-            if (groupName.StartsWith("ErrorCodes") && groupName.Contains('.'))
-            {
-                groupName = "ErrorCodes";
-                isLikelyOpenCL = true;
-            }
-            else if (groupName.EndsWith(".flags"))
-            {
-                // NOTE: I've actually gone ahead and disagreed with the original code here because why do we want to
-                // strip flags out of the name? There are only three instances of this in the spec currently:
-                // cl_arm_svm_alloc.flags, cl_arm_device_svm_capabilities.flags, and
-                // cl_intel_advanced_motion_estimation.flags
-                //groupName = groupName[..^".flags".Length];
-                isBitmask = true;
-                isLikelyOpenCL = true;
-            }
-
-            if (groupName.Contains('.'))
-            {
-                logger.LogDebug(
-                    "OpenCL-style group name syntax: \"{}\" (replacing '.' with '_')",
-                    groupName
-                );
-                groupName = groupName.Replace('.', '_');
-                isLikelyOpenCL = true;
-            }
         }
 
         // Okay so this bit is absolutely freaking bonkers. We're using the <require comment="..."> attribute for
@@ -2775,7 +2857,7 @@ public partial class MixKhronosData(
                     "Expected \"name\" attribute on <enum> in <require> tag."
                 );
 
-            var thisVendor = VendorFromString(enumName, vendors);
+            var thisVendor = VendorFromEnumName(enumName, vendors);
 
             // If we've already intentionally excluded this enum, don't change that now. L880
             if (topLevelIntentionalExclusions.Contains(enumName))
@@ -2863,23 +2945,31 @@ public partial class MixKhronosData(
             {
                 // Just in case.
                 var tempVar = false;
-                var groupStr = group;
-                FixupGroupNameForOpenCL(ref groupStr, ref likelyOpenCL, ref tempVar);
+                var groupName = group;
+                var nativeName = group;
+                FixupGroupNameForOpenCL(
+                    ref groupName,
+                    ref nativeName,
+                    ref isLikelyOpenCL,
+                    ref tempVar
+                );
+
+                nativeName ??= groupName;
 
                 // Update the group info if it doesn't exist.
-                if (data.Groups.TryGetValue(groupStr, out var groupInfo))
+                if (data.Groups.TryGetValue(nativeName, out var groupInfo))
                 {
                     if (thisVendor is not null && groupInfo.ExclusiveVendor != thisVendor)
                     {
-                        data.Groups[groupStr] = groupInfo with { ExclusiveVendor = null };
+                        data.Groups[nativeName] = groupInfo with { ExclusiveVendor = null };
                     }
                 }
                 else
                 {
-                    data.Groups[groupStr] = new EnumGroup()
+                    data.Groups[nativeName] = new EnumGroup()
                     {
-                        Name = groupStr,
-                        NativeName = groupStr,
+                        Name = nativeName,
+                        NativeName = nativeName,
 
                         IsDefinitelyBitmask =
                             (typeStr is not null && typeStr.Contains("bitfield"))
@@ -2895,16 +2985,148 @@ public partial class MixKhronosData(
                 }
 
                 // Mark this enum.
-                enumToGroups.Add(groupStr);
+                enumToGroups.Add(nativeName);
+            }
+        }
+
+        // Post-process the OpenCL group names
+        //
+        // This targets names like cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel,
+        // which becomes cl_advanced_motion_estimation_motion_detect_desc_intel after transformation.
+        //
+        // We can do this transformation here because these enum types
+        // will never be output by ClangScraper due to the naming scheme.
+        // This has the benefit of avoiding a symbol-based rename later.
+        {
+            // Hardcoding because we know this is OpenCL
+            // We also make a lot of assumptions about the format of the relevant names
+            const string globalPrefix = "cl_";
+
+            // Filter for relevant names
+            var groups = data
+                .Groups.Values.Where(group =>
+                    group.NativeName.Contains('.')
+                    && group.NativeName.StartsWith(globalPrefix)
+                    && group.NativeName.All(c => !char.IsUpper(c))
+                )
+                .ToList();
+
+            // Mapping from native name to new managed name
+            var groupsToRename = new Dictionary<string, string>();
+
+            foreach (var group in groups)
+            {
+                // Split into sections
+                var sections = group.NativeName.Split('.');
+
+                // Remove global prefix from each section
+                for (var i = 0; i < sections.Length; i++)
+                {
+                    ref var section = ref sections[i];
+                    if (section.StartsWith(globalPrefix))
+                    {
+                        section = section[globalPrefix.Length..];
+                    }
+                }
+
+                // Look for vendor prefixes/suffixes in each section and remove them
+                // Assume that names will not have two different vendors
+                string? identifiedVendor = null;
+                foreach (var vendor in data.Vendors)
+                {
+                    var lowercaseVendor = vendor.ToLower();
+                    for (var i = 0; i < sections.Length; i++)
+                    {
+                        ref var section = ref sections[i];
+                        if (section.StartsWith(lowercaseVendor))
+                        {
+                            identifiedVendor = vendor;
+                            section = section[(lowercaseVendor.Length + 1)..];
+                        }
+
+                        if (section.EndsWith(lowercaseVendor))
+                        {
+                            identifiedVendor = vendor;
+                            section = section[..^(lowercaseVendor.Length + 1)];
+                        }
+                    }
+                }
+
+                // Assemble new name
+                var newName = $"{globalPrefix}{string.Join('_', sections)}";
+                if (identifiedVendor != null)
+                {
+                    newName = $"{newName}_{identifiedVendor.ToLowerInvariant()}";
+                }
+
+                groupsToRename[group.NativeName] = newName;
+            }
+
+            // Apply renames
+            foreach (var (nativeName, newManagedName) in groupsToRename)
+            {
+                data.Groups[nativeName] = data.Groups[nativeName] with { Name = newManagedName };
             }
         }
     }
 
-    private static string? VendorFromString(string str, HashSet<string> vendors) =>
-        str.LastIndexOf('_') is > 0 and var idx
-        && idx < str.Length
-        && str[idx..].ToUpper() is var vend
-        && vendors.Contains(vend)
-            ? vend
+    /// <summary>
+    /// This normalizes some inconsistencies that the OpenCL group names have compared to the other Khronos XML specs.
+    /// </summary>
+    /// <remarks>
+    /// Currently only intended to be used by <see cref="ReadGroups"/>.
+    /// </remarks>
+    private void FixupGroupNameForOpenCL(
+        ref string groupName,
+        ref string? nativeName,
+        ref bool isLikelyOpenCL,
+        ref bool isBitmask
+    )
+    {
+        // Merge all ErrorCodes blocks
+        if (groupName.StartsWith("ErrorCodes") && groupName.Contains('.'))
+        {
+            groupName = "ErrorCodes";
+            nativeName = "ErrorCodes";
+            isLikelyOpenCL = true;
+        }
+
+        if (groupName.EndsWith(".flags"))
+        {
+            // NOTE from Perksey: I've actually gone ahead and disagreed with the original code here because why do we want to
+            // strip flags out of the name? There are only three instances of this in the spec currently:
+            // cl_arm_svm_alloc.flags, cl_arm_device_svm_capabilities.flags, and
+            // cl_intel_advanced_motion_estimation.flags
+
+            // groupName = groupName[..^".flags".Length];
+            isBitmask = true;
+            isLikelyOpenCL = true;
+        }
+
+        if (groupName.Contains('.'))
+        {
+            logger.LogDebug(
+                "OpenCL-style group name syntax: \"{}\" (replacing '.' with '_')",
+                groupName
+            );
+            groupName = groupName.Replace('.', '_');
+            isLikelyOpenCL = true;
+        }
+    }
+
+    /// <summary>
+    /// Extracts the vendor suffix from an enum type or enum member name.
+    /// </summary>
+    /// <remarks>
+    /// Also handles OpenCL-style names, which are in lower snake case instead of upper snake case.
+    /// <para/>
+    /// Currently only intended to be used by <see cref="ReadGroups"/>.
+    /// <see cref="RewriterPhase3"/> has an implementation that works for both enum and non-enum names, but behaves differently.
+    /// </remarks>
+    private static string? VendorFromEnumName(string name, HashSet<string> vendors) =>
+        name.LastIndexOf('_') is > 0 and var idx
+        && name[idx..].ToUpper() is var vendor
+        && vendors.Contains(vendor)
+            ? vendor
             : null;
 }

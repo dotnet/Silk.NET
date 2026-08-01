@@ -1,0 +1,41 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from the OpenXR headers and corresponding dependencies.
+// Original source is Copyright 2017-2026 The Khronos Group Inc. Licensed under the MIT license.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace Silk.NET.OpenXR;
+
+[NativeName("XrEventDataPerfSettingsEXT")]
+[SupportedApiProfile("openxr")]
+public unsafe partial struct EventDataPerfSettingsEXT
+{
+    [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
+    public StructureType Type = StructureType.EventDataPerfSettingsEXT;
+
+    [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
+    public void* Next;
+
+    [NativeName("domain")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
+    public PerfSettingsDomainEXT Domain;
+
+    [NativeName("subDomain")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
+    public PerfSettingsSubDomainEXT SubDomain;
+
+    [NativeName("fromLevel")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
+    public PerfSettingsNotificationLevelEXT FromLevel;
+
+    [NativeName("toLevel")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
+    public PerfSettingsNotificationLevelEXT ToLevel;
+
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
+    public EventDataPerfSettingsEXT() { }
+}

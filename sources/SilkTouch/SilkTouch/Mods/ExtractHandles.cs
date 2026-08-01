@@ -293,6 +293,7 @@ public class ExtractHandles(ILogger<ExtractHandles> logger) : Mod
             {
                 var fullyQualifiedName = string.IsNullOrWhiteSpace(ns) ? name : $"{ns}.{name}";
                 var structDeclarationSyntax = StructDeclaration(name)
+                    .WithAttributeLists(new SyntaxList<AttributeListSyntax>().WithNativeName(name))
                     .WithModifiers(
                         TokenList(
                             Token(SyntaxKind.PublicKeyword),

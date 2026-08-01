@@ -1,16 +1,16 @@
-﻿// VkPerformanceCounterDescriptionARM.gen.cs
+﻿// VkPerformanceCounterDescriptionARM_name.gen.cs
+namespace Silk.NET.Vulkan;
+[InlineArray(256)]
+[NameAffix("Prefix", "NestedStructParent", nameof(VkPerformanceCounterDescriptionARM))]
+public struct VkPerformanceCounterDescriptionARM_name
+{
+    public sbyte e0;
+}
+
+// VkPerformanceCounterDescriptionARM.gen.cs
 namespace Silk.NET.Vulkan;
 public struct VkPerformanceCounterDescriptionARM
 {
     [NativeTypeName("char[256]")]
-    public VkPerformanceCounterDescriptionARMname name;
-}
-
-// VkPerformanceCounterDescriptionARMname.gen.cs
-namespace Silk.NET.Vulkan;
-[InlineArray(256)]
-[NameAffix("Prefix", "NestedStructParent", nameof(VkPerformanceCounterDescriptionARM))]
-public struct VkPerformanceCounterDescriptionARMname
-{
-    public sbyte e0;
+    public VkPerformanceCounterDescriptionARM_name name;
 }

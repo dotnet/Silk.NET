@@ -233,9 +233,7 @@ public class TransformHandles(
             var structName = node.Identifier.Text;
             return node.WithIdentifier(Identifier(structName))
                 .WithAttributeLists(
-                    new SyntaxList<AttributeListSyntax>()
-                        .WithNativeName(structName)
-                        .AddNameAffix(NameAffixType.Suffix, "HandleType", "Handle")
+                    node.AttributeLists.AddNameAffix(NameAffixType.Suffix, "HandleType", "Handle")
                 )
                 .WithMembers(
                     List(

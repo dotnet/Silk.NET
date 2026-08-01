@@ -15,11 +15,14 @@ Metal.
 
 ## Generator Overview
 
-There are two main things to configure:
+There are three main things to configure:
 
 1. Silk 3 - This is the [`generator.json`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/generator.json) file.
 
 2. ClangSharpPInvokeGenerator - This is the [`eng/silktouch`](https://github.com/dotnet/Silk.NET/tree/develop/3.0/eng/silktouch) folder.
+
+3. C# Project File - This is your typical `.csproj` file and needs to be added to your solution before running the
+   SilkTouch generator.
 
 Both are organized by native API.
 
@@ -62,8 +65,8 @@ files). These response files store command line arguments to be passed into Clan
 Note that these files can be stored anywhere since the SilkTouch configuration lets you configure where the SilkTouch
 generator looks for these response files.
 
-> To read more about ClangSharpPInvokeGenerator's command line arguments, a good option is to install the tool directly
-> and use `--help` to display its command line documentation.
+> To read more about ClangSharpPInvokeGenerator's command line arguments, you can either refer to
+> [ClangSharp's README](https://github.com/dotnet/ClangSharp) or install the tool locally:
 >
 > ```sh
 > dotnet tool install --global ClangSharpPInvokeGenerator
@@ -211,14 +214,59 @@ static Vk()
 }
 ```
 
+### Initial Project Creation
+
+You must create the initial project for the generated bindings to go in. This also goes for the solution file.
+SilkTouch does not modify either file.
+
+The paths for these files correspond to the following options in the `generator.json` file:
+- `Jobs.JOB_NAME.SourceProject`
+- `Jobs.JOB_NAME.Solution`
+
+(TODO: Does this apply to `Jobs.JOB_NAME.TestProject` as well?)
+
+For the source project file, ensure that the project references the `Silk.NET.Core` project or package by using the
+corresponding `ProjectReference` or `PackageReference`. Also ensure the `AllowUnsafeBlocks` property is set to true.
+
+> Note: In Silk's repository, `AllowUnsafeBlocks` is set globally by
+> [Directory.Build.props](https://github.com/dotnet/Silk.NET/blob/develop/3.0/Directory.Build.props).
+>
+> (TODO: Not sure if other properties are required.)
+
+For the solution file, both `.sln` and `.slnx` file formats are supported. This is because we defer to Roslyn and
+MSBuild under the hood.
+
+### Running the Generator
+
+The generator can be run directly from source using the following command:
+
+```sh
+dotnet run --project sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj -c Release -- generator.json --only SDL
+```
+
+You may use the `--help` option to display additional information about available options.
+
+```
+dotnet run --project sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj -c Release -- --help
+```
+
+Some notable options include the `--only` and `--skip` options. `--only` lets you specify the exact jobs to run.
+`--skip` is the opposite and lets you specify the jobs to skip. If `--only` and `--skip` is specified for the same job,
+`--skip` takes precedence.
+
+Warning: There are currently some generator bugs associated with running multiple jobs in the same process. We recommend
+that you use `--only` to ensure that only one job is executed per process. Running multiple processes in parallel is
+fine.
+
 ### Generated Bindings Output
 
 All generated binding will be output to the `Jobs.JOB_NAME.SourceProject` path defined in `generator.json`.
 
-These generated files all have the `.gen.cs` suffix and most of them are partial type declarations.
-This means by creating a similarly named `.cs` file and using the `partial` C# keyword, you can add to the type.
+These generated files all have the `.gen.cs` suffix and most of them are partial type declarations. This means by
+creating a similarly named `.cs` file and using the `partial` C# keyword, you can add to the type.
 
-Do not modify the `.gen.cs` files since running the generator again will overwrite those changes.
+Do not modify the `.gen.cs` files since running the generator again will overwrite those changes. Files without this
+extension are left untouched by the generator.
 
 ### Packing the Generated Bindings
 

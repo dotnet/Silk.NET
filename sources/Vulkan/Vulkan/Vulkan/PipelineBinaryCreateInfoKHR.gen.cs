@@ -17,6 +17,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -28,6 +29,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -39,6 +41,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -50,6 +53,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -61,6 +65,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -71,6 +76,7 @@ public unsafe partial struct PipelineBinaryCreateInfoKHR
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]

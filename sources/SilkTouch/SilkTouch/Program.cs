@@ -16,7 +16,7 @@ internal class Program
     private static Option<string[]> SkipOption { get; } =
         new(["--skip", "-s"], Array.Empty<string>)
         {
-            Description = "A list of job names to skip.  Takes precedence over --only.",
+            Description = "A list of job names to skip. Takes precedence over --only.",
             Arity = ArgumentArity.ZeroOrMore,
         };
 

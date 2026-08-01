@@ -1,0 +1,11 @@
+﻿// Test.gen.cs
+[NameAffix("Suffix", "Test", nameof(B.CSuffix))]
+public struct ACSuffix
+{
+}
+
+public struct B
+{
+    [NameAffix("Suffix", "Test", "Suffix")]
+    public static int CSuffix;
+}

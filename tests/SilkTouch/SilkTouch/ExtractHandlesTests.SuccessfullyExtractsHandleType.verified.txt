@@ -7,6 +7,7 @@ public class Vk
 }
 
 // VkInstance_T.gen.cs
+[NativeName("VkInstance_T")]
 public unsafe partial struct VkInstance_T
 {
 }

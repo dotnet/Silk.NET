@@ -69,6 +69,15 @@ public class PrettifyNames(
         public bool Prettify { get; init; } = false;
 
         /// <summary>
+        /// Whether the affix should be fully capitalized.
+        /// Defaults to false.
+        /// </summary>
+        /// <remarks>
+        /// Applies after <see cref="Prettify"/>, if <see cref="Prettify"/> is also enabled.
+        /// </remarks>
+        public bool Capitalize { get; init; } = false;
+
+        /// <summary>
         /// The order with which the affix is applied.
         /// <para/>
         /// Does nothing if <see cref="Remove"/> is true.
@@ -199,10 +208,10 @@ public class PrettifyNames(
         var typeNames = newNames.GetValueOrDefault("", []);
         var typeNamesLongestFirst = typeNames.OrderByDescending(x => x.Key.Length).ToArray();
 
-        var documentPaths = proj
-            .Documents.Select(d => d.RelativePath())
-            .Where(d => d != null)
-            .ToHashSet();
+        var documentPaths = new HashSet<string?>(
+            proj.Documents.Select(d => d.RelativePath()).Where(d => d != null),
+            StringComparer.OrdinalIgnoreCase // Also handle casing differences
+        );
 
         foreach (var docId in proj.DocumentIds)
         {
@@ -244,7 +253,10 @@ public class PrettifyNames(
             if (!documentPaths.Add(newPath))
             {
                 logger.LogError(
-                    $"{originalName} -> {doc.Name} failed to rename file as a file already exists at {newPath}"
+                    "Refusing to rename doc from {OldName} to {NewNew} since another document already exists at {Path}",
+                    originalName,
+                    doc.Name,
+                    newPath
                 );
 
                 continue;
@@ -638,7 +650,7 @@ public class PrettifyNames(
     {
         private readonly record struct MemberKey(string Scope, string Member);
 
-        private readonly record struct NameFragment(string Value, bool Prettify);
+        private readonly record struct NameFragment(string Value, bool Prettify, bool Capitalize);
 
         private static readonly NameAffixConfiguration _defaultConfig = new();
 
@@ -677,13 +689,14 @@ public class PrettifyNames(
                             continue;
                         }
 
-                        var referencedMemberOriginalName = affix.Affix;
+                        var reference = affix.Affix;
                         if (
                             TryResolveName(
                                 context,
                                 scope,
-                                referencedMemberOriginalName,
-                                out var referencedMemberScope,
+                                reference,
+                                out var memberScope,
+                                out var memberName,
                                 out _,
                                 out var isInFinalSet
                             )
@@ -694,18 +707,15 @@ public class PrettifyNames(
                             // Names from the final set should therefore not affect the processing order
                             if (!isInFinalSet)
                             {
-                                var referencedMemberkey = new MemberKey(
-                                    referencedMemberScope,
-                                    referencedMemberOriginalName
-                                );
+                                var referencedMemberKey = new MemberKey(memberScope, memberName);
                                 if (
                                     !notifyDependantByKey.TryGetValue(
-                                        referencedMemberkey,
+                                        referencedMemberKey,
                                         out var dependants
                                     )
                                 )
                                 {
-                                    notifyDependantByKey[referencedMemberkey] = dependants = [];
+                                    notifyDependantByKey[referencedMemberKey] = dependants = [];
                                 }
 
                                 dependants.Add(new MemberKey(scope, member));
@@ -920,7 +930,7 @@ public class PrettifyNames(
                 }
             );
 
-            var nameFragments = new List<NameFragment> { new(baseName, false) };
+            var nameFragments = new List<NameFragment> { new(baseName, false, false) };
             foreach (var affix in affixes)
             {
                 var affixValue = affix.Affix;
@@ -931,6 +941,7 @@ public class PrettifyNames(
                             context,
                             scope,
                             affixValue,
+                            out _,
                             out _,
                             out var referencedMemberValue,
                             out _
@@ -944,7 +955,11 @@ public class PrettifyNames(
                 var affixConfig = GetConfiguration(affix);
                 if (!affixConfig.Remove)
                 {
-                    var fragment = new NameFragment(affixValue, affixConfig.Prettify);
+                    var fragment = new NameFragment(
+                        affixValue,
+                        affixConfig.Prettify,
+                        affixConfig.Capitalize
+                    );
 
                     if (affix.Type == NameAffixType.Prefix)
                     {
@@ -959,113 +974,110 @@ public class PrettifyNames(
 
             // Build result by merging fragments
             var result = "";
-            var previousFragment = new NameFragment("", false);
-            foreach (var nameFragment in nameFragments)
-            {
-                switch (previousFragment.Prettify, nameFragment.Prettify)
-                {
-                    case (true, true):
-                    {
-                        previousFragment = new NameFragment(
-                            $"{previousFragment.Value}_{nameFragment.Value}",
-                            true
-                        );
-                        break;
-                    }
-                    case (false, false):
-                    {
-                        previousFragment = new NameFragment(
-                            $"{previousFragment.Value}{nameFragment.Value}",
-                            false
-                        );
-                        break;
-                    }
-                    default:
-                    {
-                        OutputFragment(previousFragment);
-                        previousFragment = nameFragment;
-                        break;
-                    }
-                }
-            }
-
-            OutputFragment(previousFragment);
-
-            return result;
-
-            void OutputFragment(NameFragment fragment)
+            foreach (var fragment in nameFragments)
             {
                 var fragmentValue = fragment.Value;
-                if (previousFragment.Prettify)
+                if (fragment.Prettify)
                 {
                     fragmentValue = namePrettifier.Prettify(fragmentValue, true);
                 }
 
+                if (fragment.Capitalize)
+                {
+                    fragmentValue = fragmentValue.ToUpperInvariant();
+                }
+
                 result += fragmentValue;
             }
+
+            return result;
         }
 
         /// <summary>
         /// Tries the resolve the current output name of the referenced member from the current scope.
         /// </summary>
         /// <param name="context">The name processor context. Used during the name resolution process.</param>
-        /// <param name="referenceScope">The scope from which the reference was made. The reference scope and its parent scopes will be used during the resolution process.</param>
-        /// <param name="referencedMember">The original name of the member being referenced.</param>
-        /// <param name="referencedMemberScope">The scope in which the referenced member was found.</param>
-        /// <param name="referencedMemberValue">The current output name of the member being referenced.</param>
+        /// <param name="resolutionScope">The scope from which the reference was made. The reference scope and its parent scopes will be used during the resolution process.</param>
+        /// <param name="reference">The reference to resolve a member for. Can be qualified.</param>
+        /// <param name="memberScope">The scope in which the referenced member was found.</param>
+        /// <param name="memberName">The current name of the referenced member.</param>
+        /// <param name="memberValue">The current output name of the member being referenced.</param>
         /// <param name="isInFinalSet">Whether the referenced member was found in the final set.</param>
         private bool TryResolveName(
             NameProcessorContext context,
-            string referenceScope,
-            string referencedMember,
-            [NotNullWhen(true)] out string? referencedMemberScope,
-            [NotNullWhen(true)] out string? referencedMemberValue,
+            string resolutionScope,
+            string reference,
+            [NotNullWhen(true)] out string? memberScope,
+            [NotNullWhen(true)] out string? memberName,
+            [NotNullWhen(true)] out string? memberValue,
             out bool isInFinalSet
         )
         {
-            var currentScope = referenceScope;
+            // referencedMember can be in the format ContainingType.Member
+            // This splits the qualifier out
+            string referenceScope;
+            string referenceName;
+            if (reference.IndexOf('.') is var index and >= 0)
+            {
+                referenceScope = reference[..index];
+                referenceName = reference[(index + 1)..];
+            }
+            else
+            {
+                referenceScope = "";
+                referenceName = reference;
+            }
+
             while (true)
             {
+                var testScope =
+                    resolutionScope != "" && referenceScope != ""
+                        ? $"{resolutionScope}.{referenceScope}"
+                        : $"{resolutionScope}{referenceScope}";
+
                 // Try resolve from working set
                 if (
-                    context.Names.TryGetValue(currentScope, out var workingScopeMembers)
+                    context.Names.TryGetValue(testScope, out var workingScopeMembers)
                     && workingScopeMembers.TryGetValue(
-                        referencedMember,
+                        referenceName,
                         out var referencedCandidateNames
                     )
                 )
                 {
-                    referencedMemberScope = currentScope;
-                    referencedMemberValue = referencedCandidateNames.Primary;
+                    memberScope = testScope;
+                    memberName = referenceName;
+                    memberValue = referencedCandidateNames.Primary;
                     isInFinalSet = false;
                     return true;
                 }
 
                 // Try resolve from final set
                 if (
-                    context.FinalNames.TryGetValue(currentScope, out var finalScopeMembers)
-                    && finalScopeMembers.TryGetValue(referencedMember, out var referencedFinalName)
+                    context.FinalNames.TryGetValue(testScope, out var finalScopeMembers)
+                    && finalScopeMembers.TryGetValue(referenceName, out var referencedFinalName)
                 )
                 {
-                    referencedMemberScope = currentScope;
-                    referencedMemberValue = referencedFinalName;
+                    memberScope = testScope;
+                    memberName = referenceName;
+                    memberValue = referencedFinalName;
                     isInFinalSet = true;
                     return true;
                 }
 
                 // Try to go up a scope
                 // This currently does not handle nested scopes
-                if (currentScope != "")
+                if (resolutionScope != "")
                 {
-                    currentScope = "";
+                    resolutionScope = "";
                     continue;
                 }
 
                 break;
             }
 
-            referencedMemberScope = null;
-            referencedMemberValue = null;
+            memberScope = null;
+            memberName = null;
+            memberValue = null;
             isInFinalSet = false;
             return false;
         }

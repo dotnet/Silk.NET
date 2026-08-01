@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubmitFlagBits")]
+[NativeName("VkSubmitFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum SubmitFlags : uint

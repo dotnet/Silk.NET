@@ -111,6 +111,9 @@ Stateless APIs are typically accessed through static methods, while stateful API
 objects. More information on this can be found in the
 [Static vs Instance Bindings](../../silk.net/static-vs-instance-bindings.md) document.
 
+`[DllImport]` is used over `[LibraryImport]` because `[LibraryImport]`'s source generator ends up using `[DllImport]`
+in its generated code.
+
 Usage recommendations:
 
 (TODO: To be added)
@@ -170,6 +173,9 @@ provide cross-platform bindings.
 - Enums use `uint` as their backing type on Linux instead of `int` like on Windows. Silk handles this by using
   `TransformEnums` to "coerce" the backing types to their Windows equivalents when possible.
 
+- C `long` is output as C# `long` on Windows and C# `nint` on Linux. Silk handles this by generating bindings on Windows
+  where possible.
+
 Note: There may be other differences not yet documented here. In the case new differences are discovered, please
 update this section. API-specific differences should not be documented here and should be documented in the
 [API-Specific Notes](api-specific-notes.md) document.
@@ -213,10 +219,6 @@ Usage recommendations:
 
 This mod should be used when the API being bound makes use of the pre-C99 enum pattern described above.
 
-This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
-mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
-being generated.
-
 ### ExtractFunctionPointers
 
 Mod categories: Creation
@@ -237,8 +239,15 @@ Name affix categories:
   delegate representation of a function pointer type to distinguish the delegate type from the struct type for extracted
   function pointers.
 
-- `FunctionPointerParent` - This is a prefix used by the delegate representation of a function pointer type. This is
-  used to ensure that the delegate type always uses the current name of its struct counterpart as part of its own name.
+- `FunctionPointerNameFallbackParent` - This is a prefix used by the struct representation of a function pointer type.
+  This is used in cases where a "fallback" name is used since there is no other native name available. For example, if
+  an unmanaged delegate was extracted from a method parameter, the method name and parameter name are joined together.
+  This prefix references the method name to ensure that the struct type uses the final name of the method as part of
+  its own name during name prettification.
+
+- `FunctionPointerParent` - This is a prefix used by the delegate representation of a function pointer type. This
+  prefix references the name of its struct counterpart to ensure that the delegate type uses the final name of its
+  struct counterpart as part of its own name during name prettification.
 
 These affixes are usually left unconfigured in `PrettifyNames`.
 
@@ -246,10 +255,6 @@ Usage recommendations:
 
 This mod should be used when a set of bindings contains unmanaged delegates annotated with `[NativeTypeName]`
 attributes.
-
-This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
-mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
-being generated.
 
 ### ExtractHandles
 
@@ -297,10 +302,6 @@ Furthermore, this mod should be used alongside `TransformHandles` so that the ha
 user-friendly version. `ExtractHandles` should be positioned before `TransformHandles` and any other mods that might use
 its results in the mod order.
 
-This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
-mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
-being generated.
-
 ### ExtractNestedTypes
 
 Mod categories: Creation
@@ -316,8 +317,8 @@ Examples for how `ExtractNestedTypes` works can be found in the `ExtractNestedTy
 Name affix categories:
 
 - `NestedStructParent` - This is a prefix that references the name of the type that the extracted type was previously
-  nested in. This is used to ensure that the extracted type always uses the current name of its original "parent" type
-  as part of its own name.
+  nested in. This ensures the extracted type uses the final name of its original "parent" type as part of its own name
+  during name prettification.
 
 These affixes are usually left unconfigured in `PrettifyNames`.
 
@@ -327,10 +328,6 @@ This mod must be used before `PrettifyNames` when using `PrettifyNames` and ther
 bindings. This is because `PrettifyNames` does not handle nesting when renaming identifiers. Other mods may have similar
 restrictions. This restriction is generally because nesting increases complexity, and as such, mods are written with the
 assumption that nested types are extracted beforehand.
-
-This mod was originally part of the now removed `ExtractNestedTyping` mod. For simplicity, feel free to include all
-mods originally from `ExtractNestedTyping`. However, you may also include the mods strictly needed for the bindings
-being generated.
 
 ### IdentifySharedPrefixes
 
@@ -496,13 +493,13 @@ the mod.
 
 Khronos-style XML specifications:
 
-- OpenAL: https://raw.githubusercontent.com/kcat/openal-soft/refs/heads/master/registry/xml/al.xml
-- OpenCL: https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/refs/heads/main/xml/cl.xml
-- OpenGL: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/refs/heads/main/xml/gl.xml
+- OpenAL: https://raw.githubusercontent.com/kcat/openal-soft/master/registry/xml/al.xml
+- OpenCL: https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/main/xml/cl.xml
+- OpenGL: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml
 - OpenGL Windows: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml
-- OpenGL X11: https://github.com/KhronosGroup/OpenGL-Registry/blob/main/xml/glx.xml
-- OpenXR: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK-Source/main/specification/registry/xr.xml
-- Vulkan: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/refs/heads/main/xml/vk.xml
+- OpenGL X11: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/glx.xml
+- OpenXR: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK/main/specification/registry/xr.xml
+- Vulkan: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/main/xml/vk.xml
 
 Be aware that these link to the latest version. Silk's repo may be using an older version of these XML files.
 

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceGroupPresentModeFlagBitsKHR")]
+[NativeName("VkDeviceGroupPresentModeFlagsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum DeviceGroupPresentModeFlagsKHR : uint

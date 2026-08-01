@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineCreationFeedbackFlagBits")]
+[NativeName("VkPipelineCreationFeedbackFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum PipelineCreationFeedbackFlags : uint

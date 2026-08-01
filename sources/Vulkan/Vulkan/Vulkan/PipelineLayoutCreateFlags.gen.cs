@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineLayoutCreateFlagBits")]
+[NativeName("VkPipelineLayoutCreateFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum PipelineLayoutCreateFlags : uint
@@ -24,4 +24,18 @@ public enum PipelineLayoutCreateFlags : uint
         ]
     )]
     IndependentSetsBitEXT = 0x2,
+
+    [NativeName("VK_PIPELINE_LAYOUT_CREATE_NO_TASK_SHADER_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_KHR_maintenance11+VK_EXT_shader_object+VK_EXT_mesh_shader",
+            "VK_KHR_maintenance11+VK_EXT_shader_object+VK_NV_mesh_shader",
+        ],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
+    NoTaskShaderBitKHR = 0x4,
 }

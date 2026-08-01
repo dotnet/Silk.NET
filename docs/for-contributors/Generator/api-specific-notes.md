@@ -1,23 +1,73 @@
 # API-Specific Notes
 
 This document's purpose is to note down any decisions or quirks that are specific to a library that Silk is generating
-bindings for.
+bindings for. It is fine for a section to be empty if we do not have any notes specific to that library.
 
 This is meant to be a living document. Please update this as new work is being done on the generator.
 
-## OpenAL
+Certain APIs are grouped together because they share similar characteristics.
+
+## C Bindings
+
+These are APIs that can be categorized as being straightforward C APIs or are C APIs that simply do not share
+characteristics with other bindings.
+
+### SDL
 
 Currently empty.
 
-## OpenGL
+## Khronos Bindings
 
-Currently empty.
+These are APIs managed either by Khronos or APIs managed in a similar way to the official Khronos APIs.
+These use the `MixKhronosData` mod and come with an XML spec.
 
-## SDL
+Be aware that the XML spec links point to the latest version. Silk's repo may be using an older version of these XML
+files.
 
-Currently empty.
+---
 
-## Vulkan
+For APIs that use the `Flags/FlagBits` pattern, the `Flags` version of the name is use for both the native name and
+managed name. This is because the XML data uses the `Flags` version to provide base type data. There was a time where
+we preferred the `FlagBits` version instead for the `[NativeName]` attribute. This is because searching for the
+`FlagBits` version online brings up a more useful documentation page.
+
+### OpenAL
+
+Spec file used: https://raw.githubusercontent.com/kcat/openal-soft/master/registry/xml/al.xml
+
+### OpenCL
+
+Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/main/xml/cl.xml
+
+The following warning is expected since we do not want to hardcode the version in our entrypoint header:
+
+```
+warning: cl_version.h: CL_TARGET_OPENCL_VERSION is not defined. Defaulting to 310 (OpenCL 3.1) [-W#pragma-messages]
+```
+
+### OpenGL
+
+Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml
+
+### OpenXR
+
+Spec file used: https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK/main/specification/registry/xr.xml
+
+There will be the following errors in the generation log. This is expected. These types are part of the XML
+specification, but not part of the main `openxr.h` header.
+
+API Constants shows up here, but not in Vulkan because OpenXR's XML lacks the `type="constants"` attribute that
+Vulkan's XML has.
+
+```
+fail: Silk.NET.SilkTouch.Mods.MixKhronosData[0] Enum "API Constants" has no base type. Please add TypeMap entry to the configuration. This enum group will be skipped.
+fail: Silk.NET.SilkTouch.Mods.MixKhronosData[0] Enum "XrAndroidThreadTypeKHR" has no base type. Please add TypeMap entry to the configuration. This enum group will be skipped.
+fail: Silk.NET.SilkTouch.Mods.MixKhronosData[0] Enum "XrLoaderInterfaceStructs" has no base type. Please add TypeMap entry to the configuration. This enum group will be skipped.
+```
+
+### Vulkan
+
+Spec file used: https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/main/xml/vk.xml
 
 There will be the following errors in the generation log. This is expected. These types are part of the XML
 specification, but not part of the main `vulkan.h` header.

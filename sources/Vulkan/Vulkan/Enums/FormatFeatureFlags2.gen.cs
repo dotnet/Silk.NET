@@ -128,6 +128,9 @@ public enum FormatFeatureFlags2 : ulong
     [NativeName("VK_FORMAT_FEATURE_2_VIDEO_ENCODE_DPB_BIT_KHR")]
     VideoEncodeDpbBitKHR = 0x10000000,
 
+    [NativeName("VK_FORMAT_FEATURE_2_BLOCK_MATCHING_SXD_BIT_QCOM")]
+    BlockMatchingSxdBitQCOM = 0x100000000000,
+
     [NativeName("VK_FORMAT_FEATURE_2_SAMPLED_IMAGE_BIT_KHR")]
     SampledImageBitKHR = 0x1,
 
@@ -260,6 +263,9 @@ public enum FormatFeatureFlags2 : ulong
     [NativeName("VK_FORMAT_FEATURE_2_VIDEO_ENCODE_EMPHASIS_MAP_BIT_KHR")]
     VideoEncodeEmphasisMapBitKHR = 0x4000000000000,
 
+    [NativeName("VK_FORMAT_FEATURE_2_SAMPLED_IMAGE_FILTER_LINEAR_2D_BIT_IMG")]
+    SampledImageFilterLinear2DBitIMG = 0x200000000000,
+
     [NativeName("VK_FORMAT_FEATURE_2_DEPTH_COPY_ON_COMPUTE_QUEUE_BIT_KHR")]
     DepthCopyOnComputeQueueBitKHR = 0x10000000000000,
 
@@ -271,4 +277,13 @@ public enum FormatFeatureFlags2 : ulong
 
     [NativeName("VK_FORMAT_FEATURE_2_STENCIL_COPY_ON_TRANSFER_QUEUE_BIT_KHR")]
     StencilCopyOnTransferQueueBitKHR = 0x80000000000000,
+
+    [NativeName("VK_FORMAT_FEATURE_2_DATA_GRAPH_OPTICAL_FLOW_IMAGE_BIT_ARM")]
+    DataGraphOpticalFlowImageBitARM = 0x100000000000000,
+
+    [NativeName("VK_FORMAT_FEATURE_2_DATA_GRAPH_OPTICAL_FLOW_VECTOR_BIT_ARM")]
+    DataGraphOpticalFlowVectorBitARM = 0x200000000000000,
+
+    [NativeName("VK_FORMAT_FEATURE_2_DATA_GRAPH_OPTICAL_FLOW_COST_BIT_ARM")]
+    DataGraphOpticalFlowCostBitARM = 0x400000000000000,
 }

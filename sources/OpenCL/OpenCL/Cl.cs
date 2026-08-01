@@ -1,0 +1,118 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using Silk.NET.Core.Loader;
+
+namespace Silk.NET.OpenCL;
+
+public partial class Cl
+{
+    public const string ErrMultiplePlatformSingleObject =
+        "CurrentPlatform cannot be changed once set, use another API object for additional platforms. For more "
+        + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
+
+    static Cl()
+    {
+        LoaderInterface.RegisterAlternativeName("opencl", "OpenCL");
+        LoaderInterface.RegisterAlternativeName(
+            "opencl",
+            "/System/Library/Frameworks/OpenCL.framework/OpenCL"
+        );
+    }
+
+    public partial class StaticWrapper<T>
+    {
+        public PlatformIdHandle CurrentPlatform
+        {
+            get;
+            set
+            {
+                if (field == value)
+                {
+                    return;
+                }
+
+                if (field != nullptr)
+                {
+                    throw new InvalidOperationException(ErrMultiplePlatformSingleObject);
+                }
+
+                field = value;
+            }
+        }
+
+        public ICl Clone() => new StaticWrapper<T>();
+    }
+
+    public partial class ThisThread
+    {
+        private static partial ICl ContextFactory() => Create();
+    }
+
+    public PlatformIdHandle CurrentPlatform
+    {
+        get;
+        set
+        {
+            if (field == value)
+            {
+                return;
+            }
+
+            if (field != nullptr)
+            {
+                throw new InvalidOperationException(ErrMultiplePlatformSingleObject);
+            }
+
+            field = value;
+        }
+    }
+
+    public static ICl Create()
+    {
+        var context = new NativeContext();
+        var cl = new Cl(context);
+        context.Cl = cl;
+
+        return cl;
+    }
+
+    public unsafe ICl Clone()
+    {
+        var context = new NativeContext();
+        var cl = new Cl(context);
+
+        context.Cl = cl;
+
+        cl.CurrentPlatform = CurrentPlatform;
+        Array.Copy(_slots, cl._slots, _slots.Length);
+
+        return cl;
+    }
+
+    private class NativeContext : INativeContext
+    {
+        private readonly DefaultNativeContext _context = new();
+
+        public Cl Cl { get; set; } = null!;
+        private ICl Icl => Cl;
+
+        public unsafe void* LoadFunction(string functionName, string libraryNameHint)
+        {
+            if (functionName == "clGetExtensionFunctionAddressForPlatform")
+            {
+                return _context.LoadFunction(functionName, libraryNameHint);
+            }
+
+            var ptr = Icl.GetExtensionFunctionAddressForPlatform(Cl.CurrentPlatform, functionName);
+            if (ptr != nullptr)
+            {
+                return ptr;
+            }
+
+            return _context.LoadFunction(functionName, libraryNameHint);
+        }
+
+        public void Dispose() => _context.Dispose();
+    }
+}

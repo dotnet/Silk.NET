@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBufferUsageFlagBits")]
+[NativeName("VkBufferUsageFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum BufferUsageFlags : uint
@@ -362,6 +362,20 @@ public enum BufferUsageFlags : uint
         ]
     )]
     ExecutionGraphScratchBitAMDX = 0x2000000,
+
+    [NativeName("VK_BUFFER_USAGE_DESCRIPTOR_HEAP_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    DescriptorHeapBitEXT = 0x10000000,
 
     [NativeName("VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
     [SupportedApiProfile(

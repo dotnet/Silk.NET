@@ -20,6 +20,9 @@ public enum TensorCreateFlagsARM : ulong
     [NativeName("VK_TENSOR_CREATE_PROTECTED_BIT_ARM")]
     ProtectedBit = 0x2,
 
+    [NativeName("VK_TENSOR_CREATE_DESCRIPTOR_HEAP_CAPTURE_REPLAY_BIT_ARM")]
+    DescriptorHeapCaptureReplayBit = 0x8,
+
     [NativeName("VK_TENSOR_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_ARM")]
     DescriptorBufferCaptureReplayBit = 0x4,
 }

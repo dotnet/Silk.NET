@@ -346,7 +346,8 @@ public class ExtractEnumConstants : IMod
                                     StringComparison.OrdinalIgnoreCase
                                 )
                                 || (
-                                    constCandidate[enumCandidate.Length] != '_'
+                                    constCandidate.Length > enumCandidate.Length
+                                    && constCandidate[enumCandidate.Length] != '_'
                                     && char.IsUpper(constCandidate[enumCandidate.Length - 1])
                                         == char.IsUpper(constCandidate[enumCandidate.Length])
                                 )

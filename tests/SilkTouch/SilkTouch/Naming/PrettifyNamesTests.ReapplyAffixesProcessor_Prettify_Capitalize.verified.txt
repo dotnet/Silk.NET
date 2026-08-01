@@ -1,0 +1,5 @@
+﻿// Test.gen.cs
+[NameAffix("Prefix", "TestPrefix", "prefix_")]
+public struct PREFIXBaseName
+{
+}
