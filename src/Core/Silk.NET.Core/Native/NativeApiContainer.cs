@@ -31,9 +31,8 @@ namespace Silk.NET.Core.Native
 
         public IVTable CurrentVTable => _vTable;
 
-        public void Dispose()
+        public virtual void Dispose()
         {
-            _ctx.Dispose();
             CurrentVTable.Dispose();
         }
 
