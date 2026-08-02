@@ -13,6 +13,10 @@ on:
       - build/nuke/Native/SilkDroid.cs
       - build/nuke/Build.Support.cs
       - .github/workflows/sdl2.yml
+
+permissions:
+  contents: read
+
 jobs:
   Build:
     if: github.repository == 'dotnet/Silk.NET'

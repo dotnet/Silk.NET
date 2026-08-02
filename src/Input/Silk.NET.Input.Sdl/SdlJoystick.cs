@@ -52,12 +52,9 @@ namespace Silk.NET.Input.Sdl
                         Array.Resize(ref _axes, @event.Jaxis.Axis + 1);
                     }
 
-                    AxisMoved?.Invoke
-                    (
-                        this,
-                        _axes[@event.Jaxis.Axis] = new Axis
-                            (@event.Jaxis.Axis, (float) @event.Jaxis.Value / short.MaxValue)
-                    );
+                    _axes[@event.Jaxis.Axis] = new Axis
+                        (@event.Jaxis.Axis, (float) @event.Jaxis.Value / short.MaxValue);
+                    AxisMoved?.Invoke(this, _axes[@event.Jaxis.Axis]);
                     break;
                 }
                 case EventType.Joyballmotion:
@@ -73,17 +70,14 @@ namespace Silk.NET.Input.Sdl
                     }
 
                     var val = @event.Jhat.Value;
-                    HatMoved?.Invoke
+                    _hats[@event.Jhat.Hat] = new Hat
                     (
-                        this,
-                        _hats[@event.Jhat.Hat] = new Hat
-                        (
-                            @event.Jhat.Hat, (Position2D) ((val & 0x01) * (int) Position2D.Up +
-                                                           (val & 0x02) * (int) Position2D.Right +
-                                                           (val & 0x04) * (int) Position2D.Down +
-                                                           (val & 0x08) * (int) Position2D.Left)
-                        )
+                        @event.Jhat.Hat, (Position2D) ((val & 0x01) * (int) Position2D.Up +
+                                                       (val & 0x02) * (int) Position2D.Right +
+                                                       (val & 0x04) * (int) Position2D.Down +
+                                                       (val & 0x08) * (int) Position2D.Left)
                     );
+                    HatMoved?.Invoke(this, _hats[@event.Jhat.Hat]);
                     break;
                 }
                 case EventType.Joybuttondown:
@@ -93,12 +87,9 @@ namespace Silk.NET.Input.Sdl
                         Array.Resize(ref _buttons, @event.Jbutton.Button + 1);
                     }
 
-                    ButtonDown?.Invoke
-                    (
-                        this,
-                        _buttons[@event.Jbutton.Button] = new Button
-                            ((ButtonName) @event.Jbutton.Button, @event.Jbutton.Button, true)
-                    );
+                    _buttons[@event.Jbutton.Button] = new Button
+                        ((ButtonName) @event.Jbutton.Button, @event.Jbutton.Button, true);
+                    ButtonDown?.Invoke(this, _buttons[@event.Jbutton.Button]);
                     break;
                 }
                 case EventType.Joybuttonup:
@@ -108,12 +99,9 @@ namespace Silk.NET.Input.Sdl
                         Array.Resize(ref _buttons, @event.Jbutton.Button + 1);
                     }
 
-                    ButtonUp?.Invoke
-                    (
-                        this,
-                        _buttons[@event.Jbutton.Button] = new Button
-                            ((ButtonName) @event.Jbutton.Button, @event.Jbutton.Button, false)
-                    );
+                    _buttons[@event.Jbutton.Button] = new Button
+                        ((ButtonName) @event.Jbutton.Button, @event.Jbutton.Button, false);
+                    ButtonUp?.Invoke(this, _buttons[@event.Jbutton.Button]);
                     break;
                 }
                 case EventType.Joydeviceadded:

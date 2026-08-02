@@ -11,6 +11,10 @@ on:
       - build/nuke/Native/Core.cs
       - build/nuke/Native/VulkanLoader.cs
       - .github/workflows/vulkan-loader.yml
+
+permissions:
+  contents: read
+
 jobs:
   Build:
     if: github.repository == 'dotnet/Silk.NET'
