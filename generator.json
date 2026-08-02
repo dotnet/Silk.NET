@@ -3043,7 +3043,79 @@
             "namespace": "Silk.NET.XInput",
             "extensionsNamespace": "Silk.NET.XInput.Extensions",
             "typeMaps": [
-                {},
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "MediaFoundation",
+            "sources": [
+                "build/include/silk.net.mediafoundation.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "mediafoundation",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "typemap-native",
+                "no-pre-2.17-obsolete-enums"
+            ],
+            "converter": {},
+            "prefix": "MF",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/mfmediaengine.h"
+                ],
+                "classes": {
+                    "silk.net.mediafoundation.h": "[Core]MediaFoundation"
+                }
+            },
+            "exclude": [],
+            "rename": {
+                "MF_MEDIA_ENGINE_CANPLAY": "MediaEngineCanPlay",
+                "MF_MEDIA_ENGINE_CREATEFLAGS": "MediaEngineCreateFlags",
+                "MF_MEDIA_ENGINE_ERR": "MediaEngineError",
+                "_MF_MEDIA_ENGINE_KEYERR": "MediaEngineKeyError",
+                "MF_MEDIA_ENGINE_STREAMTYPE_FAILED": "MediaEngineStreamTypeFailed",
+                "MF_MEDIAKEYS_REQUIREMENT": "MediaKeysRequirement"
+            },
+            "bakery": {
+                "profileNames": [
+                    "silk.net.mediafoundation"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.MediaFoundation",
+            "extensionsNamespace": "Silk.NET.MediaFoundation.Extensions",
+            "nameContainer": {
+                "linux-x64": "libMediaFoundation.so",
+                "win-x64": "MediaFoundation.dll",
+                "win-x86": "MediaFoundation.dll",
+                "osx-x64": "libMediaFoundation.dylib",
+                "android": "libMediaFoundation.so",
+                "iOS": "__Internal",
+                "className": "MediaFoundationLibraryNameContainer"
+            },
+            "typeMaps": [
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
