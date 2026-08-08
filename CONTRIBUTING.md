@@ -11,7 +11,7 @@ Please:
 - **DO** talk to us in #team-talk in the Discord or open a discussion about your contribution
 - **DO** keep the discussions around contributions focused. If you have another matter to discuss, rather than creating a massive tangent in the current discussion, open up a new one.
 - **DO** follow the code of conduct if discussing on GitHub and/or the Discord #rules if discussing on Discord.
-- **DON'T** use AI to generate contributions for the project
+- **DON'T** use AI to generate contributions for the project.
 - **DON'T** make PRs that don't directly affect the end user, such as style changes. These are best done as part of a PR related to the area in question. Documentation is fine (and encouraged!), as this is useful to the end user.
 - **DON'T** commit code you didn't write without following its license and following our guidelines for doing so in the Contributor License Agreement. If you are unable to license some code, don't commit it.
 - **DON'T** surprise us with big pull requests or big API changes without talking to us first!
@@ -67,7 +67,6 @@ This helps everyone understand where everyone's coming from, and helps establish
 You **MUST** follow the [Code of Conduct](CODE_OF_CONDUCT.md) at all times.
 
 You **SHOULD** communicate with the Silk.NET team using the #team-talk channel in our Discord, or via GitHub Discussions.
-Where you are discussing a potential contribution, you **SHOULD** also discuss the mechanisms with which you intend to author your contribution (i.e. usage of AI tools) so we can be on the same page on what to expect. To be clear, we aren't going to force you into a specific way of working, but we want to manage our own expectations as well as ensure these guidelines are being followed. 
 
 ### Intellectual Property
 
@@ -87,7 +86,7 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 1. Tag a maintainer when you're done and ask for a review!
 
 ## Breaking changes
-Contributions must maintain API signature and behavioral compatibility. Contributions that include breaking changes will be rejected. There are exceptions to this, such as if the contribution is made against a major/breaking version branch (such as `2.0` instead of `master`), however this is subject to the team's approval. At risk of sounding like a broken record, talk to us about your idea first!
+Contributions must maintain API signature and behavioral compatibility. Contributions that include breaking changes will be rejected. There are exceptions to this, such as if the contribution is made against a major/breaking version branch (such as `2.0` instead of `main`), however this is subject to the team's approval. At risk of sounding like a broken record, talk to us about your idea first!
 
 ### Generated bindings
 Sometimes upstream specification changes happen while working on your contribution. Unfortunately, we are not in control of breaking changes created by the upstream spec sources, and if one happens while working on your contribution it is not a cause for concern.
