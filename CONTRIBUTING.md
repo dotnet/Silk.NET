@@ -11,8 +11,7 @@ Please:
 - **DO** talk to us in #team-talk in the Discord or open a discussion about your contribution
 - **DO** keep the discussions around contributions focused. If you have another matter to discuss, rather than creating a massive tangent in the current discussion, open up a new one.
 - **DO** follow the code of conduct if discussing on GitHub and/or the Discord #rules if discussing on Discord.
-- **DON'T** use AI for your contribution without reading and understanding the nuance of doing so captured in this document.
-- **DON'T** use AI in such a way that removes you as the human contributor from the process of understanding the code you're reading/writing, making technical decisions, documenting your contribution, and/or responding to the team/review comments.
+- **DON'T** use AI to generate contributions for the project
 - **DON'T** make PRs that don't directly affect the end user, such as style changes. These are best done as part of a PR related to the area in question. Documentation is fine (and encouraged!), as this is useful to the end user.
 - **DON'T** commit code you didn't write without following its license and following our guidelines for doing so in the Contributor License Agreement. If you are unable to license some code, don't commit it.
 - **DON'T** surprise us with big pull requests or big API changes without talking to us first!
@@ -21,8 +20,6 @@ Please:
 ### Unannounced Contributions (including AI "drive-by" contributions)
 
 You **MUST NOT** submit unannounced sizeable contributions without first discussing it with the Silk.NET team.
-
-**This includes both AI-generated contributions and non-AI-generated contributions.**
 
 Silk.NET is vehemently against AI "drive-by" contributions (i.e. where a large amount of work has been submitted by someone unfamiliar to the team), and we will reject any PR where we suspect this is the case. The simple way to avoid this is to talk to us before contributing anything sizeable.
 
@@ -42,21 +39,23 @@ You **MUST** talk to us in #team-talk in the Discord, post an issue comment, and
 
 ### Use of AI
 
-When you're working on a contribution, you **MUST** be responsible and accountable for every line of code that you are contributing.
+It is the current view of the maintainers that AI **MUST NOT** be used to generate code for contributions to this project.
+There is no appetite on the current maintainers team to review the contributions of or collaborate with AI-assisted developers.
+This policy is based on an ongoing consensus on the maintainers team. Should the consensus of the maintainers team change, this policy will be updated. 
 
-You **MUST** be able to reason for, understand, and defend all technical aspects of your contribution. At the same time, you **MUST** be able to acknowledge and understand any review comments, and make informed decisions on how to action them.
+"AI" in this case means a Large Language Model ("LLM"), such as ChatGPT, Claude, Copilot, Grok, etc.
 
-All technical decisions **MUST** be your own, and informed by your own understanding and ideally input from the Silk.NET team. AI can be used well for ideation (e.g. as a "sounding board"), but must be done so with sufficient understanding of the context to know when the AI is leading you astray. For the avoidance of doubt, the Silk.NET team can also be used in this way, and in fact we encourage this more than the AI alternative - we're always happy to lend time to help you help us with your contribution! 
+AI-generated code is based upon sources of unknown origins and may not be compatible with the Zlib license, or may introduce conflicting license terms if they include code from other projects.
 
-Note that the above guidelines also apply for contributions where AI isn't used - if you don't understand what you've written or can't defend it, chances are we won't either.
+AI can be used to identify issues with contributions to this project, but the solutions to those issues should be authored by humans.
 
-You **MUST** declare all AI usage, regardless of whether it is for code completion, review/comprehension, or generation of the contribution.
+We have found that AI will frequently hallucinate issues that are not actually problems in practice, report incorrect information, and describe problems that are actually not issues at all. If AI identifies a problem with this codebase, please make sure you understand what it is saying and have independently confirmed that the issue exists before submitting a bug report or pull request.
 
-AI generated documentation **MUST** be agreed with the Silk.NET team on a case-by-case basis. We will reject any pull request that contains AI-generated documentation that hasn't been explicitly approved by us ahead of time.
+Any pull request to this project will ask you to confirm that you are the author and that you are contributing your changes under the Zlib license.
 
 ### Human Communication
 
-As a general rule, even if AI is writing your code, we are still collaborating with you, not the AI.
+As a general rule, we are still collaborating with you and your ideas, not that of any tools you may have used.
 
 To this end, AI-generated descriptions, comments, or other forms of communication **MUST NOT** be used. If you have met the AI usage guideline, you don't need them.
 AI-assisted translations or edits **MAY** be used in communication, but only where the original words prior to translation are your own. 
@@ -75,10 +74,6 @@ Where you are discussing a potential contribution, you **SHOULD** also discuss t
 You **MUST NOT** use third party code without declaring it as per our Contributor License Agreement and ensuring the license is compatible with ours.
 If you are ever in doubt, you **MUST** discuss this with the Silk.NET team. The .NET Foundation owns Silk.NET's intellectual property, and is by extension the risk owner of any potential infringements.
 We can liase with the Foundation as needed. 
-
-As per the "use of AI" section, you **MUST** declare any code that has been generated by AI. This does not automatically preclude the usage of AI-generated code on intellectual property grounds, rather it just manages the Silk.NET team's expectations. 
-
-We understand AI usage is a sensitive issue from an intellectual property perspective. Large language models are known to make use of publicly-accessible material, however this does not automatically make the content licensable in an MIT-compatible way. The .NET Foundation has not established a stance on the intellectual property impact of AI usage, and in the advent of widespread LLM availability it has become the modus operandi for many software companies, teams, and individuals to make use of LLM output in copyrighted works in line with that LLM's terms and conditions. It is unknowable what materials (IP incumbered or not) were used in the production of specific output, whether that output is sufficiently transformative in the eyes of the law, and whether it is the LLM provider or the Foundation that owns the risk of infringement. We will follow industry trends/legal precedence in this stance as they develop.
 
 #### Early Pull Requests
 Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-blend/pull-request-first-f6bb667a9b6). Please don't wait until you're done to open a PR!
