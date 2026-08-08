@@ -45,7 +45,7 @@ This policy is based on an ongoing consensus on the maintainers team. Should the
 
 "AI" in this case means a Large Language Model ("LLM"), such as ChatGPT, Claude, Copilot, Grok, etc.
 
-AI-generated code is based upon sources of unknown origins and may not be compatible with the Zlib license, or may introduce conflicting license terms if they include code from other projects.
+AI-generated code is based upon sources of unknown origins and may not be compatible with the MIT license, or may introduce conflicting license terms if they include code from other projects.
 
 AI can be used to identify issues with contributions to this project, but the solutions to those issues should be authored by humans.
 
