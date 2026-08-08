@@ -12,4 +12,4 @@ AI can be used to identify issues with contributions to this project, but the so
 
 We have found that AI will frequently hallucinate issues that are not actually problems in practice, report incorrect information, and describe problems that are actually not issues at all. If AI identifies a problem with this codebase, please make sure you understand what it is saying and have independently confirmed that the issue exists before submitting a bug report or pull request.
 
-Any pull request to this project will ask you to confirm that you are the author and that you are contributing your changes under the Zlib license.
+Any pull request to this project will ask you to confirm that you are the author and that you are contributing your changes under the MIT license.
