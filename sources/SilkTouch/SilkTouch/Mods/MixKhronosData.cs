@@ -37,13 +37,13 @@ public partial class MixKhronosData(
 
     private class NameAffixes
     {
-        public const string KhronosFunctionDataType = "KhronosFunctionDataType";
-        public const string KhronosHandleType = "KhronosHandleType";
-        public const string KhronosImpliedVendor = "KhronosImpliedVendor";
-        public const string KhronosNamespaceEnum = "KhronosNamespaceEnum";
-        public const string KhronosNonExclusiveVendor = "KhronosNonExclusiveVendor";
-        public const string KhronosNonVendor = "KhronosNonVendor";
-        public const string KhronosVendor = "KhronosVendor";
+        public const string KhronosFunctionDataType = nameof(KhronosFunctionDataType);
+        public const string KhronosHandleType = nameof(KhronosHandleType);
+        public const string KhronosImpliedVendor = nameof(KhronosImpliedVendor);
+        public const string KhronosNamespaceEnum = nameof(KhronosNamespaceEnum);
+        public const string KhronosNonExclusiveVendor = nameof(KhronosNonExclusiveVendor);
+        public const string KhronosNonVendor = nameof(KhronosNonVendor);
+        public const string KhronosVendor = nameof(KhronosVendor);
     }
 
     internal class JobData
