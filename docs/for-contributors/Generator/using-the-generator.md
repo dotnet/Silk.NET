@@ -267,8 +267,6 @@ extension are left untouched by the generator.
 
 ### Packing the Generated Bindings
 
-(TODO: This section needs verification.)
-
 `dotnet pack` should simply work here.
 
 If you are contributing to Silk's repository, Silk automatically packs and pushes changes made during a pull request
