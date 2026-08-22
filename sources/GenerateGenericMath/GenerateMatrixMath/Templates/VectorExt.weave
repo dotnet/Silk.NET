@@ -1,0 +1,425 @@
+@namespace GenerateMatrixMath
+@encode Encode
+@using System.Reflection
+@using System.Runtime.InteropServices
+@using GenerateMatrixMath.Model
+@model Vector
+{{
+    var size = model.Size;
+    var fields = Vector.VectorFieldNames.Take(size);
+    var thisType = new { Name = "Vector", model.Size };
+    var numericsName = "Vector" + model.Size;
+    var generateNumericsCast = model.NumericsTypes.Any(t => t.Name == numericsName);
+}}
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+namespace Silk.NET.Maths
+{
+    using System.Numerics;
+    using System.Runtime.CompilerServices;
+    using System.Runtime.Intrinsics;
+
+    /// <summary>
+    /// Methods for working with <see cref="{{@Name thisType}}{T}"/>.
+    /// </summary>
+    public static partial class {{@Name thisType}}
+    {
+        /// <summary>Extensions for vectors with elements implementing <see cref="IRootFunctions{TSelf}"/>.</summary>
+        extension<TSelf>({{@Name thisType}}<TSelf> vector)
+            where TSelf : IRootFunctions<TSelf>
+        {
+            /// <summary>Gets the length of the vector.</summary>
+            {{if generateNumericsCast}}
+                public TSelf Length
+                {
+                    get
+                    {
+                        if (typeof(TSelf) == typeof(float))
+                            return Unsafe.BitCast<float, TSelf>(Unsafe.BitCast<{{@Name thisType}}<TSelf>, {{= numericsName}}>(vector).Length());
+                        return TSelf.Sqrt(vector.LengthSquared);
+                    }
+                }
+            {{else}}
+                public TSelf Length => TSelf.Sqrt(vector.LengthSquared);
+            {{/if}}
+        }
+
+        /// <summary>Extensions for vectors with elements implementing <see cref="INumberBase{TSelf}"/>.</summary>
+        extension<TSelf>({{@Name thisType}}<TSelf> vector)
+            where TSelf : INumberBase<TSelf>
+        {
+            /// <summary>Gets the length squared of the vector.</summary>
+            {{if generateNumericsCast}}
+                public TSelf LengthSquared
+                {
+                    get
+                    {
+                        if (typeof(TSelf) == typeof(float))
+                            return Unsafe.BitCast<float, TSelf>(Unsafe.BitCast<{{@Name thisType}}<TSelf>, {{= numericsName}}>(vector).LengthSquared());
+                        return {{@Name thisType}}.Dot(vector, vector);
+                    }
+                }
+            {{else}}
+                public TSelf LengthSquared => {{@Name thisType}}.Dot(vector, vector);
+            {{/if}}
+        }
+
+        /// <summary>Extensions for vectors with elements implementing <see cref="IBitwiseOperators{TSelf, TSelf, TSelf}"/>.</summary>
+        extension<TSelf>({{@Name thisType}}<TSelf> vector)
+            where TSelf : INumberBase<TSelf>, IBitwiseOperators<TSelf, TSelf, TSelf>
+        {
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf,TSelf}.op_OnesComplement"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static {{@Name thisType}}<TSelf> OnesComplement({{@Name thisType}}<TSelf> value) =>
+                new({{each f in fields}}~value.{{= f}}{{delimit}}, {{/each}});
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static {{@Name thisType}}<TSelf> BitwiseAnd({{@Name thisType}}<TSelf> left, {{@Name thisType}}<TSelf> right) =>
+                new({{each f in fields}}left.{{= f}} & right.{{= f}}{{delimit}}, {{/each}});
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static {{@Name thisType}}<TSelf> BitwiseOr({{@Name thisType}}<TSelf> left, {{@Name thisType}}<TSelf> right) =>
+                new({{each f in fields}}left.{{= f}} | right.{{= f}}{{delimit}}, {{/each}});
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static {{@Name thisType}}<TSelf> ExclusiveOr({{@Name thisType}}<TSelf> left, {{@Name thisType}}<TSelf> right) =>
+                new({{each f in fields}}left.{{= f}} ^ right.{{= f}}{{delimit}}, {{/each}});
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static {{@Name thisType}}<TSelf> BitwiseAnd({{@Name thisType}}<TSelf> left, TSelf right) =>
+                new({{each f in fields}}left.{{= f}} & right{{delimit}}, {{/each}});
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static {{@Name thisType}}<TSelf> BitwiseOr({{@Name thisType}}<TSelf> left, TSelf right) =>
+                new({{each f in fields}}left.{{= f}} | right{{delimit}}, {{/each}});
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static {{@Name thisType}}<TSelf> ExclusiveOr({{@Name thisType}}<TSelf> left, TSelf right) =>
+                new({{each f in fields}}left.{{= f}} ^ right{{delimit}}, {{/each}});
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static {{@Name thisType}}<TSelf> BitwiseAnd(TSelf left, {{@Name thisType}}<TSelf> right) =>
+                new({{each f in fields}}left & right.{{= f}}{{delimit}}, {{/each}});
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf,TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static {{@Name thisType}}<TSelf> BitwiseOr(TSelf left, {{@Name thisType}}<TSelf> right) =>
+                new({{each f in fields}}left | right.{{= f}}{{delimit}}, {{/each}});
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static {{@Name thisType}}<TSelf> ExclusiveOr(TSelf left, {{@Name thisType}}<TSelf> right) =>
+                new({{each f in fields}}left ^ right.{{= f}}{{delimit}}, {{/each}});
+        }
+
+        {{each g in model.ExtensionProperties.GroupBy(p => p.Type)}}
+            {{
+                var inter = g.Key;
+                var t = inter.GetGenericArguments().Single();
+            }}
+            /// <summary>Extensions for vectors with elements implementing <see cref="{{= Encode(inter).Replace('<', '{').Replace('>', '}')}}"/>.</summary>
+            extension<{{= t}}>({{@Name thisType}}<{{= t}}> vector)
+                where {{= t}} : {{if inter != typeof(System.Numerics.INumberBase<>) && !inter.GetInterfaces().Any(i => i == typeof(System.Numerics.INumberBase<>))}}INumberBase<{{= t}}>, {{/if}}{{: inter}}
+            {
+                {{each p in g}}
+                    /// <summary>Gets a vector with all components set to <see cref="{{= Encode(inter).Replace('<', '{').Replace('>', '}')}}.{{: p.Name}}"/>.</summary>
+                    public static {{@Name thisType}}<{{= t}}> {{= p.Name}} => new({{= t}}.{{= p.Name}});
+                {{delimit}}
+
+                {{/each}}
+            }
+
+        {{/each}}
+        /// <summary>Desconstructs a vector into its components.</summary>
+        /// <param name="vector">The vector to deconstruct.</param>
+        {{each f in fields}}
+            /// <param name="{{= f.ToLower()}}">The {{= f}} component.</param>
+        {{/each}}
+        public static void Deconstruct<T>(this {{@Name thisType}}<T> vector, {{each f in fields}}out T {{= f.ToLower()}}{{delimit}}, {{/each}})
+            where T : INumberBase<T>
+        {
+            {{each f in fields}}
+                {{= f.ToLower()}} = vector.{{= f}};
+            {{/each}}
+        }
+
+        /// <summary>Computes the dot product of two vectors.</summary>
+        {{if generateNumericsCast}}
+            public static T Dot<T>({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+                where T : INumberBase<T>
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<float, T>({{= numericsName}}.Dot(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(left), Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(right)));
+                return {{each f in fields}}left.{{= f}} * right.{{= f}}{{delimit}} + {{/each}};
+            }
+        {{else}}
+            public static T Dot<T>({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+                where T : INumberBase<T> =>
+                {{each f in fields}}left.{{= f}} * right.{{= f}}{{delimit}} + {{/each}};
+        {{/if}}
+
+        /// <summary>Reflects a vector over a normal vector.</summary>
+        {{if generateNumericsCast && size < 4}}
+            public static {{@Name thisType}}<T> Reflect<T>({{@Name thisType}}<T> vector, {{@Name thisType}}<T> normal)
+                where T : INumberBase<T>
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>({{= numericsName}}.Reflect(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(vector), Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(normal)));
+                T dot = Dot(vector, normal);
+                return vector - (normal * (dot + dot));
+            }
+        {{else}}
+        public static {{@Name thisType}}<T> Reflect<T>({{@Name thisType}}<T> vector, {{@Name thisType}}<T> normal)
+            where T : INumberBase<T>
+        {
+            T dot = Dot(vector, normal);
+            return vector - (normal * (dot + dot));
+        }
+        {{/if}}
+
+        /// <summary>Normalizes a vector.</summary>
+        {{if generateNumericsCast}}
+            public static {{@Name thisType}}<T> Normalize<T>(this {{@Name thisType}}<T> vector)
+                where T : IRootFunctions<T>
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<{{= numericsName}}, {{@Name thisType}}<T>>({{= numericsName}}.Normalize(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(vector)));
+                return vector / vector.Length;
+            }
+        {{else}}
+            public static {{@Name thisType}}<T> Normalize<T>(this {{@Name thisType}}<T> vector)
+                where T : IRootFunctions<T> =>
+                vector / vector.Length;
+        {{/if}}
+
+        /// <summary>Returns the Euclidean distance between the two given points.</summary>
+        /// <param name="start">The starting point.</param>
+        /// <param name="end">The ending point.</param>
+        /// <returns>The distance.</returns>
+        {{if generateNumericsCast}}
+            public static T Distance<T>({{@Name thisType}}<T> start, {{@Name thisType}}<T> end)
+                where T : IRootFunctions<T>
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<float, T>({{= numericsName}}.Distance(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(start), Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(end)));
+                return T.Sqrt(DistanceSquared(start, end));
+            }
+        {{else}}
+            public static T Distance<T>({{@Name thisType}}<T> start, {{@Name thisType}}<T> end)
+                where T : IRootFunctions<T> =>
+                T.Sqrt(DistanceSquared(start, end));
+        {{/if}}
+
+        /// <summary>Returns the Euclidean distance squared between the two given points.</summary>
+        /// <param name="start">The starting point.</param>
+        /// <param name="end">The ending point.</param>
+        /// <returns>The distance squared.</returns>
+        {{if generateNumericsCast}}
+            public static T DistanceSquared<T>({{@Name thisType}}<T> start, {{@Name thisType}}<T> end)
+                where T : INumberBase<T>
+            {
+                if (typeof(T) == typeof(float))
+                    return Unsafe.BitCast<float, T>({{= numericsName}}.DistanceSquared(Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(start), Unsafe.BitCast<{{@Name thisType}}<T>, {{= numericsName}}>(end)));
+                var difference = end - start;
+                return Dot(difference, difference);
+            }
+        {{else}}
+            public static T DistanceSquared<T>({{@Name thisType}}<T> start, {{@Name thisType}}<T> end)
+                where T : INumberBase<T>
+            {
+                var difference = end - start;
+                return Dot(difference, difference);
+            }
+        {{/if}}
+
+        /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Round(TSelf)"/> to each member of the vector and converts to integer.</summary>
+        public static {{@Name thisType}}<int> RoundToInt<T>({{@Name thisType}}<T> vector)
+            where T : IFloatingPoint<T> =>
+            {{@Name thisType}}.Round(vector).AsChecked<int>();
+
+        /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Floor(TSelf)"/> to each member of the vector and converts to integer.</summary>
+        public static {{@Name thisType}}<int> FloorToInt<T>({{@Name thisType}}<T> vector)
+            where T : IFloatingPoint<T> =>
+            {{@Name thisType}}.Floor(vector).AsChecked<int>();
+
+        /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Ceiling(TSelf)"/> to each member of the vector and converts to integer.</summary>
+        public static {{@Name thisType}}<int> CeilingToInt<T>({{@Name thisType}}<T> vector)
+            where T : IFloatingPoint<T> =>
+            {{@Name thisType}}.Ceiling(vector).AsChecked<int>();
+
+        {{if generateNumericsCast}}
+            /// <summary>Converts a <see cref="{{@Name thisType}}{T}"/> to <see cref="{{= numericsName}}"/>.</summary>
+            public static {{= numericsName}} ToNumerics<T>(this {{@Name thisType}}<T> from)
+                where T : INumberBase<T> =>
+                ({{= numericsName}})from;
+
+        {{/if}}
+        {{each intrinsic in model.Intrinsics}}
+            {{ var byteSize = Marshal.SizeOf(intrinsic); }}
+            {{ var bitSize = byteSize * size * 8; }}
+            {{each storage in new[] { 64, 128, 256, 512 } }}
+                {{if bitSize <= storage}}
+                    /// <summary>Converts a <see cref="{{@Name thisType}}{T}"/> to a <see cref="Vector{{= storage}}{T}"/>.</summary>
+                    public static Vector{{= storage}}<{{: intrinsic}}> ToVector{{= storage}}(this {{@Name thisType}}<{{: intrinsic}}> vector) =>
+                        Vector{{= storage}}.Create({{each i in Enumerable.Range(1, storage / (byteSize * 8))}}{{if i <= size}}vector.{{= Vector.VectorFieldNames[i - 1]}}{{else}}({{: intrinsic}})0{{/if}}{{delimit}}, {{/each}});
+
+                {{/if}}
+            {{/each}}
+        {{/each}}
+        /// <summary>Linearly interpolates between two vectors using a scalar t-value (clamped between 0 and 1).</summary>
+        public static {{@Name thisType}}<T> LerpClamped<T>({{@Name thisType}}<T> value1, {{@Name thisType}}<T> value2, T amount)
+            where T : IFloatingPointIeee754<T> =>
+            Lerp(value1, value2, T.Clamp(amount, T.Zero, T.One));
+
+        /// <summary>Linearly interpolates between two vectors using a vector t-value (clamped between 0 and 1).</summary>
+        public static {{@Name thisType}}<T> LerpClamped<T>({{@Name thisType}}<T> value1, {{@Name thisType}}<T> value2, {{@Name thisType}}<T> amount)
+            where T : IFloatingPointIeee754<T> =>
+            new({{each f in fields}}T.Lerp(value1.{{= f}}, value2.{{= f}}, T.Clamp(amount.{{= f}}, T.Zero, T.One)){{delimit}},
+                {{/each}});
+
+        /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.SinCos(TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        public static ({{@Name thisType}}<T> Sin, {{@Name thisType}}<T> Cos) SinCos<T>({{@Name thisType}}<T> x)
+            where T : ITrigonometricFunctions<T> =>
+            (new({{each f in fields}}T.Sin(x.{{= f}}){{delimit}}, {{/each}}), new({{each f in fields}}T.Cos(x.{{= f}}){{delimit}}, {{/each}}));
+
+        /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.SinCosPi(TSelf)"/> to the provided arguments.</summary>
+        /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
+        public static ({{@Name thisType}}<T> SinPi, {{@Name thisType}}<T> CosPi) SinCosPi<T>({{@Name thisType}}<T> x)
+            where T : ITrigonometricFunctions<T> =>
+            (new({{each f in fields}}T.SinPi(x.{{= f}}){{delimit}}, {{/each}}), new({{each f in fields}}T.CosPi(x.{{= f}}){{delimit}}, {{/each}}));
+
+        /// <summary>Applies <see cref="IBinaryInteger{TSelf}.DivRem(TSelf, TSelf)"/> to the provided arguments.</summary>
+        /// <param name="left">A vector whose members will be provided for <parameref name="left"/>.</param>
+        /// <param name="right">A vector whose members will be provided for <parameref name="right"/>.</param>
+        public static ({{@Name thisType}}<T> Quotient, {{@Name thisType}}<T> Remainder) DivRem<T>({{@Name thisType}}<T> left, {{@Name thisType}}<T> right)
+            where T : IBinaryInteger<T>
+        {
+            {{each f in fields}}
+                var (q{{= f}}, r{{= f}}) = T.DivRem(left.{{= f}}, right.{{= f}});
+            {{/each}}
+            return (new {{@Name thisType}}<T>({{each f in fields}}q{{= f}}{{delimit}}, {{/each}}), new {{@Name thisType}}<T>({{each f in fields}}r{{= f}}{{delimit}}, {{/each}}));
+        }
+
+        /// <summary>Multiplies a vector by a scalar value.</summary>
+        /// <param name="left">The source vector.</param>
+        /// <param name="right">The scaling factor.</param>
+        /// <returns>The scaled vector.</returns>
+        public static {{@Name thisType}}<T> Multiply<T>({{@Name thisType}}<T> left, T right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        /// <summary>Multiplies a vector by a scalar value.</summary>
+        /// <param name="left">The scaling factor.</param>
+        /// <param name="right">The source vector.</param>
+        /// <returns>The scaled vector.</returns>
+        public static {{@Name thisType}}<T> Multiply<T>(T left, {{@Name thisType}}<T> right)
+            where T : INumberBase<T> =>
+            left * right;
+
+        {{each extension in model.Extensions}}
+            {{
+                var inter = extension.Type;
+                var t = inter.GetGenericArguments().Single();
+
+                var name = extension.Name;
+                var interName = inter.Name;
+                var backTickIndex = interName.IndexOf('`');
+                if (backTickIndex > 0)
+                {
+                    interName = interName.Substring(0, backTickIndex);
+                }
+                var methods = inter.GetMethods(BindingFlags.Public | BindingFlags.Static).Where(m => m.Name == name && m.GetParameters().Length == extension.Arguments.Length);
+            }}
+            {{each method in methods}}
+                {{
+                    var parameters = method.GetParameters();
+                    var arguments = parameters.Select((p, i) =>
+                    {
+                        var memberwise = extension.Arguments[i] == ArgumentMultiplicity.Memberwise;
+                        return new
+                        {
+                            Memberwise = memberwise,
+                            Type = p.ParameterType,
+                            p.Name,
+                        };
+                    });
+                    var returnType = method.ReturnType;
+                }}
+                /// <summary>Applies <see cref="{{= Encode(inter).Replace('<', '{').Replace('>', '}')}}.{{= name}}({{each a in arguments}}{{= Encode(a.Type).Replace('<', '{').Replace('>', '}')}}{{delimit}}, {{/each}})"/> to the provided arguments.</summary>
+                {{each a in arguments}}
+                    {{if a.Memberwise}}
+                        /// <param name="{{= a.Name}}">A vector whose members will be provided for <parameref name="{{= a.Name}}"/>.</param>
+                    {{else}}
+                        /// <param name="{{= a.Name}}">A single value provided for <parameref name="{{= a.Name}}"/>.</param>
+                    {{/if}}
+                {{/each}}
+                public static {{@Name thisType}}<{{: returnType}}> {{= name}}<{{= t}}>({{each a in arguments}}{{wrapif a.Memberwise}}{{@Name thisType}}<{{body}}{{: a.Type}}{{/body}}>{{/wrapif}} {{= a.Name}}{{delimit}}, {{/each}})
+                    where {{= t}} : {{= method.DeclaringType.Name.Split('`')[0]}}<{{= t}}> =>
+                    new({{each f in fields}}{{= t}}.{{= name}}({{each a in arguments}}{{= a.Name}}{{if a.Memberwise}}.{{= f}}{{/if}}{{delimit}}, {{/each}}){{delimit}}, {{/each}});
+            {{delimit}}
+
+            {{/each}}
+        {{delimit}}
+
+        {{/each}}
+        {{each normal in new[] { false, true } }}
+            {{each inputSize in model.Sizes.Where(s => s <= size)}}
+                {{ var inputType = new { Name = "Vector", Size = inputSize }; }}
+
+                /// <summary>Transforms the given vector by the specified Quaternion.</summary>
+                public static {{@Name thisType}}<T> Transform{{if normal}}Normal{{/if}}<T>({{@Name inputType}}<T> vector, Quaternion<T> quaternion)
+                    where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
+                {
+                    var x2 = quaternion.X + quaternion.X;
+                    var y2 = quaternion.Y + quaternion.Y;
+                    var z2 = quaternion.Z + quaternion.Z;
+
+                    var wx2 = quaternion.W * x2;
+                    var wy2 = quaternion.W * y2;
+                    var wz2 = quaternion.W * z2;
+                    var xx2 = quaternion.X * x2;
+                    var xy2 = quaternion.X * y2;
+                    var xz2 = quaternion.X * z2;
+                    var yy2 = quaternion.Y * y2;
+                    var yz2 = quaternion.Y * z2;
+                    var zz2 = quaternion.Z * z2;
+
+                    return new(
+                        {{each i in Enumerable.Range(1, size)}}{{if i == 1}}(vector.X * (T.One - yy2 - zz2)) + (vector.Y * (xy2 - wz2)){{if inputSize >= 3}} + (vector.Z * (xz2 + wy2)){{/if}}{{elif i == 2}}(vector.X * (xy2 + wz2)) + (vector.Y * (T.One - xx2 - zz2)){{if inputSize >= 3}} + (vector.Z * (yz2 - wx2)){{/if}}{{elif i == 3}}(vector.X * (xz2 - wy2)) + (vector.Y * (yz2 + wx2)){{if inputSize >= 3}} + (vector.Z * (T.One - xx2 - yy2)){{/if}}{{elif i == 4}}{{if inputSize >= 4}}vector.W{{else}}T.One{{/if}}{{/if}}{{delimit}},
+                        {{/each}});
+                }
+            {{/each}}
+        {{/each}}
+        {{each normal in new[] { false, true } }}
+            {{each dim in model.AllSizes.Where(d => d.Columns >= size)}}
+                {{ var matrixType = new { Name = "Matrix", Size = dim }; }}
+                {{each inputSize in model.Sizes.Where(s => s <= size)}}
+                    {{ var inputType = new { Name = "Vector", Size = inputSize }; }}
+
+                    /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
+                    public static {{@Name thisType}}<T> Transform{{if normal}}Normal{{/if}}<T>({{@Name inputType}}<T> vector, {{@Name matrixType}}<T> matrix)
+                        where T : INumberBase<T> =>
+                        {{if dim.Rows == inputSize && dim.Columns == size}}
+                            vector * matrix;
+                        {{else}}
+                            {{
+                                var rows = Enumerable.Range(1, dim.Rows);
+                                var cols = Enumerable.Range(1, dim.Columns);
+                            }}
+                            new({{each c in Enumerable.Range(1, size)}}{{each r in Enumerable.Range(1, dim.Rows).Where(r => r <= inputSize || (r == dim.Rows && !normal))}}{{if r <= inputSize}}(vector.{{= Vector.VectorFieldNames[r - 1]}} * matrix.M{{= r}}{{= c}}){{else}}matrix.M{{= r}}{{= c}}{{/if}}{{delimit}} + {{/each}}{{delimit}},
+                                {{/each}});
+                        {{/if}}
+                {{/each}}
+            {{/each}}
+        {{/each}}
+    }
+}
