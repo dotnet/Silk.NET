@@ -6,7 +6,7 @@ namespace Silk.NET.OpenXR;
 
 public partial class Xr
 {
-    public const string ErrMultipleInstanceSingleObject =
+    private const string _errMultipleInstanceSingleObject =
         "CurrentInstance cannot be changed once set, use another API object for additional instances. For more "
         + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
 
@@ -32,7 +32,7 @@ public partial class Xr
 
                 if (field != nullptr)
                 {
-                    throw new InvalidOperationException(ErrMultipleInstanceSingleObject);
+                    throw new InvalidOperationException(_errMultipleInstanceSingleObject);
                 }
 
                 field = value;
@@ -59,7 +59,7 @@ public partial class Xr
 
             if (field != nullptr)
             {
-                throw new InvalidOperationException(ErrMultipleInstanceSingleObject);
+                throw new InvalidOperationException(_errMultipleInstanceSingleObject);
             }
 
             field = value;

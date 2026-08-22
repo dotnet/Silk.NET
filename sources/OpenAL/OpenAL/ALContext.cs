@@ -9,7 +9,7 @@ namespace Silk.NET.OpenAL;
 
 public partial class ALContext
 {
-    public const string ErrMultipleDeviceSingleObject =
+    private const string _errMultipleDeviceSingleObject =
         "CurrentDevice cannot be changed once set, use another API object for additional devices. For more "
         + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
 
@@ -53,7 +53,7 @@ public partial class ALContext
 
                 if (field != nullptr)
                 {
-                    throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
+                    throw new InvalidOperationException(_errMultipleDeviceSingleObject);
                 }
 
                 field = value;
@@ -83,7 +83,7 @@ public partial class ALContext
 
             if (field != nullptr)
             {
-                throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
+                throw new InvalidOperationException(_errMultipleDeviceSingleObject);
             }
 
             _getProcAddress = null;

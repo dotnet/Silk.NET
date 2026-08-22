@@ -7,7 +7,7 @@ namespace Silk.NET.OpenCL;
 
 public partial class Cl
 {
-    public const string ErrMultiplePlatformSingleObject =
+    private const string _errMultiplePlatformSingleObject =
         "CurrentPlatform cannot be changed once set, use another API object for additional platforms. For more "
         + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
 
@@ -34,7 +34,7 @@ public partial class Cl
 
                 if (field != nullptr)
                 {
-                    throw new InvalidOperationException(ErrMultiplePlatformSingleObject);
+                    throw new InvalidOperationException(_errMultiplePlatformSingleObject);
                 }
 
                 field = value;
@@ -61,7 +61,7 @@ public partial class Cl
 
             if (field != nullptr)
             {
-                throw new InvalidOperationException(ErrMultiplePlatformSingleObject);
+                throw new InvalidOperationException(_errMultiplePlatformSingleObject);
             }
 
             field = value;

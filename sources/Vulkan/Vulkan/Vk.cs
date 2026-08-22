@@ -6,11 +6,11 @@ namespace Silk.NET.Vulkan;
 
 public partial class Vk
 {
-    public const string ErrMultipleInstanceSingleObject =
+    private const string _errMultipleInstanceSingleObject =
         "CurrentInstance cannot be changed once set, use another API object for additional instances. For more "
         + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
 
-    public const string ErrMultipleDeviceSingleObject =
+    private const string _errMultipleDeviceSingleObject =
         "CurrentDevice cannot be changed once set, use another API object for additional devices. For more "
         + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
 
@@ -50,7 +50,7 @@ public partial class Vk
 
                 if (field != nullptr)
                 {
-                    throw new InvalidOperationException(ErrMultipleInstanceSingleObject);
+                    throw new InvalidOperationException(_errMultipleInstanceSingleObject);
                 }
 
                 field = value;
@@ -69,7 +69,7 @@ public partial class Vk
 
                 if (field != nullptr)
                 {
-                    throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
+                    throw new InvalidOperationException(_errMultipleDeviceSingleObject);
                 }
 
                 field = value;
@@ -96,7 +96,7 @@ public partial class Vk
 
             if (field != nullptr)
             {
-                throw new InvalidOperationException(ErrMultipleInstanceSingleObject);
+                throw new InvalidOperationException(_errMultipleInstanceSingleObject);
             }
 
             field = value;
@@ -115,7 +115,7 @@ public partial class Vk
 
             if (field != nullptr)
             {
-                throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
+                throw new InvalidOperationException(_errMultipleDeviceSingleObject);
             }
 
             field = value;
