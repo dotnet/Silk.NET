@@ -222,8 +222,7 @@ SilkTouch does not modify either file.
 The paths for these files correspond to the following options in the `generator.json` file:
 - `Jobs.JOB_NAME.SourceProject`
 - `Jobs.JOB_NAME.Solution`
-
-(TODO: Does this apply to `Jobs.JOB_NAME.TestProject` as well?)
+- `Jobs.JOB_NAME.TestProject` (Test projects are optional and can be omitted from the generator config.)
 
 For the source project file, ensure that the project references the `Silk.NET.Core` project or package by using the
 corresponding `ProjectReference` or `PackageReference`. Also ensure the `AllowUnsafeBlocks` property is set to true.
