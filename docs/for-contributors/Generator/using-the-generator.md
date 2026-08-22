@@ -229,8 +229,6 @@ corresponding `ProjectReference` or `PackageReference`. Also ensure the `AllowUn
 
 > Note: In Silk's repository, `AllowUnsafeBlocks` is set globally by
 > [Directory.Build.props](https://github.com/dotnet/Silk.NET/blob/develop/3.0/Directory.Build.props).
->
-> (TODO: Not sure if other properties are required.)
 
 For the solution file, both `.sln` and `.slnx` file formats are supported. This is because we defer to Roslyn and
 MSBuild under the hood.
