@@ -350,13 +350,19 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
     private readonly IPointerTarget _unboundedPointerTarget;
     private readonly IReadOnlyList<IPointerTarget> _unboundedTargetList;
 
-    public void UpdateFalseTarget(in Box3D<float> bounds)
+    public ISimulatedPointerTarget ApplySimulatedTarget(Func<SdlInputBackend, ISimulatedPointerTarget> createFalseTarget)
     {
-        _falseTarget ??= new FalseTouchSurfaceTarget(backend: Backend);
-        _falseTarget.SetBounds(bounds);
+        if (_falseTarget is null)
+        {
+            _falseTarget = createFalseTarget(Backend);
+            _allTargets.Add(_falseTarget);
+            _activeTargets.Add(_falseTarget);
+        }
+
+        return _falseTarget;
     }
 
-    private FalseTouchSurfaceTarget? _falseTarget;
+    private ISimulatedPointerTarget? _falseTarget;
 
     internal required IInputEventQueue<MouseScrollEvent> ScrollEvents { private get; init; }
     internal required IInputEventQueue<PointChangedEvent> PointEvents { private get; init; }

@@ -84,16 +84,20 @@ internal partial class SdlInputBackend
         }
     }
 
-    public bool TryGetVirtualTouchpad(nint ownerId, int touchpadId, in Maths.Box3D<float> bounds, ulong sdlTimestamp, long timestamp, [NotNullWhen(true)] out SdlTouchSurface? device)
+    public bool TryGetVirtualTouchpad(nint ownerId, int touchpadId, ulong sdlTimestamp, long timestamp, [NotNullWhen(true)] out SdlTouchSurface? device, [NotNullWhen(true)] out ISimulatedPointerTarget? target)
     {
         var hash = HashCode.Combine(ownerId, touchpadId);
         ulong id = Unsafe.As<int, uint>(ref hash);
         if (!TryGetOrCreateDevice(id, timestamp, sdlTimestamp, out device, isSimulated: true))
         {
+            target = null;
             return false;
         }
 
-        device.UpdateFalseTarget(bounds);
+        target = device.ApplySimulatedTarget(CreateSimulatedTarget);
+
         return true;
+
+        static ISimulatedPointerTarget CreateSimulatedTarget(SdlInputBackend backend) => new SimulatedPointerTarget(backend);
     }
 }

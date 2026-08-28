@@ -6,9 +6,9 @@ using Silk.NET.Maths;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
-internal class FalseTouchSurfaceTarget : SdlBoundedPointerTarget
+internal sealed class SimulatedPointerTarget : SdlBoundedPointerTarget, ISimulatedPointerTarget
 {
-    public FalseTouchSurfaceTarget(SdlInputBackend backend) : base(backend)
+    public SimulatedPointerTarget(SdlInputBackend backend) : base(backend)
     {
     }
 
@@ -18,4 +18,9 @@ internal class FalseTouchSurfaceTarget : SdlBoundedPointerTarget
 
 
     protected override Box3D<float> CalculateBounds() => _bounds;
+}
+
+internal interface ISimulatedPointerTarget : IPointerTarget
+{
+    void SetBounds(in Box3D<float> bounds);
 }

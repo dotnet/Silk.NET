@@ -126,24 +126,24 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
             pressure: finger.Pressure,
             sdlTimestamp: finger.Timestamp,
             timestamp: timestamp,
-            isPositionInWindowSpace: true);
+            isPositionInTargetSpace: true);
     }
 
     public void Event(uint fingerId, IPointerTarget? target, Vector3 position, SdlInputBackend.FingerEventType eventType,
-        float pressure, ulong sdlTimestamp, long timestamp, bool isPositionInWindowSpace)
+        float pressure, ulong sdlTimestamp, long timestamp, bool isPositionInTargetSpace)
     {
         switch (eventType)
         {
             case SdlInputBackend.FingerEventType.Motion:
-                AddOrUpdatePoint(fingerId, target, position, pressure, null, null, isPositionInWindowSpace, sdlTimestamp,
+                AddOrUpdatePoint(fingerId, target, position, pressure, null, null, isPositionInTargetSpace, sdlTimestamp,
                     timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Down:
-                AddOrUpdatePoint(fingerId, target, position, pressure, true, null, isPositionInWindowSpace, sdlTimestamp,
+                AddOrUpdatePoint(fingerId, target, position, pressure, true, null, isPositionInTargetSpace, sdlTimestamp,
                     timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Up:
-                AddOrUpdatePoint(fingerId, target, position, pressure, false, null, isPositionInWindowSpace, sdlTimestamp,
+                AddOrUpdatePoint(fingerId, target, position, pressure, false, null, isPositionInTargetSpace, sdlTimestamp,
                     timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Canceled:

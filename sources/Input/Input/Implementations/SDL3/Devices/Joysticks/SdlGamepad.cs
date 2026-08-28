@@ -631,9 +631,9 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
                } SDL_GamepadTouchpadEvent;
              */
 
-        // todo - reconcile top-left zero with whatever the standard in this library is (bottom-left zero?)
+        // todo - reconcile SDL's top-left zero with whatever the standard in this library is (bottom-left zero?)
         var bounds = new Box3D<float>(Vector3D<float>.Zero, Vector3D<float>.One);
-        if (!Backend.TryGetVirtualTouchpad(Id, evt.Touchpad, bounds, evt.Timestamp, timestamp, out var surface))
+        if (!Backend.TryGetVirtualTouchpad(Id, evt.Touchpad, evt.Timestamp, timestamp, out var surface, out var target))
         {
             InputLog.Warn("Failed to retrieve touch surface for gamepad input");
             return;
@@ -641,12 +641,14 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
         Debug.Assert(surface.IsSimulated);
         Debug.Assert(surface.Targets.Count == 1);
-        Debug.Assert(surface.Targets[0] is FalseTouchSurfaceTarget);
+        Debug.Assert(surface.Targets[0] == target);
+
+        target.SetBounds(bounds);
         var fingerId = evt.Finger;
 
         surface.Event(
             fingerId: Unsafe.As<int, uint>(ref fingerId),
-            target: surface.Targets[0],
+            target: target,
             position: new Vector3(evt.X, evt.Y, 0),
             eventType: down switch {
                 true => SdlInputBackend.FingerEventType.Down,
@@ -656,7 +658,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             pressure: evt.Pressure,
             sdlTimestamp: evt.Timestamp,
             timestamp: timestamp,
-            isPositionInWindowSpace: true);
+            isPositionInTargetSpace: true);
     }
 
     public void AddSensorEvent(in GamepadSensorEvent evtGsensor, long timestamp)
