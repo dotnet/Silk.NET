@@ -52,14 +52,14 @@ internal partial class SdlInputBackend : IInputBackend
         _getDisplayId = GetDisplayId;
 
         // subscribe to SDL events
-        var ptr = new EventFilter(OnEvent);
-        if (!Sdl.AddEventWatch(ptr, (Ref)nullptr))
+        _inputSubscriptionEventPtr = new EventFilter(OnEvent);
+        if (!Sdl.AddEventWatch(_inputSubscriptionEventPtr, (Ref)nullptr))
         {
             Sdl.ThrowError();
         }
 
         // set our context ID according to our unique event filter handle
-        Id = (nint)ptr.Handle;
+        Id = (nint)_inputSubscriptionEventPtr.Handle;
 
         // create cursor
         CursorConfiguration = new SdlCursor(Sdl);
@@ -567,11 +567,8 @@ internal partial class SdlInputBackend : IInputBackend
 
     private unsafe void ReleaseUnmanagedResources()
     {
-        Sdl.RemoveEventWatch(
-            new EventFilter((delegate* unmanaged<void*, Event*, byte>)(void*)Id),
-            nullptr
-        );
-        SilkMarshal.Free((Ptr)Id);
+        Sdl.RemoveEventWatch(_inputSubscriptionEventPtr, (Ref)nullptr);
+        _inputSubscriptionEventPtr.Dispose();
     }
 
     public void Dispose()
@@ -788,6 +785,7 @@ internal partial class SdlInputBackend : IInputBackend
 
     private ProcessEventArgs _eventProcessingArgs;
     private bool _pumped;
+    private readonly EventFilter _inputSubscriptionEventPtr;
     private readonly List<TimedRawSdlEvent> _pumpedSdlEventsSorted = new();
     private readonly SdlEventQueue _pumpedSdlEvents = new();
     private readonly SilkEventContext _silkEvents;
