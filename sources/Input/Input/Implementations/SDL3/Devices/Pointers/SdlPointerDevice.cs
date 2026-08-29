@@ -7,6 +7,7 @@ using System.Numerics;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Silk.NET.Input.SDL3.DataStructures;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
@@ -328,9 +329,10 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
         // todo (LOW PRIO) -
         //  use only the given events to update the state of each input device later based on their event queues?
         //  is that possible? keyboard character input would probably be a problem..
-        State.GripPressure = pressure;
         GripEvents.Enqueue(new PointerGripChangedEvent(this, timestamp, pressure, pressure - State.GripPressure),
             sdlTimestamp);
+
+        State.GripPressure = pressure;
     }
 
 
@@ -364,10 +366,10 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
 
     private ISimulatedPointerTarget? _falseTarget;
 
-    internal required IInputEventQueue<MouseScrollEvent> ScrollEvents { private get; init; }
-    internal required IInputEventQueue<PointChangedEvent> PointEvents { private get; init; }
-    internal required IInputEventQueue<PointerClickEvent> ClickEvents { private get; init; }
-    internal required IInputEventQueue<ButtonChangedEvent<PointerButton>> ButtonEvents { private get; init; }
-    internal required IInputEventQueue<PointerGripChangedEvent> GripEvents { private get; init; }
-    internal required IInputEventQueue<PointerTargetChangedEvent> TargetEvents { private get; init; }
+    internal required ISdlInputEventQueue<MouseScrollEvent> ScrollEvents { private get; init; }
+    internal required ISdlInputEventQueue<PointChangedEvent> PointEvents { private get; init; }
+    internal required ISdlInputEventQueue<PointerClickEvent> ClickEvents { private get; init; }
+    internal required ISdlInputEventQueue<ButtonChangedEvent<PointerButton>> ButtonEvents { private get; init; }
+    internal required ISdlInputEventQueue<PointerGripChangedEvent> GripEvents { private get; init; }
+    internal required ISdlInputEventQueue<PointerTargetChangedEvent> TargetEvents { private get; init; }
 }

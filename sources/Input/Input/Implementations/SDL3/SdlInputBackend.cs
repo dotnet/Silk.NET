@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Silk.NET.Input.SDL3.DataStructures;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
 using Silk.NET.Input.SDL3.Devices.Pointers;
 using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
@@ -66,10 +67,10 @@ internal partial class SdlInputBackend : IInputBackend
         var timeBasis = SdlTimestampCalculator.GetHighPrecisionTimeBasis(iterationCount: 4);
 
         // create our event queue
-        _silkEvents = new SilkEventContext(timeBasis);
+        _sdlInputEvents = new SdlInputEventContext(timeBasis);
 
         // create our runtime event processing data structure - convenient for encapsulation purposes
-        _eventProcessingArgs = new ProcessEventArgs(this, _silkEvents.ConnectionInputEvents, [], [], []);
+        _eventProcessingArgs = new ProcessEventArgs(this, _sdlInputEvents.ConnectionEvents, [], [], []);
 
         if (info.Window == nullptr)
         {
@@ -151,17 +152,7 @@ internal partial class SdlInputBackend : IInputBackend
     // (having obviously created a window beforehand but not actually polling events I guess)
     public void Update(IInputHandler? handler = null)
     {
-        if (!_pumped)
-        {
-            Sdl.PumpEvents();
-        }
-
-        _pumped = false;
-        if (handler == null)
-        {
-            _pumpedSdlEvents.Clear();
-            return;
-        }
+        Sdl.PumpEvents();
 
         // QUESTION - do we want this before or after the event processing? or should
         // it always just be done in the same way as other input events? e.g. via events
@@ -169,43 +160,46 @@ internal partial class SdlInputBackend : IInputBackend
         // have the latest information when they're updated, we should be good?
         UpdatePointerTargets(_eventProcessingArgs.SdlWindowTargets, _eventProcessingArgs.SdlDisplayTargets);
 
-        // actually process the events
-        if (!_pumpedSdlEvents.HasEvents)
+        // actually process the events in-order
+        if (_pumpedSdlEvents.HasEvents)
         {
-            return;
-        }
-
-        while (_pumpedSdlEvents.TryDequeue(out var evt))
-        {
-            _pumpedSdlEventsSorted.Add(evt);
-        }
-
-        var sortedSpan = CollectionsMarshal.AsSpan(_pumpedSdlEventsSorted);
-        sortedSpan.StableSort((x, y) => x.Event.Common.Timestamp.CompareTo(y.Event.Common.Timestamp));
-
-        foreach (var evt in _pumpedSdlEventsSorted)
-        {
-            ProcessEvent(evt.Event, evt.Timestamp, ref _eventProcessingArgs);
-        }
-
-        _pumpedSdlEventsSorted.Clear();
-
-        var devices = _eventProcessingArgs.Devices;
-        for (var index = 0; index < devices.Count; index++)
-        {
-            var device = devices[index];
-            if (device is SdlGamepad gamepad)
+            while (_pumpedSdlEvents.TryDequeue(out var evt))
             {
-                gamepad.ExecuteRumble();
+                _pumpedSdlEventsSorted.Add(evt);
             }
 
-            if (device is INeedFinalizationEachFrame needer)
+            var sortedSpan = CollectionsMarshal.AsSpan(_pumpedSdlEventsSorted);
+            sortedSpan.StableSort(_timedRawSdlEventComparison);
+
+            for (var index = 0; index < sortedSpan.Length; index++)
             {
-                needer.FinalizeUpdate();
+                ref readonly var evt = ref sortedSpan[index];
+                ProcessEvent(evt.Event, evt.StopwatchTimestamp, ref _eventProcessingArgs);
+            }
+
+            _pumpedSdlEventsSorted.Clear();
+
+
+            var devices = _eventProcessingArgs.Devices;
+            for (var index = 0; index < devices.Count; index++)
+            {
+                var device = devices[index];
+                if (device is SdlGamepad gamepad)
+                {
+                    gamepad.ExecuteRumble();
+                }
+
+                if (device is INeedFinalizationEachFrame needer)
+                {
+                    needer.FinalizeUpdate();
+                }
+            }
+
+            if (handler is not null)
+            {
+                _sdlInputEvents.RaiseEvents(handler);
             }
         }
-
-        _silkEvents.RaiseEvents(handler);
     }
 
 
@@ -213,7 +207,6 @@ internal partial class SdlInputBackend : IInputBackend
     // ?? [UnmanagedFunctionPointer()]
     private unsafe byte OnEvent(void* arg0, Event* arg1)
     {
-        _pumped = true;
         _pumpedSdlEvents.Add(ref *arg1);
         return 1;
     }
@@ -620,20 +613,22 @@ internal partial class SdlInputBackend : IInputBackend
 
     private readonly struct TimedRawSdlEvent
     {
-        public readonly long Timestamp;
+        public readonly long StopwatchTimestamp;
         public readonly Event Event;
 
         public TimedRawSdlEvent(Event @event, long timestamp)
         {
             Event = @event;
-            Timestamp = timestamp;
+            StopwatchTimestamp = timestamp;
         }
     }
 
-    private class SdlEventQueue
+    private class EventQueue
     {
         private TimedRawSdlEvent[] _events = new TimedRawSdlEvent[256];
         private int _nextEventIndex;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Add(ref Event p0)
         {
             var timestamp = Stopwatch.GetTimestamp();
@@ -646,6 +641,23 @@ internal partial class SdlInputBackend : IInputBackend
             _events[_nextEventIndex++] = new TimedRawSdlEvent(p0, timestamp);
         }
 
+        #if DEBUG
+        private bool NeedsSort()
+        {
+            for(var i = 1; i < _nextEventIndex; i++)
+            {
+                ref readonly var first = ref _events[i - 1];
+                ref readonly var second = ref _events[i];
+                if (first.Event.Common.Timestamp > second.Event.Common.Timestamp || first.StopwatchTimestamp > second.StopwatchTimestamp)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        #endif
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool TryDequeue(out TimedRawSdlEvent p0)
         {
@@ -655,31 +667,35 @@ internal partial class SdlInputBackend : IInputBackend
                 return false;
             }
 
+#if DEBUG // todo - remove sort checks once tested on a variety of machines/platforms
             if (!_isSorted)
             {
-                // sort the events by timestamp
-                var span = _events.AsSpan(0, _nextEventIndex);
+                var needsSort = NeedsSort();
 
-                // order in descending order, such that "de-queueing" the last event will return the first chronological event in the queue (last event in the array)
-                span.StableSort((e1, e2) => e2.Timestamp.CompareTo(e1.Timestamp));
+                if (needsSort)
+                {
+                    InputLog.Error("Needs pre-sort by timestamp - please alert maintainer");
+
+                    // sort the events by timestamp
+                    var span = _events.AsSpan(0, _nextEventIndex);
+
+                    // order in descending order, such that "de-queueing" the last event will return the first chronological event in the queue (last event in the array)
+                    span.StableSort((e1, e2) => e2.StopwatchTimestamp.CompareTo(e1.StopwatchTimestamp));
+                }
+
                 _isSorted = true;
             }
+#endif
 
             p0 = _events[--_nextEventIndex];
             return true;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Clear()
-        {
-            _nextEventIndex = 0;
-            _isSorted = false;
-        }
-
         public bool HasEvents => _nextEventIndex > 0;
 
+        #if DEBUG
         private bool _isSorted;
-
+        #endif
     }
 
     /// <summary>
@@ -694,7 +710,7 @@ internal partial class SdlInputBackend : IInputBackend
         public readonly List<SdlDisplayTarget> SdlDisplayTargets;
         public ulong PreviousTimestamp;
         private readonly List<SdlDevice> _devices;
-        private readonly IInputEventQueue<ConnectionEvent> _connectionEventQueue;
+        private readonly ISdlInputEventQueue<ConnectionEvent> _connectionEventQueue;
         private readonly HashSet<nint> _deviceRegistry = [];
 
         /// <param name="backend">The SDL input backend that these args are for</param>
@@ -702,7 +718,7 @@ internal partial class SdlInputBackend : IInputBackend
         /// <param name="sdlDevices">A list of sdl devices. If not provided, a new list will be allocated.</param>
         /// <param name="sdlWindowTargets">A list of sdl window targets. If not provided, a new list will be allocated.</param>
         /// <param name="sdlDisplayTargets">A list of sdl display targets. If not provided, a new list will be allocated.</param>
-        public ProcessEventArgs(SdlInputBackend backend, IInputEventQueue<ConnectionEvent> connectionEventQueue,
+        public ProcessEventArgs(SdlInputBackend backend, ISdlInputEventQueue<ConnectionEvent> connectionEventQueue,
             List<SdlDevice>? sdlDevices = null, List<SdlWindowTarget>? sdlWindowTargets = null,
             List<SdlDisplayTarget>? sdlDisplayTargets = null)
         {
@@ -782,13 +798,15 @@ internal partial class SdlInputBackend : IInputBackend
     }
 
     // NOTE: Be careful where these are used!
-
     private ProcessEventArgs _eventProcessingArgs;
-    private bool _pumped;
+
+    private static readonly Comparison<TimedRawSdlEvent> _timedRawSdlEventComparison =
+        (x, y) => x.Event.Common.Timestamp.CompareTo(y.Event.Common.Timestamp);
+
     private readonly EventFilter _inputSubscriptionEventPtr;
     private readonly List<TimedRawSdlEvent> _pumpedSdlEventsSorted = new();
-    private readonly SdlEventQueue _pumpedSdlEvents = new();
-    private readonly SilkEventContext _silkEvents;
+    private readonly EventQueue _pumpedSdlEvents = new();
+    private readonly SdlInputEventContext _sdlInputEvents;
 }
 
 

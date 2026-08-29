@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 
+using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
@@ -44,7 +46,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     public static readonly Type UnderlyingType = typeof(T).GetEnumUnderlyingType();
 
     private static readonly T[] _allValuesOrdered;
-    private static readonly Dictionary<T, int> _numericallyDistinctIndices;
+    private static readonly ConcurrentDictionary<T, int> _numericallyDistinctIndices;
     private static readonly ulong[] _allEnumValuesDistinctRaw;
     private static readonly bool _unnamedAreIndexable;
 #pragma warning disable CS0414 // Field is assigned but its value is never used
@@ -136,14 +138,19 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
             throw new InvalidOperationException("Enum provided uses an unknown numeric base??");
         }
 
-        var dict = new Dictionary<T, int>(numericallyDistinct.Length);
+        var dict = new ConcurrentDictionary<T, int>(
+            concurrencyLevel: -1, // defaults to Environment.ProcessorCount at time of writing
+            capacity: numericallyDistinct.Length);
+
         for (var index = 0; index < numericallyDistinct.Length; index++)
         {
             var enumVal = numericallyDistinct[index];
+#if DEBUG
+            Debug.Assert(dict.TryAdd(enumVal, index));
+#else
+            _ = dict.TryAdd(enumVal, index);
+#endif
 
-            // get attribute and check for ignore
-
-            dict.Add(enumVal, index);
         }
 
         _allValuesOrdered = all;
@@ -207,7 +214,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         if (_numericallyDistinctIndices.Count < _maxCapacity)
         {
 #if DEBUG
-            System.Diagnostics.Debug.Assert(_numericallyDistinctIndices.TryAdd(value, idx));
+            Debug.Assert(_numericallyDistinctIndices.TryAdd(value, idx));
 #else
             _ = _numericallyDistinctIndices.TryAdd(value, idx);
 #endif

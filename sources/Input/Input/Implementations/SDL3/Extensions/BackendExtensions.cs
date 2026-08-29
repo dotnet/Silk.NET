@@ -74,7 +74,7 @@ internal static unsafe class BackendExtensions
 
                 var hash64Bytes = (byte*)&original;
 
-                for (int i = 0; i < withBytes.Length; i += 8)
+                for (int i = 0; i < withBytes.Length; ++i)
                 {
                     hash64Bytes[i % 8] ^= withBytes[i];
                 }

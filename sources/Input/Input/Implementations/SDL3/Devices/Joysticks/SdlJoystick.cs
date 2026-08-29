@@ -3,6 +3,7 @@
 
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Silk.NET.Input.SDL3.DataStructures;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Joysticks;
@@ -13,44 +14,44 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     private JoystickType _joystickType;
     internal JoystickHandle JoystickHandle { get; private set; }
 
-    public static SdlJoystick CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlJoystick CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
         nint uniqueId = 0;
 
         var guid = backend.Sdl.GetJoystickGuidForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(new ReadOnlySpan<byte>(&guid, 16), ref uniqueId))
         {
-            return CreatePls(backend, uniqueId, sdlDeviceId, silkEvents);
+            return CreatePls(backend, uniqueId, sdlDeviceId, sdlInputEvents);
         }
 
         var pathPtr = backend.Sdl.GetJoystickPathForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(pathPtr, ref uniqueId))
         {
-            return CreatePls(backend, uniqueId, sdlDeviceId, silkEvents);
+            return CreatePls(backend, uniqueId, sdlDeviceId, sdlInputEvents);
         }
 
         var name = backend.Sdl.GetJoystickNameForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(name, ref uniqueId))
         {
-            return CreatePls(backend, uniqueId, sdlDeviceId, silkEvents);
+            return CreatePls(backend, uniqueId, sdlDeviceId, sdlInputEvents);
         }
 
         var type = backend.Sdl.GetJoystickTypeForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(type, ref uniqueId))
         {
-            return CreatePls(backend, uniqueId, sdlDeviceId, silkEvents);
+            return CreatePls(backend, uniqueId, sdlDeviceId, sdlInputEvents);
         }
 
         uniqueId = SdlInputBackend.FallbackUniqueId<SdlJoystick>(sdlDeviceId, uniqueId);
-        return CreatePls(backend, uniqueId, sdlDeviceId, silkEvents);
+        return CreatePls(backend, uniqueId, sdlDeviceId, sdlInputEvents);
 
         static SdlJoystick CreatePls(SdlInputBackend sdlInputBackend, nint uniqueId, ulong sdlDeviceId,
-            SilkEventContext context)
+            SdlInputEventContext context)
         {
             return new SdlJoystick(sdlDeviceId, uniqueId, sdlInputBackend) {
-                ButtonEvents = context.ButtonChangedInputEvents,
-                AxisEvents = context.JoystickAxisMoveInputEvents,
-                HatEvents = context.JoystickHatMoveInputEvents
+                ButtonEvents = context.ButtonChangedEvents,
+                AxisEvents = context.JoystickAxisMoveEvents,
+                HatEvents = context.JoystickHatMoveEvents
             };
         }
     }
@@ -251,9 +252,9 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     internal const short DigitalThreshold = short.MaxValue / 8;
 
     // events
-    internal required IInputEventQueue<ButtonChangedEvent<JoystickButton>> ButtonEvents { get; init; }
-    internal required IInputEventQueue<JoystickAxisMoveEvent> AxisEvents { get; init; }
-    internal required IInputEventQueue<JoystickHatMoveEvent> HatEvents { get; init; }
+    internal required ISdlInputEventQueue<ButtonChangedEvent<JoystickButton>> ButtonEvents { get; init; }
+    internal required ISdlInputEventQueue<JoystickAxisMoveEvent> AxisEvents { get; init; }
+    internal required ISdlInputEventQueue<JoystickHatMoveEvent> HatEvents { get; init; }
 
     ButtonReadOnlyList<JoystickButton> IButtonDevice<JoystickButton>.State => State.Buttons;
 

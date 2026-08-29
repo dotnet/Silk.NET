@@ -93,7 +93,6 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
     public void Dispose()
     {
         FreeCurrentCursor();
-        DisposeCursorSurface(ref _customCursorSurface);
     }
 
     private void FreeCurrentCursor()
@@ -106,7 +105,7 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
         _sdl.DestroyCursor(_handle);
         _handle = default;
 
-        if (_handleStyle == CursorStyles.Custom)
+        if (_customCursorSurface != null)
         {
             DisposeCursorSurface(ref _customCursorSurface);
         }
@@ -119,7 +118,14 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
         if(surface != null)
         {
             _sdl.DestroySurface(surface);
-            _customCursorSurface = null;
+            surface = null;
+        }
+
+        if (_customCursorImage != null)
+        {
+            NativeMemory.AlignedFree(_customCursorImage);
+            _customCursorImage = null;
+            _cursorImageLengthBytes = 0;
         }
     }
 
@@ -147,7 +153,7 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
             else
             {
                 successfulStyles |= cursorStyle;
-                sdl.Free(cursor.Handle);
+                sdl.DestroyCursor(cursor);
             }
         }
 
@@ -222,7 +228,7 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
         get
         {
             var byteCount = _customCursorWidth * _customCursorHeight * 4;
-            var myBytes = _customCursorImage.AsSpan(..byteCount);
+            var myBytes = new Span<byte>(_customCursorImage, byteCount);
             var asInts = MemoryMarshal.Cast<byte, int>(myBytes);
             return new CustomCursor { Width = _customCursorWidth, Height = _customCursorHeight, Data = asInts };
         }
@@ -240,13 +246,20 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
             _customCursorHeight = value.Height;
             _customCursorWidth = value.Width;
             var byteCount = necessaryLength * 4;
-            if (_customCursorImage is null || _customCursorImage.Length < byteCount)
+            if (_customCursorImage is null)
             {
-                _customCursorImage = GC.AllocateUninitializedArray<byte>(byteCount, pinned: true);
+                _customCursorImage = (byte*)NativeMemory.AlignedAlloc((nuint)byteCount, alignment: 64);
+            }
+            else if (byteCount > _cursorImageLengthBytes)
+            {
+                NativeMemory.AlignedFree(_customCursorImage);
+                _customCursorImage = (byte*)NativeMemory.AlignedAlloc((nuint)byteCount, alignment: 64);
             }
 
+            _cursorImageLengthBytes = byteCount;
+
             // copy the user data to our fixed array
-            var myBytes = _customCursorImage.AsSpan(..byteCount);
+            var myBytes = new Span<byte>(_customCursorImage, byteCount);
             var providedBytes = MemoryMarshal.Cast<int, byte>(value.Data);
             providedBytes.CopyTo(myBytes);
 
@@ -272,14 +285,11 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
                 }
                 else
                 {
-                    customCursorSurface = _sdl.CreateSurface(val.Width, val.Height, PixelFormat.Argb8888);
+                    customCursorSurface = CreateSurface(val);
                 }
 
-                // ensure the surface's pixel data is our fixed array
-                fixed (byte* ptr = _customCursorImage)
-                {
-                    customCursorSurface->Pixels = ptr;
-                }
+                // ensure the surface's pixel data is our native memory
+                customCursorSurface->Pixels = _customCursorImage;
 
                 return;
 
@@ -293,6 +303,7 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
 
     private Surface* _customCursorSurface;
     private int _customCursorHeight, _customCursorWidth;
-    private byte[]? _customCursorImage;
+    private byte* _customCursorImage;
+    private int _cursorImageLengthBytes;
 
 }

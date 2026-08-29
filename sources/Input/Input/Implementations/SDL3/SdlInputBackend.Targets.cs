@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
+using Silk.NET.Input.SDL3.DataStructures;
 using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 using Silk.NET.SDL;
 

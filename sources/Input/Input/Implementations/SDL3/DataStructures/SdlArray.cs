@@ -1,18 +1,22 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
 
-namespace Silk.NET.Input.SDL3;
+namespace Silk.NET.Input.SDL3.DataStructures;
 
-// note - this probably doesn't need to be a ref struct, but is bc that's the extents
+// note - this probably doesn't need to be a ref struct, but is bc that's the extent
 // of the struct's current use cases
 // LONG-TERM DOM-SPECIFIC TO-DO - can this struct be represented as a NativeArray<T, TBackend> where TBackend has a
 //  Free(void*) or Free(void*, int) method?
-internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArray<T>>, IReadOnlyList<T> where T : unmanaged
+/// <summary>
+/// Represents an array of values produced by SDL. For .NET-allocated native memory, see
+/// <seealso cref="NativeMemory{T}"/>.
+/// </summary>
+/// <typeparam name="T">The type of values in the array - usually SDL struct types.</typeparam>
+internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArray<T>> where T : unmanaged
 {
     private readonly Ptr<T> _ptr;
     public int Count { get; }
@@ -76,8 +80,6 @@ internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArr
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public ReadOnlySpan<T> AsReadOnlySpan() => _ptr.Native == null ? default : new ReadOnlySpan<T>(_ptr.Native, Count);
 
-    T IReadOnlyList<T>.this[int index] => this[index];
-
     public ref T this[int index]
     {
         get
@@ -106,17 +108,6 @@ internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArr
 
     public bool Equals(SdlArray<T> other) => this == other;
 
-    public IEnumerator<T> GetEnumerator()
-    {
-        if (_ptr == nullptr)
-        {
-            throw new NullReferenceException();
-        }
-
-        return (IEnumerator<T>)AsReadOnlySpan().ToArray().GetEnumerator();
-    }
-
     public override bool Equals(object? obj) => obj == null && _ptr.Native == null;
     public override int GetHashCode() => HashCode.Combine(_ptr, Count, _sdl);
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }

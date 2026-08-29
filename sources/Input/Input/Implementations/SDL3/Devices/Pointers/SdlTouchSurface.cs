@@ -23,7 +23,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
 {
     // todo - touch surfaces need to stick around forever?
     public static SdlTouchSurface CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated,
-        SdlInputBackend backend, SilkEventContext silkEvents)
+        SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
         var namePtr = backend.Sdl.GetTouchDeviceName(sdlDeviceId);
 
@@ -52,12 +52,12 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
             var deviceType = isSimulated ? TouchDeviceType.Invalid : backend.Sdl.GetTouchDeviceType(sdlDeviceId);
             return new SdlTouchSurface(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, deviceType,
                 isSimulated) {
-                ScrollEvents = silkEvents.MouseScrollInputEvents,
-                PointEvents = silkEvents.PointChangedInputEvents,
-                ClickEvents = silkEvents.PointerClickInputEvents,
-                ButtonEvents = silkEvents.PointerButtonInputEvents,
-                GripEvents = silkEvents.PointerGripChangedInputEvents,
-                TargetEvents = silkEvents.PointerTargetChangedInputEvents
+                ScrollEvents = sdlInputEvents.MouseScrollEvents,
+                PointEvents = sdlInputEvents.PointChangedEvents,
+                ClickEvents = sdlInputEvents.PointerClickEvents,
+                ButtonEvents = sdlInputEvents.PointerButtonEvents,
+                GripEvents = sdlInputEvents.PointerGripChangedEvents,
+                TargetEvents = sdlInputEvents.PointerTargetChangedEvents
             };
         }
     }
@@ -108,7 +108,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Event(in TouchFingerEvent finger, SdlInputBackend.FingerEventType fingerType, long timestamp)
     {
-        Vector3 position = new Vector3(finger.X, finger.Y, 0);
+        var position = new Vector3(finger.X, finger.Y, 0);
         if (Backend.TryGetPointerTargetForWindow(finger.WindowID, out var target))
         {
             position *= target.Bounds.Size.ToSystem();
@@ -119,7 +119,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
         }
 
         Event(
-            fingerId: (uint)(finger.TouchID % int.MaxValue),
+            fingerId: (uint)(finger.FingerID % int.MaxValue),
             target: target,
             position: position,
             eventType: fingerType,

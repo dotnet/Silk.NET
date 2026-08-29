@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Silk.NET.Input.SDL3.DataStructures;
 using Silk.NET.Input.SDL3.Devices.Pointers;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
@@ -230,7 +231,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     #endregion
 
     public static SdlGamepad? CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated,
-        SdlInputBackend backend, SilkEventContext context)
+        SdlInputBackend backend, SdlInputEventContext context)
     {
         if (!backend.TryGetOrCreateDevice<SdlJoystick>(sdlDeviceId, timestamp, sdlTimestamp, out var joystick))
         {
@@ -243,8 +244,8 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         if (backend.AttemptUniqueId(gpn, ref joystickUniqueId))
         {
             return new SdlGamepad(joystick, uniqueId: joystickUniqueId) {
-                ThumbstickEvents = context.GamepadThumbstickMoveInputEvents,
-                TriggerEvents = context.GamepadTriggerMoveInputEvents,
+                ThumbstickEvents = context.GamepadThumbstickMoveEvents,
+                TriggerEvents = context.GamepadTriggerMoveEvents,
             };
         }
 
@@ -253,15 +254,15 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         if (backend.AttemptUniqueId(guid, ref joystickUniqueId))
         {
             return new SdlGamepad(joystick, uniqueId: joystickUniqueId) {
-                ThumbstickEvents = context.GamepadThumbstickMoveInputEvents,
-                TriggerEvents = context.GamepadTriggerMoveInputEvents,
+                ThumbstickEvents = context.GamepadThumbstickMoveEvents,
+                TriggerEvents = context.GamepadTriggerMoveEvents,
             };
         }
 
         joystickUniqueId = SdlInputBackend.FallbackUniqueId<SdlGamepad>(sdlDeviceId, joystickUniqueId);
         var sdlGamepad = new SdlGamepad(joystick, uniqueId: joystickUniqueId) {
-            ThumbstickEvents = context.GamepadThumbstickMoveInputEvents,
-            TriggerEvents = context.GamepadTriggerMoveInputEvents,
+            ThumbstickEvents = context.GamepadThumbstickMoveEvents,
+            TriggerEvents = context.GamepadTriggerMoveEvents,
         };
         return sdlGamepad;
     }
@@ -603,8 +604,8 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     private FrozenDictionary<int, GamepadBinding> _bindings;
     private readonly List<List<GamepadBinding>?> _hatBindings = [];
-    internal required IInputEventQueue<GamepadThumbstickMoveEvent> ThumbstickEvents { get; init; }
-    internal required IInputEventQueue<GamepadTriggerMoveEvent> TriggerEvents { get; init; }
+    internal required ISdlInputEventQueue<GamepadThumbstickMoveEvent> ThumbstickEvents { get; init; }
+    internal required ISdlInputEventQueue<GamepadTriggerMoveEvent> TriggerEvents { get; init; }
 
 
     JoystickState IJoystick.State => Joystick.State;

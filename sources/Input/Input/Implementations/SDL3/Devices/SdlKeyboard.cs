@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.KeyHandling;
+using Silk.NET.Input.SDL3.DataStructures;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
@@ -22,7 +23,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     private bool _hasUpdates;
 
-    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
         var namePtr = backend.Sdl.GetKeyboardNameForID((uint)sdlDeviceId);
 
@@ -36,14 +37,14 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
             if (backend.AttemptUniqueId(namePtr, ref uniqueId))
             {
                 return new SdlKeyboard(sdlDeviceId, uniqueId, backend) {
-                    KeyChangedEvents = silkEvents.KeyChangedInputEvents, KeyCharEvents = silkEvents.KeyCharInputEvents
+                    KeyChangedEvents = sdlInputEvents.KeyChangedEvents, KeyCharEvents = sdlInputEvents.KeyCharEvents
                 };
             }
         }
 
         uniqueId = SdlInputBackend.FallbackUniqueId<SdlKeyboard>(sdlDeviceId, uniqueId);
         return new SdlKeyboard(sdlDeviceId, uniqueId, backend) {
-            KeyChangedEvents = silkEvents.KeyChangedInputEvents, KeyCharEvents = silkEvents.KeyCharInputEvents
+            KeyChangedEvents = sdlInputEvents.KeyChangedEvents, KeyCharEvents = sdlInputEvents.KeyCharEvents
         };
     }
 
@@ -259,8 +260,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
     private ushort _modState;
     private const float _pressureMultiplier = 1f / 255f;
     private readonly ButtonStates _keyStates;
-    internal required IInputEventQueue<KeyChangedEvent> KeyChangedEvents;
-    internal required IInputEventQueue<KeyCharEvent> KeyCharEvents;
+    internal required ISdlInputEventQueue<KeyChangedEvent> KeyChangedEvents;
+    internal required ISdlInputEventQueue<KeyCharEvent> KeyCharEvents;
 
     private class ButtonStates : IReadOnlyList<Button<KeyName>>
     {

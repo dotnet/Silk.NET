@@ -1,11 +1,13 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.Input;
 
 internal static class SortExtensions
 {
-    extension<T>(Span<T> span)
+    extension<T>(Span<T> span) where T : unmanaged
     {
         /// <summary>
         /// Sorts the given span of items using the given comparison, using merge sort.
@@ -159,6 +161,7 @@ internal static class SortExtensions
                             Reverse(span, middle, last);
                             Reverse(span, first, last);
 
+                            return;
 
                             static void Reverse(Span<T> span, int start, int end)
                             {
@@ -178,8 +181,8 @@ internal static class SortExtensions
         /// keys[1] is directly associated with values[1], etc.
         /// Uses merge sort.
         /// </summary>
-        public void StableSortWith<TValue>(Span<TValue> values,
-            Comparison<T> comparison)
+        public unsafe void StableSortWith<TValue>(NativeMemory<TValue>.UnsafeView values, Comparison<T> comparison)
+            where TValue : struct
         {
             if (span.Length != values.Length)
             {
@@ -201,16 +204,17 @@ internal static class SortExtensions
             var mid = span.Length >> 1;
             var leftKeys = span[..mid];
             var rightKeys = span[mid..];
-            var leftValues = values[..mid];
-            var rightValues = values[mid..];
+            var leftValues = new NativeMemory<TValue>.UnsafeView(values.Ptr, 0, mid);
+            var rightValues = new NativeMemory<TValue>.UnsafeView(values.Ptr, mid, values.Length - mid);
 
             leftKeys.StableSortWith(leftValues, comparison);
             rightKeys.StableSortWith(rightValues, comparison);
             Merge(span, values, mid, comparison);
             return;
 
-            static void InsertionSort(Span<T> keys, Span<TValue> values, Comparison<T> comparison)
+            static unsafe void InsertionSort(Span<T> keys, NativeMemory<TValue>.UnsafeView valueView, Comparison<T> comparison)
             {
+                var values = valueView.Ptr;
                 for (var i = 1; i < keys.Length; i++)
                 {
                     var key = keys[i];
@@ -230,7 +234,7 @@ internal static class SortExtensions
             }
 
 
-            static void Merge(Span<T> keys, Span<TValue> values, int mid, Comparison<T> comparison)
+            static void Merge(Span<T> keys, NativeMemory<TValue>.UnsafeView values, int mid, Comparison<T> comparison)
             {
                 if (mid <= 0 || mid >= keys.Length)
                 {
@@ -245,7 +249,7 @@ internal static class SortExtensions
                 MergeRange(keys, values, 0, mid, keys.Length, comparison);
                 return;
 
-                static void MergeRange(Span<T> keys, Span<TValue> values, int start, int mid, int end,
+                static void MergeRange(Span<T> keys, NativeMemory<TValue>.UnsafeView values, int start, int mid, int end,
                     Comparison<T> comparison)
                 {
                     while (true)
@@ -332,7 +336,7 @@ internal static class SortExtensions
                             return start;
                         }
 
-                        static void Rotate(Span<T> keys, Span<TValue> values, int first, int middle, int last)
+                        static void Rotate(Span<T> keys, NativeMemory<TValue>.UnsafeView values, int first, int middle, int last)
                         {
                             Reverse(keys, values, first, middle);
                             Reverse(keys, values, middle, last);
@@ -340,7 +344,7 @@ internal static class SortExtensions
 
                             return;
 
-                            static void Reverse(Span<T> keys, Span<TValue> values, int start, int end)
+                            static void Reverse(Span<T> keys, NativeMemory<TValue>.UnsafeView values, int start, int end)
                             {
                                 for (int i = start, j = end - 1; i < j; i++, j--)
                                 {

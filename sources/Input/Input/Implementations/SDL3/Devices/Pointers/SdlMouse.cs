@@ -69,7 +69,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         (SdlMouseInputFlags)NativeBackend.GetMouseState((float*)Unsafe.AsPointer(ref x),
             (float*)Unsafe.AsPointer(ref y));
 
-    public static SdlMouse CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlMouse CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
         var deviceName = backend.Sdl.GetMouseNameForID((uint)sdlDeviceId);
         nint uniqueId = 0;
@@ -80,12 +80,12 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 
         var mouse =
             new SdlMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, backend.CursorConfiguration) {
-                ScrollEvents = silkEvents.MouseScrollInputEvents,
-                PointEvents = silkEvents.PointChangedInputEvents,
-                ClickEvents = silkEvents.PointerClickInputEvents,
-                ButtonEvents = silkEvents.PointerButtonInputEvents,
-                GripEvents = silkEvents.PointerGripChangedInputEvents,
-                TargetEvents = silkEvents.PointerTargetChangedInputEvents
+                ScrollEvents = sdlInputEvents.MouseScrollEvents,
+                PointEvents = sdlInputEvents.PointChangedEvents,
+                ClickEvents = sdlInputEvents.PointerClickEvents,
+                ButtonEvents = sdlInputEvents.PointerButtonEvents,
+                GripEvents = sdlInputEvents.PointerGripChangedEvents,
+                TargetEvents = sdlInputEvents.PointerTargetChangedEvents
             };
 
         return mouse;
@@ -204,7 +204,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
             3 => PointerButton.Secondary,
             4 => PointerButton.Button4,
             5 => PointerButton.Button5,
-            _ => throw new ArgumentOutOfRangeException(nameof(evtButton.Button), evtButton.Button, null)
+            _ => PointerButton.Button5 + evtButton.Button - 5
         };
         //var button = PointerButton.Primary + (evtButton.Button - 1);
         const float mult = 1 / 255f;
@@ -225,6 +225,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         {
             pWheelPosition.Y = 0;
         }
+
 
         AddMouseScrollEvent(
             scrollWheelPosition: _state.WheelPosition = pWheelPosition + delta,

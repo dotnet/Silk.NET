@@ -138,26 +138,35 @@ public class InputContext
 
     void IInputHandler<ConnectionEvent>.Handle(ConnectionEvent e) => HandleDeviceConnectionChanged(e);
 
-    private void HandleDeviceConnectionChanged(ConnectionEvent e)
+    private void HandleDeviceConnectionChanged(ConnectionEvent evt)
     {
-        InputLog.Debug($"Input device connection changed: {e}");
-        _pointers?.HandleDeviceConnectionChanged(e);
-        _joysticks?.HandleDeviceConnectionChanged(e);
-        _gamepads?.HandleDeviceConnectionChanged(e);
-        _keyboards?.HandleDeviceConnectionChanged(e);
+        InputLog.Debug($"Input device connection changed: {evt}");
+        _pointers?.HandleDeviceConnectionChanged(evt);
+        _joysticks?.HandleDeviceConnectionChanged(evt);
+        _gamepads?.HandleDeviceConnectionChanged(evt);
+        _keyboards?.HandleDeviceConnectionChanged(evt);
 
-        if (_devices is null)
+
+        if (_devices is not null)
         {
-            return;
+
+            if (evt.IsConnected)
+            {
+                _devices.Add(evt.Device);
+            }
+            else
+            {
+                _devices.Remove(evt.Device);
+            }
         }
 
-        if (e.IsConnected)
+        try
         {
-            _devices.Add(e.Device);
+            ConnectionChanged?.Invoke(evt);
         }
-        else
+        catch (Exception e)
         {
-            _devices.Remove(e.Device);
+            InputLog.Error(e.ToString());
         }
     }
 
@@ -212,7 +221,15 @@ public class InputContext
     void IInputHandler.HandleDeviceConnectionChanged(ConnectionEvent @event)
     {
         HandleDeviceConnectionChanged(@event);
-        ConnectionChanged?.Invoke(@event);
+
+        try
+        {
+            ConnectionChanged?.Invoke(@event);
+        }
+        catch (Exception e)
+        {
+            InputLog.Error(e.ToString());
+        }
     }
 
     IEnumerator<IInputBackend> IEnumerable<IInputBackend>.GetEnumerator() =>
@@ -232,6 +249,8 @@ public class InputContext
         {
             HandleBackendRemoval(backend);
         }
+
+        _backends.Clear();
     }
 
     bool ICollection<IInputBackend>.Contains(IInputBackend item) => _backends.Contains(item);

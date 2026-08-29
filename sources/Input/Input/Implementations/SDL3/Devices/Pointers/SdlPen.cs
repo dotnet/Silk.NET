@@ -20,7 +20,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         State = new PointerState(Buttons, Points);
     }
 
-    public static SdlPen CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SilkEventContext silkEvents)
+    public static SdlPen CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
         nint uniqueId = 0;
 
@@ -52,12 +52,12 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         SdlPen Create()
         {
             return new SdlPen(backend, uniqueId, sdlDeviceId, name.ReadToString(), backend.UnboundedPointerTarget) {
-                ScrollEvents = silkEvents.MouseScrollInputEvents,
-                PointEvents = silkEvents.PointChangedInputEvents,
-                ClickEvents = silkEvents.PointerClickInputEvents,
-                ButtonEvents = silkEvents.PointerButtonInputEvents,
-                GripEvents = silkEvents.PointerGripChangedInputEvents,
-                TargetEvents = silkEvents.PointerTargetChangedInputEvents
+                ScrollEvents = sdlInputEvents.MouseScrollEvents,
+                PointEvents = sdlInputEvents.PointChangedEvents,
+                ClickEvents = sdlInputEvents.PointerClickEvents,
+                ButtonEvents = sdlInputEvents.PointerButtonEvents,
+                GripEvents = sdlInputEvents.PointerGripChangedEvents,
+                TargetEvents = sdlInputEvents.PointerTargetChangedEvents
             };
         }
     }
