@@ -546,16 +546,17 @@ internal partial class SdlInputBackend : IInputBackend
     }
 
 
-    private unsafe void ReleaseUnmanagedResources()
+    private void ReleaseUnmanagedResources()
     {
         Sdl.RemoveEventWatch(_inputSubscriptionEventPtr, (Ref)nullptr);
         _inputSubscriptionEventPtr.Dispose();
+        Sdl.QuitSubSystem(SdlInitFlags);
+        _sdlInputEvents.Dispose();
     }
 
     public void Dispose()
     {
         ReleaseUnmanagedResources();
-        Sdl.QuitSubSystem(SdlInitFlags);
         GC.SuppressFinalize(this);
     }
 

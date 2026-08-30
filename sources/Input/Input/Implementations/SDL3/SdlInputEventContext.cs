@@ -12,7 +12,7 @@ namespace Silk.NET.Input.SDL3;
 /// <br/><br/>
 /// To use this class, create an instance of it and share its various event queues with SDL event producers
 /// </summary>
-internal class SdlInputEventContext
+internal sealed class SdlInputEventContext : IDisposable
 {
     public ISdlInputEventQueue<ButtonChangedEvent<JoystickButton>> JoyButtonChangedEvents => _joyButtonChangedEvents;
 
@@ -178,5 +178,24 @@ internal class SdlInputEventContext
                 #endif
             }
         }
+    }
+
+    public void Dispose()
+    {
+        _joyButtonChangedEvents.Dispose();
+        _connectionEvents.Dispose();
+        _keyChangedEvents.Dispose();
+        _gamepadThumbstickMoveEvents.Dispose();
+        _gamepadTriggerMoveEvents.Dispose();
+        _joystickAxisMoveEvents.Dispose();
+        _joystickHatMoveEvents.Dispose();
+        _keyCharEvents.Dispose();
+        _mouseScrollEvents.Dispose();
+        _pointChangedEvents.Dispose();
+        _pointerClickEvents.Dispose();
+        _pointerButtonEvents.Dispose();
+        _pointerGripChangedEvents.Dispose();
+        _pointerTargetChangedEvents.Dispose();
+        _orderedSdlEvents.Dispose();
     }
 }

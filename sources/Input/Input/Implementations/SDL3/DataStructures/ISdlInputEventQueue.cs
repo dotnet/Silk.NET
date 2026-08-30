@@ -3,7 +3,7 @@
 
 namespace Silk.NET.Input.SDL3.DataStructures;
 
-internal interface ISdlInputEventQueue<T> where T : struct
+internal interface ISdlInputEventQueue<T> : IDisposable where T : struct
 {
     public void Enqueue(in T item, ulong sdlTimestamp);
 }
