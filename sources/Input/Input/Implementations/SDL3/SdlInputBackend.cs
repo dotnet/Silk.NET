@@ -165,20 +165,8 @@ internal partial class SdlInputBackend : IInputBackend
         {
             while (_pumpedSdlEvents.TryDequeue(out var evt))
             {
-                _pumpedSdlEventsSorted.Add(evt);
-            }
-
-            var sortedSpan = CollectionsMarshal.AsSpan(_pumpedSdlEventsSorted);
-            sortedSpan.StableSort(_timedRawSdlEventComparison);
-
-            for (var index = 0; index < sortedSpan.Length; index++)
-            {
-                ref readonly var evt = ref sortedSpan[index];
                 ProcessEvent(evt.Event, evt.StopwatchTimestamp, ref _eventProcessingArgs);
             }
-
-            _pumpedSdlEventsSorted.Clear();
-
 
             var devices = _eventProcessingArgs.Devices;
             for (var index = 0; index < devices.Count; index++)
@@ -670,9 +658,7 @@ internal partial class SdlInputBackend : IInputBackend
 #if DEBUG // todo - remove sort checks once tested on a variety of machines/platforms
             if (!_isSorted)
             {
-                var needsSort = NeedsSort();
-
-                if (needsSort)
+                if (NeedsSort())
                 {
                     InputLog.Error("Needs pre-sort by timestamp - please alert maintainer");
 
@@ -804,7 +790,6 @@ internal partial class SdlInputBackend : IInputBackend
         (x, y) => x.Event.Common.Timestamp.CompareTo(y.Event.Common.Timestamp);
 
     private readonly EventFilter _inputSubscriptionEventPtr;
-    private readonly List<TimedRawSdlEvent> _pumpedSdlEventsSorted = new();
     private readonly EventQueue _pumpedSdlEvents = new();
     private readonly SdlInputEventContext _sdlInputEvents;
 }
