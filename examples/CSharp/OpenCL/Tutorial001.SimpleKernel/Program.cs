@@ -1,9 +1,4 @@
-﻿// TODO: Exanite: This example is easier to read as a Program class. We should probably do the same for the other examples.
-//
-// TODO: Exanite: I plan to rename these "tutorials" to be "smoke tests" and to reserve tutorials to be for examples properly designed for educational purposes.
-// TODO: Exanite: The existing tutorials just test if the API works and I don't want to misrepresent that.
-
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using Silk.NET.OpenCL;
 
 internal unsafe class Program
@@ -69,14 +64,8 @@ internal unsafe class Program
 
     public static int Main(string[] args)
     {
-        // TODO: Exanite: The todos in this file represent issues that I found or thoughts that I had while working on this smoke test.
-        // TODO: Exanite: These might not represent actual problems, but I want to document these so we can address them later.
-
         // Load API
-        // TODO: These todos apply to all Silk bindings.
-        // TODO: Consider making INativeContext public. It's nice for debugging.
-        // TODO: Consider returning the concrete class instead of the interface. Having to cast to access Cl.CurrentPlatform is annoying.
-        // TODO: I liked how INativeContext only required the function name in Silk 2. Silk 3 is currently `LoadFunction(functionName, libraryNameHint)`.
+        // TODO: Expose Cl.CurrentPlatform through the interface.
         var cl = Cl.Create(); // TODO: This should be disposable
 
         // Initialize host data
@@ -93,9 +82,8 @@ internal unsafe class Program
         }
 
         // Select platform and device
-        // TODO: I'm going to prefer the DSL types whenever possible
         // TODO: Return type should be ErrorCodes
-        var platform = default(PlatformIdHandle); // TODO: Using the DSL types requires us to initialize the variable first, which is annoying
+        var platform = default(PlatformIdHandle);
         CheckError(cl.GetPlatformIDs(1, platform.AsRef(), nullptr));
 
         var device = default(DeviceIdHandle);
@@ -259,7 +247,6 @@ internal unsafe class Program
         // Cleanup
         CheckError(cl.ReleaseKernel(kernel));
         CheckError(cl.ReleaseProgram(program));
-        // SilkMarshal.Free(kernelSource.AsRef()); // TODO: We don't need to free the output of StringToNative, right? Seems to be a managed array backing it.
         CheckError(cl.ReleaseMemObject(deviceOutputBuffer));
         CheckError(cl.ReleaseMemObject(deviceDataBuffer2));
         CheckError(cl.ReleaseMemObject(deviceDataBuffer1));
