@@ -1,8 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Runtime.CompilerServices;
-
+// ReSharper disable SwapViaDeconstruction
 namespace Silk.NET.Input;
 
 internal static class SortExtensions
@@ -38,7 +37,7 @@ internal static class SortExtensions
 
             return;
 
-            static void InsertionSort(Span<T> span, Comparison<T> comparison)
+            static void InsertionSort(in Span<T> span, Comparison<T> comparison)
             {
                 for (var i = 1; i < span.Length; i++)
                 {
@@ -55,7 +54,7 @@ internal static class SortExtensions
                 }
             }
 
-            static void Merge(Span<T> span, int mid, Comparison<T> comparison)
+            static void Merge(in Span<T> span, int mid, Comparison<T> comparison)
             {
                 if (mid <= 0 || mid >= span.Length)
                 {
@@ -70,7 +69,7 @@ internal static class SortExtensions
                 MergeRange(span, 0, mid, span.Length, comparison);
                 return;
 
-                static void MergeRange(Span<T> span, int start, int mid, int end, Comparison<T> comparison)
+                static void MergeRange(in Span<T> span, int start, int mid, int end, Comparison<T> comparison)
                 {
                     while (true)
                     {
@@ -118,7 +117,7 @@ internal static class SortExtensions
                         continue;
 
 
-                        static int LowerBound(Span<T> span, int start, int end, T value, Comparison<T> comparison)
+                        static int LowerBound(in Span<T> span, int start, int end, in T value, Comparison<T> comparison)
                         {
                             while (start < end)
                             {
@@ -136,7 +135,7 @@ internal static class SortExtensions
                             return start;
                         }
 
-                        static int UpperBound(Span<T> span, int start, int end, T value, Comparison<T> comparison)
+                        static int UpperBound(in Span<T> span, int start, int end, in T value, Comparison<T> comparison)
                         {
                             while (start < end)
                             {
@@ -155,7 +154,7 @@ internal static class SortExtensions
                         }
 
 
-                        static void Rotate(Span<T> span, int first, int middle, int last)
+                        static void Rotate(in Span<T> span, int first, int middle, int last)
                         {
                             Reverse(span, first, middle);
                             Reverse(span, middle, last);
@@ -163,7 +162,7 @@ internal static class SortExtensions
 
                             return;
 
-                            static void Reverse(Span<T> span, int start, int end)
+                            static void Reverse(in Span<T> span, int start, int end)
                             {
                                 for (int i = start, j = end - 1; i < j; i++, j--)
                                 {
@@ -177,11 +176,11 @@ internal static class SortExtensions
         }
 
         /// <summary>
-        /// Sorts the given spans of keys and values by comparing the keys using the given comparison. It is expected that
-        /// keys[1] is directly associated with values[1], etc.
+        /// Sorts the given spans of keys and values by comparing the keys. It is expected
+        /// that keys[1] is directly associated with values[1], etc - representing pairs of keys and values.
         /// Uses merge sort.
         /// </summary>
-        public unsafe void StableSortWith<TValue>(NativeMemory<TValue>.UnsafeView values, Comparison<T> comparison)
+        public unsafe void StableSortWith<TValue>(in NativeMemory<TValue>.UnsafeView values, Comparison<T> comparison)
             where TValue : struct
         {
             if (span.Length != values.Length)
@@ -212,7 +211,8 @@ internal static class SortExtensions
             Merge(span, values, mid, comparison);
             return;
 
-            static unsafe void InsertionSort(Span<T> keys, NativeMemory<TValue>.UnsafeView valueView, Comparison<T> comparison)
+            static void InsertionSort(in Span<T> keys, in NativeMemory<TValue>.UnsafeView valueView,
+                Comparison<T> comparison)
             {
                 var values = valueView.Ptr;
                 for (var i = 1; i < keys.Length; i++)
@@ -233,8 +233,7 @@ internal static class SortExtensions
                 }
             }
 
-
-            static void Merge(Span<T> keys, NativeMemory<TValue>.UnsafeView values, int mid, Comparison<T> comparison)
+            static void Merge(in Span<T> keys, in NativeMemory<TValue>.UnsafeView values, int mid, Comparison<T> comparison)
             {
                 if (mid <= 0 || mid >= keys.Length)
                 {
@@ -249,7 +248,8 @@ internal static class SortExtensions
                 MergeRange(keys, values, 0, mid, keys.Length, comparison);
                 return;
 
-                static void MergeRange(Span<T> keys, NativeMemory<TValue>.UnsafeView values, int start, int mid, int end,
+                static void MergeRange(in Span<T> keys, in NativeMemory<TValue>.UnsafeView values,
+                    int start, int mid, int end,
                     Comparison<T> comparison)
                 {
                     while (true)
@@ -261,10 +261,12 @@ internal static class SortExtensions
 
                         if (end - start == 2)
                         {
-                            if (comparison(keys[mid], keys[start]) < 0)
+                            ref var midKey = ref keys[mid];
+                            ref var startKey = ref keys[start];
+                            if (comparison(midKey, startKey) < 0)
                             {
-                                (keys[start], keys[mid]) = (keys[mid], keys[start]);
-                                (values[start], values[mid]) = (values[mid], values[start]);
+                                Swap(keys, mid, start);
+                                Swap(values, mid, start);
                             }
 
                             return;
@@ -298,8 +300,7 @@ internal static class SortExtensions
 
                         continue;
 
-                        static int LowerBound(Span<T> keys, int start, int end, T value,
-                            Comparison<T> comparison)
+                        static int LowerBound(in Span<T> keys, int start, int end, in T value, Comparison<T> comparison)
                         {
                             while (start < end)
                             {
@@ -317,8 +318,7 @@ internal static class SortExtensions
                             return start;
                         }
 
-                        static int UpperBound(Span<T> keys, int start, int end, T value,
-                            Comparison<T> comparison)
+                        static int UpperBound(in Span<T> keys, int start, int end, in T value, Comparison<T> comparison)
                         {
                             while (start < end)
                             {
@@ -336,7 +336,8 @@ internal static class SortExtensions
                             return start;
                         }
 
-                        static void Rotate(Span<T> keys, NativeMemory<TValue>.UnsafeView values, int first, int middle, int last)
+                        static void Rotate(in Span<T> keys, in NativeMemory<TValue>.UnsafeView values,
+                            int first, int middle, int last)
                         {
                             Reverse(keys, values, first, middle);
                             Reverse(keys, values, middle, last);
@@ -344,18 +345,38 @@ internal static class SortExtensions
 
                             return;
 
-                            static void Reverse(Span<T> keys, NativeMemory<TValue>.UnsafeView values, int start, int end)
+                            static void Reverse(in Span<T> keys, in NativeMemory<TValue>.UnsafeView values,
+                                int start, int end)
                             {
                                 for (int i = start, j = end - 1; i < j; i++, j--)
                                 {
-                                    (keys[i], keys[j]) = (keys[j], keys[i]);
-                                    (values[i], values[j]) = (values[j], values[i]);
+                                    Swap(keys, i, j);
+                                    Swap(values, i, j);
                                 }
                             }
                         }
                     }
                 }
             }
+
         }
+    }
+
+    private static void Swap<T>(in NativeMemory<T>.UnsafeView values, int i, int j) where T : struct
+    {
+        ref var key1 = ref values[i];
+        ref var key2 = ref values[j];
+        var tempKey = key1;
+        key1 = key2;
+        key2 = tempKey;
+    }
+
+    private static void Swap<T>(in Span<T> keys, int i, int j)
+    {
+        ref var key1 = ref keys[i];
+        ref var key2 = ref keys[j];
+        var tempKey = key1;
+        key1 = key2;
+        key2 = tempKey;
     }
 }

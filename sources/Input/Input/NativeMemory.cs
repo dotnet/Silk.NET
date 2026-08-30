@@ -29,48 +29,9 @@ internal unsafe struct NativeMemory<T> : IDisposable where T : struct
     private int _capacity;
     private int _actualCount;
 
-    public int Count
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => _actualCount;
-    }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public UnsafeView AsSpan() => new(_ptr, 0, _actualCount);
-
-    public ref T this[int index]
-    {
-        get
-        {
-            if(index >= _actualCount)
-            {
-                throw new IndexOutOfRangeException();
-            }
-
-            return ref _ptr[index];
-        }
-    }
-
-    public void EnsureCapacity(int desiredCount)
-    {
-        if (_capacity >= desiredCount)
-        {
-            return;
-        }
-
-        var newSize = Math.Max(_capacity * 2, desiredCount);
-
-        if (_ptr != null)
-        {
-            _ptr = (T*)NativeMemory.Realloc(_ptr, (uint)(Unsafe.SizeOf<T>() * newSize));
-        }
-        else
-        {
-            _ptr = (T*)NativeMemory.Alloc((uint)(Unsafe.SizeOf<T>() * newSize));
-        }
-
-        _capacity = newSize;
-    }
 
     public void Add(in T value)
     {
@@ -93,13 +54,64 @@ internal unsafe struct NativeMemory<T> : IDisposable where T : struct
     {
         var count = _actualCount;
         _actualCount = 0;
-        if(_ptr == null)
+        return _ptr == null ? default : new UnsafeView(_ptr, 0, count);
+    }
+
+    /// <summary>
+    /// Disposes of the native memory buffers, freeing the underlying pointer.
+    /// </summary>
+    public void Dispose()
+    {
+        if (_ptr != null)
         {
-            return default;
+            NativeMemory.Free(_ptr);
+            _actualCount = 0;
+            _capacity = 0;
+            _ptr = null;
+        }
+    }
+
+    private void EnsureCapacity(int desiredCount)
+    {
+        if (_capacity >= desiredCount)
+        {
+            return;
         }
 
-        return new UnsafeView(_ptr, 0, count);
+        var newSize = Math.Max(_capacity * 2, desiredCount);
+
+        if (_ptr != null)
+        {
+            _ptr = (T*)NativeMemory.Realloc(_ptr, (uint)(Unsafe.SizeOf<T>() * newSize));
+        }
+        else
+        {
+            _ptr = (T*)NativeMemory.Alloc((uint)(Unsafe.SizeOf<T>() * newSize));
+        }
+
+        _capacity = newSize;
     }
+
+    /* Commenting out as it is unused
+
+       public int Count
+       {
+           [MethodImpl(MethodImplOptions.AggressiveInlining)]
+           get => _actualCount;
+       }
+
+       public ref T this[int index]
+       {
+           get
+           {
+               if(index >= _actualCount)
+               {
+                   throw new IndexOutOfRangeException();
+               }
+
+               return ref _ptr[index];
+           }
+       }
 
     /// <summary>
     /// Clears the values in the buffer, optionally clearing the entire capacity of the buffer.
@@ -126,20 +138,7 @@ internal unsafe struct NativeMemory<T> : IDisposable where T : struct
             byteCount: (nuint)(max * Unsafe.SizeOf<T>()),
             value: 0);
     }
-
-    /// <summary>
-    /// Disposes of the native memory buffers, freeing the underlying pointer.
-    /// </summary>
-    public void Dispose()
-    {
-        if (_ptr != null)
-        {
-            NativeMemory.Free(_ptr);
-            _actualCount = 0;
-            _capacity = 0;
-            _ptr = null;
-        }
-    }
+    */
 
     /// <summary>
     /// Our version of <see cref="Span{T}"/>. This is only necessary because managed structs in a span throw runtime

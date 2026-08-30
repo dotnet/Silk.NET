@@ -6,18 +6,26 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input.SDL3.DataStructures;
 
-internal class SdlInputEventQueue<T> : ISdlInputEventQueue<T>, IDisposable where T : struct
+internal class SdlInputEventQueue<T> : ISdlInputEventQueue<T> where T : struct
 {
     // Currently unused, so just commenting this out
-    /*public int Count
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+    /*
+        public int Count
         {
-            Debug.Assert(_sdlTimestamps.Count == _events.Count);
-            return _sdlTimestamps.Count;
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                Debug.Assert(_sdlTimestamps.Count == _events.Count);
+                return _sdlTimestamps.Count;
+            }
         }
-    }*/
+
+        public void Clear(bool entireCapacity, int startIndex = 0)
+        {
+            _events.ClearValues(entireCapacity, (uint)startIndex);
+            _sdlTimestamps.ClearValues(entireCapacity, (uint)startIndex);
+        }
+    */
 
 
     public void Enqueue(in T item, ulong sdlTimestamp)
@@ -33,37 +41,18 @@ internal class SdlInputEventQueue<T> : ISdlInputEventQueue<T>, IDisposable where
     }
 
 
-    internal readonly ref struct SdlTimestampedValues<TValue>(NativeMemory<TValue>.UnsafeView values, NativeMemory<ulong>.UnsafeView sdlTimestamps) where TValue : struct
-    {
-        public readonly NativeMemory<TValue>.UnsafeView Values = values;
-        public readonly NativeMemory<ulong>.UnsafeView SdlTimestamps = sdlTimestamps;
-
-        public int Length
-        {
-            get
-            {
-                Debug.Assert(Values.Length == SdlTimestamps.Length);
-                return Values.Length;
-            }
-        }
-    }
-
     /// <Summary>
     /// Returns a reference to our data as two spans and clears the inner count of our buffers
     /// (the functional equivalent of calling <see cref="List{T}.Clear()"/>)
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    internal SdlTimestampedValues<T> ConsumeWithoutClearing() => new(_events.ConsumeWithoutClearing(), _sdlTimestamps.ConsumeWithoutClearing());
+    internal SdlTimestampedValues<T> ConsumeWithoutClearing() =>
+        new(_events.ConsumeWithoutClearing(), _sdlTimestamps.ConsumeWithoutClearing());
 
-    public void Clear(bool entireCapacity, int startIndex = 0)
-    {
-        _events.ClearValues(entireCapacity, (uint)startIndex);
-        _sdlTimestamps.ClearValues(entireCapacity, (uint)startIndex);
-    }
 
     public void Dispose()
     {
-        if(_disposed)
+        if (_disposed)
         {
             throw new ObjectDisposedException(nameof(SdlInputEventQueue<>));
         }
@@ -76,15 +65,38 @@ internal class SdlInputEventQueue<T> : ISdlInputEventQueue<T>, IDisposable where
 
     ~SdlInputEventQueue()
     {
-        if (_disposed)
-            return;
-
-        _sdlTimestamps.Dispose();
-        _events.Dispose();
+        if (!_disposed)
+        {
+            _sdlTimestamps.Dispose();
+            _events.Dispose();
+        }
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public SdlTimestampedValues<T> AsSpanPair() => new(_events.AsSpan(), _sdlTimestamps.AsSpan());
+    internal SdlTimestampedValues<T> AsSpanPair() => new(_events.AsSpan(), _sdlTimestamps.AsSpan());
+
+
+    internal readonly ref struct SdlTimestampedValues<TValue> where TValue : struct
+    {
+        public readonly NativeMemory<TValue>.UnsafeView Values;
+        public readonly NativeMemory<ulong>.UnsafeView SdlTimestamps;
+
+        public SdlTimestampedValues(NativeMemory<TValue>.UnsafeView values,
+            NativeMemory<ulong>.UnsafeView sdlTimestamps)
+        {
+            Values = values;
+            SdlTimestamps = sdlTimestamps;
+        }
+
+        public int Length
+        {
+            get
+            {
+                Debug.Assert(Values.Length == SdlTimestamps.Length);
+                return Values.Length;
+            }
+        }
+    }
 
     private bool _disposed;
     private NativeMemory<T> _events;
