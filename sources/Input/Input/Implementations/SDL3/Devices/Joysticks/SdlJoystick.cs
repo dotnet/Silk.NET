@@ -49,7 +49,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
             SdlInputEventContext context)
         {
             return new SdlJoystick(sdlDeviceId, uniqueId, sdlInputBackend) {
-                ButtonEvents = context.ButtonChangedEvents,
+                ButtonEvents = context.JoyButtonChangedEvents,
                 AxisEvents = context.JoystickAxisMoveEvents,
                 HatEvents = context.JoystickHatMoveEvents
             };

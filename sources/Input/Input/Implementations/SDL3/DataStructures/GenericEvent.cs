@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input.SDL3.DataStructures;
 
-internal readonly record struct GenericEvent(nint EventPtr, Type Type)
+internal readonly record struct GenericEvent(nint EventPtr, SdlEventDiscriminator Type)
 {
     public unsafe ref T Value<T>() => ref Unsafe.AsRef<T>((void*)EventPtr);
 }

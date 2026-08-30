@@ -14,7 +14,7 @@ namespace Silk.NET.Input.SDL3;
 /// </summary>
 internal class SdlInputEventContext
 {
-    public ISdlInputEventQueue<ButtonChangedEvent<JoystickButton>> ButtonChangedEvents => _buttonChangedEvents;
+    public ISdlInputEventQueue<ButtonChangedEvent<JoystickButton>> JoyButtonChangedEvents => _joyButtonChangedEvents;
 
     public ISdlInputEventQueue<ConnectionEvent> ConnectionEvents => _connectionEvents;
 
@@ -44,7 +44,7 @@ internal class SdlInputEventContext
 
     public ISdlInputEventQueue<ButtonChangedEvent<PointerButton>> PointerButtonEvents => _pointerButtonEvents;
 
-    private readonly SdlInputEventQueue<ButtonChangedEvent<JoystickButton>> _buttonChangedEvents = new();
+    private readonly SdlInputEventQueue<ButtonChangedEvent<JoystickButton>> _joyButtonChangedEvents = new();
     private readonly SdlInputEventQueue<ConnectionEvent> _connectionEvents = new();
     private readonly SdlInputEventQueue<KeyChangedEvent> _keyChangedEvents = new();
     private readonly SdlInputEventQueue<GamepadThumbstickMoveEvent> _gamepadThumbstickMoveEvents = new();
@@ -65,20 +65,20 @@ internal class SdlInputEventContext
 
     public void RaiseEvents(params Span<IInputHandler> handlers)
     {
-        _orderedSdlEvents.StoreReferencesTo(_buttonChangedEvents);
-        _orderedSdlEvents.StoreReferencesTo(_connectionEvents);
-        _orderedSdlEvents.StoreReferencesTo(_keyChangedEvents);
-        _orderedSdlEvents.StoreReferencesTo(_gamepadThumbstickMoveEvents);
-        _orderedSdlEvents.StoreReferencesTo(_gamepadTriggerMoveEvents);
-        _orderedSdlEvents.StoreReferencesTo(_joystickAxisMoveEvents);
-        _orderedSdlEvents.StoreReferencesTo(_joystickHatMoveEvents);
-        _orderedSdlEvents.StoreReferencesTo(_keyCharEvents);
-        _orderedSdlEvents.StoreReferencesTo(_mouseScrollEvents);
-        _orderedSdlEvents.StoreReferencesTo(_pointChangedEvents);
-        _orderedSdlEvents.StoreReferencesTo(_pointerClickEvents);
-        _orderedSdlEvents.StoreReferencesTo(_pointerGripChangedEvents);
-        _orderedSdlEvents.StoreReferencesTo(_pointerTargetChangedEvents);
-        _orderedSdlEvents.StoreReferencesTo(_pointerButtonEvents);
+        _orderedSdlEvents.StoreReferencesTo(_joyButtonChangedEvents, SdlEventDiscriminator.JoystickButtonChanged);
+        _orderedSdlEvents.StoreReferencesTo(_connectionEvents, SdlEventDiscriminator.Connection);
+        _orderedSdlEvents.StoreReferencesTo(_keyChangedEvents, SdlEventDiscriminator.KeyChanged);
+        _orderedSdlEvents.StoreReferencesTo(_gamepadThumbstickMoveEvents, SdlEventDiscriminator.GamepadThumbstickMove);
+        _orderedSdlEvents.StoreReferencesTo(_gamepadTriggerMoveEvents, SdlEventDiscriminator.GamepadTriggerMove);
+        _orderedSdlEvents.StoreReferencesTo(_joystickAxisMoveEvents, SdlEventDiscriminator.JoystickAxisMove);
+        _orderedSdlEvents.StoreReferencesTo(_joystickHatMoveEvents, SdlEventDiscriminator.JoystickHatMove);
+        _orderedSdlEvents.StoreReferencesTo(_keyCharEvents, SdlEventDiscriminator.KeyChar);
+        _orderedSdlEvents.StoreReferencesTo(_mouseScrollEvents, SdlEventDiscriminator.MouseScroll);
+        _orderedSdlEvents.StoreReferencesTo(_pointChangedEvents, SdlEventDiscriminator.PointChanged);
+        _orderedSdlEvents.StoreReferencesTo(_pointerClickEvents, SdlEventDiscriminator.PointerClick);
+        _orderedSdlEvents.StoreReferencesTo(_pointerGripChangedEvents, SdlEventDiscriminator.PointerGripChanged);
+        _orderedSdlEvents.StoreReferencesTo(_pointerTargetChangedEvents, SdlEventDiscriminator.PointerTargetChanged);
+        _orderedSdlEvents.StoreReferencesTo(_pointerButtonEvents, SdlEventDiscriminator.PointerButtonChanged);
 
         var genericEvents = _orderedSdlEvents.ConsumeAndSortSelf();
 
@@ -87,79 +87,79 @@ internal class SdlInputEventContext
             return;
         }
 
-        // todo (low prio) - surely there could be a better way to do this...
         for (var index = 0; index < genericEvents.Length; index++)
         {
             ref readonly var evt = ref genericEvents[index];
-            if (evt.Type == typeof(PointChangedEvent))
+            switch (evt.Type)
             {
-                RaiseEvent(handlers, evt.Value<PointChangedEvent>());
-            }
-            else if (evt.Type == typeof(PointerClickEvent))
-            {
-                RaiseEvent(handlers, evt.Value<PointerClickEvent>());
-            }
-            else if (evt.Type == typeof(ButtonChangedEvent<PointerButton>))
-            {
-                RaiseEvent(handlers, evt.Value<ButtonChangedEvent<PointerButton>>());
-            }
-            else if (evt.Type == typeof(PointerGripChangedEvent))
-            {
-                RaiseEvent(handlers, evt.Value<PointerGripChangedEvent>());
-            }
-            else if (evt.Type == typeof(PointerTargetChangedEvent))
-            {
-                RaiseEvent(handlers, evt.Value<PointerTargetChangedEvent>());
-            }
-            else if (evt.Type == typeof(ButtonChangedEvent<JoystickButton>))
-            {
-                RaiseEvent(handlers, evt.Value<ButtonChangedEvent<JoystickButton>>());
-            }
-            else if (evt.Type == typeof(ButtonChangedEvent<KeyName>))
-            {
-                RaiseEvent(handlers, evt.Value<ButtonChangedEvent<KeyName>>());
-            }
-            else if (evt.Type == typeof(ConnectionEvent))
-            {
-                RaiseEvent(handlers, evt.Value<ConnectionEvent>());
-            }
-            else if (evt.Type == typeof(KeyChangedEvent))
-            {
-                RaiseEvent(handlers, evt.Value<KeyChangedEvent>());
-            }
-            else if (evt.Type == typeof(GamepadThumbstickMoveEvent))
-            {
-                RaiseEvent(handlers, evt.Value<GamepadThumbstickMoveEvent>());
-            }
-            else if (evt.Type == typeof(GamepadTriggerMoveEvent))
-            {
-                RaiseEvent(handlers, evt.Value<GamepadTriggerMoveEvent>());
-            }
-            else if (evt.Type == typeof(JoystickAxisMoveEvent))
-            {
-                RaiseEvent(handlers, evt.Value<JoystickAxisMoveEvent>());
-            }
-            else if (evt.Type == typeof(JoystickHatMoveEvent))
-            {
-                RaiseEvent(handlers, evt.Value<JoystickHatMoveEvent>());
-            }
-            else if (evt.Type == typeof(KeyCharEvent))
-            {
-                RaiseEvent(handlers, evt.Value<KeyCharEvent>());
-            }
-            else if (evt.Type == typeof(MouseScrollEvent))
-            {
-                RaiseEvent(handlers, evt.Value<MouseScrollEvent>());
-            }
-            else
-            {
-                throw new InvalidOperationException("Invalid type: " + evt.Type);
+                case SdlEventDiscriminator.PointChanged:
+                    RaiseEvent(handlers, evt.Value<PointChangedEvent>());
+                    break;
+
+                case SdlEventDiscriminator.PointerClick:
+                    RaiseEvent(handlers, evt.Value<PointerClickEvent>());
+                    break;
+
+                case SdlEventDiscriminator.PointerButtonChanged:
+                    RaiseEvent(handlers, evt.Value<ButtonChangedEvent<PointerButton>>());
+                    break;
+
+                case SdlEventDiscriminator.PointerGripChanged:
+                    RaiseEvent(handlers, evt.Value<PointerGripChangedEvent>());
+                    break;
+
+                case SdlEventDiscriminator.PointerTargetChanged:
+                    RaiseEvent(handlers, evt.Value<PointerTargetChangedEvent>());
+                    break;
+
+                case SdlEventDiscriminator.JoystickButtonChanged:
+                    RaiseEvent(handlers, evt.Value<ButtonChangedEvent<JoystickButton>>());
+                    break;
+
+                case SdlEventDiscriminator.KeyButtonChanged:
+                    RaiseEvent(handlers, evt.Value<ButtonChangedEvent<KeyName>>());
+                    break;
+
+                case SdlEventDiscriminator.Connection:
+                    RaiseEvent(handlers, evt.Value<ConnectionEvent>());
+                    break;
+
+                case SdlEventDiscriminator.KeyChanged:
+                    RaiseEvent(handlers, evt.Value<KeyChangedEvent>());
+                    break;
+
+                case SdlEventDiscriminator.GamepadThumbstickMove:
+                    RaiseEvent(handlers, evt.Value<GamepadThumbstickMoveEvent>());
+                    break;
+
+                case SdlEventDiscriminator.GamepadTriggerMove:
+                    RaiseEvent(handlers, evt.Value<GamepadTriggerMoveEvent>());
+                    break;
+
+                case SdlEventDiscriminator.JoystickAxisMove:
+                    RaiseEvent(handlers, evt.Value<JoystickAxisMoveEvent>());
+                    break;
+
+                case SdlEventDiscriminator.JoystickHatMove:
+                    RaiseEvent(handlers, evt.Value<JoystickHatMoveEvent>());
+                    break;
+
+                case SdlEventDiscriminator.KeyChar:
+                    RaiseEvent(handlers, evt.Value<KeyCharEvent>());
+                    break;
+
+                case SdlEventDiscriminator.MouseScroll:
+                    RaiseEvent(handlers, evt.Value<MouseScrollEvent>());
+                    break;
+
+                default:
+                    throw new InvalidOperationException("Invalid type: " + evt.Type);
             }
         }
 
         return;
 
-        static void RaiseEvent<TItem>(Span<IInputHandler> handlers, in TItem evt)
+        static void RaiseEvent<TItem>(in Span<IInputHandler> handlers, in TItem evt)
             where TItem : struct
         {
             for (var index = 0; index < handlers.Length; index++)
@@ -169,10 +169,13 @@ internal class SdlInputEventContext
                 {
                     appropriateHandler.Handle(evt);
                 }
+
+                #if DEBUG
                 else
                 {
                     InputLog.Debug($"Unhandled event type {typeof(TItem).Name} from {handler.GetType().Name}.");
                 }
+                #endif
             }
         }
     }

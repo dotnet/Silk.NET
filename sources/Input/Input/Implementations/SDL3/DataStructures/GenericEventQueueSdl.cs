@@ -2,7 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Buffers;
-using System.Runtime.CompilerServices;
+using System.Diagnostics;
 using Silk.NET.Input.SDL3.Devices.Pointers;
 
 namespace Silk.NET.Input.SDL3.DataStructures;
@@ -22,19 +22,21 @@ internal sealed class GenericEventQueueSdl : SdlInputEventQueue<GenericEvent>
     /// bugs, or even memory access violations.<br/><br/>
     /// </summary>
     /// <param name="queueSdl">The queue whose data to reference</param>
+    /// <param name="discriminator">The kind of event to store - directly relates to the type of event provided and must match correctly</param>
     /// <param name="consume">If true (default), <see cref="queueSdl"/> will be "consumed" -
     /// the equivalent of calling <see cref="List{T}.Clear()"/></param>
     /// <typeparam name="T"></typeparam>
-    public unsafe void StoreReferencesTo<T>(in SdlInputEventQueue<T> queueSdl, bool consume = true) where T : struct
+    public unsafe void StoreReferencesTo<T>(in SdlInputEventQueue<T> queueSdl, SdlEventDiscriminator discriminator, bool consume = true) where T : struct
     {
         var q = consume ? queueSdl.ConsumeWithoutClearing() : queueSdl.AsSpanPair();
         var values = q.Values;
         var timestamps = q.SdlTimestamps;
+        discriminator.EnsureTypeCorrectness(typeof(T));
         for (var i = 0; i < q.Length; i++)
         {
             var genericEvent = new GenericEvent(
                 EventPtr: values.PointerAt(i),
-                Type: typeof(T));
+                Type: discriminator);
 
             Enqueue(genericEvent, timestamps.Ptr[i]);
         }
