@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -5,8 +7,7 @@ namespace Silk.NET.Input;
 /// </summary>
 public sealed class Gamepads : InputContextDeviceList<IGamepad>, IGamepadInputHandler
 {
-    internal Gamepads(InputContext ctx)
-        : base(ctx)
+    internal Gamepads(InputContext ctx) : base(ctx)
     {
     }
 
@@ -25,21 +26,22 @@ public sealed class Gamepads : InputContextDeviceList<IGamepad>, IGamepadInputHa
     /// </summary>
     public event Action<GamepadTriggerMoveEvent>? TriggerMove;
 
-    internal void HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event) =>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IButtonInputHandler<JoystickButton>.HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event) =>
         ButtonChanged?.Invoke(@event);
 
-    void IButtonInputHandler<JoystickButton>.HandleButtonChanged(
-        ButtonChangedEvent<JoystickButton> @event
-    ) => HandleButtonChanged(@event);
-
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal void HandleThumbstickMove(GamepadThumbstickMoveEvent @event) =>
         ThumbstickMove?.Invoke(@event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IGamepadInputHandler.HandleThumbstickMove(GamepadThumbstickMoveEvent @event) =>
         HandleThumbstickMove(@event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal void HandleTriggerMove(GamepadTriggerMoveEvent @event) => TriggerMove?.Invoke(@event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IGamepadInputHandler.HandleTriggerMove(GamepadTriggerMoveEvent @event) =>
         HandleTriggerMove(@event);
 }

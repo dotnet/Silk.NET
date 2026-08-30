@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -21,6 +23,8 @@ public interface IKeyboardInputHandler : IButtonInputHandler<KeyName>, IInputHan
     /// <param name="event">The event details.</param>
     void HandleKeyChar(KeyCharEvent @event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IInputHandler<KeyCharEvent>.Handle(KeyCharEvent @event) => HandleKeyChar(@event);
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IInputHandler<KeyChangedEvent>.Handle(KeyChangedEvent @event) => HandleKeyChanged(@event);
 }

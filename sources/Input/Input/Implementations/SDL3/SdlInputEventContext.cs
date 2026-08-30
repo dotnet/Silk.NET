@@ -120,10 +120,6 @@ internal sealed class SdlInputEventContext : IDisposable
                     RaiseEvent(handlers, evt.Value<ButtonChangedEvent<KeyName>>());
                     break;
 
-                case SdlEventDiscriminator.Connection:
-                    RaiseEvent(handlers, evt.Value<ConnectionEvent>());
-                    break;
-
                 case SdlEventDiscriminator.KeyChanged:
                     RaiseEvent(handlers, evt.Value<KeyChangedEvent>());
                     break;
@@ -152,6 +148,17 @@ internal sealed class SdlInputEventContext : IDisposable
                     RaiseEvent(handlers, evt.Value<MouseScrollEvent>());
                     break;
 
+                case SdlEventDiscriminator.Connection:
+                {
+                    var value = evt.Value<ConnectionEvent>();
+                    for (var i = 0; i < handlers.Length; ++i)
+                    {
+                        handlers[i].HandleDeviceConnectionChanged(value);
+                    }
+
+                    break;
+                }
+
                 default:
                     throw new InvalidOperationException("Invalid type: " + evt.Type);
             }
@@ -159,26 +166,24 @@ internal sealed class SdlInputEventContext : IDisposable
 
         return;
 
-        static void RaiseEvent<TItem>(in Span<IInputHandler> handlers, in TItem evt)
-            where TItem : struct
+        static void RaiseEvent<TItem>(in Span<IInputHandler> handlers, in TItem evt) where TItem : struct
         {
-            for (var index = 0; index < handlers.Length; index++)
+            for (var index = 0; index < handlers.Length; ++index)
             {
-                var handler = handlers[index];
-                if (handler is IInputHandler<TItem> appropriateHandler)
+                if (handlers[index] is IInputHandler<TItem> appropriateHandler)
                 {
                     appropriateHandler.Handle(evt);
                 }
-
                 #if DEBUG
                 else
                 {
-                    InputLog.Debug($"Unhandled event type {typeof(TItem).Name} from {handler.GetType().Name}.");
+                    InputLog.Debug($"Unhandled event type {typeof(TItem).Name} from {handlers[index].GetType().Name}.");
                 }
                 #endif
             }
         }
     }
+
 
     public void Dispose()
     {

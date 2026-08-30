@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -17,6 +19,9 @@ public interface IGamepadInputHandler : IButtonInputHandler<JoystickButton>, IIn
     /// <param name="event">The event details.</param>
     void HandleTriggerMove(GamepadTriggerMoveEvent @event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IInputHandler<GamepadThumbstickMoveEvent>.Handle(GamepadThumbstickMoveEvent @event) => HandleThumbstickMove(@event);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IInputHandler<GamepadTriggerMoveEvent>.Handle(GamepadTriggerMoveEvent @event) => HandleTriggerMove(@event);
 }

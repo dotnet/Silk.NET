@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -23,19 +25,25 @@ public sealed class Joysticks : InputContextDeviceList<IJoystick>, IJoystickInpu
     /// </summary>
     public event Action<JoystickHatMoveEvent>? HatMove;
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal void HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event) =>
         ButtonChanged?.Invoke(@event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IButtonInputHandler<JoystickButton>.HandleButtonChanged(
         ButtonChangedEvent<JoystickButton> @event
     ) => HandleButtonChanged(@event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal void HandleAxisMove(JoystickAxisMoveEvent @event) => AxisMove?.Invoke(@event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IJoystickInputHandler.HandleAxisMove(JoystickAxisMoveEvent @event) =>
         HandleAxisMove(@event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal void HandleHatMove(JoystickHatMoveEvent @event) => HatMove?.Invoke(@event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IJoystickInputHandler.HandleHatMove(JoystickHatMoveEvent @event) => HandleHatMove(@event);
 }

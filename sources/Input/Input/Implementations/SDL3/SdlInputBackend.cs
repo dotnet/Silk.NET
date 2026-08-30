@@ -165,28 +165,43 @@ internal partial class SdlInputBackend : IInputBackend
         {
             while (_pumpedSdlEvents.TryDequeue(out var evt))
             {
+                #if DEBUG
+                if (evt.Event.Common.Timestamp < _eventProcessingArgs.PreviousTimestamp)
+                {
+                    InputLog.Error($"Events out of order: {evt.Event.Common.Timestamp} < {_eventProcessingArgs.PreviousTimestamp}");
+                }
+
+                _eventProcessingArgs.PreviousTimestamp = evt.Event.Common.Timestamp;
+                #endif
+
                 ProcessEvent(evt.Event, evt.StopwatchTimestamp, ref _eventProcessingArgs);
             }
+        }
 
-            var devices = _eventProcessingArgs.Devices;
-            for (var index = 0; index < devices.Count; index++)
+        var devices = _eventProcessingArgs.Devices;
+        for (var index = 0; index < devices.Count; index++)
+        {
+            var device = devices[index];
+            if (device is SdlGamepad gamepad)
             {
-                var device = devices[index];
-                if (device is SdlGamepad gamepad)
-                {
-                    gamepad.ExecuteRumble();
-                }
-
-                if (device is INeedFinalizationEachFrame needer)
-                {
-                    needer.FinalizeUpdate();
-                }
+                gamepad.ExecuteRumble();
             }
 
-            if (handler is not null)
+            if (device is INeedFinalizationEachFrame needer)
             {
-                _sdlInputEvents.RaiseEvents(handler);
+                needer.FinalizeUpdate();
             }
+        }
+
+        if (handler is not null)
+        {
+            _sdlInputEvents.RaiseEvents(handler);
+        }
+
+        // reset timestamp order detection
+        if (!_pumpedSdlEvents.HasEvents)
+        {
+            _eventProcessingArgs.PreviousTimestamp = ulong.MinValue;
         }
     }
 
@@ -209,12 +224,6 @@ internal partial class SdlInputBackend : IInputBackend
     private static void ProcessEvent(in Event evt, long timestamp, ref ProcessEventArgs processEventArgs)
     {
         var backend = processEventArgs.Backend;
-        if (evt.Common.Timestamp < processEventArgs.PreviousTimestamp)
-        {
-            InputLog.Error("Events out of order");
-        }
-
-        processEventArgs.PreviousTimestamp = evt.Common.Timestamp;
 
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         var type = (EventType)evt.Common.Type;

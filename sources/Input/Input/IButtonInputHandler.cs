@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -13,10 +15,6 @@ public interface IButtonInputHandler<T> : IInputHandler<ButtonChangedEvent<T>>
     /// <param name="event">The event details.</param>
     void HandleButtonChanged(ButtonChangedEvent<T> @event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IInputHandler<ButtonChangedEvent<T>>.Handle(ButtonChangedEvent<T> @event) => HandleButtonChanged(@event);
-}
-
-public interface IInputHandler<in T> : IInputHandler where T : struct
-{
-    void Handle(T @event);
 }

@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -11,5 +13,6 @@ public interface IMouseInputHandler : IButtonInputHandler<PointerButton>, IInput
     /// <param name="event">The event details.</param>
     void HandleScroll(MouseScrollEvent @event);
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     void IInputHandler<MouseScrollEvent>.Handle(MouseScrollEvent @event) => HandleScroll(@event);
 }

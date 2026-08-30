@@ -18,7 +18,7 @@ namespace Silk.NET.Input;
     "ST0005",
     UrlFormat = "https://dotnet.github.io/Silk.NET/docs/v3/silk.net/diagnostics/{0}"
 )]
-public abstract class InputContextDeviceList<T> : IReadOnlyList<T>, IInputHandler<ConnectionEvent>
+public abstract class InputContextDeviceList<T> : IReadOnlyList<T>, IInputHandler
 {
     private readonly InputContext _ctx;
     private List<T>? _list;
@@ -37,8 +37,6 @@ public abstract class InputContextDeviceList<T> : IReadOnlyList<T>, IInputHandle
 
     /// <inheritdoc />
     public T this[int index] => List[index];
-
-    public void Handle(ConnectionEvent @event) => HandleDeviceConnectionChanged(@event);
 
     void IInputHandler.HandleDeviceConnectionChanged(ConnectionEvent @event) =>
         HandleDeviceConnectionChanged(@event);

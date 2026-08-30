@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Diagnostics;
 
 namespace Silk.NET.Input;
@@ -12,28 +11,8 @@ namespace Silk.NET.Input;
 /// In addition, certain backends may have (unavoidable) restrictions on what thread <see cref="Update"/> can be called
 /// on - the user is responsible for respecting these threading rules as well.
 /// </remarks>
-public class InputContext
-    : IJoystickInputHandler,
-        IGamepadInputHandler,
-        IMouseInputHandler,
-        IPointerInputHandler,
-        IKeyboardInputHandler,
-        IInputHandler<ConnectionEvent>,
-        IList<IInputBackend>,
-        IReadOnlyList<IInputBackend>
+public partial class InputContext
 {
-    // These are lazy-initialized as they contain their own device lists in addition to the device list stored here and
-    // the device lists stored in each of the backends. You could argue having this many duplicated lists is inefficient
-    // and you'd be absolutely right, but realistically: how many devices will the average user have connected to their
-    // PC? If you're worried about your game's memory consumption, you're probably not looking at the small lists that
-    // input allocates... This way we can also provide sane/consistent indices.
-    private Pointers? _pointers;
-    private Keyboards? _keyboards;
-    private Gamepads? _gamepads;
-    private Joysticks? _joysticks;
-    private readonly List<IInputBackend> _backends = [];
-    private List<IInputDevice>? _devices;
-
     /// <summary>
     /// Gets the <see cref="IPointerDevice"/>s enumerated by the <see cref="IInputBackend"/>s attached to this context.
     /// </summary>
@@ -120,6 +99,8 @@ public class InputContext
     private void HandleBackendRemoval(IInputBackend backend)
     {
         var timestamp = Stopwatch.GetTimestamp();
+
+        // remove all of their devices
         foreach (var device in backend.Devices)
         {
             HandleDeviceConnectionChanged(new ConnectionEvent(device, timestamp, false));
@@ -130,13 +111,14 @@ public class InputContext
     {
         var timestamp = Stopwatch.GetTimestamp();
         InputLog.Debug($"Adding backend {backend.Name}");
+
+        // add all of their devices to ours
         foreach (var device in backend.Devices)
         {
             HandleDeviceConnectionChanged(new ConnectionEvent(device, timestamp, true));
         }
     }
 
-    void IInputHandler<ConnectionEvent>.Handle(ConnectionEvent e) => HandleDeviceConnectionChanged(e);
 
     private void HandleDeviceConnectionChanged(ConnectionEvent evt)
     {
@@ -170,143 +152,15 @@ public class InputContext
         }
     }
 
-    void IInputHandler<PointerTargetChangedEvent>.Handle(PointerTargetChangedEvent @event) =>
-        _pointers?.HandleTargetChanged(@event);
-
-    void IInputHandler<PointChangedEvent>.Handle(PointChangedEvent @event) =>
-        _pointers?.HandlePointChanged(@event);
-
-    void IInputHandler<PointerGripChangedEvent>.Handle(PointerGripChangedEvent @event) =>
-        _pointers?.HandleGripChanged(@event);
-
-    void IButtonInputHandler<JoystickButton>.HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event) =>
-        _joysticks?.HandleButtonChanged(@event);
-
-    void IJoystickInputHandler.HandleAxisMove(JoystickAxisMoveEvent @event) =>
-        _joysticks?.HandleAxisMove(@event);
-
-    void IJoystickInputHandler.HandleHatMove(JoystickHatMoveEvent @event) =>
-        _joysticks?.HandleHatMove(@event);
-
-    void IGamepadInputHandler.HandleThumbstickMove(GamepadThumbstickMoveEvent @event) =>
-        _gamepads?.HandleThumbstickMove(@event);
-
-    void IGamepadInputHandler.HandleTriggerMove(GamepadTriggerMoveEvent @event) =>
-        _gamepads?.HandleTriggerMove(@event);
-
-    void IButtonInputHandler<PointerButton>.HandleButtonChanged(ButtonChangedEvent<PointerButton> @event) =>
-        _pointers?.HandleButtonChanged(@event);
-
-    void IMouseInputHandler.HandleScroll(MouseScrollEvent @event) =>
-        _pointers?.HandleScroll(@event);
-
-    void IPointerInputHandler.HandleTargetChanged(PointerTargetChangedEvent @event) =>
-        _pointers?.HandleTargetChanged(@event);
-
-    void IPointerInputHandler.HandlePointChanged(PointChangedEvent @event) =>
-        _pointers?.HandlePointChanged(@event);
-
-    void IPointerInputHandler.HandleGripChanged(PointerGripChangedEvent @event) =>
-        _pointers?.HandleGripChanged(@event);
-
-    void IButtonInputHandler<KeyName>.HandleButtonChanged(ButtonChangedEvent<KeyName> @event) =>
-        _keyboards?.HandleButtonChanged(@event);
-
-    void IKeyboardInputHandler.HandleKeyChanged(KeyChangedEvent @event) =>
-        _keyboards?.HandleKeyChanged(@event);
-
-    void IKeyboardInputHandler.HandleKeyChar(KeyCharEvent @event) =>
-        _keyboards?.HandleKeyChar(@event);
-
-    void IInputHandler.HandleDeviceConnectionChanged(ConnectionEvent @event)
-    {
-        HandleDeviceConnectionChanged(@event);
-
-        try
-        {
-            ConnectionChanged?.Invoke(@event);
-        }
-        catch (Exception e)
-        {
-            InputLog.Error(e.ToString());
-        }
-    }
-
-    IEnumerator<IInputBackend> IEnumerable<IInputBackend>.GetEnumerator() =>
-        _backends.GetEnumerator();
-
-    IEnumerator IEnumerable.GetEnumerator() => _backends.GetEnumerator();
-
-    void ICollection<IInputBackend>.Add(IInputBackend item)
-    {
-        HandleBackendAddition(item);
-        _backends.Add(item);
-    }
-
-    void ICollection<IInputBackend>.Clear()
-    {
-        foreach (var backend in Backends)
-        {
-            HandleBackendRemoval(backend);
-        }
-
-        _backends.Clear();
-    }
-
-    bool ICollection<IInputBackend>.Contains(IInputBackend item) => _backends.Contains(item);
-
-    void ICollection<IInputBackend>.CopyTo(IInputBackend[] array, int arrayIndex) =>
-        _backends.CopyTo(array, arrayIndex);
-
-    bool ICollection<IInputBackend>.Remove(IInputBackend item)
-    {
-        HandleBackendRemoval(item);
-        return _backends.Remove(item);
-    }
-
-    int ICollection<IInputBackend>.Count => _backends.Count;
-
-    bool ICollection<IInputBackend>.IsReadOnly => false;
-
-    int IList<IInputBackend>.IndexOf(IInputBackend item) => _backends.IndexOf(item);
-
-    void IList<IInputBackend>.Insert(int index, IInputBackend item)
-    {
-        HandleBackendAddition(item);
-        _backends.Insert(index, item);
-    }
-
-    void IList<IInputBackend>.RemoveAt(int index)
-    {
-        var backend = _backends[index];
-        HandleBackendRemoval(backend);
-        _backends.RemoveAt(index);
-    }
-
-    IInputBackend IList<IInputBackend>.this[int index]
-    {
-        get => _backends[index];
-        set
-        {
-            ArgumentNullException.ThrowIfNull(value);
-
-            var existing = _backends[index];
-            if(existing == value)
-            {
-                return;
-            }
-
-            HandleBackendRemoval(existing);
-            HandleBackendAddition(value);
-            _backends[index] = value;
-        }
-    }
-
-    int IReadOnlyCollection<IInputBackend>.Count => _backends.Count;
-
-    /// <summary>
-    /// Returns the <see cref="IInputBackend"/> at the specified index.
-    /// </summary>
-    /// <param name="index"></param>
-    public IInputBackend this[int index] => _backends[index];
+    // These are lazy-initialized as they contain their own device lists in addition to the device list stored here and
+    // the device lists stored in each of the backends. You could argue having this many duplicated lists is inefficient
+    // and you'd be absolutely right, but realistically: how many devices will the average user have connected to their
+    // PC? If you're worried about your game's memory consumption, you're probably not looking at the small lists that
+    // input allocates... This way we can also provide sane/consistent indices.
+    private Pointers? _pointers;
+    private Keyboards? _keyboards;
+    private Gamepads? _gamepads;
+    private Joysticks? _joysticks;
+    private readonly List<IInputBackend> _backends = [];
+    private List<IInputDevice>? _devices;
 }
