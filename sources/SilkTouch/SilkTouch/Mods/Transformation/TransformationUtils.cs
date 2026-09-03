@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -259,16 +262,13 @@ public static class TransformationUtils
             GenericNameSyntax { TypeArgumentList.Arguments.Count: 1 } gn
                 when gn.Identifier.ToString().AsSpan() is { Length: >= 3 } span
                     && span[..3] is "Ref" or "Ptr"
-                    && (span.Length == 3 || span[^1] is 'D')
-                => span.Length == 3
-                    ? gn.TypeArgumentList.Arguments[0]
-                    : byte.TryParse(span[3..^1], out var nd)
-                        ? gn.WithIdentifier(
-                            nd <= 2
-                                ? Identifier(span[..3].ToString())
-                                : Identifier($"{span[..3]}{nd - 1}")
-                        )
-                        : null,
-            _ => null
+                    && (span.Length == 3 || span[^1] is 'D') => span.Length == 3
+                ? gn.TypeArgumentList.Arguments[0]
+            : byte.TryParse(span[3..^1], out var nd)
+                ? gn.WithIdentifier(
+                    nd <= 2 ? Identifier(span[..3].ToString()) : Identifier($"{span[..3]}{nd - 1}")
+                )
+            : null,
+            _ => null,
         };
 }
