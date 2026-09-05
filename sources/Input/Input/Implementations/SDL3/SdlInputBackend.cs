@@ -4,6 +4,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using Silk.NET.Input.SDL3.DataStructures;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
 using Silk.NET.Input.SDL3.Devices.Pointers;
@@ -152,7 +153,6 @@ internal partial class SdlInputBackend : IInputBackend
     public void Update(IInputHandler? handler = null)
     {
         ref var eventArgs = ref _eventProcessingArgs;
-        var events = eventArgs.Events;
         Sdl.PumpEvents();
 
         // QUESTION - do we want this before or after the event processing? or should
@@ -162,26 +162,28 @@ internal partial class SdlInputBackend : IInputBackend
         UpdatePointerTargets(eventArgs.SdlWindowTargets, eventArgs.SdlDisplayTargets);
 
         // actually process the events in-order
-        if (events.HasEvents)
+
+        var rawEvents = _rawEvents.ConsumeWithoutClearing();
+
+#if DEBUG
+        var previousTimestamp = 0ul;
+        var previousStopwatchTimestamp = 0L;
+#endif
+
+        for(var i = 0; i < rawEvents.Length; ++i)
         {
-            #if DEBUG
-            var previousTimestamp = 0ul;
-            var previousStopwatchTimestamp = 0L;
-            #endif
-            while (events.TryDequeue(out var evt))
+            ref readonly var evt = ref rawEvents[i];
+#if DEBUG
+            if (evt.Event.Common.Timestamp < previousTimestamp || evt.StopwatchTimestamp < previousStopwatchTimestamp)
             {
-                #if DEBUG
-                if (evt.Event.Common.Timestamp < previousTimestamp || evt.StopwatchTimestamp < previousStopwatchTimestamp)
-                {
-                    InputLog.Error("Needs pre-sort by timestamp - please alert maintainer");
-                }
-
-                previousTimestamp = evt.Event.Common.Timestamp;
-                previousStopwatchTimestamp = evt.StopwatchTimestamp;
-                #endif
-
-                ProcessEvent(evt.Event, evt.StopwatchTimestamp, ref eventArgs);
+                InputLog.Error("Needs pre-sort by timestamp - please alert maintainer");
             }
+
+            previousTimestamp = evt.Event.Common.Timestamp;
+            previousStopwatchTimestamp = evt.StopwatchTimestamp;
+#endif
+
+            ProcessEvent(evt.Event, evt.StopwatchTimestamp, ref eventArgs);
         }
 
         var devices = eventArgs.Devices;
@@ -211,7 +213,7 @@ internal partial class SdlInputBackend : IInputBackend
     private unsafe byte OnEvent(void* arg0, Event* arg1)
     {
         var timestamp = Stopwatch.GetTimestamp();
-        _eventProcessingArgs.Events.Add(ref *arg1, timestamp);
+        _rawEvents.Add(new TimedRawSdlEvent(*arg1, timestamp));
         return 1;
     }
 
@@ -562,6 +564,7 @@ internal partial class SdlInputBackend : IInputBackend
         _inputSubscriptionEventPtr.Dispose();
         Sdl.QuitSubSystem(SdlInitFlags);
         _sdlInputEvents.Dispose();
+        _rawEvents.Dispose();
     }
 
     public void Dispose()
@@ -622,49 +625,11 @@ internal partial class SdlInputBackend : IInputBackend
         }
     }
 
-    private class EventQueue
-    {
-        private TimedRawSdlEvent[] _events = new TimedRawSdlEvent[256];
-        private int _addIndex;
-        private int _dequeueIndex;
-
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Add(ref Event p0, long timestamp)
-        {
-            if (_addIndex == _events.Length)
-            {
-                Array.Resize(ref _events, _events.Length * 2);
-            }
-
-            _events[_addIndex++] = new TimedRawSdlEvent(p0, timestamp);
-        }
-
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool TryDequeue(out TimedRawSdlEvent p0)
-        {
-            if (_dequeueIndex >= _addIndex)
-            {
-                // clear
-                _addIndex = 0;
-                _dequeueIndex = 0;
-
-                // return that we're empty
-                p0 = default;
-                return false;
-            }
-
-
-            p0 = _events[_dequeueIndex++];
-            return true;
-        }
-
-        public bool HasEvents => _addIndex > 0;
-    }
 
     /// <summary>
     /// A struct containing all the data required for processing SDL events.
+    /// This is a struct to prevent additional pointer indirections, but the field is applied to should be considered
+    /// an
     /// </summary>
     private struct ProcessEventArgs
     {
@@ -676,7 +641,6 @@ internal partial class SdlInputBackend : IInputBackend
         private readonly List<SdlDevice> _devices;
         private readonly ISdlInputEventQueue<ConnectionEvent> _connectionEventQueue;
         private readonly HashSet<nint> _deviceRegistry = [];
-        public readonly EventQueue Events = new();
 
         /// <param name="backend">The SDL input backend that these args are for</param>
         /// <param name="connectionEventQueue">The event queue for connection events</param>
@@ -763,6 +727,7 @@ internal partial class SdlInputBackend : IInputBackend
 
     // NOTE: Be careful where these are used!
     private ProcessEventArgs _eventProcessingArgs;
+    private NativeMemory<TimedRawSdlEvent> _rawEvents;
 
     private readonly EventFilter _inputSubscriptionEventPtr;
     private readonly SdlInputEventContext _sdlInputEvents;
