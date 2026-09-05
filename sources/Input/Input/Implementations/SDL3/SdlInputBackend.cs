@@ -166,21 +166,30 @@ internal partial class SdlInputBackend : IInputBackend
         var rawEvents = _rawEvents.ConsumeWithoutClearing();
 
 #if DEBUG
-        var previousTimestamp = 0ul;
-        var previousStopwatchTimestamp = 0L;
+        TimedRawSdlEvent? previous = null;
 #endif
 
         for(var i = 0; i < rawEvents.Length; ++i)
         {
             ref readonly var evt = ref rawEvents[i];
 #if DEBUG
-            if (evt.Event.Common.Timestamp < previousTimestamp || evt.StopwatchTimestamp < previousStopwatchTimestamp)
+            const string fmt = "Needs pre-sort by {0} timestamp. Please alert maintainer.\nPrevious:{1}\nCurrent:{2}\nDifference: SDL {3} Stopwatch {4}";
+            if (previous is { } prev)
             {
-                InputLog.Error("Needs pre-sort by timestamp - please alert maintainer");
+                if (prev.Event.Common.Timestamp > evt.Event.Common.Timestamp)
+                {
+                    evt.TimeMinus(prev, out var stopwatchDiff, out var sdlDiff);
+                    InputLog.Error(string.Format(fmt, "SDL", previous?.ToString() ?? "null", evt.ToString(), sdlDiff, stopwatchDiff));
+                }
+
+                if (prev.StopwatchTimestamp > evt.StopwatchTimestamp)
+                {
+                    evt.TimeMinus(prev, out var stopwatchDiff, out var sdlDiff);
+                    InputLog.Error(string.Format(fmt, "SDL", previous?.ToString() ?? "null", evt.ToString(), sdlDiff, stopwatchDiff));
+                }
             }
 
-            previousTimestamp = evt.Event.Common.Timestamp;
-            previousStopwatchTimestamp = evt.StopwatchTimestamp;
+            previous = evt;
 #endif
 
             ProcessEvent(evt.Event, evt.StopwatchTimestamp, ref eventArgs);
@@ -623,6 +632,20 @@ internal partial class SdlInputBackend : IInputBackend
             Event = @event;
             StopwatchTimestamp = timestamp;
         }
+
+        #if DEBUG
+        public override string ToString()
+        {
+            var type = (EventType)Event.Type;
+            return $"{type} | SDL Timestamp: {Event.Common.Timestamp} | Stopwatch Timestamp: {StopwatchTimestamp}";
+        }
+
+        public void TimeMinus(in TimedRawSdlEvent other, out long stopwatchDiff, out long sdlDiff)
+        {
+            stopwatchDiff = StopwatchTimestamp - other.StopwatchTimestamp;
+            sdlDiff = (long)(Event.Common.Timestamp - other.Event.Common.Timestamp);
+        }
+        #endif
     }
 
 

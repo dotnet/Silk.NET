@@ -18,7 +18,7 @@ namespace Silk.NET.Input.SDL3.DataStructures;
 /// <typeparam name="T">The type of values in the array - usually SDL struct types.</typeparam>
 internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArray<T>> where T : unmanaged
 {
-    private readonly Ptr<T> _ptr;
+    private readonly T* _ptr;
     public int Count { get; }
     private readonly ISdl? _sdl;
 
@@ -47,15 +47,18 @@ internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArr
     {
         if (!CanDispose)
         {
+            #if DEBUG
+            InputLog.Error("SdlArray disposal attempt without permission");
+            #endif
             return;
         }
 
-        if (_ptr.Native == null)
+        if (_ptr == null)
         {
             return;
         }
 
-        _sdl.Free(_ptr.Native);
+        _sdl.Free(_ptr);
     }
 
     public static implicit operator Ptr<T>(SdlArray<T> array) => array._ptr;
@@ -72,19 +75,19 @@ internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArr
 
 
 
-    public bool IsNull => _ptr.Native == null;
+    public bool IsNull => _ptr == null;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public Span<T> AsSpan() => _ptr.Native == null ? default : new Span<T>(_ptr.Native, Count);
+    public Span<T> AsSpan() => _ptr == null ? default : new Span<T>(_ptr, Count);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public ReadOnlySpan<T> AsReadOnlySpan() => _ptr.Native == null ? default : new ReadOnlySpan<T>(_ptr.Native, Count);
+    public ReadOnlySpan<T> AsReadOnlySpan() => _ptr == null ? default : new ReadOnlySpan<T>(_ptr, Count);
 
     public ref T this[int index]
     {
         get
         {
-            if (_ptr.Native == null)
+            if (_ptr == null)
             {
                 throw new NullReferenceException();
             }
@@ -96,7 +99,7 @@ internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArr
 
             ArgumentOutOfRangeException.ThrowIfNegative(index);
 
-            return ref _ptr.Native[index];
+            return ref _ptr[index];
         }
     }
 
@@ -108,6 +111,6 @@ internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArr
 
     public bool Equals(SdlArray<T> other) => this == other;
 
-    public override bool Equals(object? obj) => obj == null && _ptr.Native == null;
-    public override int GetHashCode() => HashCode.Combine(_ptr, Count, _sdl);
+    public override bool Equals(object? obj) => obj == null && _ptr == null;
+    public override int GetHashCode() => HashCode.Combine((nuint)_ptr, Count, _sdl);
 }
