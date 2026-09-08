@@ -66,11 +66,20 @@ public enum GeometryTypeKHR : uint
         "vulkan",
         ["VK_AMDX_dense_geometry_format"],
         ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_extended_flags",
             "VK_KHR_acceleration_structure+VK_KHR_maintenance5",
             "VK_KHR_acceleration_structure+VK_VERSION_1_4",
         ]
     )]
     DenseGeometryFormatTrianglesAMDX = 1000478000,
+
+    [NativeName("VK_GEOMETRY_TYPE_MICROMAP_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    Micromap = 1000623000,
 
     [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_NV")]
     [SupportedApiProfile(

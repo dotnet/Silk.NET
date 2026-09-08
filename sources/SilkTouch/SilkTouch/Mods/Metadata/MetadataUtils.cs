@@ -31,6 +31,7 @@ public static class MetadataUtils
     /// </summary>
     /// <param name="cType">The C type or parameter string.</param>
     /// <param name="mutability">The mutabilities for each indirection level.</param>
+    /// <param name="symbolMap">Symbol map used to look up symbol values by the symbol name.</param>
     /// <param name="outerCount">
     /// If the type had an array specifier, this specifies the count of the outermost indirection level. Will be zero
     /// if this is not the case.
@@ -41,7 +42,8 @@ public static class MetadataUtils
     public static void GetTypeDetails(
         this ReadOnlySpan<char> cType,
         Span<bool> mutability,
-        out int outerCount
+        out int outerCount,
+        Dictionary<string, string>? symbolMap = null
     )
     {
         outerCount = 0;
@@ -52,18 +54,18 @@ public static class MetadataUtils
             {
                 do
                 {
-                    var num = cType[(idx + 1)..];
-                    if (num.IndexOf(']') is not -1 and var j)
+                    var arraySize = cType[(idx + 1)..];
+                    if (arraySize.IndexOf(']') is not -1 and var j)
                     {
-                        num = num[..j];
-                        idx += num.Length + 2; // + 1 for [, + 1 again for ]
+                        arraySize = arraySize[..j];
+                        idx += arraySize.Length + 2; // + 1 for [, + 1 again for ]
                     }
                     else
                     {
-                        idx += num.Length;
+                        idx += arraySize.Length;
                     }
 
-                    if (num.Length == 0)
+                    if (arraySize.Length == 0)
                     {
                         break;
                     }
@@ -75,7 +77,30 @@ public static class MetadataUtils
                         outerCount = 1;
                     }
 
-                    outerCount *= int.Parse(num);
+                    var resolutionAttempts = 0;
+                    int parsedArraySize;
+                    const int maxResolutionAttempts = 10;
+                    while (!int.TryParse(arraySize, out parsedArraySize))
+                    {
+                        if (
+                            resolutionAttempts > maxResolutionAttempts
+                            || symbolMap == null
+                            || !symbolMap.TryGetAlternateLookup<ReadOnlySpan<char>>(
+                                out var spanSymbolMap
+                            )
+                            || !spanSymbolMap.TryGetValue(arraySize, out var newArraySize)
+                        )
+                        {
+                            throw new InvalidOperationException(
+                                $"Failed to determine outer array size for C type: {cType}"
+                            );
+                        }
+
+                        arraySize = newArraySize;
+                        resolutionAttempts++;
+                    }
+
+                    outerCount *= parsedArraySize;
                 } while (idx < cType.Length && cType[idx] == '[');
                 idx = cType.LastIndexOf(']');
             }
@@ -167,9 +192,20 @@ public static class MetadataUtils
         {
             foreach (var provider in metadataProviders)
             {
-                if (provider.TryGetChildSymbolMetadata(jobKey, parentSymbol, childSymbol, out var childMetadata))
+                if (
+                    provider.TryGetChildSymbolMetadata(
+                        jobKey,
+                        parentSymbol,
+                        childSymbol,
+                        out var childMetadata
+                    )
+                )
                 {
-                    foreach (var child in childMetadata.Where(x => filter.Invoke((x, MetadataSources.Child))))
+                    foreach (
+                        var child in childMetadata.Where(x =>
+                            filter.Invoke((x, MetadataSources.Child))
+                        )
+                    )
                     {
                         foundChildMetadata = true;
                         yield return child;

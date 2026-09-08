@@ -16,10 +16,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public StructureType SType = StructureType.SurfacePresentScalingCapabilitiesKHR;
 
@@ -27,10 +24,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public void* PNext;
 
@@ -38,10 +32,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public PresentScalingFlagsKHR SupportedPresentScaling;
 
@@ -49,10 +40,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public PresentGravityFlagsKHR SupportedPresentGravityX;
 
@@ -60,10 +48,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public PresentGravityFlagsKHR SupportedPresentGravityY;
 
@@ -71,10 +56,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public Extent2D MinScaledImageExtent;
 
@@ -82,20 +64,14 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public Extent2D MaxScaledImageExtent;
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public SurfacePresentScalingCapabilitiesKHR() { }
 }

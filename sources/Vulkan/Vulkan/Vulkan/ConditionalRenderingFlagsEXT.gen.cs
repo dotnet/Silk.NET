@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkConditionalRenderingFlagBitsEXT")]
+[NativeName("VkConditionalRenderingFlagsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum ConditionalRenderingFlagsEXT : uint

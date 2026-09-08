@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFramebufferCreateFlagBits")]
+[NativeName("VkFramebufferCreateFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum FramebufferCreateFlags : uint

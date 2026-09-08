@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkResolveImageFlagBitsKHR")]
+[NativeName("VkResolveImageFlagsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum ResolveImageFlagsKHR : uint

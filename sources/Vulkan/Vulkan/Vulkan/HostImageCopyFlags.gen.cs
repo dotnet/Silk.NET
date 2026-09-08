@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkHostImageCopyFlagBits")]
+[NativeName("VkHostImageCopyFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum HostImageCopyFlags : uint

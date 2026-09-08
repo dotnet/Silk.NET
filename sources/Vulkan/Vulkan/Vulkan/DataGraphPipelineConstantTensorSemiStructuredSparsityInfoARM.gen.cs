@@ -14,7 +14,10 @@ public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsi
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ],
         RequireAll = true
     )]
     public StructureType SType =
@@ -24,7 +27,10 @@ public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsi
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ],
         RequireAll = true
     )]
     public void* PNext;
@@ -33,7 +39,10 @@ public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsi
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ],
         RequireAll = true
     )]
     public uint Dimension;
@@ -42,7 +51,10 @@ public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsi
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ],
         RequireAll = true
     )]
     public uint ZeroCount;
@@ -51,7 +63,10 @@ public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsi
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ],
         RequireAll = true
     )]
     public uint GroupSize;
@@ -59,7 +74,10 @@ public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsi
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ],
         RequireAll = true
     )]
     public DataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM() { }

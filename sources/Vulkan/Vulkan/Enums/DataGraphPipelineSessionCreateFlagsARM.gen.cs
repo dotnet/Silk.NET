@@ -16,4 +16,7 @@ public enum DataGraphPipelineSessionCreateFlagsARM : ulong
 
     [NativeName("VK_DATA_GRAPH_PIPELINE_SESSION_CREATE_PROTECTED_BIT_ARM")]
     ProtectedBit = 0x1,
+
+    [NativeName("VK_DATA_GRAPH_PIPELINE_SESSION_CREATE_OPTICAL_FLOW_CACHE_BIT_ARM")]
+    OpticalFlowCacheBit = 0x2,
 }

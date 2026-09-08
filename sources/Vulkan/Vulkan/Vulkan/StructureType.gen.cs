@@ -2945,6 +2945,27 @@ public enum StructureType : uint
     )]
     PhysicalDeviceShaderDrawParametersFeatures = 1000063000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRIVER_PROPERTIES")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_2",
+            "VK_COMPUTE_VERSION_1_3",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_2",
+            "VK_GRAPHICS_VERSION_1_3",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+            "VK_VERSION_1_4",
+        ],
+        MinVersion = "1.2"
+    )]
+    PhysicalDeviceDriverProperties = 1000196000,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_1_FEATURES")]
     [SupportedApiProfile(
         "vulkan",
@@ -3049,27 +3070,6 @@ public enum StructureType : uint
         MinVersion = "1.2"
     )]
     ImageFormatListCreateInfo = 1000147000,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRIVER_PROPERTIES")]
-    [SupportedApiProfile(
-        "vulkan",
-        [
-            "VK_BASE_VERSION_1_2",
-            "VK_BASE_VERSION_1_3",
-            "VK_BASE_VERSION_1_4",
-            "VK_COMPUTE_VERSION_1_2",
-            "VK_COMPUTE_VERSION_1_3",
-            "VK_COMPUTE_VERSION_1_4",
-            "VK_GRAPHICS_VERSION_1_2",
-            "VK_GRAPHICS_VERSION_1_3",
-            "VK_GRAPHICS_VERSION_1_4",
-            "VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-            "VK_VERSION_1_4",
-        ],
-        MinVersion = "1.2"
-    )]
-    PhysicalDeviceDriverProperties = 1000196000,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_MEMORY_MODEL_FEATURES")]
     [SupportedApiProfile(
@@ -6533,6 +6533,83 @@ public enum StructureType : uint
     )]
     AndroidHardwareBufferFormatProperties2ANDROID = 1000129006,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GPA_FEATURES_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceGpaFeaturesAMD = 1000133000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GPA_PROPERTIES_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceGpaPropertiesAMD = 1000133001,
+
+    [NativeName("VK_STRUCTURE_TYPE_GPA_SAMPLE_BEGIN_INFO_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
+    GpaSampleBeginInfoAMD = 1000133002,
+
+    [NativeName("VK_STRUCTURE_TYPE_GPA_SESSION_CREATE_INFO_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
+    GpaSessionCreateInfoAMD = 1000133003,
+
+    [NativeName("VK_STRUCTURE_TYPE_GPA_DEVICE_CLOCK_MODE_INFO_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
+    GpaDeviceClockModeInfoAMD = 1000133004,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GPA_PROPERTIES_2_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceGpaProperties2AMD = 1000133005,
+
+    [NativeName("VK_STRUCTURE_TYPE_GPA_DEVICE_GET_CLOCK_INFO_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
+    GpaDeviceGetClockInfoAMD = 1000133006,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ENQUEUE_FEATURES_AMDX")]
     [SupportedApiProfile(
         "vulkan",
@@ -6587,6 +6664,220 @@ public enum StructureType : uint
         ]
     )]
     PipelineShaderStageNodeCreateInfoAMDX = 1000134004,
+
+    [NativeName("VK_STRUCTURE_TYPE_TEXEL_BUFFER_DESCRIPTOR_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    TexelBufferDescriptorInfoEXT = 1000135000,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_DESCRIPTOR_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    ImageDescriptorInfoEXT = 1000135001,
+
+    [NativeName("VK_STRUCTURE_TYPE_RESOURCE_DESCRIPTOR_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    ResourceDescriptorInfoEXT = 1000135002,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_HEAP_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    BindHeapInfoEXT = 1000135003,
+
+    [NativeName("VK_STRUCTURE_TYPE_PUSH_DATA_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    PushDataInfoEXT = 1000135004,
+
+    [NativeName("VK_STRUCTURE_TYPE_DESCRIPTOR_SET_AND_BINDING_MAPPING_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    DescriptorSetAndBindingMappingEXT = 1000135005,
+
+    [NativeName("VK_STRUCTURE_TYPE_SHADER_DESCRIPTOR_SET_AND_BINDING_MAPPING_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    ShaderDescriptorSetAndBindingMappingInfoEXT = 1000135006,
+
+    [NativeName("VK_STRUCTURE_TYPE_OPAQUE_CAPTURE_DATA_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    OpaqueCaptureDataCreateInfoEXT = 1000135007,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_HEAP_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    PhysicalDeviceDescriptorHeapPropertiesEXT = 1000135008,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_HEAP_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    PhysicalDeviceDescriptorHeapFeaturesEXT = 1000135009,
+
+    [NativeName("VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_DESCRIPTOR_HEAP_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ]
+    )]
+    CommandBufferInheritanceDescriptorHeapInfoEXT = 1000135010,
+
+    [NativeName("VK_STRUCTURE_TYPE_SAMPLER_CUSTOM_BORDER_COLOR_INDEX_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_border_color", "VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ],
+        RequireAll = true
+    )]
+    SamplerCustomBorderColorIndexCreateInfoEXT = 1000135011,
+
+    [NativeName("VK_STRUCTURE_TYPE_INDIRECT_COMMANDS_LAYOUT_PUSH_DATA_TOKEN_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap", "VK_NV_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ],
+        RequireAll = true
+    )]
+    IndirectCommandsLayoutPushDataTokenNV = 1000135012,
+
+    [NativeName("VK_STRUCTURE_TYPE_SUBSAMPLED_IMAGE_FORMAT_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap", "VK_EXT_fragment_density_map"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ],
+        RequireAll = true
+    )]
+    SubsampledImageFormatPropertiesEXT = 1000135013,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_HEAP_TENSOR_PROPERTIES_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_descriptor_heap"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ],
+        RequireAll = true
+    )]
+    PhysicalDeviceDescriptorHeapTensorPropertiesARM = 1000135014,
 
     [NativeName("VK_STRUCTURE_TYPE_ATTACHMENT_SAMPLE_COUNT_INFO_AMD")]
     [SupportedApiProfile(
@@ -7244,6 +7535,25 @@ public enum StructureType : uint
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     FilterCubicImageViewImageFormatPropertiesEXT = 1000170001,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_CONVERSION_FEATURES_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_cooperative_matrix_conversion"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    PhysicalDeviceCooperativeMatrixConversionFeaturesQCOM = 1000172000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ELAPSED_TIMER_QUERY_FEATURES_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_elapsed_timer_query"],
+        ImpliesSets = [
+            "VK_QCOM_elapsed_timer_query+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_elapsed_timer_query+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceElapsedTimerQueryFeaturesQCOM = 1000173000,
+
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_HOST_POINTER_INFO_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7479,6 +7789,136 @@ public enum StructureType : uint
     )]
     CheckpointData2NV = 1000314009,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_TIMING_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    PhysicalDevicePresentTimingFeaturesEXT = 1000208000,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_TIMING_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    SwapchainTimingPropertiesEXT = 1000208001,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_TIME_DOMAIN_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    SwapchainTimeDomainPropertiesEXT = 1000208002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PRESENT_TIMINGS_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    PresentTimingsInfoEXT = 1000208003,
+
+    [NativeName("VK_STRUCTURE_TYPE_PRESENT_TIMING_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    PresentTimingInfoEXT = 1000208004,
+
+    [NativeName("VK_STRUCTURE_TYPE_PAST_PRESENTATION_TIMING_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    PastPresentationTimingInfoEXT = 1000208005,
+
+    [NativeName("VK_STRUCTURE_TYPE_PAST_PRESENTATION_TIMING_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    PastPresentationTimingPropertiesEXT = 1000208006,
+
+    [NativeName("VK_STRUCTURE_TYPE_PAST_PRESENTATION_TIMING_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    PastPresentationTimingEXT = 1000208007,
+
+    [NativeName("VK_STRUCTURE_TYPE_PRESENT_TIMING_SURFACE_CAPABILITIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    PresentTimingSurfaceCapabilitiesEXT = 1000208008,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_CALIBRATED_TIMESTAMP_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    SwapchainCalibratedTimestampInfoEXT = 1000208009,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_FUNCTIONS_2_FEATURES_INTEL")]
     [SupportedApiProfile(
         "vulkan",
@@ -7699,6 +8139,41 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceCoherentMemoryFeaturesAMD = 1000229000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CONSTANT_DATA_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_constant_data"],
+        ImpliesSets = [
+            "VK_KHR_shader_constant_data+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_shader_constant_data+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderConstantDataFeaturesKHR = 1000231000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ABORT_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
+    PhysicalDeviceShaderAbortFeaturesKHR = 1000233000,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_FAULT_SHADER_ABORT_MESSAGE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
+    DeviceFaultShaderAbortMessageInfoKHR = 1000233001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ABORT_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_shader_abort"],
+        ImpliesSets = ["VK_KHR_device_fault", "VK_KHR_shader_constant_data"]
+    )]
+    PhysicalDeviceShaderAbortPropertiesKHR = 1000233002,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_IMAGE_ATOMIC_INT64_FEATURES_EXT")]
     [SupportedApiProfile(
@@ -8302,6 +8777,17 @@ public enum StructureType : uint
     )]
     PhysicalDeviceCustomBorderColorFeaturesEXT = 1000287002,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXTURE_COMPRESSION_ASTC_3D_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceTextureCompressionAstc3DFeaturesEXT = 1000288000,
+
     [NativeName("VK_STRUCTURE_TYPE_PIPELINE_LIBRARY_CREATE_INFO_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_pipeline_library"])]
     PipelineLibraryCreateInfoKHR = 1000290000,
@@ -8504,6 +8990,94 @@ public enum StructureType : uint
     )]
     DeviceDiagnosticsConfigCreateInfoNV = 1000300001,
 
+    [NativeName("VK_STRUCTURE_TYPE_PERF_HINT_INFO_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_queue_perf_hint"],
+        ImpliesSets = [
+            "VK_QCOM_queue_perf_hint+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_queue_perf_hint+VK_VERSION_1_1",
+        ]
+    )]
+    PerfHintInfoQCOM = 1000302000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_QUEUE_PERF_HINT_FEATURES_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_queue_perf_hint"],
+        ImpliesSets = [
+            "VK_QCOM_queue_perf_hint+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_queue_perf_hint+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceQueuePerfHintFeaturesQCOM = 1000302001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_QUEUE_PERF_HINT_PROPERTIES_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_queue_perf_hint"],
+        ImpliesSets = [
+            "VK_QCOM_queue_perf_hint+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_queue_perf_hint+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceQueuePerfHintPropertiesQCOM = 1000302002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_PROCESSING_3_FEATURES_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_image_processing3"],
+        ImpliesSets = [
+            "VK_QCOM_image_processing3+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_image_processing3+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceImageProcessing3FeaturesQCOM = 1000303000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MULTIPLE_WAIT_QUEUES_FEATURES_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_shader_multiple_wait_queues"],
+        ImpliesSets = [
+            "VK_QCOM_shader_multiple_wait_queues+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_shader_multiple_wait_queues+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM = 1000304000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MULTIPLE_WAIT_QUEUES_PROPERTIES_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_shader_multiple_wait_queues"],
+        ImpliesSets = [
+            "VK_QCOM_shader_multiple_wait_queues+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_shader_multiple_wait_queues+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM = 1000304001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SPLIT_BARRIER_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_split_barrier"],
+        ImpliesSets = [
+            "VK_EXT_shader_split_barrier+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_split_barrier+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderSplitBarrierFeaturesEXT = 1000305000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SPLIT_BARRIER_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_split_barrier"],
+        ImpliesSets = [
+            "VK_EXT_shader_split_barrier+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_split_barrier+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderSplitBarrierPropertiesEXT = 1000305001,
+
     [NativeName("VK_STRUCTURE_TYPE_CUDA_MODULE_CREATE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -8563,10 +9137,7 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     PhysicalDeviceTileShadingFeaturesQCOM = 1000309000,
 
@@ -8574,10 +9145,7 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     PhysicalDeviceTileShadingPropertiesQCOM = 1000309001,
 
@@ -8585,10 +9153,7 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     RenderPassTileShadingCreateInfoQCOM = 1000309002,
 
@@ -8596,10 +9161,7 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     PerTileBeginInfoQCOM = 1000309003,
 
@@ -8607,10 +9169,7 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     PerTileEndInfoQCOM = 1000309004,
 
@@ -8618,10 +9177,7 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     DispatchTileInfoQCOM = 1000309005,
 
@@ -8849,6 +9405,218 @@ public enum StructureType : uint
     )]
     AccelerationStructureCaptureDescriptorDataInfoEXT = 1000316009,
 
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_MEMORY_COPY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    DeviceMemoryCopyKHR = 1000318000,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_DEVICE_MEMORY_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    CopyDeviceMemoryInfoKHR = 1000318001,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_MEMORY_IMAGE_COPY_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    DeviceMemoryImageCopyKHR = 1000318002,
+
+    [NativeName("VK_STRUCTURE_TYPE_COPY_DEVICE_MEMORY_IMAGE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    CopyDeviceMemoryImageInfoKHR = 1000318003,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_RANGE_BARRIERS_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    MemoryRangeBarriersInfoKHR = 1000318004,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_RANGE_BARRIER_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    MemoryRangeBarrierKHR = 1000318005,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_ADDRESS_COMMANDS_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    PhysicalDeviceDeviceAddressCommandsFeaturesKHR = 1000318006,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_INDEX_BUFFER_3_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    BindIndexBuffer3InfoKHR = 1000318007,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_VERTEX_BUFFER_3_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    BindVertexBuffer3InfoKHR = 1000318008,
+
+    [NativeName("VK_STRUCTURE_TYPE_DRAW_INDIRECT_2_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    DrawIndirect2InfoKHR = 1000318009,
+
+    [NativeName("VK_STRUCTURE_TYPE_DRAW_INDIRECT_COUNT_2_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    DrawIndirectCount2InfoKHR = 1000318010,
+
+    [NativeName("VK_STRUCTURE_TYPE_DISPATCH_INDIRECT_2_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    DispatchIndirect2InfoKHR = 1000318011,
+
+    [NativeName("VK_STRUCTURE_TYPE_CONDITIONAL_RENDERING_BEGIN_INFO_2_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_conditional_rendering", "VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
+    ConditionalRenderingBeginInfo2EXT = 1000318012,
+
+    [NativeName("VK_STRUCTURE_TYPE_BIND_TRANSFORM_FEEDBACK_BUFFER_2_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_transform_feedback", "VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
+    BindTransformFeedbackBuffer2InfoEXT = 1000318013,
+
+    [NativeName("VK_STRUCTURE_TYPE_MEMORY_MARKER_INFO_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_buffer_marker", "VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
+    MemoryMarkerInfoAMD = 1000318014,
+
+    [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CREATE_INFO_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_KHR_buffer_device_address+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_EXT_extended_dynamic_state+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ],
+        RequireAll = true
+    )]
+    AccelerationStructureCreateInfo2KHR = 1000318015,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GRAPHICS_PIPELINE_LIBRARY_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -8909,11 +9677,12 @@ public enum StructureType : uint
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADER_BARYCENTRIC_PROPERTIES_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_fragment_shader_barycentric"],
+        ["VK_EXT_provoking_vertex", "VK_KHR_fragment_shader_barycentric"],
         ImpliesSets = [
             "VK_KHR_fragment_shader_barycentric+VK_KHR_get_physical_device_properties2",
             "VK_KHR_fragment_shader_barycentric+VK_VERSION_1_1",
-        ]
+        ],
+        RequireAll = true
     )]
     PhysicalDeviceFragmentShaderBarycentricPropertiesKHR = 1000322000,
 
@@ -9931,6 +10700,24 @@ public enum StructureType : uint
     )]
     PhysicalDeviceSchedulingControlsPropertiesARM = 1000417002,
 
+    [NativeName("VK_STRUCTURE_TYPE_DISPATCH_PARAMETERS_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_scheduling_controls"],
+        ImpliesSets = ["VK_ARM_shader_core_builtins"]
+    )]
+    DispatchParametersARM = 1000417003,
+
+    [NativeName(
+        "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_DISPATCH_PARAMETERS_PROPERTIES_ARM"
+    )]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_scheduling_controls"],
+        ImpliesSets = ["VK_ARM_shader_core_builtins"]
+    )]
+    PhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM = 1000417004,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_SLICED_VIEW_OF_3D_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -10696,6 +11483,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_AMDX_dense_geometry_format"],
         ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_extended_flags",
             "VK_KHR_acceleration_structure+VK_KHR_maintenance5",
             "VK_KHR_acceleration_structure+VK_VERSION_1_4",
         ]
@@ -10709,6 +11497,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_AMDX_dense_geometry_format"],
         ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_extended_flags",
             "VK_KHR_acceleration_structure+VK_KHR_maintenance5",
             "VK_KHR_acceleration_structure+VK_VERSION_1_4",
         ]
@@ -10827,6 +11616,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -10838,6 +11628,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -10849,6 +11640,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -10860,6 +11652,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -10871,6 +11664,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -10882,6 +11676,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -10893,6 +11688,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -10904,6 +11700,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -10915,6 +11712,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -10926,6 +11724,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -10980,10 +11779,7 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     SurfacePresentModeKHR = 1000274000,
 
@@ -10991,10 +11787,7 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     SurfacePresentScalingCapabilitiesKHR = 1000274001,
 
@@ -11002,10 +11795,7 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     SurfacePresentModeCompatibilityKHR = 1000274002,
 
@@ -11014,9 +11804,8 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     PhysicalDeviceSwapchainMaintenance1FeaturesKHR = 1000275000,
@@ -11026,9 +11815,8 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     SwapchainPresentFenceInfoKHR = 1000275001,
@@ -11038,9 +11826,8 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     SwapchainPresentModesCreateInfoKHR = 1000275002,
@@ -11050,9 +11837,8 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     SwapchainPresentModeInfoKHR = 1000275003,
@@ -11062,9 +11848,8 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     SwapchainPresentScalingCreateInfoKHR = 1000275004,
@@ -11074,9 +11859,8 @@ public enum StructureType : uint
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     ReleaseSwapchainImagesInfoKHR = 1000275005,
@@ -11260,6 +12044,14 @@ public enum StructureType : uint
     )]
     PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT = 1000499000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INTERNALLY_SYNCHRONIZED_QUEUES_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_internally_synchronized_queues"],
+        ImpliesSets = ["VK_VERSION_1_1"]
+    )]
+    PhysicalDeviceInternallySynchronizedQueuesFeaturesKHR = 1000504000,
+
     [NativeName("VK_STRUCTURE_TYPE_LATENCY_SLEEP_MODE_INFO_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -11414,7 +12206,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineCreateInfoARM = 1000507000,
 
@@ -11422,7 +12217,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineSessionCreateInfoARM = 1000507001,
 
@@ -11430,7 +12228,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineResourceInfoARM = 1000507002,
 
@@ -11438,7 +12239,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineConstantARM = 1000507003,
 
@@ -11446,7 +12250,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineSessionMemoryRequirementsInfoARM = 1000507004,
 
@@ -11454,7 +12261,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     BindDataGraphPipelineSessionMemoryInfoARM = 1000507005,
 
@@ -11462,7 +12272,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     PhysicalDeviceDataGraphFeaturesARM = 1000507006,
 
@@ -11470,7 +12283,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineShaderModuleCreateInfoARM = 1000507007,
 
@@ -11478,7 +12294,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelinePropertyQueryResultARM = 1000507008,
 
@@ -11486,7 +12305,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineInfoARM = 1000507009,
 
@@ -11494,7 +12316,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineCompilerControlCreateInfoARM = 1000507010,
 
@@ -11502,7 +12327,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineSessionBindPointRequirementsInfoARM = 1000507011,
 
@@ -11510,7 +12338,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineSessionBindPointRequirementARM = 1000507012,
 
@@ -11518,7 +12349,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineIdentifierCreateInfoARM = 1000507013,
 
@@ -11526,7 +12360,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineDispatchInfoARM = 1000507014,
 
@@ -11534,7 +12371,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphProcessingEngineCreateInfoARM = 1000507016,
 
@@ -11542,7 +12382,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     QueueFamilyDataGraphProcessingEnginePropertiesARM = 1000507017,
 
@@ -11550,7 +12393,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     QueueFamilyDataGraphPropertiesARM = 1000507018,
 
@@ -11560,7 +12406,10 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM = 1000507019,
 
@@ -11570,10 +12419,21 @@ public enum StructureType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ],
         RequireAll = true
     )]
     DataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM = 1000507015,
+
+    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_DATA_GRAPH_TOSA_PROPERTIES_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_instruction_set_tosa"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    QueueFamilyDataGraphTosaPropertiesARM = 1000508000,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTIVIEW_PER_VIEW_RENDER_AREAS_FEATURES_QCOM")]
     [SupportedApiProfile(
@@ -12561,8 +13421,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12573,8 +13435,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12585,8 +13449,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12597,8 +13463,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12609,8 +13477,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12621,8 +13491,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12633,8 +13505,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12645,8 +13519,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12657,8 +13533,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12669,8 +13547,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12681,8 +13561,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12693,8 +13575,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12705,8 +13589,10 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -12717,12 +13603,58 @@ public enum StructureType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
     GeneratedCommandsShaderInfoEXT = 1000572014,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FAULT_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceFaultFeaturesKHR = 1000573000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FAULT_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceFaultPropertiesKHR = 1000573001,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_FAULT_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    DeviceFaultInfoKHR = 1000573002,
+
+    [NativeName("VK_STRUCTURE_TYPE_DEVICE_FAULT_DEBUG_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_device_fault"],
+        ImpliesSets = [
+            "VK_KHR_device_fault+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_device_fault+VK_VERSION_1_1",
+        ]
+    )]
+    DeviceFaultDebugInfoKHR = 1000573003,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_8_FEATURES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
@@ -12775,6 +13707,34 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceShaderFmaFeaturesKHR = 1000579000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PUSH_CONSTANT_BANK_INFO_NV")]
+    [SupportedApiProfile("vulkan", ["VK_NV_push_constant_bank"])]
+    PushConstantBankInfoNV = 1000580000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PUSH_CONSTANT_BANK_FEATURES_NV")]
+    [SupportedApiProfile("vulkan", ["VK_NV_push_constant_bank"])]
+    PhysicalDevicePushConstantBankFeaturesNV = 1000580001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PUSH_CONSTANT_BANK_PROPERTIES_NV")]
+    [SupportedApiProfile("vulkan", ["VK_NV_push_constant_bank"])]
+    PhysicalDevicePushConstantBankPropertiesNV = 1000580002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_INVOCATION_REORDER_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_ray_tracing_invocation_reorder"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
+    PhysicalDeviceRayTracingInvocationReorderFeaturesEXT = 1000581000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_INVOCATION_REORDER_PROPERTIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_ray_tracing_invocation_reorder"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
+    PhysicalDeviceRayTracingInvocationReorderPropertiesEXT = 1000581001,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEPTH_CLAMP_CONTROL_FEATURES_EXT")]
     [SupportedApiProfile(
@@ -12870,18 +13830,6 @@ public enum StructureType : uint
     [SupportedApiProfile("vulkan", ["VK_OHOS_surface"], ImpliesSets = ["VK_KHR_surface"])]
     SurfaceCreateInfoOHOS = 1000685000,
 
-    [NativeName("VK_STRUCTURE_TYPE_NATIVE_BUFFER_OHOS")]
-    [SupportedApiProfile("vulkan", ["VK_OHOS_native_buffer"])]
-    NativeBufferOHOS = 1000453001,
-
-    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_IMAGE_CREATE_INFO_OHOS")]
-    [SupportedApiProfile("vulkan", ["VK_OHOS_native_buffer"])]
-    SwapchainImageCreateInfoOHOS = 1000453002,
-
-    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENTATION_PROPERTIES_OHOS")]
-    [SupportedApiProfile("vulkan", ["VK_OHOS_native_buffer"])]
-    PhysicalDevicePresentationPropertiesOHOS = 1000453003,
-
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HDR_VIVID_FEATURES_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -12935,6 +13883,30 @@ public enum StructureType : uint
         ImpliesSets = ["VK_EXT_opacity_micromap"]
     )]
     PhysicalDevicePipelineOpacityMicromapFeaturesARM = 1000596000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VIDEO_ENCODE_FEEDBACK_2_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_feedback2"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    PhysicalDeviceVideoEncodeFeedback2FeaturesKHR = 1000598000,
+
+    [NativeName("VK_STRUCTURE_TYPE_VIDEO_ENCODE_FEEDBACK_2_CAPABILITIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_feedback2"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    VideoEncodeFeedback2CapabilitiesKHR = 1000598001,
+
+    [NativeName("VK_STRUCTURE_TYPE_QUERY_POOL_VIDEO_ENCODE_PER_PARTITION_FEEDBACK_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_feedback2"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    QueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR = 1000598002,
 
     [NativeName("VK_STRUCTURE_TYPE_IMPORT_MEMORY_METAL_HANDLE_INFO_EXT")]
     [SupportedApiProfile(
@@ -13035,6 +14007,50 @@ public enum StructureType : uint
     )]
     RenderPassPerformanceCountersByRegionBeginInfoARM = 1000605004,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INSTRUMENTATION_FEATURES_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderInstrumentationFeaturesARM = 1000607000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INSTRUMENTATION_PROPERTIES_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderInstrumentationPropertiesARM = 1000607001,
+
+    [NativeName("VK_STRUCTURE_TYPE_SHADER_INSTRUMENTATION_CREATE_INFO_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
+    ShaderInstrumentationCreateInfoARM = 1000607002,
+
+    [NativeName("VK_STRUCTURE_TYPE_SHADER_INSTRUMENTATION_METRIC_DESCRIPTION_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
+    ShaderInstrumentationMetricDescriptionARM = 1000607003,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VERTEX_ATTRIBUTE_ROBUSTNESS_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13062,6 +14078,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_VALVE_fragment_density_map_layered"],
         ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
             "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
@@ -13073,6 +14090,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_VALVE_fragment_density_map_layered"],
         ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
             "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
@@ -13084,6 +14102,7 @@ public enum StructureType : uint
         "vulkan",
         ["VK_VALVE_fragment_density_map_layered"],
         ImpliesSets = [
+            "VK_EXT_fragment_density_map+VK_KHR_extended_flags",
             "VK_EXT_fragment_density_map+VK_KHR_maintenance5",
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
@@ -13133,6 +14152,22 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDevicePresentMeteringFeaturesNV = 1000613001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTISAMPLED_RENDER_TO_SWAPCHAIN_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_swapchain"],
+        ImpliesSets = ["VK_EXT_multisampled_render_to_single_sampled", "VK_KHR_swapchain"]
+    )]
+    PhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT = 1000616000,
+
+    [NativeName("VK_STRUCTURE_TYPE_SWAPCHAIN_FLAGS_SURFACE_CAPABILITIES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_multisampled_render_to_swapchain"],
+        ImpliesSets = ["VK_EXT_multisampled_render_to_single_sampled", "VK_KHR_swapchain"]
+    )]
+    SwapchainFlagsSurfaceCapabilitiesEXT = 1000616001,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_OFFSET_FEATURES_EXT")]
     [SupportedApiProfile(
@@ -13204,6 +14239,38 @@ public enum StructureType : uint
     )]
     PhysicalDevicePresentModeFifoLatestReadyFeaturesKHR = 1000361000,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_OPACITY_MICROMAP_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    PhysicalDeviceOpacityMicromapFeaturesKHR = 1000623000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_OPACITY_MICROMAP_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    PhysicalDeviceOpacityMicromapPropertiesKHR = 1000623001,
+
+    [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_MICROMAP_DATA_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    AccelerationStructureGeometryMicromapDataKHR = 1000623002,
+
+    [NativeName("VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_TRIANGLES_OPACITY_MICROMAP_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    AccelerationStructureTrianglesOpacityMicromapKHR = 1000623003,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_64_BIT_INDEXING_FEATURES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -13214,6 +14281,39 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceShader64BitIndexingFeaturesEXT = 1000627000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUSTOM_RESOLVE_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceCustomResolveFeaturesEXT = 1000628000,
+
+    [NativeName("VK_STRUCTURE_TYPE_BEGIN_CUSTOM_RESOLVE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve+VK_KHR_dynamic_rendering", "VK_EXT_custom_resolve+VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
+    BeginCustomResolveInfoEXT = 1000628001,
+
+    [NativeName("VK_STRUCTURE_TYPE_CUSTOM_RESOLVE_CREATE_INFO_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_custom_resolve+VK_KHR_dynamic_rendering", "VK_EXT_custom_resolve+VK_VERSION_1_3"],
+        ImpliesSets = [
+            "VK_EXT_custom_resolve+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_custom_resolve+VK_VERSION_1_1",
+        ]
+    )]
+    CustomResolveCreateInfoEXT = 1000628002,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DATA_GRAPH_MODEL_FEATURES_QCOM")]
     [SupportedApiProfile(
@@ -13286,6 +14386,86 @@ public enum StructureType : uint
     )]
     ResolveImageModeInfoKHR = 1000630004,
 
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DATA_GRAPH_OPTICAL_FLOW_FEATURES_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    PhysicalDeviceDataGraphOpticalFlowFeaturesARM = 1000631000,
+
+    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_DATA_GRAPH_OPTICAL_FLOW_PROPERTIES_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    QueueFamilyDataGraphOpticalFlowPropertiesARM = 1000631001,
+
+    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_OPTICAL_FLOW_IMAGE_FORMAT_INFO_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    DataGraphOpticalFlowImageFormatInfoARM = 1000631003,
+
+    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_OPTICAL_FLOW_IMAGE_FORMAT_PROPERTIES_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    DataGraphOpticalFlowImageFormatPropertiesARM = 1000631004,
+
+    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_OPTICAL_FLOW_DISPATCH_INFO_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    DataGraphPipelineOpticalFlowDispatchInfoARM = 1000631005,
+
+    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_OPTICAL_FLOW_CREATE_INFO_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    DataGraphPipelineOpticalFlowCreateInfoARM = 1000631002,
+
+    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_RESOURCE_INFO_IMAGE_LAYOUT_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    DataGraphPipelineResourceInfoImageLayoutARM = 1000631006,
+
+    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SINGLE_NODE_CREATE_INFO_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    DataGraphPipelineSingleNodeCreateInfoARM = 1000631007,
+
+    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SINGLE_NODE_CONNECTION_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_data_graph_optical_flow"],
+        ImpliesSets = ["VK_ARM_data_graph"]
+    )]
+    DataGraphPipelineSingleNodeConnectionARM = 1000631008,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_LONG_VECTOR_FEATURES_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_shader_long_vector"], ImpliesSets = ["VK_VERSION_1_2"])]
+    PhysicalDeviceShaderLongVectorFeaturesEXT = 1000635000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_LONG_VECTOR_PROPERTIES_EXT")]
+    [SupportedApiProfile("vulkan", ["VK_EXT_shader_long_vector"], ImpliesSets = ["VK_VERSION_1_2"])]
+    PhysicalDeviceShaderLongVectorPropertiesEXT = 1000635001,
+
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CACHE_INCREMENTAL_MODE_FEATURES_SEC")]
     [SupportedApiProfile(
         "vulkan",
@@ -13309,6 +14489,200 @@ public enum StructureType : uint
         ]
     )]
     PhysicalDeviceShaderUniformBufferUnsizedArrayFeaturesEXT = 1000642000,
+
+    [NativeName("VK_STRUCTURE_TYPE_COMPUTE_OCCUPANCY_PRIORITY_PARAMETERS_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_compute_occupancy_priority"],
+        ImpliesSets = [
+            "VK_NV_compute_occupancy_priority+VK_KHR_get_physical_device_properties2",
+            "VK_NV_compute_occupancy_priority+VK_VERSION_1_1",
+        ]
+    )]
+    ComputeOccupancyPriorityParametersNV = 1000645000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COMPUTE_OCCUPANCY_PRIORITY_FEATURES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_compute_occupancy_priority"],
+        ImpliesSets = [
+            "VK_NV_compute_occupancy_priority+VK_KHR_get_physical_device_properties2",
+            "VK_NV_compute_occupancy_priority+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceComputeOccupancyPriorityFeaturesNV = 1000645001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MAINTENANCE_11_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceMaintenance11FeaturesKHR = 1000657000,
+
+    [NativeName("VK_STRUCTURE_TYPE_QUEUE_FAMILY_OPTIMAL_IMAGE_TRANSFER_GRANULARITY_PROPERTIES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ]
+    )]
+    QueueFamilyOptimalImageTransferGranularityPropertiesKHR = 1000657001,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SUBGROUP_PARTITIONED_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_subgroup_partitioned"],
+        ImpliesSets = [
+            "VK_EXT_shader_subgroup_partitioned+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_subgroup_partitioned+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceShaderSubgroupPartitionedFeaturesEXT = 1000662000,
+
+    [NativeName("VK_STRUCTURE_TYPE_UBM_SURFACE_CREATE_INFO_SEC")]
+    [SupportedApiProfile("vulkan", ["VK_SEC_ubm_surface"], ImpliesSets = ["VK_KHR_surface"])]
+    UbmSurfaceCreateInfoSEC = 1000664000,
+
+    [NativeName("VK_STRUCTURE_TYPE_FORMAT_PROPERTIES_4_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_extended_flags"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ]
+    )]
+    FormatProperties4KHR = 1000668000,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_CREATE_FLAGS_2_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_extended_flags"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ]
+    )]
+    ImageCreateFlags2CreateInfoKHR = 1000668001,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_USAGE_FLAGS_2_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_extended_flags"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ]
+    )]
+    ImageUsageFlags2CreateInfoKHR = 1000668002,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_VIEW_USAGE_2_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_extended_flags"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ]
+    )]
+    ImageViewUsage2CreateInfoKHR = 1000668003,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_FLAGS_FEATURES_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_extended_flags"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDeviceExtendedFlagsFeaturesKHR = 1000668004,
+
+    [NativeName("VK_STRUCTURE_TYPE_IMAGE_STENCIL_USAGE_2_CREATE_INFO_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        [
+            "VK_KHR_extended_flags+VK_EXT_separate_stencil_usage",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+        ],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ]
+    )]
+    ImageStencilUsage2CreateInfoKHR = 1000668005,
+
+    [NativeName("VK_STRUCTURE_TYPE_SHARED_PRESENT_SURFACE_CAPABILITIES_2_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_extended_flags", "VK_KHR_shared_presentable_image"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_extended_flags+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    SharedPresentSurfaceCapabilities2KHR = 1000668006,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_MIXED_FLOAT_DOT_PRODUCT_FEATURES_VALVE")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_VALVE_shader_mixed_float_dot_product"],
+        ImpliesSets = [
+            "VK_KHR_get_physical_device_properties2+VK_KHR_shader_float16_int8",
+            "VK_KHR_get_physical_device_properties2+VK_VERSION_1_2",
+            "VK_VERSION_1_1+VK_KHR_shader_float16_int8",
+            "VK_VERSION_1_1+VK_VERSION_1_2",
+        ]
+    )]
+    PhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE = 1000673000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_THROTTLE_HINT_FEATURES_SEC")]
+    [SupportedApiProfile("vulkan", ["VK_SEC_throttle_hint"])]
+    PhysicalDeviceThrottleHintFeaturesSEC = 1000674000,
+
+    [NativeName("VK_STRUCTURE_TYPE_THROTTLE_HINT_SUBMIT_INFO_SEC")]
+    [SupportedApiProfile("vulkan", ["VK_SEC_throttle_hint"])]
+    ThrottleHintSubmitInfoSEC = 1000674001,
+
+    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_NEURAL_STATISTICS_CREATE_INFO_ARM")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
+    DataGraphPipelineNeuralStatisticsCreateInfoARM = 1000676000,
+
+    [NativeName("VK_STRUCTURE_TYPE_DATA_GRAPH_PIPELINE_SESSION_NEURAL_STATISTICS_CREATE_INFO_ARM")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
+    DataGraphPipelineSessionNeuralStatisticsCreateInfoARM = 1000676001,
+
+    [NativeName(
+        "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_FEATURES_ARM"
+    )]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
+    PhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM = 1000676002,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIMITIVE_RESTART_INDEX_FEATURES_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_primitive_restart_index"],
+        ImpliesSets = [
+            "VK_EXT_primitive_restart_index+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_primitive_restart_index+VK_VERSION_1_1",
+        ]
+    )]
+    PhysicalDevicePrimitiveRestartIndexFeaturesEXT = 1000678000,
+
+    [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_DECODE_VECTOR_FEATURES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix_decode_vector"],
+        ImpliesSets = ["VK_NV_cooperative_matrix2"]
+    )]
+    PhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV = 1000689000,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VARIABLE_POINTER_FEATURES")]
     [SupportedApiProfile(

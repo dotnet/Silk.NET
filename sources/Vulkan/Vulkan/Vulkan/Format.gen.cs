@@ -6625,9 +6625,366 @@ public enum Format : uint
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc2x4BppSrgbBlockIMG = 1000054007,
 
+    [NativeName("VK_FORMAT_ASTC_3x3x3_UNORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc3x3x3UnormBlockEXT = 1000288000,
+
+    [NativeName("VK_FORMAT_ASTC_3x3x3_SRGB_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc3x3x3SrgbBlockEXT = 1000288001,
+
+    [NativeName("VK_FORMAT_ASTC_3x3x3_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc3x3x3SfloatBlockEXT = 1000288002,
+
+    [NativeName("VK_FORMAT_ASTC_4x3x3_UNORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc4x3x3UnormBlockEXT = 1000288003,
+
+    [NativeName("VK_FORMAT_ASTC_4x3x3_SRGB_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc4x3x3SrgbBlockEXT = 1000288004,
+
+    [NativeName("VK_FORMAT_ASTC_4x3x3_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc4x3x3SfloatBlockEXT = 1000288005,
+
+    [NativeName("VK_FORMAT_ASTC_4x4x3_UNORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc4x4x3UnormBlockEXT = 1000288006,
+
+    [NativeName("VK_FORMAT_ASTC_4x4x3_SRGB_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc4x4x3SrgbBlockEXT = 1000288007,
+
+    [NativeName("VK_FORMAT_ASTC_4x4x3_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc4x4x3SfloatBlockEXT = 1000288008,
+
+    [NativeName("VK_FORMAT_ASTC_4x4x4_UNORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc4x4x4UnormBlockEXT = 1000288009,
+
+    [NativeName("VK_FORMAT_ASTC_4x4x4_SRGB_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc4x4x4SrgbBlockEXT = 1000288010,
+
+    [NativeName("VK_FORMAT_ASTC_4x4x4_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc4x4x4SfloatBlockEXT = 1000288011,
+
+    [NativeName("VK_FORMAT_ASTC_5x4x4_UNORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x4x4UnormBlockEXT = 1000288012,
+
+    [NativeName("VK_FORMAT_ASTC_5x4x4_SRGB_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x4x4SrgbBlockEXT = 1000288013,
+
+    [NativeName("VK_FORMAT_ASTC_5x4x4_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x4x4SfloatBlockEXT = 1000288014,
+
+    [NativeName("VK_FORMAT_ASTC_5x5x4_UNORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x5x4UnormBlockEXT = 1000288015,
+
+    [NativeName("VK_FORMAT_ASTC_5x5x4_SRGB_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x5x4SrgbBlockEXT = 1000288016,
+
+    [NativeName("VK_FORMAT_ASTC_5x5x4_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x5x4SfloatBlockEXT = 1000288017,
+
+    [NativeName("VK_FORMAT_ASTC_5x5x5_UNORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x5x5UnormBlockEXT = 1000288018,
+
+    [NativeName("VK_FORMAT_ASTC_5x5x5_SRGB_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x5x5SrgbBlockEXT = 1000288019,
+
+    [NativeName("VK_FORMAT_ASTC_5x5x5_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc5x5x5SfloatBlockEXT = 1000288020,
+
+    [NativeName("VK_FORMAT_ASTC_6x5x5_UNORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x5x5UnormBlockEXT = 1000288021,
+
+    [NativeName("VK_FORMAT_ASTC_6x5x5_SRGB_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x5x5SrgbBlockEXT = 1000288022,
+
+    [NativeName("VK_FORMAT_ASTC_6x5x5_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x5x5SfloatBlockEXT = 1000288023,
+
+    [NativeName("VK_FORMAT_ASTC_6x6x5_UNORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x6x5UnormBlockEXT = 1000288024,
+
+    [NativeName("VK_FORMAT_ASTC_6x6x5_SRGB_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x6x5SrgbBlockEXT = 1000288025,
+
+    [NativeName("VK_FORMAT_ASTC_6x6x5_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x6x5SfloatBlockEXT = 1000288026,
+
+    [NativeName("VK_FORMAT_ASTC_6x6x6_UNORM_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x6x6UnormBlockEXT = 1000288027,
+
+    [NativeName("VK_FORMAT_ASTC_6x6x6_SRGB_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x6x6SrgbBlockEXT = 1000288028,
+
+    [NativeName("VK_FORMAT_ASTC_6x6x6_SFLOAT_BLOCK_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_texture_compression_astc_3d"],
+        ImpliesSets = [
+            "VK_EXT_texture_compression_astc_3d+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_texture_compression_astc_3d+VK_VERSION_1_1",
+        ]
+    )]
+    Astc6x6x6SfloatBlockEXT = 1000288029,
+
     [NativeName("VK_FORMAT_R8_BOOL_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     R8BoolARM = 1000460000,
+
+    [NativeName("VK_FORMAT_R16_SFLOAT_FPENCODING_BFLOAT16_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_KHR_shader_bfloat16"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
+    R16SfloatFpencodingBfloat16ARM = 1000460001,
+
+    [NativeName("VK_FORMAT_R8_SFLOAT_FPENCODING_FLOAT8E4M3_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_shader_float8"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
+    R8SfloatFpencodingFloat8E4M3ARM = 1000460002,
+
+    [NativeName("VK_FORMAT_R8_SFLOAT_FPENCODING_FLOAT8E5M2_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_tensors", "VK_EXT_shader_float8"],
+        ImpliesSets = ["VK_VERSION_1_3"],
+        RequireAll = true
+    )]
+    R8SfloatFpencodingFloat8E5M2ARM = 1000460003,
 
     [NativeName("VK_FORMAT_R16G16_SFIXED5_NV")]
     [SupportedApiProfile(

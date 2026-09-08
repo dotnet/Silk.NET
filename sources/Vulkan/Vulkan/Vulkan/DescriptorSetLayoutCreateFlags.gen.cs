@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorSetLayoutCreateFlagBits")]
+[NativeName("VkDescriptorSetLayoutCreateFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum DescriptorSetLayoutCreateFlags : uint

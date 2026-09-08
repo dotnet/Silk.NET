@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubgroupFeatureFlagBits")]
+[NativeName("VkSubgroupFeatureFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum SubgroupFeatureFlags : uint
@@ -19,6 +19,10 @@ public enum SubgroupFeatureFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_1",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
@@ -40,6 +44,10 @@ public enum SubgroupFeatureFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_1",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
@@ -61,6 +69,10 @@ public enum SubgroupFeatureFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_1",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
@@ -82,6 +94,10 @@ public enum SubgroupFeatureFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_1",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
@@ -103,6 +119,10 @@ public enum SubgroupFeatureFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_1",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
@@ -124,6 +144,10 @@ public enum SubgroupFeatureFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_1",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
@@ -145,6 +169,10 @@ public enum SubgroupFeatureFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_1",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
@@ -166,6 +194,10 @@ public enum SubgroupFeatureFlags : uint
     [SupportedApiProfile(
         "vulkan",
         [
+            "VK_BASE_VERSION_1_1",
+            "VK_BASE_VERSION_1_2",
+            "VK_BASE_VERSION_1_3",
+            "VK_BASE_VERSION_1_4",
             "VK_COMPUTE_VERSION_1_1",
             "VK_COMPUTE_VERSION_1_2",
             "VK_COMPUTE_VERSION_1_3",
@@ -199,13 +231,24 @@ public enum SubgroupFeatureFlags : uint
     )]
     RotateClusteredBit = 0x400,
 
+    [NativeName("VK_SUBGROUP_FEATURE_PARTITIONED_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_subgroup_partitioned"],
+        ImpliesSets = [
+            "VK_EXT_shader_subgroup_partitioned+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_shader_subgroup_partitioned+VK_VERSION_1_1",
+        ]
+    )]
+    PartitionedBitEXT = 0x100,
+
     [NativeName("VK_SUBGROUP_FEATURE_PARTITIONED_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shader_subgroup_partitioned"],
         ImpliesSets = ["VK_VERSION_1_1"]
     )]
-    PartitionedBitNV = 0x100,
+    PartitionedBitNV = PartitionedBitEXT,
 
     [NativeName("VK_SUBGROUP_FEATURE_ROTATE_BIT_KHR")]
     [SupportedApiProfile(

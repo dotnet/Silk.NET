@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineCreateFlagBits")]
+[NativeName("VkPipelineCreateFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum PipelineCreateFlags : uint
@@ -387,17 +387,6 @@ public enum PipelineCreateFlags : uint
     )]
     DepthStencilAttachmentFeedbackLoopBitEXT = 0x4000000,
 
-    [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
-    )]
-    RayTracingOpacityMicromapBitEXT = 0x1000000,
-
     [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_DISPLACEMENT_MICROMAP_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -405,6 +394,14 @@ public enum PipelineCreateFlags : uint
         ImpliesSets = ["VK_EXT_opacity_micromap"]
     )]
     RayTracingDisplacementMicromapBitNV = 0x10000000,
+
+    [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_OPACITY_MICROMAP_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    RayTracingOpacityMicromapBitKHR = 0x1000000,
 
     [NativeName("VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
     [SupportedApiProfile(
@@ -443,6 +440,17 @@ public enum PipelineCreateFlags : uint
         ]
     )]
     EarlyReturnOnFailureBitEXT = EarlyReturnOnFailureBit,
+
+    [NativeName("VK_PIPELINE_CREATE_RAY_TRACING_OPACITY_MICROMAP_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    RayTracingOpacityMicromapBitEXT = RayTracingOpacityMicromapBitKHR,
 
     [NativeName("VK_PIPELINE_CREATE_NO_PROTECTED_ACCESS_BIT_EXT")]
     [SupportedApiProfile(

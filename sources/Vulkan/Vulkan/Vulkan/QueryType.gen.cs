@@ -162,6 +162,17 @@ public enum QueryType : uint
     )]
     AccelerationStructureCompactedSizeNV = 1000165000,
 
+    [NativeName("VK_QUERY_TYPE_TIME_ELAPSED_QCOM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_QCOM_elapsed_timer_query"],
+        ImpliesSets = [
+            "VK_QCOM_elapsed_timer_query+VK_KHR_get_physical_device_properties2",
+            "VK_QCOM_elapsed_timer_query+VK_VERSION_1_1",
+        ]
+    )]
+    TimeElapsedQCOM = 1000173000,
+
     [NativeName("VK_QUERY_TYPE_PERFORMANCE_QUERY_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     PerformanceQueryINTEL = 1000210000,

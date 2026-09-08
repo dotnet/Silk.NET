@@ -15,10 +15,7 @@ public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public StructureType SType = StructureType.RenderPassTileShadingCreateInfoQCOM;
 
@@ -26,10 +23,7 @@ public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public void* PNext;
 
@@ -37,10 +31,7 @@ public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public TileShadingRenderPassFlagsQCOM Flags;
 
@@ -48,20 +39,14 @@ public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public Extent2D TileApronSize;
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
-        ImpliesSets = [
-            "VK_QCOM_tile_shading+VK_KHR_get_physical_device_properties2",
-            "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
-        ]
+        ImpliesSets = ["VK_QCOM_tile_properties"]
     )]
     public RenderPassTileShadingCreateInfoQCOM() { }
 }

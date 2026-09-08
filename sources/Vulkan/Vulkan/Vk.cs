@@ -6,28 +6,34 @@ namespace Silk.NET.Vulkan;
 
 public partial class Vk
 {
-    public const string ErrMultipleInstanceSingleObject =
+    private const string _errMultipleInstanceSingleObject =
         "CurrentInstance cannot be changed once set, use another API object for additional instances. For more "
         + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
 
-    public const string ErrMultipleDeviceSingleObject =
+    private const string _errMultipleDeviceSingleObject =
         "CurrentDevice cannot be changed once set, use another API object for additional devices. For more "
         + "info, see https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings";
 
     static Vk()
     {
-        LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
         LoaderInterface.RegisterAlternativeName("vulkan", "vulkan-1");
         LoaderInterface.RegisterAlternativeName("vulkan", "MoltenVK");
     }
 
     public unsafe partial class DllImport
     {
-        public static partial Result CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceHandle* pInstance)
-            => CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
+        public static partial Result CreateInstance(
+            InstanceCreateInfo* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            InstanceHandle* pInstance
+        ) => CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
 
-        public static partial Result CreateDevice(PhysicalDeviceHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceHandle* pDevice)
-            => CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
+        public static partial Result CreateDevice(
+            PhysicalDeviceHandle physicalDevice,
+            DeviceCreateInfo* pCreateInfo,
+            AllocationCallbacks* pAllocator,
+            DeviceHandle* pDevice
+        ) => CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
     }
 
     public partial class StaticWrapper<T>
@@ -44,7 +50,7 @@ public partial class Vk
 
                 if (field != nullptr)
                 {
-                    throw new InvalidOperationException(ErrMultipleInstanceSingleObject);
+                    throw new InvalidOperationException(_errMultipleInstanceSingleObject);
                 }
 
                 field = value;
@@ -63,7 +69,7 @@ public partial class Vk
 
                 if (field != nullptr)
                 {
-                    throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
+                    throw new InvalidOperationException(_errMultipleDeviceSingleObject);
                 }
 
                 field = value;
@@ -90,7 +96,7 @@ public partial class Vk
 
             if (field != nullptr)
             {
-                throw new InvalidOperationException(ErrMultipleInstanceSingleObject);
+                throw new InvalidOperationException(_errMultipleInstanceSingleObject);
             }
 
             field = value;
@@ -109,7 +115,7 @@ public partial class Vk
 
             if (field != nullptr)
             {
-                throw new InvalidOperationException(ErrMultipleDeviceSingleObject);
+                throw new InvalidOperationException(_errMultipleDeviceSingleObject);
             }
 
             field = value;
@@ -139,7 +145,12 @@ public partial class Vk
         return vk;
     }
 
-    unsafe Result IVk.CreateDevice(PhysicalDeviceHandle physicalDevice, DeviceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, DeviceHandle* pDevice)
+    unsafe Result IVk.CreateDevice(
+        PhysicalDeviceHandle physicalDevice,
+        DeviceCreateInfo* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        DeviceHandle* pDevice
+    )
     {
         var result = CreateDeviceInternal(physicalDevice, pCreateInfo, pAllocator, pDevice);
         if (result == Result.Success)
@@ -150,7 +161,11 @@ public partial class Vk
         return result;
     }
 
-    unsafe Result IVk.CreateInstance(InstanceCreateInfo* pCreateInfo, AllocationCallbacks* pAllocator, InstanceHandle* pInstance)
+    unsafe Result IVk.CreateInstance(
+        InstanceCreateInfo* pCreateInfo,
+        AllocationCallbacks* pAllocator,
+        InstanceHandle* pInstance
+    )
     {
         var result = CreateInstanceInternal(pCreateInfo, pAllocator, pInstance);
         if (result == Result.Success)
@@ -189,17 +204,13 @@ public partial class Vk
         }
 
         [UnmanagedCallersOnly]
-        private static unsafe void* GetDeviceProcAddr(DeviceHandle device, sbyte* pName)
-        {
-            return DllImport.GetDeviceProcAddr(device, pName);
-        }
+        private static unsafe void* GetDeviceProcAddr(DeviceHandle device, sbyte* pName) =>
+            DllImport.GetDeviceProcAddr(device, pName);
 
         [UnmanagedCallersOnly]
-        private static unsafe void* GetInstanceProcAddr(InstanceHandle instance, sbyte* pName)
-        {
-            return DllImport.GetInstanceProcAddr(instance, pName);
-        }
+        private static unsafe void* GetInstanceProcAddr(InstanceHandle instance, sbyte* pName) =>
+            DllImport.GetInstanceProcAddr(instance, pName);
 
-        public void Dispose() {}
+        public void Dispose() { }
     }
 }

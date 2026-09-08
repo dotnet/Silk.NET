@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeFeedbackFlagBitsKHR")]
+[NativeName("VkVideoEncodeFeedbackFlagsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum VideoEncodeFeedbackFlagsKHR : uint
@@ -47,4 +47,60 @@ public enum VideoEncodeFeedbackFlagsKHR : uint
         ]
     )]
     BitstreamHasOverridesBit = 0x4,
+
+    [NativeName("VK_VIDEO_ENCODE_FEEDBACK_AVERAGE_QUANTIZATION_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_feedback2"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    AverageQuantizationBit = 0x8,
+
+    [NativeName("VK_VIDEO_ENCODE_FEEDBACK_MIN_QUANTIZATION_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_feedback2"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    MinQuantizationBit = 0x10,
+
+    [NativeName("VK_VIDEO_ENCODE_FEEDBACK_MAX_QUANTIZATION_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_feedback2"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    MaxQuantizationBit = 0x20,
+
+    [NativeName("VK_VIDEO_ENCODE_FEEDBACK_INTRA_PIXELS_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_feedback2"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    IntraPixelsBit = 0x40,
+
+    [NativeName("VK_VIDEO_ENCODE_FEEDBACK_INTER_PIXELS_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_feedback2"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    InterPixelsBit = 0x80,
+
+    [NativeName("VK_VIDEO_ENCODE_FEEDBACK_SKIPPED_PIXELS_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_feedback2"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    SkippedPixelsBit = 0x100,
+
+    [NativeName("VK_VIDEO_ENCODE_FEEDBACK_PICTURE_PARTITION_COUNT_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_video_encode_feedback2"],
+        ImpliesSets = ["VK_KHR_video_encode_queue"]
+    )]
+    PicturePartitionCountBit = 0x200,
 }

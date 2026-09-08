@@ -45,6 +45,14 @@ public enum AccelerationStructureTypeKHR : uint
     )]
     Generic = 2,
 
+    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_OPACITY_MICROMAP_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
+    )]
+    OpacityMicromap = 1000623000,
+
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV")]
     [SupportedApiProfile(
         "vulkan",

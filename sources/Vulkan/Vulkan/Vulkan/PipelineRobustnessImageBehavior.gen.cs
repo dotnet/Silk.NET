@@ -15,7 +15,12 @@ public enum PipelineRobustnessImageBehavior : uint
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.4"
     )]
     DeviceDefault = 0,
@@ -23,7 +28,12 @@ public enum PipelineRobustnessImageBehavior : uint
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.4"
     )]
     Disabled = 1,
@@ -31,7 +41,12 @@ public enum PipelineRobustnessImageBehavior : uint
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.4"
     )]
     RobustImageAccess = 2,
@@ -39,7 +54,12 @@ public enum PipelineRobustnessImageBehavior : uint
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+        [
+            "VK_BASE_VERSION_1_4",
+            "VK_COMPUTE_VERSION_1_4",
+            "VK_GRAPHICS_VERSION_1_4",
+            "VK_VERSION_1_4",
+        ],
         MinVersion = "1.4"
     )]
     RobustImageAccess2 = 3,

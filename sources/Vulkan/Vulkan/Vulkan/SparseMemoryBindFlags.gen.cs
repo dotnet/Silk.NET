@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSparseMemoryBindFlagBits")]
+[NativeName("VkSparseMemoryBindFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum SparseMemoryBindFlags : uint

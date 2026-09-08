@@ -26,7 +26,7 @@ partial class Vk(INativeContext nativeContext) : IDisposable
         private static partial IVk ContextFactory();
     }
 
-    private readonly unsafe void*[] _slots = new void*[702];
+    private readonly unsafe void*[] _slots = new void*[767];
 
     public static IVk Create(INativeContext ctx) => new Vk(ctx);
 

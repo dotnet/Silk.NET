@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -295,7 +298,8 @@ public class LocationTransformationRewriter : CSharpSyntaxRewriter
             return node;
         }
 
-        var symbol = _semanticModel.GetSymbolInfo(node).Symbol;
+        var symbolInfo = _semanticModel.GetSymbolInfo(node);
+        var symbol = symbolInfo.Symbol ?? symbolInfo.CandidateSymbols.FirstOrDefault();
         ReportSymbol(node, symbol);
 
         return base.VisitIdentifierName(node)!;

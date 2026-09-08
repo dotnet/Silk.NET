@@ -17,9 +17,8 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     public StructureType SType = StructureType.ReleaseSwapchainImagesInfoKHR;
@@ -29,9 +28,8 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     public void* PNext;
@@ -41,9 +39,8 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     public SwapchainHandleKHR Swapchain;
@@ -53,9 +50,8 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     public uint ImageIndexCount;
@@ -65,9 +61,8 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     public uint* PImageIndices;
@@ -76,9 +71,8 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
         ImpliesSets = [
-            "VK_KHR_swapchain_maintenance1+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_surface_maintenance1",
-            "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_swapchain+VK_KHR_surface_maintenance1+VK_VERSION_1_1",
         ]
     )]
     public ReleaseSwapchainImagesInfoKHR() { }

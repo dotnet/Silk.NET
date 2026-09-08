@@ -81,6 +81,12 @@ public enum AccessFlags2 : ulong
     [NativeName("VK_ACCESS_2_VIDEO_DECODE_WRITE_BIT_KHR")]
     VideoDecodeWriteBitKHR = 0x1000000000,
 
+    [NativeName("VK_ACCESS_2_SAMPLER_HEAP_READ_BIT_EXT")]
+    SamplerHeapReadBitEXT = 0x200000000000000,
+
+    [NativeName("VK_ACCESS_2_RESOURCE_HEAP_READ_BIT_EXT")]
+    ResourceHeapReadBitEXT = 0x400000000000000,
+
     [NativeName("VK_ACCESS_2_VIDEO_ENCODE_READ_BIT_KHR")]
     VideoEncodeReadBitKHR = 0x2000000000,
 

@@ -76,6 +76,21 @@ public enum IndirectCommandsTokenTypeNV : uint
     )]
     DrawTasks = 7,
 
+    [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_PUSH_DATA_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap", "VK_NV_device_generated_commands"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ],
+        RequireAll = true
+    )]
+    PushData = 1000135000,
+
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_NV")]
     [SupportedApiProfile(
         "vulkan",

@@ -6982,7 +6982,7 @@ public unsafe partial interface IGL
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSync")]
-        static abstract uint ClientWaitSync(Sync* sync, uint flags, ulong timeout);
+        static abstract uint ClientWaitSync(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glClientWaitSync")]
         [SupportedApiProfile(
@@ -7019,7 +7019,7 @@ public unsafe partial interface IGL
         )]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSync")]
         static abstract Constant<uint, GLEnum, SyncStatus> ClientWaitSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncObjectMask> flags,
             ulong timeout
         );
@@ -7028,14 +7028,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
-        static abstract uint ClientWaitSyncAPPLE(Sync* sync, uint flags, ulong timeout);
+        static abstract uint ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
         static abstract Constant<uint, GLEnum, SyncStatus> ClientWaitSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncObjectMask> flags,
             ulong timeout
         );
@@ -13996,13 +13996,17 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gl", ["GL_ARB_cl_event"])]
         [SupportedApiProfile("glcore", ["GL_ARB_cl_event"])]
         [NativeFunction("opengl", EntryPoint = "glCreateSyncFromCLeventARB")]
-        static abstract Sync* CreateSyncFromCLeventARB(void* context, void* @event, uint flags);
+        static abstract SyncHandle CreateSyncFromCLeventARB(
+            void* context,
+            void* @event,
+            uint flags
+        );
 
         [NativeName("glCreateSyncFromCLeventARB")]
         [SupportedApiProfile("gl", ["GL_ARB_cl_event"])]
         [SupportedApiProfile("glcore", ["GL_ARB_cl_event"])]
         [NativeFunction("opengl", EntryPoint = "glCreateSyncFromCLeventARB")]
-        static abstract Ptr<Sync> CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags);
+        static abstract SyncHandle CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags);
 
         [NativeName("glCreateTextures")]
         [SupportedApiProfile(
@@ -16151,55 +16155,13 @@ public unsafe partial interface IGL
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
-        static abstract void DeleteSync(Sync* sync);
-
-        [NativeName("glDeleteSync")]
-        [SupportedApiProfile(
-            "gl",
-            [
-                "GL_ARB_sync",
-                "GL_VERSION_3_2",
-                "GL_VERSION_3_3",
-                "GL_VERSION_4_0",
-                "GL_VERSION_4_1",
-                "GL_VERSION_4_2",
-                "GL_VERSION_4_3",
-                "GL_VERSION_4_4",
-                "GL_VERSION_4_5",
-                "GL_VERSION_4_6",
-            ],
-            MinVersion = "3.2"
-        )]
-        [SupportedApiProfile(
-            "glcore",
-            [
-                "GL_ARB_sync",
-                "GL_VERSION_3_2",
-                "GL_VERSION_3_3",
-                "GL_VERSION_4_0",
-                "GL_VERSION_4_1",
-                "GL_VERSION_4_2",
-                "GL_VERSION_4_3",
-                "GL_VERSION_4_4",
-                "GL_VERSION_4_5",
-                "GL_VERSION_4_6",
-            ],
-            MinVersion = "3.2"
-        )]
-        [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
-        static abstract void DeleteSync(Ref<Sync> sync);
+        static abstract void DeleteSync(SyncHandle sync);
 
         [NativeName("glDeleteSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
-        static abstract void DeleteSyncAPPLE(Sync* sync);
-
-        [NativeName("glDeleteSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
-        static abstract void DeleteSyncAPPLE(Ref<Sync> sync);
+        static abstract void DeleteSyncAPPLE(SyncHandle sync);
 
         [NativeName("glDeleteTextures")]
         [SupportedApiProfile(
@@ -22711,7 +22673,7 @@ public unsafe partial interface IGL
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glFenceSync")]
-        static abstract Sync* FenceSync(uint condition, uint flags);
+        static abstract SyncHandle FenceSync(uint condition, uint flags);
 
         [NativeName("glFenceSync")]
         [SupportedApiProfile(
@@ -22747,7 +22709,7 @@ public unsafe partial interface IGL
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glFenceSync")]
-        static abstract Ptr<Sync> FenceSync(
+        static abstract SyncHandle FenceSync(
             Constant<uint, GLEnum, SyncCondition> condition,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags
         );
@@ -22756,13 +22718,13 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
-        static abstract Sync* FenceSyncAPPLE(uint condition, uint flags);
+        static abstract SyncHandle FenceSyncAPPLE(uint condition, uint flags);
 
         [NativeName("glFenceSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
-        static abstract Ptr<Sync> FenceSyncAPPLE(
+        static abstract SyncHandle FenceSyncAPPLE(
             Constant<uint, GLEnum, SyncCondition> condition,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags
         );
@@ -41357,7 +41319,13 @@ public unsafe partial interface IGL
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
-        static abstract void GetSync(Sync* sync, uint pname, uint count, uint* length, int* values);
+        static abstract void GetSync(
+            SyncHandle sync,
+            uint pname,
+            uint count,
+            uint* length,
+            int* values
+        );
 
         [NativeName("glGetSynciv")]
         [SupportedApiProfile(
@@ -41394,7 +41362,7 @@ public unsafe partial interface IGL
         )]
         [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
         static abstract void GetSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             uint count,
             Ref<uint> length,
@@ -41436,7 +41404,7 @@ public unsafe partial interface IGL
         )]
         [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
         static abstract int GetSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             Ref<uint> length
         );
@@ -41446,7 +41414,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         static abstract void GetSyncAPPLE(
-            Sync* sync,
+            SyncHandle sync,
             uint pname,
             uint count,
             uint* length,
@@ -41458,7 +41426,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         static abstract void GetSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             uint count,
             Ref<uint> length,
@@ -41470,7 +41438,7 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         static abstract int GetSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             Ref<uint> length
         );
@@ -46698,16 +46666,7 @@ public unsafe partial interface IGL
         [NativeName("glImportSyncEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
         [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
-        static abstract Ptr<Sync> ImportSyncEXT(
-            uint external_sync_type,
-            nint external_sync,
-            uint flags
-        );
-
-        [NativeName("glImportSyncEXT")]
-        [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
-        [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
-        static abstract Sync* ImportSyncRawEXT(
+        static abstract SyncHandle ImportSyncEXT(
             uint external_sync_type,
             nint external_sync,
             uint flags
@@ -49793,7 +49752,19 @@ public unsafe partial interface IGL
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glIsSync")]
-        static abstract uint IsSync(Sync* sync);
+        static abstract MaybeBool<uint> IsSync(SyncHandle sync);
+
+        [NativeName("glIsSyncAPPLE")]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+        static abstract MaybeBool<uint> IsSyncAPPLE(SyncHandle sync);
+
+        [NativeName("glIsSyncAPPLE")]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+        static abstract uint IsSyncRawAPPLE(SyncHandle sync);
 
         [NativeName("glIsSync")]
         [SupportedApiProfile(
@@ -49829,19 +49800,7 @@ public unsafe partial interface IGL
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glIsSync")]
-        static abstract MaybeBool<uint> IsSync(Ref<Sync> sync);
-
-        [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-        static abstract uint IsSyncAPPLE(Sync* sync);
-
-        [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-        static abstract MaybeBool<uint> IsSyncAPPLE(Ref<Sync> sync);
+        static abstract uint IsSyncRaw(SyncHandle sync);
 
         [NativeName("glIsTexture")]
         [SupportedApiProfile(
@@ -101745,7 +101704,7 @@ public unsafe partial interface IGL
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glWaitSync")]
-        static abstract void WaitSync(Sync* sync, uint flags, ulong timeout);
+        static abstract void WaitSync(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glWaitSync")]
         [SupportedApiProfile(
@@ -101782,7 +101741,7 @@ public unsafe partial interface IGL
         )]
         [NativeFunction("opengl", EntryPoint = "glWaitSync")]
         static abstract void WaitSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags,
             ulong timeout
         );
@@ -101791,14 +101750,14 @@ public unsafe partial interface IGL
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
-        static abstract void WaitSyncAPPLE(Sync* sync, uint flags, ulong timeout);
+        static abstract void WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glWaitSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
         static abstract void WaitSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags,
             ulong timeout
         );
@@ -109600,7 +109559,7 @@ public unsafe partial interface IGL
         MinVersion = "3.2"
     )]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSync")]
-    uint ClientWaitSync(Sync* sync, uint flags, ulong timeout);
+    uint ClientWaitSync(SyncHandle sync, uint flags, ulong timeout);
 
     [NativeName("glClientWaitSync")]
     [SupportedApiProfile(
@@ -109637,7 +109596,7 @@ public unsafe partial interface IGL
     )]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSync")]
     Constant<uint, GLEnum, SyncStatus> ClientWaitSync(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncObjectMask> flags,
         ulong timeout
     );
@@ -109646,14 +109605,14 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
-    uint ClientWaitSyncAPPLE(Sync* sync, uint flags, ulong timeout);
+    uint ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
     [NativeName("glClientWaitSyncAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     Constant<uint, GLEnum, SyncStatus> ClientWaitSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncObjectMask> flags,
         ulong timeout
     );
@@ -116461,13 +116420,13 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gl", ["GL_ARB_cl_event"])]
     [SupportedApiProfile("glcore", ["GL_ARB_cl_event"])]
     [NativeFunction("opengl", EntryPoint = "glCreateSyncFromCLeventARB")]
-    Sync* CreateSyncFromCLeventARB(void* context, void* @event, uint flags);
+    SyncHandle CreateSyncFromCLeventARB(void* context, void* @event, uint flags);
 
     [NativeName("glCreateSyncFromCLeventARB")]
     [SupportedApiProfile("gl", ["GL_ARB_cl_event"])]
     [SupportedApiProfile("glcore", ["GL_ARB_cl_event"])]
     [NativeFunction("opengl", EntryPoint = "glCreateSyncFromCLeventARB")]
-    Ptr<Sync> CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags);
+    SyncHandle CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags);
 
     [NativeName("glCreateTextures")]
     [SupportedApiProfile(
@@ -118495,55 +118454,13 @@ public unsafe partial interface IGL
         MinVersion = "3.2"
     )]
     [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
-    void DeleteSync(Sync* sync);
-
-    [NativeName("glDeleteSync")]
-    [SupportedApiProfile(
-        "gl",
-        [
-            "GL_ARB_sync",
-            "GL_VERSION_3_2",
-            "GL_VERSION_3_3",
-            "GL_VERSION_4_0",
-            "GL_VERSION_4_1",
-            "GL_VERSION_4_2",
-            "GL_VERSION_4_3",
-            "GL_VERSION_4_4",
-            "GL_VERSION_4_5",
-            "GL_VERSION_4_6",
-        ],
-        MinVersion = "3.2"
-    )]
-    [SupportedApiProfile(
-        "glcore",
-        [
-            "GL_ARB_sync",
-            "GL_VERSION_3_2",
-            "GL_VERSION_3_3",
-            "GL_VERSION_4_0",
-            "GL_VERSION_4_1",
-            "GL_VERSION_4_2",
-            "GL_VERSION_4_3",
-            "GL_VERSION_4_4",
-            "GL_VERSION_4_5",
-            "GL_VERSION_4_6",
-        ],
-        MinVersion = "3.2"
-    )]
-    [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
-    void DeleteSync(Ref<Sync> sync);
+    void DeleteSync(SyncHandle sync);
 
     [NativeName("glDeleteSyncAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
-    void DeleteSyncAPPLE(Sync* sync);
-
-    [NativeName("glDeleteSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-    [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
-    void DeleteSyncAPPLE(Ref<Sync> sync);
+    void DeleteSyncAPPLE(SyncHandle sync);
 
     [NativeName("glDeleteTextures")]
     [SupportedApiProfile(
@@ -124811,7 +124728,7 @@ public unsafe partial interface IGL
         MinVersion = "3.2"
     )]
     [NativeFunction("opengl", EntryPoint = "glFenceSync")]
-    Sync* FenceSync(uint condition, uint flags);
+    SyncHandle FenceSync(uint condition, uint flags);
 
     [NativeName("glFenceSync")]
     [SupportedApiProfile(
@@ -124847,7 +124764,7 @@ public unsafe partial interface IGL
         MinVersion = "3.2"
     )]
     [NativeFunction("opengl", EntryPoint = "glFenceSync")]
-    Ptr<Sync> FenceSync(
+    SyncHandle FenceSync(
         Constant<uint, GLEnum, SyncCondition> condition,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags
     );
@@ -124856,13 +124773,13 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
-    Sync* FenceSyncAPPLE(uint condition, uint flags);
+    SyncHandle FenceSyncAPPLE(uint condition, uint flags);
 
     [NativeName("glFenceSyncAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
-    Ptr<Sync> FenceSyncAPPLE(
+    SyncHandle FenceSyncAPPLE(
         Constant<uint, GLEnum, SyncCondition> condition,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags
     );
@@ -142382,7 +142299,7 @@ public unsafe partial interface IGL
         MinVersion = "3.2"
     )]
     [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
-    void GetSync(Sync* sync, uint pname, uint count, uint* length, int* values);
+    void GetSync(SyncHandle sync, uint pname, uint count, uint* length, int* values);
 
     [NativeName("glGetSynciv")]
     [SupportedApiProfile(
@@ -142419,7 +142336,7 @@ public unsafe partial interface IGL
     )]
     [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
     void GetSync(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         uint count,
         Ref<uint> length,
@@ -142460,20 +142377,20 @@ public unsafe partial interface IGL
         MinVersion = "3.2"
     )]
     [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
-    int GetSync(Ref<Sync> sync, Constant<uint, GLEnum, SyncParameterName> pname, Ref<uint> length);
+    int GetSync(SyncHandle sync, Constant<uint, GLEnum, SyncParameterName> pname, Ref<uint> length);
 
     [NativeName("glGetSyncivAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
-    void GetSyncAPPLE(Sync* sync, uint pname, uint count, uint* length, int* values);
+    void GetSyncAPPLE(SyncHandle sync, uint pname, uint count, uint* length, int* values);
 
     [NativeName("glGetSyncivAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     void GetSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         uint count,
         Ref<uint> length,
@@ -142485,7 +142402,7 @@ public unsafe partial interface IGL
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     int GetSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         Ref<uint> length
     );
@@ -147575,12 +147492,7 @@ public unsafe partial interface IGL
     [NativeName("glImportSyncEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
     [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
-    Ptr<Sync> ImportSyncEXT(uint external_sync_type, nint external_sync, uint flags);
-
-    [NativeName("glImportSyncEXT")]
-    [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
-    [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
-    Sync* ImportSyncRawEXT(uint external_sync_type, nint external_sync, uint flags);
+    SyncHandle ImportSyncEXT(uint external_sync_type, nint external_sync, uint flags);
 
     [NativeName("glIndexd")]
     [SupportedApiProfile(
@@ -150609,7 +150521,19 @@ public unsafe partial interface IGL
         MinVersion = "3.2"
     )]
     [NativeFunction("opengl", EntryPoint = "glIsSync")]
-    uint IsSync(Sync* sync);
+    MaybeBool<uint> IsSync(SyncHandle sync);
+
+    [NativeName("glIsSyncAPPLE")]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+    MaybeBool<uint> IsSyncAPPLE(SyncHandle sync);
+
+    [NativeName("glIsSyncAPPLE")]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+    uint IsSyncRawAPPLE(SyncHandle sync);
 
     [NativeName("glIsSync")]
     [SupportedApiProfile(
@@ -150645,19 +150569,7 @@ public unsafe partial interface IGL
         MinVersion = "3.2"
     )]
     [NativeFunction("opengl", EntryPoint = "glIsSync")]
-    MaybeBool<uint> IsSync(Ref<Sync> sync);
-
-    [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-    uint IsSyncAPPLE(Sync* sync);
-
-    [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-    MaybeBool<uint> IsSyncAPPLE(Ref<Sync> sync);
+    uint IsSyncRaw(SyncHandle sync);
 
     [NativeName("glIsTexture")]
     [SupportedApiProfile(
@@ -199688,7 +199600,7 @@ public unsafe partial interface IGL
         MinVersion = "3.2"
     )]
     [NativeFunction("opengl", EntryPoint = "glWaitSync")]
-    void WaitSync(Sync* sync, uint flags, ulong timeout);
+    void WaitSync(SyncHandle sync, uint flags, ulong timeout);
 
     [NativeName("glWaitSync")]
     [SupportedApiProfile(
@@ -199724,20 +199636,20 @@ public unsafe partial interface IGL
         MinVersion = "3.2"
     )]
     [NativeFunction("opengl", EntryPoint = "glWaitSync")]
-    void WaitSync(Ref<Sync> sync, Constant<uint, GLEnum, SyncBehaviorFlags> flags, ulong timeout);
+    void WaitSync(SyncHandle sync, Constant<uint, GLEnum, SyncBehaviorFlags> flags, ulong timeout);
 
     [NativeName("glWaitSyncAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
-    void WaitSyncAPPLE(Sync* sync, uint flags, ulong timeout);
+    void WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
     [NativeName("glWaitSyncAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     void WaitSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags,
         ulong timeout
     );

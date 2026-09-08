@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSparseImageFormatFlagBits")]
+[NativeName("VkSparseImageFormatFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum SparseImageFormatFlags : uint

@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCompositeAlphaFlagBitsKHR")]
+[NativeName("VkCompositeAlphaFlagsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum CompositeAlphaFlagsKHR : uint

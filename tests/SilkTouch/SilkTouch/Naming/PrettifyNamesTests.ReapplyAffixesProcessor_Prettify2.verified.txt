@@ -1,0 +1,6 @@
+﻿// Test.gen.cs
+[NameAffix("Prefix", "TestPrefix1", "inner_")]
+[NameAffix("Prefix", "TestPrefix2", "outer_")]
+public struct OuterInnerBaseName
+{
+}

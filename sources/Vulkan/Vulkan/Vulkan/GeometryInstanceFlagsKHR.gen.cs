@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGeometryInstanceFlagBitsKHR")]
+[NativeName("VkGeometryInstanceFlagsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum GeometryInstanceFlagsKHR : uint
@@ -59,27 +59,21 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     ForceNoOpaqueBit = 0x8,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_BIT_EXT")]
+    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
     )]
-    ForceOpacityMicromap2StateBitEXT = 0x10,
+    ForceOpacityMicromap2StateBit = 0x10,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
+    [NativeName("VK_GEOMETRY_INSTANCE_DISABLE_OPACITY_MICROMAPS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
+        ["VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"]
     )]
-    DisableOpacityMicromapsBitEXT = 0x20,
+    DisableOpacityMicromapsBit = 0x20,
 
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_KHR")]
     [SupportedApiProfile(
@@ -135,4 +129,26 @@ public enum GeometryInstanceFlagsKHR : uint
         ]
     )]
     ForceNoOpaqueBitNV = ForceNoOpaqueBit,
+
+    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    ForceOpacityMicromap2StateBitEXT = ForceOpacityMicromap2StateBit,
+
+    [NativeName("VK_GEOMETRY_INSTANCE_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    DisableOpacityMicromapsBitEXT = DisableOpacityMicromapsBit,
 }
