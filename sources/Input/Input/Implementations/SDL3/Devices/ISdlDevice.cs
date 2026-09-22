@@ -12,7 +12,12 @@ internal interface ISdlDevice<out T> : IInputDevice where T : SdlDevice
     public static abstract T? CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext context);
 }
 
-internal interface INeedFinalizationEachFrame
+internal interface INeedCompletionEachFrame
 {
-    public void FinalizeUpdate();
+    public void CompleteUpdate();
+}
+
+internal interface IMapTargetPoints
+{
+    public void AppendPointsTranslatedToOtherTargets(IReadOnlyList<IPointerTarget> allTargets, IPointerTarget unboundedTarget);
 }

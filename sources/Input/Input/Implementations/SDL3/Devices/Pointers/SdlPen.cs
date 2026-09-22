@@ -14,11 +14,11 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 /// </remarks>
 internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
 {
-    public SdlPen(SdlInputBackend backend, nint silkId, ulong sdlDeviceId, string name, IPointerTarget unbounded) :
-        base(backend, silkId, sdlDeviceId, unbounded)
+    public SdlPen(SdlInputBackend backend, nint silkId, ulong sdlDeviceId, string name) :
+        base(backend, silkId, sdlDeviceId)
     {
         Name = name;
-        State = new PointerState(Buttons, Points);
+        State = new PointerState(Buttons, StatePoints);
     }
 
     public static SdlPen CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
@@ -52,7 +52,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
 
         SdlPen Create()
         {
-            return new SdlPen(backend, uniqueId, sdlDeviceId, name.ReadToString(), backend.UnboundedPointerTarget) {
+            return new SdlPen(backend, uniqueId, sdlDeviceId, name.ReadToString()) {
                 ScrollEvents = sdlInputEvents.MouseScrollEvents,
                 PointEvents = sdlInputEvents.PointChangedEvents,
                 ClickEvents = sdlInputEvents.PointerClickEvents,
@@ -112,7 +112,6 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
             pressure: null,
             isDown: null,
             ray: null,
-            isPositionInTargetSpace: true,
             sdlTimestamp: sdlTimestamp,
             timestamp: timestamp);
     }
@@ -147,7 +146,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         {
             case PenAxis.Pressure:
             {
-                AddOrUpdatePoint(null, target, new Vector3(evt.X, evt.Y, 0), evt.Value, null, null, true, evt.Timestamp, timestamp);
+                AddOrUpdatePoint(null, target, new Vector3(evt.X, evt.Y, 0), evt.Value, null, null, evt.Timestamp, timestamp);
                 break;
             }
             case PenAxis.Xtilt:

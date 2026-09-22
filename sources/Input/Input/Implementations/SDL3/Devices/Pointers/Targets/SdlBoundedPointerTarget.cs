@@ -52,18 +52,32 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
     public TargetPoint GetPoint(IPointerDevice pointer, int point) => PointerTargetExtensions.GetPoint(this, pointer, point);
 
 
-    public void Move(Vector2D<float> newPosXy)
+    public bool Move(Vector2D<float> newPosXy)
     {
+        var currentPos = Bounds.Min;
+        if (newPosXy == new Vector2D<float>(currentPos.X, currentPos.Y))
+        {
+            return false;
+        }
         var currentSize = Bounds.Size;
         var newPos = new Vector3D<float>(newPosXy.X, newPosXy.Y, 0);
         Bounds = new Box3D<float>(newPos, newPos + currentSize);
+        return true;
     }
 
-    public void Resize(Vector2D<float> newSize2)
+    public bool Resize(Vector2D<float> newSize2)
     {
+        var currentSize = Bounds.Size;
+        if (newSize2 == new Vector2D<float>(currentSize.X, currentSize.Y))
+        {
+            return false;
+        }
+
+
         var currentPos = Bounds.Min;
         var newSize = new Vector3D<float>(newSize2.X, newSize2.Y, 0);
         Bounds = new Box3D<float>(currentPos, currentPos + newSize);
+        return true;
     }
 
     public static unsafe Box2D<float> CalculateAllDisplayBounds(ISdl sdl)
@@ -114,39 +128,6 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
         return new Box2D<float>(rect.X, rect.Y, rect.X + rect.W, rect.Y + rect.H);
     }
 
-    public static unsafe Box2D<float> CalculateWindowBounds(ISdl sdl, WindowHandle window)
-    {
-        Vector2D<int> windowSize = default;
-        var gotSize = sdl.GetWindowSize(window, &windowSize.X, &windowSize.Y);
-        if (gotSize == 0)
-        {
-            SdlLog.Error("Failed to get window size for window.");
-            return default;
-        }
-
-        Vector2D<int> windowPosition = default;
-        var gotPos = sdl.GetWindowPosition(window, &windowPosition.X, &windowPosition.Y);
-        if (gotPos == 0)
-        {
-            SdlLog.Error("Failed to get window position for window.");
-            return default;
-        }
-
-        var windowEndPos = windowPosition + windowSize;
-        return new Box2D<float>(windowPosition.X, windowPosition.Y, windowEndPos.X, windowEndPos.Y);
-    }
-
-    public static Box2D<float> CalculateWindowBounds(ISdl sdl, uint windowId)
-    {
-        var window = sdl.GetWindowFromID(windowId);
-        if (window == nullptr)
-        {
-            SdlLog.Error($"Failed to get window from ID {windowId}.");
-            return default;
-        }
-
-        return CalculateWindowBounds(sdl, window);
-    }
 
     public void Dispose()
     {

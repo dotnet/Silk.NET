@@ -12,7 +12,7 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 /// <summary>
 /// A base class for SDL input devices that operate in terms of a window's or DWMs bounds.
 /// </summary>
-internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinalizationEachFrame
+internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IMapTargetPoints
 {
     /// <summary>
     /// True if the device only supports one point - e.g., a mouse.<br/>
@@ -21,20 +21,28 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IN
     protected abstract bool OnePointOnly { get; }
     private readonly List<Button<PointerButton>> _buttons = new(EnumInfo<PointerButton>.UniqueNamedValues.Count);
     protected ButtonReadOnlyList<PointerButton> Buttons => new(_buttons);
-    protected InputReadOnlyList<TargetPoint> Points => new(other: _points);
-    private readonly List<TargetPoint> _points = [];
+    protected InputReadOnlyList<TargetPoint> StatePoints => new(other: _publicPoints);
 
-    internal required ISdlInputEventQueue<MouseScrollEvent> ScrollEvents { private get; init; }
-    internal required ISdlInputEventQueue<PointChangedEvent> PointEvents { private get; init; }
-    internal required ISdlInputEventQueue<PointerClickEvent> ClickEvents { private get; init; }
-    internal required ISdlInputEventQueue<ButtonChangedEvent<PointerButton>> ButtonEvents { private get; init; }
-    internal required ISdlInputEventQueue<PointerGripChangedEvent> GripEvents { private get; init; }
-    internal required ISdlInputEventQueue<PointerTargetChangedEvent> TargetEvents { private get; init; }
+    /// <summary>
+    /// This collection is maintained 1:1 with SDL's input events
+    /// </summary>
+    private readonly List<TargetPoint> _actualPoints = [];
+
+    /// <summary>
+    /// This is the final collection provided to consuming APIs, complete with actual and remapped points
+    /// </summary>
+    private readonly List<TargetPoint> _publicPoints = [];
+
+    internal required SdlInputEventQueue<MouseScrollEvent> ScrollEvents { private get; init; }
+    internal required SdlInputEventQueue<PointChangedEvent> PointEvents { private get; init; }
+    internal required SdlInputEventQueue<PointerClickEvent> ClickEvents { private get; init; }
+    internal required SdlInputEventQueue<ButtonChangedEvent<PointerButton>> ButtonEvents { private get; init; }
+    internal required SdlInputEventQueue<PointerGripChangedEvent> GripEvents { private get; init; }
+    internal required SdlInputEventQueue<PointerTargetChangedEvent> TargetEvents { private get; init; }
 
     protected SdlPointerDevice(SdlInputBackend backend, nint silkId,
-        ulong sdlDeviceId, IPointerTarget unboundedPointerTarget) : base(backend, silkId, sdlDeviceId)
+        ulong sdlDeviceId) : base(backend, silkId, sdlDeviceId)
     {
-        _unboundedPointerTarget = unboundedPointerTarget;
         for (var i = 0; i < EnumInfo<PointerButton>.UniqueNamedValues.Count; i++)
         {
             var button = EnumInfo<PointerButton>.UniqueNamedValues[i];
@@ -69,13 +77,6 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IN
     public abstract PointerState State { get; }
 
     public IReadOnlyList<IPointerTarget> Targets => _myPointerTargets;
-
-
-    public void FinalizeUpdate()
-    {
-
-    }
-
 
     protected void AddMouseScrollEvent(Vector2 scrollWheelPosition, Vector2 scrollWheelDelta, Vector3 mousePos, IPointerTarget target, ulong sdlTimestamp, long timestamp)
     {
@@ -120,4 +121,33 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IN
 
     public ISimulatedPointerTarget ApplySimulatedTarget(Func<ISdl, ISimulatedPointerTarget> createTarget) =>
         _falseTarget ??= createTarget(NativeBackend);
+
+    public void AppendPointsTranslatedToOtherTargets(IReadOnlyList<IPointerTarget> allTargets, IPointerTarget unboundedPointerTarget)
+    {
+        _publicPoints.Clear();
+        _publicPoints.AddRange(_actualPoints);
+
+        var actualPoints = CollectionsMarshal.AsSpan(_actualPoints);
+        for (var i = 0; i < allTargets.Count; i++)
+        {
+            ConvertPointsToTarget(in actualPoints, allTargets[i]);
+        }
+
+        ConvertPointsToTarget(in actualPoints, unboundedPointerTarget);
+        return;
+
+        // it might make sense to have "proxy" or "portal" IPointerTargets >:)
+        void ConvertPointsToTarget(ref readonly Span<TargetPoint> realPoints, IPointerTarget target)
+        {
+            for (var p = 0; p < _actualPoints.Count; ++p)
+            {
+                ref readonly var pt = ref realPoints[p];
+                if (pt.Target == target)
+                    continue;
+
+                // convert!
+                _publicPoints.Add(TranslatePoint(in pt, target));
+            }
+        }
+    }
 }

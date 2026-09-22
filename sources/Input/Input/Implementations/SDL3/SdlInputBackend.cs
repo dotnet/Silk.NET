@@ -6,7 +6,6 @@ using System.Diagnostics.CodeAnalysis;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
 using Silk.NET.Input.SDL3.Devices.Pointers;
 using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
-using Silk.NET.Maths;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
@@ -14,7 +13,7 @@ namespace Silk.NET.Input.SDL3;
 internal partial class SdlInputBackend : IInputBackend
 {
     [field: MaybeNull]
-    public SdlUnboundedPointerTarget UnboundedPointerTarget =>
+    private SdlUnboundedPointerTarget UnboundedPointerTarget =>
         field ??= new SdlUnboundedPointerTarget(this);
 
     public ISdl Sdl { get; }
@@ -31,11 +30,11 @@ internal partial class SdlInputBackend : IInputBackend
 
     public readonly ICursorConfiguration CursorConfiguration;
 
-    private const uint SdlInitFlags =
+    private const uint _sdlInitFlags =
         SDL.Sdl.InitJoystick | SDL.Sdl.InitGamepad | SDL.Sdl.InitEvents | SDL.Sdl.InitHaptic | SDL.Sdl.InitSensor;
 
 
-    public unsafe SdlInputBackend(SdlPlatformInfo info)
+    public SdlInputBackend(SdlPlatformInfo info)
     {
         Sdl = info.Sdl ?? SDL.Sdl.Instance;
 
@@ -45,14 +44,18 @@ internal partial class SdlInputBackend : IInputBackend
         }
 
         // subscribe to SDL events
-        _inputSubscriptionEventPtr = new EventFilter(OnEvent);
-        if (!Sdl.AddEventWatch(_inputSubscriptionEventPtr, (Ref)nullptr))
+        // ReSharper disable once RedundantUnsafeContext
+        unsafe
         {
-            Sdl.ThrowError();
-        }
+            _inputSubscriptionEventPtr = new EventFilter(OnEvent);
+            if (!Sdl.AddEventWatch(_inputSubscriptionEventPtr, (Ref)nullptr))
+            {
+                Sdl.ThrowError();
+            }
 
-        // set our context ID according to our unique event filter handle
-        Id = (nint)_inputSubscriptionEventPtr.Handle;
+            // set our context ID according to our unique event filter handle
+            Id = (nint)_inputSubscriptionEventPtr.Handle;
+        }
 
         // create cursor
         CursorConfiguration = new SdlCursor(Sdl);
@@ -78,7 +81,7 @@ internal partial class SdlInputBackend : IInputBackend
             _focusedWindow = focusedWindow;
         }
 
-        if (!Sdl.InitSubSystem(SdlInitFlags))
+        if (!Sdl.InitSubSystem(_sdlInitFlags))
         {
             SdlLog.Error("Failed to initialize SDL gamepad subsystem.");
         }
@@ -144,15 +147,9 @@ internal partial class SdlInputBackend : IInputBackend
     {
         Sdl.PumpEvents();
 
-        // QUESTION - do we want this before or after the event processing? or should
-        // it always just be done in the same way as other input events? e.g. via events
-        // windows can change without input events being processed... but who cares? as long as the devices
-        // have the latest information when they're updated, we should be good?
-        //UpdatePointerTargets();
-
         // actually process the events in-order
 
-        var rawEvents = _rawEvents.ConsumeWithoutClearing();
+        var rawEvents = _rawEvents.AsSpan();
 
 #if DEBUG
         TimedRawSdlEvent? previous = null;
@@ -162,30 +159,13 @@ internal partial class SdlInputBackend : IInputBackend
         {
             ref readonly var evt = ref rawEvents[i];
 #if DEBUG
-            const string fmt =
-                "Needs pre-sort by {0} timestamp. Please alert maintainer.\nPrevious:{1}\nCurrent:{2}\nDifference: SDL {3} Stopwatch {4}";
-            if (previous is { } prev)
-            {
-                if (prev.Event.Common.Timestamp > evt.Event.Common.Timestamp)
-                {
-                    evt.TimeMinus(prev, out var stopwatchDiff, out var sdlDiff);
-                    InputLog.Error(string.Format(fmt, "SDL", previous?.ToString() ?? "null", evt.ToString(), sdlDiff,
-                        stopwatchDiff));
-                }
-
-                if (prev.StopwatchTimestamp > evt.StopwatchTimestamp)
-                {
-                    evt.TimeMinus(prev, out var stopwatchDiff, out var sdlDiff);
-                    InputLog.Error(string.Format(fmt, "SDL", previous?.ToString() ?? "null", evt.ToString(), sdlDiff,
-                        stopwatchDiff));
-                }
-            }
-
-            previous = evt;
+            DebugTiming(evt, ref previous);
 #endif
 
             ProcessEvent(evt.Event, evt.StopwatchTimestamp, ref _focusedWindow, this);
         }
+
+        _rawEvents.ResetCount();
 
         var devices = _deviceRegistry.Devices;
         for (var index = 0; index < devices.Count; index++)
@@ -196,15 +176,46 @@ internal partial class SdlInputBackend : IInputBackend
                 gamepad.ExecuteRumble();
             }
 
-            if (device is INeedFinalizationEachFrame needer)
+            if (device is INeedCompletionEachFrame needer)
             {
-                needer.FinalizeUpdate();
+                needer.CompleteUpdate();
+            }
+
+            if (device is IMapTargetPoints mapper)
+            {
+                mapper.AppendPointsTranslatedToOtherTargets(_sdlWindowTargets, UnboundedPointerTarget);
             }
         }
 
         if (handler is not null)
         {
             _sdlInputEvents.RaiseEvents(handler);
+        }
+
+        return;
+
+        static void DebugTiming(in TimedRawSdlEvent evt, [NotNull] ref TimedRawSdlEvent? previous)
+        {
+            const string fmt =
+                "Needs pre-sort by {0} timestamp. Please alert maintainer.\nPrevious:{1}\nCurrent:{2}\nDifference: SDL {3} Stopwatch {4}";
+            if (previous is { } prev)
+            {
+                if (prev.Event.Common.Timestamp > evt.Event.Common.Timestamp)
+                {
+                    evt.TimeMinus(prev, out var stopwatchDiff, out var sdlDiff);
+                    InputLog.Error(string.Format(fmt, "SDL", previous.ToString(), evt.ToString(), sdlDiff,
+                        stopwatchDiff));
+                }
+
+                if (prev.StopwatchTimestamp > evt.StopwatchTimestamp)
+                {
+                    evt.TimeMinus(prev, out var stopwatchDiff, out var sdlDiff);
+                    InputLog.Error(string.Format(fmt, "SDL", previous.ToString(), evt.ToString(), sdlDiff,
+                        stopwatchDiff));
+                }
+            }
+
+            previous = evt;
         }
     }
 
@@ -528,27 +539,16 @@ internal partial class SdlInputBackend : IInputBackend
             case EventType.DisplayCurrentModeChanged:
             case EventType.DisplayContentScaleChanged:
             {
-                var bounds = SdlBoundedPointerTarget.CalculateAllDisplayBounds(backend.Sdl);
-                var x = (QueuedEventType.BoundedPointerTargetUpdate,
-                        evt.Common.Timestamp,
-                        bounds.Min.ToSystem(),
-                        bounds.Max.ToSystem()
-                    );
-
-                // var id = evt.Display.DisplayID;
-
-                InputLog.Debug($"Display bounds changed: {x.BoundedPointerTargetUpdate}");
                 break;
             }
             case EventType.WindowMouseEnter:
                 break;
-            case EventType.WindowMouseLeave
-                : // do we need to do anything? we should probably track the current window of the pointer
+            case EventType.WindowMouseLeave:
             {
+                // do we need to do anything? we should probably track the current window of the pointer
                 //var x = (QueuedEventType.MouseExitedWindow, timestamp);
                 break;
             }
-                break;
             case EventType.WindowFocusGained:
                 focusedWindow = backend.Sdl.GetWindowFromID(evt.Window.WindowID);
                 break;
@@ -567,7 +567,6 @@ internal partial class SdlInputBackend : IInputBackend
             case EventType.WindowDisplayChanged:
             case EventType.WindowDisplayScaleChanged:
             case EventType.WindowSafeAreaChanged:
-                break;
                 backend.OnWindowUnclearMotion(evt.Window, timestamp);
                 break;
             case EventType.WindowMoved:
@@ -590,7 +589,7 @@ internal partial class SdlInputBackend : IInputBackend
     {
         Sdl.RemoveEventWatch(_inputSubscriptionEventPtr, (Ref)nullptr);
         _inputSubscriptionEventPtr.Dispose();
-        Sdl.QuitSubSystem(SdlInitFlags);
+        Sdl.QuitSubSystem(_sdlInitFlags);
         _sdlInputEvents.Dispose();
         _rawEvents.Dispose();
     }
@@ -656,27 +655,8 @@ internal partial class SdlInputBackend : IInputBackend
         Canceled = EventType.FingerCanceled
     }
 
-    private enum QueuedEventType : byte
-    {
-        /// <summary>
-        /// The mouse has exited the window and the shared point should be marked inactive until proven otherwise by
-        /// further mouse motion (indicating it has entered another window).
-        /// </summary>
-        /// <remarks>
-        /// We do not track the mouse enter events as this would cause us to fire twice for a mouse entering a window:
-        /// once for the entering, and once for new position.
-        /// </remarks>
-        MouseExitedWindow,
-
-        /// <summary>
-        /// The display bounds have been changed, meaning that <see cref="SdlBoundedPointerTarget"/>'s
-        /// <see cref="IPointerTarget.Bounds"/> will have changed.
-        /// </summary>
-        BoundedPointerTargetUpdate,
-    }
-
     private readonly DeviceRegistry _deviceRegistry = new([]);
-    private NativeMemory<TimedRawSdlEvent> _rawEvents;
+    private PinnedGcMemory<TimedRawSdlEvent> _rawEvents;
 
     private readonly EventFilter _inputSubscriptionEventPtr;
     private readonly SdlInputEventContext _sdlInputEvents;
@@ -684,6 +664,7 @@ internal partial class SdlInputBackend : IInputBackend
 }
 
 [Flags]
+[SuppressMessage("ReSharper", "RedundantNameQualifier")]
 internal enum SdlMouseInputFlags : uint
 {
     LeftButtonDown = SDL.Sdl.ButtonLmask,

@@ -12,8 +12,7 @@ namespace Silk.NET.Input.SDL3.DataStructures;
 // LONG-TERM DOM-SPECIFIC TO-DO - can this struct be represented as a NativeArray<T, TBackend> where TBackend has a
 //  Free(void*) or Free(void*, int) method?
 /// <summary>
-/// Represents an array of values produced by SDL. For .NET-allocated native memory, see
-/// <seealso cref="NativeMemory{T}"/>.
+/// Represents an array of values produced by SDL.
 /// </summary>
 /// <typeparam name="T">The type of values in the array - usually SDL struct types.</typeparam>
 internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArray<T>> where T : unmanaged

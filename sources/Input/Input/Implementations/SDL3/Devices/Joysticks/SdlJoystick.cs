@@ -253,9 +253,9 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     internal const short DigitalThreshold = short.MaxValue / 8;
 
     // events
-    internal required ISdlInputEventQueue<ButtonChangedEvent<JoystickButton>> ButtonEvents { get; init; }
-    internal required ISdlInputEventQueue<JoystickAxisMoveEvent> AxisEvents { get; init; }
-    internal required ISdlInputEventQueue<JoystickHatMoveEvent> HatEvents { get; init; }
+    internal required SdlInputEventQueue<ButtonChangedEvent<JoystickButton>> ButtonEvents { get; init; }
+    internal required SdlInputEventQueue<JoystickAxisMoveEvent> AxisEvents { get; init; }
+    internal required SdlInputEventQueue<JoystickHatMoveEvent> HatEvents { get; init; }
 
     ButtonReadOnlyList<JoystickButton> IButtonDevice<JoystickButton>.State => State.Buttons;
 

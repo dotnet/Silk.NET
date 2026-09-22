@@ -18,11 +18,11 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     // the mouse is always considered "down" - there is no up/down state for the mouse pointer itself - only its buttons.
     private const bool DownState = true;
 
-    private SdlMouse(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unboundedPointerTarget,
+    private SdlMouse(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend,
         ICursorConfiguration cursor)
-        : base(backend, uniqueId, sdlDeviceId, unboundedPointerTarget)
+        : base(backend, uniqueId, sdlDeviceId)
     {
-        _state = new MouseState(Buttons, Points, Vector2.Zero);
+        _state = new MouseState(Buttons, StatePoints, Vector2.Zero);
         Cursor = cursor;
     }
 
@@ -35,7 +35,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         var window = NativeBackend.GetMouseFocus();
         if (Backend.TryGetOrCreatePointerTargetForWindow(window, out var target))
         {
-            AddOrUpdatePoint(null, target, new Vector3(x, y, 0), null, DownState, null, true, sdlTimestamp, timestamp);
+            AddOrUpdatePoint(null, target, new Vector3(x, y, 0), null, DownState, null, sdlTimestamp, timestamp);
         }
         // var point = _unboundedPointerTarget.GetPoint(this, 0);
     }
@@ -66,7 +66,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         }
 
         var mouse =
-            new SdlMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, backend.CursorConfiguration) {
+            new SdlMouse(sdlDeviceId, uniqueId, backend, backend.CursorConfiguration) {
                 ScrollEvents = sdlInputEvents.MouseScrollEvents,
                 PointEvents = sdlInputEvents.PointChangedEvents,
                 ClickEvents = sdlInputEvents.PointerClickEvents,
@@ -173,8 +173,12 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 
     public void AddMotion(in MouseMotionEvent evtMotion, IPointerTarget target, long timestamp)
     {
-        AddOrUpdatePoint(null, target, new Vector3(evtMotion.X, evtMotion.Y, 0), 1, null, null,
-            evtMotion.WindowID != 0, evtMotion.Timestamp, timestamp);
+        if (evtMotion is { Xrel: 0, Yrel: 0 })
+        {
+            return;
+        }
+
+        AddOrUpdatePoint(null, target, new Vector3(evtMotion.X, evtMotion.Y, 0), 1, null, null, evtMotion.Timestamp, timestamp);
     }
 
 

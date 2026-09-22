@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
@@ -10,11 +11,10 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 internal abstract partial class SdlPointerDevice
 {
-    private readonly IPointerTarget _unboundedPointerTarget;
     private ISimulatedPointerTarget? _falseTarget;
     private readonly List<IPointerTarget> _myPointerTargets = new();
 
-    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget? target, long timestamp, ulong sdlTimestamp, uint touchId,
+    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget target, long timestamp, ulong sdlTimestamp, uint touchId,
         in Vector3? positionOnTarget, Ray3D<float>? ray, float? pressure, out TargetPoint? oldPoint)
     {
         if (touchId != 0 && OnePointOnly)
@@ -24,14 +24,12 @@ internal abstract partial class SdlPointerDevice
                 "provided touchId must be 0.");
         }
 
-        target ??= _unboundedPointerTarget;
-
         AddPointerTargetIfNew();
 
         int? pointIndex = null;
         int? defaultIndex = null;
 
-        for (var i = 0; i < _points.Count; i++)
+        for (var i = 0; i < _actualPoints.Count; i++)
         {
             var candidatePoint = GetPointRef(i);
             if (candidatePoint.Target == target && candidatePoint.Id == touchId)
@@ -49,7 +47,7 @@ internal abstract partial class SdlPointerDevice
         bool isNewPoint;
         if (pointIndex == null)
         {
-            pointIndex = defaultIndex ?? _points.Count;
+            pointIndex = defaultIndex ?? _actualPoints.Count;
             isNewPoint = true;
         }
         else
@@ -64,7 +62,7 @@ internal abstract partial class SdlPointerDevice
         oldPoint = isNewPoint ? null : point;
 
         point = ToTargetPoint(
-            windowTarget: target,
+            target: target,
             touchId: *(int*)&touchId,
             posOnTarget: positionOnTarget ?? point.Position,
             pressure: pressure ?? point.Pressure,
@@ -73,8 +71,7 @@ internal abstract partial class SdlPointerDevice
             // if it's a pre-existing point, use the existing ray.
             ray: ray ?? (isNewPoint
                 ? new Ray3D<float>(origin: Vector3D<float>.Zero, direction: Vector3D<float>.UnitZ)
-                : point.Pointer),
-            unboundedPointerTarget: _unboundedPointerTarget);
+                : point.Pointer));
 
         return ref point;
 
@@ -92,7 +89,7 @@ internal abstract partial class SdlPointerDevice
                     Timestamp: timestamp,
                     Target: target,
                     IsAdded: true,
-                    OldBounds: bounds,
+                    OldBounds: default,
                     NewBounds: bounds),
                 sdlTimestamp: sdlTimestamp);
         }
@@ -103,36 +100,40 @@ internal abstract partial class SdlPointerDevice
     /// </summary>
     /// <param name="posOnTarget">Position projected to target-space</param>
     /// <param name="pressure">Touch/etc point pressure</param>
-    /// <param name="windowTarget">If null, will be considered unbounded</param>
+    /// <param name="target">The target being pointed at</param>
     /// <param name="touchId">The unique ID of the touch/pointer point, persisting through its lifetime</param>
     /// <param name="ray">A ray that determines the final point on the target</param>
-    /// <param name="unboundedPointerTarget"></param>
-    private static TargetPoint ToTargetPoint(in Vector3 posOnTarget, float pressure, IPointerTarget? windowTarget, int touchId,
-        Ray3D<float> ray, IPointerTarget unboundedPointerTarget)
+    private static TargetPoint ToTargetPoint(in Vector3 posOnTarget, float pressure, IPointerTarget target, int touchId,
+        Ray3D<float> ray)
     {
-        var hasTarget = windowTarget is not null;
-        var flags = hasTarget ? TargetPointFlags.PointingAtTarget : TargetPointFlags.NotPointingAtTarget;
+        var bounds = target.Bounds;
+        var min = bounds.Min.ToSystem();
+        var max  = bounds.Max.ToSystem();
+        var diff3 = max - min;
+        var normalizedPosition = (posOnTarget - min) / diff3;
 
-        Vector3 normalizedPositionOnTarget;
-
-        if (hasTarget && windowTarget != unboundedPointerTarget)
+        if (!float.IsFinite(normalizedPosition.X))
         {
-            var bounds = windowTarget!.Bounds;
-            var min = bounds.Min.ToSystem();
-            normalizedPositionOnTarget = (posOnTarget - min) / (bounds.Max.ToSystem() - min);
+            normalizedPosition.X = 0;
         }
-        else
+
+        if(!float.IsFinite(normalizedPosition.Y))
         {
-            normalizedPositionOnTarget = default;
+            normalizedPosition.Y = 0;
+        }
+
+        if(!float.IsFinite(normalizedPosition.Z))
+        {
+            normalizedPosition.Z = 0;
         }
 
         return new TargetPoint(touchId,
-            Flags: flags,
+            Flags: TargetPointFlags.PointingAtTarget,
             Position: posOnTarget,
-            NormalizedPosition: normalizedPositionOnTarget,
+            NormalizedPosition: normalizedPosition,
             Pointer: ray,
             Pressure: pressure,
-            Target: windowTarget
+            Target: target
         );
     }
 
@@ -145,13 +146,12 @@ internal abstract partial class SdlPointerDevice
     /// <param name="pressure">The pressure, set null if it has not changed</param>
     /// <param name="isDown">"Down" status. Set null if has not changed</param>
     /// <param name="ray">The ray - set null if has not changed or is simply computed in 2D without extra calculation</param>
-    /// <param name="isPositionInTargetSpace">True if the provided position (if present) is relative to the given target</param>
     /// <param name="sdlTimestamp"></param>
     /// <param name="timestamp"></param>
     /// <exception cref="InvalidOperationException"></exception>
-    protected void AddOrUpdatePoint(uint? touchId, IPointerTarget? target, in Vector3? pos, float? pressure,
+    protected void AddOrUpdatePoint(uint? touchId, IPointerTarget target, in Vector3? pos, float? pressure,
         bool? isDown,
-        Ray3D<float>? ray, bool isPositionInTargetSpace, ulong sdlTimestamp, long timestamp)
+        Ray3D<float>? ray, ulong sdlTimestamp, long timestamp)
     {
         if (pos == null && pressure == null && isDown == null && ray == null)
         {
@@ -159,11 +159,6 @@ internal abstract partial class SdlPointerDevice
         }
 
         touchId = ValidateTouchId(touchId);
-
-        if (pos != null && target is null && isPositionInTargetSpace)
-        {
-            throw new InvalidOperationException("Target must be specified if position is in target space");
-        }
 
         ref var point = ref CreateOrUpdateTargetPoint(
             target: target,
@@ -183,7 +178,7 @@ internal abstract partial class SdlPointerDevice
             // point was actually removed - after that point changed event, we should remove it
             // note - a null newPoint means the point was removed
             var previous = point;
-            for (var i = 0; i < _points.Count; i++)
+            for (var i = 0; i < _actualPoints.Count; i++)
             {
                 ref var candidatePoint = ref GetPointRef(i);
                 if (candidatePoint.Id == previous.Id)
@@ -215,7 +210,7 @@ internal abstract partial class SdlPointerDevice
         return touchId ?? throw new ArgumentNullException($"TouchId cannot be null for device {this}.");
     }
 
-    protected void UpdatePointRay(uint? touchId, IPointerTarget? target, float? xTilt, float? yTilt, float? zTwist,
+    protected void UpdatePointRay(uint? touchId, IPointerTarget target, float? xTilt, float? yTilt, float? zTwist,
         float? distance,
         ulong sdlTimestamp, long timestamp)
     {
@@ -254,13 +249,13 @@ internal abstract partial class SdlPointerDevice
 
     private ref TargetPoint GetPointRef(int index)
     {
-        _points.EnsureCapacity(index + 1);
-        while (index >= _points.Count)
+        _actualPoints.EnsureCapacity(index + 1);
+        while (index >= _actualPoints.Count)
         {
-            _points.Add(default);
+            _actualPoints.Add(default);
         }
 
-        return ref CollectionsMarshal.AsSpan(_points)[index];
+        return ref CollectionsMarshal.AsSpan(_actualPoints)[index];
     }
 
     public void TargetDestroyed(IPointerTarget target, long timestamp, ulong sdlTimestamp)
@@ -286,5 +281,37 @@ internal abstract partial class SdlPointerDevice
                     NewBounds: target.Bounds),
                 sdlTimestamp);
         }
+    }
+
+    // remaps the given point to the given pointer target
+    private static TargetPoint TranslatePoint(ref readonly TargetPoint pt, IPointerTarget target)
+    {
+        Debug.Assert(pt.Target != target);
+        var oldBoundsMin = pt.Target.Bounds.Min.ToSystem();
+        oldBoundsMin &= Vector3.IsFinite(oldBoundsMin);
+
+        var newBoundsMin = target.Bounds.Min.ToSystem();
+        newBoundsMin &= Vector3.IsFinite(newBoundsMin);
+
+        // both bounds exist in the same coordinate space - the new position needs to be translated to be relative
+        // to the new target
+        var rawPtPosition = pt.Position + oldBoundsMin;
+        var newPtPosition = rawPtPosition - newBoundsMin;
+
+        var newBoundsMax = target.Bounds.Max.ToSystem();
+        newBoundsMax &= Vector3.IsFinite(newBoundsMax);
+
+        var newBoundsSize = newBoundsMax - newBoundsMin;
+        var newNormalizedPos = newPtPosition / newBoundsSize;
+        newNormalizedPos &= Vector3.IsFinite(newNormalizedPos);
+
+        return new TargetPoint(
+            Id: pt.Id,
+            Flags: TargetPointFlags.NotPointingAtTarget,
+            Position: newPtPosition,
+            NormalizedPosition: newNormalizedPos,
+            Pointer: pt.Pointer,
+            Pressure: pt.Pressure,
+            Target: target);
     }
 }

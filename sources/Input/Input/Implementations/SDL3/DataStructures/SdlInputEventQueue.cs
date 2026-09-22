@@ -6,27 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input.SDL3.DataStructures;
 
-internal class SdlInputEventQueue<T> : ISdlInputEventQueue<T> where T : struct
+internal sealed class SdlInputEventQueue<T> where T : struct
 {
-    // Currently unused, so just commenting this out
-    /*
-        public int Count
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                Debug.Assert(_sdlTimestamps.Count == _events.Count);
-                return _sdlTimestamps.Count;
-            }
-        }
+    public static readonly SdlEventDiscriminator TypeDiscriminator = InputEventKinds.Get(typeof(T));
 
-        public void Clear(bool entireCapacity, int startIndex = 0)
-        {
-            _events.ClearValues(entireCapacity, (uint)startIndex);
-            _sdlTimestamps.ClearValues(entireCapacity, (uint)startIndex);
-        }
-    */
-
+    public int Count => _events.Count;
 
     public void Enqueue(in T item, ulong sdlTimestamp)
     {
@@ -40,14 +24,14 @@ internal class SdlInputEventQueue<T> : ISdlInputEventQueue<T> where T : struct
         _sdlTimestamps.Add(sdlTimestamp);
     }
 
+    public ReadOnlySpan<ulong> SdlTimestamps
+    {
+        get => _sdlTimestamps.AsSpan();
+    }
 
-    /// <summary>
-    /// Returns a reference to our data as two spans and clears the inner count of our buffers
-    /// (the functional equivalent of calling <see cref="List{T}.Clear()"/>)
-    /// </summary>
+    /// <inheritdoc cref="PinnedGcMemory{T}.UnsafeGetRef"/>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    internal SdlTimestampedValues<T> ConsumeWithoutClearing() =>
-        new(_events.ConsumeWithoutClearing(), _sdlTimestamps.ConsumeWithoutClearing());
+    public ref readonly T UnsafeGetRef(int index) => ref _events.UnsafeGetRef(index);
 
 
     public void Dispose()
@@ -78,11 +62,11 @@ internal class SdlInputEventQueue<T> : ISdlInputEventQueue<T> where T : struct
 
     internal readonly ref struct SdlTimestampedValues<TValue> where TValue : struct
     {
-        public readonly NativeMemory<TValue>.UnsafeView Values;
-        public readonly NativeMemory<ulong>.UnsafeView SdlTimestamps;
+        public readonly Span<TValue> Values;
+        public readonly Span<ulong> SdlTimestamps;
 
-        public SdlTimestampedValues(NativeMemory<TValue>.UnsafeView values,
-            NativeMemory<ulong>.UnsafeView sdlTimestamps)
+        public SdlTimestampedValues(Span<TValue> values,
+            Span<ulong> sdlTimestamps)
         {
             Values = values;
             SdlTimestamps = sdlTimestamps;
@@ -99,6 +83,16 @@ internal class SdlInputEventQueue<T> : ISdlInputEventQueue<T> where T : struct
     }
 
     private bool _disposed;
-    private NativeMemory<T> _events;
-    private NativeMemory<ulong> _sdlTimestamps;
+    private PinnedGcMemory<T> _events;
+    private PinnedGcMemory<ulong> _sdlTimestamps;
+
+    /// <summary>
+    /// Resets the count of our events without explicitly clearing the memory
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void ResetCount()
+    {
+        _events.ResetCount();
+        _sdlTimestamps.ResetCount();
+    }
 }

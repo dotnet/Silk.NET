@@ -41,7 +41,7 @@ public readonly record struct TargetPoint(
     Vector3 NormalizedPosition,
     Ray3D<float> Pointer,
     float Pressure,
-    IPointerTarget? Target
+    IPointerTarget Target
 )
 {
     /// <summary>

@@ -260,6 +260,7 @@ internal unsafe partial class SdlInputBackend
         uint id, WindowHandle window)
     {
         var newTarget = SdlWindowTarget.Create(backend, id, window);
+        newTarget.UpdateBounds();
         targets.Add(newTarget);
         return newTarget;
     }
@@ -296,8 +297,12 @@ internal unsafe partial class SdlInputBackend
         }
 
         var bounds = target.Bounds;
-        target.Move(new Vector2D<float>(evt.Data1, evt.Data2));
+        if (!target.Move(new Vector2D<float>(evt.Data1, evt.Data2)))
+        {
+            return;
+        }
 
+        SdlLog.Debug("Window move");
 
         for (var index = 0; index < _deviceRegistry.Devices.Count; index++)
         {
@@ -316,6 +321,7 @@ internal unsafe partial class SdlInputBackend
             return;
         }
 
+        SdlLog.Debug("Window destroyed");
         for (var index = 0; index < _deviceRegistry.Devices.Count; index++)
         {
             if (_deviceRegistry.Devices[index] is SdlPointerDevice pointerDevice)
@@ -338,6 +344,8 @@ internal unsafe partial class SdlInputBackend
             return; // nothing has changed
         }
 
+        SdlLog.Debug("Window unclear motion");
+
         for (var index = 0; index < _deviceRegistry.Devices.Count; index++)
         {
             if (_deviceRegistry.Devices[index] is SdlPointerDevice pointerDevice)
@@ -354,7 +362,10 @@ internal unsafe partial class SdlInputBackend
             return;
         }
 
-        target.Resize(new Vector2D<float>(evt.Data1, evt.Data2));
+        if (!target.Resize(new Vector2D<float>(evt.Data1, evt.Data2)))
+        {
+            return;
+        }
         for (var index = 0; index < _deviceRegistry.Devices.Count; index++)
         {
             if (_deviceRegistry.Devices[index] is SdlPointerDevice pointerDevice)

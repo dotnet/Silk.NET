@@ -285,7 +285,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         value = Math.Clamp(value, lower, upper);
 
         var mappedValue = NormalizeInRange(value, min, max);
-        UpdateGamepadAxis(gAxis, mappedValue, sdlTimestamp, timestamp);
+        UpdateGAxis();
 
         return;
 
@@ -300,7 +300,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             return Math.Clamp(normalized, 0f, 1f);
         }
 
-        void UpdateGamepadAxis(GamepadAxis gAxis, float mappedValue, ulong sdlTimestamp, long timestamp)
+        void UpdateGAxis()
         {
             switch (gAxis)
             {
@@ -420,6 +420,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     /// <param name="timestamp">The timestamp from <see cref="InputContext"/>.</param>
     public void UpdateFromJoyButton(int buttonIdx, bool down, ulong sdlTimestamp, long timestamp)
     {
+        Debug.Assert(_bindings != null, "Bindings not initialized");
         if (!_bindings.TryGetValue(InputIndexToMappingIndex(buttonIdx, InputType.Button), out var binding))
         {
             InputLog.Warn($"No button binding for index {buttonIdx}");
@@ -458,6 +459,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     /// <param name="timestamp">The timestamp from <see cref="InputContext"/>.</param>
     public void UpdateFromJoyAxis(int axis, short joystickInput, ulong sdlTimestamp, long timestamp)
     {
+        Debug.Assert(_bindings != null, "Bindings not initialized");
         if (!_bindings.TryGetValue(InputIndexToMappingIndex(axis, InputType.Axis), out var binding))
         {
             return;
@@ -602,10 +604,10 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             };
     }
 
-    private FrozenDictionary<int, GamepadBinding> _bindings;
+    private FrozenDictionary<int, GamepadBinding>? _bindings;
     private readonly List<List<GamepadBinding>?> _hatBindings = [];
-    internal required ISdlInputEventQueue<GamepadThumbstickMoveEvent> ThumbstickEvents { get; init; }
-    internal required ISdlInputEventQueue<GamepadTriggerMoveEvent> TriggerEvents { get; init; }
+    internal required SdlInputEventQueue<GamepadThumbstickMoveEvent> ThumbstickEvents { get; init; }
+    internal required SdlInputEventQueue<GamepadTriggerMoveEvent> TriggerEvents { get; init; }
 
 
     JoystickState IJoystick.State => Joystick.State;
@@ -654,8 +656,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             },
             pressure: evt.Pressure,
             sdlTimestamp: evt.Timestamp,
-            timestamp: timestamp,
-            isPositionInTargetSpace: true);
+            timestamp: timestamp);
     }
 
     public void AddSensorEvent(in GamepadSensorEvent evtGsensor, long timestamp)

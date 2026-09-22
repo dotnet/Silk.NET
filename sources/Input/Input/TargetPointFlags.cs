@@ -7,12 +7,15 @@ namespace Silk.NET.Input;
 public enum TargetPointFlags
 {
     /// <summary>
-    /// No flags are set, indicating that the point is not being pointed at and therefore may not be valid.
+    /// No flags are set, indicating that this <see cref="TargetPoint"/> does not point to its
+    /// <see cref="TargetPoint.Target"/> and therefore may not be valid per typical user expectations.
+    /// This value is used indicate that this point is a "remapped" point, e.g. "raw" mouse input,
+    /// points mapped to other windows, etc
     /// </summary>
     NotPointingAtTarget = 0,
 
     /// <summary>
-    /// Indicates that the point has been resolved as a valid point at which the pointer is pointing.
+    /// Indicates that this <see cref="TargetPoint"/> is pointing at <see cref="TargetPoint.Target"/>
     /// </summary>
     PointingAtTarget = 1 << 0
 }

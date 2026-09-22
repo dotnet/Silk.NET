@@ -51,7 +51,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
             // that being said, it feels like code smell to ask SDL about something it knows nothing about, so if
             // we're simulated (all-C#-side), we just don't bother asking SDL.
             var deviceType = isSimulated ? TouchDeviceType.Invalid : backend.Sdl.GetTouchDeviceType(sdlDeviceId);
-            return new SdlTouchSurface(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, deviceType,
+            return new SdlTouchSurface(sdlDeviceId, uniqueId, backend, deviceType,
                 isSimulated) {
                 ScrollEvents = sdlInputEvents.MouseScrollEvents,
                 PointEvents = sdlInputEvents.PointChangedEvents,
@@ -93,8 +93,8 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
     protected override bool OnePointOnly => false;
     private readonly TouchDeviceType _type;
 
-    private SdlTouchSurface(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unbounded,
-        TouchDeviceType type, bool isSimulated) : base(backend, uniqueId, sdlDeviceId, unbounded)
+    private SdlTouchSurface(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend,
+        TouchDeviceType type, bool isSimulated) : base(backend, uniqueId, sdlDeviceId)
     {
         _type = type;
         IsSimulated = isSimulated;
@@ -103,7 +103,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
             InputLog.Error("Invalid touch device type");
         }
 
-        State = new PointerState(Buttons, Points);
+        State = new PointerState(Buttons, StatePoints);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -119,25 +119,24 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
             eventType: fingerType,
             pressure: finger.Pressure,
             sdlTimestamp: finger.Timestamp,
-            timestamp: timestamp,
-            isPositionInTargetSpace: true);
+            timestamp: timestamp);
     }
 
-    public void Event(uint fingerId, IPointerTarget? target, Vector3 position, SdlInputBackend.FingerEventType eventType,
-        float pressure, ulong sdlTimestamp, long timestamp, bool isPositionInTargetSpace)
+    public void Event(uint fingerId, IPointerTarget target, Vector3 position, SdlInputBackend.FingerEventType eventType,
+        float pressure, ulong sdlTimestamp, long timestamp)
     {
         switch (eventType)
         {
             case SdlInputBackend.FingerEventType.Motion:
-                AddOrUpdatePoint(fingerId, target, position, pressure, null, null, isPositionInTargetSpace, sdlTimestamp,
+                AddOrUpdatePoint(fingerId, target, position, pressure, null, null, sdlTimestamp,
                     timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Down:
-                AddOrUpdatePoint(fingerId, target, position, pressure, true, null, isPositionInTargetSpace, sdlTimestamp,
+                AddOrUpdatePoint(fingerId, target, position, pressure, true, null, sdlTimestamp,
                     timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Up:
-                AddOrUpdatePoint(fingerId, target, position, pressure, false, null, isPositionInTargetSpace, sdlTimestamp,
+                AddOrUpdatePoint(fingerId, target, position, pressure, false, null, sdlTimestamp,
                     timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Canceled:

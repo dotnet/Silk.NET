@@ -368,7 +368,7 @@ public sealed class Pointers
 
         for (var i = 0; i < _clicks.Count; i++)
         {
-            if (_clicks[i].Device != @event.Device)
+            if (!ReferenceEquals(_clicks[i].Device, @event.Device))
             {
                 continue;
             }

@@ -12,7 +12,7 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INeedFinalizationEachFrame
+internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INeedCompletionEachFrame
 {
     public KeyboardState State { get; }
     public override string Name => NativeBackend.GetKeyboardNameForID((uint)SdlDeviceId).ReadToString();
@@ -146,7 +146,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         return _textRecorder?.ConsumeInput();
     }
 
-    public void FinalizeUpdate()
+    public void CompleteUpdate()
     {
         if (_hasUpdates)
         {
@@ -286,8 +286,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
     private ushort _modState;
     private const float _pressureMultiplier = 1f / 255f;
     private readonly ButtonStates _keyStates;
-    internal required ISdlInputEventQueue<KeyChangedEvent> KeyChangedEvents;
-    internal required ISdlInputEventQueue<KeyCharEvent> KeyCharEvents;
+    internal required SdlInputEventQueue<KeyChangedEvent> KeyChangedEvents;
+    internal required SdlInputEventQueue<KeyCharEvent> KeyCharEvents;
 
     private class ButtonStates : IReadOnlyList<Button<KeyName>>
     {
