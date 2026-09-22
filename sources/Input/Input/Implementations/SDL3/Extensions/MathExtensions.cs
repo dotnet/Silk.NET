@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 using Silk.NET.Maths;
 
-namespace Silk.NET.Input.SDL3.Devices.Pointers;
+namespace Silk.NET.Input.SDL3.Extensions;
 
 internal static class MathExtensions
 {

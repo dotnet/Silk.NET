@@ -27,7 +27,7 @@ internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArr
 
     public static SdlArray<T> Null => default;
 
-    public SdlArray(Ptr<T> ptr, int count, ISdl? sdl, bool consumerCanDispose = true)
+    public SdlArray(Ptr<T> ptr, int count, ISdl? sdl, bool consumerCanDispose)
     {
         if (consumerCanDispose)
         {

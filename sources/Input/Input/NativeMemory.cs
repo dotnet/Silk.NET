@@ -40,7 +40,7 @@ internal unsafe struct NativeMemory<T> : IDisposable where T : struct
         _ptr[index] = value;
     }
 
-    /// <Summary>
+    /// <summary>
     /// Returns a reference to our data as two spans and clears the inner count of our buffers
     /// (the functional equivalent of calling <see cref="List{T}.Clear()"/>), while still allowing you to read the data.
     /// <br/><br/>

@@ -1,0 +1,290 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Numerics;
+using System.Runtime.InteropServices;
+using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
+using Silk.NET.Maths;
+
+namespace Silk.NET.Input.SDL3.Devices.Pointers;
+
+internal abstract partial class SdlPointerDevice
+{
+    private readonly IPointerTarget _unboundedPointerTarget;
+    private ISimulatedPointerTarget? _falseTarget;
+    private readonly List<IPointerTarget> _myPointerTargets = new();
+
+    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget? target, long timestamp, ulong sdlTimestamp, uint touchId,
+        in Vector3? positionOnTarget, Ray3D<float>? ray, float? pressure, out TargetPoint? oldPoint)
+    {
+        if (touchId != 0 && OnePointOnly)
+        {
+            throw new InvalidOperationException(
+                "A single-point device cannot have multiple points per-target, so the " +
+                "provided touchId must be 0.");
+        }
+
+        target ??= _unboundedPointerTarget;
+
+        AddPointerTargetIfNew();
+
+        int? pointIndex = null;
+        int? defaultIndex = null;
+
+        for (var i = 0; i < _points.Count; i++)
+        {
+            var candidatePoint = GetPointRef(i);
+            if (candidatePoint.Target == target && candidatePoint.Id == touchId)
+            {
+                pointIndex = i;
+                break;
+            }
+
+            if (defaultIndex is null && candidatePoint == default)
+            {
+                defaultIndex = i;
+            }
+        }
+
+        bool isNewPoint;
+        if (pointIndex == null)
+        {
+            pointIndex = defaultIndex ?? _points.Count;
+            isNewPoint = true;
+        }
+        else
+        {
+            isNewPoint = false;
+        }
+
+        ref var point = ref GetPointRef(pointIndex.Value);
+
+        // note: a null oldPoint means this is a new point
+        // see PointChangedEvent for more info
+        oldPoint = isNewPoint ? null : point;
+
+        point = ToTargetPoint(
+            windowTarget: target,
+            touchId: *(int*)&touchId,
+            posOnTarget: positionOnTarget ?? point.Position,
+            pressure: pressure ?? point.Pressure,
+
+            // if a ray is provided, use it. otherwise, if it's a new point, use the default ray.
+            // if it's a pre-existing point, use the existing ray.
+            ray: ray ?? (isNewPoint
+                ? new Ray3D<float>(origin: Vector3D<float>.Zero, direction: Vector3D<float>.UnitZ)
+                : point.Pointer),
+            unboundedPointerTarget: _unboundedPointerTarget);
+
+        return ref point;
+
+        void AddPointerTargetIfNew()
+        {
+            if (_myPointerTargets.Contains(target))
+            {
+                return;
+            }
+
+            _myPointerTargets.Add(target);
+            var bounds = target.Bounds;
+            TargetEvents.Enqueue(
+                item: new PointerTargetChangedEvent(Pointer: this,
+                    Timestamp: timestamp,
+                    Target: target,
+                    IsAdded: true,
+                    OldBounds: bounds,
+                    NewBounds: bounds),
+                sdlTimestamp: sdlTimestamp);
+        }
+    }
+
+    /// <summary>
+    /// Creates a target point
+    /// </summary>
+    /// <param name="posOnTarget">Position projected to target-space</param>
+    /// <param name="pressure">Touch/etc point pressure</param>
+    /// <param name="windowTarget">If null, will be considered unbounded</param>
+    /// <param name="touchId">The unique ID of the touch/pointer point, persisting through its lifetime</param>
+    /// <param name="ray">A ray that determines the final point on the target</param>
+    /// <param name="unboundedPointerTarget"></param>
+    private static TargetPoint ToTargetPoint(in Vector3 posOnTarget, float pressure, IPointerTarget? windowTarget, int touchId,
+        Ray3D<float> ray, IPointerTarget unboundedPointerTarget)
+    {
+        var hasTarget = windowTarget is not null;
+        var flags = hasTarget ? TargetPointFlags.PointingAtTarget : TargetPointFlags.NotPointingAtTarget;
+
+        Vector3 normalizedPositionOnTarget;
+
+        if (hasTarget && windowTarget != unboundedPointerTarget)
+        {
+            var bounds = windowTarget!.Bounds;
+            var min = bounds.Min.ToSystem();
+            normalizedPositionOnTarget = (posOnTarget - min) / (bounds.Max.ToSystem() - min);
+        }
+        else
+        {
+            normalizedPositionOnTarget = default;
+        }
+
+        return new TargetPoint(touchId,
+            Flags: flags,
+            Position: posOnTarget,
+            NormalizedPosition: normalizedPositionOnTarget,
+            Pointer: ray,
+            Pressure: pressure,
+            Target: windowTarget
+        );
+    }
+
+    /// <summary>
+    /// Adds or updates a point.
+    /// </summary>
+    /// <param name="touchId">Touch id. Must be null for single-point-only devices (e.g. a mouse)</param>
+    /// <param name="target">The target the touch applies to</param>
+    /// <param name="pos">The touch position. Set null if it has not changed</param>
+    /// <param name="pressure">The pressure, set null if it has not changed</param>
+    /// <param name="isDown">"Down" status. Set null if has not changed</param>
+    /// <param name="ray">The ray - set null if has not changed or is simply computed in 2D without extra calculation</param>
+    /// <param name="isPositionInTargetSpace">True if the provided position (if present) is relative to the given target</param>
+    /// <param name="sdlTimestamp"></param>
+    /// <param name="timestamp"></param>
+    /// <exception cref="InvalidOperationException"></exception>
+    protected void AddOrUpdatePoint(uint? touchId, IPointerTarget? target, in Vector3? pos, float? pressure,
+        bool? isDown,
+        Ray3D<float>? ray, bool isPositionInTargetSpace, ulong sdlTimestamp, long timestamp)
+    {
+        if (pos == null && pressure == null && isDown == null && ray == null)
+        {
+            throw new InvalidOperationException("At least one parameter must have a value");
+        }
+
+        touchId = ValidateTouchId(touchId);
+
+        if (pos != null && target is null && isPositionInTargetSpace)
+        {
+            throw new InvalidOperationException("Target must be specified if position is in target space");
+        }
+
+        ref var point = ref CreateOrUpdateTargetPoint(
+            target: target,
+            timestamp: timestamp,
+            sdlTimestamp: sdlTimestamp,
+            touchId: touchId.Value,
+            positionOnTarget: pos,
+            ray: ray,
+            pressure: pressure,
+            oldPoint: out var oldPoint);
+
+        PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint,
+            NewPoint: point), sdlTimestamp);
+
+        if (isDown is false)
+        {
+            // point was actually removed - after that point changed event, we should remove it
+            // note - a null newPoint means the point was removed
+            var previous = point;
+            for (var i = 0; i < _points.Count; i++)
+            {
+                ref var candidatePoint = ref GetPointRef(i);
+                if (candidatePoint.Id == previous.Id)
+                {
+                    candidatePoint = default;
+                }
+            }
+
+            PointEvents.Enqueue(
+                item: new PointChangedEvent(
+                    Pointer: this,
+                    Timestamp: timestamp,
+                    OldPoint: previous,
+                    NewPoint: point),
+                sdlTimestamp: sdlTimestamp);
+        }
+    }
+
+    private uint ValidateTouchId(uint? touchId)
+    {
+        if (OnePointOnly)
+        {
+            return touchId != null
+                ? throw new InvalidOperationException(
+                    "A single-point device cannot have a touchId - it must be null.")
+                : 0u;
+        }
+
+        return touchId ?? throw new ArgumentNullException($"TouchId cannot be null for device {this}.");
+    }
+
+    protected void UpdatePointRay(uint? touchId, IPointerTarget? target, float? xTilt, float? yTilt, float? zTwist,
+        float? distance,
+        ulong sdlTimestamp, long timestamp)
+    {
+        if (xTilt == null && yTilt == null && zTwist == null && distance == null)
+        {
+            throw new InvalidOperationException("At least one parameter must have a value");
+        }
+
+        touchId = ValidateTouchId(touchId);
+
+        ref var point = ref CreateOrUpdateTargetPoint(
+            target: target,
+            timestamp: timestamp,
+            sdlTimestamp: sdlTimestamp,
+            touchId: touchId.Value,
+            positionOnTarget: null,
+            ray: null,
+            pressure: null,
+            oldPoint: out var oldPoint);
+
+        var ray = point.Pointer;
+        xTilt ??= ray.Direction.X;
+        yTilt ??= ray.Direction.Y;
+        zTwist ??= ray.Direction.Z;
+        distance ??= ray.Origin.Z;
+
+        point = point with {
+            Pointer = new Ray3D<float>(
+                origin: ray.Origin with { Z = distance.Value },
+                direction: new Vector3D<float>(xTilt.Value, yTilt.Value, zTwist.Value))
+        };
+
+        PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint,
+            NewPoint: point), sdlTimestamp);
+    }
+
+    private ref TargetPoint GetPointRef(int index)
+    {
+        _points.EnsureCapacity(index + 1);
+        while (index >= _points.Count)
+        {
+            _points.Add(default);
+        }
+
+        return ref CollectionsMarshal.AsSpan(_points)[index];
+    }
+
+    public void TargetDestroyed(IPointerTarget target, long timestamp, ulong sdlTimestamp)
+    {
+        if (_myPointerTargets.Remove(target))
+        {
+            var bounds = target.Bounds;
+            TargetEvents.Enqueue(new PointerTargetChangedEvent(this, timestamp, target, false, bounds, bounds), sdlTimestamp);
+        }
+    }
+
+
+    public void TargetChanged(SdlWindowTarget target, long timestamp, ulong sdlTimestamp, in Box3D<float> oldBounds)
+    {
+        if (_myPointerTargets.Contains(target))
+        {
+            TargetEvents.Enqueue(new PointerTargetChangedEvent(
+                    Pointer: this,
+                    Timestamp: timestamp,
+                    Target: target,
+                    IsAdded: null,
+                    OldBounds: oldBounds,
+                    NewBounds: target.Bounds),
+                sdlTimestamp);
+        }
+    }
+}

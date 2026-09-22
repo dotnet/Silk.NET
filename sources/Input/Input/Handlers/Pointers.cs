@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Input;
@@ -103,14 +102,11 @@ public sealed class Pointers
         }
     }
 
-    void IMouseInputHandler.HandleScroll(MouseScrollEvent @event) => HandleScroll(@event);
+    /// <inheritdoc/>
+    public void HandleScroll(MouseScrollEvent @event) => MouseScroll?.Invoke(@event);
 
-    internal void HandleScroll(MouseScrollEvent @event) => MouseScroll?.Invoke(@event);
-
-    void IPointerInputHandler.HandleTargetChanged(PointerTargetChangedEvent @event) =>
-        HandleTargetChanged(@event);
-
-    internal void HandleTargetChanged(PointerTargetChangedEvent @event)
+    /// <inheritdoc/>
+    public void HandleTargetChanged(PointerTargetChangedEvent @event)
     {
         TargetChanged?.Invoke(@event);
         if (_clicks is null || @event.IsAdded is not false)
@@ -136,10 +132,8 @@ public sealed class Pointers
         }
     }
 
-    void IPointerInputHandler.HandlePointChanged(PointChangedEvent @event) =>
-        HandlePointChanged(@event);
-
-    internal void HandlePointChanged(PointChangedEvent @event)
+    /// <inheritdoc/>
+    public void HandlePointChanged(PointChangedEvent @event)
     {
         try
         {
@@ -175,10 +169,8 @@ public sealed class Pointers
         }
     }
 
-    void IPointerInputHandler.HandleGripChanged(PointerGripChangedEvent @event) =>
-        HandleGripChanged(@event);
-
-    internal void HandleGripChanged(PointerGripChangedEvent @event) => GripChanged?.Invoke(@event);
+    /// <inheritdoc/>
+    public void HandleGripChanged(PointerGripChangedEvent @event) => GripChanged?.Invoke(@event);
 
     private record struct ClickData(
         IPointerDevice Device,
@@ -364,15 +356,6 @@ public sealed class Pointers
             InputLog.Error($"Exception during click event: {e.Message}\n{e.StackTrace}");
         }
     }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointerTargetChangedEvent>.Handle(PointerTargetChangedEvent @event) => HandleTargetChanged(@event);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointChangedEvent>.Handle(PointChangedEvent @event) => HandlePointChanged(@event);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointerGripChangedEvent>.Handle(PointerGripChangedEvent @event) => HandleGripChanged(@event);
 
     /// <inheritdoc />
     protected internal override void HandleDeviceConnectionChanged(ConnectionEvent @event)

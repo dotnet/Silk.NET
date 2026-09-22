@@ -1,28 +1,40 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
-using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Input.SDL3.DataStructures;
-using Silk.NET.Maths;
+using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 /// <summary>
 /// A base class for SDL input devices that operate in terms of a window's or DWMs bounds.
 /// </summary>
-internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinalizationEachFrame
+internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinalizationEachFrame
 {
+    /// <summary>
+    /// True if the device only supports one point - e.g., a mouse.<br/>
+    /// False otherwise - e.g., a multitouch screen.
+    /// </summary>
+    protected abstract bool OnePointOnly { get; }
+    private readonly List<Button<PointerButton>> _buttons = new(EnumInfo<PointerButton>.UniqueNamedValues.Count);
+    protected ButtonReadOnlyList<PointerButton> Buttons => new(_buttons);
+    protected InputReadOnlyList<TargetPoint> Points => new(other: _points);
+    private readonly List<TargetPoint> _points = [];
+
+    internal required ISdlInputEventQueue<MouseScrollEvent> ScrollEvents { private get; init; }
+    internal required ISdlInputEventQueue<PointChangedEvent> PointEvents { private get; init; }
+    internal required ISdlInputEventQueue<PointerClickEvent> ClickEvents { private get; init; }
+    internal required ISdlInputEventQueue<ButtonChangedEvent<PointerButton>> ButtonEvents { private get; init; }
+    internal required ISdlInputEventQueue<PointerGripChangedEvent> GripEvents { private get; init; }
+    internal required ISdlInputEventQueue<PointerTargetChangedEvent> TargetEvents { private get; init; }
+
     protected SdlPointerDevice(SdlInputBackend backend, nint silkId,
         ulong sdlDeviceId, IPointerTarget unboundedPointerTarget) : base(backend, silkId, sdlDeviceId)
     {
         _unboundedPointerTarget = unboundedPointerTarget;
-        _unboundedTargetList = [unboundedPointerTarget];
-        _allTargets.AddRange(_unboundedTargetList);
         for (var i = 0; i < EnumInfo<PointerButton>.UniqueNamedValues.Count; i++)
         {
             var button = EnumInfo<PointerButton>.UniqueNamedValues[i];
@@ -54,227 +66,18 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
     }
 
 
-    private readonly List<Button<PointerButton>> _buttons = new(EnumInfo<PointerButton>.UniqueNamedValues.Count);
-    protected ButtonReadOnlyList<PointerButton> Buttons => new(_buttons);
-    protected InputReadOnlyList<TargetPoint> Points => new(_points);
-    private readonly List<TargetPoint> _points = [];
-
     public abstract PointerState State { get; }
 
-    public IReadOnlyList<IPointerTarget> Targets => _allTargets;
+    public IReadOnlyList<IPointerTarget> Targets => _myPointerTargets;
 
-    /// <summary>
-    /// True if the device only supports one point - e.g., a mouse.<br/>
-    /// False otherwise - e.g., a multitouch screen.
-    /// </summary>
-    protected abstract bool OnePointOnly { get; }
 
     public void FinalizeUpdate()
     {
-        RepopulateActiveTargets();
 
-        return;
-
-        void RepopulateActiveTargets()
-        {
-            // todo- pointer target removal from AllTargets when they are destroyed
-            _activeTargets.Clear();
-            for (var index = 0; index < _points.Count; index++)
-            {
-                var point = _points[index];
-                var target = point.Target!;
-                if (!_activeTargets.Contains(target))
-                {
-                    _activeTargets.Add(target);
-                }
-
-                if (!_allTargets.Contains(target))
-                {
-                    _allTargets.Add(target);
-                }
-            }
-
-            if (_falseTarget is not null)
-            {
-                _activeTargets.Add(_falseTarget);
-            }
-        }
-    }
-
-    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget? target, uint touchId,
-        in Vector3? positionOnTarget, Ray3D<float>? ray, float? pressure, out TargetPoint? oldPoint)
-    {
-        if (touchId != 0 && OnePointOnly)
-        {
-            throw new InvalidOperationException(
-                "A single-point device cannot have multiple points per-target, so the " +
-                "provided touchId must be 0.");
-        }
-
-        target ??= _unboundedPointerTarget;
-
-        int? pointIndex = null;
-        int? defaultIndex = null;
-
-        for (var i = 0; i < _points.Count; i++)
-        {
-            var candidatePoint = GetPointRef(i);
-            if (candidatePoint.Target == target && candidatePoint.Id == touchId)
-            {
-                pointIndex = i;
-                break;
-            }
-
-            if (defaultIndex is null && candidatePoint == default)
-            {
-                defaultIndex = i;
-            }
-        }
-
-        bool isNewPoint;
-        if (pointIndex == null)
-        {
-            pointIndex = defaultIndex ?? _points.Count;
-            isNewPoint = true;
-        }
-        else
-        {
-            isNewPoint = false;
-        }
-
-        ref var point = ref GetPointRef(pointIndex.Value);
-
-        // note: a null oldPoint means this is a new point
-        // see PointChangedEvent for more info
-        oldPoint = isNewPoint ? null : point;
-
-        point = ToTargetPoint(
-            windowTarget: target,
-            touchId: *(int*)&touchId,
-            posOnTarget: positionOnTarget ?? point.Position,
-            pressure: pressure ?? point.Pressure,
-
-            // if a ray is provided, use it. otherwise, if it's a new point, use the default ray.
-            // if it's a pre-existing point, use the existing ray.
-            ray: ray ?? (isNewPoint
-                ? new Ray3D<float>(origin: Vector3D<float>.Zero, direction: Vector3D<float>.UnitZ)
-                : point.Pointer));
-
-        return ref point;
     }
 
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static Ray3D<float> ConstructRay(in Vector3D<float> origin, Vector3D<float>? direction = null) =>
-        new(origin, direction ?? Vector3D<float>.UnitZ);
-
-    /// <summary>
-    /// Adds or updates a point.
-    /// </summary>
-    /// <param name="touchId">Touch id. Must be null for single-point-only devices (e.g. a mouse)</param>
-    /// <param name="target">The target the touch applies to</param>
-    /// <param name="pos">The touch position. Set null if it has not changed</param>
-    /// <param name="pressure">The pressure, set null if it has not changed</param>
-    /// <param name="isDown">"Down" status. Set null if has not changed</param>
-    /// <param name="ray">The ray - set null if has not changed or is simply computed in 2D without extra calculation</param>
-    /// <param name="isPositionInTargetSpace">True if the provided position (if present) is relative to the given target</param>
-    /// <param name="sdlTimestamp"></param>
-    /// <param name="timestamp"></param>
-    /// <exception cref="InvalidOperationException"></exception>
-    protected void AddOrUpdatePoint(uint? touchId, IPointerTarget? target, in Vector3? pos, float? pressure, bool? isDown,
-        Ray3D<float>? ray, bool isPositionInTargetSpace, ulong sdlTimestamp, long timestamp)
-    {
-        if (pos == null && pressure == null && isDown == null && ray == null)
-        {
-            throw new InvalidOperationException("At least one parameter must have a value");
-        }
-
-        touchId = ValidateTouchId(touchId);
-
-        if (pos != null)
-        {
-            if (target is null && isPositionInTargetSpace)
-            {
-                throw new InvalidOperationException("Target must be specified if position is in target space");
-            }
-        }
-
-        ref var point = ref CreateOrUpdateTargetPoint(target, touchId.Value, pos, ray, pressure, out var oldPoint);
-
-        PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint,
-            NewPoint: point), sdlTimestamp);
-
-        if (isDown is false)
-        {
-            // point was actually removed - after that point changed event, we should remove it
-            // note - a null newPoint means the point was removed
-            var previous = point;
-            for (int i = 0; i < _points.Count; i++)
-            {
-                ref var candidatePoint = ref GetPointRef(i);
-                if (candidatePoint.Id == previous.Id)
-                {
-                    candidatePoint = default;
-                }
-            }
-
-            PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: previous,
-                NewPoint: point), sdlTimestamp);
-        }
-    }
-
-    private uint ValidateTouchId(uint? touchId)
-    {
-        if (OnePointOnly)
-        {
-            return touchId != null
-                ? throw new InvalidOperationException(
-                    "A single-point device cannot have a touchId - it must be null.")
-                : 0u;
-        }
-
-        return touchId ?? throw new ArgumentNullException($"TouchId cannot be null for device {this}.");
-    }
-
-
-    /// <summary>
-    /// Creates a target point
-    /// </summary>
-    /// <param name="posOnTarget">Position projected to target-space</param>
-    /// <param name="pressure">Touch/etc point pressure</param>
-    /// <param name="windowTarget">If null, will be considered unbounded</param>
-    /// <param name="touchId">The unique ID of the touch/pointer point, persisting through its lifetime</param>
-    /// <param name="ray">A ray that determines the final point on the target</param>
-    private TargetPoint ToTargetPoint(in Vector3 posOnTarget, float pressure, IPointerTarget? windowTarget, int touchId,
-        Ray3D<float> ray)
-    {
-        var hasTarget = windowTarget is not null;
-        var flags = hasTarget ? TargetPointFlags.PointingAtTarget : TargetPointFlags.NotPointingAtTarget;
-
-        Vector3 normalizedPositionOnTarget;
-
-        if (hasTarget && windowTarget != _unboundedPointerTarget)
-        {
-            var bounds = windowTarget!.Bounds;
-            var min = bounds.Min.ToSystem();
-            normalizedPositionOnTarget = (posOnTarget - min) / (bounds.Max.ToSystem() - min);
-        }
-        else
-        {
-            normalizedPositionOnTarget = default;
-        }
-
-        return new TargetPoint(touchId,
-            Flags: flags,
-            Position: posOnTarget,
-            NormalizedPosition: normalizedPositionOnTarget,
-            Pointer: ray,
-            Pressure: pressure,
-            Target: windowTarget
-        );
-    }
-
-    protected void AddMouseScrollEvent(Vector2 scrollWheelPosition, Vector2 scrollWheelDelta, Vector3 mousePos, uint? windowId, ulong sdlTimestamp, long timestamp)
+    protected void AddMouseScrollEvent(Vector2 scrollWheelPosition, Vector2 scrollWheelDelta, Vector3 mousePos, IPointerTarget target, ulong sdlTimestamp, long timestamp)
     {
         if (this is not IMouse mouse)
         {
@@ -283,9 +86,16 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
 
         uint? touchId = null;
         touchId = ValidateTouchId(touchId);
-        Backend.TryGetPointerTargetForWindow(windowId ?? 0, out var windowTarget);
 
-        ref var point = ref CreateOrUpdateTargetPoint(windowTarget, touchId.Value, mousePos, null, null, out _);
+        ref var point = ref CreateOrUpdateTargetPoint(
+            target: target,
+            timestamp: timestamp,
+            sdlTimestamp: sdlTimestamp,
+            touchId: touchId.Value,
+            positionOnTarget: mousePos,
+            ray: null,
+            pressure: null,
+            oldPoint: out _);
 
         ScrollEvents.Enqueue(new MouseScrollEvent(
             Mouse: mouse,
@@ -294,33 +104,6 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
             WheelPosition: scrollWheelPosition,
             Delta: scrollWheelDelta), sdlTimestamp);
 
-    }
-
-    protected void UpdatePointRay(uint? touchId, IPointerTarget? target, float? xTilt, float? yTilt, float? zTwist, float? distance,
-        ulong sdlTimestamp, long timestamp)
-    {
-        if (xTilt == null && yTilt == null && zTwist == null && distance == null)
-        {
-            throw new InvalidOperationException("At least one parameter must have a value");
-        }
-
-        touchId = ValidateTouchId(touchId);
-
-        ref var point = ref CreateOrUpdateTargetPoint(target, touchId.Value, null, null, null, out var oldPoint);
-        var ray = point.Pointer;
-        xTilt ??= ray.Direction.X;
-        yTilt ??= ray.Direction.Y;
-        zTwist ??= ray.Direction.Z;
-        distance ??= ray.Origin.Z;
-
-        point = point with {
-            Pointer = new Ray3D<float>(
-                origin: ray.Origin with { Z = distance.Value },
-                direction: new Vector3D<float>(xTilt.Value, yTilt.Value, zTwist.Value))
-        };
-
-        PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint,
-            NewPoint: point), sdlTimestamp);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -335,41 +118,6 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
         State.GripPressure = pressure;
     }
 
-
-    private ref TargetPoint GetPointRef(int index)
-    {
-        _points.EnsureCapacity(index + 1);
-        while (index >= _points.Count)
-        {
-            _points.Add(default);
-        }
-
-        return ref CollectionsMarshal.AsSpan(_points)[index];
-    }
-
-    private readonly List<IPointerTarget> _activeTargets = [];
-    private readonly List<IPointerTarget> _allTargets = [];
-    private readonly IPointerTarget _unboundedPointerTarget;
-    private readonly IReadOnlyList<IPointerTarget> _unboundedTargetList;
-
-    public ISimulatedPointerTarget ApplySimulatedTarget(Func<SdlInputBackend, ISimulatedPointerTarget> createFalseTarget)
-    {
-        if (_falseTarget is null)
-        {
-            _falseTarget = createFalseTarget(Backend);
-            _allTargets.Add(_falseTarget);
-            _activeTargets.Add(_falseTarget);
-        }
-
-        return _falseTarget;
-    }
-
-    private ISimulatedPointerTarget? _falseTarget;
-
-    internal required ISdlInputEventQueue<MouseScrollEvent> ScrollEvents { private get; init; }
-    internal required ISdlInputEventQueue<PointChangedEvent> PointEvents { private get; init; }
-    internal required ISdlInputEventQueue<PointerClickEvent> ClickEvents { private get; init; }
-    internal required ISdlInputEventQueue<ButtonChangedEvent<PointerButton>> ButtonEvents { private get; init; }
-    internal required ISdlInputEventQueue<PointerGripChangedEvent> GripEvents { private get; init; }
-    internal required ISdlInputEventQueue<PointerTargetChangedEvent> TargetEvents { private get; init; }
+    public ISimulatedPointerTarget ApplySimulatedTarget(Func<ISdl, ISimulatedPointerTarget> createTarget) =>
+        _falseTarget ??= createTarget(NativeBackend);
 }

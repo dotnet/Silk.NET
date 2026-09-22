@@ -4,6 +4,7 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.DataStructures;
+using Silk.NET.Input.SDL3.Extensions;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Joysticks;

@@ -41,7 +41,7 @@ internal class SdlInputEventQueue<T> : ISdlInputEventQueue<T> where T : struct
     }
 
 
-    /// <Summary>
+    /// <summary>
     /// Returns a reference to our data as two spans and clears the inner count of our buffers
     /// (the functional equivalent of calling <see cref="List{T}.Clear()"/>)
     /// </summary>

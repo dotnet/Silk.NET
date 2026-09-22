@@ -4,7 +4,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
-using Silk.NET.Input.SDL3.Devices.Pointers;
 
 namespace Silk.NET.Input.SDL3;
 
@@ -14,7 +13,7 @@ internal partial class SdlInputBackend
         where T : SdlDevice, ISdlDevice<T>
     {
         // If we already have a device with this ID, return it.
-        var sdlDevices = _eventProcessingArgs.Devices;
+        var sdlDevices = _deviceRegistry.Devices;
         for (var i = 0; i < sdlDevices.Count; i++)
         {
             if (sdlDevices[i] is T typedDevice && typedDevice.SdlDeviceId == id)
@@ -53,17 +52,22 @@ internal partial class SdlInputBackend
             return false;
         }
 
-        _eventProcessingArgs.AddDevice(device, timestamp, sdlTimestamp);
+        if (_deviceRegistry.AddDevice(device))
+        {
+            _sdlInputEvents.ConnectionEvents.Enqueue(new ConnectionEvent(device, timestamp, true), sdlTimestamp);
+        }
         InputLog.Debug($"{typeof(T)} added: (sdl ID: {id})");
         return true;
     }
 
     private bool RemoveDevice<T>(uint id, long timestamp, ulong sdlTimestamp) where T : SdlDevice, ISdlDevice<T>
     {
-        if (_eventProcessingArgs.RemoveDevice<T>(id, timestamp, sdlTimestamp, out var device))
+        if (_deviceRegistry.RemoveDevice<T>(id, out var device))
         {
+            _sdlInputEvents.ConnectionEvents.Enqueue(new ConnectionEvent(device, timestamp, false), sdlTimestamp);
+
             // device IDs may have changed when a device was removed, so we need to refresh them
-            RefreshDeviceIds(_eventProcessingArgs.Devices);
+            RefreshDeviceIds(_deviceRegistry.Devices);
             return true;
         }
 
@@ -71,7 +75,7 @@ internal partial class SdlInputBackend
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool ContainsDevice(nint uniqueId) => _eventProcessingArgs.ContainsDevice(uniqueId);
+    public bool ContainsDevice(nint uniqueId) => _deviceRegistry.ContainsDevice(uniqueId);
 
     private static void RefreshDeviceIds(IReadOnlyList<SdlDevice> devices)
     {
@@ -84,20 +88,57 @@ internal partial class SdlInputBackend
         }
     }
 
-    public bool TryGetVirtualTouchpad(nint ownerId, int touchpadId, ulong sdlTimestamp, long timestamp, [NotNullWhen(true)] out SdlTouchSurface? device, [NotNullWhen(true)] out ISimulatedPointerTarget? target)
+    /// <summary>
+    /// A struct containing all the data required for processing SDL events.
+    /// This is a struct to prevent additional pointer indirections, but the field is applied to should be considered
+    /// an
+    /// </summary>
+    private readonly struct DeviceRegistry
     {
-        var hash = HashCode.Combine(ownerId, touchpadId);
-        ulong id = Unsafe.As<int, uint>(ref hash);
-        if (!TryGetOrCreateDevice(id, timestamp, sdlTimestamp, out device, isSimulated: true))
+        public IReadOnlyList<SdlDevice> Devices => _devices;
+        private readonly List<SdlDevice> _devices;
+        private readonly HashSet<nint> _deviceRegistry = [];
+
+        /// <param name="sdlDevices">A list of sdl devices. If not provided, a new list will be allocated.</param>
+        public DeviceRegistry(List<SdlDevice>? sdlDevices = null) => _devices = sdlDevices ?? [];
+
+        public bool AddDevice<T>(T device) where T : SdlDevice, ISdlDevice<T>
         {
-            target = null;
-            return false;
+            if (!_deviceRegistry.Add(device.Id))
+            {
+                InputLog.Error($"Tried to add device with id {device.Id} that was already registered");
+                return false;
+            }
+
+            _devices.Add(device);
+            return true;
         }
 
-        target = device.ApplySimulatedTarget(CreateSimulatedTarget);
+        public bool RemoveDevice<T>(uint id, [NotNullWhen(true)] out SdlDevice? device)
+            where T : SdlDevice, ISdlDevice<T>
+        {
+            var deviceIdx = _devices.FindIndex(x => x is T && x.SdlDeviceId == id);
 
-        return true;
+            if (deviceIdx == -1)
+            {
+                // we never used this device to begin with, so just ignore its removal
+                device = null;
+                return false;
+            }
 
-        static ISimulatedPointerTarget CreateSimulatedTarget(SdlInputBackend backend) => new SimulatedPointerTarget(backend);
+            device = _devices[deviceIdx];
+            device.Dispose();
+            _devices.RemoveAt(deviceIdx);
+            // note - registration is handled in the device ID creation process
+            if (!_deviceRegistry.Remove(device.Id))
+            {
+                InputLog.Error($"Tried to unregister device with id {device.Id} that was not registered");
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool ContainsDevice(nint uniqueId) => _deviceRegistry.Contains(uniqueId);
     }
 }

@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Silk.NET.Input.SDL3.Extensions;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
@@ -13,18 +14,17 @@ internal interface ISdlBoundedPointerTarget<out T, THandle>
     uint Id { get; }
     THandle Handle { get; }
 
-    public static abstract T? Create(SdlInputBackend backend, uint id, THandle handle);
-    public void UpdateBounds();
+    public static abstract T? Create(ISdl backend, uint id, THandle handle);
 }
 
 internal abstract class SdlBoundedPointerTarget : IPointerTarget
 {
-    protected SdlBoundedPointerTarget(SdlInputBackend backend)
+    protected SdlBoundedPointerTarget(ISdl backend)
     {
-        Backend = backend;
+        NativeBackend = backend;
     }
 
-    internal SdlInputBackend Backend { get; }
+    internal ISdl NativeBackend { get; }
     private Box2D<float> Bounds2D
     {
         get
@@ -36,7 +36,13 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
 
     public Box3D<float> Bounds { get; private set; }
 
-    public void UpdateBounds() => Bounds = CalculateBounds();
+    public bool UpdateBounds()
+    {
+        var previous = Bounds;
+        Bounds = CalculateBounds();
+        return previous != Bounds;
+    }
+
     protected abstract Box3D<float> CalculateBounds();
 
     /// <inheritdoc />
@@ -44,6 +50,21 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
 
     /// <inheritdoc />
     public TargetPoint GetPoint(IPointerDevice pointer, int point) => PointerTargetExtensions.GetPoint(this, pointer, point);
+
+
+    public void Move(Vector2D<float> newPosXy)
+    {
+        var currentSize = Bounds.Size;
+        var newPos = new Vector3D<float>(newPosXy.X, newPosXy.Y, 0);
+        Bounds = new Box3D<float>(newPos, newPos + currentSize);
+    }
+
+    public void Resize(Vector2D<float> newSize2)
+    {
+        var currentPos = Bounds.Min;
+        var newSize = new Vector3D<float>(newSize2.X, newSize2.Y, 0);
+        Bounds = new Box3D<float>(currentPos, currentPos + newSize);
+    }
 
     public static unsafe Box2D<float> CalculateAllDisplayBounds(ISdl sdl)
     {
@@ -96,7 +117,7 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
     public static unsafe Box2D<float> CalculateWindowBounds(ISdl sdl, WindowHandle window)
     {
         Vector2D<int> windowSize = default;
-        var gotSize = sdl.GetWindowSize(window, &windowSize.X, &windowSize.Y);;
+        var gotSize = sdl.GetWindowSize(window, &windowSize.X, &windowSize.Y);
         if (gotSize == 0)
         {
             SdlLog.Error("Failed to get window size for window.");

@@ -3,12 +3,13 @@
 
 using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 using Silk.NET.Maths;
+using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 internal sealed class SimulatedPointerTarget : SdlBoundedPointerTarget, ISimulatedPointerTarget
 {
-    public SimulatedPointerTarget(SdlInputBackend backend) : base(backend)
+    public SimulatedPointerTarget(ISdl backend) : base(backend)
     {
     }
 

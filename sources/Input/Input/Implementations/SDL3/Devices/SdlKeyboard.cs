@@ -7,6 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.KeyHandling;
 using Silk.NET.Input.SDL3.DataStructures;
+using Silk.NET.Input.SDL3.Extensions;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
@@ -15,6 +16,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 {
     public KeyboardState State { get; }
     public override string Name => NativeBackend.GetKeyboardNameForID((uint)SdlDeviceId).ReadToString();
+
     public string? ClipboardText
     {
         get => NativeBackend.HasClipboardText() ? NativeBackend.GetClipboardText().ReadToString() : null;
@@ -23,7 +25,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     private bool _hasUpdates;
 
-    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
+    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated,
+        SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
         var namePtr = backend.Sdl.GetKeyboardNameForID((uint)sdlDeviceId);
 
@@ -48,7 +51,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         };
     }
 
-    private SdlKeyboard(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
+    private SdlKeyboard(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId,
+        sdlDeviceId)
     {
         _modState = NativeBackend.GetModState();
         _keyStates = new ButtonStates();
@@ -61,7 +65,6 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
     {
-
     }
 
     protected override void Release()
@@ -81,9 +84,21 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
     public void BeginInput()
     {
         var sdlWindow = Backend.FocusedWindow;
-        if (sdlWindow != null && NativeBackend.StartTextInput(sdlWindow.Value))
+        if (sdlWindow != null)
         {
-            BeginRecordingSdl(sdlWindow.Value);
+            if (!NativeBackend.SetWindowKeyboardGrab(sdlWindow.Value, true))
+            {
+                SdlLog.Debug("Failed to grab keyboard");
+            }
+
+            if (NativeBackend.StartTextInput(sdlWindow.Value))
+            {
+                BeginRecordingSdl(sdlWindow.Value);
+            }
+            else
+            {
+                _textRecordState = TextRecorderState.RecordingNoSdl;
+            }
         }
         else
         {
@@ -97,6 +112,13 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
     {
         _textRecordState = TextRecorderState.RecordingSdl;
         _textEntryWindow = sdlWindow;
+        if (!NativeBackend.HasKeyboard() &&
+            NativeBackend.HasScreenKeyboardSupport() &&
+            !NativeBackend.ScreenKeyboardShown(sdlWindow) &&
+            NativeBackend.GetGrabbedWindow() != sdlWindow)
+        {
+            NativeBackend.SetWindowKeyboardGrab(sdlWindow, (byte)0x1);
+        }
     }
 
     public string? EndInput()
@@ -116,8 +138,10 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
                 {
                     NativeBackend.StopTextInput(sdlWindow.Value);
                 }
+
                 break;
         }
+
         _textRecordState = TextRecorderState.None;
         return _textRecorder?.ConsumeInput();
     }
@@ -149,7 +173,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         if (shouldRecord)
         {
             _textRecorder ??= new TextRecorder(null);
-            if(_textRecorder.AddKeyStroke(keyName, this, out var newChar))
+            if (_textRecorder.AddKeyStroke(keyName, this, out var newChar))
             {
                 KeyCharEvents.Enqueue(new KeyCharEvent(this, timestamp, newChar.Value), key.Timestamp);
             }
@@ -191,7 +215,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         else if (evt.WindowID != NativeBackend.GetWindowID(_textEntryWindow.Value))
         {
             InputLog.Error("Received text editing event for a different window than the " +
-                                    "one we're recording text for.");
+                           "one we're recording text for.");
         }
 
         _textRecorder ??= new TextRecorder(null);
@@ -242,7 +266,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         else if (evt.WindowID != NativeBackend.GetWindowID(_textEntryWindow.Value))
         {
             InputLog.Error("Received text input event for a different window than the " +
-                                    "one we're recording text for.");
+                           "one we're recording text for.");
         }
 
 
@@ -255,7 +279,9 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     private WindowHandle? _textEntryWindow;
     private TextRecorder? _textRecorder;
-    private enum TextRecorderState {None, RecordingNoSdl, RecordingSdl}
+
+    private enum TextRecorderState { None, RecordingNoSdl, RecordingSdl }
+
     private TextRecorderState _textRecordState;
     private ushort _modState;
     private const float _pressureMultiplier = 1f / 255f;
@@ -269,7 +295,6 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
         static ButtonStates()
         {
-
         }
 
         public void SetKeyState(KeyName key, byte pressure)

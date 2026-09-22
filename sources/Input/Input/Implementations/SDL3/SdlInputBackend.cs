@@ -3,9 +3,6 @@
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using Silk.NET.Input.SDL3.DataStructures;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
 using Silk.NET.Input.SDL3.Devices.Pointers;
 using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
@@ -27,9 +24,10 @@ internal partial class SdlInputBackend : IInputBackend
 
     public nint Id { get; }
 
-    public IReadOnlyList<IInputDevice> Devices => _eventProcessingArgs.Devices;
+    public IReadOnlyList<IInputDevice> Devices => _deviceRegistry.Devices;
 
-    public WindowHandle? FocusedWindow => _eventProcessingArgs.FocusedWindow;
+    public WindowHandle? FocusedWindow => _focusedWindow;
+    private WindowHandle? _focusedWindow;
 
     public readonly ICursorConfiguration CursorConfiguration;
 
@@ -45,12 +43,6 @@ internal partial class SdlInputBackend : IInputBackend
         {
             throw new ArgumentNullException(nameof(info), "No SDL instance was provided or found.");
         }
-
-        // pre-allocate callbacks
-        _getDisplayHandles = GetDisplayHandles;
-        _getWindowHandles = GetWindowHandles;
-        _getWindowId = GetWindowId;
-        _getDisplayId = GetDisplayId;
 
         // subscribe to SDL events
         _inputSubscriptionEventPtr = new EventFilter(OnEvent);
@@ -69,8 +61,6 @@ internal partial class SdlInputBackend : IInputBackend
         // create our event queue
         _sdlInputEvents = new SdlInputEventContext(timeBasis);
 
-        // create our runtime event processing data structure - convenient for encapsulation purposes
-        _eventProcessingArgs = new ProcessEventArgs(this, _sdlInputEvents.ConnectionEvents, [], [], []);
 
         if (info.Window == nullptr)
         {
@@ -85,7 +75,7 @@ internal partial class SdlInputBackend : IInputBackend
                 throw new ArgumentNullException(nameof(info), "No window was provided and no window had focus.");
             }
 
-            _eventProcessingArgs.FocusedWindow = focusedWindow;
+            _focusedWindow = focusedWindow;
         }
 
         if (!Sdl.InitSubSystem(SdlInitFlags))
@@ -152,14 +142,13 @@ internal partial class SdlInputBackend : IInputBackend
     // (having obviously created a window beforehand but not actually polling events I guess)
     public void Update(IInputHandler? handler = null)
     {
-        ref var eventArgs = ref _eventProcessingArgs;
         Sdl.PumpEvents();
 
         // QUESTION - do we want this before or after the event processing? or should
         // it always just be done in the same way as other input events? e.g. via events
         // windows can change without input events being processed... but who cares? as long as the devices
         // have the latest information when they're updated, we should be good?
-        UpdatePointerTargets(eventArgs.SdlWindowTargets, eventArgs.SdlDisplayTargets);
+        //UpdatePointerTargets();
 
         // actually process the events in-order
 
@@ -169,33 +158,36 @@ internal partial class SdlInputBackend : IInputBackend
         TimedRawSdlEvent? previous = null;
 #endif
 
-        for(var i = 0; i < rawEvents.Length; ++i)
+        for (var i = 0; i < rawEvents.Length; ++i)
         {
             ref readonly var evt = ref rawEvents[i];
 #if DEBUG
-            const string fmt = "Needs pre-sort by {0} timestamp. Please alert maintainer.\nPrevious:{1}\nCurrent:{2}\nDifference: SDL {3} Stopwatch {4}";
+            const string fmt =
+                "Needs pre-sort by {0} timestamp. Please alert maintainer.\nPrevious:{1}\nCurrent:{2}\nDifference: SDL {3} Stopwatch {4}";
             if (previous is { } prev)
             {
                 if (prev.Event.Common.Timestamp > evt.Event.Common.Timestamp)
                 {
                     evt.TimeMinus(prev, out var stopwatchDiff, out var sdlDiff);
-                    InputLog.Error(string.Format(fmt, "SDL", previous?.ToString() ?? "null", evt.ToString(), sdlDiff, stopwatchDiff));
+                    InputLog.Error(string.Format(fmt, "SDL", previous?.ToString() ?? "null", evt.ToString(), sdlDiff,
+                        stopwatchDiff));
                 }
 
                 if (prev.StopwatchTimestamp > evt.StopwatchTimestamp)
                 {
                     evt.TimeMinus(prev, out var stopwatchDiff, out var sdlDiff);
-                    InputLog.Error(string.Format(fmt, "SDL", previous?.ToString() ?? "null", evt.ToString(), sdlDiff, stopwatchDiff));
+                    InputLog.Error(string.Format(fmt, "SDL", previous?.ToString() ?? "null", evt.ToString(), sdlDiff,
+                        stopwatchDiff));
                 }
             }
 
             previous = evt;
 #endif
 
-            ProcessEvent(evt.Event, evt.StopwatchTimestamp, ref eventArgs);
+            ProcessEvent(evt.Event, evt.StopwatchTimestamp, ref _focusedWindow, this);
         }
 
-        var devices = eventArgs.Devices;
+        var devices = _deviceRegistry.Devices;
         for (var index = 0; index < devices.Count; index++)
         {
             var device = devices[index];
@@ -217,7 +209,6 @@ internal partial class SdlInputBackend : IInputBackend
     }
 
 
-
     // ?? [UnmanagedFunctionPointer()]
     private unsafe byte OnEvent(void* arg0, Event* arg1)
     {
@@ -231,25 +222,24 @@ internal partial class SdlInputBackend : IInputBackend
     /// </summary>
     /// <param name="evt"></param>
     /// <param name="timestamp"></param>
-    /// <param name="processEventArgs"></param>
+    /// <param name="focusedWindow"></param>
+    /// <param name="backend"></param>
     /// <seealso href="https://wiki.libsdl.org/SDL3/SDL_EventType"/>
-    private static void ProcessEvent(in Event evt, long timestamp, ref ProcessEventArgs processEventArgs)
+    private static void ProcessEvent(in Event evt, long timestamp, ref WindowHandle? focusedWindow, SdlInputBackend backend)
     {
-        var backend = processEventArgs.Backend;
-
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         var type = (EventType)evt.Common.Type;
 
         switch (type)
         {
             case EventType.GamepadAdded:
-                backend.TryGetOrCreateDevice<SdlGamepad>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp, out _);
+                backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, evt.Common.Timestamp, out _);
                 return;
             case EventType.GamepadRemoved:
                 backend.RemoveDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, evt.Common.Timestamp);
                 return;
             case EventType.JoystickAdded:
-                backend.TryGetOrCreateDevice<SdlJoystick>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp, out _);
+                backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, evt.Common.Timestamp, out _);
                 return;
             case EventType.JoystickRemoved:
                 backend.RemoveDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, evt.Common.Timestamp);
@@ -266,17 +256,12 @@ internal partial class SdlInputBackend : IInputBackend
             case EventType.MouseRemoved:
                 backend.RemoveDevice<SdlMouse>(evt.Mdevice.Which, timestamp, evt.Common.Timestamp);
                 return;
-            case EventType.PenProximityIn:
-                _ = backend.TryGetOrCreateDevice<SdlPen>(evt.Ptouch.Which, timestamp, evt.Common.Timestamp, out _);
-                return;
-            case EventType.PenProximityOut:
-                backend.RemoveDevice<SdlPen>(evt.Ptouch.Which, timestamp, evt.Common.Timestamp);
-                break;
 
             // Keyboard events
             case >= EventType.KeyDown and <= EventType.TextEditingCandidates:
             {
-                if (!backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp, out var keyboard))
+                if (!backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp,
+                        out var keyboard))
                 {
                     return;
                 }
@@ -362,7 +347,8 @@ internal partial class SdlInputBackend : IInputBackend
             // Joystick events
             case >= EventType.JoystickAxisMotion and <= EventType.JoystickUpdateComplete:
             {
-                if (!backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, evt.Common.Timestamp, out var joystick))
+                if (!backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, evt.Common.Timestamp,
+                        out var joystick))
                 {
                     return;
                 }
@@ -373,7 +359,8 @@ internal partial class SdlInputBackend : IInputBackend
                         joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value, evt.Jaxis.Timestamp, timestamp);
                         break;
                     case EventType.JoystickBallMotion:
-                        joystick.AddBallEvent(evt.Jball.Ball, evt.Jball.Xrel, evt.Jball.Yrel, evt.Jball.Timestamp, timestamp);
+                        joystick.AddBallEvent(evt.Jball.Ball, evt.Jball.Xrel, evt.Jball.Yrel, evt.Jball.Timestamp,
+                            timestamp);
                         break;
                     case EventType.JoystickHatMotion:
                         joystick.AddHatEvent(evt.Jhat.Hat, evt.Jhat.Value, evt.Jhat.Timestamp, timestamp);
@@ -398,47 +385,74 @@ internal partial class SdlInputBackend : IInputBackend
             // Mouse events
             case >= EventType.MouseMotion and <= EventType.MouseAdded:
             {
-                if (!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, timestamp, evt.Common.Timestamp, out var mouse))
+                if (!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, timestamp, evt.Common.Timestamp,
+                        out var mouse))
                 {
                     return;
                 }
 
+
                 switch (type)
                 {
                     case EventType.MouseMotion:
-                        mouse.AddMotion(evt.Motion, timestamp);
+                    {
+                        if(backend.TryGetOrCreatePointerTargetForWindow(evt.Motion.WindowID, out var windowTarget))
+                        {
+                            mouse.AddMotion(evt.Motion, windowTarget, timestamp);
+                        }
                         break;
+                    }
                     case EventType.MouseButtonDown:
                     case EventType.MouseButtonUp:
+                    {
                         mouse.AddButtonEvent(evt.Button, timestamp);
                         break;
+                    }
                     case EventType.MouseWheel:
-                        mouse.AddWheelEvent(evt.Wheel, timestamp);
+                    {
+                        if (backend.TryGetOrCreatePointerTargetForWindow(evt.Motion.WindowID, out var windowTarget))
+                        {
+                            mouse.AddWheelEvent(evt.Wheel, windowTarget, timestamp);
+                        }
+
                         break;
+                    }
                 }
 
                 break;
             }
 
             // Pen events
-            case > EventType.PenProximityIn and <= EventType.PenAxis:
+
+            case EventType.PenProximityIn:
+            case EventType.PenProximityOut:
+            case >= EventType.PenProximityIn and <= EventType.PenAxis:
             {
-                Debug.Assert(type != EventType.PenProximityOut);
-
-
                 if (!backend.TryGetOrCreateDevice<SdlPen>(evt.Ptouch.Which, timestamp, evt.Common.Timestamp,
                         out var penDevice))
                 {
                     return;
                 }
 
-
                 switch (type)
                 {
+                    case EventType.PenProximityIn:
+                    case EventType.PenProximityOut:
+                    {
+                        if (backend.TryGetOrCreatePointerTargetForWindow(evt.Pproximity.WindowID, out var windowTarget))
+                        {
+                            penDevice.ProximityEvent(evt: evt.Pproximity, target: windowTarget, proximityIn: type == EventType.PenProximityIn);
+                        }
+
+                        break;
+                    }
                     case EventType.PenDown:
                     case EventType.PenUp:
                     {
-                        penDevice.UpDownEvent(evt.Ptouch, timestamp);
+                        if(backend.TryGetOrCreatePointerTargetForWindow(evt.Ptouch.WindowID, out var windowTarget))
+                        {
+                            penDevice.UpDownEvent(evt.Ptouch, windowTarget, timestamp);
+                        }
                         break;
                     }
                     case EventType.PenButtonDown:
@@ -449,12 +463,19 @@ internal partial class SdlInputBackend : IInputBackend
                     }
                     case EventType.PenMotion:
                     {
-                        penDevice.MotionEvent(evt.Pmotion, timestamp);
+                        if(backend.TryGetOrCreatePointerTargetForWindow(evt.Pmotion.WindowID, out var windowTarget))
+                        {
+                            penDevice.MotionEvent(evt.Pmotion, windowTarget, timestamp);
+                        }
                         break;
                     }
                     case EventType.PenAxis:
                     {
-                        penDevice.AxisEvent(evt.Paxis, timestamp);
+                        if (backend.TryGetOrCreatePointerTargetForWindow(evt.Paxis.WindowID, out var windowTarget))
+                        {
+                            penDevice.AxisEvent(evt.Paxis, windowTarget, timestamp);
+                        }
+
                         break;
                     }
                 }
@@ -467,12 +488,16 @@ internal partial class SdlInputBackend : IInputBackend
             {
                 var finger = evt.Tfinger;
                 var device = finger.TouchID;
-                if (!backend.TryGetOrCreateDevice<SdlTouchSurface>(device, timestamp, evt.Common.Timestamp, out var touchDevice))
+                if (!backend.TryGetOrCreateDevice<SdlTouchSurface>(device, timestamp, evt.Common.Timestamp,
+                        out var touchDevice))
                 {
                     return;
                 }
 
-                touchDevice.Event(finger, (FingerEventType)finger.Type, timestamp);
+                if(backend.TryGetOrCreatePointerTargetForWindow(finger.WindowID, out var windowTarget))
+                {
+                    touchDevice.Event(finger, windowTarget, (FingerEventType)finger.Type, timestamp);
+                }
                 break;
             }
 
@@ -523,43 +548,37 @@ internal partial class SdlInputBackend : IInputBackend
                 //var x = (QueuedEventType.MouseExitedWindow, timestamp);
                 break;
             }
-            case EventType.WindowMoved:
-                break;
-            case EventType.WindowMinimized:
                 break;
             case EventType.WindowFocusGained:
-                processEventArgs.FocusedWindow = processEventArgs.Backend.Sdl.GetWindowFromID(evt.Window.WindowID);
+                focusedWindow = backend.Sdl.GetWindowFromID(evt.Window.WindowID);
                 break;
             case EventType.WindowFocusLost:
-                processEventArgs.FocusedWindow = null;
+                focusedWindow = null;
                 break;
-            case EventType.WindowLeaveFullscreen:
-                break;
+            case EventType.WindowMinimized:
             case EventType.WindowEnterFullscreen:
-                break;
             case EventType.WindowExposed:
-                break;
+            case EventType.WindowLeaveFullscreen:
             case EventType.WindowHidden:
-                break;
-            case EventType.WindowDestroyed:
-                break;
             case EventType.WindowShown:
-                break;
-
-            // window scaling changes:
+            case EventType.WindowRestored:
+            case EventType.WindowMaximized:
+            case EventType.WindowPixelSizeChanged:
+            case EventType.WindowDisplayChanged:
+            case EventType.WindowDisplayScaleChanged:
             case EventType.WindowSafeAreaChanged:
                 break;
+                backend.OnWindowUnclearMotion(evt.Window, timestamp);
+                break;
+            case EventType.WindowMoved:
+                backend.OnWindowMove(evt.Window, timestamp);
+                break;
+            case EventType.WindowDestroyed:
+                backend.OnWindowDestroyed(evt.Window, timestamp);
+                break;
+
             case EventType.WindowResized:
-                break;
-            case EventType.WindowRestored:
-                break;
-            case EventType.WindowMaximized:
-                break;
-            case EventType.WindowPixelSizeChanged:
-                break;
-            case EventType.WindowDisplayChanged:
-                break;
-            case EventType.WindowDisplayScaleChanged:
+                backend.OnWindowResized(evt.Window, timestamp);
                 break;
         }
 
@@ -585,42 +604,6 @@ internal partial class SdlInputBackend : IInputBackend
 
     ~SdlInputBackend() => ReleaseUnmanagedResources();
 
-    internal unsafe bool TryGetPointerTargetForWindow(WindowHandle window,
-        [NotNullWhen(true)] out IPointerTarget? target)
-    {
-        if (window.Handle == null)
-        {
-            target = null;
-            return false;
-        }
-
-        var id = Sdl.GetWindowID(window);
-        return TryGetPointerTargetForWindow(id, out target);
-    }
-
-    internal bool TryGetPointerTargetForWindow(uint id,
-        [NotNullWhen(true)] out IPointerTarget? target)
-    {
-        if (id == 0)
-        {
-            target = null;
-            return false;
-        }
-
-        for (var i = 0; i < _eventProcessingArgs.SdlWindowTargets.Count; ++i)
-        {
-            var t = _eventProcessingArgs.SdlWindowTargets[i];
-            if (t.Id == id)
-            {
-                target = t;
-                return true;
-            }
-
-        }
-
-        target = null;
-        return false;
-    }
 
     private readonly struct TimedRawSdlEvent
     {
@@ -633,7 +616,7 @@ internal partial class SdlInputBackend : IInputBackend
             StopwatchTimestamp = timestamp;
         }
 
-        #if DEBUG
+#if DEBUG
         public override string ToString()
         {
             var type = (EventType)Event.Type;
@@ -642,84 +625,28 @@ internal partial class SdlInputBackend : IInputBackend
 
         public void TimeMinus(in TimedRawSdlEvent other, out long stopwatchDiff, out long sdlDiff)
         {
-            stopwatchDiff = StopwatchTimestamp - other.StopwatchTimestamp;
-            sdlDiff = (long)(Event.Common.Timestamp - other.Event.Common.Timestamp);
+            if (StopwatchTimestamp > other.StopwatchTimestamp)
+            {
+                stopwatchDiff = StopwatchTimestamp - other.StopwatchTimestamp;
+            }
+            else
+            {
+                stopwatchDiff = -(other.StopwatchTimestamp - StopwatchTimestamp);
+            }
+
+            if(Event.Common.Timestamp > other.Event.Common.Timestamp)
+            {
+                sdlDiff = (long)(Event.Common.Timestamp - other.Event.Common.Timestamp);
+            }
+            else
+            {
+                sdlDiff = -(long)(other.Event.Common.Timestamp - Event.Common.Timestamp);
+            }
         }
-        #endif
+#endif
     }
 
 
-    /// <summary>
-    /// A struct containing all the data required for processing SDL events.
-    /// This is a struct to prevent additional pointer indirections, but the field is applied to should be considered
-    /// an
-    /// </summary>
-    private struct ProcessEventArgs
-    {
-        public readonly SdlInputBackend Backend;
-        public readonly IReadOnlyList<SdlDevice> Devices => _devices;
-        public WindowHandle? FocusedWindow;
-        public readonly List<SdlWindowTarget> SdlWindowTargets;
-        public readonly List<SdlDisplayTarget> SdlDisplayTargets;
-        private readonly List<SdlDevice> _devices;
-        private readonly ISdlInputEventQueue<ConnectionEvent> _connectionEventQueue;
-        private readonly HashSet<nint> _deviceRegistry = [];
-
-        /// <param name="backend">The SDL input backend that these args are for</param>
-        /// <param name="connectionEventQueue">The event queue for connection events</param>
-        /// <param name="sdlDevices">A list of sdl devices. If not provided, a new list will be allocated.</param>
-        /// <param name="sdlWindowTargets">A list of sdl window targets. If not provided, a new list will be allocated.</param>
-        /// <param name="sdlDisplayTargets">A list of sdl display targets. If not provided, a new list will be allocated.</param>
-        public ProcessEventArgs(SdlInputBackend backend, ISdlInputEventQueue<ConnectionEvent> connectionEventQueue,
-            List<SdlDevice>? sdlDevices = null, List<SdlWindowTarget>? sdlWindowTargets = null,
-            List<SdlDisplayTarget>? sdlDisplayTargets = null)
-        {
-            Backend = backend;
-            _devices = sdlDevices ?? [];
-            SdlWindowTargets = sdlWindowTargets ?? [];
-            SdlDisplayTargets = sdlDisplayTargets ?? [];
-            _connectionEventQueue = connectionEventQueue;
-        }
-
-        public void AddDevice<T>(T device, long timestamp, ulong sdlTimestamp) where T : SdlDevice, ISdlDevice<T>
-        {
-            if (!_deviceRegistry.Add(device.Id))
-            {
-                InputLog.Error($"Tried to add device with id {device.Id} that was already registered");
-                return;
-            }
-
-            _devices.Add(device);
-            _connectionEventQueue.Enqueue(new ConnectionEvent(device, timestamp, true), sdlTimestamp);
-        }
-
-        public bool RemoveDevice<T>(uint id, long timestamp, ulong sdlTimestamp, [NotNullWhen(true)] out SdlDevice? device) where T : SdlDevice, ISdlDevice<T>
-        {
-            var deviceIdx = _devices.FindIndex(x => x is T && x.SdlDeviceId == id);
-
-            if (deviceIdx == -1)
-            {
-                // we never used this device to begin with, so just ignore its removal
-                device = null;
-                return false;
-            }
-
-            device = _devices[deviceIdx];
-            device.Dispose();
-            _devices.RemoveAt(deviceIdx);
-            // note - registration is handled in the device ID creation process
-            if (!_deviceRegistry.Remove(device.Id))
-            {
-                InputLog.Error($"Tried to unregister device with id {device.Id} that was not registered");
-                return false;
-            }
-
-            _connectionEventQueue.Enqueue(new ConnectionEvent(device, timestamp, false), sdlTimestamp);
-            return true;
-        }
-
-        public bool ContainsDevice(nint uniqueId) => _deviceRegistry.Contains(uniqueId);
-    }
 
     internal enum FingerEventType : uint
     {
@@ -748,14 +675,13 @@ internal partial class SdlInputBackend : IInputBackend
         BoundedPointerTargetUpdate,
     }
 
-    // NOTE: Be careful where these are used!
-    private ProcessEventArgs _eventProcessingArgs;
+    private readonly DeviceRegistry _deviceRegistry = new([]);
     private NativeMemory<TimedRawSdlEvent> _rawEvents;
 
     private readonly EventFilter _inputSubscriptionEventPtr;
     private readonly SdlInputEventContext _sdlInputEvents;
-}
 
+}
 
 [Flags]
 internal enum SdlMouseInputFlags : uint

@@ -3,6 +3,7 @@
 
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Silk.NET.Input.SDL3.Extensions;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
@@ -106,17 +107,10 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void Event(in TouchFingerEvent finger, SdlInputBackend.FingerEventType fingerType, long timestamp)
+    public void Event(in TouchFingerEvent finger, IPointerTarget target, SdlInputBackend.FingerEventType fingerType, long timestamp)
     {
         var position = new Vector3(finger.X, finger.Y, 0);
-        if (Backend.TryGetPointerTargetForWindow(finger.WindowID, out var target))
-        {
-            position *= target.Bounds.Size.ToSystem();
-        }
-        else
-        {
-            throw new InvalidOperationException($"Touch device {this} has no target with window id {finger.WindowID}");
-        }
+        position *= target.Bounds.Size.ToSystem();
 
         Event(
             fingerId: (uint)(finger.FingerID % int.MaxValue),

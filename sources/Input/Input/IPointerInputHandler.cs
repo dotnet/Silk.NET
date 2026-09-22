@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Silk.NET.Input;
 
 /// <summary>
@@ -23,4 +25,14 @@ public interface IPointerInputHandler : IButtonInputHandler<PointerButton>, IInp
     /// </summary>
     /// <param name="event">The event details.</param>
     void HandleGripChanged(PointerGripChangedEvent @event);
+
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IInputHandler<PointerTargetChangedEvent>.Handle(PointerTargetChangedEvent @event) => HandleTargetChanged(@event);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IInputHandler<PointChangedEvent>.Handle(PointChangedEvent @event) => HandlePointChanged(@event);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IInputHandler<PointerGripChangedEvent>.Handle(PointerGripChangedEvent @event) => HandleGripChanged(@event);
 }

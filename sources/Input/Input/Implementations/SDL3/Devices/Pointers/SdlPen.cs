@@ -3,6 +3,7 @@
 
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Silk.NET.Input.SDL3.Extensions;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
@@ -82,9 +83,9 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
     {
     }
 
-    public void UpDownEvent(in PenTouchEvent evt, long timestamp)
+    public void UpDownEvent(in PenTouchEvent evt, IPointerTarget target, long timestamp)
     {
-        MotionEvent(evt.WindowID, evt.X, evt.Y, evt.Timestamp, timestamp);
+        MotionEvent(target, evt.X, evt.Y, evt.Timestamp, timestamp);
 
         if (evt.Down > 0)
         {
@@ -100,11 +101,10 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
 
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void MotionEvent(in PenMotionEvent evt, long timestamp) => MotionEvent(evt.WindowID, evt.X, evt.Y, evt.Timestamp, timestamp);
+    public void MotionEvent(in PenMotionEvent evt, IPointerTarget target, long timestamp) => MotionEvent(target, evt.X, evt.Y, evt.Timestamp, timestamp);
 
-    private void MotionEvent(in uint windowId, float x, float y, ulong sdlTimestamp, long timestamp)
+    private void MotionEvent(IPointerTarget target, float x, float y, ulong sdlTimestamp, long timestamp)
     {
-        Backend.TryGetPointerTargetForWindow(windowId, out var target);
         AddOrUpdatePoint(
             touchId: null,
             target: target,
@@ -141,9 +141,8 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         Button5,
     }
 
-    public void AxisEvent(in PenAxisEvent evt, long timestamp)
+    public void AxisEvent(in PenAxisEvent evt, IPointerTarget target, long timestamp)
     {
-        Backend.TryGetPointerTargetForWindow(evt.WindowID, out var target);
         switch (evt.Axis)
         {
             case PenAxis.Pressure:
@@ -188,4 +187,26 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
             }
         }
     }
+
+    // ReSharper disable once ArrangeMethodOrOperatorBody
+    public void ProximityEvent(in PenProximityEvent evt, IPointerTarget target, bool proximityIn)
+    {
+        // quoting the documentation:
+
+        // "Not all platforms have a window associated with the pen during proximity events.
+        // Some wait until motion/button/etc events to offer this info."
+        // for the sake of uniformity of logic across platforms, we will simply ignore the window provided by this
+        // proximity event
+
+        // we also don't really need to do anything here since there's no useful information provided by this event
+        // aside from that window information
+
+        // as a result, the only consequence of this event being raised is that we will have guaranteed that we have
+        // a pen device to handle subsequent input events
+
+        // however, we will store the proximity state of this device for future reference / debugging purposes
+        IsNear = proximityIn;
+    }
+
+    public bool IsNear { get; private set; }
 }

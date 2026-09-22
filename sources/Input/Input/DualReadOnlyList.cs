@@ -12,12 +12,11 @@ public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
     /// <summary>
     /// Represents a list that has exactly two elements.
     /// </summary>
-    /// <typeparam name="T">The element type.</typeparam>
 
-    public DualReadOnlyList(Func<T> left, Func<T> right)
+    public DualReadOnlyList(Func<T> getLeft, Func<T> getRight)
     {
-        _left = left;
-        _right = right;
+        _getLeft = getLeft;
+        _getRight = getRight;
     }
 
     /// <summary>
@@ -26,7 +25,7 @@ public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
     public T Left
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => _left();
+        get => _getLeft();
     }
 
     /// <summary>
@@ -35,15 +34,15 @@ public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
     public T Right
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get => _right();
+        get => _getRight();
     }
 
 
     /// <inheritdoc />
     public IEnumerator<T> GetEnumerator()
     {
-        yield return _left();
-        yield return _right();
+        yield return _getLeft();
+        yield return _getRight();
     }
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
@@ -55,12 +54,12 @@ public readonly struct DualReadOnlyList<T> : IReadOnlyList<T>
     public T this[int index] =>
         index switch
         {
-            0 => _left(),
-            1 => _right(),
+            0 => _getLeft(),
+            1 => _getRight(),
             _ => throw new IndexOutOfRangeException(),
         };
 
 
-    private readonly Func<T> _left;
-    private readonly Func<T> _right;
+    private readonly Func<T> _getLeft;
+    private readonly Func<T> _getRight;
 }

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.DataStructures;
-using Silk.NET.Input.SDL3.Devices.Pointers;
+using Silk.NET.Input.SDL3.Extensions;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
@@ -639,10 +639,6 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             InputLog.Warn("Failed to retrieve touch surface for gamepad input");
             return;
         }
-
-        Debug.Assert(surface.IsSimulated);
-        Debug.Assert(surface.Targets.Count == 1);
-        Debug.Assert(surface.Targets[0] == target);
 
         target.SetBounds(bounds);
         var fingerId = evt.Finger;

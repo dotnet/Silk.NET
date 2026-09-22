@@ -3,6 +3,7 @@
 
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Silk.NET.Input.SDL3.Extensions;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
@@ -32,24 +33,10 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         ApplyMouseButtonState(mouseInputFlags, sdlTimestamp, timestamp);
 
         var window = NativeBackend.GetMouseFocus();
-        uint windowId;
-        if (window == nullptr)
+        if (Backend.TryGetOrCreatePointerTargetForWindow(window, out var target))
         {
-            windowId = 0;
+            AddOrUpdatePoint(null, target, new Vector3(x, y, 0), null, DownState, null, true, sdlTimestamp, timestamp);
         }
-        else
-        {
-            windowId = NativeBackend.GetWindowID(window);
-            if (windowId == 0)
-            {
-                SdlLog.Error("Mouse has no window");
-            }
-        }
-
-
-        // var pressure = _state.Buttons[PointerButton.Primary].Pressure;
-        Backend.TryGetPointerTargetForWindow(windowId, out var target);
-        AddOrUpdatePoint(null, target, new Vector3(x, y, 0), null, DownState, null, true, sdlTimestamp, timestamp);
         // var point = _unboundedPointerTarget.GetPoint(this, 0);
     }
 
@@ -184,13 +171,8 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     /// </summary>
     public bool NeedsPump { get; private set; }
 
-    public void AddMotion(in MouseMotionEvent evtMotion, long timestamp)
+    public void AddMotion(in MouseMotionEvent evtMotion, IPointerTarget target, long timestamp)
     {
-        if (!Backend.TryGetPointerTargetForWindow(evtMotion.WindowID, out var target))
-        {
-            throw new InvalidOperationException("Failed to get pointer target for window");
-        }
-
         AddOrUpdatePoint(null, target, new Vector3(evtMotion.X, evtMotion.Y, 0), 1, null, null,
             evtMotion.WindowID != 0, evtMotion.Timestamp, timestamp);
     }
@@ -211,7 +193,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         AddButtonEvent(button, timestamp, evtButton.Timestamp, evtButton.Down > 0, evtButton.Down * mult);
     }
 
-    public void AddWheelEvent(in MouseWheelEvent evtWheel, long timestamp)
+    public void AddWheelEvent(in MouseWheelEvent evtWheel, IPointerTarget target, long timestamp)
     {
         var pWheelPosition = _state.WheelPosition;
         const float max = 100f;
@@ -230,7 +212,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         AddMouseScrollEvent(
             scrollWheelPosition: _state.WheelPosition = pWheelPosition + delta,
             scrollWheelDelta: delta,
-            windowId: evtWheel.WindowID,
+            target: target,
             sdlTimestamp: evtWheel.Timestamp,
             mousePos: new Vector3(evtWheel.X, evtWheel.Y, 0),
             timestamp: timestamp);
