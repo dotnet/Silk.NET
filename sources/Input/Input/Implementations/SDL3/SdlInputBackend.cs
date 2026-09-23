@@ -604,6 +604,7 @@ internal partial class SdlInputBackend : IInputBackend
         Sdl.QuitSubSystem(_sdlInitFlags);
         _sdlInputEvents.Dispose();
         _rawEvents.Dispose();
+        _timestamps.Dispose();
     }
 
     public void Dispose()
