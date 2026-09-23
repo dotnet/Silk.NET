@@ -15,8 +15,7 @@ internal abstract partial class SdlPointerDevice
     private ISimulatedPointerTarget? _falseTarget;
     private readonly List<IPointerTarget> _myPointerTargets = new();
 
-    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget target, long timestamp, ulong sdlTimestamp,
-        uint touchId,
+    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget target, long timestamp, uint touchId,
         in Vector3? positionOnTarget, Ray3D<float>? ray, float? pressure, out TargetPoint? oldPoint)
     {
         if (touchId != 0 && OnePointOnly)
@@ -98,8 +97,7 @@ internal abstract partial class SdlPointerDevice
                     Target: target,
                     IsAdded: true,
                     OldBounds: default,
-                    NewBounds: bounds),
-                sdlTimestamp: sdlTimestamp);
+                    NewBounds: bounds));
         }
     }
 
@@ -145,14 +143,12 @@ internal abstract partial class SdlPointerDevice
         );
     }
 
-    protected void SetPointLookAtTarget(uint? touchId, IPointerTarget target, bool lookAt, ulong sdlTimestamp,
-        long timestamp)
+    protected void SetPointLookAtTarget(uint? touchId, IPointerTarget target, bool lookAt, long timestamp)
     {
         touchId = ValidateTouchId(touchId);
         ref var point = ref CreateOrUpdateTargetPoint(
             target: target,
             timestamp: timestamp,
-            sdlTimestamp: sdlTimestamp,
             touchId: touchId.Value,
             positionOnTarget: null,
             ray: null,
@@ -172,12 +168,10 @@ internal abstract partial class SdlPointerDevice
     /// <param name="pressure">The pressure, set null if it has not changed</param>
     /// <param name="isDown">"Down" status. Set null if has not changed</param>
     /// <param name="ray">The ray - set null if has not changed or is simply computed in 2D without extra calculation</param>
-    /// <param name="sdlTimestamp"></param>
     /// <param name="timestamp"></param>
     /// <exception cref="InvalidOperationException"></exception>
     protected void AddOrUpdatePoint(uint? touchId, IPointerTarget target, in Vector3? pos, float? pressure,
-        bool? isDown,
-        Ray3D<float>? ray, ulong sdlTimestamp, long timestamp)
+        bool? isDown, Ray3D<float>? ray, long timestamp)
     {
         if (pos == null && pressure == null && isDown == null && ray == null)
         {
@@ -189,7 +183,6 @@ internal abstract partial class SdlPointerDevice
         ref var point = ref CreateOrUpdateTargetPoint(
             target: target,
             timestamp: timestamp,
-            sdlTimestamp: sdlTimestamp,
             touchId: touchId.Value,
             positionOnTarget: pos,
             ray: ray,
@@ -197,7 +190,7 @@ internal abstract partial class SdlPointerDevice
             oldPoint: out var oldPoint);
 
         PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint,
-            NewPoint: point), sdlTimestamp);
+            NewPoint: point));
 
         if (isDown is false)
         {
@@ -219,8 +212,7 @@ internal abstract partial class SdlPointerDevice
                     Pointer: this,
                     Timestamp: timestamp,
                     OldPoint: previous,
-                    NewPoint: point),
-                sdlTimestamp: sdlTimestamp);
+                    NewPoint: point));
         }
     }
 
@@ -238,8 +230,7 @@ internal abstract partial class SdlPointerDevice
     }
 
     protected void UpdatePointRay(uint? touchId, IPointerTarget target, float? xTilt, float? yTilt, float? zTwist,
-        float? distance,
-        ulong sdlTimestamp, long timestamp)
+        float? distance, long timestamp)
     {
         if (xTilt == null && yTilt == null && zTwist == null && distance == null)
         {
@@ -251,7 +242,6 @@ internal abstract partial class SdlPointerDevice
         ref var point = ref CreateOrUpdateTargetPoint(
             target: target,
             timestamp: timestamp,
-            sdlTimestamp: sdlTimestamp,
             touchId: touchId.Value,
             positionOnTarget: null,
             ray: null,
@@ -271,7 +261,7 @@ internal abstract partial class SdlPointerDevice
         };
 
         PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint,
-            NewPoint: point), sdlTimestamp);
+            NewPoint: point));
     }
 
     private static void EnsurePointsListCapacity(int index, List<TargetPoint> actualPoints)
@@ -283,18 +273,17 @@ internal abstract partial class SdlPointerDevice
         }
     }
 
-    public void TargetDestroyed(IPointerTarget target, long timestamp, ulong sdlTimestamp)
+    public void TargetDestroyed(IPointerTarget target, long timestamp)
     {
         if (_myPointerTargets.Remove(target))
         {
             var bounds = target.Bounds;
-            TargetEvents.Enqueue(new PointerTargetChangedEvent(this, timestamp, target, false, bounds, bounds),
-                sdlTimestamp);
+            TargetEvents.Enqueue(new PointerTargetChangedEvent(this, timestamp, target, false, bounds, bounds));
         }
     }
 
 
-    public void TargetChanged(SdlWindowTarget target, long timestamp, ulong sdlTimestamp, in Box3D<float> oldBounds)
+    public void TargetChanged(SdlWindowTarget target, long timestamp, in Box3D<float> oldBounds)
     {
         if (_myPointerTargets.Contains(target))
         {
@@ -304,8 +293,7 @@ internal abstract partial class SdlPointerDevice
                     Target: target,
                     IsAdded: null,
                     OldBounds: oldBounds,
-                    NewBounds: target.Bounds),
-                sdlTimestamp);
+                    NewBounds: target.Bounds));
         }
     }
 

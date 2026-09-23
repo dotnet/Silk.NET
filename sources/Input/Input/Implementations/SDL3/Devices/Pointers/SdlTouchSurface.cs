@@ -23,7 +23,7 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, IPointerDevice
 {
     // todo - touch surfaces need to stick around forever?
-    public static SdlTouchSurface CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated,
+    public static SdlTouchSurface CreateDevice(ulong sdlDeviceId, long timestamp, bool isSimulated,
         SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
         var namePtr = backend.Sdl.GetTouchDeviceName(sdlDeviceId);
@@ -81,7 +81,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
     }
 
 
-    protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
+    protected internal override void Initialize(long timestamp)
     {
     }
 
@@ -118,26 +118,22 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
             position: position,
             eventType: fingerType,
             pressure: finger.Pressure,
-            sdlTimestamp: finger.Timestamp,
             timestamp: timestamp);
     }
 
     public void Event(uint fingerId, IPointerTarget target, Vector3 position, SdlInputBackend.FingerEventType eventType,
-        float pressure, ulong sdlTimestamp, long timestamp)
+        float pressure, long timestamp)
     {
         switch (eventType)
         {
             case SdlInputBackend.FingerEventType.Motion:
-                AddOrUpdatePoint(fingerId, target, position, pressure, null, null, sdlTimestamp,
-                    timestamp);
+                AddOrUpdatePoint(fingerId, target, position, pressure, null, null, timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Down:
-                AddOrUpdatePoint(fingerId, target, position, pressure, true, null, sdlTimestamp,
-                    timestamp);
+                AddOrUpdatePoint(fingerId, target, position, pressure, true, null, timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Up:
-                AddOrUpdatePoint(fingerId, target, position, pressure, false, null, sdlTimestamp,
-                    timestamp);
+                AddOrUpdatePoint(fingerId, target, position, pressure, false, null, timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Canceled:
                 break;

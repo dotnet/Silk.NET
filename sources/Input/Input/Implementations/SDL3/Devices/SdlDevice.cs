@@ -46,7 +46,7 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
                                              GetType() == other.GetType() &&
                                              NativeBackend == other.NativeBackend;
 
-    protected internal abstract void Initialize(long timestamp, ulong sdlTimestamp);
+    protected internal abstract void Initialize(long timestamp);
 
     protected abstract void Release();
 

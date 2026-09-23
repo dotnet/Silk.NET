@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.DataStructures;
@@ -175,12 +174,12 @@ internal unsafe partial class SdlInputBackend
 
     */
 
-    public bool TryGetVirtualTouchpad(nint ownerId, int touchpadId, ulong sdlTimestamp, long timestamp,
+    public bool TryGetVirtualTouchpad(nint ownerId, int touchpadId, long timestamp,
         [NotNullWhen(true)] out SdlTouchSurface? device, [NotNullWhen(true)] out ISimulatedPointerTarget? target)
     {
         var hash = HashCode.Combine(ownerId, touchpadId);
         ulong id = Unsafe.As<int, uint>(ref hash);
-        if (!TryGetOrCreateDevice(id, timestamp, sdlTimestamp, out device, isSimulated: true))
+        if (!TryGetOrCreateDevice(id, timestamp, out device, isSimulated: true))
         {
             target = null;
             return false;
@@ -308,7 +307,7 @@ internal unsafe partial class SdlInputBackend
         {
             if (_deviceRegistry.Devices[index] is SdlPointerDevice pointerDevice)
             {
-                pointerDevice.TargetChanged(target, timestamp, evt.Timestamp, oldBounds: bounds);
+                pointerDevice.TargetChanged(target, timestamp, oldBounds: bounds);
             }
         }
     }
@@ -326,7 +325,7 @@ internal unsafe partial class SdlInputBackend
         {
             if (_deviceRegistry.Devices[index] is SdlPointerDevice pointerDevice)
             {
-                pointerDevice.TargetDestroyed(target, timestamp, evt.Timestamp);
+                pointerDevice.TargetDestroyed(target, timestamp);
             }
         }
     }
@@ -350,7 +349,7 @@ internal unsafe partial class SdlInputBackend
         {
             if (_deviceRegistry.Devices[index] is SdlPointerDevice pointerDevice)
             {
-                pointerDevice.TargetChanged(target, timestamp, evt.Timestamp, oldBounds: previous);
+                pointerDevice.TargetChanged(target, timestamp, oldBounds: previous);
             }
         }
     }
@@ -370,7 +369,7 @@ internal unsafe partial class SdlInputBackend
         {
             if (_deviceRegistry.Devices[index] is SdlPointerDevice pointerDevice)
             {
-                pointerDevice.TargetChanged(target, timestamp, evt.Timestamp, oldBounds: target.Bounds);
+                pointerDevice.TargetChanged(target, timestamp, oldBounds: target.Bounds);
             }
         }
     }

@@ -26,7 +26,11 @@ internal struct PinnedGcMemory<T> : IDisposable where T : struct
     /// </summary>
     public ref readonly T UnsafeGetRef(int index) => ref _array[index];
 
-    public int Count => _actualCount;
+    public int Count
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => _actualCount;
+    }
 
     public void Add(in T value)
     {

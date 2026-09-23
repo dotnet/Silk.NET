@@ -3,6 +3,7 @@
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.SDL;
 
@@ -256,6 +257,7 @@ internal sealed class TextRecorder
     /// <param name="textPtr"></param>
     /// <param name="cursorStart">The cursor position in the buffer to inject</param>
     /// <param name="textLength"></param>
+    [SkipLocalsInit]
     public void InsertTextAt(Ptr<sbyte> textPtr, int cursorStart, int textLength)
     {
         Span<char> textSpan = stackalloc char[textLength];

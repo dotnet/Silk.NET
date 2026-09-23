@@ -50,8 +50,7 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
         }
     }
 
-    protected void AddButtonEvent(PointerButton button, long timestamp, ulong sdlTimestamp, bool isDown,
-        float? pressure = null)
+    protected void AddButtonEvent(PointerButton button, long timestamp, bool isDown, float? pressure = null)
     {
         pressure ??= isDown ? 1.0f : 0.0f;
         var idx = EnumInfo<PointerButton>.ValueIndexOf(button);
@@ -68,8 +67,7 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
 
         if (myButton != original)
         {
-            ButtonEvents.Enqueue(new ButtonChangedEvent<PointerButton>(this, timestamp, myButton, original),
-                sdlTimestamp);
+            ButtonEvents.Enqueue(new ButtonChangedEvent<PointerButton>(this, timestamp, myButton, original));
         }
     }
 
@@ -78,7 +76,7 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
 
     public IReadOnlyList<IPointerTarget> Targets => _myPointerTargets;
 
-    protected void AddMouseScrollEvent(Vector2 scrollWheelPosition, Vector2 scrollWheelDelta, Vector3 mousePos, IPointerTarget target, ulong sdlTimestamp, long timestamp)
+    protected void AddMouseScrollEvent(Vector2 scrollWheelPosition, Vector2 scrollWheelDelta, Vector3 mousePos, IPointerTarget target, long timestamp)
     {
         if (this is not IMouse mouse)
         {
@@ -91,7 +89,6 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
         ref var point = ref CreateOrUpdateTargetPoint(
             target: target,
             timestamp: timestamp,
-            sdlTimestamp: sdlTimestamp,
             touchId: touchId.Value,
             positionOnTarget: mousePos,
             ray: null,
@@ -103,18 +100,17 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
             Timestamp: timestamp,
             Point: point,
             WheelPosition: scrollWheelPosition,
-            Delta: scrollWheelDelta), sdlTimestamp);
+            Delta: scrollWheelDelta));
 
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected void SetGripPressure(float pressure, ulong sdlTimestamp, long timestamp)
+    protected void SetGripPressure(float pressure, long timestamp)
     {
         // todo (LOW PRIO) -
         //  use only the given events to update the state of each input device later based on their event queues?
         //  is that possible? keyboard character input would probably be a problem..
-        GripEvents.Enqueue(new PointerGripChangedEvent(this, timestamp, pressure, pressure - State.GripPressure),
-            sdlTimestamp);
+        GripEvents.Enqueue(new PointerGripChangedEvent(this, timestamp, pressure, pressure - State.GripPressure));
 
         State.GripPressure = pressure;
     }

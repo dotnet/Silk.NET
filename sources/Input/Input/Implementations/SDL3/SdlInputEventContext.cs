@@ -1,10 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using Silk.NET.Input.SDL3.DataStructures;
-using Silk.NET.Input.SDL3.Devices.Pointers;
 
 namespace Silk.NET.Input.SDL3;
 
@@ -16,53 +13,53 @@ namespace Silk.NET.Input.SDL3;
 /// </summary>
 internal sealed class SdlInputEventContext : IDisposable
 {
-    public SdlInputEventQueue<ButtonChangedEvent<JoystickButton>> JoyButtonChangedEvents { get; } = new();
-    public SdlInputEventQueue<ConnectionEvent> ConnectionEvents { get; } = new();
-    public SdlInputEventQueue<KeyChangedEvent> KeyChangedEvents { get; } = new();
-    public SdlInputEventQueue<GamepadThumbstickMoveEvent> GamepadThumbstickMoveEvents { get; } = new();
-    public SdlInputEventQueue<GamepadTriggerMoveEvent> GamepadTriggerMoveEvents { get; } = new();
-    public SdlInputEventQueue<JoystickAxisMoveEvent> JoystickAxisMoveEvents { get; } = new();
-    public SdlInputEventQueue<JoystickHatMoveEvent> JoystickHatMoveEvents { get; } = new();
-    public SdlInputEventQueue<KeyCharEvent> KeyCharEvents { get; } = new();
-    public SdlInputEventQueue<MouseScrollEvent> MouseScrollEvents { get; } = new();
-    public SdlInputEventQueue<PointChangedEvent> PointChangedEvents { get; } = new();
-    public SdlInputEventQueue<PointerClickEvent> PointerClickEvents { get; } = new();
-    public SdlInputEventQueue<PointerGripChangedEvent> PointerGripChangedEvents { get; } = new();
-    public SdlInputEventQueue<PointerTargetChangedEvent> PointerTargetChangedEvents { get; } = new();
-    public SdlInputEventQueue<ButtonChangedEvent<PointerButton>> PointerButtonEvents { get; } = new();
+    public SdlInputEventQueue<ButtonChangedEvent<JoystickButton>> JoyButtonChangedEvents { get; }
+    public SdlInputEventQueue<ConnectionEvent> ConnectionEvents { get; }
+    public SdlInputEventQueue<KeyChangedEvent> KeyChangedEvents { get; }
+    public SdlInputEventQueue<GamepadThumbstickMoveEvent> GamepadThumbstickMoveEvents { get; }
+    public SdlInputEventQueue<GamepadTriggerMoveEvent> GamepadTriggerMoveEvents { get; }
+    public SdlInputEventQueue<JoystickAxisMoveEvent> JoystickAxisMoveEvents { get; }
+    public SdlInputEventQueue<JoystickHatMoveEvent> JoystickHatMoveEvents { get; }
+    public SdlInputEventQueue<KeyCharEvent> KeyCharEvents { get; }
+    public SdlInputEventQueue<MouseScrollEvent> MouseScrollEvents { get; }
+    public SdlInputEventQueue<PointChangedEvent> PointChangedEvents { get; }
+    public SdlInputEventQueue<PointerClickEvent> PointerClickEvents { get; }
+    public SdlInputEventQueue<PointerGripChangedEvent> PointerGripChangedEvents { get; }
+    public SdlInputEventQueue<PointerTargetChangedEvent> PointerTargetChangedEvents { get; }
+    public SdlInputEventQueue<ButtonChangedEvent<PointerButton>> PointerButtonEvents { get; }
 
-    private readonly GenericEventQueueSdl _orderedSdlEvents;
+    private readonly List<GenericEvent> _orderedSdlEvents;
 
-    public SdlInputEventContext(SdlTimestampCalculator.TimeBasis basis) =>
-        _orderedSdlEvents = new GenericEventQueueSdl(basis);
+    public SdlInputEventContext()
+    {
+        var events = _orderedSdlEvents = [];
+        JoyButtonChangedEvents = new SdlInputEventQueue<ButtonChangedEvent<JoystickButton>>(events);
+        ConnectionEvents = new SdlInputEventQueue<ConnectionEvent>(events);
+        KeyChangedEvents = new SdlInputEventQueue<KeyChangedEvent>(events);
+        GamepadThumbstickMoveEvents = new SdlInputEventQueue<GamepadThumbstickMoveEvent>(events);
+        GamepadTriggerMoveEvents = new SdlInputEventQueue<GamepadTriggerMoveEvent>(events);
+        JoystickAxisMoveEvents = new SdlInputEventQueue<JoystickAxisMoveEvent>(events);
+        JoystickHatMoveEvents = new SdlInputEventQueue<JoystickHatMoveEvent>(events);
+        KeyCharEvents = new SdlInputEventQueue<KeyCharEvent>(events);
+        MouseScrollEvents = new SdlInputEventQueue<MouseScrollEvent>(events);
+        PointChangedEvents = new SdlInputEventQueue<PointChangedEvent>(events);
+        PointerClickEvents = new SdlInputEventQueue<PointerClickEvent>(events);
+        PointerGripChangedEvents = new SdlInputEventQueue<PointerGripChangedEvent>(events);
+        PointerTargetChangedEvents = new SdlInputEventQueue<PointerTargetChangedEvent>(events);
+        PointerButtonEvents = new SdlInputEventQueue<ButtonChangedEvent<PointerButton>>(events);
+    }
 
     public void RaiseEvents(params Span<IInputHandler> handlers)
     {
-        _orderedSdlEvents.LoadAndReset(JoyButtonChangedEvents);
-        _orderedSdlEvents.LoadAndReset(ConnectionEvents);
-        _orderedSdlEvents.LoadAndReset(KeyChangedEvents);
-        _orderedSdlEvents.LoadAndReset(GamepadThumbstickMoveEvents);
-        _orderedSdlEvents.LoadAndReset(GamepadTriggerMoveEvents);
-        _orderedSdlEvents.LoadAndReset(JoystickAxisMoveEvents);
-        _orderedSdlEvents.LoadAndReset(JoystickHatMoveEvents);
-        _orderedSdlEvents.LoadAndReset(KeyCharEvents);
-        _orderedSdlEvents.LoadAndReset(MouseScrollEvents);
-        _orderedSdlEvents.LoadAndReset(PointChangedEvents);
-        _orderedSdlEvents.LoadAndReset(PointerClickEvents);
-        _orderedSdlEvents.LoadAndReset(PointerGripChangedEvents);
-        _orderedSdlEvents.LoadAndReset(PointerTargetChangedEvents);
-        _orderedSdlEvents.LoadAndReset(PointerButtonEvents);
-
-
         if (handlers is { Length: > 0 })
         {
-            try
+            var genericEvents = System.Runtime.InteropServices.CollectionsMarshal.AsSpan(_orderedSdlEvents);
+            for (var index = 0; index < genericEvents.Length; index++)
             {
-                var genericEvents = _orderedSdlEvents.Sorted();
+                ref readonly var evt = ref genericEvents[index];
 
-                for (var index = 0; index < genericEvents.Length; index++)
+                try
                 {
-                    ref readonly var evt = ref genericEvents[index];
                     switch (evt.Type)
                     {
                         case SdlEventDiscriminator.PointChanged:
@@ -136,18 +133,34 @@ internal sealed class SdlInputEventContext : IDisposable
                             throw new InvalidOperationException("Invalid type: " + evt.Type);
                     }
                 }
-            }
-            catch (Exception e)
-            {
-                InputLog.Error(e.ToString());
+                catch (Exception e)
+                {
+                    InputLog.Error(e.ToString());
+                }
             }
         }
 
         _orderedSdlEvents.Clear();
+        // clear all
+        JoyButtonChangedEvents.ResetCount();
+        ConnectionEvents.ResetCount();
+        KeyChangedEvents.ResetCount();
+        GamepadThumbstickMoveEvents.ResetCount();
+        GamepadTriggerMoveEvents.ResetCount();
+        JoystickAxisMoveEvents.ResetCount();
+        JoystickHatMoveEvents.ResetCount();
+        KeyCharEvents.ResetCount();
+        MouseScrollEvents.ResetCount();
+        PointChangedEvents.ResetCount();
+        PointerClickEvents.ResetCount();
+        PointerGripChangedEvents.ResetCount();
+        PointerTargetChangedEvents.ResetCount();
+        PointerButtonEvents.ResetCount();
 
         return;
 
-        static void RaiseEvent<TItem>(ref readonly Span<IInputHandler> handlers, ref readonly TItem evt) where TItem : struct
+        static void RaiseEvent<TItem>(ref readonly Span<IInputHandler> handlers, ref readonly TItem evt)
+            where TItem : struct
         {
             for (var index = 0; index < handlers.Length; ++index)
             {
@@ -183,53 +196,5 @@ internal sealed class SdlInputEventContext : IDisposable
         PointerGripChangedEvents.Dispose();
         PointerTargetChangedEvents.Dispose();
         _orderedSdlEvents.Clear();
-    }
-
-
-    private sealed class GenericEventQueueSdl
-    {
-        private readonly SdlTimestampCalculator.TimeBasis _basis;
-        private readonly List<GenericEvent> _events = [];
-        public GenericEventQueueSdl(SdlTimestampCalculator.TimeBasis basis) => _basis = basis;
-
-        public void LoadAndReset<T>(in SdlInputEventQueue<T> queueSdl) where T : struct
-        {
-            var sdlTimestamps = queueSdl.SdlTimestamps;
-            for (var i = 0; i < queueSdl.Count; i++)
-            {
-                var genericEvent = new GenericEvent(
-                    Queue: queueSdl,
-                    Index: i,
-                    Type: SdlInputEventQueue<T>.TypeDiscriminator,
-                    Timestamp: SdlTimestampCalculator.ToTimestamp(sdlTimestamps[i], _basis));
-
-                _events.Add(genericEvent);
-            }
-
-            queueSdl.ResetCount();
-        }
-
-        public Span<GenericEvent> Sorted()
-        {
-            var valuesToSort = CollectionsMarshal.AsSpan(_events);
-            valuesToSort.StableSort(_timestampComparer);
-            return valuesToSort;
-        }
-
-        private static readonly Comparison<GenericEvent> _timestampComparer =
-            (timeA, timeB) => timeA.Timestamp.CompareTo(timeB.Timestamp);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Clear() => _events.Clear();
-
-
-        internal readonly record struct GenericEvent(object Queue, int Index, SdlEventDiscriminator Type, FractionalTimestamp Timestamp)
-        {
-            public ref readonly T Value<T>() where T : struct
-            {
-                var queue = (SdlInputEventQueue<T>)Queue;
-                return ref queue.UnsafeGetRef(Index);
-            }
-        }
     }
 }

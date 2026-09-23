@@ -10,14 +10,14 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
 {
-    public SdlPen(SdlInputBackend backend, nint silkId, ulong sdlDeviceId, string name) :
+    private SdlPen(SdlInputBackend backend, nint silkId, ulong sdlDeviceId, string name) :
         base(backend, silkId, sdlDeviceId)
     {
         Name = name;
         State = new PointerState(Buttons, StatePoints);
     }
 
-    public static SdlPen CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
+    public static SdlPen CreateDevice(ulong sdlDeviceId, long timestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
         nint uniqueId = 0;
 
@@ -71,7 +71,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         get;
     }
 
-    protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
+    protected internal override void Initialize(long timestamp)
     {
     }
 
@@ -81,26 +81,25 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
 
     public void UpDownEvent(ref readonly PenTouchEvent evt, IPointerTarget target, long timestamp)
     {
-        MotionEvent(target, evt.X, evt.Y, evt.Timestamp, timestamp);
+        MotionEvent(target, evt.X, evt.Y, timestamp);
 
         if (evt.Down > 0)
         {
             const float divisor = 1f / 255f;
             var downPressure = evt.Down * divisor;
-            AddButtonEvent(PointerButton.Primary, timestamp, evt.Timestamp, true, downPressure);
+            AddButtonEvent(PointerButton.Primary, timestamp, true, downPressure);
         }
         else
         {
-            AddButtonEvent(PointerButton.Primary, timestamp, evt.Timestamp, false, 0);
+            AddButtonEvent(PointerButton.Primary, timestamp, false, 0);
         }
     }
 
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void MotionEvent(ref readonly PenMotionEvent evt, IPointerTarget target, long timestamp) => MotionEvent(target, evt.X, evt.Y, evt.Timestamp, timestamp);
+    public void MotionEvent(ref readonly PenMotionEvent evt, IPointerTarget target, long timestamp) => MotionEvent(target, evt.X, evt.Y, timestamp);
 
-    private void MotionEvent(IPointerTarget target, float x, float y, ulong sdlTimestamp, long timestamp)
-    {
+    private void MotionEvent(IPointerTarget target, float x, float y, long timestamp) =>
         AddOrUpdatePoint(
             touchId: null,
             target: target,
@@ -108,9 +107,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
             pressure: null,
             isDown: null,
             ray: null,
-            sdlTimestamp: sdlTimestamp,
             timestamp: timestamp);
-    }
 
     public void ButtonEvent(ref readonly PenButtonEvent evt, long timestamp)
     {
@@ -124,7 +121,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
             _ => throw new ArgumentOutOfRangeException(nameof(button), button, null)
         };
 
-        AddButtonEvent(pointerButton, timestamp, evt.Timestamp, evt.Down > 0, evt.Down / 255f);
+        AddButtonEvent(pointerButton, timestamp, evt.Down > 0, evt.Down / 255f);
     }
 
     private enum SdlPenButton : byte
@@ -142,27 +139,27 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         {
             case PenAxis.Pressure:
             {
-                AddOrUpdatePoint(null, target, new Vector3(evt.X, evt.Y, 0), evt.Value, null, null, evt.Timestamp, timestamp);
+                AddOrUpdatePoint(null, target, new Vector3(evt.X, evt.Y, 0), evt.Value, null, null, timestamp);
                 break;
             }
             case PenAxis.Xtilt:
             {
-                UpdatePointRay(null, target, evt.Value, null, null, distance: null, evt.Timestamp, timestamp);
+                UpdatePointRay(null, target, evt.Value, null, null, distance: null, timestamp);
                 break;
             }
             case PenAxis.Ytilt:
             {
-                UpdatePointRay(null, target, null, evt.Value, null, distance: null, evt.Timestamp, timestamp);
+                UpdatePointRay(null, target, null, evt.Value, null, distance: null, timestamp);
                 break;
             }
             case PenAxis.Distance:
             {
-                UpdatePointRay(null, target, null, null, null, distance: evt.Value, evt.Timestamp, timestamp);
+                UpdatePointRay(null, target, null, null, null, distance: evt.Value, timestamp);
                 break;
             }
             case PenAxis.Rotation: // barrel rotation
             {
-                UpdatePointRay(null, target, null, null, evt.Value, distance: null, evt.Timestamp, timestamp);
+                UpdatePointRay(null, target, null, null, evt.Value, distance: null, timestamp);
                 break;
             }
             case PenAxis.Slider:
@@ -173,7 +170,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
             }
             case PenAxis.TangentialPressure:
             {
-                SetGripPressure(evt.Value, evt.Timestamp, timestamp);
+                SetGripPressure(evt.Value, timestamp);
                 break;
             }
             default:
@@ -202,6 +199,6 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         // however, we will store the proximity state of this device for future reference / debugging purposes
 
         // update my latest point to be not-looking-at
-        SetPointLookAtTarget(null, target, proximityIn, evt.Timestamp, timestamp);
+        SetPointLookAtTarget(null, target, proximityIn, timestamp);
     }
 }

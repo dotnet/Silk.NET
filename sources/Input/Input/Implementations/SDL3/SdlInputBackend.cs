@@ -3,6 +3,8 @@
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
 using Silk.NET.Input.SDL3.Devices.Pointers;
 using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
@@ -59,10 +61,12 @@ internal partial class SdlInputBackend : IInputBackend
 
         // create cursor
         CursorConfiguration = new SdlCursor(Sdl);
-        var timeBasis = SdlTimestampCalculator.GetHighPrecisionTimeBasis(iterationCount: 4);
+
+        // todo - manage clock drift by semi-regularly recalculating this time basis
+        _timeBasis = SdlTimestampCalculator.GetHighPrecisionTimeBasis(iterationCount: 4);
 
         // create our event queue
-        _sdlInputEvents = new SdlInputEventContext(timeBasis);
+        _sdlInputEvents = new SdlInputEventContext();
 
 
         if (info.Window == nullptr)
@@ -151,21 +155,26 @@ internal partial class SdlInputBackend : IInputBackend
 
         var rawEvents = _rawEvents.AsSpan();
 
-#if DEBUG
-        TimedRawSdlEvent? previous = null;
-#endif
-
+        // timestamp calculations first in a separate loop (for cache locality of calculation logic)
         for (var i = 0; i < rawEvents.Length; ++i)
         {
-            ref readonly var evt = ref rawEvents[i];
-#if DEBUG
-            DebugTiming(evt, ref previous);
-#endif
+            ref readonly var sdlTimestamp = ref rawEvents[i].Common.Timestamp;
+            var timestamp = SdlTimestampCalculator.ToTimestamp(sdlTimestamp, _timeBasis);
+            _timestamps.Enqueue(in timestamp);
+        }
 
-            ProcessEvent(evt.Event, evt.StopwatchTimestamp, ref _focusedWindow, this);
+        var timestamps = _timestamps.AsSpan();
+
+        Debug.Assert(rawEvents.Length == timestamps.Length);
+
+        // actually process the events
+        for (var i = 0; i < rawEvents.Length; ++i)
+        {
+            ProcessEvent(ref rawEvents[i], timestamps[i], ref _focusedWindow, this);
         }
 
         _rawEvents.ResetCount();
+        _timestamps.ResetCount();
 
         var devices = _deviceRegistry.Devices;
         for (var index = 0; index < devices.Count; index++)
@@ -191,42 +200,13 @@ internal partial class SdlInputBackend : IInputBackend
         {
             _sdlInputEvents.RaiseEvents(handler);
         }
-
-#if DEBUG
-        return;
-
-        static void DebugTiming(in TimedRawSdlEvent evt, [NotNull] ref TimedRawSdlEvent? previous)
-        {
-            const string fmt =
-                "Needs pre-sort by {0} timestamp. Please alert maintainer.\nPrevious:{1}\nCurrent:{2}\nDifference: SDL {3} Stopwatch {4}";
-            if (previous is { } prev)
-            {
-                if (prev.Event.Common.Timestamp > evt.Event.Common.Timestamp)
-                {
-                    evt.TimeMinus(prev, out var stopwatchDiff, out var sdlDiff);
-                    InputLog.Error(string.Format(fmt, "SDL", previous.ToString(), evt.ToString(), sdlDiff,
-                        stopwatchDiff));
-                }
-
-                if (prev.StopwatchTimestamp > evt.StopwatchTimestamp)
-                {
-                    evt.TimeMinus(prev, out var stopwatchDiff, out var sdlDiff);
-                    InputLog.Error(string.Format(fmt, "SDL", previous.ToString(), evt.ToString(), sdlDiff,
-                        stopwatchDiff));
-                }
-            }
-
-            previous = evt;
-        }
-#endif
     }
 
 
     // ?? [UnmanagedFunctionPointer()]
     private unsafe byte OnEvent(void* arg0, Event* arg1)
     {
-        var timestamp = Stopwatch.GetTimestamp();
-        _rawEvents.Add(new TimedRawSdlEvent(*arg1, timestamp));
+        _rawEvents.Enqueue(ref Unsafe.AsRef<Event>(arg1));
         return 1;
     }
 
@@ -238,7 +218,7 @@ internal partial class SdlInputBackend : IInputBackend
     /// <param name="focusedWindow"></param>
     /// <param name="backend"></param>
     /// <seealso href="https://wiki.libsdl.org/SDL3/SDL_EventType"/>
-    private static void ProcessEvent(in Event evt, long timestamp, ref WindowHandle? focusedWindow, SdlInputBackend backend)
+    private static void ProcessEvent(ref readonly Event evt, long timestamp, ref WindowHandle? focusedWindow, SdlInputBackend backend)
     {
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         var type = (EventType)evt.Common.Type;
@@ -246,35 +226,34 @@ internal partial class SdlInputBackend : IInputBackend
         switch (type)
         {
             case EventType.GamepadAdded:
-                backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, evt.Common.Timestamp, out _);
+                backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, out _);
                 return;
             case EventType.GamepadRemoved:
-                backend.RemoveDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, evt.Common.Timestamp);
+                backend.RemoveDevice<SdlGamepad>(evt.Gdevice.Which, timestamp);
                 return;
             case EventType.JoystickAdded:
-                backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, evt.Common.Timestamp, out _);
+                backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, out _);
                 return;
             case EventType.JoystickRemoved:
-                backend.RemoveDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, evt.Common.Timestamp);
+                backend.RemoveDevice<SdlJoystick>(evt.Jdevice.Which, timestamp);
                 return;
             case EventType.KeyboardAdded:
-                backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp, out _);
+                backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, out _);
                 return;
             case EventType.KeyboardRemoved:
-                backend.RemoveDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp);
+                backend.RemoveDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp);
                 return;
             case EventType.MouseAdded:
-                backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, timestamp, evt.Common.Timestamp, out _);
+                backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, timestamp, out _);
                 return;
             case EventType.MouseRemoved:
-                backend.RemoveDevice<SdlMouse>(evt.Mdevice.Which, timestamp, evt.Common.Timestamp);
+                backend.RemoveDevice<SdlMouse>(evt.Mdevice.Which, timestamp);
                 return;
 
             // Keyboard events
             case >= EventType.KeyDown and <= EventType.TextEditingCandidates:
             {
-                if (!backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, evt.Common.Timestamp,
-                        out var keyboard))
+                if (!backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, out var keyboard))
                 {
                     return;
                 }
@@ -304,8 +283,7 @@ internal partial class SdlInputBackend : IInputBackend
             // Gamepad events
             case >= EventType.GamepadAxisMotion and <= EventType.GamepadSteamHandleUpdated:
             {
-                if (!backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, evt.Common.Timestamp,
-                        out var gamepad))
+                if (!backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, out var gamepad))
                 {
                     return;
                 }
@@ -320,7 +298,7 @@ internal partial class SdlInputBackend : IInputBackend
                         // gamepad.AddButtonEvent(evt.Gbutton.Button, evt.Gbutton.Down, evt.Gbutton.Timestamp, timestamp);
                         break;
                     case EventType.GamepadRemapped:
-                        gamepad.Remap(timestamp, evt.Common.Timestamp);
+                        gamepad.Remap(timestamp);
                         break;
 
                     // todo - sensor + touchpad
@@ -360,8 +338,7 @@ internal partial class SdlInputBackend : IInputBackend
             // Joystick events
             case >= EventType.JoystickAxisMotion and <= EventType.JoystickUpdateComplete:
             {
-                if (!backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, evt.Common.Timestamp,
-                        out var joystick))
+                if (!backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, out var joystick))
                 {
                     return;
                 }
@@ -369,18 +346,18 @@ internal partial class SdlInputBackend : IInputBackend
                 switch (type)
                 {
                     case EventType.JoystickAxisMotion:
-                        joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value, evt.Jaxis.Timestamp, timestamp);
+                        joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value, timestamp);
                         break;
                     case EventType.JoystickBallMotion:
                         joystick.AddBallEvent(evt.Jball.Ball, evt.Jball.Xrel, evt.Jball.Yrel, evt.Jball.Timestamp,
                             timestamp);
                         break;
                     case EventType.JoystickHatMotion:
-                        joystick.AddHatEvent(evt.Jhat.Hat, evt.Jhat.Value, evt.Jhat.Timestamp, timestamp);
+                        joystick.AddHatEvent(evt.Jhat.Hat, evt.Jhat.Value, timestamp);
                         break;
                     case EventType.JoystickButtonDown:
                     case EventType.JoystickButtonUp:
-                        joystick.AddButtonEvent(evt.Jbutton.Button, evt.Jbutton.Down, evt.Jbutton.Timestamp, timestamp);
+                        joystick.AddButtonEvent(evt.Jbutton.Button, evt.Jbutton.Down, timestamp);
                         break;
                     case EventType.JoystickBatteryUpdated:
                         break;
@@ -398,8 +375,7 @@ internal partial class SdlInputBackend : IInputBackend
             // Mouse events
             case >= EventType.MouseMotion and <= EventType.MouseAdded:
             {
-                if (!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, timestamp, evt.Common.Timestamp,
-                        out var mouse))
+                if (!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, timestamp, out var mouse))
                 {
                     return;
                 }
@@ -449,8 +425,7 @@ internal partial class SdlInputBackend : IInputBackend
             case EventType.PenProximityOut:
             case >= EventType.PenProximityIn and <= EventType.PenAxis:
             {
-                if (!backend.TryGetOrCreateDevice<SdlPen>(evt.Pproximity.Which, timestamp, evt.Common.Timestamp,
-                        out var penDevice))
+                if (!backend.TryGetOrCreateDevice<SdlPen>(evt.Pproximity.Which, timestamp, out var penDevice))
                 {
                     return;
                 }
@@ -526,8 +501,7 @@ internal partial class SdlInputBackend : IInputBackend
             {
                 var finger = evt.Tfinger;
                 var device = finger.TouchID;
-                if (!backend.TryGetOrCreateDevice<SdlTouchSurface>(device, timestamp, evt.Common.Timestamp,
-                        out var touchDevice))
+                if (!backend.TryGetOrCreateDevice<SdlTouchSurface>(device, timestamp, out var touchDevice))
                 {
                     return;
                 }
@@ -642,48 +616,6 @@ internal partial class SdlInputBackend : IInputBackend
     ~SdlInputBackend() => ReleaseUnmanagedResources();
 
 
-    private readonly struct TimedRawSdlEvent
-    {
-        public readonly long StopwatchTimestamp;
-        public readonly Event Event;
-
-        public TimedRawSdlEvent(Event @event, long timestamp)
-        {
-            Event = @event;
-            StopwatchTimestamp = timestamp;
-        }
-
-#if DEBUG
-        public override string ToString()
-        {
-            var type = (EventType)Event.Type;
-            return $"{type} | SDL Timestamp: {Event.Common.Timestamp} | Stopwatch Timestamp: {StopwatchTimestamp}";
-        }
-
-        public void TimeMinus(in TimedRawSdlEvent other, out long stopwatchDiff, out long sdlDiff)
-        {
-            if (StopwatchTimestamp > other.StopwatchTimestamp)
-            {
-                stopwatchDiff = StopwatchTimestamp - other.StopwatchTimestamp;
-            }
-            else
-            {
-                stopwatchDiff = -(other.StopwatchTimestamp - StopwatchTimestamp);
-            }
-
-            if(Event.Common.Timestamp > other.Event.Common.Timestamp)
-            {
-                sdlDiff = (long)(Event.Common.Timestamp - other.Event.Common.Timestamp);
-            }
-            else
-            {
-                sdlDiff = -(long)(other.Event.Common.Timestamp - Event.Common.Timestamp);
-            }
-        }
-#endif
-    }
-
-
 
     internal enum FingerEventType : uint
     {
@@ -694,11 +626,59 @@ internal partial class SdlInputBackend : IInputBackend
     }
 
     private readonly DeviceRegistry _deviceRegistry = new([]);
-    private PinnedGcMemory<TimedRawSdlEvent> _rawEvents;
 
+    private NativeMemory<long> _timestamps;
+    private NativeMemory<Event> _rawEvents;
+    private readonly SdlTimestampCalculator.TimeBasis _timeBasis;
     private readonly EventFilter _inputSubscriptionEventPtr;
     private readonly SdlInputEventContext _sdlInputEvents;
 
+    private unsafe struct NativeMemory<T> where T : unmanaged
+    {
+        private T* _values;
+        private int _count;
+        private int _capacity;
+        private const int _defaultLength = 16;
+        private static readonly nuint _elementSize = (uint)sizeof(T);
+
+        public void Enqueue(ref readonly T value)
+        {
+            var newCount = _count + 1;
+            if (newCount >= _capacity)
+            {
+                if (_capacity == 0)
+                {
+                    _capacity = _defaultLength;
+                    _values = (T*)NativeMemory.Alloc((nuint)_capacity * _elementSize);
+                }
+                else
+                {
+                    // increase size
+                    _capacity *= 2;
+                    _values = (T*)NativeMemory.Realloc(_values, (nuint)_capacity * _elementSize);
+                }
+            }
+
+
+            _values[_count] = value;
+            _count = newCount;
+        }
+
+        public void Dispose()
+        {
+            if (_values != null)
+            {
+                NativeMemory.Free(_values);
+                _capacity = 0;
+                _count = 0;
+                _values = null;
+            }
+        }
+
+        public Span<T> AsSpan() => new(_values, _count);
+
+        public void ResetCount() => _count = 0;
+    }
 }
 
 [Flags]

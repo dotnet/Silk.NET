@@ -25,7 +25,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     private bool _hasUpdates;
 
-    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated,
+    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, long timestamp, bool isSimulated,
         SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
         var namePtr = backend.Sdl.GetKeyboardNameForID((uint)sdlDeviceId);
@@ -63,7 +63,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
             numLockActive: () => (_modState & Sdl.KmodNum) == Sdl.KmodNum);
     }
 
-    protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
+    protected internal override void Initialize(long timestamp)
     {
     }
 
@@ -175,7 +175,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
             _textRecorder ??= new TextRecorder(null);
             if (_textRecorder.AddKeyStroke(keyName, this, out var newChar))
             {
-                KeyCharEvents.Enqueue(new KeyCharEvent(this, timestamp, newChar.Value), key.Timestamp);
+                KeyCharEvents.Enqueue(new KeyCharEvent(this, timestamp, newChar.Value));
             }
             else
             {
@@ -185,7 +185,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
                     Key: _keyStates[keyName],
                     Previous: button,
                     Modifiers: State.Modifiers,
-                    IsRepeat: isRepeat), key.Timestamp);
+                    IsRepeat: isRepeat));
             }
         }
         else
@@ -196,7 +196,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
                 Key: _keyStates[keyName],
                 Previous: button,
                 Modifiers: State.Modifiers,
-                IsRepeat: isRepeat), key.Timestamp);
+                IsRepeat: isRepeat));
         }
     }
 

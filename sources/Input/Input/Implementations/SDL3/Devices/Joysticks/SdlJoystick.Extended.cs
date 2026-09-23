@@ -31,7 +31,7 @@ internal sealed partial class SdlJoystick
     internal void AddDeviceMapping(ISdlJoystick device) => _devices.Add(device);
     internal void RemoveDeviceMapping(ISdlJoystick device) => _devices.Remove(device);
 
-    internal void UpdateRawButtonState(JoystickButton button, bool isDown, float pressure, ulong sdlTimestamp, long timestamp)
+    internal void UpdateRawButtonState(JoystickButton button, bool isDown, float pressure, long timestamp)
     {
         var idx = button.Index();
         if (idx < 0)
@@ -48,7 +48,7 @@ internal sealed partial class SdlJoystick
         // ReSharper disable once CompareOfFloatsByEqualityOperator
         if (previous.IsDown != buttonState.IsDown || previous.Pressure != buttonState.Pressure)
         {
-            ButtonEvents.Enqueue(new ButtonChangedEvent<JoystickButton>(this, timestamp, buttonState, previous), sdlTimestamp);
+            ButtonEvents.Enqueue(new ButtonChangedEvent<JoystickButton>(this, timestamp, buttonState, previous));
         }
     }
 
@@ -61,7 +61,7 @@ internal sealed partial class SdlJoystick
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal Vector2 GetAxisStateByIndex2D(int xIndex, int yIndex) => new(GetAxisStateByIndex(xIndex), GetAxisStateByIndex(yIndex));
 
-    internal bool UpdateRawAxisState(JoystickAxis axis, float value, ulong sdlTimestamp, long timestamp,
+    internal bool UpdateRawAxisState(JoystickAxis axis, float value, long timestamp,
         out JoystickAxisMoveEvent evt)
     {
         var index = axis.Index();
@@ -78,7 +78,7 @@ internal sealed partial class SdlJoystick
         if (delta != 0)
         {
             evt = new JoystickAxisMoveEvent(this, timestamp, index, value, delta);
-            AxisEvents.Enqueue(evt, sdlTimestamp);
+            AxisEvents.Enqueue(evt);
             return true;
         }
 

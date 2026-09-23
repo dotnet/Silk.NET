@@ -9,7 +9,7 @@ namespace Silk.NET.Input.SDL3;
 
 internal partial class SdlInputBackend
 {
-    internal bool TryGetOrCreateDevice<T>(ulong id, long timestamp, ulong sdlTimestamp, [NotNullWhen(true)] out T? device, bool isSimulated = false)
+    internal bool TryGetOrCreateDevice<T>(ulong id, long timestamp, [NotNullWhen(true)] out T? device, bool isSimulated = false)
         where T : SdlDevice, ISdlDevice<T>
     {
         // If we already have a device with this ID, return it.
@@ -25,7 +25,7 @@ internal partial class SdlInputBackend
 
         try
         {
-            device = T.CreateDevice(id, timestamp, sdlTimestamp, isSimulated, this, _sdlInputEvents);
+            device = T.CreateDevice(id, timestamp, isSimulated, this, _sdlInputEvents);
         }
         catch (Exception e)
         {
@@ -42,7 +42,7 @@ internal partial class SdlInputBackend
 
         try
         {
-            device.Initialize(timestamp, sdlTimestamp);
+            device.Initialize(timestamp);
         }
         catch (Exception e)
         {
@@ -54,7 +54,7 @@ internal partial class SdlInputBackend
 
         if (_deviceRegistry.AddDevice(device))
         {
-            _sdlInputEvents.ConnectionEvents.Enqueue(new ConnectionEvent(device, timestamp, true), sdlTimestamp);
+            _sdlInputEvents.ConnectionEvents.Enqueue(new ConnectionEvent(device, timestamp, true));
         }
 
         #if DEBUG
@@ -63,11 +63,11 @@ internal partial class SdlInputBackend
         return true;
     }
 
-    private bool RemoveDevice<T>(uint id, long timestamp, ulong sdlTimestamp) where T : SdlDevice, ISdlDevice<T>
+    private bool RemoveDevice<T>(uint id, long timestamp) where T : SdlDevice, ISdlDevice<T>
     {
         if (_deviceRegistry.RemoveDevice<T>(id, out var device))
         {
-            _sdlInputEvents.ConnectionEvents.Enqueue(new ConnectionEvent(device, timestamp, false), sdlTimestamp);
+            _sdlInputEvents.ConnectionEvents.Enqueue(new ConnectionEvent(device, timestamp, false));
 
             // device IDs may have changed when a device was removed, so we need to refresh them
             RefreshDeviceIds(_deviceRegistry.Devices);

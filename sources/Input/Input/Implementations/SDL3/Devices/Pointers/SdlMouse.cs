@@ -26,28 +26,28 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         Cursor = cursor;
     }
 
-    protected internal override void Initialize(long timestamp, ulong sdlTimestamp)
+    protected internal override void Initialize(long timestamp)
     {
         float x = 0, y = 0;
         var mouseInputFlags = GetMouseState(ref x, ref y);
-        ApplyMouseButtonState(mouseInputFlags, sdlTimestamp, timestamp);
+        ApplyMouseButtonState(mouseInputFlags, timestamp);
 
         var window = NativeBackend.GetMouseFocus();
         if (Backend.TryGetOrCreatePointerTargetForWindow(window, out var target))
         {
-            AddOrUpdatePoint(null, target, new Vector3(x, y, 0), null, DownState, null, sdlTimestamp, timestamp);
+            AddOrUpdatePoint(null, target, new Vector3(x, y, 0), null, DownState, null, timestamp);
         }
         // var point = _unboundedPointerTarget.GetPoint(this, 0);
     }
 
 
-    private void ApplyMouseButtonState(SdlMouseInputFlags mouseState, ulong nowSdl, long now)
+    private void ApplyMouseButtonState(SdlMouseInputFlags mouseState, long now)
     {
         foreach (var pointerButtonName in EnumInfo<PointerButton>.UniqueNamedValues)
         {
             if (mouseState.Has(pointerButtonName))
             {
-                AddButtonEvent(pointerButtonName, now, nowSdl, true);
+                AddButtonEvent(pointerButtonName, now, true);
             }
         }
     }
@@ -56,7 +56,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         (SdlMouseInputFlags)NativeBackend.GetMouseState((float*)Unsafe.AsPointer(ref x),
             (float*)Unsafe.AsPointer(ref y));
 
-    public static SdlMouse CreateDevice(ulong sdlDeviceId, long timestamp, ulong sdlTimestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
+    public static SdlMouse CreateDevice(ulong sdlDeviceId, long timestamp, bool isSimulated, SdlInputBackend backend, SdlInputEventContext sdlInputEvents)
     {
         var deviceName = backend.Sdl.GetMouseNameForID((uint)sdlDeviceId);
         nint uniqueId = 0;
@@ -178,7 +178,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
             return;
         }
 
-        AddOrUpdatePoint(null, target, new Vector3(evtMotion.X, evtMotion.Y, 0), 1, null, null, evtMotion.Timestamp, timestamp);
+        AddOrUpdatePoint(null, target, new Vector3(evtMotion.X, evtMotion.Y, 0), 1, null, null, timestamp);
     }
 
 
@@ -196,7 +196,6 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
                 _ => PointerButton.Button5 + evtButton.Button - 5
             },
             timestamp: timestamp,
-            sdlTimestamp: evtButton.Timestamp,
             isDown: evtButton.Down > 0,
             pressure: evtButton.Down * mult);
     }
@@ -221,7 +220,6 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
             scrollWheelPosition: _state.WheelPosition = pWheelPosition + delta,
             scrollWheelDelta: delta,
             target: target,
-            sdlTimestamp: evtWheel.Timestamp,
             mousePos: new Vector3(evtWheel.X, evtWheel.Y, 0),
             timestamp: timestamp);
     }
