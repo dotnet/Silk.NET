@@ -129,8 +129,19 @@ public partial class InputContext
         return _backends.Remove(item);
     }
 
-    int ICollection<IInputBackend>.Count => _backends.Count;
-    bool ICollection<IInputBackend>.IsReadOnly => false;
+    int ICollection<IInputBackend>.Count
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => _backends.Count;
+    }
+
+    bool ICollection<IInputBackend>.IsReadOnly
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => false;
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     int IList<IInputBackend>.IndexOf(IInputBackend item) => _backends.IndexOf(item);
 
     void IList<IInputBackend>.Insert(int index, IInputBackend item)

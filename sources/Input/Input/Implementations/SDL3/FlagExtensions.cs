@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Frozen;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input.SDL3;
 
@@ -10,6 +11,7 @@ internal static class FlagExtensions
     /// <param name="flags"></param>
     extension(SdlMouseInputFlags flags)
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Has(PointerButton button) => _pointerButtonToMouseFlags.TryGetValue(button, out var converted)
                                                       && (flags & converted) == converted;
     }

@@ -26,6 +26,7 @@ internal sealed class SdlInputEventQueue<T> where T : struct
 
     public ReadOnlySpan<ulong> SdlTimestamps
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get => _sdlTimestamps.AsSpan();
     }
 

@@ -192,6 +192,7 @@ internal partial class SdlInputBackend : IInputBackend
             _sdlInputEvents.RaiseEvents(handler);
         }
 
+#if DEBUG
         return;
 
         static void DebugTiming(in TimedRawSdlEvent evt, [NotNull] ref TimedRawSdlEvent? previous)
@@ -217,6 +218,7 @@ internal partial class SdlInputBackend : IInputBackend
 
             previous = evt;
         }
+#endif
     }
 
 

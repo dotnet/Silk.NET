@@ -72,16 +72,19 @@ internal abstract partial class SdlPointerDevice
             // if a ray is provided, use it. otherwise, if it's a new point, use the default ray.
             // if it's a pre-existing point, use the existing ray.
             ray: ray ?? (isNewPoint
-                ? new Ray3D<float>(origin: Vector3D<float>.Zero, direction: Vector3D<float>.UnitZ)
+                ? new Ray3D<float>(origin: Vector3D<float>.Zero, direction: new Vector3D<float>(0, 0, 1))
                 : point.Pointer));
 
         return ref point;
 
         void AddPointerTargetIfNew()
         {
-            if (_myPointerTargets.Contains(target))
+            for (var i = 0; i < _myPointerTargets.Count; ++i)
             {
-                return;
+                if (ReferenceEquals(_myPointerTargets[i], target))
+                {
+                    return;
+                }
             }
 
             _myPointerTargets.Add(target);

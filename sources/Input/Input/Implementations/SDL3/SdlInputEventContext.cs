@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Input.SDL3.DataStructures;
 using Silk.NET.Input.SDL3.Devices.Pointers;
@@ -218,6 +219,7 @@ internal sealed class SdlInputEventContext : IDisposable
         private static readonly Comparison<GenericEvent> _timestampComparer =
             (timeA, timeB) => timeA.Timestamp.CompareTo(timeB.Timestamp);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Clear() => _events.Clear();
 
 

@@ -125,9 +125,21 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
     public void AppendPointsTranslatedToOtherTargets(IReadOnlyList<IPointerTarget> allTargets, IPointerTarget unboundedPointerTarget)
     {
         _publicPoints.Clear();
-        _publicPoints.AddRange(_actualPoints);
+        var necessaryCapacity = (allTargets.Count + 1) * _actualPoints.Count;
+        if (_publicPoints.Capacity < necessaryCapacity)
+        {
+            _publicPoints.Capacity = necessaryCapacity;
+        }
 
         var actualPoints = CollectionsMarshal.AsSpan(_actualPoints);
+
+        // populate "real" points first
+        for (var i = 0; i < actualPoints.Length; ++i)
+        {
+            _publicPoints.Add(actualPoints[i]);
+        }
+
+        // add translated points
         for (var i = 0; i < allTargets.Count; i++)
         {
             ConvertPointsToTarget(in actualPoints, allTargets[i]);

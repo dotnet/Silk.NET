@@ -45,24 +45,25 @@ public partial class InputContext
                 return _devices;
             }
 
-            if (Backends.Count == 0)
+            if (_backends.Count == 0)
             {
                 return _devices = [];
             }
 
             var deviceCount = 0;
 
-            foreach(var backend in Backends)
+            for (var index = 0; index < _backends.Count; index++)
             {
-                deviceCount += backend.Devices.Count;
+                deviceCount += _backends[index].Devices.Count;
             }
 
             _devices = new List<IInputDevice>(deviceCount);
 
-            foreach (var backend in Backends)
+            for (var index = 0; index < _backends.Count; index++)
             {
-                _devices ??= new List<IInputDevice>(backend.Devices.Count);
-                _devices.AddRange(backend.Devices);
+                var devices = Backends[index].Devices;
+                _devices ??= new List<IInputDevice>(devices.Count);
+                _devices.AddRange(devices);
             }
 
             return _devices ??= [];
@@ -88,9 +89,9 @@ public partial class InputContext
     /// </remarks>
     public void Update()
     {
-        foreach (var backend in Backends)
+        for (var index = 0; index < Backends.Count; index++)
         {
-            backend.Update(this);
+            Backends[index].Update(this);
         }
 
         _pointers?.ProcessClicks();
