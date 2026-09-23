@@ -8,10 +8,6 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
-/// <remarks>
-/// TODO: implement this as a device with continuous lifetime - currently, this is removed and recreated with
-///  each pen proximity event
-/// </remarks>
 internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
 {
     public SdlPen(SdlInputBackend backend, nint silkId, ulong sdlDeviceId, string name) :

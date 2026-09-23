@@ -3,6 +3,7 @@
 
 using System.Diagnostics;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 using Silk.NET.Maths;
@@ -307,10 +308,13 @@ internal abstract partial class SdlPointerDevice
     private static TargetPoint TranslatePoint(ref readonly TargetPoint pt, IPointerTarget target)
     {
         Debug.Assert(pt.Target != target);
-        var oldBoundsMin = pt.Target.Bounds.Min.ToSystem();
+        var oldBounds = pt.Target.Bounds;
+        var newBounds = target.Bounds;
+
+        var oldBoundsMin = Unsafe.As<Vector3D<float>, Vector3>(ref oldBounds.Min);
         oldBoundsMin &= Vector3.IsFinite(oldBoundsMin);
 
-        var newBoundsMin = target.Bounds.Min.ToSystem();
+        var newBoundsMin = Unsafe.As<Vector3D<float>, Vector3>(ref newBounds.Min);
         newBoundsMin &= Vector3.IsFinite(newBoundsMin);
 
         // both bounds exist in the same coordinate space - the new position needs to be translated to be relative
@@ -318,16 +322,16 @@ internal abstract partial class SdlPointerDevice
         var rawPtPosition = pt.Position + oldBoundsMin;
         var newPtPosition = rawPtPosition - newBoundsMin;
 
-        var newBoundsMax = target.Bounds.Max.ToSystem();
+        var newBoundsMax = Unsafe.As<Vector3D<float>, Vector3>(ref newBounds.Max);
         newBoundsMax &= Vector3.IsFinite(newBoundsMax);
 
-        var newBoundsSize = newBoundsMax - newBoundsMin;
-        var newNormalizedPos = newPtPosition / newBoundsSize;
+        // normalized pos = newPos / newBoundsSize
+        var newNormalizedPos = newPtPosition / (newBoundsMax - newBoundsMin);
         newNormalizedPos &= Vector3.IsFinite(newNormalizedPos);
 
         return new TargetPoint(
             Id: pt.Id,
-            Flags: TargetPointFlags.NotPointingAtTarget,
+            Flags: TargetPointFlags.NotPointingAtTarget, // todo - should this be actually measured?
             Position: newPtPosition,
             NormalizedPosition: newNormalizedPos,
             Pointer: pt.Pointer,

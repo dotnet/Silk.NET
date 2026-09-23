@@ -72,37 +72,7 @@ public static class UnsafeNumericValueExtensions
             return result;
         }
 
-        /// <summary>
-        /// Compares two values of the same type for equality.
-        /// </summary>
-        /// <remarks>
-        /// This will only be faster than <see cref="EqualsUnsafe"/> if you are providing a large struct.
-        /// This method does not require hardware support for vectorization, and thus will likely be slower
-        /// than vectorized methods for large types.
-        /// </remarks>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe bool EqualsUnsafe(in T other)
-        {
-            var left = (byte*)&value;
-            var right = (byte*)Unsafe.AsPointer(in other);
-            var length = sizeof(T);
-            var index = 0;
-            ulong diff = 0;
 
-            var maxSimdIndex = length & ~(sizeof(ulong) - 1); // equivalent to length - (length % sizeof(ulong))
-            for (; index < maxSimdIndex; index += sizeof(ulong))
-            {
-                diff |= Unsafe.ReadUnaligned<ulong>(left + index) ^ Unsafe.ReadUnaligned<ulong>(right + index);
-            }
-
-            // remaining bytes
-            for (; index < length; ++index)
-            {
-                diff |= (byte)(left[index] ^ right[index]);
-            }
-
-            return diff == 0;
-        }
     }
 
     extension<T>(T value) where T : unmanaged, IUnsignedNumber<T>, IBinaryInteger<T>

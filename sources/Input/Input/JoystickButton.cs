@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
 
@@ -139,6 +140,7 @@ public static class JoystickButtonExtensions
     }
 
     /// <inheritdoc cref="EnumInfo{T}.ValueIndexOf(T)"/>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int Index<T>(this T value) where T : unmanaged, Enum => EnumInfo<T>.ValueIndexOf(value);
 }
 

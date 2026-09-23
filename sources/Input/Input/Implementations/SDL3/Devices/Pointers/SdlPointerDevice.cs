@@ -142,11 +142,11 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
             for (var p = 0; p < _actualPoints.Count; ++p)
             {
                 ref readonly var pt = ref realPoints[p];
-                if (pt.Target == target)
-                    continue;
-
-                // convert!
-                _publicPoints.Add(TranslatePoint(in pt, target));
+                if (!ReferenceEquals(pt.Target, target))
+                {
+                    // convert!
+                    _publicPoints.Add(TranslatePoint(in pt, target));
+                }
             }
         }
     }
