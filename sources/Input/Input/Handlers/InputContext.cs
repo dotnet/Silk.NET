@@ -123,7 +123,9 @@ public partial class InputContext
 
     private void HandleDeviceConnectionChanged(ConnectionEvent evt)
     {
+#if DEBUG
         InputLog.Debug($"Input device connection changed: {evt}");
+#endif
         _pointers?.HandleDeviceConnectionChanged(evt);
         _joysticks?.HandleDeviceConnectionChanged(evt);
         _gamepads?.HandleDeviceConnectionChanged(evt);

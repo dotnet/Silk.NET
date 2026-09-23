@@ -56,7 +56,10 @@ internal partial class SdlInputBackend
         {
             _sdlInputEvents.ConnectionEvents.Enqueue(new ConnectionEvent(device, timestamp, true), sdlTimestamp);
         }
-        InputLog.Debug($"{typeof(T)} added: (sdl ID: {id})");
+
+        #if DEBUG
+        InputLog.Debug($"DEVICE ADDED: {typeof(T)} (sdl ID: {id})");
+        #endif
         return true;
     }
 

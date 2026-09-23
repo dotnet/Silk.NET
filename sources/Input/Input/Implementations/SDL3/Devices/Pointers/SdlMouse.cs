@@ -171,7 +171,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     /// </summary>
     public bool NeedsPump { get; private set; }
 
-    public void AddMotion(in MouseMotionEvent evtMotion, IPointerTarget target, long timestamp)
+    public void AddMotion(ref readonly MouseMotionEvent evtMotion, IPointerTarget target, long timestamp)
     {
         if (evtMotion is { Xrel: 0, Yrel: 0 })
         {
@@ -182,22 +182,26 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     }
 
 
-    public void AddButtonEvent(in MouseButtonEvent evtButton, long timestamp)
+    public void AddMouseButtonEvent(ref readonly MouseButtonEvent evtButton, long timestamp)
     {
-        var button = evtButton.Button switch {
-            1 => PointerButton.Primary,
-            2 => PointerButton.MiddleButton,
-            3 => PointerButton.Secondary,
-            4 => PointerButton.Button4,
-            5 => PointerButton.Button5,
-            _ => PointerButton.Button5 + evtButton.Button - 5
-        };
         //var button = PointerButton.Primary + (evtButton.Button - 1);
         const float mult = 1 / 255f;
-        AddButtonEvent(button, timestamp, evtButton.Timestamp, evtButton.Down > 0, evtButton.Down * mult);
+        AddButtonEvent(
+            button: evtButton.Button switch {
+                1 => PointerButton.Primary,
+                2 => PointerButton.MiddleButton,
+                3 => PointerButton.Secondary,
+                4 => PointerButton.Button4,
+                5 => PointerButton.Button5,
+                _ => PointerButton.Button5 + evtButton.Button - 5
+            },
+            timestamp: timestamp,
+            sdlTimestamp: evtButton.Timestamp,
+            isDown: evtButton.Down > 0,
+            pressure: evtButton.Down * mult);
     }
 
-    public void AddWheelEvent(in MouseWheelEvent evtWheel, IPointerTarget target, long timestamp)
+    public void AddWheelEvent(ref readonly MouseWheelEvent evtWheel, IPointerTarget target, long timestamp)
     {
         var pWheelPosition = _state.WheelPosition;
         const float max = 100f;

@@ -1,4 +1,5 @@
 using System.Numerics;
+using Silk.NET.Input.SDL3.Devices.Joysticks;
 
 namespace Silk.NET.Input;
 
@@ -7,6 +8,13 @@ namespace Silk.NET.Input;
 /// </summary>
 public class GamepadState
 {
+    private static readonly int _leftTriggerIndex = JoystickAxis.LeftTrigger.Index();
+    private static readonly int _rightTriggerIndex = JoystickAxis.RightTrigger.Index();
+    private static readonly int _stickLeftXIndex =  JoystickAxis.LeftX.Index();
+    private static readonly int _stickLeftYIndex =  JoystickAxis.LeftY.Index();
+    private static readonly int _stickRightXIndex =  JoystickAxis.RightX.Index();
+    private static readonly int _stickRightYIndex =  JoystickAxis.RightY.Index();
+
     ///  <summary>
     ///  The constructor for a new GamepadState object
     ///  </summary>
@@ -22,11 +30,16 @@ public class GamepadState
         _axisStates = axisStates;
         Buttons = new ButtonReadOnlyList<JoystickButton>(buttons);
         Triggers = new DualReadOnlyList<float>(
-            getLeft: () => _axisStates[JoystickAxis.LeftTrigger.Index()],
-            getRight: () =>_axisStates[JoystickAxis.RightTrigger.Index()]);
+            getLeft: () => _axisStates[_leftTriggerIndex],
+            getRight: () => _axisStates[_rightTriggerIndex]);
         Thumbsticks = new DualReadOnlyList<Vector2>(
-            getLeft: () => new Vector2(_axisStates[JoystickAxis.LeftX.Index()], _axisStates[JoystickAxis.LeftY.Index()]),
-            getRight: () => new Vector2(_axisStates[JoystickAxis.RightX.Index()], _axisStates[JoystickAxis.RightY.Index()]));
+            getLeft: () => GamepadAxes.RemapXyToPlusMinus1(
+                new Vector2(_axisStates[_stickLeftXIndex], _axisStates[_stickLeftYIndex])
+            ),
+            getRight: () => GamepadAxes.RemapXyToPlusMinus1(
+                new Vector2(_axisStates[_stickRightXIndex], _axisStates[_stickRightYIndex])
+            )
+        );
     }
 
     /// <summary>

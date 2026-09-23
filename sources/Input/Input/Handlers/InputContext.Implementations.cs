@@ -83,19 +83,8 @@ public partial class InputContext
     void IKeyboardInputHandler.HandleKeyChar(KeyCharEvent @event) =>
         _keyboards?.HandleKeyChar(@event);
 
-    void IInputHandler.HandleDeviceConnectionChanged(ConnectionEvent @event)
-    {
-        HandleDeviceConnectionChanged(@event);
-
-        try
-        {
-            ConnectionChanged?.Invoke(@event);
-        }
-        catch (Exception e)
-        {
-            InputLog.Error(e.ToString());
-        }
-    }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IInputHandler.HandleDeviceConnectionChanged(ConnectionEvent @event) => HandleDeviceConnectionChanged(@event);
 
     IEnumerator<IInputBackend> IEnumerable<IInputBackend>.GetEnumerator() =>
         _backends.GetEnumerator();

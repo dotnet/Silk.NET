@@ -411,21 +411,29 @@ internal partial class SdlInputBackend : IInputBackend
                     {
                         if(backend.TryGetOrCreatePointerTargetForWindow(evt.Motion.WindowID, out var windowTarget))
                         {
-                            mouse.AddMotion(evt.Motion, windowTarget, timestamp);
+                            mouse.AddMotion(in evt.Motion, windowTarget, timestamp);
+                        }
+                        else
+                        {
+                            LogFailedPointerTargetRetrieval(evt.Motion.WindowID);
                         }
                         break;
                     }
                     case EventType.MouseButtonDown:
                     case EventType.MouseButtonUp:
                     {
-                        mouse.AddButtonEvent(evt.Button, timestamp);
+                        mouse.AddMouseButtonEvent(in evt.Button, timestamp);
                         break;
                     }
                     case EventType.MouseWheel:
                     {
                         if (backend.TryGetOrCreatePointerTargetForWindow(evt.Wheel.WindowID, out var windowTarget))
                         {
-                            mouse.AddWheelEvent(evt.Wheel, windowTarget, timestamp);
+                            mouse.AddWheelEvent(in evt.Wheel, windowTarget, timestamp);
+                        }
+                        else
+                        {
+                            LogFailedPointerTargetRetrieval(evt.Wheel.WindowID);
                         }
 
                         break;
@@ -456,6 +464,10 @@ internal partial class SdlInputBackend : IInputBackend
                         {
                             penDevice.ProximityEvent(in evt.Pproximity, windowTarget, type == EventType.PenProximityIn, timestamp);
                         }
+                        else
+                        {
+                            LogFailedPointerTargetRetrieval(evt.Pproximity.WindowID);
+                        }
 
                         break;
                     }
@@ -466,6 +478,11 @@ internal partial class SdlInputBackend : IInputBackend
                         {
                             penDevice.UpDownEvent(in evt.Ptouch, windowTarget, timestamp);
                         }
+                        else
+                        {
+                            LogFailedPointerTargetRetrieval(evt.Ptouch.WindowID);
+                        }
+
                         break;
                     }
                     case EventType.PenButtonDown:
@@ -480,6 +497,10 @@ internal partial class SdlInputBackend : IInputBackend
                         {
                             penDevice.MotionEvent(in evt.Pmotion, windowTarget, timestamp);
                         }
+                        else
+                        {
+                            LogFailedPointerTargetRetrieval(evt.Pmotion.WindowID);
+                        }
                         break;
                     }
                     case EventType.PenAxis:
@@ -487,6 +508,10 @@ internal partial class SdlInputBackend : IInputBackend
                         if (backend.TryGetOrCreatePointerTargetForWindow(evt.Paxis.WindowID, out var windowTarget))
                         {
                             penDevice.AxisEvent(in evt.Paxis, windowTarget, timestamp);
+                        }
+                        else
+                        {
+                            LogFailedPointerTargetRetrieval(evt.Paxis.WindowID);
                         }
 
                         break;
@@ -510,6 +535,10 @@ internal partial class SdlInputBackend : IInputBackend
                 if(backend.TryGetOrCreatePointerTargetForWindow(finger.WindowID, out var windowTarget))
                 {
                     touchDevice.Event(finger, windowTarget, (FingerEventType)finger.Type, timestamp);
+                }
+                else
+                {
+                    LogFailedPointerTargetRetrieval(finger.WindowID);
                 }
                 break;
             }
@@ -584,6 +613,13 @@ internal partial class SdlInputBackend : IInputBackend
         }
 
         #endregion
+
+        void LogFailedPointerTargetRetrieval(uint windowId)
+        {
+            #if DEBUG
+            InputLog.Warn("Failed to get or create pointer target for window ID: " + windowId);
+            #endif
+        }
     }
 
 

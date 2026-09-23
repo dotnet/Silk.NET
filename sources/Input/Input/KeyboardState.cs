@@ -76,7 +76,7 @@ public class KeyboardState
         KeyModifiers.ShiftLeft, KeyModifiers.ShiftRight, KeyModifiers.SuperLeft, KeyModifiers.SuperRight
     ];
 
-    private IReadOnlyList<Button<KeyName>> _rawKeys;
+    private readonly IReadOnlyList<Button<KeyName>> _rawKeys;
     private readonly Func<bool> _numLockActive;
     private readonly Func<bool> _capsLockActive;
 }

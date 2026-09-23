@@ -261,8 +261,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
         joystickUniqueId = SdlInputBackend.FallbackUniqueId<SdlGamepad>(sdlDeviceId, joystickUniqueId);
         var sdlGamepad = new SdlGamepad(joystick, uniqueId: joystickUniqueId) {
-            ThumbstickEvents = context.GamepadThumbstickMoveEvents,
-            TriggerEvents = context.GamepadTriggerMoveEvents,
+            ThumbstickEvents = context.GamepadThumbstickMoveEvents, TriggerEvents = context.GamepadTriggerMoveEvents,
         };
         return sdlGamepad;
     }
@@ -310,13 +309,14 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
                 {
                     var axis = ToJoystickAxis(gAxis);
                     var axes = GetJoystickAxis2(axis);
-                    var xIndex = axes.X.Index();
-                    var yIndex = axes.Y.Index();
-                    var previous = Joystick.GetAxisStateByIndex2D(xIndex, yIndex);
+                    var xIdx = axes.X.Index();
+                    var yIdx = axes.Y.Index();
+                    var previous = Joystick.GetAxisStateByIndex2D(xIdx, yIdx);
 
                     if (Joystick.UpdateRawAxisState(axis, mappedValue, sdlTimestamp, timestamp, out _))
                     {
-                        var latest = Joystick.GetAxisStateByIndex2D(xIndex, yIndex);
+                        var latest = GamepadAxes.RemapXyToPlusMinus1(Joystick.GetAxisStateByIndex2D(xIdx, yIdx));
+                        previous = GamepadAxes.RemapXyToPlusMinus1(previous);
 
                         // Processed Axes
                         ThumbstickEvents.Enqueue(new GamepadThumbstickMoveEvent(Gamepad: this,

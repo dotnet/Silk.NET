@@ -171,9 +171,6 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     /// X as the 'minus' component and
     /// Y as the 'plus' component
     /// </returns>
-    /// <remarks>
-    /// Todo: the gamepad api demands that joystick axes are (-1, 1)
-    /// </remarks>
     internal static Vector2 SplitValue(float value)
     {
         value = (float)((value - 0.5d) * 2d);
