@@ -15,6 +15,8 @@ namespace Silk.NET.Core.Loader
         private static readonly LibraryLoader SPlatformDefaultLoader = LibraryLoader.GetPlatformDefaultLoader();
         private readonly LibraryLoader _loader;
 
+        private nint _handle;
+
         /// <summary>
         ///     Constructs a new NativeLibrary using the platform's default library loader.
         /// </summary>
@@ -55,7 +57,7 @@ namespace Silk.NET.Core.Loader
         private UnmanagedLibrary(LibraryLoader loader, nint handle)
         {
             _loader = loader;
-            Handle = handle;
+            _handle = handle;
         }
 
         /// <summary>
@@ -82,7 +84,7 @@ namespace Silk.NET.Core.Loader
         public UnmanagedLibrary(string name, LibraryLoader loader, PathResolver pathResolver)
         {
             _loader = loader;
-            Handle = _loader.LoadNativeLibrary(name, pathResolver);
+            _handle = _loader.LoadNativeLibrary(name, pathResolver);
         }
 
         /// <summary>
@@ -94,20 +96,26 @@ namespace Silk.NET.Core.Loader
         public UnmanagedLibrary(string[] names, LibraryLoader loader, PathResolver pathResolver)
         {
             _loader = loader;
-            Handle = _loader.LoadNativeLibrary(names, pathResolver);
+            _handle = _loader.LoadNativeLibrary(names, pathResolver);
         }
 
         /// <summary>
         ///     The operating system handle of the loaded library.
         /// </summary>
-        public nint Handle { get; }
+        public nint Handle => _handle;
 
         /// <summary>
         ///     Frees the native library. Function pointers retrieved from this library will be void.
         /// </summary>
         public void Dispose()
         {
+            if (_handle == 0)
+            {
+                return;
+            }
+            
             _loader.FreeNativeLibrary(Handle);
+            _handle = 0;
         }
 
         /// <summary>

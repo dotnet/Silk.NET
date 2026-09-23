@@ -4,14 +4,9 @@ on:
     branches:
       - 'main'
       - 'release/**'
-    paths-ignore:
-      - 'documentation/**'
     tags:
       - '*'
-  pull_request:
-    # all branches
-    paths-ignore:
-      - 'documentation/**'
+  pull_request: # all branches
 permissions:
   packages: write
 jobs:
@@ -49,14 +44,14 @@ jobs:
         dotnet-version: 7.0.102
     - name: Install Workloads
       run: dotnet workload install android ios maccatalyst
-    - name: Test
-      if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
-      # skip Clean, Restore, and Compile as this will build the affect the whole solution.
-      # dotnet test will compile the necessary projects for testing only.
-      run: ./build.sh Test --skip Clean Restore Compile
     - name: Validation Checks
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       run: ./build.sh ValidateSolution
+    - name: Test
+      if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
+      # skip Clean, Restore, and Compile as those will affect the whole solution.
+      # dotnet test will compile the necessary projects for testing only.
+      run: ./build.sh Test --skip Clean Restore Compile
     - name: Pack (CI)
       if: ${{ github.repository != 'dotnet/Silk.NET' || !startsWith(github.ref, 'refs/tags/') }}
       # Use a release NUKE so it doesn't interfere with the debug build

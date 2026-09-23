@@ -6,6 +6,10 @@ on:
   pull_request:
     paths:
       - "CODEOWNERS"
+
+permissions:
+  contents: read
+
 jobs:
   Validate:
     runs-on: ubuntu-latest

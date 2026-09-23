@@ -2065,6 +2065,38 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// <para>
+        /// This function retrieves the content scale for the specified window.
+        /// </para>
+        /// <para>
+        /// The content scale is the ratio between the current DPI and the platform's default DPI.
+        /// </para>
+        /// <para>
+        /// If you scale all pixel dimensions by this scale then your content should appear at an appropriate size.
+        /// This is especially important for text and any UI elements.
+        /// </para>
+        /// <para>
+        /// On platforms where each monitor can have its own content scale, the window content scale
+        /// depends on which monitor the system considers the window to be on.
+        /// </para>
+        /// </summary>
+        /// <param name="window">The window to query.</param>
+        /// <param name="xscale">Where to store the x-axis content scale, or <c>out _</c>.</param>
+        /// <param name="yscale">Where to store the y-axis content scale, or <c>out _</c>.</param>
+        /// <remarks>
+        /// <para>
+        /// This function must only be called from the main thread.
+        /// </para>
+        /// <para>
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
+        /// </para>
+        /// </remarks>
+        /// <seealso cref="GetMonitorContentScale" />
+        // ReSharper disable IdentifierTypo
+        public unsafe partial void GetWindowContentScale(WindowHandle* window, out float xscale, out float yscale);
+        // ReSharper enable IdentifierTypo
+
+        /// <summary>
+        /// <para>
         /// This function returns the value of an input option for the specified window.
         /// The mode must be <see cref="CursorStateAttribute.Cursor" /> or <see cref="CursorStateAttribute.RawMouseMotion" />.
         /// </para>

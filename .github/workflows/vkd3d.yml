@@ -14,6 +14,10 @@ on:
       - build/nuke/Native/Vkd3d.cs
       - .github/workflows/vkd3d.yml
       - src/Microsoft/Vkd3dCompiler/*
+
+permissions:
+  contents: read
+
 jobs:
   Build:
     if: github.repository == 'dotnet/Silk.NET'

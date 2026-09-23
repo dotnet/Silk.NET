@@ -236,12 +236,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         private void SetPerFrameImGuiData(float deltaSeconds)
         {
             var io = ImGuiNET.ImGui.GetIO();
+            var size = _view.Size;
+            var framebufferSize = _view.FramebufferSize;
+
+            // Update here since Resize isn't raised on all platforms
+            _windowWidth = size.X;
+            _windowHeight = size.Y;
+
             io.DisplaySize = new Vector2(_windowWidth, _windowHeight);
 
             if (_windowWidth > 0 && _windowHeight > 0)
             {
-                io.DisplayFramebufferScale = new Vector2(_view.FramebufferSize.X / _windowWidth,
-                    _view.FramebufferSize.Y / _windowHeight);
+                io.DisplayFramebufferScale = new Vector2((float) framebufferSize.X / _windowWidth,
+                    (float) framebufferSize.Y / _windowHeight);
             }
 
             io.DeltaTime = deltaSeconds; // DeltaTime is in seconds.
@@ -427,6 +434,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _gl.PolygonMode(GLEnum.FrontAndBack, GLEnum.Fill);
 #endif
 
+            // Setup viewport, orthographic projection matrix
+            _gl.Viewport(0, 0, (uint) framebufferWidth, (uint) framebufferHeight);
+
             float L = drawDataPtr.DisplayPos.X;
             float R = drawDataPtr.DisplayPos.X + drawDataPtr.DisplaySize.X;
             float T = drawDataPtr.DisplayPos.Y;
@@ -488,6 +498,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _gl.GetInteger(GLEnum.PolygonMode, lastPolygonMode);
 #endif
 
+            Span<int> lastViewport = stackalloc int[4];
+            _gl.GetInteger(GLEnum.Viewport, lastViewport);
             Span<int> lastScissorBox = stackalloc int[4];
             _gl.GetInteger(GLEnum.ScissorBox, lastScissorBox);
 
@@ -637,6 +649,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _gl.PolygonMode(GLEnum.FrontAndBack, (GLEnum) lastPolygonMode[0]);
 #endif
 
+            _gl.Viewport(lastViewport[0], lastViewport[1], (uint) lastViewport[2], (uint) lastViewport[3]);
             _gl.Scissor(lastScissorBox[0], lastScissorBox[1], (uint) lastScissorBox[2], (uint) lastScissorBox[3]);
         }
 
