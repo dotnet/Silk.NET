@@ -18,14 +18,17 @@ namespace Silk.NET.Input.Glfw
             Buttons = new Button[0];
             Hats = new Hat[0];
 
-            _connected = IsConnected;
+            IsConnected = _connected = GlfwProvider.GLFW.Value.JoystickPresent(i) &&
+                                       !GlfwProvider.GLFW.Value.JoystickIsGamepad(i);
         }
 
         public string Name => GlfwProvider.GLFW.Value.GetJoystickName(Index) ?? "Silk.NET Joystick (via GLFW)";
         public int Index { get; }
 
-        public bool IsConnected => GlfwProvider.GLFW.Value.JoystickPresent(Index) &&
-                                   !GlfwProvider.GLFW.Value.JoystickIsGamepad(Index);
+        /// <summary>
+        /// Cached connection status from GLFW's joystick connection callback.
+        /// </summary>
+        public bool IsConnected { get; internal set; }
 
         public IReadOnlyList<Axis> Axes { get; private set; }
         public IReadOnlyList<Button> Buttons { get; private set; }

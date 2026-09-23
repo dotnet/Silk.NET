@@ -23,7 +23,7 @@ namespace Silk.NET.Input.Glfw
             Thumbsticks = new Thumbstick[GamepadThumbstickCount];
             Triggers = new Trigger[GamepadTriggerCount];
 
-            _connected = hasState;
+            IsConnected = _connected = hasState;
 
             for (int j = 0; j < GamepadButtonCount; j++)
             {
@@ -44,7 +44,12 @@ namespace Silk.NET.Input.Glfw
 
         public string Name => GlfwProvider.GLFW.Value.GetGamepadName(Index) ?? "Silk.NET Gamepad (via GLFW)";
         public int Index { get; }
-        public bool IsConnected => GlfwProvider.GLFW.Value.JoystickIsGamepad(Index);
+
+        /// <summary>
+        /// Cached connection status from GLFW's joystick connection callback.
+        /// </summary>
+        public bool IsConnected { get; internal set; }
+
         public IReadOnlyList<Button> Buttons { get; }
         public IReadOnlyList<Thumbstick> Thumbsticks { get; }
         public IReadOnlyList<Trigger> Triggers { get; }
@@ -57,8 +62,10 @@ namespace Silk.NET.Input.Glfw
 
         public void Update()
         {
-            if (!GlfwProvider.GLFW.Value.GetGamepadState(Index, out var state))
+            if (!IsConnected || !GlfwProvider.GLFW.Value.GetGamepadState(Index, out var state))
             {
+                IsConnected = false;
+
                 // Detect when this gamepad disconnects
                 if (_connected)
                 {

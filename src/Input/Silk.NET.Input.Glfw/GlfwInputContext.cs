@@ -49,6 +49,7 @@ namespace Silk.NET.Input.Glfw
             Mice = _mice;
 
             GlfwInputPlatform.RegisterWindow((WindowHandle*) Handle, _subscribers);
+            GlfwInputPlatform.JoystickConnectionChanged += OnJoystickConnectionChanged;
         }
 
         public override void ProcessEvents()
@@ -69,8 +70,24 @@ namespace Silk.NET.Input.Glfw
             }
         }
 
+        // Cache connection status on the devices so that ProcessEvents only polls slots that actually have something plugged
+        // in, rather than asking GLFW about all gamepads and all joysticks every single frame.
+        private void OnJoystickConnectionChanged(int jid, ConnectedState state)
+        {
+            if (jid < 0 || jid >= _joysticks.Length)
+            {
+                return;
+            }
+            
+            var connected = state == ConnectedState.Connected;
+            var isGamepad = connected && GlfwProvider.GLFW.Value.JoystickIsGamepad(jid);
+            _gamepads[jid].IsConnected = connected && isGamepad;
+            _joysticks[jid].IsConnected = connected && !isGamepad;
+        }
+
         public override unsafe void CoreDispose()
         {
+            GlfwInputPlatform.JoystickConnectionChanged -= OnJoystickConnectionChanged;
             GlfwInputPlatform.UnregisterWindow((WindowHandle*) Handle, _subscribers);
             foreach (var gamepad in _gamepads)
             {

@@ -18,6 +18,17 @@ namespace Silk.NET.Input.Glfw
     {
         private static readonly Dictionary<nint, GlfwEvents> _subs = new Dictionary<nint, GlfwEvents>();
 
+        // Unlike the keyboard/mouse callbacks, GLFW's joystick callback is global rather than per window, so it is
+        // owned here instead of by GlfwEvents.cs and available to every live input context.
+        private static readonly GlfwCallbacks.JoystickCallback _joystickCallback =
+            (jid, state) => JoystickConnectionChanged?.Invoke(jid, state);
+
+        /// <summary>
+        /// Raised when GLFW reports that a joystick has been connected to or disconnected from the system. The
+        /// underlying GLFW callback is only installed while at least one input context is alive.
+        /// </summary>
+        internal static event GlfwCallbacks.JoystickCallback? JoystickConnectionChanged;
+
         /// <inheritdoc />
         public bool IsApplicable(IView window) => window is GlfwWindow;
 
@@ -30,6 +41,12 @@ namespace Silk.NET.Input.Glfw
             {
                 throw new InvalidOperationException($"More than one input context for window {(nint) handle}.");
             }
+
+            if (_subs.Count == 0)
+            {
+                GlfwProvider.GLFW.Value.SetJoystickCallback(_joystickCallback);
+            }
+
             var events = _subs[(nint) handle] = new GlfwEvents(handle);
             foreach (var subscriber in subscribers)
             {
@@ -48,6 +65,11 @@ namespace Silk.NET.Input.Glfw
 
                 events.Dispose();
                 _subs.Remove((nint) handle);
+
+                if (_subs.Count == 0)
+                {
+                    GlfwProvider.GLFW.Value.SetJoystickCallback(null);
+                }
             }
             else
             {
