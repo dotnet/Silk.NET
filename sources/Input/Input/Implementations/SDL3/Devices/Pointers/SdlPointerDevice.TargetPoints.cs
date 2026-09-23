@@ -14,7 +14,8 @@ internal abstract partial class SdlPointerDevice
     private ISimulatedPointerTarget? _falseTarget;
     private readonly List<IPointerTarget> _myPointerTargets = new();
 
-    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget target, long timestamp, ulong sdlTimestamp, uint touchId,
+    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget target, long timestamp, ulong sdlTimestamp,
+        uint touchId,
         in Vector3? positionOnTarget, Ray3D<float>? ray, float? pressure, out TargetPoint? oldPoint)
     {
         if (touchId != 0 && OnePointOnly)
@@ -108,7 +109,7 @@ internal abstract partial class SdlPointerDevice
     {
         var bounds = target.Bounds;
         var min = bounds.Min.ToSystem();
-        var max  = bounds.Max.ToSystem();
+        var max = bounds.Max.ToSystem();
         var diff3 = max - min;
         var normalizedPosition = (posOnTarget - min) / diff3;
 
@@ -117,12 +118,12 @@ internal abstract partial class SdlPointerDevice
             normalizedPosition.X = 0;
         }
 
-        if(!float.IsFinite(normalizedPosition.Y))
+        if (!float.IsFinite(normalizedPosition.Y))
         {
             normalizedPosition.Y = 0;
         }
 
-        if(!float.IsFinite(normalizedPosition.Z))
+        if (!float.IsFinite(normalizedPosition.Z))
         {
             normalizedPosition.Z = 0;
         }
@@ -135,6 +136,24 @@ internal abstract partial class SdlPointerDevice
             Pressure: pressure,
             Target: target
         );
+    }
+
+    protected void SetPointLookAtTarget(uint? touchId, IPointerTarget target, bool lookAt, ulong sdlTimestamp,
+        long timestamp)
+    {
+        touchId = ValidateTouchId(touchId);
+        ref var point = ref CreateOrUpdateTargetPoint(
+            target: target,
+            timestamp: timestamp,
+            sdlTimestamp: sdlTimestamp,
+            touchId: touchId.Value,
+            positionOnTarget: null,
+            ray: null,
+            pressure: null,
+            oldPoint: out _);
+        point = point with {
+            Flags = lookAt ? TargetPointFlags.PointingAtTarget : TargetPointFlags.NotPointingAtTarget
+        };
     }
 
     /// <summary>
@@ -263,7 +282,8 @@ internal abstract partial class SdlPointerDevice
         if (_myPointerTargets.Remove(target))
         {
             var bounds = target.Bounds;
-            TargetEvents.Enqueue(new PointerTargetChangedEvent(this, timestamp, target, false, bounds, bounds), sdlTimestamp);
+            TargetEvents.Enqueue(new PointerTargetChangedEvent(this, timestamp, target, false, bounds, bounds),
+                sdlTimestamp);
         }
     }
 

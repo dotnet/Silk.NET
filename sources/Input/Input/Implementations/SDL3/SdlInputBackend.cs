@@ -421,7 +421,7 @@ internal partial class SdlInputBackend : IInputBackend
                     }
                     case EventType.MouseWheel:
                     {
-                        if (backend.TryGetOrCreatePointerTargetForWindow(evt.Motion.WindowID, out var windowTarget))
+                        if (backend.TryGetOrCreatePointerTargetForWindow(evt.Wheel.WindowID, out var windowTarget))
                         {
                             mouse.AddWheelEvent(evt.Wheel, windowTarget, timestamp);
                         }
@@ -439,7 +439,7 @@ internal partial class SdlInputBackend : IInputBackend
             case EventType.PenProximityOut:
             case >= EventType.PenProximityIn and <= EventType.PenAxis:
             {
-                if (!backend.TryGetOrCreateDevice<SdlPen>(evt.Ptouch.Which, timestamp, evt.Common.Timestamp,
+                if (!backend.TryGetOrCreateDevice<SdlPen>(evt.Pproximity.Which, timestamp, evt.Common.Timestamp,
                         out var penDevice))
                 {
                     return;
@@ -452,7 +452,7 @@ internal partial class SdlInputBackend : IInputBackend
                     {
                         if (backend.TryGetOrCreatePointerTargetForWindow(evt.Pproximity.WindowID, out var windowTarget))
                         {
-                            penDevice.ProximityEvent(evt: evt.Pproximity, target: windowTarget, proximityIn: type == EventType.PenProximityIn);
+                            penDevice.ProximityEvent(in evt.Pproximity, windowTarget, type == EventType.PenProximityIn, timestamp);
                         }
 
                         break;
@@ -462,21 +462,21 @@ internal partial class SdlInputBackend : IInputBackend
                     {
                         if(backend.TryGetOrCreatePointerTargetForWindow(evt.Ptouch.WindowID, out var windowTarget))
                         {
-                            penDevice.UpDownEvent(evt.Ptouch, windowTarget, timestamp);
+                            penDevice.UpDownEvent(in evt.Ptouch, windowTarget, timestamp);
                         }
                         break;
                     }
                     case EventType.PenButtonDown:
                     case EventType.PenButtonUp:
                     {
-                        penDevice.ButtonEvent(evt.Pbutton, timestamp);
+                        penDevice.ButtonEvent(in evt.Pbutton, timestamp);
                         break;
                     }
                     case EventType.PenMotion:
                     {
                         if(backend.TryGetOrCreatePointerTargetForWindow(evt.Pmotion.WindowID, out var windowTarget))
                         {
-                            penDevice.MotionEvent(evt.Pmotion, windowTarget, timestamp);
+                            penDevice.MotionEvent(in evt.Pmotion, windowTarget, timestamp);
                         }
                         break;
                     }
@@ -484,7 +484,7 @@ internal partial class SdlInputBackend : IInputBackend
                     {
                         if (backend.TryGetOrCreatePointerTargetForWindow(evt.Paxis.WindowID, out var windowTarget))
                         {
-                            penDevice.AxisEvent(evt.Paxis, windowTarget, timestamp);
+                            penDevice.AxisEvent(in evt.Paxis, windowTarget, timestamp);
                         }
 
                         break;

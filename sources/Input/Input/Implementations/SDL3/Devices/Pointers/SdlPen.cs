@@ -83,7 +83,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
     {
     }
 
-    public void UpDownEvent(in PenTouchEvent evt, IPointerTarget target, long timestamp)
+    public void UpDownEvent(ref readonly PenTouchEvent evt, IPointerTarget target, long timestamp)
     {
         MotionEvent(target, evt.X, evt.Y, evt.Timestamp, timestamp);
 
@@ -101,7 +101,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
 
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void MotionEvent(in PenMotionEvent evt, IPointerTarget target, long timestamp) => MotionEvent(target, evt.X, evt.Y, evt.Timestamp, timestamp);
+    public void MotionEvent(ref readonly PenMotionEvent evt, IPointerTarget target, long timestamp) => MotionEvent(target, evt.X, evt.Y, evt.Timestamp, timestamp);
 
     private void MotionEvent(IPointerTarget target, float x, float y, ulong sdlTimestamp, long timestamp)
     {
@@ -116,7 +116,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
             timestamp: timestamp);
     }
 
-    public void ButtonEvent(in PenButtonEvent evt, long timestamp)
+    public void ButtonEvent(ref readonly PenButtonEvent evt, long timestamp)
     {
         var button = (SdlPenButton)evt.Button;
         var pointerButton = button switch {
@@ -140,7 +140,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         Button5,
     }
 
-    public void AxisEvent(in PenAxisEvent evt, IPointerTarget target, long timestamp)
+    public void AxisEvent(ref readonly PenAxisEvent evt, IPointerTarget target, long timestamp)
     {
         switch (evt.Axis)
         {
@@ -188,7 +188,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
     }
 
     // ReSharper disable once ArrangeMethodOrOperatorBody
-    public void ProximityEvent(in PenProximityEvent evt, IPointerTarget target, bool proximityIn)
+    public void ProximityEvent(ref readonly PenProximityEvent evt, IPointerTarget target, bool proximityIn, long timestamp)
     {
         // quoting the documentation:
 
@@ -204,8 +204,8 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         // a pen device to handle subsequent input events
 
         // however, we will store the proximity state of this device for future reference / debugging purposes
-        IsNear = proximityIn;
-    }
 
-    public bool IsNear { get; private set; }
+        // update my latest point to be not-looking-at
+        SetPointLookAtTarget(null, target, proximityIn, evt.Timestamp, timestamp);
+    }
 }

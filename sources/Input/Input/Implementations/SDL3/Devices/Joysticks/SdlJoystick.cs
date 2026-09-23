@@ -212,16 +212,18 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
         for (byte i = 0; i < buttonCount; i++)
         {
-            var joystickInput = NativeBackend.GetJoystickButtonRaw(JoystickHandle, i);
+            var joystickInput = NativeBackend.GetJoystickButtonRaw(joystickHandle, i);
             AddButtonEvent(i, joystickInput, nowSdlTimestamp, nowTimestamp);
         }
 
         for (var i = 0; i < axisCount; i++)
         {
-            var joystickInput = NativeBackend.GetJoystickAxis(JoystickHandle, i);
+            // Sdl docs on GetJoystickAxis:
+            // "Returns a 16-bit signed integer representing the current position of the axis or 0 on failure;
+            // call SDL_GetError() for more information."
+            var joystickInput = NativeBackend.GetJoystickAxis(joystickHandle, i);
             if (joystickInput == 0)
             {
-                // this indicates an sdl error, so just set our internal axis to 0
                 joystickInput = short.MinValue;
             }
 

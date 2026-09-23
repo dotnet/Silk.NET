@@ -57,7 +57,7 @@ internal struct PinnedGcMemory<T> : IDisposable where T : struct
 
         var newSize = Math.Max(_capacity * 2, desiredCount);
 
-        var newArray = GC.AllocateUninitializedArray<T>(Unsafe.SizeOf<T>() * newSize, pinned: true);
+        var newArray = GC.AllocateUninitializedArray<T>(newSize, pinned: true);
         _array?.CopyTo(newArray.AsSpan(0, _array.Length));
 
         _array = newArray;
