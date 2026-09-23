@@ -31,9 +31,10 @@ internal abstract partial class SdlPointerDevice
         int? pointIndex = null;
         int? defaultIndex = null;
 
-        for (var i = 0; i < _actualPoints.Count; i++)
+        var actualPointsSpan = CollectionsMarshal.AsSpan(_actualPoints);
+        for (var i = 0; i < actualPointsSpan.Length; i++)
         {
-            var candidatePoint = GetPointRef(i);
+            ref readonly var candidatePoint = ref actualPointsSpan[i];
             if (candidatePoint.Target == target && candidatePoint.Id == touchId)
             {
                 pointIndex = i;
@@ -50,6 +51,8 @@ internal abstract partial class SdlPointerDevice
         if (pointIndex == null)
         {
             pointIndex = defaultIndex ?? _actualPoints.Count;
+            EnsurePointsListCapacity(pointIndex.Value, _actualPoints);
+            actualPointsSpan = CollectionsMarshal.AsSpan(_actualPoints);
             isNewPoint = true;
         }
         else
@@ -57,7 +60,7 @@ internal abstract partial class SdlPointerDevice
             isNewPoint = false;
         }
 
-        ref var point = ref GetPointRef(pointIndex.Value);
+        ref var point = ref actualPointsSpan[pointIndex.Value];
 
         // note: a null oldPoint means this is a new point
         // see PointChangedEvent for more info
@@ -201,9 +204,10 @@ internal abstract partial class SdlPointerDevice
             // point was actually removed - after that point changed event, we should remove it
             // note - a null newPoint means the point was removed
             var previous = point;
-            for (var i = 0; i < _actualPoints.Count; i++)
+            var actualPoints = CollectionsMarshal.AsSpan(_actualPoints);
+            for (var i = 0; i < actualPoints.Length; i++)
             {
-                ref var candidatePoint = ref GetPointRef(i);
+                ref var candidatePoint = ref actualPoints[i];
                 if (candidatePoint.Id == previous.Id)
                 {
                     candidatePoint = default;
@@ -270,15 +274,13 @@ internal abstract partial class SdlPointerDevice
             NewPoint: point), sdlTimestamp);
     }
 
-    private ref TargetPoint GetPointRef(int index)
+    private static void EnsurePointsListCapacity(int index, List<TargetPoint> actualPoints)
     {
-        _actualPoints.EnsureCapacity(index + 1);
-        while (index >= _actualPoints.Count)
+        actualPoints.EnsureCapacity(index + 1);
+        while (index >= actualPoints.Count)
         {
-            _actualPoints.Add(default);
+            actualPoints.Add(default);
         }
-
-        return ref CollectionsMarshal.AsSpan(_actualPoints)[index];
     }
 
     public void TargetDestroyed(IPointerTarget target, long timestamp, ulong sdlTimestamp)
