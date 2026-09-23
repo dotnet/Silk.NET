@@ -33,10 +33,10 @@ public class GamepadState
             getLeft: () => _axisStates[_leftTriggerIndex],
             getRight: () => _axisStates[_rightTriggerIndex]);
         Thumbsticks = new DualReadOnlyList<Vector2>(
-            getLeft: () => GamepadAxes.RemapXyToPlusMinus1(
+            getLeft: () => GamepadAxes.JoystickAxesToThumbstick(
                 new Vector2(_axisStates[_stickLeftXIndex], _axisStates[_stickLeftYIndex])
             ),
-            getRight: () => GamepadAxes.RemapXyToPlusMinus1(
+            getRight: () => GamepadAxes.JoystickAxesToThumbstick(
                 new Vector2(_axisStates[_stickRightXIndex], _axisStates[_stickRightYIndex])
             )
         );

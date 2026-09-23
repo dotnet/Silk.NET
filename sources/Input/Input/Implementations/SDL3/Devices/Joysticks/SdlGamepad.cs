@@ -315,8 +315,8 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
                     if (Joystick.UpdateRawAxisState(axis, mappedValue, sdlTimestamp, timestamp, out _))
                     {
-                        var latest = GamepadAxes.RemapXyToPlusMinus1(Joystick.GetAxisStateByIndex2D(xIdx, yIdx));
-                        previous = GamepadAxes.RemapXyToPlusMinus1(previous);
+                        var latest = GamepadAxes.JoystickAxesToThumbstick(Joystick.GetAxisStateByIndex2D(xIdx, yIdx));
+                        previous = GamepadAxes.JoystickAxesToThumbstick(previous);
 
                         // Processed Axes
                         ThumbstickEvents.Enqueue(new GamepadThumbstickMoveEvent(Gamepad: this,
