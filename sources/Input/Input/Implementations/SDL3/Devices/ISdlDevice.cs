@@ -17,6 +17,11 @@ internal interface INeedCompletionEachFrame
     public void CompleteUpdate();
 }
 
+internal interface INeedPreUpdate
+{
+    public void PreUpdate();
+}
+
 internal interface IMapTargetPoints
 {
     public void AppendPointsTranslatedToOtherTargets(IReadOnlyList<IPointerTarget> allTargets, IPointerTarget unboundedTarget);

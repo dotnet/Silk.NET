@@ -28,7 +28,8 @@ public sealed class MouseState(
         ) { }
 
     /// <summary>
-    /// Gets the current position of the scroll wheel in number of ratchets.
+    /// Gets the current position of the scroll wheel in number of ratchets
+    /// between the previous and latest times the input was captured by the backend
     /// </summary>
     public Vector2 WheelPosition { get; internal set; } = wheelPosition;
 }

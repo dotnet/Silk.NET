@@ -8,7 +8,7 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
-internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
+internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>, INeedPreUpdate
 {
     public override PointerState State => _state;
     public ICursorConfiguration Cursor { get; }
@@ -185,7 +185,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     public void AddMouseButtonEvent(ref readonly MouseButtonEvent evtButton, long timestamp)
     {
         //var button = PointerButton.Primary + (evtButton.Button - 1);
-        const float mult = 1 / 255f;
+        var down = evtButton.Down > 0;
         AddButtonEvent(
             button: evtButton.Button switch {
                 1 => PointerButton.Primary,
@@ -196,32 +196,21 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
                 _ => PointerButton.Button5 + evtButton.Button - 5
             },
             timestamp: timestamp,
-            isDown: evtButton.Down > 0,
-            pressure: evtButton.Down * mult);
+            isDown: down,
+            pressure: down ? 1 : 0);
     }
 
     public void AddWheelEvent(ref readonly MouseWheelEvent evtWheel, IPointerTarget target, long timestamp)
     {
-        var pWheelPosition = _state.WheelPosition;
-        const float max = 100f;
         var delta = new Vector2(evtWheel.X, evtWheel.Y);
-        if (delta.X != 0 && pWheelPosition.X is > max or < -max)
-        {
-            pWheelPosition.X = 0;
-        }
-
-        if (delta.Y != 0 && pWheelPosition.Y is > max or < -max)
-        {
-            pWheelPosition.Y = 0;
-        }
-
 
         AddMouseScrollEvent(
-            scrollWheelPosition: _state.WheelPosition = pWheelPosition + delta,
+            scrollWheelPosition: _state.WheelPosition += delta,
             scrollWheelDelta: delta,
             target: target,
-            mousePos: new Vector3(evtWheel.X, evtWheel.Y, 0),
+            mousePos: new Vector3(evtWheel.MouseX, evtWheel.MouseY, 0),
             timestamp: timestamp);
     }
 
+    public void PreUpdate() => _state.WheelPosition = Vector2.Zero;
 }

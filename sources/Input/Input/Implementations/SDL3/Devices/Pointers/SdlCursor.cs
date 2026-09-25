@@ -2,22 +2,17 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Frozen;
-using System.Runtime.InteropServices;
+using System.Numerics;
+using System.Reflection.Metadata;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
-internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
+internal unsafe partial class SdlCursor : ICursorConfiguration, IDisposable
 {
     private readonly ISdl _sdl;
 
-    private CursorHandle _handle;
-
-    /// <summary>
-    /// Internal style of the current cursor handle - may differ from the <see cref="Style"/> property,
-    /// </summary>
-    private CursorStyles _handleStyle = _noStyle;
-    private const CursorStyles _noStyle = (CursorStyles)(-1);
+    private CursorHandle _systemCursorHandle;
 
     private static readonly FrozenDictionary<CursorStyles, SystemCursor> _cursorStyles =
         new Dictionary<CursorStyles, SystemCursor> {
@@ -34,143 +29,101 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
     public SdlCursor(ISdl sdl)
     {
         _sdl = sdl;
+        SupportedStyles = TestCursorCompatibility(sdl, _cursorStyles);
         Mode = CursorModes.Normal;
-        SupportedStyles = TestCursorCompatibility(sdl);
         Style = CursorStyles.Arrow;
-    }
+        _customCursorSdl = new CustomCursorSdl();
 
-    private bool SetCursorStyle(CursorStyles style)
-    {
-        CursorHandle handle;
-        if (style == CursorStyles.Custom)
+        return;
+
+        static CursorStyles TestCursorCompatibility(ISdl sdl, FrozenDictionary<CursorStyles, SystemCursor> styles)
         {
-            if (_customCursorImage == null || _customCursorSurface == null)
+            // check cursor style availability
+            ReadOnlySpan<CursorStyles> mainStyles = [
+                CursorStyles.Arrow, CursorStyles.IBeam, CursorStyles.Crosshair, CursorStyles.Hand, CursorStyles.HResize,
+                CursorStyles.VResize
+            ];
+
+            // QUESTION: is it necessary to check for the Default style? can some platforms just not support any cursor?
+            // if so, the result of this evaluation will still report that "Default" is available..
+            // lest we make it nullable... nah i'll leave it to the Sdl gods for now
+            var supportedStyles = CursorStyles.Default | CursorStyles.Hidden;
+
+#if WebAssembly || ANDROID || IOS || MACCATALYST
+#else
+            supportedStyles |= CursorStyles.Custom;
+#endif
+
+            for (var i = 0; i < mainStyles.Length; i++)
             {
-                return false;
+                var cursorStyle = mainStyles[i];
+                var sdlStyle = styles[cursorStyle];
+                var cursor = sdl.CreateSystemCursor(sdlStyle);
+                if (cursor.Handle == null)
+                {
+                    SdlLog.Debug($"System cursor style {sdlStyle} unavailable");
+                }
+                else
+                {
+                    supportedStyles |= cursorStyle;
+                    sdl.DestroyCursor(cursor);
+                }
             }
 
-            var canReuseCurrentCursorHandle = _handleStyle == CursorStyles.Custom; // todo - compare cursor hotspot
-            if (canReuseCurrentCursorHandle)
-            {
-                return true;
-            }
-
-            // todo: cursor hotspot, not supported by sdl?
-            handle = _sdl.CreateColorCursor(surface: _customCursorSurface, hot_x: 0, hot_y: 0);
+            return supportedStyles;
         }
-        else if (style == _handleStyle)
-        {
-            return true;
-        }
-        else
-        {
-            handle = _sdl.CreateSystemCursor(_cursorStyles[style]);
-        }
-
-        if (handle.Handle == null)
-        {
-            SdlLog.Error("Failed to create cursor");
-            return false;
-        }
-
-        if (_handle != handle)
-        {
-            FreeCurrentCursor();
-        }
-
-        _handle = handle;
-        _handleStyle = style;
-
-        if (_sdl.SetCursor(_handle))
-        {
-            return true;
-        }
-
-        SdlLog.Error("Failed to set cursor");
-        return false;
     }
 
     public void Dispose()
     {
-        FreeCurrentCursor();
+        // frees the cursor
+        _customCursorSdl.Free(_sdl);
+        if (_systemCursorHandle != default)
+        {
+            _sdl.DestroyCursor(_systemCursorHandle);
+            _systemCursorHandle = default;
+        }
     }
 
-    private void FreeCurrentCursor()
+    private static void DisposeCursor(ref CursorHandle cursorHandle, ISdl sdl)
     {
-        if (_handle == default)
+        if (cursorHandle != default)
         {
-            return;
-        }
-
-        _sdl.DestroyCursor(_handle);
-        _handle = default;
-
-        if (_customCursorSurface != null)
-        {
-            DisposeCursorSurface(ref _customCursorSurface);
-        }
-
-        _handleStyle = _noStyle;
-    }
-
-    private void DisposeCursorSurface(ref Surface* surface)
-    {
-        if(surface != null)
-        {
-            _sdl.DestroySurface(surface);
-            surface = null;
-        }
-
-        if (_customCursorImage != null)
-        {
-            NativeMemory.AlignedFree(_customCursorImage);
-            _customCursorImage = null;
-            _cursorImageLengthBytes = 0;
+            sdl.DestroyCursor(cursorHandle);
+            cursorHandle = default;
         }
     }
 
-    private static CursorStyles TestCursorCompatibility(ISdl sdl)
-    {
-        // check cursor style availability
-        ReadOnlySpan<CursorStyles> mainStyles = [
-            CursorStyles.Arrow, CursorStyles.IBeam, CursorStyles.Crosshair, CursorStyles.Hand, CursorStyles.HResize,
-            CursorStyles.VResize
-        ];
 
-        // QUESTION: is it necessary to check for the Default style? can some platforms just not support any cursor?
-        // if so, the result of this evaluation will still report that "Default" is available..
-        // lest we make it nullable... nah i'll leave it to the Sdl gods for now
-        var successfulStyles = CursorStyles.Default;
-        for (var i = 0; i < mainStyles.Length; i++)
-        {
-            var cursorStyle = mainStyles[i];
-            var sdlStyle = _cursorStyles[cursorStyle];
-            var cursor = sdl.CreateSystemCursor(sdlStyle);
-            if (cursor.Handle == null)
-            {
-                SdlLog.Debug($"System cursor style {sdlStyle} unavailable");
-            }
-            else
-            {
-                successfulStyles |= cursorStyle;
-                sdl.DestroyCursor(cursor);
-            }
-        }
+    public event EventHandler<CursorModes>? ModeChanged;
 
-        return successfulStyles;
-    }
+    public CursorStyles SupportedStyles { get; }
 
     // TODO we can't query support for these cursor modes, but should we try-it-and-see to be accurate?
     // TODO if you're using one input context for all windows, there is no way to specify a window for
     //  grabbed cursor mode
-    public CursorModes SupportedModes =>
-        CursorModes.Normal | CursorModes.Confined | CursorModes.Unbounded;
+    public CursorModes SupportedModes => CursorModes.Normal | CursorModes.Confined | CursorModes.Unbounded;
 
     public CursorModes Mode
     {
         get;
         set
         {
+            if (value == default)
+            {
+                throw new Exception("Unnamed cursor mode not supported");
+            }
+
+            if ((SupportedModes & value) != value)
+            {
+                throw new PlatformNotSupportedException("The provided mode is not supported on this platform");
+            }
+
+            if (BitOperations.PopCount(*(uint*)&value) > 1)
+            {
+                throw new InvalidOperationException("Multi-bit modes are not supported");
+            }
+
             field = value;
             try
             {
@@ -183,127 +136,140 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
         }
     }
 
-    public event EventHandler<CursorModes>? ModeChanged;
-
-    public CursorStyles SupportedStyles { get; }
-
     public CursorStyles Style
     {
         get;
         set
         {
-            if (value == CursorStyles.Hidden && field != CursorStyles.Hidden)
+            if (value == field && value != CursorStyles.Custom)
             {
-                SetCursorVisibility(false);
                 return;
             }
 
-            SetCursorStyle(value);
-            if(field == CursorStyles.Hidden)
+            if ((SupportedStyles & value) != value)
+            {
+                throw new PlatformNotSupportedException("The provided style is not supported on this platform");
+            }
+
+            if (BitOperations.PopCount(*(uint*)&value) > 1)
+            {
+                throw new InvalidOperationException("Multi-bit styles are not supported");
+            }
+
+
+            var wasHidden = field == CursorStyles.Hidden;
+            if (value == CursorStyles.Hidden)
+            {
+                if (!wasHidden)
+                {
+                    SetCursorVisibility(false);
+                }
+
+                field = value;
+                return;
+            }
+
+            if (value == CursorStyles.Custom)
+            {
+                var handle = _customCursorSdl.CursorHandle;
+                if (handle == default)
+                {
+                    throw new InvalidOperationException("Custom cursors must be set via the Image property");
+                }
+
+                if (!_sdl.SetCursor(_customCursorSdl.CursorHandle))
+                {
+                    SdlLog.Error("Failed to set cursor");
+                    return;
+                }
+            }
+            else
+            {
+                // force-clear the custom cursor if necessary
+                _customCursorSdl.Free(_sdl);
+
+                var handle = _sdl.CreateSystemCursor(_cursorStyles[value]);
+                if (_sdl.SetCursor(handle))
+                {
+                    if(_systemCursorHandle != default)
+                    {
+                        _sdl.DestroyCursor(_systemCursorHandle);
+                    }
+
+                    _systemCursorHandle = handle;
+                }
+                else
+                {
+                    SdlLog.Error("Failed to set cursor");
+                    _sdl.DestroyCursor(handle);
+                    return;
+                }
+            }
+
+            if (wasHidden)
             {
                 SetCursorVisibility(true);
             }
 
             field = value;
+
+            return;
+
+            void SetCursorVisibility(bool visible)
+            {
+                if (visible ? _sdl.ShowCursor() : _sdl.HideCursor())
+                {
+                    return;
+                }
+
+                SdlLog.Error("Failed to change cursor visibility");
+            }
         }
     }
 
-    private void SetCursorVisibility(bool visible)
-    {
-        if (_handle == default)
-        {
-            return;
-        }
-
-        if (visible ? _sdl.HideCursor() : _sdl.ShowCursor())
-        {
-            return;
-        }
-
-        SdlLog.Error("Failed to hide cursor");
-    }
 
     public CustomCursor Image
     {
         get
         {
-            var byteCount = _customCursorWidth * _customCursorHeight * 4;
-            var myBytes = new Span<byte>(_customCursorImage, byteCount);
-            var asInts = MemoryMarshal.Cast<byte, int>(myBytes);
-            return new CustomCursor { Width = _customCursorWidth, Height = _customCursorHeight, Data = asInts };
+            if (!_customCursorSdl.Exists)
+            {
+                // todo: should this throw?
+                return default;
+            }
+
+            return new CustomCursor
+            {
+                Width = _customCursorSdl.Width,
+                Height = _customCursorSdl.Height,
+                Data = _customCursorSdl.ImageData
+            };
         }
         set
         {
-            var necessaryLength = value.Width * value.Height;
-            if(value.Data.Length < necessaryLength)
+            if ((SupportedStyles & CursorStyles.Custom) != CursorStyles.Custom)
             {
-                throw new ArgumentException($"Custom cursor image of size ({value.Width}, {value.Height}) " +
-                                         $"must be at least {value.Width * value.Height * 4} bytes long, " +
-                                         $"got {value.Data.Length} bytes instead");
+                throw new PlatformNotSupportedException("Custom cursors are not supported on this platform");
             }
 
-            // ensure we have a fixed byte array to work with so updates would automatically apply to sdl
-            _customCursorHeight = value.Height;
-            _customCursorWidth = value.Width;
-            var byteCount = necessaryLength * 4;
-            if (_customCursorImage is null)
+            if (value == default)
             {
-                _customCursorImage = (byte*)NativeMemory.AlignedAlloc((nuint)byteCount, alignment: 64);
-            }
-            else if (byteCount > _cursorImageLengthBytes)
-            {
-                NativeMemory.AlignedFree(_customCursorImage);
-                _customCursorImage = (byte*)NativeMemory.AlignedAlloc((nuint)byteCount, alignment: 64);
-            }
-
-            _cursorImageLengthBytes = byteCount;
-
-            // copy the user data to our fixed array
-            var myBytes = new Span<byte>(_customCursorImage, byteCount);
-            var providedBytes = MemoryMarshal.Cast<int, byte>(value.Data);
-            providedBytes.CopyTo(myBytes);
-
-            ApplyToCursorSurface(ref _customCursorSurface, value);
-
-            if (Style == CursorStyles.Custom && _handleStyle != CursorStyles.Custom)
-            {
-                SetCursorStyle(CursorStyles.Custom);
-            }
-
-            return;
-
-            void ApplyToCursorSurface(ref Surface* customCursorSurface, in CustomCursor val)
-            {
-                // create a new sdl surface if necessary
-                if(customCursorSurface != null)
+                // revert the style to default if our custom cursor was active
+                if (Style == CursorStyles.Custom)
                 {
-                    if (customCursorSurface->H != val.Height || customCursorSurface->W != val.Width)
-                    {
-                        DisposeCursorSurface(ref customCursorSurface);
-                        customCursorSurface = CreateSurface(val);
-                    }
-                }
-                else
-                {
-                    customCursorSurface = CreateSurface(val);
+                    Style = CursorStyles.Default;
                 }
 
-                // ensure the surface's pixel data is our native memory
-                customCursorSurface->Pixels = _customCursorImage;
-
+                _customCursorSdl.Free(_sdl);
                 return;
+            }
 
-                Ptr<Surface> CreateSurface(CustomCursor customCursor)
-                {
-                    return _sdl.CreateSurface(customCursor.Width, customCursor.Height, PixelFormat.Argb8888);
-                }
+            if (_customCursorSdl.PrepareCursorWith(in value, _sdl))
+            {
+                Style = CursorStyles.Custom;
             }
         }
     }
 
-    private Surface* _customCursorSurface;
-    private int _customCursorHeight, _customCursorWidth;
-    private byte* _customCursorImage;
-    private int _cursorImageLengthBytes;
-
+    private CustomCursorSdl _customCursorSdl;
 }

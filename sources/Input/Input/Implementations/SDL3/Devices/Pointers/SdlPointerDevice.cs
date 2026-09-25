@@ -83,13 +83,10 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
             throw new InvalidOperationException("This device does not support scrolling.");
         }
 
-        uint? touchId = null;
-        touchId = ValidateTouchId(touchId);
-
         ref var point = ref CreateOrUpdateTargetPoint(
             target: target,
             timestamp: timestamp,
-            touchId: touchId.Value,
+            touchId: ValidateTouchId(null),
             positionOnTarget: mousePos,
             ray: null,
             pressure: null,
@@ -101,7 +98,6 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
             Point: point,
             WheelPosition: scrollWheelPosition,
             Delta: scrollWheelDelta));
-
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -167,6 +167,17 @@ internal partial class SdlInputBackend : IInputBackend
 
         Debug.Assert(rawEvents.Length == timestamps.Length);
 
+        var devices = _deviceRegistry.Devices;
+
+        for (var index = 0; index < devices.Count; ++index)
+        {
+            if (devices[index] is INeedPreUpdate needer)
+            {
+                needer.PreUpdate();
+            }
+        }
+
+
         // actually process the events
         for (var i = 0; i < rawEvents.Length; ++i)
         {
@@ -176,7 +187,6 @@ internal partial class SdlInputBackend : IInputBackend
         _rawEvents.ResetCount();
         _timestamps.ResetCount();
 
-        var devices = _deviceRegistry.Devices;
         for (var index = 0; index < devices.Count; index++)
         {
             var device = devices[index];

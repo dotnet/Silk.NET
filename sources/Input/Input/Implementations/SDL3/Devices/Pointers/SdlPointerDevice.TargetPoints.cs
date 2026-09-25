@@ -25,10 +25,38 @@ internal abstract partial class SdlPointerDevice
                 "provided touchId must be 0.");
         }
 
-        AddPointerTargetIfNew();
+        // handle new pointer target:
 
-        int? pointIndex = null;
-        int? defaultIndex = null;
+        // first check if we have it already
+        var exists = false;
+        for (var i = 0; i < _myPointerTargets.Count; ++i)
+        {
+            if (ReferenceEquals(_myPointerTargets[i], target))
+            {
+                exists = true;
+                break;
+            }
+        }
+
+        // if we don't have it already, that's an EZ target changed event
+        if (!exists)
+        {
+            _myPointerTargets.Add(target);
+            var bounds = target.Bounds;
+            TargetEvents.Enqueue(
+                item: new PointerTargetChangedEvent(Pointer: this,
+                    Timestamp: timestamp,
+                    Target: target,
+                    IsAdded: true,
+                    OldBounds: default,
+                    NewBounds: bounds));
+        }
+
+        // now handle the point:
+
+        // first we check to see if we have this point already
+        int? pointIndex = null; // the index of our point
+        int? defaultIndex = null; // the index of an empty slot we could put a new point
 
         var actualPointsSpan = CollectionsMarshal.AsSpan(_actualPoints);
         for (var i = 0; i < actualPointsSpan.Length; i++)
@@ -40,6 +68,7 @@ internal abstract partial class SdlPointerDevice
                 break;
             }
 
+            // check for a free spot while we're here to avoid re-searching the list later if necessary
             if (defaultIndex is null && candidatePoint == default)
             {
                 defaultIndex = i;
@@ -49,22 +78,33 @@ internal abstract partial class SdlPointerDevice
         bool isNewPoint;
         if (pointIndex == null)
         {
-            pointIndex = defaultIndex ?? _actualPoints.Count;
-            EnsurePointsListCapacity(pointIndex.Value, _actualPoints);
-            actualPointsSpan = CollectionsMarshal.AsSpan(_actualPoints);
             isNewPoint = true;
+            if (defaultIndex == null)
+            {
+                // we need to expand the list
+                pointIndex = _actualPoints.Count;
+                _actualPoints.Add(default);
+                actualPointsSpan = CollectionsMarshal.AsSpan(_actualPoints);
+            }
+            else
+            {
+                // we can fill an old spot
+                pointIndex = defaultIndex;
+            }
         }
         else
         {
             isNewPoint = false;
         }
 
+        // we got our slot
         ref var point = ref actualPointsSpan[pointIndex.Value];
 
         // note: a null oldPoint means this is a new point
         // see PointChangedEvent for more info
         oldPoint = isNewPoint ? null : point;
 
+        // replace the point with a newly calculated point based on the inputs
         point = ToTargetPoint(
             target: target,
             touchId: *(int*)&touchId,
@@ -78,27 +118,6 @@ internal abstract partial class SdlPointerDevice
                 : point.Pointer));
 
         return ref point;
-
-        void AddPointerTargetIfNew()
-        {
-            for (var i = 0; i < _myPointerTargets.Count; ++i)
-            {
-                if (ReferenceEquals(_myPointerTargets[i], target))
-                {
-                    return;
-                }
-            }
-
-            _myPointerTargets.Add(target);
-            var bounds = target.Bounds;
-            TargetEvents.Enqueue(
-                item: new PointerTargetChangedEvent(Pointer: this,
-                    Timestamp: timestamp,
-                    Target: target,
-                    IsAdded: true,
-                    OldBounds: default,
-                    NewBounds: bounds));
-        }
     }
 
     /// <summary>
@@ -262,15 +281,6 @@ internal abstract partial class SdlPointerDevice
 
         PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint,
             NewPoint: point));
-    }
-
-    private static void EnsurePointsListCapacity(int index, List<TargetPoint> actualPoints)
-    {
-        actualPoints.EnsureCapacity(index + 1);
-        while (index >= actualPoints.Count)
-        {
-            actualPoints.Add(default);
-        }
     }
 
     public void TargetDestroyed(IPointerTarget target, long timestamp)
