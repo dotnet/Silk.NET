@@ -32,11 +32,6 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
             return Create();
         }
 
-        if (backend.AttemptUniqueId(name, ref uniqueId))
-        {
-            return Create();
-        }
-
         if (backend.AttemptUniqueId(sdlDeviceId, ref uniqueId))
         {
             return Create();
@@ -81,13 +76,11 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
 
     public void UpDownEvent(ref readonly PenTouchEvent evt, IPointerTarget target, long timestamp)
     {
-        MotionEvent(target, evt.X, evt.Y, timestamp);
+        var pt = MotionEvent(target, evt.X, evt.Y, timestamp);
 
         if (evt.Down > 0)
         {
-            const float divisor = 1f / 255f;
-            var downPressure = evt.Down * divisor;
-            AddButtonEvent(PointerButton.Primary, timestamp, true, downPressure);
+            AddButtonEvent(PointerButton.Primary, timestamp, true, pt.Pressure);
         }
         else
         {
@@ -99,7 +92,8 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void MotionEvent(ref readonly PenMotionEvent evt, IPointerTarget target, long timestamp) => MotionEvent(target, evt.X, evt.Y, timestamp);
 
-    private void MotionEvent(IPointerTarget target, float x, float y, long timestamp) =>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private TargetPoint MotionEvent(IPointerTarget target, float x, float y, long timestamp) =>
         AddOrUpdatePoint(
             touchId: null,
             target: target,

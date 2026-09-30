@@ -133,7 +133,7 @@ public static class JoystickButtonExtensions
         return button > JoystickButton.Unknown;
 #else
         var isIdentified = button > JoystickButton.Unknown;
-        Debug.Assert(isIdentified == EnumInfo<JoystickButton>.HasValue((int)button));
+        System.Diagnostics.Debug.Assert(isIdentified == EnumInfo<JoystickButton>.HasValue((int)button));
         return isIdentified;
 #endif
     }

@@ -145,7 +145,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         {
             var enumVal = numericallyDistinct[index];
 #if DEBUG
-            Debug.Assert(dict.TryAdd(enumVal, index));
+            System.Diagnostics.Debug.Assert(dict.TryAdd(enumVal, index));
 #else
             _ = dict.TryAdd(enumVal, index);
 #endif
@@ -213,7 +213,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         if (_numericallyDistinctIndices.Count < _maxCapacity)
         {
 #if DEBUG
-            Debug.Assert(_numericallyDistinctIndices.TryAdd(value, idx));
+            System.Diagnostics.Debug.Assert(_numericallyDistinctIndices.TryAdd(value, idx));
 #else
             _ = _numericallyDistinctIndices.TryAdd(value, idx);
 #endif

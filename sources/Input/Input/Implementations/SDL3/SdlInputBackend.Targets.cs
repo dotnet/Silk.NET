@@ -188,9 +188,9 @@ internal unsafe partial class SdlInputBackend
         target = device.ApplySimulatedTarget(CreateSimulatedTarget);
 
 #if DEBUG
-        Debug.Assert(device.IsSimulated);
-        Debug.Assert(device.Targets.Count == 1);
-        Debug.Assert(device.Targets[0] == target);
+        System.Diagnostics.Debug.Assert(device.IsSimulated);
+        System.Diagnostics.Debug.Assert(device.Targets.Count == 1);
+        System.Diagnostics.Debug.Assert(device.Targets[0] == target);
 #endif
         return true;
 
@@ -315,7 +315,7 @@ internal unsafe partial class SdlInputBackend
 
     private void OnWindowDestroyed(in WindowEvent evt, long timestamp)
     {
-        if (!TryGetOrCreatePointerTargetForWindow(evt.WindowID, out var target))
+        if (!TryGetPointerTargetForWindowId(evt.WindowID, _sdlWindowTargets, out var target))
         {
             return;
         }
@@ -332,7 +332,7 @@ internal unsafe partial class SdlInputBackend
 
     private void OnWindowUnclearMotion(in WindowEvent evt, long timestamp)
     {
-        if (!TryGetOrCreatePointerTargetForWindow(evt.WindowID, out var target))
+        if (!TryGetPointerTargetForWindowId(evt.WindowID, _sdlWindowTargets, out var target))
         {
             return;
         }
@@ -361,15 +361,18 @@ internal unsafe partial class SdlInputBackend
             return;
         }
 
+        var previous = target.Bounds;
         if (!target.Resize(new Vector2D<float>(evt.Data1, evt.Data2)))
         {
             return;
         }
-        for (var index = 0; index < _deviceRegistry.Devices.Count; index++)
+
+        var devices = _deviceRegistry.Devices;
+        for (var index = 0; index < devices.Count; index++)
         {
-            if (_deviceRegistry.Devices[index] is SdlPointerDevice pointerDevice)
+            if (devices[index] is SdlPointerDevice pointerDevice)
             {
-                pointerDevice.TargetChanged(target, timestamp, oldBounds: target.Bounds);
+                pointerDevice.TargetChanged(target, timestamp, oldBounds: previous);
             }
         }
     }

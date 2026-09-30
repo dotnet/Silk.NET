@@ -51,96 +51,14 @@ internal sealed class SdlInputEventContext : IDisposable
 
     public void RaiseEvents(params Span<IInputHandler> handlers)
     {
-        if (handlers is { Length: > 0 })
+        var genericEvents = System.Runtime.InteropServices.CollectionsMarshal.AsSpan(_orderedSdlEvents);
+        if(!handlers.IsEmpty)
         {
-            var genericEvents = System.Runtime.InteropServices.CollectionsMarshal.AsSpan(_orderedSdlEvents);
-            for (var index = 0; index < genericEvents.Length; index++)
-            {
-                ref readonly var evt = ref genericEvents[index];
-
-                try
-                {
-                    switch (evt.Type)
-                    {
-                        case SdlEventDiscriminator.PointChanged:
-                            RaiseEvent(in handlers, in evt.Value<PointChangedEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.PointerClick:
-                            RaiseEvent(in handlers, in evt.Value<PointerClickEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.PointerButtonChanged:
-                            RaiseEvent(in handlers, in evt.Value<ButtonChangedEvent<PointerButton>>());
-                            break;
-
-                        case SdlEventDiscriminator.PointerGripChanged:
-                            RaiseEvent(in handlers, in evt.Value<PointerGripChangedEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.PointerTargetChanged:
-                            RaiseEvent(in handlers, in evt.Value<PointerTargetChangedEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.JoystickButtonChanged:
-                            RaiseEvent(in handlers, in evt.Value<ButtonChangedEvent<JoystickButton>>());
-                            break;
-
-                        case SdlEventDiscriminator.KeyButtonChanged:
-                            RaiseEvent(in handlers, in evt.Value<ButtonChangedEvent<KeyName>>());
-                            break;
-
-                        case SdlEventDiscriminator.KeyChanged:
-                            RaiseEvent(in handlers, in evt.Value<KeyChangedEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.GamepadThumbstickMove:
-                            RaiseEvent(in handlers, in evt.Value<GamepadThumbstickMoveEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.GamepadTriggerMove:
-                            RaiseEvent(in handlers, in evt.Value<GamepadTriggerMoveEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.JoystickAxisMove:
-                            RaiseEvent(in handlers, in evt.Value<JoystickAxisMoveEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.JoystickHatMove:
-                            RaiseEvent(in handlers, in evt.Value<JoystickHatMoveEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.KeyChar:
-                            RaiseEvent(in handlers, in evt.Value<KeyCharEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.MouseScroll:
-                            RaiseEvent(in handlers, in evt.Value<MouseScrollEvent>());
-                            break;
-
-                        case SdlEventDiscriminator.Connection:
-                        {
-                            var value = evt.Value<ConnectionEvent>();
-                            for (var i = 0; i < handlers.Length; ++i)
-                            {
-                                handlers[i].HandleDeviceConnectionChanged(value);
-                            }
-
-                            break;
-                        }
-
-                        default:
-                            throw new InvalidOperationException("Invalid type: " + evt.Type);
-                    }
-                }
-                catch (Exception e)
-                {
-                    InputLog.Error(e.ToString());
-                }
-            }
+            RaiseEvents(in handlers, genericEvents);
         }
 
         _orderedSdlEvents.Clear();
+
         // clear all
         JoyButtonChangedEvents.ResetCount();
         ConnectionEvents.ResetCount();
@@ -156,6 +74,94 @@ internal sealed class SdlInputEventContext : IDisposable
         PointerGripChangedEvents.ResetCount();
         PointerTargetChangedEvents.ResetCount();
         PointerButtonEvents.ResetCount();
+    }
+
+    private static void RaiseEvents(ref readonly Span<IInputHandler> handlers, Span<GenericEvent> genericEvents)
+    {
+        for (var index = 0; index < genericEvents.Length; index++)
+        {
+            ref readonly var evt = ref genericEvents[index];
+
+            try
+            {
+                switch (evt.Type)
+                {
+                    case SdlEventDiscriminator.PointChanged:
+                        RaiseEvent(in handlers, in evt.Value<PointChangedEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.PointerClick:
+                        RaiseEvent(in handlers, in evt.Value<PointerClickEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.PointerButtonChanged:
+                        RaiseEvent(in handlers, in evt.Value<ButtonChangedEvent<PointerButton>>());
+                        break;
+
+                    case SdlEventDiscriminator.PointerGripChanged:
+                        RaiseEvent(in handlers, in evt.Value<PointerGripChangedEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.PointerTargetChanged:
+                        RaiseEvent(in handlers, in evt.Value<PointerTargetChangedEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.JoystickButtonChanged:
+                        RaiseEvent(in handlers, in evt.Value<ButtonChangedEvent<JoystickButton>>());
+                        break;
+
+                    case SdlEventDiscriminator.KeyButtonChanged:
+                        RaiseEvent(in handlers, in evt.Value<ButtonChangedEvent<KeyName>>());
+                        break;
+
+                    case SdlEventDiscriminator.KeyChanged:
+                        RaiseEvent(in handlers, in evt.Value<KeyChangedEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.GamepadThumbstickMove:
+                        RaiseEvent(in handlers, in evt.Value<GamepadThumbstickMoveEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.GamepadTriggerMove:
+                        RaiseEvent(in handlers, in evt.Value<GamepadTriggerMoveEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.JoystickAxisMove:
+                        RaiseEvent(in handlers, in evt.Value<JoystickAxisMoveEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.JoystickHatMove:
+                        RaiseEvent(in handlers, in evt.Value<JoystickHatMoveEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.KeyChar:
+                        RaiseEvent(in handlers, in evt.Value<KeyCharEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.MouseScroll:
+                        RaiseEvent(in handlers, in evt.Value<MouseScrollEvent>());
+                        break;
+
+                    case SdlEventDiscriminator.Connection:
+                    {
+                        var value = evt.Value<ConnectionEvent>();
+                        for (var i = 0; i < handlers.Length; ++i)
+                        {
+                            handlers[i].HandleDeviceConnectionChanged(value);
+                        }
+
+                        break;
+                    }
+
+                    default:
+                        throw new InvalidOperationException("Invalid type: " + evt.Type);
+                }
+            }
+            catch (Exception e)
+            {
+                InputLog.Error(e.ToString());
+            }
+        }
 
         return;
 

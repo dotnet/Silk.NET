@@ -50,9 +50,8 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
         }
     }
 
-    protected void AddButtonEvent(PointerButton button, long timestamp, bool isDown, float? pressure = null)
+    protected void AddButtonEvent(PointerButton button, long timestamp, bool isDown, float pressure01)
     {
-        pressure ??= isDown ? 1.0f : 0.0f;
         var idx = EnumInfo<PointerButton>.ValueIndexOf(button);
 
         while (idx >= _buttons.Count)
@@ -63,12 +62,25 @@ internal abstract partial class SdlPointerDevice : SdlDevice, IPointerDevice, IM
 
         ref var myButton = ref CollectionsMarshal.AsSpan(_buttons)[idx];
         var original = myButton;
-        myButton = new Button<PointerButton>(button, isDown, pressure.Value);
+        myButton = new Button<PointerButton>(button, isDown, pressure01);
 
         if (myButton != original)
         {
             ButtonEvents.Enqueue(new ButtonChangedEvent<PointerButton>(this, timestamp, myButton, original));
         }
+    }
+
+    protected float GetCurrentPressure(uint? touchId, IPointerTarget target, long timestamp, float x, float y)
+    {
+        ref var point = ref CreateOrUpdateTargetPoint(
+            target: target,
+            timestamp: timestamp,
+            touchId: ValidateTouchId(touchId),
+            positionOnTarget: new Vector3(x, y, 0),
+            ray: null,
+            pressure: null,
+            oldPoint: out _);
+        return point.Pressure;
     }
 
 

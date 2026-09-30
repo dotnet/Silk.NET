@@ -67,14 +67,15 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
 
     public bool Resize(Vector2D<float> newSize2)
     {
-        var currentSize = Bounds.Size;
+        var box3D = Bounds;
+        var currentSize = box3D.Size;
         if (newSize2 == new Vector2D<float>(currentSize.X, currentSize.Y))
         {
             return false;
         }
 
 
-        var currentPos = Bounds.Min;
+        var currentPos = box3D.Min;
         var newSize = new Vector3D<float>(newSize2.X, newSize2.Y, 0);
         Bounds = new Box3D<float>(currentPos, currentPos + newSize);
         return true;

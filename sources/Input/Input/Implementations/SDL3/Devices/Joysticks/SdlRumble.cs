@@ -85,7 +85,7 @@ internal unsafe class SdlRumble : IReadOnlyList<IMotor>
 
     private static void SetJoystickRumble(ISdl backend, void* handle, ushort left, ushort right)
     {
-        var average = (ushort)((left + right) >> 2);
+        var average = (ushort)((left + right) >> 1);
         var joystickHandle = *(JoystickHandle*)&handle;
         if (!backend.RumbleJoystick(joystickHandle, average, average, _durationMs))
         {

@@ -61,9 +61,7 @@ public partial class InputContext
 
             for (var index = 0; index < _backends.Count; index++)
             {
-                var devices = Backends[index].Devices;
-                _devices ??= new List<IInputDevice>(devices.Count);
-                _devices.AddRange(devices);
+                _devices.AddRange(_backends[index].Devices);
             }
 
             return _devices ??= [];

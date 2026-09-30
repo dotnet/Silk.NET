@@ -112,6 +112,10 @@ public partial class InputContext
     void ICollection<IInputBackend>.CopyTo(IInputBackend[] array, int arrayIndex) =>
         _backends.CopyTo(array, arrayIndex);
 
+    /// <remarks>
+    /// Note: this does not dispose of the given backend, as the <see cref="InputContext"/> does not own backends
+    /// given to it.
+    /// </remarks>
     bool ICollection<IInputBackend>.Remove(IInputBackend item)
     {
         HandleBackendRemoval(item);

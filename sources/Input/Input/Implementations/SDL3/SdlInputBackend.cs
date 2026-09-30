@@ -206,10 +206,7 @@ internal partial class SdlInputBackend : IInputBackend
             }
         }
 
-        if (handler is not null)
-        {
-            _sdlInputEvents.RaiseEvents(handler);
-        }
+        _sdlInputEvents.RaiseEvents(handler is null ? Span<IInputHandler>.Empty : [handler]);
     }
 
 

@@ -30,7 +30,13 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
     {
         float x = 0, y = 0;
         var mouseInputFlags = GetMouseState(ref x, ref y);
-        ApplyMouseButtonState(mouseInputFlags, timestamp);
+        foreach (var pointerButtonName in EnumInfo<PointerButton>.UniqueNamedValues)
+        {
+            if (mouseInputFlags.Has(pointerButtonName))
+            {
+                AddButtonEvent(pointerButtonName, timestamp, true, 1);
+            }
+        }
 
         var window = NativeBackend.GetMouseFocus();
         if (Backend.TryGetOrCreatePointerTargetForWindow(window, out var target))
@@ -40,17 +46,6 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
         // var point = _unboundedPointerTarget.GetPoint(this, 0);
     }
 
-
-    private void ApplyMouseButtonState(SdlMouseInputFlags mouseState, long now)
-    {
-        foreach (var pointerButtonName in EnumInfo<PointerButton>.UniqueNamedValues)
-        {
-            if (mouseState.Has(pointerButtonName))
-            {
-                AddButtonEvent(pointerButtonName, now, true);
-            }
-        }
-    }
 
     private unsafe SdlMouseInputFlags GetMouseState(ref float x, ref float y) =>
         (SdlMouseInputFlags)NativeBackend.GetMouseState((float*)Unsafe.AsPointer(ref x),
@@ -197,8 +192,9 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
             },
             timestamp: timestamp,
             isDown: down,
-            pressure: down ? 1 : 0);
+            pressure01: down ? 1 : 0);
     }
+
 
     public void AddWheelEvent(ref readonly MouseWheelEvent evtWheel, IPointerTarget target, long timestamp)
     {

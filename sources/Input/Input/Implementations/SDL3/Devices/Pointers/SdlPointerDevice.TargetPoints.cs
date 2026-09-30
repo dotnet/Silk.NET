@@ -189,7 +189,7 @@ internal abstract partial class SdlPointerDevice
     /// <param name="ray">The ray - set null if has not changed or is simply computed in 2D without extra calculation</param>
     /// <param name="timestamp"></param>
     /// <exception cref="InvalidOperationException"></exception>
-    protected void AddOrUpdatePoint(uint? touchId, IPointerTarget target, in Vector3? pos, float? pressure,
+    protected TargetPoint AddOrUpdatePoint(uint? touchId, IPointerTarget target, in Vector3? pos, float? pressure,
         bool? isDown, Ray3D<float>? ray, long timestamp)
     {
         if (pos == null && pressure == null && isDown == null && ray == null)
@@ -233,6 +233,8 @@ internal abstract partial class SdlPointerDevice
                     OldPoint: previous,
                     NewPoint: point));
         }
+
+        return point;
     }
 
     private uint ValidateTouchId(uint? touchId)

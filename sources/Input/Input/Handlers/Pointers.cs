@@ -81,7 +81,15 @@ public sealed class Pointers
             return;
         }
 
-        ButtonChanged?.Invoke(@event);
+        try
+        {
+            ButtonChanged?.Invoke(@event);
+        }
+        catch (Exception e)
+        {
+            InputLog.Error($"Exception while handling button changed event: {e.Message}\n{e.StackTrace}");
+        }
+
         if (@event.Previous.IsDown || !@event.Button.IsDown)
         {
             return;
@@ -108,7 +116,15 @@ public sealed class Pointers
     /// <inheritdoc/>
     public void HandleTargetChanged(PointerTargetChangedEvent @event)
     {
-        TargetChanged?.Invoke(@event);
+        try
+        {
+            TargetChanged?.Invoke(@event);
+        }
+        catch (Exception e)
+        {
+            InputLog.Error($"Exception while handling target changed event: {e.Message}\n{e.StackTrace}");
+        }
+
         if (_clicks is null || @event.IsAdded is not false)
         {
             return;
