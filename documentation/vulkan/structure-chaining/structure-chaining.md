@@ -21,7 +21,7 @@ the [Raw Chaining methodology](raw_chaining.md). In a very real sense, it can ei
 of both, or of being a compromise that isn't as good as either alternative!
 
 Notwithstanding, the methodology makes use of a set of well documented extension methods, found
-in [`ChainExtensions`](../../src/Vulkan/Silk.NET.Vulkan/ChainExtensions.cs) to allow the type-safe manipulation
+in [`ChainExtensions`](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/ChainExtensions.cs) to allow the type-safe manipulation
 of `IChainable` structures efficiently; with the exception of the `ref Chain(out)` instance convenience method which we
 cover [below](#creation-chain), that is implemented automatically on any structure that implements `IChainStart`.
 
