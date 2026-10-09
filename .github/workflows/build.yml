@@ -24,7 +24,7 @@ jobs:
         java-version: 21
         distribution: "temurin"
     - name: Setup Android Environment
-      uses: android-actions/setup-android@v3
+      uses: android-actions/setup-android@v4.0.4
       env:
         ANDROID_SDK_ROOT: /Users/runner/Library/Android/sdk
     - name: Install Android Platforms
