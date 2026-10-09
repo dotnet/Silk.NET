@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.CommandLine;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.Build.Locator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -88,22 +90,29 @@ internal class Program
             // Register MSBuild
             MSBuildLocator.RegisterDefaults();
 
-            var sp = new ServiceCollection()
-                .AddLogging(builder =>
-                {
-                    builder.AddSimpleConsole(opts =>
+            ILifetimeScope container;
+            {
+                var services = new ServiceCollection()
+                    .AddLogging(builder =>
                     {
-                        opts.SingleLine = true;
-                        opts.ColorBehavior = Console.IsOutputRedirected
-                            ? LoggerColorBehavior.Disabled
-                            : LoggerColorBehavior.Default;
-                        opts.IncludeScopes = false;
-                    });
-                    builder.SetMinimumLevel(ctx.ParseResult.GetValueForOption(LoggingOption));
-                })
-                .AddOptions()
-                .AddSilkTouch(config)
-                .BuildServiceProvider();
+                        builder.AddSimpleConsole(opts =>
+                        {
+                            opts.SingleLine = true;
+                            opts.ColorBehavior = Console.IsOutputRedirected
+                                ? LoggerColorBehavior.Disabled
+                                : LoggerColorBehavior.Default;
+                            opts.IncludeScopes = false;
+                        });
+                        builder.SetMinimumLevel(ctx.ParseResult.GetValueForOption(LoggingOption));
+                    })
+                    .AddOptions()
+                    .AddSilkTouch(config);
+
+                var builder = new ContainerBuilder();
+                builder.Populate(services);
+
+                container = builder.Build();
+            }
 
             var jobsToRun = new HashSet<string>(
                 ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
@@ -115,8 +124,8 @@ internal class Program
                 StringComparer.OrdinalIgnoreCase
             );
 
-            var logger = sp.GetRequiredService<ILogger<Program>>();
-            var generator = sp.GetRequiredService<SilkTouchGenerator>();
+            var logger = container.Resolve<ILogger<Program>>();
+            var generator = container.Resolve<SilkTouchGenerator>();
 
             await Parallel.ForEachAsync(
                 config

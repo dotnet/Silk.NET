@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" />
     <PackageReference Include="ClangSharp.PInvokeGenerator" />
     <PackageReference Include="CSharpier.Core" />
     <PackageReference Include="Humanizer.Core" />
