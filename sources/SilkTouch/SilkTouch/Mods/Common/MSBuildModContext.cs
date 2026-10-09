@@ -118,7 +118,7 @@ internal class MSBuildModContext(
         }
     }
 
-    private string ObtainCacheKey()
+    private string ObtainCacheKey() // TODO: This code is never used
     {
         // Obtain a cache key for the job, should the mods want to cache any artifacts.
         var cacheKey = string.Join(',', cfg.AsEnumerable().OrderBy(x => x.Key));

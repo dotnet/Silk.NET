@@ -28,7 +28,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </remarks>
 /// <param name="log">The logger.</param>
 /// <param name="options">The configuration options.</param>
-[ModConfiguration<Configuration>]
 public class ChangeNativeClass(
     ILogger<ChangeNativeClass> log,
     IOptionsSnapshot<ChangeNativeClass.Configuration> options

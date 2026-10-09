@@ -21,7 +21,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Does not support nested types. Please use <see cref="ExtractNestedTypes"/> before this mod.
 /// Note that despite this, some initial work has been done to add nested type support so that it can be added when necessary.
 /// </remarks>
-[ModConfiguration<Configuration>]
 public class PrettifyNames(
     ILogger<PrettifyNames> logger,
     IOptionsSnapshot<PrettifyNames.Configuration> config

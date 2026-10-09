@@ -20,7 +20,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <param name="stdResolver">The standard include resolver.</param>
 /// <param name="inputResolver">The user path input resolver.</param>
 /// <param name="options">The mod configuration options snapshot.</param>
-[ModConfiguration<Configuration>]
 public class AddIncludes(
     IStdIncludeResolver stdResolver,
     IInputResolver inputResolver,

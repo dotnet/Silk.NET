@@ -25,7 +25,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// to be akin to booleans to use the <c>MaybeBool</c> type.
 /// This functionality is based on <see cref="BoolTransformer"/>.
 /// </remarks>
-[ModConfiguration<Configuration>]
 public class TransformProperties(IOptionsSnapshot<TransformProperties.Configuration> cfg) : IMod
 {
     /// <summary>

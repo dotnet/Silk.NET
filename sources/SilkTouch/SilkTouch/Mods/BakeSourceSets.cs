@@ -26,7 +26,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <param name="strategies">
 /// The available bake strategies. The actual strategy to use is determined from the configuration.
 /// </param>
-[ModConfiguration<Configuration>]
 public class BakeSourceSets(
     ILogger<BakeSourceSets> logger,
     IOptionsSnapshot<BakeSourceSets.Configuration> config,

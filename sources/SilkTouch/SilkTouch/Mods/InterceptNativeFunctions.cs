@@ -16,7 +16,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// suffix.
 /// </summary>
 /// <param name="options">The configuration for the mod.</param>
-[ModConfiguration<Configuration>]
 public class InterceptNativeFunctions(
     IOptionsSnapshot<InterceptNativeFunctions.Configuration> options
 ) : IMod

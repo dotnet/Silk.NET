@@ -11,7 +11,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Strips matching attributes from the generated bindings.
 /// </summary>
-[ModConfiguration<Configuration>]
 public class StripAttributes(IOptionsSnapshot<StripAttributes.Configuration> cfg) : IMod
 {
     /// <summary>

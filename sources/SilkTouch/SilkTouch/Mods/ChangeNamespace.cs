@@ -22,7 +22,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// A mod that changes namespaces in response files. It is assumed that there will be no other sources of variance with
 /// regards to namespaces.
 /// </summary>
-[ModConfiguration<Configuration>]
 public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> config)
     : IMod,
         IResponseFileMod

@@ -24,8 +24,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 /// <param name="logger">The logger.</param>
 /// <param name="cfg">The configuration.</param>
-[ModConfiguration<Configuration>]
-public partial class MixKhronosData(
     ILogger<MixKhronosData> logger,
     IOptionsSnapshot<MixKhronosData.Configuration> cfg
 )

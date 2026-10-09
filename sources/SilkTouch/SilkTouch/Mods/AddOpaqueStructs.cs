@@ -21,7 +21,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Adds opaque structs.
 /// </summary>
-[ModConfiguration<Configuration>]
 public class AddOpaqueStructs(
     ILogger<AddOpaqueStructs> logger,
     IOptionsSnapshot<AddOpaqueStructs.Configuration> config

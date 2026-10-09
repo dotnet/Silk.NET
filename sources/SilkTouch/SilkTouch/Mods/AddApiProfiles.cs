@@ -24,7 +24,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <param name="logger">The logger to use.</param>
 /// <param name="config">The configuration snapshot.</param>
 /// <param name="versionProviders">The version providers.</param>
-[ModConfiguration<Configuration>]
 public class AddApiProfiles(
     ILogger<AddApiProfiles> logger,
     IOptionsSnapshot<AddApiProfiles.Configuration> config,

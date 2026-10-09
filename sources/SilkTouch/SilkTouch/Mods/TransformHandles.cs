@@ -28,7 +28,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <remarks>
 /// The `Handle` suffix is not applied until <see cref="PrettifyNames"/> executes.
 /// </remarks>
-[ModConfiguration<Config>]
 public class TransformHandles(
     IOptionsSnapshot<TransformHandles.Config> config,
     ILogger<TransformHandles> logger

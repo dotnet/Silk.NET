@@ -4,15 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Sources;
-using Diagnostic = ClangSharp.Diagnostic;
 
 namespace Silk.NET.SilkTouch;
 

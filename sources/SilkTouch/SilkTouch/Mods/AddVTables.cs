@@ -37,7 +37,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <see cref="DllImport"/>-based partial class implementation of the static interface. However, in some cases this
 /// could be any other implementation such as the <see cref="ThisThread"/> implementation.
 /// </remarks>
-[ModConfiguration<Configuration>]
 public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMod
 {
     /// <summary>

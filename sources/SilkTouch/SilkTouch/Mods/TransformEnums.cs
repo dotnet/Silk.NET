@@ -14,7 +14,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Contains various transformations related to enums.
 /// </summary>
-[ModConfiguration<Configuration>]
 public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) : IMod
 {
     /// <summary>

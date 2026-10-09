@@ -31,7 +31,6 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <param name="inputResolver">The input resolver to use.</param>
 /// <param name="responseFileMods">The mods that modify response files before they are fed to ClangSharp.</param>
 /// <param name="cacheProvider">The cache provider into which ClangSharp outputs are cached.</param>
-[ModConfiguration<Configuration>]
 public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
     IOptionsSnapshot<ClangScraper.Configuration> config,

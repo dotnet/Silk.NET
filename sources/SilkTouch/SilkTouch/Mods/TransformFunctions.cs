@@ -11,7 +11,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Mods the bindings to use the Silk.NET.Core pointer types.
 /// </summary>
-[ModConfiguration<Configuration>]
 public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewriter, IMod
 {
     private ThreadLocal<string> _jobKey = new();
