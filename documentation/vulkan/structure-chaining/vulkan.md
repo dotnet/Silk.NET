@@ -16,7 +16,7 @@ a [machine-readable XML version](https://raw.githubusercontent.com/KhronosGroup/
 which is used by Silk.NET's `BuildTools` to automatically generate the API in the `Silk.NET.Vulkan` namespace. Each
 structure type, used by the API, is clearly defined in the document. Two of those types are `VkBaseOutStructure`
 and `VkBaseInStructure`, the latter of which maps to
-the [BaseInStructure](../../src/Vulkan/Silk.NET.Vulkan/Structs/BaseInStructure.gen.cs) type in Silk.NET, which contains
+the [BaseInStructure](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/Structs/BaseInStructure.gen.cs) type in Silk.NET, which contains
 2 fields:
 
 ```csharp
@@ -45,7 +45,7 @@ alternatively as `BaseInStructure*` as above, or even `BaseOutStructure`) in a f
 cannot specify fields though, so this guarantee is enforced during generation. It is important, therefore, that you do
 not add the interface to your own types, unless you are very clear on the implications and make the same guarantees.
 
-The interface is defined [here](../../src/Vulkan/Silk.NET.Vulkan/IChainable.cs):
+The interface is defined [here](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/IChainable.cs):
 
 ```csharp
 /// <summary>
@@ -80,7 +80,7 @@ unsafe BaseInStructure* IChainable.PNext
 ## IStructuredType
 
 You may also note that `IChainable` extends `IStructuredType` which is
-defined [here](../../src/Vulkan/Silk.NET.Vulkan/IStructuredType.cs):
+defined [here](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/IStructuredType.cs):
 
 ```csharp
 /// <summary>
@@ -127,7 +127,7 @@ For _some_ chainable structures,
 the [Vulkan Specification](https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/main/xml/vk.xml) goes further and
 specifies which chains the structure can be used in. For example, take the `VkPhysicalDeviceVariablePointersFeatures`
 structure, which maps
-to [`PhysicalDeviceVariablePointersFeatures`](../../src/Vulkan/Silk.NET.Vulkan/Structs/PhysicalDeviceVariablePointersFeatures.gen.cs)
+to [`PhysicalDeviceVariablePointersFeatures`](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/Structs/PhysicalDeviceVariablePointersFeatures.gen.cs)
 . It is defined in the specification as:
 
 ```xml
@@ -153,7 +153,7 @@ public unsafe partial struct PhysicalDeviceVariablePointersFeatures :
 
 As you can see, it _doesn't_ seem to implement `IChainable`, instead it implements `IExtendsChain<>` 3 times. The first
 part is easy enough to understand when we see the definition
-of `IExtendsChain` [here](../../src/Vulkan/Silk.NET.Vulkan/IExtendsChain.cs):
+of `IExtendsChain` [here](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/IExtendsChain.cs):
 
 ```csharp
 /// <summary>
@@ -173,7 +173,7 @@ allowing it to enforce such constraints at compile time.
 
 But where does the `IExtendsChain<PhysicalDeviceFeatures2KHR>` come from? As the API only lists 2 structures in
 the `structextends` attribute? Well a clue can be found in the `PhysicalDeviceFeatures2`
-structure [here](../../src/Vulkan/Silk.NET.Vulkan/Structs/PhysicalDeviceFeatures2.gen.cs):
+structure [here](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/Structs/PhysicalDeviceFeatures2.gen.cs):
 
 ```csharp
 [NativeName("Name", "VkPhysicalDeviceFeatures2")]
@@ -184,13 +184,13 @@ public unsafe partial struct PhysicalDeviceFeatures2 : IChainStart, IExtendsChai
 
 As you can see this indicates that the specification defines an alias for `VkPhysicalDeviceFeatures2`
 called `VkPhysicalDeviceFeatures2KHR`, which maps to the `PhysicalDeviceFeatures2KHR` structure
-found [here](../../src/Vulkan/Silk.NET.Vulkan/Structs/PhysicalDeviceFeatures2KHR.gen.cs).
+found [here](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/Structs/PhysicalDeviceFeatures2KHR.gen.cs).
 
 ## IChainStart
 
 From `PhysicalDeviceFeatures2` we can see another new interface called `IChainStart`, similar to
 `IExtendsChain<TChain>`, it also implements `IChainable` and is
-defined [here](../../src/Vulkan/Silk.NET.Vulkan/IChainStart.cs):
+defined [here](https://github.com/dotnet/Silk.NET/blob/main/src/Vulkan/Silk.NET.Vulkan/IChainStart.cs):
 
 ```csharp
 /// <summary>
