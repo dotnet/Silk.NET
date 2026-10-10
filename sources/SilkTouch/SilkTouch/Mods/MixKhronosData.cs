@@ -21,7 +21,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// A mod that reads Khronos specifications to influence codegen.
 /// </summary>
-/// <param name="logger">The logger.</param>
 public partial class MixKhronosData(
     ILogger<MixKhronosData> logger,
     MixKhronosData.Configuration config
