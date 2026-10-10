@@ -10,16 +10,24 @@ using Silk.NET.SilkTouch.Sources;
 namespace Silk.NET.SilkTouch;
 
 /// <summary>
-/// The main entry-point class for SilkTouch.
+/// TODO
 /// </summary>
-public class SilkTouchGenerator : IDisposable
+public class SilkTouchJob : IDisposable
 {
     private readonly ILifetimeScope container;
 
-    private readonly string _jobKey;
-    private SilkTouchConfiguration _jobConfig;
-    private readonly ILogger<SilkTouchGenerator> _logger;
+    private readonly ILogger<SilkTouchJob> _logger;
     private readonly IInputResolver _inputResolver;
+
+    /// <summary>
+    /// TODO
+    /// </summary>
+    public string Key { get; }
+
+    /// <summary>
+    /// TODO
+    /// </summary>
+    public SilkTouchConfiguration Config { get; private set; }
 
     /// <summary>
     /// Gets the loaded mods for this generator instance.
@@ -27,27 +35,28 @@ public class SilkTouchGenerator : IDisposable
     public IReadOnlyList<IMod> Mods { get; }
 
     /// <summary>
-    /// The main entry-point class for SilkTouch.
+    /// TODO
     /// </summary>
-    /// <param name="jobKey"></param>
-    /// <param name="jobConfig"></param> // TODO
+    /// <param name="key"></param>
+    /// <param name="config"></param> // TODO
     /// <param name="parentContainer"></param>
     /// <param name="build"></param>
-    public SilkTouchGenerator(
-        string jobKey,
-        SilkTouchConfiguration jobConfig,
+    public SilkTouchJob(
+        string key,
+        SilkTouchConfiguration config,
         ILifetimeScope parentContainer,
         Action<ContainerBuilder> build
     )
     {
-        _logger = parentContainer.Resolve<ILogger<SilkTouchGenerator>>();
+        this.Key = key;
+        this.Config = config;
+
+        _logger = parentContainer.Resolve<ILogger<SilkTouchJob>>();
         _inputResolver = parentContainer.Resolve<IInputResolver>();
 
         // TODO: Maybe have each mod provide a Register(ILifetimeScope container, Mod.Configuration configuration) method
         container = parentContainer.BeginLifetimeScope(build);
 
-        _jobKey = jobKey;
-        _jobConfig = jobConfig;
         Mods = container.Resolve<IMod[]>();
     }
 
@@ -59,10 +68,10 @@ public class SilkTouchGenerator : IDisposable
         var sw = Stopwatch.StartNew();
 
         // Resolve any relative paths in the job configuration.
-        _jobConfig = await _inputResolver.Resolve(_jobConfig);
+        Config = await _inputResolver.Resolve(Config);
 
         // Prepare the context
-        var context = new MSBuildModContext(_jobKey, _jobConfig, _logger);
+        var context = new MSBuildModContext(Key, Config, _logger);
 
         // Just in case a mod gets naughty and tries to modify at the initialization stage.
         var srcProj = context.SourceProject;
@@ -71,7 +80,7 @@ public class SilkTouchGenerator : IDisposable
         // Initialize the mods
         foreach (var mod in Mods)
         {
-            _logger.LogDebug("Using mod {0} for {1}", mod.GetType().Name, _jobKey);
+            _logger.LogDebug("Using mod {0} for {1}", mod.GetType().Name, Key);
             await mod.InitializeAsync(context, ct);
             if (context.SourceProject != srcProj || context.TestProject != testProj)
             {
@@ -83,7 +92,7 @@ public class SilkTouchGenerator : IDisposable
 
         foreach (var mod in Mods)
         {
-            _logger.LogInformation("Executing {} for {}...", mod.GetType().Name, _jobKey);
+            _logger.LogInformation("Executing {} for {}...", mod.GetType().Name, Key);
             await mod.ExecuteAsync(context, ct);
         }
 
@@ -93,7 +102,7 @@ public class SilkTouchGenerator : IDisposable
         // Output the generated bindings
         _logger.LogInformation(
             "Bindings generation for {} completed in {} seconds.",
-            _jobKey,
+            Key,
             sw.Elapsed.TotalSeconds
         );
     }
@@ -129,5 +138,6 @@ public class SilkTouchGenerator : IDisposable
         return ret;
     }
 
+    /// <inheritdoc />
     public void Dispose() => container.Dispose();
 }

@@ -115,21 +115,36 @@ internal class Program
                 StringComparer.OrdinalIgnoreCase
             );
 
-            var generator = container.Resolve<SilkTouchGenerator>();
+            // TODO: Refactor as fluent builder
+            var allJobs = new List<SilkTouchJob>()
+            {
+                new(
+                    "Vulkan",
+                    new SilkTouchConfiguration
+                    {
+                        Solution = "TODO", // TODO
+                        SourceProject = "null",
+                        TestProject = "null",
+                        Mods = new string[] { },
+                        DefaultLicenseHeader = "null",
+                    },
+                    container,
+                    builder => { }
+                ),
+            };
+
+            var generator = container.Resolve<SilkTouchJob>();
 
             await Parallel.ForEachAsync(
-                config
-                    .GetSection("Jobs")
-                    .GetChildren()
-                    .Where(section =>
+                allJobs.Where(job =>
+                {
+                    if (jobsToSkip.Contains(job.Key))
                     {
-                        if (jobsToSkip.Contains(section.Key))
-                        {
-                            return false;
-                        }
+                        return false;
+                    }
 
-                        return jobsToRun.Count == 0 || jobsToRun.Contains(section.Key);
-                    }),
+                    return jobsToRun.Count == 0 || jobsToRun.Contains(job.Key);
+                }),
                 async (job, ct) =>
                 {
                     await generator.RunAsync(

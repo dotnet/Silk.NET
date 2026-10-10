@@ -235,12 +235,12 @@ public sealed class ClangScraper(
         // Figure out what the common root is so we can aggregate the file paths without collisions
         var srcRoot =
             cfg.InputSourceRoot
-            ?? SilkTouchGenerator.GetLongestCommonPath(
+            ?? SilkTouchJob.GetLongestCommonPath(
                 rsps.Select(x => x.GeneratorConfiguration.OutputLocation)
             );
         var testRoot =
             cfg.InputTestRoot
-            ?? SilkTouchGenerator.GetLongestCommonPath(
+            ?? SilkTouchJob.GetLongestCommonPath(
                 rsps.Select(x => x.GeneratorConfiguration.TestOutputLocation)
             );
         srcRoot = Path.GetFullPath(srcRoot);
