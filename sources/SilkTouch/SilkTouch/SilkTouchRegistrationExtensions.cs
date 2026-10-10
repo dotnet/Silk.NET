@@ -260,9 +260,15 @@ public static class SilkTouchRegistrationExtensions
         {
             context.Builder.RegisterType<TransformFunctions>().AsHierarchyAndInterfaces().SingleInstance();
 
-            context.Builder.RegisterType<PtrRefTransformer>().AsImplementedInterfaces().SingleInstance();
-            context.Builder.RegisterType<BoolTransformer>().AsImplementedInterfaces().SingleInstance();
-            context.Builder.RegisterType<ArrayParameterTransformer>().AsImplementedInterfaces().SingleInstance();
+            // These probably can be moved to their own registration methods, but keeping it here since we have no reason to exclude any transformers right now
+            // Also, BoolTransformer relies on TransformFunctions.Configuration, which is tech debt
+            {
+                context.Builder.RegisterType<FunctionTransformer>().SingleInstance();
+
+                context.Builder.RegisterType<PtrRefTransformer>().AsImplementedInterfaces().SingleInstance();
+                context.Builder.RegisterType<BoolTransformer>().AsImplementedInterfaces().SingleInstance();
+                context.Builder.RegisterType<ArrayParameterTransformer>().AsImplementedInterfaces().SingleInstance();
+            }
 
             context.Builder.RegisterInstance(config).SingleInstance();
 

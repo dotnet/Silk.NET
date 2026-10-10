@@ -72,7 +72,6 @@ internal static class Program
                 // TODO: Cleanup. Probably move into a SilkTouchHost class.
                 {
                     services.AddSingleton<ResponseFileHandler>();
-                    services.AddSingleton<FunctionTransformer>();
                     services.AddSingleton<DefaultBakeStrategy>();
                     services.AddSingleton<IBakeStrategy>(s =>
                         s.GetRequiredService<DefaultBakeStrategy>()
