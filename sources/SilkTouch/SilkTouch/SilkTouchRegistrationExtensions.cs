@@ -63,6 +63,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(ClangScraper.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -76,6 +77,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(AddIncludes.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -91,6 +93,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(AddOpaqueStructs.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -104,6 +107,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(AddVTables.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -117,6 +121,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(BakeSourceSets.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -130,6 +135,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(ChangeNamespace.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -145,6 +151,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(ChangeNativeClass.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -157,6 +164,7 @@ public static class SilkTouchRegistrationExtensions
                 .Builder.RegisterType<ExtractEnumConstants>()
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -169,6 +177,7 @@ public static class SilkTouchRegistrationExtensions
                 .Builder.RegisterType<ExtractFunctionPointers>()
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -181,6 +190,7 @@ public static class SilkTouchRegistrationExtensions
                 .Builder.RegisterType<ExtractHandles>()
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -193,6 +203,7 @@ public static class SilkTouchRegistrationExtensions
                 .Builder.RegisterType<ExtractNestedTypes>()
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -210,6 +221,7 @@ public static class SilkTouchRegistrationExtensions
                 )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -227,6 +239,7 @@ public static class SilkTouchRegistrationExtensions
                 )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -239,6 +252,7 @@ public static class SilkTouchRegistrationExtensions
                 .Builder.RegisterType<MarkNativeNames>()
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -252,6 +266,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(MixKhronosData.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -265,6 +280,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(PrettifyNames.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -278,6 +294,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(StripAttributes.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -291,6 +308,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(TransformEnums.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -315,6 +333,7 @@ public static class SilkTouchRegistrationExtensions
                     .Builder.RegisterType<PtrRefTransformer>()
                     .AsImplementedInterfaces()
                     .SingleInstance();
+
                 context
                     .Builder.RegisterType<BoolTransformer>()
                     .WithParameter(
@@ -322,6 +341,7 @@ public static class SilkTouchRegistrationExtensions
                     )
                     .AsImplementedInterfaces()
                     .SingleInstance();
+
                 context
                     .Builder.RegisterType<ArrayParameterTransformer>()
                     .AsImplementedInterfaces()
@@ -343,6 +363,7 @@ public static class SilkTouchRegistrationExtensions
                 .WithParameter(new TypedParameter(typeof(TransformHandles.Configuration), config))
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
 
@@ -360,6 +381,7 @@ public static class SilkTouchRegistrationExtensions
                 )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
+
             return context;
         }
     }
