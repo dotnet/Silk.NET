@@ -19,8 +19,7 @@ public static class ModRegistrationExtensions
         AddApiProfiles.Configuration config
     )
     {
-        // TODO: Need to add a register mod helper since we need to register interfaces, base classes, and the concrete type
-        builder.RegisterType<AddApiProfiles>().SingleInstance();
+        builder.RegisterMod<AddApiProfiles>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -33,7 +32,7 @@ public static class ModRegistrationExtensions
         AddIncludes.Configuration config
     )
     {
-        builder.RegisterType<AddIncludes>().SingleInstance();
+        builder.RegisterMod<AddIncludes>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -46,7 +45,7 @@ public static class ModRegistrationExtensions
         AddOpaqueStructs.Configuration config
     )
     {
-        builder.RegisterType<AddOpaqueStructs>().SingleInstance();
+        builder.RegisterMod<AddOpaqueStructs>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -59,7 +58,7 @@ public static class ModRegistrationExtensions
         AddVTables.Configuration config
     )
     {
-        builder.RegisterType<AddVTables>().SingleInstance();
+        builder.RegisterMod<AddVTables>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -72,7 +71,7 @@ public static class ModRegistrationExtensions
         BakeSourceSets.Configuration config
     )
     {
-        builder.RegisterType<BakeSourceSets>().SingleInstance();
+        builder.RegisterMod<BakeSourceSets>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -85,7 +84,7 @@ public static class ModRegistrationExtensions
         ChangeNamespace.Configuration config
     )
     {
-        builder.RegisterType<ChangeNamespace>().SingleInstance();
+        builder.RegisterMod<ChangeNamespace>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -98,7 +97,7 @@ public static class ModRegistrationExtensions
         ChangeNativeClass.Configuration config
     )
     {
-        builder.RegisterType<ChangeNativeClass>().SingleInstance();
+        builder.RegisterMod<ChangeNativeClass>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -108,7 +107,7 @@ public static class ModRegistrationExtensions
     /// </summary>
     public static ContainerBuilder RegisterExtractEnumConstants(this ContainerBuilder builder)
     {
-        builder.RegisterType<ExtractEnumConstants>().SingleInstance();
+        builder.RegisterMod<ExtractEnumConstants>();
         return builder;
     }
 
@@ -117,7 +116,7 @@ public static class ModRegistrationExtensions
     /// </summary>
     public static ContainerBuilder RegisterExtractFunctionPointers(this ContainerBuilder builder)
     {
-        builder.RegisterType<ExtractFunctionPointers>().SingleInstance();
+        builder.RegisterMod<ExtractFunctionPointers>();
         return builder;
     }
 
@@ -126,7 +125,7 @@ public static class ModRegistrationExtensions
     /// </summary>
     public static ContainerBuilder RegisterExtractHandles(this ContainerBuilder builder)
     {
-        builder.RegisterType<ExtractHandles>().SingleInstance();
+        builder.RegisterMod<ExtractHandles>();
         return builder;
     }
 
@@ -135,7 +134,7 @@ public static class ModRegistrationExtensions
     /// </summary>
     public static ContainerBuilder RegisterExtractNestedTypes(this ContainerBuilder builder)
     {
-        builder.RegisterType<ExtractNestedTypes>().SingleInstance();
+        builder.RegisterMod<ExtractNestedTypes>();
         return builder;
     }
 
@@ -147,7 +146,7 @@ public static class ModRegistrationExtensions
         IdentifySharedPrefixes.Configuration config
     )
     {
-        builder.RegisterType<IdentifySharedPrefixes>().SingleInstance();
+        builder.RegisterMod<IdentifySharedPrefixes>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -160,7 +159,7 @@ public static class ModRegistrationExtensions
         InterceptNativeFunctions.Configuration config
     )
     {
-        builder.RegisterType<InterceptNativeFunctions>().SingleInstance();
+        builder.RegisterMod<InterceptNativeFunctions>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -170,7 +169,7 @@ public static class ModRegistrationExtensions
     /// </summary>
     public static ContainerBuilder RegisterMarkNativeNames(this ContainerBuilder builder)
     {
-        builder.RegisterType<MarkNativeNames>().SingleInstance();
+        builder.RegisterMod<MarkNativeNames>();
         return builder;
     }
 
@@ -182,7 +181,7 @@ public static class ModRegistrationExtensions
         MixKhronosData.Configuration config
     )
     {
-        builder.RegisterType<MixKhronosData>().SingleInstance();
+        builder.RegisterMod<MixKhronosData>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -195,7 +194,7 @@ public static class ModRegistrationExtensions
         PrettifyNames.Configuration config
     )
     {
-        builder.RegisterType<PrettifyNames>().SingleInstance();
+        builder.RegisterMod<PrettifyNames>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -208,7 +207,7 @@ public static class ModRegistrationExtensions
         StripAttributes.Configuration config
     )
     {
-        builder.RegisterType<StripAttributes>().SingleInstance();
+        builder.RegisterMod<StripAttributes>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -221,7 +220,7 @@ public static class ModRegistrationExtensions
         TransformEnums.Configuration config
     )
     {
-        builder.RegisterType<TransformEnums>().SingleInstance();
+        builder.RegisterMod<TransformEnums>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -231,7 +230,7 @@ public static class ModRegistrationExtensions
     /// </summary>
     public static ContainerBuilder RegisterTransformFunctions(this ContainerBuilder builder)
     {
-        builder.RegisterType<TransformFunctions>().SingleInstance();
+        builder.RegisterMod<TransformFunctions>();
         return builder;
     }
 
@@ -243,7 +242,7 @@ public static class ModRegistrationExtensions
         TransformHandles.Configuration config
     )
     {
-        builder.RegisterType<TransformHandles>().SingleInstance();
+        builder.RegisterMod<TransformHandles>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
@@ -256,8 +255,25 @@ public static class ModRegistrationExtensions
         TransformProperties.Configuration config
     )
     {
-        builder.RegisterType<TransformProperties>().SingleInstance();
+        builder.RegisterMod<TransformProperties>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
+    }
+
+    private static void RegisterMod<T>(this ContainerBuilder builder)
+        where T : IMod
+    {
+        var type = typeof(T);
+        var typesToRegister = new HashSet<Type>();
+        typesToRegister.UnionWith(type.GetInterfaces());
+
+        var current = type;
+        while (current != null)
+        {
+            typesToRegister.Add(current);
+            current = current.BaseType;
+        }
+
+        builder.RegisterType<T>().As(typesToRegister.ToArray()).SingleInstance();
     }
 }
