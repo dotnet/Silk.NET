@@ -11,7 +11,7 @@ public class DummyModContext : IModContext
     public ValueTask DisposeAsync() => ValueTask.CompletedTask;
 
     public string JobKey { get; set; } = string.Empty;
-    public string? ConfigurationDirectory { get; set; }
+    public string? WorkingDirectory { get; set; }
     public Project? SourceProject { get; set; }
     public Project? TestProject { get; set; }
 }

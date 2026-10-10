@@ -370,7 +370,7 @@ public sealed class ClangScraper(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        if (ctx.ConfigurationDirectory is null)
+        if (ctx.WorkingDirectory is null)
         {
             throw new NotSupportedException("I/O not available.");
         }
@@ -406,7 +406,7 @@ public sealed class ClangScraper(
         // Read the response files.
         logger.LogInformation("Reading response files for {}, please wait...", ctx.JobKey);
         var rsps = rspHandler
-            .ReadResponseFiles(ctx.ConfigurationDirectory, cfg.ClangSharpResponseFiles)
+            .ReadResponseFiles(ctx.WorkingDirectory, cfg.ClangSharpResponseFiles)
             .ToList();
 
         // Apply modifications. This is done before the cache key as modifications to the rsps result in different

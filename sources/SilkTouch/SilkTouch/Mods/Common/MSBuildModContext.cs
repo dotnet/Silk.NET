@@ -8,33 +8,41 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using CSharpier.Core;
 using CSharpier.Core.CSharp;
+using Microsoft.Build.Framework;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.Extensions.Configuration;
+using Microsoft.CodeAnalysis.MSBuild;
 using Microsoft.Extensions.Logging;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 using EndOfLine = CSharpier.Core.EndOfLine;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace Silk.NET.SilkTouch.Mods;
 
-internal class MSBuildModContext(
-    MSBuildModContextProvider parent,
-    IConfigurationSection cfg,
-    ILogger logger
-) : IModContext
+internal class MSBuildModContext(string jobKey, SilkTouchConfiguration jobConfig, ILogger logger)
+    : IModContext,
+        IProgress<ProjectLoadProgress>,
+        Microsoft.Build.Framework.ILogger
 {
     private Project? _srcProject,
         _testProject;
 
-    private SilkTouchConfiguration? _cfg = cfg.Get<SilkTouchConfiguration>();
-    public string JobKey { get; } = cfg.Key;
-    public string ConfigurationDirectory { get; init; } = Environment.CurrentDirectory;
+    public string JobKey => jobKey;
+
+    public string WorkingDirectory { get; init; } = Environment.CurrentDirectory;
+
+    /// <inheritdoc />
+    public LoggerVerbosity Verbosity { get; set; } = LoggerVerbosity.Detailed;
+
+    /// <inheritdoc />
+    public string? Parameters { get; set; } = string.Empty;
 
     public Project? SourceProject
     {
         get => _srcProject;
         set => Assign(ref _srcProject, ref _testProject, value, nameof(TestProject));
     }
+
     public Project? TestProject
     {
         get => _testProject;
@@ -75,27 +83,21 @@ internal class MSBuildModContext(
 
     public async Task InitializeAsync()
     {
-        if (_cfg?.Solution is null)
-        {
-            throw new InvalidOperationException("No solution provided in configuration.");
-        }
+        logger.LogInformation("Opening solution at {}...", WorkingDirectory);
+        var solution = await MSBuildWorkspace
+            .Create()
+            .OpenSolutionAsync(WorkingDirectory, this, this);
 
-        var solution = await parent.OpenSolutionAsync(
-            Path.GetFullPath(_cfg.Solution, ConfigurationDirectory)
-        );
-
-        if (_cfg?.SourceProject is null)
+        if (jobConfig.SourceProject is null)
         {
             throw new InvalidOperationException("No source project provided in configuration.");
         }
 
         // First locate the source project
-        var projectFile = Path.GetFullPath(_cfg.SourceProject, ConfigurationDirectory);
+        var projectFile = Path.GetFullPath(jobConfig.SourceProject, WorkingDirectory);
         _srcProject = solution
             .Projects.Where(x => x.FilePath is not null)
-            .FirstOrDefault(x =>
-                Path.GetFullPath(x.FilePath!, ConfigurationDirectory) == projectFile
-            );
+            .FirstOrDefault(x => Path.GetFullPath(x.FilePath!, WorkingDirectory) == projectFile);
         if (_srcProject is null)
         {
             throw new InvalidOperationException("Failed to locate source project.");
@@ -105,25 +107,17 @@ internal class MSBuildModContext(
         // TODO maybe one day we'll lift this restriction? I couldn't think of a reason not to have it, but there's also not many to have it.
         SourceProject = _srcProject.RemoveDocuments([.. _srcProject.DocumentIds]);
         solution = _srcProject.Solution;
-        if (_cfg.TestProject is not null)
+        if (jobConfig.TestProject is not null)
         {
-            var testProjectFile = Path.GetFullPath(_cfg.TestProject, ConfigurationDirectory);
+            var testProjectFile = Path.GetFullPath(jobConfig.TestProject, WorkingDirectory);
             _testProject = solution
                 .Projects.Where(x => x.FilePath is not null)
                 .FirstOrDefault(x =>
-                    Path.GetFullPath(x.FilePath!, ConfigurationDirectory) == testProjectFile
+                    Path.GetFullPath(x.FilePath!, WorkingDirectory) == testProjectFile
                 );
             TestProject = _testProject?.RemoveDocuments([.. _testProject.DocumentIds]);
             solution = _testProject?.Solution ?? solution;
         }
-    }
-
-    private string ObtainCacheKey() // TODO: This code is never used
-    {
-        // Obtain a cache key for the job, should the mods want to cache any artifacts.
-        var cacheKey = string.Join(',', cfg.AsEnumerable().OrderBy(x => x.Key));
-        logger.LogDebug("Cache key for job (before hashing): {}", cacheKey);
-        return Convert.ToHexString(XxHash64.Hash(Encoding.UTF8.GetBytes(cacheKey)));
     }
 
     public async ValueTask DisposeAsync()
@@ -149,9 +143,9 @@ internal class MSBuildModContext(
         var existingFileGate = 0;
         var sw = Stopwatch.StartNew();
         logger.LogInformation("Writing {} to disk...", JobKey);
-        var defaultLicenseHeaderTrivia = _cfg?.DefaultLicenseHeader is null
+        var defaultLicenseHeaderTrivia = jobConfig.DefaultLicenseHeader is null
             ? null
-            : (await File.ReadAllLinesAsync(_cfg.DefaultLicenseHeader))
+            : (await File.ReadAllLinesAsync(jobConfig.DefaultLicenseHeader))
                 .Where(x => x.Length == 0 || x.StartsWith("//"))
                 .Select(x => Comment(x.Trim()))
                 .ToArray();
@@ -306,5 +300,187 @@ internal class MSBuildModContext(
         var normalizedRoot = root.NormalizeWhitespace();
         var result = await CSharpFormatter.FormatAsync(normalizedRoot.SyntaxTree, _opts, ct);
         return !result.ErrorDiagnostics.Any() ? result.Code : normalizedRoot.ToFullString();
+    }
+
+    /// <inheritdoc />
+    public void Report(ProjectLoadProgress value) =>
+        logger.LogDebug(
+            "{0}: {1}({2}) - elapsed {3}",
+            value.Operation,
+            value.FilePath,
+            value.TargetFramework,
+            value.ElapsedTime
+        );
+
+    private IEventSource? _eventSource;
+
+    /// <inheritdoc />
+    public void Initialize(IEventSource eventSource)
+    {
+        if (_eventSource is not null)
+        {
+            throw new InvalidOperationException("Already initialised.");
+        }
+
+        _eventSource = eventSource;
+        _eventSource.BuildStarted += EventSourceOnBuildStarted;
+        _eventSource.AnyEventRaised += EventSourceOnAnyEventRaised;
+        _eventSource.BuildFinished += EventSourceOnBuildFinished;
+        _eventSource.ErrorRaised += EventSourceOnErrorRaised;
+        _eventSource.MessageRaised += EventSourceOnMessageRaised;
+        _eventSource.ProjectFinished += EventSourceOnProjectFinished;
+        _eventSource.ProjectStarted += EventSourceOnProjectStarted;
+        _eventSource.TargetFinished += EventSourceOnTargetFinished;
+        _eventSource.TargetStarted += EventSourceOnTargetStarted;
+        _eventSource.TaskFinished += EventSourceOnTaskFinished;
+        _eventSource.TaskStarted += EventSourceOnTaskStarted;
+        _eventSource.WarningRaised += EventSourceOnWarningRaised;
+        _eventSource.CustomEventRaised += EventSourceOnCustomEventRaised;
+        _eventSource.StatusEventRaised += EventSourceOnStatusEventRaised;
+    }
+
+    private void EventSourceOnStatusEventRaised(object sender, BuildStatusEventArgs e) =>
+        logger.LogTrace(
+            "At {0} {1} raised status event: {2} ({3})",
+            e.Timestamp,
+            e.SenderName,
+            e.Message,
+            e.HelpKeyword
+        );
+
+    private void EventSourceOnCustomEventRaised(object sender, CustomBuildEventArgs e) =>
+        logger.LogTrace(
+            "At {0} {1} raised custom event: {2} ({3})",
+            e.Timestamp,
+            e.SenderName,
+            e.Message,
+            e.HelpKeyword
+        );
+
+    private void EventSourceOnWarningRaised(object sender, BuildWarningEventArgs e) =>
+        logger.LogWarning(
+            "{0}:{1}:{2} : warning {3}: {4} ({5})",
+            e.File,
+            e.LineNumber,
+            e.ColumnNumber,
+            e.Code,
+            e.Message,
+            e.ProjectFile
+        );
+
+    private void EventSourceOnTaskStarted(object sender, TaskStartedEventArgs e) =>
+        logger.LogTrace(
+            "At {0} {1} started task {2} from {3}, message: {4} ({5})",
+            e.Timestamp,
+            e.SenderName,
+            e.TaskName,
+            e.TaskFile,
+            e.Message,
+            e.HelpKeyword
+        );
+
+    private void EventSourceOnTaskFinished(object sender, TaskFinishedEventArgs e) =>
+        logger.LogTrace(
+            "At {0} {1} finished task {2} from {3}, message: {4} ({5})",
+            e.Timestamp,
+            e.SenderName,
+            e.TaskName,
+            e.TaskFile,
+            e.Message,
+            e.HelpKeyword
+        );
+
+    private void EventSourceOnTargetStarted(object sender, TargetStartedEventArgs e) =>
+        logger.LogTrace(
+            "At {0} {1} started target {2} from {3}, message: {4} ({5})",
+            e.Timestamp,
+            e.SenderName,
+            e.TargetName,
+            e.TargetFile,
+            e.Message,
+            e.HelpKeyword
+        );
+
+    private void EventSourceOnTargetFinished(object sender, TargetFinishedEventArgs e) =>
+        logger.LogTrace(
+            "At {0} {1} finished target {2} from {3}, message: {4} ({5})",
+            e.Timestamp,
+            e.SenderName,
+            e.TargetName,
+            e.TargetFile,
+            e.Message,
+            e.HelpKeyword
+        );
+
+    private void EventSourceOnProjectStarted(object sender, ProjectStartedEventArgs e) =>
+        logger.LogTrace("MSBuild started processing project {0}: {1}", e.ProjectFile, e.Message);
+
+    private void EventSourceOnProjectFinished(object sender, ProjectFinishedEventArgs e) =>
+        logger.LogTrace("MSBuild finished processing project {0}: {1}", e.ProjectFile, e.Message);
+
+    private void EventSourceOnMessageRaised(object sender, BuildMessageEventArgs e) =>
+        logger.LogTrace(
+            "{0}:{1}:{2} : message {3}: {4} ({5})",
+            e.File,
+            e.LineNumber,
+            e.ColumnNumber,
+            e.Code,
+            e.Message,
+            e.ProjectFile
+        );
+
+    private void EventSourceOnErrorRaised(object sender, BuildErrorEventArgs e) =>
+        logger.LogError(
+            "{0}:{1}:{2} : error {3}: {4} ({5})",
+            e.File,
+            e.LineNumber,
+            e.ColumnNumber,
+            e.Code,
+            e.Message,
+            e.ProjectFile
+        );
+
+    private void EventSourceOnBuildFinished(object sender, BuildFinishedEventArgs e)
+        // was going to be a LogDebug/LogError but it seems this happens in some cases anyway?
+        =>
+        logger.LogDebug(
+            e.Succeeded ? "MSBuild completed successfully" : "MSBuild failed (might be okay?)"
+        );
+
+    private void EventSourceOnAnyEventRaised(object sender, BuildEventArgs e) =>
+        logger.LogTrace(
+            "At {0} {1} raised event: {2} ({3})",
+            e.Timestamp,
+            e.SenderName,
+            e.Message,
+            e.HelpKeyword
+        );
+
+    private void EventSourceOnBuildStarted(object sender, BuildStartedEventArgs e) =>
+        logger.LogDebug("MSBuild started.");
+
+    /// <inheritdoc />
+    public void Shutdown()
+    {
+        if (_eventSource is null)
+        {
+            return;
+        }
+
+        _eventSource.BuildStarted -= EventSourceOnBuildStarted;
+        _eventSource.AnyEventRaised -= EventSourceOnAnyEventRaised;
+        _eventSource.BuildFinished -= EventSourceOnBuildFinished;
+        _eventSource.ErrorRaised -= EventSourceOnErrorRaised;
+        _eventSource.MessageRaised -= EventSourceOnMessageRaised;
+        _eventSource.ProjectFinished -= EventSourceOnProjectFinished;
+        _eventSource.ProjectStarted -= EventSourceOnProjectStarted;
+        _eventSource.TargetFinished -= EventSourceOnTargetFinished;
+        _eventSource.TargetStarted -= EventSourceOnTargetStarted;
+        _eventSource.TaskFinished -= EventSourceOnTaskFinished;
+        _eventSource.TaskStarted -= EventSourceOnTaskStarted;
+        _eventSource.WarningRaised -= EventSourceOnWarningRaised;
+        _eventSource.CustomEventRaised -= EventSourceOnCustomEventRaised;
+        _eventSource.StatusEventRaised -= EventSourceOnStatusEventRaised;
+        _eventSource = null;
     }
 }
