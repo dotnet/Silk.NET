@@ -1,10 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using Microsoft.Extensions.Configuration;
+using Autofac;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Sources;
@@ -14,92 +12,98 @@ namespace Silk.NET.SilkTouch;
 /// <summary>
 /// The main entry-point class for SilkTouch.
 /// </summary>
-/// <param name="logger">The logger.</param>
-/// <param name="mods">The mods to use.</param>
-/// <param name="modContextProvider">The provider of <see cref="IModContext"/>s.</param>
-/// <param name="inputResolver">The user path input resolver.</param>
-public class SilkTouchGenerator(
-    ILogger<SilkTouchGenerator> logger,
-    IEnumerable<IMod> mods,
-    IModContextProvider modContextProvider,
-    IInputResolver inputResolver
-)
+public class SilkTouchGenerator
 {
-    private AsyncLocal<SilkTouchConfiguration> _jobConfig = new();
+    private readonly ILifetimeScope container;
+
+    private readonly string _jobKey;
+    private readonly SilkTouchConfiguration _jobConfig;
+    private readonly ILogger<SilkTouchGenerator> _logger;
+    private readonly IInputResolver _inputResolver;
 
     /// <summary>
     /// Gets the loaded mods for this generator instance.
     /// </summary>
-    public IReadOnlyList<IMod> Mods { get; } = mods.ToArray();
+    public IReadOnlyList<IMod> Mods { get; }
 
     /// <summary>
-    /// The current job.
+    /// The main entry-point class for SilkTouch.
     /// </summary>
-    public SilkTouchConfiguration? Current => _jobConfig.Value;
+    /// <param name="jobKey"></param>
+    /// <param name="jobConfig"></param> // TODO
+    /// <param name="parentContainer"></param>
+    /// <param name="build"></param>
+    public SilkTouchGenerator(
+        string jobKey,
+        SilkTouchConfiguration jobConfig,
+        ILifetimeScope parentContainer,
+        Action<ContainerBuilder> build
+    )
+    {
+        // TODO: Maybe have each mod provide a Register(ILifetimeScope container, Mod.Configuration configuration) method
+        container = parentContainer.BeginLifetimeScope(builder =>
+        {
+            // TODO: Decide whether we should register job config here or not
+            builder.RegisterInstance(jobConfig).SingleInstance();
+
+            build.Invoke(builder);
+        });
+
+        _jobKey = jobKey;
+        _jobConfig = jobConfig;
+        _logger = container.Resolve<ILogger<SilkTouchGenerator>>();
+        _inputResolver = container.Resolve<IInputResolver>();
+        Mods = container.Resolve<IMod[]>();
+    }
 
     /// <summary>
     /// Generates binding syntax trees per the given configuration.
     /// </summary>
-    /// <param name="key">The name of the current job (used as a configuration key).</param>
-    /// <param name="jobConfig">The configuration, expected to be stored as <c>Jobs:{key}</c>.</param>
-    /// <param name="ct">Cancellation token (if any)</param>
-    /// <returns>The generated bindings' syntax trees.</returns>
-    public async Task RunAsync(
-        string key,
-        IConfigurationSection jobConfig,
-        CancellationToken ct = default
-    )
+    public async Task RunAsync(CancellationToken ct = default)
     {
         var sw = Stopwatch.StartNew();
-        var job =
-            jobConfig.Get<SilkTouchConfiguration>()
-            ?? throw new InvalidOperationException("Configuration was null");
 
         // Resolve any relative paths in the job configuration.
-        job = await inputResolver.Resolve(job);
-        _jobConfig.Value = job;
+        _jobConfig = await _inputResolver.Resolve(_jobConfig); // TODO: This creates a new instance so need to be careful
 
         // Prepare the mods
-        var jobMods =
-            job.Mods?.Select(x => Mods.First(y => y.GetType().Name == x)).ToArray()
-            ?? Array.Empty<IMod>();
-
-        var ctx = await modContextProvider.GetContextAsync(key, jobConfig, ct);
+        var ctx = await modContextProvider.GetContextAsync(_jobKey, _jobConfig, ct);
 
         // Just in case a mod gets naughty and tries to modify at the initialization stage.
         var srcProj = ctx.SourceProject;
         var testProj = ctx.TestProject;
 
         // Initialize the mods
-        foreach (var jobMod in jobMods)
+        foreach (var mod in Mods)
         {
-            logger.LogDebug("Using mod {0} for {1}", jobMod.GetType().Name, key);
-            await jobMod.InitializeAsync(ctx, ct);
+            _logger.LogDebug("Using mod {0} for {1}", mod.GetType().Name, _jobKey);
+            await mod.InitializeAsync(ctx, ct);
             if (ctx.SourceProject != srcProj || ctx.TestProject != testProj)
             {
                 throw new InvalidOperationException(
-                    $"{jobMod.GetType().Name} illegally generated code at the initialization stage."
+                    $"{mod.GetType().Name} illegally generated code at the initialization stage."
                 );
             }
         }
 
-        foreach (var jobMod in jobMods)
+        foreach (var mod in Mods)
         {
-            logger.LogInformation("Executing {} for {}...", jobMod.GetType().Name, key);
-            await jobMod.ExecuteAsync(ctx, ct);
+            _logger.LogInformation("Executing {} for {}...", mod.GetType().Name, _jobKey);
+            await mod.ExecuteAsync(ctx, ct);
         }
 
         // Manually dispose so that we don't do this when generation fails (await using is too clever).
         await ctx.DisposeAsync();
 
         // Output the generated bindings
-        logger.LogInformation(
+        _logger.LogInformation(
             "Bindings generation for {} completed in {} seconds.",
-            key,
+            _jobKey,
             sw.Elapsed.TotalSeconds
         );
     }
 
+    // TODO: Why is this here?
     internal static string GetLongestCommonPrefix(string[] s)
     {
         var k = s[0].Length;
