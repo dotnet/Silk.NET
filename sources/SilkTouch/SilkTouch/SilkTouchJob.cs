@@ -14,7 +14,7 @@ namespace Silk.NET.SilkTouch;
 /// </summary>
 public class SilkTouchJob : IDisposable
 {
-    private readonly ILifetimeScope container;
+    private readonly ILifetimeScope _container;
 
     private readonly ILogger<SilkTouchJob> _logger;
     private readonly IInputResolver _inputResolver;
@@ -55,9 +55,9 @@ public class SilkTouchJob : IDisposable
         _inputResolver = parentContainer.Resolve<IInputResolver>();
 
         // TODO: Maybe have each mod provide a Register(ILifetimeScope container, Mod.Configuration configuration) method
-        container = parentContainer.BeginLifetimeScope(build);
+        _container = parentContainer.BeginLifetimeScope(build);
 
-        Mods = container.Resolve<IMod[]>();
+        Mods = _container.Resolve<IMod[]>();
     }
 
     /// <summary>
@@ -139,5 +139,5 @@ public class SilkTouchJob : IDisposable
     }
 
     /// <inheritdoc />
-    public void Dispose() => container.Dispose();
+    public void Dispose() => _container.Dispose();
 }

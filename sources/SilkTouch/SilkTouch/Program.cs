@@ -39,7 +39,7 @@ internal class Program
     private static Option<int> JobsOption { get; } =
         new(new[] { "--max-jobs", "-j" }, () => Environment.ProcessorCount)
         {
-            Description = "Maximum number of parallel ClangSharp executions.",
+            Description = "Maximum number of parallel jobs.",
         };
 
     public static async Task Main(string[] args)
@@ -123,7 +123,6 @@ internal class Program
                         Solution = "TODO", // TODO
                         SourceProject = "null",
                         TestProject = "null",
-                        Mods = new string[] { },
                         DefaultLicenseHeader = "null",
                     },
                     container,
