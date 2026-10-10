@@ -13,265 +13,283 @@ namespace Silk.NET.SilkTouch;
 public static class ModRegistrationExtensions
 {
     /// <summary>
+    /// Creates a <see cref="SilkTouchRegistrationContext"/>.
+    /// </summary>
+    public static SilkTouchRegistrationContext SilkTouch(this ContainerBuilder builder) =>
+        new(builder);
+
+    /// <summary>
     /// Registers the <see cref="AddApiProfiles"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterAddApiProfiles(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext AddApiProfiles(
+        this SilkTouchRegistrationContext context,
         AddApiProfiles.Configuration config
     )
     {
-        builder.RegisterMod<AddApiProfiles>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<AddApiProfiles>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="ClangScraper"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterClangScraper(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext ClangScraper(
+        this SilkTouchRegistrationContext context,
         ClangScraper.Configuration config
     )
     {
-        builder.RegisterMod<ClangScraper>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<ClangScraper>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="AddIncludes"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterAddIncludes(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext AddIncludes(
+        this SilkTouchRegistrationContext context,
         AddIncludes.Configuration config
     )
     {
-        builder.RegisterMod<AddIncludes>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<AddIncludes>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="AddOpaqueStructs"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterAddOpaqueStructs(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext AddOpaqueStructs(
+        this SilkTouchRegistrationContext context,
         AddOpaqueStructs.Configuration config
     )
     {
-        builder.RegisterMod<AddOpaqueStructs>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<AddOpaqueStructs>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="AddVTables"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterAddVTables(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext AddVTables(
+        this SilkTouchRegistrationContext context,
         AddVTables.Configuration config
     )
     {
-        builder.RegisterMod<AddVTables>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<AddVTables>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="BakeSourceSets"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterBakeSourceSets(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext BakeSourceSets(
+        this SilkTouchRegistrationContext context,
         BakeSourceSets.Configuration config
     )
     {
-        builder.RegisterMod<BakeSourceSets>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<BakeSourceSets>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="ChangeNamespace"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterChangeNamespace(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext ChangeNamespace(
+        this SilkTouchRegistrationContext context,
         ChangeNamespace.Configuration config
     )
     {
-        builder.RegisterMod<ChangeNamespace>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<ChangeNamespace>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="ChangeNativeClass"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterChangeNativeClass(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext ChangeNativeClass(
+        this SilkTouchRegistrationContext context,
         ChangeNativeClass.Configuration config
     )
     {
-        builder.RegisterMod<ChangeNativeClass>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<ChangeNativeClass>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="ExtractEnumConstants"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterExtractEnumConstants(this ContainerBuilder builder)
+    public static SilkTouchRegistrationContext ExtractEnumConstants(
+        this SilkTouchRegistrationContext context
+    )
     {
-        builder.RegisterMod<ExtractEnumConstants>();
-        return builder;
+        context.Builder.RegisterMod<ExtractEnumConstants>();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="ExtractFunctionPointers"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterExtractFunctionPointers(this ContainerBuilder builder)
+    public static SilkTouchRegistrationContext ExtractFunctionPointers(
+        this SilkTouchRegistrationContext context
+    )
     {
-        builder.RegisterMod<ExtractFunctionPointers>();
-        return builder;
+        context.Builder.RegisterMod<ExtractFunctionPointers>();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="ExtractHandles"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterExtractHandles(this ContainerBuilder builder)
+    public static SilkTouchRegistrationContext ExtractHandles(
+        this SilkTouchRegistrationContext context
+    )
     {
-        builder.RegisterMod<ExtractHandles>();
-        return builder;
+        context.Builder.RegisterMod<ExtractHandles>();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="ExtractNestedTypes"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterExtractNestedTypes(this ContainerBuilder builder)
+    public static SilkTouchRegistrationContext ExtractNestedTypes(
+        this SilkTouchRegistrationContext context
+    )
     {
-        builder.RegisterMod<ExtractNestedTypes>();
-        return builder;
+        context.Builder.RegisterMod<ExtractNestedTypes>();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="IdentifySharedPrefixes"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterIdentifySharedPrefixes(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext IdentifySharedPrefixes(
+        this SilkTouchRegistrationContext context,
         IdentifySharedPrefixes.Configuration config
     )
     {
-        builder.RegisterMod<IdentifySharedPrefixes>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<IdentifySharedPrefixes>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="InterceptNativeFunctions"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterInterceptNativeFunctions(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext InterceptNativeFunctions(
+        this SilkTouchRegistrationContext context,
         InterceptNativeFunctions.Configuration config
     )
     {
-        builder.RegisterMod<InterceptNativeFunctions>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<InterceptNativeFunctions>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="MarkNativeNames"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterMarkNativeNames(this ContainerBuilder builder)
+    public static SilkTouchRegistrationContext MarkNativeNames(
+        this SilkTouchRegistrationContext context
+    )
     {
-        builder.RegisterMod<MarkNativeNames>();
-        return builder;
+        context.Builder.RegisterMod<MarkNativeNames>();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="MixKhronosData"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterMixKhronosData(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext MixKhronosData(
+        this SilkTouchRegistrationContext context,
         MixKhronosData.Configuration config
     )
     {
-        builder.RegisterMod<MixKhronosData>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<MixKhronosData>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="PrettifyNames"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterPrettifyNames(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext PrettifyNames(
+        this SilkTouchRegistrationContext context,
         PrettifyNames.Configuration config
     )
     {
-        builder.RegisterMod<PrettifyNames>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<PrettifyNames>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="StripAttributes"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterStripAttributes(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext StripAttributes(
+        this SilkTouchRegistrationContext context,
         StripAttributes.Configuration config
     )
     {
-        builder.RegisterMod<StripAttributes>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<StripAttributes>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="TransformEnums"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterTransformEnums(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext TransformEnums(
+        this SilkTouchRegistrationContext context,
         TransformEnums.Configuration config
     )
     {
-        builder.RegisterMod<TransformEnums>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<TransformEnums>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="TransformFunctions"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterTransformFunctions(this ContainerBuilder builder)
+    public static SilkTouchRegistrationContext TransformFunctions(
+        this SilkTouchRegistrationContext context
+    )
     {
-        builder.RegisterMod<TransformFunctions>();
-        return builder;
+        context.Builder.RegisterMod<TransformFunctions>();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="TransformHandles"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterTransformHandles(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext TransformHandles(
+        this SilkTouchRegistrationContext context,
         TransformHandles.Configuration config
     )
     {
-        builder.RegisterMod<TransformHandles>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<TransformHandles>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     /// <summary>
     /// Registers the <see cref="TransformProperties"/> mod.
     /// </summary>
-    public static ContainerBuilder RegisterTransformProperties(
-        this ContainerBuilder builder,
+    public static SilkTouchRegistrationContext TransformProperties(
+        this SilkTouchRegistrationContext context,
         TransformProperties.Configuration config
     )
     {
-        builder.RegisterMod<TransformProperties>();
-        builder.RegisterInstance(config).SingleInstance();
-        return builder;
+        context.Builder.RegisterMod<TransformProperties>();
+        context.Builder.RegisterInstance(config).SingleInstance();
+        return context;
     }
 
     private static void RegisterMod<T>(this ContainerBuilder builder)
@@ -290,4 +308,9 @@ public static class ModRegistrationExtensions
 
         builder.RegisterType<T>().As(typesToRegister.ToArray()).SingleInstance();
     }
+
+    /// <summary>
+    /// Helper for registering SilkTouch mods to a <see cref="ContainerBuilder"/>
+    /// </summary>
+    public record struct SilkTouchRegistrationContext(ContainerBuilder Builder);
 }
