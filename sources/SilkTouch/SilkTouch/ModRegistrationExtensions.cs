@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Autofac;
+using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
 
 namespace Silk.NET.SilkTouch;
@@ -20,6 +21,19 @@ public static class ModRegistrationExtensions
     )
     {
         builder.RegisterMod<AddApiProfiles>();
+        builder.RegisterInstance(config).SingleInstance();
+        return builder;
+    }
+
+    /// <summary>
+    /// Registers the <see cref="ClangScraper"/> mod.
+    /// </summary>
+    public static ContainerBuilder RegisterClangScraper(
+        this ContainerBuilder builder,
+        ClangScraper.Configuration config
+    )
+    {
+        builder.RegisterMod<ClangScraper>();
         builder.RegisterInstance(config).SingleInstance();
         return builder;
     }
