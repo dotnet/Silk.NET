@@ -11,7 +11,7 @@ public interface ISurfaceWindow
     /// <summary>
     /// Gets the window bounds including the window border.
     /// </summary>
-    Rectangle<float> Bounds { get; set; }
+    Rect2D<float> Bounds { get; set; }
 
     /// <summary>
     /// Forwards to the <see cref="System.Drawing.Size" /> component of <see cref="Bounds" />.
@@ -25,7 +25,7 @@ public interface ISurfaceWindow
     }
 
     /// <summary>
-    /// Forwards to the <see cref="Rectangle{T}.Origin" /> component of <see cref="Bounds" />.
+    /// Forwards to the <see cref="Rect2D{T}.Origin" /> component of <see cref="Bounds" />.
     /// </summary>
     // DIM is required, but this implementation is for illustrative purposes only! Exact resize semantics of silk types
     // are yet to be defined.
@@ -43,10 +43,10 @@ public interface ISurfaceWindow
     /// Setting this property is interpreted to mean changing <see cref="Bounds" /> by the same delta in the hopes of
     /// achieving the desired result.
     /// </remarks>
-    Rectangle<float> ClientArea { get; set; }
+    Rect2D<float> ClientArea { get; set; }
 
     /// <summary>
-    /// Forwards to the <see cref="Rectangle{T}.Size" /> component of <see cref="ClientArea" />.
+    /// Forwards to the <see cref="Rect2D{T}.Size" /> component of <see cref="ClientArea" />.
     /// </summary>
     /// <remarks>
     /// Setting this property is interpreted to mean changing <see cref="Size" /> by the same delta in the hopes of

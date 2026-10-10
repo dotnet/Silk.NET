@@ -1,8 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Runtime.CompilerServices;
+using System.Numerics;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -12,20 +11,17 @@ namespace Silk.NET.Maths
     /// </summary>
     [Serializable]
     [DataContract]
-    public struct Box2D<T>
-        : IEquatable<Box2D<T>>
-        where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+    public struct Box2D<T> :
+        IEquatable<Box2D<T>>, IExtents2D<T>
+        where T : INumber<T>
     {
-        /// <summary>
-        /// The min.
-        /// </summary>
+        /// <inheritdoc/>
         [DataMember]
-        public Vector2D<T> Min;
-        /// <summary>
-        /// The max.
-        /// </summary>
+        public Vector2D<T> Min { get; set; }
+
+        /// <inheritdoc/>
         [DataMember]
-        public Vector2D<T> Max;
+        public Vector2D<T> Max { get; set; }
 
         /// <summary>
         /// Constructs a Box2D from a min and a max
@@ -72,68 +68,35 @@ namespace Silk.NET.Maths
         {
         }
 
-        /// <summary>
-        /// The center of this box.
-        /// </summary>
+        /// <inheritdoc/>
         [IgnoreDataMember]
-        public Vector2D<T> Center => (Min + Max) / Scalar<T>.Two;
+        public readonly Vector2D<T> Center => (Min + Max) / T.CreateTruncating(2);
 
-        /// <summary>
-        /// The size of this box.
-        /// When setting the box is scaled about its center.
-        /// </summary>
+        /// <inheritdoc/>
         [IgnoreDataMember]
-        public Vector2D<T> Size => Max - Min;
+        public readonly Vector2D<T> Size => Max - Min;
+
+        /// <inheritdoc/>
+        [IgnoreDataMember]
+        public readonly Vector2D<T> HalfSize => Size / T.CreateTruncating(2);
+
+        /// <inheritdoc/>
+        public readonly bool Contains<TOther>(TOther other)
+            where TOther : IExtents2D<T> =>
+            Extents2D.Contains<Box2D<T>, TOther, T>(this, other);
+
+        /// <inheritdoc/>
+        public readonly bool Intersects<TOther>(TOther other)
+            where TOther : IExtents2D<T> =>
+            Extents2D.Intersects<Box2D<T>, TOther, T>(this, other);
 
         /// <summary>
-        /// Calculates whether this box contains a point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns>True if this box contains the point; False otherwise.</returns>
-        /// <remarks>This does consider a point on the edge contained.</remarks>
-        public bool Contains(Vector2D<T> point)
-            => Scalar.GreaterThanOrEqual(point.X, Min.X) && Scalar.GreaterThanOrEqual(point.Y, Min.Y)
-            && Scalar.LessThanOrEqual(point.X, Max.X) && Scalar.LessThanOrEqual(point.Y, Max.Y);
-
-        /// <summary>
-        /// Calculates whether this box contains another box
-        /// </summary>
-        /// <param name="other">The box.</param>
-        /// <returns>True if this box contains the given box; False otherwise.</returns>
-        /// <remarks>This does consider a box that touches the edge contained.</remarks>
-        public bool Contains(Box2D<T> other)
-            => Scalar.GreaterThanOrEqual(other.Min.X, Min.X) && Scalar.GreaterThanOrEqual(other.Min.Y, Min.Y)
-            && Scalar.LessThanOrEqual(other.Max.X, Max.X) && Scalar.LessThanOrEqual(other.Max.Y, Max.Y);
-
-        /// <summary>
-        /// Calculates the distance to the nearest edge from the point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector2D<T> point)
-        {
-            var dx = Scalar.Max(Scalar.Max(Scalar.Subtract(Min.X, point.X), Scalar<T>.Zero), Scalar.Subtract(point.X, Max.X));
-            var dy = Scalar.Max(Scalar.Max(Scalar.Subtract(Min.Y, point.Y), Scalar<T>.Zero), Scalar.Subtract(point.Y, Max.Y));
-            return Scalar.Sqrt(Scalar.Add(Scalar.Multiply(dx, dx), Scalar.Multiply(dy, dy)));
-        }
-
-        /// <summary>
-        /// Calculates this box translated by a given distance.
-        /// </summary>
-        /// <param name="distance">The distance.</param>
-        /// <returns>The calculated box.</returns>
-        public Box2D<T> GetTranslated(Vector2D<T> distance)
-        {
-            return new(Min + distance, Max + distance);
-        }
-
-        /// <summary>
-        /// Calculates a new box scaled by the given scale around the given anchor.
+        /// Calculates a new Box2D scaled by the given scale around the given anchor.
         /// </summary>
         /// <param name="scale">The scale.</param>
         /// <param name="anchor">The anchor.</param>
-        /// <returns>The calculated box.</returns>
-        public Box2D<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
+        /// <returns>The calculated Box2D.</returns>
+        public readonly Box2D<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
         {
             var min = (scale * (Min - anchor)) + anchor;
             var max = (scale * (Max - anchor)) + anchor;
@@ -141,16 +104,13 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Calculates a new box scaled by the given scale around the given anchor.
+        /// Calculates this box translated by a given distance.
         /// </summary>
-        /// <param name="scale">The scale.</param>
-        /// <param name="anchor">The anchor.</param>
-        /// <typeparam name="TScale">The type of the scale.</typeparam>
+        /// <param name="distance">The distance.</param>
         /// <returns>The calculated box.</returns>
-        public Box2D<T> GetScaled<TScale>(Vector2D<TScale> scale, Vector2D<T> anchor)
-            where TScale : unmanaged, IFormattable, IEquatable<TScale>, IComparable<TScale>
+        public readonly Box2D<T> GetTranslated(Vector2D<T> distance)
         {
-            return this.As<TScale>().GetScaled(scale, anchor.As<TScale>()).As<T>();
+            return new(Min + distance, Max + distance);
         }
 
         /// <summary>
@@ -158,50 +118,50 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The calculated box.</returns>
-        public Box2D<T> GetInflated(Vector2D<T> point)
-        {
-            return new(Vector2D.Min(Min, point), Vector2D.Max(Max, point));
-        }
+        public readonly Box2D<T> GetInflated(Vector2D<T> point) =>
+            new(Vector2D.Min(Min, point), Vector2D.Max(Max, point));
 
         /// <summary>Returns a boolean indicating whether the given Box2D is equal to this Box2D instance.</summary>
         /// <param name="other">The Box2D to compare this instance to.</param>
-        /// <returns>True if the other Box2D is equal to this instance; False otherwise.</returns>
-        public bool Equals(Box2D<T> other)
-        {
-            return Min.Equals(other.Min) && Max.Equals(other.Max);
-        }
+        /// <returns><c>true</c> if the other Box2D is equal to this instance; <c>false</c> otherwise.</returns>
+        public readonly bool Equals(Box2D<T> other) =>
+            Min.Equals(other.Min) && Max.Equals(other.Max);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Box2D instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this Box2D; False otherwise.</returns>
-        public override bool Equals(object? obj)
-        {
-            return obj is Box2D<T> other && Equals(other);
-        }
+        /// <returns><c>true</c> if the Object is equal to this Box2D; <c>false</c> otherwise.</returns>
+        public override bool Equals(object? obj) =>
+            obj is Box2D<T> other && Equals(other);
 
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>The hash code.</returns>
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Min, Max);
-        }
+        public override readonly int GetHashCode() =>
+            HashCode.Combine(Min, Max);
 
         /// <summary>Returns a boolean indicating whether the two given Box2s are equal.</summary>
-        /// <param name="value1">The first Box2D to compare.</param>
-        /// <param name="value2">The second Box2D to compare.</param>
-        /// <returns>True if the Box2s are equal; False otherwise.</returns>
-        public static bool operator ==(Box2D<T> value1, Box2D<T> value2)
-        {
-            return value1.Equals(value2);
-        }
+        /// <param name="left">The first Box2D to compare.</param>
+        /// <param name="right">The second Box2D to compare.</param>
+        /// <returns><c>true</c> if the Box2s are equal; <c>false</c> otherwise.</returns>
+        public static bool operator ==(Box2D<T> left, Box2D<T> right) =>
+            left.Min == right.Min && left.Max == right.Max;
 
         /// <summary>Returns a boolean indicating whether the two given Box2s are not equal.</summary>
-        /// <param name="value1">The first Box2D to compare.</param>
-        /// <param name="value2">The second Box2D to compare.</param>
-        /// <returns>True if the Box2s are not equal; False if they are equal.</returns>
-        public static bool operator !=(Box2D<T> value1, Box2D<T> value2)
+        /// <param name="left">The first Box2D to compare.</param>
+        /// <param name="right">The second Box2D to compare.</param>
+        /// <returns><c>true</c> if the Box2s are not equal; <c>false</c> if they are equal.</returns>
+        public static bool operator !=(Box2D<T> left, Box2D<T> right) =>
+            left.Min != right.Min || left.Max != right.Max;
+
+        /// <summary>
+        /// Returns this box casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted box</returns>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
+        public readonly Box2D<TOther> As<TOther>()
+            where TOther : INumber<TOther>
         {
-            return !value1.Equals(value2);
+            return new(Min.As<TOther>(), Max.As<TOther>());
         }
 
         /// <summary>
@@ -209,9 +169,32 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <typeparam name="TOther">The type to cast to</typeparam>
         /// <returns>The casted box</returns>
-        public Box2D<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        public readonly Box2D<TOther> AsChecked<TOther>()
+            where TOther : INumber<TOther>
         {
-            return new(Min.As<TOther>(), Max.As<TOther>());
+            return new(Min.AsChecked<TOther>(), Max.AsChecked<TOther>());
+        }
+
+        /// <summary>
+        /// Returns this box casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted box</returns>
+        public readonly Box2D<TOther> AsSaturating<TOther>()
+            where TOther : INumber<TOther>
+        {
+            return new(Min.AsSaturating<TOther>(), Max.AsSaturating<TOther>());
+        }
+
+        /// <summary>
+        /// Returns this box casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted box</returns>
+        public readonly Box2D<TOther> AsTruncating<TOther>()
+            where TOther : INumber<TOther>
+        {
+            return new(Min.AsTruncating<TOther>(), Max.AsTruncating<TOther>());
         }
     }
 }

@@ -10,8 +10,8 @@ namespace Silk.NET.Windowing.SDL3;
 
 internal partial class SdlSurfaceComponents : ISurfaceWindow
 {
-    private Rectangle<float> _bounds;
-    public Rectangle<float> Bounds
+    private Rect2D<float> _bounds;
+    public Rect2D<float> Bounds
     {
         get => GetBounds(ClientArea);
         set
@@ -34,7 +34,7 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
                 Sdl.ThrowError();
             }
 
-            ClientArea = new Rectangle<float>(
+            ClientArea = new Rect2D<float>(
                 value.Origin.X + left,
                 value.Origin.Y - top,
                 value.Size.X - left - right,
@@ -44,7 +44,7 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
         }
     }
 
-    private Rectangle<float> GetBounds(Rectangle<float> ca)
+    private Rect2D<float> GetBounds(Rect2D<float> ca)
     {
         if (!IsSurfaceInitialized)
         {
@@ -68,7 +68,7 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
             Sdl.ClearError();
         }
 
-        return _bounds = new Rectangle<float>(
+        return _bounds = new Rect2D<float>(
             ca.Origin.X - left,
             ca.Origin.Y + top,
             ca.Size.X + left + right,
@@ -76,8 +76,8 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
         );
     }
 
-    private Rectangle<float> _clientArea = new(-1, -1, 640, 480);
-    public Rectangle<float> ClientArea
+    private Rect2D<float> _clientArea = new(-1, -1, 640, 480);
+    public Rect2D<float> ClientArea
     {
         get
         {
@@ -100,7 +100,7 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
                 Sdl.ThrowError();
             }
 
-            return _clientArea = new Rectangle<float>(x, y, width, height);
+            return _clientArea = new Rect2D<float>(x, y, width, height);
         }
         set
         {
@@ -599,12 +599,12 @@ internal partial class SdlSurfaceComponents : ISurfaceWindow
         }
     }
 
-    public void OnWindowCoordinatesChanged(Rectangle<float>? requestedClientArea = null)
+    public void OnWindowCoordinatesChanged(Rect2D<float>? requestedClientArea = null)
     {
         var oldBounds = _bounds;
         var oldClientArea = _clientArea;
-        Rectangle<float> newBounds;
-        Rectangle<float> newClientArea;
+        Rect2D<float> newBounds;
+        Rect2D<float> newClientArea;
         if (requestedClientArea is { } ca)
         {
             newBounds = GetBounds(ca);

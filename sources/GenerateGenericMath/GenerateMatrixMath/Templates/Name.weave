@@ -1,0 +1,2 @@
+@namespace GenerateMatrixMath
+{{= model.Name}}{{= model.Size.ToString().ToUpper()}}{{if model.Size is int}}D{{else}}{{/if}}
