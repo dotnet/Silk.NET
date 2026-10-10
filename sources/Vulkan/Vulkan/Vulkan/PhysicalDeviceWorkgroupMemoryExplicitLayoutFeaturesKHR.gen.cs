@@ -49,11 +49,9 @@ public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeatures
     [NativeName("workgroupMemoryExplicitLayoutScalarBlockLayout")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_KHR_workgroup_memory_explicit_layout"],
-        ImpliesSets = [
-            "VK_KHR_workgroup_memory_explicit_layout+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_workgroup_memory_explicit_layout+VK_VERSION_1_1",
-        ]
+        ["VK_EXT_shader_long_vector", "VK_KHR_workgroup_memory_explicit_layout"],
+        ImpliesSets = ["VK_VERSION_1_2"],
+        RequireAll = true
     )]
     public MaybeBool<uint> WorkgroupMemoryExplicitLayoutScalarBlockLayout;
 

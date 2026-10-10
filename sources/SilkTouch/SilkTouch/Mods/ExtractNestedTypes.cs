@@ -121,7 +121,7 @@ public partial class ExtractNestedTypes : IMod
                     continue;
                 }
 
-                var extractedIdentifier = $"{node.Identifier}{match.Groups[1].Value}";
+                var extractedIdentifier = $"{node.Identifier}_{match.Groups[1].Value}";
                 _typeRenames[structNode.Identifier.ToString()] = extractedIdentifier;
                 structNode =
                     VisitStructDeclaration(

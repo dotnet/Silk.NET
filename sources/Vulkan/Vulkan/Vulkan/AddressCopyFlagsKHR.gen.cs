@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAddressCopyFlagBitsKHR")]
+[NativeName("VkAddressCopyFlagsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum AddressCopyFlagsKHR : uint

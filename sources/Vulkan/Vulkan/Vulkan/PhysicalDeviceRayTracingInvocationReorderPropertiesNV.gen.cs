@@ -35,7 +35,7 @@ public unsafe partial struct PhysicalDeviceRayTracingInvocationReorderProperties
         ["VK_NV_ray_tracing_invocation_reorder"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public RayTracingInvocationReorderModeNV RayTracingInvocationReorderReorderingHint;
+    public RayTracingInvocationReorderModeEXT RayTracingInvocationReorderReorderingHint;
 
     [SupportedApiProfile(
         "vulkan",

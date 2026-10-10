@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGraphicsPipelineLibraryFlagBitsEXT")]
+[NativeName("VkGraphicsPipelineLibraryFlagsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum GraphicsPipelineLibraryFlagsEXT : uint

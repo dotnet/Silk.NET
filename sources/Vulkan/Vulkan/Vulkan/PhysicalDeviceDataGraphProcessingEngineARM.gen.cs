@@ -15,7 +15,10 @@ public partial struct PhysicalDeviceDataGraphProcessingEngineARM
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     public PhysicalDeviceDataGraphProcessingEngineTypeARM Type;
 
@@ -23,7 +26,10 @@ public partial struct PhysicalDeviceDataGraphProcessingEngineARM
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     public MaybeBool<uint> IsForeign;
 }

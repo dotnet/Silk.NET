@@ -7806,7 +7806,7 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "3.2"
         )]
-        public static extern uint ClientWaitSync(Sync* sync, uint flags, ulong timeout);
+        public static extern uint ClientWaitSync(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glClientWaitSync")]
         [SupportedApiProfile(
@@ -7842,47 +7842,29 @@ public unsafe partial class GL : IGL, IGL.Static
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSync")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
         public static Constant<uint, GLEnum, SyncStatus> ClientWaitSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncObjectMask> flags,
             ulong timeout
-        )
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                return (Constant<uint, GLEnum, SyncStatus>)
-                    (uint)ClientWaitSync(__dsl_sync, (uint)flags, timeout);
-            }
-        }
+        ) => (Constant<uint, GLEnum, SyncStatus>)(uint)ClientWaitSync(sync, (uint)flags, timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glClientWaitSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        public static extern uint ClientWaitSyncAPPLE(Sync* sync, uint flags, ulong timeout);
+        public static extern uint ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
         public static Constant<uint, GLEnum, SyncStatus> ClientWaitSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncObjectMask> flags,
             ulong timeout
-        )
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                return (Constant<uint, GLEnum, SyncStatus>)
-                    (uint)ClientWaitSyncAPPLE(__dsl_sync, (uint)flags, timeout);
-            }
-        }
+        ) =>
+            (Constant<uint, GLEnum, SyncStatus>)
+                (uint)ClientWaitSyncAPPLE(sync, (uint)flags, timeout);
 
         [NativeName("glClipControl")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glClipControl")]
@@ -16481,7 +16463,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glCreateSyncFromCLeventARB")]
         [SupportedApiProfile("gl", ["GL_ARB_cl_event"])]
         [SupportedApiProfile("glcore", ["GL_ARB_cl_event"])]
-        public static extern Sync* CreateSyncFromCLeventARB(
+        public static extern SyncHandle CreateSyncFromCLeventARB(
             void* context,
             void* @event,
             uint flags
@@ -16494,12 +16476,12 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<Sync> CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags)
+        public static SyncHandle CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags)
         {
             fixed (void* __dsl_event = @event)
             fixed (void* __dsl_context = context)
             {
-                return (Sync*)CreateSyncFromCLeventARB(__dsl_context, __dsl_event, flags);
+                return (SyncHandle)CreateSyncFromCLeventARB(__dsl_context, __dsl_event, flags);
             }
         }
 
@@ -19182,73 +19164,13 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "3.2"
         )]
-        public static extern void DeleteSync(Sync* sync);
-
-        [NativeName("glDeleteSync")]
-        [SupportedApiProfile(
-            "gl",
-            [
-                "GL_ARB_sync",
-                "GL_VERSION_3_2",
-                "GL_VERSION_3_3",
-                "GL_VERSION_4_0",
-                "GL_VERSION_4_1",
-                "GL_VERSION_4_2",
-                "GL_VERSION_4_3",
-                "GL_VERSION_4_4",
-                "GL_VERSION_4_5",
-                "GL_VERSION_4_6",
-            ],
-            MinVersion = "3.2"
-        )]
-        [SupportedApiProfile(
-            "glcore",
-            [
-                "GL_ARB_sync",
-                "GL_VERSION_3_2",
-                "GL_VERSION_3_3",
-                "GL_VERSION_4_0",
-                "GL_VERSION_4_1",
-                "GL_VERSION_4_2",
-                "GL_VERSION_4_3",
-                "GL_VERSION_4_4",
-                "GL_VERSION_4_5",
-                "GL_VERSION_4_6",
-            ],
-            MinVersion = "3.2"
-        )]
-        [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static void DeleteSync(Ref<Sync> sync)
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                DeleteSync(__dsl_sync);
-            }
-        }
+        public static extern void DeleteSync(SyncHandle sync);
 
         [NativeName("glDeleteSyncAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glDeleteSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        public static extern void DeleteSyncAPPLE(Sync* sync);
-
-        [NativeName("glDeleteSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static void DeleteSyncAPPLE(Ref<Sync> sync)
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                DeleteSyncAPPLE(__dsl_sync);
-            }
-        }
+        public static extern void DeleteSyncAPPLE(SyncHandle sync);
 
         [NativeName("glDeleteTextures")]
         [SupportedApiProfile(
@@ -26850,7 +26772,7 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "3.2"
         )]
-        public static extern Sync* FenceSync(uint condition, uint flags);
+        public static extern SyncHandle FenceSync(uint condition, uint flags);
 
         [NativeName("glFenceSync")]
         [SupportedApiProfile(
@@ -26886,31 +26808,25 @@ public unsafe partial class GL : IGL, IGL.Static
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glFenceSync")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static Ptr<Sync> FenceSync(
+        public static SyncHandle FenceSync(
             Constant<uint, GLEnum, SyncCondition> condition,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags
-        ) => (Sync*)FenceSync((uint)condition, (uint)flags);
+        ) => (SyncHandle)FenceSync((uint)condition, (uint)flags);
 
         [NativeName("glFenceSyncAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glFenceSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        public static extern Sync* FenceSyncAPPLE(uint condition, uint flags);
+        public static extern SyncHandle FenceSyncAPPLE(uint condition, uint flags);
 
         [NativeName("glFenceSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static Ptr<Sync> FenceSyncAPPLE(
+        public static SyncHandle FenceSyncAPPLE(
             Constant<uint, GLEnum, SyncCondition> condition,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags
-        ) => (Sync*)FenceSyncAPPLE((uint)condition, (uint)flags);
+        ) => (SyncHandle)FenceSyncAPPLE((uint)condition, (uint)flags);
 
         [NativeName("glFinalCombinerInputNV")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glFinalCombinerInputNV")]
@@ -51824,7 +51740,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MinVersion = "3.2"
         )]
         public static extern void GetSync(
-            Sync* sync,
+            SyncHandle sync,
             uint pname,
             uint count,
             uint* length,
@@ -51869,7 +51785,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             uint count,
             Ref<uint> length,
@@ -51878,9 +51794,8 @@ public unsafe partial class GL : IGL, IGL.Static
         {
             fixed (int* __dsl_values = values)
             fixed (uint* __dsl_length = length)
-            fixed (Sync* __dsl_sync = sync)
             {
-                GetSync(__dsl_sync, (uint)pname, count, __dsl_length, __dsl_values);
+                GetSync(sync, (uint)pname, count, __dsl_length, __dsl_values);
             }
         }
 
@@ -51922,16 +51837,15 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             Ref<uint> length
         )
         {
             fixed (uint* __dsl_length = length)
-            fixed (Sync* __dsl_sync = sync)
             {
                 int values = default;
-                GetSync(__dsl_sync, (uint)pname, 1, __dsl_length, (int*)&values);
+                GetSync(sync, (uint)pname, 1, __dsl_length, (int*)&values);
                 return values;
             }
         }
@@ -51941,7 +51855,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         public static extern void GetSyncAPPLE(
-            Sync* sync,
+            SyncHandle sync,
             uint pname,
             uint count,
             uint* length,
@@ -51956,7 +51870,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             uint count,
             Ref<uint> length,
@@ -51965,9 +51879,8 @@ public unsafe partial class GL : IGL, IGL.Static
         {
             fixed (int* __dsl_values = values)
             fixed (uint* __dsl_length = length)
-            fixed (Sync* __dsl_sync = sync)
             {
-                GetSyncAPPLE(__dsl_sync, (uint)pname, count, __dsl_length, __dsl_values);
+                GetSyncAPPLE(sync, (uint)pname, count, __dsl_length, __dsl_values);
             }
         }
 
@@ -51979,16 +51892,15 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             Ref<uint> length
         )
         {
             fixed (uint* __dsl_length = length)
-            fixed (Sync* __dsl_sync = sync)
             {
                 int values = default;
-                GetSyncAPPLE(__dsl_sync, (uint)pname, 1, __dsl_length, (int*)&values);
+                GetSyncAPPLE(sync, (uint)pname, 1, __dsl_length, (int*)&values);
                 return values;
             }
         }
@@ -58827,21 +58739,9 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glImportSyncEXT")]
-        [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
-        [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static Ptr<Sync> ImportSyncEXT(
-            uint external_sync_type,
-            nint external_sync,
-            uint flags
-        ) => (Sync*)ImportSyncRawEXT(external_sync_type, external_sync, flags);
-
-        [NativeName("glImportSyncEXT")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glImportSyncEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
-        public static extern Sync* ImportSyncRawEXT(
+        public static extern SyncHandle ImportSyncEXT(
             uint external_sync_type,
             nint external_sync,
             uint flags
@@ -62282,42 +62182,6 @@ public unsafe partial class GL : IGL, IGL.Static
         public static extern uint IsStateRawNV(uint state);
 
         [NativeName("glIsSync")]
-        [DllImport("opengl", ExactSpelling = true, EntryPoint = "glIsSync")]
-        [SupportedApiProfile(
-            "gl",
-            [
-                "GL_ARB_sync",
-                "GL_VERSION_3_2",
-                "GL_VERSION_3_3",
-                "GL_VERSION_4_0",
-                "GL_VERSION_4_1",
-                "GL_VERSION_4_2",
-                "GL_VERSION_4_3",
-                "GL_VERSION_4_4",
-                "GL_VERSION_4_5",
-                "GL_VERSION_4_6",
-            ],
-            MinVersion = "3.2"
-        )]
-        [SupportedApiProfile(
-            "glcore",
-            [
-                "GL_ARB_sync",
-                "GL_VERSION_3_2",
-                "GL_VERSION_3_3",
-                "GL_VERSION_4_0",
-                "GL_VERSION_4_1",
-                "GL_VERSION_4_2",
-                "GL_VERSION_4_3",
-                "GL_VERSION_4_4",
-                "GL_VERSION_4_5",
-                "GL_VERSION_4_6",
-            ],
-            MinVersion = "3.2"
-        )]
-        public static extern uint IsSync(Sync* sync);
-
-        [NativeName("glIsSync")]
         [SupportedApiProfile(
             "gl",
             [
@@ -62351,37 +62215,57 @@ public unsafe partial class GL : IGL, IGL.Static
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glIsSync")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static MaybeBool<uint> IsSync(Ref<Sync> sync)
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                return (MaybeBool<uint>)(uint)IsSync(__dsl_sync);
-            }
-        }
-
-        [NativeName("glIsSyncAPPLE")]
-        [DllImport("opengl", ExactSpelling = true, EntryPoint = "glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        public static extern uint IsSyncAPPLE(Sync* sync);
+        public static MaybeBool<uint> IsSync(SyncHandle sync) =>
+            (MaybeBool<uint>)(uint)IsSyncRaw(sync);
 
         [NativeName("glIsSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        public static MaybeBool<uint> IsSyncAPPLE(SyncHandle sync) =>
+            (MaybeBool<uint>)(uint)IsSyncRawAPPLE(sync);
+
+        [NativeName("glIsSyncAPPLE")]
+        [DllImport("opengl", ExactSpelling = true, EntryPoint = "glIsSyncAPPLE")]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        public static extern uint IsSyncRawAPPLE(SyncHandle sync);
+
+        [NativeName("glIsSync")]
+        [DllImport("opengl", ExactSpelling = true, EntryPoint = "glIsSync")]
+        [SupportedApiProfile(
+            "gl",
+            [
+                "GL_ARB_sync",
+                "GL_VERSION_3_2",
+                "GL_VERSION_3_3",
+                "GL_VERSION_4_0",
+                "GL_VERSION_4_1",
+                "GL_VERSION_4_2",
+                "GL_VERSION_4_3",
+                "GL_VERSION_4_4",
+                "GL_VERSION_4_5",
+                "GL_VERSION_4_6",
+            ],
+            MinVersion = "3.2"
         )]
-        public static MaybeBool<uint> IsSyncAPPLE(Ref<Sync> sync)
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                return (MaybeBool<uint>)(uint)IsSyncAPPLE(__dsl_sync);
-            }
-        }
+        [SupportedApiProfile(
+            "glcore",
+            [
+                "GL_ARB_sync",
+                "GL_VERSION_3_2",
+                "GL_VERSION_3_3",
+                "GL_VERSION_4_0",
+                "GL_VERSION_4_1",
+                "GL_VERSION_4_2",
+                "GL_VERSION_4_3",
+                "GL_VERSION_4_4",
+                "GL_VERSION_4_5",
+                "GL_VERSION_4_6",
+            ],
+            MinVersion = "3.2"
+        )]
+        public static extern uint IsSyncRaw(SyncHandle sync);
 
         [NativeName("glIsTexture")]
         [SupportedApiProfile(
@@ -125462,7 +125346,7 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "3.2"
         )]
-        public static extern void WaitSync(Sync* sync, uint flags, ulong timeout);
+        public static extern void WaitSync(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glWaitSync")]
         [SupportedApiProfile(
@@ -125498,45 +125382,27 @@ public unsafe partial class GL : IGL, IGL.Static
             MinVersion = "3.2"
         )]
         [NativeFunction("opengl", EntryPoint = "glWaitSync")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
         public static void WaitSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags,
             ulong timeout
-        )
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                WaitSync(__dsl_sync, (uint)flags, timeout);
-            }
-        }
+        ) => WaitSync(sync, (uint)flags, timeout);
 
         [NativeName("glWaitSyncAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glWaitSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        public static extern void WaitSyncAPPLE(Sync* sync, uint flags, ulong timeout);
+        public static extern void WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glWaitSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
         public static void WaitSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags,
             ulong timeout
-        )
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                WaitSyncAPPLE(__dsl_sync, (uint)flags, timeout);
-            }
-        }
+        ) => WaitSyncAPPLE(sync, (uint)flags, timeout);
 
         [NativeName("glWaitVkSemaphoreNV")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glWaitVkSemaphoreNV")]
@@ -135527,7 +135393,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public uint ClientWaitSync(Sync* sync, uint flags, ulong timeout) =>
+        public uint ClientWaitSync(SyncHandle sync, uint flags, ulong timeout) =>
             T.ClientWaitSync(sync, flags, timeout);
 
         [NativeName("glClientWaitSync")]
@@ -135568,7 +135434,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public Constant<uint, GLEnum, SyncStatus> ClientWaitSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncObjectMask> flags,
             ulong timeout
         ) => T.ClientWaitSync(sync, flags, timeout);
@@ -135580,7 +135446,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public uint ClientWaitSyncAPPLE(Sync* sync, uint flags, ulong timeout) =>
+        public uint ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
             T.ClientWaitSyncAPPLE(sync, flags, timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
@@ -135591,7 +135457,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public Constant<uint, GLEnum, SyncStatus> ClientWaitSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncObjectMask> flags,
             ulong timeout
         ) => T.ClientWaitSyncAPPLE(sync, flags, timeout);
@@ -144722,7 +144588,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Sync* CreateSyncFromCLeventARB(void* context, void* @event, uint flags) =>
+        public SyncHandle CreateSyncFromCLeventARB(void* context, void* @event, uint flags) =>
             T.CreateSyncFromCLeventARB(context, @event, flags);
 
         [NativeName("glCreateSyncFromCLeventARB")]
@@ -144732,7 +144598,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Ptr<Sync> CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags) =>
+        public SyncHandle CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags) =>
             T.CreateSyncFromCLeventARB(context, @event, flags);
 
         [NativeName("glCreateTextures")]
@@ -147417,46 +147283,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void DeleteSync(Sync* sync) => T.DeleteSync(sync);
-
-        [NativeName("glDeleteSync")]
-        [SupportedApiProfile(
-            "gl",
-            [
-                "GL_ARB_sync",
-                "GL_VERSION_3_2",
-                "GL_VERSION_3_3",
-                "GL_VERSION_4_0",
-                "GL_VERSION_4_1",
-                "GL_VERSION_4_2",
-                "GL_VERSION_4_3",
-                "GL_VERSION_4_4",
-                "GL_VERSION_4_5",
-                "GL_VERSION_4_6",
-            ],
-            MinVersion = "3.2"
-        )]
-        [SupportedApiProfile(
-            "glcore",
-            [
-                "GL_ARB_sync",
-                "GL_VERSION_3_2",
-                "GL_VERSION_3_3",
-                "GL_VERSION_4_0",
-                "GL_VERSION_4_1",
-                "GL_VERSION_4_2",
-                "GL_VERSION_4_3",
-                "GL_VERSION_4_4",
-                "GL_VERSION_4_5",
-                "GL_VERSION_4_6",
-            ],
-            MinVersion = "3.2"
-        )]
-        [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public void DeleteSync(Ref<Sync> sync) => T.DeleteSync(sync);
+        public void DeleteSync(SyncHandle sync) => T.DeleteSync(sync);
 
         [NativeName("glDeleteSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
@@ -147465,16 +147292,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void DeleteSyncAPPLE(Sync* sync) => T.DeleteSyncAPPLE(sync);
-
-        [NativeName("glDeleteSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public void DeleteSyncAPPLE(Ref<Sync> sync) => T.DeleteSyncAPPLE(sync);
+        public void DeleteSyncAPPLE(SyncHandle sync) => T.DeleteSyncAPPLE(sync);
 
         [NativeName("glDeleteTextures")]
         [SupportedApiProfile(
@@ -155289,7 +155107,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Sync* FenceSync(uint condition, uint flags) => T.FenceSync(condition, flags);
+        public SyncHandle FenceSync(uint condition, uint flags) => T.FenceSync(condition, flags);
 
         [NativeName("glFenceSync")]
         [SupportedApiProfile(
@@ -155328,7 +155146,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Ptr<Sync> FenceSync(
+        public SyncHandle FenceSync(
             Constant<uint, GLEnum, SyncCondition> condition,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags
         ) => T.FenceSync(condition, flags);
@@ -155340,7 +155158,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Sync* FenceSyncAPPLE(uint condition, uint flags) =>
+        public SyncHandle FenceSyncAPPLE(uint condition, uint flags) =>
             T.FenceSyncAPPLE(condition, flags);
 
         [NativeName("glFenceSyncAPPLE")]
@@ -155350,7 +155168,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Ptr<Sync> FenceSyncAPPLE(
+        public SyncHandle FenceSyncAPPLE(
             Constant<uint, GLEnum, SyncCondition> condition,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags
         ) => T.FenceSyncAPPLE(condition, flags);
@@ -177985,7 +177803,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetSync(Sync* sync, uint pname, uint count, uint* length, int* values) =>
+        public void GetSync(SyncHandle sync, uint pname, uint count, uint* length, int* values) =>
             T.GetSync(sync, pname, count, length, values);
 
         [NativeName("glGetSynciv")]
@@ -178026,7 +177844,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void GetSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             uint count,
             Ref<uint> length,
@@ -178071,7 +177889,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             Ref<uint> length
         ) => T.GetSync(sync, pname, length);
@@ -178083,8 +177901,13 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetSyncAPPLE(Sync* sync, uint pname, uint count, uint* length, int* values) =>
-            T.GetSyncAPPLE(sync, pname, count, length, values);
+        public void GetSyncAPPLE(
+            SyncHandle sync,
+            uint pname,
+            uint count,
+            uint* length,
+            int* values
+        ) => T.GetSyncAPPLE(sync, pname, count, length, values);
 
         [NativeName("glGetSyncivAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
@@ -178094,7 +177917,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void GetSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             uint count,
             Ref<uint> length,
@@ -178109,7 +177932,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             Ref<uint> length
         ) => T.GetSyncAPPLE(sync, pname, length);
@@ -184399,17 +184222,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Ptr<Sync> ImportSyncEXT(uint external_sync_type, nint external_sync, uint flags) =>
+        public SyncHandle ImportSyncEXT(uint external_sync_type, nint external_sync, uint flags) =>
             T.ImportSyncEXT(external_sync_type, external_sync, flags);
-
-        [NativeName("glImportSyncEXT")]
-        [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
-        [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public Sync* ImportSyncRawEXT(uint external_sync_type, nint external_sync, uint flags) =>
-            T.ImportSyncRawEXT(external_sync_type, external_sync, flags);
 
         [NativeName("glIndexd")]
         [SupportedApiProfile(
@@ -188044,7 +187858,25 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public uint IsSync(Sync* sync) => T.IsSync(sync);
+        public MaybeBool<uint> IsSync(SyncHandle sync) => T.IsSync(sync);
+
+        [NativeName("glIsSyncAPPLE")]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public MaybeBool<uint> IsSyncAPPLE(SyncHandle sync) => T.IsSyncAPPLE(sync);
+
+        [NativeName("glIsSyncAPPLE")]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint IsSyncRawAPPLE(SyncHandle sync) => T.IsSyncRawAPPLE(sync);
 
         [NativeName("glIsSync")]
         [SupportedApiProfile(
@@ -188083,25 +187915,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public MaybeBool<uint> IsSync(Ref<Sync> sync) => T.IsSync(sync);
-
-        [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public uint IsSyncAPPLE(Sync* sync) => T.IsSyncAPPLE(sync);
-
-        [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public MaybeBool<uint> IsSyncAPPLE(Ref<Sync> sync) => T.IsSyncAPPLE(sync);
+        public uint IsSyncRaw(SyncHandle sync) => T.IsSyncRaw(sync);
 
         [NativeName("glIsTexture")]
         [SupportedApiProfile(
@@ -251750,7 +251564,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void WaitSync(Sync* sync, uint flags, ulong timeout) =>
+        public void WaitSync(SyncHandle sync, uint flags, ulong timeout) =>
             T.WaitSync(sync, flags, timeout);
 
         [NativeName("glWaitSync")]
@@ -251791,7 +251605,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void WaitSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags,
             ulong timeout
         ) => T.WaitSync(sync, flags, timeout);
@@ -251803,7 +251617,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void WaitSyncAPPLE(Sync* sync, uint flags, ulong timeout) =>
+        public void WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
             T.WaitSyncAPPLE(sync, flags, timeout);
 
         [NativeName("glWaitSyncAPPLE")]
@@ -251814,7 +251628,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void WaitSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags,
             ulong timeout
         ) => T.WaitSyncAPPLE(sync, flags, timeout);
@@ -262466,7 +262280,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static uint ClientWaitSync(Sync* sync, uint flags, ulong timeout) =>
+        public static uint ClientWaitSync(SyncHandle sync, uint flags, ulong timeout) =>
             Underlying.Value!.ClientWaitSync(sync, flags, timeout);
 
         [NativeName("glClientWaitSync")]
@@ -262507,17 +262321,10 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Constant<uint, GLEnum, SyncStatus> ClientWaitSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncObjectMask> flags,
             ulong timeout
-        )
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                return (Constant<uint, GLEnum, SyncStatus>)
-                    (uint)ClientWaitSync(__dsl_sync, (uint)flags, timeout);
-            }
-        }
+        ) => Underlying.Value!.ClientWaitSync(sync, flags, timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
@@ -262526,7 +262333,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static uint ClientWaitSyncAPPLE(Sync* sync, uint flags, ulong timeout) =>
+        public static uint ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
             Underlying.Value!.ClientWaitSyncAPPLE(sync, flags, timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
@@ -262537,17 +262344,10 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Constant<uint, GLEnum, SyncStatus> ClientWaitSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncObjectMask> flags,
             ulong timeout
-        )
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                return (Constant<uint, GLEnum, SyncStatus>)
-                    (uint)ClientWaitSyncAPPLE(__dsl_sync, (uint)flags, timeout);
-            }
-        }
+        ) => Underlying.Value!.ClientWaitSyncAPPLE(sync, flags, timeout);
 
         [NativeName("glClipControl")]
         [SupportedApiProfile(
@@ -272876,8 +272676,11 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Sync* CreateSyncFromCLeventARB(void* context, void* @event, uint flags) =>
-            Underlying.Value!.CreateSyncFromCLeventARB(context, @event, flags);
+        public static SyncHandle CreateSyncFromCLeventARB(
+            void* context,
+            void* @event,
+            uint flags
+        ) => Underlying.Value!.CreateSyncFromCLeventARB(context, @event, flags);
 
         [NativeName("glCreateSyncFromCLeventARB")]
         [SupportedApiProfile("gl", ["GL_ARB_cl_event"])]
@@ -272886,12 +272689,12 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<Sync> CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags)
+        public static SyncHandle CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags)
         {
             fixed (void* __dsl_event = @event)
             fixed (void* __dsl_context = context)
             {
-                return (Sync*)CreateSyncFromCLeventARB(__dsl_context, __dsl_event, flags);
+                return (SyncHandle)CreateSyncFromCLeventARB(__dsl_context, __dsl_event, flags);
             }
         }
 
@@ -275922,52 +275725,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void DeleteSync(Sync* sync) => Underlying.Value!.DeleteSync(sync);
-
-        [NativeName("glDeleteSync")]
-        [SupportedApiProfile(
-            "gl",
-            [
-                "GL_ARB_sync",
-                "GL_VERSION_3_2",
-                "GL_VERSION_3_3",
-                "GL_VERSION_4_0",
-                "GL_VERSION_4_1",
-                "GL_VERSION_4_2",
-                "GL_VERSION_4_3",
-                "GL_VERSION_4_4",
-                "GL_VERSION_4_5",
-                "GL_VERSION_4_6",
-            ],
-            MinVersion = "3.2"
-        )]
-        [SupportedApiProfile(
-            "glcore",
-            [
-                "GL_ARB_sync",
-                "GL_VERSION_3_2",
-                "GL_VERSION_3_3",
-                "GL_VERSION_4_0",
-                "GL_VERSION_4_1",
-                "GL_VERSION_4_2",
-                "GL_VERSION_4_3",
-                "GL_VERSION_4_4",
-                "GL_VERSION_4_5",
-                "GL_VERSION_4_6",
-            ],
-            MinVersion = "3.2"
-        )]
-        [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static void DeleteSync(Ref<Sync> sync)
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                DeleteSync(__dsl_sync);
-            }
-        }
+        public static void DeleteSync(SyncHandle sync) => Underlying.Value!.DeleteSync(sync);
 
         [NativeName("glDeleteSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
@@ -275976,22 +275734,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void DeleteSyncAPPLE(Sync* sync) => Underlying.Value!.DeleteSyncAPPLE(sync);
-
-        [NativeName("glDeleteSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static void DeleteSyncAPPLE(Ref<Sync> sync)
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                DeleteSyncAPPLE(__dsl_sync);
-            }
-        }
+        public static void DeleteSyncAPPLE(SyncHandle sync) =>
+            Underlying.Value!.DeleteSyncAPPLE(sync);
 
         [NativeName("glDeleteTextures")]
         [SupportedApiProfile(
@@ -284618,7 +284362,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Sync* FenceSync(uint condition, uint flags) =>
+        public static SyncHandle FenceSync(uint condition, uint flags) =>
             Underlying.Value!.FenceSync(condition, flags);
 
         [NativeName("glFenceSync")]
@@ -284658,7 +284402,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<Sync> FenceSync(
+        public static SyncHandle FenceSync(
             Constant<uint, GLEnum, SyncCondition> condition,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags
         ) => Underlying.Value!.FenceSync(condition, flags);
@@ -284670,7 +284414,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Sync* FenceSyncAPPLE(uint condition, uint flags) =>
+        public static SyncHandle FenceSyncAPPLE(uint condition, uint flags) =>
             Underlying.Value!.FenceSyncAPPLE(condition, flags);
 
         [NativeName("glFenceSyncAPPLE")]
@@ -284680,7 +284424,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<Sync> FenceSyncAPPLE(
+        public static SyncHandle FenceSyncAPPLE(
             Constant<uint, GLEnum, SyncCondition> condition,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags
         ) => Underlying.Value!.FenceSyncAPPLE(condition, flags);
@@ -312084,8 +311828,13 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetSync(Sync* sync, uint pname, uint count, uint* length, int* values) =>
-            Underlying.Value!.GetSync(sync, pname, count, length, values);
+        public static void GetSync(
+            SyncHandle sync,
+            uint pname,
+            uint count,
+            uint* length,
+            int* values
+        ) => Underlying.Value!.GetSync(sync, pname, count, length, values);
 
         [NativeName("glGetSynciv")]
         [SupportedApiProfile(
@@ -312125,7 +311874,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             uint count,
             Ref<uint> length,
@@ -312134,9 +311883,8 @@ public unsafe partial class GL : IGL, IGL.Static
         {
             fixed (int* __dsl_values = values)
             fixed (uint* __dsl_length = length)
-            fixed (Sync* __dsl_sync = sync)
             {
-                GetSync(__dsl_sync, (uint)pname, count, __dsl_length, __dsl_values);
+                GetSync(sync, (uint)pname, count, __dsl_length, __dsl_values);
             }
         }
 
@@ -312178,16 +311926,15 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             Ref<uint> length
         )
         {
             fixed (uint* __dsl_length = length)
-            fixed (Sync* __dsl_sync = sync)
             {
                 int values = default;
-                GetSync(__dsl_sync, (uint)pname, 1, __dsl_length, (int*)&values);
+                GetSync(sync, (uint)pname, 1, __dsl_length, (int*)&values);
                 return values;
             }
         }
@@ -312200,7 +311947,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetSyncAPPLE(
-            Sync* sync,
+            SyncHandle sync,
             uint pname,
             uint count,
             uint* length,
@@ -312215,7 +311962,7 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             uint count,
             Ref<uint> length,
@@ -312224,9 +311971,8 @@ public unsafe partial class GL : IGL, IGL.Static
         {
             fixed (int* __dsl_values = values)
             fixed (uint* __dsl_length = length)
-            fixed (Sync* __dsl_sync = sync)
             {
-                GetSyncAPPLE(__dsl_sync, (uint)pname, count, __dsl_length, __dsl_values);
+                GetSyncAPPLE(sync, (uint)pname, count, __dsl_length, __dsl_values);
             }
         }
 
@@ -312238,16 +311984,15 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncParameterName> pname,
             Ref<uint> length
         )
         {
             fixed (uint* __dsl_length = length)
-            fixed (Sync* __dsl_sync = sync)
             {
                 int values = default;
-                GetSyncAPPLE(__dsl_sync, (uint)pname, 1, __dsl_length, (int*)&values);
+                GetSyncAPPLE(sync, (uint)pname, 1, __dsl_length, (int*)&values);
                 return values;
             }
         }
@@ -319744,23 +319489,11 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<Sync> ImportSyncEXT(
+        public static SyncHandle ImportSyncEXT(
             uint external_sync_type,
             nint external_sync,
             uint flags
         ) => Underlying.Value!.ImportSyncEXT(external_sync_type, external_sync, flags);
-
-        [NativeName("glImportSyncEXT")]
-        [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
-        [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static Sync* ImportSyncRawEXT(
-            uint external_sync_type,
-            nint external_sync,
-            uint flags
-        ) => Underlying.Value!.ImportSyncRawEXT(external_sync_type, external_sync, flags);
 
         [NativeName("glIndexd")]
         [SupportedApiProfile(
@@ -323675,7 +323408,27 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static uint IsSync(Sync* sync) => Underlying.Value!.IsSync(sync);
+        public static MaybeBool<uint> IsSync(SyncHandle sync) => Underlying.Value!.IsSync(sync);
+
+        [NativeName("glIsSyncAPPLE")]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static MaybeBool<uint> IsSyncAPPLE(SyncHandle sync) =>
+            Underlying.Value!.IsSyncAPPLE(sync);
+
+        [NativeName("glIsSyncAPPLE")]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint IsSyncRawAPPLE(SyncHandle sync) =>
+            Underlying.Value!.IsSyncRawAPPLE(sync);
 
         [NativeName("glIsSync")]
         [SupportedApiProfile(
@@ -323714,37 +323467,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<uint> IsSync(Ref<Sync> sync)
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                return (MaybeBool<uint>)(uint)IsSync(__dsl_sync);
-            }
-        }
-
-        [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static uint IsSyncAPPLE(Sync* sync) => Underlying.Value!.IsSyncAPPLE(sync);
-
-        [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-        [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-        [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static MaybeBool<uint> IsSyncAPPLE(Ref<Sync> sync)
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                return (MaybeBool<uint>)(uint)IsSyncAPPLE(__dsl_sync);
-            }
-        }
+        public static uint IsSyncRaw(SyncHandle sync) => Underlying.Value!.IsSyncRaw(sync);
 
         [NativeName("glIsTexture")]
         [SupportedApiProfile(
@@ -395924,7 +395647,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void WaitSync(Sync* sync, uint flags, ulong timeout) =>
+        public static void WaitSync(SyncHandle sync, uint flags, ulong timeout) =>
             Underlying.Value!.WaitSync(sync, flags, timeout);
 
         [NativeName("glWaitSync")]
@@ -395965,16 +395688,10 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void WaitSync(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags,
             ulong timeout
-        )
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                WaitSync(__dsl_sync, (uint)flags, timeout);
-            }
-        }
+        ) => Underlying.Value!.WaitSync(sync, flags, timeout);
 
         [NativeName("glWaitSyncAPPLE")]
         [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
@@ -395983,7 +395700,7 @@ public unsafe partial class GL : IGL, IGL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void WaitSyncAPPLE(Sync* sync, uint flags, ulong timeout) =>
+        public static void WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
             Underlying.Value!.WaitSyncAPPLE(sync, flags, timeout);
 
         [NativeName("glWaitSyncAPPLE")]
@@ -395994,16 +395711,10 @@ public unsafe partial class GL : IGL, IGL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void WaitSyncAPPLE(
-            Ref<Sync> sync,
+            SyncHandle sync,
             Constant<uint, GLEnum, SyncBehaviorFlags> flags,
             ulong timeout
-        )
-        {
-            fixed (Sync* __dsl_sync = sync)
-            {
-                WaitSyncAPPLE(__dsl_sync, (uint)flags, timeout);
-            }
-        }
+        ) => Underlying.Value!.WaitSyncAPPLE(sync, flags, timeout);
 
         [NativeName("glWaitVkSemaphoreNV")]
         [SupportedApiProfile("gl", ["GL_NV_draw_vulkan_image"])]
@@ -415297,9 +415008,9 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IGL.ClientWaitSync(Sync* sync, uint flags, ulong timeout) =>
+    uint IGL.ClientWaitSync(SyncHandle sync, uint flags, ulong timeout) =>
         (
-            (delegate* unmanaged<Sync*, uint, ulong, uint>)(
+            (delegate* unmanaged<SyncHandle, uint, ulong, uint>)(
                 _slots[223] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[223] = nativeContext.LoadFunction("glClientWaitSync", "opengl")
@@ -415341,7 +415052,7 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint ClientWaitSync(Sync* sync, uint flags, ulong timeout) =>
+    public static uint ClientWaitSync(SyncHandle sync, uint flags, ulong timeout) =>
         ThisThread.ClientWaitSync(sync, flags, timeout);
 
     [NativeName("glClientWaitSync")]
@@ -415380,17 +415091,12 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glClientWaitSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Constant<uint, GLEnum, SyncStatus> IGL.ClientWaitSync(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncObjectMask> flags,
         ulong timeout
-    )
-    {
-        fixed (Sync* __dsl_sync = sync)
-        {
-            return (Constant<uint, GLEnum, SyncStatus>)
-                (uint)((IGL)this).ClientWaitSync(__dsl_sync, (uint)flags, timeout);
-        }
-    }
+    ) =>
+        (Constant<uint, GLEnum, SyncStatus>)
+            (uint)((IGL)this).ClientWaitSync(sync, (uint)flags, timeout);
 
     [NativeName("glClientWaitSync")]
     [SupportedApiProfile(
@@ -415428,7 +415134,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glClientWaitSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Constant<uint, GLEnum, SyncStatus> ClientWaitSync(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncObjectMask> flags,
         ulong timeout
     ) => ThisThread.ClientWaitSync(sync, flags, timeout);
@@ -415438,9 +415144,9 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IGL.ClientWaitSyncAPPLE(Sync* sync, uint flags, ulong timeout) =>
+    uint IGL.ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
         (
-            (delegate* unmanaged<Sync*, uint, ulong, uint>)(
+            (delegate* unmanaged<SyncHandle, uint, ulong, uint>)(
                 _slots[224] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[224] = nativeContext.LoadFunction("glClientWaitSyncAPPLE", "opengl")
@@ -415452,7 +415158,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint ClientWaitSyncAPPLE(Sync* sync, uint flags, ulong timeout) =>
+    public static uint ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
         ThisThread.ClientWaitSyncAPPLE(sync, flags, timeout);
 
     [NativeName("glClientWaitSyncAPPLE")]
@@ -415461,17 +415167,12 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Constant<uint, GLEnum, SyncStatus> IGL.ClientWaitSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncObjectMask> flags,
         ulong timeout
-    )
-    {
-        fixed (Sync* __dsl_sync = sync)
-        {
-            return (Constant<uint, GLEnum, SyncStatus>)
-                (uint)((IGL)this).ClientWaitSyncAPPLE(__dsl_sync, (uint)flags, timeout);
-        }
-    }
+    ) =>
+        (Constant<uint, GLEnum, SyncStatus>)
+            (uint)((IGL)this).ClientWaitSyncAPPLE(sync, (uint)flags, timeout);
 
     [NativeName("glClientWaitSyncAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
@@ -415479,7 +415180,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Constant<uint, GLEnum, SyncStatus> ClientWaitSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncObjectMask> flags,
         ulong timeout
     ) => ThisThread.ClientWaitSyncAPPLE(sync, flags, timeout);
@@ -434578,9 +434279,9 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("glcore", ["GL_ARB_cl_event"])]
     [NativeFunction("opengl", EntryPoint = "glCreateSyncFromCLeventARB")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Sync* IGL.CreateSyncFromCLeventARB(void* context, void* @event, uint flags) =>
+    SyncHandle IGL.CreateSyncFromCLeventARB(void* context, void* @event, uint flags) =>
         (
-            (delegate* unmanaged<void*, void*, uint, Sync*>)(
+            (delegate* unmanaged<void*, void*, uint, SyncHandle>)(
                 _slots[436] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[436] = nativeContext.LoadFunction(
@@ -434595,7 +434296,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("glcore", ["GL_ARB_cl_event"])]
     [NativeFunction("opengl", EntryPoint = "glCreateSyncFromCLeventARB")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Sync* CreateSyncFromCLeventARB(void* context, void* @event, uint flags) =>
+    public static SyncHandle CreateSyncFromCLeventARB(void* context, void* @event, uint flags) =>
         ThisThread.CreateSyncFromCLeventARB(context, @event, flags);
 
     [NativeName("glCreateSyncFromCLeventARB")]
@@ -434603,12 +434304,13 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("glcore", ["GL_ARB_cl_event"])]
     [NativeFunction("opengl", EntryPoint = "glCreateSyncFromCLeventARB")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Ptr<Sync> IGL.CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags)
+    SyncHandle IGL.CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags)
     {
         fixed (void* __dsl_event = @event)
         fixed (void* __dsl_context = context)
         {
-            return (Sync*)((IGL)this).CreateSyncFromCLeventARB(__dsl_context, __dsl_event, flags);
+            return (SyncHandle)
+                ((IGL)this).CreateSyncFromCLeventARB(__dsl_context, __dsl_event, flags);
         }
     }
 
@@ -434617,7 +434319,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("glcore", ["GL_ARB_cl_event"])]
     [NativeFunction("opengl", EntryPoint = "glCreateSyncFromCLeventARB")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Ptr<Sync> CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags) =>
+    public static SyncHandle CreateSyncFromCLeventARB(Ref context, Ref @event, uint flags) =>
         ThisThread.CreateSyncFromCLeventARB(context, @event, flags);
 
     [NativeName("glCreateTextures")]
@@ -440017,9 +439719,9 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IGL.DeleteSync(Sync* sync) =>
+    void IGL.DeleteSync(SyncHandle sync) =>
         (
-            (delegate* unmanaged<Sync*, void>)(
+            (delegate* unmanaged<SyncHandle, void>)(
                 _slots[495] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[495] = nativeContext.LoadFunction("glDeleteSync", "opengl")
@@ -440061,96 +439763,16 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DeleteSync(Sync* sync) => ThisThread.DeleteSync(sync);
-
-    [NativeName("glDeleteSync")]
-    [SupportedApiProfile(
-        "gl",
-        [
-            "GL_ARB_sync",
-            "GL_VERSION_3_2",
-            "GL_VERSION_3_3",
-            "GL_VERSION_4_0",
-            "GL_VERSION_4_1",
-            "GL_VERSION_4_2",
-            "GL_VERSION_4_3",
-            "GL_VERSION_4_4",
-            "GL_VERSION_4_5",
-            "GL_VERSION_4_6",
-        ],
-        MinVersion = "3.2"
-    )]
-    [SupportedApiProfile(
-        "glcore",
-        [
-            "GL_ARB_sync",
-            "GL_VERSION_3_2",
-            "GL_VERSION_3_3",
-            "GL_VERSION_4_0",
-            "GL_VERSION_4_1",
-            "GL_VERSION_4_2",
-            "GL_VERSION_4_3",
-            "GL_VERSION_4_4",
-            "GL_VERSION_4_5",
-            "GL_VERSION_4_6",
-        ],
-        MinVersion = "3.2"
-    )]
-    [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IGL.DeleteSync(Ref<Sync> sync)
-    {
-        fixed (Sync* __dsl_sync = sync)
-        {
-            ((IGL)this).DeleteSync(__dsl_sync);
-        }
-    }
-
-    [NativeName("glDeleteSync")]
-    [SupportedApiProfile(
-        "gl",
-        [
-            "GL_ARB_sync",
-            "GL_VERSION_3_2",
-            "GL_VERSION_3_3",
-            "GL_VERSION_4_0",
-            "GL_VERSION_4_1",
-            "GL_VERSION_4_2",
-            "GL_VERSION_4_3",
-            "GL_VERSION_4_4",
-            "GL_VERSION_4_5",
-            "GL_VERSION_4_6",
-        ],
-        MinVersion = "3.2"
-    )]
-    [SupportedApiProfile(
-        "glcore",
-        [
-            "GL_ARB_sync",
-            "GL_VERSION_3_2",
-            "GL_VERSION_3_3",
-            "GL_VERSION_4_0",
-            "GL_VERSION_4_1",
-            "GL_VERSION_4_2",
-            "GL_VERSION_4_3",
-            "GL_VERSION_4_4",
-            "GL_VERSION_4_5",
-            "GL_VERSION_4_6",
-        ],
-        MinVersion = "3.2"
-    )]
-    [NativeFunction("opengl", EntryPoint = "glDeleteSync")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DeleteSync(Ref<Sync> sync) => ThisThread.DeleteSync(sync);
+    public static void DeleteSync(SyncHandle sync) => ThisThread.DeleteSync(sync);
 
     [NativeName("glDeleteSyncAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IGL.DeleteSyncAPPLE(Sync* sync) =>
+    void IGL.DeleteSyncAPPLE(SyncHandle sync) =>
         (
-            (delegate* unmanaged<Sync*, void>)(
+            (delegate* unmanaged<SyncHandle, void>)(
                 _slots[496] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[496] = nativeContext.LoadFunction("glDeleteSyncAPPLE", "opengl")
@@ -440162,27 +439784,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DeleteSyncAPPLE(Sync* sync) => ThisThread.DeleteSyncAPPLE(sync);
-
-    [NativeName("glDeleteSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-    [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IGL.DeleteSyncAPPLE(Ref<Sync> sync)
-    {
-        fixed (Sync* __dsl_sync = sync)
-        {
-            ((IGL)this).DeleteSyncAPPLE(__dsl_sync);
-        }
-    }
-
-    [NativeName("glDeleteSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-    [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DeleteSyncAPPLE(Ref<Sync> sync) => ThisThread.DeleteSyncAPPLE(sync);
+    public static void DeleteSyncAPPLE(SyncHandle sync) => ThisThread.DeleteSyncAPPLE(sync);
 
     [NativeName("glDeleteTextures")]
     [SupportedApiProfile(
@@ -456512,9 +456114,9 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glFenceSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Sync* IGL.FenceSync(uint condition, uint flags) =>
+    SyncHandle IGL.FenceSync(uint condition, uint flags) =>
         (
-            (delegate* unmanaged<uint, uint, Sync*>)(
+            (delegate* unmanaged<uint, uint, SyncHandle>)(
                 _slots[698] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[698] = nativeContext.LoadFunction("glFenceSync", "opengl")
@@ -456556,7 +456158,7 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glFenceSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Sync* FenceSync(uint condition, uint flags) =>
+    public static SyncHandle FenceSync(uint condition, uint flags) =>
         ThisThread.FenceSync(condition, flags);
 
     [NativeName("glFenceSync")]
@@ -456594,10 +456196,10 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glFenceSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Ptr<Sync> IGL.FenceSync(
+    SyncHandle IGL.FenceSync(
         Constant<uint, GLEnum, SyncCondition> condition,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags
-    ) => (Sync*)((IGL)this).FenceSync((uint)condition, (uint)flags);
+    ) => (SyncHandle)((IGL)this).FenceSync((uint)condition, (uint)flags);
 
     [NativeName("glFenceSync")]
     [SupportedApiProfile(
@@ -456634,7 +456236,7 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glFenceSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Ptr<Sync> FenceSync(
+    public static SyncHandle FenceSync(
         Constant<uint, GLEnum, SyncCondition> condition,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags
     ) => ThisThread.FenceSync(condition, flags);
@@ -456644,9 +456246,9 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Sync* IGL.FenceSyncAPPLE(uint condition, uint flags) =>
+    SyncHandle IGL.FenceSyncAPPLE(uint condition, uint flags) =>
         (
-            (delegate* unmanaged<uint, uint, Sync*>)(
+            (delegate* unmanaged<uint, uint, SyncHandle>)(
                 _slots[699] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[699] = nativeContext.LoadFunction("glFenceSyncAPPLE", "opengl")
@@ -456658,7 +456260,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Sync* FenceSyncAPPLE(uint condition, uint flags) =>
+    public static SyncHandle FenceSyncAPPLE(uint condition, uint flags) =>
         ThisThread.FenceSyncAPPLE(condition, flags);
 
     [NativeName("glFenceSyncAPPLE")]
@@ -456666,17 +456268,17 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Ptr<Sync> IGL.FenceSyncAPPLE(
+    SyncHandle IGL.FenceSyncAPPLE(
         Constant<uint, GLEnum, SyncCondition> condition,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags
-    ) => (Sync*)((IGL)this).FenceSyncAPPLE((uint)condition, (uint)flags);
+    ) => (SyncHandle)((IGL)this).FenceSyncAPPLE((uint)condition, (uint)flags);
 
     [NativeName("glFenceSyncAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Ptr<Sync> FenceSyncAPPLE(
+    public static SyncHandle FenceSyncAPPLE(
         Constant<uint, GLEnum, SyncCondition> condition,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags
     ) => ThisThread.FenceSyncAPPLE(condition, flags);
@@ -505099,9 +504701,9 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IGL.GetSync(Sync* sync, uint pname, uint count, uint* length, int* values) =>
+    void IGL.GetSync(SyncHandle sync, uint pname, uint count, uint* length, int* values) =>
         (
-            (delegate* unmanaged<Sync*, uint, uint, uint*, int*, void>)(
+            (delegate* unmanaged<SyncHandle, uint, uint, uint*, int*, void>)(
                 _slots[1229] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[1229] = nativeContext.LoadFunction("glGetSynciv", "opengl")
@@ -505143,8 +504745,13 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetSync(Sync* sync, uint pname, uint count, uint* length, int* values) =>
-        ThisThread.GetSync(sync, pname, count, length, values);
+    public static void GetSync(
+        SyncHandle sync,
+        uint pname,
+        uint count,
+        uint* length,
+        int* values
+    ) => ThisThread.GetSync(sync, pname, count, length, values);
 
     [NativeName("glGetSynciv")]
     [SupportedApiProfile(
@@ -505182,7 +504789,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetSync(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         uint count,
         Ref<uint> length,
@@ -505191,9 +504798,8 @@ public unsafe partial class GL : IGL, IGL.Static
     {
         fixed (int* __dsl_values = values)
         fixed (uint* __dsl_length = length)
-        fixed (Sync* __dsl_sync = sync)
         {
-            ((IGL)this).GetSync(__dsl_sync, (uint)pname, count, __dsl_length, __dsl_values);
+            ((IGL)this).GetSync(sync, (uint)pname, count, __dsl_length, __dsl_values);
         }
     }
 
@@ -505233,7 +504839,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetSync(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         uint count,
         Ref<uint> length,
@@ -505276,16 +504882,15 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int IGL.GetSync(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         Ref<uint> length
     )
     {
         fixed (uint* __dsl_length = length)
-        fixed (Sync* __dsl_sync = sync)
         {
             int values = default;
-            ((IGL)this).GetSync(__dsl_sync, (uint)pname, 1, __dsl_length, (int*)&values);
+            ((IGL)this).GetSync(sync, (uint)pname, 1, __dsl_length, (int*)&values);
             return values;
         }
     }
@@ -505326,7 +504931,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glGetSynciv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetSync(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         Ref<uint> length
     ) => ThisThread.GetSync(sync, pname, length);
@@ -505336,9 +504941,9 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IGL.GetSyncAPPLE(Sync* sync, uint pname, uint count, uint* length, int* values) =>
+    void IGL.GetSyncAPPLE(SyncHandle sync, uint pname, uint count, uint* length, int* values) =>
         (
-            (delegate* unmanaged<Sync*, uint, uint, uint*, int*, void>)(
+            (delegate* unmanaged<SyncHandle, uint, uint, uint*, int*, void>)(
                 _slots[1230] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[1230] = nativeContext.LoadFunction("glGetSyncivAPPLE", "opengl")
@@ -505351,7 +504956,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetSyncAPPLE(
-        Sync* sync,
+        SyncHandle sync,
         uint pname,
         uint count,
         uint* length,
@@ -505364,7 +504969,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         uint count,
         Ref<uint> length,
@@ -505373,9 +504978,8 @@ public unsafe partial class GL : IGL, IGL.Static
     {
         fixed (int* __dsl_values = values)
         fixed (uint* __dsl_length = length)
-        fixed (Sync* __dsl_sync = sync)
         {
-            ((IGL)this).GetSyncAPPLE(__dsl_sync, (uint)pname, count, __dsl_length, __dsl_values);
+            ((IGL)this).GetSyncAPPLE(sync, (uint)pname, count, __dsl_length, __dsl_values);
         }
     }
 
@@ -505385,7 +504989,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         uint count,
         Ref<uint> length,
@@ -505398,16 +505002,15 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int IGL.GetSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         Ref<uint> length
     )
     {
         fixed (uint* __dsl_length = length)
-        fixed (Sync* __dsl_sync = sync)
         {
             int values = default;
-            ((IGL)this).GetSyncAPPLE(__dsl_sync, (uint)pname, 1, __dsl_length, (int*)&values);
+            ((IGL)this).GetSyncAPPLE(sync, (uint)pname, 1, __dsl_length, (int*)&values);
             return values;
         }
     }
@@ -505418,7 +505021,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncParameterName> pname,
         Ref<uint> length
     ) => ThisThread.GetSyncAPPLE(sync, pname, length);
@@ -518947,26 +518550,9 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
     [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Ptr<Sync> IGL.ImportSyncEXT(uint external_sync_type, nint external_sync, uint flags) =>
-        (Sync*)((IGL)this).ImportSyncRawEXT(external_sync_type, external_sync, flags);
-
-    [NativeName("glImportSyncEXT")]
-    [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
-    [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Ptr<Sync> ImportSyncEXT(
-        uint external_sync_type,
-        nint external_sync,
-        uint flags
-    ) => ThisThread.ImportSyncEXT(external_sync_type, external_sync, flags);
-
-    [NativeName("glImportSyncEXT")]
-    [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
-    [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Sync* IGL.ImportSyncRawEXT(uint external_sync_type, nint external_sync, uint flags) =>
+    SyncHandle IGL.ImportSyncEXT(uint external_sync_type, nint external_sync, uint flags) =>
         (
-            (delegate* unmanaged<uint, nint, uint, Sync*>)(
+            (delegate* unmanaged<uint, nint, uint, SyncHandle>)(
                 _slots[1377] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[1377] = nativeContext.LoadFunction("glImportSyncEXT", "opengl")
@@ -518977,8 +518563,11 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gl", ["GL_EXT_x11_sync_object"])]
     [NativeFunction("opengl", EntryPoint = "glImportSyncEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Sync* ImportSyncRawEXT(uint external_sync_type, nint external_sync, uint flags) =>
-        ThisThread.ImportSyncRawEXT(external_sync_type, external_sync, flags);
+    public static SyncHandle ImportSyncEXT(
+        uint external_sync_type,
+        nint external_sync,
+        uint flags
+    ) => ThisThread.ImportSyncEXT(external_sync_type, external_sync, flags);
 
     [NativeName("glIndexd")]
     [SupportedApiProfile(
@@ -526409,9 +525998,120 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glIsSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IGL.IsSync(Sync* sync) =>
+    MaybeBool<uint> IGL.IsSync(SyncHandle sync) =>
+        (MaybeBool<uint>)(uint)((IGL)this).IsSyncRaw(sync);
+
+    [NativeName("glIsSync")]
+    [SupportedApiProfile(
+        "gl",
+        [
+            "GL_ARB_sync",
+            "GL_VERSION_3_2",
+            "GL_VERSION_3_3",
+            "GL_VERSION_4_0",
+            "GL_VERSION_4_1",
+            "GL_VERSION_4_2",
+            "GL_VERSION_4_3",
+            "GL_VERSION_4_4",
+            "GL_VERSION_4_5",
+            "GL_VERSION_4_6",
+        ],
+        MinVersion = "3.2"
+    )]
+    [SupportedApiProfile(
+        "glcore",
+        [
+            "GL_ARB_sync",
+            "GL_VERSION_3_2",
+            "GL_VERSION_3_3",
+            "GL_VERSION_4_0",
+            "GL_VERSION_4_1",
+            "GL_VERSION_4_2",
+            "GL_VERSION_4_3",
+            "GL_VERSION_4_4",
+            "GL_VERSION_4_5",
+            "GL_VERSION_4_6",
+        ],
+        MinVersion = "3.2"
+    )]
+    [NativeFunction("opengl", EntryPoint = "glIsSync")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<uint> IsSync(SyncHandle sync) => ThisThread.IsSync(sync);
+
+    [NativeName("glIsSyncAPPLE")]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    MaybeBool<uint> IGL.IsSyncAPPLE(SyncHandle sync) =>
+        (MaybeBool<uint>)(uint)((IGL)this).IsSyncRawAPPLE(sync);
+
+    [NativeName("glIsSyncAPPLE")]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static MaybeBool<uint> IsSyncAPPLE(SyncHandle sync) => ThisThread.IsSyncAPPLE(sync);
+
+    [NativeName("glIsSyncAPPLE")]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint IGL.IsSyncRawAPPLE(SyncHandle sync) =>
         (
-            (delegate* unmanaged<Sync*, uint>)(
+            (delegate* unmanaged<SyncHandle, uint>)(
+                _slots[1455] is not null and var loadedFnPtr
+                    ? loadedFnPtr
+                    : _slots[1455] = nativeContext.LoadFunction("glIsSyncAPPLE", "opengl")
+            )
+        )(sync);
+
+    [NativeName("glIsSyncAPPLE")]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint IsSyncRawAPPLE(SyncHandle sync) => ThisThread.IsSyncRawAPPLE(sync);
+
+    [NativeName("glIsSync")]
+    [SupportedApiProfile(
+        "gl",
+        [
+            "GL_ARB_sync",
+            "GL_VERSION_3_2",
+            "GL_VERSION_3_3",
+            "GL_VERSION_4_0",
+            "GL_VERSION_4_1",
+            "GL_VERSION_4_2",
+            "GL_VERSION_4_3",
+            "GL_VERSION_4_4",
+            "GL_VERSION_4_5",
+            "GL_VERSION_4_6",
+        ],
+        MinVersion = "3.2"
+    )]
+    [SupportedApiProfile(
+        "glcore",
+        [
+            "GL_ARB_sync",
+            "GL_VERSION_3_2",
+            "GL_VERSION_3_3",
+            "GL_VERSION_4_0",
+            "GL_VERSION_4_1",
+            "GL_VERSION_4_2",
+            "GL_VERSION_4_3",
+            "GL_VERSION_4_4",
+            "GL_VERSION_4_5",
+            "GL_VERSION_4_6",
+        ],
+        MinVersion = "3.2"
+    )]
+    [NativeFunction("opengl", EntryPoint = "glIsSync")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint IGL.IsSyncRaw(SyncHandle sync) =>
+        (
+            (delegate* unmanaged<SyncHandle, uint>)(
                 _slots[1454] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[1454] = nativeContext.LoadFunction("glIsSync", "opengl")
@@ -526453,128 +526153,7 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glIsSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint IsSync(Sync* sync) => ThisThread.IsSync(sync);
-
-    [NativeName("glIsSync")]
-    [SupportedApiProfile(
-        "gl",
-        [
-            "GL_ARB_sync",
-            "GL_VERSION_3_2",
-            "GL_VERSION_3_3",
-            "GL_VERSION_4_0",
-            "GL_VERSION_4_1",
-            "GL_VERSION_4_2",
-            "GL_VERSION_4_3",
-            "GL_VERSION_4_4",
-            "GL_VERSION_4_5",
-            "GL_VERSION_4_6",
-        ],
-        MinVersion = "3.2"
-    )]
-    [SupportedApiProfile(
-        "glcore",
-        [
-            "GL_ARB_sync",
-            "GL_VERSION_3_2",
-            "GL_VERSION_3_3",
-            "GL_VERSION_4_0",
-            "GL_VERSION_4_1",
-            "GL_VERSION_4_2",
-            "GL_VERSION_4_3",
-            "GL_VERSION_4_4",
-            "GL_VERSION_4_5",
-            "GL_VERSION_4_6",
-        ],
-        MinVersion = "3.2"
-    )]
-    [NativeFunction("opengl", EntryPoint = "glIsSync")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<uint> IGL.IsSync(Ref<Sync> sync)
-    {
-        fixed (Sync* __dsl_sync = sync)
-        {
-            return (MaybeBool<uint>)(uint)((IGL)this).IsSync(__dsl_sync);
-        }
-    }
-
-    [NativeName("glIsSync")]
-    [SupportedApiProfile(
-        "gl",
-        [
-            "GL_ARB_sync",
-            "GL_VERSION_3_2",
-            "GL_VERSION_3_3",
-            "GL_VERSION_4_0",
-            "GL_VERSION_4_1",
-            "GL_VERSION_4_2",
-            "GL_VERSION_4_3",
-            "GL_VERSION_4_4",
-            "GL_VERSION_4_5",
-            "GL_VERSION_4_6",
-        ],
-        MinVersion = "3.2"
-    )]
-    [SupportedApiProfile(
-        "glcore",
-        [
-            "GL_ARB_sync",
-            "GL_VERSION_3_2",
-            "GL_VERSION_3_3",
-            "GL_VERSION_4_0",
-            "GL_VERSION_4_1",
-            "GL_VERSION_4_2",
-            "GL_VERSION_4_3",
-            "GL_VERSION_4_4",
-            "GL_VERSION_4_5",
-            "GL_VERSION_4_6",
-        ],
-        MinVersion = "3.2"
-    )]
-    [NativeFunction("opengl", EntryPoint = "glIsSync")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<uint> IsSync(Ref<Sync> sync) => ThisThread.IsSync(sync);
-
-    [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IGL.IsSyncAPPLE(Sync* sync) =>
-        (
-            (delegate* unmanaged<Sync*, uint>)(
-                _slots[1455] is not null and var loadedFnPtr
-                    ? loadedFnPtr
-                    : _slots[1455] = nativeContext.LoadFunction("glIsSyncAPPLE", "opengl")
-            )
-        )(sync);
-
-    [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint IsSyncAPPLE(Sync* sync) => ThisThread.IsSyncAPPLE(sync);
-
-    [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<uint> IGL.IsSyncAPPLE(Ref<Sync> sync)
-    {
-        fixed (Sync* __dsl_sync = sync)
-        {
-            return (MaybeBool<uint>)(uint)((IGL)this).IsSyncAPPLE(__dsl_sync);
-        }
-    }
-
-    [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
-    [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
-    [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<uint> IsSyncAPPLE(Ref<Sync> sync) => ThisThread.IsSyncAPPLE(sync);
+    public static uint IsSyncRaw(SyncHandle sync) => ThisThread.IsSyncRaw(sync);
 
     [NativeName("glIsTexture")]
     [SupportedApiProfile(
@@ -659816,9 +659395,9 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glWaitSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IGL.WaitSync(Sync* sync, uint flags, ulong timeout) =>
+    void IGL.WaitSync(SyncHandle sync, uint flags, ulong timeout) =>
         (
-            (delegate* unmanaged<Sync*, uint, ulong, void>)(
+            (delegate* unmanaged<SyncHandle, uint, ulong, void>)(
                 _slots[3219] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[3219] = nativeContext.LoadFunction("glWaitSync", "opengl")
@@ -659860,7 +659439,7 @@ public unsafe partial class GL : IGL, IGL.Static
     )]
     [NativeFunction("opengl", EntryPoint = "glWaitSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void WaitSync(Sync* sync, uint flags, ulong timeout) =>
+    public static void WaitSync(SyncHandle sync, uint flags, ulong timeout) =>
         ThisThread.WaitSync(sync, flags, timeout);
 
     [NativeName("glWaitSync")]
@@ -659899,16 +659478,10 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glWaitSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.WaitSync(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags,
         ulong timeout
-    )
-    {
-        fixed (Sync* __dsl_sync = sync)
-        {
-            ((IGL)this).WaitSync(__dsl_sync, (uint)flags, timeout);
-        }
-    }
+    ) => ((IGL)this).WaitSync(sync, (uint)flags, timeout);
 
     [NativeName("glWaitSync")]
     [SupportedApiProfile(
@@ -659946,7 +659519,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glWaitSync")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void WaitSync(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags,
         ulong timeout
     ) => ThisThread.WaitSync(sync, flags, timeout);
@@ -659956,9 +659529,9 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IGL.WaitSyncAPPLE(Sync* sync, uint flags, ulong timeout) =>
+    void IGL.WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
         (
-            (delegate* unmanaged<Sync*, uint, ulong, void>)(
+            (delegate* unmanaged<SyncHandle, uint, ulong, void>)(
                 _slots[3220] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[3220] = nativeContext.LoadFunction("glWaitSyncAPPLE", "opengl")
@@ -659970,7 +659543,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void WaitSyncAPPLE(Sync* sync, uint flags, ulong timeout) =>
+    public static void WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
         ThisThread.WaitSyncAPPLE(sync, flags, timeout);
 
     [NativeName("glWaitSyncAPPLE")]
@@ -659979,16 +659552,10 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.WaitSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags,
         ulong timeout
-    )
-    {
-        fixed (Sync* __dsl_sync = sync)
-        {
-            ((IGL)this).WaitSyncAPPLE(__dsl_sync, (uint)flags, timeout);
-        }
-    }
+    ) => ((IGL)this).WaitSyncAPPLE(sync, (uint)flags, timeout);
 
     [NativeName("glWaitSyncAPPLE")]
     [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
@@ -659996,7 +659563,7 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void WaitSyncAPPLE(
-        Ref<Sync> sync,
+        SyncHandle sync,
         Constant<uint, GLEnum, SyncBehaviorFlags> flags,
         ulong timeout
     ) => ThisThread.WaitSyncAPPLE(sync, flags, timeout);

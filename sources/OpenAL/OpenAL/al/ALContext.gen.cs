@@ -295,21 +295,26 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetInteger(DeviceHandle device, int param1, int size, Ref<int> values)
+        public static void GetInteger(
+            DeviceHandle device,
+            Constant<int, ContextInteger> param1,
+            int size,
+            Ref<int> values
+        )
         {
             fixed (int* __dsl_values = values)
             {
-                GetInteger(device, param1, size, __dsl_values);
+                GetInteger(device, (int)param1, size, __dsl_values);
             }
         }
 
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        public static int GetInteger(DeviceHandle device, int param1)
+        public static int GetInteger(DeviceHandle device, Constant<int, ContextInteger> param1)
         {
             int values = default;
-            GetInteger(device, param1, 1, (int*)&values);
+            GetInteger(device, (int)param1, 1, (int*)&values);
             return values;
         }
 
@@ -904,8 +909,12 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetInteger(DeviceHandle device, int param1, int size, Ref<int> values) =>
-            T.GetInteger(device, param1, size, values);
+        public void GetInteger(
+            DeviceHandle device,
+            Constant<int, ContextInteger> param1,
+            int size,
+            Ref<int> values
+        ) => T.GetInteger(device, param1, size, values);
 
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -913,7 +922,8 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int GetInteger(DeviceHandle device, int param1) => T.GetInteger(device, param1);
+        public int GetInteger(DeviceHandle device, Constant<int, ContextInteger> param1) =>
+            T.GetInteger(device, param1);
 
         [NativeName("alcGetProcAddress")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -1555,11 +1565,16 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetInteger(DeviceHandle device, int param1, int size, Ref<int> values)
+        public static void GetInteger(
+            DeviceHandle device,
+            Constant<int, ContextInteger> param1,
+            int size,
+            Ref<int> values
+        )
         {
             fixed (int* __dsl_values = values)
             {
-                GetInteger(device, param1, size, __dsl_values);
+                GetInteger(device, (int)param1, size, __dsl_values);
             }
         }
 
@@ -1569,10 +1584,10 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int GetInteger(DeviceHandle device, int param1)
+        public static int GetInteger(DeviceHandle device, Constant<int, ContextInteger> param1)
         {
             int values = default;
-            GetInteger(device, param1, 1, (int*)&values);
+            GetInteger(device, (int)param1, 1, (int*)&values);
             return values;
         }
 
@@ -2564,11 +2579,16 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IALContext.GetInteger(DeviceHandle device, int param1, int size, Ref<int> values)
+    void IALContext.GetInteger(
+        DeviceHandle device,
+        Constant<int, ContextInteger> param1,
+        int size,
+        Ref<int> values
+    )
     {
         fixed (int* __dsl_values = values)
         {
-            ((IALContext)this).GetInteger(device, param1, size, __dsl_values);
+            ((IALContext)this).GetInteger(device, (int)param1, size, __dsl_values);
         }
     }
 
@@ -2576,17 +2596,21 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetInteger(DeviceHandle device, int param1, int size, Ref<int> values) =>
-        ThisThread.GetInteger(device, param1, size, values);
+    public static void GetInteger(
+        DeviceHandle device,
+        Constant<int, ContextInteger> param1,
+        int size,
+        Ref<int> values
+    ) => ThisThread.GetInteger(device, param1, size, values);
 
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IALContext.GetInteger(DeviceHandle device, int param1)
+    int IALContext.GetInteger(DeviceHandle device, Constant<int, ContextInteger> param1)
     {
         int values = default;
-        ((IALContext)this).GetInteger(device, param1, 1, (int*)&values);
+        ((IALContext)this).GetInteger(device, (int)param1, 1, (int*)&values);
         return values;
     }
 
@@ -2594,7 +2618,7 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int GetInteger(DeviceHandle device, int param1) =>
+    public static int GetInteger(DeviceHandle device, Constant<int, ContextInteger> param1) =>
         ThisThread.GetInteger(device, param1);
 
     [NativeName("alcGetProcAddress")]

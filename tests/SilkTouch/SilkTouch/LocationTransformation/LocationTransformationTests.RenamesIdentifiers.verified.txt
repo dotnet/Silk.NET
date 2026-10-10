@@ -1,0 +1,29 @@
+﻿// Test.gen.cs
+public struct DataOut
+{
+}
+
+/// <summary>
+/// Holds <see cref = "DataOut"/>.
+/// </summary>
+public struct StructOut
+{
+    public DataOut FieldOut;
+    public DataOut PropertyOut => FieldOut;
+
+    public DataOut MethodOut(DataOut a) => new DataOut();
+    public void Method2Out()
+    {
+        DataOut data = new DataOut();
+    }
+}
+
+[NameAffix("", "", nameof(StructOut))]
+[NameAffix("", "", nameof(StructOut.MethodOut))]
+public class ClassOut
+{
+    public DataOut FieldOut;
+    public DataOut PropertyOut => FieldOut;
+
+    public DataOut MethodOut(DataOut a) => new DataOut();
+}

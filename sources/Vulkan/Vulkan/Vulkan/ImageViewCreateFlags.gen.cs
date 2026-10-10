@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageViewCreateFlagBits")]
+[NativeName("VkImageViewCreateFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum ImageViewCreateFlags : uint

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSemaphoreImportFlagBits")]
+[NativeName("VkSemaphoreImportFlags")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum SemaphoreImportFlags : uint

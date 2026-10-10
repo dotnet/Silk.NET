@@ -45,6 +45,16 @@ In order to use the experimental feed, you must change this project file slightl
   </PropertyGroup>
 ```
 
+Optionally, create a `nuget.config` file next to your solution file with the following contents:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <packageSources>
+        <add key="silk" value="https://dotnet.github.io/Silk.NET/nuget/experimental/index.json"/>
+    </packageSources>
+</configuration>
+```
+
 ## Install an experimental version
 
 Now .NET has access to the experimental feed, it's time to install an experimental package. Check for the latest version on our [GitLab Package Registry](https://gitlab.com/silkdotnet/Silk.NET/-/packages).
@@ -56,7 +66,6 @@ At the time of writing, the latest version is `2.0.0-build97.0`. Now to install 
     <PackageReference Include="Silk.NET" Version="2.0.0-build97.0" />
   </ItemGroup>
 ```
-
 
 > [!WARNING]
 > Experimental Feed builds may be deleted without warning at the Silk.NET team's discretion.

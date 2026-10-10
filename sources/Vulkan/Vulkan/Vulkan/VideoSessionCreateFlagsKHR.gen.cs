@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoSessionCreateFlagBitsKHR")]
+[NativeName("VkVideoSessionCreateFlagsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum VideoSessionCreateFlagsKHR : uint

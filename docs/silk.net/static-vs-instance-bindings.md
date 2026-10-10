@@ -129,3 +129,15 @@ var source = AL.GenSource();
 ALC has the same caveats as Vulkan, given that the ALC function pointers are tied to a specific device. As a result,
 `alcOpenDevice` is intercepted to set the value of `CurrentDevice` to then be fed into `alcGetProcAddress` (or
 `alcGetProcAddress2` if available).
+
+## OpenCL
+
+OpenCL is a stateful API similar to Vulkan, but its functions are split into two categories: core functions and
+extension functions. Core functions are stateless and do not require any special handling to be used.
+
+However, extension functions depend on the `PlatformIdHandle` being used. Unlike Vulkan, our OpenCL bindings do not
+automatically set the `CurrentPlatform` property on the OpenCL API object. This is because unlike Vulkan's
+`CreateInstance` and `CreateDevice` functions, OpenCL's `GetPlatformIDs` function does not imply the selection of a
+particular platform. In order to use extension functions, you must manually set the `CurrentPlatform` property to
+indicate your selected platform. This platform will then be used by Silk to retrieve extension functions by calling
+`clGetExtensionFunctionAddressForPlatform`.

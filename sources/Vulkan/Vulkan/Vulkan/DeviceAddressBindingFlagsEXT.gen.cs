@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceAddressBindingFlagBitsEXT")]
+[NativeName("VkDeviceAddressBindingFlagsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum DeviceAddressBindingFlagsEXT : uint

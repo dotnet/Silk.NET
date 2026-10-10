@@ -19,9 +19,9 @@ public class NameAffixerTests
             [NameAffix("Suffix", "KhronosVendor", "SOFT")]
             public void alGetBufferPtrvDirectSOFT() { }
             """
-        );
+        )!;
 
-        var affixes = member!.AttributeLists.GetNameAffixes();
+        var affixes = member.AttributeLists.GetNameAffixes();
 
         Assert.That(
             affixes,
@@ -37,7 +37,7 @@ public class NameAffixerTests
     }
 
     [Test]
-    public void ApplyAffixes_AddsAffixes()
+    public void ApplyAffixes()
     {
         Assert.Multiple(() =>
         {
@@ -70,7 +70,7 @@ public class NameAffixerTests
     }
 
     [Test]
-    public void StripAffixes_RemovesAffixes()
+    public void StripAffixes()
     {
         Assert.Multiple(() =>
         {
@@ -100,5 +100,38 @@ public class NameAffixerTests
                 Is.EqualTo("GetBufferPtr")
             );
         });
+    }
+
+    [Test]
+    public void ReferencedAffixes()
+    {
+        var member = ParseMemberDeclaration(
+            """
+            [NameAffix("Suffix", "Reference", nameof(Other))]
+            [NameAffix("Suffix", "QualifiedReference", nameof(Other.Member))]
+            public void Test() { }
+            """
+        )!;
+
+        var affixes = member.AttributeLists.GetNameAffixes();
+
+        Assert.That(
+            affixes,
+            Is.EqualTo(
+                [
+                    new NameAffix(NameAffixType.Suffix, "Reference", "Other", 0, true),
+                    new NameAffix(
+                        NameAffixType.Suffix,
+                        "QualifiedReference",
+                        "Other.Member",
+                        1,
+                        true
+                    ),
+                ]
+            )
+        );
+
+        Assert.AreEqual("TestOtherMember", NameAffixer.ApplyAffixes("Test", affixes));
+        Assert.AreEqual("Test", NameAffixer.StripAffixes("TestOtherMember", affixes));
     }
 }

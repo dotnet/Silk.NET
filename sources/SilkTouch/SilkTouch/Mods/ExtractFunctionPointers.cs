@@ -144,25 +144,63 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
             }
 
             // As above, get the native type name if we can and also get a fallback name based on context.
-            var (currentNativeTypeName, fallback) = current switch
+            const string functionPointerNameFallbackParent = "FunctionPointerNameFallbackParent";
+            string? currentNativeTypeName = null;
+            string? fallback = null;
+            SyntaxList<AttributeListSyntax> fallbackPfnAttrLists = default;
+            switch (current)
             {
-                MethodDeclarationSyntax meth => (
-                    meth.AttributeLists.GetNativeTypeName(SyntaxKind.ReturnKeyword),
-                    $"{meth.Identifier}_r"
-                ),
-                ParameterSyntax { Parent.Parent: MethodDeclarationSyntax meth } param => (
-                    param.AttributeLists.GetNativeTypeName(),
-                    $"{meth.Identifier}_{param.Identifier}"
-                ),
-                VariableDeclarationSyntax
+                case MethodDeclarationSyntax meth:
                 {
-                    Parent: FieldDeclarationSyntax { Parent: BaseTypeDeclarationSyntax type } fld
-                } vardec => (
-                    fld.AttributeLists.GetNativeTypeName(),
-                    $"{type.Identifier}_{vardec.Variables[0].Identifier}"
-                ),
-                _ => (null, null),
-            };
+                    currentNativeTypeName = meth.AttributeLists.GetNativeTypeName(
+                        SyntaxKind.ReturnKeyword
+                    );
+
+                    fallback = $"{meth.Identifier}_r";
+                    if (meth.Parent is TypeDeclarationSyntax type)
+                    {
+                        fallbackPfnAttrLists = fallbackPfnAttrLists.AddReferencedNameAffix(
+                            NameAffixType.Prefix,
+                            functionPointerNameFallbackParent,
+                            $"{type.Identifier}.{meth.Identifier}"
+                        );
+                    }
+
+                    break;
+                }
+                case ParameterSyntax { Parent.Parent: MethodDeclarationSyntax meth } param:
+                {
+                    currentNativeTypeName = param.AttributeLists.GetNativeTypeName();
+
+                    fallback = $"{meth.Identifier}_{param.Identifier}";
+                    if (meth.Parent is TypeDeclarationSyntax type)
+                    {
+                        fallbackPfnAttrLists = fallbackPfnAttrLists.AddReferencedNameAffix(
+                            NameAffixType.Prefix,
+                            functionPointerNameFallbackParent,
+                            $"{type.Identifier}.{meth.Identifier}"
+                        );
+                    }
+
+                    break;
+                }
+                case VariableDeclarationSyntax
+                {
+                    Parent: FieldDeclarationSyntax { Parent: BaseTypeDeclarationSyntax type } fld,
+                } vardec:
+                {
+                    currentNativeTypeName = fld.AttributeLists.GetNativeTypeName();
+
+                    fallback = $"{type.Identifier}_{vardec.Variables[0].Identifier}";
+                    fallbackPfnAttrLists = fallbackPfnAttrLists.AddReferencedNameAffix(
+                        NameAffixType.Prefix,
+                        functionPointerNameFallbackParent,
+                        $"{type.Identifier}"
+                    );
+
+                    break;
+                }
+            }
 
             // If the native type name is actually the function pointer signature (i.e. not through a typedef) then we
             // should pass the native type name down when recursing.
@@ -282,18 +320,22 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
             if (!FunctionPointerTypes.TryGetValue(currentNativeTypeName, out var pfnInfo))
             {
                 var (pfn, @delegate) = CreateFunctionPointerTypes(
-                    currentNativeTypeName,
-                    $"{currentNativeTypeName}Delegate",
-                    (
+                    pfnName: currentNativeTypeName,
+                    delegateName: $"{currentNativeTypeName}Delegate",
+                    pfnAttrLists: (
                         currentNativeTypeName == fallback
-                            ? SingletonList(
-                                AttributeList(
-                                    SingletonSeparatedList(Attribute(IdentifierName("Transformed")))
-                                )
-                            )
+                            ? (SyntaxList<AttributeListSyntax>)
+                                [
+                                    AttributeList(
+                                        SingletonSeparatedList(
+                                            Attribute(IdentifierName("Transformed"))
+                                        )
+                                    ),
+                                    .. fallbackPfnAttrLists,
+                                ]
                             : default
                     ).WithNativeName(currentNativeTypeName),
-                    (
+                    delegateAttrLists: (
                         currentNativeTypeName == fallback
                             ? SingletonList(
                                 AttributeList(
@@ -313,7 +355,7 @@ public partial class ExtractFunctionPointers(ILogger<ExtractFunctionPointers> lo
                             "FunctionPointerDelegateType",
                             "Delegate"
                         ),
-                    node
+                    rawPfn: node
                 );
 
                 FunctionPointerTypes[currentNativeTypeName] = pfnInfo =

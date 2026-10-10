@@ -16,7 +16,10 @@ public enum DataGraphPipelinePropertyARM : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     CreationLog = 0,
 
@@ -24,7 +27,18 @@ public enum DataGraphPipelinePropertyARM : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     Identifier = 1,
+
+    [NativeName("VK_DATA_GRAPH_PIPELINE_PROPERTY_NEURAL_ACCELERATOR_DEBUG_DATABASE_ARM")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
+    NeuralAcceleratorDebugDatabase = 1000676000,
+
+    [NativeName("VK_DATA_GRAPH_PIPELINE_PROPERTY_NEURAL_ACCELERATOR_STATISTICS_INFO_ARM")]
+    [SupportedApiProfile("vulkan", ["VK_ARM_data_graph_neural_accelerator_statistics"])]
+    NeuralAcceleratorStatisticsInfo = 1000676001,
 }

@@ -14,10 +14,7 @@ public unsafe partial struct SurfacePresentModeCompatibilityKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public StructureType SType = StructureType.SurfacePresentModeCompatibilityKHR;
 
@@ -25,10 +22,7 @@ public unsafe partial struct SurfacePresentModeCompatibilityKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public void* PNext;
 
@@ -36,10 +30,7 @@ public unsafe partial struct SurfacePresentModeCompatibilityKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public uint PresentModeCount;
 
@@ -47,20 +38,14 @@ public unsafe partial struct SurfacePresentModeCompatibilityKHR
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public PresentModeKHR* PPresentModes;
 
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
-        ImpliesSets = [
-            "VK_KHR_surface_maintenance1+VK_KHR_get_surface_capabilities2",
-            "VK_KHR_surface_maintenance1+VK_KHR_surface",
-        ]
+        ImpliesSets = ["VK_KHR_get_surface_capabilities2", "VK_KHR_surface"]
     )]
     public SurfacePresentModeCompatibilityKHR() { }
 }

@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System.CommandLine;
 using Microsoft.Build.Locator;
 using Microsoft.Extensions.Configuration;
@@ -16,7 +19,7 @@ internal class Program
     private static Option<string[]> SkipOption { get; } =
         new(["--skip", "-s"], Array.Empty<string>)
         {
-            Description = "A list of job names to skip.  Takes precedence over --only.",
+            Description = "A list of job names to skip. Takes precedence over --only.",
             Arity = ArgumentArity.ZeroOrMore,
         };
 

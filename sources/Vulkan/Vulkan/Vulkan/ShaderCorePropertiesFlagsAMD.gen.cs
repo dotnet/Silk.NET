@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkShaderCorePropertiesFlagBitsAMD")]
+[NativeName("VkShaderCorePropertiesFlagsAMD")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum ShaderCorePropertiesFlagsAMD : uint

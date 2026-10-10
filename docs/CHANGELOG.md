@@ -12,6 +12,8 @@ Silk.NET 3.0 Preview 1
 
 - Added combined OpenGL bindings using the 3.0 bindings style.
 - Added OpenAL bindings using the 3.0 bindings style.
+- Added OpenCL bindings using the 3.0 bindings style.
+- Added OpenXR bindings using the 3.0 bindings style (needs more work to be usable).
 - Added SDL3 bindings using the 3.0 bindings style.
 - Added Vulkan bindings using the 3.0 bindings style.
 - Improved the bindings style to be more accessible, IDE-friendly, and AOT-friendly. Learn more at **TODO ADD A LINK TO DOCUMENTATION HERE**.

@@ -53,7 +53,7 @@ public unsafe partial struct DeviceFaultInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultAddressInfoEXT* PAddressInfos;
+    public DeviceFaultAddressInfoKHR* PAddressInfos;
 
     [NativeName("pVendorInfos")]
     [SupportedApiProfile(
@@ -64,7 +64,7 @@ public unsafe partial struct DeviceFaultInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultVendorInfoEXT* PVendorInfos;
+    public DeviceFaultVendorInfoKHR* PVendorInfos;
 
     [NativeName("pVendorBinaryData")]
     [SupportedApiProfile(

@@ -56,6 +56,32 @@ public enum TimeDomainKHR : uint
     )]
     QueryPerformanceCounter = 3,
 
+    [NativeName("VK_TIME_DOMAIN_PRESENT_STAGE_LOCAL_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    PresentStageLocalEXT = 1000208000,
+
+    [NativeName("VK_TIME_DOMAIN_SWAPCHAIN_LOCAL_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_present_timing"],
+        ImpliesSets = [
+            "VK_KHR_calibrated_timestamps",
+            "VK_KHR_get_surface_capabilities2",
+            "VK_KHR_present_id2",
+            "VK_KHR_swapchain",
+        ]
+    )]
+    SwapchainLocalEXT = 1000208001,
+
     [NativeName("VK_TIME_DOMAIN_DEVICE_EXT")]
     [SupportedApiProfile(
         "vulkan",

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDisplayPlaneAlphaFlagBitsKHR")]
+[NativeName("VkDisplayPlaneAlphaFlagsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum DisplayPlaneAlphaFlagsKHR : uint

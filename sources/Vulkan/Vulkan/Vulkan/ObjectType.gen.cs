@@ -873,6 +873,17 @@ public enum ObjectType : uint
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     DebugUtilsMessengerEXT = 1000128000,
 
+    [NativeName("VK_OBJECT_TYPE_GPA_SESSION_AMD")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_AMD_gpa_interface"],
+        ImpliesSets = [
+            "VK_AMD_gpa_interface+VK_KHR_get_physical_device_properties2",
+            "VK_AMD_gpa_interface+VK_VERSION_1_1",
+        ]
+    )]
+    GpaSessionAMD = 1000133000,
+
     [NativeName("VK_OBJECT_TYPE_ACCELERATION_STRUCTURE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -996,6 +1007,7 @@ public enum ObjectType : uint
         "vulkan",
         ["VK_KHR_pipeline_binary"],
         ImpliesSets = [
+            "VK_KHR_pipeline_binary+VK_KHR_extended_flags",
             "VK_KHR_pipeline_binary+VK_KHR_maintenance5",
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
@@ -1006,7 +1018,10 @@ public enum ObjectType : uint
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
-        ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
+        ImpliesSets = [
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_extended_flags",
+            "VK_VERSION_1_3+VK_KHR_deferred_host_operations+VK_KHR_maintenance5",
+        ]
     )]
     DataGraphPipelineSessionARM = 1000507000,
 
@@ -1019,8 +1034,10 @@ public enum ObjectType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
@@ -1031,12 +1048,25 @@ public enum ObjectType : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
     IndirectExecutionSetEXT = 1000572001,
+
+    [NativeName("VK_OBJECT_TYPE_SHADER_INSTRUMENTATION_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation"],
+        ImpliesSets = [
+            "VK_ARM_shader_instrumentation+VK_KHR_get_physical_device_properties2",
+            "VK_ARM_shader_instrumentation+VK_VERSION_1_1",
+        ]
+    )]
+    ShaderInstrumentationARM = 1000607000,
 
     [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]

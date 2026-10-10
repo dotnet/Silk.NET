@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkShaderCreateFlagBitsEXT")]
+[NativeName("VkShaderCreateFlagsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum ShaderCreateFlagsEXT : uint
@@ -26,6 +26,30 @@ public enum ShaderCreateFlagsEXT : uint
         ]
     )]
     CreateLinkStageBit = 0x1,
+
+    [NativeName("VK_SHADER_CREATE_DESCRIPTOR_HEAP_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_heap", "VK_EXT_shader_object"],
+        ImpliesSets = [
+            "VK_KHR_extended_flags+VK_KHR_buffer_device_address",
+            "VK_KHR_extended_flags+VK_VERSION_1_2",
+            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
+            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_VERSION_1_4",
+        ],
+        RequireAll = true
+    )]
+    CreateDescriptorHeapBit = 0x400,
+
+    [NativeName("VK_SHADER_CREATE_INSTRUMENT_SHADER_BIT_ARM")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_ARM_shader_instrumentation", "VK_KHR_maintenance5"],
+        ImpliesSets = ["VK_VERSION_1_1+VK_KHR_dynamic_rendering", "VK_VERSION_1_3"],
+        RequireAll = true
+    )]
+    CreateInstrumentShaderBitARM = 0x800,
 
     [NativeName("VK_SHADER_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
     [SupportedApiProfile(
@@ -112,12 +136,23 @@ public enum ShaderCreateFlagsEXT : uint
         "vulkan",
         ["VK_EXT_device_generated_commands"],
         ImpliesSets = [
-            "VK_KHR_maintenance5+VK_KHR_buffer_device_address",
-            "VK_KHR_maintenance5+VK_VERSION_1_2",
+            "VK_KHR_buffer_device_address+VK_KHR_extended_flags",
+            "VK_KHR_buffer_device_address+VK_KHR_maintenance5",
+            "VK_VERSION_1_2+VK_KHR_extended_flags",
+            "VK_VERSION_1_2+VK_KHR_maintenance5",
             "VK_VERSION_1_3",
         ]
     )]
     CreateIndirectBindableBit = 0x80,
+
+    [NativeName("VK_SHADER_CREATE_OPACITY_MICROMAP_DISALLOW_MIXED_SPECIAL_INDEX_BIT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_object", "VK_KHR_opacity_micromap"],
+        ImpliesSets = ["VK_KHR_acceleration_structure", "VK_KHR_device_address_commands"],
+        RequireAll = true
+    )]
+    CreateOpacityMicromapDisallowMixedSpecialIndexBit = 0x1000,
 
     [NativeName("VK_SHADER_CREATE_64_BIT_INDEXING_BIT_EXT")]
     [SupportedApiProfile(
@@ -129,4 +164,16 @@ public enum ShaderCreateFlagsEXT : uint
         ]
     )]
     Create64BitIndexingBit = 0x8000,
+
+    [NativeName("VK_SHADER_CREATE_INDEPENDENT_SETS_BIT_KHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_shader_object", "VK_KHR_maintenance11"],
+        ImpliesSets = [
+            "VK_KHR_maintenance11+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_maintenance11+VK_VERSION_1_1",
+        ],
+        RequireAll = true
+    )]
+    CreateIndependentSetsBitKHR = 0x40000,
 }

@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFrameBoundaryFlagBitsEXT")]
+[NativeName("VkFrameBoundaryFlagsEXT")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum FrameBoundaryFlagsEXT : uint

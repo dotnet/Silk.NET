@@ -107,8 +107,9 @@
         "MarkNativeNames",
         "AddApiProfiles",
         "BakeSourceSets",
-        "MixKhronosData",
         "AddOpaqueStructs",
+        "MixKhronosData",
+        "TransformHandles",
         "TransformFunctions",
         "IdentifySharedPrefixes",
         "PrettifyNames",
@@ -160,7 +161,7 @@
         ]
       },
       "MixKhronosData": {
-        "SpecPath": "eng/submodules/opengl/xml/gl.xml",
+        "SpecPath": "eng/submodules/opengl-registry/xml/gl.xml",
         "Namespace": "Silk.NET.OpenGL",
         "TypeMap": {
           "GLenum": "uint",
@@ -226,6 +227,9 @@
         "AddNoneMemberToFlags": true,
         "RewriteMemberValues": true
       },
+      "TransformHandles": {
+        "UseDsl": true
+      },
       "TransformFunctions": {
         "BoolTypes": {
           "GLboolean": null
@@ -234,6 +238,178 @@
       "TransformProperties": {
         "BoolTypes": {
           "GLboolean": null
+        }
+      },
+      "StripAttributes": {
+        "Remove": [
+          "NativeTypeName",
+          "NameAffix",
+          "Transformed"
+        ]
+      }
+    },
+    "OpenCL": {
+      "SourceProject": "sources/OpenCL/OpenCL/Silk.NET.OpenCL.csproj",
+      "Solution": "Silk.NET.slnx",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "AddIncludes",
+        "ClangScraper",
+        "MarkNativeNames",
+        "AddApiProfiles",
+        "ExtractHandles",
+        "ExtractNestedTypes",
+        "ExtractFunctionPointers",
+        "MixKhronosData",
+        "TransformHandles",
+        "TransformFunctions",
+        "IdentifySharedPrefixes",
+        "PrettifyNames",
+        "TransformEnums",
+        "AddVTables",
+        "StripAttributes"
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/opencl/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/OpenCL",
+        "InputTestRoot": "tests/OpenCL"
+      },
+      "MixKhronosData": {
+        "SpecPath": "eng/submodules/opencl-docs/xml/cl.xml",
+        "Namespace": "Silk.NET.OpenCL",
+        "TypeMap": {
+          "cl_bitfield": "ulong",
+          "cl_properties": "ulong",
+          "intptr_t": "long",
+          "ErrorCodes": "int",
+          "cl_affinity_domain_ext": "uint",
+          "clCommandExecutionStatus": "uint",
+          "cl_compiler_mode_altera": "uint",
+          "cl_motion_estimation_desc_intel.mb_block_type": "uint",
+          "cl_motion_estimation_desc_intel.subpixel_mode": "uint",
+          "cl_motion_estimation_desc_intel.sad_adjust_mode": "uint",
+          "cl_motion_estimation_desc_intel.search_path_type": "uint",
+          "cl_arm_device_svm_capabilities.flags": "uint",
+          "cl_arm_svm_alloc.flags": "uint",
+          "cl_intel_advanced_motion_estimation.flags": "uint",
+          "cl_intel_advanced_motion_estimation.search_cost_penalty": "uint",
+          "cl_intel_advanced_motion_estimation.search_cost_precision": "uint",
+          "cl_intel_advanced_motion_estimation.intra_search_prediction_modes_buffer.luma_block": "uint",
+          "cl_intel_advanced_motion_estimation.intra_search_prediction_modes_buffer.chroma_block": "uint",
+          "cl_intel_advanced_motion_estimation.skip_block_type": "uint",
+          "cl_intel_advanced_motion_estimation.device_me_version": "uint",
+          "cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel": "uint",
+          "cl_intel_advanced_motion_estimation.cl_motion_detect_desc_intel.2": "uint",
+          "cl_intel_device_side_avc_motion_estimation.version": "uint",
+          "cl_intel_device_side_avc_motion_estimation.major": "uint",
+          "cl_intel_device_side_avc_motion_estimation.minor": "uint",
+          "cl_intel_device_side_avc_motion_estimation.major.dir": "uint",
+          "cl_intel_device_side_avc_motion_estimation.partition": "uint",
+          "cl_intel_device_side_avc_motion_estimation.window": "uint",
+          "cl_intel_device_side_avc_motion_estimation.adjust": "uint",
+          "cl_intel_device_side_avc_motion_estimation.subpixel": "uint",
+          "cl_intel_device_side_avc_motion_estimation.cost.precision": "uint",
+          "cl_intel_device_side_avc_motion_estimation.weight": "uint",
+          "cl_intel_device_side_avc_motion_estimation.border": "uint",
+          "cl_intel_device_side_avc_motion_estimation.skip": "uint",
+          "cl_intel_device_side_avc_motion_estimation.skip.dir": "uint",
+          "cl_intel_device_side_avc_motion_estimation.skip.block.based": "uint",
+          "cl_intel_device_side_avc_motion_estimation.intra": "uint",
+          "cl_intel_device_side_avc_motion_estimation.intra.luma": "uint",
+          "cl_intel_device_side_avc_motion_estimation.intra.neighbor": "uint",
+          "cl_intel_device_side_avc_motion_estimation.luma.predictor": "uint",
+          "cl_intel_device_side_avc_motion_estimation.frame.dir": "uint",
+          "cl_intel_device_side_avc_motion_estimation.slice": "uint",
+          "cl_intel_device_side_avc_motion_estimation.scan.dir": "uint",
+          "cl_command_termination_reason_arm": "uint",
+          "cl_platform_command_buffer_capabilities_khr": "uint",
+          "cl_device_command_buffer_capabilities_khr": "uint",
+          "cl_media_adapter_type_khr": "uint",
+          "cl_media_adapter_set_khr": "uint",
+          "host_cache_policy": "uint",
+          "allocation_type": "uint",
+          "cl_unified_shared_memory_capabilities_intel": "uint",
+          "cl_mem_alloc_info_intel": "uint",
+          "cl_semaphore_type": "uint",
+          "cl_kernel_workgroup_info": "uint"
+        },
+        "Vendors": [
+          "ALTERA"
+        ],
+        "IdentifyEnumMemberImpliedVendors": true
+      },
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport"
+          },
+          {
+            "Kind": "StaticWrapper"
+          },
+          {
+            "Kind": "ThisThread",
+            "IsDefault": true,
+            "GenerateFactoryPartial": true
+          }
+        ]
+      },
+      "IdentifySharedPrefixes": {
+        "GlobalPrefixHints": ["cl", "_cl"],
+        "PrefixOverrides": {
+          "cl_device_info": "CL_DEVICE",
+          "cl_context_properties": "CL_CONTEXT",
+          "cl_device_integer_dot_product_capabilities": "CL_DEVICE_INTEGER_DOT_PRODUCT",
+          "cl_device_integer_dot_product_capabilities_khr": "CL_DEVICE_INTEGER_DOT_PRODUCT"
+        }
+      },
+      "PrettifyNames": {
+        "NameOverrides": {
+          "CL_DRIVER_VERSION": "DriverVersion",
+          "CL_DRIVER_UUID": "DriverUuid",
+          "CL_DRIVER_UUID_KHR": "DriverUuidKHR"
+        },
+        "Affixes": {
+          "HandleType": {
+            "Order": 1
+          },
+          "FunctionPointerDelegateType": {
+            "Order": 1
+          },
+          "KhronosVendor": {
+            "Order": -1,
+            "Capitalize": true
+          },
+          "KhronosFunctionDataType": {
+            "IsDiscriminator": true
+          },
+          "KhronosImpliedVendor": {
+            "Remove": true
+          },
+          "KhronosNonExclusiveVendor": {
+            "Remove": true
+          },
+          "SharedPrefix": {
+            "Remove": true
+          }
+        }
+      },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RewriteMemberValues": true
+      },
+      "TransformHandles": {
+        "UseDsl": true
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "cl_bool": null
+        }
+      },
+      "TransformProperties": {
+        "BoolTypes": {
+          "cl_bool": null
         }
       },
       "StripAttributes": {
@@ -293,9 +469,6 @@
           "SOFT",
           "LOKI",
           "EXT"
-        ],
-        "ExcludeVendorSuffixIdentification": [
-          "ALC_INVALID_CONTEXT"
         ],
         "NonVendorSuffixes": [
           "Direct"
@@ -392,6 +565,137 @@
         ]
       }
     },
+    "OpenXR": {
+      "SourceProject": "sources/OpenXR/OpenXR/Silk.NET.OpenXR.csproj",
+      "Solution": "Silk.NET.slnx",
+      "DefaultLicenseHeader": "eng/silktouch/header.txt",
+      "Mods": [
+        "AddIncludes",
+        "ClangScraper",
+        "MarkNativeNames",
+        "ExtractHandles",
+        "ExtractNestedTypes",
+        "ExtractFunctionPointers",
+        "TransformHandles",
+        "MixKhronosData",
+        "AddApiProfiles",
+        "InterceptNativeFunctions",
+        "TransformFunctions",
+        "TransformProperties",
+        "IdentifySharedPrefixes",
+        "PrettifyNames",
+        "TransformEnums",
+        "AddVTables",
+        "StripAttributes"
+      ],
+      "ClangScraper": {
+        "ClangSharpResponseFiles": [
+          "eng/silktouch/openxr/**/generate.rsp"
+        ],
+        "InputSourceRoot": "sources/OpenXR",
+        "InputTestRoot": "tests/OpenXR"
+      },
+      "AddApiProfiles": {
+        "Profiles": [
+          {
+            "Profile": "openxr",
+            "SourceSubdirectory": "openxr"
+          }
+        ]
+      },
+      "MixKhronosData": {
+        "SpecPath": "eng/submodules/openxr-sdk/specification/registry/xr.xml",
+        "Namespace": "Silk.NET.OpenXR",
+        "StructureTypes": [
+          "XrStructureType"
+        ],
+        "FlagsTypes": [
+          "XrFlags64"
+        ],
+        "IdentifyEnumMemberImpliedVendors": true
+      },
+      "InterceptNativeFunctions": {
+        "NativeFunctionNames": [
+          "xrCreateInstance"
+        ]
+      },
+      "TransformFunctions": {
+        "BoolTypes": {
+          "XrBool32": null
+        }
+      },
+      "TransformProperties": {
+        "BoolTypes": {
+          "XrBool32": null
+        }
+      },
+      "TransformHandles": {
+        "UseDsl": true
+      },
+      "IdentifySharedPrefixes": {
+        "GlobalPrefixHints": ["PFN_xr", "xr"],
+        "PrefixOverrides": {
+          "XrPerfSettingsNotificationLevelEXT": "XR_PERF_SETTINGS_NOTIF_LEVEL",
+          "XrSceneMarkerQRCodeSymbolTypeMSFT": "XR_SCENE_MARKER_QR_CODE_SYMBOL_TYPE",
+          "XrStructureType": "XR_TYPE"
+        }
+      },
+      "PrettifyNames": {
+        "Affixes": {
+          "HandleType": {
+            "Order": 1
+          },
+          "FunctionPointerDelegateType": {
+            "Order": 1
+          },
+          "KhronosVendor": {
+            "Order": -1
+          },
+          "KhronosImpliedVendor": {
+            "Remove": true
+          },
+          "KhronosHandleType": {
+            "Remove": true
+          },
+          "SharedPrefix": {
+            "Remove": true
+          }
+        }
+      },
+      "TransformEnums": {
+        "AddNoneMemberToFlags": true,
+        "RemoveMembers": [
+          {
+            "MemberName": "MaxEnum",
+            "MemberValue": "0x7FFFFFFF"
+          }
+        ],
+        "CoerceBackingTypes": "PreferUnsigned",
+        "RewriteMemberValues": true
+      },
+      "AddVTables": {
+        "VTables": [
+          {
+            "Kind": "DllImport"
+          },
+          {
+            "Kind": "StaticWrapper"
+          },
+          {
+            "Kind": "ThisThread",
+            "IsDefault": true,
+            "GenerateFactoryPartial": true
+          }
+        ]
+      },
+      "StripAttributes": {
+        "Remove": [
+          "NativeTypeName",
+          "NameAffix",
+          "Transformed"
+        ]
+      }
+    },
     "Vulkan": {
       "SourceProject": "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
       "Solution": "Silk.NET.slnx",
@@ -402,7 +706,6 @@
         "MarkNativeNames",
         "ExtractHandles",
         "ExtractNestedTypes",
-        "ExtractEnumConstants",
         "ExtractFunctionPointers",
         "TransformHandles",
         "MixKhronosData",
@@ -432,7 +735,7 @@
         ]
       },
       "MixKhronosData": {
-        "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
+        "SpecPath": "eng/submodules/vulkan-docs/xml/vk.xml",
         "Namespace": "Silk.NET.Vulkan",
         "StructureTypes": [
           "VkStructureType"
@@ -470,6 +773,7 @@
       "IdentifySharedPrefixes": {
         "GlobalPrefixHints": ["PFN_vk", "vk"],
         "PrefixOverrides": {
+          "VkImageCreateFlags2KHR": "VK_IMAGE_CREATE_2",
           "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2",
           "VkMemoryDecompressionMethodFlagsEXT": "VK_MEMORY_DECOMPRESSION_METHOD"
         }
