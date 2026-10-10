@@ -28,13 +28,15 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <remarks>
 /// The `Handle` suffix is not applied until <see cref="PrettifyNames"/> executes.
 /// </remarks>
-public class TransformHandles(TransformHandles.Config config, ILogger<TransformHandles> logger)
-    : IMod
+public class TransformHandles(
+    TransformHandles.Configuration configuration,
+    ILogger<TransformHandles> logger
+) : IMod
 {
     /// <summary>
     /// The configuration for the <see cref="TransformHandles"/> mod.
     /// </summary>
-    public class Config
+    public class Configuration
     {
         /// <summary>
         /// Whether the DSL (i.e. <c>nullptr</c>) should be usable with handle types.
@@ -96,7 +98,7 @@ public class TransformHandles(TransformHandles.Config config, ILogger<TransformH
         project = ctx.SourceProject;
 
         // Use document IDs from earlier
-        var handleTypeRewriter = new HandleTypeRewriter(config.UseDsl);
+        var handleTypeRewriter = new HandleTypeRewriter(configuration.UseDsl);
         foreach (var documentId in handleTypeDocumentIds)
         {
             var document =
