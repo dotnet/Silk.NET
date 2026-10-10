@@ -17,7 +17,7 @@ using Silk.NET.SilkTouch.Sources;
 
 namespace Silk.NET.SilkTouch;
 
-internal class Program
+internal static class Program
 {
     private static Option<LogLevel> LoggingOption { get; } =
         new(["--log-level", "-l"], () => LogLevel.Information);
