@@ -30,14 +30,14 @@ internal class Program
         };
 
     private static Option<string[]> OnlyOption { get; } =
-        new(new[] { "--only", "-o" }, Array.Empty<string>)
+        new(["--only", "-o"], Array.Empty<string>)
         {
             Description = "A list of job names to run.",
             Arity = ArgumentArity.ZeroOrMore,
         };
 
     private static Option<int> JobsOption { get; } =
-        new(new[] { "--max-jobs", "-j" }, () => Environment.ProcessorCount)
+        new(["--max-jobs", "-j"], () => Environment.ProcessorCount)
         {
             Description = "Maximum number of parallel jobs.",
         };
