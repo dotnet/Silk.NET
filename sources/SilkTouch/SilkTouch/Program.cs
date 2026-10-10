@@ -5,14 +5,12 @@ using System.CommandLine;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Build.Locator;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
-using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Bakery;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Sources;
@@ -133,8 +131,6 @@ internal class Program
                 ),
             };
 
-            var generator = container.Resolve<SilkTouchJob>();
-
             await Parallel.ForEachAsync(
                 allJobs.Where(job =>
                 {
@@ -147,7 +143,7 @@ internal class Program
                 }),
                 async (job, ct) =>
                 {
-                    await generator.RunAsync(
+                    await job.RunAsync(
                         // TODO parallelism configuration
                         // ctx.ParseResult.GetValueForOption(jobs),
                         ct
