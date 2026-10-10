@@ -7,9 +7,15 @@ using Autofac.Extensions.DependencyInjection;
 using Microsoft.Build.Locator;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 using Silk.NET.SilkTouch.Caching;
+using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Mods.Bakery;
+using Silk.NET.SilkTouch.Mods.Transformation;
+using Silk.NET.SilkTouch.Sources;
 
 namespace Silk.NET.SilkTouch;
 
@@ -32,21 +38,6 @@ internal class Program
             Arity = ArgumentArity.ZeroOrMore,
         };
 
-    private static Argument<string[]> ConfigsArgument { get; } =
-        new("configs")
-        {
-            Description = "Path(s) to JSON SilkTouch configuration(s)",
-            Arity = ArgumentArity.OneOrMore,
-        };
-
-    private static Argument<string[]> ConfigOverridesArgument { get; } =
-        new("overrides", Array.Empty<string>)
-        {
-            Description =
-                "Arguments recognisable by Microsoft.Extensions.Configuration.CommandLine to override JSON configuration items.",
-            Arity = ArgumentArity.ZeroOrMore,
-        };
-
     private static Option<int> JobsOption { get; } =
         new(new[] { "--max-jobs", "-j" }, () => Environment.ProcessorCount)
         {
@@ -55,38 +46,10 @@ internal class Program
 
     public static async Task Main(string[] args)
     {
-        var rootCommand = new RootCommand
-        {
-            LoggingOption,
-            SkipOption,
-            OnlyOption,
-            ConfigsArgument,
-            ConfigOverridesArgument,
-            JobsOption,
-        };
+        var rootCommand = new RootCommand { LoggingOption, SkipOption, OnlyOption, JobsOption };
 
         rootCommand.SetHandler(async ctx =>
         {
-            // Create the ConfigurationBuilder with support for env var & command line overrides
-            var cb = new ConfigurationBuilder()
-                .AddEnvironmentVariables(source => source.Prefix = "SILKDOTNET_")
-                .AddCommandLine(ctx.ParseResult.GetValueForArgument(ConfigOverridesArgument));
-
-            // Add the JSON files to the ConfigurationBuilder
-            var jsons = ctx.ParseResult.GetValueForArgument(ConfigsArgument);
-            cb = jsons.Aggregate(
-                cb,
-                (current, file) => current.AddJsonFile(Path.GetFullPath(file))
-            );
-            var config = cb.Build();
-            if (jsons.Length == 1)
-            {
-                FileSystemCacheProvider.CommonDir = Path.GetFullPath(
-                    (Path.GetDirectoryName(jsons[0]) is (null or not "") and var path ? path : ".")
-                        ?? Environment.CurrentDirectory
-                );
-            }
-
             // Register MSBuild
             MSBuildLocator.RegisterDefaults();
 
@@ -105,8 +68,36 @@ internal class Program
                         });
                         builder.SetMinimumLevel(ctx.ParseResult.GetValueForOption(LoggingOption));
                     })
-                    .AddOptions()
-                    .AddSilkTouch(config);
+                    .AddOptions();
+
+                // TODO: Cleanup. Probably move into a SilkTouchHost class.
+                {
+                    services.AddSingleton<ResponseFileHandler>();
+                    services.AddSingleton<FunctionTransformer>();
+                    services.AddSingleton<DefaultBakeStrategy>();
+                    services.AddSingleton<IBakeStrategy>(s =>
+                        s.GetRequiredService<DefaultBakeStrategy>()
+                    );
+                    services.TryAddSingleton<ICacheProvider, FileSystemCacheProvider>();
+                    services.AddSingleton<IInputSource, GitInputSource>();
+                    services.AddSingleton<IInputSource, NuGetInputSource>();
+                    services.AddSingleton<IFunctionTransformer, PtrRefTransformer>();
+                    services.AddSingleton<IFunctionTransformer, BoolTransformer>();
+                    services.AddSingleton<IFunctionTransformer, ArrayParameterTransformer>();
+                    services.TryAddSingleton<IInputResolver, UriBasedInputResolver>();
+                    if (OperatingSystem.IsWindows())
+                    {
+                        services.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();
+                    }
+                    else if (OperatingSystem.IsMacOS())
+                    {
+                        services.AddSingleton<IStdIncludeResolver, MacOSStdIncludeResolver>();
+                    }
+                    else
+                    {
+                        services.AddSingleton<IStdIncludeResolver, UnixStdIncludeResolver>();
+                    }
+                }
 
                 var builder = new ContainerBuilder();
                 builder.Populate(services);
@@ -124,7 +115,6 @@ internal class Program
                 StringComparer.OrdinalIgnoreCase
             );
 
-            var logger = container.Resolve<ILogger<Program>>();
             var generator = container.Resolve<SilkTouchGenerator>();
 
             await Parallel.ForEachAsync(
@@ -143,8 +133,6 @@ internal class Program
                 async (job, ct) =>
                 {
                     await generator.RunAsync(
-                        job.Key,
-                        job,
                         // TODO parallelism configuration
                         // ctx.ParseResult.GetValueForOption(jobs),
                         ct
