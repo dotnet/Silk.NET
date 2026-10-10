@@ -13,7 +13,6 @@ using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Bakery;
-using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Sources;
 
 namespace Silk.NET.SilkTouch;
@@ -247,20 +246,16 @@ internal static class Program
                                     .AddVTables(
                                         new()
                                         {
-                                            // TODO:
-                                            // "VTables": [
-                                            //   {
-                                            //     "Kind": "DllImport"
-                                            //   },
-                                            //   {
-                                            //     "Kind": "StaticWrapper"
-                                            //   },
-                                            //   {
-                                            //     "Kind": "ThisThread",
-                                            //     "IsDefault": true,
-                                            //     "GenerateFactoryPartial": true
-                                            //   }
-                                            // ]
+                                            VTables =
+                                            [
+                                                new AddVTables.DllImport(),
+                                                new AddVTables.StaticWrapper(),
+                                                new AddVTables.ThisThread()
+                                                {
+                                                    IsDefault = true,
+                                                    GenerateFactoryPartial = true,
+                                                },
+                                            ],
                                         }
                                     )
                                     .StripAttributes(

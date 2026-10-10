@@ -2,11 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
-using System.Text.Json.Serialization;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Configuration;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -34,10 +32,6 @@ public class AddVTables(AddVTables.Configuration config) : IMod
     /// <summary>
     /// Base class for VTable configurations.
     /// </summary>
-    [JsonPolymorphic(TypeDiscriminatorPropertyName = "Kind")]
-    [JsonDerivedType(typeof(DllImport), nameof(DllImport))]
-    [JsonDerivedType(typeof(ThisThread), nameof(ThisThread))]
-    [JsonDerivedType(typeof(StaticWrapper), nameof(StaticWrapper))]
     public abstract record VTable
     {
         /// <summary>
@@ -144,7 +138,7 @@ public class AddVTables(AddVTables.Configuration config) : IMod
             ).AddMembers(ctx.Original);
 
         /// <inheritdoc />
-        public override ClassDeclarationSyntax? GetBoilerplate(in VTableBoilerplateContext ctx) =>
+        public override ClassDeclarationSyntax GetBoilerplate(in VTableBoilerplateContext ctx) =>
             ClassDeclaration(Name)
                 .WithModifiers(
                     TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
@@ -213,7 +207,7 @@ public class AddVTables(AddVTables.Configuration config) : IMod
         public override bool IsStatic => true;
 
         /// <inheritdoc />
-        public override ClassDeclarationSyntax? GetBoilerplate(in VTableBoilerplateContext ctx) =>
+        public override ClassDeclarationSyntax GetBoilerplate(in VTableBoilerplateContext ctx) =>
             ClassDeclaration(Name)
                 .WithModifiers(
                     TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
@@ -509,10 +503,10 @@ public class AddVTables(AddVTables.Configuration config) : IMod
         /// <summary>
         /// The various VTable types to generate.
         /// </summary>
-        public IConfigurationSection[]? VTables { get; init; }
+        public VTable[] VTables { get; init; } = [];
     }
 
-    class Rewriter(VTable[] vTables) : ModCSharpSyntaxRewriter
+    private class Rewriter(VTable[] vTables) : ModCSharpSyntaxRewriter
     {
         private InterfaceDeclarationSyntax? _currentInterface;
         private ClassDeclarationSyntax? _currentClass;
@@ -604,7 +598,7 @@ public class AddVTables(AddVTables.Configuration config) : IMod
 
         private static string InterfaceKey(ClassDeclarationSyntax klass) => $"I{klass.Identifier}";
 
-        public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
+        public override SyntaxNode VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             if (_currentClass is not null)
             {
@@ -1400,32 +1394,7 @@ public class AddVTables(AddVTables.Configuration config) : IMod
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        VTable[]? vTables = null;
-        if (config.VTables is not null)
-        {
-            vTables = new VTable[config.VTables.Length];
-            for (var i = 0; i < config.VTables.Length; i++)
-            {
-                vTables[i] = (VTable)(
-                    config
-                        .VTables[i]
-                        .Get(
-                            config.VTables[i].GetValue<string>("Kind") switch
-                            {
-                                nameof(DllImport) => typeof(DllImport),
-                                nameof(StaticWrapper) => typeof(StaticWrapper),
-                                nameof(ThisThread) => typeof(ThisThread),
-                                _ => throw new InvalidOperationException(
-                                    "VTable must have valid \"Kind\" property"
-                                ),
-                            }
-                        )
-                    ?? throw new InvalidOperationException(
-                        "Failed to deserialize VTable configuration properly"
-                    )
-                );
-            }
-        }
+        var vTables = config.VTables;
         var rw = new Rewriter(
             vTables
                 ?? new VTable[]
