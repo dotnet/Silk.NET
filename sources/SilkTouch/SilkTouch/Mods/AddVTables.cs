@@ -504,7 +504,7 @@ public class AddVTables(AddVTables.Configuration config) : IMod
     /// <summary>
     /// The mod's configuration.
     /// </summary>
-    public record Configuration // DON'T USE CONSTRUCTOR-STYLE RECORDS! Needs a default ctor.
+    public record Configuration
     {
         /// <summary>
         /// The various VTable types to generate.
@@ -993,7 +993,8 @@ public class AddVTables(AddVTables.Configuration config) : IMod
                         && x.ChildTokens()
                             .FirstOrDefault(y => y.IsKind(SyntaxKind.IdentifierToken))
                             .ToString() == tok.ToString()
-                    ) ?? false
+                    )
+                    ?? false
                 )
             )
             {

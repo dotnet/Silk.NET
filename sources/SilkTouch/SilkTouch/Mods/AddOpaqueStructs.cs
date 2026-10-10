@@ -24,7 +24,7 @@ public class AddOpaqueStructs(
     /// <summary>
     /// The configuration for the opaque structs mod.
     /// </summary>
-    public record Configuration // DON'T USE CONSTRUCTOR-STYLE RECORDS! Needs a default ctor.
+    public record Configuration
     {
         /// <summary>
         /// Opaque struct names.

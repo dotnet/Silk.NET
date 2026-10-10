@@ -22,7 +22,7 @@ public class ChangeNamespace(ChangeNamespace.Configuration config) : IMod, IResp
     /// <summary>
     /// The configuration for the change namespace mod.
     /// </summary>
-    public record Configuration // DON'T USE CONSTRUCTOR-STYLE RECORDS! Needs a default ctor.
+    public record Configuration
     {
         /// <summary>
         /// A mapping of namespace regexes to replacements.
