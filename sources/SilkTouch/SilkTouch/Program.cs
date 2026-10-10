@@ -103,12 +103,12 @@ internal static class Program
                 container = builder.Build();
             }
 
-            var jobsToRun = new HashSet<string>(
+            var jobKeysToRun = new HashSet<string>(
                 ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
                 StringComparer.OrdinalIgnoreCase
             );
 
-            var jobsToSkip = new HashSet<string>(
+            var jobKeysToSkip = new HashSet<string>(
                 ctx.ParseResult.GetValueForOption(SkipOption) ?? [],
                 StringComparer.OrdinalIgnoreCase
             );
@@ -130,23 +130,25 @@ internal static class Program
                 ),
             };
 
-            await Parallel.ForEachAsync(
-                allJobs.Where(job =>
+            var jobsToRun = allJobs.Where(job =>
+            {
+                if (jobKeysToSkip.Contains(job.Key))
                 {
-                    if (jobsToSkip.Contains(job.Key))
-                    {
-                        return false;
-                    }
+                    return false;
+                }
 
-                    return jobsToRun.Count == 0 || jobsToRun.Contains(job.Key);
-                }),
+                return jobKeysToRun.Count == 0 || jobKeysToRun.Contains(job.Key);
+            });
+
+            await Parallel.ForEachAsync(
+                jobsToRun,
+                new ParallelOptions
+                {
+                    MaxDegreeOfParallelism = ctx.ParseResult.GetValueForOption(JobsOption),
+                },
                 async (job, ct) =>
                 {
-                    await job.RunAsync(
-                        // TODO parallelism configuration
-                        // ctx.ParseResult.GetValueForOption(jobs),
-                        ct
-                    );
+                    await job.RunAsync(ct);
                 }
             );
 
