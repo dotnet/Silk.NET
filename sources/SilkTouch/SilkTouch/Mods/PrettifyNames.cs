@@ -3,12 +3,10 @@
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
 
@@ -21,10 +19,9 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Does not support nested types. Please use <see cref="ExtractNestedTypes"/> before this mod.
 /// Note that despite this, some initial work has been done to add nested type support so that it can be added when necessary.
 /// </remarks>
-public class PrettifyNames(
-    ILogger<PrettifyNames> logger,
-    IOptionsSnapshot<PrettifyNames.Configuration> config
-) : IMod, IResponseFileMod
+public class PrettifyNames(ILogger<PrettifyNames> logger, PrettifyNames.Configuration config)
+    : IMod,
+        IResponseFileMod
 {
     /// <summary>
     /// The configuration for the <see cref="PrettifyNames"/> mod.
@@ -111,7 +108,6 @@ public class PrettifyNames(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var cfg = config.Get(ctx.JobKey);
         if (ctx.SourceProject is null)
         {
             return;
@@ -127,15 +123,15 @@ public class PrettifyNames(
         // Process the names
         var nameProcessorContext = new NameProcessorContext(visitor);
         {
-            var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
+            var namePrettifier = new NamePrettifier(config.LongAcronymThreshold);
 
             // Define name processors
             var nameProcessors = new INameProcessor[]
             {
-                new HandleOverridesProcessor(cfg.NameOverrides),
+                new HandleOverridesProcessor(config.NameOverrides),
                 new StripAffixesProcessor(visitor),
                 new PrettifyProcessor(namePrettifier),
-                new ReapplyAffixesProcessor(visitor, namePrettifier, cfg.Affixes),
+                new ReapplyAffixesProcessor(visitor, namePrettifier, config.Affixes),
                 new PrefixIfStartsWithNumberProcessor(),
                 new ResolveConflictsProcessor(visitor, logger),
                 new OutputFinalNamesProcessor(),

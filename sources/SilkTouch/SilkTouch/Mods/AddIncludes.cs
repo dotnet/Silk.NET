@@ -1,13 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Extensions.FileSystemGlobbing;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Sources;
 
@@ -19,11 +13,11 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 /// <param name="stdResolver">The standard include resolver.</param>
 /// <param name="inputResolver">The user path input resolver.</param>
-/// <param name="options">The mod configuration options snapshot.</param>
+/// <param name="config">The mod configuration.</param>
 public class AddIncludes(
     IStdIncludeResolver stdResolver,
     IInputResolver inputResolver,
-    IOptionsSnapshot<AddIncludes.Configuration> options
+    AddIncludes.Configuration config
 ) : IMod, IResponseFileMod
 {
     /// <summary>
@@ -60,7 +54,6 @@ public class AddIncludes(
     /// <inheritdoc />
     public async Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
-        var cfg = options.Get(key);
         for (var i = 0; i < rsps.Count; i++)
         {
             var rsp = rsps[i];
@@ -68,20 +61,24 @@ public class AddIncludes(
 
             cmdLineArgs.InsertRange(
                 0,
-                cfg.PriorityIncludes?.Select(x => $"--include-directory={x}") ?? []
+                config.PriorityIncludes?.Select(x => $"--include-directory={x}") ?? []
             );
             cmdLineArgs.AddRange(
-                cfg.AdditionalIncludes?.Select(x => $"--include-directory={x}") ?? []
+                config.AdditionalIncludes?.Select(x => $"--include-directory={x}") ?? []
             );
 
-            if (!cfg.SuppressStdIncludes)
+            if (!config.SuppressStdIncludes)
             {
                 cmdLineArgs.AddRange(stdResolver.GetStandardIncludes());
             }
 
             var matcher = new Matcher();
-            matcher.AddIncludePatterns(cfg.RemoveMatchingIncludes?.Where(x => x[0] != '!') ?? []);
-            matcher.AddExcludePatterns(cfg.RemoveMatchingIncludes?.Where(x => x[0] == '!') ?? []);
+            matcher.AddIncludePatterns(
+                config.RemoveMatchingIncludes?.Where(x => x[0] != '!') ?? []
+            );
+            matcher.AddExcludePatterns(
+                config.RemoveMatchingIncludes?.Where(x => x[0] == '!') ?? []
+            );
             for (var j = 0; j < cmdLineArgs.Count; j++)
             {
                 string? path = null;
@@ -117,9 +114,9 @@ public class AddIncludes(
 
                 path = Path.GetFullPath(path, rsp.FileDirectory);
                 if (
-                    (!Directory.Exists(path) && !cfg.KeepMissingIncludes)
+                    (!Directory.Exists(path) && !config.KeepMissingIncludes)
                     || (
-                        cfg.RemoveMatchingIncludes is { Length: > 0 }
+                        config.RemoveMatchingIncludes is { Length: > 0 }
                         && matcher.Match(path).HasMatches
                     )
                 )

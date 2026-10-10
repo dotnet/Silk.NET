@@ -3,15 +3,12 @@
 
 using System.Collections.Concurrent;
 using System.Diagnostics;
-using System.IO.Hashing;
-using System.Runtime.InteropServices;
 using ClangSharp;
 using ClangSharp.Interop;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Sources;
@@ -33,11 +30,11 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <param name="cacheProvider">The cache provider into which ClangSharp outputs are cached.</param>
 public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
-    IOptionsSnapshot<ClangScraper.Configuration> config,
+    ClangScraper.Configuration config,
     ILogger<ClangScraper> logger,
     IInputResolver inputResolver,
     ICacheProvider? cacheProvider = null,
-    IEnumerable<IJobDependency<IResponseFileMod>>? responseFileMods = null
+    IEnumerable<IResponseFileMod>? responseFileMods = null
 ) : IMod
 {
     // TODO add Windows SDK and Xcode configuration
@@ -401,26 +398,31 @@ public sealed class ClangScraper(
         };
 
         // Read the configuration.
-        var cfg = await inputResolver.Resolve(config.Get(ctx.JobKey));
+        var resolvedConfig = await inputResolver.Resolve(config);
 
         // Read the response files.
         logger.LogInformation("Reading response files for {}, please wait...", ctx.JobKey);
         var rsps = rspHandler
-            .ReadResponseFiles(ctx.WorkingDirectory, cfg.ClangSharpResponseFiles)
+            .ReadResponseFiles(ctx.WorkingDirectory, resolvedConfig.ClangSharpResponseFiles)
             .ToList();
 
         // Apply modifications. This is done before the cache key as modifications to the rsps result in different
         // outputs.
-        foreach (var mod in responseFileMods?.SelectMany(x => x.Get(ctx.JobKey)) ?? [])
+        if (responseFileMods != null)
         {
-            rsps = await mod.BeforeScrapeAsync(ctx.JobKey, rsps);
+            foreach (var mod in responseFileMods)
+            {
+                rsps = await mod.BeforeScrapeAsync(ctx.JobKey, rsps);
+            }
         }
 
         // Resolve any foreign paths referenced in the response files
         await inputResolver.ResolveInPlace(rsps);
 
         // Should we completely skip running ClangSharp (e.g. we can't get Windows SDK bindings on macOS)
-        var skip = (cfg.SkipScrapeIf?.Any(applicableSkipIfs.Contains)).GetValueOrDefault();
+        var skip = (
+            resolvedConfig.SkipScrapeIf?.Any(applicableSkipIfs.Contains)
+        ).GetValueOrDefault();
         var cacheKey = $"{ctx.JobKey}-ClangSharp";
         Exception? innerException = null;
         try
@@ -428,7 +430,7 @@ public sealed class ClangScraper(
             if (!skip)
             {
                 // Run the scraper over the response files
-                await ScrapeBindingsAsync(rsps, ctx, cfg, cacheKey, ct);
+                await ScrapeBindingsAsync(rsps, ctx, resolvedConfig, cacheKey, ct);
             }
         }
         catch (Exception e)

@@ -10,7 +10,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
@@ -23,9 +22,9 @@ namespace Silk.NET.SilkTouch.Mods;
 /// A mod that reads Khronos specifications to influence codegen.
 /// </summary>
 /// <param name="logger">The logger.</param>
-/// <param name="cfg">The configuration.</param>
+public partial class MixKhronosData(
     ILogger<MixKhronosData> logger,
-    IOptionsSnapshot<MixKhronosData.Configuration> cfg
+    MixKhronosData.Configuration config
 )
     : IMod,
         IResponseFileMod,
@@ -263,13 +262,12 @@ namespace Silk.NET.SilkTouch.Mods;
     /// <inheritdoc />
     public async Task InitializeAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var currentConfig = cfg.Get(ctx.JobKey);
-        var specPath = currentConfig.SpecPath;
+        var specPath = config.SpecPath;
         var job = Jobs[ctx.JobKey] = new JobData
         {
-            Configuration = currentConfig,
-            TypeMap = currentConfig.TypeMap is not null
-                ? new Dictionary<string, string>(currentConfig.TypeMap)
+            Configuration = config,
+            TypeMap = config.TypeMap is not null
+                ? new Dictionary<string, string>(config.TypeMap)
                 : [],
         };
         job.TypeMap.TryAdd("int8_t", "sbyte");
@@ -308,7 +306,7 @@ namespace Silk.NET.SilkTouch.Mods;
                     ?.Elements("tag")
                     .Attributes("name")
                     .Select(x => x.Value) ?? [],
-                .. currentConfig.NonStandardExtensionNomenclature
+                .. config.NonStandardExtensionNomenclature
                     ? []
                     : xml.Element("registry")
                         ?.Element("extensions")
@@ -325,7 +323,7 @@ namespace Silk.NET.SilkTouch.Mods;
                         // Extract the second part from the extension name
                         // Eg: GL_NV_command_list -> NV
                         .Select(name => name.Value.Split('_')[1].ToUpper()) ?? [],
-                .. currentConfig.Vendors ?? [],
+                .. config.Vendors ?? [],
             ]
         );
 
@@ -354,7 +352,7 @@ namespace Silk.NET.SilkTouch.Mods;
         // We want Flags as the output, but in order to generate everything correctly,
         // we need to first map Flags to FlagBits, then rename FlagBits back to Flags (this is done in the rewriters).
         // Without this, ClangSharp will output the Flags types as the integral storage type instead of the enum
-        var flagsTypesSet = currentConfig.FlagsTypes.ToHashSet();
+        var flagsTypesSet = config.FlagsTypes.ToHashSet();
         foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
         {
             var typedef = typeElement.Element("type")?.Value;
@@ -375,7 +373,7 @@ namespace Silk.NET.SilkTouch.Mods;
         }
 
         // Gather information about struct structure type enums
-        if (currentConfig.StructureTypes.Count != 0)
+        if (config.StructureTypes.Count != 0)
         {
             foreach (
                 var typeElement in xml.Elements("registry")
@@ -398,7 +396,7 @@ namespace Silk.NET.SilkTouch.Mods;
                         continue;
                     }
 
-                    if (currentConfig.StructureTypes.Contains(memberType))
+                    if (config.StructureTypes.Contains(memberType))
                     {
                         var memberName = memberElement.Element("name")?.Value;
                         if (memberName == null)

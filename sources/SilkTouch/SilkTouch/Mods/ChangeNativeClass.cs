@@ -9,8 +9,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Silk.NET.Core;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -27,10 +25,10 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <see cref="Configuration.NewClasses"/>. Nested types are not supported at this time. Only static members are moved.
 /// </remarks>
 /// <param name="log">The logger.</param>
-/// <param name="options">The configuration options.</param>
+/// <param name="config">The configuration options.</param>
 public class ChangeNativeClass(
     ILogger<ChangeNativeClass> log,
-    IOptionsSnapshot<ChangeNativeClass.Configuration> options
+    ChangeNativeClass.Configuration config
 ) : IMod
 {
     /// <summary>
@@ -48,11 +46,8 @@ public class ChangeNativeClass(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        // Get the config.
-        var cfg = options.Get(ctx.JobKey);
-
         // Compile all the patterns
-        var patterns = cfg
+        var patterns = config
             .NewClasses.Select(x => (Regex: new Regex(x.Key, RegexOptions.Compiled), x.Value))
             .ToList();
         var finder = new MatchFinder(patterns);

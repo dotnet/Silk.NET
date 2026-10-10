@@ -1,18 +1,11 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -23,7 +16,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 public class AddOpaqueStructs(
     ILogger<AddOpaqueStructs> logger,
-    IOptionsSnapshot<AddOpaqueStructs.Configuration> config
+    AddOpaqueStructs.Configuration config
 ) : IMod, IResponseFileMod
 {
     private readonly ConcurrentDictionary<string, string> _defaultNamespaces = new();
@@ -59,7 +52,6 @@ public class AddOpaqueStructs(
     /// <inheritdoc />
     public Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var cfg = config.Get(ctx.JobKey);
         var proj = ctx.SourceProject;
         if (
             proj?.FilePath is null
@@ -70,7 +62,7 @@ public class AddOpaqueStructs(
             return Task.CompletedTask;
         }
 
-        foreach (var fullyQualifiedName in cfg.Names ?? Array.Empty<string>())
+        foreach (var fullyQualifiedName in config.Names ?? Array.Empty<string>())
         {
             var lastPeriodIndex = fullyQualifiedName.LastIndexOf('.');
             var ns =

@@ -1,18 +1,10 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-using ClangSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -22,9 +14,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// A mod that changes namespaces in response files. It is assumed that there will be no other sources of variance with
 /// regards to namespaces.
 /// </summary>
-public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> config)
-    : IMod,
-        IResponseFileMod
+public class ChangeNamespace(ChangeNamespace.Configuration config) : IMod, IResponseFileMod
 {
     private readonly Dictionary<string, (HashSet<string>, IReadOnlyList<(Regex, string)>)> _jobs =
         new();
@@ -44,7 +34,7 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
         var regexes =
-            config.Get(key).Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray()
+            config.Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray()
             ?? Array.Empty<(Regex, string)>();
         for (var i = 0; i < rsps.Count; i++)
         {

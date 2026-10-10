@@ -3,7 +3,6 @@
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -11,7 +10,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Strips matching attributes from the generated bindings.
 /// </summary>
-public class StripAttributes(IOptionsSnapshot<StripAttributes.Configuration> cfg) : IMod
+public class StripAttributes(StripAttributes.Configuration config) : IMod
 {
     /// <summary>
     /// <see cref="StripAttributes"/> mod configuration.
@@ -27,8 +26,6 @@ public class StripAttributes(IOptionsSnapshot<StripAttributes.Configuration> cfg
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var config = cfg.Get(ctx.JobKey);
-
         var proj = ctx.SourceProject;
         if (proj == null)
         {

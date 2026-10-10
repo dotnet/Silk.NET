@@ -4,7 +4,6 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -15,10 +14,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// to intercept the function call with custom logic. The original implementation is available with an <c>Internal</c>
 /// suffix.
 /// </summary>
-/// <param name="options">The configuration for the mod.</param>
-public class InterceptNativeFunctions(
-    IOptionsSnapshot<InterceptNativeFunctions.Configuration> options
-) : IMod
+public class InterceptNativeFunctions(InterceptNativeFunctions.Configuration config) : IMod
 {
     /// <summary>
     /// The configuration for the <see cref="InterceptNativeFunctions"/> mod.
@@ -34,13 +30,12 @@ public class InterceptNativeFunctions(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var cfg = options.Get(ctx.JobKey);
-        if (cfg.NativeFunctionNames is not { Count: > 0 })
+        if (config.NativeFunctionNames is not { Count: > 0 })
         {
             return;
         }
 
-        var rewriter = new Rewriter(cfg);
+        var rewriter = new Rewriter(config);
         var proj = ctx.SourceProject;
         foreach (var docId in proj?.DocumentIds ?? [])
         {
@@ -71,7 +66,7 @@ public class InterceptNativeFunctions(
             return ret;
         }
 
-        public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node)
+        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
             if (
                 (

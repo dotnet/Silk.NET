@@ -1,20 +1,12 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Text.Json.Serialization;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using Silk.NET.SilkTouch.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -37,7 +29,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <see cref="DllImport"/>-based partial class implementation of the static interface. However, in some cases this
 /// could be any other implementation such as the <see cref="ThisThread"/> implementation.
 /// </remarks>
-public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMod
+public class AddVTables(AddVTables.Configuration config) : IMod
 {
     /// <summary>
     /// Base class for VTable configurations.
@@ -1407,17 +1399,17 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var cfg = config.Get(ctx.JobKey);
         VTable[]? vTables = null;
-        if (cfg.VTables is not null)
+        if (config.VTables is not null)
         {
-            vTables = new VTable[cfg.VTables.Length];
-            for (var i = 0; i < cfg.VTables.Length; i++)
+            vTables = new VTable[config.VTables.Length];
+            for (var i = 0; i < config.VTables.Length; i++)
             {
                 vTables[i] = (VTable)(
-                    cfg.VTables[i]
+                    config
+                        .VTables[i]
                         .Get(
-                            cfg.VTables[i].GetValue<string>("Kind") switch
+                            config.VTables[i].GetValue<string>("Kind") switch
                             {
                                 nameof(DllImport) => typeof(DllImport),
                                 nameof(StaticWrapper) => typeof(StaticWrapper),

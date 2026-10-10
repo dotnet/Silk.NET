@@ -28,10 +28,8 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <remarks>
 /// The `Handle` suffix is not applied until <see cref="PrettifyNames"/> executes.
 /// </remarks>
-public class TransformHandles(
-    IOptionsSnapshot<TransformHandles.Config> config,
-    ILogger<TransformHandles> logger
-) : IMod
+public class TransformHandles(TransformHandles.Config config, ILogger<TransformHandles> logger)
+    : IMod
 {
     /// <summary>
     /// The configuration for the <see cref="TransformHandles"/> mod.
@@ -47,7 +45,6 @@ public class TransformHandles(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var cfg = config.Get(ctx.JobKey);
         var project = ctx.SourceProject;
         if (project == null)
         {
@@ -99,7 +96,7 @@ public class TransformHandles(
         project = ctx.SourceProject;
 
         // Use document IDs from earlier
-        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDsl);
+        var handleTypeRewriter = new HandleTypeRewriter(config.UseDsl);
         foreach (var documentId in handleTypeDocumentIds)
         {
             var document =

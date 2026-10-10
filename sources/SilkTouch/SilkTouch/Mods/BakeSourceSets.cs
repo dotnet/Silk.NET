@@ -1,18 +1,11 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Mods.Bakery;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -28,8 +21,8 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </param>
 public class BakeSourceSets(
     ILogger<BakeSourceSets> logger,
-    IOptionsSnapshot<BakeSourceSets.Configuration> config,
-    IEnumerable<IJobDependency<IBakeStrategy>> strategies
+    BakeSourceSets.Configuration config,
+    IEnumerable<IBakeStrategy> strategies
 ) : Mod
 {
     /// <summary>
@@ -310,15 +303,11 @@ public class BakeSourceSets(
             return;
         }
 
-        var cfg = config.Get(ctx.JobKey);
-
         // Locate the bake strategy the user's after.
-        var strategy = strategies
-            .SelectMany(x => x.Get(ctx.JobKey))
-            .FirstOrDefault(x =>
-                x.Name == cfg.Strategy
-                || (cfg.Strategy is null && x.GetType() == typeof(DefaultBakeStrategy))
-            );
+        var strategy = strategies.FirstOrDefault(x =>
+            x.Name == config.Strategy
+            || (config.Strategy is null && x.GetType() == typeof(DefaultBakeStrategy))
+        );
         if (strategy is null)
         {
             throw new ConfigurationErrorsException(
@@ -348,7 +337,7 @@ public class BakeSourceSets(
             }
 
             var root = await tree.GetRootAsync(ct);
-            var srcSet = cfg
+            var srcSet = config
                 .SourceSets.Where(x => path.StartsWith(x.Key, StringComparison.OrdinalIgnoreCase))
                 .MaxBy(x => x.Key.Length);
             rewriter.SourceSet = srcSet.Key;
