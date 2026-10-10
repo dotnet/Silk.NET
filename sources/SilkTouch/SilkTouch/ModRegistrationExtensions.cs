@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Autofac;
+using Autofac.Builder;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
 
@@ -26,7 +27,7 @@ public static class ModRegistrationExtensions
         AddApiProfiles.Configuration config
     )
     {
-        context.Builder.RegisterMod<AddApiProfiles>();
+        context.Builder.RegisterType<AddApiProfiles>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -39,7 +40,7 @@ public static class ModRegistrationExtensions
         ClangScraper.Configuration config
     )
     {
-        context.Builder.RegisterMod<ClangScraper>();
+        context.Builder.RegisterType<ClangScraper>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -52,7 +53,7 @@ public static class ModRegistrationExtensions
         AddIncludes.Configuration config
     )
     {
-        context.Builder.RegisterMod<AddIncludes>();
+        context.Builder.RegisterType<AddIncludes>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -65,7 +66,7 @@ public static class ModRegistrationExtensions
         AddOpaqueStructs.Configuration config
     )
     {
-        context.Builder.RegisterMod<AddOpaqueStructs>();
+        context.Builder.RegisterType<AddOpaqueStructs>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -78,7 +79,7 @@ public static class ModRegistrationExtensions
         AddVTables.Configuration config
     )
     {
-        context.Builder.RegisterMod<AddVTables>();
+        context.Builder.RegisterType<AddVTables>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -91,7 +92,7 @@ public static class ModRegistrationExtensions
         BakeSourceSets.Configuration config
     )
     {
-        context.Builder.RegisterMod<BakeSourceSets>();
+        context.Builder.RegisterType<BakeSourceSets>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -104,7 +105,7 @@ public static class ModRegistrationExtensions
         ChangeNamespace.Configuration config
     )
     {
-        context.Builder.RegisterMod<ChangeNamespace>();
+        context.Builder.RegisterType<ChangeNamespace>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -117,7 +118,7 @@ public static class ModRegistrationExtensions
         ChangeNativeClass.Configuration config
     )
     {
-        context.Builder.RegisterMod<ChangeNativeClass>();
+        context.Builder.RegisterType<ChangeNativeClass>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -129,7 +130,7 @@ public static class ModRegistrationExtensions
         this SilkTouchRegistrationContext context
     )
     {
-        context.Builder.RegisterMod<ExtractEnumConstants>();
+        context.Builder.RegisterType<ExtractEnumConstants>().AsHierarchyAndInterfaces().SingleInstance();
         return context;
     }
 
@@ -140,7 +141,7 @@ public static class ModRegistrationExtensions
         this SilkTouchRegistrationContext context
     )
     {
-        context.Builder.RegisterMod<ExtractFunctionPointers>();
+        context.Builder.RegisterType<ExtractFunctionPointers>().AsHierarchyAndInterfaces().SingleInstance();
         return context;
     }
 
@@ -151,7 +152,7 @@ public static class ModRegistrationExtensions
         this SilkTouchRegistrationContext context
     )
     {
-        context.Builder.RegisterMod<ExtractHandles>();
+        context.Builder.RegisterType<ExtractHandles>().AsHierarchyAndInterfaces().SingleInstance();
         return context;
     }
 
@@ -162,7 +163,7 @@ public static class ModRegistrationExtensions
         this SilkTouchRegistrationContext context
     )
     {
-        context.Builder.RegisterMod<ExtractNestedTypes>();
+        context.Builder.RegisterType<ExtractNestedTypes>().AsHierarchyAndInterfaces().SingleInstance();
         return context;
     }
 
@@ -174,7 +175,7 @@ public static class ModRegistrationExtensions
         IdentifySharedPrefixes.Configuration config
     )
     {
-        context.Builder.RegisterMod<IdentifySharedPrefixes>();
+        context.Builder.RegisterType<IdentifySharedPrefixes>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -187,7 +188,7 @@ public static class ModRegistrationExtensions
         InterceptNativeFunctions.Configuration config
     )
     {
-        context.Builder.RegisterMod<InterceptNativeFunctions>();
+        context.Builder.RegisterType<InterceptNativeFunctions>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -199,7 +200,7 @@ public static class ModRegistrationExtensions
         this SilkTouchRegistrationContext context
     )
     {
-        context.Builder.RegisterMod<MarkNativeNames>();
+        context.Builder.RegisterType<MarkNativeNames>().AsHierarchyAndInterfaces().SingleInstance();
         return context;
     }
 
@@ -211,7 +212,7 @@ public static class ModRegistrationExtensions
         MixKhronosData.Configuration config
     )
     {
-        context.Builder.RegisterMod<MixKhronosData>();
+        context.Builder.RegisterType<MixKhronosData>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -224,7 +225,7 @@ public static class ModRegistrationExtensions
         PrettifyNames.Configuration config
     )
     {
-        context.Builder.RegisterMod<PrettifyNames>();
+        context.Builder.RegisterType<PrettifyNames>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -237,7 +238,7 @@ public static class ModRegistrationExtensions
         StripAttributes.Configuration config
     )
     {
-        context.Builder.RegisterMod<StripAttributes>();
+        context.Builder.RegisterType<StripAttributes>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -250,7 +251,7 @@ public static class ModRegistrationExtensions
         TransformEnums.Configuration config
     )
     {
-        context.Builder.RegisterMod<TransformEnums>();
+        context.Builder.RegisterType<TransformEnums>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -262,7 +263,7 @@ public static class ModRegistrationExtensions
         this SilkTouchRegistrationContext context
     )
     {
-        context.Builder.RegisterMod<TransformFunctions>();
+        context.Builder.RegisterType<TransformFunctions>().AsHierarchyAndInterfaces().SingleInstance();
         return context;
     }
 
@@ -274,7 +275,7 @@ public static class ModRegistrationExtensions
         TransformHandles.Configuration config
     )
     {
-        context.Builder.RegisterMod<TransformHandles>();
+        context.Builder.RegisterType<TransformHandles>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
@@ -287,26 +288,28 @@ public static class ModRegistrationExtensions
         TransformProperties.Configuration config
     )
     {
-        context.Builder.RegisterMod<TransformProperties>();
+        context.Builder.RegisterType<TransformProperties>().AsHierarchyAndInterfaces().SingleInstance();
         context.Builder.RegisterInstance(config).SingleInstance();
         return context;
     }
 
-    private static void RegisterMod<T>(this ContainerBuilder builder)
-        where T : IMod
+    extension<TLimit, TConcreteActivatorData>(IRegistrationBuilder<TLimit, TConcreteActivatorData, SingleRegistrationStyle> registration) where TConcreteActivatorData : IConcreteActivatorData
     {
-        var type = typeof(T);
-        var typesToRegister = new HashSet<Type>();
-        typesToRegister.UnionWith(type.GetInterfaces());
-
-        var current = type;
-        while (current != null)
+        private IRegistrationBuilder<TLimit, TConcreteActivatorData, SingleRegistrationStyle> AsHierarchyAndInterfaces()
         {
-            typesToRegister.Add(current);
-            current = current.BaseType;
-        }
+            var type = registration.ActivatorData.Activator.LimitType;
+            var typesToRegister = new HashSet<Type>();
+            typesToRegister.UnionWith(type.GetInterfaces());
 
-        builder.RegisterType<T>().As(typesToRegister.ToArray()).SingleInstance();
+            var current = type;
+            while (current != null)
+            {
+                typesToRegister.Add(current);
+                current = current.BaseType;
+            }
+
+            return registration.As(typesToRegister.ToArray());
+        }
     }
 
     /// <summary>
