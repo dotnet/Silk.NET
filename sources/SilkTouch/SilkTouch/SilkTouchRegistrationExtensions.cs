@@ -5,6 +5,7 @@ using Autofac;
 using Autofac.Builder;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Mods.Transformation;
 
 namespace Silk.NET.SilkTouch;
 
@@ -255,9 +256,16 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="TransformFunctions"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext TransformFunctions()
+        public SilkTouchModRegistrationContext TransformFunctions(TransformFunctions.Configuration config)
         {
             context.Builder.RegisterType<TransformFunctions>().AsHierarchyAndInterfaces().SingleInstance();
+
+            context.Builder.RegisterType<PtrRefTransformer>().AsImplementedInterfaces().SingleInstance();
+            context.Builder.RegisterType<BoolTransformer>().AsImplementedInterfaces().SingleInstance();
+            context.Builder.RegisterType<ArrayParameterTransformer>().AsImplementedInterfaces().SingleInstance();
+
+            context.Builder.RegisterInstance(config).SingleInstance();
+
             return context;
         }
 

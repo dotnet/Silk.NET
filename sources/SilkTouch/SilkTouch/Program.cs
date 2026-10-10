@@ -80,9 +80,6 @@ internal static class Program
                     services.TryAddSingleton<ICacheProvider, FileSystemCacheProvider>();
                     services.AddSingleton<IInputSource, GitInputSource>();
                     services.AddSingleton<IInputSource, NuGetInputSource>();
-                    services.AddSingleton<IFunctionTransformer, PtrRefTransformer>(); // TODO: Move to RegisterTransformFunctions
-                    services.AddSingleton<IFunctionTransformer, BoolTransformer>();
-                    services.AddSingleton<IFunctionTransformer, ArrayParameterTransformer>();
                     services.TryAddSingleton<IInputResolver, UriBasedInputResolver>();
                     if (OperatingSystem.IsWindows())
                     {
@@ -189,12 +186,7 @@ internal static class Program
                                         }
                                     )
                                     .TransformFunctions(
-                                    // TODO:
-                                    // "TransformFunctions": {
-                                    //   "BoolTypes": {
-                                    //     "VkBool32": null
-                                    //   }
-                                    // },
+                                        new() { BoolTypes = new() { ["VkBool32"] = null } }
                                     )
                                     .TransformProperties(
                                         new() { BoolTypes = new() { ["VkBool32"] = null } }

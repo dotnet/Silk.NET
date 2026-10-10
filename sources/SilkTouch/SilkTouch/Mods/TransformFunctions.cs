@@ -23,7 +23,7 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
         /// <summary>
         /// Whether all integer return types should be treated as potentially boolean.
         /// </summary>
-        public required bool IntReturnsMaybeBool { get; init; }
+        public bool IntReturnsMaybeBool { get; init; }
 
         /// <summary>
         /// Types to treat as boolean and their boolean schemes if different from the default.
