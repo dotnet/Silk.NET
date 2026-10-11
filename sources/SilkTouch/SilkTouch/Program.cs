@@ -21,9 +21,8 @@ internal static class Program
                     DefaultLicenseHeader = "eng/silktouch/header.txt",
                 },
                 context =>
-                    context.Mods(context =>
-                        context
-                            .AddIncludes(new())
+                    context.Mods(mods =>
+                        mods.AddIncludes(new())
                             .ClangScraper(
                                 new()
                                 {
