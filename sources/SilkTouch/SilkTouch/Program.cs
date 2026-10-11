@@ -5,6 +5,8 @@ using Silk.NET.SilkTouch.Mods;
 
 namespace Silk.NET.SilkTouch;
 
+// TODO: Move to separate project/single file app
+// TODO: Also change SilkTouch to be a library project instead of executable
 internal static class Program
 {
     public static async Task Main(string[] args) =>

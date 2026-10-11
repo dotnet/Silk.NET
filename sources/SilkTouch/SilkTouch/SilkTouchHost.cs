@@ -133,6 +133,9 @@ public class SilkTouchHost
         await rootCommand.InvokeAsync(args);
     }
 
+    /// <summary>
+    /// Dependencies defined here will be shared by all jobs.
+    /// </summary>
     private void Configure(ContainerBuilder builder, InvocationContext ctx)
     {
         var services = new ServiceCollection()
