@@ -6,7 +6,6 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Build.Locator;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 using Silk.NET.SilkTouch.Caching;
@@ -51,6 +50,7 @@ internal static class Program
             // Register MSBuild
             MSBuildLocator.RegisterDefaults();
 
+            // TODO: Cleanup. Probably move into a SilkTouchHost class.
             ILifetimeScope container;
             {
                 var services = new ServiceCollection()
@@ -68,34 +68,59 @@ internal static class Program
                     })
                     .AddOptions();
 
-                // TODO: Cleanup. Probably move into a SilkTouchHost class.
+                var builder = new ContainerBuilder();
+                builder.Populate(services);
+
                 {
-                    services.AddSingleton<IModContextFactory, MSBuildModContextFactory>();
-                    services.AddSingleton<ResponseFileHandler>();
-                    services.AddSingleton<DefaultBakeStrategy>();
-                    services.AddSingleton<IBakeStrategy>(s =>
-                        s.GetRequiredService<DefaultBakeStrategy>()
-                    );
-                    services.TryAddSingleton<ICacheProvider, FileSystemCacheProvider>();
-                    services.AddSingleton<IInputSource, GitInputSource>();
-                    services.AddSingleton<IInputSource, NuGetInputSource>();
-                    services.TryAddSingleton<IInputResolver, UriBasedInputResolver>();
+                    builder
+                        .RegisterType<MSBuildModContextFactory>()
+                        .As<IModContextFactory>()
+                        .SingleInstance();
+
+                    builder.RegisterType<ResponseFileHandler>().SingleInstance();
+
+                    builder
+                        .RegisterType<DefaultBakeStrategy>()
+                        .AsSelf()
+                        .AsImplementedInterfaces()
+                        .SingleInstance();
+
+                    builder
+                        .RegisterType<FileSystemCacheProvider>()
+                        .As<ICacheProvider>()
+                        .SingleInstance();
+
+                    builder.RegisterType<GitInputSource>().As<IInputSource>().SingleInstance();
+
+                    builder.RegisterType<NuGetInputSource>().As<IInputSource>().SingleInstance();
+
+                    builder
+                        .RegisterType<UriBasedInputResolver>()
+                        .As<IInputResolver>()
+                        .SingleInstance();
+
                     if (OperatingSystem.IsWindows())
                     {
-                        services.AddSingleton<IStdIncludeResolver, WindowsStdIncludeResolver>();
+                        builder
+                            .RegisterType<WindowsStdIncludeResolver>()
+                            .As<IStdIncludeResolver>()
+                            .SingleInstance();
                     }
                     else if (OperatingSystem.IsMacOS())
                     {
-                        services.AddSingleton<IStdIncludeResolver, MacOSStdIncludeResolver>();
+                        builder
+                            .RegisterType<MacOSStdIncludeResolver>()
+                            .As<IStdIncludeResolver>()
+                            .SingleInstance();
                     }
                     else
                     {
-                        services.AddSingleton<IStdIncludeResolver, UnixStdIncludeResolver>();
+                        builder
+                            .RegisterType<UnixStdIncludeResolver>()
+                            .As<IStdIncludeResolver>()
+                            .SingleInstance();
                     }
                 }
-
-                var builder = new ContainerBuilder();
-                builder.Populate(services);
 
                 container = builder.Build();
             }
