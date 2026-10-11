@@ -3,7 +3,7 @@
 
 using Silk.NET.SilkTouch.Mods;
 
-namespace Silk.NET.SilkTouch;
+namespace Silk.NET.SilkTouch.Jobs;
 
 // TODO: Move to separate project/single file app
 // TODO: Also change SilkTouch to be a library project instead of executable
