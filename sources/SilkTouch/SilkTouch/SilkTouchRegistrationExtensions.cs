@@ -15,6 +15,7 @@ namespace Silk.NET.SilkTouch;
 public static class SilkTouchRegistrationExtensions
 {
     /// <summary>
+    /// Entrypoint to the rest of the SilkTouch registration methods.
     /// Begins a <see cref="SilkTouchRegistrationContext"/>.
     /// </summary>
     public static SilkTouchRegistrationContext SilkTouch(this ContainerBuilder builder) =>

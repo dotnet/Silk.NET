@@ -10,7 +10,7 @@ using Silk.NET.SilkTouch.Sources;
 namespace Silk.NET.SilkTouch;
 
 /// <summary>
-/// TODO
+/// Represents an individual SilkTouch bindings generation job.
 /// </summary>
 public class SilkTouchJob : IDisposable
 {
@@ -21,12 +21,12 @@ public class SilkTouchJob : IDisposable
     private readonly IModContextFactory _modContextFactory;
 
     /// <summary>
-    /// TODO
+    /// The job key.
     /// </summary>
     public string Key { get; }
 
     /// <summary>
-    /// TODO
+    /// The job config.
     /// </summary>
     public SilkTouchConfiguration Config { get; private set; }
 
@@ -36,17 +36,20 @@ public class SilkTouchJob : IDisposable
     public IReadOnlyList<IMod> Mods { get; }
 
     /// <summary>
-    /// TODO
+    /// Creates a new <see cref="SilkTouchJob"/>.
     /// </summary>
-    /// <param name="key"></param>
-    /// <param name="config"></param> // TODO
-    /// <param name="parentContainer"></param>
-    /// <param name="build"></param>
+    /// <param name="key">The job key.</param>
+    /// <param name="config">The job config.</param>
+    /// <param name="parentContainer">The parent container. Should be the one from the <see cref="SilkTouchHost"/>.</param>
+    /// <param name="configure">
+    /// The action that configures the dependency container used by this job.
+    /// You'll want to register SilkTouch mods during this action. See <see cref="SilkTouchRegistrationExtensions"/>.
+    /// </param>
     public SilkTouchJob(
         string key,
         SilkTouchConfiguration config,
         ILifetimeScope parentContainer,
-        Action<ContainerBuilder> build
+        Action<ContainerBuilder> configure
     )
     {
         Key = key;
@@ -54,7 +57,7 @@ public class SilkTouchJob : IDisposable
 
         _logger = parentContainer.Resolve<ILogger<SilkTouchJob>>();
         _inputResolver = parentContainer.Resolve<IInputResolver>();
-        _container = parentContainer.BeginLifetimeScope(build);
+        _container = parentContainer.BeginLifetimeScope(configure);
 
         _modContextFactory = _container.Resolve<IModContextFactory>();
         Mods = _container.Resolve<IMod[]>();
