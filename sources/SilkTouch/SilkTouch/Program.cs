@@ -240,7 +240,7 @@ internal static class Program
                                             ],
                                             CoerceBackingTypes = TransformEnums
                                                 .EnumBackingTypePreference
-                                                .PreferSigned,
+                                                .PreferUnsigned,
                                             RewriteMemberValues = true,
                                         }
                                     )
