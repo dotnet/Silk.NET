@@ -70,6 +70,7 @@ internal static class Program
 
                 // TODO: Cleanup. Probably move into a SilkTouchHost class.
                 {
+                    services.AddSingleton<IModContextFactory, MSBuildModContextFactory>();
                     services.AddSingleton<ResponseFileHandler>();
                     services.AddSingleton<DefaultBakeStrategy>();
                     services.AddSingleton<IBakeStrategy>(s =>

@@ -83,10 +83,9 @@ internal class MSBuildModContext(string jobKey, SilkTouchConfiguration jobConfig
 
     public async Task InitializeAsync()
     {
-        logger.LogInformation("Opening solution at {}...", WorkingDirectory);
-        var solution = await MSBuildWorkspace
-            .Create()
-            .OpenSolutionAsync(WorkingDirectory, this, this);
+        var solutionPath = Path.GetFullPath(jobConfig.Solution, WorkingDirectory);
+        logger.LogInformation("Opening solution at {}...", solutionPath);
+        var solution = await MSBuildWorkspace.Create().OpenSolutionAsync(solutionPath, this, this);
 
         if (jobConfig.SourceProject is null)
         {

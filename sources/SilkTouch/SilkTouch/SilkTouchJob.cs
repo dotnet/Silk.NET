@@ -18,6 +18,7 @@ public class SilkTouchJob : IDisposable
 
     private readonly ILogger<SilkTouchJob> _logger;
     private readonly IInputResolver _inputResolver;
+    private readonly IModContextFactory _modContextFactory;
 
     /// <summary>
     /// TODO
@@ -48,15 +49,14 @@ public class SilkTouchJob : IDisposable
         Action<ContainerBuilder> build
     )
     {
-        this.Key = key;
-        this.Config = config;
+        Key = key;
+        Config = config;
 
         _logger = parentContainer.Resolve<ILogger<SilkTouchJob>>();
         _inputResolver = parentContainer.Resolve<IInputResolver>();
-
-        // TODO: Maybe have each mod provide a Register(ILifetimeScope container, Mod.Configuration configuration) method
         _container = parentContainer.BeginLifetimeScope(build);
 
+        _modContextFactory = _container.Resolve<IModContextFactory>();
         Mods = _container.Resolve<IMod[]>();
     }
 
@@ -71,7 +71,7 @@ public class SilkTouchJob : IDisposable
         Config = await _inputResolver.Resolve(Config);
 
         // Prepare the context
-        var context = new MSBuildModContext(Key, Config, _logger);
+        var context = await _modContextFactory.CreateContextAsync(Key, Config, ct);
 
         // Just in case a mod gets naughty and tries to modify at the initialization stage.
         var srcProj = context.SourceProject;
