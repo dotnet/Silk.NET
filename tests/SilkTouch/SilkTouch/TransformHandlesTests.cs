@@ -41,9 +41,7 @@ public class TransformHandlesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var transformHandles = new TransformHandles(
-            new DummyOptions<TransformHandles.Configuration>(
-                new TransformHandles.Configuration() { UseDsl = false }
-            ),
+            new TransformHandles.Configuration() { UseDsl = false },
             NullLogger<TransformHandles>.Instance
         );
 
@@ -77,9 +75,7 @@ public class TransformHandlesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var transformHandles = new TransformHandles(
-            new DummyOptions<TransformHandles.Configuration>(
-                new TransformHandles.Configuration() { UseDsl = true }
-            ),
+            new TransformHandles.Configuration() { UseDsl = true },
             NullLogger<TransformHandles>.Instance
         );
 
@@ -114,9 +110,7 @@ public class TransformHandlesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var transformHandles = new TransformHandles(
-            new DummyOptions<TransformHandles.Configuration>(
-                new TransformHandles.Configuration() { UseDsl = true }
-            ),
+            new TransformHandles.Configuration() { UseDsl = true },
             NullLogger<TransformHandles>.Instance
         );
 

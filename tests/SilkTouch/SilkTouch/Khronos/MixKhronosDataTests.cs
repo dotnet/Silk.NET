@@ -49,9 +49,7 @@ public class MixKhronosDataTests
                 {
                     var mod = new MixKhronosData(
                         new NullLogger<MixKhronosData>(),
-                        new DummyOptions<MixKhronosData.Configuration>(
-                            new MixKhronosData.Configuration { SpecPath = TestFile(x) }
-                        )
+                        new MixKhronosData.Configuration { SpecPath = TestFile(x) }
                     );
                     await mod.InitializeAsync(new DummyModContext(), ct);
                     return (object[])[x, mod.Jobs[""]];
@@ -258,7 +256,8 @@ public class MixKhronosDataTests
                         .SupportedApiProfiles?.OrderBy(x => x.Key)
                         .Select(x =>
                             $"{x.Key}\n{new string('-', x.Key.Length)}\n{string.Join('\n', x.Value.Select(y => AttributeList(SingletonSeparatedList(y.GetSupportedApiProfileAttribute())).ToString()).Order())}\n"
-                        ) ?? []
+                        )
+                        ?? []
                 )
             )
             .UseFileName($"{nameof(MixKhronosDataTests)}.{nameof(SupportedApiProfiles)}.{file}");
