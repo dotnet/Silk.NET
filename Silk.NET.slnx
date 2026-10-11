@@ -37,7 +37,6 @@
         <File Path="Directory.Build.props" />
         <File Path="Directory.Build.targets" />
         <File Path="Directory.Packages.props" />
-        <File Path="generator.json" />
         <File Path="LICENSE.md" />
         <File Path="Silk.NET.sln.DotSettings" />
     </Folder>
