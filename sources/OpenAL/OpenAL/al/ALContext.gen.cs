@@ -1934,7 +1934,7 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
 
     [NativeName("ALC_EXT_EFX_NAME")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
-    public static ReadOnlySpan<byte> ExtEfxName => "ALC_EXT_EFX"u8;
+    public static Utf8String ExtEfxName => "ALC_EXT_EFX"u8;
 
     [NativeName("alcCaptureCloseDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]

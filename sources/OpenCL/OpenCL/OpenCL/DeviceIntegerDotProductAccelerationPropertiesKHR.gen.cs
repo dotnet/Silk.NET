@@ -12,20 +12,20 @@ namespace Silk.NET.OpenCL;
 public partial struct DeviceIntegerDotProductAccelerationPropertiesKHR
 {
     [NativeName("signed_accelerated")]
-    public uint SignedAccelerated;
+    public MaybeBool<uint> SignedAccelerated;
 
     [NativeName("unsigned_accelerated")]
-    public uint UnsignedAccelerated;
+    public MaybeBool<uint> UnsignedAccelerated;
 
     [NativeName("mixed_signedness_accelerated")]
-    public uint MixedSignednessAccelerated;
+    public MaybeBool<uint> MixedSignednessAccelerated;
 
     [NativeName("accumulating_saturating_signed_accelerated")]
-    public uint AccumulatingSaturatingSignedAccelerated;
+    public MaybeBool<uint> AccumulatingSaturatingSignedAccelerated;
 
     [NativeName("accumulating_saturating_unsigned_accelerated")]
-    public uint AccumulatingSaturatingUnsignedAccelerated;
+    public MaybeBool<uint> AccumulatingSaturatingUnsignedAccelerated;
 
     [NativeName("accumulating_saturating_mixed_signedness_accelerated")]
-    public uint AccumulatingSaturatingMixedSignednessAccelerated;
+    public MaybeBool<uint> AccumulatingSaturatingMixedSignednessAccelerated;
 }

@@ -26131,7 +26131,7 @@ public unsafe partial class AL : IAL, IAL.Static
 
     [NativeName("AL_EXT_FOLDBACK_NAME")]
     [SupportedApiProfile("al", ["AL_EXT_FOLDBACK"])]
-    public static ReadOnlySpan<byte> ExtFoldbackName => "AL_EXT_FOLDBACK"u8;
+    public static Utf8String ExtFoldbackName => "AL_EXT_FOLDBACK"u8;
 
     [NativeName("alAuxiliaryEffectSlotf")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
