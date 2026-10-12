@@ -12,7 +12,7 @@ namespace Silk.NET.SilkTouch;
 /// <summary>
 /// Represents an individual SilkTouch bindings generation job.
 /// </summary>
-public class SilkTouchJob : IDisposable
+internal class SilkTouchJob : IDisposable
 {
     private readonly ILifetimeScope _container;
 
