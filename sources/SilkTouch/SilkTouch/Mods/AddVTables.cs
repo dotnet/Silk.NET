@@ -503,7 +503,13 @@ public class AddVTables(AddVTables.Configuration config) : IMod
         /// <summary>
         /// The various VTable types to generate.
         /// </summary>
-        public VTable[] VTables { get; init; } = [];
+        public VTable[] VTables { get; init; } =
+            new VTable[]
+            {
+                new DllImport { IsDefault = true },
+                new StaticWrapper(),
+                new ThisThread(),
+            };
     }
 
     private class Rewriter(VTable[] vTables) : ModCSharpSyntaxRewriter
@@ -1395,15 +1401,7 @@ public class AddVTables(AddVTables.Configuration config) : IMod
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var vTables = config.VTables;
-        var rw = new Rewriter(
-            vTables
-                ?? new VTable[]
-                {
-                    new DllImport { IsDefault = true },
-                    new StaticWrapper(),
-                    new ThisThread(),
-                }
-        );
+        var rw = new Rewriter(vTables);
         var newFiles = new List<(string, CSharpSyntaxNode)>(rw.FullClassNames.Count);
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
