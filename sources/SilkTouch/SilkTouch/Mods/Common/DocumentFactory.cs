@@ -21,7 +21,8 @@ public class DocumentFactory
     /// <summary>
     /// Using statements to add to all initialized documents.
     /// </summary>
-    private readonly Dictionary<string, UsingDirectiveSyntax> _usings = [];
+    private readonly List<UsingDirectiveSyntax> _usings = [];
+    private readonly HashSet<string> _usingDiscriminators = [];
 
     private readonly DocumentReporter _reporter;
     private readonly DocumentInitializer _initializer;
@@ -39,7 +40,8 @@ public class DocumentFactory
         : this()
     {
         _commonNamespace = original._commonNamespace;
-        _usings = original._usings.ToDictionary();
+        _usings = [.. original._usings];
+        _usingDiscriminators = [.. original._usingDiscriminators];
     }
 
     /// <summary>
@@ -98,7 +100,11 @@ public class DocumentFactory
     public void AddUsing(UsingDirectiveSyntax directive)
     {
         var directiveNoTrivia = directive.WithoutTrivia();
-        _usings.TryAdd(GetDiscriminator(directiveNoTrivia), directiveNoTrivia);
+        var discriminator = GetDiscriminator(directiveNoTrivia);
+        if (_usingDiscriminators.Add(discriminator))
+        {
+            _usings.Add(directiveNoTrivia);
+        }
     }
 
     /// <summary>
