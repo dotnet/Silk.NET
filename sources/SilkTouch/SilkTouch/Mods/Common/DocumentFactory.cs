@@ -35,16 +35,22 @@ public class DocumentFactory
         _reporter = new DocumentReporter(this);
     }
 
+    private DocumentFactory(DocumentFactory original)
+        : this()
+    {
+        _commonNamespace = original._commonNamespace;
+        _usings = original._usings.ToDictionary();
+    }
+
     /// <summary>
-    /// Determines where to locate the given "fully qualified file name" i.e. a file name for a type prefixed with its
-    /// namespace e.g. Silk.NET.Core.SomeType`1.gen.cs. The extension is removed so that we don't mistake it as part of
-    /// the namespace.
+    /// Determines the path to place a document given the "fully qualified file name".
     /// </summary>
     /// <param name="fullyQualified">
-    /// The fully qualified file name without the extension e.g. Silk.NET.Core.SomeType`1
+    /// The name of a type prefixed with its namespace. Should not contain a file extension.
+    /// Eg: Silk.NET.Core.SomeType`1.
     /// </param>
-    /// <param name="extension">The file extension e.g. .gen.cs</param>
-    /// <returns>The path within the sources directory to place this file.</returns>
+    /// <param name="extension">The file extension. Eg: .gen.cs</param>
+    /// <returns>The path within the project source directory to place this file.</returns>
     public string PathForFullyQualified(string fullyQualified, string extension = ".gen.cs")
     {
         if (!fullyQualified.Contains('.') || _commonNamespace is null or { Length: 0 })
@@ -66,31 +72,42 @@ public class DocumentFactory
     public void ReportDocument(SyntaxNode root) => _reporter.Visit(root);
 
     /// <summary>
-    /// Initializes a new document.
+    /// Initializes and reports information about a new document.
     /// </summary>
     /// <remarks>
     /// This currently adds using statements and header comments if not added already.
+    /// This also calls <see cref="ReportDocument"/>.
     /// </remarks>
-    public SyntaxNode InitializeDocument(SyntaxNode root) => _initializer.Visit(root);
+    public SyntaxNode InitializeDocument(SyntaxNode root)
+    {
+        _reporter.Visit(root);
+        return _initializer.Visit(root);
+    }
 
     /// <summary>
-    /// Adds a namespace import to the resultant syntax tree.
+    /// Registers a using directive to be added for all newly initialized documents.
     /// </summary>
     /// <param name="ns">The dot-separated namespace.</param>
-    /// <returns>Whether it was added.</returns>
-    public bool AddUsing(string ns) =>
+    public void AddUsing(string ns) =>
         AddUsing(UsingDirective(ModUtils.NamespaceIntoIdentifierName(ns)));
 
     /// <summary>
-    /// Adds a using directive to the resultant syntax tree.
+    /// Registers a using directive to be added for all newly initialized documents.
     /// </summary>
-    /// <param name="directive">The directive.</param>
-    /// <returns>Whether it was added.</returns>
-    public bool AddUsing(UsingDirectiveSyntax directive)
+    /// <param name="directive">The using directive.</param>
+    public void AddUsing(UsingDirectiveSyntax directive)
     {
         var directiveNoTrivia = directive.WithoutTrivia();
-        return _usings.TryAdd(GetDiscriminator(directiveNoTrivia), directiveNoTrivia);
+        _usings.TryAdd(GetDiscriminator(directiveNoTrivia), directiveNoTrivia);
     }
+
+    /// <summary>
+    /// Creates a clone of this document factory.
+    /// </summary>
+    /// <remarks>
+    /// Can be useful for registering local using statements without affecting the original document factory.
+    /// </remarks>
+    public DocumentFactory Clone() => new(this);
 
     /// <summary>
     /// Gets a discriminator for the given using.
