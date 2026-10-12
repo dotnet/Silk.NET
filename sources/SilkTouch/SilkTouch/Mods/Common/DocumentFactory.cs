@@ -4,8 +4,6 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Silk.NET.SilkTouch.Mods.Transformation;
-using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -16,99 +14,98 @@ namespace Silk.NET.SilkTouch.Mods;
 public class DocumentFactory
 {
     /// <summary>
-    /// Represents an <see cref="IMod"/> with common functionality.
+    /// The namespace common to all reported documents.
     /// </summary>
-    public abstract class Mod : IMod
+    private string? _commonNamespace;
+
+    /// <summary>
+    /// Using statements to add to all initialized documents.
+    /// </summary>
+    private readonly Dictionary<string, UsingDirectiveSyntax> _usings = [];
+
+    private readonly DocumentReporter _reporter;
+    private readonly DocumentInitializer _initializer;
+
+    /// <summary>
+    /// Creates a new <see cref="DocumentFactory"/>.
+    /// </summary>
+    public DocumentFactory()
     {
-        /// <summary>
-        /// Gets the common namespace determined from the default namespaces within the response file.
-        /// </summary>
-        public string? CommonNamespace { get; private set; }
-
-        /// <summary>
-        /// Determines where to locate the given "fully qualified file name" i.e. a file name for a type prefixed with its
-        /// namespace e.g. Silk.NET.Core.SomeType`1.gen.cs. The extension is removed so that we don't mistake it as part of
-        /// the namespace.
-        /// </summary>
-        /// <param name="fullyQualified">
-        /// The fully qualified file name without the extension e.g. Silk.NET.Core.SomeType`1
-        /// </param>
-        /// <param name="extension">The file extension e.g. .gen.cs</param>
-        /// <returns>The path within the sources directory to place this file.</returns>
-        public string PathForFullyQualified(string fullyQualified, string extension = ".gen.cs")
-        {
-            if (!fullyQualified.Contains('.') || CommonNamespace is null or { Length: 0 })
-            {
-                return fullyQualified + extension;
-            }
-
-            return fullyQualified.StartsWith(CommonNamespace)
-                ? fullyQualified[CommonNamespace.Length..].Trim('.').Replace('.', '/') + extension
-                : fullyQualified + extension;
-        }
-
-        /// <inheritdoc />
-        public virtual Task InitializeAsync(IModContext ctx, CancellationToken ct = default) =>
-            Task.CompletedTask;
-
-        /// <inheritdoc />
-        public virtual async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
-        {
-            if (
-                ctx.SourceProject is not null
-                && await ctx.SourceProject.GetCompilationAsync(ct) is { } comp
-            )
-            {
-                CommonNamespace = CommonNamespaceVisitor.CommonNamespaceFrom(comp.SourceModule);
-            }
-        }
-
-        class CommonNamespaceVisitor : SymbolVisitor
-        {
-            private List<INamespaceSymbol> _namespacesWithTypes = [];
-
-            public override void DefaultVisit(ISymbol symbol)
-            {
-                foreach (var member in symbol.Members())
-                {
-                    Visit(member);
-                }
-            }
-
-            public override void VisitNamedType(INamedTypeSymbol symbol)
-            {
-                if (!_namespacesWithTypes.Contains(symbol.ContainingNamespace))
-                {
-                    _namespacesWithTypes.Add(symbol.ContainingNamespace);
-                }
-            }
-
-            public string CommonNamespace =>
-                NameUtils.FindCommonPrefix(
-                    _namespacesWithTypes
-                        .Select(x => x.NamespaceFromSymbol())
-                        .Where(x => !string.IsNullOrWhiteSpace(x))
-                        .ToList(),
-                    true,
-                    int.MaxValue,
-                    true
-                );
-
-            public static string CommonNamespaceFrom(ISymbol symbol)
-            {
-                var visitor = new CommonNamespaceVisitor();
-                visitor.Visit(symbol);
-                return visitor.CommonNamespace;
-            }
-        }
+        _initializer = new DocumentInitializer(this);
+        _reporter = new DocumentReporter(this);
     }
 
     /// <summary>
-    /// <see cref="CSharpSyntaxRewriter"/> containing common functionality for mods.
+    /// Determines where to locate the given "fully qualified file name" i.e. a file name for a type prefixed with its
+    /// namespace e.g. Silk.NET.Core.SomeType`1.gen.cs. The extension is removed so that we don't mistake it as part of
+    /// the namespace.
     /// </summary>
-    public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = false)
-        : CSharpSyntaxRewriter(visitIntoStructuredTrivia),
-            ITransformationContext
+    /// <param name="fullyQualified">
+    /// The fully qualified file name without the extension e.g. Silk.NET.Core.SomeType`1
+    /// </param>
+    /// <param name="extension">The file extension e.g. .gen.cs</param>
+    /// <returns>The path within the sources directory to place this file.</returns>
+    public string PathForFullyQualified(string fullyQualified, string extension = ".gen.cs")
+    {
+        if (!fullyQualified.Contains('.') || _commonNamespace is null or { Length: 0 })
+        {
+            return fullyQualified + extension;
+        }
+
+        return fullyQualified.StartsWith(_commonNamespace)
+            ? fullyQualified[_commonNamespace.Length..].Trim('.').Replace('.', '/') + extension
+            : fullyQualified + extension;
+    }
+
+    /// <summary>
+    /// Reports information about a document in the project.
+    /// </summary>
+    /// <remarks>
+    /// This currently saves the using statements and common namespace for use in initializing new documents.
+    /// </remarks>
+    public void ReportDocument(SyntaxNode root) => _reporter.Visit(root);
+
+    /// <summary>
+    /// Initializes a new document.
+    /// </summary>
+    /// <remarks>
+    /// This currently adds using statements and header comments if not added already.
+    /// </remarks>
+    public SyntaxNode InitializeDocument(SyntaxNode root) => _initializer.Visit(root);
+
+    /// <summary>
+    /// Adds a namespace import to the resultant syntax tree.
+    /// </summary>
+    /// <param name="ns">The dot-separated namespace.</param>
+    /// <returns>Whether it was added.</returns>
+    public bool AddUsing(string ns) =>
+        AddUsing(UsingDirective(ModUtils.NamespaceIntoIdentifierName(ns)));
+
+    /// <summary>
+    /// Adds a using directive to the resultant syntax tree.
+    /// </summary>
+    /// <param name="directive">The directive.</param>
+    /// <returns>Whether it was added.</returns>
+    public bool AddUsing(UsingDirectiveSyntax directive)
+    {
+        var directiveNoTrivia = directive.WithoutTrivia();
+        return _usings.TryAdd(GetDiscriminator(directiveNoTrivia), directiveNoTrivia);
+    }
+
+    /// <summary>
+    /// Gets a discriminator for the given using.
+    /// </summary>
+    /// <param name="use">The using.</param>
+    /// <returns>The discriminator string.</returns>
+    private static string GetDiscriminator(UsingDirectiveSyntax use) =>
+        use.WithoutTrivia().NormalizeWhitespace().ToFullString();
+
+    private class DocumentReporter(DocumentFactory factory) : CSharpSyntaxWalker { }
+
+    private class DocumentInitializer(DocumentFactory factory) : CSharpSyntaxRewriter { }
+
+    private abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = false)
+        : CSharpSyntaxRewriter(visitIntoStructuredTrivia)
     {
         /// <summary>
         /// <c>using</c>s to add to the appropriate place within the syntax tree.
@@ -207,33 +204,20 @@ public class DocumentFactory
                 )
             );
 
-        /// <inheritdoc />
-        public MethodDeclarationSyntax? Original { get; set; }
-
-        /// <inheritdoc />
-        public IFunctionTransformer[]? Transformers { get; set; }
-
         /// <summary>
         /// Adds a namespace import to the resultant syntax tree.
         /// </summary>
-        /// <param name="str">The dot-separated namespace.</param>
+        /// <param name="ns">The dot-separated namespace.</param>
         /// <returns>Whether it was added.</returns>
-        protected bool AddUsing(string str) =>
-            AddUsing(UsingDirective(ModUtils.NamespaceIntoIdentifierName(str)));
+        public bool AddUsing(string ns) =>
+            AddUsing(UsingDirective(ModUtils.NamespaceIntoIdentifierName(ns)));
 
         /// <summary>
         /// Adds a using directive to the resultant syntax tree.
         /// </summary>
         /// <param name="use">The directive.</param>
         /// <returns>Whether it was added.</returns>
-        public bool AddUsing(UsingDirectiveSyntax use) => UsingsToAdd.TryAdd(Discrim(use), use);
-
-        /// <summary>
-        /// Gets a discriminator for the given using.
-        /// </summary>
-        /// <param name="use">The using.</param>
-        /// <returns>The discriminator string.</returns>
-        protected static string Discrim(UsingDirectiveSyntax use) =>
-            new(use.WithoutTrivia().ToString().Where(char.IsAsciiLetterOrDigit).ToArray());
+        public bool AddUsing(UsingDirectiveSyntax use) =>
+            UsingsToAdd.TryAdd(GetDiscriminator(use), use);
     }
 }

@@ -25,10 +25,10 @@ public interface ITransformationContext
     /// <summary>
     /// Adds a namespace import to the resultant syntax tree.
     /// </summary>
-    /// <param name="str">The dot-separated namespace.</param>
+    /// <param name="ns">The dot-separated namespace.</param>
     /// <returns>Whether it was added.</returns>
-    public bool AddUsing(string str) =>
-        AddUsing(UsingDirective(ModUtils.NamespaceIntoIdentifierName(str)));
+    public bool AddUsing(string ns) =>
+        AddUsing(UsingDirective(ModUtils.NamespaceIntoIdentifierName(ns)));
 
     /// <summary>
     /// Adds a using directive to the resultant syntax tree.
