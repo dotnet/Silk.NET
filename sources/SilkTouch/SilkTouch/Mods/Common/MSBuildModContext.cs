@@ -227,6 +227,7 @@ internal class MSBuildModContext(string jobKey, SilkTouchConfiguration jobConfig
         }
 
         // Add a license header to files that don't have one
+        // TODO: Move this to DocumentFactory
         if (defaultLicenseHeaderTrivia is not null)
         {
             var shouldAddHeader =
