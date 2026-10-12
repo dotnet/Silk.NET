@@ -179,12 +179,23 @@ public class DocumentFactory
 
     private class DocumentInitializer(DocumentFactory factory) : CSharpSyntaxRewriter
     {
-        // TODO: Handle headers.
+        public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node)
+        {
+            var leadingTrivia = node.GetLeadingTrivia();
+            var hasHeader = leadingTrivia.Any(x =>
+                x.IsKind(SyntaxKind.SingleLineCommentTrivia)
+                || x.IsKind(SyntaxKind.MultiLineCommentTrivia)
+            );
 
-        public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node) =>
-            base.VisitCompilationUnit(node) is CompilationUnitSyntax comp
-                ? comp.WithUsings(List(factory._usings))
+            var header =
+                hasHeader ? leadingTrivia
+                : factory.DefaultHeader is { } defaultHeader ? TriviaList(defaultHeader)
+                : default;
+
+            return base.VisitCompilationUnit(node) is CompilationUnitSyntax comp
+                ? comp.WithUsings(List(factory._usings)).WithLeadingTrivia(header)
                 : null;
+        }
 
         public override SyntaxNode? VisitFileScopedNamespaceDeclaration(
             FileScopedNamespaceDeclarationSyntax node
