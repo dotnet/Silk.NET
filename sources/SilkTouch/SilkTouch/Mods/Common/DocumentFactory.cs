@@ -4,6 +4,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -14,13 +15,20 @@ namespace Silk.NET.SilkTouch.Mods;
 public class DocumentFactory
 {
     /// <summary>
+    /// The default header to add if the document does not currently have one.
+    /// </summary>
+    public SyntaxTrivia? DefaultHeader { get; set; }
+
+    /// <summary>
     /// The namespace common to all reported documents.
     /// </summary>
-    private string? _commonNamespace;
+    public string? CommonNamespace { get; set; }
 
     /// <summary>
     /// Using statements to add to all initialized documents.
     /// </summary>
+    public IReadOnlyList<UsingDirectiveSyntax> Usings => _usings;
+
     private readonly List<UsingDirectiveSyntax> _usings = [];
     private readonly HashSet<string> _usingDiscriminators = [];
 
@@ -39,7 +47,7 @@ public class DocumentFactory
     private DocumentFactory(DocumentFactory original)
         : this()
     {
-        _commonNamespace = original._commonNamespace;
+        CommonNamespace = original.CommonNamespace;
         _usings = [.. original._usings];
         _usingDiscriminators = [.. original._usingDiscriminators];
     }
@@ -55,13 +63,13 @@ public class DocumentFactory
     /// <returns>The path within the project source directory to place this file.</returns>
     public string PathForFullyQualified(string fullyQualified, string extension = ".gen.cs")
     {
-        if (!fullyQualified.Contains('.') || _commonNamespace is null or { Length: 0 })
+        if (!fullyQualified.Contains('.') || CommonNamespace is null or { Length: 0 })
         {
             return fullyQualified + extension;
         }
 
-        return fullyQualified.StartsWith(_commonNamespace)
-            ? fullyQualified[_commonNamespace.Length..].Trim('.').Replace('.', '/') + extension
+        return fullyQualified.StartsWith(CommonNamespace)
+            ? fullyQualified[CommonNamespace.Length..].Trim('.').Replace('.', '/') + extension
             : fullyQualified + extension;
     }
 
@@ -123,124 +131,55 @@ public class DocumentFactory
     private static string GetDiscriminator(UsingDirectiveSyntax use) =>
         use.WithoutTrivia().NormalizeWhitespace().ToFullString();
 
-    private class DocumentReporter(DocumentFactory factory) : CSharpSyntaxWalker { }
-
-    private class DocumentInitializer(DocumentFactory factory) : CSharpSyntaxRewriter { }
-
-    private abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = false)
-        : CSharpSyntaxRewriter(visitIntoStructuredTrivia)
+    private class DocumentReporter(DocumentFactory factory) : CSharpSyntaxWalker
     {
-        /// <summary>
-        /// <c>using</c>s to add to the appropriate place within the syntax tree.
-        /// </summary>
-        public Dictionary<string, UsingDirectiveSyntax> UsingsToAdd { get; set; } = [];
-
-        /// <inheritdoc />
-        public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node)
+        public override void VisitUsingDirective(UsingDirectiveSyntax node)
         {
-            var ret = base.VisitCompilationUnit(node);
-            if (ret is not CompilationUnitSyntax comp)
+            if (!node.GlobalKeyword.IsKind(SyntaxKind.GlobalKeyword))
             {
-                return ret;
+                factory.AddUsing(node);
             }
-
-            foreach (
-                var use in comp.Usings.Where(use =>
-                    !use.GlobalKeyword.IsKind(SyntaxKind.GlobalKeyword)
-                )
-            )
-            {
-                AddUsing(use);
-            }
-
-            ret = comp.WithUsings(GetUsings(UsingsToAdd, comp))
-                .WithMembers(
-                    UsingsToAdd.Count == 0
-                        ? comp.Members
-                        : List(
-                            comp.Members.Select(x =>
-                                x.WithLeadingTrivia(
-                                    x.GetLeadingTrivia()
-                                        .Where(y =>
-                                            y.Kind()
-                                                is not SyntaxKind.SingleLineCommentTrivia
-                                                    and not SyntaxKind.MultiLineCommentTrivia
-                                        )
-                                )
-                            )
-                        )
-                );
-
-            return ret;
         }
 
-        /// <inheritdoc />
-        public override SyntaxNode? VisitFileScopedNamespaceDeclaration(
+        public override void VisitNamespaceDeclaration(NamespaceDeclarationSyntax node)
+        {
+            ReportNamespace(node);
+            base.VisitNamespaceDeclaration(node);
+        }
+
+        public override void VisitFileScopedNamespaceDeclaration(
             FileScopedNamespaceDeclarationSyntax node
         )
         {
-            foreach (
-                var use in node.Usings.Where(use =>
-                    !use.GlobalKeyword.IsKind(SyntaxKind.GlobalKeyword)
-                )
-            )
-            {
-                AddUsing(use);
-            }
-
-            return base.VisitFileScopedNamespaceDeclaration(node.WithUsings(default));
+            ReportNamespace(node);
+            base.VisitFileScopedNamespaceDeclaration(node);
         }
 
-        /// <summary>
-        /// Gets all the usings for the given compilation unit.
-        /// </summary>
-        /// <param name="usingsToAdd">The usings to get.</param>
-        /// <param name="comp">The compilation unit.</param>
-        /// <returns>The using list.</returns>
-        public static SyntaxList<UsingDirectiveSyntax> GetUsings(
-            IReadOnlyCollection<KeyValuePair<string, UsingDirectiveSyntax>> usingsToAdd,
-            CompilationUnitSyntax? comp
-        ) =>
-            List(
-                usingsToAdd.Select(
-                    (x, i) =>
-                        i == 0
-                            ? x
-                                .Value.WithoutTrailingTrivia()
-                                .WithLeadingTrivia(
-                                    usingsToAdd
-                                        .Select(y => y.Value.GetLeadingTrivia())
-                                        .Concat(
-                                            comp?.Members.Select(y => y.GetLeadingTrivia()) ?? []
-                                        )
-                                        .OrderByDescending(y =>
-                                            y.Count(z =>
-                                                z.Kind()
-                                                    is SyntaxKind.SingleLineCommentTrivia
-                                                        or SyntaxKind.MultiLineCommentTrivia
-                                                        or SyntaxKind.WhitespaceTrivia
-                                            )
-                                        )
-                                        .FirstOrDefault()
-                                )
-                            : x.Value.WithoutTrivia()
-                )
-            );
+        private void ReportNamespace(BaseNamespaceDeclarationSyntax node)
+        {
+            var ns = node.NamespaceFromSyntaxNode();
+            factory.CommonNamespace = factory.CommonNamespace is null
+                ? ns
+                : NameUtils.FindCommonPrefix(
+                    [factory.CommonNamespace, ns],
+                    true,
+                    int.MaxValue,
+                    true
+                );
+        }
+    }
 
-        /// <summary>
-        /// Adds a namespace import to the resultant syntax tree.
-        /// </summary>
-        /// <param name="ns">The dot-separated namespace.</param>
-        /// <returns>Whether it was added.</returns>
-        public bool AddUsing(string ns) =>
-            AddUsing(UsingDirective(ModUtils.NamespaceIntoIdentifierName(ns)));
+    private class DocumentInitializer(DocumentFactory factory) : CSharpSyntaxRewriter
+    {
+        // TODO: Handle headers.
 
-        /// <summary>
-        /// Adds a using directive to the resultant syntax tree.
-        /// </summary>
-        /// <param name="use">The directive.</param>
-        /// <returns>Whether it was added.</returns>
-        public bool AddUsing(UsingDirectiveSyntax use) =>
-            UsingsToAdd.TryAdd(GetDiscriminator(use), use);
+        public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node) =>
+            base.VisitCompilationUnit(node) is CompilationUnitSyntax comp
+                ? comp.WithUsings(List(factory._usings))
+                : null;
+
+        public override SyntaxNode? VisitFileScopedNamespaceDeclaration(
+            FileScopedNamespaceDeclarationSyntax node
+        ) => base.VisitFileScopedNamespaceDeclaration(node.WithUsings(default));
     }
 }
