@@ -16,8 +16,8 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 public class ChangeNamespace(ChangeNamespace.Configuration config) : IMod, IResponseFileMod
 {
-    private readonly Dictionary<string, (HashSet<string>, IReadOnlyList<(Regex, string)>)> _jobs =
-        new();
+    private readonly HashSet<string> _ns = [];
+    private readonly List<(Regex, string)> _regexes = [];
 
     /// <summary>
     /// The configuration for the change namespace mod.
@@ -34,8 +34,7 @@ public class ChangeNamespace(ChangeNamespace.Configuration config) : IMod, IResp
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
         var regexes =
-            config.Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray()
-            ?? Array.Empty<(Regex, string)>();
+            config.Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray() ?? [];
         for (var i = 0; i < rsps.Count; i++)
         {
             var rsp = rsps[i];
@@ -59,7 +58,7 @@ public class ChangeNamespace(ChangeNamespace.Configuration config) : IMod, IResp
             };
         }
 
-        _jobs[key] = (
+        _ns.UnionWith(
             rsps.Select(x => x.GeneratorConfiguration.DefaultNamespace)
                 .Concat(
                     rsps.SelectMany(x =>
@@ -67,17 +66,16 @@ public class ChangeNamespace(ChangeNamespace.Configuration config) : IMod, IResp
                     )
                 )
                 .Distinct()
-                .ToHashSet(),
-            regexes
         );
+        _regexes.AddRange(regexes);
+
         return Task.FromResult(rsps);
     }
 
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var (ns, regexes) = _jobs[ctx.JobKey];
-        var rewriter = new Rewriter(ns, regexes);
+        var rewriter = new Rewriter(_ns, _regexes);
         var proj = ctx.SourceProject;
         foreach (var docId in proj?.DocumentIds ?? [])
         {
@@ -90,7 +88,6 @@ public class ChangeNamespace(ChangeNamespace.Configuration config) : IMod, IResp
         }
 
         ctx.SourceProject = proj;
-        _jobs.Remove(ctx.JobKey);
     }
 
     private class Rewriter : CSharpSyntaxRewriter

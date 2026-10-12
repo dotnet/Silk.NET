@@ -1588,20 +1588,18 @@ public partial class MixKhronosData(
 
     /// <inheritdoc />
     public bool TryGetChildSymbolMetadata(
-        string? jobKey,
         string nativeName,
         string childNativeName,
         [NotNullWhen(true)] out IEnumerable<SupportedApiProfileAttribute>? metadata
-    ) => TryGetSymbolMetadata(jobKey, childNativeName, out metadata);
+    ) => TryGetSymbolMetadata(childNativeName, out metadata);
 
     /// <inheritdoc />
     public bool TryGetSymbolMetadata(
-        string? jobKey,
         string nativeName,
         [NotNullWhen(true)] out IEnumerable<SupportedApiProfileAttribute>? metadata
     )
     {
-        if (jobKey is null || Job.SupportedApiProfiles is null)
+        if (Job.SupportedApiProfiles is null)
         {
             metadata = null;
             return false;

@@ -314,7 +314,7 @@ public class MixKhronosDataTests
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+        var context = new DummyModContext() { SourceProject = project };
 
         var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
@@ -348,7 +348,7 @@ public class MixKhronosDataTests
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+        var context = new DummyModContext() { SourceProject = project };
 
         var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
@@ -386,7 +386,7 @@ public class MixKhronosDataTests
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+        var context = new DummyModContext() { SourceProject = project };
 
         var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
@@ -421,7 +421,7 @@ public class MixKhronosDataTests
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+        var context = new DummyModContext() { SourceProject = project };
 
         var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
