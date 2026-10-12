@@ -30,6 +30,7 @@ public class DocumentFactory
     public IReadOnlyList<UsingDirectiveSyntax> Usings => _usings;
 
     private readonly List<UsingDirectiveSyntax> _usings = [];
+    private readonly List<string> _orderedUsingDiscriminators = [];
     private readonly HashSet<string> _usingDiscriminators = [];
 
     private readonly DocumentReporter _reporter;
@@ -49,6 +50,7 @@ public class DocumentFactory
     {
         CommonNamespace = original.CommonNamespace;
         _usings = [.. original._usings];
+        _orderedUsingDiscriminators = [.. original._orderedUsingDiscriminators];
         _usingDiscriminators = [.. original._usingDiscriminators];
     }
 
@@ -111,7 +113,13 @@ public class DocumentFactory
         var discriminator = GetDiscriminator(directiveNoTrivia);
         if (_usingDiscriminators.Add(discriminator))
         {
-            _usings.Add(directiveNoTrivia);
+            var index = ~_orderedUsingDiscriminators.BinarySearch(
+                discriminator,
+                NamespaceComparer.Instance
+            );
+
+            _orderedUsingDiscriminators.Insert(index, discriminator);
+            _usings.Insert(index, directiveNoTrivia);
         }
     }
 
@@ -181,5 +189,35 @@ public class DocumentFactory
         public override SyntaxNode? VisitFileScopedNamespaceDeclaration(
             FileScopedNamespaceDeclarationSyntax node
         ) => base.VisitFileScopedNamespaceDeclaration(node.WithUsings(default));
+    }
+
+    private class NamespaceComparer : IComparer<string>
+    {
+        public static readonly NamespaceComparer Instance = new();
+
+        public int Compare(string? x, string? y)
+        {
+            if (x == null)
+            {
+                return -1;
+            }
+
+            if (y == null)
+            {
+                return 1;
+            }
+
+            var aSys = IsSystem(x);
+            var bSys = IsSystem(y);
+            return aSys != bSys
+                ? aSys
+                    ? -1
+                    : 1
+                : string.CompareOrdinal(x, y);
+
+            bool IsSystem(string ns) =>
+                ns.Equals("System", StringComparison.Ordinal)
+                || ns.StartsWith("System.", StringComparison.Ordinal);
+        }
     }
 }
