@@ -1566,15 +1566,13 @@ public partial class MixKhronosData(
 
     /// <inheritdoc />
     public bool TryGetChildSymbolMetadata(
-        string? jobKey,
         string nativeName,
         string childNativeName,
         [NotNullWhen(true)] out SymbolConstraints? metadata
     )
     {
         if (
-            jobKey is not null
-            && Job.Annotations.TryGetValue((nativeName, childNativeName), out var annotation)
+            Job.Annotations.TryGetValue((nativeName, childNativeName), out var annotation)
             && annotation.Usage is not null
         )
         {

@@ -364,7 +364,6 @@ public static class MetadataUtils
     /// <param name="decl">The method declaration.</param>
     /// <param name="providers">The metadata providers.</param>
     /// <param name="entryPoint">The entry point. Determined from the declaration if not provided.</param>
-    /// <param name="jobKey">The job key to use when looking up metadata.</param>
     /// <returns>
     /// An enumerable over the declaration's parameters, where the parameter syntax and indices are given along with an
     /// enumerable of the other parameter syntaxes (along with the indices and constraints) for which the parameter
@@ -381,8 +380,7 @@ public static class MetadataUtils
     )> EnumerateCountParameterInfo(
         this MethodDeclarationSyntax decl,
         IEnumerable<IApiMetadataProvider<SymbolConstraints>> providers,
-        string? entryPoint = null,
-        string? jobKey = null
+        string? entryPoint = null
     ) =>
         decl.ParameterList.Parameters.Select(
             (x, i) =>
