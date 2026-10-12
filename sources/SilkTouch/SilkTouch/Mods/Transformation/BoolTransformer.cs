@@ -9,8 +9,24 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 /// <summary>
 /// A transformer transforming parameters that are recognised to be akin to booleans to use the <c>MaybeBool</c> type.
 /// </summary>
-public class BoolTransformer(TransformFunctions.Configuration config) : IFunctionTransformer
+public class BoolTransformer(BoolTransformer.Configuration config) : IFunctionTransformer
 {
+    /// <summary>
+    /// Configuration for the <see cref="BoolTransformer"/>.
+    /// </summary>
+    public class Configuration
+    {
+        /// <summary>
+        /// Whether all integer return types should be treated as potentially boolean.
+        /// </summary>
+        public bool IntReturnsMaybeBool { get; init; }
+
+        /// <summary>
+        /// Types to treat as boolean and their boolean schemes if different from the default.
+        /// </summary>
+        public Dictionary<string, string?> BoolTypes { get; init; } = [];
+    }
+
     /// <inheritdoc />
     public void Transform(
         MethodDeclarationSyntax current,

@@ -13,22 +13,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewriter, IMod
 {
-    /// <summary>
-    /// Configuration for the <see cref="TransformFunctions"/> and related code.
-    /// </summary>
-    public class Configuration
-    {
-        /// <summary>
-        /// Whether all integer return types should be treated as potentially boolean.
-        /// </summary>
-        public bool IntReturnsMaybeBool { get; init; }
-
-        /// <summary>
-        /// Types to treat as boolean and their boolean schemes if different from the default.
-        /// </summary>
-        public Dictionary<string, string?> BoolTypes { get; init; } = [];
-    }
-
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {

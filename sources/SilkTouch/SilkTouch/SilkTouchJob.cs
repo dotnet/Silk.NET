@@ -5,6 +5,7 @@ using System.Diagnostics;
 using Autofac;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Sources;
 
 namespace Silk.NET.SilkTouch;
@@ -57,7 +58,11 @@ internal class SilkTouchJob : IDisposable
 
         _logger = parentContainer.Resolve<ILogger<SilkTouchJob>>();
         _inputResolver = parentContainer.Resolve<IInputResolver>();
-        _container = parentContainer.BeginLifetimeScope(configure);
+        _container = parentContainer.BeginLifetimeScope(builder =>
+        {
+            builder.RegisterType<FunctionTransformer>().SingleInstance();
+            configure.Invoke(builder);
+        });
 
         _modContextFactory = _container.Resolve<IModContextFactory>();
         Mods = _container.Resolve<IMod[]>();

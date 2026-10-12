@@ -26,14 +26,73 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Begins a <see cref="SilkTouchRegistrationContext"/>.
         /// </summary>
-        public SilkTouchModRegistrationContext Mods() => new(context.Builder);
+        public SilkTouchModRegistrationContext WithMods() => new(context.Builder);
 
         /// <summary>
         /// Begins a <see cref="SilkTouchRegistrationContext"/>.
         /// </summary>
-        public SilkTouchRegistrationContext Mods(Action<SilkTouchModRegistrationContext> build)
+        public SilkTouchRegistrationContext WithMods(Action<SilkTouchModRegistrationContext> build)
         {
             build.Invoke(new SilkTouchModRegistrationContext(context.Builder));
+            return context;
+        }
+
+        /// <summary>
+        /// Registers the default function transformers.
+        /// </summary>
+        /// <returns></returns>
+        public SilkTouchRegistrationContext WithDefaultFunctionTransformers(
+            BoolTransformer.Configuration boolTransformerConfig
+        ) =>
+            context
+                .WithPtrRefTransformer()
+                .WithBoolTransformer(boolTransformerConfig)
+                .WithArrayParameterTransformer();
+
+        /// <summary>
+        /// Registers the <see cref="PtrRefTransformer"/> function transformer.
+        /// </summary>
+        /// <returns></returns>
+        public SilkTouchRegistrationContext WithPtrRefTransformer()
+        {
+            context
+                .Builder.RegisterType<PtrRefTransformer>()
+                .AsImplementedInterfaces()
+                .SingleInstance();
+
+            return context;
+        }
+
+        /// <summary>
+        /// Registers the <see cref="BoolTransformer"/> function transformer.
+        /// </summary>
+        /// <returns></returns>
+        public SilkTouchRegistrationContext WithBoolTransformer(
+            BoolTransformer.Configuration boolTransformerConfig
+        )
+        {
+            context
+                .Builder.RegisterType<BoolTransformer>()
+                .WithParameter(
+                    new TypedParameter(typeof(BoolTransformer.Configuration), boolTransformerConfig)
+                )
+                .AsImplementedInterfaces()
+                .SingleInstance();
+
+            return context;
+        }
+
+        /// <summary>
+        /// Registers the <see cref="ArrayParameterTransformer"/> function transformer.
+        /// </summary>
+        /// <returns></returns>
+        public SilkTouchRegistrationContext WithArrayParameterTransformer()
+        {
+            context
+                .Builder.RegisterType<ArrayParameterTransformer>()
+                .AsImplementedInterfaces()
+                .SingleInstance();
+
             return context;
         }
     }
@@ -316,38 +375,12 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="TransformFunctions"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext TransformFunctions(
-            TransformFunctions.Configuration config
-        )
+        public SilkTouchModRegistrationContext TransformFunctions()
         {
             context
                 .Builder.RegisterType<TransformFunctions>()
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
-
-            // These probably can be moved to their own registration methods, but keeping it here since we have no reason to exclude any transformers right now
-            // Also, BoolTransformer relies on TransformFunctions.Configuration, which is tech debt
-            {
-                context.Builder.RegisterType<FunctionTransformer>().SingleInstance();
-
-                context
-                    .Builder.RegisterType<PtrRefTransformer>()
-                    .AsImplementedInterfaces()
-                    .SingleInstance();
-
-                context
-                    .Builder.RegisterType<BoolTransformer>()
-                    .WithParameter(
-                        new TypedParameter(typeof(TransformFunctions.Configuration), config)
-                    )
-                    .AsImplementedInterfaces()
-                    .SingleInstance();
-
-                context
-                    .Builder.RegisterType<ArrayParameterTransformer>()
-                    .AsImplementedInterfaces()
-                    .SingleInstance();
-            }
 
             return context;
         }
