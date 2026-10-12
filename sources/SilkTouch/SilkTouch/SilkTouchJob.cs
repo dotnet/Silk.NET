@@ -60,7 +60,11 @@ internal class SilkTouchJob : IDisposable
         _inputResolver = parentContainer.Resolve<IInputResolver>();
         _container = parentContainer.BeginLifetimeScope(builder =>
         {
+            // Register default dependencies
+            builder.RegisterType<DocumentFactory>().SingleInstance();
             builder.RegisterType<FunctionTransformer>().SingleInstance();
+
+            // Register user defined dependencies
             configure.Invoke(builder);
         });
 
