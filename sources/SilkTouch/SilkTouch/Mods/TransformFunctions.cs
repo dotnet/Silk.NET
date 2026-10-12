@@ -13,8 +13,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewriter, IMod
 {
-    private ThreadLocal<string> _jobKey = new();
-
     /// <summary>
     /// Configuration for the <see cref="TransformFunctions"/> and related code.
     /// </summary>
@@ -32,23 +30,8 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
     }
 
     /// <inheritdoc />
-    public override string? JobKey
-    {
-        get => _jobKey.Value;
-        set
-        {
-            if (value is null)
-            {
-                return;
-            }
-            _jobKey.Value = value;
-        }
-    }
-
-    /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        _jobKey.Value = ctx.JobKey;
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
@@ -71,7 +54,6 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
                     cd.Members.Where(x => x is not MethodDeclarationSyntax)
                         .Concat(
                             ft.GetTransformedFunctions(
-                                    _jobKey.Value,
                                     cd.Members.OfType<MethodDeclarationSyntax>(),
                                     this
                                 )
@@ -89,7 +71,6 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
                     id.Members.Where(x => x is not MethodDeclarationSyntax)
                         .Concat(
                             ft.GetTransformedFunctions(
-                                    _jobKey.Value,
                                     id.Members.OfType<MethodDeclarationSyntax>(),
                                     this
                                 )

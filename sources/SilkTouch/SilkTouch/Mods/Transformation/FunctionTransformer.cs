@@ -25,7 +25,6 @@ public class FunctionTransformer(
     /// Transforms all of the given functions, optionally including the original function signatures in the returned
     /// transformed functions.
     /// </summary>
-    /// <param name="key">The job key.</param>
     /// <param name="functions">The functions.</param>
     /// <param name="ctx">The wider context for this function transformation operation.</param>
     /// <param name="includeOriginal">
@@ -33,7 +32,6 @@ public class FunctionTransformer(
     /// </param>
     /// <returns>The transformed (and optionally original) functions.</returns>
     public IEnumerable<MethodDeclarationSyntax> GetTransformedFunctions(
-        string? key,
         IEnumerable<MethodDeclarationSyntax> functions,
         ITransformationContext ctx,
         bool includeOriginal = true

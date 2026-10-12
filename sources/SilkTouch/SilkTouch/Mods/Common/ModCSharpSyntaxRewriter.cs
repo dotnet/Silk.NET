@@ -16,17 +16,10 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
     : CSharpSyntaxRewriter(visitIntoStructuredTrivia),
         ITransformationContext
 {
-    private ThreadLocal<Dictionary<string, UsingDirectiveSyntax>> _usingsToAdd =
-        new(() => new Dictionary<string, UsingDirectiveSyntax>());
-
     /// <summary>
     /// <c>using</c>s to add to the appropriate place within the syntax tree.
     /// </summary>
-    public Dictionary<string, UsingDirectiveSyntax> UsingsToAdd
-    {
-        get => _usingsToAdd.Value!;
-        set => _usingsToAdd.Value = value;
-    }
+    public Dictionary<string, UsingDirectiveSyntax> UsingsToAdd { get; set; } = [];
 
     /// <inheritdoc />
     public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node)
@@ -113,9 +106,6 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
                         : x.Value.WithoutTrivia()
             )
         );
-
-    /// <inheritdoc />
-    public virtual string? JobKey { get; set; }
 
     /// <inheritdoc />
     public MethodDeclarationSyntax? Original { get; set; }

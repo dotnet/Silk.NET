@@ -53,7 +53,6 @@ public class AddApiProfiles(
     }
 
     class Rewriter(
-        string? jobKey,
         IEnumerable<
             IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
         > versionProviders
@@ -66,14 +65,13 @@ public class AddApiProfiles(
         private IEnumerable<AttributeSyntax> GetProfileAttributes(string? childSymbol) =>
             Profile is null
                 ? versionProviders
-                    .GetAllMetadata(jobKey, _currentParentSymbol, childSymbol)
+                    .GetAllMetadata(_currentParentSymbol, childSymbol)
                     .Select(x => x?.GetSupportedApiProfileAttribute())
                     .OfType<AttributeSyntax>()
                 :
                 [
                     versionProviders
                         .GetMetadata(
-                            jobKey,
                             _currentParentSymbol,
                             childSymbol,
                             x => x.Metadata.Profile == Profile.Profile,
@@ -209,7 +207,7 @@ public class AddApiProfiles(
             return;
         }
 
-        var rewriter = new Rewriter(ctx.JobKey, versionProviders);
+        var rewriter = new Rewriter(versionProviders);
         foreach (var docId in ctx.SourceProject.DocumentIds)
         {
             var doc =

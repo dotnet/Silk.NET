@@ -13,26 +13,21 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 public interface ITransformationContext
 {
     /// <summary>
-    /// The job key.
-    /// </summary>
-    string? JobKey { get; set; }
-
-    /// <summary>
     /// The original method signature.
     /// </summary>
-    MethodDeclarationSyntax? Original { get; set; }
+    public MethodDeclarationSyntax? Original { get; set; }
 
     /// <summary>
     /// The transformers in use.
     /// </summary>
-    IFunctionTransformer[]? Transformers { get; set; }
+    public IFunctionTransformer[]? Transformers { get; set; }
 
     /// <summary>
     /// Adds a namespace import to the resultant syntax tree.
     /// </summary>
     /// <param name="str">The dot-separated namespace.</param>
     /// <returns>Whether it was added.</returns>
-    bool AddUsing(string str) =>
+    public bool AddUsing(string str) =>
         AddUsing(UsingDirective(ModUtils.NamespaceIntoIdentifierName(str)));
 
     /// <summary>
@@ -40,5 +35,5 @@ public interface ITransformationContext
     /// </summary>
     /// <param name="use">The directive.</param>
     /// <returns>Whether it was added.</returns>
-    bool AddUsing(UsingDirectiveSyntax use);
+    public bool AddUsing(UsingDirectiveSyntax use);
 }

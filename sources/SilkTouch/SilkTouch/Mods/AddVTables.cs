@@ -516,7 +516,6 @@ public class AddVTables(AddVTables.Configuration config) : IMod
     {
         private InterfaceDeclarationSyntax? _currentInterface;
         private ClassDeclarationSyntax? _currentClass;
-        private VTable[] _vTables = vTables;
 
         private ClassDeclarationSyntax?[] _currentVTableOutputs = new ClassDeclarationSyntax?[
             vTables.Length
@@ -859,9 +858,9 @@ public class AddVTables(AddVTables.Configuration config) : IMod
                 );
             }
 
-            for (var i = 0; i < _vTables.Length; i++)
+            for (var i = 0; i < vTables.Length; i++)
             {
-                _currentVTableOutputs[i] = _vTables[i]
+                _currentVTableOutputs[i] = vTables[i]
                     .AddMethod(
                         new VTableContext(
                             _currentVTableOutputs[i],
@@ -1040,7 +1039,7 @@ public class AddVTables(AddVTables.Configuration config) : IMod
                     .WithModifiers(TokenList(Token(SyntaxKind.PartialKeyword)))
                     .WithMembers(
                         List<MemberDeclarationSyntax>(
-                            _vTables
+                            vTables
                                 .Select(x =>
                                     x.GetBoilerplate(
                                         new VTableBoilerplateContext(
@@ -1144,7 +1143,7 @@ public class AddVTables(AddVTables.Configuration config) : IMod
 
             if (
                 _staticDefaultWrapper is not null
-                && !_vTables.Any(x => x is ThisThread && x.Name == _staticDefault)
+                && !vTables.Any(x => x is ThisThread && x.Name == _staticDefault)
             )
             {
                 yield return PropertyDeclaration(

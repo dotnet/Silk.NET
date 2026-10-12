@@ -123,7 +123,6 @@ public static class MetadataUtils
     /// Gets the first matching metadata item for a specific symbol.
     /// </summary>
     /// <param name="metadataProviders">The metadata providers.</param>
-    /// <param name="jobKey">The current job key.</param>
     /// <param name="parentSymbol">
     /// The parent symbol, optionally containing the symbol identified by <paramref name="childSymbol"/> if provided.
     /// Used as input to <see cref="IApiMetadataProvider{T}.TryGetChildSymbolMetadata"/> if
@@ -143,20 +142,18 @@ public static class MetadataUtils
     [return: NotNullIfNotNull(nameof(defaultValue))]
     public static T? GetMetadata<T>(
         this IEnumerable<IApiMetadataProvider<IEnumerable<T>>> metadataProviders,
-        string? jobKey,
         string? parentSymbol = null,
         string? childSymbol = null,
         Predicate<(T Metadata, MetadataSources Sources)>? filter = default,
         T? defaultValue = default
     ) =>
-        GetAllMetadata(metadataProviders, jobKey, parentSymbol, childSymbol, filter)
+        GetAllMetadata(metadataProviders, parentSymbol, childSymbol, filter)
             .FirstOrDefault(defaultValue);
 
     /// <summary>
     /// Gets all matching metadata items for a specific symbol.
     /// </summary>
     /// <param name="metadataProviders">The metadata providers.</param>
-    /// <param name="jobKey">The current job key.</param>
     /// <param name="parentSymbol">
     /// The parent symbol, optionally containing the symbol identified by <paramref name="childSymbol"/> if provided.
     /// Used as input to <see cref="IApiMetadataProvider{T}.TryGetChildSymbolMetadata"/> if
@@ -174,7 +171,6 @@ public static class MetadataUtils
     /// <returns>The metadata item.</returns>
     public static IEnumerable<T?> GetAllMetadata<T>(
         this IEnumerable<IApiMetadataProvider<IEnumerable<T>>> metadataProviders,
-        string? jobKey,
         string? parentSymbol = null,
         string? childSymbol = null,
         Predicate<(T Metadata, MetadataSources Sources)>? filter = default
@@ -194,7 +190,6 @@ public static class MetadataUtils
             {
                 if (
                     provider.TryGetChildSymbolMetadata(
-                        jobKey,
                         parentSymbol,
                         childSymbol,
                         out var childMetadata
@@ -216,7 +211,7 @@ public static class MetadataUtils
 
         foreach (var provider in metadataProviders)
         {
-            if (provider.TryGetSymbolMetadata(jobKey, parentSymbol, out var parentMetadata))
+            if (provider.TryGetSymbolMetadata(parentSymbol, out var parentMetadata))
             {
                 var source = MetadataSources.Parent;
                 if (!foundChildMetadata)
@@ -325,7 +320,6 @@ public static class MetadataUtils
     /// <param name="decl">The method with the parameters to enumerate.</param>
     /// <param name="providers">The metadata providers.</param>
     /// <param name="entryPoint"></param>
-    /// <param name="jobKey"></param>
     /// <returns></returns>
     public static IEnumerable<(
         ParameterSyntax Param,
@@ -334,8 +328,7 @@ public static class MetadataUtils
     )> EnumerateSymbolConstraints(
         this MethodDeclarationSyntax decl,
         IEnumerable<IApiMetadataProvider<SymbolConstraints>> providers,
-        string? entryPoint = null,
-        string? jobKey = null
+        string? entryPoint = null
     )
     {
         if (entryPoint is null)
@@ -352,7 +345,6 @@ public static class MetadataUtils
                     PtrParamConstraints: providers
                         .Select(z =>
                             z.TryGetChildSymbolMetadata(
-                                jobKey,
                                 entryPoint,
                                 y.PtrParam.Identifier.ToString().TrimStart('@'),
                                 out var md
@@ -397,7 +389,7 @@ public static class MetadataUtils
                 (
                     CountParam: x,
                     CountParamIdx: i,
-                    ParamsForCount: decl.EnumerateSymbolConstraints(providers, entryPoint, jobKey)
+                    ParamsForCount: decl.EnumerateSymbolConstraints(providers, entryPoint)
                         .Where(y =>
                             y.ParamConstraints?.CommonUsage?.CountExpression.AsSpan()
                                 .TrimStart('@')

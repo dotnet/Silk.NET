@@ -52,7 +52,7 @@ public class MixKhronosDataTests
                         new MixKhronosData.Configuration { SpecPath = TestFile(x) }
                     );
                     await mod.InitializeAsync(new DummyModContext(), ct);
-                    return (object[])[x, mod.Jobs[""]];
+                    return (object[])[x, mod.Job];
                 }
             );
     }
@@ -318,13 +318,10 @@ public class MixKhronosDataTests
 
         var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
-            Jobs =
+            Job = new MixKhronosData.JobData
             {
-                ["OpenGL"] = new MixKhronosData.JobData
-                {
-                    Configuration = new MixKhronosData.Configuration(),
-                    Vendors = ["NV"],
-                },
+                Configuration = new MixKhronosData.Configuration(),
+                Vendors = ["NV"],
             },
         };
 
@@ -355,16 +352,13 @@ public class MixKhronosDataTests
 
         var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
-            Jobs =
+            Job = new MixKhronosData.JobData
             {
-                ["OpenGL"] = new MixKhronosData.JobData
+                Configuration = new MixKhronosData.Configuration()
                 {
-                    Configuration = new MixKhronosData.Configuration()
-                    {
-                        IdentifyEnumMemberImpliedVendors = true,
-                    },
-                    Vendors = ["NV"],
+                    IdentifyEnumMemberImpliedVendors = true,
                 },
+                Vendors = ["NV"],
             },
         };
 
@@ -396,16 +390,13 @@ public class MixKhronosDataTests
 
         var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
-            Jobs =
+            Job = new MixKhronosData.JobData
             {
-                ["OpenGL"] = new MixKhronosData.JobData
+                Configuration = new MixKhronosData.Configuration()
                 {
-                    Configuration = new MixKhronosData.Configuration()
-                    {
-                        IdentifyEnumTypeNonExclusiveVendors = true,
-                    },
-                    Vendors = ["ARB"],
+                    IdentifyEnumTypeNonExclusiveVendors = true,
                 },
+                Vendors = ["ARB"],
             },
         };
 
@@ -434,23 +425,20 @@ public class MixKhronosDataTests
 
         var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
-            Jobs =
+            Job = new MixKhronosData.JobData
             {
-                ["OpenGL"] = new MixKhronosData.JobData
+                Configuration = new MixKhronosData.Configuration(),
+                Groups =
                 {
-                    Configuration = new MixKhronosData.Configuration(),
-                    Groups =
                     {
+                        "GLenum",
+                        new MixKhronosData.EnumGroup()
                         {
-                            "GLenum",
-                            new MixKhronosData.EnumGroup()
-                            {
-                                Name = "GLEnum",
-                                NativeName = "GLenum",
-                                BaseType = "GLenum",
-                                Namespace = "GL",
-                            }
-                        },
+                            Name = "GLEnum",
+                            NativeName = "GLenum",
+                            BaseType = "GLenum",
+                            Namespace = "GL",
+                        }
                     },
                 },
             },
