@@ -10,10 +10,8 @@ using CSharpier.Core;
 using CSharpier.Core.CSharp;
 using Microsoft.Build.Framework;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.MSBuild;
 using Microsoft.Extensions.Logging;
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 using EndOfLine = CSharpier.Core.EndOfLine;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
@@ -142,12 +140,7 @@ internal class MSBuildModContext(string jobKey, SilkTouchConfiguration jobConfig
         var existingFileGate = 0;
         var sw = Stopwatch.StartNew();
         logger.LogInformation("Writing {} to disk...", JobKey);
-        var defaultLicenseHeaderTrivia = jobConfig.DefaultLicenseHeader is null
-            ? null
-            : (await File.ReadAllLinesAsync(jobConfig.DefaultLicenseHeader))
-                .Where(x => x.Length == 0 || x.StartsWith("//"))
-                .Select(x => Comment(x.Trim()))
-                .ToArray();
+
         await Parallel.ForEachAsync(
             [.. SourceProject?.Documents ?? [], .. TestProject?.Documents ?? []],
             async (doc, ct) =>
@@ -174,7 +167,7 @@ internal class MSBuildModContext(string jobKey, SilkTouchConfiguration jobConfig
                 }
 
                 Directory.CreateDirectory(fileDir);
-                await DiffWriteAsync(doc.FilePath, root, pool, defaultLicenseHeaderTrivia, ct);
+                await DiffWriteAsync(doc.FilePath, root, pool, ct);
                 while (Interlocked.CompareExchange(ref existingFileGate, 1, 0) != 0)
                 {
                     // look ma I made a BreakneckLock
@@ -198,7 +191,6 @@ internal class MSBuildModContext(string jobKey, SilkTouchConfiguration jobConfig
         string fname,
         SyntaxNode node,
         ArrayPool<byte> pool,
-        SyntaxTrivia[]? defaultLicenseHeaderTrivia = null,
         CancellationToken ct = default
     )
     {
@@ -224,26 +216,6 @@ internal class MSBuildModContext(string jobKey, SilkTouchConfiguration jobConfig
                     ct
                 )
                 : Task.CompletedTask;
-        }
-
-        // Add a license header to files that don't have one
-        // TODO: Move this to DocumentFactory
-        if (defaultLicenseHeaderTrivia is not null)
-        {
-            var shouldAddHeader =
-                !node.GetLeadingTrivia().Any(x => x.Kind() is SyntaxKind.SingleLineCommentTrivia)
-                || !(
-                    node.ChildNodes()
-                        .FirstOrDefault()
-                        ?.GetLeadingTrivia()
-                        .Any(x => x.Kind() is SyntaxKind.SingleLineCommentTrivia)
-                ).GetValueOrDefault();
-            if (shouldAddHeader)
-            {
-                node = node.WithLeadingTrivia(
-                    defaultLicenseHeaderTrivia.Concat(node.GetLeadingTrivia())
-                );
-            }
         }
 
         // Convert our syntax node to a UTF-8 byte array using CSharpier
