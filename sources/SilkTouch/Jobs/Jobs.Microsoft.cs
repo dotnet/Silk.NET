@@ -14,6 +14,7 @@ internal static partial class Jobs
                 SourceProject = "sources/Win32/Win32/Silk.NET.Win32.csproj",
                 TestProject = "tests/Win32/Win32/Silk.NET.Win32.UnitTests.csproj",
                 DefaultLicenseHeader = "eng/silktouch/header.txt",
+                DefaultNamespace = "Silk.NET.Windows",
             },
             context =>
                 context

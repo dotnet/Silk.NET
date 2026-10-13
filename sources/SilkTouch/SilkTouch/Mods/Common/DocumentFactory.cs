@@ -4,7 +4,6 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -20,9 +19,9 @@ public class DocumentFactory
     public SyntaxTriviaList? DefaultHeader { get; set; }
 
     /// <summary>
-    /// The namespace common to all reported documents.
+    /// The default namespace to use for documents.
     /// </summary>
-    public string? CommonNamespace { get; set; }
+    public string? DefaultNamespace { get; set; }
 
     /// <summary>
     /// Using statements to add to all initialized documents.
@@ -48,7 +47,7 @@ public class DocumentFactory
     private DocumentFactory(DocumentFactory original)
         : this()
     {
-        CommonNamespace = original.CommonNamespace;
+        DefaultNamespace = original.DefaultNamespace;
         _usings = [.. original._usings];
         _orderedUsingDiscriminators = [.. original._orderedUsingDiscriminators];
         _usingDiscriminators = [.. original._usingDiscriminators];
@@ -65,13 +64,13 @@ public class DocumentFactory
     /// <returns>The path within the project source directory to place this file.</returns>
     public string PathForFullyQualified(string fullyQualified, string extension = ".gen.cs")
     {
-        if (!fullyQualified.Contains('.') || CommonNamespace is null or { Length: 0 })
+        if (!fullyQualified.Contains('.') || DefaultNamespace is null or { Length: 0 })
         {
             return fullyQualified + extension;
         }
 
-        return fullyQualified.StartsWith(CommonNamespace)
-            ? fullyQualified[CommonNamespace.Length..].Trim('.').Replace('.', '/') + extension
+        return fullyQualified.StartsWith(DefaultNamespace)
+            ? fullyQualified[DefaultNamespace.Length..].Trim('.').Replace('.', '/') + extension
             : fullyQualified + extension;
     }
 
@@ -79,7 +78,7 @@ public class DocumentFactory
     /// Reports information about a document in the project.
     /// </summary>
     /// <remarks>
-    /// This currently saves the using statements and common namespace for use in initializing new documents.
+    /// This currently saves the using statements for use in initializing new documents.
     /// </remarks>
     public void ReportDocument(SyntaxNode root) => _reporter.Visit(root);
 
@@ -147,33 +146,6 @@ public class DocumentFactory
             {
                 factory.AddUsing(node);
             }
-        }
-
-        public override void VisitNamespaceDeclaration(NamespaceDeclarationSyntax node)
-        {
-            ReportNamespace(node);
-            base.VisitNamespaceDeclaration(node);
-        }
-
-        public override void VisitFileScopedNamespaceDeclaration(
-            FileScopedNamespaceDeclarationSyntax node
-        )
-        {
-            ReportNamespace(node);
-            base.VisitFileScopedNamespaceDeclaration(node);
-        }
-
-        private void ReportNamespace(BaseNamespaceDeclarationSyntax node)
-        {
-            var ns = node.NamespaceFromSyntaxNode();
-            factory.CommonNamespace = factory.CommonNamespace is null
-                ? ns
-                : NameUtils.FindCommonPrefix(
-                    [factory.CommonNamespace, ns],
-                    true,
-                    int.MaxValue,
-                    true
-                );
         }
     }
 

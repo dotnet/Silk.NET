@@ -89,6 +89,7 @@ internal class SilkTouchJob : IDisposable
         var context = await _modContextFactory.CreateContextAsync(Key, Config, ct);
 
         // Initialize the document factory
+        _documentFactory.DefaultNamespace = Config.DefaultNamespace;
         if (Config.DefaultLicenseHeader != null)
         {
             _documentFactory.DefaultHeader = ParseLeadingTrivia(

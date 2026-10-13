@@ -28,4 +28,9 @@ public record SilkTouchConfiguration
     /// response file)
     /// </summary>
     public string? DefaultLicenseHeader { get; init; }
+
+    /// <summary>
+    /// The default namespace to be used by generated documents.
+    /// </summary>
+    public string? DefaultNamespace { get; init; }
 }

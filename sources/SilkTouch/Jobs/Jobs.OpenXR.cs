@@ -15,6 +15,7 @@ internal static partial class Jobs
                 Solution = "Silk.NET.slnx",
                 SourceProject = "sources/OpenXR/OpenXR/Silk.NET.OpenXR.csproj",
                 DefaultLicenseHeader = "eng/silktouch/header.txt",
+                DefaultNamespace = "Silk.NET.OpenXR",
             },
             context =>
                 context
