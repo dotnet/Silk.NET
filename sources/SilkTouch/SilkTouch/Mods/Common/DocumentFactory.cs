@@ -64,7 +64,7 @@ public class DocumentFactory
     /// <returns>The path within the project source directory to place this file.</returns>
     public string PathForFullyQualified(string fullyQualified, string extension = ".gen.cs")
     {
-        if (!fullyQualified.Contains('.') || DefaultNamespace is null or { Length: 0 })
+        if (!fullyQualified.Contains('.') || DefaultNamespace is null)
         {
             return fullyQualified + extension;
         }
@@ -159,10 +159,21 @@ public class DocumentFactory
                 || x.IsKind(SyntaxKind.MultiLineCommentTrivia)
             );
 
+            node = (CompilationUnitSyntax)base.VisitCompilationUnit(node)!;
+
+            var hasNamespace = node.Members.Any(x => x is BaseNamespaceDeclarationSyntax);
+            if (!hasNamespace)
+            {
+                node = node.WithMembers([
+                    FileScopedNamespaceDeclaration(
+                            ModUtils.NamespaceIntoIdentifierName(factory.DefaultNamespace)
+                        )
+                        .WithMembers(node.Members),
+                ]);
+            }
+
             var header = hasHeader ? leadingTrivia : factory.DefaultHeader;
-            return ((CompilationUnitSyntax)base.VisitCompilationUnit(node)!)
-                .WithUsings(List(factory._usings))
-                .WithLeadingTrivia(header);
+            return node.WithUsings(List(factory._usings)).WithLeadingTrivia(header);
         }
 
         public override SyntaxNode? VisitFileScopedNamespaceDeclaration(
