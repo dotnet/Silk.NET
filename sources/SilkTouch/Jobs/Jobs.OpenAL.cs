@@ -14,7 +14,7 @@ internal static partial class Jobs
             {
                 Solution = "Silk.NET.slnx",
                 SourceProject = "sources/OpenAL/OpenAL/Silk.NET.OpenAL.csproj",
-                DefaultLicenseHeader = "eng/silktouch/header.txt",
+                DefaultLicenseHeader = "eng/silktouch/openal/header.txt",
                 DefaultNamespace = "Silk.NET.OpenAL",
             },
             context =>
@@ -32,7 +32,7 @@ internal static partial class Jobs
                                 {
                                     ClangSharpResponseFiles =
                                     [
-                                        "eng/silktouch/openal*/**/generate.rsp",
+                                        "eng/silktouch/openal/**/generate.rsp",
                                     ],
                                     InputSourceRoot = "sources/OpenAL",
                                     InputTestRoot = "tests/OpenAL",

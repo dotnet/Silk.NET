@@ -14,7 +14,7 @@ internal static partial class Jobs
             {
                 Solution = "Silk.NET.slnx",
                 SourceProject = "sources/Vulkan/Vulkan/Silk.NET.Vulkan.csproj",
-                DefaultLicenseHeader = "eng/silktouch/header.txt",
+                DefaultLicenseHeader = "eng/silktouch/vulkan/header.txt",
                 DefaultNamespace = "Silk.NET.Vulkan",
             },
             context =>
