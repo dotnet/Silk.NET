@@ -512,7 +512,7 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
             };
     }
 
-    private class Rewriter(VTable[] vTables, DocumentFactory documentFactory) : CSharpSyntaxRewriter
+    private class Rewriter(VTable[] vTables) : CSharpSyntaxRewriter
     {
         private InterfaceDeclarationSyntax? _currentInterface;
         private ClassDeclarationSyntax? _currentClass;
@@ -1051,9 +1051,6 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
                         )
                     );
 
-                documentFactory.AddUsing("Silk.NET.Core.Loader");
-                documentFactory.AddUsing("System.Reflection");
-
                 yield return new KeyValuePair<string, CSharpSyntaxNode>(
                     $"{outputName}.gen.cs",
                     CompilationUnit()
@@ -1380,8 +1377,12 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
+        documentFactory.AddUsing("Silk.NET.Core.Loader");
+        documentFactory.AddUsing("System.Reflection");
+        documentFactory.AddUsing("System.Runtime.CompilerServices");
+
         var vTables = config.VTables;
-        var rw = new Rewriter(vTables, documentFactory);
+        var rw = new Rewriter(vTables);
         var newFiles = new List<(string, CSharpSyntaxNode)>(rw.FullClassNames.Count);
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
@@ -1396,7 +1397,9 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
 
             rw.Reset();
             proj = doc.WithSyntaxRoot(
-                rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null")
+                documentFactory.PopulateDocument(
+                    rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null")
+                )
             ).Project;
             if (rw.InterfacePartials.Count == 0)
             {
