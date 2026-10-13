@@ -169,7 +169,7 @@ public class DocumentFactory
             node = (CompilationUnitSyntax)base.VisitCompilationUnit(node.WithLeadingTrivia())!;
 
             var hasNamespace = node.Members.Any(x => x is BaseNamespaceDeclarationSyntax);
-            if (!hasNamespace)
+            if (!hasNamespace && factory.DefaultNamespace != null)
             {
                 node = node.WithMembers([
                     FileScopedNamespaceDeclaration(

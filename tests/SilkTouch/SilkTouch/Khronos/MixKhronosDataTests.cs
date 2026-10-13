@@ -48,6 +48,7 @@ public class MixKhronosDataTests
                 async (x, ct) =>
                 {
                     var mod = new MixKhronosData(
+                        new DocumentFactory(),
                         new NullLogger<MixKhronosData>(),
                         new MixKhronosData.Configuration { SpecPath = TestFile(x) }
                     );
@@ -315,8 +316,13 @@ public class MixKhronosDataTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
 
-        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var mixKhronosData = new MixKhronosData(
+            documentFactory,
+            NullLogger<MixKhronosData>.Instance,
+            null!
+        )
         {
             Job = new MixKhronosData.JobData
             {
@@ -349,8 +355,13 @@ public class MixKhronosDataTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
 
-        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var mixKhronosData = new MixKhronosData(
+            documentFactory,
+            NullLogger<MixKhronosData>.Instance,
+            null!
+        )
         {
             Job = new MixKhronosData.JobData
             {
@@ -387,8 +398,13 @@ public class MixKhronosDataTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
 
-        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var mixKhronosData = new MixKhronosData(
+            documentFactory,
+            NullLogger<MixKhronosData>.Instance,
+            null!
+        )
         {
             Job = new MixKhronosData.JobData
             {
@@ -422,8 +438,13 @@ public class MixKhronosDataTests
             .Project;
 
         var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
 
-        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var mixKhronosData = new MixKhronosData(
+            documentFactory,
+            NullLogger<MixKhronosData>.Instance,
+            null!
+        )
         {
             Job = new MixKhronosData.JobData
             {
