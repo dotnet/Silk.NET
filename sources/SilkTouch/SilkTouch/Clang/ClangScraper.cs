@@ -357,7 +357,6 @@ public sealed class ClangScraper(
         var src = job.SourceProject;
         var test = job.TestProject;
         AddDocuments(ref src, ref test, sourceDocuments, testDocuments);
-
         job.SourceProject = src;
         job.TestProject = test;
     }
@@ -526,9 +525,9 @@ public sealed class ClangScraper(
         ICollection<ScrapedDocument> testDocuments
     )
     {
-        foreach (var scrapedDocument in sourceDocuments)
+        foreach (var document in sourceDocuments)
         {
-            documentFactory.ReportDocument(scrapedDocument.Root);
+            documentFactory.ReportDocument(document.Root);
         }
 
         if (sourceProject != null)
@@ -547,12 +546,12 @@ public sealed class ClangScraper(
 
         if (testProject != null)
         {
-            foreach (var (filePath, tree) in testDocuments)
+            foreach (var (filePath, root) in testDocuments)
             {
                 testProject = testProject
                     ?.AddDocument(
                         Path.GetFileName(filePath),
-                        tree,
+                        root,
                         filePath: testProject.FullPath(filePath)
                     )
                     .Project;
