@@ -20,6 +20,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// A mod that reads Khronos specifications to influence codegen.
 /// </summary>
 public partial class MixKhronosData(
+    DocumentFactory documentFactory,
     ILogger<MixKhronosData> logger,
     MixKhronosData.Configuration config
 )
@@ -454,7 +455,7 @@ public partial class MixKhronosData(
         {
             proj = proj.AddDocument(
                 Path.GetFileName(filePath),
-                node,
+                documentFactory.PopulateDocument(node),
                 filePath: proj.FullPath(filePath)
             ).Project;
         }

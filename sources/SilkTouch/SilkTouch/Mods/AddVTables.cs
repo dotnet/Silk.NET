@@ -1056,21 +1056,19 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
 
                 yield return new KeyValuePair<string, CSharpSyntaxNode>(
                     $"{outputName}.gen.cs",
-                    documentFactory.PopulateDocument(
-                        CompilationUnit()
-                            .WithMembers(
-                                string.IsNullOrWhiteSpace(ns)
-                                    ? SingletonList<MemberDeclarationSyntax>(boilerplate)
-                                    : SingletonList<MemberDeclarationSyntax>(
-                                        FileScopedNamespaceDeclaration(
-                                                ModUtils.NamespaceIntoIdentifierName(ns)
-                                            )
-                                            .WithMembers(
-                                                SingletonList<MemberDeclarationSyntax>(boilerplate)
-                                            )
-                                    )
-                            )
-                    )
+                    CompilationUnit()
+                        .WithMembers(
+                            string.IsNullOrWhiteSpace(ns)
+                                ? SingletonList<MemberDeclarationSyntax>(boilerplate)
+                                : SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns)
+                                        )
+                                        .WithMembers(
+                                            SingletonList<MemberDeclarationSyntax>(boilerplate)
+                                        )
+                                )
+                        )
                 );
             }
         }
@@ -1383,7 +1381,7 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var vTables = config.VTables;
-        var rw = new Rewriter(vTables, documentFactory.Clone());
+        var rw = new Rewriter(vTables, documentFactory);
         var newFiles = new List<(string, CSharpSyntaxNode)>(rw.FullClassNames.Count);
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
@@ -1410,48 +1408,44 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
                 && fname.Replace(rw.ClassName, $"I{rw.ClassName}") is var ifn
                 && ifn != fname
                     ? ifn
-                    : ModUtils.AddEffectiveSuffix(fname, "Interfaces");
+                    : fname.AddEffectiveSuffix("Interfaces");
             var nNamespaces = rw.InterfacePartials.Select(x => x.Namespace).Distinct().Count();
             newFiles.Add(
                 (
                     ifname,
-                    documentFactory.PopulateDocument(
-                        CompilationUnit()
-                            .WithMembers(
-                                nNamespaces == 1
-                                    ? string.IsNullOrWhiteSpace(rw.InterfacePartials[0].Namespace)
-                                        ? List<MemberDeclarationSyntax>(
-                                            rw.InterfacePartials.Select(x => x.Interface)
-                                        )
-                                        : SingletonList<MemberDeclarationSyntax>(
-                                            FileScopedNamespaceDeclaration(
-                                                    ModUtils.NamespaceIntoIdentifierName(
-                                                        rw.InterfacePartials[0].Namespace
-                                                    )
+                    CompilationUnit()
+                        .WithMembers(
+                            nNamespaces == 1
+                                ? string.IsNullOrWhiteSpace(rw.InterfacePartials[0].Namespace)
+                                    ? List<MemberDeclarationSyntax>(
+                                        rw.InterfacePartials.Select(x => x.Interface)
+                                    )
+                                    : SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(
+                                                    rw.InterfacePartials[0].Namespace
+                                                )
+                                            )
+                                            .WithMembers(
+                                                List<MemberDeclarationSyntax>(
+                                                    rw.InterfacePartials.Select(x => x.Interface)
+                                                )
+                                            )
+                                    )
+                                : List<MemberDeclarationSyntax>(
+                                    rw.InterfacePartials.GroupBy(x => x.Namespace)
+                                        .Select(g =>
+                                            NamespaceDeclaration(
+                                                    ModUtils.NamespaceIntoIdentifierName(g.Key)
                                                 )
                                                 .WithMembers(
                                                     List<MemberDeclarationSyntax>(
-                                                        rw.InterfacePartials.Select(x =>
-                                                            x.Interface
-                                                        )
+                                                        g.Select(x => x.Interface)
                                                     )
                                                 )
                                         )
-                                    : List<MemberDeclarationSyntax>(
-                                        rw.InterfacePartials.GroupBy(x => x.Namespace)
-                                            .Select(g =>
-                                                NamespaceDeclaration(
-                                                        ModUtils.NamespaceIntoIdentifierName(g.Key)
-                                                    )
-                                                    .WithMembers(
-                                                        List<MemberDeclarationSyntax>(
-                                                            g.Select(x => x.Interface)
-                                                        )
-                                                    )
-                                            )
-                                    )
-                            )
-                    )
+                                )
+                        )
                 )
             );
         }
@@ -1461,7 +1455,11 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
         )
         {
             proj = proj
-                ?.AddDocument(Path.GetFileName(fname), root, filePath: proj.FullPath(fname))
+                ?.AddDocument(
+                    Path.GetFileName(fname),
+                    documentFactory.PopulateDocument(root),
+                    filePath: proj.FullPath(fname)
+                )
                 .Project;
         }
 

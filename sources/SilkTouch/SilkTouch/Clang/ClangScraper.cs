@@ -342,9 +342,12 @@ public sealed class ClangScraper(
         foreach (var (fname, tree) in aggregatedSources)
         {
             var root = await tree.GetRootAsync(ct);
-            root = documentFactory.PopulateDocument(root);
             src = src
-                ?.AddDocument(Path.GetFileName(fname), root, filePath: src.FullPath(fname))
+                ?.AddDocument(
+                    Path.GetFileName(fname),
+                    documentFactory.PopulateDocument(root),
+                    filePath: src.FullPath(fname)
+                )
                 .Project;
         }
 
@@ -480,7 +483,11 @@ public sealed class ClangScraper(
                     ref var proj = ref isSource ? ref src : ref tst;
                     var filePath = proj!.FullPath(rel);
                     proj = proj
-                        ?.AddDocument(Path.GetFileName(file), root, filePath: filePath)
+                        ?.AddDocument(
+                            Path.GetFileName(file),
+                            documentFactory.PopulateDocument(root),
+                            filePath: filePath
+                        )
                         .Project;
                 }
 

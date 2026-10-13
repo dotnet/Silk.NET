@@ -50,7 +50,7 @@ public class ExtractHandles(ILogger<ExtractHandles> logger, DocumentFactory docu
             project = project
                 .AddDocument(
                     Path.GetFileName(relativePath),
-                    node,
+                    documentFactory.PopulateDocument(node),
                     filePath: project.FullPath(relativePath)
                 )
                 .Project;

@@ -11,6 +11,11 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Handles creation of new documents.
 /// </summary>
+/// <remarks>
+/// In general, this class adds defaults when the document is missing them.
+/// Namespaces, using statements, and header comments are currently handled.
+/// Best practice is to call <see cref="PopulateDocument"/> when the document is added to a project.
+/// </remarks>
 public class DocumentFactory
 {
     /// <summary>
@@ -47,6 +52,7 @@ public class DocumentFactory
     private DocumentFactory(DocumentFactory original)
         : this()
     {
+        DefaultHeader = original.DefaultHeader;
         DefaultNamespace = original.DefaultNamespace;
         _usings = [.. original._usings];
         _orderedUsingDiscriminators = [.. original._orderedUsingDiscriminators];

@@ -373,7 +373,7 @@ public class BakeSourceSets(
         {
             proj = proj.AddDocument(
                 Path.GetFileName(bakedPath),
-                bakedRoot,
+                documentFactory.PopulateDocument(bakedRoot),
                 // we can forgive the below nulls because RelativePath checks them, and returns null if they're null.
                 filePath: proj.FullPath(bakedPath)
             ).Project;
@@ -403,19 +403,17 @@ public class BakeSourceSets(
                     : null;
                 yield return new KeyValuePair<string, CompilationUnitSyntax>(
                     $"{subdir}/{documentFactory.PathForFullyQualified(fqTopLevelType)}",
-                    documentFactory.PopulateDocument(
-                        CompilationUnit()
-                            .WithMembers(
-                                ns is null
-                                    ? SingletonList(bakedSyntax)
-                                    : SingletonList<MemberDeclarationSyntax>(
-                                        FileScopedNamespaceDeclaration(
-                                                ModUtils.NamespaceIntoIdentifierName(ns)
-                                            )
-                                            .WithMembers(SingletonList(bakedSyntax))
-                                    )
-                            )
-                    )
+                    CompilationUnit()
+                        .WithMembers(
+                            ns is null
+                                ? SingletonList(bakedSyntax)
+                                : SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns)
+                                        )
+                                        .WithMembers(SingletonList(bakedSyntax))
+                                )
+                        )
                 );
             }
         }

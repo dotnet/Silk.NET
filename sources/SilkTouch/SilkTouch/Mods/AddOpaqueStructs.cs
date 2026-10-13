@@ -14,6 +14,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Adds opaque structs.
 /// </summary>
 public class AddOpaqueStructs(
+    DocumentFactory documentFactory,
     ILogger<AddOpaqueStructs> logger,
     AddOpaqueStructs.Configuration config
 ) : IMod, IResponseFileMod
@@ -86,29 +87,31 @@ public class AddOpaqueStructs(
             var fileName = $"{name}.gen.cs";
             proj = proj.AddDocument(
                 fileName,
-                CompilationUnit()
-                    .WithMembers(
-                        SingletonList<MemberDeclarationSyntax>(
-                            FileScopedNamespaceDeclaration(ns)
-                                .WithMembers(
-                                    SingletonList<MemberDeclarationSyntax>(
-                                        StructDeclaration(name)
-                                            .WithAttributeLists(
-                                                new SyntaxList<AttributeListSyntax>().WithNativeName(
-                                                    name
+                documentFactory.PopulateDocument(
+                    CompilationUnit()
+                        .WithMembers(
+                            SingletonList<MemberDeclarationSyntax>(
+                                FileScopedNamespaceDeclaration(ns)
+                                    .WithMembers(
+                                        SingletonList<MemberDeclarationSyntax>(
+                                            StructDeclaration(name)
+                                                .WithAttributeLists(
+                                                    new SyntaxList<AttributeListSyntax>().WithNativeName(
+                                                        name
+                                                    )
                                                 )
-                                            )
-                                            .WithModifiers(
-                                                TokenList(
-                                                    Token(SyntaxKind.PublicKeyword),
-                                                    Token(SyntaxKind.ReadOnlyKeyword),
-                                                    Token(SyntaxKind.PartialKeyword)
+                                                .WithModifiers(
+                                                    TokenList(
+                                                        Token(SyntaxKind.PublicKeyword),
+                                                        Token(SyntaxKind.ReadOnlyKeyword),
+                                                        Token(SyntaxKind.PartialKeyword)
+                                                    )
                                                 )
-                                            )
+                                        )
                                     )
-                                )
+                            )
                         )
-                    ),
+                ),
                 filePath: proj.FullPath(fileName)
             ).Project;
         }
