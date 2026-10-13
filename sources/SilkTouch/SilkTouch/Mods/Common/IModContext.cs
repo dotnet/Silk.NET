@@ -16,7 +16,7 @@ public interface IModContext : IAsyncDisposable
     public string JobKey { get; }
 
     /// <summary>
-    /// The path to resolve relatives from.
+    /// The path to resolve relative paths from.
     /// </summary>
     public string? WorkingDirectory { get; }
 
