@@ -166,7 +166,7 @@ public class DocumentFactory
                 || x.IsKind(SyntaxKind.MultiLineCommentTrivia)
             );
 
-            node = (CompilationUnitSyntax)base.VisitCompilationUnit(node)!;
+            node = (CompilationUnitSyntax)base.VisitCompilationUnit(node.WithLeadingTrivia())!;
 
             var hasNamespace = node.Members.Any(x => x is BaseNamespaceDeclarationSyntax);
             if (!hasNamespace)
