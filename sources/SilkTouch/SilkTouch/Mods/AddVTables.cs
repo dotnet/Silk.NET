@@ -27,7 +27,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <see cref="DllImport"/>-based partial class implementation of the static interface. However, in some cases this
 /// could be any other implementation such as the <see cref="ThisThread"/> implementation.
 /// </remarks>
-public class AddVTables(AddVTables.Configuration config, DocumentFactory baseDocumentFactory) : IMod
+public class AddVTables(AddVTables.Configuration config, DocumentFactory documentFactory) : IMod
 {
     /// <summary>
     /// Base class for VTable configurations.
@@ -512,7 +512,7 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory baseDoc
             };
     }
 
-    private class Rewriter(VTable[] vTables) : CSharpSyntaxRewriter
+    private class Rewriter(VTable[] vTables, DocumentFactory documentFactory) : CSharpSyntaxRewriter
     {
         private InterfaceDeclarationSyntax? _currentInterface;
         private ClassDeclarationSyntax? _currentClass;
@@ -584,22 +584,6 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory baseDoc
             string,
             List<(string EntryPoint, string Library)>
         > EntryPoints { get; set; } = [];
-
-        public override SyntaxNode? Visit(SyntaxNode? node)
-        {
-            var ret = base.Visit(node);
-            if (node is CompilationUnitSyntax)
-            {
-                foreach (var (k, v) in UsingsToAdd)
-                {
-                    AggregatedUsings[k] = v;
-                }
-
-                UsingsToAdd.Clear();
-            }
-
-            return ret;
-        }
 
         private static string InterfaceKey(ClassDeclarationSyntax klass) => $"I{klass.Identifier}";
 
@@ -1019,8 +1003,6 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory baseDoc
 
         public IEnumerable<KeyValuePair<string, CSharpSyntaxNode>> GetExtraFiles()
         {
-            var uta = UsingsToAdd;
-            UsingsToAdd = AggregatedUsings;
             foreach (var (outputName, nonInterface) in FullClassNames)
             {
                 if (nonInterface is null)
@@ -1068,28 +1050,29 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory baseDoc
                             )
                         )
                     );
-                AddUsing("Silk.NET.Core.Loader");
-                AddUsing("System.Reflection");
+
+                documentFactory.AddUsing("Silk.NET.Core.Loader");
+                documentFactory.AddUsing("System.Reflection");
+
                 yield return new KeyValuePair<string, CSharpSyntaxNode>(
                     $"{outputName}.gen.cs",
-                    CompilationUnit()
-                        .WithUsings(GetUsings(UsingsToAdd, null))
-                        .WithMembers(
-                            string.IsNullOrWhiteSpace(ns)
-                                ? SingletonList<MemberDeclarationSyntax>(boilerplate)
-                                : SingletonList<MemberDeclarationSyntax>(
-                                    FileScopedNamespaceDeclaration(
-                                            ModUtils.NamespaceIntoIdentifierName(ns)
-                                        )
-                                        .WithMembers(
-                                            SingletonList<MemberDeclarationSyntax>(boilerplate)
-                                        )
-                                )
-                        )
+                    documentFactory.PopulateDocument(
+                        CompilationUnit()
+                            .WithMembers(
+                                string.IsNullOrWhiteSpace(ns)
+                                    ? SingletonList<MemberDeclarationSyntax>(boilerplate)
+                                    : SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(ns)
+                                            )
+                                            .WithMembers(
+                                                SingletonList<MemberDeclarationSyntax>(boilerplate)
+                                            )
+                                    )
+                            )
+                    )
                 );
             }
-
-            UsingsToAdd = uta;
         }
 
         private IEnumerable<MemberDeclarationSyntax> GenerateTopLevelBoilerplate(
@@ -1400,7 +1383,7 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory baseDoc
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var vTables = config.VTables;
-        var rw = new Rewriter(vTables);
+        var rw = new Rewriter(vTables, documentFactory.Clone());
         var newFiles = new List<(string, CSharpSyntaxNode)>(rw.FullClassNames.Count);
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])

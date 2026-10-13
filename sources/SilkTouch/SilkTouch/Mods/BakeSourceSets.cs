@@ -320,7 +320,6 @@ public class BakeSourceSets(
         var rewriter = new Rewriter(strategy, logger);
         var bakery = new Dictionary<string, BakeSet>();
         var baked = new List<string>();
-        var aggregatedUsings = new Dictionary<string, UsingDirectiveSyntax>();
         foreach (var docId in ctx.SourceProject.DocumentIds)
         {
             var doc =
@@ -359,11 +358,6 @@ public class BakeSourceSets(
             baked.Add(path);
 
             rewriter.Visit(root);
-            foreach (var (k, v) in rewriter.UsingsToAdd)
-            {
-                aggregatedUsings.TryAdd(k, v);
-            }
-            rewriter.UsingsToAdd.Clear();
             rewriter.Baked = null;
             rewriter.SourceSet = null;
         }
@@ -375,10 +369,7 @@ public class BakeSourceSets(
                 )
                 .Select(x => x.Id),
         ]);
-        foreach (
-            var (bakedRoot, bakedPath) in GetBaked(bakery, aggregatedUsings)
-                .Select(x => (x.Value, path: x.Key))
-        )
+        foreach (var (bakedRoot, bakedPath) in GetBaked(bakery).Select(x => (x.Value, path: x.Key)))
         {
             proj = proj.AddDocument(
                 Path.GetFileName(bakedPath),
@@ -392,8 +383,7 @@ public class BakeSourceSets(
     }
 
     private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(
-        Dictionary<string, BakeSet> bakery,
-        Dictionary<string, UsingDirectiveSyntax> aggregatedUsings
+        Dictionary<string, BakeSet> bakery
     )
     {
         foreach (var (subdir, bakeSet) in bakery)
@@ -413,18 +403,19 @@ public class BakeSourceSets(
                     : null;
                 yield return new KeyValuePair<string, CompilationUnitSyntax>(
                     $"{subdir}/{documentFactory.PathForFullyQualified(fqTopLevelType)}",
-                    CompilationUnit()
-                        .WithMembers(
-                            ns is null
-                                ? SingletonList(bakedSyntax)
-                                : SingletonList<MemberDeclarationSyntax>(
-                                    FileScopedNamespaceDeclaration(
-                                            ModUtils.NamespaceIntoIdentifierName(ns)
-                                        )
-                                        .WithMembers(SingletonList(bakedSyntax))
-                                )
-                        )
-                        .WithUsings(ModCSharpSyntaxRewriter.GetUsings(aggregatedUsings, null))
+                    documentFactory.PopulateDocument(
+                        CompilationUnit()
+                            .WithMembers(
+                                ns is null
+                                    ? SingletonList(bakedSyntax)
+                                    : SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(ns)
+                                            )
+                                            .WithMembers(SingletonList(bakedSyntax))
+                                    )
+                            )
+                    )
                 );
             }
         }

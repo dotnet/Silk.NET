@@ -204,7 +204,7 @@ public class FunctionTransformer(
             ctx.Original = null;
         }
 
-        ctx.Transformers = null;
+        ctx.Transformers = [];
         return ret;
     }
 
