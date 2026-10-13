@@ -73,10 +73,9 @@ public sealed class ClangScraper(
         public int Parallelism { get; init; }
 
         /// <summary>
-        /// Skips generation if any of the given strings are in the applicable "skip ifs" are set.
+        /// Skips generation if evaluates to true.
         /// </summary>
-        // TODO document
-        public string[]? SkipScrapeIf { get; init; }
+        public Func<bool> SkipScrapeIf { get; init; } = static () => false;
 
         /// <summary>
         /// Forces the scraper to use cache. Best used on the command line.
@@ -215,14 +214,12 @@ public sealed class ClangScraper(
     /// Runs ClangSharp for each of the given response files and aggregates the raw outputs.
     /// </summary>
     /// <param name="rsps">The response files.</param>
-    /// <param name="job">The job context.</param>
     /// <param name="cfg">The configuration.</param>
     /// <param name="cacheKey">The cache key.</param>
     /// <param name="ct">The cancellation token.</param>
     /// <exception cref="InvalidOperationException">The scraper output wasn't as expected.</exception>
-    private async Task ScrapeBindingsAsync(
+    private async Task<ScrapeResult> ScrapeBindingsAsync(
         IReadOnlyList<ResponseFile> rsps,
-        IModContext job,
         Configuration cfg,
         string cacheKey,
         CancellationToken ct = default
@@ -354,11 +351,7 @@ public sealed class ClangScraper(
             })
         );
 
-        var src = job.SourceProject;
-        var test = job.TestProject;
-        AddDocuments(ref src, ref test, sourceDocuments, testDocuments);
-        job.SourceProject = src;
-        job.TestProject = test;
+        return new ScrapeResult(sourceDocuments, testDocuments);
     }
 
     /// <inheritdoc />
@@ -368,31 +361,6 @@ public sealed class ClangScraper(
         {
             throw new NotSupportedException("I/O not available.");
         }
-
-        var applicableSkipIfs = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-        {
-            // Windows-specific conditions
-            OperatingSystem.IsWindows()
-                ? "win"
-                : "!win",
-            OperatingSystem.IsWindowsVersionAtLeast(10) ? "win10" : "!win10",
-            // Linux-specific conditions
-            OperatingSystem.IsLinux()
-                ? "linux"
-                : "!linux",
-            // macOS-specific conditions - .NET 6 doesn't support anything less than Mojave
-            OperatingSystem.IsMacOS()
-                ? "macos"
-                : "!macos",
-            OperatingSystem.IsMacOSVersionAtLeast(10, 14) ? "macos-mojave" : "!macos-mojave",
-            OperatingSystem.IsMacOSVersionAtLeast(10, 15) ? "macos-catalina" : "!macos-catalina",
-            OperatingSystem.IsMacOSVersionAtLeast(11) ? "macos-big-sur" : "!macos-big-sur",
-            OperatingSystem.IsMacOSVersionAtLeast(12) ? "macos-monterey" : "!macos-monterey",
-            // Others
-            VisualStudioResolver.TryGetVisualStudioInfo(out _)
-                ? "vs"
-                : "!vs",
-        };
 
         // Read the configuration.
         var resolvedConfig = await inputResolver.Resolve(config);
@@ -416,89 +384,74 @@ public sealed class ClangScraper(
         // Resolve any foreign paths referenced in the response files
         await inputResolver.ResolveInPlace(rsps);
 
-        // Should we completely skip running ClangSharp (e.g. we can't get Windows SDK bindings on macOS)
-        var skip = (
-            resolvedConfig.SkipScrapeIf?.Any(applicableSkipIfs.Contains)
-        ).GetValueOrDefault();
+        // Try generating the raw bindings with ClangSharp
+        // If scraping needs to be skipped or if the scrape fails, then fall back to a cache if available
+        var skipScrape = config.SkipScrapeIf.Invoke();
         var cacheKey = $"{ctx.JobKey}-ClangSharp";
+
         Exception? innerException = null;
-        try
+        ScrapeResult? scrapeResult = null;
+        if (!skipScrape)
         {
-            if (!skip)
+            try
             {
-                // Run the scraper over the response files
-                await ScrapeBindingsAsync(rsps, ctx, resolvedConfig, cacheKey, ct);
+                scrapeResult = await ScrapeBindingsAsync(rsps, resolvedConfig, cacheKey, ct);
             }
-        }
-        catch (Exception e)
-        {
-            logger.LogError(e, "Failed to scrape raw bindings, will attempt to use the cache...");
-            skip = true;
-            innerException = e;
-        }
-        finally
-        {
-            if (skip && cacheProvider is not null)
+            catch (Exception e)
             {
-                await using var cacheDir = await cacheProvider.GetDirectoryAsync(
-                    cacheKey,
-                    CacheIntent.StageIntermediateOutput,
-                    CacheFlags.None,
-                    FileAccess.Read
+                logger.LogError(
+                    e,
+                    "Failed to scrape raw bindings, will attempt to use the cache..."
                 );
-
-                var src = ctx.SourceProject;
-                var tst = ctx.TestProject;
-                var sourceDocuments = new List<ScrapedDocument>();
-                var testDocuments = new List<ScrapedDocument>();
-                await foreach (
-                    var file in (
-                        cacheDir?.GetCommittedFilesAsync() ?? AsyncEnumerable.Empty<string>()
-                    ).WithCancellation(ct)
-                )
-                {
-                    await cacheDir!.GetCommittedFileAsync(file);
-                    var isSource = file.StartsWith("sources");
-                    var isTest = file.StartsWith("tests");
-                    if (!isSource && !isTest)
-                    {
-                        continue;
-                    }
-
-                    // Have to do this if statement this way as we can't have a ref var over an await point
-                    if ((isSource && src is null) || (isTest && tst is null))
-                    {
-                        continue;
-                    }
-
-                    var rel = file[(isSource ? "sources".Length : "tests".Length)..]
-                        .TrimStart('/', '\\');
-                    var content = await cacheDir.GetCommittedFileAsync(file);
-                    var root = await CSharpSyntaxTree
-                        .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
-                        .GetRootAsync(ct);
-                    if (isSource)
-                    {
-                        sourceDocuments.Add(new ScrapedDocument(rel, root));
-                    }
-                    else
-                    {
-                        testDocuments.Add(new ScrapedDocument(rel, root));
-                    }
-                }
-
-                skip = cacheDir is not null;
-                if (!skip)
-                {
-                    AddDocuments(ref src, ref tst, sourceDocuments, testDocuments);
-                    ctx.SourceProject = src;
-                    ctx.TestProject = tst;
-                }
+                innerException = e;
             }
         }
 
-        // CA2219: Do not raise exceptions in exception clauses
-        if (skip)
+        if (!scrapeResult.HasValue && cacheProvider is not null)
+        {
+            await using var cacheDir = await cacheProvider.GetDirectoryAsync(
+                cacheKey,
+                CacheIntent.StageIntermediateOutput,
+                CacheFlags.None,
+                FileAccess.Read
+            );
+
+            var sourceDocuments = new List<ScrapedDocument>();
+            var testDocuments = new List<ScrapedDocument>();
+            await foreach (
+                var file in (
+                    cacheDir?.GetCommittedFilesAsync() ?? AsyncEnumerable.Empty<string>()
+                ).WithCancellation(ct)
+            )
+            {
+                await cacheDir!.GetCommittedFileAsync(file);
+                var isSource = file.StartsWith("sources");
+                var isTest = file.StartsWith("tests");
+                if (!isSource && !isTest)
+                {
+                    continue;
+                }
+
+                var rel = file[(isSource ? "sources".Length : "tests".Length)..]
+                    .TrimStart('/', '\\');
+                var content = await cacheDir.GetCommittedFileAsync(file);
+                var root = await CSharpSyntaxTree
+                    .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
+                    .GetRootAsync(ct);
+                if (isSource)
+                {
+                    sourceDocuments.Add(new ScrapedDocument(rel, root));
+                }
+                else
+                {
+                    testDocuments.Add(new ScrapedDocument(rel, root));
+                }
+            }
+
+            scrapeResult = new ScrapeResult(sourceDocuments, testDocuments);
+        }
+
+        if (!scrapeResult.HasValue)
         {
             if (innerException is not null)
             {
@@ -514,25 +467,30 @@ public sealed class ClangScraper(
                     + "fall back on."
             );
         }
+
+        AddDocuments(ctx, scrapeResult.Value);
     }
 
     private record struct ScrapedDocument(string FilePath, SyntaxNode Root);
 
-    private void AddDocuments(
-        ref Project? sourceProject,
-        ref Project? testProject,
-        ICollection<ScrapedDocument> sourceDocuments,
-        ICollection<ScrapedDocument> testDocuments
-    )
+    private record struct ScrapeResult(
+        ICollection<ScrapedDocument> SourceDocuments,
+        ICollection<ScrapedDocument> TestDocuments
+    );
+
+    private void AddDocuments(IModContext ctx, ScrapeResult result)
     {
-        foreach (var document in sourceDocuments)
+        var sourceProject = ctx.SourceProject;
+        var testProject = ctx.TestProject;
+
+        foreach (var document in result.SourceDocuments)
         {
             documentFactory.ReportDocument(document.Root);
         }
 
         if (sourceProject != null)
         {
-            foreach (var (filePath, root) in sourceDocuments)
+            foreach (var (filePath, root) in result.SourceDocuments)
             {
                 sourceProject = sourceProject
                     .AddDocument(
@@ -546,7 +504,7 @@ public sealed class ClangScraper(
 
         if (testProject != null)
         {
-            foreach (var (filePath, root) in testDocuments)
+            foreach (var (filePath, root) in result.TestDocuments)
             {
                 testProject = testProject
                     ?.AddDocument(
@@ -557,6 +515,9 @@ public sealed class ClangScraper(
                     .Project;
             }
         }
+
+        ctx.SourceProject = sourceProject;
+        ctx.TestProject = testProject;
     }
 
     /// <summary>
