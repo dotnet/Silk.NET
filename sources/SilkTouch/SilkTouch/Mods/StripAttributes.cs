@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -52,7 +53,7 @@ public class StripAttributes(StripAttributes.Configuration config) : IMod
         ctx.SourceProject = proj;
     }
 
-    private class Rewriter(Configuration config) : ModCSharpSyntaxRewriter
+    private class Rewriter(Configuration config) : CSharpSyntaxRewriter
     {
         private SyntaxList<AttributeListSyntax> StripAttributes(
             SyntaxList<AttributeListSyntax> attributeLists

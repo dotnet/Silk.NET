@@ -41,7 +41,8 @@ public class BakeSourceSets(
         public required Dictionary<string, string> SourceSets { get; init; }
     }
 
-    class Rewriter(IBakeStrategy strategy, ILogger<BakeSourceSets> logger) : ModCSharpSyntaxRewriter
+    private class Rewriter(IBakeStrategy strategy, ILogger<BakeSourceSets> logger)
+        : ModCSharpSyntaxRewriter
     {
         public BakeSet? Baked { get; set; }
 
@@ -366,15 +367,13 @@ public class BakeSourceSets(
             rewriter.SourceSet = null;
         }
 
-        var proj = ctx.SourceProject.RemoveDocuments(
-            [
-                .. ctx
-                    .SourceProject.Documents.Where(x =>
-                        x.RelativePath() is { } rp && baked.Contains(rp)
-                    )
-                    .Select(x => x.Id),
-            ]
-        );
+        var proj = ctx.SourceProject.RemoveDocuments([
+            .. ctx
+                .SourceProject.Documents.Where(x =>
+                    x.RelativePath() is { } rp && baked.Contains(rp)
+                )
+                .Select(x => x.Id),
+        ]);
         foreach (
             var (bakedRoot, bakedPath) in GetBaked(bakery, aggregatedUsings)
                 .Select(x => (x.Value, path: x.Key))
@@ -445,7 +444,8 @@ public class BakeSourceSets(
                         ty.Members.Concat(
                             member
                                 .Inner?.Children.Values.OrderBy(x => x.Index)
-                                .Select(x => Bake(x).Syntax) ?? []
+                                .Select(x => Bake(x).Syntax)
+                                ?? []
                         )
                     )
                 )
@@ -458,7 +458,8 @@ public class BakeSourceSets(
                             member
                                 .Inner?.Children.Values.OrderBy(x => x.Index)
                                 .Select(x => x.Syntax)
-                                .OfType<EnumMemberDeclarationSyntax>() ?? []
+                                .OfType<EnumMemberDeclarationSyntax>()
+                                ?? []
                         )
                     )
                 )

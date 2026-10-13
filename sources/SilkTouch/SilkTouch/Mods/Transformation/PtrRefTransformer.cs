@@ -13,9 +13,7 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 /// <summary>
 /// A transformer that converts between raw pointers and Silk DSL pointer types.
 /// </summary>
-public sealed partial class PtrRefTransformer()
-    : ModCSharpSyntaxRewriter(true),
-        IFunctionTransformer
+public sealed partial class PtrRefTransformer() : CSharpSyntaxRewriter(true), IFunctionTransformer
 {
     private const int MaxIndirections = 3;
     private ITransformationContext? _ctx;

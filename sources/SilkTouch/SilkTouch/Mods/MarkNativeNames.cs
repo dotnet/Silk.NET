@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Clang;
 
@@ -46,7 +47,7 @@ public class MarkNativeNames : IMod
         ctx.SourceProject = proj;
     }
 
-    private class Rewriter : ModCSharpSyntaxRewriter
+    private class Rewriter : CSharpSyntaxRewriter
     {
         private SyntaxList<AttributeListSyntax> TryAddNativeNameAttribute(
             SyntaxList<AttributeListSyntax> attributeLists,
