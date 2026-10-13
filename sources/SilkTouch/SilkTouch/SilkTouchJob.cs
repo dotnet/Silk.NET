@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Sources;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch;
 
@@ -20,6 +21,7 @@ internal class SilkTouchJob : IDisposable
     private readonly ILogger<SilkTouchJob> _logger;
     private readonly IInputResolver _inputResolver;
     private readonly IModContextFactory _modContextFactory;
+    private readonly DocumentFactory _documentFactory;
 
     /// <summary>
     /// The job key.
@@ -69,6 +71,7 @@ internal class SilkTouchJob : IDisposable
         });
 
         _modContextFactory = _container.Resolve<IModContextFactory>();
+        _documentFactory = _container.Resolve<DocumentFactory>();
         Mods = _container.Resolve<IMod[]>();
     }
 
@@ -84,6 +87,14 @@ internal class SilkTouchJob : IDisposable
 
         // Prepare the context
         var context = await _modContextFactory.CreateContextAsync(Key, Config, ct);
+
+        // Initialize the document factory
+        if (Config.DefaultLicenseHeader != null)
+        {
+            _documentFactory.DefaultHeader = ParseLeadingTrivia(
+                await File.ReadAllTextAsync(Config.DefaultLicenseHeader, ct)
+            );
+        }
 
         // Just in case a mod gets naughty and tries to modify at the initialization stage.
         var srcProj = context.SourceProject;

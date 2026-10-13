@@ -17,7 +17,7 @@ public class DocumentFactory
     /// <summary>
     /// The default header to add if the document does not currently have one.
     /// </summary>
-    public SyntaxTrivia? DefaultHeader { get; set; }
+    public SyntaxTriviaList? DefaultHeader { get; set; }
 
     /// <summary>
     /// The namespace common to all reported documents.
@@ -187,11 +187,7 @@ public class DocumentFactory
                 || x.IsKind(SyntaxKind.MultiLineCommentTrivia)
             );
 
-            var header =
-                hasHeader ? leadingTrivia
-                : factory.DefaultHeader is { } defaultHeader ? TriviaList(defaultHeader)
-                : default;
-
+            var header = hasHeader ? leadingTrivia : factory.DefaultHeader;
             return base.VisitCompilationUnit(node) is CompilationUnitSyntax comp
                 ? comp.WithUsings(List(factory._usings)).WithLeadingTrivia(header)
                 : null;
