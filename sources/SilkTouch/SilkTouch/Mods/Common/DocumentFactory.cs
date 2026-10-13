@@ -90,7 +90,7 @@ public class DocumentFactory
     /// This currently adds using statements and header comments if not added already.
     /// This also calls <see cref="ReportDocument"/>.
     /// </remarks>
-    public SyntaxNode InitializeDocument(SyntaxNode root)
+    public SyntaxNode PopulateDocument(SyntaxNode root)
     {
         _reporter.Visit(root);
         return _initializer.Visit(root);
@@ -115,7 +115,7 @@ public class DocumentFactory
         {
             var index = ~_orderedUsingDiscriminators.BinarySearch(
                 discriminator,
-                NamespaceComparer.Instance
+                UsingDirectiveComparer.Instance
             );
 
             _orderedUsingDiscriminators.Insert(index, discriminator);
@@ -202,31 +202,27 @@ public class DocumentFactory
         ) => base.VisitFileScopedNamespaceDeclaration(node.WithUsings(default));
     }
 
-    private class NamespaceComparer : IComparer<string>
+    private class UsingDirectiveComparer : IComparer<string>
     {
-        public static readonly NamespaceComparer Instance = new();
+        public static readonly UsingDirectiveComparer Instance = new();
 
         public int Compare(string? x, string? y)
         {
-            if (x == null)
-            {
-                return -1;
-            }
+            const string prefix = "using ";
+            const string suffix = ";";
 
-            if (y == null)
-            {
-                return 1;
-            }
+            var xSpan = x.AsSpan()[prefix.Length..][..^suffix.Length];
+            var ySpan = y.AsSpan()[prefix.Length..][..^suffix.Length];
 
-            var aSys = IsSystem(x);
-            var bSys = IsSystem(y);
-            return aSys != bSys
-                ? aSys
+            var xSys = IsSystem(xSpan);
+            var ySys = IsSystem(ySpan);
+            return xSys != ySys
+                ? xSys
                     ? -1
                     : 1
-                : string.CompareOrdinal(x, y);
+                : xSpan.CompareTo(ySpan, StringComparison.Ordinal);
 
-            bool IsSystem(string ns) =>
+            bool IsSystem(ReadOnlySpan<char> ns) =>
                 ns.Equals("System", StringComparison.Ordinal)
                 || ns.StartsWith("System.", StringComparison.Ordinal);
         }
