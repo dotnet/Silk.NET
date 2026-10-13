@@ -338,53 +338,28 @@ public sealed class ClangScraper(
 
         await (cacheDir?.CommitAsync() ?? ValueTask.CompletedTask);
 
+        var sourceDocuments = await Task.WhenAll(
+            aggregatedSources.Select(async kvp =>
+            {
+                var root = await kvp.Value.GetRootAsync(ct);
+                return new ScrapedDocument(kvp.Key, root);
+            })
+        );
+
+        var testDocuments = await Task.WhenAll(
+            aggregatedTests.Select(async kvp =>
+            {
+                var root = await kvp.Value.GetRootAsync(ct);
+                return new ScrapedDocument(kvp.Key, root);
+            })
+        );
+
         var src = job.SourceProject;
-
-        var documents = new List<ScrapedDocument>();
-        foreach (var (fname, tree) in aggregatedSources)
-        {
-            var root = await tree.GetRootAsync(ct);
-            documentFactory.ReportDocument(root);
-            documents.Add(new ScrapedDocument(fname, root));
-        }
-
-        src = AddDocuments(src, documents);
+        var test = job.TestProject;
+        AddDocuments(ref src, ref test, sourceDocuments, testDocuments);
 
         job.SourceProject = src;
-        var test = job.TestProject;
-        foreach (var (fname, tree) in aggregatedTests)
-        {
-            test = test
-                ?.AddDocument(
-                    Path.GetFileName(fname),
-                    await tree.GetRootAsync(ct),
-                    filePath: test.FullPath(fname)
-                )
-                .Project;
-        }
-
         job.TestProject = test;
-    }
-
-    private Project? AddDocuments(Project? project, List<ScrapedDocument> documents)
-    {
-        if (project == null)
-        {
-            return null;
-        }
-
-        foreach (var (fileName, root) in documents)
-        {
-            project = project
-                .AddDocument(
-                    Path.GetFileName(fileName),
-                    documentFactory.PopulateDocument(root),
-                    filePath: project.FullPath(fileName)
-                )
-                .Project;
-        }
-
-        return project;
     }
 
     /// <inheritdoc />
@@ -472,10 +447,11 @@ public sealed class ClangScraper(
                     CacheFlags.None,
                     FileAccess.Read
                 );
+
                 var src = ctx.SourceProject;
                 var tst = ctx.TestProject;
-
-                var documents = new List<ScrapedDocument>();
+                var sourceDocuments = new List<ScrapedDocument>();
+                var testDocuments = new List<ScrapedDocument>();
                 await foreach (
                     var file in (
                         cacheDir?.GetCommittedFilesAsync() ?? AsyncEnumerable.Empty<string>()
@@ -502,21 +478,20 @@ public sealed class ClangScraper(
                     var root = await CSharpSyntaxTree
                         .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
                         .GetRootAsync(ct);
-                    ref var proj = ref isSource ? ref src : ref tst;
-                    var filePath = proj!.FullPath(rel);
-                    documents.Add(new ScrapedDocument(file, root));
-                    proj = proj
-                        ?.AddDocument(
-                            Path.GetFileName(file),
-                            documentFactory.PopulateDocument(root),
-                            filePath: filePath
-                        )
-                        .Project;
+                    if (isSource)
+                    {
+                        sourceDocuments.Add(new ScrapedDocument(rel, root));
+                    }
+                    else
+                    {
+                        testDocuments.Add(new ScrapedDocument(rel, root));
+                    }
                 }
 
                 skip = cacheDir is not null;
                 if (!skip)
                 {
+                    AddDocuments(ref src, ref tst, sourceDocuments, testDocuments);
                     ctx.SourceProject = src;
                     ctx.TestProject = tst;
                 }
@@ -542,7 +517,48 @@ public sealed class ClangScraper(
         }
     }
 
-    private record struct ScrapedDocument(string FileName, SyntaxNode Root);
+    private record struct ScrapedDocument(string FilePath, SyntaxNode Root);
+
+    private void AddDocuments(
+        ref Project? sourceProject,
+        ref Project? testProject,
+        ICollection<ScrapedDocument> sourceDocuments,
+        ICollection<ScrapedDocument> testDocuments
+    )
+    {
+        foreach (var scrapedDocument in sourceDocuments)
+        {
+            documentFactory.ReportDocument(scrapedDocument.Root);
+        }
+
+        if (sourceProject != null)
+        {
+            foreach (var (filePath, root) in sourceDocuments)
+            {
+                sourceProject = sourceProject
+                    .AddDocument(
+                        Path.GetFileName(filePath),
+                        documentFactory.PopulateDocument(root),
+                        filePath: sourceProject.FullPath(filePath)
+                    )
+                    .Project;
+            }
+        }
+
+        if (testProject != null)
+        {
+            foreach (var (filePath, tree) in testDocuments)
+            {
+                testProject = testProject
+                    ?.AddDocument(
+                        Path.GetFileName(filePath),
+                        tree,
+                        filePath: testProject.FullPath(filePath)
+                    )
+                    .Project;
+            }
+        }
+    }
 
     /// <summary>
     /// Returns true if <paramref name="path"/> starts with the path <paramref name="baseDirPath"/>.
