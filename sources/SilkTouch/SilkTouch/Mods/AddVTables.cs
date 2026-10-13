@@ -512,7 +512,7 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
             };
     }
 
-    private class Rewriter(VTable[] vTables) : CSharpSyntaxRewriter
+    private class Rewriter(VTable[] vTables, DocumentFactory documentFactory) : CSharpSyntaxRewriter
     {
         private InterfaceDeclarationSyntax? _currentInterface;
         private ClassDeclarationSyntax? _currentClass;
@@ -1051,21 +1051,26 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
                         )
                     );
 
+                documentFactory.AddUsing("Silk.NET.Core.Loader");
+                documentFactory.AddUsing("System.Reflection");
+
                 yield return new KeyValuePair<string, CSharpSyntaxNode>(
                     $"{outputName}.gen.cs",
-                    CompilationUnit()
-                        .WithMembers(
-                            string.IsNullOrWhiteSpace(ns)
-                                ? SingletonList<MemberDeclarationSyntax>(boilerplate)
-                                : SingletonList<MemberDeclarationSyntax>(
-                                    FileScopedNamespaceDeclaration(
-                                            ModUtils.NamespaceIntoIdentifierName(ns)
-                                        )
-                                        .WithMembers(
-                                            SingletonList<MemberDeclarationSyntax>(boilerplate)
-                                        )
-                                )
-                        )
+                    documentFactory.PopulateDocument(
+                        CompilationUnit()
+                            .WithMembers(
+                                string.IsNullOrWhiteSpace(ns)
+                                    ? SingletonList<MemberDeclarationSyntax>(boilerplate)
+                                    : SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(ns)
+                                            )
+                                            .WithMembers(
+                                                SingletonList<MemberDeclarationSyntax>(boilerplate)
+                                            )
+                                    )
+                            )
+                    )
                 );
             }
         }
@@ -1377,12 +1382,8 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        documentFactory.AddUsing("Silk.NET.Core.Loader");
-        documentFactory.AddUsing("System.Reflection");
-        documentFactory.AddUsing("System.Runtime.CompilerServices");
-
         var vTables = config.VTables;
-        var rw = new Rewriter(vTables);
+        var rw = new Rewriter(vTables, documentFactory.Clone());
         var newFiles = new List<(string, CSharpSyntaxNode)>(rw.FullClassNames.Count);
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])

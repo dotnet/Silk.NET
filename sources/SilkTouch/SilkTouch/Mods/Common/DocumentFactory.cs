@@ -89,18 +89,10 @@ public class DocumentFactory
     public void ReportDocument(SyntaxNode root) => _reporter.Visit(root);
 
     /// <summary>
-    /// Initializes and reports information about a new document.
+    /// Initializes a new document with using statements, header comments, and a namespace.
     /// </summary>
-    /// <remarks>
-    /// This currently adds using statements and header comments if not added already.
-    /// This also calls <see cref="ReportDocument"/>.
-    /// </remarks>
     public T PopulateDocument<T>(T root)
-        where T : SyntaxNode
-    {
-        _reporter.Visit(root);
-        return (T)_initializer.Visit(root);
-    }
+        where T : SyntaxNode => (T)_initializer.Visit(root);
 
     /// <summary>
     /// Registers a using directive to be added for all newly initialized documents.

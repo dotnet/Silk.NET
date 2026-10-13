@@ -97,6 +97,10 @@ internal class SilkTouchJob : IDisposable
             );
         }
 
+        // Add commonly used namespaces
+        _documentFactory.AddUsing("System.Runtime.CompilerServices");
+        _documentFactory.AddUsing("System.Runtime.InteropServices");
+
         // Just in case a mod gets naughty and tries to modify at the initialization stage.
         var srcProj = context.SourceProject;
         var testProj = context.TestProject;

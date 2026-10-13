@@ -339,17 +339,16 @@ public sealed class ClangScraper(
         await (cacheDir?.CommitAsync() ?? ValueTask.CompletedTask);
 
         var src = job.SourceProject;
+
+        var documents = new List<ScrapedDocument>();
         foreach (var (fname, tree) in aggregatedSources)
         {
             var root = await tree.GetRootAsync(ct);
-            src = src
-                ?.AddDocument(
-                    Path.GetFileName(fname),
-                    documentFactory.PopulateDocument(root),
-                    filePath: src.FullPath(fname)
-                )
-                .Project;
+            documentFactory.ReportDocument(root);
+            documents.Add(new ScrapedDocument(fname, root));
         }
+
+        src = AddDocuments(src, documents);
 
         job.SourceProject = src;
         var test = job.TestProject;
@@ -365,6 +364,27 @@ public sealed class ClangScraper(
         }
 
         job.TestProject = test;
+    }
+
+    private Project? AddDocuments(Project? project, List<ScrapedDocument> documents)
+    {
+        if (project == null)
+        {
+            return null;
+        }
+
+        foreach (var (fileName, root) in documents)
+        {
+            project = project
+                .AddDocument(
+                    Path.GetFileName(fileName),
+                    documentFactory.PopulateDocument(root),
+                    filePath: project.FullPath(fileName)
+                )
+                .Project;
+        }
+
+        return project;
     }
 
     /// <inheritdoc />
@@ -454,6 +474,8 @@ public sealed class ClangScraper(
                 );
                 var src = ctx.SourceProject;
                 var tst = ctx.TestProject;
+
+                var documents = new List<ScrapedDocument>();
                 await foreach (
                     var file in (
                         cacheDir?.GetCommittedFilesAsync() ?? AsyncEnumerable.Empty<string>()
@@ -482,6 +504,7 @@ public sealed class ClangScraper(
                         .GetRootAsync(ct);
                     ref var proj = ref isSource ? ref src : ref tst;
                     var filePath = proj!.FullPath(rel);
+                    documents.Add(new ScrapedDocument(file, root));
                     proj = proj
                         ?.AddDocument(
                             Path.GetFileName(file),
@@ -518,6 +541,8 @@ public sealed class ClangScraper(
             );
         }
     }
+
+    private record struct ScrapedDocument(string FileName, SyntaxNode Root);
 
     /// <summary>
     /// Returns true if <paramref name="path"/> starts with the path <paramref name="baseDirPath"/>.
