@@ -180,7 +180,7 @@ public sealed partial class PtrRefTransformer() : CSharpSyntaxRewriter(true), IF
                 )
             )
             .AddMaxOpt();
-        _ctx?.AddUsing("System.Runtime.CompilerServices");
+        _ctx?.DocumentFactory.AddUsing("System.Runtime.CompilerServices");
 
         // Generate the fixed blocks for the "inner idents"
         foreach (var param in paramsToChange)

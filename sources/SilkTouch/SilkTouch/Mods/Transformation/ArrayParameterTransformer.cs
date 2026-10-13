@@ -31,11 +31,6 @@ public class ArrayParameterTransformer : IFunctionTransformer
         // Keep the original in the loop:
         next(decl);
 
-        if (ctx.Transformers is null)
-        {
-            return;
-        }
-
         decl.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
         entryPoint ??= decl.Identifier.ToString();
 

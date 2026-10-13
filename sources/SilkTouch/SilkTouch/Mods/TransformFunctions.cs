@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -11,8 +12,20 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Mods the bindings to use the Silk.NET.Core pointer types.
 /// </summary>
-public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewriter, IMod
+public class TransformFunctions(FunctionTransformer ft)
+    : CSharpSyntaxRewriter,
+        IMod,
+        ITransformationContext
 {
+    /// <inheritdoc />
+    public MethodDeclarationSyntax? Original { get; set; }
+
+    /// <inheritdoc />
+    public IFunctionTransformer[]? Transformers { get; set; }
+
+    /// <inheritdoc />
+    public DocumentFactory DocumentFactory { get; set; }
+
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {

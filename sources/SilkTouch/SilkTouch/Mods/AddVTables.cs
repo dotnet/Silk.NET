@@ -27,7 +27,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <see cref="DllImport"/>-based partial class implementation of the static interface. However, in some cases this
 /// could be any other implementation such as the <see cref="ThisThread"/> implementation.
 /// </remarks>
-public class AddVTables(AddVTables.Configuration config) : IMod
+public class AddVTables(AddVTables.Configuration config, DocumentFactory baseDocumentFactory) : IMod
 {
     /// <summary>
     /// Base class for VTable configurations.
@@ -512,7 +512,7 @@ public class AddVTables(AddVTables.Configuration config) : IMod
             };
     }
 
-    private class Rewriter(VTable[] vTables) : ModCSharpSyntaxRewriter
+    private class Rewriter(VTable[] vTables) : CSharpSyntaxRewriter
     {
         private InterfaceDeclarationSyntax? _currentInterface;
         private ClassDeclarationSyntax? _currentClass;
@@ -1432,40 +1432,43 @@ public class AddVTables(AddVTables.Configuration config) : IMod
             newFiles.Add(
                 (
                     ifname,
-                    CompilationUnit()
-                        .WithUsings(ModCSharpSyntaxRewriter.GetUsings(rw.AggregatedUsings, null))
-                        .WithMembers(
-                            nNamespaces == 1
-                                ? string.IsNullOrWhiteSpace(rw.InterfacePartials[0].Namespace)
-                                    ? List<MemberDeclarationSyntax>(
-                                        rw.InterfacePartials.Select(x => x.Interface)
-                                    )
-                                    : SingletonList<MemberDeclarationSyntax>(
-                                        FileScopedNamespaceDeclaration(
-                                                ModUtils.NamespaceIntoIdentifierName(
-                                                    rw.InterfacePartials[0].Namespace
-                                                )
-                                            )
-                                            .WithMembers(
-                                                List<MemberDeclarationSyntax>(
-                                                    rw.InterfacePartials.Select(x => x.Interface)
-                                                )
-                                            )
-                                    )
-                                : List<MemberDeclarationSyntax>(
-                                    rw.InterfacePartials.GroupBy(x => x.Namespace)
-                                        .Select(g =>
-                                            NamespaceDeclaration(
-                                                    ModUtils.NamespaceIntoIdentifierName(g.Key)
+                    documentFactory.PopulateDocument(
+                        CompilationUnit()
+                            .WithMembers(
+                                nNamespaces == 1
+                                    ? string.IsNullOrWhiteSpace(rw.InterfacePartials[0].Namespace)
+                                        ? List<MemberDeclarationSyntax>(
+                                            rw.InterfacePartials.Select(x => x.Interface)
+                                        )
+                                        : SingletonList<MemberDeclarationSyntax>(
+                                            FileScopedNamespaceDeclaration(
+                                                    ModUtils.NamespaceIntoIdentifierName(
+                                                        rw.InterfacePartials[0].Namespace
+                                                    )
                                                 )
                                                 .WithMembers(
                                                     List<MemberDeclarationSyntax>(
-                                                        g.Select(x => x.Interface)
+                                                        rw.InterfacePartials.Select(x =>
+                                                            x.Interface
+                                                        )
                                                     )
                                                 )
                                         )
-                                )
-                        )
+                                    : List<MemberDeclarationSyntax>(
+                                        rw.InterfacePartials.GroupBy(x => x.Namespace)
+                                            .Select(g =>
+                                                NamespaceDeclaration(
+                                                        ModUtils.NamespaceIntoIdentifierName(g.Key)
+                                                    )
+                                                    .WithMembers(
+                                                        List<MemberDeclarationSyntax>(
+                                                            g.Select(x => x.Interface)
+                                                        )
+                                                    )
+                                            )
+                                    )
+                            )
+                    )
                 )
             );
         }

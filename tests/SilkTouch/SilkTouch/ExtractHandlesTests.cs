@@ -41,7 +41,10 @@ public class ExtractHandlesTests
 
         var context = new DummyModContext() { SourceProject = project };
 
-        var extractHandles = new ExtractHandles(NullLogger<ExtractHandles>.Instance);
+        var extractHandles = new ExtractHandles(
+            NullLogger<ExtractHandles>.Instance,
+            new DocumentFactory()
+        );
 
         await extractHandles.ExecuteAsync(context);
 

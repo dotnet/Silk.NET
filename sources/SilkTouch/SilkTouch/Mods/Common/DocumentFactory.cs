@@ -89,10 +89,11 @@ public class DocumentFactory
     /// This currently adds using statements and header comments if not added already.
     /// This also calls <see cref="ReportDocument"/>.
     /// </remarks>
-    public SyntaxNode PopulateDocument(SyntaxNode root)
+    public T PopulateDocument<T>(T root)
+        where T : SyntaxNode
     {
         _reporter.Visit(root);
-        return _initializer.Visit(root);
+        return (T)_initializer.Visit(root);
     }
 
     /// <summary>

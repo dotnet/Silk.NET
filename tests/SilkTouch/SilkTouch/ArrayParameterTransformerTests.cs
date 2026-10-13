@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
 
@@ -218,7 +219,8 @@ public class ArrayParameterTransformerTests
         ) => throw new NotImplementedException();
 
         public MethodDeclarationSyntax? Original { get; set; }
-        public IFunctionTransformer[]? Transformers { get; set; }
+        public IFunctionTransformer[] Transformers { get; set; }
+        public DocumentFactory DocumentFactory { get; set; } = new();
 
         public bool AddUsing(UsingDirectiveSyntax use) => throw new NotImplementedException();
 

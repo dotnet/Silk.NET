@@ -44,7 +44,7 @@ public class BakeSourceSets(
     }
 
     private class Rewriter(IBakeStrategy strategy, ILogger<BakeSourceSets> logger)
-        : ModCSharpSyntaxRewriter
+        : CSharpSyntaxRewriter
     {
         public BakeSet? Baked { get; set; }
 
