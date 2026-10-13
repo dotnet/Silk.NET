@@ -14,16 +14,18 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Merging the APIs of multiple source sets into a single source set.
 /// </summary>
+/// <param name="documentFactory">The document factory to use.</param>
 /// <param name="logger">The logger to use.</param>
 /// <param name="config">The configuration snapshot.</param>
 /// <param name="strategies">
 /// The available bake strategies. The actual strategy to use is determined from the configuration.
 /// </param>
 public class BakeSourceSets(
+    DocumentFactory documentFactory,
     ILogger<BakeSourceSets> logger,
     BakeSourceSets.Configuration config,
     IEnumerable<IBakeStrategy> strategies
-) : Mod
+) : IMod
 {
     /// <summary>
     /// The mod configuration.
@@ -296,9 +298,8 @@ public class BakeSourceSets(
     private Dictionary<string, BakeSet> _baked = new();
 
     /// <inheritdoc />
-    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        await base.ExecuteAsync(ctx, ct);
         if (ctx.SourceProject is null)
         {
             return;
@@ -411,7 +412,7 @@ public class BakeSourceSets(
                     ? fqTopLevelType[..idx]
                     : null;
                 yield return new KeyValuePair<string, CompilationUnitSyntax>(
-                    $"{subdir}/{PathForFullyQualified(fqTopLevelType)}",
+                    $"{subdir}/{documentFactory.PathForFullyQualified(fqTopLevelType)}",
                     CompilationUnit()
                         .WithMembers(
                             ns is null
