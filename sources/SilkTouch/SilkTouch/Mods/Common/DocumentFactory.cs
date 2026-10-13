@@ -151,7 +151,7 @@ public class DocumentFactory
 
     private class DocumentInitializer(DocumentFactory factory) : CSharpSyntaxRewriter
     {
-        public override SyntaxNode? VisitCompilationUnit(CompilationUnitSyntax node)
+        public override SyntaxNode VisitCompilationUnit(CompilationUnitSyntax node)
         {
             var leadingTrivia = node.GetLeadingTrivia();
             var hasHeader = leadingTrivia.Any(x =>
@@ -160,9 +160,9 @@ public class DocumentFactory
             );
 
             var header = hasHeader ? leadingTrivia : factory.DefaultHeader;
-            return base.VisitCompilationUnit(node) is CompilationUnitSyntax comp
-                ? comp.WithUsings(List(factory._usings)).WithLeadingTrivia(header)
-                : null;
+            return ((CompilationUnitSyntax)base.VisitCompilationUnit(node)!)
+                .WithUsings(List(factory._usings))
+                .WithLeadingTrivia(header);
         }
 
         public override SyntaxNode? VisitFileScopedNamespaceDeclaration(
