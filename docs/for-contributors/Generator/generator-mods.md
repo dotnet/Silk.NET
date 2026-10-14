@@ -27,9 +27,11 @@ ideally, no communication is done at all so that mods are kept completely standa
 
 ### Mod Configuration
 
-Mods are configured through the generator config JSON file. Silk's config file is named `generator.json` and is located
-at the root of the Silk.NET repository. This config file can be used as reference for your own config files. In
-addition, most mods have a configuration class located in their source code with additional documentation.
+Mods are configured as part of bindings generation jobs in a separate C# project. Silk's own configuration project is
+the
+[`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/feature/silktouch-config-overhaul/sources/SilkTouch/Jobs/Program.cs)
+project. This project can be used as reference for your own SilkTouch configuration projects. More information about
+using the SilkTouch generator can be found in the [Using the Generator](using-the-generator.md) documentation.
 
 ## Available Mods
 
@@ -186,7 +188,7 @@ development and iteration, the generator is typically set up so that platform-sp
 
 Usage recommendations:
 
-This mod is configured differently from the rest of the mods. The JSON mod configuration follows the same pattern as the
+This mod is configured differently from the rest of the mods. The C# mod configuration follows the same pattern as the
 rest of the mods, but the bulk of the configuration comes in the form of `.rsp` files. These `.rsp` files represent the
 command line arguments passed to ClangSharpPInvokeGenerator. More information about how to use this mod and how to
 configure the generator as a whole is found in the [Using the Generator](using-the-generator.md) documentation.
@@ -373,16 +375,12 @@ Name affix categories:
 
 Example name affix configurations for `PrettifyNames`:
 
-```
-"SharedPrefix": {
-  "Remove": true
-}
+```cs
+["SharedPrefix"] = new() { Remove = true },
 ```
 
-```
-"SharedPrefix": {
-  "IsDiscriminator": true
-}
+```cs
+["SharedPrefix"] = new() { IsDiscriminator = true },
 ```
 
 Usage recommendations:
@@ -465,8 +463,8 @@ This is a monolithic mod that handles behavior specific to Khronos-style APIs su
 
 Because this mod is intended more for internal use rather than public use, the documentation here will focus on
 decisions made during the development of the mod and other internal details rather than the exact usage of the mod.
-For information relating to how the mod should be used, please use Silk's `generator.json` configuration, source code,
-and `MixKhronosDataTests` as a reference.
+For information relating to how the mod should be used, please use Silk's own configuration, source code, and
+`MixKhronosDataTests` as a reference.
 
 (TODO: Document major decisions relating to `MixKhronosData`. This is difficult because of the mod's long development
 history, and while this section is already massive, it still does not cover everything the mod does. This should be done
