@@ -29,7 +29,7 @@ ideally, no communication is done at all so that mods are kept completely standa
 
 Mods are configured as part of bindings generation jobs in a separate C# project. Silk's own configuration project is
 the
-[`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/feature/silktouch-config-overhaul/sources/SilkTouch/Jobs/Program.cs)
+[`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/SilkTouch/Jobs/Program.cs)
 project. This project can be used as reference for your own SilkTouch configuration projects. More information about
 using the SilkTouch generator can be found in the [Using the Generator](using-the-generator.md) documentation.
 

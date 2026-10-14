@@ -17,7 +17,7 @@ Metal.
 
 There are three main things to configure:
 
-1. Silk 3 - This is the [`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/feature/silktouch-config-overhaul/sources/SilkTouch/Jobs/Program.cs)
+1. Silk 3 - This is the [`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/SilkTouch/Jobs/Program.cs)
    project. You may also use a single file app instead of a full C# project.
 
 2. ClangSharpPInvokeGenerator - This is the [`eng/silktouch`](https://github.com/dotnet/Silk.NET/tree/develop/3.0/eng/silktouch) folder.
@@ -34,7 +34,7 @@ you are binding.
 ## SilkTouch Configuration
 
 Silk defines the configuration for SilkTouch as regular C# in the
-[`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/feature/silktouch-config-overhaul/sources/SilkTouch/Jobs/Program.cs)
+[`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/SilkTouch/Jobs/Program.cs)
 project.
 
 This project defines the different bindings jobs and the list of mods to run for each job. Silk's own bindings jobs are
