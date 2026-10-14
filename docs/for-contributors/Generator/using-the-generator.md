@@ -17,7 +17,8 @@ Metal.
 
 There are three main things to configure:
 
-1. Silk 3 - This is the [`generator.json`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/generator.json) file.
+1. Silk 3 - This is the [`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/SilkTouch/Jobs/Program.cs)
+   project. You may also use a single file app instead of a full C# project.
 
 2. ClangSharpPInvokeGenerator - This is the [`eng/silktouch`](https://github.com/dotnet/Silk.NET/tree/develop/3.0/eng/silktouch) folder.
 
@@ -32,9 +33,13 @@ you are binding.
 
 ## SilkTouch Configuration
 
-Silk defines the configuration for SilkTouch in the
-[`generator.json`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/generator.json) file. This file defines the
-different bindings jobs and the list of mods to run for each job.
+Silk defines the configuration for SilkTouch as regular C# in the
+[`Silk.NET.SilkTouch.Jobs`](https://github.com/dotnet/Silk.NET/blob/develop/3.0/sources/SilkTouch/Jobs/Program.cs)
+project.
+
+This project defines the different bindings jobs and the list of mods to run for each job. Silk's own bindings jobs are
+split into multiple files for maintainability, but since this is regular C# code, you may organize your own job
+definitions however you wish.
 
 For example, when binding to a C API:
 
@@ -48,8 +53,8 @@ For example, when binding to a C API:
 
 Aside from reading documentation, some other ways to learn about the mods are to:
 
-- Read through the tests. The tests act as examples for specific behaviors expected by each mod, with configurations,
-  inputs, and expected outputs provided for each case.
+- Read through the SilkTouch tests. The tests act as examples for specific behaviors expected by each mod, with
+  configurations, inputs, and expected outputs provided for each case.
 
 - Add them one by one. Mods run in the order you define them and work off the output of the previous mod.
 
@@ -105,7 +110,9 @@ eng
     - SDL3
 ```
 
-Profiles likely will not be relevent for most C APIs, so the examples here will keep focusing on the SDL case.
+Profiles are not likely to be required for your average C API required, so the examples here will keep focusing on the
+SDL case. Profiles are needed when your API has multiple variants or needs to be generated on multiple platforms. For
+additional reference, please use the OpenGL (TODO: or OpenXR bindings) bindings jobs as examples.
 
 The following is the folder structure used for Silk's SDL bindings. You do not have to structure it the way Silk does.
 Silk's structure focuses on keeping consistency in its response file organization, regardless of whether the API makes
@@ -117,8 +124,8 @@ eng
   - sdl
     - SDL3
       - generate.rsp <-- The main settings file. Used as the entrypoint. All import paths must be relative to this file.
-      - header.txt
       - sdl-SDL.h <-- Handwritten header file that #includes the relevant headers of the library you want to bind.
+    - header.txt
     - remap.rsp
     - settings.rsp <-- Shared settings for all profiles.
 ```
@@ -164,7 +171,7 @@ Silk.NET.SDL
 --define-macro
 TODO_DEFINE_MACROS=HERE
 --headerFile
-header.txt
+../header.txt
 --include-directory
 ../../../submodules/sdl/include
 --with-callconv
@@ -238,22 +245,18 @@ MSBuild under the hood.
 The generator can be run directly from source using the following command:
 
 ```sh
-dotnet run --project sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj -c Release -- generator.json --only SDL
+dotnet run --project sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only SDL
 ```
 
 You may use the `--help` option to display additional information about available options.
 
 ```
-dotnet run --project sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj -c Release -- --help
+dotnet run --project sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --help
 ```
 
 Some notable options include the `--only` and `--skip` options. `--only` lets you specify the exact jobs to run.
 `--skip` is the opposite and lets you specify the jobs to skip. If `--only` and `--skip` is specified for the same job,
 `--skip` takes precedence.
-
-Warning: There are currently some generator bugs associated with running multiple jobs in the same process. We recommend
-that you use `--only` to ensure that only one job is executed per process. Running multiple processes in parallel is
-fine.
 
 ### Generated Bindings Output
 

@@ -20,7 +20,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// extern MyEnum GetMyEnum();
 /// </code>
 /// </summary>
-public class ExtractEnumConstants : IMod
+public class ExtractEnumConstants(DocumentFactory documentFactory) : IMod
 {
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
@@ -80,17 +80,21 @@ public class ExtractEnumConstants : IMod
             project = project
                 ?.AddDocument(
                     $"{identifier}.gen.cs",
-                    CompilationUnit()
-                        .WithMembers(
-                            ns is { Length: > 0 }
-                                ? SingletonList<MemberDeclarationSyntax>(
-                                    FileScopedNamespaceDeclaration(
-                                            ModUtils.NamespaceIntoIdentifierName(ns.TrimEnd('.'))
-                                        )
-                                        .WithMembers(SingletonList(typeDecl))
-                                )
-                                : SingletonList(typeDecl)
-                        ),
+                    documentFactory.PopulateDocument(
+                        CompilationUnit()
+                            .WithMembers(
+                                ns is { Length: > 0 }
+                                    ? SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(
+                                                    ns.TrimEnd('.')
+                                                )
+                                            )
+                                            .WithMembers(SingletonList(typeDecl))
+                                    )
+                                    : SingletonList(typeDecl)
+                            )
+                    ),
                     // Place extracted enum types in the directory common to where the types are referenced from
                     filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
                 )

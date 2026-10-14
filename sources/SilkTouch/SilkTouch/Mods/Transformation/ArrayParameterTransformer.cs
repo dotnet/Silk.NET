@@ -31,11 +31,6 @@ public class ArrayParameterTransformer : IFunctionTransformer
         // Keep the original in the loop:
         next(decl);
 
-        if (ctx.Transformers is null)
-        {
-            return;
-        }
-
         decl.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
         entryPoint ??= decl.Identifier.ToString();
 
@@ -75,8 +70,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
             // 1. Get all count parameters
             decl.EnumerateCountParameterInfo(
                     ctx.Transformers.OfType<IApiMetadataProvider<SymbolConstraints>>(),
-                    entryPoint,
-                    ctx.JobKey
+                    entryPoint
                 )
                 .Select(x =>
                     (
@@ -106,8 +100,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
         {
             ((ptrParam, _, ptrCount), countParamNo) = decl.EnumerateSymbolConstraints(
                     ctx.Transformers.OfType<IApiMetadataProvider<SymbolConstraints>>(),
-                    entryPoint,
-                    ctx.JobKey
+                    entryPoint
                 )
                 .Where(x => x.ParamConstraints?.CommonUsage?.StaticCount == 1)
                 .Select((x, i) => (x, i))

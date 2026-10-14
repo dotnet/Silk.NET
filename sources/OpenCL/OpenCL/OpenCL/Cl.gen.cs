@@ -4,8 +4,10 @@
 // Original source is Copyright 2013-2026 The Khronos Group Inc. Licensed under the Apache 2.0 license.
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Silk.NET.Core.Loader;
 
 namespace Silk.NET.OpenCL;
 
@@ -26875,7 +26877,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const int LuidSize = 8;
 
     [NativeName("CL_KHR_FP64_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrFp64ExtensionName => "cl_khr_fp64"u8;
+    public static Utf8String KhrFp64ExtensionName => "cl_khr_fp64"u8;
 
     [NativeName("CL_KHR_FP64_EXTENSION_VERSION")]
     public const int KhrFp64ExtensionVersion = (
@@ -26885,7 +26887,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_FP16_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrFp16ExtensionName => "cl_khr_fp16"u8;
+    public static Utf8String KhrFp16ExtensionName => "cl_khr_fp16"u8;
 
     [NativeName("CL_KHR_FP16_EXTENSION_VERSION")]
     public const int KhrFp16ExtensionVersion = (
@@ -26895,7 +26897,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_APPLE_SETMEMOBJECTDESTRUCTOR_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> AppleSetmemobjectdestructorExtensionName =>
+    public static Utf8String AppleSetmemobjectdestructorExtensionName =>
         "cl_APPLE_SetMemObjectDestructor"u8;
 
     [NativeName("CL_APPLE_SETMEMOBJECTDESTRUCTOR_EXTENSION_VERSION")]
@@ -26906,7 +26908,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_APPLE_CONTEXTLOGGINGFUNCTIONS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> AppleContextloggingfunctionsExtensionName =>
+    public static Utf8String AppleContextloggingfunctionsExtensionName =>
         "cl_APPLE_ContextLoggingFunctions"u8;
 
     [NativeName("CL_APPLE_CONTEXTLOGGINGFUNCTIONS_EXTENSION_VERSION")]
@@ -26917,7 +26919,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_ICD_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrIcdExtensionName => "cl_khr_icd"u8;
+    public static Utf8String KhrIcdExtensionName => "cl_khr_icd"u8;
 
     [NativeName("CL_KHR_ICD_EXTENSION_VERSION")]
     public const int KhrIcdExtensionVersion = (
@@ -26931,7 +26933,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public static nint Icd2TagKHR => unchecked((nint)(0x4F50454E434C3331));
 
     [NativeName("CL_KHR_ICD_UNLOADABLE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrIcdUnloadableExtensionName => "cl_khr_icd_unloadable"u8;
+    public static Utf8String KhrIcdUnloadableExtensionName => "cl_khr_icd_unloadable"u8;
 
     [NativeName("CL_KHR_ICD_UNLOADABLE_EXTENSION_VERSION")]
     public const int KhrIcdUnloadableExtensionVersion = (
@@ -26941,7 +26943,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_IL_PROGRAM_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrIlProgramExtensionName => "cl_khr_il_program"u8;
+    public static Utf8String KhrIlProgramExtensionName => "cl_khr_il_program"u8;
 
     [NativeName("CL_KHR_IL_PROGRAM_EXTENSION_VERSION")]
     public const int KhrIlProgramExtensionVersion = (
@@ -26951,8 +26953,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_IMAGE2D_FROM_BUFFER_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrImage2DFromBufferExtensionName =>
-        "cl_khr_image2d_from_buffer"u8;
+    public static Utf8String KhrImage2DFromBufferExtensionName => "cl_khr_image2d_from_buffer"u8;
 
     [NativeName("CL_KHR_IMAGE2D_FROM_BUFFER_EXTENSION_VERSION")]
     public const int KhrImage2DFromBufferExtensionVersion = (
@@ -26962,8 +26963,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_INITIALIZE_MEMORY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrInitializeMemoryExtensionName =>
-        "cl_khr_initialize_memory"u8;
+    public static Utf8String KhrInitializeMemoryExtensionName => "cl_khr_initialize_memory"u8;
 
     [NativeName("CL_KHR_INITIALIZE_MEMORY_EXTENSION_VERSION")]
     public const int KhrInitializeMemoryExtensionVersion = (
@@ -26973,8 +26973,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_TERMINATE_CONTEXT_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrTerminateContextExtensionName =>
-        "cl_khr_terminate_context"u8;
+    public static Utf8String KhrTerminateContextExtensionName => "cl_khr_terminate_context"u8;
 
     [NativeName("CL_KHR_TERMINATE_CONTEXT_EXTENSION_VERSION")]
     public const int KhrTerminateContextExtensionVersion = (
@@ -26984,7 +26983,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SPIR_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSpirExtensionName => "cl_khr_spir"u8;
+    public static Utf8String KhrSpirExtensionName => "cl_khr_spir"u8;
 
     [NativeName("CL_KHR_SPIR_EXTENSION_VERSION")]
     public const int KhrSpirExtensionVersion = (
@@ -26994,8 +26993,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_CREATE_COMMAND_QUEUE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrCreateCommandQueueExtensionName =>
-        "cl_khr_create_command_queue"u8;
+    public static Utf8String KhrCreateCommandQueueExtensionName => "cl_khr_create_command_queue"u8;
 
     [NativeName("CL_KHR_CREATE_COMMAND_QUEUE_EXTENSION_VERSION")]
     public const int KhrCreateCommandQueueExtensionVersion = (
@@ -27005,7 +27003,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_NV_DEVICE_ATTRIBUTE_QUERY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> NvDeviceAttributeQueryExtensionName =>
+    public static Utf8String NvDeviceAttributeQueryExtensionName =>
         "cl_nv_device_attribute_query"u8;
 
     [NativeName("CL_NV_DEVICE_ATTRIBUTE_QUERY_EXTENSION_VERSION")]
@@ -27016,7 +27014,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_AMD_DEVICE_ATTRIBUTE_QUERY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> AmdDeviceAttributeQueryExtensionName =>
+    public static Utf8String AmdDeviceAttributeQueryExtensionName =>
         "cl_amd_device_attribute_query"u8;
 
     [NativeName("CL_AMD_DEVICE_ATTRIBUTE_QUERY_EXTENSION_VERSION")]
@@ -27027,7 +27025,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_ARM_PRINTF_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ArmPrintfExtensionName => "cl_arm_printf"u8;
+    public static Utf8String ArmPrintfExtensionName => "cl_arm_printf"u8;
 
     [NativeName("CL_ARM_PRINTF_EXTENSION_VERSION")]
     public const int ArmPrintfExtensionVersion = (
@@ -27037,7 +27035,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_EXT_DEVICE_FISSION_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtDeviceFissionExtensionName => "cl_ext_device_fission"u8;
+    public static Utf8String ExtDeviceFissionExtensionName => "cl_ext_device_fission"u8;
 
     [NativeName("CL_EXT_DEVICE_FISSION_EXTENSION_VERSION")]
     public const int ExtDeviceFissionExtensionVersion = (
@@ -27059,8 +27057,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const ulong PartitionByNamesListEndEXT = unchecked((ulong)(0) - 1);
 
     [NativeName("CL_EXT_MIGRATE_MEMOBJECT_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtMigrateMemobjectExtensionName =>
-        "cl_ext_migrate_memobject"u8;
+    public static Utf8String ExtMigrateMemobjectExtensionName => "cl_ext_migrate_memobject"u8;
 
     [NativeName("CL_EXT_MIGRATE_MEMOBJECT_EXTENSION_VERSION")]
     public const int ExtMigrateMemobjectExtensionVersion = (
@@ -27070,7 +27067,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_EXT_CXX_FOR_OPENCL_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtCxxForOpenclExtensionName => "cl_ext_cxx_for_opencl"u8;
+    public static Utf8String ExtCxxForOpenclExtensionName => "cl_ext_cxx_for_opencl"u8;
 
     [NativeName("CL_EXT_CXX_FOR_OPENCL_EXTENSION_VERSION")]
     public const int ExtCxxForOpenclExtensionVersion = (
@@ -27080,7 +27077,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_QCOM_EXT_HOST_PTR_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> QcomExtHostPtrExtensionName => "cl_qcom_ext_host_ptr"u8;
+    public static Utf8String QcomExtHostPtrExtensionName => "cl_qcom_ext_host_ptr"u8;
 
     [NativeName("CL_QCOM_EXT_HOST_PTR_EXTENSION_VERSION")]
     public const int QcomExtHostPtrExtensionVersion = (
@@ -27090,7 +27087,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_QCOM_EXT_HOST_PTR_IOCOHERENT_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> QcomExtHostPtrIocoherentExtensionName =>
+    public static Utf8String QcomExtHostPtrIocoherentExtensionName =>
         "cl_qcom_ext_host_ptr_iocoherent"u8;
 
     [NativeName("CL_QCOM_EXT_HOST_PTR_IOCOHERENT_EXTENSION_VERSION")]
@@ -27101,7 +27098,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_QCOM_ION_HOST_PTR_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> QcomIonHostPtrExtensionName => "cl_qcom_ion_host_ptr"u8;
+    public static Utf8String QcomIonHostPtrExtensionName => "cl_qcom_ion_host_ptr"u8;
 
     [NativeName("CL_QCOM_ION_HOST_PTR_EXTENSION_VERSION")]
     public const int QcomIonHostPtrExtensionVersion = (
@@ -27111,7 +27108,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_QCOM_ANDROID_NATIVE_BUFFER_HOST_PTR_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> QcomAndroidNativeBufferHostPtrExtensionName =>
+    public static Utf8String QcomAndroidNativeBufferHostPtrExtensionName =>
         "cl_qcom_android_native_buffer_host_ptr"u8;
 
     [NativeName("CL_QCOM_ANDROID_NATIVE_BUFFER_HOST_PTR_EXTENSION_VERSION")]
@@ -27122,7 +27119,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_IMG_YUV_IMAGE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ImgYuvImageExtensionName => "cl_img_yuv_image"u8;
+    public static Utf8String ImgYuvImageExtensionName => "cl_img_yuv_image"u8;
 
     [NativeName("CL_IMG_YUV_IMAGE_EXTENSION_VERSION")]
     public const int ImgYuvImageExtensionVersion = (
@@ -27132,8 +27129,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_IMG_CACHED_ALLOCATIONS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ImgCachedAllocationsExtensionName =>
-        "cl_img_cached_allocations"u8;
+    public static Utf8String ImgCachedAllocationsExtensionName => "cl_img_cached_allocations"u8;
 
     [NativeName("CL_IMG_CACHED_ALLOCATIONS_EXTENSION_VERSION")]
     public const int ImgCachedAllocationsExtensionVersion = (
@@ -27143,7 +27139,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_IMG_USE_GRALLOC_PTR_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ImgUseGrallocPtrExtensionName => "cl_img_use_gralloc_ptr"u8;
+    public static Utf8String ImgUseGrallocPtrExtensionName => "cl_img_use_gralloc_ptr"u8;
 
     [NativeName("CL_IMG_USE_GRALLOC_PTR_EXTENSION_VERSION")]
     public const int ImgUseGrallocPtrExtensionVersion = (
@@ -27153,7 +27149,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_IMG_GENERATE_MIPMAP_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ImgGenerateMipmapExtensionName => "cl_img_generate_mipmap"u8;
+    public static Utf8String ImgGenerateMipmapExtensionName => "cl_img_generate_mipmap"u8;
 
     [NativeName("CL_IMG_GENERATE_MIPMAP_EXTENSION_VERSION")]
     public const int ImgGenerateMipmapExtensionVersion = (
@@ -27163,7 +27159,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_IMG_MEM_PROPERTIES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ImgMemPropertiesExtensionName => "cl_img_mem_properties"u8;
+    public static Utf8String ImgMemPropertiesExtensionName => "cl_img_mem_properties"u8;
 
     [NativeName("CL_IMG_MEM_PROPERTIES_EXTENSION_VERSION")]
     public const int ImgMemPropertiesExtensionVersion = (
@@ -27173,7 +27169,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUBGROUPS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSubgroupsExtensionName => "cl_khr_subgroups"u8;
+    public static Utf8String KhrSubgroupsExtensionName => "cl_khr_subgroups"u8;
 
     [NativeName("CL_KHR_SUBGROUPS_EXTENSION_VERSION")]
     public const int KhrSubgroupsExtensionVersion = (
@@ -27183,7 +27179,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_MIPMAP_IMAGE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrMipmapImageExtensionName => "cl_khr_mipmap_image"u8;
+    public static Utf8String KhrMipmapImageExtensionName => "cl_khr_mipmap_image"u8;
 
     [NativeName("CL_KHR_MIPMAP_IMAGE_EXTENSION_VERSION")]
     public const int KhrMipmapImageExtensionVersion = (
@@ -27193,7 +27189,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_PRIORITY_HINTS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrPriorityHintsExtensionName => "cl_khr_priority_hints"u8;
+    public static Utf8String KhrPriorityHintsExtensionName => "cl_khr_priority_hints"u8;
 
     [NativeName("CL_KHR_PRIORITY_HINTS_EXTENSION_VERSION")]
     public const int KhrPriorityHintsExtensionVersion = (
@@ -27203,7 +27199,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_THROTTLE_HINTS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrThrottleHintsExtensionName => "cl_khr_throttle_hints"u8;
+    public static Utf8String KhrThrottleHintsExtensionName => "cl_khr_throttle_hints"u8;
 
     [NativeName("CL_KHR_THROTTLE_HINTS_EXTENSION_VERSION")]
     public const int KhrThrottleHintsExtensionVersion = (
@@ -27213,7 +27209,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUBGROUP_NAMED_BARRIER_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSubgroupNamedBarrierExtensionName =>
+    public static Utf8String KhrSubgroupNamedBarrierExtensionName =>
         "cl_khr_subgroup_named_barrier"u8;
 
     [NativeName("CL_KHR_SUBGROUP_NAMED_BARRIER_EXTENSION_VERSION")]
@@ -27224,8 +27220,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_EXTENDED_VERSIONING_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExtendedVersioningExtensionName =>
-        "cl_khr_extended_versioning"u8;
+    public static Utf8String KhrExtendedVersioningExtensionName => "cl_khr_extended_versioning"u8;
 
     [NativeName("CL_KHR_EXTENDED_VERSIONING_EXTENSION_VERSION")]
     public const int KhrExtendedVersioningExtensionVersion = (
@@ -27263,7 +27258,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const int NameVersionMaxNameSizeKHR = 64;
 
     [NativeName("CL_KHR_DEVICE_UUID_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrDeviceUuidExtensionName => "cl_khr_device_uuid"u8;
+    public static Utf8String KhrDeviceUuidExtensionName => "cl_khr_device_uuid"u8;
 
     [NativeName("CL_KHR_DEVICE_UUID_EXTENSION_VERSION")]
     public const int KhrDeviceUuidExtensionVersion = (
@@ -27281,7 +27276,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const int LuidSizeKHR = 8;
 
     [NativeName("CL_KHR_PCI_BUS_INFO_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrPciBusInfoExtensionName => "cl_khr_pci_bus_info"u8;
+    public static Utf8String KhrPciBusInfoExtensionName => "cl_khr_pci_bus_info"u8;
 
     [NativeName("CL_KHR_PCI_BUS_INFO_EXTENSION_VERSION")]
     public const int KhrPciBusInfoExtensionVersion = (
@@ -27291,7 +27286,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUGGESTED_LOCAL_WORK_SIZE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSuggestedLocalWorkSizeExtensionName =>
+    public static Utf8String KhrSuggestedLocalWorkSizeExtensionName =>
         "cl_khr_suggested_local_work_size"u8;
 
     [NativeName("CL_KHR_SUGGESTED_LOCAL_WORK_SIZE_EXTENSION_VERSION")]
@@ -27302,8 +27297,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_INTEGER_DOT_PRODUCT_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrIntegerDotProductExtensionName =>
-        "cl_khr_integer_dot_product"u8;
+    public static Utf8String KhrIntegerDotProductExtensionName => "cl_khr_integer_dot_product"u8;
 
     [NativeName("CL_KHR_INTEGER_DOT_PRODUCT_EXTENSION_VERSION")]
     public const int KhrIntegerDotProductExtensionVersion = (
@@ -27313,7 +27307,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_EXTERNAL_MEMORY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExternalMemoryExtensionName => "cl_khr_external_memory"u8;
+    public static Utf8String KhrExternalMemoryExtensionName => "cl_khr_external_memory"u8;
 
     [NativeName("CL_KHR_EXTERNAL_MEMORY_EXTENSION_VERSION")]
     public const int KhrExternalMemoryExtensionVersion = (
@@ -27327,7 +27321,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const int MemDeviceHandleListEndKHR = 0;
 
     [NativeName("CL_KHR_EXTERNAL_MEMORY_DMA_BUF_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExternalMemoryDmaBufExtensionName =>
+    public static Utf8String KhrExternalMemoryDmaBufExtensionName =>
         "cl_khr_external_memory_dma_buf"u8;
 
     [NativeName("CL_KHR_EXTERNAL_MEMORY_DMA_BUF_EXTENSION_VERSION")]
@@ -27338,7 +27332,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_EXTERNAL_MEMORY_OPAQUE_FD_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExternalMemoryOpaqueFdExtensionName =>
+    public static Utf8String KhrExternalMemoryOpaqueFdExtensionName =>
         "cl_khr_external_memory_opaque_fd"u8;
 
     [NativeName("CL_KHR_EXTERNAL_MEMORY_OPAQUE_FD_EXTENSION_VERSION")]
@@ -27349,7 +27343,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_EXTERNAL_MEMORY_WIN32_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExternalMemoryWin32ExtensionName =>
+    public static Utf8String KhrExternalMemoryWin32ExtensionName =>
         "cl_khr_external_memory_win32"u8;
 
     [NativeName("CL_KHR_EXTERNAL_MEMORY_WIN32_EXTENSION_VERSION")]
@@ -27360,8 +27354,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExternalSemaphoreExtensionName =>
-        "cl_khr_external_semaphore"u8;
+    public static Utf8String KhrExternalSemaphoreExtensionName => "cl_khr_external_semaphore"u8;
 
     [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_EXTENSION_VERSION")]
     public const int KhrExternalSemaphoreExtensionVersion = (
@@ -27379,7 +27372,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const int SemaphoreExportHandleTypesListEndKHR = 0;
 
     [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_OPAQUE_FD_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExternalSemaphoreOpaqueFdExtensionName =>
+    public static Utf8String KhrExternalSemaphoreOpaqueFdExtensionName =>
         "cl_khr_external_semaphore_opaque_fd"u8;
 
     [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_OPAQUE_FD_EXTENSION_VERSION")]
@@ -27390,7 +27383,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_SYNC_FD_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExternalSemaphoreSyncFdExtensionName =>
+    public static Utf8String KhrExternalSemaphoreSyncFdExtensionName =>
         "cl_khr_external_semaphore_sync_fd"u8;
 
     [NativeName("CL_KHR_EXTERNAL_SEMAPHORE_SYNC_FD_EXTENSION_VERSION")]
@@ -27401,7 +27394,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SEMAPHORE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSemaphoreExtensionName => "cl_khr_semaphore"u8;
+    public static Utf8String KhrSemaphoreExtensionName => "cl_khr_semaphore"u8;
 
     [NativeName("CL_KHR_SEMAPHORE_EXTENSION_VERSION")]
     public const int KhrSemaphoreExtensionVersion = (
@@ -27415,7 +27408,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const int SemaphoreDeviceHandleListEndKHR = 0;
 
     [NativeName("CL_ARM_IMPORT_MEMORY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ArmImportMemoryExtensionName => "cl_arm_import_memory"u8;
+    public static Utf8String ArmImportMemoryExtensionName => "cl_arm_import_memory"u8;
 
     [NativeName("CL_ARM_IMPORT_MEMORY_EXTENSION_VERSION")]
     public const int ArmImportMemoryExtensionVersion = (
@@ -27433,7 +27426,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const ulong ImportMemoryWholeAllocationARM = 0xffffffffffffffffUL;
 
     [NativeName("CL_ARM_SHARED_VIRTUAL_MEMORY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ArmSharedVirtualMemoryExtensionName =>
+    public static Utf8String ArmSharedVirtualMemoryExtensionName =>
         "cl_arm_shared_virtual_memory"u8;
 
     [NativeName("CL_ARM_SHARED_VIRTUAL_MEMORY_EXTENSION_VERSION")]
@@ -27447,7 +27440,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const int ArmGetCoreId = 1;
 
     [NativeName("CL_ARM_GET_CORE_ID_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ArmGetCoreIdExtensionName => "cl_arm_get_core_id"u8;
+    public static Utf8String ArmGetCoreIdExtensionName => "cl_arm_get_core_id"u8;
 
     [NativeName("CL_ARM_GET_CORE_ID_EXTENSION_VERSION")]
     public const int ArmGetCoreIdExtensionVersion = (
@@ -27457,8 +27450,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_ARM_JOB_SLOT_SELECTION_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ArmJobSlotSelectionExtensionName =>
-        "cl_arm_job_slot_selection"u8;
+    public static Utf8String ArmJobSlotSelectionExtensionName => "cl_arm_job_slot_selection"u8;
 
     [NativeName("CL_ARM_JOB_SLOT_SELECTION_EXTENSION_VERSION")]
     public const int ArmJobSlotSelectionExtensionVersion = (
@@ -27468,8 +27460,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_ARM_SCHEDULING_CONTROLS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ArmSchedulingControlsExtensionName =>
-        "cl_arm_scheduling_controls"u8;
+    public static Utf8String ArmSchedulingControlsExtensionName => "cl_arm_scheduling_controls"u8;
 
     [NativeName("CL_ARM_SCHEDULING_CONTROLS_EXTENSION_VERSION")]
     public const int ArmSchedulingControlsExtensionVersion = (
@@ -27479,7 +27470,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_ARM_CONTROLLED_KERNEL_TERMINATION_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ArmControlledKernelTerminationExtensionName =>
+    public static Utf8String ArmControlledKernelTerminationExtensionName =>
         "cl_arm_controlled_kernel_termination"u8;
 
     [NativeName("CL_ARM_CONTROLLED_KERNEL_TERMINATION_EXTENSION_VERSION")]
@@ -27490,7 +27481,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_ARM_PROTECTED_MEMORY_ALLOCATION_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ArmProtectedMemoryAllocationExtensionName =>
+    public static Utf8String ArmProtectedMemoryAllocationExtensionName =>
         "cl_arm_protected_memory_allocation"u8;
 
     [NativeName("CL_ARM_PROTECTED_MEMORY_ALLOCATION_EXTENSION_VERSION")]
@@ -27501,7 +27492,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_EXEC_BY_LOCAL_THREAD_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelExecByLocalThreadExtensionName =>
+    public static Utf8String IntelExecByLocalThreadExtensionName =>
         "cl_intel_exec_by_local_thread"u8;
 
     [NativeName("CL_INTEL_EXEC_BY_LOCAL_THREAD_EXTENSION_VERSION")]
@@ -27512,7 +27503,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_DEVICE_ATTRIBUTE_QUERY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelDeviceAttributeQueryExtensionName =>
+    public static Utf8String IntelDeviceAttributeQueryExtensionName =>
         "cl_intel_device_attribute_query"u8;
 
     [NativeName("CL_INTEL_DEVICE_ATTRIBUTE_QUERY_EXTENSION_VERSION")]
@@ -27523,7 +27514,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_DEVICE_PARTITION_BY_NAMES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelDevicePartitionByNamesExtensionName =>
+    public static Utf8String IntelDevicePartitionByNamesExtensionName =>
         "cl_intel_device_partition_by_names"u8;
 
     [NativeName("CL_INTEL_DEVICE_PARTITION_BY_NAMES_EXTENSION_VERSION")]
@@ -27538,7 +27529,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const int PartitionByNamesListEndINTEL = -1;
 
     [NativeName("CL_INTEL_ACCELERATOR_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelAcceleratorExtensionName => "cl_intel_accelerator"u8;
+    public static Utf8String IntelAcceleratorExtensionName => "cl_intel_accelerator"u8;
 
     [NativeName("CL_INTEL_ACCELERATOR_EXTENSION_VERSION")]
     public const int IntelAcceleratorExtensionVersion = (
@@ -27548,8 +27539,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_MOTION_ESTIMATION_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelMotionEstimationExtensionName =>
-        "cl_intel_motion_estimation"u8;
+    public static Utf8String IntelMotionEstimationExtensionName => "cl_intel_motion_estimation"u8;
 
     [NativeName("CL_INTEL_MOTION_ESTIMATION_EXTENSION_VERSION")]
     public const int IntelMotionEstimationExtensionVersion = (
@@ -27559,7 +27549,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_ADVANCED_MOTION_ESTIMATION_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelAdvancedMotionEstimationExtensionName =>
+    public static Utf8String IntelAdvancedMotionEstimationExtensionName =>
         "cl_intel_advanced_motion_estimation"u8;
 
     [NativeName("CL_INTEL_ADVANCED_MOTION_ESTIMATION_EXTENSION_VERSION")]
@@ -27570,7 +27560,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_SIMULTANEOUS_SHARING_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelSimultaneousSharingExtensionName =>
+    public static Utf8String IntelSimultaneousSharingExtensionName =>
         "cl_intel_simultaneous_sharing"u8;
 
     [NativeName("CL_INTEL_SIMULTANEOUS_SHARING_EXTENSION_VERSION")]
@@ -27581,7 +27571,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_EGL_IMAGE_YUV_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelEglImageYuvExtensionName => "cl_intel_egl_image_yuv"u8;
+    public static Utf8String IntelEglImageYuvExtensionName => "cl_intel_egl_image_yuv"u8;
 
     [NativeName("CL_INTEL_EGL_IMAGE_YUV_EXTENSION_VERSION")]
     public const int IntelEglImageYuvExtensionVersion = (
@@ -27591,7 +27581,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_PACKED_YUV_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelPackedYuvExtensionName => "cl_intel_packed_yuv"u8;
+    public static Utf8String IntelPackedYuvExtensionName => "cl_intel_packed_yuv"u8;
 
     [NativeName("CL_INTEL_PACKED_YUV_EXTENSION_VERSION")]
     public const int IntelPackedYuvExtensionVersion = (
@@ -27601,7 +27591,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_REQUIRED_SUBGROUP_SIZE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelRequiredSubgroupSizeExtensionName =>
+    public static Utf8String IntelRequiredSubgroupSizeExtensionName =>
         "cl_intel_required_subgroup_size"u8;
 
     [NativeName("CL_INTEL_REQUIRED_SUBGROUP_SIZE_EXTENSION_VERSION")]
@@ -27612,8 +27602,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_DRIVER_DIAGNOSTICS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelDriverDiagnosticsExtensionName =>
-        "cl_intel_driver_diagnostics"u8;
+    public static Utf8String IntelDriverDiagnosticsExtensionName => "cl_intel_driver_diagnostics"u8;
 
     [NativeName("CL_INTEL_DRIVER_DIAGNOSTICS_EXTENSION_VERSION")]
     public const int IntelDriverDiagnosticsExtensionVersion = (
@@ -27623,7 +27612,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_PLANAR_YUV_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelPlanarYuvExtensionName => "cl_intel_planar_yuv"u8;
+    public static Utf8String IntelPlanarYuvExtensionName => "cl_intel_planar_yuv"u8;
 
     [NativeName("CL_INTEL_PLANAR_YUV_EXTENSION_VERSION")]
     public const int IntelPlanarYuvExtensionVersion = (
@@ -27633,7 +27622,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_DEVICE_SIDE_AVC_MOTION_ESTIMATION_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelDeviceSideAvcMotionEstimationExtensionName =>
+    public static Utf8String IntelDeviceSideAvcMotionEstimationExtensionName =>
         "cl_intel_device_side_avc_motion_estimation"u8;
 
     [NativeName("CL_INTEL_DEVICE_SIDE_AVC_MOTION_ESTIMATION_EXTENSION_VERSION")]
@@ -27644,7 +27633,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_UNIFIED_SHARED_MEMORY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelUnifiedSharedMemoryExtensionName =>
+    public static Utf8String IntelUnifiedSharedMemoryExtensionName =>
         "cl_intel_unified_shared_memory"u8;
 
     [NativeName("CL_INTEL_UNIFIED_SHARED_MEMORY_EXTENSION_VERSION")]
@@ -27655,7 +27644,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_MEM_ALLOC_BUFFER_LOCATION_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelMemAllocBufferLocationExtensionName =>
+    public static Utf8String IntelMemAllocBufferLocationExtensionName =>
         "cl_intel_mem_alloc_buffer_location"u8;
 
     [NativeName("CL_INTEL_MEM_ALLOC_BUFFER_LOCATION_EXTENSION_VERSION")]
@@ -27666,7 +27655,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_CREATE_BUFFER_WITH_PROPERTIES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelCreateBufferWithPropertiesExtensionName =>
+    public static Utf8String IntelCreateBufferWithPropertiesExtensionName =>
         "cl_intel_create_buffer_with_properties"u8;
 
     [NativeName("CL_INTEL_CREATE_BUFFER_WITH_PROPERTIES_EXTENSION_VERSION")]
@@ -27677,7 +27666,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_PROGRAM_SCOPE_HOST_PIPE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelProgramScopeHostPipeExtensionName =>
+    public static Utf8String IntelProgramScopeHostPipeExtensionName =>
         "cl_intel_program_scope_host_pipe"u8;
 
     [NativeName("CL_INTEL_PROGRAM_SCOPE_HOST_PIPE_EXTENSION_VERSION")]
@@ -27688,7 +27677,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_MEM_CHANNEL_PROPERTY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelMemChannelPropertyExtensionName =>
+    public static Utf8String IntelMemChannelPropertyExtensionName =>
         "cl_intel_mem_channel_property"u8;
 
     [NativeName("CL_INTEL_MEM_CHANNEL_PROPERTY_EXTENSION_VERSION")]
@@ -27699,7 +27688,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_MEM_FORCE_HOST_MEMORY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelMemForceHostMemoryExtensionName =>
+    public static Utf8String IntelMemForceHostMemoryExtensionName =>
         "cl_intel_mem_force_host_memory"u8;
 
     [NativeName("CL_INTEL_MEM_FORCE_HOST_MEMORY_EXTENSION_VERSION")]
@@ -27710,7 +27699,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_COMMAND_QUEUE_FAMILIES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelCommandQueueFamiliesExtensionName =>
+    public static Utf8String IntelCommandQueueFamiliesExtensionName =>
         "cl_intel_command_queue_families"u8;
 
     [NativeName("CL_INTEL_COMMAND_QUEUE_FAMILIES_EXTENSION_VERSION")]
@@ -27729,7 +27718,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     public const int QueueDefaultCapabilitiesINTEL = 0;
 
     [NativeName("CL_INTEL_QUEUE_NO_SYNC_OPERATIONS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelQueueNoSyncOperationsExtensionName =>
+    public static Utf8String IntelQueueNoSyncOperationsExtensionName =>
         "cl_intel_queue_no_sync_operations"u8;
 
     [NativeName("CL_INTEL_QUEUE_NO_SYNC_OPERATIONS_EXTENSION_VERSION")]
@@ -27740,7 +27729,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_SHARING_FORMAT_QUERY_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelSharingFormatQueryExtensionName =>
+    public static Utf8String IntelSharingFormatQueryExtensionName =>
         "cl_intel_sharing_format_query"u8;
 
     [NativeName("CL_INTEL_SHARING_FORMAT_QUERY_EXTENSION_VERSION")]
@@ -27751,7 +27740,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_EXT_IMAGE_REQUIREMENTS_INFO_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtImageRequirementsInfoExtensionName =>
+    public static Utf8String ExtImageRequirementsInfoExtensionName =>
         "cl_ext_image_requirements_info"u8;
 
     [NativeName("CL_EXT_IMAGE_REQUIREMENTS_INFO_EXTENSION_VERSION")]
@@ -27762,8 +27751,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_EXT_IMAGE_FROM_BUFFER_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtImageFromBufferExtensionName =>
-        "cl_ext_image_from_buffer"u8;
+    public static Utf8String ExtImageFromBufferExtensionName => "cl_ext_image_from_buffer"u8;
 
     [NativeName("CL_EXT_IMAGE_FROM_BUFFER_EXTENSION_VERSION")]
     public const int ExtImageFromBufferExtensionVersion = (
@@ -27773,7 +27761,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_LOADER_INFO_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> LoaderInfoExtensionName => "cl_loader_info"u8;
+    public static Utf8String LoaderInfoExtensionName => "cl_loader_info"u8;
 
     [NativeName("CL_LOADER_INFO_EXTENSION_VERSION")]
     public const int LoaderInfoExtensionVersion = (
@@ -27783,7 +27771,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_DEPTH_IMAGES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrDepthImagesExtensionName => "cl_khr_depth_images"u8;
+    public static Utf8String KhrDepthImagesExtensionName => "cl_khr_depth_images"u8;
 
     [NativeName("CL_KHR_DEPTH_IMAGES_EXTENSION_VERSION")]
     public const int KhrDepthImagesExtensionVersion = (
@@ -27793,7 +27781,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_EXT_FLOAT_ATOMICS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtFloatAtomicsExtensionName => "cl_ext_float_atomics"u8;
+    public static Utf8String ExtFloatAtomicsExtensionName => "cl_ext_float_atomics"u8;
 
     [NativeName("CL_EXT_FLOAT_ATOMICS_EXTENSION_VERSION")]
     public const int ExtFloatAtomicsExtensionVersion = (
@@ -27803,7 +27791,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_CREATE_MEM_OBJECT_PROPERTIES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelCreateMemObjectPropertiesExtensionName =>
+    public static Utf8String IntelCreateMemObjectPropertiesExtensionName =>
         "cl_intel_create_mem_object_properties"u8;
 
     [NativeName("CL_INTEL_CREATE_MEM_OBJECT_PROPERTIES_EXTENSION_VERSION")]
@@ -27814,7 +27802,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_POCL_CONTENT_SIZE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> PoclContentSizeExtensionName => "cl_pocl_content_size"u8;
+    public static Utf8String PoclContentSizeExtensionName => "cl_pocl_content_size"u8;
 
     [NativeName("CL_POCL_CONTENT_SIZE_EXTENSION_VERSION")]
     public const int PoclContentSizeExtensionVersion = (
@@ -27824,8 +27812,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_EXT_IMAGE_RAW10_RAW12_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtImageRaw10Raw12ExtensionName =>
-        "cl_ext_image_raw10_raw12"u8;
+    public static Utf8String ExtImageRaw10Raw12ExtensionName => "cl_ext_image_raw10_raw12"u8;
 
     [NativeName("CL_EXT_IMAGE_RAW10_RAW12_EXTENSION_VERSION")]
     public const int ExtImageRaw10Raw12ExtensionVersion = (
@@ -27835,7 +27822,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_3D_IMAGE_WRITES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> Khr3DImageWritesExtensionName => "cl_khr_3d_image_writes"u8;
+    public static Utf8String Khr3DImageWritesExtensionName => "cl_khr_3d_image_writes"u8;
 
     [NativeName("CL_KHR_3D_IMAGE_WRITES_EXTENSION_VERSION")]
     public const int Khr3DImageWritesExtensionVersion = (
@@ -27845,7 +27832,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_ASYNC_WORK_GROUP_COPY_FENCE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrAsyncWorkGroupCopyFenceExtensionName =>
+    public static Utf8String KhrAsyncWorkGroupCopyFenceExtensionName =>
         "cl_khr_async_work_group_copy_fence"u8;
 
     [NativeName("CL_KHR_ASYNC_WORK_GROUP_COPY_FENCE_EXTENSION_VERSION")]
@@ -27856,7 +27843,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_BYTE_ADDRESSABLE_STORE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrByteAddressableStoreExtensionName =>
+    public static Utf8String KhrByteAddressableStoreExtensionName =>
         "cl_khr_byte_addressable_store"u8;
 
     [NativeName("CL_KHR_BYTE_ADDRESSABLE_STORE_EXTENSION_VERSION")]
@@ -27867,7 +27854,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_DEVICE_ENQUEUE_LOCAL_ARG_TYPES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrDeviceEnqueueLocalArgTypesExtensionName =>
+    public static Utf8String KhrDeviceEnqueueLocalArgTypesExtensionName =>
         "cl_khr_device_enqueue_local_arg_types"u8;
 
     [NativeName("CL_KHR_DEVICE_ENQUEUE_LOCAL_ARG_TYPES_EXTENSION_VERSION")]
@@ -27878,7 +27865,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_EXPECT_ASSUME_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExpectAssumeExtensionName => "cl_khr_expect_assume"u8;
+    public static Utf8String KhrExpectAssumeExtensionName => "cl_khr_expect_assume"u8;
 
     [NativeName("CL_KHR_EXPECT_ASSUME_EXTENSION_VERSION")]
     public const int KhrExpectAssumeExtensionVersion = (
@@ -27888,7 +27875,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_EXTENDED_ASYNC_COPIES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExtendedAsyncCopiesExtensionName =>
+    public static Utf8String KhrExtendedAsyncCopiesExtensionName =>
         "cl_khr_extended_async_copies"u8;
 
     [NativeName("CL_KHR_EXTENDED_ASYNC_COPIES_EXTENSION_VERSION")]
@@ -27899,7 +27886,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_EXTENDED_BIT_OPS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrExtendedBitOpsExtensionName => "cl_khr_extended_bit_ops"u8;
+    public static Utf8String KhrExtendedBitOpsExtensionName => "cl_khr_extended_bit_ops"u8;
 
     [NativeName("CL_KHR_EXTENDED_BIT_OPS_EXTENSION_VERSION")]
     public const int KhrExtendedBitOpsExtensionVersion = (
@@ -27909,7 +27896,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_GLOBAL_INT32_BASE_ATOMICS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrGlobalInt32BaseAtomicsExtensionName =>
+    public static Utf8String KhrGlobalInt32BaseAtomicsExtensionName =>
         "cl_khr_global_int32_base_atomics"u8;
 
     [NativeName("CL_KHR_GLOBAL_INT32_BASE_ATOMICS_EXTENSION_VERSION")]
@@ -27920,7 +27907,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_GLOBAL_INT32_EXTENDED_ATOMICS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrGlobalInt32ExtendedAtomicsExtensionName =>
+    public static Utf8String KhrGlobalInt32ExtendedAtomicsExtensionName =>
         "cl_khr_global_int32_extended_atomics"u8;
 
     [NativeName("CL_KHR_GLOBAL_INT32_EXTENDED_ATOMICS_EXTENSION_VERSION")]
@@ -27931,8 +27918,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_INT64_BASE_ATOMICS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrInt64BaseAtomicsExtensionName =>
-        "cl_khr_int64_base_atomics"u8;
+    public static Utf8String KhrInt64BaseAtomicsExtensionName => "cl_khr_int64_base_atomics"u8;
 
     [NativeName("CL_KHR_INT64_BASE_ATOMICS_EXTENSION_VERSION")]
     public const int KhrInt64BaseAtomicsExtensionVersion = (
@@ -27942,7 +27928,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_INT64_EXTENDED_ATOMICS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrInt64ExtendedAtomicsExtensionName =>
+    public static Utf8String KhrInt64ExtendedAtomicsExtensionName =>
         "cl_khr_int64_extended_atomics"u8;
 
     [NativeName("CL_KHR_INT64_EXTENDED_ATOMICS_EXTENSION_VERSION")]
@@ -27953,7 +27939,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_KERNEL_CLOCK_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrKernelClockExtensionName => "cl_khr_kernel_clock"u8;
+    public static Utf8String KhrKernelClockExtensionName => "cl_khr_kernel_clock"u8;
 
     [NativeName("CL_KHR_KERNEL_CLOCK_EXTENSION_VERSION")]
     public const int KhrKernelClockExtensionVersion = (
@@ -27963,7 +27949,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_LOCAL_INT32_BASE_ATOMICS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrLocalInt32BaseAtomicsExtensionName =>
+    public static Utf8String KhrLocalInt32BaseAtomicsExtensionName =>
         "cl_khr_local_int32_base_atomics"u8;
 
     [NativeName("CL_KHR_LOCAL_INT32_BASE_ATOMICS_EXTENSION_VERSION")]
@@ -27974,7 +27960,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_LOCAL_INT32_EXTENDED_ATOMICS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrLocalInt32ExtendedAtomicsExtensionName =>
+    public static Utf8String KhrLocalInt32ExtendedAtomicsExtensionName =>
         "cl_khr_local_int32_extended_atomics"u8;
 
     [NativeName("CL_KHR_LOCAL_INT32_EXTENDED_ATOMICS_EXTENSION_VERSION")]
@@ -27985,8 +27971,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_MIPMAP_IMAGE_WRITES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrMipmapImageWritesExtensionName =>
-        "cl_khr_mipmap_image_writes"u8;
+    public static Utf8String KhrMipmapImageWritesExtensionName => "cl_khr_mipmap_image_writes"u8;
 
     [NativeName("CL_KHR_MIPMAP_IMAGE_WRITES_EXTENSION_VERSION")]
     public const int KhrMipmapImageWritesExtensionVersion = (
@@ -27996,7 +27981,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SELECT_FPROUNDING_MODE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSelectFproundingModeExtensionName =>
+    public static Utf8String KhrSelectFproundingModeExtensionName =>
         "cl_khr_select_fprounding_mode"u8;
 
     [NativeName("CL_KHR_SELECT_FPROUNDING_MODE_EXTENSION_VERSION")]
@@ -28007,7 +27992,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SPIRV_EXTENDED_DEBUG_INFO_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSpirvExtendedDebugInfoExtensionName =>
+    public static Utf8String KhrSpirvExtendedDebugInfoExtensionName =>
         "cl_khr_spirv_extended_debug_info"u8;
 
     [NativeName("CL_KHR_SPIRV_EXTENDED_DEBUG_INFO_EXTENSION_VERSION")]
@@ -28018,8 +28003,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SPIRV_LINKONCE_ODR_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSpirvLinkonceOdrExtensionName =>
-        "cl_khr_spirv_linkonce_odr"u8;
+    public static Utf8String KhrSpirvLinkonceOdrExtensionName => "cl_khr_spirv_linkonce_odr"u8;
 
     [NativeName("CL_KHR_SPIRV_LINKONCE_ODR_EXTENSION_VERSION")]
     public const int KhrSpirvLinkonceOdrExtensionVersion = (
@@ -28029,7 +28013,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SPIRV_NO_INTEGER_WRAP_DECORATION_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSpirvNoIntegerWrapDecorationExtensionName =>
+    public static Utf8String KhrSpirvNoIntegerWrapDecorationExtensionName =>
         "cl_khr_spirv_no_integer_wrap_decoration"u8;
 
     [NativeName("CL_KHR_SPIRV_NO_INTEGER_WRAP_DECORATION_EXTENSION_VERSION")]
@@ -28040,7 +28024,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SPIRV_QUERIES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSpirvQueriesExtensionName => "cl_khr_spirv_queries"u8;
+    public static Utf8String KhrSpirvQueriesExtensionName => "cl_khr_spirv_queries"u8;
 
     [NativeName("CL_KHR_SPIRV_QUERIES_EXTENSION_VERSION")]
     public const int KhrSpirvQueriesExtensionVersion = (
@@ -28050,8 +28034,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SRGB_IMAGE_WRITES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSrgbImageWritesExtensionName =>
-        "cl_khr_srgb_image_writes"u8;
+    public static Utf8String KhrSrgbImageWritesExtensionName => "cl_khr_srgb_image_writes"u8;
 
     [NativeName("CL_KHR_SRGB_IMAGE_WRITES_EXTENSION_VERSION")]
     public const int KhrSrgbImageWritesExtensionVersion = (
@@ -28061,7 +28044,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUBGROUP_BALLOT_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSubgroupBallotExtensionName => "cl_khr_subgroup_ballot"u8;
+    public static Utf8String KhrSubgroupBallotExtensionName => "cl_khr_subgroup_ballot"u8;
 
     [NativeName("CL_KHR_SUBGROUP_BALLOT_EXTENSION_VERSION")]
     public const int KhrSubgroupBallotExtensionVersion = (
@@ -28071,7 +28054,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUBGROUP_CLUSTERED_REDUCE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSubgroupClusteredReduceExtensionName =>
+    public static Utf8String KhrSubgroupClusteredReduceExtensionName =>
         "cl_khr_subgroup_clustered_reduce"u8;
 
     [NativeName("CL_KHR_SUBGROUP_CLUSTERED_REDUCE_EXTENSION_VERSION")]
@@ -28082,7 +28065,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUBGROUP_EXTENDED_TYPES_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSubgroupExtendedTypesExtensionName =>
+    public static Utf8String KhrSubgroupExtendedTypesExtensionName =>
         "cl_khr_subgroup_extended_types"u8;
 
     [NativeName("CL_KHR_SUBGROUP_EXTENDED_TYPES_EXTENSION_VERSION")]
@@ -28093,7 +28076,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUBGROUP_NON_UNIFORM_ARITHMETIC_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSubgroupNonUniformArithmeticExtensionName =>
+    public static Utf8String KhrSubgroupNonUniformArithmeticExtensionName =>
         "cl_khr_subgroup_non_uniform_arithmetic"u8;
 
     [NativeName("CL_KHR_SUBGROUP_NON_UNIFORM_ARITHMETIC_EXTENSION_VERSION")]
@@ -28104,7 +28087,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUBGROUP_NON_UNIFORM_VOTE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSubgroupNonUniformVoteExtensionName =>
+    public static Utf8String KhrSubgroupNonUniformVoteExtensionName =>
         "cl_khr_subgroup_non_uniform_vote"u8;
 
     [NativeName("CL_KHR_SUBGROUP_NON_UNIFORM_VOTE_EXTENSION_VERSION")]
@@ -28115,7 +28098,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUBGROUP_ROTATE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSubgroupRotateExtensionName => "cl_khr_subgroup_rotate"u8;
+    public static Utf8String KhrSubgroupRotateExtensionName => "cl_khr_subgroup_rotate"u8;
 
     [NativeName("CL_KHR_SUBGROUP_ROTATE_EXTENSION_VERSION")]
     public const int KhrSubgroupRotateExtensionVersion = (
@@ -28125,7 +28108,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUBGROUP_SHUFFLE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSubgroupShuffleExtensionName => "cl_khr_subgroup_shuffle"u8;
+    public static Utf8String KhrSubgroupShuffleExtensionName => "cl_khr_subgroup_shuffle"u8;
 
     [NativeName("CL_KHR_SUBGROUP_SHUFFLE_EXTENSION_VERSION")]
     public const int KhrSubgroupShuffleExtensionVersion = (
@@ -28135,7 +28118,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_SUBGROUP_SHUFFLE_RELATIVE_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrSubgroupShuffleRelativeExtensionName =>
+    public static Utf8String KhrSubgroupShuffleRelativeExtensionName =>
         "cl_khr_subgroup_shuffle_relative"u8;
 
     [NativeName("CL_KHR_SUBGROUP_SHUFFLE_RELATIVE_EXTENSION_VERSION")]
@@ -28146,7 +28129,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_KHR_WORK_GROUP_UNIFORM_ARITHMETIC_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> KhrWorkGroupUniformArithmeticExtensionName =>
+    public static Utf8String KhrWorkGroupUniformArithmeticExtensionName =>
         "cl_khr_work_group_uniform_arithmetic"u8;
 
     [NativeName("CL_KHR_WORK_GROUP_UNIFORM_ARITHMETIC_EXTENSION_VERSION")]
@@ -28157,7 +28140,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_EXT_BUFFER_DEVICE_ADDRESS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtBufferDeviceAddressExtensionName =>
+    public static Utf8String ExtBufferDeviceAddressExtensionName =>
         "cl_ext_buffer_device_address"u8;
 
     [NativeName("CL_EXT_BUFFER_DEVICE_ADDRESS_EXTENSION_VERSION")]
@@ -28168,7 +28151,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_EXT_IMAGE_UNORM_INT_2_101010_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtImageUnormInt2x101010ExtensionName =>
+    public static Utf8String ExtImageUnormInt2x101010ExtensionName =>
         "cl_ext_image_unorm_int_2_101010"u8;
 
     [NativeName("CL_EXT_IMAGE_UNORM_INT_2_101010_EXTENSION_VERSION")]
@@ -28179,7 +28162,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_EXT_IMAGE_UNSIGNED_10X6_12X4_14X2_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtImageUnsigned10x6x12x4x14x2ExtensionName =>
+    public static Utf8String ExtImageUnsigned10x6x12x4x14x2ExtensionName =>
         "cl_ext_image_unsigned_10x6_12x4_14x2"u8;
 
     [NativeName("CL_EXT_IMAGE_UNSIGNED_10X6_12X4_14X2_EXTENSION_VERSION")]
@@ -28190,7 +28173,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_EXT_IMMUTABLE_MEMORY_OBJECTS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ExtImmutableMemoryObjectsExtensionName =>
+    public static Utf8String ExtImmutableMemoryObjectsExtensionName =>
         "cl_ext_immutable_memory_objects"u8;
 
     [NativeName("CL_EXT_IMMUTABLE_MEMORY_OBJECTS_EXTENSION_VERSION")]
@@ -28201,7 +28184,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_IMG_CANCEL_COMMAND_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ImgCancelCommandExtensionName => "cl_img_cancel_command"u8;
+    public static Utf8String ImgCancelCommandExtensionName => "cl_img_cancel_command"u8;
 
     [NativeName("CL_IMG_CANCEL_COMMAND_EXTENSION_VERSION")]
     public const int ImgCancelCommandExtensionVersion = (
@@ -28211,8 +28194,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_IMG_SAFETY_MECHANISMS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> ImgSafetyMechanismsExtensionName =>
-        "cl_img_safety_mechanisms"u8;
+    public static Utf8String ImgSafetyMechanismsExtensionName => "cl_img_safety_mechanisms"u8;
 
     [NativeName("CL_IMG_SAFETY_MECHANISMS_EXTENSION_VERSION")]
     public const int ImgSafetyMechanismsExtensionVersion = (
@@ -28222,7 +28204,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_INTEL_KERNEL_ALLOCATIONS_INFO_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> IntelKernelAllocationsInfoExtensionName =>
+    public static Utf8String IntelKernelAllocationsInfoExtensionName =>
         "cl_intel_kernel_allocations_info"u8;
 
     [NativeName("CL_INTEL_KERNEL_ALLOCATIONS_INFO_EXTENSION_VERSION")]
@@ -28233,7 +28215,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_QCOM_PERF_HINT_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> QcomPerfHintExtensionName => "cl_qcom_perf_hint"u8;
+    public static Utf8String QcomPerfHintExtensionName => "cl_qcom_perf_hint"u8;
 
     [NativeName("CL_QCOM_PERF_HINT_EXTENSION_VERSION")]
     public const int QcomPerfHintExtensionVersion = (
@@ -28243,7 +28225,7 @@ public unsafe partial class Cl : ICl, ICl.Static
     );
 
     [NativeName("CL_LOADER_LAYERS_EXTENSION_NAME")]
-    public static ReadOnlySpan<byte> LoaderLayersExtensionName => "cl_loader_layers"u8;
+    public static Utf8String LoaderLayersExtensionName => "cl_loader_layers"u8;
 
     [NativeName("CL_LOADER_LAYERS_EXTENSION_VERSION")]
     public const int LoaderLayersExtensionVersion = (

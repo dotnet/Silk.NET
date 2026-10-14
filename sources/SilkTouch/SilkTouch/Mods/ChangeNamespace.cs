@@ -1,18 +1,10 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-using ClangSharp;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -22,18 +14,15 @@ namespace Silk.NET.SilkTouch.Mods;
 /// A mod that changes namespaces in response files. It is assumed that there will be no other sources of variance with
 /// regards to namespaces.
 /// </summary>
-[ModConfiguration<Configuration>]
-public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> config)
-    : IMod,
-        IResponseFileMod
+public class ChangeNamespace(ChangeNamespace.Configuration config) : IMod, IResponseFileMod
 {
-    private readonly Dictionary<string, (HashSet<string>, IReadOnlyList<(Regex, string)>)> _jobs =
-        new();
+    private readonly HashSet<string> _ns = [];
+    private readonly List<(Regex, string)> _regexes = [];
 
     /// <summary>
     /// The configuration for the change namespace mod.
     /// </summary>
-    public record Configuration // DON'T USE CONSTRUCTOR-STYLE RECORDS! Needs a default ctor.
+    public record Configuration
     {
         /// <summary>
         /// A mapping of namespace regexes to replacements.
@@ -45,8 +34,7 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
         var regexes =
-            config.Get(key).Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray()
-            ?? Array.Empty<(Regex, string)>();
+            config.Mappings?.Select(kvp => (new Regex(kvp.Key), kvp.Value)).ToArray() ?? [];
         for (var i = 0; i < rsps.Count; i++)
         {
             var rsp = rsps[i];
@@ -70,7 +58,7 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
             };
         }
 
-        _jobs[key] = (
+        _ns.UnionWith(
             rsps.Select(x => x.GeneratorConfiguration.DefaultNamespace)
                 .Concat(
                     rsps.SelectMany(x =>
@@ -78,17 +66,16 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
                     )
                 )
                 .Distinct()
-                .ToHashSet(),
-            regexes
         );
+        _regexes.AddRange(regexes);
+
         return Task.FromResult(rsps);
     }
 
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var (ns, regexes) = _jobs[ctx.JobKey];
-        var rewriter = new Rewriter(ns, regexes);
+        var rewriter = new Rewriter(_ns, _regexes);
         var proj = ctx.SourceProject;
         foreach (var docId in proj?.DocumentIds ?? [])
         {
@@ -101,7 +88,6 @@ public class ChangeNamespace(IOptionsSnapshot<ChangeNamespace.Configuration> con
         }
 
         ctx.SourceProject = proj;
-        _jobs.Remove(ctx.JobKey);
     }
 
     private class Rewriter : CSharpSyntaxRewriter

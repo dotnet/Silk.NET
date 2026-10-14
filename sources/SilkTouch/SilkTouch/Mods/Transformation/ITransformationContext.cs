@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.Transformation;
 
@@ -13,32 +12,20 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 public interface ITransformationContext
 {
     /// <summary>
-    /// The job key.
-    /// </summary>
-    string? JobKey { get; set; }
-
-    /// <summary>
     /// The original method signature.
     /// </summary>
-    MethodDeclarationSyntax? Original { get; set; }
+    public MethodDeclarationSyntax? Original { get; set; }
 
     /// <summary>
     /// The transformers in use.
     /// </summary>
-    IFunctionTransformer[]? Transformers { get; set; }
+    public IFunctionTransformer[] Transformers { get; set; }
 
     /// <summary>
-    /// Adds a namespace import to the resultant syntax tree.
+    /// The document factory in use.
     /// </summary>
-    /// <param name="str">The dot-separated namespace.</param>
-    /// <returns>Whether it was added.</returns>
-    bool AddUsing(string str) =>
-        AddUsing(UsingDirective(ModUtils.NamespaceIntoIdentifierName(str)));
-
-    /// <summary>
-    /// Adds a using directive to the resultant syntax tree.
-    /// </summary>
-    /// <param name="use">The directive.</param>
-    /// <returns>Whether it was added.</returns>
-    bool AddUsing(UsingDirectiveSyntax use);
+    /// <remarks>
+    /// Main purpose is for adding using statements.
+    /// </remarks>
+    public DocumentFactory DocumentFactory { get; set; }
 }

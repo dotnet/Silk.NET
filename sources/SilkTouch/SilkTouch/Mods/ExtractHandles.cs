@@ -17,13 +17,11 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <para/>
 /// See <see cref="TransformHandles"/> for applying further transformations.
 /// </summary>
-public class ExtractHandles(ILogger<ExtractHandles> logger) : Mod
+public class ExtractHandles(ILogger<ExtractHandles> logger, DocumentFactory documentFactory) : IMod
 {
     /// <inheritdoc />
-    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        await base.ExecuteAsync(ctx, ct);
-
         var project = ctx.SourceProject;
         if (project == null)
         {
@@ -47,11 +45,12 @@ public class ExtractHandles(ILogger<ExtractHandles> logger) : Mod
         // Add syntax nodes to the project as new documents
         foreach (var (fullyQualifiedName, node) in syntaxNodes)
         {
-            var relativePath = $"Handles/{PathForFullyQualified(fullyQualifiedName)}";
+            var relativePath =
+                $"Handles/{documentFactory.PathForFullyQualified(fullyQualifiedName)}";
             project = project
                 .AddDocument(
                     Path.GetFileName(relativePath),
-                    node,
+                    documentFactory.PopulateDocument(node),
                     filePath: project.FullPath(relativePath)
                 )
                 .Project;
@@ -66,10 +65,12 @@ public class ExtractHandles(ILogger<ExtractHandles> logger) : Mod
         CancellationToken ct
     ) : SymbolVisitor
     {
-        private readonly HashSet<IErrorTypeSymbol> _nonHandleTypes =
-            new(SymbolEqualityComparer.Default);
-        private readonly Dictionary<IErrorTypeSymbol, string> _missingTypes =
-            new(SymbolEqualityComparer.Default);
+        private readonly HashSet<IErrorTypeSymbol> _nonHandleTypes = new(
+            SymbolEqualityComparer.Default
+        );
+        private readonly Dictionary<IErrorTypeSymbol, string> _missingTypes = new(
+            SymbolEqualityComparer.Default
+        );
 
         private string? _currentNamespace = null;
         private int _pointerTypeDepth = 0;

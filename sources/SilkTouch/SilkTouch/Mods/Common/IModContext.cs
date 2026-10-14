@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using Microsoft.CodeAnalysis;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -17,10 +16,9 @@ public interface IModContext : IAsyncDisposable
     public string JobKey { get; }
 
     /// <summary>
-    /// Gets the directory in which the configuration file is contained. May be null if I/O is banned in the current
-    /// generator form factor (e.g. the SilkTouch framework is running as a source generator).
+    /// The path to resolve relative paths from.
     /// </summary>
-    public string? ConfigurationDirectory { get; }
+    public string? WorkingDirectory { get; }
 
     /// <summary>
     /// The current compilation for the generation outputs.

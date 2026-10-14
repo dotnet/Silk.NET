@@ -1,18 +1,10 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -21,18 +13,18 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Adds opaque structs.
 /// </summary>
-[ModConfiguration<Configuration>]
 public class AddOpaqueStructs(
+    DocumentFactory documentFactory,
     ILogger<AddOpaqueStructs> logger,
-    IOptionsSnapshot<AddOpaqueStructs.Configuration> config
+    AddOpaqueStructs.Configuration config
 ) : IMod, IResponseFileMod
 {
-    private readonly ConcurrentDictionary<string, string> _defaultNamespaces = new();
+    private string? _defaultNamespace;
 
     /// <summary>
     /// The configuration for the opaque structs mod.
     /// </summary>
-    public record Configuration // DON'T USE CONSTRUCTOR-STYLE RECORDS! Needs a default ctor.
+    public record Configuration
     {
         /// <summary>
         /// Opaque struct names.
@@ -51,7 +43,7 @@ public class AddOpaqueStructs(
         var ns = rsps[0].GeneratorConfiguration.DefaultNamespace;
         if (rsps.All(responseFile => responseFile.GeneratorConfiguration.DefaultNamespace == ns))
         {
-            _defaultNamespaces[key] = ns;
+            _defaultNamespace = ns;
         }
 
         return Task.FromResult(rsps);
@@ -60,7 +52,6 @@ public class AddOpaqueStructs(
     /// <inheritdoc />
     public Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var cfg = config.Get(ctx.JobKey);
         var proj = ctx.SourceProject;
         if (
             proj?.FilePath is null
@@ -71,7 +62,7 @@ public class AddOpaqueStructs(
             return Task.CompletedTask;
         }
 
-        foreach (var fullyQualifiedName in cfg.Names ?? Array.Empty<string>())
+        foreach (var fullyQualifiedName in config.Names ?? Array.Empty<string>())
         {
             var lastPeriodIndex = fullyQualifiedName.LastIndexOf('.');
             var ns =
@@ -79,8 +70,8 @@ public class AddOpaqueStructs(
                     ? ModUtils.NamespaceIntoIdentifierName(
                         fullyQualifiedName.AsSpan()[..lastPeriodIndex]
                     )
-                : _defaultNamespaces.TryGetValue(ctx.JobKey, out var def)
-                    ? ModUtils.NamespaceIntoIdentifierName(def)
+                : _defaultNamespace != null
+                    ? ModUtils.NamespaceIntoIdentifierName(_defaultNamespace)
                 : null;
             if (ns is null)
             {
@@ -96,29 +87,31 @@ public class AddOpaqueStructs(
             var fileName = $"{name}.gen.cs";
             proj = proj.AddDocument(
                 fileName,
-                CompilationUnit()
-                    .WithMembers(
-                        SingletonList<MemberDeclarationSyntax>(
-                            FileScopedNamespaceDeclaration(ns)
-                                .WithMembers(
-                                    SingletonList<MemberDeclarationSyntax>(
-                                        StructDeclaration(name)
-                                            .WithAttributeLists(
-                                                new SyntaxList<AttributeListSyntax>().WithNativeName(
-                                                    name
+                documentFactory.PopulateDocument(
+                    CompilationUnit()
+                        .WithMembers(
+                            SingletonList<MemberDeclarationSyntax>(
+                                FileScopedNamespaceDeclaration(ns)
+                                    .WithMembers(
+                                        SingletonList<MemberDeclarationSyntax>(
+                                            StructDeclaration(name)
+                                                .WithAttributeLists(
+                                                    new SyntaxList<AttributeListSyntax>().WithNativeName(
+                                                        name
+                                                    )
                                                 )
-                                            )
-                                            .WithModifiers(
-                                                TokenList(
-                                                    Token(SyntaxKind.PublicKeyword),
-                                                    Token(SyntaxKind.ReadOnlyKeyword),
-                                                    Token(SyntaxKind.PartialKeyword)
+                                                .WithModifiers(
+                                                    TokenList(
+                                                        Token(SyntaxKind.PublicKeyword),
+                                                        Token(SyntaxKind.ReadOnlyKeyword),
+                                                        Token(SyntaxKind.PartialKeyword)
+                                                    )
                                                 )
-                                            )
+                                        )
                                     )
-                                )
+                            )
                         )
-                    ),
+                ),
                 filePath: proj.FullPath(fileName)
             ).Project;
         }

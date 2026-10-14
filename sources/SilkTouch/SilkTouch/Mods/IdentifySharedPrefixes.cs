@@ -4,7 +4,6 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Naming;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -17,9 +16,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// These are identified as [NameAffix] attributes that
 /// <see cref="PrettifyNames"/> and other mods can then process further.
 /// </summary>
-[ModConfiguration<Configuration>]
-public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Configuration> config)
-    : IMod
+public class IdentifySharedPrefixes(IdentifySharedPrefixes.Configuration config) : IMod
 {
     /// <summary>
     /// This was from the original NameTrimmer code
@@ -57,7 +54,6 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var configuration = config.Get(ctx.JobKey);
         var project = ctx.SourceProject;
         if (project is null)
         {
@@ -66,9 +62,9 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
 
         // Sort the hints from large to small
         // This makes it so that we prefer longer prefixes
-        var hints = configuration.GlobalPrefixHints.ToList();
+        var hints = config.GlobalPrefixHints.ToList();
         hints.Sort((x, y) => -x.Length.CompareTo(y.Length));
-        configuration = configuration with { GlobalPrefixHints = hints };
+        config = config with { GlobalPrefixHints = hints };
 
         // Gather all the names
         var visitor = new Visitor();
@@ -81,7 +77,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         var results = new Dictionary<string, Dictionary<string, string>>();
         foreach (var (scope, members) in visitor.Scopes)
         {
-            var prefixes = IdentifyPrefixes(scope, members, visitor.NonDeterminant, configuration);
+            var prefixes = IdentifyPrefixes(scope, members, visitor.NonDeterminant, config);
             if (prefixes == null)
             {
                 continue;

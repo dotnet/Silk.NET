@@ -1,18 +1,11 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Mods.Bakery;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -21,17 +14,18 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Merging the APIs of multiple source sets into a single source set.
 /// </summary>
+/// <param name="documentFactory">The document factory to use.</param>
 /// <param name="logger">The logger to use.</param>
 /// <param name="config">The configuration snapshot.</param>
 /// <param name="strategies">
 /// The available bake strategies. The actual strategy to use is determined from the configuration.
 /// </param>
-[ModConfiguration<Configuration>]
 public class BakeSourceSets(
+    DocumentFactory documentFactory,
     ILogger<BakeSourceSets> logger,
-    IOptionsSnapshot<BakeSourceSets.Configuration> config,
-    IEnumerable<IJobDependency<IBakeStrategy>> strategies
-) : Mod
+    BakeSourceSets.Configuration config,
+    IEnumerable<IBakeStrategy> strategies
+) : IMod
 {
     /// <summary>
     /// The mod configuration.
@@ -49,7 +43,8 @@ public class BakeSourceSets(
         public required Dictionary<string, string> SourceSets { get; init; }
     }
 
-    class Rewriter(IBakeStrategy strategy, ILogger<BakeSourceSets> logger) : ModCSharpSyntaxRewriter
+    private class Rewriter(IBakeStrategy strategy, ILogger<BakeSourceSets> logger)
+        : CSharpSyntaxRewriter
     {
         public BakeSet? Baked { get; set; }
 
@@ -303,23 +298,18 @@ public class BakeSourceSets(
     private Dictionary<string, BakeSet> _baked = new();
 
     /// <inheritdoc />
-    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        await base.ExecuteAsync(ctx, ct);
         if (ctx.SourceProject is null)
         {
             return;
         }
 
-        var cfg = config.Get(ctx.JobKey);
-
         // Locate the bake strategy the user's after.
-        var strategy = strategies
-            .SelectMany(x => x.Get(ctx.JobKey))
-            .FirstOrDefault(x =>
-                x.Name == cfg.Strategy
-                || (cfg.Strategy is null && x.GetType() == typeof(DefaultBakeStrategy))
-            );
+        var strategy = strategies.FirstOrDefault(x =>
+            x.Name == config.Strategy
+            || (config.Strategy is null && x.GetType() == typeof(DefaultBakeStrategy))
+        );
         if (strategy is null)
         {
             throw new ConfigurationErrorsException(
@@ -330,7 +320,6 @@ public class BakeSourceSets(
         var rewriter = new Rewriter(strategy, logger);
         var bakery = new Dictionary<string, BakeSet>();
         var baked = new List<string>();
-        var aggregatedUsings = new Dictionary<string, UsingDirectiveSyntax>();
         foreach (var docId in ctx.SourceProject.DocumentIds)
         {
             var doc =
@@ -349,7 +338,7 @@ public class BakeSourceSets(
             }
 
             var root = await tree.GetRootAsync(ct);
-            var srcSet = cfg
+            var srcSet = config
                 .SourceSets.Where(x => path.StartsWith(x.Key, StringComparison.OrdinalIgnoreCase))
                 .MaxBy(x => x.Key.Length);
             rewriter.SourceSet = srcSet.Key;
@@ -369,32 +358,22 @@ public class BakeSourceSets(
             baked.Add(path);
 
             rewriter.Visit(root);
-            foreach (var (k, v) in rewriter.UsingsToAdd)
-            {
-                aggregatedUsings.TryAdd(k, v);
-            }
-            rewriter.UsingsToAdd.Clear();
             rewriter.Baked = null;
             rewriter.SourceSet = null;
         }
 
-        var proj = ctx.SourceProject.RemoveDocuments(
-            [
-                .. ctx
-                    .SourceProject.Documents.Where(x =>
-                        x.RelativePath() is { } rp && baked.Contains(rp)
-                    )
-                    .Select(x => x.Id),
-            ]
-        );
-        foreach (
-            var (bakedRoot, bakedPath) in GetBaked(bakery, aggregatedUsings)
-                .Select(x => (x.Value, path: x.Key))
-        )
+        var proj = ctx.SourceProject.RemoveDocuments([
+            .. ctx
+                .SourceProject.Documents.Where(x =>
+                    x.RelativePath() is { } rp && baked.Contains(rp)
+                )
+                .Select(x => x.Id),
+        ]);
+        foreach (var (bakedRoot, bakedPath) in GetBaked(bakery).Select(x => (x.Value, path: x.Key)))
         {
             proj = proj.AddDocument(
                 Path.GetFileName(bakedPath),
-                bakedRoot,
+                documentFactory.PopulateDocument(bakedRoot),
                 // we can forgive the below nulls because RelativePath checks them, and returns null if they're null.
                 filePath: proj.FullPath(bakedPath)
             ).Project;
@@ -404,8 +383,7 @@ public class BakeSourceSets(
     }
 
     private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(
-        Dictionary<string, BakeSet> bakery,
-        Dictionary<string, UsingDirectiveSyntax> aggregatedUsings
+        Dictionary<string, BakeSet> bakery
     )
     {
         foreach (var (subdir, bakeSet) in bakery)
@@ -424,7 +402,7 @@ public class BakeSourceSets(
                     ? fqTopLevelType[..idx]
                     : null;
                 yield return new KeyValuePair<string, CompilationUnitSyntax>(
-                    $"{subdir}/{PathForFullyQualified(fqTopLevelType)}",
+                    $"{subdir}/{documentFactory.PathForFullyQualified(fqTopLevelType)}",
                     CompilationUnit()
                         .WithMembers(
                             ns is null
@@ -436,7 +414,6 @@ public class BakeSourceSets(
                                         .WithMembers(SingletonList(bakedSyntax))
                                 )
                         )
-                        .WithUsings(ModCSharpSyntaxRewriter.GetUsings(aggregatedUsings, null))
                 );
             }
         }
@@ -457,7 +434,8 @@ public class BakeSourceSets(
                         ty.Members.Concat(
                             member
                                 .Inner?.Children.Values.OrderBy(x => x.Index)
-                                .Select(x => Bake(x).Syntax) ?? []
+                                .Select(x => Bake(x).Syntax)
+                                ?? []
                         )
                     )
                 )
@@ -470,7 +448,8 @@ public class BakeSourceSets(
                             member
                                 .Inner?.Children.Values.OrderBy(x => x.Index)
                                 .Select(x => x.Syntax)
-                                .OfType<EnumMemberDeclarationSyntax>() ?? []
+                                .OfType<EnumMemberDeclarationSyntax>()
+                                ?? []
                         )
                     )
                 )

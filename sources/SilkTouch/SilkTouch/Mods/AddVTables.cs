@@ -1,20 +1,10 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text.Json.Serialization;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using Silk.NET.SilkTouch.Clang;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -37,16 +27,12 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <see cref="DllImport"/>-based partial class implementation of the static interface. However, in some cases this
 /// could be any other implementation such as the <see cref="ThisThread"/> implementation.
 /// </remarks>
-[ModConfiguration<Configuration>]
-public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMod
+public class AddVTables(AddVTables.Configuration config, DocumentFactory sharedDocumentFactory)
+    : IMod
 {
     /// <summary>
     /// Base class for VTable configurations.
     /// </summary>
-    [JsonPolymorphic(TypeDiscriminatorPropertyName = "Kind")]
-    [JsonDerivedType(typeof(DllImport), nameof(DllImport))]
-    [JsonDerivedType(typeof(ThisThread), nameof(ThisThread))]
-    [JsonDerivedType(typeof(StaticWrapper), nameof(StaticWrapper))]
     public abstract record VTable
     {
         /// <summary>
@@ -153,7 +139,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             ).AddMembers(ctx.Original);
 
         /// <inheritdoc />
-        public override ClassDeclarationSyntax? GetBoilerplate(in VTableBoilerplateContext ctx) =>
+        public override ClassDeclarationSyntax GetBoilerplate(in VTableBoilerplateContext ctx) =>
             ClassDeclaration(Name)
                 .WithModifiers(
                     TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
@@ -222,7 +208,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         public override bool IsStatic => true;
 
         /// <inheritdoc />
-        public override ClassDeclarationSyntax? GetBoilerplate(in VTableBoilerplateContext ctx) =>
+        public override ClassDeclarationSyntax GetBoilerplate(in VTableBoilerplateContext ctx) =>
             ClassDeclaration(Name)
                 .WithModifiers(
                     TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.PartialKeyword))
@@ -513,19 +499,24 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
     /// <summary>
     /// The mod's configuration.
     /// </summary>
-    public record Configuration // DON'T USE CONSTRUCTOR-STYLE RECORDS! Needs a default ctor.
+    public record Configuration
     {
         /// <summary>
         /// The various VTable types to generate.
         /// </summary>
-        public IConfigurationSection[]? VTables { get; init; }
+        public VTable[] VTables { get; init; } =
+            new VTable[]
+            {
+                new DllImport { IsDefault = true },
+                new StaticWrapper(),
+                new ThisThread(),
+            };
     }
 
-    class Rewriter(VTable[] vTables) : ModCSharpSyntaxRewriter
+    private class Rewriter(VTable[] vTables) : CSharpSyntaxRewriter
     {
         private InterfaceDeclarationSyntax? _currentInterface;
         private ClassDeclarationSyntax? _currentClass;
-        private VTable[] _vTables = vTables;
 
         private ClassDeclarationSyntax?[] _currentVTableOutputs = new ClassDeclarationSyntax?[
             vTables.Length
@@ -595,25 +586,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             List<(string EntryPoint, string Library)>
         > EntryPoints { get; set; } = [];
 
-        public override SyntaxNode? Visit(SyntaxNode? node)
-        {
-            var ret = base.Visit(node);
-            if (node is CompilationUnitSyntax)
-            {
-                foreach (var (k, v) in UsingsToAdd)
-                {
-                    AggregatedUsings[k] = v;
-                }
-
-                UsingsToAdd.Clear();
-            }
-
-            return ret;
-        }
-
         private static string InterfaceKey(ClassDeclarationSyntax klass) => $"I{klass.Identifier}";
 
-        public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
+        public override SyntaxNode VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             if (_currentClass is not null)
             {
@@ -868,9 +843,9 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 );
             }
 
-            for (var i = 0; i < _vTables.Length; i++)
+            for (var i = 0; i < vTables.Length; i++)
             {
-                _currentVTableOutputs[i] = _vTables[i]
+                _currentVTableOutputs[i] = vTables[i]
                     .AddMethod(
                         new VTableContext(
                             _currentVTableOutputs[i],
@@ -1002,7 +977,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         && x.ChildTokens()
                             .FirstOrDefault(y => y.IsKind(SyntaxKind.IdentifierToken))
                             .ToString() == tok.ToString()
-                    ) ?? false
+                    )
+                    ?? false
                 )
             )
             {
@@ -1028,8 +1004,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
         public IEnumerable<KeyValuePair<string, CSharpSyntaxNode>> GetExtraFiles()
         {
-            var uta = UsingsToAdd;
-            UsingsToAdd = AggregatedUsings;
             foreach (var (outputName, nonInterface) in FullClassNames)
             {
                 if (nonInterface is null)
@@ -1048,7 +1022,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                     .WithModifiers(TokenList(Token(SyntaxKind.PartialKeyword)))
                     .WithMembers(
                         List<MemberDeclarationSyntax>(
-                            _vTables
+                            vTables
                                 .Select(x =>
                                     x.GetBoilerplate(
                                         new VTableBoilerplateContext(
@@ -1077,12 +1051,10 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                             )
                         )
                     );
-                AddUsing("Silk.NET.Core.Loader");
-                AddUsing("System.Reflection");
+
                 yield return new KeyValuePair<string, CSharpSyntaxNode>(
                     $"{outputName}.gen.cs",
                     CompilationUnit()
-                        .WithUsings(GetUsings(UsingsToAdd, null))
                         .WithMembers(
                             string.IsNullOrWhiteSpace(ns)
                                 ? SingletonList<MemberDeclarationSyntax>(boilerplate)
@@ -1097,8 +1069,6 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         )
                 );
             }
-
-            UsingsToAdd = uta;
         }
 
         private IEnumerable<MemberDeclarationSyntax> GenerateTopLevelBoilerplate(
@@ -1152,7 +1122,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
 
             if (
                 _staticDefaultWrapper is not null
-                && !_vTables.Any(x => x is ThisThread && x.Name == _staticDefault)
+                && !vTables.Any(x => x is ThisThread && x.Name == _staticDefault)
             )
             {
                 yield return PropertyDeclaration(
@@ -1408,41 +1378,12 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var cfg = config.Get(ctx.JobKey);
-        VTable[]? vTables = null;
-        if (cfg.VTables is not null)
-        {
-            vTables = new VTable[cfg.VTables.Length];
-            for (var i = 0; i < cfg.VTables.Length; i++)
-            {
-                vTables[i] = (VTable)(
-                    cfg.VTables[i]
-                        .Get(
-                            cfg.VTables[i].GetValue<string>("Kind") switch
-                            {
-                                nameof(DllImport) => typeof(DllImport),
-                                nameof(StaticWrapper) => typeof(StaticWrapper),
-                                nameof(ThisThread) => typeof(ThisThread),
-                                _ => throw new InvalidOperationException(
-                                    "VTable must have valid \"Kind\" property"
-                                ),
-                            }
-                        )
-                    ?? throw new InvalidOperationException(
-                        "Failed to deserialize VTable configuration properly"
-                    )
-                );
-            }
-        }
-        var rw = new Rewriter(
-            vTables
-                ?? new VTable[]
-                {
-                    new DllImport { IsDefault = true },
-                    new StaticWrapper(),
-                    new ThisThread(),
-                }
-        );
+        var documentFactory = sharedDocumentFactory.Clone();
+        documentFactory.AddUsing("Silk.NET.Core.Loader");
+        documentFactory.AddUsing("System.Reflection");
+
+        var vTables = config.VTables;
+        var rw = new Rewriter(vTables);
         var newFiles = new List<(string, CSharpSyntaxNode)>(rw.FullClassNames.Count);
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
@@ -1456,9 +1397,14 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
             }
 
             rw.Reset();
-            proj = doc.WithSyntaxRoot(
-                rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null")
-            ).Project;
+            var newNode =
+                rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null");
+            if (newNode != node)
+            {
+                newNode = documentFactory.PopulateDocument(newNode);
+            }
+
+            proj = doc.WithSyntaxRoot(newNode).Project;
             if (rw.InterfacePartials.Count == 0)
             {
                 continue;
@@ -1469,13 +1415,12 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                 && fname.Replace(rw.ClassName, $"I{rw.ClassName}") is var ifn
                 && ifn != fname
                     ? ifn
-                    : ModUtils.AddEffectiveSuffix(fname, "Interfaces");
+                    : fname.AddEffectiveSuffix("Interfaces");
             var nNamespaces = rw.InterfacePartials.Select(x => x.Namespace).Distinct().Count();
             newFiles.Add(
                 (
                     ifname,
                     CompilationUnit()
-                        .WithUsings(ModCSharpSyntaxRewriter.GetUsings(rw.AggregatedUsings, null))
                         .WithMembers(
                             nNamespaces == 1
                                 ? string.IsNullOrWhiteSpace(rw.InterfacePartials[0].Namespace)
@@ -1517,7 +1462,11 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
         )
         {
             proj = proj
-                ?.AddDocument(Path.GetFileName(fname), root, filePath: proj.FullPath(fname))
+                ?.AddDocument(
+                    Path.GetFileName(fname),
+                    documentFactory.PopulateDocument(root),
+                    filePath: proj.FullPath(fname)
+                )
                 .Project;
         }
 

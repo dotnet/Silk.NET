@@ -47,12 +47,10 @@ public class InterceptNativeFunctionsTests
         var context = new DummyModContext() { SourceProject = project };
 
         var interceptNativeFunctions = new InterceptNativeFunctions(
-            new DummyOptions<InterceptNativeFunctions.Configuration>(
-                new InterceptNativeFunctions.Configuration()
-                {
-                    NativeFunctionNames = ["vkCreateInstance"],
-                }
-            )
+            new InterceptNativeFunctions.Configuration()
+            {
+                NativeFunctionNames = ["vkCreateInstance"],
+            }
         );
 
         await interceptNativeFunctions.ExecuteAsync(context);

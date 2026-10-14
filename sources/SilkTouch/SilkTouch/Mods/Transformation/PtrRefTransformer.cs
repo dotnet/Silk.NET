@@ -1,12 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -17,12 +13,10 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 /// <summary>
 /// A transformer that converts between raw pointers and Silk DSL pointer types.
 /// </summary>
-public sealed partial class PtrRefTransformer()
-    : ModCSharpSyntaxRewriter(true),
-        IFunctionTransformer
+public sealed partial class PtrRefTransformer() : CSharpSyntaxRewriter(true), IFunctionTransformer
 {
     private const int MaxIndirections = 3;
-    private ThreadLocal<ITransformationContext?> _ctx = new();
+    private ITransformationContext? _ctx;
 
     /// <inheritdoc />
     public void Transform(
@@ -31,7 +25,7 @@ public sealed partial class PtrRefTransformer()
         Action<MethodDeclarationSyntax> next
     )
     {
-        _ctx.Value = ctx;
+        _ctx = ctx;
         if (Visit(current) is MethodDeclarationSyntax modded)
         {
             next(modded);
@@ -41,7 +35,7 @@ public sealed partial class PtrRefTransformer()
             next(current);
         }
 
-        _ctx.Value = null;
+        _ctx = null;
     }
 
     private static bool ShouldConvertToDSL(TypeSyntax syn) =>
@@ -186,7 +180,7 @@ public sealed partial class PtrRefTransformer()
                 )
             )
             .AddMaxOpt();
-        _ctx.Value?.AddUsing("System.Runtime.CompilerServices");
+        _ctx?.DocumentFactory.AddUsing("System.Runtime.CompilerServices");
 
         // Generate the fixed blocks for the "inner idents"
         foreach (var param in paramsToChange)
