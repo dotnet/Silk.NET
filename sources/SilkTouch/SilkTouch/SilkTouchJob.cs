@@ -135,37 +135,6 @@ internal class SilkTouchJob : IDisposable
         );
     }
 
-    // TODO: Why is this here?
-    internal static string GetLongestCommonPrefix(string[] s)
-    {
-        var k = s[0].Length;
-        for (var i = 1; i < s.Length; i++)
-        {
-            k = Math.Min(k, s[i].Length);
-            for (var j = 0; j < k; j++)
-            {
-                if (s[i][j] == s[0][j])
-                {
-                    continue;
-                }
-
-                k = j;
-                break;
-            }
-        }
-
-        return s[0][..k];
-    }
-
-    internal static string GetLongestCommonPath(IEnumerable<string> s)
-    {
-        var ret = GetLongestCommonPrefix(
-            s.Select(x => Path.GetFullPath(x.Replace('\\', '/').TrimEnd('/'))).ToArray()
-        );
-        Debug.Assert(Directory.Exists(ret));
-        return ret;
-    }
-
     /// <inheritdoc />
     public void Dispose() => _container.Dispose();
 }

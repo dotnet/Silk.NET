@@ -234,14 +234,10 @@ public sealed class ClangScraper(
         // Figure out what the common root is so we can aggregate the file paths without collisions
         var srcRoot =
             cfg.InputSourceRoot
-            ?? SilkTouchJob.GetLongestCommonPath(
-                rsps.Select(x => x.GeneratorConfiguration.OutputLocation)
-            );
+            ?? GetLongestCommonPath(rsps.Select(x => x.GeneratorConfiguration.OutputLocation));
         var testRoot =
             cfg.InputTestRoot
-            ?? SilkTouchJob.GetLongestCommonPath(
-                rsps.Select(x => x.GeneratorConfiguration.TestOutputLocation)
-            );
+            ?? GetLongestCommonPath(rsps.Select(x => x.GeneratorConfiguration.TestOutputLocation));
         srcRoot = Path.GetFullPath(srcRoot);
         testRoot = Path.GetFullPath(testRoot);
 
@@ -530,6 +526,36 @@ public sealed class ClangScraper(
         var normalizedBaseDirPath = Path.GetFullPath(baseDirPath.Replace('\\', '/').TrimEnd('/'));
 
         return normalizedPath.StartsWith(normalizedBaseDirPath, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static string GetLongestCommonPath(IEnumerable<string> s)
+    {
+        var ret = GetLongestCommonPrefix(
+            s.Select(x => Path.GetFullPath(x.Replace('\\', '/').TrimEnd('/'))).ToArray()
+        );
+        Debug.Assert(Directory.Exists(ret));
+        return ret;
+    }
+
+    private static string GetLongestCommonPrefix(string[] s)
+    {
+        var k = s[0].Length;
+        for (var i = 1; i < s.Length; i++)
+        {
+            k = Math.Min(k, s[i].Length);
+            for (var j = 0; j < k; j++)
+            {
+                if (s[i][j] == s[0][j])
+                {
+                    continue;
+                }
+
+                k = j;
+                break;
+            }
+        }
+
+        return s[0][..k];
     }
 
     private void LogConfiguration(ResponseFile cfg)
