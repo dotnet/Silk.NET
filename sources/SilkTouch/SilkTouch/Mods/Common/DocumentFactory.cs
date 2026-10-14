@@ -107,8 +107,8 @@ public class DocumentFactory
     /// <param name="directive">The using directive.</param>
     public void AddUsing(UsingDirectiveSyntax directive)
     {
-        var directiveNoTrivia = directive.WithoutTrivia();
-        var discriminator = GetDiscriminator(directiveNoTrivia);
+        directive = directive.WithoutTrivia().NormalizeWhitespace();
+        var discriminator = GetDiscriminator(directive);
         if (_usingDiscriminators.Add(discriminator))
         {
             var index = ~_orderedUsingDiscriminators.BinarySearch(
@@ -117,7 +117,7 @@ public class DocumentFactory
             );
 
             _orderedUsingDiscriminators.Insert(index, discriminator);
-            _usings.Insert(index, directiveNoTrivia);
+            _usings.Insert(index, directive);
         }
     }
 
