@@ -76,7 +76,6 @@ internal class MSBuildModContext(
     public async Task InitializeAsync()
     {
         var solutionPath = Path.GetFullPath(jobConfig.Solution, WorkingDirectory);
-        logger.LogInformation("Opening solution at {}...", solutionPath);
         var solution = await parent.OpenSolutionAsync(solutionPath);
 
         if (jobConfig.SourceProject is null)

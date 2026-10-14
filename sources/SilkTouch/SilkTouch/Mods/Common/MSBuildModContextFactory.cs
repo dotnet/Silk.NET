@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Collections.Concurrent;
 using Microsoft.Build.Framework;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
@@ -17,7 +16,8 @@ internal class MSBuildModContextFactory(ILogger<MSBuildModContextFactory> logger
         IProgress<ProjectLoadProgress>,
         Microsoft.Build.Framework.ILogger
 {
-    private readonly ConcurrentDictionary<string, Task<Solution>> _solutions = [];
+    private readonly Dictionary<string, Task<Solution>> _solutions = [];
+    private readonly Lock _solutionsLock = new();
 
     /// <inheritdoc />
     public LoggerVerbosity Verbosity { get; set; } = LoggerVerbosity.Detailed;
@@ -37,15 +37,20 @@ internal class MSBuildModContextFactory(ILogger<MSBuildModContextFactory> logger
         return ret;
     }
 
-    internal Task<Solution> OpenSolutionAsync(string file) =>
-        _solutions.GetOrAdd(
-            file,
-            async x =>
-            {
-                logger.LogInformation("Opening solution at {}...", x);
-                return await MSBuildWorkspace.Create().OpenSolutionAsync(x, this, this);
-            }
-        );
+    internal Task<Solution> OpenSolutionAsync(string filePath)
+    {
+        using var _ = _solutionsLock.EnterScope();
+
+        if (!_solutions.TryGetValue(filePath, out var task))
+        {
+            logger.LogInformation("Opening solution at {}...", filePath);
+            _solutions[filePath] = task = MSBuildWorkspace
+                .Create()
+                .OpenSolutionAsync(filePath, this, this);
+        }
+
+        return task;
+    }
 
     /// <inheritdoc />
     public void Report(ProjectLoadProgress value) =>
