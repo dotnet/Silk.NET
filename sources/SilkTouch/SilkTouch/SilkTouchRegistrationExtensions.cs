@@ -21,22 +21,9 @@ public static class SilkTouchRegistrationExtensions
     public static SilkTouchRegistrationContext SilkTouch(this ContainerBuilder builder) =>
         new(builder);
 
+    // Non-mods
     extension(SilkTouchRegistrationContext context)
     {
-        /// <summary>
-        /// Begins a <see cref="SilkTouchRegistrationContext"/>.
-        /// </summary>
-        public SilkTouchModRegistrationContext WithMods() => new(context.Builder);
-
-        /// <summary>
-        /// Begins a <see cref="SilkTouchRegistrationContext"/>.
-        /// </summary>
-        public SilkTouchRegistrationContext WithMods(Action<SilkTouchModRegistrationContext> build)
-        {
-            build.Invoke(new SilkTouchModRegistrationContext(context.Builder));
-            return context;
-        }
-
         /// <summary>
         /// Registers the default function transformers.
         /// </summary>
@@ -97,12 +84,13 @@ public static class SilkTouchRegistrationExtensions
         }
     }
 
-    extension(SilkTouchModRegistrationContext context)
+    // Mods
+    extension(SilkTouchRegistrationContext context)
     {
         /// <summary>
         /// Registers the <see cref="AddApiProfiles"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext AddApiProfiles(AddApiProfiles.Configuration config)
+        public SilkTouchRegistrationContext AddApiProfiles(AddApiProfiles.Configuration config)
         {
             context
                 .Builder.RegisterType<AddApiProfiles>()
@@ -116,7 +104,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="ClangScraper"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext ClangScraper(ClangScraper.Configuration config)
+        public SilkTouchRegistrationContext ClangScraper(ClangScraper.Configuration config)
         {
             context
                 .Builder.RegisterType<ClangScraper>()
@@ -130,7 +118,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="AddIncludes"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext AddIncludes(AddIncludes.Configuration config)
+        public SilkTouchRegistrationContext AddIncludes(AddIncludes.Configuration config)
         {
             context
                 .Builder.RegisterType<AddIncludes>()
@@ -144,9 +132,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="AddOpaqueStructs"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext AddOpaqueStructs(
-            AddOpaqueStructs.Configuration config
-        )
+        public SilkTouchRegistrationContext AddOpaqueStructs(AddOpaqueStructs.Configuration config)
         {
             context
                 .Builder.RegisterType<AddOpaqueStructs>()
@@ -160,7 +146,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="AddVTables"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext AddVTables(AddVTables.Configuration config)
+        public SilkTouchRegistrationContext AddVTables(AddVTables.Configuration config)
         {
             context
                 .Builder.RegisterType<AddVTables>()
@@ -174,7 +160,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="BakeSourceSets"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext BakeSourceSets(BakeSourceSets.Configuration config)
+        public SilkTouchRegistrationContext BakeSourceSets(BakeSourceSets.Configuration config)
         {
             context
                 .Builder.RegisterType<BakeSourceSets>()
@@ -188,7 +174,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="ChangeNamespace"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext ChangeNamespace(ChangeNamespace.Configuration config)
+        public SilkTouchRegistrationContext ChangeNamespace(ChangeNamespace.Configuration config)
         {
             context
                 .Builder.RegisterType<ChangeNamespace>()
@@ -202,7 +188,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="ChangeNativeClass"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext ChangeNativeClass(
+        public SilkTouchRegistrationContext ChangeNativeClass(
             ChangeNativeClass.Configuration config
         )
         {
@@ -218,7 +204,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="ExtractEnumConstants"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext ExtractEnumConstants()
+        public SilkTouchRegistrationContext ExtractEnumConstants()
         {
             context
                 .Builder.RegisterType<ExtractEnumConstants>()
@@ -231,7 +217,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="ExtractFunctionPointers"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext ExtractFunctionPointers()
+        public SilkTouchRegistrationContext ExtractFunctionPointers()
         {
             context
                 .Builder.RegisterType<ExtractFunctionPointers>()
@@ -244,7 +230,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="ExtractHandles"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext ExtractHandles()
+        public SilkTouchRegistrationContext ExtractHandles()
         {
             context
                 .Builder.RegisterType<ExtractHandles>()
@@ -257,7 +243,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="ExtractNestedTypes"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext ExtractNestedTypes()
+        public SilkTouchRegistrationContext ExtractNestedTypes()
         {
             context
                 .Builder.RegisterType<ExtractNestedTypes>()
@@ -270,7 +256,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="IdentifySharedPrefixes"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext IdentifySharedPrefixes(
+        public SilkTouchRegistrationContext IdentifySharedPrefixes(
             IdentifySharedPrefixes.Configuration config
         )
         {
@@ -288,7 +274,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="InterceptNativeFunctions"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext InterceptNativeFunctions(
+        public SilkTouchRegistrationContext InterceptNativeFunctions(
             InterceptNativeFunctions.Configuration config
         )
         {
@@ -306,7 +292,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="MarkNativeNames"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext MarkNativeNames()
+        public SilkTouchRegistrationContext MarkNativeNames()
         {
             context
                 .Builder.RegisterType<MarkNativeNames>()
@@ -319,7 +305,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="MixKhronosData"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext MixKhronosData(MixKhronosData.Configuration config)
+        public SilkTouchRegistrationContext MixKhronosData(MixKhronosData.Configuration config)
         {
             context
                 .Builder.RegisterType<MixKhronosData>()
@@ -333,7 +319,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="PrettifyNames"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext PrettifyNames(PrettifyNames.Configuration config)
+        public SilkTouchRegistrationContext PrettifyNames(PrettifyNames.Configuration config)
         {
             context
                 .Builder.RegisterType<PrettifyNames>()
@@ -347,7 +333,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="StripAttributes"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext StripAttributes(StripAttributes.Configuration config)
+        public SilkTouchRegistrationContext StripAttributes(StripAttributes.Configuration config)
         {
             context
                 .Builder.RegisterType<StripAttributes>()
@@ -361,7 +347,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="TransformEnums"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext TransformEnums(TransformEnums.Configuration config)
+        public SilkTouchRegistrationContext TransformEnums(TransformEnums.Configuration config)
         {
             context
                 .Builder.RegisterType<TransformEnums>()
@@ -375,7 +361,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="TransformFunctions"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext TransformFunctions()
+        public SilkTouchRegistrationContext TransformFunctions()
         {
             context
                 .Builder.RegisterType<TransformFunctions>()
@@ -388,9 +374,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="TransformHandles"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext TransformHandles(
-            TransformHandles.Configuration config
-        )
+        public SilkTouchRegistrationContext TransformHandles(TransformHandles.Configuration config)
         {
             context
                 .Builder.RegisterType<TransformHandles>()
@@ -404,7 +388,7 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="TransformProperties"/> mod.
         /// </summary>
-        public SilkTouchModRegistrationContext TransformProperties(
+        public SilkTouchRegistrationContext TransformProperties(
             TransformProperties.Configuration config
         )
         {
@@ -450,9 +434,4 @@ public static class SilkTouchRegistrationExtensions
     /// Helper for registering SilkTouch to a <see cref="ContainerBuilder"/>
     /// </summary>
     public record struct SilkTouchRegistrationContext(ContainerBuilder Builder);
-
-    /// <summary>
-    /// Helper for registering SilkTouch mods to a <see cref="ContainerBuilder"/>
-    /// </summary>
-    public record struct SilkTouchModRegistrationContext(ContainerBuilder Builder);
 }

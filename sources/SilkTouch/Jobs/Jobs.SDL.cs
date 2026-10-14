@@ -21,40 +21,33 @@ internal static partial class Jobs
                     .WithDefaultFunctionTransformers(
                         new() { BoolTypes = new() { ["SDL_bool"] = null } }
                     )
-                    .WithMods(mods =>
-                        mods.AddIncludes(new())
-                            .ClangScraper(
-                                new()
-                                {
-                                    ClangSharpResponseFiles = ["eng/silktouch/sdl/**/generate.rsp"],
-                                    InputSourceRoot = "sources/SDL",
-                                    InputTestRoot = "tests/SDL",
-                                }
-                            )
-                            .MarkNativeNames()
-                            .ExtractHandles()
-                            .ExtractNestedTypes()
-                            .ExtractEnumConstants()
-                            .ExtractFunctionPointers()
-                            .TransformHandles(new() { UseDsl = true })
-                            .TransformFunctions()
-                            .TransformProperties(
-                                new() { BoolTypes = new() { ["SDL_bool"] = null } }
-                            )
-                            .IdentifySharedPrefixes(new() { GlobalPrefixHints = ["SDL"] })
-                            .PrettifyNames(
-                                new()
-                                {
-                                    Affixes = new() { ["SharedPrefix"] = new() { Remove = true } },
-                                }
-                            )
-                            .TransformEnums(
-                                new() { AddNoneMemberToFlags = true, RewriteMemberValues = true }
-                            )
-                            .AddVTables(new())
-                            .StripAttributes(
-                                new() { Remove = ["NativeTypeName", "NameAffix", "Transformed"] }
-                            )
+                    .AddIncludes(new())
+                    .ClangScraper(
+                        new()
+                        {
+                            ClangSharpResponseFiles = ["eng/silktouch/sdl/**/generate.rsp"],
+                            InputSourceRoot = "sources/SDL",
+                            InputTestRoot = "tests/SDL",
+                        }
+                    )
+                    .MarkNativeNames()
+                    .ExtractHandles()
+                    .ExtractNestedTypes()
+                    .ExtractEnumConstants()
+                    .ExtractFunctionPointers()
+                    .TransformHandles(new() { UseDsl = true })
+                    .TransformFunctions()
+                    .TransformProperties(new() { BoolTypes = new() { ["SDL_bool"] = null } })
+                    .IdentifySharedPrefixes(new() { GlobalPrefixHints = ["SDL"] })
+                    .PrettifyNames(
+                        new() { Affixes = new() { ["SharedPrefix"] = new() { Remove = true } } }
+                    )
+                    .TransformEnums(
+                        new() { AddNoneMemberToFlags = true, RewriteMemberValues = true }
+                    )
+                    .AddVTables(new())
+                    .StripAttributes(
+                        new() { Remove = ["NativeTypeName", "NameAffix", "Transformed"] }
                     )
         );
 }

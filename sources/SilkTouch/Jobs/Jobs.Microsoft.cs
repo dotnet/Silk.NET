@@ -19,41 +19,36 @@ internal static partial class Jobs
             context =>
                 context
                     .WithDefaultFunctionTransformers(new())
-                    .WithMods(mods =>
-                        mods.AddIncludes(new())
-                            .ClangScraper(
-                                new()
-                                {
-                                    ClangSharpResponseFiles =
-                                    [
-                                        "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp",
-                                    ],
-                                    ManualOverrides = new()
-                                    {
-                                        ["sources/Windows/um/icm/Windows.gen.cs"] =
-                                            "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
-                                        ["sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs"] =
-                                            "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
-                                        ["sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs"] =
-                                            "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
-                                        ["sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs"] =
-                                            "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs",
-                                        ["sources/Windows/shared/strsafe/Windows.gen.cs"] =
-                                            "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/strsafe/Windows.gen.cs",
-                                    },
-                                    InputSourceRoot =
-                                        "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
-                                    InputTestRoot =
-                                        "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
-                                    SkipScrapeIf = static () => !OperatingSystem.IsWindows(),
-                                }
-                            )
-                            .ChangeNamespace(
-                                new()
-                                {
-                                    Mappings = new() { ["TerraFX.Interop.(.*)"] = "Silk.NET.$1" },
-                                }
-                            )
+                    .AddIncludes(new())
+                    .ClangScraper(
+                        new()
+                        {
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp",
+                            ],
+                            ManualOverrides = new()
+                            {
+                                ["sources/Windows/um/icm/Windows.gen.cs"] =
+                                    "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
+                                ["sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs"] =
+                                    "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
+                                ["sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs"] =
+                                    "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
+                                ["sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs"] =
+                                    "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs",
+                                ["sources/Windows/shared/strsafe/Windows.gen.cs"] =
+                                    "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/strsafe/Windows.gen.cs",
+                            },
+                            InputSourceRoot =
+                                "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
+                            InputTestRoot =
+                                "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
+                            SkipScrapeIf = static () => !OperatingSystem.IsWindows(),
+                        }
+                    )
+                    .ChangeNamespace(
+                        new() { Mappings = new() { ["TerraFX.Interop.(.*)"] = "Silk.NET.$1" } }
                     )
         );
 }
