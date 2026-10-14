@@ -18,7 +18,7 @@ using Silk.NET.SilkTouch.Sources;
 namespace Silk.NET.SilkTouch;
 
 /// <summary>
-/// Represents a set of configured SilkTouch jobs and the ability to run them.
+/// The main entrypoint for the SilkTouch bindings generator.
 /// </summary>
 public class SilkTouchHost
 {
