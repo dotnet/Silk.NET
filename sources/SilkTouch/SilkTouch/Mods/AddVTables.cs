@@ -27,7 +27,8 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <see cref="DllImport"/>-based partial class implementation of the static interface. However, in some cases this
 /// could be any other implementation such as the <see cref="ThisThread"/> implementation.
 /// </remarks>
-public class AddVTables(AddVTables.Configuration config, DocumentFactory documentFactory) : IMod
+public class AddVTables(AddVTables.Configuration config, DocumentFactory sharedDocumentFactory)
+    : IMod
 {
     /// <summary>
     /// Base class for VTable configurations.
@@ -512,7 +513,7 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
             };
     }
 
-    private class Rewriter(VTable[] vTables, DocumentFactory documentFactory) : CSharpSyntaxRewriter
+    private class Rewriter(VTable[] vTables) : CSharpSyntaxRewriter
     {
         private InterfaceDeclarationSyntax? _currentInterface;
         private ClassDeclarationSyntax? _currentClass;
@@ -1051,26 +1052,21 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
                         )
                     );
 
-                documentFactory.AddUsing("Silk.NET.Core.Loader");
-                documentFactory.AddUsing("System.Reflection");
-
                 yield return new KeyValuePair<string, CSharpSyntaxNode>(
                     $"{outputName}.gen.cs",
-                    documentFactory.PopulateDocument(
-                        CompilationUnit()
-                            .WithMembers(
-                                string.IsNullOrWhiteSpace(ns)
-                                    ? SingletonList<MemberDeclarationSyntax>(boilerplate)
-                                    : SingletonList<MemberDeclarationSyntax>(
-                                        FileScopedNamespaceDeclaration(
-                                                ModUtils.NamespaceIntoIdentifierName(ns)
-                                            )
-                                            .WithMembers(
-                                                SingletonList<MemberDeclarationSyntax>(boilerplate)
-                                            )
-                                    )
-                            )
-                    )
+                    CompilationUnit()
+                        .WithMembers(
+                            string.IsNullOrWhiteSpace(ns)
+                                ? SingletonList<MemberDeclarationSyntax>(boilerplate)
+                                : SingletonList<MemberDeclarationSyntax>(
+                                    FileScopedNamespaceDeclaration(
+                                            ModUtils.NamespaceIntoIdentifierName(ns)
+                                        )
+                                        .WithMembers(
+                                            SingletonList<MemberDeclarationSyntax>(boilerplate)
+                                        )
+                                )
+                        )
                 );
             }
         }
@@ -1382,8 +1378,12 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
+        var documentFactory = sharedDocumentFactory.Clone();
+        documentFactory.AddUsing("Silk.NET.Core.Loader");
+        documentFactory.AddUsing("System.Reflection");
+
         var vTables = config.VTables;
-        var rw = new Rewriter(vTables, documentFactory.Clone());
+        var rw = new Rewriter(vTables);
         var newFiles = new List<(string, CSharpSyntaxNode)>(rw.FullClassNames.Count);
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
@@ -1397,11 +1397,14 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory documen
             }
 
             rw.Reset();
-            proj = doc.WithSyntaxRoot(
-                documentFactory.PopulateDocument(
-                    rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null")
-                )
-            ).Project;
+            var newNode =
+                rw.Visit(node) ?? throw new InvalidOperationException("Visit returned null");
+            if (newNode != node)
+            {
+                newNode = documentFactory.PopulateDocument(newNode);
+            }
+
+            proj = doc.WithSyntaxRoot(newNode).Project;
             if (rw.InterfacePartials.Count == 0)
             {
                 continue;
