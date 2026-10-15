@@ -73,9 +73,9 @@ public sealed class ClangScraper(
         public int Parallelism { get; init; }
 
         /// <summary>
-        /// Skips generation if evaluates to true.
+        /// Skips generation if evaluates to false.
         /// </summary>
-        public Func<bool> SkipScrapeIf { get; init; } = static () => false;
+        public Func<bool> ScrapeIf { get; init; } = static () => true;
 
         /// <summary>
         /// Forces the scraper to use cache. Best used on the command line.
@@ -382,12 +382,12 @@ public sealed class ClangScraper(
 
         // Try generating the raw bindings with ClangSharp
         // If scraping needs to be skipped or if the scrape fails, then fall back to a cache if available
-        var skipScrape = config.SkipScrapeIf.Invoke();
+        var shouldScrape = config.ScrapeIf.Invoke();
         var cacheKey = $"{ctx.JobKey}-ClangSharp";
 
         Exception? innerException = null;
         ScrapeResult? scrapeResult = null;
-        if (!skipScrape)
+        if (shouldScrape)
         {
             try
             {

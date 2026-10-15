@@ -44,7 +44,7 @@ internal static partial class Jobs
                                 "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
                             InputTestRoot =
                                 "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
-                            SkipScrapeIf = static () => !OperatingSystem.IsWindows(),
+                            ScrapeIf = static () => OperatingSystem.IsWindows(),
                         }
                     )
                     .ChangeNamespace(
