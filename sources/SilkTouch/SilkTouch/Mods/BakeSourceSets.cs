@@ -12,7 +12,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Merging the APIs of multiple source sets into a single source set.
+/// Merges the APIs of multiple source sets into a single source set.
 /// </summary>
 /// <param name="documentFactory">The document factory to use.</param>
 /// <param name="logger">The logger to use.</param>
