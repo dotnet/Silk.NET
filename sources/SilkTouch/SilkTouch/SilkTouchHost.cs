@@ -3,6 +3,7 @@
 
 using System.CommandLine;
 using System.CommandLine.Invocation;
+using System.Diagnostics.CodeAnalysis;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Build.Locator;
@@ -76,62 +77,83 @@ public class SilkTouchHost
 
         rootCommand.SetHandler(async ctx =>
         {
-            // Register MSBuild
-            MSBuildLocator.RegisterDefaults();
-
-            // Build container
-            ILifetimeScope container;
+            try
             {
-                var builder = new ContainerBuilder();
-                Configure(builder, ctx);
-                container = builder.Build();
+                // Register MSBuild
+                MSBuildLocator.RegisterDefaults();
+
+                // Build container
+                ILifetimeScope container;
+                {
+                    var builder = new ContainerBuilder();
+                    Configure(builder, ctx);
+                    container = builder.Build();
+                }
+
+                var jobKeysToRun = new HashSet<string>(
+                    ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
+                    StringComparer.OrdinalIgnoreCase
+                );
+
+                var jobKeysToSkip = new HashSet<string>(
+                    ctx.ParseResult.GetValueForOption(SkipOption) ?? [],
+                    StringComparer.OrdinalIgnoreCase
+                );
+
+                var jobsToRun = _jobDefinitions.Where(job =>
+                {
+                    if (jobKeysToSkip.Contains(job.Key))
+                    {
+                        return false;
+                    }
+
+                    return jobKeysToRun.Count == 0 || jobKeysToRun.Contains(job.Key);
+                });
+
+                var logger = container.Resolve<ILogger<SilkTouchHost>>();
+                try
+                {
+                    await Parallel.ForEachAsync(
+                        jobsToRun,
+                        new ParallelOptions
+                        {
+                            MaxDegreeOfParallelism = ctx.ParseResult.GetValueForOption(JobsOption),
+                        },
+                        async (jobKvp, ct) =>
+                        {
+                            using var job = new SilkTouchJob(
+                                jobKvp.Key,
+                                jobKvp.Value.Config,
+                                container,
+                                builder => jobKvp.Value.Configure.Invoke(builder.SilkTouch())
+                            );
+
+                            await job.RunAsync(ct);
+                        }
+                    );
+                }
+                catch (Exception e)
+                {
+                    logger.LogError(e, "Error occurred while running SilkTouch jobs");
+                    Exit(1);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine(e);
+                Exit(1);
             }
 
-            var jobKeysToRun = new HashSet<string>(
-                ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
-                StringComparer.OrdinalIgnoreCase
-            );
-
-            var jobKeysToSkip = new HashSet<string>(
-                ctx.ParseResult.GetValueForOption(SkipOption) ?? [],
-                StringComparer.OrdinalIgnoreCase
-            );
-
-            var jobsToRun = _jobDefinitions.Where(job =>
-            {
-                if (jobKeysToSkip.Contains(job.Key))
-                {
-                    return false;
-                }
-
-                return jobKeysToRun.Count == 0 || jobKeysToRun.Contains(job.Key);
-            });
-
-            await Parallel.ForEachAsync(
-                jobsToRun,
-                new ParallelOptions
-                {
-                    MaxDegreeOfParallelism = ctx.ParseResult.GetValueForOption(JobsOption),
-                },
-                async (jobKvp, ct) =>
-                {
-                    using var job = new SilkTouchJob(
-                        jobKvp.Key,
-                        jobKvp.Value.Config,
-                        container,
-                        builder => jobKvp.Value.Configure.Invoke(builder.SilkTouch())
-                    );
-
-                    await job.RunAsync(ct);
-                }
-            );
-
-            // Workaround for dangling logging/socket engine threads
-            Environment.Exit(0);
+            Exit(0);
         });
 
         await rootCommand.InvokeAsync(args);
     }
+
+    [DoesNotReturn]
+    private static void Exit(int exitCode) =>
+        // Workaround for dangling logging/socket engine threads
+        Environment.Exit(exitCode);
 
     /// <summary>
     /// Dependencies defined here will be shared by all jobs.
