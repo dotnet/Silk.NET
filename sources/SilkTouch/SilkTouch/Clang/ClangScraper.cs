@@ -486,7 +486,10 @@ public sealed class ClangScraper(
 
     private void AddDocuments(IModContext ctx, ScrapeResult result)
     {
-        foreach (var document in result.SourceDocuments)
+        var sourceDocuments = result.SourceDocuments.OrderBy(x => x.FilePath).ToArray();
+        var testDocuments = result.TestDocuments.OrderBy(x => x.FilePath).ToArray();
+
+        foreach (var document in sourceDocuments)
         {
             documentFactory.ReportDocument(document.Root);
         }
@@ -494,7 +497,7 @@ public sealed class ClangScraper(
         var sourceProject = ctx.SourceProject;
         if (sourceProject != null)
         {
-            foreach (var (filePath, root) in result.SourceDocuments)
+            foreach (var (filePath, root) in sourceDocuments)
             {
                 sourceProject = sourceProject
                     .AddDocument(
@@ -510,7 +513,7 @@ public sealed class ClangScraper(
         var testProject = ctx.TestProject;
         if (testProject != null)
         {
-            foreach (var (filePath, root) in result.TestDocuments)
+            foreach (var (filePath, root) in testDocuments)
             {
                 testProject = testProject
                     ?.AddDocument(
