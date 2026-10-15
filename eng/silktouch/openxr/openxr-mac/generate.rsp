@@ -1,5 +1,9 @@
 @../settings.rsp
 @../remap.rsp
+--define-macro
+XR_USE_GRAPHICS_API_METAL
+XR_USE_TIMESPEC
+XR_USE_GRAPHICS_API_VULKAN
 --exclude
 XR_NULL_HANDLE
 --file
@@ -9,8 +13,9 @@ Xr
 --namespace
 Silk.NET.OpenXR
 --output
-../../../../sources/OpenXR/OpenXR
+../../../../sources/openxr-mac/xr
 --test-output
-../../../../tests/OpenXR/OpenXR
+../../../../tests/openxr-mac/xr
 --traverse
 ../../../submodules/openxr-sdk/include/openxr/openxr.h
+../../../submodules/openxr-sdk/include/openxr/openxr_platform.h
