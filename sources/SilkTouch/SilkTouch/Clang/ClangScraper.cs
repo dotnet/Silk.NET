@@ -220,12 +220,14 @@ public sealed class ClangScraper(
     /// </summary>
     /// <param name="rsps">The response files.</param>
     /// <param name="cfg">The configuration.</param>
+    /// <param name="jobKey">The job key.</param>
     /// <param name="cacheKey">The cache key.</param>
     /// <param name="ct">The cancellation token.</param>
     /// <exception cref="InvalidOperationException">The scraper output wasn't as expected.</exception>
     private async Task<ScrapeResult> ScrapeBindingsAsync(
         IReadOnlyList<ResponseFile> rsps,
         Configuration cfg,
+        string jobKey,
         string cacheKey,
         CancellationToken ct = default
     )
@@ -334,6 +336,11 @@ public sealed class ClangScraper(
                 )
         );
 
+        logger.LogInformation(
+            "Writing raw bindings to cache for {JobKey} (Cache key: {CacheKey})",
+            jobKey,
+            cacheKey
+        );
         await (cacheDir?.CommitAsync() ?? ValueTask.CompletedTask);
 
         var sourceDocuments = await Task.WhenAll(
@@ -393,7 +400,6 @@ public sealed class ClangScraper(
             resolvedConfig.CacheKey != null
                 ? $"{ctx.JobKey}-{resolvedConfig.CacheKey}-ClangSharp"
                 : $"{ctx.JobKey}-ClangSharp";
-        logger.LogInformation("Using cache key: {CacheKey}", cacheKey);
 
         Exception? innerException = null;
         ScrapeResult? scrapeResult = null;
@@ -401,7 +407,18 @@ public sealed class ClangScraper(
         {
             try
             {
-                scrapeResult = await ScrapeBindingsAsync(rsps, resolvedConfig, cacheKey, ct);
+                logger.LogInformation(
+                    "Scraping raw bindings for {JobKey} (Cache key: {CacheKey})",
+                    ctx.JobKey,
+                    cacheKey
+                );
+                scrapeResult = await ScrapeBindingsAsync(
+                    rsps,
+                    resolvedConfig,
+                    ctx.JobKey,
+                    cacheKey,
+                    ct
+                );
             }
             catch (Exception e)
             {
@@ -415,6 +432,11 @@ public sealed class ClangScraper(
 
         if (!scrapeResult.HasValue && cacheProvider is not null)
         {
+            logger.LogInformation(
+                "Reading raw bindings from cache for {JobKey} (Cache key: {CacheKey})",
+                ctx.JobKey,
+                cacheKey
+            );
             await using var cacheDir = await cacheProvider.GetDirectoryAsync(
                 cacheKey,
                 CacheIntent.StageIntermediateOutput,
