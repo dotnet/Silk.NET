@@ -60,3 +60,9 @@ jobs:
 
       - name: Show git status
         run: git status
+
+      - name: Upload cache as artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: .silktouch cache (${{ matrix.os }})
+          path: .silktouch
