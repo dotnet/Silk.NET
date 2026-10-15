@@ -7,9 +7,17 @@ permissions:
   contents: read
 
 jobs:
-  windows:
-    name: Scrape on Windows
-    runs-on: windows-quick
+  scrape:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-24.04
+          - windows-2025
+          - macos-15
+
+    name: Scrape on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
 
     steps:
 
@@ -22,6 +30,7 @@ jobs:
         run: dotnet tool install --global PowerShell
 
       - name: Setup Windows SDK
+        if: "runner.os == 'Windows'"
         uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
         with:
           sdk-version: 22621
