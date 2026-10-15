@@ -109,7 +109,16 @@ internal class SilkTouchJob : IDisposable
         foreach (var mod in Mods)
         {
             _logger.LogDebug("Using mod {0} for {1}", mod.GetType().Name, Key);
-            await mod.InitializeAsync(context, ct);
+            try
+            {
+                await mod.InitializeAsync(context, ct);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error while initializing {Mod} for {Job}", mod, Key);
+                throw;
+            }
+
             if (context.SourceProject != srcProj || context.TestProject != testProj)
             {
                 throw new InvalidOperationException(
@@ -121,7 +130,15 @@ internal class SilkTouchJob : IDisposable
         foreach (var mod in Mods)
         {
             _logger.LogInformation("Executing {} for {}...", mod.GetType().Name, Key);
-            await mod.ExecuteAsync(context, ct);
+            try
+            {
+                await mod.ExecuteAsync(context, ct);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error while executing {Mod} for {Job}", mod, Key);
+                throw;
+            }
         }
 
         // Manually dispose so that we don't do this when generation fails (await using is too clever).
