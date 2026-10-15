@@ -25,6 +25,8 @@ internal static partial class Jobs
                     .ClangScraper(
                         new()
                         {
+                            ScrapeIf = static () => OperatingSystem.IsWindows(),
+
                             ClangSharpResponseFiles = ["eng/silktouch/sdl/**/generate.rsp"],
                             InputSourceRoot = "sources/SDL",
                             InputTestRoot = "tests/SDL",

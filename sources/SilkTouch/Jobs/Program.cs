@@ -5,6 +5,10 @@ namespace Silk.NET.SilkTouch.Jobs;
 
 internal static class Program
 {
+    // ClangScrapers's output is not platform-independent,
+    // so for consistency the scraped set of bindings are locked to one platform (usually Windows)
+    // You'll see this set as the ScrapeIf option for ClangScraper
+
     public static Task Main(string[] args) =>
         SilkTouchHost
             .Create()
