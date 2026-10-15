@@ -12,10 +12,14 @@ jobs:
     runs-on: windows-quick
 
     steps:
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: "10.0.401"
+
+      - name: Setup PowerShell
+        run: dotnet tool install --global PowerShell
 
       - name: Setup Windows SDK
         uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
@@ -38,6 +42,7 @@ jobs:
           git submodule update --init --recursive --depth 0 $submodules
 
       - name: Scrape
+        shell: pwsh
         run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only OpenXR
 
       - name: Show git status
