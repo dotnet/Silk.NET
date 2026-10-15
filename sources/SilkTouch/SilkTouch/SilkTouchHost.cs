@@ -83,12 +83,9 @@ public class SilkTouchHost
                 MSBuildLocator.RegisterDefaults();
 
                 // Build container
-                ILifetimeScope container;
-                {
-                    var builder = new ContainerBuilder();
-                    Configure(builder, ctx);
-                    container = builder.Build();
-                }
+                var builder = new ContainerBuilder();
+                Configure(builder, ctx);
+                await using ILifetimeScope container = builder.Build();
 
                 var jobKeysToRun = new HashSet<string>(
                     ctx.ParseResult.GetValueForOption(OnlyOption) ?? [],
@@ -134,8 +131,8 @@ public class SilkTouchHost
                 }
                 catch (Exception e)
                 {
-                    logger.LogError(e, "Error occurred while running SilkTouch jobs");
-                    Exit(1);
+                    logger.LogError(e, "Error occurred while running SilkTouch");
+                    throw;
                 }
             }
             catch (Exception e)
