@@ -1,0 +1,33 @@
+name: Bindings Regeneration
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    name: Scrape on Windows
+    runs-on: windows-quick
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: false
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.401"
+
+      - name: Setup Windows SDK
+        uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
+        with:
+          sdk-version: 22621
+
+      - name: Scrape
+        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only OpenXR
+
+      - name: Show git status
+        run: git status
