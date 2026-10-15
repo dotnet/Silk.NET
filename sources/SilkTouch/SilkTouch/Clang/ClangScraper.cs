@@ -78,6 +78,11 @@ public sealed class ClangScraper(
         public Func<bool> ScrapeIf { get; init; } = static () => true;
 
         /// <summary>
+        /// The partial cache key used for this scraper execution.
+        /// </summary>
+        public string? CacheKey { get; init; }
+
+        /// <summary>
         /// Forces the scraper to use cache. Best used on the command line.
         /// </summary>
         public bool ForceCache { get; init; }
@@ -383,7 +388,12 @@ public sealed class ClangScraper(
         // Try generating the raw bindings with ClangSharp
         // If scraping needs to be skipped or if the scrape fails, then fall back to a cache if available
         var shouldScrape = config.ScrapeIf.Invoke();
-        var cacheKey = $"{ctx.JobKey}-ClangSharp";
+
+        var cacheKey =
+            resolvedConfig.CacheKey != null
+                ? $"{ctx.JobKey}-{resolvedConfig.CacheKey}-ClangSharp"
+                : $"{ctx.JobKey}-ClangSharp";
+        logger.LogInformation("Using cache key: {CacheKey}", cacheKey);
 
         Exception? innerException = null;
         ScrapeResult? scrapeResult = null;
