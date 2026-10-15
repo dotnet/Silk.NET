@@ -66,3 +66,4 @@ jobs:
         with:
           name: .silktouch cache (${{ matrix.os }})
           path: .silktouch
+          include-hidden-files: true
