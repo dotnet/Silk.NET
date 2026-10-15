@@ -52,7 +52,11 @@ jobs:
 
       - name: Scrape
         shell: pwsh
-        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only OpenXR
+        run: |
+          dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only OpenXR
+
+          # Ignore errors for now since we're only interested in the cache file
+          exit 0
 
       - name: Show git status
         run: git status
