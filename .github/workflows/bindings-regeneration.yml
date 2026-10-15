@@ -12,10 +12,6 @@ jobs:
     runs-on: windows-quick
 
     steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: false
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
@@ -25,6 +21,21 @@ jobs:
         uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
         with:
           sdk-version: 22621
+
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          submodules: false
+
+      - name: Initialize Submodules
+        shell: pwsh
+        run: |
+          $submodules = @(
+            "eng/submodules/openxr-sdk",
+            "eng/submodules/vulkan-headers"
+          )
+
+          git submodule update --init --recursive --depth 0 $submodules
 
       - name: Scrape
         run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only OpenXR
