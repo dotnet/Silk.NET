@@ -137,7 +137,7 @@ public class SilkTouchHost
             }
             catch (Exception e)
             {
-                Console.Error.WriteLine(e);
+                Console.WriteLine(e);
                 Exit(1);
             }
 
