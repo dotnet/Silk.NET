@@ -23,6 +23,8 @@ internal static partial class Jobs
                     .ClangScraper(
                         new()
                         {
+                            ScrapeIf = static () => OperatingSystem.IsWindows(),
+
                             ClangSharpResponseFiles =
                             [
                                 "eng/submodules/terrafx.interop.windows/generation/**/generate.rsp",
@@ -44,7 +46,6 @@ internal static partial class Jobs
                                 "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
                             InputTestRoot =
                                 "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
-                            ScrapeIf = static () => OperatingSystem.IsWindows(),
                         }
                     )
                     .ChangeNamespace(
