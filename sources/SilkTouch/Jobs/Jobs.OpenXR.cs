@@ -26,11 +26,54 @@ internal static partial class Jobs
                     .ClangScraper(
                         new()
                         {
+                            CacheKey = "Windows",
                             ScrapeIf = static () => OperatingSystem.IsWindows(),
 
-                            ClangSharpResponseFiles = ["eng/silktouch/openxr/**/generate.rsp"],
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/openxr/openxr-windows/generate.rsp",
+                            ],
                             InputSourceRoot = "sources/OpenXR",
                             InputTestRoot = "tests/OpenXR",
+                        }
+                    )
+                    .ClangScraper(
+                        new()
+                        {
+                            CacheKey = "Linux",
+                            ScrapeIf = static () => OperatingSystem.IsLinux(),
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/openxr/openxr-linux/generate.rsp",
+                            ],
+                            InputSourceRoot = "sources/OpenXR",
+                            InputTestRoot = "tests/OpenXR",
+                        }
+                    )
+                    .ClangScraper(
+                        new()
+                        {
+                            CacheKey = "Mac",
+                            ScrapeIf = static () => OperatingSystem.IsMacOS(),
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/openxr/openxr-mac/generate.rsp",
+                            ],
+                            InputSourceRoot = "sources/OpenXR",
+                            InputTestRoot = "tests/OpenXR",
+                        }
+                    )
+                    .BakeSourceSets(
+                        new()
+                        {
+                            SourceSets = new()
+                            {
+                                ["xr-windows"] = "xr",
+                                ["xr-linux"] = "xr",
+                                ["xr-mac"] = "xr",
+                            },
                         }
                     )
                     .MarkNativeNames()
