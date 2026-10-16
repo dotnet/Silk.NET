@@ -42,19 +42,19 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             return node;
         }
 
-        if (node.GetType() != existing.Value.Syntax.GetType())
+        if (node.GetType() != existing.Syntax.GetType())
         {
             throw new ArgumentException(
                 "Node types differed - the profiles may contain two types with the "
                     + $"same name but with a different datatype (i.e. profile 1 contains a {node.Kind().Humanize()} "
-                    + $"whereas profile 2 contains a {existing.Value.Syntax.Kind().Humanize()})"
+                    + $"whereas profile 2 contains a {existing.Syntax.Kind().Humanize()})"
             );
         }
 
         node = node.WithAttributeLists(
             List(
                 existing
-                    .Value.Syntax.AttributeLists.SelectMany(x =>
+                    .Syntax.AttributeLists.SelectMany(x =>
                         x.Attributes.Select(y => x.WithAttributes(SingletonSeparatedList(y)))
                     )
                     .Concat(
@@ -75,9 +75,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                     ty.BaseList?.WithTypes(
                         SeparatedList(
                             ty.BaseList.Types.Concat(
-                                    ((BaseTypeDeclarationSyntax)existing.Value.Syntax)
-                                        .BaseList
-                                        ?.Types
+                                    ((BaseTypeDeclarationSyntax)existing.Syntax).BaseList?.Types
                                         ?? []
                                 )
                                 .DistinctBy(x => x.ToString())
@@ -97,9 +95,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                 { } members
             )
             {
-                var bakedFields = (
-                    existing.Value.Inner?.Children.Values ?? (IEnumerable<BakedMember>)[]
-                )
+                var bakedFields = (existing.Inner?.Children.Values ?? (IEnumerable<BakedMember>)[])
                     .OrderBy(x => x.Index)
                     .Select(x => x.Syntax)
                     .OfType<FieldDeclarationSyntax>()
@@ -148,8 +144,8 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         // Okay fine here's some extra handling just in case it's a partial:
         if (
             node is BaseMethodDeclarationSyntax meth
-            && existing.Value.Syntax is BaseMethodDeclarationSyntax bakedMeth
-            && existing.Value.Syntax.Modifiers.Any(SyntaxKind.PartialKeyword)
+            && existing.Syntax is BaseMethodDeclarationSyntax bakedMeth
+            && existing.Syntax.Modifiers.Any(SyntaxKind.PartialKeyword)
             && node.Modifiers.Any(SyntaxKind.PartialKeyword)
         )
         {
@@ -191,7 +187,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
 
             if (!precedence)
             {
-                node = existing.Value.Syntax.AddAttributeLists(
+                node = existing.Syntax.AddAttributeLists(
                     node.AttributeLists.Select(x =>
                             x.WithAttributes(
                                 SeparatedList(
@@ -209,7 +205,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
 
         // Check that constants and enums have the same value
         if (
-            (existing.Value.Syntax, node) is
+            (existing.Syntax, node) is
             (EnumMemberDeclarationSyntax lEnum, EnumMemberDeclarationSyntax rEnum)
         )
         {
@@ -224,7 +220,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             }
         }
         else if (
-            (existing.Value.Syntax, node) is
+            (existing.Syntax, node) is
             (FieldDeclarationSyntax lConst, FieldDeclarationSyntax rConst)
         )
         {
