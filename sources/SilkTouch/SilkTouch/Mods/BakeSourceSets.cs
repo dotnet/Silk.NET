@@ -400,6 +400,26 @@ public class BakeSourceSets(
         Dictionary<string, BakeSet> bakeSets
     )
     {
+        // Identify which input source sets correspond to each output source set
+        // This is equivalent to the sourceSet dictionary with the KVPs reversed
+        var resultSourceSets = new Dictionary<string, List<string>>();
+        {
+            foreach (var (input, output) in sourceSets)
+            {
+                if (!resultSourceSets.TryGetValue(output, out var inputs))
+                {
+                    resultSourceSets[output] = inputs = [];
+                }
+
+                if (!inputs.Contains(input))
+                {
+                    inputs.Add(input);
+                }
+            }
+        }
+
+        var resultBakeSets = new Dictionary<string, BakeSet>();
+
         // TODO
         return bakeSets;
     }
