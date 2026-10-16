@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Silk.NET.SilkTouch.Mods.Bakery;
@@ -19,19 +18,14 @@ public interface IBakeStrategy // the temptation to call this IRecipe was sooooo
     /// <summary>
     /// Cleans up the specified syntax node.
     /// </summary>
-    public SyntaxNode? Cleanup(SyntaxNode? node);
+    public MemberDeclarationSyntax? Cleanup(MemberDeclarationSyntax? node);
 
     /// <summary>
-    /// Gets a declaration to store in a <see cref="BakeSet" /> element, merging the encountered declaration with the
-    /// existing one in that <see cref="BakeSet" /> element if provided.
+    /// Merges the two specified members into a final syntax node.
     /// </summary>
-    /// <param name="node">The encountered syntax node.</param>
     /// <param name="discrim">The discriminator for this member.</param>
-    /// <param name="existing">The current member stored in the <see cref="BakeSet" />.</param>
-    /// <returns>The merged type declaration.</returns>
-    public MemberDeclarationSyntax BakeMember(
-        MemberDeclarationSyntax node,
-        string? discrim,
-        BakedMember? existing
-    );
+    /// <param name="first">The first member.</param>
+    /// <param name="second">The second member.</param>
+    /// <returns>The merged member declaration.</returns>
+    public MemberDeclarationSyntax? Merge(string discrim, BakedMember first, BakedMember second);
 }
