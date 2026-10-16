@@ -73,7 +73,7 @@ public class BakeSourceSets(
         // - [x] InterfaceDeclarationSyntax
 
         public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            Visit(
+            Report(
                 node,
                 node.Identifier
                     + (
@@ -85,16 +85,16 @@ public class BakeSourceSets(
             );
 
         public override SyntaxNode? VisitEventDeclaration(EventDeclarationSyntax node) =>
-            Visit(node, node.Identifier.ToString(), base.VisitEventDeclaration);
+            Report(node, node.Identifier.ToString(), base.VisitEventDeclaration);
 
         public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
-            Visit(node, node.Identifier.ToString(), base.VisitPropertyDeclaration);
+            Report(node, node.Identifier.ToString(), base.VisitPropertyDeclaration);
 
         public override SyntaxNode? VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
-            Visit(node, node.Identifier.ToString(), base.VisitEnumMemberDeclaration);
+            Report(node, node.Identifier.ToString(), base.VisitEnumMemberDeclaration);
 
         public override SyntaxNode? VisitIndexerDeclaration(IndexerDeclarationSyntax node) =>
-            Visit(
+            Report(
                 node,
                 $"this[{string.Join(", ", node.ParameterList.Parameters.Select(ModUtils.GetMethodDiscriminator))}]",
                 base.VisitIndexerDeclaration
@@ -103,7 +103,7 @@ public class BakeSourceSets(
         public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node) =>
             node.FirstAncestorOrSelf<BaseFieldDeclarationSyntax>() is { } baseFld
             && node.FirstAncestorOrSelf<VariableDeclarationSyntax>() is { } varDecl
-                ? Visit(
+                ? Report(
                     // We want to add just this one specific individual standalone field.
                     baseFld.WithDeclaration(varDecl.WithVariables(SingletonSeparatedList(node))),
                     // But we're visiting the inner declarator representing that field.
@@ -118,7 +118,7 @@ public class BakeSourceSets(
         public override SyntaxNode? VisitConstructorDeclaration(
             ConstructorDeclarationSyntax node
         ) =>
-            Visit(
+            Report(
                 node,
                 ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
@@ -131,10 +131,10 @@ public class BakeSourceSets(
             );
 
         public override SyntaxNode? VisitDestructorDeclaration(DestructorDeclarationSyntax node) =>
-            Visit(node, "~", base.VisitDestructorDeclaration);
+            Report(node, "~", base.VisitDestructorDeclaration);
 
         public override SyntaxNode? VisitOperatorDeclaration(OperatorDeclarationSyntax node) =>
-            Visit(
+            Report(
                 node,
                 ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
@@ -149,7 +149,7 @@ public class BakeSourceSets(
         public override SyntaxNode? VisitConversionOperatorDeclaration(
             ConversionOperatorDeclarationSyntax node
         ) =>
-            Visit(
+            Report(
                 node,
                 ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
@@ -162,7 +162,7 @@ public class BakeSourceSets(
             );
 
         public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            Visit(
+            Report(
                 node,
                 ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
@@ -175,21 +175,21 @@ public class BakeSourceSets(
             );
 
         public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node) =>
-            VisitType(node, base.VisitStructDeclaration);
+            ReportType(node, base.VisitStructDeclaration);
 
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node) =>
-            VisitType(node, base.VisitClassDeclaration);
+            ReportType(node, base.VisitClassDeclaration);
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node) =>
-            VisitType(node, base.VisitEnumDeclaration);
+            ReportType(node, base.VisitEnumDeclaration);
 
         public override SyntaxNode? VisitRecordDeclaration(RecordDeclarationSyntax node) =>
-            VisitType(node, base.VisitRecordDeclaration);
+            ReportType(node, base.VisitRecordDeclaration);
 
         public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
-            VisitType(node, base.VisitInterfaceDeclaration);
+            ReportType(node, base.VisitInterfaceDeclaration);
 
-        private SyntaxNode? VisitType<T>(T node, Func<T, SyntaxNode?> @base)
+        private SyntaxNode? ReportType<T>(T node, Func<T, SyntaxNode?> @base)
             where T : BaseTypeDeclarationSyntax
         {
             @base(node);
@@ -201,25 +201,29 @@ public class BakeSourceSets(
             return null; // baking erases, but the caller should know that.
         }
 
-        private SyntaxNode? Visit<T>(T node, string discrim, Func<T, SyntaxNode?> @base)
-            where T : MemberDeclarationSyntax => Visit(node, node, discrim, @base);
+        private SyntaxNode? Report<T>(T node, string discrim, Func<T, SyntaxNode?> @base)
+            where T : MemberDeclarationSyntax => Report(node, node, discrim, @base);
 
-        // This is super convoluted but to deduplicate the member handling code for fields (wherein one field decl may
-        // have many declarators of logically independent fields) we separate nodeToAdd vs nodeVisiting. Most of the
-        // time these will be the same, but for fields we will be wanting to add a field representing that one
-        // individual field whereas we're actually visiting the declarator for that individual field (because if we
-        // tried to add the field decl as nodeVisiting directly we'd be adding 3 fields in one)
-        private SyntaxNode? Visit<TSeparated, TVisiting>(
+        /// <param name="nodeToAdd">The logical representation of the node that we plan to output.</param>
+        /// <param name="nodeVisiting">The node as it exists in the syntax tree.</param>
+        /// <param name="discrim">The discriminator used for identifying the node.</param>
+        /// <param name="visitChildren">The method used to visit the <see cref="nodeVisiting"/>'s child nodes.</param>
+        /// <remarks>
+        /// Field declaration syntax nodes can contain multiple variable declarators (eg: public int a, b, c;).
+        /// This method deduplicates the member handling code by treating the nodeToAdd and nodeVisiting separately.
+        /// This effectively treats each variable declarator as their own field declaration.
+        /// </remarks>
+        private SyntaxNode? Report<TSeparated, TVisiting>(
             TSeparated nodeToAdd,
             TVisiting nodeVisiting,
             string discrim,
-            Func<TVisiting, SyntaxNode?> @base
+            Func<TVisiting, SyntaxNode?> visitChildren
         )
             where TSeparated : MemberDeclarationSyntax
             where TVisiting : SyntaxNode
         {
             // First, call the base visitor logic.
-            _ = @base(nodeVisiting);
+            _ = visitChildren(nodeVisiting);
 
             logger.LogTrace(
                 "Baking item for source set at \"{}\" with discriminator \"{}\": {}",
