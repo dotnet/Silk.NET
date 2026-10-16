@@ -219,7 +219,7 @@ public class BakeSourceSets(
             where TVisiting : SyntaxNode
         {
             // First, call the base visitor logic.
-            var retNode = @base(nodeVisiting);
+            _ = @base(nodeVisiting);
 
             logger.LogTrace(
                 "Baking item for source set at \"{}\" with discriminator \"{}\": {}",
