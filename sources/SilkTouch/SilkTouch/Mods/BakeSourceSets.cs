@@ -341,10 +341,6 @@ public class BakeSourceSets(
                 .SourceSets.Where(x => path.StartsWith(x.Key, StringComparison.OrdinalIgnoreCase))
                 .MaxBy(x => x.Key.Length);
             rewriter.SourceSet = srcSet.Key;
-            if (rewriter.SourceSet is null)
-            {
-                continue;
-            }
 
             logger.LogDebug("Identified profile {} for {}", rewriter.SourceSet, path);
             var discrim = srcSet.Value.Trim('/');
