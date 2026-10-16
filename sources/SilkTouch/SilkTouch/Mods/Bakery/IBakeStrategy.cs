@@ -18,11 +18,17 @@ public interface IBakeStrategy // the temptation to call this IRecipe was sooooo
     /// <summary>
     /// Cleans up the specified syntax node.
     /// </summary>
+    /// <remarks>
+    /// This typically is used to remove the members of the syntax node since baking involves extracting all members of each type.
+    /// </remarks>
     public MemberDeclarationSyntax? Cleanup(MemberDeclarationSyntax? node);
 
     /// <summary>
     /// Merges the two specified members into a final syntax node.
     /// </summary>
+    /// <remarks>
+    /// This is only called when two bake sets have the same member.
+    /// </remarks>
     /// <param name="discrim">The discriminator for this member.</param>
     /// <param name="first">The first member.</param>
     /// <param name="second">The second member.</param>
