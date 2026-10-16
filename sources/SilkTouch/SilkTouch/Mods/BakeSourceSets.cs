@@ -292,11 +292,6 @@ public class BakeSourceSets(
         }
     }
 
-    /// <summary>
-    /// A map of baked roots to deduplicated <see cref="MemberDeclarationSyntax"/>es and their associated discriminants.
-    /// </summary>
-    private Dictionary<string, BakeSet> _baked = new();
-
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
