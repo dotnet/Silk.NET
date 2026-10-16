@@ -40,6 +40,18 @@ public class BakeSourceSets(
         /// <summary>
         /// The source sets to bake/merge.
         /// </summary>
+        /// <remarks>
+        /// Both the keys and values correspond to folder paths in the source project.
+        /// The key defines the folder to take documents from.
+        /// The value defines the folder to merge documents into.
+        /// <para/>
+        /// For example, at time of writing, Silk's OpenGL bindings have 4 source sets: glcompat -> gl, glcore -> gl, gles1 -> gl, gles2 -> gl.
+        /// These correspond to four input folders of the same name.
+        /// After baking, there will be one output folder named "gl".
+        /// <para/>
+        /// The input folder's internal structure does not affect the output.
+        /// The output folder will contain a flattened list of documents.
+        /// </remarks>
         public required Dictionary<string, string> SourceSets { get; init; }
     }
 
@@ -207,7 +219,7 @@ public class BakeSourceSets(
         /// <param name="nodeToAdd">The logical representation of the node that we plan to output.</param>
         /// <param name="nodeVisiting">The node as it exists in the syntax tree.</param>
         /// <param name="discrim">The discriminator used for identifying the node.</param>
-        /// <param name="visitChildren">The method used to visit the <see cref="nodeVisiting"/>'s child nodes.</param>
+        /// <param name="visitChildren">The method used to visit the <paramref name="nodeVisiting"/>'s child nodes.</param>
         /// <remarks>
         /// Field declaration syntax nodes can contain multiple variable declarators (eg: public int a, b, c;).
         /// This method deduplicates the member handling code by treating the nodeToAdd and nodeVisiting separately.
@@ -304,7 +316,7 @@ public class BakeSourceSets(
             return;
         }
 
-        // Locate the bake strategy the user's after.
+        // Locate the configured bake strategy.
         var strategy = strategies.FirstOrDefault(x =>
             x.Name == config.Strategy
             || (config.Strategy is null && x.GetType() == typeof(DefaultBakeStrategy))
@@ -316,6 +328,7 @@ public class BakeSourceSets(
             );
         }
 
+        // Visit each doc
         var rewriter = new Rewriter(strategy, logger);
         var bakery = new Dictionary<string, BakeSet>();
         var baked = new List<string>();
@@ -337,13 +350,16 @@ public class BakeSourceSets(
             }
 
             var root = await tree.GetRootAsync(ct);
-            var srcSet = config
+
+            // Identify the source set the document is part of
+            // sourceSet is a key value pair: SourceSetFrom -> SourceSetTo
+            var sourceSet = config
                 .SourceSets.Where(x => path.StartsWith(x.Key, StringComparison.OrdinalIgnoreCase))
                 .MaxBy(x => x.Key.Length);
-            rewriter.SourceSet = srcSet.Key;
+            rewriter.SourceSet = sourceSet.Key;
 
             logger.LogDebug("Identified profile {} for {}", rewriter.SourceSet, path);
-            var discrim = srcSet.Value.Trim('/');
+            var discrim = sourceSet.Value.Trim('/');
             if (!bakery.TryGetValue(discrim, out var bakeSet))
             {
                 bakeSet = bakery[discrim] = new BakeSet();
@@ -357,6 +373,7 @@ public class BakeSourceSets(
             rewriter.SourceSet = null;
         }
 
+        // Remove documents that were used as baker input
         var proj = ctx.SourceProject.RemoveDocuments([
             .. ctx
                 .SourceProject.Documents.Where(x =>
@@ -364,6 +381,8 @@ public class BakeSourceSets(
                 )
                 .Select(x => x.Id),
         ]);
+
+        // Add the final baked documents
         foreach (var (bakedRoot, bakedPath) in GetBaked(bakery).Select(x => (x.Value, path: x.Key)))
         {
             proj = proj.AddDocument(
