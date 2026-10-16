@@ -22,7 +22,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         GetType() == typeof(DefaultBakeStrategy) ? "Default" : GetType().FullName ?? GetType().Name;
 
     /// <inheritdoc />
-    public SyntaxNode? Cleanup(SyntaxNode? node)
+    public virtual MemberDeclarationSyntax? Cleanup(MemberDeclarationSyntax? node)
     {
         node = node switch
         {
@@ -36,25 +36,14 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
     }
 
     /// <inheritdoc />
-    public virtual MemberDeclarationSyntax BakeMember(
-        MemberDeclarationSyntax node,
-        string? discrim,
-        BakedMember? existing
+    public virtual MemberDeclarationSyntax? Merge(
+        string discrim,
+        BakedMember first,
+        BakedMember second
     )
     {
-        // Strip the declaration down to its bare necessities.
-        node = node switch
-        {
-            // TODO do we need to strip more than this for dedupe purposes?
-            TypeDeclarationSyntax klass => klass.WithMembers(default),
-            EnumDeclarationSyntax enumeration => enumeration.WithMembers(default),
-            _ => node,
-        };
-
-        if (existing is null)
-        {
-            return node;
-        }
+        var existing = first;
+        var node = second.Syntax;
 
         if (node.GetType() != existing.Syntax.GetType())
         {
