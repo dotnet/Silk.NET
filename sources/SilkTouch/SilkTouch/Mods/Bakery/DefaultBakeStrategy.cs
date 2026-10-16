@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -49,8 +48,8 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         {
             throw new ArgumentException(
                 "Node types differed - the profiles may contain two types with the "
-                    + $"same name but with a different datatype (i.e. profile 1 contains a {node.Kind().Humanize()} "
-                    + $"whereas profile 2 contains a {existing.Syntax.Kind().Humanize()})"
+                    + $"same name but with a different datatype (i.e. profile 1 contains a {node.Kind()} "
+                    + $"whereas profile 2 contains a {existing.Syntax.Kind()})"
             );
         }
 
