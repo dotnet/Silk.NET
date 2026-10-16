@@ -5,8 +5,10 @@
 // being header-derived only, implementations of the headers may have a less permissive license.
 using System;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Silk.NET.Core.Loader;
 
 namespace Silk.NET.OpenAL;
 

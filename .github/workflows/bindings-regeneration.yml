@@ -1,0 +1,69 @@
+name: Bindings Regeneration
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scrape:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-24.04
+          - windows-2025
+          - macos-15
+
+    name: Scrape on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    steps:
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.401"
+
+      - name: Setup PowerShell
+        run: dotnet tool install --global PowerShell
+
+      - name: Setup Windows SDK
+        if: "runner.os == 'Windows'"
+        uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
+        with:
+          sdk-version: 22621
+
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          submodules: false
+
+      - name: Initialize Submodules
+        shell: pwsh
+        run: |
+          $submodules = @(
+            "eng/submodules/openxr-sdk",
+            "eng/submodules/vulkan-headers"
+          )
+
+          git submodule update --init --recursive --depth 0 $submodules
+
+      - name: Scrape
+        shell: pwsh
+        run: |
+          dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only OpenXR
+
+          # Ignore errors for now since we're only interested in the cache file
+          exit 0
+
+      - name: Show git status
+        run: git status
+
+      - name: Upload cache as artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: .silktouch cache (${{ matrix.os }})
+          path: .silktouch
+          include-hidden-files: true

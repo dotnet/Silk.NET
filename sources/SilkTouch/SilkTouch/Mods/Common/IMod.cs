@@ -1,9 +1,6 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
@@ -22,7 +19,8 @@ public interface IMod
     /// </summary>
     /// <param name="ctx">The generation job context.</param>
     /// <param name="ct">The cancellation token.</param>
-    Task InitializeAsync(IModContext ctx, CancellationToken ct = default) => Task.CompletedTask;
+    public Task InitializeAsync(IModContext ctx, CancellationToken ct = default) =>
+        Task.CompletedTask;
 
     /// <summary>
     /// Executes the mod as originally initialised for the given job context asynchronously.
@@ -33,5 +31,5 @@ public interface IMod
     /// <remarks>
     /// Always preceded by <see cref="InitializeAsync"/>.
     /// </remarks>
-    Task ExecuteAsync(IModContext ctx, CancellationToken ct = default);
+    public Task ExecuteAsync(IModContext ctx, CancellationToken ct = default);
 }

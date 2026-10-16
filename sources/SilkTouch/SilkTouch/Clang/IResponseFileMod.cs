@@ -1,9 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
 namespace Silk.NET.SilkTouch.Clang;
 
 /// <summary>
@@ -21,5 +18,5 @@ public interface IResponseFileMod
     /// <returns>
     /// The modified response files to be passed into either the next mod or ClangSharp if this is the last mod.
     /// </returns>
-    Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps);
+    public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps);
 }

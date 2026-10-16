@@ -57,7 +57,6 @@ public class ArrayParameterTransformerTests
             IFunctionTransformer
     {
         public bool TryGetChildSymbolMetadata(
-            string? jobKey,
             string nativeName,
             string childNativeName,
             [NotNullWhen(true)] out SymbolConstraints? metadata
@@ -128,7 +127,6 @@ public class ArrayParameterTransformerTests
             IFunctionTransformer
     {
         public bool TryGetChildSymbolMetadata(
-            string? jobKey,
             string nativeName,
             string childNativeName,
             [NotNullWhen(true)] out SymbolConstraints? metadata

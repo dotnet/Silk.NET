@@ -1,8 +1,6 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Collections.Concurrent;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
@@ -10,7 +8,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
@@ -22,12 +19,10 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// A mod that reads Khronos specifications to influence codegen.
 /// </summary>
-/// <param name="logger">The logger.</param>
-/// <param name="cfg">The configuration.</param>
-[ModConfiguration<Configuration>]
 public partial class MixKhronosData(
+    DocumentFactory documentFactory,
     ILogger<MixKhronosData> logger,
-    IOptionsSnapshot<MixKhronosData.Configuration> cfg
+    MixKhronosData.Configuration config
 )
     : IMod,
         IResponseFileMod,
@@ -35,10 +30,10 @@ public partial class MixKhronosData(
         IApiMetadataProvider<SymbolConstraints>,
         IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
 {
-    internal ConcurrentDictionary<string, JobData> Jobs = new();
+    internal JobData Job = null!;
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
-    private class NameAffixes
+    private static class NameAffixes
     {
         public const string KhronosFunctionDataType = nameof(KhronosFunctionDataType);
         public const string KhronosHandleType = nameof(KhronosHandleType);
@@ -265,23 +260,22 @@ public partial class MixKhronosData(
     /// <inheritdoc />
     public async Task InitializeAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var currentConfig = cfg.Get(ctx.JobKey);
-        var specPath = currentConfig.SpecPath;
-        var job = Jobs[ctx.JobKey] = new JobData
+        var specPath = config.SpecPath;
+        Job = new JobData
         {
-            Configuration = currentConfig,
-            TypeMap = currentConfig.TypeMap is not null
-                ? new Dictionary<string, string>(currentConfig.TypeMap)
+            Configuration = config,
+            TypeMap = config.TypeMap is not null
+                ? new Dictionary<string, string>(config.TypeMap)
                 : [],
         };
-        job.TypeMap.TryAdd("int8_t", "sbyte");
-        job.TypeMap.TryAdd("uint8_t", "byte");
-        job.TypeMap.TryAdd("int16_t", "short");
-        job.TypeMap.TryAdd("uint16_t", "ushort");
-        job.TypeMap.TryAdd("int32_t", "int");
-        job.TypeMap.TryAdd("uint32_t", "uint");
-        job.TypeMap.TryAdd("int64_t", "long");
-        job.TypeMap.TryAdd("uint64_t", "ulong");
+        Job.TypeMap.TryAdd("int8_t", "sbyte");
+        Job.TypeMap.TryAdd("uint8_t", "byte");
+        Job.TypeMap.TryAdd("int16_t", "short");
+        Job.TypeMap.TryAdd("uint16_t", "ushort");
+        Job.TypeMap.TryAdd("int32_t", "int");
+        Job.TypeMap.TryAdd("uint32_t", "uint");
+        Job.TypeMap.TryAdd("int64_t", "long");
+        Job.TypeMap.TryAdd("uint64_t", "ulong");
         if (specPath is null)
         {
             // No metadata, can't continue. It'd be odd if the Khronos mod is being used in this case. There was once
@@ -295,50 +289,49 @@ public partial class MixKhronosData(
         var xml = await XDocument.LoadAsync(fs, LoadOptions.None, CancellationToken.None);
 
         var (apiSets, supportedApiProfiles) = EvaluateProfiles(xml);
-        job.ApiSets = apiSets;
-        job.SupportedApiProfiles = supportedApiProfiles;
+        Job.ApiSets = apiSets;
+        Job.SupportedApiProfiles = supportedApiProfiles;
 
         var profiles = supportedApiProfiles
             .SelectMany(x => x.Value)
             .Select(x => x.Profile)
             .ToHashSet();
 
-        job.Vendors.UnionWith(
-            [
-                .. xml.Element("registry")
-                    ?.Element("tags")
-                    ?.Elements("tag")
+        Job.Vendors.UnionWith([
+            .. xml.Element("registry")
+                ?.Element("tags")
+                ?.Elements("tag")
+                .Attributes("name")
+                .Select(x => x.Value)
+                ?? [],
+            .. config.NonStandardExtensionNomenclature
+                ? []
+                : xml.Element("registry")
+                    ?.Element("extensions")
+                    ?.Elements("extension")
+                    // Only include vendors who have extensions that match a declared profile
+                    // This is mainly to exclude extensions that are declared as supported="disabled"
+                    .Where(ext =>
+                    {
+                        var supportedProfiles = ext.Attribute("supported")?.Value.Split("|") ?? [];
+                        return profiles.Intersect(supportedProfiles).Any();
+                    })
                     .Attributes("name")
-                    .Select(x => x.Value) ?? [],
-                .. currentConfig.NonStandardExtensionNomenclature
-                    ? []
-                    : xml.Element("registry")
-                        ?.Element("extensions")
-                        ?.Elements("extension")
-                        // Only include vendors who have extensions that match a declared profile
-                        // This is mainly to exclude extensions that are declared as supported="disabled"
-                        .Where(ext =>
-                        {
-                            var supportedProfiles =
-                                ext.Attribute("supported")?.Value.Split("|") ?? [];
-                            return profiles.Intersect(supportedProfiles).Any();
-                        })
-                        .Attributes("name")
-                        // Extract the second part from the extension name
-                        // Eg: GL_NV_command_list -> NV
-                        .Select(name => name.Value.Split('_')[1].ToUpper()) ?? [],
-                .. currentConfig.Vendors ?? [],
-            ]
-        );
+                    // Extract the second part from the extension name
+                    // Eg: GL_NV_command_list -> NV
+                    .Select(name => name.Value.Split('_')[1].ToUpper())
+                    ?? [],
+            .. config.Vendors ?? [],
+        ]);
 
-        job.DeprecatedAliases = xml.Descendants()
+        Job.DeprecatedAliases = xml.Descendants()
             .Where(x =>
                 x.Attribute("deprecated")?.Value == "aliased" && x.Attribute("name") != null
             )
             .Select(x => x.Attribute("name")!.Value)
             .ToHashSet();
 
-        ReadGroups(xml, job, job.Vendors);
+        ReadGroups(xml, Job, Job.Vendors);
 
         foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
         {
@@ -349,14 +342,14 @@ public partial class MixKhronosData(
                 continue;
             }
 
-            job.TypeMap.TryAdd(type, baseType);
+            Job.TypeMap.TryAdd(type, baseType);
         }
 
         // Add mappings from Flags storage types to FlagBits enums types
         // We want Flags as the output, but in order to generate everything correctly,
         // we need to first map Flags to FlagBits, then rename FlagBits back to Flags (this is done in the rewriters).
         // Without this, ClangSharp will output the Flags types as the integral storage type instead of the enum
-        var flagsTypesSet = currentConfig.FlagsTypes.ToHashSet();
+        var flagsTypesSet = config.FlagsTypes.ToHashSet();
         foreach (var typeElement in xml.Elements("registry").Elements("types").Elements("type"))
         {
             var typedef = typeElement.Element("type")?.Value;
@@ -373,11 +366,11 @@ public partial class MixKhronosData(
                 continue;
             }
 
-            job.AdditionalTypeRemappings[mapFrom] = mapTo;
+            Job.AdditionalTypeRemappings[mapFrom] = mapTo;
         }
 
         // Gather information about struct structure type enums
-        if (currentConfig.StructureTypes.Count != 0)
+        if (config.StructureTypes.Count != 0)
         {
             foreach (
                 var typeElement in xml.Elements("registry")
@@ -400,7 +393,7 @@ public partial class MixKhronosData(
                         continue;
                     }
 
-                    if (currentConfig.StructureTypes.Contains(memberType))
+                    if (config.StructureTypes.Contains(memberType))
                     {
                         var memberName = memberElement.Element("name")?.Value;
                         if (memberName == null)
@@ -414,7 +407,7 @@ public partial class MixKhronosData(
                             continue;
                         }
 
-                        job.StructureTypeMembers.Add(
+                        Job.StructureTypeMembers.Add(
                             structName,
                             new StructureTypeMember()
                             {
@@ -432,8 +425,12 @@ public partial class MixKhronosData(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var jobData = Jobs[ctx.JobKey];
-        var currentConfig = jobData.Configuration;
+        if (Job == null)
+        {
+            return;
+        }
+
+        var currentConfig = Job.Configuration;
         var proj = ctx.SourceProject;
 
         if (proj == null)
@@ -442,7 +439,7 @@ public partial class MixKhronosData(
         }
 
         // Rewrite phase 1
-        var rewriter1 = new RewriterPhase1(jobData, logger);
+        var rewriter1 = new RewriterPhase1(Job, logger);
         foreach (var docId in proj.DocumentIds)
         {
             var doc =
@@ -458,13 +455,13 @@ public partial class MixKhronosData(
         {
             proj = proj.AddDocument(
                 Path.GetFileName(filePath),
-                node,
+                documentFactory.PopulateDocument(node),
                 filePath: proj.FullPath(filePath)
             ).Project;
         }
 
         // Rewrite phase 2
-        var rewriter2 = new RewriterPhase2(jobData, rewriter1);
+        var rewriter2 = new RewriterPhase2(Job, rewriter1);
         foreach (var docId in proj.DocumentIds)
         {
             var doc =
@@ -478,11 +475,11 @@ public partial class MixKhronosData(
         // Rewrite phase 3
         {
             // OpenCL uses lower snake case names
-            var vendorSuffixComparison = jobData.IsLikelyOpenCL
+            var vendorSuffixComparison = Job.IsLikelyOpenCL
                 ? StringComparison.OrdinalIgnoreCase
                 : StringComparison.Ordinal;
 
-            var rewriter3 = new RewriterPhase3(jobData, currentConfig, vendorSuffixComparison);
+            var rewriter3 = new RewriterPhase3(Job, currentConfig, vendorSuffixComparison);
             foreach (var docId in proj.DocumentIds)
             {
                 var doc =
@@ -496,7 +493,7 @@ public partial class MixKhronosData(
         }
 
         // Rewrite phase 4
-        var rewriter4 = new RewriterPhase4(jobData);
+        var rewriter4 = new RewriterPhase4(Job);
         foreach (var docId in proj.DocumentIds)
         {
             var doc =
@@ -526,8 +523,6 @@ public partial class MixKhronosData(
     /// <inheritdoc />
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
     {
-        var job = Jobs[key];
-
         rsps = rsps.Select(rsp =>
                 rsp with
                 {
@@ -535,7 +530,7 @@ public partial class MixKhronosData(
                     {
                         RemappedNames = rsp
                             .GeneratorConfiguration.RemappedNames.Concat(
-                                job.AdditionalTypeRemappings
+                                Job.AdditionalTypeRemappings
                             )
                             .ToDictionary(),
                     },
@@ -721,7 +716,8 @@ public partial class MixKhronosData(
                         )[0]
                 )
                 .ThenBy(x => x.Attribute("number")?.Value, VersionComparer.Instance)
-                .ToArray() ?? [];
+                .ToArray()
+            ?? [];
 
         // Record the variations declared within those elements (OpenGL only atm)
         var profileVariations = new Dictionary<string, HashSet<string>>();
@@ -795,7 +791,8 @@ public partial class MixKhronosData(
                     ?.Value.Split(
                         _listSeparators,
                         StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries
-                    ) ?? [];
+                    )
+                ?? [];
 
             // Evaluate all of the elements.
             for (var i = 0; i < allApis.Length; i++)
@@ -1268,7 +1265,8 @@ public partial class MixKhronosData(
                     ?.Value.Split(
                         _listSeparators,
                         StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries
-                    ) ?? [];
+                    )
+                ?? [];
 
             foreach (var supportedApi in supportedApis)
             {
@@ -1362,12 +1360,6 @@ public partial class MixKhronosData(
         Action<MethodDeclarationSyntax> next
     )
     {
-        if (ctx.JobKey is null)
-        {
-            next(current);
-            return;
-        }
-
         current.AttributeLists.GetNativeFunctionInfo(out _, out var entryPoint, out _);
         entryPoint ??= current.Identifier.ToString();
         foreach (var meth in TransformToConstants(current, ctx, entryPoint))
@@ -1383,8 +1375,6 @@ public partial class MixKhronosData(
         string entryPoint
     )
     {
-        Debug.Assert(ctx.JobKey is not null);
-
         // This will contain the changed parameters. Note that the changes from the previous passes (see below) are kept
         // in this list so that we don't create differences between fully grouped pointer overloads vs partially grouped
         // pointer overloads. In addition, we want to keep things like the Constant DSL type even if we're overloading
@@ -1403,7 +1393,7 @@ public partial class MixKhronosData(
             var newRet = GetTypeTransformation(
                 entryPoint,
                 ":return",
-                Jobs[ctx.JobKey],
+                Job,
                 ret,
                 pass,
                 ref anyNonTrivialParameters
@@ -1423,7 +1413,7 @@ public partial class MixKhronosData(
                     || GetTypeTransformation(
                         entryPoint,
                         param.Identifier.ToString(),
-                        Jobs[ctx.JobKey],
+                        Job,
                         param.Type,
                         pass,
                         ref anyNonTrivialParameters
@@ -1577,16 +1567,13 @@ public partial class MixKhronosData(
 
     /// <inheritdoc />
     public bool TryGetChildSymbolMetadata(
-        string? jobKey,
         string nativeName,
         string childNativeName,
         [NotNullWhen(true)] out SymbolConstraints? metadata
     )
     {
         if (
-            jobKey is not null
-            && Jobs[jobKey]
-                .Annotations.TryGetValue((nativeName, childNativeName), out var annotation)
+            Job.Annotations.TryGetValue((nativeName, childNativeName), out var annotation)
             && annotation.Usage is not null
         )
         {
@@ -1600,30 +1587,24 @@ public partial class MixKhronosData(
 
     /// <inheritdoc />
     public bool TryGetChildSymbolMetadata(
-        string? jobKey,
         string nativeName,
         string childNativeName,
         [NotNullWhen(true)] out IEnumerable<SupportedApiProfileAttribute>? metadata
-    ) => TryGetSymbolMetadata(jobKey, childNativeName, out metadata);
+    ) => TryGetSymbolMetadata(childNativeName, out metadata);
 
     /// <inheritdoc />
     public bool TryGetSymbolMetadata(
-        string? jobKey,
         string nativeName,
         [NotNullWhen(true)] out IEnumerable<SupportedApiProfileAttribute>? metadata
     )
     {
-        if (
-            jobKey is null
-            || !Jobs.TryGetValue(jobKey, out var job)
-            || job.SupportedApiProfiles is null
-        )
+        if (Job.SupportedApiProfiles is null)
         {
             metadata = null;
             return false;
         }
 
-        if (!job.SupportedApiProfiles.TryGetValue(nativeName, out var mdList))
+        if (!Job.SupportedApiProfiles.TryGetValue(nativeName, out var mdList))
         {
             metadata = null;
             return false;
@@ -1742,8 +1723,7 @@ public partial class MixKhronosData(
                         .Distinct()
                         .Select((x, i) => (x, i))
                         .LastOrDefault()
-                        is
-                        (var n, 0)
+                        is (var n, 0)
                         ? n
                         : null;
 
@@ -1786,9 +1766,9 @@ public partial class MixKhronosData(
                                                         )
                                                         .WithAttributeLists(attributes)
                                                         .WithBaseList(
-                                                            BaseList(
-                                                                [SimpleBaseType(baseTypeSyntax)]
-                                                            )
+                                                            BaseList([
+                                                                SimpleBaseType(baseTypeSyntax),
+                                                            ])
                                                         )
                                                         .WithMembers(
                                                             SeparatedList(
@@ -1928,13 +1908,11 @@ public partial class MixKhronosData(
             if (node.Members.Any(m => job.DeprecatedAliases.Contains(m.Identifier.ValueText)))
             {
                 // Remove deprecated aliases
-                node = node.WithMembers(
-                    [
-                        .. node.Members.Where(m =>
-                            !job.DeprecatedAliases.Contains(m.Identifier.ValueText)
-                        ),
-                    ]
-                );
+                node = node.WithMembers([
+                    .. node.Members.Where(m =>
+                        !job.DeprecatedAliases.Contains(m.Identifier.ValueText)
+                    ),
+                ]);
             }
 
             if (
@@ -1963,13 +1941,11 @@ public partial class MixKhronosData(
             {
                 // Remove deprecated aliases
                 node = node.WithDeclaration(
-                    node.Declaration.WithVariables(
-                        [
-                            .. node.Declaration.Variables.Where(v =>
-                                !job.DeprecatedAliases.Contains(v.Identifier.ValueText)
-                            ),
-                        ]
-                    )
+                    node.Declaration.WithVariables([
+                        .. node.Declaration.Variables.Where(v =>
+                            !job.DeprecatedAliases.Contains(v.Identifier.ValueText)
+                        ),
+                    ])
                 );
 
                 if (node.Declaration.Variables.Count == 0)
@@ -2287,39 +2263,37 @@ public partial class MixKhronosData(
                 && canTrimImpliedVendors
             )
             {
-                node = node.WithMembers(
-                    [
-                        .. node.Members.Select(member =>
+                node = node.WithMembers([
+                    .. node.Members.Select(member =>
+                    {
+                        var memberName = member.Identifier.Text;
+
+                        if (
+                            memberName.EndsWith(typeVendor, vendorSuffixComparison)
+                            && CanIdentifySuffix(memberName, typeVendor.Length)
+                        )
                         {
-                            var memberName = member.Identifier.Text;
-
-                            if (
-                                memberName.EndsWith(typeVendor, vendorSuffixComparison)
-                                && CanIdentifySuffix(memberName, typeVendor.Length)
-                            )
-                            {
-                                // Identify for trimming
-                                return member.WithAttributeLists(
-                                    member.AttributeLists.AddNameAffix(
-                                        NameAffixType.Suffix,
-                                        NameAffixes.KhronosImpliedVendor,
-                                        member.Identifier.Text[^typeVendor.Length..],
-                                        true
-                                    )
-                                );
-                            }
-
-                            // Default behavior - Identify, but not for trimming
+                            // Identify for trimming
                             return member.WithAttributeLists(
-                                ProcessAndGetNewAttributes(
-                                    member.AttributeLists,
-                                    member.Identifier,
-                                    false
+                                member.AttributeLists.AddNameAffix(
+                                    NameAffixType.Suffix,
+                                    NameAffixes.KhronosImpliedVendor,
+                                    member.Identifier.Text[^typeVendor.Length..],
+                                    true
                                 )
                             );
-                        }),
-                    ]
-                );
+                        }
+
+                        // Default behavior - Identify, but not for trimming
+                        return member.WithAttributeLists(
+                            ProcessAndGetNewAttributes(
+                                member.AttributeLists,
+                                member.Identifier,
+                                false
+                            )
+                        );
+                    }),
+                ]);
             }
             else
             {
@@ -2403,13 +2377,11 @@ public partial class MixKhronosData(
                 initializerAdded = true;
                 members.Add(
                     memberFieldNode.WithDeclaration(
-                        memberFieldNode.Declaration.WithVariables(
-                            [
-                                .. memberFieldNode.Declaration.Variables.Select(variable =>
-                                    variable.WithInitializer(initializer)
-                                ),
-                            ]
-                        )
+                        memberFieldNode.Declaration.WithVariables([
+                            .. memberFieldNode.Declaration.Variables.Select(variable =>
+                                variable.WithInitializer(initializer)
+                            ),
+                        ])
                     )
                 );
             }

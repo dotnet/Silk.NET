@@ -1,50 +1,55 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Concurrent;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Build.Framework;
-using Microsoft.Build.Locator;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// A <see cref="IModContextProvider"/> that uses an MSBuild workspace and writes the modified files to disk (without
-/// project modifications) upon disposal of the returned contexts.
+/// A <see cref="IModContextFactory"/> that creates mod contexts that use an MSBuild workspace.
 /// </summary>
-public class MSBuildModContextProvider(ILogger<MSBuildModContextProvider> logger)
-    : IModContextProvider,
+internal class MSBuildModContextFactory(ILogger<MSBuildModContextFactory> logger)
+    : IModContextFactory,
         IProgress<ProjectLoadProgress>,
         Microsoft.Build.Framework.ILogger
 {
-    private readonly ConcurrentDictionary<string, Task<Solution>> _solutions = [];
-
-    internal Task<Solution> OpenSolutionAsync(string file) =>
-        _solutions.GetOrAdd(
-            file,
-            async x =>
-            {
-                logger.LogInformation("Opening solution at {}...", x);
-                return await MSBuildWorkspace.Create().OpenSolutionAsync(x, this, this);
-            }
-        );
+    private readonly Dictionary<string, Task<Solution>> _solutions = [];
+    private readonly Lock _solutionsLock = new();
 
     /// <inheritdoc />
-    public async Task<IModContext> GetContextAsync(
+    public LoggerVerbosity Verbosity { get; set; } = LoggerVerbosity.Detailed;
+
+    /// <inheritdoc />
+    public string? Parameters { get; set; } = string.Empty;
+
+    /// <inheritdoc />
+    public async Task<IModContext> CreateContextAsync(
         string key,
-        IConfigurationSection cfg,
+        SilkTouchConfiguration config,
         CancellationToken ct = default
     )
     {
-        var ret = new MSBuildModContext(this, cfg, logger);
+        var ret = new MSBuildModContext(this, key, config, logger);
         await ret.InitializeAsync();
         return ret;
+    }
+
+    internal Task<Solution> OpenSolutionAsync(string filePath)
+    {
+        using var _ = _solutionsLock.EnterScope();
+
+        if (!_solutions.TryGetValue(filePath, out var task))
+        {
+            logger.LogInformation("Opening solution at {}...", filePath);
+            _solutions[filePath] = task = MSBuildWorkspace
+                .Create()
+                .OpenSolutionAsync(filePath, this, this);
+        }
+
+        return task;
     }
 
     /// <inheritdoc />
@@ -228,10 +233,4 @@ public class MSBuildModContextProvider(ILogger<MSBuildModContextProvider> logger
         _eventSource.StatusEventRaised -= EventSourceOnStatusEventRaised;
         _eventSource = null;
     }
-
-    /// <inheritdoc />
-    public LoggerVerbosity Verbosity { get; set; } = LoggerVerbosity.Detailed;
-
-    /// <inheritdoc />
-    public string? Parameters { get; set; } = string.Empty;
 }

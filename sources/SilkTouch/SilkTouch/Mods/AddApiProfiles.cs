@@ -1,18 +1,11 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Silk.NET.Core;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -24,13 +17,10 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <param name="logger">The logger to use.</param>
 /// <param name="config">The configuration snapshot.</param>
 /// <param name="versionProviders">The version providers.</param>
-[ModConfiguration<Configuration>]
 public class AddApiProfiles(
     ILogger<AddApiProfiles> logger,
-    IOptionsSnapshot<AddApiProfiles.Configuration> config,
-    IEnumerable<
-        IJobDependency<IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>>
-    > versionProviders
+    AddApiProfiles.Configuration config,
+    IEnumerable<IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>> versionProviders
 ) : IMod
 {
     /// <summary>
@@ -63,7 +53,6 @@ public class AddApiProfiles(
     }
 
     class Rewriter(
-        string? jobKey,
         IEnumerable<
             IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
         > versionProviders
@@ -76,14 +65,13 @@ public class AddApiProfiles(
         private IEnumerable<AttributeSyntax> GetProfileAttributes(string? childSymbol) =>
             Profile is null
                 ? versionProviders
-                    .GetAllMetadata(jobKey, _currentParentSymbol, childSymbol)
+                    .GetAllMetadata(_currentParentSymbol, childSymbol)
                     .Select(x => x?.GetSupportedApiProfileAttribute())
                     .OfType<AttributeSyntax>()
                 :
                 [
                     versionProviders
                         .GetMetadata(
-                            jobKey,
                             _currentParentSymbol,
                             childSymbol,
                             x => x.Metadata.Profile == Profile.Profile,
@@ -219,11 +207,7 @@ public class AddApiProfiles(
             return;
         }
 
-        var cfg = config.Get(ctx.JobKey);
-        var rewriter = new Rewriter(
-            ctx.JobKey,
-            versionProviders.SelectMany(x => x.Get(ctx.JobKey)).ToArray()
-        );
+        var rewriter = new Rewriter(versionProviders);
         foreach (var docId in ctx.SourceProject.DocumentIds)
         {
             var doc =
@@ -242,7 +226,7 @@ public class AddApiProfiles(
             }
 
             var root = await tree.GetRootAsync(ct);
-            rewriter.Profile = cfg
+            rewriter.Profile = config
                 .Profiles?.Where(x =>
                     path.StartsWith(x.SourceSubdirectory, StringComparison.OrdinalIgnoreCase)
                 )
@@ -250,8 +234,8 @@ public class AddApiProfiles(
             if (
                 rewriter.Profile is null
                 && !(
-                    cfg.SearchAllFiles.GetValueOrDefault()
-                    || (cfg.SearchAllFiles is null && cfg.Profiles is null or { Length: 0 })
+                    config.SearchAllFiles.GetValueOrDefault()
+                    || (config.SearchAllFiles is null && config.Profiles is null or { Length: 0 })
                 )
             )
             {

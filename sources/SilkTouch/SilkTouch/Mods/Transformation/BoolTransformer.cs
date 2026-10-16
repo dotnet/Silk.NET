@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.Transformation;
@@ -10,9 +9,24 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 /// <summary>
 /// A transformer transforming parameters that are recognised to be akin to booleans to use the <c>MaybeBool</c> type.
 /// </summary>
-public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> options)
-    : IFunctionTransformer
+public class BoolTransformer(BoolTransformer.Configuration config) : IFunctionTransformer
 {
+    /// <summary>
+    /// Configuration for the <see cref="BoolTransformer"/>.
+    /// </summary>
+    public class Configuration
+    {
+        /// <summary>
+        /// Whether all integer return types should be treated as potentially boolean.
+        /// </summary>
+        public bool IntReturnsMaybeBool { get; init; }
+
+        /// <summary>
+        /// Types to treat as boolean and their boolean schemes if different from the default.
+        /// </summary>
+        public Dictionary<string, string?> BoolTypes { get; init; } = [];
+    }
+
     /// <inheritdoc />
     public void Transform(
         MethodDeclarationSyntax current,
@@ -21,13 +35,12 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
     )
     {
         var ogCurrent = current;
-        var cfg = options.Get(ctx.JobKey);
         string? retBoolScheme = null;
         TypeSyntax? newRetType = null;
         var retNative = current.GetNativeReturnTypeName() ?? current.ReturnType.ToString();
         if (
-            (current.ReturnType.IsInteger() && cfg.IntReturnsMaybeBool)
-            || cfg.BoolTypes.TryGetValue(retNative, out retBoolScheme)
+            (current.ReturnType.IsInteger() && config.IntReturnsMaybeBool)
+            || config.BoolTypes.TryGetValue(retNative, out retBoolScheme)
             || (retNative == "bool" && current.ReturnType.ToString().Trim() != "bool") // stdbool.h, hopefully...
         )
         {
@@ -45,7 +58,7 @@ public class BoolTransformer(IOptionsSnapshot<TransformFunctions.Configuration> 
                 paramNative is not null
                 && param.Type is not null
                 && (
-                    cfg.BoolTypes.TryGetValue(paramNative, out paramBoolScheme)
+                    config.BoolTypes.TryGetValue(paramNative, out paramBoolScheme)
                     || (paramNative == "bool" && param.Type.ToString().Trim() != "bool") // stdbool.h, hopefully...
                 )
             )

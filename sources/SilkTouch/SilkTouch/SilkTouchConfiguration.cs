@@ -1,8 +1,6 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Collections.Generic;
-
 namespace Silk.NET.SilkTouch;
 
 /// <summary>
@@ -26,14 +24,13 @@ public record SilkTouchConfiguration
     public string? TestProject { get; init; }
 
     /// <summary>
-    /// The mods to load for generation. If there are no mods, this tool is basically equivalent to running
-    /// ClangSharpPInvokeGenerator directly.
-    /// </summary>
-    public string[]? Mods { get; init; }
-
-    /// <summary>
     /// A path to the license header to use if one wasn't added by other means (e.g. a license header specified in a
     /// response file)
     /// </summary>
     public string? DefaultLicenseHeader { get; init; }
+
+    /// <summary>
+    /// The default namespace to be used by generated documents.
+    /// </summary>
+    public string? DefaultNamespace { get; init; }
 }

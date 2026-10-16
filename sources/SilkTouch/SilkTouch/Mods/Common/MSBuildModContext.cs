@@ -9,32 +9,32 @@ using System.Text;
 using CSharpier.Core;
 using CSharpier.Core.CSharp;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 using EndOfLine = CSharpier.Core.EndOfLine;
+using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace Silk.NET.SilkTouch.Mods;
 
 internal class MSBuildModContext(
-    MSBuildModContextProvider parent,
-    IConfigurationSection cfg,
+    MSBuildModContextFactory parent,
+    string jobKey,
+    SilkTouchConfiguration jobConfig,
     ILogger logger
 ) : IModContext
 {
     private Project? _srcProject,
         _testProject;
 
-    private SilkTouchConfiguration? _cfg = cfg.Get<SilkTouchConfiguration>();
-    public string JobKey { get; } = cfg.Key;
-    public string ConfigurationDirectory { get; init; } = Environment.CurrentDirectory;
+    public string JobKey => jobKey;
+
+    public string WorkingDirectory { get; init; } = Environment.CurrentDirectory;
 
     public Project? SourceProject
     {
         get => _srcProject;
         set => Assign(ref _srcProject, ref _testProject, value, nameof(TestProject));
     }
+
     public Project? TestProject
     {
         get => _testProject;
@@ -75,27 +75,19 @@ internal class MSBuildModContext(
 
     public async Task InitializeAsync()
     {
-        if (_cfg?.Solution is null)
-        {
-            throw new InvalidOperationException("No solution provided in configuration.");
-        }
+        var solutionPath = Path.GetFullPath(jobConfig.Solution, WorkingDirectory);
+        var solution = await parent.OpenSolutionAsync(solutionPath);
 
-        var solution = await parent.OpenSolutionAsync(
-            Path.GetFullPath(_cfg.Solution, ConfigurationDirectory)
-        );
-
-        if (_cfg?.SourceProject is null)
+        if (jobConfig.SourceProject is null)
         {
             throw new InvalidOperationException("No source project provided in configuration.");
         }
 
         // First locate the source project
-        var projectFile = Path.GetFullPath(_cfg.SourceProject, ConfigurationDirectory);
+        var projectFile = Path.GetFullPath(jobConfig.SourceProject, WorkingDirectory);
         _srcProject = solution
             .Projects.Where(x => x.FilePath is not null)
-            .FirstOrDefault(x =>
-                Path.GetFullPath(x.FilePath!, ConfigurationDirectory) == projectFile
-            );
+            .FirstOrDefault(x => Path.GetFullPath(x.FilePath!, WorkingDirectory) == projectFile);
         if (_srcProject is null)
         {
             throw new InvalidOperationException("Failed to locate source project.");
@@ -105,25 +97,17 @@ internal class MSBuildModContext(
         // TODO maybe one day we'll lift this restriction? I couldn't think of a reason not to have it, but there's also not many to have it.
         SourceProject = _srcProject.RemoveDocuments([.. _srcProject.DocumentIds]);
         solution = _srcProject.Solution;
-        if (_cfg.TestProject is not null)
+        if (jobConfig.TestProject is not null)
         {
-            var testProjectFile = Path.GetFullPath(_cfg.TestProject, ConfigurationDirectory);
+            var testProjectFile = Path.GetFullPath(jobConfig.TestProject, WorkingDirectory);
             _testProject = solution
                 .Projects.Where(x => x.FilePath is not null)
                 .FirstOrDefault(x =>
-                    Path.GetFullPath(x.FilePath!, ConfigurationDirectory) == testProjectFile
+                    Path.GetFullPath(x.FilePath!, WorkingDirectory) == testProjectFile
                 );
             TestProject = _testProject?.RemoveDocuments([.. _testProject.DocumentIds]);
             solution = _testProject?.Solution ?? solution;
         }
-    }
-
-    private string ObtainCacheKey()
-    {
-        // Obtain a cache key for the job, should the mods want to cache any artifacts.
-        var cacheKey = string.Join(',', cfg.AsEnumerable().OrderBy(x => x.Key));
-        logger.LogDebug("Cache key for job (before hashing): {}", cacheKey);
-        return Convert.ToHexString(XxHash64.Hash(Encoding.UTF8.GetBytes(cacheKey)));
     }
 
     public async ValueTask DisposeAsync()
@@ -149,12 +133,7 @@ internal class MSBuildModContext(
         var existingFileGate = 0;
         var sw = Stopwatch.StartNew();
         logger.LogInformation("Writing {} to disk...", JobKey);
-        var defaultLicenseHeaderTrivia = _cfg?.DefaultLicenseHeader is null
-            ? null
-            : (await File.ReadAllLinesAsync(_cfg.DefaultLicenseHeader))
-                .Where(x => x.Length == 0 || x.StartsWith("//"))
-                .Select(x => Comment(x.Trim()))
-                .ToArray();
+
         await Parallel.ForEachAsync(
             [.. SourceProject?.Documents ?? [], .. TestProject?.Documents ?? []],
             async (doc, ct) =>
@@ -181,7 +160,7 @@ internal class MSBuildModContext(
                 }
 
                 Directory.CreateDirectory(fileDir);
-                await DiffWriteAsync(doc.FilePath, root, pool, defaultLicenseHeaderTrivia, ct);
+                await DiffWriteAsync(doc.FilePath, root, pool, ct);
                 while (Interlocked.CompareExchange(ref existingFileGate, 1, 0) != 0)
                 {
                     // look ma I made a BreakneckLock
@@ -205,7 +184,6 @@ internal class MSBuildModContext(
         string fname,
         SyntaxNode node,
         ArrayPool<byte> pool,
-        SyntaxTrivia[]? defaultLicenseHeaderTrivia = null,
         CancellationToken ct = default
     )
     {
@@ -231,25 +209,6 @@ internal class MSBuildModContext(
                     ct
                 )
                 : Task.CompletedTask;
-        }
-
-        // Add a license header to files that don't have one
-        if (defaultLicenseHeaderTrivia is not null)
-        {
-            var shouldAddHeader =
-                !node.GetLeadingTrivia().Any(x => x.Kind() is SyntaxKind.SingleLineCommentTrivia)
-                || !(
-                    node.ChildNodes()
-                        .FirstOrDefault()
-                        ?.GetLeadingTrivia()
-                        .Any(x => x.Kind() is SyntaxKind.SingleLineCommentTrivia)
-                ).GetValueOrDefault();
-            if (shouldAddHeader)
-            {
-                node = node.WithLeadingTrivia(
-                    defaultLicenseHeaderTrivia.Concat(node.GetLeadingTrivia())
-                );
-            }
         }
 
         // Convert our syntax node to a UTF-8 byte array using CSharpier

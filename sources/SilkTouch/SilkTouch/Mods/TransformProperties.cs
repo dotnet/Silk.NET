@@ -4,7 +4,6 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -25,8 +24,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// to be akin to booleans to use the <c>MaybeBool</c> type.
 /// This functionality is based on <see cref="BoolTransformer"/>.
 /// </remarks>
-[ModConfiguration<Configuration>]
-public class TransformProperties(IOptionsSnapshot<TransformProperties.Configuration> cfg) : IMod
+public class TransformProperties(TransformProperties.Configuration config) : IMod
 {
     /// <summary>
     /// Configuration for the <see cref="TransformProperties"/>.
@@ -42,8 +40,6 @@ public class TransformProperties(IOptionsSnapshot<TransformProperties.Configurat
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var config = cfg.Get(ctx.JobKey);
-
         var rw = new Rewriter(config);
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])

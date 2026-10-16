@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
 
@@ -217,14 +218,13 @@ public class ArrayParameterTransformerTests
             Action<MethodDeclarationSyntax> next
         ) => throw new NotImplementedException();
 
-        public string? JobKey { get; set; }
         public MethodDeclarationSyntax? Original { get; set; }
-        public IFunctionTransformer[]? Transformers { get; set; }
+        public IFunctionTransformer[] Transformers { get; set; }
+        public DocumentFactory DocumentFactory { get; set; } = new();
 
         public bool AddUsing(UsingDirectiveSyntax use) => throw new NotImplementedException();
 
         public bool TryGetChildSymbolMetadata(
-            string? jobKey,
             string nativeName,
             string childNativeName,
             [NotNullWhen(true)] out SymbolConstraints? metadata
@@ -246,17 +246,15 @@ public class ArrayParameterTransformerTests
                             )
                         ),
                     ],
-                    ElementTypeConstraints: new SymbolConstraints(
-                        [
-                            new LogicalAnnotation<UsageConstraints>(
-                                LogicalRequirement.Always,
-                                null,
-                                null,
-                                null,
-                                new UsageConstraints()
-                            ),
-                        ]
-                    ),
+                    ElementTypeConstraints: new SymbolConstraints([
+                        new LogicalAnnotation<UsageConstraints>(
+                            LogicalRequirement.Always,
+                            null,
+                            null,
+                            null,
+                            new UsageConstraints()
+                        ),
+                    ]),
                     IsMutable: childNativeName.Contains('m')
                 );
                 return true;
@@ -278,17 +276,15 @@ public class ArrayParameterTransformerTests
                             )
                         ),
                     ],
-                    ElementTypeConstraints: new SymbolConstraints(
-                        [
-                            new LogicalAnnotation<UsageConstraints>(
-                                LogicalRequirement.Always,
-                                null,
-                                null,
-                                null,
-                                new UsageConstraints()
-                            ),
-                        ]
-                    ),
+                    ElementTypeConstraints: new SymbolConstraints([
+                        new LogicalAnnotation<UsageConstraints>(
+                            LogicalRequirement.Always,
+                            null,
+                            null,
+                            null,
+                            new UsageConstraints()
+                        ),
+                    ]),
                     IsMutable: childNativeName.Contains('m')
                 );
                 return true;

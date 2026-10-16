@@ -42,19 +42,17 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration()
+            new PrettifyNames.Configuration()
+            {
+                LongAcronymThreshold = 3,
+                Affixes =
                 {
-                    LongAcronymThreshold = 3,
-                    Affixes =
                     {
-                        {
-                            "SharedPrefix",
-                            new PrettifyNames.NameAffixConfiguration() { Remove = true }
-                        },
+                        "SharedPrefix",
+                        new PrettifyNames.NameAffixConfiguration() { Remove = true }
                     },
-                }
-            )
+                },
+            }
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -105,19 +103,17 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration()
+            new PrettifyNames.Configuration()
+            {
+                LongAcronymThreshold = 4,
+                Affixes =
                 {
-                    LongAcronymThreshold = 4,
-                    Affixes =
                     {
-                        {
-                            "SharedPrefix",
-                            new PrettifyNames.NameAffixConfiguration() { Remove = true }
-                        },
+                        "SharedPrefix",
+                        new PrettifyNames.NameAffixConfiguration() { Remove = true }
                     },
-                }
-            )
+                },
+            }
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -159,31 +155,29 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration()
+            new PrettifyNames.Configuration()
+            {
+                LongAcronymThreshold = 4,
+                Affixes =
                 {
-                    LongAcronymThreshold = 4,
-                    Affixes =
                     {
+                        "SharedPrefix",
+                        new PrettifyNames.NameAffixConfiguration()
                         {
-                            "SharedPrefix",
-                            new PrettifyNames.NameAffixConfiguration()
-                            {
-                                DiscriminatorPriority = 0,
-                                IsDiscriminator = true,
-                            }
-                        },
-                        {
-                            "KhronosFunctionDataType",
-                            new PrettifyNames.NameAffixConfiguration()
-                            {
-                                DiscriminatorPriority = 1,
-                                IsDiscriminator = true,
-                            }
-                        },
+                            DiscriminatorPriority = 0,
+                            IsDiscriminator = true,
+                        }
                     },
-                }
-            )
+                    {
+                        "KhronosFunctionDataType",
+                        new PrettifyNames.NameAffixConfiguration()
+                        {
+                            DiscriminatorPriority = 1,
+                            IsDiscriminator = true,
+                        }
+                    },
+                },
+            }
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -227,31 +221,29 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration()
+            new PrettifyNames.Configuration()
+            {
+                LongAcronymThreshold = 4,
+                Affixes =
                 {
-                    LongAcronymThreshold = 4,
-                    Affixes =
                     {
+                        "SharedPrefix",
+                        new PrettifyNames.NameAffixConfiguration()
                         {
-                            "SharedPrefix",
-                            new PrettifyNames.NameAffixConfiguration()
-                            {
-                                DiscriminatorPriority = 1,
-                                IsDiscriminator = true,
-                            }
-                        },
-                        {
-                            "KhronosFunctionDataType",
-                            new PrettifyNames.NameAffixConfiguration()
-                            {
-                                DiscriminatorPriority = 0,
-                                IsDiscriminator = true,
-                            }
-                        },
+                            DiscriminatorPriority = 1,
+                            IsDiscriminator = true,
+                        }
                     },
-                }
-            )
+                    {
+                        "KhronosFunctionDataType",
+                        new PrettifyNames.NameAffixConfiguration()
+                        {
+                            DiscriminatorPriority = 0,
+                            IsDiscriminator = true,
+                        }
+                    },
+                },
+            }
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -288,7 +280,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+            new PrettifyNames.Configuration()
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -319,7 +311,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+            new PrettifyNames.Configuration()
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -353,7 +345,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+            new PrettifyNames.Configuration()
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -384,12 +376,10 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration()
-                {
-                    NameOverrides = { { "ALBUFFERCALLBACKTYPESOFT", "BufferCallbackSOFT" } },
-                }
-            )
+            new PrettifyNames.Configuration()
+            {
+                NameOverrides = { { "ALBUFFERCALLBACKTYPESOFT", "BufferCallbackSOFT" } },
+            }
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -419,7 +409,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+            new PrettifyNames.Configuration()
         );
 
         Assert.ThrowsAsync<InvalidOperationException>(async () =>
@@ -446,7 +436,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+            new PrettifyNames.Configuration()
         );
 
         Assert.ThrowsAsync<InvalidOperationException>(async () =>
@@ -480,20 +470,17 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+            new PrettifyNames.Configuration()
             {
-                Value =
+                Affixes =
                 {
-                    Affixes =
                     {
+                        "SharedPrefix",
+                        new PrettifyNames.NameAffixConfiguration()
                         {
-                            "SharedPrefix",
-                            new PrettifyNames.NameAffixConfiguration()
-                            {
-                                DiscriminatorPriority = 0,
-                                IsDiscriminator = true,
-                            }
-                        },
+                            DiscriminatorPriority = 0,
+                            IsDiscriminator = true,
+                        }
                     },
                 },
             }
@@ -526,7 +513,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+            new PrettifyNames.Configuration()
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -553,18 +540,16 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration()
+            new PrettifyNames.Configuration()
+            {
+                Affixes =
                 {
-                    Affixes =
                     {
-                        {
-                            "TestPrefix",
-                            new PrettifyNames.NameAffixConfiguration() { Prettify = true }
-                        },
+                        "TestPrefix",
+                        new PrettifyNames.NameAffixConfiguration() { Prettify = true }
                     },
-                }
-            )
+                },
+            }
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -592,22 +577,20 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration()
+            new PrettifyNames.Configuration()
+            {
+                Affixes =
                 {
-                    Affixes =
                     {
-                        {
-                            "TestPrefix1",
-                            new PrettifyNames.NameAffixConfiguration() { Prettify = true }
-                        },
-                        {
-                            "TestPrefix2",
-                            new PrettifyNames.NameAffixConfiguration() { Prettify = true }
-                        },
+                        "TestPrefix1",
+                        new PrettifyNames.NameAffixConfiguration() { Prettify = true }
                     },
-                }
-            )
+                    {
+                        "TestPrefix2",
+                        new PrettifyNames.NameAffixConfiguration() { Prettify = true }
+                    },
+                },
+            }
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -634,18 +617,16 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration()
+            new PrettifyNames.Configuration()
+            {
+                Affixes =
                 {
-                    Affixes =
                     {
-                        {
-                            "TestPrefix",
-                            new PrettifyNames.NameAffixConfiguration() { Capitalize = true }
-                        },
+                        "TestPrefix",
+                        new PrettifyNames.NameAffixConfiguration() { Capitalize = true }
                     },
-                }
-            )
+                },
+            }
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -672,22 +653,20 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration()
+            new PrettifyNames.Configuration()
+            {
+                Affixes =
                 {
-                    Affixes =
                     {
+                        "TestPrefix",
+                        new PrettifyNames.NameAffixConfiguration()
                         {
-                            "TestPrefix",
-                            new PrettifyNames.NameAffixConfiguration()
-                            {
-                                Prettify = true,
-                                Capitalize = true,
-                            }
-                        },
+                            Prettify = true,
+                            Capitalize = true,
+                        }
                     },
-                }
-            )
+                },
+            }
         );
 
         await prettifyNames.ExecuteAsync(context);

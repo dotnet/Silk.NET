@@ -19,7 +19,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// Apparently this mod only handles the special nested structs output by <see cref="ClangScraper"/>
 /// right now. We might change this in the future if there is the need.
 /// </remarks>
-public partial class ExtractNestedTypes : IMod
+public partial class ExtractNestedTypes(DocumentFactory documentFactory) : IMod
 {
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
@@ -55,21 +55,25 @@ public partial class ExtractNestedTypes : IMod
                 project = project
                     .AddDocument(
                         $"{newStruct.Identifier}.gen.cs",
-                        CompilationUnit()
-                            .WithMembers(
-                                rewriter.Namespace is not null
-                                    ? SingletonList<MemberDeclarationSyntax>(
-                                        FileScopedNamespaceDeclaration(
-                                                ModUtils.NamespaceIntoIdentifierName(
-                                                    rewriter.Namespace
+                        documentFactory.PopulateDocument(
+                            CompilationUnit()
+                                .WithMembers(
+                                    rewriter.Namespace is not null
+                                        ? SingletonList<MemberDeclarationSyntax>(
+                                            FileScopedNamespaceDeclaration(
+                                                    ModUtils.NamespaceIntoIdentifierName(
+                                                        rewriter.Namespace
+                                                    )
                                                 )
-                                            )
-                                            .WithMembers(
-                                                SingletonList<MemberDeclarationSyntax>(newStruct)
-                                            )
-                                    )
-                                    : SingletonList<MemberDeclarationSyntax>(newStruct)
-                            ),
+                                                .WithMembers(
+                                                    SingletonList<MemberDeclarationSyntax>(
+                                                        newStruct
+                                                    )
+                                                )
+                                        )
+                                        : SingletonList<MemberDeclarationSyntax>(newStruct)
+                                )
+                        ),
                         // Place extracted struct next to the original file it came from
                         filePath: project.FullPath(
                             $"{file.AsSpan()[..file.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
