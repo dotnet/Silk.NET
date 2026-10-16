@@ -292,7 +292,7 @@ public class BakeSourceSets(
                 }
                 nsPre = string.Empty; // only the top-level type shall be prefixed with the namespace
                 bakeSet = (
-                    bakeSet!.Children[discrim] = new BakedMember(
+                    bakeSet.Children[discrim] = new BakedMember(
                         strategy.BakeMember(
                             decl,
                             discrim,
@@ -301,10 +301,10 @@ public class BakeSourceSets(
                         baked.Inner ?? new BakeSet(),
                         baked.Syntax is null ? bakeSet.Children.Count : baked.Index
                     )
-                ).Inner;
+                ).Inner!;
             }
 
-            return bakeSet!;
+            return bakeSet;
         }
     }
 
