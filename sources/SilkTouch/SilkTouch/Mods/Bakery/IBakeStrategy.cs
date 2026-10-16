@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Silk.NET.SilkTouch.Mods.Bakery;
@@ -14,7 +13,7 @@ public interface IBakeStrategy // the temptation to call this IRecipe was sooooo
     /// <summary>
     /// A name for the bake strategy as identified in <see cref="BakeSourceSets.Configuration.Strategy" />.
     /// </summary>
-    string Name { get; }
+    public string Name { get; }
 
     /// <summary>
     /// Gets a declaration to store in a <see cref="BakeSet" /> element, merging the encountered declaration with the
@@ -24,7 +23,7 @@ public interface IBakeStrategy // the temptation to call this IRecipe was sooooo
     /// <param name="discrim">The discriminator for this member.</param>
     /// <param name="existing">The current member stored in the <see cref="BakeSet" />.</param>
     /// <returns>The merged type declaration.</returns>
-    MemberDeclarationSyntax BakeMember(
+    public MemberDeclarationSyntax BakeMember(
         MemberDeclarationSyntax node,
         string? discrim,
         BakedMember? existing
