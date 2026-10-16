@@ -388,7 +388,6 @@ public class BakeSourceSets(
             proj = proj.AddDocument(
                 Path.GetFileName(bakedPath),
                 documentFactory.PopulateDocument(bakedRoot),
-                // we can forgive the below nulls because RelativePath checks them, and returns null if they're null.
                 filePath: proj.FullPath(bakedPath)
             ).Project;
         }
