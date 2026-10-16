@@ -333,7 +333,6 @@ public class BakeSourceSets(
 
         // Visit each doc
         var visitor = new Visitor(strategy);
-        var bakery = new Dictionary<string, BakeSet>();
         var baked = new List<string>();
         foreach (var docId in ctx.SourceProject.DocumentIds)
         {
@@ -379,8 +378,14 @@ public class BakeSourceSets(
                 .Select(x => x.Id),
         ]);
 
+        var inputBakeSets = visitor.BakeSets;
+        var outputBakeSets = inputBakeSets; // TODO
+
         // Add the final baked documents
-        foreach (var (bakedRoot, bakedPath) in GetBaked(bakery).Select(x => (x.Value, path: x.Key)))
+        foreach (
+            var (bakedRoot, bakedPath) in GetBaked(outputBakeSets)
+                .Select(x => (x.Value, path: x.Key))
+        )
         {
             proj = proj.AddDocument(
                 Path.GetFileName(bakedPath),
@@ -393,10 +398,10 @@ public class BakeSourceSets(
     }
 
     private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(
-        Dictionary<string, BakeSet> bakery
+        Dictionary<string, BakeSet> bakeSets
     )
     {
-        foreach (var (subdir, bakeSet) in bakery)
+        foreach (var (subdir, bakeSet) in bakeSets)
         {
             foreach (var (fqTopLevelType, bakedMember) in bakeSet.Children)
             {
