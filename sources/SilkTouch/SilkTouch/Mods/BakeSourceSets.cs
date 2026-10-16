@@ -366,9 +366,6 @@ public class BakeSourceSets(
             visitor.Visit(root);
         }
 
-        // TODO
-        Environment.Exit(1);
-
         // Remove documents that were used as baker input
         var proj = ctx.SourceProject.RemoveDocuments([
             .. ctx
@@ -378,8 +375,9 @@ public class BakeSourceSets(
                 .Select(x => x.Id),
         ]);
 
+        // Bake
         var inputBakeSets = visitor.BakeSets;
-        var outputBakeSets = inputBakeSets; // TODO
+        var outputBakeSets = Bake(config.SourceSets, inputBakeSets);
 
         // Add the final baked documents
         foreach (
@@ -395,6 +393,15 @@ public class BakeSourceSets(
         }
 
         ctx.SourceProject = proj;
+    }
+
+    private Dictionary<string, BakeSet> Bake(
+        Dictionary<string, string> sourceSets,
+        Dictionary<string, BakeSet> bakeSets
+    )
+    {
+        // TODO
+        return bakeSets;
     }
 
     private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(
