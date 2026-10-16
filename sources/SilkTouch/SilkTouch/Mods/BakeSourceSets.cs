@@ -270,39 +270,43 @@ public class BakeSourceSets(
             where TSeparated : MemberDeclarationSyntax
             where TVisiting : SyntaxNode
         {
+            var self = strategy.Cleanup(nodeToAdd);
+
             // Add self before visiting children
-            var parentBakedMember = _stack.Count > 0 ? _stack[^1] : null;
-            var selfBakedMember = new BakedMember(
-                nodeToAdd,
-                null,
-                parentBakedMember?.Inner?.Children.Count ?? 0
-            );
-            if (parentBakedMember == null)
+            if (self != null)
             {
-                var sourceSetKey =
-                    SourceSet ?? throw new InvalidOperationException("SourceSet not set");
-                if (!BakeSets.TryGetValue(sourceSetKey, out var bakeSet))
+                var parentBakedMember = _stack.Count > 0 ? _stack[^1] : null;
+                var selfBakedMember = new BakedMember(
+                    nodeToAdd,
+                    null,
+                    parentBakedMember?.Inner?.Children.Count ?? 0
+                );
+                if (parentBakedMember == null)
                 {
-                    BakeSets[sourceSetKey] = bakeSet = new BakeSet();
+                    var sourceSetKey =
+                        SourceSet ?? throw new InvalidOperationException("SourceSet not set");
+                    if (!BakeSets.TryGetValue(sourceSetKey, out var bakeSet))
+                    {
+                        BakeSets[sourceSetKey] = bakeSet = new BakeSet();
+                    }
+
+                    bakeSet.Children.Add(discrim, selfBakedMember);
+                }
+                else
+                {
+                    parentBakedMember.Inner ??= new BakeSet();
+                    parentBakedMember.Inner.Children.Add(discrim, selfBakedMember);
                 }
 
-                bakeSet.Children.Add(discrim, selfBakedMember);
-            }
-            else
-            {
-                parentBakedMember.Inner ??= new BakeSet();
-                parentBakedMember.Inner.Children.Add(discrim, selfBakedMember);
-            }
-
-            _stack.Add(selfBakedMember);
-
-            try
-            {
-                visitChildren(nodeVisiting);
-            }
-            finally
-            {
-                _stack.RemoveAt(_stack.Count - 1);
+                _stack.Add(selfBakedMember);
+                try
+                {
+                    visitChildren(nodeVisiting);
+                }
+                finally
+                {
+                    _stack.RemoveAt(_stack.Count - 1);
+                }
             }
         }
     }

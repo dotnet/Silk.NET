@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Silk.NET.SilkTouch.Mods.Bakery;
@@ -14,6 +15,11 @@ public interface IBakeStrategy // the temptation to call this IRecipe was sooooo
     /// A name for the bake strategy as identified in <see cref="BakeSourceSets.Configuration.Strategy" />.
     /// </summary>
     public string Name { get; }
+
+    /// <summary>
+    /// Cleans up the specified syntax node.
+    /// </summary>
+    public SyntaxNode? Cleanup(SyntaxNode? node);
 
     /// <summary>
     /// Gets a declaration to store in a <see cref="BakeSet" /> element, merging the encountered declaration with the
