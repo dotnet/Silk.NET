@@ -76,7 +76,11 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         {
             node = incomingType
                 .WithModifiers(
-                    TokenList(node.Modifiers.Concat(node.Modifiers).DistinctBy(x => x.ToString()))
+                    TokenList(
+                        existing
+                            .Syntax.Modifiers.Concat(node.Modifiers)
+                            .DistinctBy(x => x.ToString())
+                    )
                 )
                 .WithBaseList(
                     incomingType.BaseList?.WithTypes(
