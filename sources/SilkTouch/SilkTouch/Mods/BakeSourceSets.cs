@@ -470,48 +470,45 @@ public class BakeSourceSets(
     }
 
     /// <summary>
-    /// Merges the second <see cref="BakedMember"/> into the first and returns the first.
+    /// Merges the two <see cref="BakedMember"/>s together.
     /// Returns null if the member should not be kept.
     /// </summary>
-    /// <remarks>
-    /// The first will be modified, the second will not.
-    /// </remarks>
     private BakedMember? Merge(
         IBakeStrategy strategy,
         string discrim,
-        BakedMember first,
+        BakedMember? first,
         BakedMember second
     )
     {
         // Handle children first
-        if (first.Inner != null && second.Inner != null)
+        var mergedInner = first?.Inner ?? second.Inner;
+        if (mergedInner != null && second.Inner != null)
         {
             foreach (var (childDiscrim, childSecond) in second.Inner.Children)
             {
-                if (second.Inner.Children.TryGetValue(childDiscrim, out var childFirst))
+                BakedMember? childFirst = null;
+                first?.Inner?.Children.TryGetValue(childDiscrim, out childFirst);
+
+                var childMerged = Merge(strategy, childDiscrim, childFirst, childSecond);
+                if (childMerged != null)
                 {
-                    var childMerged = Merge(strategy, childDiscrim, childFirst, childSecond);
-                    if (childMerged != null)
-                    {
-                        first.Inner.Children[childDiscrim] = childMerged;
-                    }
-                    else
-                    {
-                        first.Inner.Children.Remove(childDiscrim);
-                    }
+                    mergedInner.Children[childDiscrim] = childMerged;
+                }
+                else
+                {
+                    mergedInner.Children.Remove(childDiscrim);
                 }
             }
         }
 
         // Then merge self
-        var merged = strategy.Merge(discrim, first, second);
-        if (merged == null)
+        var mergedSyntax = strategy.Merge(discrim, first, second);
+        if (mergedSyntax == null)
         {
             return null;
         }
 
-        first.Syntax = merged;
-        return first;
+        return new BakedMember(mergedSyntax, mergedInner, first?.Index ?? second.Index);
     }
 
     private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(

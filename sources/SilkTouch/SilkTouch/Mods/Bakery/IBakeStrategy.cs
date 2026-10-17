@@ -33,5 +33,5 @@ public interface IBakeStrategy // the temptation to call this IRecipe was sooooo
     /// <param name="first">The first member.</param>
     /// <param name="second">The second member.</param>
     /// <returns>The merged member declaration.</returns>
-    public MemberDeclarationSyntax? Merge(string discrim, BakedMember first, BakedMember second);
+    public MemberDeclarationSyntax? Merge(string discrim, BakedMember? first, BakedMember second);
 }

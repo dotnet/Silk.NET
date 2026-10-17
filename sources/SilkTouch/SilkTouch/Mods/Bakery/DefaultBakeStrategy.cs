@@ -37,10 +37,15 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
     /// <inheritdoc />
     public virtual MemberDeclarationSyntax? Merge(
         string discrim,
-        BakedMember first,
+        BakedMember? first,
         BakedMember second
     )
     {
+        if (first == null)
+        {
+            return second.Syntax;
+        }
+
         var existing = first;
         var node = second.Syntax;
 
