@@ -72,15 +72,17 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             )
         );
 
-        if (node is BaseTypeDeclarationSyntax ty)
+        if (node is BaseTypeDeclarationSyntax incomingType)
         {
-            node = ty.WithModifiers(
+            node = incomingType
+                .WithModifiers(
                     TokenList(node.Modifiers.Concat(node.Modifiers).DistinctBy(x => x.ToString()))
                 )
                 .WithBaseList(
-                    ty.BaseList?.WithTypes(
+                    incomingType.BaseList?.WithTypes(
                         SeparatedList(
-                            ty.BaseList.Types.Concat(
+                            incomingType
+                                .BaseList.Types.Concat(
                                     ((BaseTypeDeclarationSyntax)existing.Syntax).BaseList?.Types
                                         ?? []
                                 )
@@ -114,7 +116,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                 if (existingFields.Length != incomingFields.Length)
                 {
                     throw new InvalidOperationException(
-                        $"Differing number of fields between definitions of {ty.Identifier} ({existingFields.Length} vs "
+                        $"Differing number of fields between definitions of {incomingType.Identifier} ({existingFields.Length} vs "
                             + $"{incomingFields.Length})"
                     );
                 }
@@ -132,7 +134,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                     )
                     {
                         throw new InvalidOperationException(
-                            $"Field {i} differs between definitions of {ty.Identifier}. "
+                            $"Field {i} differs between definitions of {incomingType.Identifier}. "
                                 + $"Left: {existingFields[i]}, right: {incomingFields[i]}"
                         );
                     }
@@ -208,45 +210,48 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         // Check that constants and enums have the same value
         if (
             (existing.Syntax, node: node) is
-            (EnumMemberDeclarationSyntax lEnum, EnumMemberDeclarationSyntax rEnum)
+            (EnumMemberDeclarationSyntax existingEnum, EnumMemberDeclarationSyntax incomingEnum)
         )
         {
-            if (lEnum.EqualsValue?.Value.ToString() != rEnum.EqualsValue?.Value.ToString())
+            if (
+                existingEnum.EqualsValue?.Value.ToString()
+                != incomingEnum.EqualsValue?.Value.ToString()
+            )
             {
                 logger.LogWarning(
                     "Enum member with discriminator \"{}\" differs between definitions. Left: {}, right: {}",
                     discrim,
-                    lEnum.EqualsValue?.Value.ToString() ?? "auto-assigned",
-                    rEnum.EqualsValue?.Value.ToString() ?? "auto-assigned"
+                    existingEnum.EqualsValue?.Value.ToString() ?? "auto-assigned",
+                    incomingEnum.EqualsValue?.Value.ToString() ?? "auto-assigned"
                 );
             }
         }
         else if (
             (existing.Syntax, node: node) is
-            (FieldDeclarationSyntax lConst, FieldDeclarationSyntax rConst)
+            (FieldDeclarationSyntax existingConst, FieldDeclarationSyntax incomingConst)
         )
         {
-            var isConst = lConst.Modifiers.Any(SyntaxKind.ConstKeyword);
-            if (isConst != rConst.Modifiers.Any(SyntaxKind.ConstKeyword))
+            var isConst = existingConst.Modifiers.Any(SyntaxKind.ConstKeyword);
+            if (isConst != incomingConst.Modifiers.Any(SyntaxKind.ConstKeyword))
             {
                 logger.LogWarning(
                     "Const with discriminator \"{}\" isn't const in its redefinition. Left: {}, right: {}",
                     discrim,
-                    lConst.ToString(),
-                    rConst.ToString()
+                    existingConst.ToString(),
+                    incomingConst.ToString()
                 );
             }
             else if (
                 isConst
-                && lConst.Declaration.Variables[0].Initializer?.Value.ToString()
-                    != rConst.Declaration.Variables[0].Initializer?.Value.ToString()
+                && existingConst.Declaration.Variables[0].Initializer?.Value.ToString()
+                    != incomingConst.Declaration.Variables[0].Initializer?.Value.ToString()
             )
             {
                 logger.LogWarning(
                     "Const value with discriminator \"{}\" differs between definitions. Left: {}, right: {}",
                     discrim,
-                    lConst.Declaration.Variables[0].Initializer?.Value.ToString(),
-                    rConst.Declaration.Variables[0].Initializer?.Value.ToString()
+                    existingConst.Declaration.Variables[0].Initializer?.Value.ToString(),
+                    incomingConst.Declaration.Variables[0].Initializer?.Value.ToString()
                 );
             }
         }
