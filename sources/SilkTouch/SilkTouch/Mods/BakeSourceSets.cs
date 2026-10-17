@@ -417,6 +417,12 @@ public class BakeSourceSets(
                     inputs.Add(input);
                 }
             }
+
+            // Ensure consistent order
+            foreach (var (_, inputs) in resultSourceSets)
+            {
+                inputs.Sort(StringComparer.Ordinal);
+            }
         }
 
         var resultBakeSets = new Dictionary<string, BakeSet>();
