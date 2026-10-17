@@ -377,7 +377,7 @@ public class BakeSourceSets(
 
         // Bake
         var inputBakeSets = visitor.BakeSets;
-        var outputBakeSets = Bake(config.SourceSets, inputBakeSets);
+        var outputBakeSets = Bake(strategy, config.SourceSets, inputBakeSets);
 
         // Add the final baked documents
         foreach (
@@ -396,6 +396,7 @@ public class BakeSourceSets(
     }
 
     private Dictionary<string, BakeSet> Bake(
+        IBakeStrategy strategy,
         Dictionary<string, string> sourceSets,
         Dictionary<string, BakeSet> bakeSets
     )
@@ -419,9 +420,98 @@ public class BakeSourceSets(
         }
 
         var resultBakeSets = new Dictionary<string, BakeSet>();
+        foreach (var (output, inputs) in resultSourceSets)
+        {
+            var activeSets = new List<BakeSet>();
+            foreach (var input in inputs)
+            {
+                if (bakeSets.TryGetValue(input, out var bakeSet))
+                {
+                    activeSets.Add(bakeSet);
+                }
+            }
 
-        // TODO
-        return bakeSets;
+            if (activeSets.Count == 0)
+            {
+                continue;
+            }
+
+            var outputBakeSet = activeSets[0];
+            for (var i = 1; i < activeSets.Count; i++)
+            {
+                var currentBakeSet = activeSets[i];
+                foreach (var (discrim, second) in currentBakeSet.Children)
+                {
+                    if (outputBakeSet.Children.TryGetValue(discrim, out var first))
+                    {
+                        var merged = Merge(strategy, discrim, first, second);
+                        if (merged != null)
+                        {
+                            outputBakeSet.Children[discrim] = merged;
+                        }
+                        else
+                        {
+                            outputBakeSet.Children.Remove(discrim);
+                        }
+                    }
+                    else
+                    {
+                        // All members processed here are top-level types
+                        // We always keep these since there's no ABI conflict
+                        outputBakeSet.Children[discrim] = second;
+                    }
+                }
+            }
+
+            resultBakeSets[output] = outputBakeSet;
+        }
+
+        return resultBakeSets;
+    }
+
+    /// <summary>
+    /// Merges the second <see cref="BakedMember"/> into the first and returns the first.
+    /// Returns null if the member should not be kept.
+    /// </summary>
+    /// <remarks>
+    /// The first will be modified, the second will not.
+    /// </remarks>
+    private BakedMember? Merge(
+        IBakeStrategy strategy,
+        string discrim,
+        BakedMember first,
+        BakedMember second
+    )
+    {
+        // Handle children first
+        if (first.Inner != null && second.Inner != null)
+        {
+            foreach (var (childDiscrim, childSecond) in second.Inner.Children)
+            {
+                if (second.Inner.Children.TryGetValue(childDiscrim, out var childFirst))
+                {
+                    var childMerged = Merge(strategy, childDiscrim, childFirst, childSecond);
+                    if (childMerged != null)
+                    {
+                        first.Inner.Children[childDiscrim] = childMerged;
+                    }
+                    else
+                    {
+                        first.Inner.Children.Remove(childDiscrim);
+                    }
+                }
+            }
+        }
+
+        // Then merge self
+        var merged = strategy.Merge(discrim, first, second);
+        if (merged == null)
+        {
+            return null;
+        }
+
+        first.Syntax = merged;
+        return first;
     }
 
     private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(
