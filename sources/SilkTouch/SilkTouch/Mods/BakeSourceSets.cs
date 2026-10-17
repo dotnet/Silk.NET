@@ -96,18 +96,6 @@ public class BakeSourceSets(
         /// </summary>
         public Dictionary<string, BakeSet> BakeSets { get; } = new();
 
-        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            ReportMember(
-                node,
-                node.Identifier
-                    + (
-                        node is { TypeParameterList.Parameters.Count: > 0 and var cnt }
-                            ? $"`{cnt}"
-                            : string.Empty
-                    ),
-                base.VisitDelegateDeclaration
-            );
-
         public override void VisitEventDeclaration(EventDeclarationSyntax node) =>
             ReportMember(node, node.Identifier.ToString(), base.VisitEventDeclaration);
 
@@ -205,6 +193,9 @@ public class BakeSourceSets(
                 base.VisitMethodDeclaration
             );
 
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
+            ReportType(node, base.VisitDelegateDeclaration);
+
         public override void VisitStructDeclaration(StructDeclarationSyntax node) =>
             ReportType(node, base.VisitStructDeclaration);
 
@@ -219,6 +210,32 @@ public class BakeSourceSets(
 
         public override void VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
             ReportType(node, base.VisitInterfaceDeclaration);
+
+        /// <remarks>
+        /// Delegates are not <see cref="BaseTypeDeclarationSyntax"/>es.
+        /// </remarks>
+        private void ReportType(
+            DelegateDeclarationSyntax node,
+            Action<DelegateDeclarationSyntax> visitChildren
+        )
+        {
+            var discrim = $"{node.Identifier}";
+            var isTopLevel = _stack.Count == 0;
+            if (isTopLevel)
+            {
+                var nsPre = node.NamespaceFromSyntaxNode() is { Length: > 0 } ns
+                    ? $"{ns}."
+                    : string.Empty;
+                discrim = $"{nsPre}{discrim}";
+            }
+
+            if (node is { TypeParameterList.Parameters.Count: > 0 and var cnt })
+            {
+                discrim = $"{discrim}`{cnt}";
+            }
+
+            Report(node, node, discrim, visitChildren);
+        }
 
         private void ReportType<T>(T node, Action<T> visitChildren)
             where T : BaseTypeDeclarationSyntax
