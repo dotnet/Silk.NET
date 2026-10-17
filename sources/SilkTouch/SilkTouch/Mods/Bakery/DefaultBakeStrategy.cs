@@ -74,6 +74,11 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
 
         if (node is BaseTypeDeclarationSyntax incomingType)
         {
+            var baseTypes = (((BaseTypeDeclarationSyntax)existing.Syntax).BaseList?.Types ?? [])
+                .Concat(incomingType.BaseList?.Types ?? [])
+                .DistinctBy(x => x.ToString())
+                .ToArray();
+
             node = incomingType
                 .WithModifiers(
                     TokenList(
@@ -82,18 +87,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                             .DistinctBy(x => x.ToString())
                     )
                 )
-                .WithBaseList(
-                    incomingType.BaseList?.WithTypes(
-                        SeparatedList(
-                            incomingType
-                                .BaseList.Types.Concat(
-                                    ((BaseTypeDeclarationSyntax)existing.Syntax).BaseList?.Types
-                                        ?? []
-                                )
-                                .DistinctBy(x => x.ToString())
-                        )
-                    )
-                );
+                .WithBaseList(baseTypes.Length != 0 ? BaseList(SeparatedList(baseTypes)) : null);
 
             // If this is a struct or record struct, fields should exactly match.
             if (
