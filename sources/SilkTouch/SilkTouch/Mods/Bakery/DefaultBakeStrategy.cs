@@ -90,8 +90,6 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                 );
 
             // If this is a struct or record struct, fields should exactly match.
-            // TODO: Members is always empty
-            // TODO: Static fields?
             if (
                 node is StructDeclarationSyntax
                 || (node is RecordDeclarationSyntax r && r.Modifiers.Any(SyntaxKind.StructKeyword))
@@ -106,6 +104,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                         .OrderBy(x => x.Index)
                         .Select(x => x.Syntax)
                         .OfType<FieldDeclarationSyntax>()
+                        .Where(x => !x.Modifiers.Any(m => m.IsKind(SyntaxKind.StaticKeyword)))
                         .SelectMany(x =>
                             x.Declaration.Variables.Select(y => (x.Declaration.Type, Var: y))
                         )
