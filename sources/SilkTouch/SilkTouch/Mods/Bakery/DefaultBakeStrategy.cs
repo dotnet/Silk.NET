@@ -37,18 +37,16 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
     /// <inheritdoc />
     public virtual MemberDeclarationSyntax? Merge(
         string discrim,
-        BakedMember? first,
-        BakedMember second
+        BakedMember? existing,
+        BakedMember incoming
     )
     {
-        if (first == null)
+        if (existing == null)
         {
-            return second.Syntax;
+            return incoming.Syntax;
         }
 
-        var existing = first;
-        var node = second.Syntax;
-
+        var node = incoming.Syntax;
         if (node.GetType() != existing.Syntax.GetType())
         {
             throw new ArgumentException(
@@ -95,55 +93,48 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             // TODO: Members is always empty
             // TODO: Static fields?
             if (
-                (
-                    node is StructDeclarationSyntax s
-                        ? (SyntaxList<MemberDeclarationSyntax>?)s.Members
-                    : node is RecordDeclarationSyntax r && r.Modifiers.Any(SyntaxKind.StructKeyword)
-                        ? r.Members
-                    : null
-                ) is
-                { } members
+                node is StructDeclarationSyntax
+                || (node is RecordDeclarationSyntax r && r.Modifiers.Any(SyntaxKind.StructKeyword))
             )
             {
-                var existingFields = (
-                    existing.Inner?.Children.Values ?? (IEnumerable<BakedMember>)[]
-                )
-                    .OrderBy(x => x.Index)
-                    .Select(x => x.Syntax)
-                    .OfType<FieldDeclarationSyntax>()
-                    .SelectMany(x =>
-                        x.Declaration.Variables.Select(y => (x.Declaration.Type, Var: y))
-                    )
-                    .ToArray();
-                var ourFields = members
-                    .OfType<FieldDeclarationSyntax>()
-                    .SelectMany(x =>
-                        x.Declaration.Variables.Select(y => (x.Declaration.Type, Var: y))
-                    )
-                    .ToArray();
-                if (existingFields.Length != ourFields.Length)
+                var existingFields = ExtractFields(existing);
+                var incomingFields = ExtractFields(incoming);
+
+                (TypeSyntax Type, VariableDeclaratorSyntax Var)[] ExtractFields(BakedMember member)
+                {
+                    return (incoming.Inner?.Children.Values ?? Enumerable.Empty<BakedMember>())
+                        .OrderBy(x => x.Index)
+                        .Select(x => x.Syntax)
+                        .OfType<FieldDeclarationSyntax>()
+                        .SelectMany(x =>
+                            x.Declaration.Variables.Select(y => (x.Declaration.Type, Var: y))
+                        )
+                        .ToArray();
+                }
+
+                if (existingFields.Length != incomingFields.Length)
                 {
                     throw new InvalidOperationException(
                         $"Differing number of fields between definitions of {ty.Identifier} ({existingFields.Length} vs "
-                            + $"{ourFields.Length})"
+                            + $"{incomingFields.Length})"
                     );
                 }
 
                 for (var i = 0; i < existingFields.Length; i++)
                 {
                     if (
-                        existingFields[i].Type.ToString() != ourFields[i].Type.ToString()
+                        existingFields[i].Type.ToString() != incomingFields[i].Type.ToString()
                         || existingFields[i].Var.Identifier.ToString()
-                            != ourFields[i].Var.Identifier.ToString()
+                            != incomingFields[i].Var.Identifier.ToString()
                         || existingFields[i].Var.Initializer?.ToString()
-                            != ourFields[i].Var.Initializer?.ToString()
+                            != incomingFields[i].Var.Initializer?.ToString()
                         || existingFields[i].Var.ArgumentList?.ToString()
-                            != ourFields[i].Var.ArgumentList?.ToString()
+                            != incomingFields[i].Var.ArgumentList?.ToString()
                     )
                     {
                         throw new InvalidOperationException(
                             $"Field {i} differs between definitions of {ty.Identifier}. "
-                                + $"Left: {existingFields[i]}, right: {ourFields[i]}"
+                                + $"Left: {existingFields[i]}, right: {incomingFields[i]}"
                         );
                     }
                 }
@@ -155,14 +146,14 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
 
         // Okay fine here's some extra handling just in case it's a partial:
         if (
-            node is BaseMethodDeclarationSyntax method
+            node is BaseMethodDeclarationSyntax incomingMethod
             && existing.Syntax is BaseMethodDeclarationSyntax existingMethod
             && existing.Syntax.Modifiers.Any(SyntaxKind.PartialKeyword)
             && node.Modifiers.Any(SyntaxKind.PartialKeyword)
         )
         {
             var precedence = false;
-            if (existingMethod.Body is null && method.Body is not null)
+            if (existingMethod.Body is null && incomingMethod.Body is not null)
             {
                 if (existingMethod.ExpressionBody is not null)
                 {
@@ -176,7 +167,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                 precedence = true;
             }
 
-            if (existingMethod.ExpressionBody is null && method.ExpressionBody is not null)
+            if (existingMethod.ExpressionBody is null && incomingMethod.ExpressionBody is not null)
             {
                 if (existingMethod.Body is not null)
                 {
