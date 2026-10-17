@@ -25,11 +25,11 @@ public record BakedMember
     }
 
     /// <summary>The baked declaration.</summary>
-    public MemberDeclarationSyntax Syntax { get; init; }
+    public MemberDeclarationSyntax Syntax { get; set; }
 
     /// <summary>The children contained in this member.</summary>
     public BakeSet? Inner { get; set; }
 
     /// <summary>A hint for the order in which this member was declared in its parent.</summary>
-    public int Index { get; init; }
+    public int Index { get; set; }
 }
