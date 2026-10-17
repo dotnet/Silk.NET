@@ -277,7 +277,7 @@ public class BakeSourceSets(
             {
                 var parentBakedMember = _stack.Count > 0 ? _stack[^1] : null;
                 var selfBakedMember = new BakedMember(
-                    nodeToAdd,
+                    self,
                     null,
                     parentBakedMember?.Inner?.Children.Count ?? 0
                 );
