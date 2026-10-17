@@ -70,9 +70,9 @@ internal static partial class Jobs
                         {
                             SourceSets = new()
                             {
-                                ["xr-windows"] = "xr",
-                                ["xr-linux"] = "xr",
-                                ["xr-mac"] = "xr",
+                                ["xr-windows"] = "OpenXR", // TODO: Rename to "xr" for consistency with other bindings. Currently kept as "OpenXR" for reducing diff noise.
+                                ["xr-linux"] = "OpenXR",
+                                ["xr-mac"] = "OpenXR",
                             },
                         }
                     )
