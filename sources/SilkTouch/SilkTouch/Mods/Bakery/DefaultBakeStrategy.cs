@@ -58,6 +58,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             );
         }
 
+        // Merge attributes
         node = node.WithAttributeLists(
             List(
                 existing
@@ -91,6 +92,8 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                 );
 
             // If this is a struct or record struct, fields should exactly match.
+            // TODO: Members is always empty
+            // TODO: Static fields?
             if (
                 (
                     node is StructDeclarationSyntax s
@@ -102,7 +105,9 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                 { } members
             )
             {
-                var bakedFields = (existing.Inner?.Children.Values ?? (IEnumerable<BakedMember>)[])
+                var existingFields = (
+                    existing.Inner?.Children.Values ?? (IEnumerable<BakedMember>)[]
+                )
                     .OrderBy(x => x.Index)
                     .Select(x => x.Syntax)
                     .OfType<FieldDeclarationSyntax>()
@@ -116,29 +121,29 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                         x.Declaration.Variables.Select(y => (x.Declaration.Type, Var: y))
                     )
                     .ToArray();
-                if (bakedFields.Length != ourFields.Length)
+                if (existingFields.Length != ourFields.Length)
                 {
                     throw new InvalidOperationException(
-                        $"Differing number of fields between definitions of {ty.Identifier} ({bakedFields.Length} vs "
+                        $"Differing number of fields between definitions of {ty.Identifier} ({existingFields.Length} vs "
                             + $"{ourFields.Length})"
                     );
                 }
 
-                for (var i = 0; i < bakedFields.Length; i++)
+                for (var i = 0; i < existingFields.Length; i++)
                 {
                     if (
-                        bakedFields[i].Type.ToString() != ourFields[i].Type.ToString()
-                        || bakedFields[i].Var.Identifier.ToString()
+                        existingFields[i].Type.ToString() != ourFields[i].Type.ToString()
+                        || existingFields[i].Var.Identifier.ToString()
                             != ourFields[i].Var.Identifier.ToString()
-                        || bakedFields[i].Var.Initializer?.ToString()
+                        || existingFields[i].Var.Initializer?.ToString()
                             != ourFields[i].Var.Initializer?.ToString()
-                        || bakedFields[i].Var.ArgumentList?.ToString()
+                        || existingFields[i].Var.ArgumentList?.ToString()
                             != ourFields[i].Var.ArgumentList?.ToString()
                     )
                     {
                         throw new InvalidOperationException(
                             $"Field {i} differs between definitions of {ty.Identifier}. "
-                                + $"Left: {bakedFields[i]}, right: {ourFields[i]}"
+                                + $"Left: {existingFields[i]}, right: {ourFields[i]}"
                         );
                     }
                 }
@@ -150,16 +155,16 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
 
         // Okay fine here's some extra handling just in case it's a partial:
         if (
-            node is BaseMethodDeclarationSyntax meth
-            && existing.Syntax is BaseMethodDeclarationSyntax bakedMeth
+            node is BaseMethodDeclarationSyntax method
+            && existing.Syntax is BaseMethodDeclarationSyntax existingMethod
             && existing.Syntax.Modifiers.Any(SyntaxKind.PartialKeyword)
             && node.Modifiers.Any(SyntaxKind.PartialKeyword)
         )
         {
             var precedence = false;
-            if (bakedMeth.Body is null && meth.Body is not null)
+            if (existingMethod.Body is null && method.Body is not null)
             {
-                if (bakedMeth.ExpressionBody is not null)
+                if (existingMethod.ExpressionBody is not null)
                 {
                     throw new InvalidOperationException(
                         $"The existing definition for \"{discrim}\" provides an expression body whereas this "
@@ -171,9 +176,9 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                 precedence = true;
             }
 
-            if (bakedMeth.ExpressionBody is null && meth.ExpressionBody is not null)
+            if (existingMethod.ExpressionBody is null && method.ExpressionBody is not null)
             {
-                if (bakedMeth.Body is not null)
+                if (existingMethod.Body is not null)
                 {
                     throw new InvalidOperationException(
                         $"The existing definition for \"{discrim}\" provides an expression body whereas this "
@@ -212,7 +217,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
 
         // Check that constants and enums have the same value
         if (
-            (existing.Syntax, node) is
+            (existing.Syntax, node: node) is
             (EnumMemberDeclarationSyntax lEnum, EnumMemberDeclarationSyntax rEnum)
         )
         {
@@ -227,7 +232,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             }
         }
         else if (
-            (existing.Syntax, node) is
+            (existing.Syntax, node: node) is
             (FieldDeclarationSyntax lConst, FieldDeclarationSyntax rConst)
         )
         {
