@@ -48,8 +48,8 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         {
             throw new ArgumentException(
                 "Node types differed - the profiles may contain two types with the "
-                    + $"same name but with a different datatype (i.e. profile 1 contains a {node.Kind()} "
-                    + $"whereas profile 2 contains a {existing.Syntax.Kind()})"
+                    + $"same name but with a different datatype (i.e. profile 1 contains a {existing.Syntax.Kind()} "
+                    + $"whereas profile 2 contains a {node.Kind()})"
             );
         }
 
