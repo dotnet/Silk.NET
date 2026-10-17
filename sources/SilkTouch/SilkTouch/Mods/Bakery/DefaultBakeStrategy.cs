@@ -98,7 +98,10 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             // If this is a struct or record struct, fields should exactly match.
             if (
                 node is StructDeclarationSyntax
-                || (node is RecordDeclarationSyntax r && r.Modifiers.Any(SyntaxKind.StructKeyword))
+                || (
+                    node is RecordDeclarationSyntax r
+                    && r.ClassOrStructKeyword.IsKind(SyntaxKind.StructKeyword)
+                )
             )
             {
                 var existingFields = ExtractFields(existing);
