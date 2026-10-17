@@ -30,8 +30,12 @@ public interface IBakeStrategy // the temptation to call this IRecipe was sooooo
     /// This is only called when two bake sets have the same member.
     /// </remarks>
     /// <param name="discrim">The discriminator for this member.</param>
-    /// <param name="first">The first member.</param>
-    /// <param name="second">The second member.</param>
+    /// <param name="existing">The existing member.</param>
+    /// <param name="incoming">The incoming member.</param>
     /// <returns>The merged member declaration.</returns>
-    public MemberDeclarationSyntax? Merge(string discrim, BakedMember? first, BakedMember second);
+    public MemberDeclarationSyntax? Merge(
+        string discrim,
+        BakedMember? existing,
+        BakedMember incoming
+    );
 }

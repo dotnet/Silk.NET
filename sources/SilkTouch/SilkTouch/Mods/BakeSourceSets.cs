@@ -446,11 +446,11 @@ public class BakeSourceSets(
             for (var i = 1; i < activeSets.Count; i++)
             {
                 var currentBakeSet = activeSets[i];
-                foreach (var (discrim, second) in currentBakeSet.Children)
+                foreach (var (discrim, incoming) in currentBakeSet.Children)
                 {
-                    if (outputBakeSet.Children.TryGetValue(discrim, out var first))
+                    if (outputBakeSet.Children.TryGetValue(discrim, out var existing))
                     {
-                        var merged = Merge(strategy, discrim, first, second);
+                        var merged = Merge(strategy, discrim, existing, incoming);
                         if (merged != null)
                         {
                             outputBakeSet.Children[discrim] = merged;
@@ -464,7 +464,7 @@ public class BakeSourceSets(
                     {
                         // All members processed here are top-level types
                         // We always keep these since there's no ABI conflict
-                        outputBakeSet.Children[discrim] = second;
+                        outputBakeSet.Children[discrim] = incoming;
                     }
                 }
             }
@@ -482,39 +482,39 @@ public class BakeSourceSets(
     private BakedMember? Merge(
         IBakeStrategy strategy,
         string discrim,
-        BakedMember? first,
-        BakedMember second
+        BakedMember? existing,
+        BakedMember incoming
     )
     {
         // Handle children first
-        var mergedInner = first?.Inner ?? second.Inner;
-        if (mergedInner != null && second.Inner != null)
+        var mergedInner = existing?.Inner ?? incoming.Inner;
+        if (mergedInner != null && incoming.Inner != null)
         {
-            foreach (var (childDiscrim, childSecond) in second.Inner.Children)
+            foreach (var (discrimChild, secondChild) in incoming.Inner.Children)
             {
-                BakedMember? childFirst = null;
-                first?.Inner?.Children.TryGetValue(childDiscrim, out childFirst);
+                BakedMember? existingChild = null;
+                existing?.Inner?.Children.TryGetValue(discrimChild, out existingChild);
 
-                var childMerged = Merge(strategy, childDiscrim, childFirst, childSecond);
-                if (childMerged != null)
+                var mergedChild = Merge(strategy, discrimChild, existingChild, secondChild);
+                if (mergedChild != null)
                 {
-                    mergedInner.Children[childDiscrim] = childMerged;
+                    mergedInner.Children[discrimChild] = mergedChild;
                 }
                 else
                 {
-                    mergedInner.Children.Remove(childDiscrim);
+                    mergedInner.Children.Remove(discrimChild);
                 }
             }
         }
 
         // Then merge self
-        var mergedSyntax = strategy.Merge(discrim, first, second);
+        var mergedSyntax = strategy.Merge(discrim, existing, incoming);
         if (mergedSyntax == null)
         {
             return null;
         }
 
-        return new BakedMember(mergedSyntax, mergedInner, first?.Index ?? second.Index);
+        return new BakedMember(mergedSyntax, mergedInner, existing?.Index ?? incoming.Index);
     }
 
     private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(
