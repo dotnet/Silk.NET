@@ -11,7 +11,7 @@ public class KeyboardState
     /// Gets the text that has been typed since <see cref="IKeyboard.BeginInput"/> has been called. This will be cleared
     /// when <see cref="IKeyboard.EndInput"/> is called.
     /// </summary>
-    public InputReadOnlyList<char>? Text { get; }
+    public InputReadOnlyList<char>? Text { get; internal set; }
 
     /// <summary>
     /// Gets the key state, denoting which keys are pressed on the keyboard.

@@ -31,6 +31,7 @@ internal partial class SdlInputBackend : IInputBackend
     private WindowHandle? _focusedWindow;
 
     public readonly ICursorConfiguration CursorConfiguration;
+    internal readonly SdlCursor SdlCursor;
 
     private const uint _sdlInitFlags =
         SDL.Sdl.InitJoystick | SDL.Sdl.InitGamepad | SDL.Sdl.InitEvents | SDL.Sdl.InitHaptic | SDL.Sdl.InitSensor;
@@ -60,7 +61,7 @@ internal partial class SdlInputBackend : IInputBackend
         }
 
         // create cursor
-        CursorConfiguration = new SdlCursor(Sdl);
+        CursorConfiguration = SdlCursor = new SdlCursor(Sdl);
 
         // todo - manage clock drift by semi-regularly recalculating this time basis
         _timeBasis = SdlTimestampCalculator.GetHighPrecisionTimeBasis(iterationCount: 4);
@@ -217,9 +218,6 @@ internal partial class SdlInputBackend : IInputBackend
         return 1;
     }
 
-    /// <summary>
-    /// Interprets SDL events to apply to our input devices
-    /// </summary>
     /// <param name="evt"></param>
     /// <param name="timestamp"></param>
     /// <param name="focusedWindow"></param>
@@ -232,144 +230,157 @@ internal partial class SdlInputBackend : IInputBackend
 
         switch (type)
         {
+            // device creation / removal
             case EventType.GamepadAdded:
+            {
                 backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, out _);
                 return;
+            }
             case EventType.GamepadRemoved:
+            {
                 backend.RemoveDevice<SdlGamepad>(evt.Gdevice.Which, timestamp);
                 return;
+            }
             case EventType.JoystickAdded:
+            {
                 backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, out _);
                 return;
+            }
             case EventType.JoystickRemoved:
+            {
                 backend.RemoveDevice<SdlJoystick>(evt.Jdevice.Which, timestamp);
                 return;
+            }
             case EventType.KeyboardAdded:
+            {
                 backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, out _);
                 return;
+            }
             case EventType.KeyboardRemoved:
+            {
                 backend.RemoveDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp);
                 return;
+            }
             case EventType.MouseAdded:
+            {
                 backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, timestamp, out _);
                 return;
+            }
             case EventType.MouseRemoved:
+            {
                 backend.RemoveDevice<SdlMouse>(evt.Mdevice.Which, timestamp);
                 return;
-
-            // Keyboard events
-            case >= EventType.KeyDown and <= EventType.TextEditingCandidates:
-            {
-                if (!backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, timestamp, out var keyboard))
-                {
-                    return;
-                }
-
-                switch (type)
-                {
-                    case EventType.KeyDown:
-                    case EventType.KeyUp:
-                        keyboard.AddKeyEvent(evt.Key, timestamp);
-                        break;
-                    case EventType.TextEditing:
-                        keyboard.AddTextEditingEvent(evt.Edit);
-                        break;
-                    case EventType.TextEditingCandidates:
-                        keyboard.AddTextCandidatesEvent(evt.EditCandidates);
-                        break;
-                    case EventType.TextInput:
-                        keyboard.AddTextInputEvent(evt.Text);
-                        break;
-                }
-
-                break;
             }
 
-            #region Joysticks
-
-            // Gamepad events
-            case >= EventType.GamepadAxisMotion and <= EventType.GamepadSteamHandleUpdated:
+            // IME text editing - SdlKeyboard
+            case EventType.TextEditingCandidates:
             {
-                if (!backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, timestamp, out var gamepad))
-                {
-                    return;
-                }
+                (uint id, InputEventUpdateMethod<SdlKeyboard> updateEvent) candidatesEvt = (0u,
+                    static (k, _, ref readonly e, _) => k.AddTextCandidatesEvent(e.EditCandidates));
 
-                switch (type)
+                // text events are window-scoped: broadcast them to every keyboard device
+                for (var index = 0; index < backend.Devices.Count; index++)
                 {
-                    case EventType.GamepadAxisMotion:
-                        // gamepad.AddAxisEvent(evt.Gaxis.Axis, evt.Gaxis.Value, evt.Gaxis.Timestamp, timestamp);
-                        break;
-                    case EventType.GamepadButtonDown:
-                    case EventType.GamepadButtonUp:
-                        // gamepad.AddButtonEvent(evt.Gbutton.Button, evt.Gbutton.Down, evt.Gbutton.Timestamp, timestamp);
-                        break;
-                    case EventType.GamepadRemapped:
-                        gamepad.Remap(timestamp);
-                        break;
-
-                    // todo - sensor + touchpad
-                    case EventType.GamepadTouchpadDown:
-                        gamepad.AddTouchpadEvent(evt.Gtouchpad, down: true, timestamp);
-                        break;
-                    case EventType.GamepadTouchpadMotion:
-                        gamepad.AddTouchpadEvent(evt.Gtouchpad, down: null, timestamp);
-                        break;
-                    case EventType.GamepadTouchpadUp:
-                        gamepad.AddTouchpadEvent(evt.Gtouchpad, down: false, timestamp);
-                        break;
-                    case EventType.GamepadSensorUpdate:
-                        gamepad.AddSensorEvent(evt.Gsensor, timestamp);
-                        break;
-                    case EventType.GamepadUpdateComplete:
-                        // ignore
-                        break;
-                    /* // todo: pending updated SDL3 bindings?
-                    case EventType.GamepadCapsenseTouch:
-                        break;
-                    case EventType.GamepadCapsenseRelease:
-                        break;
-                        */
-                    case EventType.GamepadSteamHandleUpdated:
+                    if (backend.Devices[index] is SdlKeyboard keyboard)
                     {
-#if DEBUG
-                        InputLog.Debug(type.ToString());
-#endif
-                        break;
+                        _ = backend.TryAddInputEvent(keyboard.SdlDeviceId, timestamp, in evt, candidatesEvt.updateEvent);
                     }
                 }
 
                 break;
             }
 
-            // Joystick events
-            case >= EventType.JoystickAxisMotion and <= EventType.JoystickUpdateComplete:
+            // Keyboard events & IME text editing - SdlKeyboard
+            case >= EventType.KeyDown and <= EventType.TextInput:
             {
-                if (!backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, timestamp, out var joystick))
+                (uint id, InputEventUpdateMethod<SdlKeyboard>? updateEvent) kbEvt = type switch {
+                    EventType.KeyDown => (evt.Key.Which, static (k, time, ref readonly e, _) => k.AddKeyEvent(e.Key, time)),
+                    EventType.KeyUp => (evt.Key.Which, static (k, time, ref readonly e, _) => k.AddKeyEvent(e.Key, time)),
+
+                    // text events are routed to every keyboard, as they are associated with the window, not a device
+                    EventType.TextEditing => (0u, static (k, _, ref readonly e, _) => k.AddTextEditingEvent(e.Edit)),
+                    EventType.TextInput => (0u, static (k, _, ref readonly e, _) => k.AddTextInputEvent(e.Text)),
+
+                    _ => (0u, null)
+                };
+
+                if (kbEvt.updateEvent is not null)
                 {
-                    return;
+                    // text events are window-scoped: broadcast them to every keyboard device
+                    if (kbEvt.id == 0)
+                    {
+                        for (var index = 0; index < backend.Devices.Count; index++)
+                        {
+                            if (backend.Devices[index] is SdlKeyboard keyboard)
+                            {
+                                _ = backend.TryAddInputEvent(keyboard.SdlDeviceId, timestamp, in evt, kbEvt.updateEvent);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        _ = backend.TryAddInputEvent(kbEvt.id, timestamp, in evt, kbEvt.updateEvent);
+                    }
                 }
 
-                switch (type)
+
+
+                break;
+            }
+
+            #region Joysticks
+
+            // Gamepad events - SdlGamepad
+            case >= EventType.GamepadAxisMotion and <= EventType.GamepadSteamHandleUpdated:
+            {
+                (uint id, InputEventUpdateMethod<SdlGamepad>? updateEvent) gameEvt = type switch {
+                    EventType.GamepadRemapped => (evt.Gdevice.Which, static (g, time, ref readonly _, _) => g.Remap(time)),
+                    EventType.GamepadTouchpadDown => (evt.Gtouchpad.Which, static (g, time, ref readonly e, _) => g.AddTouchpadEvent(e.Gtouchpad, down: true, time)),
+                    EventType.GamepadTouchpadUp => (evt.Gtouchpad.Which, static (g, time, ref readonly e, _) => g.AddTouchpadEvent(e.Gtouchpad, down: false, time)),
+                    EventType.GamepadTouchpadMotion => (evt.Gtouchpad.Which, static(g, time, ref readonly e, _) => g.AddTouchpadEvent(e.Gtouchpad, null, time)),
+                    EventType.GamepadSensorUpdate => (evt.Gsensor.Which, static (g, time, ref readonly e, _) => g.AddSensorEvent(e.Gsensor, time)),
+
+                    // intentionally null, as they are handled by the joystick implementation
+                    EventType.GamepadAxisMotion => (evt.Gaxis.Which, null),
+                    EventType.GamepadButtonDown => (evt.Gbutton.Which, null),
+                    EventType.GamepadButtonUp => (evt.Gbutton.Which, null),
+                    EventType.GamepadUpdateComplete => (evt.Gdevice.Which, null),
+
+                    // not sure what to do with this at the moment..
+                    EventType.GamepadSteamHandleUpdated => (evt.Gdevice.Which, null),
+
+                    // todo: pending updated SDL3 bindings?
+                    // EventType.GamepadCapsenseTouch:
+                    // EventType.GamepadCapsenseRelease:
+                    _ => (0u, null)
+                };
+
+                if (gameEvt.updateEvent is not null)
                 {
-                    case EventType.JoystickAxisMotion:
-                        joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value, timestamp);
-                        break;
-                    case EventType.JoystickBallMotion:
-                        joystick.AddBallEvent(evt.Jball.Ball, evt.Jball.Xrel, evt.Jball.Yrel, evt.Jball.Timestamp,
-                            timestamp);
-                        break;
-                    case EventType.JoystickHatMotion:
-                        joystick.AddHatEvent(evt.Jhat.Hat, evt.Jhat.Value, timestamp);
-                        break;
-                    case EventType.JoystickButtonDown:
-                    case EventType.JoystickButtonUp:
-                        joystick.AddButtonEvent(evt.Jbutton.Button, evt.Jbutton.Down, timestamp);
-                        break;
-                    case EventType.JoystickBatteryUpdated:
-                        break;
-                    case EventType.JoystickUpdateComplete:
-                        break;
+                    _ = backend.TryAddInputEvent(gameEvt.id, timestamp, in evt, gameEvt.updateEvent);
+                }
+
+                break;
+            }
+
+            // Joystick events - SdlJoystick
+            case >= EventType.JoystickAxisMotion and <= EventType.JoystickUpdateComplete:
+            {
+
+                (uint id, InputEventUpdateMethod<SdlJoystick>? updateMethod) joyEvt = type switch {
+                    EventType.JoystickAxisMotion => (evt.Jaxis.Which, static (j, time, ref readonly e, _) => j.AddAxisEvent(e.Jaxis.Axis, e.Jaxis.Value, time)),
+                    EventType.JoystickBallMotion => (evt.Jball.Which, static (j, time, ref readonly e, _) => j.AddBallEvent(e.Jball.Ball, e.Jball.Xrel, e.Jball.Yrel, e.Jball.Timestamp, time)),
+                    EventType.JoystickHatMotion => (evt.Jhat.Which, static (j, time, ref readonly e, _) => j.AddHatEvent(e.Jhat.Hat, e.Jhat.Value, time)),
+                    EventType.JoystickButtonDown => (evt.Jbutton.Which, static (j, time, ref readonly e, _) => j.AddButtonEvent(e.Jbutton.Button, e.Jbutton.Down, time)),
+                    EventType.JoystickButtonUp => (evt.Jbutton.Which, static (j, time, ref readonly e, _) => j.AddButtonEvent(e.Jbutton.Button, e.Jbutton.Down, time)),
+                    EventType.JoystickBatteryUpdated => (evt.Jdevice.Which, null),
+                    EventType.JoystickUpdateComplete => (evt.Jdevice.Which, null),
+                    _ => (0u, null)
+                };
+
+                if (joyEvt.updateMethod is not null)
+                {
+                    _ = backend.TryAddInputEvent(joyEvt.id, timestamp, in evt, joyEvt.updateMethod);
                 }
 
                 break;
@@ -379,125 +390,70 @@ internal partial class SdlInputBackend : IInputBackend
 
             #region Pointers
 
-            // Mouse events
-            case >= EventType.MouseMotion and <= EventType.MouseAdded:
+            // Mouse events - SdlMouse
+            case >= EventType.MouseMotion and < EventType.MouseAdded:
             {
-                if (!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, timestamp, out var mouse))
+                (uint id, uint windowId, PointerEventUpdateMethod<SdlMouse>? updateEvent) mouseEvt = type switch {
+                    EventType.MouseMotion => (evt.Motion.Which, evt.Motion.WindowID, static (m, time, ref readonly e, _, target) => m.AddMotion(in e.Motion, target, time)),
+                    EventType.MouseWheel => (evt.Wheel.Which, evt.Wheel.WindowID, static (m, time, ref readonly e, _, target) => m.AddWheelEvent(in e.Wheel, target, time)),
+
+                    // button events are device-scoped: no pointer target required
+                    EventType.MouseButtonDown => (evt.Button.Which, evt.Button.WindowID, static (m, time, ref readonly e, _, _) => m.AddMouseButtonEvent(in e.Button, time)),
+                    EventType.MouseButtonUp => (evt.Button.Which, evt.Button.WindowID, static (m, time, ref readonly e, _, _) => m.AddMouseButtonEvent(in e.Button, time)),
+
+                    _ => (0u, 0u, null)
+                };
+
+                if (mouseEvt.updateEvent is not null)
                 {
-                    return;
-                }
-
-
-                switch (type)
-                {
-                    case EventType.MouseMotion:
-                    {
-                        if(backend.TryGetOrCreatePointerTargetForWindow(evt.Motion.WindowID, out var windowTarget))
-                        {
-                            mouse.AddMotion(in evt.Motion, windowTarget, timestamp);
-                        }
-                        else
-                        {
-                            LogFailedPointerTargetRetrieval(evt.Motion.WindowID);
-                        }
-                        break;
-                    }
-                    case EventType.MouseButtonDown:
-                    case EventType.MouseButtonUp:
-                    {
-                        mouse.AddMouseButtonEvent(in evt.Button, timestamp);
-                        break;
-                    }
-                    case EventType.MouseWheel:
-                    {
-                        if (backend.TryGetOrCreatePointerTargetForWindow(evt.Wheel.WindowID, out var windowTarget))
-                        {
-                            mouse.AddWheelEvent(in evt.Wheel, windowTarget, timestamp);
-                        }
-                        else
-                        {
-                            LogFailedPointerTargetRetrieval(evt.Wheel.WindowID);
-                        }
-
-                        break;
-                    }
+                    _ = backend.TryAddPointerInputEvent(mouseEvt.id, mouseEvt.windowId, timestamp, in evt, mouseEvt.updateEvent);
                 }
 
                 break;
             }
 
             // Pen events
-
-            case EventType.PenProximityIn:
-            case EventType.PenProximityOut:
             case >= EventType.PenProximityIn and <= EventType.PenAxis:
             {
-                if (!backend.TryGetOrCreateDevice<SdlPen>(evt.Pproximity.Which, timestamp, out var penDevice))
+                (uint id, uint windowId, PointerEventUpdateMethod<SdlPen>? updateEvent) ptrEvt = type switch {
+                    EventType.PenProximityIn => (evt.Pproximity.Which, evt.Pproximity.WindowID,
+                        static (p, time, ref readonly e, _, target) =>
+                            p.ProximityEvent(in e.Pproximity, target, proximityIn: true, time)),
+
+                    EventType.PenProximityOut => (evt.Pproximity.Which, evt.Pproximity.WindowID,
+                        static (p, time, ref readonly e, _, target) =>
+                            p.ProximityEvent(in e.Pproximity, target, proximityIn: false, time)),
+
+                    EventType.PenDown => (evt.Ptouch.Which, evt.Ptouch.WindowID,
+                        static (p, time, ref readonly e, _, target) =>
+                            p.UpDownEvent(in e.Ptouch, target, time)),
+
+                    EventType.PenUp => (evt.Ptouch.Which, evt.Ptouch.WindowID,
+                        static (p, time, ref readonly e, _, target) =>
+                            p.UpDownEvent(in e.Ptouch, target, time)),
+
+                    EventType.PenButtonDown => (evt.Pbutton.Which, evt.Pbutton.WindowID,
+                        static (p, time, ref readonly e, _, _) =>
+                            p.ButtonEvent(in e.Pbutton, time)),
+
+                    EventType.PenButtonUp => (evt.Pbutton.Which, evt.Pbutton.WindowID,
+                        static (p, time, ref readonly e, _, _) =>
+                            p.ButtonEvent(in e.Pbutton, time)),
+
+                    EventType.PenMotion => (evt.Pmotion.Which, evt.Pmotion.WindowID,
+                        static (p, time, ref readonly e, _, target) =>
+                            p.MotionEvent(in e.Pmotion, target, time)),
+
+                    EventType.PenAxis => (evt.Paxis.Which, evt.Paxis.WindowID,
+                        static (p, time, ref readonly e, _, target) =>
+                            p.AxisEvent(in e.Paxis, target, time)),
+
+                    _ => (0u, 0u, null)
+                };
+
+                if (ptrEvt.updateEvent is not null)
                 {
-                    return;
-                }
-
-                switch (type)
-                {
-                    case EventType.PenProximityIn:
-                    case EventType.PenProximityOut:
-                    {
-                        if (backend.TryGetOrCreatePointerTargetForWindow(evt.Pproximity.WindowID, out var windowTarget))
-                        {
-                            penDevice.ProximityEvent(in evt.Pproximity, windowTarget, type == EventType.PenProximityIn, timestamp);
-                        }
-                        else
-                        {
-                            LogFailedPointerTargetRetrieval(evt.Pproximity.WindowID);
-                        }
-
-                        break;
-                    }
-                    case EventType.PenDown:
-                    case EventType.PenUp:
-                    {
-                        if(backend.TryGetOrCreatePointerTargetForWindow(evt.Ptouch.WindowID, out var windowTarget))
-                        {
-                            penDevice.UpDownEvent(in evt.Ptouch, windowTarget, timestamp);
-                        }
-                        else
-                        {
-                            LogFailedPointerTargetRetrieval(evt.Ptouch.WindowID);
-                        }
-
-                        break;
-                    }
-                    case EventType.PenButtonDown:
-                    case EventType.PenButtonUp:
-                    {
-                        penDevice.ButtonEvent(in evt.Pbutton, timestamp);
-                        break;
-                    }
-                    case EventType.PenMotion:
-                    {
-                        if(backend.TryGetOrCreatePointerTargetForWindow(evt.Pmotion.WindowID, out var windowTarget))
-                        {
-                            penDevice.MotionEvent(in evt.Pmotion, windowTarget, timestamp);
-                        }
-                        else
-                        {
-                            LogFailedPointerTargetRetrieval(evt.Pmotion.WindowID);
-                        }
-                        break;
-                    }
-                    case EventType.PenAxis:
-                    {
-                        if (backend.TryGetOrCreatePointerTargetForWindow(evt.Paxis.WindowID, out var windowTarget))
-                        {
-                            penDevice.AxisEvent(in evt.Paxis, windowTarget, timestamp);
-                        }
-                        else
-                        {
-                            LogFailedPointerTargetRetrieval(evt.Paxis.WindowID);
-                        }
-
-                        break;
-                    }
+                    _ = backend.TryAddPointerInputEvent(ptrEvt.id, ptrEvt.windowId, timestamp, in evt, ptrEvt.updateEvent);
                 }
 
                 break;
@@ -506,6 +462,7 @@ internal partial class SdlInputBackend : IInputBackend
             // Touch events
             case >= EventType.FingerDown and <= EventType.FingerCanceled:
             {
+                // todo - should we use the window id as a proxy ID for the touch device here?
                 var finger = evt.Tfinger;
                 var device = finger.TouchID;
                 if (!backend.TryGetOrCreateDevice<SdlTouchSurface>(device, timestamp, out var touchDevice))
@@ -595,7 +552,7 @@ internal partial class SdlInputBackend : IInputBackend
 
         #endregion
 
-        void LogFailedPointerTargetRetrieval(uint windowId)
+        static void LogFailedPointerTargetRetrieval(uint windowId)
         {
             #if DEBUG
             InputLog.Warn("Failed to get or create pointer target for window ID: " + windowId);
@@ -624,6 +581,8 @@ internal partial class SdlInputBackend : IInputBackend
     ~SdlInputBackend() => ReleaseUnmanagedResources();
 
 
+    private delegate void InputEventUpdateMethod<in T>(T device, long timestamp, ref readonly Event evt, SdlInputBackend backend);
+    private delegate void PointerEventUpdateMethod<in T>(T device, long timestamp, ref readonly Event evt, SdlInputBackend backend, IPointerTarget pointerTarget);
 
     internal enum FingerEventType : uint
     {

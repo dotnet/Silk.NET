@@ -33,7 +33,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         var uniqueId = (nint)sdlDeviceId;
         if (namePtr == nullptr)
         {
-            InputLog.Warn($"Failed to get keyboard name for device {sdlDeviceId}.");
+            InputLog.Error($"Failed to get keyboard name for device {sdlDeviceId}.");
         }
         else
         {
@@ -83,6 +83,9 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
     //  handling via KeyboardState events? see TextRecorder class
     public void BeginInput()
     {
+        _textRecorder ??= new TextRecorder(null);
+        _textRecorder.Clear();
+        State.Text = new InputReadOnlyList<char>(_textRecorder.CharacterBuffer);
         var sdlWindow = Backend.FocusedWindow;
         if (sdlWindow != null)
         {
@@ -93,6 +96,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
             if (NativeBackend.StartTextInput(sdlWindow.Value))
             {
+                _textRecordState = TextRecorderState.RecordingSdl;
+                _textEntryWindow = sdlWindow.Value;
                 BeginRecordingSdl(sdlWindow.Value);
             }
             else
@@ -110,8 +115,6 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     private void BeginRecordingSdl(WindowHandle sdlWindow)
     {
-        _textRecordState = TextRecorderState.RecordingSdl;
-        _textEntryWindow = sdlWindow;
         if (!NativeBackend.HasKeyboard() &&
             NativeBackend.HasScreenKeyboardSupport() &&
             !NativeBackend.ScreenKeyboardShown(sdlWindow) &&
@@ -121,13 +124,13 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         }
     }
 
-    public string? EndInput()
+    public void EndInput()
     {
         InputLog.Debug($"EndInput {_textRecordState.ToString()}");
         switch (_textRecordState)
         {
             case TextRecorderState.None:
-                return null;
+                return;
             case TextRecorderState.RecordingNoSdl:
                 _textRecordState = TextRecorderState.None;
                 break;
@@ -143,7 +146,9 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
         }
 
         _textRecordState = TextRecorderState.None;
-        return _textRecorder?.ConsumeInput();
+        _textEntryWindow = null;
+        _textRecorder?.Clear();
+        State.Text = null;
     }
 
     public void CompleteUpdate()
@@ -159,8 +164,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INee
 
     public void AddKeyEvent(in KeyboardEvent key, long timestamp)
     {
-        _hasUpdates = true;
-        var keyName = SdlKeyConversions.ScancodeToKeyName(key.Scancode); // SdlToKeyName(key.Which);
+        _hasUpdates = true;        var keyName = SdlKeyConversions.ScancodeToKeyName(key.Scancode); // SdlToKeyName(key.Which);
 
         var isDown = key.Down != 0;
         var button = _keyStates[keyName];

@@ -236,6 +236,9 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     {
         if (!backend.TryGetOrCreateDevice<SdlJoystick>(sdlDeviceId, timestamp, out var joystick))
         {
+            #if DEBUG
+            InputLog.Warn("No joystick found for gamepad " + sdlDeviceId);
+            #endif
             return null;
         }
 
@@ -420,7 +423,8 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     public void UpdateFromJoyButton(int buttonIdx, bool down, long timestamp)
     {
         Debug.Assert(_bindings != null, "Bindings not initialized");
-        if (!_bindings.TryGetValue(InputIndexToMappingIndex(buttonIdx, InputType.Button), out var binding))
+        var mappingIndex = InputIndexToMappingIndex(buttonIdx, InputType.Button);
+        if (!_bindings.TryGetValue(mappingIndex, out var binding))
         {
             InputLog.Warn($"No button binding for index {buttonIdx}");
             return;
@@ -574,7 +578,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     private void UpdateButton(GamepadButton button, bool value, long timestamp)
     {
         var asJoystickButton = AsJoystickButton(button);
-        Joystick.UpdateRawButtonState(asJoystickButton, value, value ? 1 : 0, timestamp);
+        Joystick.UpdateFromGamepad(asJoystickButton, value, value ? 1 : 0, timestamp, device: this);
         return;
 
         static JoystickButton AsJoystickButton(GamepadButton buttonIndex) =>

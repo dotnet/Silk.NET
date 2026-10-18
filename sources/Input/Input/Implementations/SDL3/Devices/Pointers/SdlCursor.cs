@@ -3,7 +3,6 @@
 
 using System.Collections.Frozen;
 using System.Numerics;
-using System.Reflection.Metadata;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;

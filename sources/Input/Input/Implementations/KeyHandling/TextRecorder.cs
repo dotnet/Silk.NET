@@ -19,6 +19,8 @@ internal sealed class TextRecorder
 {
     private readonly ICharacterConverter _converter;
 
+    public IReadOnlyList<char> CharacterBuffer => _sb;
+
     /// <summary>
     /// Constructor
     /// </summary>
@@ -30,7 +32,7 @@ internal sealed class TextRecorder
     /// <summary>
     /// The number of characters currently in the buffer.
     /// </summary>
-    public int Count => _sb.Length;
+    public int Count => _sb.Count;
 
     /// <summary>
     /// Modify the buffer and recorder state based on the input key name and the state of the keyboard.
@@ -106,12 +108,12 @@ internal sealed class TextRecorder
                             }
 
                             var count = Math.Min(_cursorStart - cursorPos, 1);
-                            _sb.Remove(cursorPos, count);
+                            _sb.RemoveRange(cursorPos, count);
                             _cursorStart = cursorPos;
                         }
                         else
                         {
-                            _sb.Remove(--_cursorStart, 1);
+                            _sb.RemoveAt(--_cursorStart);
                         }
                     }
 
@@ -121,24 +123,24 @@ internal sealed class TextRecorder
                     {
                         RemoveSelectedTextAndClearSelection();
                     }
-                    else if (_cursorStart < _sb.Length)
+                    else if (_cursorStart < _sb.Count)
                     {
                         // remove from front of cursor
                         if (activeModifiers.IsControl())
                         {
                             // find first whitespace character after current cursor position
                             var cursorPos = _cursorStart;
-                            while (cursorPos < _sb.Length && !char.IsWhiteSpace(_sb[cursorPos]))
+                            while (cursorPos < _sb.Count && !char.IsWhiteSpace(_sb[cursorPos]))
                             {
                                 ++cursorPos;
                             }
 
-                            var count = Math.Min(_sb.Length - cursorPos, 1);
-                            _sb.Remove(cursorPos, count);
+                            var count = Math.Min(_sb.Count - cursorPos, 1);
+                            _sb.RemoveRange(cursorPos, count);
                         }
                         else
                         {
-                            _sb.Remove(_cursorStart, 1);
+                            _sb.RemoveAt(_cursorStart);
                         }
                     }
                     break;
@@ -165,10 +167,10 @@ internal sealed class TextRecorder
         // remove the currently selected text
         var selectedLength = _selectionLength;
         SetSelectionLength(0);
-        if (selectedLength > 0 && _cursorStart < _sb.Length)
+        if (selectedLength > 0 && _cursorStart < _sb.Count)
         {
-            Debug.Assert(_cursorStart + selectedLength <= _sb.Length);
-            _sb.Remove(_cursorStart, selectedLength);
+            Debug.Assert(_cursorStart + selectedLength <= _sb.Count);
+            _sb.RemoveRange(_cursorStart, selectedLength);
         }
     }
 
@@ -182,7 +184,7 @@ internal sealed class TextRecorder
 
         if (str.Length > 0)
         {
-            _sb.Insert(_cursorStart, str);
+            _sb.InsertRange(_cursorStart, str);
             SetCursorPositionRaw(_cursorStart + str.Length);
         }
     }
@@ -332,7 +334,7 @@ internal sealed class TextRecorder
             return;
         }
 
-        var clampedEndPosition = Math.Clamp(endPosition, _cursorStart, _sb.Length);
+        var clampedEndPosition = Math.Clamp(endPosition, _cursorStart, _sb.Count);
         SetSelectionLength(clampedEndPosition - _cursorStart);
     }
 
@@ -341,14 +343,14 @@ internal sealed class TextRecorder
     /// </summary>
     /// <param name="newLength"></param>
     private void SetSelectionLength(int newLength) =>
-        _selectionLength = Math.Clamp(newLength, 0, _sb.Length - _cursorStart);
+        _selectionLength = Math.Clamp(newLength, 0, _sb.Count - _cursorStart);
 
     /// <summary>
     /// Sets the value of <see cref="_cursorStart"/> to the given value. The value is clamped to the bounds of the buffer.
     /// Selection length is not affected.
     /// </summary>
     /// <param name="newPosition"></param>
-    private void SetCursorPositionRaw(int newPosition) => _cursorStart = Math.Clamp(newPosition, 0, _sb.Length);
+    private void SetCursorPositionRaw(int newPosition) => _cursorStart = Math.Clamp(newPosition, 0, _sb.Count);
 
     /// <summary>
     /// Fills a span with current buffer contents. Will fill the given span up to the length of the contents or the
@@ -358,8 +360,11 @@ internal sealed class TextRecorder
     /// <returns></returns>
     public int GetCurrentBuffer(Span<char> buffer)
     {
-        var maxCount = Math.Min(buffer.Length, _sb.Length);
-        _sb.CopyTo(0, buffer, maxCount);
+        var maxCount = Math.Min(buffer.Length, _sb.Count);
+        for (var i = 0; i < maxCount; ++i)
+        {
+            buffer[i] = _sb[i];
+        }
         return maxCount;
     }
 
@@ -377,20 +382,13 @@ internal sealed class TextRecorder
             return 0;
         }
 
-        _sb.CopyTo(_cursorStart, buffer, maxCount);
+        for (var i = 0; i < maxCount; ++i)
+        {
+            buffer[i] = _sb[_cursorStart + i];
+        }
         return maxCount;
     }
 
-    /// <summary>
-    /// Retrieves the current buffer contents and clears the buffer, resetting the cursor and selection positions.
-    /// </summary>
-    /// <returns></returns>
-    public string ConsumeInput()
-    {
-        var result = _sb.ToString();
-        Clear();
-        return result;
-    }
 
     /// <summary>
     /// Clears the buffer and resets the cursor and selection positions.
@@ -404,5 +402,5 @@ internal sealed class TextRecorder
 
 
     private int _cursorStart, _selectionLength;
-    private readonly StringBuilder _sb = new();
+    private readonly List<char> _sb = new();
 }

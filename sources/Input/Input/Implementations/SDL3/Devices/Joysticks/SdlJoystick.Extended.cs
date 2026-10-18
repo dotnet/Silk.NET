@@ -31,7 +31,7 @@ internal sealed partial class SdlJoystick
     internal void AddDeviceMapping(ISdlJoystick device) => _devices.Add(device);
     internal void RemoveDeviceMapping(ISdlJoystick device) => _devices.Remove(device);
 
-    internal void UpdateRawButtonState(JoystickButton button, bool isDown, float pressure, long timestamp)
+    internal void UpdateFromGamepad(JoystickButton button, bool isDown, float pressure, long timestamp, IButtonDevice<JoystickButton> device)
     {
         var idx = button.Index();
         if (idx < 0)
@@ -48,7 +48,7 @@ internal sealed partial class SdlJoystick
         // ReSharper disable once CompareOfFloatsByEqualityOperator
         if (previous.IsDown != buttonState.IsDown || previous.Pressure != buttonState.Pressure)
         {
-            ButtonEvents.Enqueue(new ButtonChangedEvent<JoystickButton>(this, timestamp, buttonState, previous));
+            ButtonEvents.Enqueue(new ButtonChangedEvent<JoystickButton>(device, timestamp, buttonState, previous));
         }
     }
 

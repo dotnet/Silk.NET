@@ -18,13 +18,126 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
     // the mouse is always considered "down" - there is no up/down state for the mouse pointer itself - only its buttons.
     private const bool DownState = true;
 
+    private static bool _firstMouse = true;
+
     private SdlMouse(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend,
-        ICursorConfiguration cursor)
+        SdlCursor cursor)
         : base(backend, uniqueId, sdlDeviceId)
     {
         _state = new MouseState(Buttons, StatePoints, Vector2.Zero);
         Cursor = cursor;
+
+        if (Interlocked.Exchange(ref _firstMouse, false))
+        {
+            // update the cursor with our state
+            Cursor.Mode = InterpretMouseMode(Backend, NativeBackend);
+        }
+
+        cursor.ModeChanged += OnCursorModeChange;
     }
+
+    private void OnCursorModeChange(object? sender, CursorModes e)
+    {
+        if (!TryGetWindowHandle(out var window, Backend, NativeBackend))
+        {
+            InputLog.Error("No window handle found - a window handle is required for changing cursor modes.");
+            return;
+        }
+
+        switch (e)
+        {
+            // todo - CursorModes is a flags-based enum. but as far as i know, SDL does not support multiple modes at
+            // once. Personally I would love to support multiple modes at once, but is that expected by anyone else?
+            // it is a [Flags] after all...
+            case CursorModes.Normal:
+            {
+                SetGrabbed(sdl: NativeBackend, window: in window, grabbed: false, relativeMode: false);
+                return;
+            }
+            case CursorModes.Confined:
+            {
+                SetGrabbed(sdl: NativeBackend, window: in window, grabbed: true, relativeMode: false);
+                break;
+            }
+            case CursorModes.Unbounded:
+            {
+                SetGrabbed(sdl: NativeBackend, window: in window, grabbed: false, relativeMode: true);
+                break;
+            }
+            default:
+                throw new ArgumentOutOfRangeException(nameof(e), e, null);
+        }
+
+        return;
+
+        static bool SetGrabbed(ISdl sdl, ref readonly WindowHandle window, bool grabbed, bool relativeMode)
+        {
+            var onlySuccess = true;
+            if (!sdl.SetWindowMouseGrab(window, grabbed))
+            {
+                SdlLog.Error("Failed to release mouse from capture.");
+                onlySuccess = false;
+            }
+
+            if (!sdl.SetWindowRelativeMouseMode(window, relativeMode))
+            {
+                SdlLog.Error("Failed to disable relative mouse mode.");
+                onlySuccess = false;
+            }
+
+            return onlySuccess;
+        }
+
+    }
+
+    private static bool TryGetWindowHandle(out WindowHandle handle, SdlInputBackend sdlInputBackend, ISdl sdl)
+    {
+        var focusedWindow = sdl.GetMouseFocus();
+        if (focusedWindow != default)
+        {
+            handle = focusedWindow;
+            return true;
+        }
+
+        if (sdlInputBackend.FocusedWindow is not { } windowHandle)
+        {
+            handle = default;
+            return false;
+        }
+
+        handle = windowHandle;
+        return true;
+    }
+
+    private static CursorModes InterpretMouseMode(SdlInputBackend backend, ISdl sdl)
+    {
+        if(!TryGetWindowHandle(out var handle, backend, sdl))
+        {
+            return CursorModes.Normal;
+        }
+
+        var isRelative = (bool)sdl.GetWindowRelativeMouseMode(handle);
+        var isGrabbed = (bool)sdl.GetWindowMouseGrab(handle);
+
+        if (!isRelative && !isGrabbed)
+        {
+            return CursorModes.Normal;
+        }
+
+        if (isGrabbed && !isRelative)
+        {
+            return CursorModes.Confined;
+        }
+
+        if(!isGrabbed && isRelative)
+        {
+            return CursorModes.Unbounded;
+        }
+
+        InputLog.Error("Unexpected mouse condition - mouse is both grabbed and relative");
+        return CursorModes.Normal;
+    }
+
 
     protected internal override void Initialize(long timestamp)
     {
@@ -61,7 +174,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>,
         }
 
         var mouse =
-            new SdlMouse(sdlDeviceId, uniqueId, backend, backend.CursorConfiguration) {
+            new SdlMouse(sdlDeviceId, uniqueId, backend, backend.SdlCursor) {
                 ScrollEvents = sdlInputEvents.MouseScrollEvents,
                 PointEvents = sdlInputEvents.PointChangedEvents,
                 ClickEvents = sdlInputEvents.PointerClickEvents,

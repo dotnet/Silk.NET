@@ -4,12 +4,62 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
+using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
 internal partial class SdlInputBackend
 {
-    internal bool TryGetOrCreateDevice<T>(ulong id, long timestamp, [NotNullWhen(true)] out T? device, bool isSimulated = false)
+
+    private bool TryAddPointerInputEvent<T>(uint deviceId, uint windowId, long timestamp, ref readonly Event evt, PointerEventUpdateMethod<T> addEventMethod, bool isSimulated = false, bool allowCreate = true)
+        where T : SdlDevice, ISdlDevice<T>
+    {
+        if (!TryGetOrCreateDevice<T>(deviceId, timestamp, out var device, isSimulated: isSimulated, allowCreate: allowCreate))
+        {
+            return false;
+        }
+
+        if (!TryGetOrCreatePointerTargetForWindow(windowId, out var target))
+        {
+#if DEBUG
+            InputLog.Warn("Failed to get or create pointer target for window ID: " + windowId);
+#endif
+            return false;
+        }
+
+        try
+        {
+            addEventMethod(device, timestamp, in evt, this, target);
+            return true;
+        }
+        catch(Exception e)
+        {
+            InputLog.Error(e.ToString());
+            return false;
+        }
+    }
+
+    private bool TryAddInputEvent<T>(ulong deviceId, long timestamp, ref readonly Event evt, InputEventUpdateMethod<T> addEventMethod, bool isSimulated = false, bool allowCreate = true)
+        where T : SdlDevice, ISdlDevice<T>
+    {
+        if (!TryGetOrCreateDevice<T>(deviceId, timestamp, out var device, isSimulated: isSimulated, allowCreate: allowCreate))
+        {
+            return false;
+        }
+
+        try
+        {
+            addEventMethod(device, timestamp, in evt, backend: this);
+            return true;
+        }
+        catch(Exception e)
+        {
+            InputLog.Error(e.ToString());
+            return false;
+        }
+    }
+
+    internal bool TryGetOrCreateDevice<T>(ulong id, long timestamp, [NotNullWhen(true)] out T? device, bool isSimulated = false, bool allowCreate = true)
         where T : SdlDevice, ISdlDevice<T>
     {
         // If we already have a device with this ID, return it.
@@ -21,6 +71,12 @@ internal partial class SdlInputBackend
                 device = typedDevice;
                 return true;
             }
+        }
+
+        if (!allowCreate)
+        {
+            device = null;
+            return false;
         }
 
         try
