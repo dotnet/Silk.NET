@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEyesGetInfoANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EyesGetInfoANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     public StructureType Type = StructureType.EyesGetInfoANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     public void* Next;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     public long Time;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     public SpaceHandle BaseSpace;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     public EyesGetInfoANDROID() { }
 }

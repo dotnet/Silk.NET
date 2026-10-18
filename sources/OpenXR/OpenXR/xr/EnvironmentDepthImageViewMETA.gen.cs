@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEnvironmentDepthImageViewMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EnvironmentDepthImageViewMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public StructureType Type = StructureType.EnvironmentDepthImageViewMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public void* Next;
 
     [NativeName("fov")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public Fovf Fov;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public Posef Pose;
 
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public EnvironmentDepthImageViewMETA() { }
 }

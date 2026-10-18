@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPerfSettingsNotificationLevelEXT")]
+[SupportedApiProfile("openxr")]
 public enum PerfSettingsNotificationLevelEXT : uint
 {
     [NativeName("XR_PERF_SETTINGS_NOTIF_LEVEL_NORMAL_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings", "XR_EXT_thermal_query"])]
     Normal = 0,
 
     [NativeName("XR_PERF_SETTINGS_NOTIF_LEVEL_WARNING_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings", "XR_EXT_thermal_query"])]
     Warning = 25,
 
     [NativeName("XR_PERF_SETTINGS_NOTIF_LEVEL_IMPAIRED_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings", "XR_EXT_thermal_query"])]
     Impaired = 75,
 }

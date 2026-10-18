@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEyeANDROID")]
+[SupportedApiProfile("openxr")]
 public partial struct EyeANDROID
 {
     [NativeName("eyeState")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     public EyeStateANDROID EyeState;
 
     [NativeName("eyePose")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     public Posef EyePose;
 }

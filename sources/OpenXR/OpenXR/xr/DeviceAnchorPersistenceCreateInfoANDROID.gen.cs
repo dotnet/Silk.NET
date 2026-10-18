@@ -9,13 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrDeviceAnchorPersistenceCreateInfoANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct DeviceAnchorPersistenceCreateInfoANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_device_anchor_persistence"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_uuid"]
+    )]
     public StructureType Type = StructureType.DeviceAnchorPersistenceCreateInfoANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_device_anchor_persistence"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_uuid"]
+    )]
     public void* Next;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_device_anchor_persistence"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_uuid"]
+    )]
     public DeviceAnchorPersistenceCreateInfoANDROID() { }
 }

@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialComponentPersistenceListEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialComponentPersistenceListEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialComponentPersistenceListEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("persistDataCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public uint PersistDataCount;
 
     [NativeName("persistData")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public SpatialPersistenceDataEXT* PersistData;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public SpatialComponentPersistenceListEXT() { }
 }

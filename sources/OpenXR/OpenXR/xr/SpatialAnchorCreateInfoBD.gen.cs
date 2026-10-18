@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorCreateInfoBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialAnchorCreateInfoBD
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public StructureType Type = StructureType.SpatialAnchorCreateInfoBD;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public void* Next;
 
     [NativeName("space")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public SpaceHandle Space;
 
     [NativeName("pose")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public Posef Pose;
 
     [NativeName("time")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public long Time;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public SpatialAnchorCreateInfoBD() { }
 }

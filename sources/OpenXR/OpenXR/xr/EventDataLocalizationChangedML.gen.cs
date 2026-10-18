@@ -9,28 +9,69 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataLocalizationChangedML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataLocalizationChangedML
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.EventDataLocalizationChangedML;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("session")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public SessionHandle Session;
 
     [NativeName("state")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public LocalizationMapStateML State;
 
     [NativeName("map")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public LocalizationMapML Map;
 
     [NativeName("confidence")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public LocalizationMapConfidenceML Confidence;
 
     [NativeName("errorFlags")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public LocalizationMapErrorFlagsML ErrorFlags;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public EventDataLocalizationChangedML() { }
 }

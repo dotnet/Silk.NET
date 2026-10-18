@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackableMarkerConfigurationANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct TrackableMarkerConfigurationANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public StructureType Type = StructureType.TrackableMarkerConfigurationANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public void* Next;
 
     [NativeName("trackingMode")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public TrackableMarkerTrackingModeANDROID TrackingMode;
 
     [NativeName("databaseCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public uint DatabaseCount;
 
     [NativeName("databases")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public TrackableMarkerDatabaseANDROID* Databases;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public TrackableMarkerConfigurationANDROID() { }
 }

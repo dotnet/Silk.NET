@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVulkanGraphicsDeviceGetInfoKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct VulkanGraphicsDeviceGetInfoKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public StructureType Type = StructureType.VulkanGraphicsDeviceGetInfoKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public void* Next;
 
     [NativeName("systemId")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public ulong SystemId;
 
     [NativeName("vulkanInstance")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public VkInstanceHandle VulkanInstance;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public VulkanGraphicsDeviceGetInfoKHR() { }
 }

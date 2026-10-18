@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrViewState")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ViewState
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.ViewState;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("viewStateFlags")]
+    [SupportedApiProfile("openxr")]
     public ViewStateFlags ViewStateFlags;
 
+    [SupportedApiProfile("openxr")]
     public ViewState() { }
 }

@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFovf")]
+[SupportedApiProfile("openxr")]
 public partial struct Fovf
 {
     [NativeName("angleLeft")]
+    [SupportedApiProfile("openxr")]
     public float AngleLeft;
 
     [NativeName("angleRight")]
+    [SupportedApiProfile("openxr")]
     public float AngleRight;
 
     [NativeName("angleUp")]
+    [SupportedApiProfile("openxr")]
     public float AngleUp;
 
     [NativeName("angleDown")]
+    [SupportedApiProfile("openxr")]
     public float AngleDown;
 }

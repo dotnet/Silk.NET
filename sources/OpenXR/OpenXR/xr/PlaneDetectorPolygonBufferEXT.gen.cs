@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPlaneDetectorPolygonBufferEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PlaneDetectorPolygonBufferEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public StructureType Type = StructureType.PlaneDetectorPolygonBufferEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public void* Next;
 
     [NativeName("vertexCapacityInput")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public uint VertexCapacityInput;
 
     [NativeName("vertexCountOutput")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public uint VertexCountOutput;
 
     [NativeName("vertices")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public Vector2F* Vertices;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public PlaneDetectorPolygonBufferEXT() { }
 }

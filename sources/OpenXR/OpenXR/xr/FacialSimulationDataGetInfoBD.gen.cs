@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFacialSimulationDataGetInfoBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FacialSimulationDataGetInfoBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public StructureType Type = StructureType.FacialSimulationDataGetInfoBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public void* Next;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public FacialSimulationDataGetInfoBD() { }
 }

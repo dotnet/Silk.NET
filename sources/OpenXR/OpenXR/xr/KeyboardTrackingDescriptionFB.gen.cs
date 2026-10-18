@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrKeyboardTrackingDescriptionFB")]
+[SupportedApiProfile("openxr")]
 public partial struct KeyboardTrackingDescriptionFB
 {
     [NativeName("trackedKeyboardId")]
+    [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
     public ulong TrackedKeyboardId;
 
     [NativeName("size")]
+    [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
     public Vector3F Size;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
     public KeyboardTrackingFlagsFB Flags;
 
     [NativeName("name")]
+    [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
     public KeyboardTrackingDescriptionFBName Name;
 }

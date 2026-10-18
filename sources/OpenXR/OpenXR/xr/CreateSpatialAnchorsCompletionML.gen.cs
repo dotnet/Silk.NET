@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCreateSpatialAnchorsCompletionML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CreateSpatialAnchorsCompletionML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
     public StructureType Type = StructureType.CreateSpatialAnchorsCompletionML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
     public void* Next;
 
     [NativeName("futureResult")]
+    [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
     public Result FutureResult;
 
     [NativeName("spaceCount")]
+    [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
     public uint SpaceCount;
 
     [NativeName("spaces")]
+    [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
     public SpaceHandle* Spaces;
 
+    [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
     public CreateSpatialAnchorsCompletionML() { }
 }

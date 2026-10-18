@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataDisplayRefreshRateChangedFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataDisplayRefreshRateChangedFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_display_refresh_rate"])]
     public StructureType Type = StructureType.EventDataDisplayRefreshRateChangedFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_display_refresh_rate"])]
     public void* Next;
 
     [NativeName("fromDisplayRefreshRate")]
+    [SupportedApiProfile("openxr", ["XR_FB_display_refresh_rate"])]
     public float FromDisplayRefreshRate;
 
     [NativeName("toDisplayRefreshRate")]
+    [SupportedApiProfile("openxr", ["XR_FB_display_refresh_rate"])]
     public float ToDisplayRefreshRate;
 
+    [SupportedApiProfile("openxr", ["XR_FB_display_refresh_rate"])]
     public EventDataDisplayRefreshRateChangedFB() { }
 }

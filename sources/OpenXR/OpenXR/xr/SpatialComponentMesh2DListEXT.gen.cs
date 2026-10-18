@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialComponentMesh2DListEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialComponentMesh2DListEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialComponentMesh2DListEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("meshCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public uint MeshCount;
 
     [NativeName("meshes")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialMeshDataEXT* Meshes;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialComponentMesh2DListEXT() { }
 }

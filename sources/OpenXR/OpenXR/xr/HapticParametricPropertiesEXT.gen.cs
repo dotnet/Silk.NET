@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHapticParametricPropertiesEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct HapticParametricPropertiesEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public StructureType Type = StructureType.HapticParametricPropertiesEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public void* Next;
 
     [NativeName("idealFrameSubmissionRate")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public long IdealFrameSubmissionRate;
 
     [NativeName("minimumFirstFrameDuration")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public long MinimumFirstFrameDuration;
 
     [NativeName("minFrequencyHz")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public float MinFrequencyHz;
 
     [NativeName("maxFrequencyHz")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public float MaxFrequencyHz;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public HapticParametricPropertiesEXT() { }
 }

@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRecommendedLayerResolutionMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct RecommendedLayerResolutionMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_recommended_layer_resolution"])]
     public StructureType Type = StructureType.RecommendedLayerResolutionMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_recommended_layer_resolution"])]
     public void* Next;
 
     [NativeName("recommendedImageDimensions")]
+    [SupportedApiProfile("openxr", ["XR_META_recommended_layer_resolution"])]
     public Extent2Di RecommendedImageDimensions;
 
     [NativeName("isValid")]
+    [SupportedApiProfile("openxr", ["XR_META_recommended_layer_resolution"])]
     public MaybeBool<uint> IsValid;
 
+    [SupportedApiProfile("openxr", ["XR_META_recommended_layer_resolution"])]
     public RecommendedLayerResolutionMETA() { }
 }

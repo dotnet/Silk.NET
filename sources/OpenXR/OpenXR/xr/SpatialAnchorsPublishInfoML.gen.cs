@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorsPublishInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialAnchorsPublishInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public StructureType Type = StructureType.SpatialAnchorsPublishInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public void* Next;
 
     [NativeName("anchorCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public uint AnchorCount;
 
     [NativeName("anchors")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public SpaceHandle* Anchors;
 
     [NativeName("expiration")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public ulong Expiration;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public SpatialAnchorsPublishInfoML() { }
 }

@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPlaneTypeANDROID")]
+[SupportedApiProfile("openxr")]
 public enum PlaneTypeANDROID : uint
 {
     [NativeName("XR_PLANE_TYPE_HORIZONTAL_DOWNWARD_FACING_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     HorizontalDownwardFacing = 0,
 
     [NativeName("XR_PLANE_TYPE_HORIZONTAL_UPWARD_FACING_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     HorizontalUpwardFacing = 1,
 
     [NativeName("XR_PLANE_TYPE_VERTICAL_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     Vertical = 2,
 
     [NativeName("XR_PLANE_TYPE_ARBITRARY_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     Arbitrary = 3,
 }

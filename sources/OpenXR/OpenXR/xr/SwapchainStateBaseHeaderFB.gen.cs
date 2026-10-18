@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSwapchainStateBaseHeaderFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SwapchainStateBaseHeaderFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_swapchain_update_state"])]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_swapchain_update_state"])]
     public void* Next;
 }

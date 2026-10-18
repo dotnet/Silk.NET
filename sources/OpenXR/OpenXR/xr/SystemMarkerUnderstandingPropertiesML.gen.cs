@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemMarkerUnderstandingPropertiesML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemMarkerUnderstandingPropertiesML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     public StructureType Type = StructureType.SystemMarkerUnderstandingPropertiesML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     public void* Next;
 
     [NativeName("supportsMarkerUnderstanding")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     public MaybeBool<uint> SupportsMarkerUnderstanding;
 
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     public SystemMarkerUnderstandingPropertiesML() { }
 }

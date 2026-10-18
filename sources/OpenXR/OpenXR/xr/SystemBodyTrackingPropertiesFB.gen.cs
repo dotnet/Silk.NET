@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemBodyTrackingPropertiesFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemBodyTrackingPropertiesFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public StructureType Type = StructureType.SystemBodyTrackingPropertiesFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public void* Next;
 
     [NativeName("supportsBodyTracking")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public MaybeBool<uint> SupportsBodyTracking;
 
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public SystemBodyTrackingPropertiesFB() { }
 }

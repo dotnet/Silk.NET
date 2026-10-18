@@ -9,17 +9,38 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFoveationLevelFB")]
+[SupportedApiProfile("openxr")]
 public enum FoveationLevelFB : uint
 {
     [NativeName("XR_FOVEATION_LEVEL_NONE_FB")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_foveation_configuration"],
+        ImpliesSets = ["XR_FB_foveation", "XR_VERSION_1_0"]
+    )]
     None = 0,
 
     [NativeName("XR_FOVEATION_LEVEL_LOW_FB")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_foveation_configuration"],
+        ImpliesSets = ["XR_FB_foveation", "XR_VERSION_1_0"]
+    )]
     Low = 1,
 
     [NativeName("XR_FOVEATION_LEVEL_MEDIUM_FB")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_foveation_configuration"],
+        ImpliesSets = ["XR_FB_foveation", "XR_VERSION_1_0"]
+    )]
     Medium = 2,
 
     [NativeName("XR_FOVEATION_LEVEL_HIGH_FB")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_foveation_configuration"],
+        ImpliesSets = ["XR_FB_foveation", "XR_VERSION_1_0"]
+    )]
     High = 3,
 }

@@ -9,8 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackableImageFormatANDROID")]
+[SupportedApiProfile("openxr")]
 public enum TrackableImageFormatANDROID : uint
 {
     [NativeName("XR_TRACKABLE_IMAGE_FORMAT_R8G8B8A8_ANDROID")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     R8G8B8A8 = 1,
 }

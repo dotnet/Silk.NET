@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrDeserializeSceneFragmentMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct DeserializeSceneFragmentMSFT
 {
     [NativeName("bufferSize")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public uint BufferSize;
 
     [NativeName("buffer")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public byte* Buffer;
 }

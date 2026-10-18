@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSoundObjectDistanceAttenuationCurveBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SoundObjectDistanceAttenuationCurveBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public StructureType Type = StructureType.SoundObjectDistanceAttenuationCurveBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public void* Next;
 
     [NativeName("curvePointCount")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public uint CurvePointCount;
 
     [NativeName("curvePoints")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public AttenuationCurvePointBD* CurvePoints;
 
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundObjectDistanceAttenuationCurveBD() { }
 }

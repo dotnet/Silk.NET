@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemAnchorPropertiesHTC")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemAnchorPropertiesHTC
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public StructureType Type = StructureType.SystemAnchorPropertiesHTC;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public void* Next;
 
     [NativeName("supportsAnchor")]
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public MaybeBool<uint> SupportsAnchor;
 
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public SystemAnchorPropertiesHTC() { }
 }

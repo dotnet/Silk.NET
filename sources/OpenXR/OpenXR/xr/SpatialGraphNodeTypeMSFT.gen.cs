@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialGraphNodeTypeMSFT")]
+[SupportedApiProfile("openxr")]
 public enum SpatialGraphNodeTypeMSFT : uint
 {
     [NativeName("XR_SPATIAL_GRAPH_NODE_TYPE_STATIC_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     Static = 1,
 
     [NativeName("XR_SPATIAL_GRAPH_NODE_TYPE_DYNAMIC_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     Dynamic = 2,
 }

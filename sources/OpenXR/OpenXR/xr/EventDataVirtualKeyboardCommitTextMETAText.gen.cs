@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_text_e__FixedBuffer")]
 [InlineArray(3992)]
+[SupportedApiProfile("openxr")]
 public partial struct EventDataVirtualKeyboardCommitTextMETAText
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public sbyte E0;
 }

@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFoveationDynamicModeInfoHTC")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FoveationDynamicModeInfoHTC
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public StructureType Type = StructureType.FoveationDynamicModeInfoHTC;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public void* Next;
 
     [NativeName("dynamicFlags")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public FoveationDynamicFlagsHTC DynamicFlags;
 
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public FoveationDynamicModeInfoHTC() { }
 }

@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSecondaryViewConfigurationSwapchainCreateInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SecondaryViewConfigurationSwapchainCreateInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_secondary_view_configuration"])]
     public StructureType Type = StructureType.SecondaryViewConfigurationSwapchainCreateInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_secondary_view_configuration"])]
     public void* Next;
 
     [NativeName("viewConfigurationType")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_secondary_view_configuration"])]
     public ViewConfigurationType ViewConfigurationType;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_secondary_view_configuration"])]
     public SecondaryViewConfigurationSwapchainCreateInfoMSFT() { }
 }

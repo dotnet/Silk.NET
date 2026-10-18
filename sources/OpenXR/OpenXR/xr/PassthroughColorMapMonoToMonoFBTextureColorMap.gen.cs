@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_textureColorMap_e__FixedBuffer")]
 [InlineArray(256)]
+[SupportedApiProfile("openxr")]
 public partial struct PassthroughColorMapMonoToMonoFBTextureColorMap
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public byte E0;
 }

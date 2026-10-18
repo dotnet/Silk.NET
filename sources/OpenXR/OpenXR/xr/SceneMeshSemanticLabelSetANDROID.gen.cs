@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMeshSemanticLabelSetANDROID")]
+[SupportedApiProfile("openxr")]
 public enum SceneMeshSemanticLabelSetANDROID : uint
 {
     [NativeName("XR_SCENE_MESH_SEMANTIC_LABEL_SET_NONE_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     None = 0,
 
     [NativeName("XR_SCENE_MESH_SEMANTIC_LABEL_SET_DEFAULT_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     Default = 1,
 }

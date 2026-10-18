@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataSpaceQueryCompleteFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataSpaceQueryCompleteFB
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.EventDataSpaceQueryCompleteFB;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("requestId")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public ulong RequestId;
 
     [NativeName("result")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public Result Result;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public EventDataSpaceQueryCompleteFB() { }
 }

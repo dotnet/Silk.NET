@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFaceExpressionSetFB")]
+[SupportedApiProfile("openxr")]
 public enum FaceExpressionSetFB : uint
 {
     [NativeName("XR_FACE_EXPRESSION_SET_DEFAULT_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     Default = 0,
 }

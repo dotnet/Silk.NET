@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrWorldMeshDetectorCreateInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct WorldMeshDetectorCreateInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public StructureType Type = StructureType.WorldMeshDetectorCreateInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public void* Next;
 
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public WorldMeshDetectorCreateInfoML() { }
 }

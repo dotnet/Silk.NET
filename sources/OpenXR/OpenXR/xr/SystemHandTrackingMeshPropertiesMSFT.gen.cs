@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemHandTrackingMeshPropertiesMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemHandTrackingMeshPropertiesMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SystemHandTrackingMeshPropertiesMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("supportsHandTrackingMesh")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public MaybeBool<uint> SupportsHandTrackingMesh;
 
     [NativeName("maxHandMeshIndexCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public uint MaxHandMeshIndexCount;
 
     [NativeName("maxHandMeshVertexCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public uint MaxHandMeshVertexCount;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public SystemHandTrackingMeshPropertiesMSFT() { }
 }

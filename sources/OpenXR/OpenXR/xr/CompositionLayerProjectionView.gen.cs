@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerProjectionView")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerProjectionView
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.CompositionLayerProjectionView;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr")]
     public Posef Pose;
 
     [NativeName("fov")]
+    [SupportedApiProfile("openxr")]
     public Fovf Fov;
 
     [NativeName("subImage")]
+    [SupportedApiProfile("openxr")]
     public SwapchainSubImage SubImage;
 
+    [SupportedApiProfile("openxr")]
     public CompositionLayerProjectionView() { }
 }

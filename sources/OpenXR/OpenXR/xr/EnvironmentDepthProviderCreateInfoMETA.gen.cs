@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEnvironmentDepthProviderCreateInfoMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EnvironmentDepthProviderCreateInfoMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public StructureType Type = StructureType.EnvironmentDepthProviderCreateInfoMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public void* Next;
 
     [NativeName("createFlags")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public EnvironmentDepthProviderCreateFlagsMETA CreateFlags;
 
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public EnvironmentDepthProviderCreateInfoMETA() { }
 }

@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSimultaneousHandsAndControllersTrackingResumeInfoMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SimultaneousHandsAndControllersTrackingResumeInfoMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]
     public StructureType Type = StructureType.SimultaneousHandsAndControllersTrackingResumeInfoMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]
     public void* Next;
 
+    [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]
     public SimultaneousHandsAndControllersTrackingResumeInfoMETA() { }
 }

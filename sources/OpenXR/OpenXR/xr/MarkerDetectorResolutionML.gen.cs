@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrMarkerDetectorResolutionML")]
+[SupportedApiProfile("openxr")]
 public enum MarkerDetectorResolutionML : uint
 {
     [NativeName("XR_MARKER_DETECTOR_RESOLUTION_LOW_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Low = 0,
 
     [NativeName("XR_MARKER_DETECTOR_RESOLUTION_MEDIUM_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Medium = 1,
 
     [NativeName("XR_MARKER_DETECTOR_RESOLUTION_HIGH_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     High = 2,
 }

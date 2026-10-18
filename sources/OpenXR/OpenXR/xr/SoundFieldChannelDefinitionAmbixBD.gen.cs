@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSoundFieldChannelDefinitionAmbixBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SoundFieldChannelDefinitionAmbixBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public StructureType Type = StructureType.SoundFieldChannelDefinitionAmbixBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public void* Next;
 
     [NativeName("channelMask")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundFieldChannelMaskAmbixBD ChannelMask;
 
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundFieldChannelDefinitionAmbixBD() { }
 }

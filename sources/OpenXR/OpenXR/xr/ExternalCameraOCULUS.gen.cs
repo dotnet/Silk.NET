@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrExternalCameraOCULUS")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ExternalCameraOCULUS
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public StructureType Type = StructureType.ExternalCameraOCULUS;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public void* Next;
 
     [NativeName("name")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public ExternalCameraOCULUSName Name;
 
     [NativeName("intrinsics")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public ExternalCameraIntrinsicsOCULUS Intrinsics;
 
     [NativeName("extrinsics")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public ExternalCameraExtrinsicsOCULUS Extrinsics;
 
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public ExternalCameraOCULUS() { }
 }

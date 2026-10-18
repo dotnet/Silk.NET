@@ -9,14 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBodyTrackingCalibrationStateMETA")]
+[SupportedApiProfile("openxr")]
 public enum BodyTrackingCalibrationStateMETA : uint
 {
     [NativeName("XR_BODY_TRACKING_CALIBRATION_STATE_VALID_META")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_body_tracking_calibration"],
+        ImpliesSets = ["XR_FB_body_tracking"]
+    )]
     Valid = 1,
 
     [NativeName("XR_BODY_TRACKING_CALIBRATION_STATE_CALIBRATING_META")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_body_tracking_calibration"],
+        ImpliesSets = ["XR_FB_body_tracking"]
+    )]
     Calibrating = 2,
 
     [NativeName("XR_BODY_TRACKING_CALIBRATION_STATE_INVALID_META")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_body_tracking_calibration"],
+        ImpliesSets = ["XR_FB_body_tracking"]
+    )]
     Invalid = 3,
 }

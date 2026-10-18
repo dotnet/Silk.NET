@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemSpaceWarpPropertiesFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemSpaceWarpPropertiesFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_space_warp"])]
     public StructureType Type = StructureType.SystemSpaceWarpPropertiesFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_space_warp"])]
     public void* Next;
 
     [NativeName("recommendedMotionVectorImageRectWidth")]
+    [SupportedApiProfile("openxr", ["XR_FB_space_warp"])]
     public uint RecommendedMotionVectorImageRectWidth;
 
     [NativeName("recommendedMotionVectorImageRectHeight")]
+    [SupportedApiProfile("openxr", ["XR_FB_space_warp"])]
     public uint RecommendedMotionVectorImageRectHeight;
 
+    [SupportedApiProfile("openxr", ["XR_FB_space_warp"])]
     public SystemSpaceWarpPropertiesFB() { }
 }

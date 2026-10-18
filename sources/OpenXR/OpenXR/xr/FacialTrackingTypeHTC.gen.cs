@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFacialTrackingTypeHTC")]
+[SupportedApiProfile("openxr")]
 public enum FacialTrackingTypeHTC : uint
 {
     [NativeName("XR_FACIAL_TRACKING_TYPE_EYE_DEFAULT_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     EyeDefault = 1,
 
     [NativeName("XR_FACIAL_TRACKING_TYPE_LIP_DEFAULT_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     LipDefault = 2,
 }

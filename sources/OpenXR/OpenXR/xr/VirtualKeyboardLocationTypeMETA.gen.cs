@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVirtualKeyboardLocationTypeMETA")]
+[SupportedApiProfile("openxr")]
 public enum VirtualKeyboardLocationTypeMETA : uint
 {
     [NativeName("XR_VIRTUAL_KEYBOARD_LOCATION_TYPE_CUSTOM_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     Custom = 0,
 
     [NativeName("XR_VIRTUAL_KEYBOARD_LOCATION_TYPE_FAR_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     Far = 1,
 
     [NativeName("XR_VIRTUAL_KEYBOARD_LOCATION_TYPE_DIRECT_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     Direct = 2,
 }

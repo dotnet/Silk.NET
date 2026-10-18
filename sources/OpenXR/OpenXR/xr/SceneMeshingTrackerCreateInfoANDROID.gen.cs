@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMeshingTrackerCreateInfoANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SceneMeshingTrackerCreateInfoANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public StructureType Type = StructureType.SceneMeshingTrackerCreateInfoANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public void* Next;
 
     [NativeName("semanticLabelSet")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public SceneMeshSemanticLabelSetANDROID SemanticLabelSet;
 
     [NativeName("enableNormals")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public MaybeBool<uint> EnableNormals;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public SceneMeshingTrackerCreateInfoANDROID() { }
 }

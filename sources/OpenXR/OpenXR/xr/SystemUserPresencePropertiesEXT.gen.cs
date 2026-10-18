@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemUserPresencePropertiesEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemUserPresencePropertiesEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_user_presence"])]
     public StructureType Type = StructureType.SystemUserPresencePropertiesEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_user_presence"])]
     public void* Next;
 
     [NativeName("supportsUserPresence")]
+    [SupportedApiProfile("openxr", ["XR_EXT_user_presence"])]
     public MaybeBool<uint> SupportsUserPresence;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_user_presence"])]
     public SystemUserPresencePropertiesEXT() { }
 }

@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrApiLayerProperties")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ApiLayerProperties
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.ApiLayerProperties;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("layerName")]
+    [SupportedApiProfile("openxr")]
     public ApiLayerPropertiesLayerName LayerName;
 
     [NativeName("specVersion")]
+    [SupportedApiProfile("openxr")]
     public ulong SpecVersion;
 
     [NativeName("layerVersion")]
+    [SupportedApiProfile("openxr")]
     public uint LayerVersion;
 
     [NativeName("description")]
+    [SupportedApiProfile("openxr")]
     public ApiLayerPropertiesDescription Description;
 
+    [SupportedApiProfile("openxr")]
     public ApiLayerProperties() { }
 }

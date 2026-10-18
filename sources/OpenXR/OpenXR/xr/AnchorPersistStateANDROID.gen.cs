@@ -9,14 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrAnchorPersistStateANDROID")]
+[SupportedApiProfile("openxr")]
 public enum AnchorPersistStateANDROID : uint
 {
     [NativeName("XR_ANCHOR_PERSIST_STATE_PERSIST_NOT_REQUESTED_ANDROID")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_device_anchor_persistence"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_uuid"]
+    )]
     PersistNotRequested = 0,
 
     [NativeName("XR_ANCHOR_PERSIST_STATE_PERSIST_PENDING_ANDROID")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_device_anchor_persistence"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_uuid"]
+    )]
     PersistPending = 1,
 
     [NativeName("XR_ANCHOR_PERSIST_STATE_PERSISTED_ANDROID")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_device_anchor_persistence"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_uuid"]
+    )]
     Persisted = 2,
 }

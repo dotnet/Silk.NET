@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackingOptimizationSettingsDomainQCOM")]
+[SupportedApiProfile("openxr")]
 public enum TrackingOptimizationSettingsDomainQCOM : uint
 {
     [NativeName("XR_TRACKING_OPTIMIZATION_SETTINGS_DOMAIN_ALL_QCOM")]
+    [SupportedApiProfile("openxr", ["XR_QCOM_tracking_optimization_settings"])]
     All = 1,
 }

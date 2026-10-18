@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_visemes_e__FixedBuffer")]
 [InlineArray(15)]
+[SupportedApiProfile("openxr")]
 public partial struct FaceTrackingVisemesMETAVisemes
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public float E0;
 }

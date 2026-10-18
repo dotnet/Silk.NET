@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackableImageDatabaseCreateInfoANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct TrackableImageDatabaseCreateInfoANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public StructureType Type = StructureType.TrackableImageDatabaseCreateInfoANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public void* Next;
 
     [NativeName("entryCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public uint EntryCount;
 
     [NativeName("entries")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public TrackableImageDatabaseEntryANDROID* Entries;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public TrackableImageDatabaseCreateInfoANDROID() { }
 }

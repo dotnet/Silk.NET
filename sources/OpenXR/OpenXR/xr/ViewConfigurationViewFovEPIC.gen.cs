@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrViewConfigurationViewFovEPIC")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ViewConfigurationViewFovEPIC
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EPIC_view_configuration_fov"])]
     public StructureType Type = StructureType.ViewConfigurationViewFovEPIC;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EPIC_view_configuration_fov"])]
     public void* Next;
 
     [NativeName("recommendedFov")]
+    [SupportedApiProfile("openxr", ["XR_EPIC_view_configuration_fov"])]
     public Fovf RecommendedFov;
 
     [NativeName("maxMutableFov")]
+    [SupportedApiProfile("openxr", ["XR_EPIC_view_configuration_fov"])]
     public Fovf MaxMutableFov;
 
+    [SupportedApiProfile("openxr", ["XR_EPIC_view_configuration_fov"])]
     public ViewConfigurationViewFovEPIC() { }
 }

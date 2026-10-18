@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrMarkerDetectorCameraML")]
+[SupportedApiProfile("openxr")]
 public enum MarkerDetectorCameraML : uint
 {
     [NativeName("XR_MARKER_DETECTOR_CAMERA_RGB_CAMERA_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     RgbCamera = 0,
 
     [NativeName("XR_MARKER_DETECTOR_CAMERA_WORLD_CAMERAS_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     WorldCameras = 1,
 }

@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFrameSynthesisConfigViewEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FrameSynthesisConfigViewEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_frame_synthesis"])]
     public StructureType Type = StructureType.FrameSynthesisConfigViewEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_frame_synthesis"])]
     public void* Next;
 
     [NativeName("recommendedMotionVectorImageRectWidth")]
+    [SupportedApiProfile("openxr", ["XR_EXT_frame_synthesis"])]
     public uint RecommendedMotionVectorImageRectWidth;
 
     [NativeName("recommendedMotionVectorImageRectHeight")]
+    [SupportedApiProfile("openxr", ["XR_EXT_frame_synthesis"])]
     public uint RecommendedMotionVectorImageRectHeight;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_frame_synthesis"])]
     public FrameSynthesisConfigViewEXT() { }
 }

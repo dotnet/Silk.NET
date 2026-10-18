@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialEntityComponentDataBaseHeaderBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialEntityComponentDataBaseHeaderBD
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 }

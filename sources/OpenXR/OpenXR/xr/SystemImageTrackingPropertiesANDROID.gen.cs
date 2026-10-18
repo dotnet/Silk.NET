@@ -9,25 +9,61 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemImageTrackingPropertiesANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemImageTrackingPropertiesANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public StructureType Type = StructureType.SystemImageTrackingPropertiesANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public void* Next;
 
     [NativeName("supportsImageTracking")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public MaybeBool<uint> SupportsImageTracking;
 
     [NativeName("supportsPhysicalSizeEstimation")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public MaybeBool<uint> SupportsPhysicalSizeEstimation;
 
     [NativeName("maxTrackedImageCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public uint MaxTrackedImageCount;
 
     [NativeName("maxLoadedImageCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public uint MaxLoadedImageCount;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public SystemImageTrackingPropertiesANDROID() { }
 }

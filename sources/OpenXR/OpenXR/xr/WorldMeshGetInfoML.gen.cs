@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrWorldMeshGetInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct WorldMeshGetInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public StructureType Type = StructureType.WorldMeshGetInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public void* Next;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public WorldMeshDetectorFlagsML Flags;
 
     [NativeName("fillHoleLength")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public float FillHoleLength;
 
     [NativeName("disconnectedComponentArea")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public float DisconnectedComponentArea;
 
     [NativeName("blockCount")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public uint BlockCount;
 
     [NativeName("blocks")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public WorldMeshBlockRequestML* Blocks;
 
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public WorldMeshGetInfoML() { }
 }

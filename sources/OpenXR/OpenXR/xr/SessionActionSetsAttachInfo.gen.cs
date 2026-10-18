@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSessionActionSetsAttachInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SessionActionSetsAttachInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.SessionActionSetsAttachInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("countActionSets")]
+    [SupportedApiProfile("openxr")]
     public uint CountActionSets;
 
     [NativeName("actionSets")]
+    [SupportedApiProfile("openxr")]
     public ActionSetHandle* ActionSets;
 
+    [SupportedApiProfile("openxr")]
     public SessionActionSetsAttachInfo() { }
 }

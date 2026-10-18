@@ -9,31 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFaceExpressionWeightsFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FaceExpressionWeightsFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public StructureType Type = StructureType.FaceExpressionWeightsFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public void* Next;
 
     [NativeName("weightCount")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public uint WeightCount;
 
     [NativeName("weights")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public float* Weights;
 
     [NativeName("confidenceCount")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public uint ConfidenceCount;
 
     [NativeName("confidences")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public float* Confidences;
 
     [NativeName("status")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public FaceExpressionStatusFB Status;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public FaceExpressionWeightsFB() { }
 }

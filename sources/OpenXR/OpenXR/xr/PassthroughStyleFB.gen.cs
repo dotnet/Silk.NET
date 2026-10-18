@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughStyleFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PassthroughStyleFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public StructureType Type = StructureType.PassthroughStyleFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public void* Next;
 
     [NativeName("textureOpacityFactor")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public float TextureOpacityFactor;
 
     [NativeName("edgeColor")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public Color4F EdgeColor;
 
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public PassthroughStyleFB() { }
 }

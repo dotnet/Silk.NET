@@ -9,11 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBodyJointSetFB")]
+[SupportedApiProfile("openxr")]
 public enum BodyJointSetFB : uint
 {
     [NativeName("XR_BODY_JOINT_SET_DEFAULT_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     Default = 0,
 
     [NativeName("XR_BODY_JOINT_SET_FULL_BODY_META")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_body_tracking_full_body"],
+        ImpliesSets = ["XR_FB_body_tracking"]
+    )]
     FullBodyMETA = 1000274000,
 }

@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrGraphicsRequirementsOpenGLKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct GraphicsRequirementsOpenGLKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public StructureType Type = StructureType.GraphicsRequirementsOpenglKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public void* Next;
 
     [NativeName("minApiVersionSupported")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public ulong MinApiVersionSupported;
 
     [NativeName("maxApiVersionSupported")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public ulong MaxApiVersionSupported;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public GraphicsRequirementsOpenGLKHR() { }
 }

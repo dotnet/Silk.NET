@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemEyeTrackingPropertiesFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemEyeTrackingPropertiesFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public StructureType Type = StructureType.SystemEyeTrackingPropertiesFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public void* Next;
 
     [NativeName("supportsEyeTracking")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public MaybeBool<uint> SupportsEyeTracking;
 
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public SystemEyeTrackingPropertiesFB() { }
 }

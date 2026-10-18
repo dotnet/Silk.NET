@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrDirectionalLightANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct DirectionalLightANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public StructureType Type = StructureType.DirectionalLightANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public void* Next;
 
     [NativeName("state")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public LightEstimateStateANDROID State;
 
     [NativeName("intensity")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public Vector3F Intensity;
 
     [NativeName("direction")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public Vector3F Direction;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public DirectionalLightANDROID() { }
 }

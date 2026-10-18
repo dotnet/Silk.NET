@@ -9,23 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrMarkerDetectorProfileML")]
+[SupportedApiProfile("openxr")]
 public enum MarkerDetectorProfileML : uint
 {
     [NativeName("XR_MARKER_DETECTOR_PROFILE_DEFAULT_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Default = 0,
 
     [NativeName("XR_MARKER_DETECTOR_PROFILE_SPEED_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Speed = 1,
 
     [NativeName("XR_MARKER_DETECTOR_PROFILE_ACCURACY_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Accuracy = 2,
 
     [NativeName("XR_MARKER_DETECTOR_PROFILE_SMALL_TARGETS_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     SmallTargets = 3,
 
     [NativeName("XR_MARKER_DETECTOR_PROFILE_LARGE_FOV_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     LargeFov = 4,
 
     [NativeName("XR_MARKER_DETECTOR_PROFILE_CUSTOM_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Custom = 5,
 }

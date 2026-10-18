@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemSimultaneousHandsAndControllersPropertiesMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemSimultaneousHandsAndControllersPropertiesMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]
     public StructureType Type = StructureType.SystemSimultaneousHandsAndControllersPropertiesMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]
     public void* Next;
 
     [NativeName("supportsSimultaneousHandsAndControllers")]
+    [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]
     public MaybeBool<uint> SupportsSimultaneousHandsAndControllers;
 
+    [SupportedApiProfile("openxr", ["XR_META_simultaneous_hands_and_controllers"])]
     public SystemSimultaneousHandsAndControllersPropertiesMETA() { }
 }

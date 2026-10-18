@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrShareSpacesRecipientBaseHeaderMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ShareSpacesRecipientBaseHeaderMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity"]
+    )]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity"]
+    )]
     public void* Next;
 }

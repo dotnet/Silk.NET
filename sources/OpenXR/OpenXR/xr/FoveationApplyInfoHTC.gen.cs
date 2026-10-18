@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFoveationApplyInfoHTC")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FoveationApplyInfoHTC
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public StructureType Type = StructureType.FoveationApplyInfoHTC;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public void* Next;
 
     [NativeName("mode")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public FoveationModeHTC Mode;
 
     [NativeName("subImageCount")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public uint SubImageCount;
 
     [NativeName("subImages")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public SwapchainSubImage* SubImages;
 
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public FoveationApplyInfoHTC() { }
 }

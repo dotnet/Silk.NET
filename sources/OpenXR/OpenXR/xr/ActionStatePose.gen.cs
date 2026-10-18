@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrActionStatePose")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ActionStatePose
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.ActionStatePose;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("isActive")]
+    [SupportedApiProfile("openxr")]
     public MaybeBool<uint> IsActive;
 
+    [SupportedApiProfile("openxr")]
     public ActionStatePose() { }
 }

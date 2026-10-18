@@ -9,31 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialComponentDataQueryResultEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialComponentDataQueryResultEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public StructureType Type = StructureType.SpatialComponentDataQueryResultEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public void* Next;
 
     [NativeName("entityIdCapacityInput")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public uint EntityIdCapacityInput;
 
     [NativeName("entityIdCountOutput")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public uint EntityIdCountOutput;
 
     [NativeName("entityIds")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public ulong* EntityIds;
 
     [NativeName("entityStateCapacityInput")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public uint EntityStateCapacityInput;
 
     [NativeName("entityStateCountOutput")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public uint EntityStateCountOutput;
 
     [NativeName("entityStates")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public SpatialEntityTrackingStateEXT* EntityStates;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public SpatialComponentDataQueryResultEXT() { }
 }

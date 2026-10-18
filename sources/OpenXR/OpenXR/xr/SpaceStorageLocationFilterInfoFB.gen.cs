@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceStorageLocationFilterInfoFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceStorageLocationFilterInfoFB
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SpaceStorageLocationFilterInfoFB;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("location")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public SpaceStorageLocationFB Location;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public SpaceStorageLocationFilterInfoFB() { }
 }

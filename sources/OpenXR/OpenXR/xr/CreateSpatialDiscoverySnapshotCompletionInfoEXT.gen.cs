@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCreateSpatialDiscoverySnapshotCompletionInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CreateSpatialDiscoverySnapshotCompletionInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public StructureType Type = StructureType.CreateSpatialDiscoverySnapshotCompletionInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public void* Next;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public long Time;
 
     [NativeName("future")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public FutureHandleEXT Future;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public CreateSpatialDiscoverySnapshotCompletionInfoEXT() { }
 }

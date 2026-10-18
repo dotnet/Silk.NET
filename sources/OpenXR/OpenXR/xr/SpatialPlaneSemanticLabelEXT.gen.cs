@@ -9,20 +9,46 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialPlaneSemanticLabelEXT")]
+[SupportedApiProfile("openxr")]
 public enum SpatialPlaneSemanticLabelEXT : uint
 {
     [NativeName("XR_SPATIAL_PLANE_SEMANTIC_LABEL_UNCATEGORIZED_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     Uncategorized = 1,
 
     [NativeName("XR_SPATIAL_PLANE_SEMANTIC_LABEL_FLOOR_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     Floor = 2,
 
     [NativeName("XR_SPATIAL_PLANE_SEMANTIC_LABEL_WALL_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     Wall = 3,
 
     [NativeName("XR_SPATIAL_PLANE_SEMANTIC_LABEL_CEILING_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     Ceiling = 4,
 
     [NativeName("XR_SPATIAL_PLANE_SEMANTIC_LABEL_TABLE_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     Table = 5,
 }

@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrDebugUtilsObjectNameInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct DebugUtilsObjectNameInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public StructureType Type = StructureType.DebugUtilsObjectNameInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public void* Next;
 
     [NativeName("objectType")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public ObjectType ObjectType;
 
     [NativeName("objectHandle")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public ulong ObjectHandle;
 
     [NativeName("objectName")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public sbyte* ObjectName;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public DebugUtilsObjectNameInfoEXT() { }
 }

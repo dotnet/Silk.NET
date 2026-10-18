@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPlaneDetectorLocationsEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PlaneDetectorLocationsEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public StructureType Type = StructureType.PlaneDetectorLocationsEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public void* Next;
 
     [NativeName("planeLocationCapacityInput")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public uint PlaneLocationCapacityInput;
 
     [NativeName("planeLocationCountOutput")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public uint PlaneLocationCountOutput;
 
     [NativeName("planeLocations")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public PlaneDetectorLocationEXT* PlaneLocations;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     public PlaneDetectorLocationsEXT() { }
 }

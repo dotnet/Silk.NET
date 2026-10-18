@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorUnpersistInfoBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialAnchorUnpersistInfoBD
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public StructureType Type = StructureType.SpatialAnchorUnpersistInfoBD;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public void* Next;
 
     [NativeName("location")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public PersistenceLocationBD Location;
 
     [NativeName("anchor")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public AnchorHandleBD Anchor;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public SpatialAnchorUnpersistInfoBD() { }
 }

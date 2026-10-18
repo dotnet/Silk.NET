@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrExtent3DiMETA")]
+[SupportedApiProfile("openxr")]
 public partial struct Extent3DiMETA
 {
     [NativeName("width")]
+    [SupportedApiProfile("openxr", ["XR_META_tile_properties_hint"])]
     public int Width;
 
     [NativeName("height")]
+    [SupportedApiProfile("openxr", ["XR_META_tile_properties_hint"])]
     public int Height;
 
     [NativeName("depth")]
+    [SupportedApiProfile("openxr", ["XR_META_tile_properties_hint"])]
     public int Depth;
 }

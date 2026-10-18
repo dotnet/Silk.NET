@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrExtent2Di")]
+[SupportedApiProfile("openxr")]
 public partial struct Extent2Di
 {
     [NativeName("width")]
+    [SupportedApiProfile("openxr")]
     public int Width;
 
     [NativeName("height")]
+    [SupportedApiProfile("openxr")]
     public int Height;
 }

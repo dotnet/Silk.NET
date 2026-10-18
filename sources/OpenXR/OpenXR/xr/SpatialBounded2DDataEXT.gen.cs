@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialBounded2DDataEXT")]
+[SupportedApiProfile("openxr")]
 public partial struct SpatialBounded2DDataEXT
 {
     [NativeName("center")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public Posef Center;
 
     [NativeName("extents")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public Extent2Df Extents;
 }

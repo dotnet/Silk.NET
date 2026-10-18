@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrGeometryInstanceCreateInfoFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct GeometryInstanceCreateInfoFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public StructureType Type = StructureType.GeometryInstanceCreateInfoFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public void* Next;
 
     [NativeName("layer")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public PassthroughLayerHandleFB Layer;
 
     [NativeName("mesh")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public TriangleMeshHandleFB Mesh;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public Posef Pose;
 
     [NativeName("scale")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public Vector3F Scale;
 
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public GeometryInstanceCreateInfoFB() { }
 }

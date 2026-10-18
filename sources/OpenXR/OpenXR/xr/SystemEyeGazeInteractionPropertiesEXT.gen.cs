@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemEyeGazeInteractionPropertiesEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemEyeGazeInteractionPropertiesEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_eye_gaze_interaction"])]
     public StructureType Type = StructureType.SystemEyeGazeInteractionPropertiesEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_eye_gaze_interaction"])]
     public void* Next;
 
     [NativeName("supportsEyeGazeInteraction")]
+    [SupportedApiProfile("openxr", ["XR_EXT_eye_gaze_interaction"])]
     public MaybeBool<uint> SupportsEyeGazeInteraction;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_eye_gaze_interaction"])]
     public SystemEyeGazeInteractionPropertiesEXT() { }
 }

@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFrameWaitInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FrameWaitInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.FrameWaitInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
+    [SupportedApiProfile("openxr")]
     public FrameWaitInfo() { }
 }

@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughColorHTC")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PassthroughColorHTC
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public StructureType Type = StructureType.PassthroughColorHTC;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public void* Next;
 
     [NativeName("alpha")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public float Alpha;
 
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public PassthroughColorHTC() { }
 }

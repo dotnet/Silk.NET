@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRenderModelStateEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct RenderModelStateEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public StructureType Type = StructureType.RenderModelStateEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public void* Next;
 
     [NativeName("nodeStateCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public uint NodeStateCount;
 
     [NativeName("nodeStates")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public RenderModelNodeStateEXT* NodeStates;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public RenderModelStateEXT() { }
 }

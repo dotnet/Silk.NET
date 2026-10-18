@@ -9,13 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrInteractionRenderModelIdsEnumerateInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct InteractionRenderModelIdsEnumerateInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_interaction_render_model"],
+        ImpliesSets = ["XR_EXT_render_model"]
+    )]
     public StructureType Type = StructureType.InteractionRenderModelIdsEnumerateInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_interaction_render_model"],
+        ImpliesSets = ["XR_EXT_render_model"]
+    )]
     public void* Next;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_interaction_render_model"],
+        ImpliesSets = ["XR_EXT_render_model"]
+    )]
     public InteractionRenderModelIdsEnumerateInfoEXT() { }
 }

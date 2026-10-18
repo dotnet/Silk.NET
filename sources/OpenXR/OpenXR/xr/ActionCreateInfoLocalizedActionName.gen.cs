@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_localizedActionName_e__FixedBuffer")]
 [InlineArray(128)]
+[SupportedApiProfile("openxr")]
 public partial struct ActionCreateInfoLocalizedActionName
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public sbyte E0;
 }

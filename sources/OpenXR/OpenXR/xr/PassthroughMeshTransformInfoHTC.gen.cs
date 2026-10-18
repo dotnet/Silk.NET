@@ -9,37 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughMeshTransformInfoHTC")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PassthroughMeshTransformInfoHTC
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public StructureType Type = StructureType.PassthroughMeshTransformInfoHTC;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public void* Next;
 
     [NativeName("vertexCount")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public uint VertexCount;
 
     [NativeName("vertices")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public Vector3F* Vertices;
 
     [NativeName("indexCount")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public uint IndexCount;
 
     [NativeName("indices")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public uint* Indices;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public long Time;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public Posef Pose;
 
     [NativeName("scale")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public Vector3F Scale;
 
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     public PassthroughMeshTransformInfoHTC() { }
 }

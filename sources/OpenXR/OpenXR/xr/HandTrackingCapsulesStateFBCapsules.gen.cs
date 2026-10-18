@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_capsules_e__FixedBuffer")]
 [InlineArray(19)]
+[SupportedApiProfile("openxr")]
 public partial struct HandTrackingCapsulesStateFBCapsules
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public HandCapsuleFB E0;
 }

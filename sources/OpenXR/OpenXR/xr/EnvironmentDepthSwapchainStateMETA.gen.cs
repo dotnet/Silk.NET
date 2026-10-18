@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEnvironmentDepthSwapchainStateMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EnvironmentDepthSwapchainStateMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public StructureType Type = StructureType.EnvironmentDepthSwapchainStateMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public void* Next;
 
     [NativeName("width")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public uint Width;
 
     [NativeName("height")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public uint Height;
 
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public EnvironmentDepthSwapchainStateMETA() { }
 }

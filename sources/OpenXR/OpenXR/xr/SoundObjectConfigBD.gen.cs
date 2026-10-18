@@ -9,37 +9,49 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSoundObjectConfigBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SoundObjectConfigBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public StructureType Type = StructureType.SoundObjectConfigBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public void* Next;
 
     [NativeName("enabled")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public MaybeBool<uint> Enabled;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public Posef Pose;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("mainVolume")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float MainVolume;
 
     [NativeName("reflectionGain")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float ReflectionGain;
 
     [NativeName("enableDoppler")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public MaybeBool<uint> EnableDoppler;
 
     [NativeName("directSoundAttenuation")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundObjectDistanceAttenuationBD* DirectSoundAttenuation;
 
     [NativeName("indirectSoundAttenuation")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundObjectDistanceAttenuationBD* IndirectSoundAttenuation;
 
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundObjectConfigBD() { }
 }

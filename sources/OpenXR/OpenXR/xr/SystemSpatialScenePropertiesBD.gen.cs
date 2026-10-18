@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemSpatialScenePropertiesBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemSpatialScenePropertiesBD
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_scene"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public StructureType Type = StructureType.SystemSpatialScenePropertiesBD;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_scene"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public void* Next;
 
     [NativeName("supportsSpatialScene")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_scene"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public MaybeBool<uint> SupportsSpatialScene;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_scene"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public SystemSpatialScenePropertiesBD() { }
 }

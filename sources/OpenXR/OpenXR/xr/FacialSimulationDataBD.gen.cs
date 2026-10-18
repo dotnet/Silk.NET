@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFacialSimulationDataBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FacialSimulationDataBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public StructureType Type = StructureType.FacialSimulationDataBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public void* Next;
 
     [NativeName("faceExpressionWeightCount")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public uint FaceExpressionWeightCount;
 
     [NativeName("faceExpressionWeights")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public float* FaceExpressionWeights;
 
     [NativeName("isUpperFaceDataValid")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public MaybeBool<uint> IsUpperFaceDataValid;
 
     [NativeName("isLowerFaceDataValid")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public MaybeBool<uint> IsLowerFaceDataValid;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public FacialSimulationDataBD() { }
 }

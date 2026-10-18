@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceLocations")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceLocations
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public StructureType Type = StructureType.SpaceLocations;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public void* Next;
 
     [NativeName("locationCount")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public uint LocationCount;
 
     [NativeName("locations")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public SpaceLocationData* Locations;
 
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public SpaceLocations() { }
 }

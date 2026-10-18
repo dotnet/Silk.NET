@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialPolygon2DDataEXT")]
+[SupportedApiProfile("openxr")]
 public partial struct SpatialPolygon2DDataEXT
 {
     [NativeName("origin")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public Posef Origin;
 
     [NativeName("vertexBuffer")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialBufferEXT VertexBuffer;
 }

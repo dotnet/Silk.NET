@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneComponentParentFilterInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SceneComponentParentFilterInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public StructureType Type = StructureType.SceneComponentParentFilterInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public void* Next;
 
     [NativeName("parentId")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public UuidMSFT ParentId;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public SceneComponentParentFilterInfoMSFT() { }
 }

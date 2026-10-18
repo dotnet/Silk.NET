@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrAudioBufferChannelLayoutBD")]
+[SupportedApiProfile("openxr")]
 public enum AudioBufferChannelLayoutBD : uint
 {
     [NativeName("XR_AUDIO_BUFFER_CHANNEL_LAYOUT_INTERLEAVED_BD")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     Interleaved = 0,
 
     [NativeName("XR_AUDIO_BUFFER_CHANNEL_LAYOUT_PLANAR_BD")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     Planar = 1,
 }

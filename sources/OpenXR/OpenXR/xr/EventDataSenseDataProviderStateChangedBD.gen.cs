@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataSenseDataProviderStateChangedBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataSenseDataProviderStateChangedBD
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.EventDataSenseDataProviderStateChangedBD;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("provider")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public SenseDataProviderHandleBD Provider;
 
     [NativeName("newState")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public SenseDataProviderStateBD NewState;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public EventDataSenseDataProviderStateChangedBD() { }
 }

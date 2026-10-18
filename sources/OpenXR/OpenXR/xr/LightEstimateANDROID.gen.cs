@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrLightEstimateANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct LightEstimateANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public StructureType Type = StructureType.LightEstimateANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public void* Next;
 
     [NativeName("state")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public LightEstimateStateANDROID State;
 
     [NativeName("lastUpdatedTime")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public long LastUpdatedTime;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     public LightEstimateANDROID() { }
 }

@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBodyJointLocationBD")]
+[SupportedApiProfile("openxr")]
 public partial struct BodyJointLocationBD
 {
     [NativeName("locationFlags")]
+    [SupportedApiProfile("openxr", ["XR_BD_body_tracking"])]
     public SpaceLocationFlags LocationFlags;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_BD_body_tracking"])]
     public Posef Pose;
 }

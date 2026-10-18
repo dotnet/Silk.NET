@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFormFactor")]
+[SupportedApiProfile("openxr")]
 public enum FormFactor : uint
 {
     [NativeName("XR_FORM_FACTOR_HEAD_MOUNTED_DISPLAY")]
+    [SupportedApiProfile("openxr")]
     HeadMountedDisplay = 1,
 
     [NativeName("XR_FORM_FACTOR_HANDHELD_DISPLAY")]
+    [SupportedApiProfile("openxr")]
     HandheldDisplay = 2,
 }

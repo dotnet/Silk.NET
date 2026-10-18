@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrWorldMeshBufferRecommendedSizeInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct WorldMeshBufferRecommendedSizeInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public StructureType Type = StructureType.WorldMeshBufferRecommendedSizeInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public void* Next;
 
     [NativeName("maxBlockCount")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public uint MaxBlockCount;
 
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public WorldMeshBufferRecommendedSizeInfoML() { }
 }

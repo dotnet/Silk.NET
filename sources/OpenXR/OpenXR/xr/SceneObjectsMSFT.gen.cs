@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneObjectsMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SceneObjectsMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public StructureType Type = StructureType.SceneObjectsMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public void* Next;
 
     [NativeName("sceneObjectCount")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public uint SceneObjectCount;
 
     [NativeName("sceneObjects")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public SceneObjectMSFT* SceneObjects;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public SceneObjectsMSFT() { }
 }

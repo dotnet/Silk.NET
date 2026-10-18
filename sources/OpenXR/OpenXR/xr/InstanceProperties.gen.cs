@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrInstanceProperties")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct InstanceProperties
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.InstanceProperties;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("runtimeVersion")]
+    [SupportedApiProfile("openxr")]
     public ulong RuntimeVersion;
 
     [NativeName("runtimeName")]
+    [SupportedApiProfile("openxr")]
     public InstancePropertiesRuntimeName RuntimeName;
 
+    [SupportedApiProfile("openxr")]
     public InstanceProperties() { }
 }

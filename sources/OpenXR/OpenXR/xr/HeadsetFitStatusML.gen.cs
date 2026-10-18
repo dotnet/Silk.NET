@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHeadsetFitStatusML")]
+[SupportedApiProfile("openxr")]
 public enum HeadsetFitStatusML : uint
 {
     [NativeName("XR_HEADSET_FIT_STATUS_UNKNOWN_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     Unknown = 0,
 
     [NativeName("XR_HEADSET_FIT_STATUS_NOT_WORN_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     NotWorn = 1,
 
     [NativeName("XR_HEADSET_FIT_STATUS_GOOD_FIT_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     GoodFit = 2,
 
     [NativeName("XR_HEADSET_FIT_STATUS_BAD_FIT_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     BadFit = 3,
 }

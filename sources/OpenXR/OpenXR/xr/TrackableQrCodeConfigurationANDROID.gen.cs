@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackableQrCodeConfigurationANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct TrackableQrCodeConfigurationANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public StructureType Type = StructureType.TrackableQrCodeConfigurationANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public void* Next;
 
     [NativeName("trackingMode")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public QrCodeTrackingModeANDROID TrackingMode;
 
     [NativeName("qrCodeEdgeSize")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public float QrCodeEdgeSize;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public TrackableQrCodeConfigurationANDROID() { }
 }

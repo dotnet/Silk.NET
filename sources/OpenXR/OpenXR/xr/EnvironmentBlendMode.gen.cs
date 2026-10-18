@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEnvironmentBlendMode")]
+[SupportedApiProfile("openxr")]
 public enum EnvironmentBlendMode : uint
 {
     [NativeName("XR_ENVIRONMENT_BLEND_MODE_OPAQUE")]
+    [SupportedApiProfile("openxr")]
     Opaque = 1,
 
     [NativeName("XR_ENVIRONMENT_BLEND_MODE_ADDITIVE")]
+    [SupportedApiProfile("openxr")]
     Additive = 2,
 
     [NativeName("XR_ENVIRONMENT_BLEND_MODE_ALPHA_BLEND")]
+    [SupportedApiProfile("openxr")]
     AlphaBlend = 3,
 }

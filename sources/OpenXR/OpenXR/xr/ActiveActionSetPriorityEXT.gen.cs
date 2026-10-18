@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrActiveActionSetPriorityEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ActiveActionSetPriorityEXT
 {
     [NativeName("actionSet")]
+    [SupportedApiProfile("openxr", ["XR_EXT_active_action_set_priority"])]
     public ActionSetHandle ActionSet;
 
     [NativeName("priorityOverride")]
+    [SupportedApiProfile("openxr", ["XR_EXT_active_action_set_priority"])]
     public uint PriorityOverride;
 }

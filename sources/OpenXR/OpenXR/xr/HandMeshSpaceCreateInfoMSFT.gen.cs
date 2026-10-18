@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHandMeshSpaceCreateInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct HandMeshSpaceCreateInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.HandMeshSpaceCreateInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("handPoseType")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public HandPoseTypeMSFT HandPoseType;
 
     [NativeName("poseInHandMeshSpace")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public Posef PoseInHandMeshSpace;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public HandMeshSpaceCreateInfoMSFT() { }
 }

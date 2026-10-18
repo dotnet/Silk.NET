@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRenderModelPropertiesFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct RenderModelPropertiesFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
     public StructureType Type = StructureType.RenderModelPropertiesFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
     public void* Next;
 
     [NativeName("vendorId")]
+    [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
     public uint VendorId;
 
     [NativeName("modelName")]
+    [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
     public RenderModelPropertiesFBModelName ModelName;
 
     [NativeName("modelKey")]
+    [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
     public ulong ModelKey;
 
     [NativeName("modelVersion")]
+    [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
     public uint ModelVersion;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
     public RenderModelFlagsFB Flags;
 
+    [SupportedApiProfile("openxr", ["XR_FB_render_model"])]
     public RenderModelPropertiesFB() { }
 }

@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrMarkerDetectorAprilTagInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct MarkerDetectorAprilTagInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     public StructureType Type = StructureType.MarkerDetectorAprilTagInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     public void* Next;
 
     [NativeName("aprilTagDict")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     public MarkerAprilTagDictML AprilTagDict;
 
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     public MarkerDetectorAprilTagInfoML() { }
 }

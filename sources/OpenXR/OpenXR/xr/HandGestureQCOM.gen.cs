@@ -9,14 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHandGestureQCOM")]
+[SupportedApiProfile("openxr")]
 public partial struct HandGestureQCOM
 {
     [NativeName("gesture")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_QCOM_hand_tracking_gesture"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public HandGestureTypeQCOM Gesture;
 
     [NativeName("gestureRatio")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_QCOM_hand_tracking_gesture"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public float GestureRatio;
 
     [NativeName("flipRatio")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_QCOM_hand_tracking_gesture"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public float FlipRatio;
 }

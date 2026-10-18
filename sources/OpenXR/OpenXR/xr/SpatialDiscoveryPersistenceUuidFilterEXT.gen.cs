@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialDiscoveryPersistenceUuidFilterEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialDiscoveryPersistenceUuidFilterEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialDiscoveryPersistenceUuidFilterEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("persistedUuidCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public uint PersistedUuidCount;
 
     [NativeName("persistedUuids")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public Uuid* PersistedUuids;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public SpatialDiscoveryPersistenceUuidFilterEXT() { }
 }

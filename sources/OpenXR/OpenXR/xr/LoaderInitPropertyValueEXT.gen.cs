@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrLoaderInitPropertyValueEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct LoaderInitPropertyValueEXT
 {
     [NativeName("name")]
+    [SupportedApiProfile("openxr")]
     public sbyte* Name;
 
     [NativeName("value")]
+    [SupportedApiProfile("openxr")]
     public sbyte* Value;
 }

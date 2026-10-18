@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrView")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct View
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.View;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr")]
     public Posef Pose;
 
     [NativeName("fov")]
+    [SupportedApiProfile("openxr")]
     public Fovf Fov;
 
+    [SupportedApiProfile("openxr")]
     public View() { }
 }

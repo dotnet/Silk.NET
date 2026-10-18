@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialEntityComponentGetInfoBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialEntityComponentGetInfoBD
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SpatialEntityComponentGetInfoBD;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("entityId")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public ulong EntityId;
 
     [NativeName("componentType")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public SpatialEntityComponentTypeBD ComponentType;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public SpatialEntityComponentGetInfoBD() { }
 }

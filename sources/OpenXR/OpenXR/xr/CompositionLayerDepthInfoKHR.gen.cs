@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerDepthInfoKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerDepthInfoKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_depth"])]
     public StructureType Type = StructureType.CompositionLayerDepthInfoKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_depth"])]
     public void* Next;
 
     [NativeName("subImage")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_depth"])]
     public SwapchainSubImage SubImage;
 
     [NativeName("minDepth")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_depth"])]
     public float MinDepth;
 
     [NativeName("maxDepth")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_depth"])]
     public float MaxDepth;
 
     [NativeName("nearZ")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_depth"])]
     public float NearZ;
 
     [NativeName("farZ")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_depth"])]
     public float FarZ;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_depth"])]
     public CompositionLayerDepthInfoKHR() { }
 }

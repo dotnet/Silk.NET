@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFrameState")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FrameState
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.FrameState;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("predictedDisplayTime")]
+    [SupportedApiProfile("openxr")]
     public long PredictedDisplayTime;
 
     [NativeName("predictedDisplayPeriod")]
+    [SupportedApiProfile("openxr")]
     public long PredictedDisplayPeriod;
 
     [NativeName("shouldRender")]
+    [SupportedApiProfile("openxr")]
     public MaybeBool<uint> ShouldRender;
 
+    [SupportedApiProfile("openxr")]
     public FrameState() { }
 }

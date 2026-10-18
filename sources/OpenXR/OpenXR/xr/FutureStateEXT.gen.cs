@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFutureStateEXT")]
+[SupportedApiProfile("openxr")]
 public enum FutureStateEXT : uint
 {
     [NativeName("XR_FUTURE_STATE_PENDING_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_future"])]
     Pending = 1,
 
     [NativeName("XR_FUTURE_STATE_READY_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_future"])]
     Ready = 2,
 }

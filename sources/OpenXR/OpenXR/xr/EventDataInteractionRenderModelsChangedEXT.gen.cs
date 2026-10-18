@@ -9,13 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataInteractionRenderModelsChangedEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataInteractionRenderModelsChangedEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_interaction_render_model"],
+        ImpliesSets = ["XR_EXT_render_model"]
+    )]
     public StructureType Type = StructureType.EventDataInteractionRenderModelsChangedEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_interaction_render_model"],
+        ImpliesSets = ["XR_EXT_render_model"]
+    )]
     public void* Next;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_interaction_render_model"],
+        ImpliesSets = ["XR_EXT_render_model"]
+    )]
     public EventDataInteractionRenderModelsChangedEXT() { }
 }

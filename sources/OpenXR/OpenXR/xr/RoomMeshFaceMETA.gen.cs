@@ -9,14 +9,42 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRoomMeshFaceMETA")]
+[SupportedApiProfile("openxr")]
 public partial struct RoomMeshFaceMETA
 {
     [NativeName("uuid")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_room_mesh"],
+        ImpliesSets = [
+            "XR_FB_spatial_entity",
+            "XR_META_spatial_entity_semantic_label",
+            "XR_VERSION_1_0",
+        ]
+    )]
     public Uuid Uuid;
 
     [NativeName("parentUuid")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_room_mesh"],
+        ImpliesSets = [
+            "XR_FB_spatial_entity",
+            "XR_META_spatial_entity_semantic_label",
+            "XR_VERSION_1_0",
+        ]
+    )]
     public Uuid ParentUuid;
 
     [NativeName("semanticLabel")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_room_mesh"],
+        ImpliesSets = [
+            "XR_FB_spatial_entity",
+            "XR_META_spatial_entity_semantic_label",
+            "XR_VERSION_1_0",
+        ]
+    )]
     public SemanticLabelMETA SemanticLabel;
 }

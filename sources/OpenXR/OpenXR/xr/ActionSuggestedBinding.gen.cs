@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrActionSuggestedBinding")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ActionSuggestedBinding
 {
     [NativeName("action")]
+    [SupportedApiProfile("openxr")]
     public ActionHandle Action;
 
     [NativeName("binding")]
+    [SupportedApiProfile("openxr")]
     public ulong Binding;
 }

@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataViewConfigurationViewsChangedEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataViewConfigurationViewsChangedEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_views_change"])]
     public StructureType Type = StructureType.EventDataViewConfigurationViewsChangedEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_views_change"])]
     public void* Next;
 
     [NativeName("systemId")]
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_views_change"])]
     public ulong SystemId;
 
     [NativeName("viewConfigurationType")]
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_views_change"])]
     public ViewConfigurationType ViewConfigurationType;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_views_change"])]
     public EventDataViewConfigurationViewsChangedEXT() { }
 }

@@ -9,8 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMarkerTypeMSFT")]
+[SupportedApiProfile("openxr")]
 public enum SceneMarkerTypeMSFT : uint
 {
     [NativeName("XR_SCENE_MARKER_TYPE_QR_CODE_MSFT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_marker"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     QrCode = 1,
 }

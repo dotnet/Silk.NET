@@ -9,17 +9,34 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSenseDataProviderTypeBD")]
+[SupportedApiProfile("openxr")]
 public enum SenseDataProviderTypeBD : uint
 {
     [NativeName("XR_SENSE_DATA_PROVIDER_TYPE_ANCHOR_BD")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     Anchor = 1000390000,
 
     [NativeName("XR_SENSE_DATA_PROVIDER_TYPE_SCENE_BD")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_scene"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     Scene = 1000392000,
 
     [NativeName("XR_SENSE_DATA_PROVIDER_TYPE_MESH_BD")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_mesh"], ImpliesSets = ["XR_BD_spatial_sensing"])]
     Mesh = 1000393000,
 
     [NativeName("XR_SENSE_DATA_PROVIDER_TYPE_PLANE_BD")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_plane"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     Plane = 1000396000,
 }

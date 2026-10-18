@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemPassthroughLayerPropertiesANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemPassthroughLayerPropertiesANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public StructureType Type = StructureType.SystemPassthroughLayerPropertiesANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public void* Next;
 
     [NativeName("supportsPassthroughLayer")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public MaybeBool<uint> SupportsPassthroughLayer;
 
     [NativeName("maxMeshIndexCount")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public uint MaxMeshIndexCount;
 
     [NativeName("maxMeshVertexCount")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public uint MaxMeshVertexCount;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public SystemPassthroughLayerPropertiesANDROID() { }
 }

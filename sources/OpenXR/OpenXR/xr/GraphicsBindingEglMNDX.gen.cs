@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrGraphicsBindingEGLMNDX")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct GraphicsBindingEglMNDX
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MNDX_egl_enable"])]
     public StructureType Type = StructureType.GraphicsBindingEglMNDX;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MNDX_egl_enable"])]
     public void* Next;
 
     [NativeName("getProcAddress")]
+    [SupportedApiProfile("openxr", ["XR_MNDX_egl_enable"])]
     public EglGetProcAddressMNDX GetProcAddress;
 
     [NativeName("display")]
+    [SupportedApiProfile("openxr", ["XR_MNDX_egl_enable"])]
     public void* Display;
 
     [NativeName("config")]
+    [SupportedApiProfile("openxr", ["XR_MNDX_egl_enable"])]
     public void* Config;
 
     [NativeName("context")]
+    [SupportedApiProfile("openxr", ["XR_MNDX_egl_enable"])]
     public void* Context;
 
+    [SupportedApiProfile("openxr", ["XR_MNDX_egl_enable"])]
     public GraphicsBindingEglMNDX() { }
 }

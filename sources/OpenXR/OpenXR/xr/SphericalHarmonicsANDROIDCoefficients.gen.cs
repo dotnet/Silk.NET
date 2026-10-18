@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_coefficients_e__FixedBuffer")]
 [InlineArray(9 * 3)]
+[SupportedApiProfile("openxr")]
 public partial struct SphericalHarmonicsANDROIDCoefficients
 {
     [NativeName("e0_0")]
+    [SupportedApiProfile("openxr")]
     public float E0x0;
 }

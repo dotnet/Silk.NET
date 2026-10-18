@@ -9,31 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVisibilityMaskKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct VisibilityMaskKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public StructureType Type = StructureType.VisibilityMaskKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public void* Next;
 
     [NativeName("vertexCapacityInput")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public uint VertexCapacityInput;
 
     [NativeName("vertexCountOutput")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public uint VertexCountOutput;
 
     [NativeName("vertices")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public Vector2F* Vertices;
 
     [NativeName("indexCapacityInput")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public uint IndexCapacityInput;
 
     [NativeName("indexCountOutput")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public uint IndexCountOutput;
 
     [NativeName("indices")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public uint* Indices;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public VisibilityMaskKHR() { }
 }

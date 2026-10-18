@@ -9,31 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerPassthroughANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerPassthroughANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public StructureType Type = StructureType.CompositionLayerPassthroughANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public void* Next;
 
     [NativeName("layerFlags")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public CompositionLayerFlags LayerFlags;
 
     [NativeName("space")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public SpaceHandle Space;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public Posef Pose;
 
     [NativeName("scale")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public Vector3F Scale;
 
     [NativeName("opacity")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public float Opacity;
 
     [NativeName("layer")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public PassthroughLayerHandleANDROID Layer;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_composition_layer_passthrough_mesh"])]
     public CompositionLayerPassthroughANDROID() { }
 }

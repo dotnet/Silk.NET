@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFaceExpressionStatusFB")]
+[SupportedApiProfile("openxr")]
 public partial struct FaceExpressionStatusFB
 {
     [NativeName("isValid")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public MaybeBool<uint> IsValid;
 
     [NativeName("isEyeFollowingBlendshapesValid")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking"])]
     public MaybeBool<uint> IsEyeFollowingBlendshapesValid;
 }

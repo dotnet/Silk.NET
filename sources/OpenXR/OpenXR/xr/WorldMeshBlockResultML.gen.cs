@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrWorldMeshBlockResultML")]
+[SupportedApiProfile("openxr")]
 public enum WorldMeshBlockResultML : uint
 {
     [NativeName("XR_WORLD_MESH_BLOCK_RESULT_SUCCESS_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     Success = 0,
 
     [NativeName("XR_WORLD_MESH_BLOCK_RESULT_FAILED_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     Failed = 1,
 
     [NativeName("XR_WORLD_MESH_BLOCK_RESULT_PENDING_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     Pending = 2,
 
     [NativeName("XR_WORLD_MESH_BLOCK_RESULT_PARTIAL_UPDATE_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     PartialUpdate = 3,
 }

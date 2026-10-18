@@ -9,13 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrStationaryReferenceSpaceGenerationIdGetInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct StationaryReferenceSpaceGenerationIdGetInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_stationary_reference_space"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.StationaryReferenceSpaceGenerationIdGetInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_stationary_reference_space"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_stationary_reference_space"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public StationaryReferenceSpaceGenerationIdGetInfoEXT() { }
 }

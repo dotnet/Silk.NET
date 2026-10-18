@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataBuffer")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataBuffer
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.EventDataBuffer;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("varying")]
+    [SupportedApiProfile("openxr")]
     public EventDataBufferVarying Varying;
 
+    [SupportedApiProfile("openxr")]
     public EventDataBuffer() { }
 }

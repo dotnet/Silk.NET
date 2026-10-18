@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialComponentPlaneSemanticLabelListEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialComponentPlaneSemanticLabelListEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialComponentPlaneSemanticLabelListEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("semanticLabelCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public uint SemanticLabelCount;
 
     [NativeName("semanticLabels")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialPlaneSemanticLabelEXT* SemanticLabels;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialComponentPlaneSemanticLabelListEXT() { }
 }

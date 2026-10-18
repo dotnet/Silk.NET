@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRenderModelCreateInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct RenderModelCreateInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public StructureType Type = StructureType.RenderModelCreateInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public void* Next;
 
     [NativeName("renderModelId")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public ulong RenderModelId;
 
     [NativeName("gltfExtensionCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public uint GltfExtensionCount;
 
     [NativeName("gltfExtensions")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public sbyte** GltfExtensions;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public RenderModelCreateInfoEXT() { }
 }

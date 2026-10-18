@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrActionSpaceCreateInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ActionSpaceCreateInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.ActionSpaceCreateInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("action")]
+    [SupportedApiProfile("openxr")]
     public ActionHandle Action;
 
     [NativeName("subactionPath")]
+    [SupportedApiProfile("openxr")]
     public ulong SubactionPath;
 
     [NativeName("poseInActionSpace")]
+    [SupportedApiProfile("openxr")]
     public Posef PoseInActionSpace;
 
+    [SupportedApiProfile("openxr")]
     public ActionSpaceCreateInfo() { }
 }

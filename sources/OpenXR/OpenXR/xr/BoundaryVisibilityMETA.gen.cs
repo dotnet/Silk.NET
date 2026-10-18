@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBoundaryVisibilityMETA")]
+[SupportedApiProfile("openxr")]
 public enum BoundaryVisibilityMETA : uint
 {
     [NativeName("XR_BOUNDARY_VISIBILITY_NOT_SUPPRESSED_META")]
+    [SupportedApiProfile("openxr", ["XR_META_boundary_visibility"])]
     NotSuppressed = 1,
 
     [NativeName("XR_BOUNDARY_VISIBILITY_SUPPRESSED_META")]
+    [SupportedApiProfile("openxr", ["XR_META_boundary_visibility"])]
     Suppressed = 2,
 }

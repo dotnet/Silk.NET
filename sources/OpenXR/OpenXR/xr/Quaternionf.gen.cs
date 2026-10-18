@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrQuaternionf")]
+[SupportedApiProfile("openxr")]
 public partial struct Quaternionf
 {
     [NativeName("x")]
+    [SupportedApiProfile("openxr")]
     public float X;
 
     [NativeName("y")]
+    [SupportedApiProfile("openxr")]
     public float Y;
 
     [NativeName("z")]
+    [SupportedApiProfile("openxr")]
     public float Z;
 
     [NativeName("w")]
+    [SupportedApiProfile("openxr")]
     public float W;
 }

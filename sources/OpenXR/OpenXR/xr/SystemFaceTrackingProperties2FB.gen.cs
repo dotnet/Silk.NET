@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemFaceTrackingProperties2FB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemFaceTrackingProperties2FB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     public StructureType Type = StructureType.SystemFaceTrackingProperties2FB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     public void* Next;
 
     [NativeName("supportsVisualFaceTracking")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     public MaybeBool<uint> SupportsVisualFaceTracking;
 
     [NativeName("supportsAudioFaceTracking")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     public MaybeBool<uint> SupportsAudioFaceTracking;
 
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     public SystemFaceTrackingProperties2FB() { }
 }

@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPerformanceMetricsStateANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PerformanceMetricsStateANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public StructureType Type = StructureType.PerformanceMetricsStateANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public void* Next;
 
     [NativeName("enabled")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public MaybeBool<uint> Enabled;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public PerformanceMetricsStateANDROID() { }
 }

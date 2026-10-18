@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFutureCompletionBaseHeaderEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FutureCompletionBaseHeaderEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_future"])]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_future"])]
     public void* Next;
 
     [NativeName("futureResult")]
+    [SupportedApiProfile("openxr", ["XR_EXT_future"])]
     public Result FutureResult;
 }

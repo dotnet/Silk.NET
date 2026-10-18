@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRenderModelPropertiesEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct RenderModelPropertiesEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public StructureType Type = StructureType.RenderModelPropertiesEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public void* Next;
 
     [NativeName("cacheId")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public Uuid CacheId;
 
     [NativeName("animatableNodeCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public uint AnimatableNodeCount;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public RenderModelPropertiesEXT() { }
 }

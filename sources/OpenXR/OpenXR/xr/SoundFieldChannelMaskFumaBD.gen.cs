@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSoundFieldChannelMaskFumaBD")]
+[SupportedApiProfile("openxr")]
 public enum SoundFieldChannelMaskFumaBD : uint
 {
     [NativeName("XR_SOUND_FIELD_CHANNEL_MASK_FUMA_1ST_ORDER_BD")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     Fuma1StOrder = 1,
 }

@@ -9,4 +9,5 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("PFN_xrVoidFunction")]
+[SupportedApiProfile("openxr")]
 public unsafe delegate void VoidFunctionDelegate();

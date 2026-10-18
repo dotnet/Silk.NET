@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrUuid")]
+[SupportedApiProfile("openxr")]
 public partial struct Uuid
 {
     [NativeName("data")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public UuidData Data;
 }

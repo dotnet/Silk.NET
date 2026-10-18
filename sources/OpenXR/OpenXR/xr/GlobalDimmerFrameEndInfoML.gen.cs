@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrGlobalDimmerFrameEndInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct GlobalDimmerFrameEndInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_global_dimmer"])]
     public StructureType Type = StructureType.GlobalDimmerFrameEndInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_global_dimmer"])]
     public void* Next;
 
     [NativeName("dimmerValue")]
+    [SupportedApiProfile("openxr", ["XR_ML_global_dimmer"])]
     public float DimmerValue;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_ML_global_dimmer"])]
     public GlobalDimmerFrameEndInfoFlagsML Flags;
 
+    [SupportedApiProfile("openxr", ["XR_ML_global_dimmer"])]
     public GlobalDimmerFrameEndInfoML() { }
 }

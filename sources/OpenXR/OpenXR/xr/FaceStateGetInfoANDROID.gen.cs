@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFaceStateGetInfoANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FaceStateGetInfoANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_face_tracking"])]
     public StructureType Type = StructureType.FaceStateGetInfoANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_face_tracking"])]
     public void* Next;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_face_tracking"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_face_tracking"])]
     public FaceStateGetInfoANDROID() { }
 }

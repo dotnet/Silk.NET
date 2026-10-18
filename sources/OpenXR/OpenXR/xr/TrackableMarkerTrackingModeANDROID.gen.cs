@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackableMarkerTrackingModeANDROID")]
+[SupportedApiProfile("openxr")]
 public enum TrackableMarkerTrackingModeANDROID : uint
 {
     [NativeName("XR_TRACKABLE_MARKER_TRACKING_MODE_DYNAMIC_ANDROID")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     Dynamic = 0,
 
     [NativeName("XR_TRACKABLE_MARKER_TRACKING_MODE_STATIC_ANDROID")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     Static = 1,
 }

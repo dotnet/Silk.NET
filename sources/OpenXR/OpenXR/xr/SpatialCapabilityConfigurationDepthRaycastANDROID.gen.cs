@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialCapabilityConfigurationDepthRaycastANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialCapabilityConfigurationDepthRaycastANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_discovery_raycast"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialCapabilityConfigurationDepthRaycastANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_discovery_raycast"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("capability")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_discovery_raycast"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialCapabilityEXT Capability;
 
     [NativeName("enabledComponentCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_discovery_raycast"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public uint EnabledComponentCount;
 
     [NativeName("enabledComponents")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_discovery_raycast"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialComponentTypeEXT* EnabledComponents;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_discovery_raycast"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialCapabilityConfigurationDepthRaycastANDROID() { }
 }

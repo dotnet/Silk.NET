@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrActionStateFloat")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ActionStateFloat
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.ActionStateFloat;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("currentState")]
+    [SupportedApiProfile("openxr")]
     public float CurrentState;
 
     [NativeName("changedSinceLastSync")]
+    [SupportedApiProfile("openxr")]
     public MaybeBool<uint> ChangedSinceLastSync;
 
     [NativeName("lastChangeTime")]
+    [SupportedApiProfile("openxr")]
     public long LastChangeTime;
 
     [NativeName("isActive")]
+    [SupportedApiProfile("openxr")]
     public MaybeBool<uint> IsActive;
 
+    [SupportedApiProfile("openxr")]
     public ActionStateFloat() { }
 }

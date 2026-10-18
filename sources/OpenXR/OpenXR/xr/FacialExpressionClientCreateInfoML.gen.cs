@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFacialExpressionClientCreateInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FacialExpressionClientCreateInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public StructureType Type = StructureType.FacialExpressionClientCreateInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public void* Next;
 
     [NativeName("requestedCount")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public uint RequestedCount;
 
     [NativeName("requestedFacialBlendShapes")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public FacialBlendShapeML* RequestedFacialBlendShapes;
 
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public FacialExpressionClientCreateInfoML() { }
 }

@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrAudioBufferBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct AudioBufferBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public StructureType Type = StructureType.AudioBufferBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public void* Next;
 
     [NativeName("channelLayout")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public AudioBufferChannelLayoutBD ChannelLayout;
 
     [NativeName("bufferChannels")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public uint BufferChannels;
 
     [NativeName("bufferLength")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public uint BufferLength;
 
     [NativeName("buffer")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float* Buffer;
 
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public AudioBufferBD() { }
 }

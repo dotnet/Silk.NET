@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFoveationLevelHTC")]
+[SupportedApiProfile("openxr")]
 public enum FoveationLevelHTC : uint
 {
     [NativeName("XR_FOVEATION_LEVEL_NONE_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     None = 0,
 
     [NativeName("XR_FOVEATION_LEVEL_LOW_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     Low = 1,
 
     [NativeName("XR_FOVEATION_LEVEL_MEDIUM_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     Medium = 2,
 
     [NativeName("XR_FOVEATION_LEVEL_HIGH_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     High = 3,
 }

@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrViewLocateInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ViewLocateInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.ViewLocateInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("viewConfigurationType")]
+    [SupportedApiProfile("openxr")]
     public ViewConfigurationType ViewConfigurationType;
 
     [NativeName("displayTime")]
+    [SupportedApiProfile("openxr")]
     public long DisplayTime;
 
     [NativeName("space")]
+    [SupportedApiProfile("openxr")]
     public SpaceHandle Space;
 
+    [SupportedApiProfile("openxr")]
     public ViewLocateInfo() { }
 }

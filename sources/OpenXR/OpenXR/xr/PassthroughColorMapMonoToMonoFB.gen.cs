@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughColorMapMonoToMonoFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PassthroughColorMapMonoToMonoFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public StructureType Type = StructureType.PassthroughColorMapMonoToMonoFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public void* Next;
 
     [NativeName("textureColorMap")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public PassthroughColorMapMonoToMonoFBTextureColorMap TextureColorMap;
 
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public PassthroughColorMapMonoToMonoFB() { }
 }

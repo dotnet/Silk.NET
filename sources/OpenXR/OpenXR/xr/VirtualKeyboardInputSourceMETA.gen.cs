@@ -9,29 +9,38 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVirtualKeyboardInputSourceMETA")]
+[SupportedApiProfile("openxr")]
 public enum VirtualKeyboardInputSourceMETA : uint
 {
     [NativeName("XR_VIRTUAL_KEYBOARD_INPUT_SOURCE_CONTROLLER_RAY_LEFT_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     ControllerRayLeft = 1,
 
     [NativeName("XR_VIRTUAL_KEYBOARD_INPUT_SOURCE_CONTROLLER_RAY_RIGHT_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     ControllerRayRight = 2,
 
     [NativeName("XR_VIRTUAL_KEYBOARD_INPUT_SOURCE_HAND_RAY_LEFT_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     HandRayLeft = 3,
 
     [NativeName("XR_VIRTUAL_KEYBOARD_INPUT_SOURCE_HAND_RAY_RIGHT_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     HandRayRight = 4,
 
     [NativeName("XR_VIRTUAL_KEYBOARD_INPUT_SOURCE_CONTROLLER_DIRECT_LEFT_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     ControllerDirectLeft = 5,
 
     [NativeName("XR_VIRTUAL_KEYBOARD_INPUT_SOURCE_CONTROLLER_DIRECT_RIGHT_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     ControllerDirectRight = 6,
 
     [NativeName("XR_VIRTUAL_KEYBOARD_INPUT_SOURCE_HAND_DIRECT_INDEX_TIP_LEFT_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     HandDirectIndexTipLeft = 7,
 
     [NativeName("XR_VIRTUAL_KEYBOARD_INPUT_SOURCE_HAND_DIRECT_INDEX_TIP_RIGHT_META")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     HandDirectIndexTipRight = 8,
 }

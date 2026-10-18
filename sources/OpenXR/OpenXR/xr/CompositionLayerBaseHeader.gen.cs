@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerBaseHeader")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerBaseHeader
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("layerFlags")]
+    [SupportedApiProfile("openxr")]
     public CompositionLayerFlags LayerFlags;
 
     [NativeName("space")]
+    [SupportedApiProfile("openxr")]
     public SpaceHandle Space;
 }

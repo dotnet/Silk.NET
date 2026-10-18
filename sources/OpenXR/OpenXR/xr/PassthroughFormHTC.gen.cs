@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughFormHTC")]
+[SupportedApiProfile("openxr")]
 public enum PassthroughFormHTC : uint
 {
     [NativeName("XR_PASSTHROUGH_FORM_PLANAR_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     Planar = 0,
 
     [NativeName("XR_PASSTHROUGH_FORM_PROJECTED_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_passthrough"])]
     Projected = 1,
 }

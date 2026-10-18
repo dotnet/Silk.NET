@@ -9,8 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceQueryActionFB")]
+[SupportedApiProfile("openxr")]
 public enum SpaceQueryActionFB : uint
 {
     [NativeName("XR_SPACE_QUERY_ACTION_LOAD_FB")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     Load = 0,
 }

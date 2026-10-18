@@ -9,40 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerEquirect2KHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerEquirect2KHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public StructureType Type = StructureType.CompositionLayerEquirect2KHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public void* Next;
 
     [NativeName("layerFlags")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public CompositionLayerFlags LayerFlags;
 
     [NativeName("space")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public SpaceHandle Space;
 
     [NativeName("eyeVisibility")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public EyeVisibility EyeVisibility;
 
     [NativeName("subImage")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public SwapchainSubImage SubImage;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public Posef Pose;
 
     [NativeName("radius")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public float Radius;
 
     [NativeName("centralHorizontalAngle")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public float CentralHorizontalAngle;
 
     [NativeName("upperVerticalAngle")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public float UpperVerticalAngle;
 
     [NativeName("lowerVerticalAngle")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public float LowerVerticalAngle;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_equirect2"])]
     public CompositionLayerEquirect2KHR() { }
 }

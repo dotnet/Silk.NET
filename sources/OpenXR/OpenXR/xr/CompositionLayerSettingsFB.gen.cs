@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerSettingsFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerSettingsFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_settings"])]
     public StructureType Type = StructureType.CompositionLayerSettingsFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_settings"])]
     public void* Next;
 
     [NativeName("layerFlags")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_settings"])]
     public CompositionLayerSettingsFlagsFB LayerFlags;
 
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_settings"])]
     public CompositionLayerSettingsFB() { }
 }

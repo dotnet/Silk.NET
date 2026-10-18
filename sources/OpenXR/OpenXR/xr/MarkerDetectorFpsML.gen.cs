@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrMarkerDetectorFpsML")]
+[SupportedApiProfile("openxr")]
 public enum MarkerDetectorFpsML : uint
 {
     [NativeName("XR_MARKER_DETECTOR_FPS_LOW_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Low = 0,
 
     [NativeName("XR_MARKER_DETECTOR_FPS_MEDIUM_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Medium = 1,
 
     [NativeName("XR_MARKER_DETECTOR_FPS_HIGH_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     High = 2,
 
     [NativeName("XR_MARKER_DETECTOR_FPS_MAX_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Max = 3,
 }

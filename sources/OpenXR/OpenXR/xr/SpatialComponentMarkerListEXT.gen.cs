@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialComponentMarkerListEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialComponentMarkerListEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialComponentMarkerListEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("markerCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public uint MarkerCount;
 
     [NativeName("markers")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialMarkerDataEXT* Markers;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialComponentMarkerListEXT() { }
 }

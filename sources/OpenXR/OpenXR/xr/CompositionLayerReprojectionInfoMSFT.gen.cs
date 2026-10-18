@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerReprojectionInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerReprojectionInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_composition_layer_reprojection"])]
     public StructureType Type = StructureType.CompositionLayerReprojectionInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_composition_layer_reprojection"])]
     public void* Next;
 
     [NativeName("reprojectionMode")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_composition_layer_reprojection"])]
     public ReprojectionModeMSFT ReprojectionMode;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_composition_layer_reprojection"])]
     public CompositionLayerReprojectionInfoMSFT() { }
 }

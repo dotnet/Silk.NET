@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneOrientedBoxBoundMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct SceneOrientedBoxBoundMSFT
 {
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public Posef Pose;
 
     [NativeName("extents")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public Vector3F Extents;
 }

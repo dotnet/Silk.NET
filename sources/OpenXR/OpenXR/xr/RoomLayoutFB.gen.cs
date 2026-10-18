@@ -9,28 +9,69 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRoomLayoutFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct RoomLayoutFB
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.RoomLayoutFB;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("floorUuid")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public Uuid FloorUuid;
 
     [NativeName("ceilingUuid")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public Uuid CeilingUuid;
 
     [NativeName("wallUuidCapacityInput")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public uint WallUuidCapacityInput;
 
     [NativeName("wallUuidCountOutput")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public uint WallUuidCountOutput;
 
     [NativeName("wallUuids")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public Uuid* WallUuids;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public RoomLayoutFB() { }
 }

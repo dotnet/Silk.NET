@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPlaneLabelANDROID")]
+[SupportedApiProfile("openxr")]
 public enum PlaneLabelANDROID : uint
 {
     [NativeName("XR_PLANE_LABEL_UNKNOWN_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     Unknown = 0,
 
     [NativeName("XR_PLANE_LABEL_WALL_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     Wall = 1,
 
     [NativeName("XR_PLANE_LABEL_FLOOR_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     Floor = 2,
 
     [NativeName("XR_PLANE_LABEL_CEILING_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     Ceiling = 3,
 
     [NativeName("XR_PLANE_LABEL_TABLE_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     Table = 4,
 }

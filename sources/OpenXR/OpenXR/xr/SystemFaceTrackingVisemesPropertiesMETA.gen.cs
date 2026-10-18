@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemFaceTrackingVisemesPropertiesMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemFaceTrackingVisemesPropertiesMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_face_tracking_visemes"],
+        ImpliesSets = ["XR_FB_face_tracking2", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SystemFaceTrackingVisemesPropertiesMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_face_tracking_visemes"],
+        ImpliesSets = ["XR_FB_face_tracking2", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("supportsVisemes")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_face_tracking_visemes"],
+        ImpliesSets = ["XR_FB_face_tracking2", "XR_VERSION_1_0"]
+    )]
     public MaybeBool<uint> SupportsVisemes;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_face_tracking_visemes"],
+        ImpliesSets = ["XR_FB_face_tracking2", "XR_VERSION_1_0"]
+    )]
     public SystemFaceTrackingVisemesPropertiesMETA() { }
 }

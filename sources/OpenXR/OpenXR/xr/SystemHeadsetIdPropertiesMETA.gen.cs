@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemHeadsetIdPropertiesMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemHeadsetIdPropertiesMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_headset_id"])]
     public StructureType Type = StructureType.SystemHeadsetIdPropertiesMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_headset_id"])]
     public void* Next;
 
     [NativeName("id")]
+    [SupportedApiProfile("openxr", ["XR_META_headset_id"])]
     public Uuid Id;
 
+    [SupportedApiProfile("openxr", ["XR_META_headset_id"])]
     public SystemHeadsetIdPropertiesMETA() { }
 }

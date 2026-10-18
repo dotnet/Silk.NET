@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMarkerQRCodeSymbolTypeMSFT")]
+[SupportedApiProfile("openxr")]
 public enum SceneMarkerQRCodeSymbolTypeMSFT : uint
 {
     [NativeName("XR_SCENE_MARKER_QR_CODE_SYMBOL_TYPE_QR_CODE_MSFT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_marker"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     QrCode = 1,
 
     [NativeName("XR_SCENE_MARKER_QR_CODE_SYMBOL_TYPE_MICRO_QR_CODE_MSFT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_marker"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     MicroQrCode = 2,
 }

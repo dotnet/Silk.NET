@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrAttenuationCurvePointBD")]
+[SupportedApiProfile("openxr")]
 public partial struct AttenuationCurvePointBD
 {
     [NativeName("distance")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float Distance;
 
     [NativeName("gain")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float Gain;
 }

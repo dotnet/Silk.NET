@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPerfSettingsDomainEXT")]
+[SupportedApiProfile("openxr")]
 public enum PerfSettingsDomainEXT : uint
 {
     [NativeName("XR_PERF_SETTINGS_DOMAIN_CPU_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings", "XR_EXT_thermal_query"])]
     Cpu = 1,
 
     [NativeName("XR_PERF_SETTINGS_DOMAIN_GPU_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings", "XR_EXT_thermal_query"])]
     Gpu = 2,
 }

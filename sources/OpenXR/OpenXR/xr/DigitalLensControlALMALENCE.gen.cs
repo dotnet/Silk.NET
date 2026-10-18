@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrDigitalLensControlALMALENCE")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct DigitalLensControlALMALENCE
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.DigitalLensControlALMALENCE;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr")]
     public DigitalLensControlFlagsALMALENCE Flags;
 
+    [SupportedApiProfile("openxr")]
     public DigitalLensControlALMALENCE() { }
 }

@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFoveationConfigurationHTC")]
+[SupportedApiProfile("openxr")]
 public partial struct FoveationConfigurationHTC
 {
     [NativeName("level")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public FoveationLevelHTC Level;
 
     [NativeName("clearFovDegree")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public float ClearFovDegree;
 
     [NativeName("focalCenterOffset")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     public Vector2F FocalCenterOffset;
 }

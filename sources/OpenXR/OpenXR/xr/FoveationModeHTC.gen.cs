@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFoveationModeHTC")]
+[SupportedApiProfile("openxr")]
 public enum FoveationModeHTC : uint
 {
     [NativeName("XR_FOVEATION_MODE_DISABLE_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     Disable = 0,
 
     [NativeName("XR_FOVEATION_MODE_FIXED_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     Fixed = 1,
 
     [NativeName("XR_FOVEATION_MODE_DYNAMIC_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     Dynamic = 2,
 
     [NativeName("XR_FOVEATION_MODE_CUSTOM_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_foveation"])]
     Custom = 3,
 }

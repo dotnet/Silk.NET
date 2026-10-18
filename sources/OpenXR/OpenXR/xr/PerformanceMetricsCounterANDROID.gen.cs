@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPerformanceMetricsCounterANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PerformanceMetricsCounterANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public StructureType Type = StructureType.PerformanceMetricsCounterANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public void* Next;
 
     [NativeName("counterFlags")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public PerformanceMetricsCounterFlagsANDROID CounterFlags;
 
     [NativeName("counterUnit")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public PerformanceMetricsCounterUnitANDROID CounterUnit;
 
     [NativeName("uintValue")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public uint UintValue;
 
     [NativeName("floatValue")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public float FloatValue;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_performance_metrics"])]
     public PerformanceMetricsCounterANDROID() { }
 }

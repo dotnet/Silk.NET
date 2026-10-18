@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSwapchainSubImage")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SwapchainSubImage
 {
     [NativeName("swapchain")]
+    [SupportedApiProfile("openxr")]
     public SwapchainHandle Swapchain;
 
     [NativeName("imageRect")]
+    [SupportedApiProfile("openxr")]
     public Rect2Di ImageRect;
 
     [NativeName("imageArrayIndex")]
+    [SupportedApiProfile("openxr")]
     public uint ImageArrayIndex;
 }

@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEnvironmentDepthImageTimestampMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EnvironmentDepthImageTimestampMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public StructureType Type = StructureType.EnvironmentDepthImageTimestampMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public void* Next;
 
     [NativeName("captureTime")]
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public long CaptureTime;
 
+    [SupportedApiProfile("openxr", ["XR_META_environment_depth"])]
     public EnvironmentDepthImageTimestampMETA() { }
 }

@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVector3f")]
+[SupportedApiProfile("openxr")]
 public partial struct Vector3F
 {
     [NativeName("x")]
+    [SupportedApiProfile("openxr")]
     public float X;
 
     [NativeName("y")]
+    [SupportedApiProfile("openxr")]
     public float Y;
 
     [NativeName("z")]
+    [SupportedApiProfile("openxr")]
     public float Z;
 }

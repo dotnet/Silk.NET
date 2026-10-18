@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataMainSessionVisibilityChangedEXTX")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataMainSessionVisibilityChangedEXTX
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
     public StructureType Type = StructureType.EventDataMainSessionVisibilityChangedEXTX;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
     public void* Next;
 
     [NativeName("visible")]
+    [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
     public MaybeBool<uint> Visible;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
     public OverlayMainSessionFlagsEXTX Flags;
 
+    [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
     public EventDataMainSessionVisibilityChangedEXTX() { }
 }

@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrActiveActionSet")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ActiveActionSet
 {
     [NativeName("actionSet")]
+    [SupportedApiProfile("openxr")]
     public ActionSetHandle ActionSet;
 
     [NativeName("subactionPath")]
+    [SupportedApiProfile("openxr")]
     public ulong SubactionPath;
 }

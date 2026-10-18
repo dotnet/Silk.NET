@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEyePositionFB")]
+[SupportedApiProfile("openxr")]
 public enum EyePositionFB : uint
 {
     [NativeName("XR_EYE_POSITION_LEFT_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     Left = 0,
 
     [NativeName("XR_EYE_POSITION_RIGHT_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     Right = 1,
 
     [NativeName("XR_EYE_POSITION_COUNT_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     Count = 2,
 }

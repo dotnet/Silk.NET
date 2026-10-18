@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialCapabilityConfigurationMicroQrCodeEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialCapabilityConfigurationMicroQrCodeEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialCapabilityConfigurationMicroQrCodeEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("capability")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialCapabilityEXT Capability;
 
     [NativeName("enabledComponentCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public uint EnabledComponentCount;
 
     [NativeName("enabledComponents")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialComponentTypeEXT* EnabledComponents;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialCapabilityConfigurationMicroQrCodeEXT() { }
 }

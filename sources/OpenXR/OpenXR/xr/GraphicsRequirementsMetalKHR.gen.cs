@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrGraphicsRequirementsMetalKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct GraphicsRequirementsMetalKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_metal_enable"])]
     public StructureType Type = StructureType.GraphicsRequirementsMetalKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_metal_enable"])]
     public void* Next;
 
     [NativeName("metalDevice")]
+    [SupportedApiProfile("openxr", ["XR_KHR_metal_enable"])]
     public void* MetalDevice;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_metal_enable"])]
     public GraphicsRequirementsMetalKHR() { }
 }

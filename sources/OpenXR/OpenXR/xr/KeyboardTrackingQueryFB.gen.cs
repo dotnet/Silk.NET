@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrKeyboardTrackingQueryFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct KeyboardTrackingQueryFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
     public StructureType Type = StructureType.KeyboardTrackingQueryFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
     public void* Next;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
     public KeyboardTrackingQueryFlagsFB Flags;
 
+    [SupportedApiProfile("openxr", ["XR_FB_keyboard_tracking"])]
     public KeyboardTrackingQueryFB() { }
 }

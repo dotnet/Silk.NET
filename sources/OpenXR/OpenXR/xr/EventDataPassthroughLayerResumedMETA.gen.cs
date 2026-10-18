@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataPassthroughLayerResumedMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataPassthroughLayerResumedMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_layer_resumed_event"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.EventDataPassthroughLayerResumedMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_layer_resumed_event"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("layer")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_layer_resumed_event"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public PassthroughLayerHandleFB Layer;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_layer_resumed_event"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public EventDataPassthroughLayerResumedMETA() { }
 }

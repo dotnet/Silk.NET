@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFrameEndInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FrameEndInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_frame_end_info"])]
     public StructureType Type = StructureType.FrameEndInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_frame_end_info"])]
     public void* Next;
 
     [NativeName("focusDistance")]
+    [SupportedApiProfile("openxr", ["XR_ML_frame_end_info"])]
     public float FocusDistance;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_ML_frame_end_info"])]
     public FrameEndInfoFlagsML Flags;
 
+    [SupportedApiProfile("openxr", ["XR_ML_frame_end_info"])]
     public FrameEndInfoML() { }
 }

@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSenseDataFilterPlaneOrientationBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SenseDataFilterPlaneOrientationBD
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_plane"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public StructureType Type = StructureType.SenseDataFilterPlaneOrientationBD;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_plane"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public void* Next;
 
     [NativeName("orientationCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_plane"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public uint OrientationCount;
 
     [NativeName("orientations")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_plane"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public PlaneOrientationBD* Orientations;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_plane"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public SenseDataFilterPlaneOrientationBD() { }
 }

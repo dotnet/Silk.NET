@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrInteractionProfileSuggestedBinding")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct InteractionProfileSuggestedBinding
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.InteractionProfileSuggestedBinding;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("interactionProfile")]
+    [SupportedApiProfile("openxr")]
     public ulong InteractionProfile;
 
     [NativeName("countSuggestedBindings")]
+    [SupportedApiProfile("openxr")]
     public uint CountSuggestedBindings;
 
     [NativeName("suggestedBindings")]
+    [SupportedApiProfile("openxr")]
     public ActionSuggestedBinding* SuggestedBindings;
 
+    [SupportedApiProfile("openxr")]
     public InteractionProfileSuggestedBinding() { }
 }

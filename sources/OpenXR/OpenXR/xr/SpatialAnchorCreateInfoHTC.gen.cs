@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorCreateInfoHTC")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialAnchorCreateInfoHTC
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public StructureType Type = StructureType.SpatialAnchorCreateInfoHTC;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public void* Next;
 
     [NativeName("space")]
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public SpaceHandle Space;
 
     [NativeName("poseInSpace")]
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public Posef PoseInSpace;
 
     [NativeName("name")]
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public SpatialAnchorNameHTC Name;
 
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public SpatialAnchorCreateInfoHTC() { }
 }

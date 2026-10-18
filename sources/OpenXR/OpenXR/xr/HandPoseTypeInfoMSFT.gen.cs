@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHandPoseTypeInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct HandPoseTypeInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.HandPoseTypeInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("handPoseType")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public HandPoseTypeMSFT HandPoseType;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public HandPoseTypeInfoMSFT() { }
 }

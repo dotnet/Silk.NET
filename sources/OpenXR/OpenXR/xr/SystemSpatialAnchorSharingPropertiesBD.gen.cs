@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemSpatialAnchorSharingPropertiesBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemSpatialAnchorSharingPropertiesBD
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor_sharing"],
+        ImpliesSets = ["XR_BD_spatial_anchor"]
+    )]
     public StructureType Type = StructureType.SystemSpatialAnchorSharingPropertiesBD;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor_sharing"],
+        ImpliesSets = ["XR_BD_spatial_anchor"]
+    )]
     public void* Next;
 
     [NativeName("supportsSpatialAnchorSharing")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor_sharing"],
+        ImpliesSets = ["XR_BD_spatial_anchor"]
+    )]
     public MaybeBool<uint> SupportsSpatialAnchorSharing;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor_sharing"],
+        ImpliesSets = ["XR_BD_spatial_anchor"]
+    )]
     public SystemSpatialAnchorSharingPropertiesBD() { }
 }

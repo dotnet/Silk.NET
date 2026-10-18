@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSoundFieldConfigBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SoundFieldConfigBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public StructureType Type = StructureType.SoundFieldConfigBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public void* Next;
 
     [NativeName("enabled")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public MaybeBool<uint> Enabled;
 
     [NativeName("orientation")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public Quaternionf Orientation;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("mainVolume")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float MainVolume;
 
     [NativeName("lfeGain")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float LfeGain;
 
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundFieldConfigBD() { }
 }

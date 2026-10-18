@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerDepthTestVARJO")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerDepthTestVARJO
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_VARJO_composition_layer_depth_test"],
+        ImpliesSets = ["XR_KHR_composition_layer_depth", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.CompositionLayerDepthTestVARJO;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_VARJO_composition_layer_depth_test"],
+        ImpliesSets = ["XR_KHR_composition_layer_depth", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("depthTestRangeNearZ")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_VARJO_composition_layer_depth_test"],
+        ImpliesSets = ["XR_KHR_composition_layer_depth", "XR_VERSION_1_0"]
+    )]
     public float DepthTestRangeNearZ;
 
     [NativeName("depthTestRangeFarZ")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_VARJO_composition_layer_depth_test"],
+        ImpliesSets = ["XR_KHR_composition_layer_depth", "XR_VERSION_1_0"]
+    )]
     public float DepthTestRangeFarZ;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_VARJO_composition_layer_depth_test"],
+        ImpliesSets = ["XR_KHR_composition_layer_depth", "XR_VERSION_1_0"]
+    )]
     public CompositionLayerDepthTestVARJO() { }
 }

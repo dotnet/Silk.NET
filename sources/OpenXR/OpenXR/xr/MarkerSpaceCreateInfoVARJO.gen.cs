@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrMarkerSpaceCreateInfoVARJO")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct MarkerSpaceCreateInfoVARJO
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public StructureType Type = StructureType.MarkerSpaceCreateInfoVARJO;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public void* Next;
 
     [NativeName("markerId")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public ulong MarkerId;
 
     [NativeName("poseInMarkerSpace")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public Posef PoseInMarkerSpace;
 
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public MarkerSpaceCreateInfoVARJO() { }
 }

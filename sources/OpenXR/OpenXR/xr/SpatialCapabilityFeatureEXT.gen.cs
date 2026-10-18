@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialCapabilityFeatureEXT")]
+[SupportedApiProfile("openxr")]
 public enum SpatialCapabilityFeatureEXT : uint
 {
     [NativeName("XR_SPATIAL_CAPABILITY_FEATURE_MARKER_TRACKING_FIXED_SIZE_MARKERS_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     MarkerTrackingFixedSizeMarkers = 1000743000,
 
     [NativeName("XR_SPATIAL_CAPABILITY_FEATURE_MARKER_TRACKING_STATIC_MARKERS_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     MarkerTrackingStaticMarkers = 1000743001,
 }

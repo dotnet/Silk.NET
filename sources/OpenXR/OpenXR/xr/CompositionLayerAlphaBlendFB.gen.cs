@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerAlphaBlendFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerAlphaBlendFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     public StructureType Type = StructureType.CompositionLayerAlphaBlendFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     public void* Next;
 
     [NativeName("srcFactorColor")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     public BlendFactorFB SrcFactorColor;
 
     [NativeName("dstFactorColor")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     public BlendFactorFB DstFactorColor;
 
     [NativeName("srcFactorAlpha")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     public BlendFactorFB SrcFactorAlpha;
 
     [NativeName("dstFactorAlpha")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     public BlendFactorFB DstFactorAlpha;
 
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     public CompositionLayerAlphaBlendFB() { }
 }

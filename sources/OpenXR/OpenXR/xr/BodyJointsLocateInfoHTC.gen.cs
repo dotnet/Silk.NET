@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBodyJointsLocateInfoHTC")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct BodyJointsLocateInfoHTC
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_HTC_body_tracking"])]
     public StructureType Type = StructureType.BodyJointsLocateInfoHTC;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_HTC_body_tracking"])]
     public void* Next;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_HTC_body_tracking"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_HTC_body_tracking"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_HTC_body_tracking"])]
     public BodyJointsLocateInfoHTC() { }
 }

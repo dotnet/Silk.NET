@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_foveationCenter_e__FixedBuffer")]
 [InlineArray(2)]
+[SupportedApiProfile("openxr")]
 public partial struct FoveationEyeTrackedStateMETAFoveationCenter
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public Vector2F E0;
 }

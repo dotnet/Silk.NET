@@ -9,25 +9,61 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerProjection")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerProjection
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public StructureType Type = StructureType.CompositionLayerProjection;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public void* Next;
 
     [NativeName("layerFlags")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public CompositionLayerFlags LayerFlags;
 
     [NativeName("space")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public SpaceHandle Space;
 
     [NativeName("viewCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public uint ViewCount;
 
     [NativeName("views")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public CompositionLayerProjectionView* Views;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public CompositionLayerProjection() { }
 }

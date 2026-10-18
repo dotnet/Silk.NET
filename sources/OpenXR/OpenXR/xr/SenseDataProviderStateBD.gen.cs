@@ -9,14 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSenseDataProviderStateBD")]
+[SupportedApiProfile("openxr")]
 public enum SenseDataProviderStateBD : uint
 {
     [NativeName("XR_SENSE_DATA_PROVIDER_STATE_INITIALIZED_BD")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     Initialized = 0,
 
     [NativeName("XR_SENSE_DATA_PROVIDER_STATE_RUNNING_BD")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     Running = 1,
 
     [NativeName("XR_SENSE_DATA_PROVIDER_STATE_STOPPED_BD")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_sensing"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     Stopped = 2,
 }

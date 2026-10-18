@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemHapticParametricPropertiesEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemHapticParametricPropertiesEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public StructureType Type = StructureType.SystemHapticParametricPropertiesEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public void* Next;
 
     [NativeName("supportsParametricHaptics")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public MaybeBool<uint> SupportsParametricHaptics;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public SystemHapticParametricPropertiesEXT() { }
 }

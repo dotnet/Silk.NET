@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemVirtualKeyboardPropertiesMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemVirtualKeyboardPropertiesMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public StructureType Type = StructureType.SystemVirtualKeyboardPropertiesMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public void* Next;
 
     [NativeName("supportsVirtualKeyboard")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public MaybeBool<uint> SupportsVirtualKeyboard;
 
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public SystemVirtualKeyboardPropertiesMETA() { }
 }

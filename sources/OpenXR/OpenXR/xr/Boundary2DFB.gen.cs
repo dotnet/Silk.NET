@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBoundary2DFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct Boundary2DFB
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.Boundary2DFB;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("vertexCapacityInput")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public uint VertexCapacityInput;
 
     [NativeName("vertexCountOutput")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public uint VertexCountOutput;
 
     [NativeName("vertices")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public Vector2F* Vertices;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public Boundary2DFB() { }
 }

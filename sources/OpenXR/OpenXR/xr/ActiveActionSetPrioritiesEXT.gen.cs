@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrActiveActionSetPrioritiesEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ActiveActionSetPrioritiesEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_active_action_set_priority"])]
     public StructureType Type = StructureType.ActiveActionSetPrioritiesEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_active_action_set_priority"])]
     public void* Next;
 
     [NativeName("actionSetPriorityCount")]
+    [SupportedApiProfile("openxr", ["XR_EXT_active_action_set_priority"])]
     public uint ActionSetPriorityCount;
 
     [NativeName("actionSetPriorities")]
+    [SupportedApiProfile("openxr", ["XR_EXT_active_action_set_priority"])]
     public ActiveActionSetPriorityEXT* ActionSetPriorities;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_active_action_set_priority"])]
     public ActiveActionSetPrioritiesEXT() { }
 }

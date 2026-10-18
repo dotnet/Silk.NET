@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughCameraStateGetInfoANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PassthroughCameraStateGetInfoANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_passthrough_camera_state"])]
     public StructureType Type = StructureType.PassthroughCameraStateGetInfoANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_passthrough_camera_state"])]
     public void* Next;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_passthrough_camera_state"])]
     public PassthroughCameraStateGetInfoANDROID() { }
 }

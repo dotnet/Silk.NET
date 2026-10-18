@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrOffset2Di")]
+[SupportedApiProfile("openxr")]
 public partial struct Offset2Di
 {
     [NativeName("x")]
+    [SupportedApiProfile("openxr")]
     public int X;
 
     [NativeName("y")]
+    [SupportedApiProfile("openxr")]
     public int Y;
 }

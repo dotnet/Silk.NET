@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMeshTrackingStateANDROID")]
+[SupportedApiProfile("openxr")]
 public enum SceneMeshTrackingStateANDROID : uint
 {
     [NativeName("XR_SCENE_MESH_TRACKING_STATE_INITIALIZING_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     Initializing = 0,
 
     [NativeName("XR_SCENE_MESH_TRACKING_STATE_TRACKING_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     Tracking = 1,
 
     [NativeName("XR_SCENE_MESH_TRACKING_STATE_WAITING_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     Waiting = 2,
 
     [NativeName("XR_SCENE_MESH_TRACKING_STATE_ERROR_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     Error = 3,
 }

@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFrameEndInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FrameEndInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.FrameEndInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("displayTime")]
+    [SupportedApiProfile("openxr")]
     public long DisplayTime;
 
     [NativeName("environmentBlendMode")]
+    [SupportedApiProfile("openxr")]
     public EnvironmentBlendMode EnvironmentBlendMode;
 
     [NativeName("layerCount")]
+    [SupportedApiProfile("openxr")]
     public uint LayerCount;
 
     [NativeName("layers")]
+    [SupportedApiProfile("openxr")]
     public CompositionLayerBaseHeader** Layers;
 
+    [SupportedApiProfile("openxr")]
     public FrameEndInfo() { }
 }

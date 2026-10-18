@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSerializedSceneFragmentDataGetInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SerializedSceneFragmentDataGetInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SerializedSceneFragmentDataGetInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("sceneFragmentId")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public UuidMSFT SceneFragmentId;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public SerializedSceneFragmentDataGetInfoMSFT() { }
 }

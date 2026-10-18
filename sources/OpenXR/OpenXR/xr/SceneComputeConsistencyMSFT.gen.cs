@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneComputeConsistencyMSFT")]
+[SupportedApiProfile("openxr")]
 public enum SceneComputeConsistencyMSFT : uint
 {
     [NativeName("XR_SCENE_COMPUTE_CONSISTENCY_SNAPSHOT_COMPLETE_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     SnapshotComplete = 1,
 
     [NativeName("XR_SCENE_COMPUTE_CONSISTENCY_SNAPSHOT_INCOMPLETE_FAST_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     SnapshotIncompleteFast = 2,
 
     [NativeName("XR_SCENE_COMPUTE_CONSISTENCY_OCCLUSION_OPTIMIZED_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     OcclusionOptimized = 3,
 }

@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneComponentsLocateInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SceneComponentsLocateInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public StructureType Type = StructureType.SceneComponentsLocateInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public void* Next;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public long Time;
 
     [NativeName("componentIdCount")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public uint ComponentIdCount;
 
     [NativeName("componentIds")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public UuidMSFT* ComponentIds;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public SceneComponentsLocateInfoMSFT() { }
 }

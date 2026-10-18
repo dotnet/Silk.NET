@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("PFN_xrDebugUtilsMessengerCallbackEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe delegate uint DebugUtilsMessengerCallbackEXTDelegate(
     ulong arg0,
     ulong arg1,

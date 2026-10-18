@@ -9,17 +9,38 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialPlaneAlignmentEXT")]
+[SupportedApiProfile("openxr")]
 public enum SpatialPlaneAlignmentEXT : uint
 {
     [NativeName("XR_SPATIAL_PLANE_ALIGNMENT_HORIZONTAL_UPWARD_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     HorizontalUpward = 0,
 
     [NativeName("XR_SPATIAL_PLANE_ALIGNMENT_HORIZONTAL_DOWNWARD_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     HorizontalDownward = 1,
 
     [NativeName("XR_SPATIAL_PLANE_ALIGNMENT_VERTICAL_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     Vertical = 2,
 
     [NativeName("XR_SPATIAL_PLANE_ALIGNMENT_ARBITRARY_EXT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_plane_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     Arbitrary = 3,
 }

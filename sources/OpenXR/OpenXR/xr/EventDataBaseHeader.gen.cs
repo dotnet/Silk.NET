@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataBaseHeader")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataBaseHeader
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public void* Next;
 }

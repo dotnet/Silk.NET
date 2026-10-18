@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHandJointLocationEXT")]
+[SupportedApiProfile("openxr")]
 public partial struct HandJointLocationEXT
 {
     [NativeName("locationFlags")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public SpaceLocationFlags LocationFlags;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public Posef Pose;
 
     [NativeName("radius")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public float Radius;
 }

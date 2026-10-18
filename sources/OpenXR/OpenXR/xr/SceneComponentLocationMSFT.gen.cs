@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneComponentLocationMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct SceneComponentLocationMSFT
 {
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public SpaceLocationFlags Flags;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public Posef Pose;
 }

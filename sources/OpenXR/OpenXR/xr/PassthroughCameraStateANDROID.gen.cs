@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughCameraStateANDROID")]
+[SupportedApiProfile("openxr")]
 public enum PassthroughCameraStateANDROID : uint
 {
     [NativeName("XR_PASSTHROUGH_CAMERA_STATE_DISABLED_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_passthrough_camera_state"])]
     Disabled = 0,
 
     [NativeName("XR_PASSTHROUGH_CAMERA_STATE_INITIALIZING_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_passthrough_camera_state"])]
     Initializing = 1,
 
     [NativeName("XR_PASSTHROUGH_CAMERA_STATE_READY_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_passthrough_camera_state"])]
     Ready = 2,
 
     [NativeName("XR_PASSTHROUGH_CAMERA_STATE_ERROR_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_passthrough_camera_state"])]
     Error = 3,
 }

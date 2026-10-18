@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrExternalCameraExtrinsicsOCULUS")]
+[SupportedApiProfile("openxr")]
 public partial struct ExternalCameraExtrinsicsOCULUS
 {
     [NativeName("lastChangeTime")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public long LastChangeTime;
 
     [NativeName("cameraStatusFlags")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public ExternalCameraStatusFlagsOCULUS CameraStatusFlags;
 
     [NativeName("attachedToDevice")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public ExternalCameraAttachedToDeviceOCULUS AttachedToDevice;
 
     [NativeName("relativePose")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public Posef RelativePose;
 }

@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrLocalizationMapTypeML")]
+[SupportedApiProfile("openxr")]
 public enum LocalizationMapTypeML : uint
 {
     [NativeName("XR_LOCALIZATION_MAP_TYPE_ON_DEVICE_ML")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     OnDevice = 0,
 
     [NativeName("XR_LOCALIZATION_MAP_TYPE_CLOUD_ML")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     Cloud = 1,
 }

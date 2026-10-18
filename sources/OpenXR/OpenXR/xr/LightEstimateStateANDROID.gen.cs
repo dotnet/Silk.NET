@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrLightEstimateStateANDROID")]
+[SupportedApiProfile("openxr")]
 public enum LightEstimateStateANDROID : uint
 {
     [NativeName("XR_LIGHT_ESTIMATE_STATE_VALID_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     Valid = 0,
 
     [NativeName("XR_LIGHT_ESTIMATE_STATE_INVALID_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_light_estimation"])]
     Invalid = 1,
 }

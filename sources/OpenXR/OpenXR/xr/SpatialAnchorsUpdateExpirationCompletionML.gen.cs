@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorsUpdateExpirationCompletionML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialAnchorsUpdateExpirationCompletionML
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public StructureType Type = StructureType.SpatialAnchorsUpdateExpirationCompletionML;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public void* Next;
 
     [NativeName("futureResult")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public Result FutureResult;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public SpatialAnchorsUpdateExpirationCompletionML() { }
 }

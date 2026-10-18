@@ -9,8 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorPersistenceNameMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct SpatialAnchorPersistenceNameMSFT
 {
     [NativeName("name")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_spatial_anchor_persistence"],
+        ImpliesSets = ["XR_MSFT_spatial_anchor", "XR_VERSION_1_0"]
+    )]
     public SpatialAnchorPersistenceNameMSFTName Name;
 }

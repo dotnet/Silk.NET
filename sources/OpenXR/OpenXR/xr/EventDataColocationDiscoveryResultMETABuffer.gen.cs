@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_buffer_e__FixedBuffer")]
 [InlineArray(1024)]
+[SupportedApiProfile("openxr")]
 public partial struct EventDataColocationDiscoveryResultMETABuffer
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public byte E0;
 }

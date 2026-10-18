@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialMeshLodBD")]
+[SupportedApiProfile("openxr")]
 public enum SpatialMeshLodBD : uint
 {
     [NativeName("XR_SPATIAL_MESH_LOD_COARSE_BD")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_mesh"], ImpliesSets = ["XR_BD_spatial_sensing"])]
     Coarse = 0,
 
     [NativeName("XR_SPATIAL_MESH_LOD_MEDIUM_BD")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_mesh"], ImpliesSets = ["XR_BD_spatial_sensing"])]
     Medium = 1,
 
     [NativeName("XR_SPATIAL_MESH_LOD_FINE_BD")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_mesh"], ImpliesSets = ["XR_BD_spatial_sensing"])]
     Fine = 2,
 }

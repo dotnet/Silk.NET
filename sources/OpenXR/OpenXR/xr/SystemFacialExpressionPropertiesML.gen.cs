@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemFacialExpressionPropertiesML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemFacialExpressionPropertiesML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public StructureType Type = StructureType.SystemFacialExpressionPropertiesML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public void* Next;
 
     [NativeName("supportsFacialExpression")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public MaybeBool<uint> SupportsFacialExpression;
 
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public SystemFacialExpressionPropertiesML() { }
 }

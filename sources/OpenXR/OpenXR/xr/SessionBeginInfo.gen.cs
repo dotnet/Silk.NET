@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSessionBeginInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SessionBeginInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.SessionBeginInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("primaryViewConfigurationType")]
+    [SupportedApiProfile("openxr")]
     public ViewConfigurationType PrimaryViewConfigurationType;
 
+    [SupportedApiProfile("openxr")]
     public SessionBeginInfo() { }
 }

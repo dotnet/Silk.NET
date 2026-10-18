@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemTrackablesPropertiesANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemTrackablesPropertiesANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public StructureType Type = StructureType.SystemTrackablesPropertiesANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public void* Next;
 
     [NativeName("supportsAnchor")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public MaybeBool<uint> SupportsAnchor;
 
     [NativeName("maxAnchors")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public uint MaxAnchors;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public SystemTrackablesPropertiesANDROID() { }
 }

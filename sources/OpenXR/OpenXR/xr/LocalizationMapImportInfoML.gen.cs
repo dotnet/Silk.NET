@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrLocalizationMapImportInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct LocalizationMapImportInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.LocalizationMapImportInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("size")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public uint Size;
 
     [NativeName("data")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public sbyte* Data;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public LocalizationMapImportInfoML() { }
 }

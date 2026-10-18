@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEyeGazesInfoFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EyeGazesInfoFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public StructureType Type = StructureType.EyeGazesInfoFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public void* Next;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public EyeGazesInfoFB() { }
 }
