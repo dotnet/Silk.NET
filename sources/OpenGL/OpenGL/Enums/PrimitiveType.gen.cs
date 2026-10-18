@@ -10,6 +10,12 @@ namespace Silk.NET.OpenGL;
 [NativeName("PrimitiveType")]
 public enum PrimitiveType : uint
 {
+    [NativeName("GL_PATCHES_EXT")]
+    PatchesEXT = 14,
+
+    [NativeName("GL_QUADS_EXT")]
+    QuadsEXT = 7,
+
     [NativeName("GL_POINTS")]
     Points = 0,
 
@@ -78,10 +84,4 @@ public enum PrimitiveType : uint
 
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_EXT")]
     TriangleStripAdjacencyEXT = 13,
-
-    [NativeName("GL_PATCHES_EXT")]
-    PatchesEXT = 14,
-
-    [NativeName("GL_QUADS_EXT")]
-    QuadsEXT = 7,
 }

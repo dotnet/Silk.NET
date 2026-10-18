@@ -13,6 +13,24 @@ public enum BufferStorageMask : uint
 {
     None = 0x0,
 
+    [NativeName("GL_MAP_READ_BIT_EXT")]
+    MapReadBitEXT = 0x1,
+
+    [NativeName("GL_MAP_WRITE_BIT_EXT")]
+    MapWriteBitEXT = 0x2,
+
+    [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
+    MapPersistentBitEXT = 0x40,
+
+    [NativeName("GL_MAP_COHERENT_BIT_EXT")]
+    MapCoherentBitEXT = 0x80,
+
+    [NativeName("GL_DYNAMIC_STORAGE_BIT_EXT")]
+    DynamicStorageBitEXT = 0x100,
+
+    [NativeName("GL_CLIENT_STORAGE_BIT_EXT")]
+    ClientStorageBitEXT = 0x200,
+
     [NativeName("GL_MAP_READ_BIT")]
     MapReadBit = 0x1,
 
@@ -39,22 +57,4 @@ public enum BufferStorageMask : uint
 
     [NativeName("GL_PER_GPU_STORAGE_BIT_NV")]
     PerGpuStorageBitNV = 0x800,
-
-    [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
-    MapPersistentBitEXT = 0x40,
-
-    [NativeName("GL_MAP_COHERENT_BIT_EXT")]
-    MapCoherentBitEXT = 0x80,
-
-    [NativeName("GL_DYNAMIC_STORAGE_BIT_EXT")]
-    DynamicStorageBitEXT = 0x100,
-
-    [NativeName("GL_CLIENT_STORAGE_BIT_EXT")]
-    ClientStorageBitEXT = 0x200,
-
-    [NativeName("GL_MAP_READ_BIT_EXT")]
-    MapReadBitEXT = 0x1,
-
-    [NativeName("GL_MAP_WRITE_BIT_EXT")]
-    MapWriteBitEXT = 0x2,
 }
