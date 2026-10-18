@@ -23,8 +23,9 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <param name="rspHandler">
 /// The handler of response file (.rsp) files i.e. configuration for the ClangSharp generator.
 /// </param>
-/// <param name="config">The configuration to use.</param>
 /// <param name="documentFactory">The document factory to use.</param>
+/// <param name="config">The configuration to use.</param>
+/// <param name="hostConfig">The host configuration to use.</param>
 /// <param name="logger">The logger to use.</param>
 /// <param name="inputResolver">The input resolver to use.</param>
 /// <param name="responseFileMods">The mods that modify response files before they are fed to ClangSharp.</param>
@@ -33,6 +34,7 @@ public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
     DocumentFactory documentFactory,
     ClangScraper.Configuration config,
+    SilkTouchHostConfiguration hostConfig,
     ILogger<ClangScraper> logger,
     IInputResolver inputResolver,
     ICacheProvider? cacheProvider = null,
@@ -73,14 +75,23 @@ public sealed class ClangScraper(
         public int Parallelism { get; init; }
 
         /// <summary>
-        /// Skips generation if evaluates to true.
+        /// Skips generation if evaluates to false.
         /// </summary>
-        public Func<bool> SkipScrapeIf { get; init; } = static () => false;
+        public Func<bool> ScrapeIf { get; init; } = static () => true;
 
         /// <summary>
-        /// Forces the scraper to use cache. Best used on the command line.
+        /// The partial cache key used for this scraper execution.
         /// </summary>
-        public bool ForceCache { get; init; }
+        public string? CacheKey { get; init; }
+
+        /// <summary>
+        /// Whether this mod should end the generation job after a "generate cache only" run.
+        /// </summary>
+        /// <remarks>
+        /// A "generate cache only" run is a run where <see cref="SilkTouchHostConfiguration.GenerateCacheOnly"/> is set to true.
+        /// The intended use pattern is setting this to true for the last <see cref="ClangScraper"/> mod in a job.
+        /// </remarks>
+        public bool ExitAfterGenerateCacheOnlyRun { get; init; }
     }
 
     /// <summary>
@@ -215,12 +226,14 @@ public sealed class ClangScraper(
     /// </summary>
     /// <param name="rsps">The response files.</param>
     /// <param name="cfg">The configuration.</param>
+    /// <param name="jobKey">The job key.</param>
     /// <param name="cacheKey">The cache key.</param>
     /// <param name="ct">The cancellation token.</param>
     /// <exception cref="InvalidOperationException">The scraper output wasn't as expected.</exception>
     private async Task<ScrapeResult> ScrapeBindingsAsync(
         IReadOnlyList<ResponseFile> rsps,
         Configuration cfg,
+        string jobKey,
         string cacheKey,
         CancellationToken ct = default
     )
@@ -329,6 +342,11 @@ public sealed class ClangScraper(
                 )
         );
 
+        logger.LogInformation(
+            "Writing raw bindings to cache for {JobKey} (Cache key: {CacheKey})",
+            jobKey,
+            cacheKey
+        );
         await (cacheDir?.CommitAsync() ?? ValueTask.CompletedTask);
 
         var sourceDocuments = await Task.WhenAll(
@@ -353,11 +371,6 @@ public sealed class ClangScraper(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        if (ctx.WorkingDirectory is null)
-        {
-            throw new NotSupportedException("I/O not available.");
-        }
-
         // Read the configuration.
         var resolvedConfig = await inputResolver.Resolve(config);
 
@@ -382,16 +395,31 @@ public sealed class ClangScraper(
 
         // Try generating the raw bindings with ClangSharp
         // If scraping needs to be skipped or if the scrape fails, then fall back to a cache if available
-        var skipScrape = config.SkipScrapeIf.Invoke();
-        var cacheKey = $"{ctx.JobKey}-ClangSharp";
+        var shouldScrape = !hostConfig.UseCacheOnly && config.ScrapeIf.Invoke();
+
+        var cacheKey =
+            resolvedConfig.CacheKey != null
+                ? $"{ctx.JobKey}-{resolvedConfig.CacheKey}-ClangSharp"
+                : $"{ctx.JobKey}-ClangSharp";
 
         Exception? innerException = null;
         ScrapeResult? scrapeResult = null;
-        if (!skipScrape)
+        if (shouldScrape)
         {
             try
             {
-                scrapeResult = await ScrapeBindingsAsync(rsps, resolvedConfig, cacheKey, ct);
+                logger.LogInformation(
+                    "Scraping raw bindings for {JobKey} (Cache key: {CacheKey})",
+                    ctx.JobKey,
+                    cacheKey
+                );
+                scrapeResult = await ScrapeBindingsAsync(
+                    rsps,
+                    resolvedConfig,
+                    ctx.JobKey,
+                    cacheKey,
+                    ct
+                );
             }
             catch (Exception e)
             {
@@ -403,68 +431,96 @@ public sealed class ClangScraper(
             }
         }
 
-        if (!scrapeResult.HasValue && cacheProvider is not null)
+        if (hostConfig.GenerateCacheOnly)
         {
-            await using var cacheDir = await cacheProvider.GetDirectoryAsync(
-                cacheKey,
-                CacheIntent.StageIntermediateOutput,
-                CacheFlags.None,
-                FileAccess.Read
-            );
-
-            var sourceDocuments = new List<ScrapedDocument>();
-            var testDocuments = new List<ScrapedDocument>();
-            await foreach (
-                var file in (
-                    cacheDir?.GetCommittedFilesAsync() ?? AsyncEnumerable.Empty<string>()
-                ).WithCancellation(ct)
-            )
+            // GenerateCacheOnly is intended to be used when not all caches are available (eg: for multi-platform cache population),
+            // so we don't validate whether a cache was generated or not in this branch
+            if (config.ExitAfterGenerateCacheOnlyRun)
             {
-                await cacheDir!.GetCommittedFileAsync(file);
-                var isSource = file.StartsWith("sources");
-                var isTest = file.StartsWith("tests");
-                if (!isSource && !isTest)
-                {
-                    continue;
-                }
+                ctx.ContinueGeneration = false;
+                return;
+            }
+        }
+        else
+        {
+            if (!scrapeResult.HasValue && cacheProvider is not null)
+            {
+                logger.LogInformation(
+                    "Reading raw bindings from cache for {JobKey} (Cache key: {CacheKey})",
+                    ctx.JobKey,
+                    cacheKey
+                );
 
-                var rel = file[(isSource ? "sources".Length : "tests".Length)..]
-                    .TrimStart('/', '\\');
-                var content = await cacheDir.GetCommittedFileAsync(file);
-                var root = await CSharpSyntaxTree
-                    .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
-                    .GetRootAsync(ct);
-                if (isSource)
-                {
-                    sourceDocuments.Add(new ScrapedDocument(rel, root));
-                }
-                else
-                {
-                    testDocuments.Add(new ScrapedDocument(rel, root));
-                }
+                scrapeResult = await ReadBindingsCacheAsync(cacheProvider, cacheKey, ct);
             }
 
-            scrapeResult = new ScrapeResult(sourceDocuments, testDocuments);
-        }
-
-        if (!scrapeResult.HasValue)
-        {
-            if (innerException is not null)
+            if (!scrapeResult.HasValue)
             {
-                throw new AggregateException(
-                    "Bindings generation was unable to complete as intended, and there was no cache "
-                        + "available to fall back on.",
-                    innerException
+                if (innerException is not null)
+                {
+                    throw new AggregateException(
+                        "Bindings generation was unable to complete as intended, and there was no cache "
+                            + "available to fall back on.",
+                        innerException
+                    );
+                }
+
+                throw new InvalidOperationException(
+                    "Bindings generation has been requested to be skipped despite there being no cache to "
+                        + "fall back on."
                 );
             }
 
-            throw new InvalidOperationException(
-                "Bindings generation has been requested to be skipped despite there being no cache to "
-                    + "fall back on."
-            );
+            AddDocuments(ctx, scrapeResult.Value);
+        }
+    }
+
+    private async Task<ScrapeResult?> ReadBindingsCacheAsync(
+        ICacheProvider cacheProvider,
+        string cacheKey,
+        CancellationToken ct
+    )
+    {
+        await using var cacheDir = await cacheProvider.GetDirectoryAsync(
+            cacheKey,
+            CacheIntent.StageIntermediateOutput,
+            CacheFlags.None,
+            FileAccess.Read
+        );
+
+        if (cacheDir == null)
+        {
+            return null;
         }
 
-        AddDocuments(ctx, scrapeResult.Value);
+        var sourceDocuments = new List<ScrapedDocument>();
+        var testDocuments = new List<ScrapedDocument>();
+        await foreach (var file in cacheDir.GetCommittedFilesAsync().WithCancellation(ct))
+        {
+            await cacheDir.GetCommittedFileAsync(file);
+            var isSource = file.StartsWith("sources");
+            var isTest = file.StartsWith("tests");
+            if (!isSource && !isTest)
+            {
+                continue;
+            }
+
+            var rel = file[(isSource ? "sources".Length : "tests".Length)..].TrimStart('/', '\\');
+            var content = await cacheDir.GetCommittedFileAsync(file);
+            var root = await CSharpSyntaxTree
+                .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
+                .GetRootAsync(ct);
+            if (isSource)
+            {
+                sourceDocuments.Add(new ScrapedDocument(rel, root));
+            }
+            else
+            {
+                testDocuments.Add(new ScrapedDocument(rel, root));
+            }
+        }
+
+        return new ScrapeResult(sourceDocuments, testDocuments);
     }
 
     private record struct ScrapedDocument(string FilePath, SyntaxNode Root);
@@ -476,7 +532,10 @@ public sealed class ClangScraper(
 
     private void AddDocuments(IModContext ctx, ScrapeResult result)
     {
-        foreach (var document in result.SourceDocuments)
+        var sourceDocuments = result.SourceDocuments.OrderBy(x => x.FilePath).ToArray();
+        var testDocuments = result.TestDocuments.OrderBy(x => x.FilePath).ToArray();
+
+        foreach (var document in sourceDocuments)
         {
             documentFactory.ReportDocument(document.Root);
         }
@@ -484,7 +543,7 @@ public sealed class ClangScraper(
         var sourceProject = ctx.SourceProject;
         if (sourceProject != null)
         {
-            foreach (var (filePath, root) in result.SourceDocuments)
+            foreach (var (filePath, root) in sourceDocuments)
             {
                 sourceProject = sourceProject
                     .AddDocument(
@@ -500,7 +559,7 @@ public sealed class ClangScraper(
         var testProject = ctx.TestProject;
         if (testProject != null)
         {
-            foreach (var (filePath, root) in result.TestDocuments)
+            foreach (var (filePath, root) in testDocuments)
             {
                 testProject = testProject
                     ?.AddDocument(

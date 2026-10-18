@@ -12,7 +12,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Merging the APIs of multiple source sets into a single source set.
+/// Merges the APIs of multiple source sets into a single source set.
 /// </summary>
 /// <param name="documentFactory">The document factory to use.</param>
 /// <param name="logger">The logger to use.</param>
@@ -40,16 +40,23 @@ public class BakeSourceSets(
         /// <summary>
         /// The source sets to bake/merge.
         /// </summary>
+        /// <remarks>
+        /// Both the keys and values correspond to folder paths in the source project.
+        /// The key defines the folder to take documents from.
+        /// The value defines the folder to merge documents into.
+        /// <para/>
+        /// For example, at time of writing, Silk's OpenGL bindings have 4 source sets: glcompat -> gl, glcore -> gl, gles1 -> gl, gles2 -> gl.
+        /// These correspond to four input folders of the same name.
+        /// After baking, there will be one output folder named "gl".
+        /// <para/>
+        /// The input folder's internal structure does not affect the output.
+        /// The output folder will contain a flattened list of documents.
+        /// </remarks>
         public required Dictionary<string, string> SourceSets { get; init; }
     }
 
-    private class Rewriter(IBakeStrategy strategy, ILogger<BakeSourceSets> logger)
-        : CSharpSyntaxRewriter
+    private class Visitor(IBakeStrategy strategy) : CSharpSyntaxWalker
     {
-        public BakeSet? Baked { get; set; }
-
-        public string? SourceSet { get; set; }
-
         // Allowable type members for baking (we need to override these):
         // - [x] FieldDeclarationSyntax (VariableDeclarator)
         // - [x] EventFieldDeclarationSyntax
@@ -72,38 +79,47 @@ public class BakeSourceSets(
         // - [x] RecordDeclarationSyntax
         // - [x] InterfaceDeclarationSyntax
 
-        public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            Visit(
-                node,
-                node.Identifier
-                    + (
-                        node is { TypeParameterList.Parameters.Count: > 0 and var cnt }
-                            ? $"`{cnt}"
-                            : string.Empty
-                    ),
-                base.VisitDelegateDeclaration
-            );
+        /// <summary>
+        /// The baked members currently being built.
+        /// Last in list is the current.
+        /// </summary>
+        private readonly List<BakedMember> _stack = new();
 
-        public override SyntaxNode? VisitEventDeclaration(EventDeclarationSyntax node) =>
-            Visit(node, node.Identifier.ToString(), base.VisitEventDeclaration);
+        /// <summary>
+        /// The source set key to add bake sets to.
+        /// </summary>
+        public string? SourceSet { get; set; }
 
-        public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
-            Visit(node, node.Identifier.ToString(), base.VisitPropertyDeclaration);
+        /// <summary>
+        /// The bake set containing the members of each source set.
+        /// Keyed by the input source set key.
+        /// </summary>
+        public Dictionary<string, BakeSet> BakeSets { get; } = new();
 
-        public override SyntaxNode? VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
-            Visit(node, node.Identifier.ToString(), base.VisitEnumMemberDeclaration);
+        public override void VisitEventDeclaration(EventDeclarationSyntax node) =>
+            ReportMember(node, node.Identifier.ToString(), base.VisitEventDeclaration);
 
-        public override SyntaxNode? VisitIndexerDeclaration(IndexerDeclarationSyntax node) =>
-            Visit(
+        public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
+            ReportMember(node, node.Identifier.ToString(), base.VisitPropertyDeclaration);
+
+        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
+            ReportMember(node, node.Identifier.ToString(), base.VisitEnumMemberDeclaration);
+
+        public override void VisitIndexerDeclaration(IndexerDeclarationSyntax node) =>
+            ReportMember(
                 node,
                 $"this[{string.Join(", ", node.ParameterList.Parameters.Select(ModUtils.GetMethodDiscriminator))}]",
                 base.VisitIndexerDeclaration
             );
 
-        public override SyntaxNode? VisitVariableDeclarator(VariableDeclaratorSyntax node) =>
-            node.FirstAncestorOrSelf<BaseFieldDeclarationSyntax>() is { } baseFld
-            && node.FirstAncestorOrSelf<VariableDeclarationSyntax>() is { } varDecl
-                ? Visit(
+        public override void VisitVariableDeclarator(VariableDeclaratorSyntax node)
+        {
+            if (
+                node.FirstAncestorOrSelf<BaseFieldDeclarationSyntax>() is { } baseFld
+                && node.FirstAncestorOrSelf<VariableDeclarationSyntax>() is { } varDecl
+            )
+            {
+                Report(
                     // We want to add just this one specific individual standalone field.
                     baseFld.WithDeclaration(varDecl.WithVariables(SingletonSeparatedList(node))),
                     // But we're visiting the inner declarator representing that field.
@@ -112,13 +128,16 @@ public class BakeSourceSets(
                     // And if for whatever reason we can't continue on with the baking logic, we carry on to the base
                     // inner declarator visitation logic as usual.
                     base.VisitVariableDeclarator
-                )
-                : base.VisitVariableDeclarator(node);
+                );
+            }
+            else
+            {
+                base.VisitVariableDeclarator(node);
+            }
+        }
 
-        public override SyntaxNode? VisitConstructorDeclaration(
-            ConstructorDeclarationSyntax node
-        ) =>
-            Visit(
+        public override void VisitConstructorDeclaration(ConstructorDeclarationSyntax node) =>
+            ReportMember(
                 node,
                 ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
@@ -130,11 +149,11 @@ public class BakeSourceSets(
                 base.VisitConstructorDeclaration
             );
 
-        public override SyntaxNode? VisitDestructorDeclaration(DestructorDeclarationSyntax node) =>
-            Visit(node, "~", base.VisitDestructorDeclaration);
+        public override void VisitDestructorDeclaration(DestructorDeclarationSyntax node) =>
+            ReportMember(node, "~", base.VisitDestructorDeclaration);
 
-        public override SyntaxNode? VisitOperatorDeclaration(OperatorDeclarationSyntax node) =>
-            Visit(
+        public override void VisitOperatorDeclaration(OperatorDeclarationSyntax node) =>
+            ReportMember(
                 node,
                 ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
@@ -146,10 +165,10 @@ public class BakeSourceSets(
                 base.VisitOperatorDeclaration
             );
 
-        public override SyntaxNode? VisitConversionOperatorDeclaration(
+        public override void VisitConversionOperatorDeclaration(
             ConversionOperatorDeclarationSyntax node
         ) =>
-            Visit(
+            ReportMember(
                 node,
                 ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
@@ -161,8 +180,8 @@ public class BakeSourceSets(
                 base.VisitConversionOperatorDeclaration
             );
 
-        public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            Visit(
+        public override void VisitMethodDeclaration(MethodDeclarationSyntax node) =>
+            ReportMember(
                 node,
                 ModUtils.GetMethodDiscriminator(
                     node.Modifiers,
@@ -174,128 +193,139 @@ public class BakeSourceSets(
                 base.VisitMethodDeclaration
             );
 
-        public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node) =>
-            VisitType(node, base.VisitStructDeclaration);
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
+            ReportType(node, base.VisitDelegateDeclaration);
 
-        public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node) =>
-            VisitType(node, base.VisitClassDeclaration);
+        public override void VisitStructDeclaration(StructDeclarationSyntax node) =>
+            ReportType(node, base.VisitStructDeclaration);
 
-        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node) =>
-            VisitType(node, base.VisitEnumDeclaration);
+        public override void VisitClassDeclaration(ClassDeclarationSyntax node) =>
+            ReportType(node, base.VisitClassDeclaration);
 
-        public override SyntaxNode? VisitRecordDeclaration(RecordDeclarationSyntax node) =>
-            VisitType(node, base.VisitRecordDeclaration);
+        public override void VisitEnumDeclaration(EnumDeclarationSyntax node) =>
+            ReportType(node, base.VisitEnumDeclaration);
 
-        public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
-            VisitType(node, base.VisitInterfaceDeclaration);
+        public override void VisitRecordDeclaration(RecordDeclarationSyntax node) =>
+            ReportType(node, base.VisitRecordDeclaration);
 
-        private SyntaxNode? VisitType<T>(T node, Func<T, SyntaxNode?> @base)
-            where T : BaseTypeDeclarationSyntax
+        public override void VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
+            ReportType(node, base.VisitInterfaceDeclaration);
+
+        private string GetTypeDiscrim(
+            MemberDeclarationSyntax node,
+            SyntaxToken identifier,
+            int typeParameterCount
+        )
         {
-            @base(node);
+            var discrim = $"{identifier}";
+            var isTopLevel = _stack.Count == 0;
+            if (isTopLevel)
+            {
+                var nsPre = node.NamespaceFromSyntaxNode() is { Length: > 0 } ns
+                    ? $"{ns}."
+                    : string.Empty;
+                discrim = $"{nsPre}{discrim}";
+            }
 
-            // Get this type's bake set for some final validation checks.
-            // This also registers the bake set if the type had no members.
-            GetOrRegisterTypeBakeSet(node);
+            if (typeParameterCount > 0)
+            {
+                discrim = $"{discrim}`{typeParameterCount}";
+            }
 
-            return null; // baking erases, but the caller should know that.
+            return discrim;
         }
 
-        private SyntaxNode? Visit<T>(T node, string discrim, Func<T, SyntaxNode?> @base)
-            where T : MemberDeclarationSyntax => Visit(node, node, discrim, @base);
+        /// <remarks>
+        /// Delegates are not <see cref="BaseTypeDeclarationSyntax"/>es.
+        /// </remarks>
+        private void ReportType(
+            DelegateDeclarationSyntax node,
+            Action<DelegateDeclarationSyntax> visitChildren
+        )
+        {
+            var discrim = GetTypeDiscrim(
+                node,
+                node.Identifier,
+                node.TypeParameterList?.Parameters.Count ?? 0
+            );
+            Report(node, node, discrim, visitChildren);
+        }
 
-        // This is super convoluted but to deduplicate the member handling code for fields (wherein one field decl may
-        // have many declarators of logically independent fields) we separate nodeToAdd vs nodeVisiting. Most of the
-        // time these will be the same, but for fields we will be wanting to add a field representing that one
-        // individual field whereas we're actually visiting the declarator for that individual field (because if we
-        // tried to add the field decl as nodeVisiting directly we'd be adding 3 fields in one)
-        private SyntaxNode? Visit<TSeparated, TVisiting>(
+        private void ReportType<T>(T node, Action<T> visitChildren)
+            where T : BaseTypeDeclarationSyntax
+        {
+            var discrim = GetTypeDiscrim(
+                node,
+                node.Identifier,
+                (node as TypeDeclarationSyntax)?.TypeParameterList?.Parameters.Count ?? 0
+            );
+            Report(node, node, discrim, visitChildren);
+        }
+
+        private void ReportMember<T>(T node, string discrim, Action<T> visitChildren)
+            where T : MemberDeclarationSyntax => Report(node, node, discrim, visitChildren);
+
+        /// <summary>
+        /// Adds the specified node to the current bake set.
+        /// </summary>
+        /// <param name="nodeToAdd">The logical representation of the node that we plan to output.</param>
+        /// <param name="nodeVisiting">The node as it exists in the syntax tree.</param>
+        /// <param name="discrim">The discriminator used for identifying the node.</param>
+        /// <param name="visitChildren">The method used to visit the <paramref name="nodeVisiting"/>'s child nodes.</param>
+        /// <remarks>
+        /// Field declaration syntax nodes can contain multiple variable declarators (eg: public int a, b, c;).
+        /// This method deduplicates the member handling code by treating the nodeToAdd and nodeVisiting separately.
+        /// This effectively treats each variable declarator as their own field declaration.
+        /// </remarks>
+        private void Report<TSeparated, TVisiting>(
             TSeparated nodeToAdd,
             TVisiting nodeVisiting,
             string discrim,
-            Func<TVisiting, SyntaxNode?> @base
+            Action<TVisiting> visitChildren
         )
             where TSeparated : MemberDeclarationSyntax
             where TVisiting : SyntaxNode
         {
-            // First, call the base visitor logic.
-            var retNode = @base(nodeVisiting);
+            var self = strategy.Cleanup(nodeToAdd);
 
-            logger.LogTrace(
-                "Baking item for source set at \"{}\" with discriminator \"{}\": {}",
-                SourceSet,
-                discrim,
-                nodeToAdd
-            );
-
-            var parent = GetOrRegisterAncestorBakeSet(nodeVisiting);
-
-            // Update the bake set. This adds if we haven't seen the member before, otherwise we just update the
-            // existing declaration by adding our attribute list.
-            parent.Children[discrim] = new BakedMember(
-                strategy.BakeMember(
-                    nodeToAdd,
-                    discrim,
-                    parent.Children.TryGetValue(discrim, out var baked) ? baked : null
-                ),
-                null,
-                baked.Syntax is null ? parent.Children.Count : baked.Index
-            );
-
-            return null; // erase it, but the caller should know to do that anyway.
-        }
-
-        private BakeSet GetOrRegisterAncestorBakeSet(SyntaxNode node) =>
-            node.Parent is null
-                ? Baked ?? throw new InvalidOperationException("BakeSet not set")
-                : GetOrRegisterTypeBakeSet(node.Parent);
-
-        private BakeSet GetOrRegisterTypeBakeSet(SyntaxNode node)
-        {
-            var nsPre = node.NamespaceFromSyntaxNode() is { Length: > 0 } ns
-                ? $"{ns}."
-                : string.Empty;
-            var bakeSet = Baked ?? throw new InvalidOperationException("BakeSet not set");
-
-            // To handle nested types, we go through each ancestor (starting from the top, hence the reverse) and get
-            // the bake set (or create if needed), and do this for each ancestor until we finally get to the containing
-            // type of the given node.
-            foreach (
-                var decl in node.AncestorsAndSelf().OfType<BaseTypeDeclarationSyntax>().Reverse()
-            )
+            // Add self before visiting children
+            if (self != null)
             {
-                var discrim = $"{nsPre}{decl.Identifier}";
-                if (
-                    decl is TypeDeclarationSyntax
-                    {
-                        TypeParameterList.Parameters.Count: > 0 and var cnt
-                    }
-                )
+                var parentBakedMember = _stack.Count > 0 ? _stack[^1] : null;
+                var selfBakedMember = new BakedMember(
+                    self,
+                    null,
+                    parentBakedMember?.Inner?.Children.Count ?? 0
+                );
+                if (parentBakedMember == null)
                 {
-                    discrim += $"`{cnt}";
-                }
-                nsPre = string.Empty; // only the top-level type shall be prefixed with the namespace
-                bakeSet = (
-                    bakeSet!.Children[discrim] = new BakedMember(
-                        strategy.BakeMember(
-                            decl,
-                            discrim,
-                            bakeSet.Children.TryGetValue(discrim, out var baked) ? baked : null
-                        ),
-                        baked.Inner ?? new BakeSet(),
-                        baked.Syntax is null ? bakeSet.Children.Count : baked.Index
-                    )
-                ).Inner;
-            }
+                    var sourceSetKey =
+                        SourceSet ?? throw new InvalidOperationException("SourceSet not set");
+                    if (!BakeSets.TryGetValue(sourceSetKey, out var bakeSet))
+                    {
+                        BakeSets[sourceSetKey] = bakeSet = new BakeSet();
+                    }
 
-            return bakeSet!;
+                    bakeSet.Children.Add(discrim, selfBakedMember);
+                }
+                else
+                {
+                    parentBakedMember.Inner ??= new BakeSet();
+                    parentBakedMember.Inner.Children.Add(discrim, selfBakedMember);
+                }
+
+                _stack.Add(selfBakedMember);
+                try
+                {
+                    visitChildren(nodeVisiting);
+                }
+                finally
+                {
+                    _stack.RemoveAt(_stack.Count - 1);
+                }
+            }
         }
     }
-
-    /// <summary>
-    /// A map of baked roots to deduplicated <see cref="MemberDeclarationSyntax"/>es and their associated discriminants.
-    /// </summary>
-    private Dictionary<string, BakeSet> _baked = new();
 
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
@@ -305,7 +335,7 @@ public class BakeSourceSets(
             return;
         }
 
-        // Locate the bake strategy the user's after.
+        // Locate the configured bake strategy.
         var strategy = strategies.FirstOrDefault(x =>
             x.Name == config.Strategy
             || (config.Strategy is null && x.GetType() == typeof(DefaultBakeStrategy))
@@ -317,8 +347,8 @@ public class BakeSourceSets(
             );
         }
 
-        var rewriter = new Rewriter(strategy, logger);
-        var bakery = new Dictionary<string, BakeSet>();
+        // Visit each doc
+        var visitor = new Visitor(strategy);
         var baked = new List<string>();
         foreach (var docId in ctx.SourceProject.DocumentIds)
         {
@@ -338,30 +368,21 @@ public class BakeSourceSets(
             }
 
             var root = await tree.GetRootAsync(ct);
-            var srcSet = config
+
+            // Identify the source set the document is part of
+            // sourceSet is a key value pair: SourceSetFrom -> SourceSetTo
+            var sourceSet = config
                 .SourceSets.Where(x => path.StartsWith(x.Key, StringComparison.OrdinalIgnoreCase))
                 .MaxBy(x => x.Key.Length);
-            rewriter.SourceSet = srcSet.Key;
-            if (rewriter.SourceSet is null)
-            {
-                continue;
-            }
+            logger.LogDebug("Identified profile {} for {}", sourceSet.Key, path);
 
-            logger.LogDebug("Identified profile {} for {}", rewriter.SourceSet, path);
-            var discrim = srcSet.Value.Trim('/');
-            if (!bakery.TryGetValue(discrim, out var bakeSet))
-            {
-                bakeSet = bakery[discrim] = new BakeSet();
-            }
-
-            rewriter.Baked = bakeSet;
             baked.Add(path);
 
-            rewriter.Visit(root);
-            rewriter.Baked = null;
-            rewriter.SourceSet = null;
+            visitor.SourceSet = sourceSet.Key;
+            visitor.Visit(root);
         }
 
+        // Remove documents that were used as baker input
         var proj = ctx.SourceProject.RemoveDocuments([
             .. ctx
                 .SourceProject.Documents.Where(x =>
@@ -369,12 +390,20 @@ public class BakeSourceSets(
                 )
                 .Select(x => x.Id),
         ]);
-        foreach (var (bakedRoot, bakedPath) in GetBaked(bakery).Select(x => (x.Value, path: x.Key)))
+
+        // Bake
+        var inputBakeSets = visitor.BakeSets;
+        var outputBakeSets = Bake(strategy, config.SourceSets, inputBakeSets);
+
+        // Add the final baked documents
+        foreach (
+            var (bakedRoot, bakedPath) in GetBaked(outputBakeSets)
+                .Select(x => (x.Value, path: x.Key))
+        )
         {
             proj = proj.AddDocument(
                 Path.GetFileName(bakedPath),
                 documentFactory.PopulateDocument(bakedRoot),
-                // we can forgive the below nulls because RelativePath checks them, and returns null if they're null.
                 filePath: proj.FullPath(bakedPath)
             ).Project;
         }
@@ -382,11 +411,133 @@ public class BakeSourceSets(
         ctx.SourceProject = proj;
     }
 
-    private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(
-        Dictionary<string, BakeSet> bakery
+    private Dictionary<string, BakeSet> Bake(
+        IBakeStrategy strategy,
+        Dictionary<string, string> sourceSets,
+        Dictionary<string, BakeSet> bakeSets
     )
     {
-        foreach (var (subdir, bakeSet) in bakery)
+        // Identify which input source sets correspond to each output source set
+        // This is equivalent to the sourceSet dictionary with the KVPs reversed
+        var resultSourceSets = new Dictionary<string, List<string>>();
+        {
+            foreach (var (input, output) in sourceSets)
+            {
+                if (!resultSourceSets.TryGetValue(output, out var inputs))
+                {
+                    resultSourceSets[output] = inputs = [];
+                }
+
+                if (!inputs.Contains(input))
+                {
+                    inputs.Add(input);
+                }
+            }
+
+            // Ensure consistent order
+            foreach (var (_, inputs) in resultSourceSets)
+            {
+                inputs.Sort(StringComparer.Ordinal);
+            }
+        }
+
+        var resultBakeSets = new Dictionary<string, BakeSet>();
+        foreach (var (output, inputs) in resultSourceSets)
+        {
+            var activeSets = new List<BakeSet>();
+            foreach (var input in inputs)
+            {
+                if (bakeSets.TryGetValue(input, out var bakeSet))
+                {
+                    activeSets.Add(bakeSet);
+                }
+            }
+
+            if (activeSets.Count == 0)
+            {
+                continue;
+            }
+
+            var outputBakeSet = activeSets[0];
+            for (var i = 1; i < activeSets.Count; i++)
+            {
+                var currentBakeSet = activeSets[i];
+                foreach (var (discrim, incoming) in currentBakeSet.Children)
+                {
+                    if (outputBakeSet.Children.TryGetValue(discrim, out var existing))
+                    {
+                        var merged = Merge(strategy, discrim, existing, incoming);
+                        if (merged != null)
+                        {
+                            outputBakeSet.Children[discrim] = merged;
+                        }
+                        else
+                        {
+                            outputBakeSet.Children.Remove(discrim);
+                        }
+                    }
+                    else
+                    {
+                        // All members processed here are top-level types
+                        // We always keep these since there's no ABI conflict
+                        outputBakeSet.Children[discrim] = incoming;
+                    }
+                }
+            }
+
+            resultBakeSets[output] = outputBakeSet;
+        }
+
+        return resultBakeSets;
+    }
+
+    /// <summary>
+    /// Merges the two <see cref="BakedMember"/>s together.
+    /// Returns null if the member should not be kept.
+    /// </summary>
+    private BakedMember? Merge(
+        IBakeStrategy strategy,
+        string discrim,
+        BakedMember? existing,
+        BakedMember incoming
+    )
+    {
+        // Handle children first
+        var mergedInner = existing?.Inner ?? incoming.Inner;
+        if (mergedInner != null && incoming.Inner != null)
+        {
+            foreach (var (discrimChild, secondChild) in incoming.Inner.Children)
+            {
+                BakedMember? existingChild = null;
+                existing?.Inner?.Children.TryGetValue(discrimChild, out existingChild);
+
+                var mergedChild = Merge(strategy, discrimChild, existingChild, secondChild);
+                if (mergedChild != null)
+                {
+                    mergedInner.Children[discrimChild] = mergedChild;
+                }
+                else
+                {
+                    mergedInner.Children.Remove(discrimChild);
+                }
+            }
+        }
+
+        // Then merge self
+        var mergedSyntax = strategy.Merge(discrim, existing, incoming);
+        if (mergedSyntax == null)
+        {
+            return null;
+        }
+
+        return new BakedMember(mergedSyntax, mergedInner, existing?.Index ?? incoming.Index);
+    }
+
+    private IEnumerable<KeyValuePair<string, CompilationUnitSyntax>> GetBaked(
+        Dictionary<string, BakeSet> bakeSets
+    )
+    {
+        foreach (var (subdir, bakeSet) in bakeSets)
         {
             foreach (var (fqTopLevelType, bakedMember) in bakeSet.Children)
             {

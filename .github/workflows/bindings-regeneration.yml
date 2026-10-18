@@ -1,0 +1,230 @@
+name: Bindings Regeneration
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-24.04
+          - windows-2025
+          - macos-15
+
+    name: Scrape on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    steps:
+
+      - name: Setup dependencies
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          switch ($true) {
+            $IsWindows {}
+            $IsLinux {
+              sudo apt-get update
+
+              # Added for OpenXR
+              sudo apt-get install -y libx11-dev libgl-dev libglx-dev libxcb1-dev libxcb-glx0-dev libegl-dev
+            }
+            $IsMacOS {}
+          }
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.401"
+
+      - name: Setup Windows SDK
+        if: "runner.os == 'Windows'"
+        uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
+        with:
+          sdk-version: 22621
+
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          submodules: false
+
+      - name: Initialize Submodules
+        shell: pwsh
+        run: |
+          $submodules = @(
+            "eng/submodules/openxr-sdk",
+            "eng/submodules/vulkan-headers"
+          )
+
+          git submodule update --init --recursive --depth 0 $submodules
+
+      - name: Clear .silktouch folder contents
+        shell: pwsh
+        run: Remove-Item -Path .silktouch -Recurse -Force
+
+      - name: Populate caches
+        shell: pwsh
+        run: |
+          dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --generate-cache-only --only OpenXR
+
+          # Ignore errors for now since we're only interested in the cache file
+          exit 0
+
+      - name: Show .silktouch folder contents
+        shell: pwsh
+        run: Get-ChildItem .silktouch
+
+      - name: Upload cache as artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: silktouch-per-os-cache-${{ matrix.os }}
+          path: .silktouch
+          include-hidden-files: true
+
+  combine:
+    name: Combine caches
+    runs-on: ubuntu-24.04
+
+    if: always()
+    needs: [scrape]
+
+    steps:
+
+      - name: Download cache
+        uses: actions/download-artifact@v8
+        with:
+          path: .silktouch
+          pattern: silktouch-per-os-cache-*
+          merge-multiple: true
+
+      - name: Show .silktouch folder contents
+        shell: pwsh
+        run: Get-ChildItem .silktouch
+
+      - name: Upload cache
+        uses: actions/upload-artifact@v7
+        with:
+          name: silktouch-combined-cache
+          path: .silktouch
+          include-hidden-files: true
+
+  regenerate:
+    name: Regenerate bindings
+    runs-on: ubuntu-24.04
+
+    needs: [combine]
+
+    steps:
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.401"
+
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          submodules: false
+
+      # TODO: Currently copied from above for simplicity. Probably better to move this into a JSON file (or similar?) with submodule dependencies defined per job.
+      - name: Initialize Submodules
+        shell: pwsh
+        run: |
+          $submodules = @(
+            "eng/submodules/openxr-sdk",
+            "eng/submodules/vulkan-headers"
+          )
+
+          git submodule update --init --recursive --depth 0 $submodules
+
+      - name: Download cache
+        uses: actions/download-artifact@v8
+        with:
+          path: .silktouch
+          pattern: silktouch-combined-cache
+
+      - name: Show .silktouch folder contents
+        shell: pwsh
+        run: Get-ChildItem .silktouch
+
+      - name: Show git status
+        shell: pwsh
+        run: git status
+
+      - name: Calculate source context
+        id: source_context
+        shell: pwsh
+        env:
+          SOURCE_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          $sourceContext = ($env:SOURCE_COMMIT_MESSAGE -split "`n")[0].Trim()
+          if ($sourceContext) {
+            $sourceContext = "`"$sourceContext`" (${{ github.sha }})"
+          }
+          else {
+            $sourceContext = "${{ github.sha }}"
+          }
+
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "value=$sourceContext"
+
+      - name: Commit cache
+        shell: pwsh
+        env:
+          SOURCE_CONTEXT: ${{ steps.source_context.outputs.value }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+          git config --local user.name "The Silk.NET Automaton"
+          git add .
+          git commit -m "Update .silktouch cache for $env:SOURCE_CONTEXT"
+
+      - name: Regenerate bindings
+        shell: pwsh
+        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --use-cache-only --only OpenXR
+
+      - name: Show git status
+        shell: pwsh
+        run: git status
+
+      - name: Commit bindings
+        shell: pwsh
+        env:
+          SOURCE_CONTEXT: ${{ steps.source_context.outputs.value }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          if (-not (git status --porcelain)) {
+            Write-Host "Bindings already up to date"
+            exit 0
+          }
+
+          git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+          git config --local user.name "The Silk.NET Automaton"
+          git add .
+          git commit -m "Regenerate bindings for $env:SOURCE_CONTEXT"
+
+      - name: Show git status
+        shell: pwsh
+        run: git status
+
+      # TODO Not pushing for now

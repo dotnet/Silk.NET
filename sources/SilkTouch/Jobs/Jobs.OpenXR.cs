@@ -26,9 +26,55 @@ internal static partial class Jobs
                     .ClangScraper(
                         new()
                         {
-                            ClangSharpResponseFiles = ["eng/silktouch/openxr/**/generate.rsp"],
+                            CacheKey = "Windows",
+                            ScrapeIf = static () => OperatingSystem.IsWindows(),
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/openxr/openxr-windows/generate.rsp",
+                            ],
                             InputSourceRoot = "sources/OpenXR",
                             InputTestRoot = "tests/OpenXR",
+                        }
+                    )
+                    .ClangScraper(
+                        new()
+                        {
+                            CacheKey = "Linux",
+                            ScrapeIf = static () => OperatingSystem.IsLinux(),
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/openxr/openxr-linux/generate.rsp",
+                            ],
+                            InputSourceRoot = "sources/OpenXR",
+                            InputTestRoot = "tests/OpenXR",
+                        }
+                    )
+                    .ClangScraper(
+                        new()
+                        {
+                            CacheKey = "Mac",
+                            ScrapeIf = static () => OperatingSystem.IsMacOS(),
+                            ExitAfterGenerateCacheOnlyRun = true,
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/openxr/openxr-mac/generate.rsp",
+                            ],
+                            InputSourceRoot = "sources/OpenXR",
+                            InputTestRoot = "tests/OpenXR",
+                        }
+                    )
+                    .BakeSourceSets(
+                        new()
+                        {
+                            SourceSets = new()
+                            {
+                                ["xr-windows"] = "xr",
+                                ["xr-linux"] = "xr",
+                                ["xr-mac"] = "xr",
+                            },
                         }
                     )
                     .MarkNativeNames()
@@ -49,10 +95,7 @@ internal static partial class Jobs
                     .AddApiProfiles(
                         new()
                         {
-                            Profiles =
-                            [
-                                new() { Profile = "openxr", SourceSubdirectory = "openxr" },
-                            ],
+                            Profiles = [new() { Profile = "openxr", SourceSubdirectory = "xr" }],
                         }
                     )
                     .InterceptNativeFunctions(new() { NativeFunctionNames = ["xrCreateInstance"] })
