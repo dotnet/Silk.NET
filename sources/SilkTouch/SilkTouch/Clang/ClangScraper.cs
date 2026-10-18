@@ -437,6 +437,7 @@ public sealed class ClangScraper(
                 ctx.JobKey,
                 cacheKey
             );
+
             await using var cacheDir = await cacheProvider.GetDirectoryAsync(
                 cacheKey,
                 CacheIntent.StageIntermediateOutput,
@@ -444,39 +445,38 @@ public sealed class ClangScraper(
                 FileAccess.Read
             );
 
-            var sourceDocuments = new List<ScrapedDocument>();
-            var testDocuments = new List<ScrapedDocument>();
-            await foreach (
-                var file in (
-                    cacheDir?.GetCommittedFilesAsync() ?? AsyncEnumerable.Empty<string>()
-                ).WithCancellation(ct)
-            )
+            if (cacheDir != null)
             {
-                await cacheDir!.GetCommittedFileAsync(file);
-                var isSource = file.StartsWith("sources");
-                var isTest = file.StartsWith("tests");
-                if (!isSource && !isTest)
+                var sourceDocuments = new List<ScrapedDocument>();
+                var testDocuments = new List<ScrapedDocument>();
+                await foreach (var file in cacheDir.GetCommittedFilesAsync().WithCancellation(ct))
                 {
-                    continue;
+                    await cacheDir.GetCommittedFileAsync(file);
+                    var isSource = file.StartsWith("sources");
+                    var isTest = file.StartsWith("tests");
+                    if (!isSource && !isTest)
+                    {
+                        continue;
+                    }
+
+                    var rel = file[(isSource ? "sources".Length : "tests".Length)..]
+                        .TrimStart('/', '\\');
+                    var content = await cacheDir.GetCommittedFileAsync(file);
+                    var root = await CSharpSyntaxTree
+                        .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
+                        .GetRootAsync(ct);
+                    if (isSource)
+                    {
+                        sourceDocuments.Add(new ScrapedDocument(rel, root));
+                    }
+                    else
+                    {
+                        testDocuments.Add(new ScrapedDocument(rel, root));
+                    }
                 }
 
-                var rel = file[(isSource ? "sources".Length : "tests".Length)..]
-                    .TrimStart('/', '\\');
-                var content = await cacheDir.GetCommittedFileAsync(file);
-                var root = await CSharpSyntaxTree
-                    .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
-                    .GetRootAsync(ct);
-                if (isSource)
-                {
-                    sourceDocuments.Add(new ScrapedDocument(rel, root));
-                }
-                else
-                {
-                    testDocuments.Add(new ScrapedDocument(rel, root));
-                }
+                scrapeResult = new ScrapeResult(sourceDocuments, testDocuments);
             }
-
-            scrapeResult = new ScrapeResult(sourceDocuments, testDocuments);
         }
 
         if (!scrapeResult.HasValue)
