@@ -149,7 +149,7 @@ jobs:
 
       - name: Show git status
         shell: pwsh
-        run: git-status
+        run: git status
 
       - name: Calculate source context
         id: source_context
@@ -191,7 +191,7 @@ jobs:
 
       - name: Show git status
         shell: pwsh
-        run: git-status
+        run: git status
 
       - name: Commit bindings
         shell: pwsh
@@ -209,6 +209,6 @@ jobs:
 
       - name: Show git status
         shell: pwsh
-        run: git-status
+        run: git status
 
       # TODO Not pushing for now
