@@ -211,6 +211,30 @@ public class BakeSourceSets(
         public override void VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
             ReportType(node, base.VisitInterfaceDeclaration);
 
+        private string GetTypeDiscrim(
+            MemberDeclarationSyntax node,
+            SyntaxToken identifier,
+            int typeParameterCount
+        )
+        {
+            var discrim = $"{identifier}";
+            var isTopLevel = _stack.Count == 0;
+            if (isTopLevel)
+            {
+                var nsPre = node.NamespaceFromSyntaxNode() is { Length: > 0 } ns
+                    ? $"{ns}."
+                    : string.Empty;
+                discrim = $"{nsPre}{discrim}";
+            }
+
+            if (typeParameterCount > 0)
+            {
+                discrim = $"{discrim}`{typeParameterCount}";
+            }
+
+            return discrim;
+        }
+
         /// <remarks>
         /// Delegates are not <see cref="BaseTypeDeclarationSyntax"/>es.
         /// </remarks>
@@ -219,47 +243,22 @@ public class BakeSourceSets(
             Action<DelegateDeclarationSyntax> visitChildren
         )
         {
-            var discrim = $"{node.Identifier}";
-            var isTopLevel = _stack.Count == 0;
-            if (isTopLevel)
-            {
-                var nsPre = node.NamespaceFromSyntaxNode() is { Length: > 0 } ns
-                    ? $"{ns}."
-                    : string.Empty;
-                discrim = $"{nsPre}{discrim}";
-            }
-
-            if (node is { TypeParameterList.Parameters.Count: > 0 and var cnt })
-            {
-                discrim = $"{discrim}`{cnt}";
-            }
-
+            var discrim = GetTypeDiscrim(
+                node,
+                node.Identifier,
+                node.TypeParameterList?.Parameters.Count ?? 0
+            );
             Report(node, node, discrim, visitChildren);
         }
 
         private void ReportType<T>(T node, Action<T> visitChildren)
             where T : BaseTypeDeclarationSyntax
         {
-            var discrim = $"{node.Identifier}";
-            var isTopLevel = _stack.Count == 0;
-            if (isTopLevel)
-            {
-                var nsPre = node.NamespaceFromSyntaxNode() is { Length: > 0 } ns
-                    ? $"{ns}."
-                    : string.Empty;
-                discrim = $"{nsPre}{discrim}";
-            }
-
-            if (
-                node is TypeDeclarationSyntax
-                {
-                    TypeParameterList.Parameters.Count: > 0 and var cnt,
-                }
-            )
-            {
-                discrim = $"{discrim}`{cnt}";
-            }
-
+            var discrim = GetTypeDiscrim(
+                node,
+                node.Identifier,
+                (node as TypeDeclarationSyntax)?.TypeParameterList?.Parameters.Count ?? 0
+            );
             Report(node, node, discrim, visitChildren);
         }
 
