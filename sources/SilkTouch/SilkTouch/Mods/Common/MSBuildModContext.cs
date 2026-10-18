@@ -41,6 +41,8 @@ internal class MSBuildModContext(
         set => Assign(ref _testProject, ref _srcProject, value, nameof(SourceProject));
     }
 
+    public bool ContinueGeneration { get; set; } = true;
+
     private static void Assign(
         ref Project? thisProject,
         ref Project? otherProject,
