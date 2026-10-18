@@ -371,11 +371,6 @@ public sealed class ClangScraper(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        if (ctx.WorkingDirectory is null)
-        {
-            throw new NotSupportedException("I/O not available.");
-        }
-
         // Read the configuration.
         var resolvedConfig = await inputResolver.Resolve(config);
 

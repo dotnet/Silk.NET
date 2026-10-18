@@ -18,7 +18,7 @@ public interface IModContext : IAsyncDisposable
     /// <summary>
     /// The path to resolve relative paths from.
     /// </summary>
-    public string? WorkingDirectory { get; }
+    public string WorkingDirectory { get; }
 
     /// <summary>
     /// The current compilation for the generation outputs.
