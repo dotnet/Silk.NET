@@ -50,6 +50,10 @@ jobs:
 
           git submodule update --init --recursive --depth 0 $submodules
 
+      - name: Clear .silktouch folder contents
+        shell: pwsh
+        run: Remove-Item -Path .silktouch -Recurse -Force
+
       - name: Scrape
         shell: pwsh
         run: |
@@ -58,12 +62,39 @@ jobs:
           # Ignore errors for now since we're only interested in the cache file
           exit 0
 
-      - name: Show git status
-        run: git status
+      - name: Show .silktouch folder contents
+        shell: pwsh
+        run: Get-ChildItem .silktouch
 
       - name: Upload cache as artifact
         uses: actions/upload-artifact@v7
         with:
           name: .silktouch cache (${{ matrix.os }})
+          path: .silktouch
+          include-hidden-files: true
+
+  combine:
+    name: Combine caches
+    runs-on: ubuntu-24.04
+
+    if: always()
+    needs: [scrape]
+
+    steps:
+
+      - name: Download cache
+        uses: actions/download-artifact@v8
+        with:
+          path: .silktouch
+          merge-multiple: true
+
+      - name: Show .silktouch folder contents
+        shell: pwsh
+        run: Get-ChildItem .silktouch
+
+      - name: Upload cache
+        uses: actions/upload-artifact@v7
+        with:
+          name: Combined .silktouch cache
           path: .silktouch
           include-hidden-files: true
