@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialRaycastResultDataANDROID")]
+[SupportedApiProfile("openxr")]
 public partial struct SpatialRaycastResultDataANDROID
 {
     [NativeName("hitPose")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_discovery_raycast"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public Posef HitPose;
 
     [NativeName("distanceSquared")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_discovery_raycast"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public float DistanceSquared;
 }

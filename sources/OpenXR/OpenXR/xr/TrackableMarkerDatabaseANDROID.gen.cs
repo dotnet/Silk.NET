@@ -9,14 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackableMarkerDatabaseANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct TrackableMarkerDatabaseANDROID
 {
     [NativeName("dictionary")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public TrackableMarkerDictionaryANDROID Dictionary;
 
     [NativeName("entryCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public uint EntryCount;
 
     [NativeName("entries")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public TrackableMarkerDatabaseEntryANDROID* Entries;
 }

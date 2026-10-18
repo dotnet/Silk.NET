@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackableObjectConfigurationANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct TrackableObjectConfigurationANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_object"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public StructureType Type = StructureType.TrackableObjectConfigurationANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_object"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public void* Next;
 
     [NativeName("labelCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_object"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public uint LabelCount;
 
     [NativeName("activeLabels")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_object"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public ObjectLabelANDROID* ActiveLabels;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_object"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public TrackableObjectConfigurationANDROID() { }
 }

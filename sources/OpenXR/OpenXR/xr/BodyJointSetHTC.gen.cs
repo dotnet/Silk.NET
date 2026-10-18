@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBodyJointSetHTC")]
+[SupportedApiProfile("openxr")]
 public enum BodyJointSetHTC : uint
 {
     [NativeName("XR_BODY_JOINT_SET_FULL_HTC")]
+    [SupportedApiProfile("openxr", ["XR_HTC_body_tracking"])]
     Full = 0,
 }

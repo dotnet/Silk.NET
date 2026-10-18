@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorPersistenceInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialAnchorPersistenceInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_spatial_anchor_persistence"],
+        ImpliesSets = ["XR_MSFT_spatial_anchor", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SpatialAnchorPersistenceInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_spatial_anchor_persistence"],
+        ImpliesSets = ["XR_MSFT_spatial_anchor", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("spatialAnchorPersistenceName")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_spatial_anchor_persistence"],
+        ImpliesSets = ["XR_MSFT_spatial_anchor", "XR_VERSION_1_0"]
+    )]
     public SpatialAnchorPersistenceNameMSFT SpatialAnchorPersistenceName;
 
     [NativeName("spatialAnchor")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_spatial_anchor_persistence"],
+        ImpliesSets = ["XR_MSFT_spatial_anchor", "XR_VERSION_1_0"]
+    )]
     public SpatialAnchorHandleMSFT SpatialAnchor;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_spatial_anchor_persistence"],
+        ImpliesSets = ["XR_MSFT_spatial_anchor", "XR_VERSION_1_0"]
+    )]
     public SpatialAnchorPersistenceInfoMSFT() { }
 }

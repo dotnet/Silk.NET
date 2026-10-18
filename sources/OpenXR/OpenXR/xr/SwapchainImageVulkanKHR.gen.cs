@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSwapchainImageVulkanKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SwapchainImageVulkanKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
     public StructureType Type = StructureType.SwapchainImageVulkanKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
     public void* Next;
 
     [NativeName("image")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
     public VkImageHandle Image;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
     public SwapchainImageVulkanKHR() { }
 }

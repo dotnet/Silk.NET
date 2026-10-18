@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSwapchainImageReleaseInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SwapchainImageReleaseInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.SwapchainImageReleaseInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
+    [SupportedApiProfile("openxr")]
     public SwapchainImageReleaseInfo() { }
 }

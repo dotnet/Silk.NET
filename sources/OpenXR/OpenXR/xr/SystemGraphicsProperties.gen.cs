@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemGraphicsProperties")]
+[SupportedApiProfile("openxr")]
 public partial struct SystemGraphicsProperties
 {
     [NativeName("maxSwapchainImageHeight")]
+    [SupportedApiProfile("openxr")]
     public uint MaxSwapchainImageHeight;
 
     [NativeName("maxSwapchainImageWidth")]
+    [SupportedApiProfile("openxr")]
     public uint MaxSwapchainImageWidth;
 
     [NativeName("maxLayerCount")]
+    [SupportedApiProfile("openxr")]
     public uint MaxLayerCount;
 }

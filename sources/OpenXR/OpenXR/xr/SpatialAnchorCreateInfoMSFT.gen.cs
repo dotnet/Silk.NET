@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorCreateInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialAnchorCreateInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.SpatialAnchorCreateInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("space")]
+    [SupportedApiProfile("openxr")]
     public SpaceHandle Space;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr")]
     public Posef Pose;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr")]
     public long Time;
 
+    [SupportedApiProfile("openxr")]
     public SpatialAnchorCreateInfoMSFT() { }
 }

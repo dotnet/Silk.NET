@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackableMarkerDatabaseEntryANDROID")]
+[SupportedApiProfile("openxr")]
 public partial struct TrackableMarkerDatabaseEntryANDROID
 {
     [NativeName("id")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public int Id;
 
     [NativeName("edgeSize")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_marker"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public float EdgeSize;
 }

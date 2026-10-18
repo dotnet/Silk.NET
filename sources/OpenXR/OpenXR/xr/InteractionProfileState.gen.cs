@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrInteractionProfileState")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct InteractionProfileState
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.InteractionProfileState;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("interactionProfile")]
+    [SupportedApiProfile("openxr")]
     public ulong InteractionProfile;
 
+    [SupportedApiProfile("openxr")]
     public InteractionProfileState() { }
 }

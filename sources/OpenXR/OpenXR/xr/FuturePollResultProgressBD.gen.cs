@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFuturePollResultProgressBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FuturePollResultProgressBD
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_future_progress"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.FuturePollResultProgressBD;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_future_progress"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("isSupported")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_future_progress"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public MaybeBool<uint> IsSupported;
 
     [NativeName("progressPercentage")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_future_progress"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public uint ProgressPercentage;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_future_progress"],
+        ImpliesSets = ["XR_EXT_future", "XR_VERSION_1_0"]
+    )]
     public FuturePollResultProgressBD() { }
 }

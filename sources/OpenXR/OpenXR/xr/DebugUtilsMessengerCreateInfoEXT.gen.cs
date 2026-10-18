@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrDebugUtilsMessengerCreateInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct DebugUtilsMessengerCreateInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public StructureType Type = StructureType.DebugUtilsMessengerCreateInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public void* Next;
 
     [NativeName("messageSeverities")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public DebugUtilsMessageSeverityFlagsEXT MessageSeverities;
 
     [NativeName("messageTypes")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public DebugUtilsMessageTypeFlagsEXT MessageTypes;
 
     [NativeName("userCallback")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public DebugUtilsMessengerCallbackEXT UserCallback;
 
     [NativeName("userData")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public void* UserData;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public DebugUtilsMessengerCreateInfoEXT() { }
 }

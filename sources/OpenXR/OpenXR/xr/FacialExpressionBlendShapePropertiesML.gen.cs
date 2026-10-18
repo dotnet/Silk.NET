@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFacialExpressionBlendShapePropertiesML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FacialExpressionBlendShapePropertiesML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public StructureType Type = StructureType.FacialExpressionBlendShapePropertiesML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public void* Next;
 
     [NativeName("requestedFacialBlendShape")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public FacialBlendShapeML RequestedFacialBlendShape;
 
     [NativeName("weight")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public float Weight;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public FacialExpressionBlendShapePropertiesFlagsML Flags;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_ML_facial_expression"])]
     public FacialExpressionBlendShapePropertiesML() { }
 }

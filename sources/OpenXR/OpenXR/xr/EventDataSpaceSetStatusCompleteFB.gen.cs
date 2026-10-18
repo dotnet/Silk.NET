@@ -9,31 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataSpaceSetStatusCompleteFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataSpaceSetStatusCompleteFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public StructureType Type = StructureType.EventDataSpaceSetStatusCompleteFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public void* Next;
 
     [NativeName("requestId")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public ulong RequestId;
 
     [NativeName("result")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public Result Result;
 
     [NativeName("space")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public SpaceHandle Space;
 
     [NativeName("uuid")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public Uuid Uuid;
 
     [NativeName("componentType")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public SpaceComponentTypeFB ComponentType;
 
     [NativeName("enabled")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public MaybeBool<uint> Enabled;
 
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public EventDataSpaceSetStatusCompleteFB() { }
 }

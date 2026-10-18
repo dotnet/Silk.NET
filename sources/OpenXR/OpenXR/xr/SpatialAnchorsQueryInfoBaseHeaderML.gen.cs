@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorsQueryInfoBaseHeaderML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialAnchorsQueryInfoBaseHeaderML
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_spatial_anchors_storage"],
+        ImpliesSets = ["XR_EXT_future", "XR_ML_spatial_anchors"]
+    )]
     public void* Next;
 }

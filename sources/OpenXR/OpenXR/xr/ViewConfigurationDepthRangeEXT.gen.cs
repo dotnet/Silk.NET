@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrViewConfigurationDepthRangeEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ViewConfigurationDepthRangeEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_depth_range"])]
     public StructureType Type = StructureType.ViewConfigurationDepthRangeEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_depth_range"])]
     public void* Next;
 
     [NativeName("recommendedNearZ")]
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_depth_range"])]
     public float RecommendedNearZ;
 
     [NativeName("minNearZ")]
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_depth_range"])]
     public float MinNearZ;
 
     [NativeName("recommendedFarZ")]
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_depth_range"])]
     public float RecommendedFarZ;
 
     [NativeName("maxFarZ")]
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_depth_range"])]
     public float MaxFarZ;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_view_configuration_depth_range"])]
     public ViewConfigurationDepthRangeEXT() { }
 }

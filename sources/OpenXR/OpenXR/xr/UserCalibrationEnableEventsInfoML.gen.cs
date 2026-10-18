@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrUserCalibrationEnableEventsInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct UserCalibrationEnableEventsInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     public StructureType Type = StructureType.UserCalibrationEnableEventsInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     public void* Next;
 
     [NativeName("enabled")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     public MaybeBool<uint> Enabled;
 
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     public UserCalibrationEnableEventsInfoML() { }
 }

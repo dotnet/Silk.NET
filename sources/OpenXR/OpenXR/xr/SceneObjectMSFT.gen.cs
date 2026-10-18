@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneObjectMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct SceneObjectMSFT
 {
     [NativeName("objectType")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public SceneObjectTypeMSFT ObjectType;
 }

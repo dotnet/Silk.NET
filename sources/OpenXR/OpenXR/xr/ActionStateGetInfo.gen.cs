@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrActionStateGetInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ActionStateGetInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.ActionStateGetInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("action")]
+    [SupportedApiProfile("openxr")]
     public ActionHandle Action;
 
     [NativeName("subactionPath")]
+    [SupportedApiProfile("openxr")]
     public ulong SubactionPath;
 
+    [SupportedApiProfile("openxr")]
     public ActionStateGetInfo() { }
 }

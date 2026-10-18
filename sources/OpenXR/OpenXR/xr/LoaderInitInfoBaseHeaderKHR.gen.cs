@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrLoaderInitInfoBaseHeaderKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct LoaderInitInfoBaseHeaderKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_loader_init"])]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_loader_init"])]
     public void* Next;
 }

@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughColorLutChannelsMETA")]
+[SupportedApiProfile("openxr")]
 public enum PassthroughColorLutChannelsMETA : uint
 {
     [NativeName("XR_PASSTHROUGH_COLOR_LUT_CHANNELS_RGB_META")]
+    [SupportedApiProfile("openxr")]
     Rgb = 1,
 
     [NativeName("XR_PASSTHROUGH_COLOR_LUT_CHANNELS_RGBA_META")]
+    [SupportedApiProfile("openxr")]
     Rgba = 2,
 }

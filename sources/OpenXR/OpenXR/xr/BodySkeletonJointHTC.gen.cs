@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBodySkeletonJointHTC")]
+[SupportedApiProfile("openxr")]
 public partial struct BodySkeletonJointHTC
 {
     [NativeName("pose")]
+    [SupportedApiProfile("openxr")]
     public Posef Pose;
 }

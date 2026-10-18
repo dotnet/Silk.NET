@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSwapchainImageOpenGLKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SwapchainImageOpenGLKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public StructureType Type = StructureType.SwapchainImageOpenglKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public void* Next;
 
     [NativeName("image")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public uint Image;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public SwapchainImageOpenGLKHR() { }
 }

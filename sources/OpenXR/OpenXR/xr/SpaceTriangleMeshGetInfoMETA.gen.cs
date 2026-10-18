@@ -9,13 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceTriangleMeshGetInfoMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceTriangleMeshGetInfoMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_mesh"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SpaceTriangleMeshGetInfoMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_mesh"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_mesh"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public SpaceTriangleMeshGetInfoMETA() { }
 }

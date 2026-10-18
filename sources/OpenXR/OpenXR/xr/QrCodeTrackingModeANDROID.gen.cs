@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrQrCodeTrackingModeANDROID")]
+[SupportedApiProfile("openxr")]
 public enum QrCodeTrackingModeANDROID : uint
 {
     [NativeName("XR_QR_CODE_TRACKING_MODE_DYNAMIC_ANDROID")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     Dynamic = 0,
 
     [NativeName("XR_QR_CODE_TRACKING_MODE_STATIC_ANDROID")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     Static = 1,
 }

@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialCapabilityConfigurationAnchorEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialCapabilityConfigurationAnchorEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialCapabilityConfigurationAnchorEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("capability")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialCapabilityEXT Capability;
 
     [NativeName("enabledComponentCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public uint EnabledComponentCount;
 
     [NativeName("enabledComponents")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialComponentTypeEXT* EnabledComponents;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialCapabilityConfigurationAnchorEXT() { }
 }

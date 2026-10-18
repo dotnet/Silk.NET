@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceContainerFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceContainerFB
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_container"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SpaceContainerFB;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_container"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("uuidCapacityInput")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_container"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public uint UuidCapacityInput;
 
     [NativeName("uuidCountOutput")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_container"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public uint UuidCountOutput;
 
     [NativeName("uuids")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_container"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public Uuid* Uuids;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_container"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public SpaceContainerFB() { }
 }

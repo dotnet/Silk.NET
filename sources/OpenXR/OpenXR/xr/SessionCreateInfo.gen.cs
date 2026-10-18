@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSessionCreateInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SessionCreateInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.SessionCreateInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("createFlags")]
+    [SupportedApiProfile("openxr")]
     public SessionCreateFlags CreateFlags;
 
     [NativeName("systemId")]
+    [SupportedApiProfile("openxr")]
     public ulong SystemId;
 
+    [SupportedApiProfile("openxr")]
     public SessionCreateInfo() { }
 }

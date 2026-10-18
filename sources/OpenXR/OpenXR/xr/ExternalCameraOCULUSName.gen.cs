@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_name_e__FixedBuffer")]
 [InlineArray(32)]
+[SupportedApiProfile("openxr")]
 public partial struct ExternalCameraOCULUSName
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public sbyte E0;
 }

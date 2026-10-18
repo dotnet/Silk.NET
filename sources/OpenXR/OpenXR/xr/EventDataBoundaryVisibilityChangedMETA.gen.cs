@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataBoundaryVisibilityChangedMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataBoundaryVisibilityChangedMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_boundary_visibility"])]
     public StructureType Type = StructureType.EventDataBoundaryVisibilityChangedMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_boundary_visibility"])]
     public void* Next;
 
     [NativeName("boundaryVisibility")]
+    [SupportedApiProfile("openxr", ["XR_META_boundary_visibility"])]
     public BoundaryVisibilityMETA BoundaryVisibility;
 
+    [SupportedApiProfile("openxr", ["XR_META_boundary_visibility"])]
     public EventDataBoundaryVisibilityChangedMETA() { }
 }

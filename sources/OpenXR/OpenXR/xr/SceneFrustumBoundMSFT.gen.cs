@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneFrustumBoundMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct SceneFrustumBoundMSFT
 {
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public Posef Pose;
 
     [NativeName("fov")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public Fovf Fov;
 
     [NativeName("farDistance")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public float FarDistance;
 }

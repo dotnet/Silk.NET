@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSoundObjectShapeSphereBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SoundObjectShapeSphereBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public StructureType Type = StructureType.SoundObjectShapeSphereBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public void* Next;
 
     [NativeName("radius")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float Radius;
 
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundObjectShapeSphereBD() { }
 }

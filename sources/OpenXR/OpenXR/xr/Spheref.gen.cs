@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpheref")]
+[SupportedApiProfile("openxr")]
 public partial struct Spheref
 {
     [NativeName("center")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public Posef Center;
 
     [NativeName("radius")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public float Radius;
 }

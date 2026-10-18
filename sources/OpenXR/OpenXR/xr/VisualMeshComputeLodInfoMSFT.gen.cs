@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVisualMeshComputeLodInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct VisualMeshComputeLodInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public StructureType Type = StructureType.VisualMeshComputeLodInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public void* Next;
 
     [NativeName("lod")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public MeshComputeLodMSFT Lod;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public VisualMeshComputeLodInfoMSFT() { }
 }

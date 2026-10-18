@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHandJointLocationsEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct HandJointLocationsEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public StructureType Type = StructureType.HandJointLocationsEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public void* Next;
 
     [NativeName("isActive")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public MaybeBool<uint> IsActive;
 
     [NativeName("jointCount")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public uint JointCount;
 
     [NativeName("jointLocations")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public HandJointLocationEXT* JointLocations;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public HandJointLocationsEXT() { }
 }

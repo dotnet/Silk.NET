@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBodyJointSetBD")]
+[SupportedApiProfile("openxr")]
 public enum BodyJointSetBD : uint
 {
     [NativeName("XR_BODY_JOINT_SET_BODY_WITHOUT_ARM_BD")]
+    [SupportedApiProfile("openxr", ["XR_BD_body_tracking"])]
     BodyWithoutArm = 1,
 
     [NativeName("XR_BODY_JOINT_SET_FULL_BODY_JOINTS_BD")]
+    [SupportedApiProfile("openxr", ["XR_BD_body_tracking"])]
     FullBodyJoints = 2,
 }

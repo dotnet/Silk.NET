@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataSessionStateChanged")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataSessionStateChanged
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public StructureType Type = StructureType.EventDataSessionStateChanged;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public void* Next;
 
     [NativeName("session")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public SessionHandle Session;
 
     [NativeName("state")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public SessionState State;
 
     [NativeName("time")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public long Time;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public EventDataSessionStateChanged() { }
 }

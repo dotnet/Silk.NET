@@ -9,14 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialMarkerDataEXT")]
+[SupportedApiProfile("openxr")]
 public partial struct SpatialMarkerDataEXT
 {
     [NativeName("capability")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialCapabilityEXT Capability;
 
     [NativeName("markerId")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public uint MarkerId;
 
     [NativeName("data")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialBufferEXT Data;
 }

@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrUuidMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct UuidMSFT
 {
     [NativeName("bytes")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public UuidMSFTBytes Bytes;
 }

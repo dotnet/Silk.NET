@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPosef")]
+[SupportedApiProfile("openxr")]
 public partial struct Posef
 {
     [NativeName("orientation")]
+    [SupportedApiProfile("openxr")]
     public Quaternionf Orientation;
 
     [NativeName("position")]
+    [SupportedApiProfile("openxr")]
     public Vector3F Position;
 }

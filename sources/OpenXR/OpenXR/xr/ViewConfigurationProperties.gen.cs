@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrViewConfigurationProperties")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ViewConfigurationProperties
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.ViewConfigurationProperties;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("viewConfigurationType")]
+    [SupportedApiProfile("openxr")]
     public ViewConfigurationType ViewConfigurationType;
 
     [NativeName("fovMutable")]
+    [SupportedApiProfile("openxr")]
     public MaybeBool<uint> FovMutable;
 
+    [SupportedApiProfile("openxr")]
     public ViewConfigurationProperties() { }
 }

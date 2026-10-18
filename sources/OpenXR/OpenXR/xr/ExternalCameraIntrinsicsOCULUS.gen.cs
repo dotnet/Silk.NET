@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrExternalCameraIntrinsicsOCULUS")]
+[SupportedApiProfile("openxr")]
 public partial struct ExternalCameraIntrinsicsOCULUS
 {
     [NativeName("lastChangeTime")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public long LastChangeTime;
 
     [NativeName("fov")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public Fovf Fov;
 
     [NativeName("virtualNearPlaneDistance")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public float VirtualNearPlaneDistance;
 
     [NativeName("virtualFarPlaneDistance")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public float VirtualFarPlaneDistance;
 
     [NativeName("imageSensorPixelResolution")]
+    [SupportedApiProfile("openxr", ["XR_OCULUS_external_camera"])]
     public Extent2Di ImageSensorPixelResolution;
 }

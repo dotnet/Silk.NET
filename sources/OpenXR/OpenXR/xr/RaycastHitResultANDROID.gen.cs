@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRaycastHitResultANDROID")]
+[SupportedApiProfile("openxr")]
 public partial struct RaycastHitResultANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]
     public TrackableTypeANDROID Type;
 
     [NativeName("trackable")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]
     public ulong Trackable;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]
     public Posef Pose;
 }

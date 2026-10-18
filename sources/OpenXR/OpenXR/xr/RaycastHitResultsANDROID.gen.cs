@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRaycastHitResultsANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct RaycastHitResultsANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]
     public StructureType Type = StructureType.RaycastHitResultsANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]
     public void* Next;
 
     [NativeName("resultsCapacityInput")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]
     public uint ResultsCapacityInput;
 
     [NativeName("resultsCountOutput")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]
     public uint ResultsCountOutput;
 
     [NativeName("results")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]
     public RaycastHitResultANDROID* Results;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_raycast"], ImpliesSets = ["XR_ANDROID_trackables"])]
     public RaycastHitResultsANDROID() { }
 }

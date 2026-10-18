@@ -9,31 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrInteractionProfileAnalogThresholdVALVE")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct InteractionProfileAnalogThresholdVALVE
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]
     public StructureType Type = StructureType.InteractionProfileAnalogThresholdVALVE;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]
     public void* Next;
 
     [NativeName("action")]
+    [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]
     public ActionHandle Action;
 
     [NativeName("binding")]
+    [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]
     public ulong Binding;
 
     [NativeName("onThreshold")]
+    [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]
     public float OnThreshold;
 
     [NativeName("offThreshold")]
+    [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]
     public float OffThreshold;
 
     [NativeName("onHaptic")]
+    [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]
     public HapticBaseHeader* OnHaptic;
 
     [NativeName("offHaptic")]
+    [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]
     public HapticBaseHeader* OffHaptic;
 
+    [SupportedApiProfile("openxr", ["XR_VALVE_analog_threshold"])]
     public InteractionProfileAnalogThresholdVALVE() { }
 }

@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHapticParametricTransientEXT")]
+[SupportedApiProfile("openxr")]
 public partial struct HapticParametricTransientEXT
 {
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public long Time;
 
     [NativeName("amplitude")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public float Amplitude;
 
     [NativeName("frequency")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     public float Frequency;
 }

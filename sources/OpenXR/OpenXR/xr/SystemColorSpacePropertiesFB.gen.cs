@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemColorSpacePropertiesFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemColorSpacePropertiesFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_color_space"])]
     public StructureType Type = StructureType.SystemColorSpacePropertiesFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_color_space"])]
     public void* Next;
 
     [NativeName("colorSpace")]
+    [SupportedApiProfile("openxr", ["XR_FB_color_space"])]
     public ColorSpaceFB ColorSpace;
 
+    [SupportedApiProfile("openxr", ["XR_FB_color_space"])]
     public SystemColorSpacePropertiesFB() { }
 }

@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSoundObstacleConfigBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SoundObstacleConfigBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public StructureType Type = StructureType.SoundObstacleConfigBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public void* Next;
 
     [NativeName("enabled")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public MaybeBool<uint> Enabled;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public Posef Pose;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("materialCount")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public uint MaterialCount;
 
     [NativeName("materials")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundObstacleMaterialHandleBD* Materials;
 
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundObstacleConfigBD() { }
 }

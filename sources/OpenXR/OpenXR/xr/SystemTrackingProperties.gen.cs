@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemTrackingProperties")]
+[SupportedApiProfile("openxr")]
 public partial struct SystemTrackingProperties
 {
     [NativeName("orientationTracking")]
+    [SupportedApiProfile("openxr")]
     public MaybeBool<uint> OrientationTracking;
 
     [NativeName("positionTracking")]
+    [SupportedApiProfile("openxr")]
     public MaybeBool<uint> PositionTracking;
 }

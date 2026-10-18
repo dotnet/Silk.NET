@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEnvironmentRaycastFilterDistanceMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EnvironmentRaycastFilterDistanceMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_environment_raycast"],
+        ImpliesSets = ["XR_EXT_future"]
+    )]
     public StructureType Type = StructureType.EnvironmentRaycastFilterDistanceMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_environment_raycast"],
+        ImpliesSets = ["XR_EXT_future"]
+    )]
     public void* Next;
 
     [NativeName("maxDistance")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_environment_raycast"],
+        ImpliesSets = ["XR_EXT_future"]
+    )]
     public float MaxDistance;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_environment_raycast"],
+        ImpliesSets = ["XR_EXT_future"]
+    )]
     public EnvironmentRaycastFilterDistanceMETA() { }
 }

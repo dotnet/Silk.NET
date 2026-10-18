@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneDeserializeInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SceneDeserializeInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SceneDeserializeInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("fragmentCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public uint FragmentCount;
 
     [NativeName("fragments")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public DeserializeSceneFragmentMSFT* Fragments;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_understanding_serialization"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public SceneDeserializeInfoMSFT() { }
 }

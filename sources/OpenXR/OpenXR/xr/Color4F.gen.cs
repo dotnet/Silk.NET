@@ -9,17 +9,38 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrColor4f")]
+[SupportedApiProfile("openxr")]
 public partial struct Color4F
 {
     [NativeName("r")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public float R;
 
     [NativeName("g")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public float G;
 
     [NativeName("b")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public float B;
 
     [NativeName("a")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
+        MinVersion = "1.0"
+    )]
     public float A;
 }

@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneComputeStateMSFT")]
+[SupportedApiProfile("openxr")]
 public enum SceneComputeStateMSFT : uint
 {
     [NativeName("XR_SCENE_COMPUTE_STATE_NONE_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     None = 0,
 
     [NativeName("XR_SCENE_COMPUTE_STATE_UPDATING_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     Updating = 1,
 
     [NativeName("XR_SCENE_COMPUTE_STATE_COMPLETED_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     Completed = 2,
 
     [NativeName("XR_SCENE_COMPUTE_STATE_COMPLETED_WITH_ERROR_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     CompletedWithError = 3,
 }

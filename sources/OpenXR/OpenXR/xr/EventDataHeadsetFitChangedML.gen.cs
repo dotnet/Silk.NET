@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataHeadsetFitChangedML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataHeadsetFitChangedML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     public StructureType Type = StructureType.EventDataHeadsetFitChangedML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     public void* Next;
 
     [NativeName("status")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     public HeadsetFitStatusML Status;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     public EventDataHeadsetFitChangedML() { }
 }

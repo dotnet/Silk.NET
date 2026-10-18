@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSwapchainImageWaitInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SwapchainImageWaitInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.SwapchainImageWaitInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("timeout")]
+    [SupportedApiProfile("openxr")]
     public long Timeout;
 
+    [SupportedApiProfile("openxr")]
     public SwapchainImageWaitInfo() { }
 }

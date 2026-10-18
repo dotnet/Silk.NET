@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataSpaceShareCompleteFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataSpaceShareCompleteFB
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.EventDataSpaceShareCompleteFB;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("requestId")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public ulong RequestId;
 
     [NativeName("result")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public Result Result;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public EventDataSpaceShareCompleteFB() { }
 }

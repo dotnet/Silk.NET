@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMeshMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct SceneMeshMSFT
 {
     [NativeName("meshBufferId")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public ulong MeshBufferId;
 
     [NativeName("supportsIndicesUint16")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public MaybeBool<uint> SupportsIndicesUint16;
 }

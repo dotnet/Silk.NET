@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFaceExpressionInfo2FB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FaceExpressionInfo2FB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     public StructureType Type = StructureType.FaceExpressionInfo2FB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     public void* Next;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     public FaceExpressionInfo2FB() { }
 }

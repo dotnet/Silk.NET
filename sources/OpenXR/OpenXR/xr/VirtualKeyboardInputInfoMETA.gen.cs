@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVirtualKeyboardInputInfoMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct VirtualKeyboardInputInfoMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public StructureType Type = StructureType.VirtualKeyboardInputInfoMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public void* Next;
 
     [NativeName("inputSource")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public VirtualKeyboardInputSourceMETA InputSource;
 
     [NativeName("inputSpace")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public SpaceHandle InputSpace;
 
     [NativeName("inputPoseInSpace")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public Posef InputPoseInSpace;
 
     [NativeName("inputState")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public VirtualKeyboardInputStateFlagsMETA InputState;
 
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public VirtualKeyboardInputInfoMETA() { }
 }

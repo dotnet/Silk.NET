@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataPerfSettingsEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataPerfSettingsEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
     public StructureType Type = StructureType.EventDataPerfSettingsEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
     public void* Next;
 
     [NativeName("domain")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
     public PerfSettingsDomainEXT Domain;
 
     [NativeName("subDomain")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
     public PerfSettingsSubDomainEXT SubDomain;
 
     [NativeName("fromLevel")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
     public PerfSettingsNotificationLevelEXT FromLevel;
 
     [NativeName("toLevel")]
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
     public PerfSettingsNotificationLevelEXT ToLevel;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_performance_settings"])]
     public EventDataPerfSettingsEXT() { }
 }

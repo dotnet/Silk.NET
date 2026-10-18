@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrColocationAdvertisementStopInfoMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ColocationAdvertisementStopInfoMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]
     public StructureType Type = StructureType.ColocationAdvertisementStopInfoMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]
     public void* Next;
 
+    [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]
     public ColocationAdvertisementStopInfoMETA() { }
 }

@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialComponentAnchorListEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialComponentAnchorListEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialComponentAnchorListEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("locationCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public uint LocationCount;
 
     [NativeName("locations")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public Posef* Locations;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_anchor"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialComponentAnchorListEXT() { }
 }

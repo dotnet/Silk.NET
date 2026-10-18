@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialPersistenceDataEXT")]
+[SupportedApiProfile("openxr")]
 public partial struct SpatialPersistenceDataEXT
 {
     [NativeName("persistUuid")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public Uuid PersistUuid;
 
     [NativeName("persistState")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public SpatialPersistenceStateEXT PersistState;
 }

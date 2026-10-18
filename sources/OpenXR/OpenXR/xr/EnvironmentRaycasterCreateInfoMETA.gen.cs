@@ -9,13 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEnvironmentRaycasterCreateInfoMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EnvironmentRaycasterCreateInfoMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_environment_raycast"],
+        ImpliesSets = ["XR_EXT_future"]
+    )]
     public StructureType Type = StructureType.EnvironmentRaycasterCreateInfoMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_environment_raycast"],
+        ImpliesSets = ["XR_EXT_future"]
+    )]
     public void* Next;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_environment_raycast"],
+        ImpliesSets = ["XR_EXT_future"]
+    )]
     public EnvironmentRaycasterCreateInfoMETA() { }
 }

@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataMarkerTrackingUpdateVARJO")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataMarkerTrackingUpdateVARJO
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public StructureType Type = StructureType.EventDataMarkerTrackingUpdateVARJO;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public void* Next;
 
     [NativeName("markerId")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public ulong MarkerId;
 
     [NativeName("isActive")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public MaybeBool<uint> IsActive;
 
     [NativeName("isPredicted")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public MaybeBool<uint> IsPredicted;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_VARJO_marker_tracking"])]
     public EventDataMarkerTrackingUpdateVARJO() { }
 }

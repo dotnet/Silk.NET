@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAudioRendererCreateInfoBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialAudioRendererCreateInfoBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public StructureType Type = StructureType.SpatialAudioRendererCreateInfoBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public void* Next;
 
     [NativeName("framesPerBuffer")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public uint FramesPerBuffer;
 
     [NativeName("sampleRate")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public AudioSampleRateBD SampleRate;
 
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SpatialAudioRendererCreateInfoBD() { }
 }

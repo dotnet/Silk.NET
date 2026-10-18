@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialMarkerStaticOptimizationEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialMarkerStaticOptimizationEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialMarkerStaticOptimizationEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("optimizeForStaticMarker")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public MaybeBool<uint> OptimizeForStaticMarker;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_marker_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialMarkerStaticOptimizationEXT() { }
 }

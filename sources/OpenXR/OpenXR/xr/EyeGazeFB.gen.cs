@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEyeGazeFB")]
+[SupportedApiProfile("openxr")]
 public partial struct EyeGazeFB
 {
     [NativeName("isValid")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public MaybeBool<uint> IsValid;
 
     [NativeName("gazePose")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public Posef GazePose;
 
     [NativeName("gazeConfidence")]
+    [SupportedApiProfile("openxr", ["XR_FB_eye_tracking_social"])]
     public float GazeConfidence;
 }

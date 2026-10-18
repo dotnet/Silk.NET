@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPlaneDetectorOrientationEXT")]
+[SupportedApiProfile("openxr")]
 public enum PlaneDetectorOrientationEXT : uint
 {
     [NativeName("XR_PLANE_DETECTOR_ORIENTATION_HORIZONTAL_UPWARD_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     HorizontalUpward = 0,
 
     [NativeName("XR_PLANE_DETECTOR_ORIENTATION_HORIZONTAL_DOWNWARD_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     HorizontalDownward = 1,
 
     [NativeName("XR_PLANE_DETECTOR_ORIENTATION_VERTICAL_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     Vertical = 2,
 
     [NativeName("XR_PLANE_DETECTOR_ORIENTATION_ARBITRARY_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_plane_detection"])]
     Arbitrary = 3,
 }

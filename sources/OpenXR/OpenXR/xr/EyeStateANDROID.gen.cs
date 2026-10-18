@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEyeStateANDROID")]
+[SupportedApiProfile("openxr")]
 public enum EyeStateANDROID : uint
 {
     [NativeName("XR_EYE_STATE_INVALID_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     Invalid = 0,
 
     [NativeName("XR_EYE_STATE_GAZING_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     Gazing = 1,
 
     [NativeName("XR_EYE_STATE_SHUT_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     Shut = 2,
 }

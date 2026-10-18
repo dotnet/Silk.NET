@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceQueryResultFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceQueryResultFB
 {
     [NativeName("space")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public SpaceHandle Space;
 
     [NativeName("uuid")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_query"],
+        ImpliesSets = ["XR_FB_spatial_entity_storage", "XR_VERSION_1_0"]
+    )]
     public Uuid Uuid;
 }

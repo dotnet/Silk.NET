@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrScenePlaneMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct ScenePlaneMSFT
 {
     [NativeName("alignment")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public ScenePlaneAlignmentTypeMSFT Alignment;
 
     [NativeName("size")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public Extent2Df Size;
 
     [NativeName("meshBufferId")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public ulong MeshBufferId;
 
     [NativeName("supportsIndicesUint16")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public MaybeBool<uint> SupportsIndicesUint16;
 }

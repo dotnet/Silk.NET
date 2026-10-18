@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSessionCreateInfoOverlayEXTX")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SessionCreateInfoOverlayEXTX
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
     public StructureType Type = StructureType.SessionCreateInfoOverlayEXTX;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
     public void* Next;
 
     [NativeName("createFlags")]
+    [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
     public OverlaySessionCreateFlagsEXTX CreateFlags;
 
     [NativeName("sessionLayersPlacement")]
+    [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
     public uint SessionLayersPlacement;
 
+    [SupportedApiProfile("openxr", ["XR_EXTX_overlay"])]
     public SessionCreateInfoOverlayEXTX() { }
 }

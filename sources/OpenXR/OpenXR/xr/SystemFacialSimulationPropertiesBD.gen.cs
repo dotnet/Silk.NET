@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemFacialSimulationPropertiesBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemFacialSimulationPropertiesBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public StructureType Type = StructureType.SystemFacialSimulationPropertiesBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public void* Next;
 
     [NativeName("supportsFaceTracking")]
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public MaybeBool<uint> SupportsFaceTracking;
 
+    [SupportedApiProfile("openxr", ["XR_BD_facial_simulation"])]
     public SystemFacialSimulationPropertiesBD() { }
 }

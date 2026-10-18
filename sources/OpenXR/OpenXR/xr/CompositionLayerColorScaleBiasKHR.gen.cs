@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerColorScaleBiasKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerColorScaleBiasKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_color_scale_bias"])]
     public StructureType Type = StructureType.CompositionLayerColorScaleBiasKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_color_scale_bias"])]
     public void* Next;
 
     [NativeName("colorScale")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_color_scale_bias"])]
     public Color4F ColorScale;
 
     [NativeName("colorBias")]
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_color_scale_bias"])]
     public Color4F ColorBias;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_composition_layer_color_scale_bias"])]
     public CompositionLayerColorScaleBiasKHR() { }
 }

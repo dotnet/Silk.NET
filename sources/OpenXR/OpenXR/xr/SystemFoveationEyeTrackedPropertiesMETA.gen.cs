@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemFoveationEyeTrackedPropertiesMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemFoveationEyeTrackedPropertiesMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_foveation_eye_tracked"],
+        ImpliesSets = ["XR_FB_foveation", "XR_FB_foveation_configuration", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SystemFoveationEyeTrackedPropertiesMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_foveation_eye_tracked"],
+        ImpliesSets = ["XR_FB_foveation", "XR_FB_foveation_configuration", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("supportsFoveationEyeTracked")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_foveation_eye_tracked"],
+        ImpliesSets = ["XR_FB_foveation", "XR_FB_foveation_configuration", "XR_VERSION_1_0"]
+    )]
     public MaybeBool<uint> SupportsFoveationEyeTracked;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_foveation_eye_tracked"],
+        ImpliesSets = ["XR_FB_foveation", "XR_FB_foveation_configuration", "XR_VERSION_1_0"]
+    )]
     public SystemFoveationEyeTrackedPropertiesMETA() { }
 }

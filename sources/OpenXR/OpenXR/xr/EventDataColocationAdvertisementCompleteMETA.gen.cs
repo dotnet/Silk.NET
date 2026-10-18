@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataColocationAdvertisementCompleteMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataColocationAdvertisementCompleteMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]
     public StructureType Type = StructureType.EventDataColocationAdvertisementCompleteMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]
     public void* Next;
 
     [NativeName("advertisementRequestId")]
+    [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]
     public ulong AdvertisementRequestId;
 
     [NativeName("result")]
+    [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]
     public Result Result;
 
+    [SupportedApiProfile("openxr", ["XR_META_colocation_discovery"])]
     public EventDataColocationAdvertisementCompleteMETA() { }
 }

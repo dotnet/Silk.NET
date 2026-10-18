@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSwapchainImageBaseHeader")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SwapchainImageBaseHeader
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 }

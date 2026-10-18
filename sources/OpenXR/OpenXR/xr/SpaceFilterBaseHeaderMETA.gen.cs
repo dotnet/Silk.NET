@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceFilterBaseHeaderMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceFilterBaseHeaderMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
     public void* Next;
 }

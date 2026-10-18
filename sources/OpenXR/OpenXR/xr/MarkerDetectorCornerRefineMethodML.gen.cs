@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrMarkerDetectorCornerRefineMethodML")]
+[SupportedApiProfile("openxr")]
 public enum MarkerDetectorCornerRefineMethodML : uint
 {
     [NativeName("XR_MARKER_DETECTOR_CORNER_REFINE_METHOD_NONE_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     None = 0,
 
     [NativeName("XR_MARKER_DETECTOR_CORNER_REFINE_METHOD_SUBPIX_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Subpix = 1,
 
     [NativeName("XR_MARKER_DETECTOR_CORNER_REFINE_METHOD_CONTOUR_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Contour = 2,
 
     [NativeName("XR_MARKER_DETECTOR_CORNER_REFINE_METHOD_APRIL_TAG_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     AprilTag = 3,
 }

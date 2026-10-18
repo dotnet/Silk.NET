@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFacialTrackerCreateInfoHTC")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FacialTrackerCreateInfoHTC
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     public StructureType Type = StructureType.FacialTrackerCreateInfoHTC;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     public void* Next;
 
     [NativeName("facialTrackingType")]
+    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     public FacialTrackingTypeHTC FacialTrackingType;
 
+    [SupportedApiProfile("openxr", ["XR_HTC_facial_tracking"])]
     public FacialTrackerCreateInfoHTC() { }
 }

@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVulkanInstanceCreateInfoKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct VulkanInstanceCreateInfoKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public StructureType Type = StructureType.VulkanInstanceCreateInfoKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public void* Next;
 
     [NativeName("systemId")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public ulong SystemId;
 
     [NativeName("createFlags")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public VulkanInstanceCreateFlagsKHR CreateFlags;
 
     [NativeName("pfnGetInstanceProcAddr")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public PfnVkGetInstanceProcAddr PfnGetInstanceProcAddr;
 
     [NativeName("vulkanCreateInfo")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public VkInstanceCreateInfoHandle VulkanCreateInfo;
 
     [NativeName("vulkanAllocator")]
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public VkAllocationCallbacksHandle VulkanAllocator;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public VulkanInstanceCreateInfoKHR() { }
 }

@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrLocalizationEnableEventsInfoML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct LocalizationEnableEventsInfoML
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.LocalizationEnableEventsInfoML;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("enabled")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public MaybeBool<uint> Enabled;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ML_localization_map"],
+        ImpliesSets = ["XR_EXT_uuid", "XR_VERSION_1_0"]
+    )]
     public LocalizationEnableEventsInfoML() { }
 }

@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrGeometryInstanceTransformFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct GeometryInstanceTransformFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public StructureType Type = StructureType.GeometryInstanceTransformFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public void* Next;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public long Time;
 
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public Posef Pose;
 
     [NativeName("scale")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public Vector3F Scale;
 
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public GeometryInstanceTransformFB() { }
 }

@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_varying_e__FixedBuffer")]
 [InlineArray(4000)]
+[SupportedApiProfile("openxr")]
 public partial struct EventDataBufferVarying
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public byte E0;
 }

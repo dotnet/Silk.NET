@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialBufferEXT")]
+[SupportedApiProfile("openxr")]
 public partial struct SpatialBufferEXT
 {
     [NativeName("bufferId")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public ulong BufferId;
 
     [NativeName("bufferType")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public SpatialBufferTypeEXT BufferType;
 }

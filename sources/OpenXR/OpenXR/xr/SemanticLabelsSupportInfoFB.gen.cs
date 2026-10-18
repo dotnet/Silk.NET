@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSemanticLabelsSupportInfoFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SemanticLabelsSupportInfoFB
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SemanticLabelsSupportInfoFB;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("flags")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public SemanticLabelsSupportFlagsFB Flags;
 
     [NativeName("recognizedLabels")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public sbyte* RecognizedLabels;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public SemanticLabelsSupportInfoFB() { }
 }

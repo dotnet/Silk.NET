@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneComponentMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct SceneComponentMSFT
 {
     [NativeName("componentType")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public SceneComponentTypeMSFT ComponentType;
 
     [NativeName("id")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public UuidMSFT Id;
 
     [NativeName("parentId")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public UuidMSFT ParentId;
 
     [NativeName("updateTime")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public long UpdateTime;
 }

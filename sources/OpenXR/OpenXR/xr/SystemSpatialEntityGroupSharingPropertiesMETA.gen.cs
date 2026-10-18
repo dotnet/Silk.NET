@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemSpatialEntityGroupSharingPropertiesMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemSpatialEntityGroupSharingPropertiesMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_group_sharing"])]
     public StructureType Type = StructureType.SystemSpatialEntityGroupSharingPropertiesMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_group_sharing"])]
     public void* Next;
 
     [NativeName("supportsSpatialEntityGroupSharing")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_group_sharing"])]
     public MaybeBool<uint> SupportsSpatialEntityGroupSharing;
 
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_group_sharing"])]
     public SystemSpatialEntityGroupSharingPropertiesMETA() { }
 }

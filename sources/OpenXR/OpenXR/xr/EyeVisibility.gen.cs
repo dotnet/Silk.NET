@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEyeVisibility")]
+[SupportedApiProfile("openxr")]
 public enum EyeVisibility : uint
 {
     [NativeName("XR_EYE_VISIBILITY_BOTH")]
+    [SupportedApiProfile("openxr")]
     Both = 0,
 
     [NativeName("XR_EYE_VISIBILITY_LEFT")]
+    [SupportedApiProfile("openxr")]
     Left = 1,
 
     [NativeName("XR_EYE_VISIBILITY_RIGHT")]
+    [SupportedApiProfile("openxr")]
     Right = 2,
 }

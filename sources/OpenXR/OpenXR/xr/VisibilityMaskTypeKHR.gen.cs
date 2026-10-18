@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVisibilityMaskTypeKHR")]
+[SupportedApiProfile("openxr")]
 public enum VisibilityMaskTypeKHR : uint
 {
     [NativeName("XR_VISIBILITY_MASK_TYPE_HIDDEN_TRIANGLE_MESH_KHR")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     HiddenTriangleMesh = 1,
 
     [NativeName("XR_VISIBILITY_MASK_TYPE_VISIBLE_TRIANGLE_MESH_KHR")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     VisibleTriangleMesh = 2,
 
     [NativeName("XR_VISIBILITY_MASK_TYPE_LINE_LOOP_KHR")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     LineLoop = 3,
 }

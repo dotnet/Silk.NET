@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorNameHTC")]
+[SupportedApiProfile("openxr")]
 public partial struct SpatialAnchorNameHTC
 {
     [NativeName("name")]
+    [SupportedApiProfile("openxr", ["XR_HTC_anchor"])]
     public SpatialAnchorNameHTCName Name;
 }

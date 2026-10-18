@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrUnpersistSpatialEntityCompletionEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct UnpersistSpatialEntityCompletionEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence_operations"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
+    )]
     public StructureType Type = StructureType.UnpersistSpatialEntityCompletionEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence_operations"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
+    )]
     public void* Next;
 
     [NativeName("futureResult")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence_operations"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
+    )]
     public Result FutureResult;
 
     [NativeName("unpersistResult")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence_operations"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
+    )]
     public SpatialPersistenceContextResultEXT UnpersistResult;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence_operations"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
+    )]
     public UnpersistSpatialEntityCompletionEXT() { }
 }

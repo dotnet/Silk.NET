@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrDevicePcmSampleRateStateFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct DevicePcmSampleRateStateFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]
     public StructureType Type = StructureType.DevicePcmSampleRateStateFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]
     public void* Next;
 
     [NativeName("sampleRate")]
+    [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]
     public float SampleRate;
 
+    [SupportedApiProfile("openxr", ["XR_FB_haptic_pcm"])]
     public DevicePcmSampleRateStateFB() { }
 }

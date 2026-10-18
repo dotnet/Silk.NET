@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("PFN_vkGetInstanceProcAddr")]
+[SupportedApiProfile("openxr")]
 public unsafe delegate PfnVkGetInstanceProcAddrP2 PfnVkGetInstanceProcAddrDelegate(
     VkInstanceHandle arg0,
     sbyte* arg1

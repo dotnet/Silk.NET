@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEyeTrackerCreateInfoANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EyeTrackerCreateInfoANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     public StructureType Type = StructureType.EyeTrackerCreateInfoANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     public void* Next;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_eye_tracking"])]
     public EyeTrackerCreateInfoANDROID() { }
 }

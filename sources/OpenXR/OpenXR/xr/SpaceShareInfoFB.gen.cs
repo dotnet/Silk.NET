@@ -9,25 +9,61 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceShareInfoFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceShareInfoFB
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SpaceShareInfoFB;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("spaceCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public uint SpaceCount;
 
     [NativeName("spaces")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public SpaceHandle* Spaces;
 
     [NativeName("userCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public uint UserCount;
 
     [NativeName("users")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public SpaceUserHandleFB* Users;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_sharing"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public SpaceShareInfoFB() { }
 }

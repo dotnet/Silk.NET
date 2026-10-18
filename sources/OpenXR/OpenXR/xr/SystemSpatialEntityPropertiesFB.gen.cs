@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemSpatialEntityPropertiesFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemSpatialEntityPropertiesFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public StructureType Type = StructureType.SystemSpatialEntityPropertiesFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public void* Next;
 
     [NativeName("supportsSpatialEntity")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public MaybeBool<uint> SupportsSpatialEntity;
 
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public SystemSpatialEntityPropertiesFB() { }
 }

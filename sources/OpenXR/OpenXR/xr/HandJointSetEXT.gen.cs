@@ -9,11 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHandJointSetEXT")]
+[SupportedApiProfile("openxr")]
 public enum HandJointSetEXT : uint
 {
     [NativeName("XR_HAND_JOINT_SET_DEFAULT_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     Default = 0,
 
     [NativeName("XR_HAND_JOINT_SET_HAND_WITH_FOREARM_ULTRALEAP")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ULTRALEAP_hand_tracking_forearm"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     HandWithForearmULTRALEAP = 1000149000,
 }

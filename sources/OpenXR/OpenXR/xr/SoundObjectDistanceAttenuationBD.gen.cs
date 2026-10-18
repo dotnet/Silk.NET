@@ -9,31 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSoundObjectDistanceAttenuationBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SoundObjectDistanceAttenuationBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public StructureType Type = StructureType.SoundObjectDistanceAttenuationBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public void* Next;
 
     [NativeName("distanceAttenuationType")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundObjectDistanceAttenuationTypeBD DistanceAttenuationType;
 
     [NativeName("minAttenuationRange")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float MinAttenuationRange;
 
     [NativeName("maxAttenuationRange")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float MaxAttenuationRange;
 
     [NativeName("referenceDistance")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float ReferenceDistance;
 
     [NativeName("rolloffFactor")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public float RolloffFactor;
 
     [NativeName("customDistanceAttenuationCurve")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundObjectDistanceAttenuationCurveBD* CustomDistanceAttenuationCurve;
 
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundObjectDistanceAttenuationBD() { }
 }

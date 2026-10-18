@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialGraphStaticNodeBindingCreateInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialGraphStaticNodeBindingCreateInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     public StructureType Type = StructureType.SpatialGraphStaticNodeBindingCreateInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     public void* Next;
 
     [NativeName("space")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     public SpaceHandle Space;
 
     [NativeName("poseInSpace")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     public Posef PoseInSpace;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     public SpatialGraphStaticNodeBindingCreateInfoMSFT() { }
 }

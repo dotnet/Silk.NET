@@ -9,9 +9,13 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("PFN_xrDebugUtilsMessengerCallbackEXT")]
+[SupportedApiProfile("openxr")]
 public readonly unsafe struct DebugUtilsMessengerCallbackEXT : IDisposable
 {
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     private readonly void* Pointer;
+
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public delegate* unmanaged<
         ulong,
         ulong,
@@ -25,19 +29,24 @@ public readonly unsafe struct DebugUtilsMessengerCallbackEXT : IDisposable
             void*,
             uint>)Pointer;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public DebugUtilsMessengerCallbackEXT(
         delegate* unmanaged<ulong, ulong, DebugUtilsMessengerCallbackDataEXT*, void*, uint> ptr
     ) => Pointer = ptr;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public DebugUtilsMessengerCallbackEXT(DebugUtilsMessengerCallbackEXTDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public void Dispose() => SilkMarshal.Free(Pointer);
 
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public static implicit operator DebugUtilsMessengerCallbackEXT(
         delegate* unmanaged<ulong, ulong, DebugUtilsMessengerCallbackDataEXT*, void*, uint> pfn
     ) => new(pfn);
 
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public static implicit operator delegate* unmanaged<
         ulong,
         ulong,

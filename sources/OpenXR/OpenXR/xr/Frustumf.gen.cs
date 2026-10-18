@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFrustumf")]
+[SupportedApiProfile("openxr")]
 public partial struct Frustumf
 {
     [NativeName("pose")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public Posef Pose;
 
     [NativeName("fov")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public Fovf Fov;
 
     [NativeName("nearZ")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public float NearZ;
 
     [NativeName("farZ")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public float FarZ;
 }

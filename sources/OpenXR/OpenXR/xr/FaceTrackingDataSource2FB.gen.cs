@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFaceTrackingDataSource2FB")]
+[SupportedApiProfile("openxr")]
 public enum FaceTrackingDataSource2FB : uint
 {
     [NativeName("XR_FACE_TRACKING_DATA_SOURCE2_VISUAL_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     Visual = 0,
 
     [NativeName("XR_FACE_TRACKING_DATA_SOURCE2_AUDIO_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_face_tracking2"])]
     Audio = 1,
 }

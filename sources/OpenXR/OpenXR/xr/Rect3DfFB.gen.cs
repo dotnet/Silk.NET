@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRect3DfFB")]
+[SupportedApiProfile("openxr")]
 public partial struct Rect3DfFB
 {
     [NativeName("offset")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public Offset3DfFB Offset;
 
     [NativeName("extent")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_scene"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public Extent3Df Extent;
 }

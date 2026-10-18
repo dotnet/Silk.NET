@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemQrCodeTrackingPropertiesANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemQrCodeTrackingPropertiesANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public StructureType Type = StructureType.SystemQrCodeTrackingPropertiesANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public void* Next;
 
     [NativeName("supportsQrCodeTracking")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public MaybeBool<uint> SupportsQrCodeTracking;
 
     [NativeName("supportsQrCodeSizeEstimation")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public MaybeBool<uint> SupportsQrCodeSizeEstimation;
 
     [NativeName("maxQrCodeCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public ushort MaxQrCodeCount;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_qr_code"],
+        ImpliesSets = ["XR_ANDROID_trackables"]
+    )]
     public SystemQrCodeTrackingPropertiesANDROID() { }
 }

@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMeshSemanticLabelANDROID")]
+[SupportedApiProfile("openxr")]
 public enum SceneMeshSemanticLabelANDROID : uint
 {
     [NativeName("XR_SCENE_MESH_SEMANTIC_LABEL_OTHER_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     Other = 0,
 
     [NativeName("XR_SCENE_MESH_SEMANTIC_LABEL_FLOOR_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     Floor = 1,
 
     [NativeName("XR_SCENE_MESH_SEMANTIC_LABEL_CEILING_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     Ceiling = 2,
 
     [NativeName("XR_SCENE_MESH_SEMANTIC_LABEL_WALL_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     Wall = 3,
 
     [NativeName("XR_SCENE_MESH_SEMANTIC_LABEL_TABLE_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     Table = 4,
 }

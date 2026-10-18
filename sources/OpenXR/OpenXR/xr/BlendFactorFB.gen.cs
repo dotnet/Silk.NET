@@ -9,23 +9,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBlendFactorFB")]
+[SupportedApiProfile("openxr")]
 public enum BlendFactorFB : uint
 {
     [NativeName("XR_BLEND_FACTOR_ZERO_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     Zero = 0,
 
     [NativeName("XR_BLEND_FACTOR_ONE_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     One = 1,
 
     [NativeName("XR_BLEND_FACTOR_SRC_ALPHA_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     SrcAlpha = 2,
 
     [NativeName("XR_BLEND_FACTOR_ONE_MINUS_SRC_ALPHA_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     OneMinusSrcAlpha = 3,
 
     [NativeName("XR_BLEND_FACTOR_DST_ALPHA_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     DstAlpha = 4,
 
     [NativeName("XR_BLEND_FACTOR_ONE_MINUS_DST_ALPHA_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_alpha_blend"])]
     OneMinusDstAlpha = 5,
 }

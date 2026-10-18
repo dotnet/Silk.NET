@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrMarkerAprilTagDictML")]
+[SupportedApiProfile("openxr")]
 public enum MarkerAprilTagDictML : uint
 {
     [NativeName("XR_MARKER_APRIL_TAG_DICT_16H5_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Dict16H5 = 0,
 
     [NativeName("XR_MARKER_APRIL_TAG_DICT_25H9_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Dict25H9 = 1,
 
     [NativeName("XR_MARKER_APRIL_TAG_DICT_36H10_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Dict36H10 = 2,
 
     [NativeName("XR_MARKER_APRIL_TAG_DICT_36H11_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_marker_understanding"])]
     Dict36H11 = 3,
 }

@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialMeshDataEXT")]
+[SupportedApiProfile("openxr")]
 public partial struct SpatialMeshDataEXT
 {
     [NativeName("origin")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public Posef Origin;
 
     [NativeName("vertexBuffer")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public SpatialBufferEXT VertexBuffer;
 
     [NativeName("indexBuffer")]
+    [SupportedApiProfile("openxr", ["XR_EXT_spatial_entity"], ImpliesSets = ["XR_EXT_future"])]
     public SpatialBufferEXT IndexBuffer;
 }

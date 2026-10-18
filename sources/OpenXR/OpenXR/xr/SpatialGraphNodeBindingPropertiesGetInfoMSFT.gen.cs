@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialGraphNodeBindingPropertiesGetInfoMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialGraphNodeBindingPropertiesGetInfoMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     public StructureType Type = StructureType.SpatialGraphNodeBindingPropertiesGetInfoMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     public void* Next;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_spatial_graph_bridge"])]
     public SpatialGraphNodeBindingPropertiesGetInfoMSFT() { }
 }

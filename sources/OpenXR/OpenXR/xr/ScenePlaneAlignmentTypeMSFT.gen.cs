@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrScenePlaneAlignmentTypeMSFT")]
+[SupportedApiProfile("openxr")]
 public enum ScenePlaneAlignmentTypeMSFT : uint
 {
     [NativeName("XR_SCENE_PLANE_ALIGNMENT_TYPE_NON_ORTHOGONAL_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     NonOrthogonal = 0,
 
     [NativeName("XR_SCENE_PLANE_ALIGNMENT_TYPE_HORIZONTAL_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     Horizontal = 1,
 
     [NativeName("XR_SCENE_PLANE_ALIGNMENT_TYPE_VERTICAL_MSFT")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     Vertical = 2,
 }

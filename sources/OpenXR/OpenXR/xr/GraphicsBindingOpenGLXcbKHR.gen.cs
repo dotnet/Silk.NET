@@ -9,31 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrGraphicsBindingOpenGLXcbKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct GraphicsBindingOpenGLXcbKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public StructureType Type = StructureType.GraphicsBindingOpenglXcbKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public void* Next;
 
     [NativeName("connection")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public XcbConnectionTHandle Connection;
 
     [NativeName("screenNumber")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public uint ScreenNumber;
 
     [NativeName("fbconfigid")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public uint Fbconfigid;
 
     [NativeName("visualid")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public uint Visualid;
 
     [NativeName("glxDrawable")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public uint GlxDrawable;
 
     [NativeName("glxContext")]
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public uint GlxContext;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public GraphicsBindingOpenGLXcbKHR() { }
 }

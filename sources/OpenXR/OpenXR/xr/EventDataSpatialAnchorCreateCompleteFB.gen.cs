@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataSpatialAnchorCreateCompleteFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataSpatialAnchorCreateCompleteFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public StructureType Type = StructureType.EventDataSpatialAnchorCreateCompleteFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public void* Next;
 
     [NativeName("requestId")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public ulong RequestId;
 
     [NativeName("result")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public Result Result;
 
     [NativeName("space")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public SpaceHandle Space;
 
     [NativeName("uuid")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public Uuid Uuid;
 
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity"])]
     public EventDataSpatialAnchorCreateCompleteFB() { }
 }

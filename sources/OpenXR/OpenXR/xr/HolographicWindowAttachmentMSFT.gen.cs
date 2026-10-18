@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHolographicWindowAttachmentMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct HolographicWindowAttachmentMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_holographic_window_attachment"])]
     public StructureType Type = StructureType.HolographicWindowAttachmentMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_holographic_window_attachment"])]
     public void* Next;
 
     [NativeName("holographicSpace")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_holographic_window_attachment"])]
     public IUnknownHandle HolographicSpace;
 
     [NativeName("coreWindow")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_holographic_window_attachment"])]
     public IUnknownHandle CoreWindow;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_holographic_window_attachment"])]
     public HolographicWindowAttachmentMSFT() { }
 }

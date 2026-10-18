@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrWorldMeshRequestCompletionML")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct WorldMeshRequestCompletionML
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public StructureType Type = StructureType.WorldMeshRequestCompletionML;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public void* Next;
 
     [NativeName("futureResult")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public Result FutureResult;
 
     [NativeName("blockCount")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public uint BlockCount;
 
     [NativeName("blocks")]
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public WorldMeshBlockML* Blocks;
 
+    [SupportedApiProfile("openxr", ["XR_ML_world_mesh_detection"], ImpliesSets = ["XR_EXT_future"])]
     public WorldMeshRequestCompletionML() { }
 }

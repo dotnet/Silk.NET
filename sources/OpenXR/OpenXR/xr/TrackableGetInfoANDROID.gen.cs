@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackableGetInfoANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct TrackableGetInfoANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public StructureType Type = StructureType.TrackableGetInfoANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public void* Next;
 
     [NativeName("trackable")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public ulong Trackable;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     public TrackableGetInfoANDROID() { }
 }

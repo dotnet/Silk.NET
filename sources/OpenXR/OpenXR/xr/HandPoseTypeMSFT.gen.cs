@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHandPoseTypeMSFT")]
+[SupportedApiProfile("openxr")]
 public enum HandPoseTypeMSFT : uint
 {
     [NativeName("XR_HAND_POSE_TYPE_TRACKED_MSFT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     Tracked = 0,
 
     [NativeName("XR_HAND_POSE_TYPE_REFERENCE_OPEN_PALM_MSFT")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     ReferenceOpenPalm = 1,
 }

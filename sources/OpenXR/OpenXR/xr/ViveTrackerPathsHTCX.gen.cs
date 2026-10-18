@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrViveTrackerPathsHTCX")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ViveTrackerPathsHTCX
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_HTCX_vive_tracker_interaction"])]
     public StructureType Type = StructureType.ViveTrackerPathsHTCX;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_HTCX_vive_tracker_interaction"])]
     public void* Next;
 
     [NativeName("persistentPath")]
+    [SupportedApiProfile("openxr", ["XR_HTCX_vive_tracker_interaction"])]
     public ulong PersistentPath;
 
     [NativeName("rolePath")]
+    [SupportedApiProfile("openxr", ["XR_HTCX_vive_tracker_interaction"])]
     public ulong RolePath;
 
+    [SupportedApiProfile("openxr", ["XR_HTCX_vive_tracker_interaction"])]
     public ViveTrackerPathsHTCX() { }
 }

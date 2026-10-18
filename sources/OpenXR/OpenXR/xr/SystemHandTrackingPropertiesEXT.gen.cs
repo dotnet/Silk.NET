@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemHandTrackingPropertiesEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemHandTrackingPropertiesEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public StructureType Type = StructureType.SystemHandTrackingPropertiesEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public void* Next;
 
     [NativeName("supportsHandTracking")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public MaybeBool<uint> SupportsHandTracking;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public SystemHandTrackingPropertiesEXT() { }
 }

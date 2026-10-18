@@ -9,13 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFoveationProfileCreateInfoFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FoveationProfileCreateInfoFB
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_foveation"],
+        ImpliesSets = ["XR_FB_swapchain_update_state", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.FoveationProfileCreateInfoFB;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_foveation"],
+        ImpliesSets = ["XR_FB_swapchain_update_state", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_foveation"],
+        ImpliesSets = ["XR_FB_swapchain_update_state", "XR_VERSION_1_0"]
+    )]
     public FoveationProfileCreateInfoFB() { }
 }

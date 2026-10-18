@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialEntityUnpersistInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialEntityUnpersistInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence_operations"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
+    )]
     public StructureType Type = StructureType.SpatialEntityUnpersistInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence_operations"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
+    )]
     public void* Next;
 
     [NativeName("persistUuid")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence_operations"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
+    )]
     public Uuid PersistUuid;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence_operations"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_persistence"]
+    )]
     public SpatialEntityUnpersistInfoEXT() { }
 }

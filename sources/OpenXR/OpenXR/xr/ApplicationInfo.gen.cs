@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrApplicationInfo")]
+[SupportedApiProfile("openxr")]
 public partial struct ApplicationInfo
 {
     [NativeName("applicationName")]
+    [SupportedApiProfile("openxr")]
     public ApplicationInfoApplicationName ApplicationName;
 
     [NativeName("applicationVersion")]
+    [SupportedApiProfile("openxr")]
     public uint ApplicationVersion;
 
     [NativeName("engineName")]
+    [SupportedApiProfile("openxr")]
     public ApplicationInfoEngineName EngineName;
 
     [NativeName("engineVersion")]
+    [SupportedApiProfile("openxr")]
     public uint EngineVersion;
 
     [NativeName("apiVersion")]
+    [SupportedApiProfile("openxr")]
     public ulong ApiVersion;
 }

@@ -9,31 +9,77 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackableImageANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct TrackableImageANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public StructureType Type = StructureType.TrackableImageANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public void* Next;
 
     [NativeName("trackingState")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public TrackingStateANDROID TrackingState;
 
     [NativeName("lastUpdatedTime")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public long LastUpdatedTime;
 
     [NativeName("database")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public TrackableImageDatabaseHandleANDROID Database;
 
     [NativeName("databaseEntryIndex")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public uint DatabaseEntryIndex;
 
     [NativeName("centerPose")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public Posef CenterPose;
 
     [NativeName("extents")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public Extent2Df Extents;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_trackables_image"],
+        ImpliesSets = ["XR_ANDROID_trackables", "XR_EXT_future"]
+    )]
     public TrackableImageANDROID() { }
 }

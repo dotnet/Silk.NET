@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialPersistenceContextCreateInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialPersistenceContextCreateInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialPersistenceContextCreateInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("scope")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public SpatialPersistenceScopeEXT Scope;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_spatial_persistence"],
+        ImpliesSets = ["XR_EXT_future", "XR_EXT_spatial_entity"]
+    )]
     public SpatialPersistenceContextCreateInfoEXT() { }
 }

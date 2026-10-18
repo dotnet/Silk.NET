@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughPreferencesMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PassthroughPreferencesMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_passthrough_preferences"])]
     public StructureType Type = StructureType.PassthroughPreferencesMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_passthrough_preferences"])]
     public void* Next;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_META_passthrough_preferences"])]
     public PassthroughPreferenceFlagsMETA Flags;
 
+    [SupportedApiProfile("openxr", ["XR_META_passthrough_preferences"])]
     public PassthroughPreferencesMETA() { }
 }

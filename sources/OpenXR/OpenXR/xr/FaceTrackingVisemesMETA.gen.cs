@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrFaceTrackingVisemesMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct FaceTrackingVisemesMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_face_tracking_visemes"],
+        ImpliesSets = ["XR_FB_face_tracking2", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.FaceTrackingVisemesMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_face_tracking_visemes"],
+        ImpliesSets = ["XR_FB_face_tracking2", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("isValid")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_face_tracking_visemes"],
+        ImpliesSets = ["XR_FB_face_tracking2", "XR_VERSION_1_0"]
+    )]
     public MaybeBool<uint> IsValid;
 
     [NativeName("visemes")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_face_tracking_visemes"],
+        ImpliesSets = ["XR_FB_face_tracking2", "XR_VERSION_1_0"]
+    )]
     public FaceTrackingVisemesMETAVisemes Visemes;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_face_tracking_visemes"],
+        ImpliesSets = ["XR_FB_face_tracking2", "XR_VERSION_1_0"]
+    )]
     public FaceTrackingVisemesMETA() { }
 }

@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialAnchorConfidenceML")]
+[SupportedApiProfile("openxr")]
 public enum SpatialAnchorConfidenceML : uint
 {
     [NativeName("XR_SPATIAL_ANCHOR_CONFIDENCE_LOW_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
     Low = 0,
 
     [NativeName("XR_SPATIAL_ANCHOR_CONFIDENCE_MEDIUM_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
     Medium = 1,
 
     [NativeName("XR_SPATIAL_ANCHOR_CONFIDENCE_HIGH_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_spatial_anchors"], ImpliesSets = ["XR_EXT_future"])]
     High = 2,
 }

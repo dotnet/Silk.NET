@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrLoaderInitInfoPropertiesEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct LoaderInitInfoPropertiesEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_loader_init_properties"])]
     public StructureType Type = StructureType.LoaderInitInfoPropertiesEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_loader_init_properties"])]
     public void* Next;
 
     [NativeName("propertyValueCount")]
+    [SupportedApiProfile("openxr", ["XR_EXT_loader_init_properties"])]
     public uint PropertyValueCount;
 
     [NativeName("propertyValues")]
+    [SupportedApiProfile("openxr", ["XR_EXT_loader_init_properties"])]
     public LoaderInitPropertyValueEXT* PropertyValues;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_loader_init_properties"])]
     public LoaderInitInfoPropertiesEXT() { }
 }

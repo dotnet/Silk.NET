@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceEraseInfoFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceEraseInfoFB
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_storage"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SpaceEraseInfoFB;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_storage"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("space")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_storage"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public SpaceHandle Space;
 
     [NativeName("location")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_storage"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public SpaceStorageLocationFB Location;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_FB_spatial_entity_storage"],
+        ImpliesSets = ["XR_FB_spatial_entity", "XR_VERSION_1_0"]
+    )]
     public SpaceEraseInfoFB() { }
 }

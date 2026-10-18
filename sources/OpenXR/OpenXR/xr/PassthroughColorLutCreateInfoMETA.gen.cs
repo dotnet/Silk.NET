@@ -9,22 +9,53 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughColorLutCreateInfoMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PassthroughColorLutCreateInfoMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.PassthroughColorLutCreateInfoMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("channels")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public PassthroughColorLutChannelsMETA Channels;
 
     [NativeName("resolution")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public uint Resolution;
 
     [NativeName("data")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public PassthroughColorLutDataMETA Data;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public PassthroughColorLutCreateInfoMETA() { }
 }

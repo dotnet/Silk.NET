@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataPassthroughStateChangedFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataPassthroughStateChangedFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public StructureType Type = StructureType.EventDataPassthroughStateChangedFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public void* Next;
 
     [NativeName("flags")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public PassthroughStateChangedFlagsFB Flags;
 
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public EventDataPassthroughStateChangedFB() { }
 }

@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMeshSnapshotCreateInfoANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SceneMeshSnapshotCreateInfoANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public StructureType Type = StructureType.SceneMeshSnapshotCreateInfoANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public void* Next;
 
     [NativeName("baseSpace")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public SpaceHandle BaseSpace;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public long Time;
 
     [NativeName("boundingBox")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public Boxf BoundingBox;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_scene_meshing"])]
     public SceneMeshSnapshotCreateInfoANDROID() { }
 }

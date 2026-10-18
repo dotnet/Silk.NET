@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHandMeshVertexMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct HandMeshVertexMSFT
 {
     [NativeName("position")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public Vector3F Position;
 
     [NativeName("normal")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_hand_tracking_mesh"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public Vector3F Normal;
 }

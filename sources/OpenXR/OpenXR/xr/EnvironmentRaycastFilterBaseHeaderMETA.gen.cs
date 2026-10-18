@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEnvironmentRaycastFilterBaseHeaderMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EnvironmentRaycastFilterBaseHeaderMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_environment_raycast"],
+        ImpliesSets = ["XR_EXT_future"]
+    )]
     public StructureType Type;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_environment_raycast"],
+        ImpliesSets = ["XR_EXT_future"]
+    )]
     public void* Next;
 }

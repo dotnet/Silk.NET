@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRenderModelAssetPropertiesEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct RenderModelAssetPropertiesEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public StructureType Type = StructureType.RenderModelAssetPropertiesEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public void* Next;
 
     [NativeName("nodePropertyCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public uint NodePropertyCount;
 
     [NativeName("nodeProperties")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public RenderModelAssetNodePropertiesEXT* NodeProperties;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public RenderModelAssetPropertiesEXT() { }
 }

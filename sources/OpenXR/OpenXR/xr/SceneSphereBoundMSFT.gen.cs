@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneSphereBoundMSFT")]
+[SupportedApiProfile("openxr")]
 public partial struct SceneSphereBoundMSFT
 {
     [NativeName("center")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public Vector3F Center;
 
     [NativeName("radius")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public float Radius;
 }

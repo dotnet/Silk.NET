@@ -9,8 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPersistenceLocationBD")]
+[SupportedApiProfile("openxr")]
 public enum PersistenceLocationBD : uint
 {
     [NativeName("XR_PERSISTENCE_LOCATION_LOCAL_BD")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_anchor"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     Local = 0,
 }

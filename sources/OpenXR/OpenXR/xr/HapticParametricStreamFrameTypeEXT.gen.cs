@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHapticParametricStreamFrameTypeEXT")]
+[SupportedApiProfile("openxr")]
 public enum HapticParametricStreamFrameTypeEXT : uint
 {
     [NativeName("XR_HAPTIC_PARAMETRIC_STREAM_FRAME_TYPE_NONE_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     None = 0,
 
     [NativeName("XR_HAPTIC_PARAMETRIC_STREAM_FRAME_TYPE_FIRST_FRAME_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     FirstFrame = 1,
 
     [NativeName("XR_HAPTIC_PARAMETRIC_STREAM_FRAME_TYPE_INTERMEDIATE_FRAME_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     IntermediateFrame = 2,
 
     [NativeName("XR_HAPTIC_PARAMETRIC_STREAM_FRAME_TYPE_LAST_FRAME_EXT")]
+    [SupportedApiProfile("openxr", ["XR_EXT_haptic_parametric"])]
     LastFrame = 3,
 }

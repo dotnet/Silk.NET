@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVirtualKeyboardAnimationStateMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct VirtualKeyboardAnimationStateMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public StructureType Type = StructureType.VirtualKeyboardAnimationStateMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public void* Next;
 
     [NativeName("animationIndex")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public int AnimationIndex;
 
     [NativeName("fraction")]
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public float Fraction;
 
+    [SupportedApiProfile("openxr", ["XR_META_virtual_keyboard"])]
     public VirtualKeyboardAnimationStateMETA() { }
 }

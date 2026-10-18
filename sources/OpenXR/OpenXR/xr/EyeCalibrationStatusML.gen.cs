@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEyeCalibrationStatusML")]
+[SupportedApiProfile("openxr")]
 public enum EyeCalibrationStatusML : uint
 {
     [NativeName("XR_EYE_CALIBRATION_STATUS_UNKNOWN_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     Unknown = 0,
 
     [NativeName("XR_EYE_CALIBRATION_STATUS_NONE_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     None = 1,
 
     [NativeName("XR_EYE_CALIBRATION_STATUS_COARSE_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     Coarse = 2,
 
     [NativeName("XR_EYE_CALIBRATION_STATUS_FINE_ML")]
+    [SupportedApiProfile("openxr", ["XR_ML_user_calibration"])]
     Fine = 3,
 }

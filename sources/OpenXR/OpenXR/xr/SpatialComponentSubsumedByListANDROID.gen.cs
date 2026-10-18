@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialComponentSubsumedByListANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialComponentSubsumedByListANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_component_subsumed_by"],
+        ImpliesSets = ["XR_EXT_spatial_entity", "XR_EXT_spatial_plane_tracking"]
+    )]
     public StructureType Type = StructureType.SpatialComponentSubsumedByListANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_component_subsumed_by"],
+        ImpliesSets = ["XR_EXT_spatial_entity", "XR_EXT_spatial_plane_tracking"]
+    )]
     public void* Next;
 
     [NativeName("subsumedUniqueIdCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_component_subsumed_by"],
+        ImpliesSets = ["XR_EXT_spatial_entity", "XR_EXT_spatial_plane_tracking"]
+    )]
     public uint SubsumedUniqueIdCount;
 
     [NativeName("subsumedUniqueIds")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_component_subsumed_by"],
+        ImpliesSets = ["XR_EXT_spatial_entity", "XR_EXT_spatial_plane_tracking"]
+    )]
     public ulong* SubsumedUniqueIds;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_component_subsumed_by"],
+        ImpliesSets = ["XR_EXT_spatial_entity", "XR_EXT_spatial_plane_tracking"]
+    )]
     public SpatialComponentSubsumedByListANDROID() { }
 }

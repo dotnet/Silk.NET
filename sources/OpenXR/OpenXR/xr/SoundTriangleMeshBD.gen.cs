@@ -9,25 +9,33 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSoundTriangleMeshBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SoundTriangleMeshBD
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public StructureType Type = StructureType.SoundTriangleMeshBD;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public void* Next;
 
     [NativeName("vertexCount")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public uint VertexCount;
 
     [NativeName("vertices")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public Vector3F* Vertices;
 
     [NativeName("indexCount")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public uint IndexCount;
 
     [NativeName("indices")]
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public uint* Indices;
 
+    [SupportedApiProfile("openxr", ["XR_BD_spatial_audio_rendering"])]
     public SoundTriangleMeshBD() { }
 }

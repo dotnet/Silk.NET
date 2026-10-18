@@ -9,22 +9,77 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRoomMeshFaceIndicesMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct RoomMeshFaceIndicesMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_room_mesh"],
+        ImpliesSets = [
+            "XR_FB_spatial_entity",
+            "XR_META_spatial_entity_semantic_label",
+            "XR_VERSION_1_0",
+        ]
+    )]
     public StructureType Type = StructureType.RoomMeshFaceIndicesMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_room_mesh"],
+        ImpliesSets = [
+            "XR_FB_spatial_entity",
+            "XR_META_spatial_entity_semantic_label",
+            "XR_VERSION_1_0",
+        ]
+    )]
     public void* Next;
 
     [NativeName("indexCapacityInput")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_room_mesh"],
+        ImpliesSets = [
+            "XR_FB_spatial_entity",
+            "XR_META_spatial_entity_semantic_label",
+            "XR_VERSION_1_0",
+        ]
+    )]
     public uint IndexCapacityInput;
 
     [NativeName("indexCountOutput")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_room_mesh"],
+        ImpliesSets = [
+            "XR_FB_spatial_entity",
+            "XR_META_spatial_entity_semantic_label",
+            "XR_VERSION_1_0",
+        ]
+    )]
     public uint IndexCountOutput;
 
     [NativeName("indices")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_room_mesh"],
+        ImpliesSets = [
+            "XR_FB_spatial_entity",
+            "XR_META_spatial_entity_semantic_label",
+            "XR_VERSION_1_0",
+        ]
+    )]
     public uint* Indices;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_spatial_entity_room_mesh"],
+        ImpliesSets = [
+            "XR_FB_spatial_entity",
+            "XR_META_spatial_entity_semantic_label",
+            "XR_VERSION_1_0",
+        ]
+    )]
     public RoomMeshFaceIndicesMETA() { }
 }

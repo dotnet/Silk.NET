@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrPassthroughColorMapLutMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct PassthroughColorMapLutMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.PassthroughColorMapLutMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("colorLut")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public PassthroughColorLutHandleMETA ColorLut;
 
     [NativeName("weight")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public float Weight;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_passthrough_color_lut"],
+        ImpliesSets = ["XR_FB_passthrough", "XR_VERSION_1_0"]
+    )]
     public PassthroughColorMapLutMETA() { }
 }

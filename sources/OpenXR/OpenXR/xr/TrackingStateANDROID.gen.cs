@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrTrackingStateANDROID")]
+[SupportedApiProfile("openxr")]
 public enum TrackingStateANDROID : uint
 {
     [NativeName("XR_TRACKING_STATE_PAUSED_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     Paused = 0,
 
     [NativeName("XR_TRACKING_STATE_STOPPED_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     Stopped = 1,
 
     [NativeName("XR_TRACKING_STATE_TRACKING_ANDROID")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_trackables"])]
     Tracking = 2,
 }

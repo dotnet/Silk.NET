@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemGetInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemGetInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.SystemGetInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("formFactor")]
+    [SupportedApiProfile("openxr")]
     public FormFactor FormFactor;
 
+    [SupportedApiProfile("openxr")]
     public SystemGetInfo() { }
 }

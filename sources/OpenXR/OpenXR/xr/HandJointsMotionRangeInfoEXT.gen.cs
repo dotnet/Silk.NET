@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHandJointsMotionRangeInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct HandJointsMotionRangeInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_hand_joints_motion_range"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.HandJointsMotionRangeInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_hand_joints_motion_range"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("handJointsMotionRange")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_hand_joints_motion_range"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public HandJointsMotionRangeEXT HandJointsMotionRange;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_hand_joints_motion_range"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public HandJointsMotionRangeInfoEXT() { }
 }

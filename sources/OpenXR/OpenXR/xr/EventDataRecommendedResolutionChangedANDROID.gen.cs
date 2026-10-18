@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataRecommendedResolutionChangedANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataRecommendedResolutionChangedANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_recommended_resolution"])]
     public StructureType Type = StructureType.EventDataRecommendedResolutionChangedANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_ANDROID_recommended_resolution"])]
     public void* Next;
 
+    [SupportedApiProfile("openxr", ["XR_ANDROID_recommended_resolution"])]
     public EventDataRecommendedResolutionChangedANDROID() { }
 }

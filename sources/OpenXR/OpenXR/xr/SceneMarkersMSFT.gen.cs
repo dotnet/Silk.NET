@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMarkersMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SceneMarkersMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_marker"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.SceneMarkersMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_marker"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("sceneMarkerCapacityInput")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_marker"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public uint SceneMarkerCapacityInput;
 
     [NativeName("sceneMarkers")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_marker"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public SceneMarkerMSFT* SceneMarkers;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MSFT_scene_marker"],
+        ImpliesSets = ["XR_MSFT_scene_understanding", "XR_VERSION_1_0"]
+    )]
     public SceneMarkersMSFT() { }
 }

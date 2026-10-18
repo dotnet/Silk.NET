@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceDiscoveryResultMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceDiscoveryResultMETA
 {
     [NativeName("space")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
     public SpaceHandle Space;
 
     [NativeName("uuid")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
     public Uuid Uuid;
 }

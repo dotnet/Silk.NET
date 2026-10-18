@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrCompositionLayerDepthTestFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct CompositionLayerDepthTestFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_depth_test"])]
     public StructureType Type = StructureType.CompositionLayerDepthTestFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_depth_test"])]
     public void* Next;
 
     [NativeName("depthMask")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_depth_test"])]
     public MaybeBool<uint> DepthMask;
 
     [NativeName("compareOp")]
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_depth_test"])]
     public CompareOpFB CompareOp;
 
+    [SupportedApiProfile("openxr", ["XR_FB_composition_layer_depth_test"])]
     public CompositionLayerDepthTestFB() { }
 }

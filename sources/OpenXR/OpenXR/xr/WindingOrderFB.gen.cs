@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrWindingOrderFB")]
+[SupportedApiProfile("openxr")]
 public enum WindingOrderFB : uint
 {
     [NativeName("XR_WINDING_ORDER_UNKNOWN_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_triangle_mesh"])]
     Unknown = 0,
 
     [NativeName("XR_WINDING_ORDER_CW_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_triangle_mesh"])]
     Cw = 1,
 
     [NativeName("XR_WINDING_ORDER_CCW_FB")]
+    [SupportedApiProfile("openxr", ["XR_FB_triangle_mesh"])]
     Ccw = 2,
 }

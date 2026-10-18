@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBoxf")]
+[SupportedApiProfile("openxr")]
 public partial struct Boxf
 {
     [NativeName("center")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public Posef Center;
 
     [NativeName("extents")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public Extent3Df Extents;
 }

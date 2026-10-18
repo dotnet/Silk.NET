@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrGraphicsRequirementsD3D12KHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct GraphicsRequirementsD3D12KHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_D3D12_enable"])]
     public StructureType Type = StructureType.GraphicsRequirementsD3D12KHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_D3D12_enable"])]
     public void* Next;
 
     [NativeName("adapterLuid")]
+    [SupportedApiProfile("openxr", ["XR_KHR_D3D12_enable"])]
     public _LUID AdapterLuid;
 
     [NativeName("minFeatureLevel")]
+    [SupportedApiProfile("openxr", ["XR_KHR_D3D12_enable"])]
     public D3D_FEATURE_LEVEL MinFeatureLevel;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_D3D12_enable"])]
     public GraphicsRequirementsD3D12KHR() { }
 }

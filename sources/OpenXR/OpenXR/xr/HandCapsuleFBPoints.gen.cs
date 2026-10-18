@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_points_e__FixedBuffer")]
 [InlineArray(2)]
+[SupportedApiProfile("openxr")]
 public partial struct HandCapsuleFBPoints
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public Vector3F E0;
 }

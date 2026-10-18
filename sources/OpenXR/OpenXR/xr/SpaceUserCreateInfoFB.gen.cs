@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceUserCreateInfoFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceUserCreateInfoFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity_user"])]
     public StructureType Type = StructureType.SpaceUserCreateInfoFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity_user"])]
     public void* Next;
 
     [NativeName("userId")]
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity_user"])]
     public ulong UserId;
 
+    [SupportedApiProfile("openxr", ["XR_FB_spatial_entity_user"])]
     public SpaceUserCreateInfoFB() { }
 }

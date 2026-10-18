@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_eyes_e__FixedBuffer")]
 [InlineArray(2)]
+[SupportedApiProfile("openxr")]
 public partial struct EyesANDROIDEyes
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public EyeANDROID E0;
 }

@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceVelocities")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpaceVelocities
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public StructureType Type = StructureType.SpaceVelocities;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public void* Next;
 
     [NativeName("velocityCount")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public uint VelocityCount;
 
     [NativeName("velocities")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public SpaceVelocityData* Velocities;
 
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public SpaceVelocities() { }
 }

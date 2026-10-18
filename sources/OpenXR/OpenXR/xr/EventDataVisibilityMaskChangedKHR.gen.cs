@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataVisibilityMaskChangedKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataVisibilityMaskChangedKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public StructureType Type = StructureType.EventDataVisibilityMaskChangedKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public void* Next;
 
     [NativeName("session")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public SessionHandle Session;
 
     [NativeName("viewConfigurationType")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public ViewConfigurationType ViewConfigurationType;
 
     [NativeName("viewIndex")]
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public uint ViewIndex;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_visibility_mask"])]
     public EventDataVisibilityMaskChangedKHR() { }
 }

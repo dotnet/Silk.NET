@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataSceneCaptureCompleteFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataSceneCaptureCompleteFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_scene_capture"])]
     public StructureType Type = StructureType.EventDataSceneCaptureCompleteFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_scene_capture"])]
     public void* Next;
 
     [NativeName("requestId")]
+    [SupportedApiProfile("openxr", ["XR_FB_scene_capture"])]
     public ulong RequestId;
 
     [NativeName("result")]
+    [SupportedApiProfile("openxr", ["XR_FB_scene_capture"])]
     public Result Result;
 
+    [SupportedApiProfile("openxr", ["XR_FB_scene_capture"])]
     public EventDataSceneCaptureCompleteFB() { }
 }

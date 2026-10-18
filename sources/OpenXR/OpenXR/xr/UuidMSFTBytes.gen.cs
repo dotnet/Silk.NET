@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_bytes_e__FixedBuffer")]
 [InlineArray(16)]
+[SupportedApiProfile("openxr")]
 public partial struct UuidMSFTBytes
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public byte E0;
 }

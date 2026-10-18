@@ -94,10 +94,7 @@ internal static partial class Jobs
                     .AddApiProfiles(
                         new()
                         {
-                            Profiles =
-                            [
-                                new() { Profile = "openxr", SourceSubdirectory = "openxr" },
-                            ],
+                            Profiles = [new() { Profile = "openxr", SourceSubdirectory = "xr" }],
                         }
                     )
                     .InterceptNativeFunctions(new() { NativeFunctionNames = ["xrCreateInstance"] })

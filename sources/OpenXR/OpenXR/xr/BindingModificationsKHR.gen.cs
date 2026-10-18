@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBindingModificationsKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct BindingModificationsKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_KHR_binding_modification"])]
     public StructureType Type = StructureType.BindingModificationsKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_KHR_binding_modification"])]
     public void* Next;
 
     [NativeName("bindingModificationCount")]
+    [SupportedApiProfile("openxr", ["XR_KHR_binding_modification"])]
     public uint BindingModificationCount;
 
     [NativeName("bindingModifications")]
+    [SupportedApiProfile("openxr", ["XR_KHR_binding_modification"])]
     public BindingModificationBaseHeaderKHR** BindingModifications;
 
+    [SupportedApiProfile("openxr", ["XR_KHR_binding_modification"])]
     public BindingModificationsKHR() { }
 }

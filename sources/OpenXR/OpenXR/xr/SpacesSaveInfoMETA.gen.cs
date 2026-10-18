@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpacesSaveInfoMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpacesSaveInfoMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]
     public StructureType Type = StructureType.SpacesSaveInfoMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]
     public void* Next;
 
     [NativeName("spaceCount")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]
     public uint SpaceCount;
 
     [NativeName("spaces")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]
     public SpaceHandle* Spaces;
 
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_persistence"])]
     public SpacesSaveInfoMETA() { }
 }

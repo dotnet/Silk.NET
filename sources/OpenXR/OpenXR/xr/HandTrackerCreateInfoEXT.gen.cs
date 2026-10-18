@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrHandTrackerCreateInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct HandTrackerCreateInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public StructureType Type = StructureType.HandTrackerCreateInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public void* Next;
 
     [NativeName("hand")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public HandEXT Hand;
 
     [NativeName("handJointSet")]
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public HandJointSetEXT HandJointSet;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_hand_tracking"])]
     public HandTrackerCreateInfoEXT() { }
 }

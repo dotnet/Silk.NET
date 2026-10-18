@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVulkanSwapchainCreateInfoMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct VulkanSwapchainCreateInfoMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_vulkan_swapchain_create_info"])]
     public StructureType Type = StructureType.VulkanSwapchainCreateInfoMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_vulkan_swapchain_create_info"])]
     public void* Next;
 
     [NativeName("additionalCreateFlags")]
+    [SupportedApiProfile("openxr", ["XR_META_vulkan_swapchain_create_info"])]
     public uint AdditionalCreateFlags;
 
     [NativeName("additionalUsageFlags")]
+    [SupportedApiProfile("openxr", ["XR_META_vulkan_swapchain_create_info"])]
     public uint AdditionalUsageFlags;
 
+    [SupportedApiProfile("openxr", ["XR_META_vulkan_swapchain_create_info"])]
     public VulkanSwapchainCreateInfoMETA() { }
 }

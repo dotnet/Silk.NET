@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_systemName_e__FixedBuffer")]
 [InlineArray(256)]
+[SupportedApiProfile("openxr")]
 public partial struct SystemPropertiesSystemName
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public sbyte E0;
 }

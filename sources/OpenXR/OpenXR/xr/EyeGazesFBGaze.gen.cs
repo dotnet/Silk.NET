@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_gaze_e__FixedBuffer")]
 [InlineArray(2)]
+[SupportedApiProfile("openxr")]
 public partial struct EyeGazesFBGaze
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public EyeGazeFB E0;
 }

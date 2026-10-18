@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialEntityComponentDataPlaneOrientationBD")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialEntityComponentDataPlaneOrientationBD
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_plane"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public StructureType Type = StructureType.SpatialEntityComponentDataPlaneOrientationBD;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_plane"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public void* Next;
 
     [NativeName("orientation")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_plane"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public PlaneOrientationBD Orientation;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_BD_spatial_plane"],
+        ImpliesSets = ["XR_BD_spatial_sensing"]
+    )]
     public SpatialEntityComponentDataPlaneOrientationBD() { }
 }

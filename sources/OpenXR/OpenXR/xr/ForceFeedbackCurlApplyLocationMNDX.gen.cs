@@ -9,11 +9,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrForceFeedbackCurlApplyLocationMNDX")]
+[SupportedApiProfile("openxr")]
 public partial struct ForceFeedbackCurlApplyLocationMNDX
 {
     [NativeName("location")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MNDX_force_feedback_curl"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public ForceFeedbackCurlLocationMNDX Location;
 
     [NativeName("value")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_MNDX_force_feedback_curl"],
+        ImpliesSets = ["XR_EXT_hand_tracking", "XR_VERSION_1_0"]
+    )]
     public float Value;
 }

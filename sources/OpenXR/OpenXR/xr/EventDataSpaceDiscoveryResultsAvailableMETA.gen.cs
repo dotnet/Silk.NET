@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrEventDataSpaceDiscoveryResultsAvailableMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct EventDataSpaceDiscoveryResultsAvailableMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
     public StructureType Type = StructureType.EventDataSpaceDiscoveryResultsAvailableMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
     public void* Next;
 
     [NativeName("requestId")]
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
     public ulong RequestId;
 
+    [SupportedApiProfile("openxr", ["XR_META_spatial_entity_discovery"])]
     public EventDataSpaceDiscoveryResultsAvailableMETA() { }
 }

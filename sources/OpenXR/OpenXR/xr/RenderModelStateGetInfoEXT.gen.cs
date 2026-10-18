@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrRenderModelStateGetInfoEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct RenderModelStateGetInfoEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public StructureType Type = StructureType.RenderModelStateGetInfoEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public void* Next;
 
     [NativeName("displayTime")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public long DisplayTime;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_EXT_render_model"],
+        ImpliesSets = ["XR_EXT_render_model+XR_EXT_uuid", "XR_EXT_render_model+XR_VERSION_1_1"]
+    )]
     public RenderModelStateGetInfoEXT() { }
 }

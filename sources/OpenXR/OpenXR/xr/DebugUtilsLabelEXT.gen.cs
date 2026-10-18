@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrDebugUtilsLabelEXT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct DebugUtilsLabelEXT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public StructureType Type = StructureType.DebugUtilsLabelEXT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public void* Next;
 
     [NativeName("labelName")]
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public sbyte* LabelName;
 
+    [SupportedApiProfile("openxr", ["XR_EXT_debug_utils"])]
     public DebugUtilsLabelEXT() { }
 }

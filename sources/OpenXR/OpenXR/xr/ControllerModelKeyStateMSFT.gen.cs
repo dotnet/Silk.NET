@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrControllerModelKeyStateMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ControllerModelKeyStateMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_controller_model"])]
     public StructureType Type = StructureType.ControllerModelKeyStateMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_controller_model"])]
     public void* Next;
 
     [NativeName("modelKey")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_controller_model"])]
     public ulong ModelKey;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_controller_model"])]
     public ControllerModelKeyStateMSFT() { }
 }

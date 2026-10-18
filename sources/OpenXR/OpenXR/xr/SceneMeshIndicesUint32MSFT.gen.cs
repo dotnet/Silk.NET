@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMeshIndicesUint32MSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SceneMeshIndicesUint32MSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public StructureType Type = StructureType.SceneMeshIndicesUint32MSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public void* Next;
 
     [NativeName("indexCapacityInput")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public uint IndexCapacityInput;
 
     [NativeName("indexCountOutput")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public uint IndexCountOutput;
 
     [NativeName("indices")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public uint* Indices;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public SceneMeshIndicesUint32MSFT() { }
 }

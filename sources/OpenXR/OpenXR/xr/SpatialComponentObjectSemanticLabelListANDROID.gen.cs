@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpatialComponentObjectSemanticLabelListANDROID")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SpatialComponentObjectSemanticLabelListANDROID
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_object_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public StructureType Type = StructureType.SpatialComponentObjectSemanticLabelListANDROID;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_object_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public void* Next;
 
     [NativeName("semanticLabelCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_object_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public uint SemanticLabelCount;
 
     [NativeName("semanticLabels")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_object_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialObjectSemanticLabelANDROID* SemanticLabels;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_ANDROID_spatial_object_tracking"],
+        ImpliesSets = ["XR_EXT_spatial_entity"]
+    )]
     public SpatialComponentObjectSemanticLabelListANDROID() { }
 }

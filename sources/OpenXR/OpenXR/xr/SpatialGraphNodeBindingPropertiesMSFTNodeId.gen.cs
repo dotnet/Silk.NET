@@ -10,8 +10,10 @@ namespace Silk.NET.OpenXR;
 
 [NativeName("_nodeId_e__FixedBuffer")]
 [InlineArray(16)]
+[SupportedApiProfile("openxr")]
 public partial struct SpatialGraphNodeBindingPropertiesMSFTNodeId
 {
     [NativeName("e0")]
+    [SupportedApiProfile("openxr")]
     public byte E0;
 }

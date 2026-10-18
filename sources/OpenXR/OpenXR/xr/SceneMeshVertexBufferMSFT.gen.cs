@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSceneMeshVertexBufferMSFT")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SceneMeshVertexBufferMSFT
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public StructureType Type = StructureType.SceneMeshVertexBufferMSFT;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public void* Next;
 
     [NativeName("vertexCapacityInput")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public uint VertexCapacityInput;
 
     [NativeName("vertexCountOutput")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public uint VertexCountOutput;
 
     [NativeName("vertices")]
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public Vector3F* Vertices;
 
+    [SupportedApiProfile("openxr", ["XR_MSFT_scene_understanding"])]
     public SceneMeshVertexBufferMSFT() { }
 }

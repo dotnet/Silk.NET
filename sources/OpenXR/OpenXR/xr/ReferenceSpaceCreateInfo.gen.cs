@@ -9,19 +9,25 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrReferenceSpaceCreateInfo")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct ReferenceSpaceCreateInfo
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr")]
     public StructureType Type = StructureType.ReferenceSpaceCreateInfo;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr")]
     public void* Next;
 
     [NativeName("referenceSpaceType")]
+    [SupportedApiProfile("openxr")]
     public ReferenceSpaceType ReferenceSpaceType;
 
     [NativeName("poseInReferenceSpace")]
+    [SupportedApiProfile("openxr")]
     public Posef PoseInReferenceSpace;
 
+    [SupportedApiProfile("openxr")]
     public ReferenceSpaceCreateInfo() { }
 }

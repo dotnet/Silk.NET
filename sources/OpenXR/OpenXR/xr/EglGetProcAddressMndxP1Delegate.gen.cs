@@ -9,4 +9,5 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("PFN_xrEglGetProcAddressMNDX_p1")]
+[SupportedApiProfile("openxr")]
 public unsafe delegate void EglGetProcAddressMndxP1Delegate();

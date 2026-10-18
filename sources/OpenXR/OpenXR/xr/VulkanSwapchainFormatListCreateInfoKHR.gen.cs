@@ -9,19 +9,45 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrVulkanSwapchainFormatListCreateInfoKHR")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct VulkanSwapchainFormatListCreateInfoKHR
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_KHR_vulkan_swapchain_format_list"],
+        ImpliesSets = ["XR_KHR_vulkan_enable", "XR_KHR_vulkan_enable2", "XR_VERSION_1_0"]
+    )]
     public StructureType Type = StructureType.VulkanSwapchainFormatListCreateInfoKHR;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_KHR_vulkan_swapchain_format_list"],
+        ImpliesSets = ["XR_KHR_vulkan_enable", "XR_KHR_vulkan_enable2", "XR_VERSION_1_0"]
+    )]
     public void* Next;
 
     [NativeName("viewFormatCount")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_KHR_vulkan_swapchain_format_list"],
+        ImpliesSets = ["XR_KHR_vulkan_enable", "XR_KHR_vulkan_enable2", "XR_VERSION_1_0"]
+    )]
     public uint ViewFormatCount;
 
     [NativeName("viewFormats")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_KHR_vulkan_swapchain_format_list"],
+        ImpliesSets = ["XR_KHR_vulkan_enable", "XR_KHR_vulkan_enable2", "XR_VERSION_1_0"]
+    )]
     public VkFormatHandle ViewFormats;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_KHR_vulkan_swapchain_format_list"],
+        ImpliesSets = ["XR_KHR_vulkan_enable", "XR_KHR_vulkan_enable2", "XR_VERSION_1_0"]
+    )]
     public VulkanSwapchainFormatListCreateInfoKHR() { }
 }

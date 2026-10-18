@@ -9,16 +9,37 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemPropertiesBodyTrackingCalibrationMETA")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemPropertiesBodyTrackingCalibrationMETA
 {
     [NativeName("type")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_body_tracking_calibration"],
+        ImpliesSets = ["XR_FB_body_tracking"]
+    )]
     public StructureType Type = StructureType.SystemPropertiesBodyTrackingCalibrationMETA;
 
     [NativeName("next")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_body_tracking_calibration"],
+        ImpliesSets = ["XR_FB_body_tracking"]
+    )]
     public void* Next;
 
     [NativeName("supportsHeightOverride")]
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_body_tracking_calibration"],
+        ImpliesSets = ["XR_FB_body_tracking"]
+    )]
     public MaybeBool<uint> SupportsHeightOverride;
 
+    [SupportedApiProfile(
+        "openxr",
+        ["XR_META_body_tracking_calibration"],
+        ImpliesSets = ["XR_FB_body_tracking"]
+    )]
     public SystemPropertiesBodyTrackingCalibrationMETA() { }
 }

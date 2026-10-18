@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSpaceVelocityData")]
+[SupportedApiProfile("openxr")]
 public partial struct SpaceVelocityData
 {
     [NativeName("velocityFlags")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public SpaceVelocityFlags VelocityFlags;
 
     [NativeName("linearVelocity")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public Vector3F LinearVelocity;
 
     [NativeName("angularVelocity")]
+    [SupportedApiProfile("openxr", ["XR_VERSION_1_1"], MinVersion = "1.1")]
     public Vector3F AngularVelocity;
 }

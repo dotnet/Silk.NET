@@ -9,16 +9,21 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrSystemPassthroughPropertiesFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct SystemPassthroughPropertiesFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public StructureType Type = StructureType.SystemPassthroughPropertiesFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public void* Next;
 
     [NativeName("supportsPassthrough")]
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public MaybeBool<uint> SupportsPassthrough;
 
+    [SupportedApiProfile("openxr", ["XR_FB_passthrough"])]
     public SystemPassthroughPropertiesFB() { }
 }

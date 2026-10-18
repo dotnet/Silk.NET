@@ -9,31 +9,41 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenXR;
 
 [NativeName("XrBodyJointLocationsFB")]
+[SupportedApiProfile("openxr")]
 public unsafe partial struct BodyJointLocationsFB
 {
     [NativeName("type")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public StructureType Type = StructureType.BodyJointLocationsFB;
 
     [NativeName("next")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public void* Next;
 
     [NativeName("isActive")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public MaybeBool<uint> IsActive;
 
     [NativeName("confidence")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public float Confidence;
 
     [NativeName("jointCount")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public uint JointCount;
 
     [NativeName("jointLocations")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public BodyJointLocationFB* JointLocations;
 
     [NativeName("skeletonChangedCount")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public uint SkeletonChangedCount;
 
     [NativeName("time")]
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public long Time;
 
+    [SupportedApiProfile("openxr", ["XR_FB_body_tracking"])]
     public BodyJointLocationsFB() { }
 }
