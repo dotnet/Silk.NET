@@ -434,35 +434,48 @@ public sealed class ClangScraper(
             }
         }
 
-        if (!scrapeResult.HasValue && cacheProvider is not null)
+        if (hostConfig.GenerateCacheOnly)
         {
-            logger.LogInformation(
-                "Reading raw bindings from cache for {JobKey} (Cache key: {CacheKey})",
-                ctx.JobKey,
-                cacheKey
-            );
-
-            scrapeResult = await ReadBindingsCacheAsync(cacheProvider, cacheKey, ct);
-        }
-
-        if (!scrapeResult.HasValue)
-        {
-            if (innerException is not null)
+            // GenerateCacheOnly is intended to be used when not all caches are available (eg: for multi-platform cache population),
+            // so we don't validate whether a cache was generated or not in this branch
+            if (config.ExitAfterGenerateCacheOnlyRun)
             {
-                throw new AggregateException(
-                    "Bindings generation was unable to complete as intended, and there was no cache "
-                        + "available to fall back on.",
-                    innerException
+                ctx.ContinueGeneration = false;
+                return;
+            }
+        }
+        else
+        {
+            if (!scrapeResult.HasValue && cacheProvider is not null)
+            {
+                logger.LogInformation(
+                    "Reading raw bindings from cache for {JobKey} (Cache key: {CacheKey})",
+                    ctx.JobKey,
+                    cacheKey
+                );
+
+                scrapeResult = await ReadBindingsCacheAsync(cacheProvider, cacheKey, ct);
+            }
+
+            if (!scrapeResult.HasValue)
+            {
+                if (innerException is not null)
+                {
+                    throw new AggregateException(
+                        "Bindings generation was unable to complete as intended, and there was no cache "
+                            + "available to fall back on.",
+                        innerException
+                    );
+                }
+
+                throw new InvalidOperationException(
+                    "Bindings generation has been requested to be skipped despite there being no cache to "
+                        + "fall back on."
                 );
             }
 
-            throw new InvalidOperationException(
-                "Bindings generation has been requested to be skipped despite there being no cache to "
-                    + "fall back on."
-            );
+            AddDocuments(ctx, scrapeResult.Value);
         }
-
-        AddDocuments(ctx, scrapeResult.Value);
     }
 
     private async Task<ScrapeResult?> ReadBindingsCacheAsync(
