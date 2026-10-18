@@ -76,7 +76,7 @@ jobs:
       - name: Populate caches
         shell: pwsh
         run: |
-          dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only OpenXR
+          dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --generate-cache-only --only OpenXR
 
           # Ignore errors for now since we're only interested in the cache file
           exit 0
@@ -187,7 +187,7 @@ jobs:
 
       - name: Regenerate bindings
         shell: pwsh
-        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only OpenXR
+        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --use-cache-only --only OpenXR
 
       - name: Show git status
         shell: pwsh
