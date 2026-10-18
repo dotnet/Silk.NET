@@ -84,7 +84,7 @@ jobs:
       - name: Upload cache as artifact
         uses: actions/upload-artifact@v7
         with:
-          name: .silktouch cache (${{ matrix.os }})
+          name: silktouch-per-os-cache-${{ matrix.os }}
           path: .silktouch
           include-hidden-files: true
 
@@ -101,6 +101,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           path: .silktouch
+          pattern: silktouch-per-os-cache-*
           merge-multiple: true
 
       - name: Show .silktouch folder contents
@@ -110,6 +111,6 @@ jobs:
       - name: Upload cache
         uses: actions/upload-artifact@v7
         with:
-          name: Combined .silktouch cache
+          name: silktouch-combined-cache
           path: .silktouch
           include-hidden-files: true
