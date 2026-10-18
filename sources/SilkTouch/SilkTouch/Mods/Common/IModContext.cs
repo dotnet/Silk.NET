@@ -34,4 +34,9 @@ public interface IModContext : IAsyncDisposable
     /// Whether generation should continue.
     /// </summary>
     public bool ContinueGeneration { get; set; }
+
+    /// <summary>
+    /// Output the bindings to the output location represented by this mod context.
+    /// </summary>
+    public Task OutputBindingsAsync();
 }

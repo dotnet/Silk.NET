@@ -86,7 +86,7 @@ internal class SilkTouchJob : IDisposable
         Config = await _inputResolver.Resolve(Config);
 
         // Prepare the context
-        var context = await _modContextFactory.CreateContextAsync(Key, Config, ct);
+        await using var context = await _modContextFactory.CreateContextAsync(Key, Config, ct);
 
         // Initialize the document factory
         _documentFactory.DefaultNamespace = Config.DefaultNamespace;
@@ -161,10 +161,12 @@ internal class SilkTouchJob : IDisposable
             }
         }
 
-        // Manually dispose so that we don't do this when generation fails (await using is too clever).
-        await context.DisposeAsync();
-
         // Output the generated bindings
+        if (context.ContinueGeneration)
+        {
+            await context.OutputBindingsAsync();
+        }
+
         _logger.LogInformation(
             "Bindings generation for {} completed in {} seconds.",
             Key,
