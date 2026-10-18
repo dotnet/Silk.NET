@@ -112,7 +112,7 @@ internal class MSBuildModContext(
         }
     }
 
-    public async ValueTask DisposeAsync()
+    public async Task OutputBindingsAsync()
     {
         IEnumerable<string>? existingFiles = null;
         if (Path.GetDirectoryName(_srcProject?.FilePath) is not { Length: > 0 } srcDir)
@@ -268,4 +268,6 @@ internal class MSBuildModContext(
         var result = await CSharpFormatter.FormatAsync(normalizedRoot.SyntaxTree, _opts, ct);
         return !result.ErrorDiagnostics.Any() ? result.Code : normalizedRoot.ToFullString();
     }
+
+    public ValueTask DisposeAsync() => ValueTask.CompletedTask;
 }

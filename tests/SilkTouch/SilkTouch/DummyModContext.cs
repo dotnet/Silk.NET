@@ -15,4 +15,6 @@ public class DummyModContext : IModContext
     public Project? SourceProject { get; set; }
     public Project? TestProject { get; set; }
     public bool ContinueGeneration { get; set; } = true;
+
+    public Task OutputBindingsAsync() => Task.CompletedTask;
 }
