@@ -442,45 +442,7 @@ public sealed class ClangScraper(
                 cacheKey
             );
 
-            await using var cacheDir = await cacheProvider.GetDirectoryAsync(
-                cacheKey,
-                CacheIntent.StageIntermediateOutput,
-                CacheFlags.None,
-                FileAccess.Read
-            );
-
-            if (cacheDir != null)
-            {
-                var sourceDocuments = new List<ScrapedDocument>();
-                var testDocuments = new List<ScrapedDocument>();
-                await foreach (var file in cacheDir.GetCommittedFilesAsync().WithCancellation(ct))
-                {
-                    await cacheDir.GetCommittedFileAsync(file);
-                    var isSource = file.StartsWith("sources");
-                    var isTest = file.StartsWith("tests");
-                    if (!isSource && !isTest)
-                    {
-                        continue;
-                    }
-
-                    var rel = file[(isSource ? "sources".Length : "tests".Length)..]
-                        .TrimStart('/', '\\');
-                    var content = await cacheDir.GetCommittedFileAsync(file);
-                    var root = await CSharpSyntaxTree
-                        .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
-                        .GetRootAsync(ct);
-                    if (isSource)
-                    {
-                        sourceDocuments.Add(new ScrapedDocument(rel, root));
-                    }
-                    else
-                    {
-                        testDocuments.Add(new ScrapedDocument(rel, root));
-                    }
-                }
-
-                scrapeResult = new ScrapeResult(sourceDocuments, testDocuments);
-            }
+            scrapeResult = await ReadBindingsCacheAsync(cacheProvider, cacheKey, ct);
         }
 
         if (!scrapeResult.HasValue)
@@ -501,6 +463,54 @@ public sealed class ClangScraper(
         }
 
         AddDocuments(ctx, scrapeResult.Value);
+    }
+
+    private async Task<ScrapeResult?> ReadBindingsCacheAsync(
+        ICacheProvider cacheProvider,
+        string cacheKey,
+        CancellationToken ct
+    )
+    {
+        await using var cacheDir = await cacheProvider.GetDirectoryAsync(
+            cacheKey,
+            CacheIntent.StageIntermediateOutput,
+            CacheFlags.None,
+            FileAccess.Read
+        );
+
+        if (cacheDir == null)
+        {
+            return null;
+        }
+
+        var sourceDocuments = new List<ScrapedDocument>();
+        var testDocuments = new List<ScrapedDocument>();
+        await foreach (var file in cacheDir.GetCommittedFilesAsync().WithCancellation(ct))
+        {
+            await cacheDir.GetCommittedFileAsync(file);
+            var isSource = file.StartsWith("sources");
+            var isTest = file.StartsWith("tests");
+            if (!isSource && !isTest)
+            {
+                continue;
+            }
+
+            var rel = file[(isSource ? "sources".Length : "tests".Length)..].TrimStart('/', '\\');
+            var content = await cacheDir.GetCommittedFileAsync(file);
+            var root = await CSharpSyntaxTree
+                .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
+                .GetRootAsync(ct);
+            if (isSource)
+            {
+                sourceDocuments.Add(new ScrapedDocument(rel, root));
+            }
+            else
+            {
+                testDocuments.Add(new ScrapedDocument(rel, root));
+            }
+        }
+
+        return new ScrapeResult(sourceDocuments, testDocuments);
     }
 
     private record struct ScrapedDocument(string FilePath, SyntaxNode Root);
