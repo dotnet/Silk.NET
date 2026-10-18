@@ -26,9 +26,6 @@ jobs:
         with:
           dotnet-version: "10.0.401"
 
-      - name: Setup PowerShell
-        run: dotnet tool install --global PowerShell
-
       - name: Setup Windows SDK
         if: "runner.os == 'Windows'"
         uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
