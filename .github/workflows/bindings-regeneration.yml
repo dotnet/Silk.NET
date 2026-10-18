@@ -21,6 +21,22 @@ jobs:
 
     steps:
 
+      - name: Setup dependencies
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          switch ($true) {
+            $IsWindows {}
+            $IsLinux {
+              sudo apt-get update
+              sudo apt-get install -y libx11-dev
+            }
+            $IsMacOS {}
+          }
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
