@@ -46,6 +46,18 @@ public class SilkTouchHost
             Description = "Maximum number of parallel jobs.",
         };
 
+    private static Option<bool> UseCacheOnlyOption { get; } =
+        new(["--use-cache-only"], () => false)
+        {
+            Description = "Limits the generator to only using the cache.",
+        };
+
+    private static Option<bool> GenerateCacheOnlyOption { get; } =
+        new(["--generate-cache-only"], () => false)
+        {
+            Description = "Limits the generator to only generating the cache.",
+        };
+
     private readonly Dictionary<string, JobDefinition> _jobDefinitions = [];
 
     private SilkTouchHost() { }
@@ -73,7 +85,15 @@ public class SilkTouchHost
     /// </summary>
     public async Task RunAsync(string[] args)
     {
-        var rootCommand = new RootCommand { LoggingOption, SkipOption, OnlyOption, JobsOption };
+        var rootCommand = new RootCommand
+        {
+            LoggingOption,
+            SkipOption,
+            OnlyOption,
+            JobsOption,
+            UseCacheOnlyOption,
+            GenerateCacheOnlyOption,
+        };
 
         rootCommand.SetHandler(async ctx =>
         {
@@ -176,6 +196,22 @@ public class SilkTouchHost
         builder.Populate(services);
 
         {
+            // Create config
+            var config = new SilkTouchHostConfiguration()
+            {
+                UseCacheOnly = ctx.ParseResult.GetValueForOption(UseCacheOnlyOption),
+                GenerateCacheOnly = ctx.ParseResult.GetValueForOption(GenerateCacheOnlyOption),
+            };
+
+            if (config.GenerateCacheOnly && config.UseCacheOnly)
+            {
+                throw new InvalidOperationException(
+                    $"{UseCacheOnlyOption.Name} and {GenerateCacheOnlyOption.Name} cannot be enabled at the same time."
+                );
+            }
+
+            builder.RegisterInstance(config).SingleInstance();
+
             builder
                 .RegisterType<MSBuildModContextFactory>()
                 .As<IModContextFactory>()

@@ -33,6 +33,7 @@ public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
     DocumentFactory documentFactory,
     ClangScraper.Configuration config,
+    SilkTouchHostConfiguration hostConfig,
     ILogger<ClangScraper> logger,
     IInputResolver inputResolver,
     ICacheProvider? cacheProvider = null,
@@ -83,9 +84,12 @@ public sealed class ClangScraper(
         public string? CacheKey { get; init; }
 
         /// <summary>
-        /// Forces the scraper to use cache. Best used on the command line.
+        /// Whether this mod should end the generation job after a "generate cache only" run.
         /// </summary>
-        public bool ForceCache { get; init; }
+        /// <remarks>
+        /// A "generate cache only" run is a run where <see cref="SilkTouchHostConfiguration.GenerateCacheOnly"/> is set to true.
+        /// </remarks>
+        public bool ExitAfterGenerateCacheOnlyRun { get; init; }
     }
 
     /// <summary>
@@ -394,7 +398,7 @@ public sealed class ClangScraper(
 
         // Try generating the raw bindings with ClangSharp
         // If scraping needs to be skipped or if the scrape fails, then fall back to a cache if available
-        var shouldScrape = config.ScrapeIf.Invoke();
+        var shouldScrape = !hostConfig.UseCacheOnly && config.ScrapeIf.Invoke();
 
         var cacheKey =
             resolvedConfig.CacheKey != null
