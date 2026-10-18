@@ -23,8 +23,9 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <param name="rspHandler">
 /// The handler of response file (.rsp) files i.e. configuration for the ClangSharp generator.
 /// </param>
-/// <param name="config">The configuration to use.</param>
 /// <param name="documentFactory">The document factory to use.</param>
+/// <param name="config">The configuration to use.</param>
+/// <param name="hostConfig">The host configuration to use.</param>
 /// <param name="logger">The logger to use.</param>
 /// <param name="inputResolver">The input resolver to use.</param>
 /// <param name="responseFileMods">The mods that modify response files before they are fed to ClangSharp.</param>
