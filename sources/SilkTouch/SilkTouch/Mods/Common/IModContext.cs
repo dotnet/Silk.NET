@@ -29,4 +29,9 @@ public interface IModContext : IAsyncDisposable
     /// The current compilation for the test outputs.
     /// </summary>
     public Project? TestProject { get; set; }
+
+    /// <summary>
+    /// Whether generation should continue.
+    /// </summary>
+    public bool ContinueGeneration { get; set; }
 }

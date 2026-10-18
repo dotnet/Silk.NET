@@ -112,6 +112,16 @@ internal class SilkTouchJob : IDisposable
             try
             {
                 await mod.InitializeAsync(context, ct);
+
+                if (!context.ContinueGeneration)
+                {
+                    _logger.LogInformation(
+                        "{Mod} requested an early exit for {Job}. Exiting...",
+                        mod,
+                        Key
+                    );
+                    break;
+                }
             }
             catch (Exception e)
             {
@@ -133,6 +143,16 @@ internal class SilkTouchJob : IDisposable
             try
             {
                 await mod.ExecuteAsync(context, ct);
+
+                if (!context.ContinueGeneration)
+                {
+                    _logger.LogInformation(
+                        "{Mod} requested an early exit for {Job}. Exiting...",
+                        mod,
+                        Key
+                    );
+                    break;
+                }
             }
             catch (Exception e)
             {
