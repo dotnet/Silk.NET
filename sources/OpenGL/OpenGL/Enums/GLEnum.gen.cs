@@ -10,6 +10,2547 @@ namespace Silk.NET.OpenGL;
 [NativeName("GLenum")]
 public enum GLEnum : uint
 {
+    [NativeName("GL_VERSION_ES_CL_1_0")]
+    VersionEsCl1x0 = 1,
+
+    [NativeName("GL_VERSION_ES_CM_1_1")]
+    VersionEsCm1x1 = 1,
+
+    [NativeName("GL_VERSION_ES_CL_1_1")]
+    VersionEsCl1x1 = 1,
+
+    [NativeName("GL_TEXTURE_EXTERNAL_OES")]
+    TextureExternalOES = 36197,
+
+    [NativeName("GL_TEXTURE_BINDING_EXTERNAL_OES")]
+    TextureBindingExternalOES = 36199,
+
+    [NativeName("GL_REQUIRED_TEXTURE_IMAGE_UNITS_OES")]
+    RequiredTextureImageUnitsOES = 36200,
+
+    [NativeName("GL_BLEND_EQUATION_RGB_OES")]
+    BlendEquationRgbOES = 32777,
+
+    [NativeName("GL_BLEND_EQUATION_ALPHA_OES")]
+    BlendEquationAlphaOES = 34877,
+
+    [NativeName("GL_BLEND_DST_RGB_OES")]
+    BlendDstRgbOES = 32968,
+
+    [NativeName("GL_BLEND_SRC_RGB_OES")]
+    BlendSrcRgbOES = 32969,
+
+    [NativeName("GL_BLEND_DST_ALPHA_OES")]
+    BlendDstAlphaOES = 32970,
+
+    [NativeName("GL_BLEND_SRC_ALPHA_OES")]
+    BlendSrcAlphaOES = 32971,
+
+    [NativeName("GL_BLEND_EQUATION_OES")]
+    BlendEquationOES = 32777,
+
+    [NativeName("GL_FUNC_ADD_OES")]
+    FuncAddOES = 32774,
+
+    [NativeName("GL_FUNC_SUBTRACT_OES")]
+    FuncSubtractOES = 32778,
+
+    [NativeName("GL_FUNC_REVERSE_SUBTRACT_OES")]
+    FuncReverseSubtractOES = 32779,
+
+    [NativeName("GL_ETC1_RGB8_OES")]
+    Etc1Rgb8OES = 36196,
+
+    [NativeName("GL_DEPTH_COMPONENT24_OES")]
+    DepthComponent24OES = 33190,
+
+    [NativeName("GL_DEPTH_COMPONENT32_OES")]
+    DepthComponent32OES = 33191,
+
+    [NativeName("GL_TEXTURE_CROP_RECT_OES")]
+    TextureCropRectOES = 35741,
+
+    [NativeName("GL_NONE_OES")]
+    NoneOES = 0,
+
+    [NativeName("GL_FRAMEBUFFER_OES")]
+    FramebufferOES = 36160,
+
+    [NativeName("GL_RENDERBUFFER_OES")]
+    RenderbufferOES = 36161,
+
+    [NativeName("GL_RGBA4_OES")]
+    Rgba4OES = 32854,
+
+    [NativeName("GL_RGB5_A1_OES")]
+    Rgb5A1OES = 32855,
+
+    [NativeName("GL_RGB565_OES")]
+    Rgb565OES = 36194,
+
+    [NativeName("GL_DEPTH_COMPONENT16_OES")]
+    DepthComponent16OES = 33189,
+
+    [NativeName("GL_RENDERBUFFER_WIDTH_OES")]
+    RenderbufferWidthOES = 36162,
+
+    [NativeName("GL_RENDERBUFFER_HEIGHT_OES")]
+    RenderbufferHeightOES = 36163,
+
+    [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_OES")]
+    RenderbufferInternalFormatOES = 36164,
+
+    [NativeName("GL_RENDERBUFFER_RED_SIZE_OES")]
+    RenderbufferRedSizeOES = 36176,
+
+    [NativeName("GL_RENDERBUFFER_GREEN_SIZE_OES")]
+    RenderbufferGreenSizeOES = 36177,
+
+    [NativeName("GL_RENDERBUFFER_BLUE_SIZE_OES")]
+    RenderbufferBlueSizeOES = 36178,
+
+    [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_OES")]
+    RenderbufferAlphaSizeOES = 36179,
+
+    [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_OES")]
+    RenderbufferDepthSizeOES = 36180,
+
+    [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_OES")]
+    RenderbufferStencilSizeOES = 36181,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
+    FramebufferAttachmentObjectTypeOES = 36048,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
+    FramebufferAttachmentObjectNameOES = 36049,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
+    FramebufferAttachmentTextureLevelOES = 36050,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
+    FramebufferAttachmentTextureCubeMapFaceOES = 36051,
+
+    [NativeName("GL_COLOR_ATTACHMENT0_OES")]
+    ColorAttachment0OES = 36064,
+
+    [NativeName("GL_DEPTH_ATTACHMENT_OES")]
+    DepthAttachmentOES = 36096,
+
+    [NativeName("GL_STENCIL_ATTACHMENT_OES")]
+    StencilAttachmentOES = 36128,
+
+    [NativeName("GL_FRAMEBUFFER_COMPLETE_OES")]
+    FramebufferCompleteOES = 36053,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_OES")]
+    FramebufferIncompleteAttachmentOES = 36054,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_OES")]
+    FramebufferIncompleteMissingAttachmentOES = 36055,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_OES")]
+    FramebufferIncompleteDimensionsOES = 36057,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_FORMATS_OES")]
+    FramebufferIncompleteFormatsOES = 36058,
+
+    [NativeName("GL_FRAMEBUFFER_UNSUPPORTED_OES")]
+    FramebufferUnsupportedOES = 36061,
+
+    [NativeName("GL_FRAMEBUFFER_BINDING_OES")]
+    FramebufferBindingOES = 36006,
+
+    [NativeName("GL_RENDERBUFFER_BINDING_OES")]
+    RenderbufferBindingOES = 36007,
+
+    [NativeName("GL_MAX_RENDERBUFFER_SIZE_OES")]
+    MaxRenderbufferSizeOES = 34024,
+
+    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
+    InvalidFramebufferOperationOES = 1286,
+
+    [NativeName("GL_WRITE_ONLY_OES")]
+    WriteOnlyOES = 35001,
+
+    [NativeName("GL_BUFFER_ACCESS_OES")]
+    BufferAccessOES = 35003,
+
+    [NativeName("GL_BUFFER_MAPPED_OES")]
+    BufferMappedOES = 35004,
+
+    [NativeName("GL_BUFFER_MAP_POINTER_OES")]
+    BufferMapPointerOES = 35005,
+
+    [NativeName("GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES")]
+    ModelviewMatrixFloatAsIntBitsOES = 35213,
+
+    [NativeName("GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES")]
+    ProjectionMatrixFloatAsIntBitsOES = 35214,
+
+    [NativeName("GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES")]
+    TextureMatrixFloatAsIntBitsOES = 35215,
+
+    [NativeName("GL_MAX_VERTEX_UNITS_OES")]
+    MaxVertexUnitsOES = 34468,
+
+    [NativeName("GL_MAX_PALETTE_MATRICES_OES")]
+    MaxPaletteMatricesOES = 34882,
+
+    [NativeName("GL_MATRIX_PALETTE_OES")]
+    MatrixPaletteOES = 34880,
+
+    [NativeName("GL_MATRIX_INDEX_ARRAY_OES")]
+    MatrixIndexArrayOES = 34884,
+
+    [NativeName("GL_WEIGHT_ARRAY_OES")]
+    WeightArrayOES = 34477,
+
+    [NativeName("GL_CURRENT_PALETTE_MATRIX_OES")]
+    CurrentPaletteMatrixOES = 34883,
+
+    [NativeName("GL_MATRIX_INDEX_ARRAY_SIZE_OES")]
+    MatrixIndexArraySizeOES = 34886,
+
+    [NativeName("GL_MATRIX_INDEX_ARRAY_TYPE_OES")]
+    MatrixIndexArrayTypeOES = 34887,
+
+    [NativeName("GL_MATRIX_INDEX_ARRAY_STRIDE_OES")]
+    MatrixIndexArrayStrideOES = 34888,
+
+    [NativeName("GL_MATRIX_INDEX_ARRAY_POINTER_OES")]
+    MatrixIndexArrayPointerOES = 34889,
+
+    [NativeName("GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES")]
+    MatrixIndexArrayBufferBindingOES = 35742,
+
+    [NativeName("GL_WEIGHT_ARRAY_SIZE_OES")]
+    WeightArraySizeOES = 34475,
+
+    [NativeName("GL_WEIGHT_ARRAY_TYPE_OES")]
+    WeightArrayTypeOES = 34473,
+
+    [NativeName("GL_WEIGHT_ARRAY_STRIDE_OES")]
+    WeightArrayStrideOES = 34474,
+
+    [NativeName("GL_WEIGHT_ARRAY_POINTER_OES")]
+    WeightArrayPointerOES = 34476,
+
+    [NativeName("GL_WEIGHT_ARRAY_BUFFER_BINDING_OES")]
+    WeightArrayBufferBindingOES = 34974,
+
+    [NativeName("GL_DEPTH_STENCIL_OES")]
+    DepthStencilOES = 34041,
+
+    [NativeName("GL_UNSIGNED_INT_24_8_OES")]
+    UnsignedInt24x8OES = 34042,
+
+    [NativeName("GL_DEPTH24_STENCIL8_OES")]
+    Depth24Stencil8OES = 35056,
+
+    [NativeName("GL_POINT_SIZE_ARRAY_OES")]
+    PointSizeArrayOES = 35740,
+
+    [NativeName("GL_POINT_SIZE_ARRAY_TYPE_OES")]
+    PointSizeArrayTypeOES = 35210,
+
+    [NativeName("GL_POINT_SIZE_ARRAY_STRIDE_OES")]
+    PointSizeArrayStrideOES = 35211,
+
+    [NativeName("GL_POINT_SIZE_ARRAY_POINTER_OES")]
+    PointSizeArrayPointerOES = 35212,
+
+    [NativeName("GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES")]
+    PointSizeArrayBufferBindingOES = 35743,
+
+    [NativeName("GL_POINT_SPRITE_OES")]
+    PointSpriteOES = 34913,
+
+    [NativeName("GL_COORD_REPLACE_OES")]
+    CoordReplaceOES = 34914,
+
+    [NativeName("GL_ALPHA8_OES")]
+    Alpha8OES = 32828,
+
+    [NativeName("GL_LUMINANCE4_ALPHA4_OES")]
+    Luminance4Alpha4OES = 32835,
+
+    [NativeName("GL_LUMINANCE8_ALPHA8_OES")]
+    Luminance8Alpha8OES = 32837,
+
+    [NativeName("GL_LUMINANCE8_OES")]
+    Luminance8OES = 32832,
+
+    [NativeName("GL_RGB8_OES")]
+    Rgb8OES = 32849,
+
+    [NativeName("GL_RGBA8_OES")]
+    Rgba8OES = 32856,
+
+    [NativeName("GL_STENCIL_INDEX1_OES")]
+    StencilIndex1OES = 36166,
+
+    [NativeName("GL_STENCIL_INDEX4_OES")]
+    StencilIndex4OES = 36167,
+
+    [NativeName("GL_STENCIL_INDEX8_OES")]
+    StencilIndex8OES = 36168,
+
+    [NativeName("GL_INCR_WRAP_OES")]
+    IncrWrapOES = 34055,
+
+    [NativeName("GL_DECR_WRAP_OES")]
+    DecrWrapOES = 34056,
+
+    [NativeName("GL_FRAMEBUFFER_UNDEFINED_OES")]
+    FramebufferUndefinedOES = 33305,
+
+    [NativeName("GL_NORMAL_MAP_OES")]
+    NormalMapOES = 34065,
+
+    [NativeName("GL_REFLECTION_MAP_OES")]
+    ReflectionMapOES = 34066,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
+    TextureCubeMapOES = 34067,
+
+    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_OES")]
+    TextureBindingCubeMapOES = 34068,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES")]
+    TextureCubeMapPositiveXOES = 34069,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES")]
+    TextureCubeMapNegativeXOES = 34070,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES")]
+    TextureCubeMapPositiveYOES = 34071,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES")]
+    TextureCubeMapNegativeYOES = 34072,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES")]
+    TextureCubeMapPositiveZOES = 34073,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES")]
+    TextureCubeMapNegativeZOES = 34074,
+
+    [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES")]
+    MaxCubeMapTextureSizeOES = 34076,
+
+    [NativeName("GL_TEXTURE_GEN_MODE_OES")]
+    TextureGenModeOES = 9472,
+
+    [NativeName("GL_TEXTURE_GEN_STR_OES")]
+    TextureGenStrOES = 36192,
+
+    [NativeName("GL_MIRRORED_REPEAT_OES")]
+    MirroredRepeatOES = 33648,
+
+    [NativeName("GL_VERTEX_ARRAY_BINDING_OES")]
+    VertexArrayBindingOES = 34229,
+
+    [NativeName("GL_3DC_X_AMD")]
+    X3DcXAMD = 34809,
+
+    [NativeName("GL_3DC_XY_AMD")]
+    X3DcXyAMD = 34810,
+
+    [NativeName("GL_ATC_RGB_AMD")]
+    AtcRgbAMD = 35986,
+
+    [NativeName("GL_ATC_RGBA_EXPLICIT_ALPHA_AMD")]
+    AtcRgbaExplicitAlphaAMD = 35987,
+
+    [NativeName("GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD")]
+    AtcRgbaInterpolatedAlphaAMD = 34798,
+
+    [NativeName("GL_RENDERBUFFER_SAMPLES_APPLE")]
+    RenderbufferSamplesAPPLE = 36011,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_APPLE")]
+    FramebufferIncompleteMultisampleAPPLE = 36182,
+
+    [NativeName("GL_MAX_SAMPLES_APPLE")]
+    MaxSamplesAPPLE = 36183,
+
+    [NativeName("GL_READ_FRAMEBUFFER_APPLE")]
+    ReadFramebufferAPPLE = 36008,
+
+    [NativeName("GL_DRAW_FRAMEBUFFER_APPLE")]
+    DrawFramebufferAPPLE = 36009,
+
+    [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_APPLE")]
+    DrawFramebufferBindingAPPLE = 36006,
+
+    [NativeName("GL_READ_FRAMEBUFFER_BINDING_APPLE")]
+    ReadFramebufferBindingAPPLE = 36010,
+
+    [NativeName("GL_SYNC_OBJECT_APPLE")]
+    SyncObjectAPPLE = 35411,
+
+    [NativeName("GL_MAX_SERVER_WAIT_TIMEOUT_APPLE")]
+    MaxServerWaitTimeoutAPPLE = 37137,
+
+    [NativeName("GL_OBJECT_TYPE_APPLE")]
+    ObjectTypeAPPLE = 37138,
+
+    [NativeName("GL_SYNC_CONDITION_APPLE")]
+    SyncConditionAPPLE = 37139,
+
+    [NativeName("GL_SYNC_STATUS_APPLE")]
+    SyncStatusAPPLE = 37140,
+
+    [NativeName("GL_SYNC_FLAGS_APPLE")]
+    SyncFlagsAPPLE = 37141,
+
+    [NativeName("GL_SYNC_FENCE_APPLE")]
+    SyncFenceAPPLE = 37142,
+
+    [NativeName("GL_SYNC_GPU_COMMANDS_COMPLETE_APPLE")]
+    SyncGpuCommandsCompleteAPPLE = 37143,
+
+    [NativeName("GL_UNSIGNALED_APPLE")]
+    UnsignaledAPPLE = 37144,
+
+    [NativeName("GL_SIGNALED_APPLE")]
+    SignaledAPPLE = 37145,
+
+    [NativeName("GL_ALREADY_SIGNALED_APPLE")]
+    AlreadySignaledAPPLE = 37146,
+
+    [NativeName("GL_TIMEOUT_EXPIRED_APPLE")]
+    TimeoutExpiredAPPLE = 37147,
+
+    [NativeName("GL_CONDITION_SATISFIED_APPLE")]
+    ConditionSatisfiedAPPLE = 37148,
+
+    [NativeName("GL_WAIT_FAILED_APPLE")]
+    WaitFailedAPPLE = 37149,
+
+    [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
+    SyncFlushCommandsBitAPPLE = 1,
+
+    [NativeName("GL_TIMEOUT_IGNORED_APPLE")]
+    TimeoutIgnoredAPPLE = 4294967295,
+
+    [NativeName("GL_TEXTURE_MAX_LEVEL_APPLE")]
+    TextureMaxLevelAPPLE = 33085,
+
+    [NativeName("GL_COLOR_EXT")]
+    ColorEXT = 6144,
+
+    [NativeName("GL_DEPTH_EXT")]
+    DepthEXT = 6145,
+
+    [NativeName("GL_STENCIL_EXT")]
+    StencilEXT = 6146,
+
+    [NativeName("GL_MAP_READ_BIT_EXT")]
+    MapReadBitEXT = 1,
+
+    [NativeName("GL_MAP_WRITE_BIT_EXT")]
+    MapWriteBitEXT = 2,
+
+    [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
+    MapInvalidateRangeBitEXT = 4,
+
+    [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
+    MapInvalidateBufferBitEXT = 8,
+
+    [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
+    MapFlushExplicitBitEXT = 16,
+
+    [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
+    MapUnsynchronizedBitEXT = 32,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
+    FramebufferAttachmentTextureSamplesEXT = 36204,
+
+    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT")]
+    UnsignedShort4x4x4x4RevEXT = 33637,
+
+    [NativeName("GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT")]
+    UnsignedShort1x5x5x5RevEXT = 33638,
+
+    [NativeName("GL_GUILTY_CONTEXT_RESET_EXT")]
+    GuiltyContextResetEXT = 33363,
+
+    [NativeName("GL_INNOCENT_CONTEXT_RESET_EXT")]
+    InnocentContextResetEXT = 33364,
+
+    [NativeName("GL_UNKNOWN_CONTEXT_RESET_EXT")]
+    UnknownContextResetEXT = 33365,
+
+    [NativeName("GL_CONTEXT_ROBUST_ACCESS_EXT")]
+    ContextRobustAccessEXT = 37107,
+
+    [NativeName("GL_RESET_NOTIFICATION_STRATEGY_EXT")]
+    ResetNotificationStrategyEXT = 33366,
+
+    [NativeName("GL_LOSE_CONTEXT_ON_RESET_EXT")]
+    LoseContextOnResetEXT = 33362,
+
+    [NativeName("GL_NO_RESET_NOTIFICATION_EXT")]
+    NoResetNotificationEXT = 33377,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
+    FramebufferAttachmentColorEncodingEXT = 33296,
+
+    [NativeName("GL_RENDERBUFFER_SAMPLES_IMG")]
+    RenderbufferSamplesIMG = 37171,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG")]
+    FramebufferIncompleteMultisampleIMG = 37172,
+
+    [NativeName("GL_MAX_SAMPLES_IMG")]
+    MaxSamplesIMG = 37173,
+
+    [NativeName("GL_TEXTURE_SAMPLES_IMG")]
+    TextureSamplesIMG = 37174,
+
+    [NativeName("GL_BGRA_IMG")]
+    BgraIMG = 32993,
+
+    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG")]
+    UnsignedShort4x4x4x4RevIMG = 33637,
+
+    [NativeName("GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG")]
+    CompressedRgbPvrtc4Bppv1IMG = 35840,
+
+    [NativeName("GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG")]
+    CompressedRgbPvrtc2Bppv1IMG = 35841,
+
+    [NativeName("GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG")]
+    CompressedRgbaPvrtc4Bppv1IMG = 35842,
+
+    [NativeName("GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG")]
+    CompressedRgbaPvrtc2Bppv1IMG = 35843,
+
+    [NativeName("GL_MODULATE_COLOR_IMG")]
+    ModulateColorIMG = 35844,
+
+    [NativeName("GL_RECIP_ADD_SIGNED_ALPHA_IMG")]
+    RecipAddSignedAlphaIMG = 35845,
+
+    [NativeName("GL_TEXTURE_ALPHA_MODULATE_IMG")]
+    TextureAlphaModulateIMG = 35846,
+
+    [NativeName("GL_FACTOR_ALPHA_MODULATE_IMG")]
+    FactorAlphaModulateIMG = 35847,
+
+    [NativeName("GL_FRAGMENT_ALPHA_MODULATE_IMG")]
+    FragmentAlphaModulateIMG = 35848,
+
+    [NativeName("GL_ADD_BLEND_IMG")]
+    AddBlendIMG = 35849,
+
+    [NativeName("GL_DOT3_RGBA_IMG")]
+    Dot3RgbaIMG = 34479,
+
+    [NativeName("GL_CLIP_PLANE0_IMG")]
+    ClipPlane0IMG = 12288,
+
+    [NativeName("GL_CLIP_PLANE1_IMG")]
+    ClipPlane1IMG = 12289,
+
+    [NativeName("GL_CLIP_PLANE2_IMG")]
+    ClipPlane2IMG = 12290,
+
+    [NativeName("GL_CLIP_PLANE3_IMG")]
+    ClipPlane3IMG = 12291,
+
+    [NativeName("GL_CLIP_PLANE4_IMG")]
+    ClipPlane4IMG = 12292,
+
+    [NativeName("GL_CLIP_PLANE5_IMG")]
+    ClipPlane5IMG = 12293,
+
+    [NativeName("GL_MAX_CLIP_PLANES_IMG")]
+    MaxClipPlanesIMG = 3378,
+
+    [NativeName("GL_TEXTURE_WIDTH_QCOM")]
+    TextureWidthQCOM = 35794,
+
+    [NativeName("GL_TEXTURE_HEIGHT_QCOM")]
+    TextureHeightQCOM = 35795,
+
+    [NativeName("GL_TEXTURE_DEPTH_QCOM")]
+    TextureDepthQCOM = 35796,
+
+    [NativeName("GL_TEXTURE_INTERNAL_FORMAT_QCOM")]
+    TextureInternalFormatQCOM = 35797,
+
+    [NativeName("GL_TEXTURE_FORMAT_QCOM")]
+    TextureFormatQCOM = 35798,
+
+    [NativeName("GL_TEXTURE_TYPE_QCOM")]
+    TextureTypeQCOM = 35799,
+
+    [NativeName("GL_TEXTURE_IMAGE_VALID_QCOM")]
+    TextureImageValidQCOM = 35800,
+
+    [NativeName("GL_TEXTURE_NUM_LEVELS_QCOM")]
+    TextureNumLevelsQCOM = 35801,
+
+    [NativeName("GL_TEXTURE_TARGET_QCOM")]
+    TextureTargetQCOM = 35802,
+
+    [NativeName("GL_TEXTURE_OBJECT_VALID_QCOM")]
+    TextureObjectValidQCOM = 35803,
+
+    [NativeName("GL_STATE_RESTORE")]
+    StateRestore = 35804,
+
+    [NativeName("GL_PERFMON_GLOBAL_MODE_QCOM")]
+    PerfmonGlobalModeQCOM = 36768,
+
+    [NativeName("GL_COLOR_BUFFER_BIT0_QCOM")]
+    ColorBufferBit0QCOM = 1,
+
+    [NativeName("GL_COLOR_BUFFER_BIT1_QCOM")]
+    ColorBufferBit1QCOM = 2,
+
+    [NativeName("GL_COLOR_BUFFER_BIT2_QCOM")]
+    ColorBufferBit2QCOM = 4,
+
+    [NativeName("GL_COLOR_BUFFER_BIT3_QCOM")]
+    ColorBufferBit3QCOM = 8,
+
+    [NativeName("GL_COLOR_BUFFER_BIT4_QCOM")]
+    ColorBufferBit4QCOM = 16,
+
+    [NativeName("GL_COLOR_BUFFER_BIT5_QCOM")]
+    ColorBufferBit5QCOM = 32,
+
+    [NativeName("GL_COLOR_BUFFER_BIT6_QCOM")]
+    ColorBufferBit6QCOM = 64,
+
+    [NativeName("GL_COLOR_BUFFER_BIT7_QCOM")]
+    ColorBufferBit7QCOM = 128,
+
+    [NativeName("GL_DEPTH_BUFFER_BIT0_QCOM")]
+    DepthBufferBit0QCOM = 256,
+
+    [NativeName("GL_DEPTH_BUFFER_BIT1_QCOM")]
+    DepthBufferBit1QCOM = 512,
+
+    [NativeName("GL_DEPTH_BUFFER_BIT2_QCOM")]
+    DepthBufferBit2QCOM = 1024,
+
+    [NativeName("GL_DEPTH_BUFFER_BIT3_QCOM")]
+    DepthBufferBit3QCOM = 2048,
+
+    [NativeName("GL_DEPTH_BUFFER_BIT4_QCOM")]
+    DepthBufferBit4QCOM = 4096,
+
+    [NativeName("GL_DEPTH_BUFFER_BIT5_QCOM")]
+    DepthBufferBit5QCOM = 8192,
+
+    [NativeName("GL_DEPTH_BUFFER_BIT6_QCOM")]
+    DepthBufferBit6QCOM = 16384,
+
+    [NativeName("GL_DEPTH_BUFFER_BIT7_QCOM")]
+    DepthBufferBit7QCOM = 32768,
+
+    [NativeName("GL_STENCIL_BUFFER_BIT0_QCOM")]
+    StencilBufferBit0QCOM = 65536,
+
+    [NativeName("GL_STENCIL_BUFFER_BIT1_QCOM")]
+    StencilBufferBit1QCOM = 131072,
+
+    [NativeName("GL_STENCIL_BUFFER_BIT2_QCOM")]
+    StencilBufferBit2QCOM = 262144,
+
+    [NativeName("GL_STENCIL_BUFFER_BIT3_QCOM")]
+    StencilBufferBit3QCOM = 524288,
+
+    [NativeName("GL_STENCIL_BUFFER_BIT4_QCOM")]
+    StencilBufferBit4QCOM = 1048576,
+
+    [NativeName("GL_STENCIL_BUFFER_BIT5_QCOM")]
+    StencilBufferBit5QCOM = 2097152,
+
+    [NativeName("GL_STENCIL_BUFFER_BIT6_QCOM")]
+    StencilBufferBit6QCOM = 4194304,
+
+    [NativeName("GL_STENCIL_BUFFER_BIT7_QCOM")]
+    StencilBufferBit7QCOM = 8388608,
+
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT0_QCOM")]
+    MultisampleBufferBit0QCOM = 16777216,
+
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT1_QCOM")]
+    MultisampleBufferBit1QCOM = 33554432,
+
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT2_QCOM")]
+    MultisampleBufferBit2QCOM = 67108864,
+
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT3_QCOM")]
+    MultisampleBufferBit3QCOM = 134217728,
+
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT4_QCOM")]
+    MultisampleBufferBit4QCOM = 268435456,
+
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT5_QCOM")]
+    MultisampleBufferBit5QCOM = 536870912,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS")]
+    FramebufferIncompleteDimensions = 36057,
+
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT6_QCOM")]
+    MultisampleBufferBit6QCOM = 1073741824,
+
+    [NativeName("GL_MULTISAMPLE_BUFFER_BIT7_QCOM")]
+    MultisampleBufferBit7QCOM = 2147483648,
+
+    [NativeName("GL_WRITEONLY_RENDERING_QCOM")]
+    WriteonlyRenderingQCOM = 34851,
+
+    [NativeName("GL_CONTEXT_RELEASE_BEHAVIOR_KHR")]
+    ContextReleaseBehaviorKHR = 33531,
+
+    [NativeName("GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH_KHR")]
+    ContextReleaseBehaviorFlushKHR = 33532,
+
+    [NativeName("GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR")]
+    DebugOutputSynchronousKHR = 33346,
+
+    [NativeName("GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR")]
+    DebugNextLoggedMessageLengthKHR = 33347,
+
+    [NativeName("GL_DEBUG_CALLBACK_FUNCTION_KHR")]
+    DebugCallbackFunctionKHR = 33348,
+
+    [NativeName("GL_DEBUG_CALLBACK_USER_PARAM_KHR")]
+    DebugCallbackUserParamKHR = 33349,
+
+    [NativeName("GL_DEBUG_SOURCE_API_KHR")]
+    DebugSourceApiKHR = 33350,
+
+    [NativeName("GL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR")]
+    DebugSourceWindowSystemKHR = 33351,
+
+    [NativeName("GL_DEBUG_SOURCE_SHADER_COMPILER_KHR")]
+    DebugSourceShaderCompilerKHR = 33352,
+
+    [NativeName("GL_DEBUG_SOURCE_THIRD_PARTY_KHR")]
+    DebugSourceThirdPartyKHR = 33353,
+
+    [NativeName("GL_DEBUG_SOURCE_APPLICATION_KHR")]
+    DebugSourceApplicationKHR = 33354,
+
+    [NativeName("GL_DEBUG_SOURCE_OTHER_KHR")]
+    DebugSourceOtherKHR = 33355,
+
+    [NativeName("GL_DEBUG_TYPE_ERROR_KHR")]
+    DebugTypeErrorKHR = 33356,
+
+    [NativeName("GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_KHR")]
+    DebugTypeDeprecatedBehaviorKHR = 33357,
+
+    [NativeName("GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR")]
+    DebugTypeUndefinedBehaviorKHR = 33358,
+
+    [NativeName("GL_DEBUG_TYPE_PORTABILITY_KHR")]
+    DebugTypePortabilityKHR = 33359,
+
+    [NativeName("GL_DEBUG_TYPE_PERFORMANCE_KHR")]
+    DebugTypePerformanceKHR = 33360,
+
+    [NativeName("GL_DEBUG_TYPE_OTHER_KHR")]
+    DebugTypeOtherKHR = 33361,
+
+    [NativeName("GL_DEBUG_TYPE_MARKER_KHR")]
+    DebugTypeMarkerKHR = 33384,
+
+    [NativeName("GL_DEBUG_TYPE_PUSH_GROUP_KHR")]
+    DebugTypePushGroupKHR = 33385,
+
+    [NativeName("GL_DEBUG_TYPE_POP_GROUP_KHR")]
+    DebugTypePopGroupKHR = 33386,
+
+    [NativeName("GL_DEBUG_SEVERITY_NOTIFICATION_KHR")]
+    DebugSeverityNotificationKHR = 33387,
+
+    [NativeName("GL_MAX_DEBUG_GROUP_STACK_DEPTH_KHR")]
+    MaxDebugGroupStackDepthKHR = 33388,
+
+    [NativeName("GL_DEBUG_GROUP_STACK_DEPTH_KHR")]
+    DebugGroupStackDepthKHR = 33389,
+
+    [NativeName("GL_BUFFER_KHR")]
+    BufferKHR = 33504,
+
+    [NativeName("GL_SHADER_KHR")]
+    ShaderKHR = 33505,
+
+    [NativeName("GL_PROGRAM_KHR")]
+    ProgramKHR = 33506,
+
+    [NativeName("GL_VERTEX_ARRAY_KHR")]
+    VertexArrayKHR = 32884,
+
+    [NativeName("GL_QUERY_KHR")]
+    QueryKHR = 33507,
+
+    [NativeName("GL_PROGRAM_PIPELINE_KHR")]
+    ProgramPipelineKHR = 33508,
+
+    [NativeName("GL_SAMPLER_KHR")]
+    SamplerKHR = 33510,
+
+    [NativeName("GL_MAX_LABEL_LENGTH_KHR")]
+    MaxLabelLengthKHR = 33512,
+
+    [NativeName("GL_MAX_DEBUG_MESSAGE_LENGTH_KHR")]
+    MaxDebugMessageLengthKHR = 37187,
+
+    [NativeName("GL_MAX_DEBUG_LOGGED_MESSAGES_KHR")]
+    MaxDebugLoggedMessagesKHR = 37188,
+
+    [NativeName("GL_DEBUG_LOGGED_MESSAGES_KHR")]
+    DebugLoggedMessagesKHR = 37189,
+
+    [NativeName("GL_DEBUG_SEVERITY_HIGH_KHR")]
+    DebugSeverityHighKHR = 37190,
+
+    [NativeName("GL_DEBUG_SEVERITY_MEDIUM_KHR")]
+    DebugSeverityMediumKHR = 37191,
+
+    [NativeName("GL_DEBUG_SEVERITY_LOW_KHR")]
+    DebugSeverityLowKHR = 37192,
+
+    [NativeName("GL_DEBUG_OUTPUT_KHR")]
+    DebugOutputKHR = 37600,
+
+    [NativeName("GL_CONTEXT_FLAG_DEBUG_BIT_KHR")]
+    ContextFlagDebugBitKHR = 2,
+
+    [NativeName("GL_STACK_OVERFLOW_KHR")]
+    StackOverflowKHR = 1283,
+
+    [NativeName("GL_STACK_UNDERFLOW_KHR")]
+    StackUnderflowKHR = 1284,
+
+    [NativeName("GL_CONTEXT_ROBUST_ACCESS_KHR")]
+    ContextRobustAccessKHR = 37107,
+
+    [NativeName("GL_LOSE_CONTEXT_ON_RESET_KHR")]
+    LoseContextOnResetKHR = 33362,
+
+    [NativeName("GL_GUILTY_CONTEXT_RESET_KHR")]
+    GuiltyContextResetKHR = 33363,
+
+    [NativeName("GL_INNOCENT_CONTEXT_RESET_KHR")]
+    InnocentContextResetKHR = 33364,
+
+    [NativeName("GL_UNKNOWN_CONTEXT_RESET_KHR")]
+    UnknownContextResetKHR = 33365,
+
+    [NativeName("GL_RESET_NOTIFICATION_STRATEGY_KHR")]
+    ResetNotificationStrategyKHR = 33366,
+
+    [NativeName("GL_NO_RESET_NOTIFICATION_KHR")]
+    NoResetNotificationKHR = 33377,
+
+    [NativeName("GL_CONTEXT_LOST_KHR")]
+    ContextLostKHR = 1287,
+
+    [NativeName("GL_SAMPLER_EXTERNAL_OES")]
+    SamplerExternalOES = 36198,
+
+    [NativeName("GL_GEOMETRY_SHADER_OES")]
+    GeometryShaderOES = 36313,
+
+    [NativeName("GL_GEOMETRY_SHADER_BIT_OES")]
+    GeometryShaderBitOES = 4,
+
+    [NativeName("GL_GEOMETRY_LINKED_VERTICES_OUT_OES")]
+    GeometryLinkedVerticesOutOES = 35094,
+
+    [NativeName("GL_GEOMETRY_LINKED_INPUT_TYPE_OES")]
+    GeometryLinkedInputTypeOES = 35095,
+
+    [NativeName("GL_GEOMETRY_LINKED_OUTPUT_TYPE_OES")]
+    GeometryLinkedOutputTypeOES = 35096,
+
+    [NativeName("GL_GEOMETRY_SHADER_INVOCATIONS_OES")]
+    GeometryShaderInvocationsOES = 34943,
+
+    [NativeName("GL_LAYER_PROVOKING_VERTEX_OES")]
+    LayerProvokingVertexOES = 33374,
+
+    [NativeName("GL_LINES_ADJACENCY_OES")]
+    LinesAdjacencyOES = 10,
+
+    [NativeName("GL_LINE_STRIP_ADJACENCY_OES")]
+    LineStripAdjacencyOES = 11,
+
+    [NativeName("GL_TRIANGLES_ADJACENCY_OES")]
+    TrianglesAdjacencyOES = 12,
+
+    [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_OES")]
+    TriangleStripAdjacencyOES = 13,
+
+    [NativeName("GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_OES")]
+    MaxGeometryUniformComponentsOES = 36319,
+
+    [NativeName("GL_MAX_GEOMETRY_UNIFORM_BLOCKS_OES")]
+    MaxGeometryUniformBlocksOES = 35372,
+
+    [NativeName("GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_OES")]
+    MaxCombinedGeometryUniformComponentsOES = 35378,
+
+    [NativeName("GL_MAX_GEOMETRY_INPUT_COMPONENTS_OES")]
+    MaxGeometryInputComponentsOES = 37155,
+
+    [NativeName("GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_OES")]
+    MaxGeometryOutputComponentsOES = 37156,
+
+    [NativeName("GL_MAX_GEOMETRY_OUTPUT_VERTICES_OES")]
+    MaxGeometryOutputVerticesOES = 36320,
+
+    [NativeName("GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_OES")]
+    MaxGeometryTotalOutputComponentsOES = 36321,
+
+    [NativeName("GL_MAX_GEOMETRY_SHADER_INVOCATIONS_OES")]
+    MaxGeometryShaderInvocationsOES = 36442,
+
+    [NativeName("GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_OES")]
+    MaxGeometryTextureImageUnitsOES = 35881,
+
+    [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_OES")]
+    MaxGeometryAtomicCounterBuffersOES = 37583,
+
+    [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTERS_OES")]
+    MaxGeometryAtomicCountersOES = 37589,
+
+    [NativeName("GL_MAX_GEOMETRY_IMAGE_UNIFORMS_OES")]
+    MaxGeometryImageUniformsOES = 37069,
+
+    [NativeName("GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_OES")]
+    MaxGeometryShaderStorageBlocksOES = 37079,
+
+    [NativeName("GL_FIRST_VERTEX_CONVENTION_OES")]
+    FirstVertexConventionOES = 36429,
+
+    [NativeName("GL_LAST_VERTEX_CONVENTION_OES")]
+    LastVertexConventionOES = 36430,
+
+    [NativeName("GL_UNDEFINED_VERTEX_OES")]
+    UndefinedVertexOES = 33376,
+
+    [NativeName("GL_PRIMITIVES_GENERATED_OES")]
+    PrimitivesGeneratedOES = 35975,
+
+    [NativeName("GL_FRAMEBUFFER_DEFAULT_LAYERS_OES")]
+    FramebufferDefaultLayersOES = 37650,
+
+    [NativeName("GL_MAX_FRAMEBUFFER_LAYERS_OES")]
+    MaxFramebufferLayersOES = 37655,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_OES")]
+    FramebufferIncompleteLayerTargetsOES = 36264,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_OES")]
+    FramebufferAttachmentLayeredOES = 36263,
+
+    [NativeName("GL_REFERENCED_BY_GEOMETRY_SHADER_OES")]
+    ReferencedByGeometryShaderOES = 37641,
+
+    [NativeName("GL_PROGRAM_BINARY_LENGTH_OES")]
+    ProgramBinaryLengthOES = 34625,
+
+    [NativeName("GL_NUM_PROGRAM_BINARY_FORMATS_OES")]
+    NumProgramBinaryFormatsOES = 34814,
+
+    [NativeName("GL_PROGRAM_BINARY_FORMATS_OES")]
+    ProgramBinaryFormatsOES = 34815,
+
+    [NativeName("GL_PRIMITIVE_BOUNDING_BOX_OES")]
+    PrimitiveBoundingBoxOES = 37566,
+
+    [NativeName("GL_SAMPLE_SHADING_OES")]
+    SampleShadingOES = 35894,
+
+    [NativeName("GL_MIN_SAMPLE_SHADING_VALUE_OES")]
+    MinSampleShadingValueOES = 35895,
+
+    [NativeName("GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_OES")]
+    MinFragmentInterpolationOffsetOES = 36443,
+
+    [NativeName("GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_OES")]
+    MaxFragmentInterpolationOffsetOES = 36444,
+
+    [NativeName("GL_FRAGMENT_INTERPOLATION_OFFSET_BITS_OES")]
+    FragmentInterpolationOffsetBitsOES = 36445,
+
+    [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES")]
+    FragmentShaderDerivativeHintOES = 35723,
+
+    [NativeName("GL_PATCHES_OES")]
+    PatchesOES = 14,
+
+    [NativeName("GL_PATCH_VERTICES_OES")]
+    PatchVerticesOES = 36466,
+
+    [NativeName("GL_TESS_CONTROL_OUTPUT_VERTICES_OES")]
+    TessControlOutputVerticesOES = 36469,
+
+    [NativeName("GL_TESS_GEN_MODE_OES")]
+    TessGenModeOES = 36470,
+
+    [NativeName("GL_TESS_GEN_SPACING_OES")]
+    TessGenSpacingOES = 36471,
+
+    [NativeName("GL_TESS_GEN_VERTEX_ORDER_OES")]
+    TessGenVertexOrderOES = 36472,
+
+    [NativeName("GL_TESS_GEN_POINT_MODE_OES")]
+    TessGenPointModeOES = 36473,
+
+    [NativeName("GL_ISOLINES_OES")]
+    IsolinesOES = 36474,
+
+    [NativeName("GL_QUADS_OES")]
+    QuadsOES = 7,
+
+    [NativeName("GL_FRACTIONAL_ODD_OES")]
+    FractionalOddOES = 36475,
+
+    [NativeName("GL_FRACTIONAL_EVEN_OES")]
+    FractionalEvenOES = 36476,
+
+    [NativeName("GL_MAX_PATCH_VERTICES_OES")]
+    MaxPatchVerticesOES = 36477,
+
+    [NativeName("GL_MAX_TESS_GEN_LEVEL_OES")]
+    MaxTessGenLevelOES = 36478,
+
+    [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_OES")]
+    MaxTessControlUniformComponentsOES = 36479,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_OES")]
+    MaxTessEvaluationUniformComponentsOES = 36480,
+
+    [NativeName("GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_OES")]
+    MaxTessControlTextureImageUnitsOES = 36481,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_OES")]
+    MaxTessEvaluationTextureImageUnitsOES = 36482,
+
+    [NativeName("GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_OES")]
+    MaxTessControlOutputComponentsOES = 36483,
+
+    [NativeName("GL_MAX_TESS_PATCH_COMPONENTS_OES")]
+    MaxTessPatchComponentsOES = 36484,
+
+    [NativeName("GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_OES")]
+    MaxTessControlTotalOutputComponentsOES = 36485,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_OES")]
+    MaxTessEvaluationOutputComponentsOES = 36486,
+
+    [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_OES")]
+    MaxTessControlUniformBlocksOES = 36489,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_OES")]
+    MaxTessEvaluationUniformBlocksOES = 36490,
+
+    [NativeName("GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_OES")]
+    MaxTessControlInputComponentsOES = 34924,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_OES")]
+    MaxTessEvaluationInputComponentsOES = 34925,
+
+    [NativeName("GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_OES")]
+    MaxCombinedTessControlUniformComponentsOES = 36382,
+
+    [NativeName("GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_OES")]
+    MaxCombinedTessEvaluationUniformComponentsOES = 36383,
+
+    [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_OES")]
+    MaxTessControlAtomicCounterBuffersOES = 37581,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_OES")]
+    MaxTessEvaluationAtomicCounterBuffersOES = 37582,
+
+    [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_OES")]
+    MaxTessControlAtomicCountersOES = 37587,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_OES")]
+    MaxTessEvaluationAtomicCountersOES = 37588,
+
+    [NativeName("GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_OES")]
+    MaxTessControlImageUniformsOES = 37067,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_OES")]
+    MaxTessEvaluationImageUniformsOES = 37068,
+
+    [NativeName("GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_OES")]
+    MaxTessControlShaderStorageBlocksOES = 37080,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_OES")]
+    MaxTessEvaluationShaderStorageBlocksOES = 37081,
+
+    [NativeName("GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED_OES")]
+    PrimitiveRestartForPatchesSupportedOES = 33313,
+
+    [NativeName("GL_IS_PER_PATCH_OES")]
+    IsPerPatchOES = 37607,
+
+    [NativeName("GL_REFERENCED_BY_TESS_CONTROL_SHADER_OES")]
+    ReferencedByTessControlShaderOES = 37639,
+
+    [NativeName("GL_REFERENCED_BY_TESS_EVALUATION_SHADER_OES")]
+    ReferencedByTessEvaluationShaderOES = 37640,
+
+    [NativeName("GL_TESS_CONTROL_SHADER_OES")]
+    TessControlShaderOES = 36488,
+
+    [NativeName("GL_TESS_EVALUATION_SHADER_OES")]
+    TessEvaluationShaderOES = 36487,
+
+    [NativeName("GL_TESS_CONTROL_SHADER_BIT_OES")]
+    TessControlShaderBitOES = 8,
+
+    [NativeName("GL_TESS_EVALUATION_SHADER_BIT_OES")]
+    TessEvaluationShaderBitOES = 16,
+
+    [NativeName("GL_TEXTURE_WRAP_R_OES")]
+    TextureWrapROES = 32882,
+
+    [NativeName("GL_TEXTURE_3D_OES")]
+    Texture3DOES = 32879,
+
+    [NativeName("GL_TEXTURE_BINDING_3D_OES")]
+    TextureBinding3DOES = 32874,
+
+    [NativeName("GL_MAX_3D_TEXTURE_SIZE_OES")]
+    Max3DTextureSizeOES = 32883,
+
+    [NativeName("GL_SAMPLER_3D_OES")]
+    Sampler3DOES = 35679,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES")]
+    FramebufferAttachmentTexture3DZoffsetOES = 36052,
+
+    [NativeName("GL_TEXTURE_BORDER_COLOR_OES")]
+    TextureBorderColorOES = 4100,
+
+    [NativeName("GL_CLAMP_TO_BORDER_OES")]
+    ClampToBorderOES = 33069,
+
+    [NativeName("GL_TEXTURE_BUFFER_OES")]
+    TextureBufferOES = 35882,
+
+    [NativeName("GL_TEXTURE_BUFFER_BINDING_OES")]
+    TextureBufferBindingOES = 35882,
+
+    [NativeName("GL_MAX_TEXTURE_BUFFER_SIZE_OES")]
+    MaxTextureBufferSizeOES = 35883,
+
+    [NativeName("GL_TEXTURE_BINDING_BUFFER_OES")]
+    TextureBindingBufferOES = 35884,
+
+    [NativeName("GL_TEXTURE_BUFFER_DATA_STORE_BINDING_OES")]
+    TextureBufferDataStoreBindingOES = 35885,
+
+    [NativeName("GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_OES")]
+    TextureBufferOffsetAlignmentOES = 37279,
+
+    [NativeName("GL_SAMPLER_BUFFER_OES")]
+    SamplerBufferOES = 36290,
+
+    [NativeName("GL_INT_SAMPLER_BUFFER_OES")]
+    IntSamplerBufferOES = 36304,
+
+    [NativeName("GL_UNSIGNED_INT_SAMPLER_BUFFER_OES")]
+    UnsignedIntSamplerBufferOES = 36312,
+
+    [NativeName("GL_IMAGE_BUFFER_OES")]
+    ImageBufferOES = 36945,
+
+    [NativeName("GL_INT_IMAGE_BUFFER_OES")]
+    IntImageBufferOES = 36956,
+
+    [NativeName("GL_UNSIGNED_INT_IMAGE_BUFFER_OES")]
+    UnsignedIntImageBufferOES = 36967,
+
+    [NativeName("GL_TEXTURE_BUFFER_OFFSET_OES")]
+    TextureBufferOffsetOES = 37277,
+
+    [NativeName("GL_TEXTURE_BUFFER_SIZE_OES")]
+    TextureBufferSizeOES = 37278,
+
+    [NativeName("GL_COMPRESSED_RGBA_ASTC_3x3x3_OES")]
+    CompressedRgbaAstc3x3x3OES = 37824,
+
+    [NativeName("GL_COMPRESSED_RGBA_ASTC_4x3x3_OES")]
+    CompressedRgbaAstc4x3x3OES = 37825,
+
+    [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4x3_OES")]
+    CompressedRgbaAstc4x4x3OES = 37826,
+
+    [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4x4_OES")]
+    CompressedRgbaAstc4x4x4OES = 37827,
+
+    [NativeName("GL_COMPRESSED_RGBA_ASTC_5x4x4_OES")]
+    CompressedRgbaAstc5x4x4OES = 37828,
+
+    [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5x4_OES")]
+    CompressedRgbaAstc5x5x4OES = 37829,
+
+    [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5x5_OES")]
+    CompressedRgbaAstc5x5x5OES = 37830,
+
+    [NativeName("GL_COMPRESSED_RGBA_ASTC_6x5x5_OES")]
+    CompressedRgbaAstc6x5x5OES = 37831,
+
+    [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6x5_OES")]
+    CompressedRgbaAstc6x6x5OES = 37832,
+
+    [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6x6_OES")]
+    CompressedRgbaAstc6x6x6OES = 37833,
+
+    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_3x3x3_OES")]
+    CompressedSrgb8Alpha8Astc3x3x3OES = 37856,
+
+    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES")]
+    CompressedSrgb8Alpha8Astc4x3x3OES = 37857,
+
+    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x3_OES")]
+    CompressedSrgb8Alpha8Astc4x4x3OES = 37858,
+
+    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x4_OES")]
+    CompressedSrgb8Alpha8Astc4x4x4OES = 37859,
+
+    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4x4_OES")]
+    CompressedSrgb8Alpha8Astc5x4x4OES = 37860,
+
+    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x4_OES")]
+    CompressedSrgb8Alpha8Astc5x5x4OES = 37861,
+
+    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x5_OES")]
+    CompressedSrgb8Alpha8Astc5x5x5OES = 37862,
+
+    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5x5_OES")]
+    CompressedSrgb8Alpha8Astc6x5x5OES = 37863,
+
+    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x5_OES")]
+    CompressedSrgb8Alpha8Astc6x6x5OES = 37864,
+
+    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x6_OES")]
+    CompressedSrgb8Alpha8Astc6x6x6OES = 37865,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_OES")]
+    TextureCubeMapArrayOES = 36873,
+
+    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_OES")]
+    TextureBindingCubeMapArrayOES = 36874,
+
+    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_OES")]
+    SamplerCubeMapArrayOES = 36876,
+
+    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_OES")]
+    SamplerCubeMapArrayShadowOES = 36877,
+
+    [NativeName("GL_INT_SAMPLER_CUBE_MAP_ARRAY_OES")]
+    IntSamplerCubeMapArrayOES = 36878,
+
+    [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_OES")]
+    UnsignedIntSamplerCubeMapArrayOES = 36879,
+
+    [NativeName("GL_IMAGE_CUBE_MAP_ARRAY_OES")]
+    ImageCubeMapArrayOES = 36948,
+
+    [NativeName("GL_INT_IMAGE_CUBE_MAP_ARRAY_OES")]
+    IntImageCubeMapArrayOES = 36959,
+
+    [NativeName("GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_OES")]
+    UnsignedIntImageCubeMapArrayOES = 36970,
+
+    [NativeName("GL_HALF_FLOAT_OES")]
+    HalfFloatOES = 36193,
+
+    [NativeName("GL_STENCIL_INDEX_OES")]
+    StencilIndexOES = 6401,
+
+    [NativeName("GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES")]
+    Texture2DMultisampleArrayOES = 37122,
+
+    [NativeName("GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY_OES")]
+    TextureBinding2DMultisampleArrayOES = 37125,
+
+    [NativeName("GL_SAMPLER_2D_MULTISAMPLE_ARRAY_OES")]
+    Sampler2DMultisampleArrayOES = 37131,
+
+    [NativeName("GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES")]
+    IntSampler2DMultisampleArrayOES = 37132,
+
+    [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES")]
+    UnsignedIntSampler2DMultisampleArrayOES = 37133,
+
+    [NativeName("GL_TEXTURE_VIEW_MIN_LEVEL_OES")]
+    TextureViewMinLevelOES = 33499,
+
+    [NativeName("GL_TEXTURE_VIEW_NUM_LEVELS_OES")]
+    TextureViewNumLevelsOES = 33500,
+
+    [NativeName("GL_TEXTURE_VIEW_MIN_LAYER_OES")]
+    TextureViewMinLayerOES = 33501,
+
+    [NativeName("GL_TEXTURE_VIEW_NUM_LAYERS_OES")]
+    TextureViewNumLayersOES = 33502,
+
+    [NativeName("GL_UNSIGNED_INT_10_10_10_2_OES")]
+    UnsignedInt10x10x10x2OES = 36342,
+
+    [NativeName("GL_INT_10_10_10_2_OES")]
+    Int10x10x10x2OES = 36343,
+
+    [NativeName("GL_MAX_VIEWPORTS_OES")]
+    MaxViewportsOES = 33371,
+
+    [NativeName("GL_VIEWPORT_SUBPIXEL_BITS_OES")]
+    ViewportSubpixelBitsOES = 33372,
+
+    [NativeName("GL_VIEWPORT_BOUNDS_RANGE_OES")]
+    ViewportBoundsRangeOES = 33373,
+
+    [NativeName("GL_VIEWPORT_INDEX_PROVOKING_VERTEX_OES")]
+    ViewportIndexProvokingVertexOES = 33375,
+
+    [NativeName("GL_Z400_BINARY_AMD")]
+    Z400BinaryAMD = 34624,
+
+    [NativeName("GL_READ_FRAMEBUFFER_ANGLE")]
+    ReadFramebufferANGLE = 36008,
+
+    [NativeName("GL_DRAW_FRAMEBUFFER_ANGLE")]
+    DrawFramebufferANGLE = 36009,
+
+    [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_ANGLE")]
+    DrawFramebufferBindingANGLE = 36006,
+
+    [NativeName("GL_READ_FRAMEBUFFER_BINDING_ANGLE")]
+    ReadFramebufferBindingANGLE = 36010,
+
+    [NativeName("GL_RENDERBUFFER_SAMPLES_ANGLE")]
+    RenderbufferSamplesANGLE = 36011,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_ANGLE")]
+    FramebufferIncompleteMultisampleANGLE = 36182,
+
+    [NativeName("GL_MAX_SAMPLES_ANGLE")]
+    MaxSamplesANGLE = 36183,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE")]
+    VertexAttribArrayDivisorANGLE = 35070,
+
+    [NativeName("GL_PACK_REVERSE_ROW_ORDER_ANGLE")]
+    PackReverseRowOrderANGLE = 37796,
+
+    [NativeName("GL_PROGRAM_BINARY_ANGLE")]
+    ProgramBinaryANGLE = 37798,
+
+    [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE")]
+    CompressedRgbaS3TcDxt3ANGLE = 33778,
+
+    [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT5_ANGLE")]
+    CompressedRgbaS3TcDxt5ANGLE = 33779,
+
+    [NativeName("GL_TEXTURE_USAGE_ANGLE")]
+    TextureUsageANGLE = 37794,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_ANGLE")]
+    FramebufferAttachmentANGLE = 37795,
+
+    [NativeName("GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE")]
+    TranslatedShaderSourceLengthANGLE = 37792,
+
+    [NativeName("GL_MAX_CLIP_DISTANCES_APPLE")]
+    MaxClipDistancesAPPLE = 3378,
+
+    [NativeName("GL_CLIP_DISTANCE0_APPLE")]
+    ClipDistance0APPLE = 12288,
+
+    [NativeName("GL_CLIP_DISTANCE1_APPLE")]
+    ClipDistance1APPLE = 12289,
+
+    [NativeName("GL_CLIP_DISTANCE2_APPLE")]
+    ClipDistance2APPLE = 12290,
+
+    [NativeName("GL_CLIP_DISTANCE3_APPLE")]
+    ClipDistance3APPLE = 12291,
+
+    [NativeName("GL_CLIP_DISTANCE4_APPLE")]
+    ClipDistance4APPLE = 12292,
+
+    [NativeName("GL_CLIP_DISTANCE5_APPLE")]
+    ClipDistance5APPLE = 12293,
+
+    [NativeName("GL_CLIP_DISTANCE6_APPLE")]
+    ClipDistance6APPLE = 12294,
+
+    [NativeName("GL_CLIP_DISTANCE7_APPLE")]
+    ClipDistance7APPLE = 12295,
+
+    [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV_APPLE")]
+    UnsignedInt10F11F11FRevAPPLE = 35899,
+
+    [NativeName("GL_UNSIGNED_INT_5_9_9_9_REV_APPLE")]
+    UnsignedInt5x9x9x9RevAPPLE = 35902,
+
+    [NativeName("GL_R11F_G11F_B10F_APPLE")]
+    R11FG11FB10FAPPLE = 35898,
+
+    [NativeName("GL_RGB9_E5_APPLE")]
+    Rgb9E5APPLE = 35901,
+
+    [NativeName("GL_MALI_PROGRAM_BINARY_ARM")]
+    MaliProgramBinaryARM = 36705,
+
+    [NativeName("GL_MALI_SHADER_BINARY_ARM")]
+    MaliShaderBinaryARM = 36704,
+
+    [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
+    FetchPerSampleARM = 36709,
+
+    [NativeName("GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM")]
+    FragmentShaderFramebufferFetchMrtARM = 36710,
+
+    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
+    TextureUnnormalizedCoordinatesARM = 36714,
+
+    [NativeName("GL_SMAPHS30_PROGRAM_BINARY_DMP")]
+    Smaphs30ProgramBinaryDMP = 37457,
+
+    [NativeName("GL_SMAPHS_PROGRAM_BINARY_DMP")]
+    SmaphsProgramBinaryDMP = 37458,
+
+    [NativeName("GL_DMP_PROGRAM_BINARY_DMP")]
+    DmpProgramBinaryDMP = 37459,
+
+    [NativeName("GL_SHADER_BINARY_DMP")]
+    ShaderBinaryDMP = 37456,
+
+    [NativeName("GL_SURFACE_COMPRESSION_EXT")]
+    SurfaceCompressionEXT = 38592,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_NONE_EXT")]
+    SurfaceCompressionFixedRateNoneEXT = 38593,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_DEFAULT_EXT")]
+    SurfaceCompressionFixedRateDefaultEXT = 38594,
+
+    [NativeName("GL_SAMPLER_EXTERNAL_2D_Y2Y_EXT")]
+    SamplerExternal2DY2YEXT = 35815,
+
+    [NativeName("GL_SRC1_COLOR_EXT")]
+    Src1ColorEXT = 35065,
+
+    [NativeName("GL_SRC1_ALPHA_EXT")]
+    Src1AlphaEXT = 34185,
+
+    [NativeName("GL_ONE_MINUS_SRC1_COLOR_EXT")]
+    OneMinusSrc1ColorEXT = 35066,
+
+    [NativeName("GL_ONE_MINUS_SRC1_ALPHA_EXT")]
+    OneMinusSrc1AlphaEXT = 35067,
+
+    [NativeName("GL_SRC_ALPHA_SATURATE_EXT")]
+    SrcAlphaSaturateEXT = 776,
+
+    [NativeName("GL_LOCATION_INDEX_EXT")]
+    LocationIndexEXT = 37647,
+
+    [NativeName("GL_MAX_DUAL_SOURCE_DRAW_BUFFERS_EXT")]
+    MaxDualSourceDrawBuffersEXT = 35068,
+
+    [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
+    MapPersistentBitEXT = 64,
+
+    [NativeName("GL_MAP_COHERENT_BIT_EXT")]
+    MapCoherentBitEXT = 128,
+
+    [NativeName("GL_DYNAMIC_STORAGE_BIT_EXT")]
+    DynamicStorageBitEXT = 256,
+
+    [NativeName("GL_CLIENT_STORAGE_BIT_EXT")]
+    ClientStorageBitEXT = 512,
+
+    [NativeName("GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT")]
+    ClientMappedBufferBarrierBitEXT = 16384,
+
+    [NativeName("GL_BUFFER_IMMUTABLE_STORAGE_EXT")]
+    BufferImmutableStorageEXT = 33311,
+
+    [NativeName("GL_BUFFER_STORAGE_FLAGS_EXT")]
+    BufferStorageFlagsEXT = 33312,
+
+    [NativeName("GL_LOWER_LEFT_EXT")]
+    LowerLeftEXT = 36001,
+
+    [NativeName("GL_UPPER_LEFT_EXT")]
+    UpperLeftEXT = 36002,
+
+    [NativeName("GL_NEGATIVE_ONE_TO_ONE_EXT")]
+    NegativeOneToOneEXT = 37726,
+
+    [NativeName("GL_ZERO_TO_ONE_EXT")]
+    ZeroToOneEXT = 37727,
+
+    [NativeName("GL_CLIP_ORIGIN_EXT")]
+    ClipOriginEXT = 37724,
+
+    [NativeName("GL_CLIP_DEPTH_MODE_EXT")]
+    ClipDepthModeEXT = 37725,
+
+    [NativeName("GL_MAX_CLIP_DISTANCES_EXT")]
+    MaxClipDistancesEXT = 3378,
+
+    [NativeName("GL_MAX_CULL_DISTANCES_EXT")]
+    MaxCullDistancesEXT = 33529,
+
+    [NativeName("GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES_EXT")]
+    MaxCombinedClipAndCullDistancesEXT = 33530,
+
+    [NativeName("GL_CLIP_DISTANCE0_EXT")]
+    ClipDistance0EXT = 12288,
+
+    [NativeName("GL_CLIP_DISTANCE1_EXT")]
+    ClipDistance1EXT = 12289,
+
+    [NativeName("GL_CLIP_DISTANCE2_EXT")]
+    ClipDistance2EXT = 12290,
+
+    [NativeName("GL_CLIP_DISTANCE3_EXT")]
+    ClipDistance3EXT = 12291,
+
+    [NativeName("GL_CLIP_DISTANCE4_EXT")]
+    ClipDistance4EXT = 12292,
+
+    [NativeName("GL_CLIP_DISTANCE5_EXT")]
+    ClipDistance5EXT = 12293,
+
+    [NativeName("GL_CLIP_DISTANCE6_EXT")]
+    ClipDistance6EXT = 12294,
+
+    [NativeName("GL_CLIP_DISTANCE7_EXT")]
+    ClipDistance7EXT = 12295,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT")]
+    FramebufferAttachmentComponentTypeEXT = 33297,
+
+    [NativeName("GL_UNSIGNED_NORMALIZED_EXT")]
+    UnsignedNormalizedEXT = 35863,
+
+    [NativeName("GL_DEPTH_CLAMP_EXT")]
+    DepthClampEXT = 34383,
+
+    [NativeName("GL_QUERY_COUNTER_BITS_EXT")]
+    QueryCounterBitsEXT = 34916,
+
+    [NativeName("GL_CURRENT_QUERY_EXT")]
+    CurrentQueryEXT = 34917,
+
+    [NativeName("GL_QUERY_RESULT_EXT")]
+    QueryResultEXT = 34918,
+
+    [NativeName("GL_QUERY_RESULT_AVAILABLE_EXT")]
+    QueryResultAvailableEXT = 34919,
+
+    [NativeName("GL_TIMESTAMP_EXT")]
+    TimestampEXT = 36392,
+
+    [NativeName("GL_GPU_DISJOINT_EXT")]
+    GpuDisjointEXT = 36795,
+
+    [NativeName("GL_MAX_DRAW_BUFFERS_EXT")]
+    MaxDrawBuffersEXT = 34852,
+
+    [NativeName("GL_DRAW_BUFFER0_EXT")]
+    DrawBuffer0EXT = 34853,
+
+    [NativeName("GL_DRAW_BUFFER1_EXT")]
+    DrawBuffer1EXT = 34854,
+
+    [NativeName("GL_DRAW_BUFFER2_EXT")]
+    DrawBuffer2EXT = 34855,
+
+    [NativeName("GL_DRAW_BUFFER3_EXT")]
+    DrawBuffer3EXT = 34856,
+
+    [NativeName("GL_DRAW_BUFFER4_EXT")]
+    DrawBuffer4EXT = 34857,
+
+    [NativeName("GL_DRAW_BUFFER5_EXT")]
+    DrawBuffer5EXT = 34858,
+
+    [NativeName("GL_DRAW_BUFFER6_EXT")]
+    DrawBuffer6EXT = 34859,
+
+    [NativeName("GL_DRAW_BUFFER7_EXT")]
+    DrawBuffer7EXT = 34860,
+
+    [NativeName("GL_DRAW_BUFFER8_EXT")]
+    DrawBuffer8EXT = 34861,
+
+    [NativeName("GL_DRAW_BUFFER9_EXT")]
+    DrawBuffer9EXT = 34862,
+
+    [NativeName("GL_DRAW_BUFFER10_EXT")]
+    DrawBuffer10EXT = 34863,
+
+    [NativeName("GL_DRAW_BUFFER11_EXT")]
+    DrawBuffer11EXT = 34864,
+
+    [NativeName("GL_DRAW_BUFFER12_EXT")]
+    DrawBuffer12EXT = 34865,
+
+    [NativeName("GL_DRAW_BUFFER13_EXT")]
+    DrawBuffer13EXT = 34866,
+
+    [NativeName("GL_DRAW_BUFFER14_EXT")]
+    DrawBuffer14EXT = 34867,
+
+    [NativeName("GL_DRAW_BUFFER15_EXT")]
+    DrawBuffer15EXT = 34868,
+
+    [NativeName("GL_SHADING_RATE_1X1_PIXELS_EXT")]
+    ShadingRate1x1PixelsEXT = 38566,
+
+    [NativeName("GL_SHADING_RATE_1X2_PIXELS_EXT")]
+    ShadingRate1x2PixelsEXT = 38567,
+
+    [NativeName("GL_SHADING_RATE_2X1_PIXELS_EXT")]
+    ShadingRate2x1PixelsEXT = 38568,
+
+    [NativeName("GL_SHADING_RATE_2X2_PIXELS_EXT")]
+    ShadingRate2x2PixelsEXT = 38569,
+
+    [NativeName("GL_SHADING_RATE_1X4_PIXELS_EXT")]
+    ShadingRate1x4PixelsEXT = 38570,
+
+    [NativeName("GL_SHADING_RATE_4X1_PIXELS_EXT")]
+    ShadingRate4x1PixelsEXT = 38571,
+
+    [NativeName("GL_SHADING_RATE_4X2_PIXELS_EXT")]
+    ShadingRate4x2PixelsEXT = 38572,
+
+    [NativeName("GL_SHADING_RATE_2X4_PIXELS_EXT")]
+    ShadingRate2x4PixelsEXT = 38573,
+
+    [NativeName("GL_SHADING_RATE_4X4_PIXELS_EXT")]
+    ShadingRate4x4PixelsEXT = 38574,
+
+    [NativeName("GL_SHADING_RATE_EXT")]
+    ShadingRateEXT = 38608,
+
+    [NativeName("GL_SHADING_RATE_ATTACHMENT_EXT")]
+    ShadingRateAttachmentEXT = 38609,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_KEEP_EXT")]
+    FragmentShadingRateCombinerOpKeepEXT = 38610,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_EXT")]
+    FragmentShadingRateCombinerOpReplaceEXT = 38611,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_EXT")]
+    FragmentShadingRateCombinerOpMinEXT = 38612,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_EXT")]
+    FragmentShadingRateCombinerOpMaxEXT = 38613,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_EXT")]
+    FragmentShadingRateCombinerOpMulEXT = 38614,
+
+    [NativeName("GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+    MinFragmentShadingRateAttachmentTexelWidthEXT = 38615,
+
+    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+    MaxFragmentShadingRateAttachmentTexelWidthEXT = 38616,
+
+    [NativeName("GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+    MinFragmentShadingRateAttachmentTexelHeightEXT = 38617,
+
+    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+    MaxFragmentShadingRateAttachmentTexelHeightEXT = 38618,
+
+    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT")]
+    MaxFragmentShadingRateAttachmentTexelAspectRatioEXT = 38619,
+
+    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT")]
+    MaxFragmentShadingRateAttachmentLayersEXT = 38620,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT")]
+    FragmentShadingRateWithShaderDepthStencilWritesSupportedEXT = 38621,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT")]
+    FragmentShadingRateWithSampleMaskSupportedEXT = 38622,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT")]
+    FragmentShadingRateAttachmentWithDefaultFramebufferSupportedEXT = 38623,
+
+    [NativeName("GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT")]
+    FragmentShadingRateNonTrivialCombinersSupportedEXT = 36719,
+
+    [NativeName("GL_GEOMETRY_SHADER_BIT_EXT")]
+    GeometryShaderBitEXT = 4,
+
+    [NativeName("GL_GEOMETRY_LINKED_VERTICES_OUT_EXT")]
+    GeometryLinkedVerticesOutEXT = 35094,
+
+    [NativeName("GL_GEOMETRY_LINKED_INPUT_TYPE_EXT")]
+    GeometryLinkedInputTypeEXT = 35095,
+
+    [NativeName("GL_GEOMETRY_LINKED_OUTPUT_TYPE_EXT")]
+    GeometryLinkedOutputTypeEXT = 35096,
+
+    [NativeName("GL_GEOMETRY_SHADER_INVOCATIONS_EXT")]
+    GeometryShaderInvocationsEXT = 34943,
+
+    [NativeName("GL_LAYER_PROVOKING_VERTEX_EXT")]
+    LayerProvokingVertexEXT = 33374,
+
+    [NativeName("GL_MAX_GEOMETRY_UNIFORM_BLOCKS_EXT")]
+    MaxGeometryUniformBlocksEXT = 35372,
+
+    [NativeName("GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_EXT")]
+    MaxCombinedGeometryUniformComponentsEXT = 35378,
+
+    [NativeName("GL_MAX_GEOMETRY_INPUT_COMPONENTS_EXT")]
+    MaxGeometryInputComponentsEXT = 37155,
+
+    [NativeName("GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_EXT")]
+    MaxGeometryOutputComponentsEXT = 37156,
+
+    [NativeName("GL_MAX_GEOMETRY_SHADER_INVOCATIONS_EXT")]
+    MaxGeometryShaderInvocationsEXT = 36442,
+
+    [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_EXT")]
+    MaxGeometryAtomicCounterBuffersEXT = 37583,
+
+    [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTERS_EXT")]
+    MaxGeometryAtomicCountersEXT = 37589,
+
+    [NativeName("GL_MAX_GEOMETRY_IMAGE_UNIFORMS_EXT")]
+    MaxGeometryImageUniformsEXT = 37069,
+
+    [NativeName("GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_EXT")]
+    MaxGeometryShaderStorageBlocksEXT = 37079,
+
+    [NativeName("GL_UNDEFINED_VERTEX_EXT")]
+    UndefinedVertexEXT = 33376,
+
+    [NativeName("GL_FRAMEBUFFER_DEFAULT_LAYERS_EXT")]
+    FramebufferDefaultLayersEXT = 37650,
+
+    [NativeName("GL_MAX_FRAMEBUFFER_LAYERS_EXT")]
+    MaxFramebufferLayersEXT = 37655,
+
+    [NativeName("GL_REFERENCED_BY_GEOMETRY_SHADER_EXT")]
+    ReferencedByGeometryShaderEXT = 37641,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR_EXT")]
+    VertexAttribArrayDivisorEXT = 35070,
+
+    [NativeName("GL_COLOR_ATTACHMENT_EXT")]
+    ColorAttachmentEXT = 37104,
+
+    [NativeName("GL_MULTIVIEW_EXT")]
+    MultiviewEXT = 37105,
+
+    [NativeName("GL_DRAW_BUFFER_EXT")]
+    DrawBufferEXT = 3073,
+
+    [NativeName("GL_READ_BUFFER_EXT")]
+    ReadBufferEXT = 3074,
+
+    [NativeName("GL_MAX_MULTIVIEW_BUFFERS_EXT")]
+    MaxMultiviewBuffersEXT = 37106,
+
+    [NativeName("GL_ANY_SAMPLES_PASSED_EXT")]
+    AnySamplesPassedEXT = 35887,
+
+    [NativeName("GL_ANY_SAMPLES_PASSED_CONSERVATIVE_EXT")]
+    AnySamplesPassedConservativeEXT = 36202,
+
+    [NativeName("GL_PRIMITIVE_BOUNDING_BOX_EXT")]
+    PrimitiveBoundingBoxEXT = 37566,
+
+    [NativeName("GL_CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT")]
+    ContextFlagProtectedContentBitEXT = 16,
+
+    [NativeName("GL_TEXTURE_PROTECTED_EXT")]
+    TextureProtectedEXT = 35834,
+
+    [NativeName("GL_COMPRESSED_SRGB_PVRTC_2BPPV1_EXT")]
+    CompressedSrgbPvrtc2Bppv1EXT = 35412,
+
+    [NativeName("GL_COMPRESSED_SRGB_PVRTC_4BPPV1_EXT")]
+    CompressedSrgbPvrtc4Bppv1EXT = 35413,
+
+    [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV1_EXT")]
+    CompressedSrgbAlphaPvrtc2Bppv1EXT = 35414,
+
+    [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV1_EXT")]
+    CompressedSrgbAlphaPvrtc4Bppv1EXT = 35415,
+
+    [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV2_IMG")]
+    CompressedSrgbAlphaPvrtc2Bppv2IMG = 37872,
+
+    [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV2_IMG")]
+    CompressedSrgbAlphaPvrtc4Bppv2IMG = 37873,
+
+    [NativeName("GL_R16_SNORM_EXT")]
+    R16SnormEXT = 36760,
+
+    [NativeName("GL_RG16_SNORM_EXT")]
+    Rg16SnormEXT = 36761,
+
+    [NativeName("GL_RGBA16_SNORM_EXT")]
+    Rgba16SnormEXT = 36763,
+
+    [NativeName("GL_VERTEX_SHADER_BIT_EXT")]
+    VertexShaderBitEXT = 1,
+
+    [NativeName("GL_FRAGMENT_SHADER_BIT_EXT")]
+    FragmentShaderBitEXT = 2,
+
+    [NativeName("GL_ALL_SHADER_BITS_EXT")]
+    AllShaderBitsEXT = 4294967295,
+
+    [NativeName("GL_PROGRAM_SEPARABLE_EXT")]
+    ProgramSeparableEXT = 33368,
+
+    [NativeName("GL_PROGRAM_PIPELINE_BINDING_EXT")]
+    ProgramPipelineBindingEXT = 33370,
+
+    [NativeName("GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_FAST_SIZE_EXT")]
+    MaxShaderPixelLocalStorageFastSizeEXT = 36707,
+
+    [NativeName("GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_SIZE_EXT")]
+    MaxShaderPixelLocalStorageSizeEXT = 36711,
+
+    [NativeName("GL_SHADER_PIXEL_LOCAL_STORAGE_EXT")]
+    ShaderPixelLocalStorageEXT = 36708,
+
+    [NativeName("GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_FAST_SIZE_EXT")]
+    MaxShaderCombinedLocalStorageFastSizeEXT = 38480,
+
+    [NativeName("GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_SIZE_EXT")]
+    MaxShaderCombinedLocalStorageSizeEXT = 38481,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_INSUFFICIENT_SHADER_COMBINED_LOCAL_STORAGE_EXT")]
+    FramebufferIncompleteInsufficientShaderCombinedLocalStorageEXT = 38482,
+
+    [NativeName("GL_TEXTURE_COMPARE_MODE_EXT")]
+    TextureCompareModeEXT = 34892,
+
+    [NativeName("GL_TEXTURE_COMPARE_FUNC_EXT")]
+    TextureCompareFuncEXT = 34893,
+
+    [NativeName("GL_COMPARE_REF_TO_TEXTURE_EXT")]
+    CompareRefToTextureEXT = 34894,
+
+    [NativeName("GL_SAMPLER_2D_SHADOW_EXT")]
+    Sampler2DShadowEXT = 35682,
+
+    [NativeName("GL_TEXTURE_SPARSE_EXT")]
+    TextureSparseEXT = 37286,
+
+    [NativeName("GL_VIRTUAL_PAGE_SIZE_INDEX_EXT")]
+    VirtualPageSizeIndexEXT = 37287,
+
+    [NativeName("GL_NUM_SPARSE_LEVELS_EXT")]
+    NumSparseLevelsEXT = 37290,
+
+    [NativeName("GL_NUM_VIRTUAL_PAGE_SIZES_EXT")]
+    NumVirtualPageSizesEXT = 37288,
+
+    [NativeName("GL_VIRTUAL_PAGE_SIZE_X_EXT")]
+    VirtualPageSizeXEXT = 37269,
+
+    [NativeName("GL_VIRTUAL_PAGE_SIZE_Y_EXT")]
+    VirtualPageSizeYEXT = 37270,
+
+    [NativeName("GL_VIRTUAL_PAGE_SIZE_Z_EXT")]
+    VirtualPageSizeZEXT = 37271,
+
+    [NativeName("GL_MAX_SPARSE_TEXTURE_SIZE_EXT")]
+    MaxSparseTextureSizeEXT = 37272,
+
+    [NativeName("GL_MAX_SPARSE_3D_TEXTURE_SIZE_EXT")]
+    MaxSparse3DTextureSizeEXT = 37273,
+
+    [NativeName("GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_EXT")]
+    MaxSparseArrayTextureLayersEXT = 37274,
+
+    [NativeName("GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_EXT")]
+    SparseTextureFullArrayCubeMipmapsEXT = 37289,
+
+    [NativeName("GL_PATCHES_EXT")]
+    PatchesEXT = 14,
+
+    [NativeName("GL_PATCH_VERTICES_EXT")]
+    PatchVerticesEXT = 36466,
+
+    [NativeName("GL_TESS_CONTROL_OUTPUT_VERTICES_EXT")]
+    TessControlOutputVerticesEXT = 36469,
+
+    [NativeName("GL_TESS_GEN_MODE_EXT")]
+    TessGenModeEXT = 36470,
+
+    [NativeName("GL_TESS_GEN_SPACING_EXT")]
+    TessGenSpacingEXT = 36471,
+
+    [NativeName("GL_TESS_GEN_VERTEX_ORDER_EXT")]
+    TessGenVertexOrderEXT = 36472,
+
+    [NativeName("GL_TESS_GEN_POINT_MODE_EXT")]
+    TessGenPointModeEXT = 36473,
+
+    [NativeName("GL_ISOLINES_EXT")]
+    IsolinesEXT = 36474,
+
+    [NativeName("GL_QUADS_EXT")]
+    QuadsEXT = 7,
+
+    [NativeName("GL_FRACTIONAL_ODD_EXT")]
+    FractionalOddEXT = 36475,
+
+    [NativeName("GL_FRACTIONAL_EVEN_EXT")]
+    FractionalEvenEXT = 36476,
+
+    [NativeName("GL_MAX_PATCH_VERTICES_EXT")]
+    MaxPatchVerticesEXT = 36477,
+
+    [NativeName("GL_MAX_TESS_GEN_LEVEL_EXT")]
+    MaxTessGenLevelEXT = 36478,
+
+    [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_EXT")]
+    MaxTessControlUniformComponentsEXT = 36479,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT")]
+    MaxTessEvaluationUniformComponentsEXT = 36480,
+
+    [NativeName("GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_EXT")]
+    MaxTessControlTextureImageUnitsEXT = 36481,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_EXT")]
+    MaxTessEvaluationTextureImageUnitsEXT = 36482,
+
+    [NativeName("GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_EXT")]
+    MaxTessControlOutputComponentsEXT = 36483,
+
+    [NativeName("GL_MAX_TESS_PATCH_COMPONENTS_EXT")]
+    MaxTessPatchComponentsEXT = 36484,
+
+    [NativeName("GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_EXT")]
+    MaxTessControlTotalOutputComponentsEXT = 36485,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_EXT")]
+    MaxTessEvaluationOutputComponentsEXT = 36486,
+
+    [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_EXT")]
+    MaxTessControlUniformBlocksEXT = 36489,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_EXT")]
+    MaxTessEvaluationUniformBlocksEXT = 36490,
+
+    [NativeName("GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_EXT")]
+    MaxTessControlInputComponentsEXT = 34924,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_EXT")]
+    MaxTessEvaluationInputComponentsEXT = 34925,
+
+    [NativeName("GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_EXT")]
+    MaxCombinedTessControlUniformComponentsEXT = 36382,
+
+    [NativeName("GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT")]
+    MaxCombinedTessEvaluationUniformComponentsEXT = 36383,
+
+    [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_EXT")]
+    MaxTessControlAtomicCounterBuffersEXT = 37581,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_EXT")]
+    MaxTessEvaluationAtomicCounterBuffersEXT = 37582,
+
+    [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_EXT")]
+    MaxTessControlAtomicCountersEXT = 37587,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_EXT")]
+    MaxTessEvaluationAtomicCountersEXT = 37588,
+
+    [NativeName("GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_EXT")]
+    MaxTessControlImageUniformsEXT = 37067,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_EXT")]
+    MaxTessEvaluationImageUniformsEXT = 37068,
+
+    [NativeName("GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_EXT")]
+    MaxTessControlShaderStorageBlocksEXT = 37080,
+
+    [NativeName("GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_EXT")]
+    MaxTessEvaluationShaderStorageBlocksEXT = 37081,
+
+    [NativeName("GL_IS_PER_PATCH_EXT")]
+    IsPerPatchEXT = 37607,
+
+    [NativeName("GL_REFERENCED_BY_TESS_CONTROL_SHADER_EXT")]
+    ReferencedByTessControlShaderEXT = 37639,
+
+    [NativeName("GL_REFERENCED_BY_TESS_EVALUATION_SHADER_EXT")]
+    ReferencedByTessEvaluationShaderEXT = 37640,
+
+    [NativeName("GL_TESS_CONTROL_SHADER_EXT")]
+    TessControlShaderEXT = 36488,
+
+    [NativeName("GL_TESS_EVALUATION_SHADER_EXT")]
+    TessEvaluationShaderEXT = 36487,
+
+    [NativeName("GL_TESS_CONTROL_SHADER_BIT_EXT")]
+    TessControlShaderBitEXT = 8,
+
+    [NativeName("GL_TESS_EVALUATION_SHADER_BIT_EXT")]
+    TessEvaluationShaderBitEXT = 16,
+
+    [NativeName("GL_TEXTURE_BORDER_COLOR_EXT")]
+    TextureBorderColorEXT = 4100,
+
+    [NativeName("GL_CLAMP_TO_BORDER_EXT")]
+    ClampToBorderEXT = 33069,
+
+    [NativeName("GL_TEXTURE_BUFFER_BINDING_EXT")]
+    TextureBufferBindingEXT = 35882,
+
+    [NativeName("GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_EXT")]
+    TextureBufferOffsetAlignmentEXT = 37279,
+
+    [NativeName("GL_TEXTURE_BUFFER_OFFSET_EXT")]
+    TextureBufferOffsetEXT = 37277,
+
+    [NativeName("GL_TEXTURE_BUFFER_SIZE_EXT")]
+    TextureBufferSizeEXT = 37278,
+
+    [NativeName("GL_TEXTURE_ASTC_DECODE_PRECISION_EXT")]
+    TextureAstcDecodePrecisionEXT = 36713,
+
+    [NativeName("GL_COMPRESSED_RGBA_BPTC_UNORM_EXT")]
+    CompressedRgbaBptcUnormEXT = 36492,
+
+    [NativeName("GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT")]
+    CompressedSrgbAlphaBptcUnormEXT = 36493,
+
+    [NativeName("GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT")]
+    CompressedRgbBptcSignedFloatEXT = 36494,
+
+    [NativeName("GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT")]
+    CompressedRgbBptcUnsignedFloatEXT = 36495,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_EXT")]
+    TextureCubeMapArrayEXT = 36873,
+
+    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_EXT")]
+    TextureBindingCubeMapArrayEXT = 36874,
+
+    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_EXT")]
+    SamplerCubeMapArrayEXT = 36876,
+
+    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_EXT")]
+    SamplerCubeMapArrayShadowEXT = 36877,
+
+    [NativeName("GL_INT_SAMPLER_CUBE_MAP_ARRAY_EXT")]
+    IntSamplerCubeMapArrayEXT = 36878,
+
+    [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_EXT")]
+    UnsignedIntSamplerCubeMapArrayEXT = 36879,
+
+    [NativeName("GL_TEXTURE_FORMAT_SRGB_OVERRIDE_EXT")]
+    TextureFormatSrgbOverrideEXT = 36799,
+
+    [NativeName("GL_R16_EXT")]
+    R16EXT = 33322,
+
+    [NativeName("GL_RG16_EXT")]
+    Rg16EXT = 33324,
+
+    [NativeName("GL_RGB16_SNORM_EXT")]
+    Rgb16SnormEXT = 36762,
+
+    [NativeName("GL_RED_EXT")]
+    RedEXT = 6403,
+
+    [NativeName("GL_RG_EXT")]
+    RgEXT = 33319,
+
+    [NativeName("GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
+    NumSurfaceCompressionFixedRatesEXT = 36718,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_1BPC_EXT")]
+    SurfaceCompressionFixedRate1BpcEXT = 38596,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_2BPC_EXT")]
+    SurfaceCompressionFixedRate2BpcEXT = 38597,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_3BPC_EXT")]
+    SurfaceCompressionFixedRate3BpcEXT = 38598,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_4BPC_EXT")]
+    SurfaceCompressionFixedRate4BpcEXT = 38599,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_5BPC_EXT")]
+    SurfaceCompressionFixedRate5BpcEXT = 38600,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_6BPC_EXT")]
+    SurfaceCompressionFixedRate6BpcEXT = 38601,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_7BPC_EXT")]
+    SurfaceCompressionFixedRate7BpcEXT = 38602,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_8BPC_EXT")]
+    SurfaceCompressionFixedRate8BpcEXT = 38603,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_9BPC_EXT")]
+    SurfaceCompressionFixedRate9BpcEXT = 38604,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_10BPC_EXT")]
+    SurfaceCompressionFixedRate10BpcEXT = 38605,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_11BPC_EXT")]
+    SurfaceCompressionFixedRate11BpcEXT = 38606,
+
+    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_12BPC_EXT")]
+    SurfaceCompressionFixedRate12BpcEXT = 38607,
+
+    [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
+    UnsignedInt2x10x10x10RevEXT = 33640,
+
+    [NativeName("GL_TEXTURE_VIEW_MIN_LEVEL_EXT")]
+    TextureViewMinLevelEXT = 33499,
+
+    [NativeName("GL_TEXTURE_VIEW_NUM_LEVELS_EXT")]
+    TextureViewNumLevelsEXT = 33500,
+
+    [NativeName("GL_TEXTURE_VIEW_MIN_LAYER_EXT")]
+    TextureViewMinLayerEXT = 33501,
+
+    [NativeName("GL_TEXTURE_VIEW_NUM_LAYERS_EXT")]
+    TextureViewNumLayersEXT = 33502,
+
+    [NativeName("GL_UNPACK_ROW_LENGTH_EXT")]
+    UnpackRowLengthEXT = 3314,
+
+    [NativeName("GL_UNPACK_SKIP_ROWS_EXT")]
+    UnpackSkipRowsEXT = 3315,
+
+    [NativeName("GL_UNPACK_SKIP_PIXELS_EXT")]
+    UnpackSkipPixelsEXT = 3316,
+
+    [NativeName("GL_GCCSO_SHADER_BINARY_FJ")]
+    GccsoShaderBinaryFJ = 37472,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_AND_DOWNSAMPLE_IMG")]
+    FramebufferIncompleteMultisampleAndDownsampleIMG = 37180,
+
+    [NativeName("GL_NUM_DOWNSAMPLE_SCALES_IMG")]
+    NumDownsampleScalesIMG = 37181,
+
+    [NativeName("GL_DOWNSAMPLE_SCALES_IMG")]
+    DownsampleScalesIMG = 37182,
+
+    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SCALE_IMG")]
+    FramebufferAttachmentTextureScaleIMG = 37183,
+
+    [NativeName("GL_SGX_PROGRAM_BINARY_IMG")]
+    SgxProgramBinaryIMG = 37168,
+
+    [NativeName("GL_SGX_BINARY_IMG")]
+    SgxBinaryIMG = 35850,
+
+    [NativeName("GL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG")]
+    CompressedRgbaPvrtc2Bppv2IMG = 37175,
+
+    [NativeName("GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG")]
+    CompressedRgbaPvrtc4Bppv2IMG = 37176,
+
+    [NativeName("GL_CUBIC_IMG")]
+    CubicIMG = 37177,
+
+    [NativeName("GL_CUBIC_MIPMAP_NEAREST_IMG")]
+    CubicMipmapNearestIMG = 37178,
+
+    [NativeName("GL_CUBIC_MIPMAP_LINEAR_IMG")]
+    CubicMipmapLinearIMG = 37179,
+
+    [NativeName("GL_COPY_READ_BUFFER_NV")]
+    CopyReadBufferNV = 36662,
+
+    [NativeName("GL_COPY_WRITE_BUFFER_NV")]
+    CopyWriteBufferNV = 36663,
+
+    [NativeName("GL_COVERAGE_COMPONENT_NV")]
+    CoverageComponentNV = 36560,
+
+    [NativeName("GL_COVERAGE_COMPONENT4_NV")]
+    CoverageComponent4NV = 36561,
+
+    [NativeName("GL_COVERAGE_ATTACHMENT_NV")]
+    CoverageAttachmentNV = 36562,
+
+    [NativeName("GL_COVERAGE_BUFFERS_NV")]
+    CoverageBuffersNV = 36563,
+
+    [NativeName("GL_COVERAGE_SAMPLES_NV")]
+    CoverageSamplesNV = 36564,
+
+    [NativeName("GL_COVERAGE_ALL_FRAGMENTS_NV")]
+    CoverageAllFragmentsNV = 36565,
+
+    [NativeName("GL_COVERAGE_EDGE_FRAGMENTS_NV")]
+    CoverageEdgeFragmentsNV = 36566,
+
+    [NativeName("GL_COVERAGE_AUTOMATIC_NV")]
+    CoverageAutomaticNV = 36567,
+
+    [NativeName("GL_COVERAGE_BUFFER_BIT_NV")]
+    CoverageBufferBitNV = 32768,
+
+    [NativeName("GL_DEPTH_COMPONENT16_NONLINEAR_NV")]
+    DepthComponent16NonlinearNV = 36396,
+
+    [NativeName("GL_MAX_DRAW_BUFFERS_NV")]
+    MaxDrawBuffersNV = 34852,
+
+    [NativeName("GL_DRAW_BUFFER0_NV")]
+    DrawBuffer0NV = 34853,
+
+    [NativeName("GL_DRAW_BUFFER1_NV")]
+    DrawBuffer1NV = 34854,
+
+    [NativeName("GL_DRAW_BUFFER2_NV")]
+    DrawBuffer2NV = 34855,
+
+    [NativeName("GL_DRAW_BUFFER3_NV")]
+    DrawBuffer3NV = 34856,
+
+    [NativeName("GL_DRAW_BUFFER4_NV")]
+    DrawBuffer4NV = 34857,
+
+    [NativeName("GL_DRAW_BUFFER5_NV")]
+    DrawBuffer5NV = 34858,
+
+    [NativeName("GL_DRAW_BUFFER6_NV")]
+    DrawBuffer6NV = 34859,
+
+    [NativeName("GL_DRAW_BUFFER7_NV")]
+    DrawBuffer7NV = 34860,
+
+    [NativeName("GL_DRAW_BUFFER8_NV")]
+    DrawBuffer8NV = 34861,
+
+    [NativeName("GL_DRAW_BUFFER9_NV")]
+    DrawBuffer9NV = 34862,
+
+    [NativeName("GL_DRAW_BUFFER10_NV")]
+    DrawBuffer10NV = 34863,
+
+    [NativeName("GL_DRAW_BUFFER11_NV")]
+    DrawBuffer11NV = 34864,
+
+    [NativeName("GL_DRAW_BUFFER12_NV")]
+    DrawBuffer12NV = 34865,
+
+    [NativeName("GL_DRAW_BUFFER13_NV")]
+    DrawBuffer13NV = 34866,
+
+    [NativeName("GL_DRAW_BUFFER14_NV")]
+    DrawBuffer14NV = 34867,
+
+    [NativeName("GL_DRAW_BUFFER15_NV")]
+    DrawBuffer15NV = 34868,
+
+    [NativeName("GL_COLOR_ATTACHMENT0_NV")]
+    ColorAttachment0NV = 36064,
+
+    [NativeName("GL_COLOR_ATTACHMENT1_NV")]
+    ColorAttachment1NV = 36065,
+
+    [NativeName("GL_COLOR_ATTACHMENT2_NV")]
+    ColorAttachment2NV = 36066,
+
+    [NativeName("GL_COLOR_ATTACHMENT3_NV")]
+    ColorAttachment3NV = 36067,
+
+    [NativeName("GL_COLOR_ATTACHMENT4_NV")]
+    ColorAttachment4NV = 36068,
+
+    [NativeName("GL_COLOR_ATTACHMENT5_NV")]
+    ColorAttachment5NV = 36069,
+
+    [NativeName("GL_COLOR_ATTACHMENT6_NV")]
+    ColorAttachment6NV = 36070,
+
+    [NativeName("GL_COLOR_ATTACHMENT7_NV")]
+    ColorAttachment7NV = 36071,
+
+    [NativeName("GL_COLOR_ATTACHMENT8_NV")]
+    ColorAttachment8NV = 36072,
+
+    [NativeName("GL_COLOR_ATTACHMENT9_NV")]
+    ColorAttachment9NV = 36073,
+
+    [NativeName("GL_COLOR_ATTACHMENT10_NV")]
+    ColorAttachment10NV = 36074,
+
+    [NativeName("GL_COLOR_ATTACHMENT11_NV")]
+    ColorAttachment11NV = 36075,
+
+    [NativeName("GL_COLOR_ATTACHMENT12_NV")]
+    ColorAttachment12NV = 36076,
+
+    [NativeName("GL_COLOR_ATTACHMENT13_NV")]
+    ColorAttachment13NV = 36077,
+
+    [NativeName("GL_COLOR_ATTACHMENT14_NV")]
+    ColorAttachment14NV = 36078,
+
+    [NativeName("GL_COLOR_ATTACHMENT15_NV")]
+    ColorAttachment15NV = 36079,
+
+    [NativeName("GL_MAX_COLOR_ATTACHMENTS_NV")]
+    MaxColorAttachmentsNV = 36063,
+
+    [NativeName("GL_READ_FRAMEBUFFER_NV")]
+    ReadFramebufferNV = 36008,
+
+    [NativeName("GL_DRAW_FRAMEBUFFER_NV")]
+    DrawFramebufferNV = 36009,
+
+    [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_NV")]
+    DrawFramebufferBindingNV = 36006,
+
+    [NativeName("GL_READ_FRAMEBUFFER_BINDING_NV")]
+    ReadFramebufferBindingNV = 36010,
+
+    [NativeName("GL_RENDERBUFFER_SAMPLES_NV")]
+    RenderbufferSamplesNV = 36011,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_NV")]
+    FramebufferIncompleteMultisampleNV = 36182,
+
+    [NativeName("GL_MAX_SAMPLES_NV")]
+    MaxSamplesNV = 36183,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR_NV")]
+    VertexAttribArrayDivisorNV = 35070,
+
+    [NativeName("GL_FLOAT_MAT2x3_NV")]
+    FloatMat2x3NV = 35685,
+
+    [NativeName("GL_FLOAT_MAT2x4_NV")]
+    FloatMat2x4NV = 35686,
+
+    [NativeName("GL_FLOAT_MAT3x2_NV")]
+    FloatMat3x2NV = 35687,
+
+    [NativeName("GL_FLOAT_MAT3x4_NV")]
+    FloatMat3x4NV = 35688,
+
+    [NativeName("GL_FLOAT_MAT4x2_NV")]
+    FloatMat4x2NV = 35689,
+
+    [NativeName("GL_FLOAT_MAT4x3_NV")]
+    FloatMat4x3NV = 35690,
+
+    [NativeName("GL_PACK_ROW_LENGTH_NV")]
+    PackRowLengthNV = 3330,
+
+    [NativeName("GL_PACK_SKIP_ROWS_NV")]
+    PackSkipRowsNV = 3331,
+
+    [NativeName("GL_PACK_SKIP_PIXELS_NV")]
+    PackSkipPixelsNV = 3332,
+
+    [NativeName("GL_PIXEL_PACK_BUFFER_NV")]
+    PixelPackBufferNV = 35051,
+
+    [NativeName("GL_PIXEL_UNPACK_BUFFER_NV")]
+    PixelUnpackBufferNV = 35052,
+
+    [NativeName("GL_PIXEL_PACK_BUFFER_BINDING_NV")]
+    PixelPackBufferBindingNV = 35053,
+
+    [NativeName("GL_PIXEL_UNPACK_BUFFER_BINDING_NV")]
+    PixelUnpackBufferBindingNV = 35055,
+
+    [NativeName("GL_POLYGON_MODE_NV")]
+    PolygonModeNV = 2880,
+
+    [NativeName("GL_POLYGON_OFFSET_POINT_NV")]
+    PolygonOffsetPointNV = 10753,
+
+    [NativeName("GL_POLYGON_OFFSET_LINE_NV")]
+    PolygonOffsetLineNV = 10754,
+
+    [NativeName("GL_POINT_NV")]
+    PointNV = 6912,
+
+    [NativeName("GL_LINE_NV")]
+    LineNV = 6913,
+
+    [NativeName("GL_FILL_NV")]
+    FillNV = 6914,
+
+    [NativeName("GL_READ_BUFFER_NV")]
+    ReadBufferNV = 3074,
+
+    [NativeName("GL_SLUMINANCE_NV")]
+    SluminanceNV = 35910,
+
+    [NativeName("GL_SLUMINANCE_ALPHA_NV")]
+    SluminanceAlphaNV = 35908,
+
+    [NativeName("GL_SRGB8_NV")]
+    Srgb8NV = 35905,
+
+    [NativeName("GL_SLUMINANCE8_NV")]
+    Sluminance8NV = 35911,
+
+    [NativeName("GL_SLUMINANCE8_ALPHA8_NV")]
+    Sluminance8Alpha8NV = 35909,
+
+    [NativeName("GL_COMPRESSED_SRGB_S3TC_DXT1_NV")]
+    CompressedSrgbS3TcDxt1NV = 35916,
+
+    [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_NV")]
+    CompressedSrgbAlphaS3TcDxt1NV = 35917,
+
+    [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_NV")]
+    CompressedSrgbAlphaS3TcDxt3NV = 35918,
+
+    [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV")]
+    CompressedSrgbAlphaS3TcDxt5NV = 35919,
+
+    [NativeName("GL_ETC1_SRGB8_NV")]
+    Etc1Srgb8NV = 35054,
+
+    [NativeName("GL_SAMPLER_2D_ARRAY_SHADOW_NV")]
+    Sampler2DArrayShadowNV = 36292,
+
+    [NativeName("GL_SAMPLER_CUBE_SHADOW_NV")]
+    SamplerCubeShadowNV = 36293,
+
+    [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
+    TextureBorderColorNV = 4100,
+
+    [NativeName("GL_CLAMP_TO_BORDER_NV")]
+    ClampToBorderNV = 33069,
+
+    [NativeName("GL_MAX_VIEWPORTS_NV")]
+    MaxViewportsNV = 33371,
+
+    [NativeName("GL_VIEWPORT_SUBPIXEL_BITS_NV")]
+    ViewportSubpixelBitsNV = 33372,
+
+    [NativeName("GL_VIEWPORT_BOUNDS_RANGE_NV")]
+    ViewportBoundsRangeNV = 33373,
+
+    [NativeName("GL_VIEWPORT_INDEX_PROVOKING_VERTEX_NV")]
+    ViewportIndexProvokingVertexNV = 33375,
+
+    [NativeName("GL_ALPHA_TEST_QCOM")]
+    AlphaTestQCOM = 3008,
+
+    [NativeName("GL_ALPHA_TEST_FUNC_QCOM")]
+    AlphaTestFuncQCOM = 3009,
+
+    [NativeName("GL_ALPHA_TEST_REF_QCOM")]
+    AlphaTestRefQCOM = 3010,
+
+    [NativeName("GL_BINNING_CONTROL_HINT_QCOM")]
+    BinningControlHintQCOM = 36784,
+
+    [NativeName("GL_CPU_OPTIMIZED_QCOM")]
+    CpuOptimizedQCOM = 36785,
+
+    [NativeName("GL_GPU_OPTIMIZED_QCOM")]
+    GpuOptimizedQCOM = 36786,
+
+    [NativeName("GL_RENDER_DIRECT_TO_FRAMEBUFFER_QCOM")]
+    RenderDirectToFramebufferQCOM = 36787,
+
+    [NativeName("GL_FOVEATION_ENABLE_BIT_QCOM")]
+    FoveationEnableBitQCOM = 1,
+
+    [NativeName("GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM")]
+    FoveationScaledBinMethodBitQCOM = 2,
+
+    [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_X_QCOM")]
+    MotionEstimationSearchBlockXQCOM = 35984,
+
+    [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_Y_QCOM")]
+    MotionEstimationSearchBlockYQCOM = 35985,
+
+    [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
+    FramebufferFetchNoncoherentQCOM = 38562,
+
+    [NativeName("GL_SHADING_RATE_QCOM")]
+    ShadingRateQCOM = 38564,
+
+    [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
+    ShadingRatePreserveAspectRatioQCOM = 38565,
+
+    [NativeName("GL_SHADING_RATE_1X1_PIXELS_QCOM")]
+    ShadingRate1x1PixelsQCOM = 38566,
+
+    [NativeName("GL_SHADING_RATE_1X2_PIXELS_QCOM")]
+    ShadingRate1x2PixelsQCOM = 38567,
+
+    [NativeName("GL_SHADING_RATE_2X1_PIXELS_QCOM")]
+    ShadingRate2x1PixelsQCOM = 38568,
+
+    [NativeName("GL_SHADING_RATE_2X2_PIXELS_QCOM")]
+    ShadingRate2x2PixelsQCOM = 38569,
+
+    [NativeName("GL_SHADING_RATE_4X2_PIXELS_QCOM")]
+    ShadingRate4x2PixelsQCOM = 38572,
+
+    [NativeName("GL_SHADING_RATE_4X4_PIXELS_QCOM")]
+    ShadingRate4x4PixelsQCOM = 38574,
+
+    [NativeName("GL_TEXTURE_FOVEATED_FEATURE_BITS_QCOM")]
+    TextureFoveatedFeatureBitsQCOM = 35835,
+
+    [NativeName("GL_TEXTURE_FOVEATED_MIN_PIXEL_DENSITY_QCOM")]
+    TextureFoveatedMinPixelDensityQCOM = 35836,
+
+    [NativeName("GL_TEXTURE_FOVEATED_FEATURE_QUERY_QCOM")]
+    TextureFoveatedFeatureQueryQCOM = 35837,
+
+    [NativeName("GL_TEXTURE_FOVEATED_NUM_FOCAL_POINTS_QUERY_QCOM")]
+    TextureFoveatedNumFocalPointsQueryQCOM = 35838,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_FOVEATION_QCOM")]
+    FramebufferIncompleteFoveationQCOM = 35839,
+
+    [NativeName("GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM")]
+    TextureFoveatedCutoffDensityQCOM = 38560,
+
+    [NativeName("GL_FOVEATION_SUBSAMPLED_LAYOUT_METHOD_BIT_QCOM")]
+    FoveationSubsampledLayoutMethodBitQCOM = 4,
+
+    [NativeName("GL_MAX_SHADER_SUBSAMPLED_IMAGE_UNITS_QCOM")]
+    MaxShaderSubsampledImageUnitsQCOM = 36769,
+
+    [NativeName("GL_TEXTURE_LOD_BIAS_QCOM")]
+    TextureLodBiasQCOM = 35990,
+
+    [NativeName("GL_SHADER_BINARY_VIV")]
+    ShaderBinaryVIV = 36804,
+
     [NativeName("GL_DEPTH_BUFFER_BIT")]
     DepthBufferBit = 256,
 
@@ -15003,2545 +17544,4 @@ public enum GLEnum : uint
 
     [NativeName("GL_FOG_SPECULAR_TEXTURE_WIN")]
     FogSpecularTextureWIN = 33004,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS")]
-    FramebufferIncompleteDimensions = 36057,
-
-    [NativeName("GL_CONTEXT_RELEASE_BEHAVIOR_KHR")]
-    ContextReleaseBehaviorKHR = 33531,
-
-    [NativeName("GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH_KHR")]
-    ContextReleaseBehaviorFlushKHR = 33532,
-
-    [NativeName("GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR")]
-    DebugOutputSynchronousKHR = 33346,
-
-    [NativeName("GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR")]
-    DebugNextLoggedMessageLengthKHR = 33347,
-
-    [NativeName("GL_DEBUG_CALLBACK_FUNCTION_KHR")]
-    DebugCallbackFunctionKHR = 33348,
-
-    [NativeName("GL_DEBUG_CALLBACK_USER_PARAM_KHR")]
-    DebugCallbackUserParamKHR = 33349,
-
-    [NativeName("GL_DEBUG_SOURCE_API_KHR")]
-    DebugSourceApiKHR = 33350,
-
-    [NativeName("GL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR")]
-    DebugSourceWindowSystemKHR = 33351,
-
-    [NativeName("GL_DEBUG_SOURCE_SHADER_COMPILER_KHR")]
-    DebugSourceShaderCompilerKHR = 33352,
-
-    [NativeName("GL_DEBUG_SOURCE_THIRD_PARTY_KHR")]
-    DebugSourceThirdPartyKHR = 33353,
-
-    [NativeName("GL_DEBUG_SOURCE_APPLICATION_KHR")]
-    DebugSourceApplicationKHR = 33354,
-
-    [NativeName("GL_DEBUG_SOURCE_OTHER_KHR")]
-    DebugSourceOtherKHR = 33355,
-
-    [NativeName("GL_DEBUG_TYPE_ERROR_KHR")]
-    DebugTypeErrorKHR = 33356,
-
-    [NativeName("GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_KHR")]
-    DebugTypeDeprecatedBehaviorKHR = 33357,
-
-    [NativeName("GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR")]
-    DebugTypeUndefinedBehaviorKHR = 33358,
-
-    [NativeName("GL_DEBUG_TYPE_PORTABILITY_KHR")]
-    DebugTypePortabilityKHR = 33359,
-
-    [NativeName("GL_DEBUG_TYPE_PERFORMANCE_KHR")]
-    DebugTypePerformanceKHR = 33360,
-
-    [NativeName("GL_DEBUG_TYPE_OTHER_KHR")]
-    DebugTypeOtherKHR = 33361,
-
-    [NativeName("GL_DEBUG_TYPE_MARKER_KHR")]
-    DebugTypeMarkerKHR = 33384,
-
-    [NativeName("GL_DEBUG_TYPE_PUSH_GROUP_KHR")]
-    DebugTypePushGroupKHR = 33385,
-
-    [NativeName("GL_DEBUG_TYPE_POP_GROUP_KHR")]
-    DebugTypePopGroupKHR = 33386,
-
-    [NativeName("GL_DEBUG_SEVERITY_NOTIFICATION_KHR")]
-    DebugSeverityNotificationKHR = 33387,
-
-    [NativeName("GL_MAX_DEBUG_GROUP_STACK_DEPTH_KHR")]
-    MaxDebugGroupStackDepthKHR = 33388,
-
-    [NativeName("GL_DEBUG_GROUP_STACK_DEPTH_KHR")]
-    DebugGroupStackDepthKHR = 33389,
-
-    [NativeName("GL_BUFFER_KHR")]
-    BufferKHR = 33504,
-
-    [NativeName("GL_SHADER_KHR")]
-    ShaderKHR = 33505,
-
-    [NativeName("GL_PROGRAM_KHR")]
-    ProgramKHR = 33506,
-
-    [NativeName("GL_VERTEX_ARRAY_KHR")]
-    VertexArrayKHR = 32884,
-
-    [NativeName("GL_QUERY_KHR")]
-    QueryKHR = 33507,
-
-    [NativeName("GL_PROGRAM_PIPELINE_KHR")]
-    ProgramPipelineKHR = 33508,
-
-    [NativeName("GL_SAMPLER_KHR")]
-    SamplerKHR = 33510,
-
-    [NativeName("GL_MAX_LABEL_LENGTH_KHR")]
-    MaxLabelLengthKHR = 33512,
-
-    [NativeName("GL_MAX_DEBUG_MESSAGE_LENGTH_KHR")]
-    MaxDebugMessageLengthKHR = 37187,
-
-    [NativeName("GL_MAX_DEBUG_LOGGED_MESSAGES_KHR")]
-    MaxDebugLoggedMessagesKHR = 37188,
-
-    [NativeName("GL_DEBUG_LOGGED_MESSAGES_KHR")]
-    DebugLoggedMessagesKHR = 37189,
-
-    [NativeName("GL_DEBUG_SEVERITY_HIGH_KHR")]
-    DebugSeverityHighKHR = 37190,
-
-    [NativeName("GL_DEBUG_SEVERITY_MEDIUM_KHR")]
-    DebugSeverityMediumKHR = 37191,
-
-    [NativeName("GL_DEBUG_SEVERITY_LOW_KHR")]
-    DebugSeverityLowKHR = 37192,
-
-    [NativeName("GL_DEBUG_OUTPUT_KHR")]
-    DebugOutputKHR = 37600,
-
-    [NativeName("GL_CONTEXT_FLAG_DEBUG_BIT_KHR")]
-    ContextFlagDebugBitKHR = 2,
-
-    [NativeName("GL_STACK_OVERFLOW_KHR")]
-    StackOverflowKHR = 1283,
-
-    [NativeName("GL_STACK_UNDERFLOW_KHR")]
-    StackUnderflowKHR = 1284,
-
-    [NativeName("GL_CONTEXT_ROBUST_ACCESS_KHR")]
-    ContextRobustAccessKHR = 37107,
-
-    [NativeName("GL_LOSE_CONTEXT_ON_RESET_KHR")]
-    LoseContextOnResetKHR = 33362,
-
-    [NativeName("GL_GUILTY_CONTEXT_RESET_KHR")]
-    GuiltyContextResetKHR = 33363,
-
-    [NativeName("GL_INNOCENT_CONTEXT_RESET_KHR")]
-    InnocentContextResetKHR = 33364,
-
-    [NativeName("GL_UNKNOWN_CONTEXT_RESET_KHR")]
-    UnknownContextResetKHR = 33365,
-
-    [NativeName("GL_RESET_NOTIFICATION_STRATEGY_KHR")]
-    ResetNotificationStrategyKHR = 33366,
-
-    [NativeName("GL_NO_RESET_NOTIFICATION_KHR")]
-    NoResetNotificationKHR = 33377,
-
-    [NativeName("GL_CONTEXT_LOST_KHR")]
-    ContextLostKHR = 1287,
-
-    [NativeName("GL_TEXTURE_EXTERNAL_OES")]
-    TextureExternalOES = 36197,
-
-    [NativeName("GL_TEXTURE_BINDING_EXTERNAL_OES")]
-    TextureBindingExternalOES = 36199,
-
-    [NativeName("GL_REQUIRED_TEXTURE_IMAGE_UNITS_OES")]
-    RequiredTextureImageUnitsOES = 36200,
-
-    [NativeName("GL_SAMPLER_EXTERNAL_OES")]
-    SamplerExternalOES = 36198,
-
-    [NativeName("GL_ETC1_RGB8_OES")]
-    Etc1Rgb8OES = 36196,
-
-    [NativeName("GL_DEPTH_COMPONENT24_OES")]
-    DepthComponent24OES = 33190,
-
-    [NativeName("GL_DEPTH_COMPONENT32_OES")]
-    DepthComponent32OES = 33191,
-
-    [NativeName("GL_GEOMETRY_SHADER_OES")]
-    GeometryShaderOES = 36313,
-
-    [NativeName("GL_GEOMETRY_SHADER_BIT_OES")]
-    GeometryShaderBitOES = 4,
-
-    [NativeName("GL_GEOMETRY_LINKED_VERTICES_OUT_OES")]
-    GeometryLinkedVerticesOutOES = 35094,
-
-    [NativeName("GL_GEOMETRY_LINKED_INPUT_TYPE_OES")]
-    GeometryLinkedInputTypeOES = 35095,
-
-    [NativeName("GL_GEOMETRY_LINKED_OUTPUT_TYPE_OES")]
-    GeometryLinkedOutputTypeOES = 35096,
-
-    [NativeName("GL_GEOMETRY_SHADER_INVOCATIONS_OES")]
-    GeometryShaderInvocationsOES = 34943,
-
-    [NativeName("GL_LAYER_PROVOKING_VERTEX_OES")]
-    LayerProvokingVertexOES = 33374,
-
-    [NativeName("GL_LINES_ADJACENCY_OES")]
-    LinesAdjacencyOES = 10,
-
-    [NativeName("GL_LINE_STRIP_ADJACENCY_OES")]
-    LineStripAdjacencyOES = 11,
-
-    [NativeName("GL_TRIANGLES_ADJACENCY_OES")]
-    TrianglesAdjacencyOES = 12,
-
-    [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_OES")]
-    TriangleStripAdjacencyOES = 13,
-
-    [NativeName("GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_OES")]
-    MaxGeometryUniformComponentsOES = 36319,
-
-    [NativeName("GL_MAX_GEOMETRY_UNIFORM_BLOCKS_OES")]
-    MaxGeometryUniformBlocksOES = 35372,
-
-    [NativeName("GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_OES")]
-    MaxCombinedGeometryUniformComponentsOES = 35378,
-
-    [NativeName("GL_MAX_GEOMETRY_INPUT_COMPONENTS_OES")]
-    MaxGeometryInputComponentsOES = 37155,
-
-    [NativeName("GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_OES")]
-    MaxGeometryOutputComponentsOES = 37156,
-
-    [NativeName("GL_MAX_GEOMETRY_OUTPUT_VERTICES_OES")]
-    MaxGeometryOutputVerticesOES = 36320,
-
-    [NativeName("GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_OES")]
-    MaxGeometryTotalOutputComponentsOES = 36321,
-
-    [NativeName("GL_MAX_GEOMETRY_SHADER_INVOCATIONS_OES")]
-    MaxGeometryShaderInvocationsOES = 36442,
-
-    [NativeName("GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_OES")]
-    MaxGeometryTextureImageUnitsOES = 35881,
-
-    [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_OES")]
-    MaxGeometryAtomicCounterBuffersOES = 37583,
-
-    [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTERS_OES")]
-    MaxGeometryAtomicCountersOES = 37589,
-
-    [NativeName("GL_MAX_GEOMETRY_IMAGE_UNIFORMS_OES")]
-    MaxGeometryImageUniformsOES = 37069,
-
-    [NativeName("GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_OES")]
-    MaxGeometryShaderStorageBlocksOES = 37079,
-
-    [NativeName("GL_FIRST_VERTEX_CONVENTION_OES")]
-    FirstVertexConventionOES = 36429,
-
-    [NativeName("GL_LAST_VERTEX_CONVENTION_OES")]
-    LastVertexConventionOES = 36430,
-
-    [NativeName("GL_UNDEFINED_VERTEX_OES")]
-    UndefinedVertexOES = 33376,
-
-    [NativeName("GL_PRIMITIVES_GENERATED_OES")]
-    PrimitivesGeneratedOES = 35975,
-
-    [NativeName("GL_FRAMEBUFFER_DEFAULT_LAYERS_OES")]
-    FramebufferDefaultLayersOES = 37650,
-
-    [NativeName("GL_MAX_FRAMEBUFFER_LAYERS_OES")]
-    MaxFramebufferLayersOES = 37655,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_OES")]
-    FramebufferIncompleteLayerTargetsOES = 36264,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_OES")]
-    FramebufferAttachmentLayeredOES = 36263,
-
-    [NativeName("GL_REFERENCED_BY_GEOMETRY_SHADER_OES")]
-    ReferencedByGeometryShaderOES = 37641,
-
-    [NativeName("GL_PROGRAM_BINARY_LENGTH_OES")]
-    ProgramBinaryLengthOES = 34625,
-
-    [NativeName("GL_NUM_PROGRAM_BINARY_FORMATS_OES")]
-    NumProgramBinaryFormatsOES = 34814,
-
-    [NativeName("GL_PROGRAM_BINARY_FORMATS_OES")]
-    ProgramBinaryFormatsOES = 34815,
-
-    [NativeName("GL_WRITE_ONLY_OES")]
-    WriteOnlyOES = 35001,
-
-    [NativeName("GL_BUFFER_ACCESS_OES")]
-    BufferAccessOES = 35003,
-
-    [NativeName("GL_BUFFER_MAPPED_OES")]
-    BufferMappedOES = 35004,
-
-    [NativeName("GL_BUFFER_MAP_POINTER_OES")]
-    BufferMapPointerOES = 35005,
-
-    [NativeName("GL_DEPTH_STENCIL_OES")]
-    DepthStencilOES = 34041,
-
-    [NativeName("GL_UNSIGNED_INT_24_8_OES")]
-    UnsignedInt24x8OES = 34042,
-
-    [NativeName("GL_DEPTH24_STENCIL8_OES")]
-    Depth24Stencil8OES = 35056,
-
-    [NativeName("GL_PRIMITIVE_BOUNDING_BOX_OES")]
-    PrimitiveBoundingBoxOES = 37566,
-
-    [NativeName("GL_ALPHA8_OES")]
-    Alpha8OES = 32828,
-
-    [NativeName("GL_DEPTH_COMPONENT16_OES")]
-    DepthComponent16OES = 33189,
-
-    [NativeName("GL_LUMINANCE4_ALPHA4_OES")]
-    Luminance4Alpha4OES = 32835,
-
-    [NativeName("GL_LUMINANCE8_ALPHA8_OES")]
-    Luminance8Alpha8OES = 32837,
-
-    [NativeName("GL_LUMINANCE8_OES")]
-    Luminance8OES = 32832,
-
-    [NativeName("GL_RGBA4_OES")]
-    Rgba4OES = 32854,
-
-    [NativeName("GL_RGB5_A1_OES")]
-    Rgb5A1OES = 32855,
-
-    [NativeName("GL_RGB565_OES")]
-    Rgb565OES = 36194,
-
-    [NativeName("GL_RGB8_OES")]
-    Rgb8OES = 32849,
-
-    [NativeName("GL_RGBA8_OES")]
-    Rgba8OES = 32856,
-
-    [NativeName("GL_SAMPLE_SHADING_OES")]
-    SampleShadingOES = 35894,
-
-    [NativeName("GL_MIN_SAMPLE_SHADING_VALUE_OES")]
-    MinSampleShadingValueOES = 35895,
-
-    [NativeName("GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_OES")]
-    MinFragmentInterpolationOffsetOES = 36443,
-
-    [NativeName("GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_OES")]
-    MaxFragmentInterpolationOffsetOES = 36444,
-
-    [NativeName("GL_FRAGMENT_INTERPOLATION_OFFSET_BITS_OES")]
-    FragmentInterpolationOffsetBitsOES = 36445,
-
-    [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES")]
-    FragmentShaderDerivativeHintOES = 35723,
-
-    [NativeName("GL_STENCIL_INDEX1_OES")]
-    StencilIndex1OES = 36166,
-
-    [NativeName("GL_STENCIL_INDEX4_OES")]
-    StencilIndex4OES = 36167,
-
-    [NativeName("GL_FRAMEBUFFER_UNDEFINED_OES")]
-    FramebufferUndefinedOES = 33305,
-
-    [NativeName("GL_PATCHES_OES")]
-    PatchesOES = 14,
-
-    [NativeName("GL_PATCH_VERTICES_OES")]
-    PatchVerticesOES = 36466,
-
-    [NativeName("GL_TESS_CONTROL_OUTPUT_VERTICES_OES")]
-    TessControlOutputVerticesOES = 36469,
-
-    [NativeName("GL_TESS_GEN_MODE_OES")]
-    TessGenModeOES = 36470,
-
-    [NativeName("GL_TESS_GEN_SPACING_OES")]
-    TessGenSpacingOES = 36471,
-
-    [NativeName("GL_TESS_GEN_VERTEX_ORDER_OES")]
-    TessGenVertexOrderOES = 36472,
-
-    [NativeName("GL_TESS_GEN_POINT_MODE_OES")]
-    TessGenPointModeOES = 36473,
-
-    [NativeName("GL_ISOLINES_OES")]
-    IsolinesOES = 36474,
-
-    [NativeName("GL_QUADS_OES")]
-    QuadsOES = 7,
-
-    [NativeName("GL_FRACTIONAL_ODD_OES")]
-    FractionalOddOES = 36475,
-
-    [NativeName("GL_FRACTIONAL_EVEN_OES")]
-    FractionalEvenOES = 36476,
-
-    [NativeName("GL_MAX_PATCH_VERTICES_OES")]
-    MaxPatchVerticesOES = 36477,
-
-    [NativeName("GL_MAX_TESS_GEN_LEVEL_OES")]
-    MaxTessGenLevelOES = 36478,
-
-    [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_OES")]
-    MaxTessControlUniformComponentsOES = 36479,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_OES")]
-    MaxTessEvaluationUniformComponentsOES = 36480,
-
-    [NativeName("GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_OES")]
-    MaxTessControlTextureImageUnitsOES = 36481,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_OES")]
-    MaxTessEvaluationTextureImageUnitsOES = 36482,
-
-    [NativeName("GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_OES")]
-    MaxTessControlOutputComponentsOES = 36483,
-
-    [NativeName("GL_MAX_TESS_PATCH_COMPONENTS_OES")]
-    MaxTessPatchComponentsOES = 36484,
-
-    [NativeName("GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_OES")]
-    MaxTessControlTotalOutputComponentsOES = 36485,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_OES")]
-    MaxTessEvaluationOutputComponentsOES = 36486,
-
-    [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_OES")]
-    MaxTessControlUniformBlocksOES = 36489,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_OES")]
-    MaxTessEvaluationUniformBlocksOES = 36490,
-
-    [NativeName("GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_OES")]
-    MaxTessControlInputComponentsOES = 34924,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_OES")]
-    MaxTessEvaluationInputComponentsOES = 34925,
-
-    [NativeName("GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_OES")]
-    MaxCombinedTessControlUniformComponentsOES = 36382,
-
-    [NativeName("GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_OES")]
-    MaxCombinedTessEvaluationUniformComponentsOES = 36383,
-
-    [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_OES")]
-    MaxTessControlAtomicCounterBuffersOES = 37581,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_OES")]
-    MaxTessEvaluationAtomicCounterBuffersOES = 37582,
-
-    [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_OES")]
-    MaxTessControlAtomicCountersOES = 37587,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_OES")]
-    MaxTessEvaluationAtomicCountersOES = 37588,
-
-    [NativeName("GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_OES")]
-    MaxTessControlImageUniformsOES = 37067,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_OES")]
-    MaxTessEvaluationImageUniformsOES = 37068,
-
-    [NativeName("GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_OES")]
-    MaxTessControlShaderStorageBlocksOES = 37080,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_OES")]
-    MaxTessEvaluationShaderStorageBlocksOES = 37081,
-
-    [NativeName("GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED_OES")]
-    PrimitiveRestartForPatchesSupportedOES = 33313,
-
-    [NativeName("GL_IS_PER_PATCH_OES")]
-    IsPerPatchOES = 37607,
-
-    [NativeName("GL_REFERENCED_BY_TESS_CONTROL_SHADER_OES")]
-    ReferencedByTessControlShaderOES = 37639,
-
-    [NativeName("GL_REFERENCED_BY_TESS_EVALUATION_SHADER_OES")]
-    ReferencedByTessEvaluationShaderOES = 37640,
-
-    [NativeName("GL_TESS_CONTROL_SHADER_OES")]
-    TessControlShaderOES = 36488,
-
-    [NativeName("GL_TESS_EVALUATION_SHADER_OES")]
-    TessEvaluationShaderOES = 36487,
-
-    [NativeName("GL_TESS_CONTROL_SHADER_BIT_OES")]
-    TessControlShaderBitOES = 8,
-
-    [NativeName("GL_TESS_EVALUATION_SHADER_BIT_OES")]
-    TessEvaluationShaderBitOES = 16,
-
-    [NativeName("GL_TEXTURE_WRAP_R_OES")]
-    TextureWrapROES = 32882,
-
-    [NativeName("GL_TEXTURE_3D_OES")]
-    Texture3DOES = 32879,
-
-    [NativeName("GL_TEXTURE_BINDING_3D_OES")]
-    TextureBinding3DOES = 32874,
-
-    [NativeName("GL_MAX_3D_TEXTURE_SIZE_OES")]
-    Max3DTextureSizeOES = 32883,
-
-    [NativeName("GL_SAMPLER_3D_OES")]
-    Sampler3DOES = 35679,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES")]
-    FramebufferAttachmentTexture3DZoffsetOES = 36052,
-
-    [NativeName("GL_TEXTURE_BORDER_COLOR_OES")]
-    TextureBorderColorOES = 4100,
-
-    [NativeName("GL_CLAMP_TO_BORDER_OES")]
-    ClampToBorderOES = 33069,
-
-    [NativeName("GL_TEXTURE_BUFFER_OES")]
-    TextureBufferOES = 35882,
-
-    [NativeName("GL_TEXTURE_BUFFER_BINDING_OES")]
-    TextureBufferBindingOES = 35882,
-
-    [NativeName("GL_MAX_TEXTURE_BUFFER_SIZE_OES")]
-    MaxTextureBufferSizeOES = 35883,
-
-    [NativeName("GL_TEXTURE_BINDING_BUFFER_OES")]
-    TextureBindingBufferOES = 35884,
-
-    [NativeName("GL_TEXTURE_BUFFER_DATA_STORE_BINDING_OES")]
-    TextureBufferDataStoreBindingOES = 35885,
-
-    [NativeName("GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_OES")]
-    TextureBufferOffsetAlignmentOES = 37279,
-
-    [NativeName("GL_SAMPLER_BUFFER_OES")]
-    SamplerBufferOES = 36290,
-
-    [NativeName("GL_INT_SAMPLER_BUFFER_OES")]
-    IntSamplerBufferOES = 36304,
-
-    [NativeName("GL_UNSIGNED_INT_SAMPLER_BUFFER_OES")]
-    UnsignedIntSamplerBufferOES = 36312,
-
-    [NativeName("GL_IMAGE_BUFFER_OES")]
-    ImageBufferOES = 36945,
-
-    [NativeName("GL_INT_IMAGE_BUFFER_OES")]
-    IntImageBufferOES = 36956,
-
-    [NativeName("GL_UNSIGNED_INT_IMAGE_BUFFER_OES")]
-    UnsignedIntImageBufferOES = 36967,
-
-    [NativeName("GL_TEXTURE_BUFFER_OFFSET_OES")]
-    TextureBufferOffsetOES = 37277,
-
-    [NativeName("GL_TEXTURE_BUFFER_SIZE_OES")]
-    TextureBufferSizeOES = 37278,
-
-    [NativeName("GL_COMPRESSED_RGBA_ASTC_3x3x3_OES")]
-    CompressedRgbaAstc3x3x3OES = 37824,
-
-    [NativeName("GL_COMPRESSED_RGBA_ASTC_4x3x3_OES")]
-    CompressedRgbaAstc4x3x3OES = 37825,
-
-    [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4x3_OES")]
-    CompressedRgbaAstc4x4x3OES = 37826,
-
-    [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4x4_OES")]
-    CompressedRgbaAstc4x4x4OES = 37827,
-
-    [NativeName("GL_COMPRESSED_RGBA_ASTC_5x4x4_OES")]
-    CompressedRgbaAstc5x4x4OES = 37828,
-
-    [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5x4_OES")]
-    CompressedRgbaAstc5x5x4OES = 37829,
-
-    [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5x5_OES")]
-    CompressedRgbaAstc5x5x5OES = 37830,
-
-    [NativeName("GL_COMPRESSED_RGBA_ASTC_6x5x5_OES")]
-    CompressedRgbaAstc6x5x5OES = 37831,
-
-    [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6x5_OES")]
-    CompressedRgbaAstc6x6x5OES = 37832,
-
-    [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6x6_OES")]
-    CompressedRgbaAstc6x6x6OES = 37833,
-
-    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_3x3x3_OES")]
-    CompressedSrgb8Alpha8Astc3x3x3OES = 37856,
-
-    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES")]
-    CompressedSrgb8Alpha8Astc4x3x3OES = 37857,
-
-    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x3_OES")]
-    CompressedSrgb8Alpha8Astc4x4x3OES = 37858,
-
-    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x4_OES")]
-    CompressedSrgb8Alpha8Astc4x4x4OES = 37859,
-
-    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4x4_OES")]
-    CompressedSrgb8Alpha8Astc5x4x4OES = 37860,
-
-    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x4_OES")]
-    CompressedSrgb8Alpha8Astc5x5x4OES = 37861,
-
-    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x5_OES")]
-    CompressedSrgb8Alpha8Astc5x5x5OES = 37862,
-
-    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5x5_OES")]
-    CompressedSrgb8Alpha8Astc6x5x5OES = 37863,
-
-    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x5_OES")]
-    CompressedSrgb8Alpha8Astc6x6x5OES = 37864,
-
-    [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x6_OES")]
-    CompressedSrgb8Alpha8Astc6x6x6OES = 37865,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_OES")]
-    TextureCubeMapArrayOES = 36873,
-
-    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_OES")]
-    TextureBindingCubeMapArrayOES = 36874,
-
-    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_OES")]
-    SamplerCubeMapArrayOES = 36876,
-
-    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_OES")]
-    SamplerCubeMapArrayShadowOES = 36877,
-
-    [NativeName("GL_INT_SAMPLER_CUBE_MAP_ARRAY_OES")]
-    IntSamplerCubeMapArrayOES = 36878,
-
-    [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_OES")]
-    UnsignedIntSamplerCubeMapArrayOES = 36879,
-
-    [NativeName("GL_IMAGE_CUBE_MAP_ARRAY_OES")]
-    ImageCubeMapArrayOES = 36948,
-
-    [NativeName("GL_INT_IMAGE_CUBE_MAP_ARRAY_OES")]
-    IntImageCubeMapArrayOES = 36959,
-
-    [NativeName("GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_OES")]
-    UnsignedIntImageCubeMapArrayOES = 36970,
-
-    [NativeName("GL_HALF_FLOAT_OES")]
-    HalfFloatOES = 36193,
-
-    [NativeName("GL_STENCIL_INDEX_OES")]
-    StencilIndexOES = 6401,
-
-    [NativeName("GL_STENCIL_INDEX8_OES")]
-    StencilIndex8OES = 36168,
-
-    [NativeName("GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES")]
-    Texture2DMultisampleArrayOES = 37122,
-
-    [NativeName("GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY_OES")]
-    TextureBinding2DMultisampleArrayOES = 37125,
-
-    [NativeName("GL_SAMPLER_2D_MULTISAMPLE_ARRAY_OES")]
-    Sampler2DMultisampleArrayOES = 37131,
-
-    [NativeName("GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES")]
-    IntSampler2DMultisampleArrayOES = 37132,
-
-    [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES")]
-    UnsignedIntSampler2DMultisampleArrayOES = 37133,
-
-    [NativeName("GL_TEXTURE_VIEW_MIN_LEVEL_OES")]
-    TextureViewMinLevelOES = 33499,
-
-    [NativeName("GL_TEXTURE_VIEW_NUM_LEVELS_OES")]
-    TextureViewNumLevelsOES = 33500,
-
-    [NativeName("GL_TEXTURE_VIEW_MIN_LAYER_OES")]
-    TextureViewMinLayerOES = 33501,
-
-    [NativeName("GL_TEXTURE_VIEW_NUM_LAYERS_OES")]
-    TextureViewNumLayersOES = 33502,
-
-    [NativeName("GL_VERTEX_ARRAY_BINDING_OES")]
-    VertexArrayBindingOES = 34229,
-
-    [NativeName("GL_UNSIGNED_INT_10_10_10_2_OES")]
-    UnsignedInt10x10x10x2OES = 36342,
-
-    [NativeName("GL_INT_10_10_10_2_OES")]
-    Int10x10x10x2OES = 36343,
-
-    [NativeName("GL_MAX_VIEWPORTS_OES")]
-    MaxViewportsOES = 33371,
-
-    [NativeName("GL_VIEWPORT_SUBPIXEL_BITS_OES")]
-    ViewportSubpixelBitsOES = 33372,
-
-    [NativeName("GL_VIEWPORT_BOUNDS_RANGE_OES")]
-    ViewportBoundsRangeOES = 33373,
-
-    [NativeName("GL_VIEWPORT_INDEX_PROVOKING_VERTEX_OES")]
-    ViewportIndexProvokingVertexOES = 33375,
-
-    [NativeName("GL_3DC_X_AMD")]
-    X3DcXAMD = 34809,
-
-    [NativeName("GL_3DC_XY_AMD")]
-    X3DcXyAMD = 34810,
-
-    [NativeName("GL_ATC_RGB_AMD")]
-    AtcRgbAMD = 35986,
-
-    [NativeName("GL_ATC_RGBA_EXPLICIT_ALPHA_AMD")]
-    AtcRgbaExplicitAlphaAMD = 35987,
-
-    [NativeName("GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD")]
-    AtcRgbaInterpolatedAlphaAMD = 34798,
-
-    [NativeName("GL_Z400_BINARY_AMD")]
-    Z400BinaryAMD = 34624,
-
-    [NativeName("GL_READ_FRAMEBUFFER_ANGLE")]
-    ReadFramebufferANGLE = 36008,
-
-    [NativeName("GL_DRAW_FRAMEBUFFER_ANGLE")]
-    DrawFramebufferANGLE = 36009,
-
-    [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_ANGLE")]
-    DrawFramebufferBindingANGLE = 36006,
-
-    [NativeName("GL_READ_FRAMEBUFFER_BINDING_ANGLE")]
-    ReadFramebufferBindingANGLE = 36010,
-
-    [NativeName("GL_RENDERBUFFER_SAMPLES_ANGLE")]
-    RenderbufferSamplesANGLE = 36011,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_ANGLE")]
-    FramebufferIncompleteMultisampleANGLE = 36182,
-
-    [NativeName("GL_MAX_SAMPLES_ANGLE")]
-    MaxSamplesANGLE = 36183,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE")]
-    VertexAttribArrayDivisorANGLE = 35070,
-
-    [NativeName("GL_PACK_REVERSE_ROW_ORDER_ANGLE")]
-    PackReverseRowOrderANGLE = 37796,
-
-    [NativeName("GL_PROGRAM_BINARY_ANGLE")]
-    ProgramBinaryANGLE = 37798,
-
-    [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE")]
-    CompressedRgbaS3TcDxt3ANGLE = 33778,
-
-    [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT5_ANGLE")]
-    CompressedRgbaS3TcDxt5ANGLE = 33779,
-
-    [NativeName("GL_TEXTURE_USAGE_ANGLE")]
-    TextureUsageANGLE = 37794,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_ANGLE")]
-    FramebufferAttachmentANGLE = 37795,
-
-    [NativeName("GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE")]
-    TranslatedShaderSourceLengthANGLE = 37792,
-
-    [NativeName("GL_MAX_CLIP_DISTANCES_APPLE")]
-    MaxClipDistancesAPPLE = 3378,
-
-    [NativeName("GL_CLIP_DISTANCE0_APPLE")]
-    ClipDistance0APPLE = 12288,
-
-    [NativeName("GL_CLIP_DISTANCE1_APPLE")]
-    ClipDistance1APPLE = 12289,
-
-    [NativeName("GL_CLIP_DISTANCE2_APPLE")]
-    ClipDistance2APPLE = 12290,
-
-    [NativeName("GL_CLIP_DISTANCE3_APPLE")]
-    ClipDistance3APPLE = 12291,
-
-    [NativeName("GL_CLIP_DISTANCE4_APPLE")]
-    ClipDistance4APPLE = 12292,
-
-    [NativeName("GL_CLIP_DISTANCE5_APPLE")]
-    ClipDistance5APPLE = 12293,
-
-    [NativeName("GL_CLIP_DISTANCE6_APPLE")]
-    ClipDistance6APPLE = 12294,
-
-    [NativeName("GL_CLIP_DISTANCE7_APPLE")]
-    ClipDistance7APPLE = 12295,
-
-    [NativeName("GL_RENDERBUFFER_SAMPLES_APPLE")]
-    RenderbufferSamplesAPPLE = 36011,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_APPLE")]
-    FramebufferIncompleteMultisampleAPPLE = 36182,
-
-    [NativeName("GL_MAX_SAMPLES_APPLE")]
-    MaxSamplesAPPLE = 36183,
-
-    [NativeName("GL_READ_FRAMEBUFFER_APPLE")]
-    ReadFramebufferAPPLE = 36008,
-
-    [NativeName("GL_DRAW_FRAMEBUFFER_APPLE")]
-    DrawFramebufferAPPLE = 36009,
-
-    [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_APPLE")]
-    DrawFramebufferBindingAPPLE = 36006,
-
-    [NativeName("GL_READ_FRAMEBUFFER_BINDING_APPLE")]
-    ReadFramebufferBindingAPPLE = 36010,
-
-    [NativeName("GL_SYNC_OBJECT_APPLE")]
-    SyncObjectAPPLE = 35411,
-
-    [NativeName("GL_MAX_SERVER_WAIT_TIMEOUT_APPLE")]
-    MaxServerWaitTimeoutAPPLE = 37137,
-
-    [NativeName("GL_OBJECT_TYPE_APPLE")]
-    ObjectTypeAPPLE = 37138,
-
-    [NativeName("GL_SYNC_CONDITION_APPLE")]
-    SyncConditionAPPLE = 37139,
-
-    [NativeName("GL_SYNC_STATUS_APPLE")]
-    SyncStatusAPPLE = 37140,
-
-    [NativeName("GL_SYNC_FLAGS_APPLE")]
-    SyncFlagsAPPLE = 37141,
-
-    [NativeName("GL_SYNC_FENCE_APPLE")]
-    SyncFenceAPPLE = 37142,
-
-    [NativeName("GL_SYNC_GPU_COMMANDS_COMPLETE_APPLE")]
-    SyncGpuCommandsCompleteAPPLE = 37143,
-
-    [NativeName("GL_UNSIGNALED_APPLE")]
-    UnsignaledAPPLE = 37144,
-
-    [NativeName("GL_SIGNALED_APPLE")]
-    SignaledAPPLE = 37145,
-
-    [NativeName("GL_ALREADY_SIGNALED_APPLE")]
-    AlreadySignaledAPPLE = 37146,
-
-    [NativeName("GL_TIMEOUT_EXPIRED_APPLE")]
-    TimeoutExpiredAPPLE = 37147,
-
-    [NativeName("GL_CONDITION_SATISFIED_APPLE")]
-    ConditionSatisfiedAPPLE = 37148,
-
-    [NativeName("GL_WAIT_FAILED_APPLE")]
-    WaitFailedAPPLE = 37149,
-
-    [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
-    SyncFlushCommandsBitAPPLE = 1,
-
-    [NativeName("GL_TIMEOUT_IGNORED_APPLE")]
-    TimeoutIgnoredAPPLE = 4294967295,
-
-    [NativeName("GL_TEXTURE_MAX_LEVEL_APPLE")]
-    TextureMaxLevelAPPLE = 33085,
-
-    [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV_APPLE")]
-    UnsignedInt10F11F11FRevAPPLE = 35899,
-
-    [NativeName("GL_UNSIGNED_INT_5_9_9_9_REV_APPLE")]
-    UnsignedInt5x9x9x9RevAPPLE = 35902,
-
-    [NativeName("GL_R11F_G11F_B10F_APPLE")]
-    R11FG11FB10FAPPLE = 35898,
-
-    [NativeName("GL_RGB9_E5_APPLE")]
-    Rgb9E5APPLE = 35901,
-
-    [NativeName("GL_MALI_PROGRAM_BINARY_ARM")]
-    MaliProgramBinaryARM = 36705,
-
-    [NativeName("GL_MALI_SHADER_BINARY_ARM")]
-    MaliShaderBinaryARM = 36704,
-
-    [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
-    FetchPerSampleARM = 36709,
-
-    [NativeName("GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM")]
-    FragmentShaderFramebufferFetchMrtARM = 36710,
-
-    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    TextureUnnormalizedCoordinatesARM = 36714,
-
-    [NativeName("GL_SMAPHS30_PROGRAM_BINARY_DMP")]
-    Smaphs30ProgramBinaryDMP = 37457,
-
-    [NativeName("GL_SMAPHS_PROGRAM_BINARY_DMP")]
-    SmaphsProgramBinaryDMP = 37458,
-
-    [NativeName("GL_DMP_PROGRAM_BINARY_DMP")]
-    DmpProgramBinaryDMP = 37459,
-
-    [NativeName("GL_SHADER_BINARY_DMP")]
-    ShaderBinaryDMP = 37456,
-
-    [NativeName("GL_SURFACE_COMPRESSION_EXT")]
-    SurfaceCompressionEXT = 38592,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_NONE_EXT")]
-    SurfaceCompressionFixedRateNoneEXT = 38593,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_DEFAULT_EXT")]
-    SurfaceCompressionFixedRateDefaultEXT = 38594,
-
-    [NativeName("GL_SAMPLER_EXTERNAL_2D_Y2Y_EXT")]
-    SamplerExternal2DY2YEXT = 35815,
-
-    [NativeName("GL_SRC1_COLOR_EXT")]
-    Src1ColorEXT = 35065,
-
-    [NativeName("GL_SRC1_ALPHA_EXT")]
-    Src1AlphaEXT = 34185,
-
-    [NativeName("GL_ONE_MINUS_SRC1_COLOR_EXT")]
-    OneMinusSrc1ColorEXT = 35066,
-
-    [NativeName("GL_ONE_MINUS_SRC1_ALPHA_EXT")]
-    OneMinusSrc1AlphaEXT = 35067,
-
-    [NativeName("GL_SRC_ALPHA_SATURATE_EXT")]
-    SrcAlphaSaturateEXT = 776,
-
-    [NativeName("GL_LOCATION_INDEX_EXT")]
-    LocationIndexEXT = 37647,
-
-    [NativeName("GL_MAX_DUAL_SOURCE_DRAW_BUFFERS_EXT")]
-    MaxDualSourceDrawBuffersEXT = 35068,
-
-    [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
-    MapPersistentBitEXT = 64,
-
-    [NativeName("GL_MAP_COHERENT_BIT_EXT")]
-    MapCoherentBitEXT = 128,
-
-    [NativeName("GL_DYNAMIC_STORAGE_BIT_EXT")]
-    DynamicStorageBitEXT = 256,
-
-    [NativeName("GL_CLIENT_STORAGE_BIT_EXT")]
-    ClientStorageBitEXT = 512,
-
-    [NativeName("GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT")]
-    ClientMappedBufferBarrierBitEXT = 16384,
-
-    [NativeName("GL_BUFFER_IMMUTABLE_STORAGE_EXT")]
-    BufferImmutableStorageEXT = 33311,
-
-    [NativeName("GL_BUFFER_STORAGE_FLAGS_EXT")]
-    BufferStorageFlagsEXT = 33312,
-
-    [NativeName("GL_LOWER_LEFT_EXT")]
-    LowerLeftEXT = 36001,
-
-    [NativeName("GL_UPPER_LEFT_EXT")]
-    UpperLeftEXT = 36002,
-
-    [NativeName("GL_NEGATIVE_ONE_TO_ONE_EXT")]
-    NegativeOneToOneEXT = 37726,
-
-    [NativeName("GL_ZERO_TO_ONE_EXT")]
-    ZeroToOneEXT = 37727,
-
-    [NativeName("GL_CLIP_ORIGIN_EXT")]
-    ClipOriginEXT = 37724,
-
-    [NativeName("GL_CLIP_DEPTH_MODE_EXT")]
-    ClipDepthModeEXT = 37725,
-
-    [NativeName("GL_MAX_CLIP_DISTANCES_EXT")]
-    MaxClipDistancesEXT = 3378,
-
-    [NativeName("GL_MAX_CULL_DISTANCES_EXT")]
-    MaxCullDistancesEXT = 33529,
-
-    [NativeName("GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES_EXT")]
-    MaxCombinedClipAndCullDistancesEXT = 33530,
-
-    [NativeName("GL_CLIP_DISTANCE0_EXT")]
-    ClipDistance0EXT = 12288,
-
-    [NativeName("GL_CLIP_DISTANCE1_EXT")]
-    ClipDistance1EXT = 12289,
-
-    [NativeName("GL_CLIP_DISTANCE2_EXT")]
-    ClipDistance2EXT = 12290,
-
-    [NativeName("GL_CLIP_DISTANCE3_EXT")]
-    ClipDistance3EXT = 12291,
-
-    [NativeName("GL_CLIP_DISTANCE4_EXT")]
-    ClipDistance4EXT = 12292,
-
-    [NativeName("GL_CLIP_DISTANCE5_EXT")]
-    ClipDistance5EXT = 12293,
-
-    [NativeName("GL_CLIP_DISTANCE6_EXT")]
-    ClipDistance6EXT = 12294,
-
-    [NativeName("GL_CLIP_DISTANCE7_EXT")]
-    ClipDistance7EXT = 12295,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT")]
-    FramebufferAttachmentComponentTypeEXT = 33297,
-
-    [NativeName("GL_UNSIGNED_NORMALIZED_EXT")]
-    UnsignedNormalizedEXT = 35863,
-
-    [NativeName("GL_DEPTH_CLAMP_EXT")]
-    DepthClampEXT = 34383,
-
-    [NativeName("GL_COLOR_EXT")]
-    ColorEXT = 6144,
-
-    [NativeName("GL_DEPTH_EXT")]
-    DepthEXT = 6145,
-
-    [NativeName("GL_STENCIL_EXT")]
-    StencilEXT = 6146,
-
-    [NativeName("GL_QUERY_COUNTER_BITS_EXT")]
-    QueryCounterBitsEXT = 34916,
-
-    [NativeName("GL_CURRENT_QUERY_EXT")]
-    CurrentQueryEXT = 34917,
-
-    [NativeName("GL_QUERY_RESULT_EXT")]
-    QueryResultEXT = 34918,
-
-    [NativeName("GL_QUERY_RESULT_AVAILABLE_EXT")]
-    QueryResultAvailableEXT = 34919,
-
-    [NativeName("GL_TIMESTAMP_EXT")]
-    TimestampEXT = 36392,
-
-    [NativeName("GL_GPU_DISJOINT_EXT")]
-    GpuDisjointEXT = 36795,
-
-    [NativeName("GL_MAX_DRAW_BUFFERS_EXT")]
-    MaxDrawBuffersEXT = 34852,
-
-    [NativeName("GL_DRAW_BUFFER0_EXT")]
-    DrawBuffer0EXT = 34853,
-
-    [NativeName("GL_DRAW_BUFFER1_EXT")]
-    DrawBuffer1EXT = 34854,
-
-    [NativeName("GL_DRAW_BUFFER2_EXT")]
-    DrawBuffer2EXT = 34855,
-
-    [NativeName("GL_DRAW_BUFFER3_EXT")]
-    DrawBuffer3EXT = 34856,
-
-    [NativeName("GL_DRAW_BUFFER4_EXT")]
-    DrawBuffer4EXT = 34857,
-
-    [NativeName("GL_DRAW_BUFFER5_EXT")]
-    DrawBuffer5EXT = 34858,
-
-    [NativeName("GL_DRAW_BUFFER6_EXT")]
-    DrawBuffer6EXT = 34859,
-
-    [NativeName("GL_DRAW_BUFFER7_EXT")]
-    DrawBuffer7EXT = 34860,
-
-    [NativeName("GL_DRAW_BUFFER8_EXT")]
-    DrawBuffer8EXT = 34861,
-
-    [NativeName("GL_DRAW_BUFFER9_EXT")]
-    DrawBuffer9EXT = 34862,
-
-    [NativeName("GL_DRAW_BUFFER10_EXT")]
-    DrawBuffer10EXT = 34863,
-
-    [NativeName("GL_DRAW_BUFFER11_EXT")]
-    DrawBuffer11EXT = 34864,
-
-    [NativeName("GL_DRAW_BUFFER12_EXT")]
-    DrawBuffer12EXT = 34865,
-
-    [NativeName("GL_DRAW_BUFFER13_EXT")]
-    DrawBuffer13EXT = 34866,
-
-    [NativeName("GL_DRAW_BUFFER14_EXT")]
-    DrawBuffer14EXT = 34867,
-
-    [NativeName("GL_DRAW_BUFFER15_EXT")]
-    DrawBuffer15EXT = 34868,
-
-    [NativeName("GL_SHADING_RATE_1X1_PIXELS_EXT")]
-    ShadingRate1x1PixelsEXT = 38566,
-
-    [NativeName("GL_SHADING_RATE_1X2_PIXELS_EXT")]
-    ShadingRate1x2PixelsEXT = 38567,
-
-    [NativeName("GL_SHADING_RATE_2X1_PIXELS_EXT")]
-    ShadingRate2x1PixelsEXT = 38568,
-
-    [NativeName("GL_SHADING_RATE_2X2_PIXELS_EXT")]
-    ShadingRate2x2PixelsEXT = 38569,
-
-    [NativeName("GL_SHADING_RATE_1X4_PIXELS_EXT")]
-    ShadingRate1x4PixelsEXT = 38570,
-
-    [NativeName("GL_SHADING_RATE_4X1_PIXELS_EXT")]
-    ShadingRate4x1PixelsEXT = 38571,
-
-    [NativeName("GL_SHADING_RATE_4X2_PIXELS_EXT")]
-    ShadingRate4x2PixelsEXT = 38572,
-
-    [NativeName("GL_SHADING_RATE_2X4_PIXELS_EXT")]
-    ShadingRate2x4PixelsEXT = 38573,
-
-    [NativeName("GL_SHADING_RATE_4X4_PIXELS_EXT")]
-    ShadingRate4x4PixelsEXT = 38574,
-
-    [NativeName("GL_SHADING_RATE_EXT")]
-    ShadingRateEXT = 38608,
-
-    [NativeName("GL_SHADING_RATE_ATTACHMENT_EXT")]
-    ShadingRateAttachmentEXT = 38609,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_KEEP_EXT")]
-    FragmentShadingRateCombinerOpKeepEXT = 38610,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_EXT")]
-    FragmentShadingRateCombinerOpReplaceEXT = 38611,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_EXT")]
-    FragmentShadingRateCombinerOpMinEXT = 38612,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_EXT")]
-    FragmentShadingRateCombinerOpMaxEXT = 38613,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_EXT")]
-    FragmentShadingRateCombinerOpMulEXT = 38614,
-
-    [NativeName("GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
-    MinFragmentShadingRateAttachmentTexelWidthEXT = 38615,
-
-    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
-    MaxFragmentShadingRateAttachmentTexelWidthEXT = 38616,
-
-    [NativeName("GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
-    MinFragmentShadingRateAttachmentTexelHeightEXT = 38617,
-
-    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
-    MaxFragmentShadingRateAttachmentTexelHeightEXT = 38618,
-
-    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT")]
-    MaxFragmentShadingRateAttachmentTexelAspectRatioEXT = 38619,
-
-    [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT")]
-    MaxFragmentShadingRateAttachmentLayersEXT = 38620,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT")]
-    FragmentShadingRateWithShaderDepthStencilWritesSupportedEXT = 38621,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT")]
-    FragmentShadingRateWithSampleMaskSupportedEXT = 38622,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT")]
-    FragmentShadingRateAttachmentWithDefaultFramebufferSupportedEXT = 38623,
-
-    [NativeName("GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT")]
-    FragmentShadingRateNonTrivialCombinersSupportedEXT = 36719,
-
-    [NativeName("GL_GEOMETRY_SHADER_BIT_EXT")]
-    GeometryShaderBitEXT = 4,
-
-    [NativeName("GL_GEOMETRY_LINKED_VERTICES_OUT_EXT")]
-    GeometryLinkedVerticesOutEXT = 35094,
-
-    [NativeName("GL_GEOMETRY_LINKED_INPUT_TYPE_EXT")]
-    GeometryLinkedInputTypeEXT = 35095,
-
-    [NativeName("GL_GEOMETRY_LINKED_OUTPUT_TYPE_EXT")]
-    GeometryLinkedOutputTypeEXT = 35096,
-
-    [NativeName("GL_GEOMETRY_SHADER_INVOCATIONS_EXT")]
-    GeometryShaderInvocationsEXT = 34943,
-
-    [NativeName("GL_LAYER_PROVOKING_VERTEX_EXT")]
-    LayerProvokingVertexEXT = 33374,
-
-    [NativeName("GL_MAX_GEOMETRY_UNIFORM_BLOCKS_EXT")]
-    MaxGeometryUniformBlocksEXT = 35372,
-
-    [NativeName("GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_EXT")]
-    MaxCombinedGeometryUniformComponentsEXT = 35378,
-
-    [NativeName("GL_MAX_GEOMETRY_INPUT_COMPONENTS_EXT")]
-    MaxGeometryInputComponentsEXT = 37155,
-
-    [NativeName("GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_EXT")]
-    MaxGeometryOutputComponentsEXT = 37156,
-
-    [NativeName("GL_MAX_GEOMETRY_SHADER_INVOCATIONS_EXT")]
-    MaxGeometryShaderInvocationsEXT = 36442,
-
-    [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_EXT")]
-    MaxGeometryAtomicCounterBuffersEXT = 37583,
-
-    [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTERS_EXT")]
-    MaxGeometryAtomicCountersEXT = 37589,
-
-    [NativeName("GL_MAX_GEOMETRY_IMAGE_UNIFORMS_EXT")]
-    MaxGeometryImageUniformsEXT = 37069,
-
-    [NativeName("GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_EXT")]
-    MaxGeometryShaderStorageBlocksEXT = 37079,
-
-    [NativeName("GL_UNDEFINED_VERTEX_EXT")]
-    UndefinedVertexEXT = 33376,
-
-    [NativeName("GL_FRAMEBUFFER_DEFAULT_LAYERS_EXT")]
-    FramebufferDefaultLayersEXT = 37650,
-
-    [NativeName("GL_MAX_FRAMEBUFFER_LAYERS_EXT")]
-    MaxFramebufferLayersEXT = 37655,
-
-    [NativeName("GL_REFERENCED_BY_GEOMETRY_SHADER_EXT")]
-    ReferencedByGeometryShaderEXT = 37641,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR_EXT")]
-    VertexAttribArrayDivisorEXT = 35070,
-
-    [NativeName("GL_MAP_READ_BIT_EXT")]
-    MapReadBitEXT = 1,
-
-    [NativeName("GL_MAP_WRITE_BIT_EXT")]
-    MapWriteBitEXT = 2,
-
-    [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
-    MapInvalidateRangeBitEXT = 4,
-
-    [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
-    MapInvalidateBufferBitEXT = 8,
-
-    [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
-    MapFlushExplicitBitEXT = 16,
-
-    [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
-    MapUnsynchronizedBitEXT = 32,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
-    FramebufferAttachmentTextureSamplesEXT = 36204,
-
-    [NativeName("GL_COLOR_ATTACHMENT_EXT")]
-    ColorAttachmentEXT = 37104,
-
-    [NativeName("GL_MULTIVIEW_EXT")]
-    MultiviewEXT = 37105,
-
-    [NativeName("GL_DRAW_BUFFER_EXT")]
-    DrawBufferEXT = 3073,
-
-    [NativeName("GL_READ_BUFFER_EXT")]
-    ReadBufferEXT = 3074,
-
-    [NativeName("GL_MAX_MULTIVIEW_BUFFERS_EXT")]
-    MaxMultiviewBuffersEXT = 37106,
-
-    [NativeName("GL_ANY_SAMPLES_PASSED_EXT")]
-    AnySamplesPassedEXT = 35887,
-
-    [NativeName("GL_ANY_SAMPLES_PASSED_CONSERVATIVE_EXT")]
-    AnySamplesPassedConservativeEXT = 36202,
-
-    [NativeName("GL_PRIMITIVE_BOUNDING_BOX_EXT")]
-    PrimitiveBoundingBoxEXT = 37566,
-
-    [NativeName("GL_CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT")]
-    ContextFlagProtectedContentBitEXT = 16,
-
-    [NativeName("GL_TEXTURE_PROTECTED_EXT")]
-    TextureProtectedEXT = 35834,
-
-    [NativeName("GL_COMPRESSED_SRGB_PVRTC_2BPPV1_EXT")]
-    CompressedSrgbPvrtc2Bppv1EXT = 35412,
-
-    [NativeName("GL_COMPRESSED_SRGB_PVRTC_4BPPV1_EXT")]
-    CompressedSrgbPvrtc4Bppv1EXT = 35413,
-
-    [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV1_EXT")]
-    CompressedSrgbAlphaPvrtc2Bppv1EXT = 35414,
-
-    [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV1_EXT")]
-    CompressedSrgbAlphaPvrtc4Bppv1EXT = 35415,
-
-    [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV2_IMG")]
-    CompressedSrgbAlphaPvrtc2Bppv2IMG = 37872,
-
-    [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV2_IMG")]
-    CompressedSrgbAlphaPvrtc4Bppv2IMG = 37873,
-
-    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT")]
-    UnsignedShort4x4x4x4RevEXT = 33637,
-
-    [NativeName("GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT")]
-    UnsignedShort1x5x5x5RevEXT = 33638,
-
-    [NativeName("GL_R16_SNORM_EXT")]
-    R16SnormEXT = 36760,
-
-    [NativeName("GL_RG16_SNORM_EXT")]
-    Rg16SnormEXT = 36761,
-
-    [NativeName("GL_RGBA16_SNORM_EXT")]
-    Rgba16SnormEXT = 36763,
-
-    [NativeName("GL_GUILTY_CONTEXT_RESET_EXT")]
-    GuiltyContextResetEXT = 33363,
-
-    [NativeName("GL_INNOCENT_CONTEXT_RESET_EXT")]
-    InnocentContextResetEXT = 33364,
-
-    [NativeName("GL_UNKNOWN_CONTEXT_RESET_EXT")]
-    UnknownContextResetEXT = 33365,
-
-    [NativeName("GL_CONTEXT_ROBUST_ACCESS_EXT")]
-    ContextRobustAccessEXT = 37107,
-
-    [NativeName("GL_RESET_NOTIFICATION_STRATEGY_EXT")]
-    ResetNotificationStrategyEXT = 33366,
-
-    [NativeName("GL_LOSE_CONTEXT_ON_RESET_EXT")]
-    LoseContextOnResetEXT = 33362,
-
-    [NativeName("GL_NO_RESET_NOTIFICATION_EXT")]
-    NoResetNotificationEXT = 33377,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
-    FramebufferAttachmentColorEncodingEXT = 33296,
-
-    [NativeName("GL_VERTEX_SHADER_BIT_EXT")]
-    VertexShaderBitEXT = 1,
-
-    [NativeName("GL_FRAGMENT_SHADER_BIT_EXT")]
-    FragmentShaderBitEXT = 2,
-
-    [NativeName("GL_ALL_SHADER_BITS_EXT")]
-    AllShaderBitsEXT = 4294967295,
-
-    [NativeName("GL_PROGRAM_SEPARABLE_EXT")]
-    ProgramSeparableEXT = 33368,
-
-    [NativeName("GL_PROGRAM_PIPELINE_BINDING_EXT")]
-    ProgramPipelineBindingEXT = 33370,
-
-    [NativeName("GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_FAST_SIZE_EXT")]
-    MaxShaderPixelLocalStorageFastSizeEXT = 36707,
-
-    [NativeName("GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_SIZE_EXT")]
-    MaxShaderPixelLocalStorageSizeEXT = 36711,
-
-    [NativeName("GL_SHADER_PIXEL_LOCAL_STORAGE_EXT")]
-    ShaderPixelLocalStorageEXT = 36708,
-
-    [NativeName("GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_FAST_SIZE_EXT")]
-    MaxShaderCombinedLocalStorageFastSizeEXT = 38480,
-
-    [NativeName("GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_SIZE_EXT")]
-    MaxShaderCombinedLocalStorageSizeEXT = 38481,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_INSUFFICIENT_SHADER_COMBINED_LOCAL_STORAGE_EXT")]
-    FramebufferIncompleteInsufficientShaderCombinedLocalStorageEXT = 38482,
-
-    [NativeName("GL_TEXTURE_COMPARE_MODE_EXT")]
-    TextureCompareModeEXT = 34892,
-
-    [NativeName("GL_TEXTURE_COMPARE_FUNC_EXT")]
-    TextureCompareFuncEXT = 34893,
-
-    [NativeName("GL_COMPARE_REF_TO_TEXTURE_EXT")]
-    CompareRefToTextureEXT = 34894,
-
-    [NativeName("GL_SAMPLER_2D_SHADOW_EXT")]
-    Sampler2DShadowEXT = 35682,
-
-    [NativeName("GL_TEXTURE_SPARSE_EXT")]
-    TextureSparseEXT = 37286,
-
-    [NativeName("GL_VIRTUAL_PAGE_SIZE_INDEX_EXT")]
-    VirtualPageSizeIndexEXT = 37287,
-
-    [NativeName("GL_NUM_SPARSE_LEVELS_EXT")]
-    NumSparseLevelsEXT = 37290,
-
-    [NativeName("GL_NUM_VIRTUAL_PAGE_SIZES_EXT")]
-    NumVirtualPageSizesEXT = 37288,
-
-    [NativeName("GL_VIRTUAL_PAGE_SIZE_X_EXT")]
-    VirtualPageSizeXEXT = 37269,
-
-    [NativeName("GL_VIRTUAL_PAGE_SIZE_Y_EXT")]
-    VirtualPageSizeYEXT = 37270,
-
-    [NativeName("GL_VIRTUAL_PAGE_SIZE_Z_EXT")]
-    VirtualPageSizeZEXT = 37271,
-
-    [NativeName("GL_MAX_SPARSE_TEXTURE_SIZE_EXT")]
-    MaxSparseTextureSizeEXT = 37272,
-
-    [NativeName("GL_MAX_SPARSE_3D_TEXTURE_SIZE_EXT")]
-    MaxSparse3DTextureSizeEXT = 37273,
-
-    [NativeName("GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_EXT")]
-    MaxSparseArrayTextureLayersEXT = 37274,
-
-    [NativeName("GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_EXT")]
-    SparseTextureFullArrayCubeMipmapsEXT = 37289,
-
-    [NativeName("GL_PATCHES_EXT")]
-    PatchesEXT = 14,
-
-    [NativeName("GL_PATCH_VERTICES_EXT")]
-    PatchVerticesEXT = 36466,
-
-    [NativeName("GL_TESS_CONTROL_OUTPUT_VERTICES_EXT")]
-    TessControlOutputVerticesEXT = 36469,
-
-    [NativeName("GL_TESS_GEN_MODE_EXT")]
-    TessGenModeEXT = 36470,
-
-    [NativeName("GL_TESS_GEN_SPACING_EXT")]
-    TessGenSpacingEXT = 36471,
-
-    [NativeName("GL_TESS_GEN_VERTEX_ORDER_EXT")]
-    TessGenVertexOrderEXT = 36472,
-
-    [NativeName("GL_TESS_GEN_POINT_MODE_EXT")]
-    TessGenPointModeEXT = 36473,
-
-    [NativeName("GL_ISOLINES_EXT")]
-    IsolinesEXT = 36474,
-
-    [NativeName("GL_QUADS_EXT")]
-    QuadsEXT = 7,
-
-    [NativeName("GL_FRACTIONAL_ODD_EXT")]
-    FractionalOddEXT = 36475,
-
-    [NativeName("GL_FRACTIONAL_EVEN_EXT")]
-    FractionalEvenEXT = 36476,
-
-    [NativeName("GL_MAX_PATCH_VERTICES_EXT")]
-    MaxPatchVerticesEXT = 36477,
-
-    [NativeName("GL_MAX_TESS_GEN_LEVEL_EXT")]
-    MaxTessGenLevelEXT = 36478,
-
-    [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_EXT")]
-    MaxTessControlUniformComponentsEXT = 36479,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT")]
-    MaxTessEvaluationUniformComponentsEXT = 36480,
-
-    [NativeName("GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_EXT")]
-    MaxTessControlTextureImageUnitsEXT = 36481,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_EXT")]
-    MaxTessEvaluationTextureImageUnitsEXT = 36482,
-
-    [NativeName("GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_EXT")]
-    MaxTessControlOutputComponentsEXT = 36483,
-
-    [NativeName("GL_MAX_TESS_PATCH_COMPONENTS_EXT")]
-    MaxTessPatchComponentsEXT = 36484,
-
-    [NativeName("GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_EXT")]
-    MaxTessControlTotalOutputComponentsEXT = 36485,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_EXT")]
-    MaxTessEvaluationOutputComponentsEXT = 36486,
-
-    [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_EXT")]
-    MaxTessControlUniformBlocksEXT = 36489,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_EXT")]
-    MaxTessEvaluationUniformBlocksEXT = 36490,
-
-    [NativeName("GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_EXT")]
-    MaxTessControlInputComponentsEXT = 34924,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_EXT")]
-    MaxTessEvaluationInputComponentsEXT = 34925,
-
-    [NativeName("GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_EXT")]
-    MaxCombinedTessControlUniformComponentsEXT = 36382,
-
-    [NativeName("GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT")]
-    MaxCombinedTessEvaluationUniformComponentsEXT = 36383,
-
-    [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_EXT")]
-    MaxTessControlAtomicCounterBuffersEXT = 37581,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_EXT")]
-    MaxTessEvaluationAtomicCounterBuffersEXT = 37582,
-
-    [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_EXT")]
-    MaxTessControlAtomicCountersEXT = 37587,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_EXT")]
-    MaxTessEvaluationAtomicCountersEXT = 37588,
-
-    [NativeName("GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_EXT")]
-    MaxTessControlImageUniformsEXT = 37067,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_EXT")]
-    MaxTessEvaluationImageUniformsEXT = 37068,
-
-    [NativeName("GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_EXT")]
-    MaxTessControlShaderStorageBlocksEXT = 37080,
-
-    [NativeName("GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_EXT")]
-    MaxTessEvaluationShaderStorageBlocksEXT = 37081,
-
-    [NativeName("GL_IS_PER_PATCH_EXT")]
-    IsPerPatchEXT = 37607,
-
-    [NativeName("GL_REFERENCED_BY_TESS_CONTROL_SHADER_EXT")]
-    ReferencedByTessControlShaderEXT = 37639,
-
-    [NativeName("GL_REFERENCED_BY_TESS_EVALUATION_SHADER_EXT")]
-    ReferencedByTessEvaluationShaderEXT = 37640,
-
-    [NativeName("GL_TESS_CONTROL_SHADER_EXT")]
-    TessControlShaderEXT = 36488,
-
-    [NativeName("GL_TESS_EVALUATION_SHADER_EXT")]
-    TessEvaluationShaderEXT = 36487,
-
-    [NativeName("GL_TESS_CONTROL_SHADER_BIT_EXT")]
-    TessControlShaderBitEXT = 8,
-
-    [NativeName("GL_TESS_EVALUATION_SHADER_BIT_EXT")]
-    TessEvaluationShaderBitEXT = 16,
-
-    [NativeName("GL_TEXTURE_BORDER_COLOR_EXT")]
-    TextureBorderColorEXT = 4100,
-
-    [NativeName("GL_CLAMP_TO_BORDER_EXT")]
-    ClampToBorderEXT = 33069,
-
-    [NativeName("GL_TEXTURE_BUFFER_BINDING_EXT")]
-    TextureBufferBindingEXT = 35882,
-
-    [NativeName("GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_EXT")]
-    TextureBufferOffsetAlignmentEXT = 37279,
-
-    [NativeName("GL_TEXTURE_BUFFER_OFFSET_EXT")]
-    TextureBufferOffsetEXT = 37277,
-
-    [NativeName("GL_TEXTURE_BUFFER_SIZE_EXT")]
-    TextureBufferSizeEXT = 37278,
-
-    [NativeName("GL_TEXTURE_ASTC_DECODE_PRECISION_EXT")]
-    TextureAstcDecodePrecisionEXT = 36713,
-
-    [NativeName("GL_COMPRESSED_RGBA_BPTC_UNORM_EXT")]
-    CompressedRgbaBptcUnormEXT = 36492,
-
-    [NativeName("GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT")]
-    CompressedSrgbAlphaBptcUnormEXT = 36493,
-
-    [NativeName("GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT")]
-    CompressedRgbBptcSignedFloatEXT = 36494,
-
-    [NativeName("GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT")]
-    CompressedRgbBptcUnsignedFloatEXT = 36495,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_EXT")]
-    TextureCubeMapArrayEXT = 36873,
-
-    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_EXT")]
-    TextureBindingCubeMapArrayEXT = 36874,
-
-    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_EXT")]
-    SamplerCubeMapArrayEXT = 36876,
-
-    [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_EXT")]
-    SamplerCubeMapArrayShadowEXT = 36877,
-
-    [NativeName("GL_INT_SAMPLER_CUBE_MAP_ARRAY_EXT")]
-    IntSamplerCubeMapArrayEXT = 36878,
-
-    [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_EXT")]
-    UnsignedIntSamplerCubeMapArrayEXT = 36879,
-
-    [NativeName("GL_TEXTURE_FORMAT_SRGB_OVERRIDE_EXT")]
-    TextureFormatSrgbOverrideEXT = 36799,
-
-    [NativeName("GL_R16_EXT")]
-    R16EXT = 33322,
-
-    [NativeName("GL_RG16_EXT")]
-    Rg16EXT = 33324,
-
-    [NativeName("GL_RGB16_SNORM_EXT")]
-    Rgb16SnormEXT = 36762,
-
-    [NativeName("GL_RED_EXT")]
-    RedEXT = 6403,
-
-    [NativeName("GL_RG_EXT")]
-    RgEXT = 33319,
-
-    [NativeName("GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
-    NumSurfaceCompressionFixedRatesEXT = 36718,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_1BPC_EXT")]
-    SurfaceCompressionFixedRate1BpcEXT = 38596,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_2BPC_EXT")]
-    SurfaceCompressionFixedRate2BpcEXT = 38597,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_3BPC_EXT")]
-    SurfaceCompressionFixedRate3BpcEXT = 38598,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_4BPC_EXT")]
-    SurfaceCompressionFixedRate4BpcEXT = 38599,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_5BPC_EXT")]
-    SurfaceCompressionFixedRate5BpcEXT = 38600,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_6BPC_EXT")]
-    SurfaceCompressionFixedRate6BpcEXT = 38601,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_7BPC_EXT")]
-    SurfaceCompressionFixedRate7BpcEXT = 38602,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_8BPC_EXT")]
-    SurfaceCompressionFixedRate8BpcEXT = 38603,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_9BPC_EXT")]
-    SurfaceCompressionFixedRate9BpcEXT = 38604,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_10BPC_EXT")]
-    SurfaceCompressionFixedRate10BpcEXT = 38605,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_11BPC_EXT")]
-    SurfaceCompressionFixedRate11BpcEXT = 38606,
-
-    [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_12BPC_EXT")]
-    SurfaceCompressionFixedRate12BpcEXT = 38607,
-
-    [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
-    UnsignedInt2x10x10x10RevEXT = 33640,
-
-    [NativeName("GL_TEXTURE_VIEW_MIN_LEVEL_EXT")]
-    TextureViewMinLevelEXT = 33499,
-
-    [NativeName("GL_TEXTURE_VIEW_NUM_LEVELS_EXT")]
-    TextureViewNumLevelsEXT = 33500,
-
-    [NativeName("GL_TEXTURE_VIEW_MIN_LAYER_EXT")]
-    TextureViewMinLayerEXT = 33501,
-
-    [NativeName("GL_TEXTURE_VIEW_NUM_LAYERS_EXT")]
-    TextureViewNumLayersEXT = 33502,
-
-    [NativeName("GL_UNPACK_ROW_LENGTH_EXT")]
-    UnpackRowLengthEXT = 3314,
-
-    [NativeName("GL_UNPACK_SKIP_ROWS_EXT")]
-    UnpackSkipRowsEXT = 3315,
-
-    [NativeName("GL_UNPACK_SKIP_PIXELS_EXT")]
-    UnpackSkipPixelsEXT = 3316,
-
-    [NativeName("GL_GCCSO_SHADER_BINARY_FJ")]
-    GccsoShaderBinaryFJ = 37472,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_AND_DOWNSAMPLE_IMG")]
-    FramebufferIncompleteMultisampleAndDownsampleIMG = 37180,
-
-    [NativeName("GL_NUM_DOWNSAMPLE_SCALES_IMG")]
-    NumDownsampleScalesIMG = 37181,
-
-    [NativeName("GL_DOWNSAMPLE_SCALES_IMG")]
-    DownsampleScalesIMG = 37182,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SCALE_IMG")]
-    FramebufferAttachmentTextureScaleIMG = 37183,
-
-    [NativeName("GL_RENDERBUFFER_SAMPLES_IMG")]
-    RenderbufferSamplesIMG = 37171,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG")]
-    FramebufferIncompleteMultisampleIMG = 37172,
-
-    [NativeName("GL_MAX_SAMPLES_IMG")]
-    MaxSamplesIMG = 37173,
-
-    [NativeName("GL_TEXTURE_SAMPLES_IMG")]
-    TextureSamplesIMG = 37174,
-
-    [NativeName("GL_SGX_PROGRAM_BINARY_IMG")]
-    SgxProgramBinaryIMG = 37168,
-
-    [NativeName("GL_BGRA_IMG")]
-    BgraIMG = 32993,
-
-    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG")]
-    UnsignedShort4x4x4x4RevIMG = 33637,
-
-    [NativeName("GL_SGX_BINARY_IMG")]
-    SgxBinaryIMG = 35850,
-
-    [NativeName("GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG")]
-    CompressedRgbPvrtc4Bppv1IMG = 35840,
-
-    [NativeName("GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG")]
-    CompressedRgbPvrtc2Bppv1IMG = 35841,
-
-    [NativeName("GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG")]
-    CompressedRgbaPvrtc4Bppv1IMG = 35842,
-
-    [NativeName("GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG")]
-    CompressedRgbaPvrtc2Bppv1IMG = 35843,
-
-    [NativeName("GL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG")]
-    CompressedRgbaPvrtc2Bppv2IMG = 37175,
-
-    [NativeName("GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG")]
-    CompressedRgbaPvrtc4Bppv2IMG = 37176,
-
-    [NativeName("GL_CUBIC_IMG")]
-    CubicIMG = 37177,
-
-    [NativeName("GL_CUBIC_MIPMAP_NEAREST_IMG")]
-    CubicMipmapNearestIMG = 37178,
-
-    [NativeName("GL_CUBIC_MIPMAP_LINEAR_IMG")]
-    CubicMipmapLinearIMG = 37179,
-
-    [NativeName("GL_COPY_READ_BUFFER_NV")]
-    CopyReadBufferNV = 36662,
-
-    [NativeName("GL_COPY_WRITE_BUFFER_NV")]
-    CopyWriteBufferNV = 36663,
-
-    [NativeName("GL_COVERAGE_COMPONENT_NV")]
-    CoverageComponentNV = 36560,
-
-    [NativeName("GL_COVERAGE_COMPONENT4_NV")]
-    CoverageComponent4NV = 36561,
-
-    [NativeName("GL_COVERAGE_ATTACHMENT_NV")]
-    CoverageAttachmentNV = 36562,
-
-    [NativeName("GL_COVERAGE_BUFFERS_NV")]
-    CoverageBuffersNV = 36563,
-
-    [NativeName("GL_COVERAGE_SAMPLES_NV")]
-    CoverageSamplesNV = 36564,
-
-    [NativeName("GL_COVERAGE_ALL_FRAGMENTS_NV")]
-    CoverageAllFragmentsNV = 36565,
-
-    [NativeName("GL_COVERAGE_EDGE_FRAGMENTS_NV")]
-    CoverageEdgeFragmentsNV = 36566,
-
-    [NativeName("GL_COVERAGE_AUTOMATIC_NV")]
-    CoverageAutomaticNV = 36567,
-
-    [NativeName("GL_COVERAGE_BUFFER_BIT_NV")]
-    CoverageBufferBitNV = 32768,
-
-    [NativeName("GL_DEPTH_COMPONENT16_NONLINEAR_NV")]
-    DepthComponent16NonlinearNV = 36396,
-
-    [NativeName("GL_MAX_DRAW_BUFFERS_NV")]
-    MaxDrawBuffersNV = 34852,
-
-    [NativeName("GL_DRAW_BUFFER0_NV")]
-    DrawBuffer0NV = 34853,
-
-    [NativeName("GL_DRAW_BUFFER1_NV")]
-    DrawBuffer1NV = 34854,
-
-    [NativeName("GL_DRAW_BUFFER2_NV")]
-    DrawBuffer2NV = 34855,
-
-    [NativeName("GL_DRAW_BUFFER3_NV")]
-    DrawBuffer3NV = 34856,
-
-    [NativeName("GL_DRAW_BUFFER4_NV")]
-    DrawBuffer4NV = 34857,
-
-    [NativeName("GL_DRAW_BUFFER5_NV")]
-    DrawBuffer5NV = 34858,
-
-    [NativeName("GL_DRAW_BUFFER6_NV")]
-    DrawBuffer6NV = 34859,
-
-    [NativeName("GL_DRAW_BUFFER7_NV")]
-    DrawBuffer7NV = 34860,
-
-    [NativeName("GL_DRAW_BUFFER8_NV")]
-    DrawBuffer8NV = 34861,
-
-    [NativeName("GL_DRAW_BUFFER9_NV")]
-    DrawBuffer9NV = 34862,
-
-    [NativeName("GL_DRAW_BUFFER10_NV")]
-    DrawBuffer10NV = 34863,
-
-    [NativeName("GL_DRAW_BUFFER11_NV")]
-    DrawBuffer11NV = 34864,
-
-    [NativeName("GL_DRAW_BUFFER12_NV")]
-    DrawBuffer12NV = 34865,
-
-    [NativeName("GL_DRAW_BUFFER13_NV")]
-    DrawBuffer13NV = 34866,
-
-    [NativeName("GL_DRAW_BUFFER14_NV")]
-    DrawBuffer14NV = 34867,
-
-    [NativeName("GL_DRAW_BUFFER15_NV")]
-    DrawBuffer15NV = 34868,
-
-    [NativeName("GL_COLOR_ATTACHMENT0_NV")]
-    ColorAttachment0NV = 36064,
-
-    [NativeName("GL_COLOR_ATTACHMENT1_NV")]
-    ColorAttachment1NV = 36065,
-
-    [NativeName("GL_COLOR_ATTACHMENT2_NV")]
-    ColorAttachment2NV = 36066,
-
-    [NativeName("GL_COLOR_ATTACHMENT3_NV")]
-    ColorAttachment3NV = 36067,
-
-    [NativeName("GL_COLOR_ATTACHMENT4_NV")]
-    ColorAttachment4NV = 36068,
-
-    [NativeName("GL_COLOR_ATTACHMENT5_NV")]
-    ColorAttachment5NV = 36069,
-
-    [NativeName("GL_COLOR_ATTACHMENT6_NV")]
-    ColorAttachment6NV = 36070,
-
-    [NativeName("GL_COLOR_ATTACHMENT7_NV")]
-    ColorAttachment7NV = 36071,
-
-    [NativeName("GL_COLOR_ATTACHMENT8_NV")]
-    ColorAttachment8NV = 36072,
-
-    [NativeName("GL_COLOR_ATTACHMENT9_NV")]
-    ColorAttachment9NV = 36073,
-
-    [NativeName("GL_COLOR_ATTACHMENT10_NV")]
-    ColorAttachment10NV = 36074,
-
-    [NativeName("GL_COLOR_ATTACHMENT11_NV")]
-    ColorAttachment11NV = 36075,
-
-    [NativeName("GL_COLOR_ATTACHMENT12_NV")]
-    ColorAttachment12NV = 36076,
-
-    [NativeName("GL_COLOR_ATTACHMENT13_NV")]
-    ColorAttachment13NV = 36077,
-
-    [NativeName("GL_COLOR_ATTACHMENT14_NV")]
-    ColorAttachment14NV = 36078,
-
-    [NativeName("GL_COLOR_ATTACHMENT15_NV")]
-    ColorAttachment15NV = 36079,
-
-    [NativeName("GL_MAX_COLOR_ATTACHMENTS_NV")]
-    MaxColorAttachmentsNV = 36063,
-
-    [NativeName("GL_READ_FRAMEBUFFER_NV")]
-    ReadFramebufferNV = 36008,
-
-    [NativeName("GL_DRAW_FRAMEBUFFER_NV")]
-    DrawFramebufferNV = 36009,
-
-    [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_NV")]
-    DrawFramebufferBindingNV = 36006,
-
-    [NativeName("GL_READ_FRAMEBUFFER_BINDING_NV")]
-    ReadFramebufferBindingNV = 36010,
-
-    [NativeName("GL_RENDERBUFFER_SAMPLES_NV")]
-    RenderbufferSamplesNV = 36011,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_NV")]
-    FramebufferIncompleteMultisampleNV = 36182,
-
-    [NativeName("GL_MAX_SAMPLES_NV")]
-    MaxSamplesNV = 36183,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR_NV")]
-    VertexAttribArrayDivisorNV = 35070,
-
-    [NativeName("GL_FLOAT_MAT2x3_NV")]
-    FloatMat2x3NV = 35685,
-
-    [NativeName("GL_FLOAT_MAT2x4_NV")]
-    FloatMat2x4NV = 35686,
-
-    [NativeName("GL_FLOAT_MAT3x2_NV")]
-    FloatMat3x2NV = 35687,
-
-    [NativeName("GL_FLOAT_MAT3x4_NV")]
-    FloatMat3x4NV = 35688,
-
-    [NativeName("GL_FLOAT_MAT4x2_NV")]
-    FloatMat4x2NV = 35689,
-
-    [NativeName("GL_FLOAT_MAT4x3_NV")]
-    FloatMat4x3NV = 35690,
-
-    [NativeName("GL_PACK_ROW_LENGTH_NV")]
-    PackRowLengthNV = 3330,
-
-    [NativeName("GL_PACK_SKIP_ROWS_NV")]
-    PackSkipRowsNV = 3331,
-
-    [NativeName("GL_PACK_SKIP_PIXELS_NV")]
-    PackSkipPixelsNV = 3332,
-
-    [NativeName("GL_PIXEL_PACK_BUFFER_NV")]
-    PixelPackBufferNV = 35051,
-
-    [NativeName("GL_PIXEL_UNPACK_BUFFER_NV")]
-    PixelUnpackBufferNV = 35052,
-
-    [NativeName("GL_PIXEL_PACK_BUFFER_BINDING_NV")]
-    PixelPackBufferBindingNV = 35053,
-
-    [NativeName("GL_PIXEL_UNPACK_BUFFER_BINDING_NV")]
-    PixelUnpackBufferBindingNV = 35055,
-
-    [NativeName("GL_POLYGON_MODE_NV")]
-    PolygonModeNV = 2880,
-
-    [NativeName("GL_POLYGON_OFFSET_POINT_NV")]
-    PolygonOffsetPointNV = 10753,
-
-    [NativeName("GL_POLYGON_OFFSET_LINE_NV")]
-    PolygonOffsetLineNV = 10754,
-
-    [NativeName("GL_POINT_NV")]
-    PointNV = 6912,
-
-    [NativeName("GL_LINE_NV")]
-    LineNV = 6913,
-
-    [NativeName("GL_FILL_NV")]
-    FillNV = 6914,
-
-    [NativeName("GL_READ_BUFFER_NV")]
-    ReadBufferNV = 3074,
-
-    [NativeName("GL_SLUMINANCE_NV")]
-    SluminanceNV = 35910,
-
-    [NativeName("GL_SLUMINANCE_ALPHA_NV")]
-    SluminanceAlphaNV = 35908,
-
-    [NativeName("GL_SRGB8_NV")]
-    Srgb8NV = 35905,
-
-    [NativeName("GL_SLUMINANCE8_NV")]
-    Sluminance8NV = 35911,
-
-    [NativeName("GL_SLUMINANCE8_ALPHA8_NV")]
-    Sluminance8Alpha8NV = 35909,
-
-    [NativeName("GL_COMPRESSED_SRGB_S3TC_DXT1_NV")]
-    CompressedSrgbS3TcDxt1NV = 35916,
-
-    [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_NV")]
-    CompressedSrgbAlphaS3TcDxt1NV = 35917,
-
-    [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_NV")]
-    CompressedSrgbAlphaS3TcDxt3NV = 35918,
-
-    [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV")]
-    CompressedSrgbAlphaS3TcDxt5NV = 35919,
-
-    [NativeName("GL_ETC1_SRGB8_NV")]
-    Etc1Srgb8NV = 35054,
-
-    [NativeName("GL_SAMPLER_2D_ARRAY_SHADOW_NV")]
-    Sampler2DArrayShadowNV = 36292,
-
-    [NativeName("GL_SAMPLER_CUBE_SHADOW_NV")]
-    SamplerCubeShadowNV = 36293,
-
-    [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
-    TextureBorderColorNV = 4100,
-
-    [NativeName("GL_CLAMP_TO_BORDER_NV")]
-    ClampToBorderNV = 33069,
-
-    [NativeName("GL_MAX_VIEWPORTS_NV")]
-    MaxViewportsNV = 33371,
-
-    [NativeName("GL_VIEWPORT_SUBPIXEL_BITS_NV")]
-    ViewportSubpixelBitsNV = 33372,
-
-    [NativeName("GL_VIEWPORT_BOUNDS_RANGE_NV")]
-    ViewportBoundsRangeNV = 33373,
-
-    [NativeName("GL_VIEWPORT_INDEX_PROVOKING_VERTEX_NV")]
-    ViewportIndexProvokingVertexNV = 33375,
-
-    [NativeName("GL_ALPHA_TEST_QCOM")]
-    AlphaTestQCOM = 3008,
-
-    [NativeName("GL_ALPHA_TEST_FUNC_QCOM")]
-    AlphaTestFuncQCOM = 3009,
-
-    [NativeName("GL_ALPHA_TEST_REF_QCOM")]
-    AlphaTestRefQCOM = 3010,
-
-    [NativeName("GL_BINNING_CONTROL_HINT_QCOM")]
-    BinningControlHintQCOM = 36784,
-
-    [NativeName("GL_CPU_OPTIMIZED_QCOM")]
-    CpuOptimizedQCOM = 36785,
-
-    [NativeName("GL_GPU_OPTIMIZED_QCOM")]
-    GpuOptimizedQCOM = 36786,
-
-    [NativeName("GL_RENDER_DIRECT_TO_FRAMEBUFFER_QCOM")]
-    RenderDirectToFramebufferQCOM = 36787,
-
-    [NativeName("GL_TEXTURE_WIDTH_QCOM")]
-    TextureWidthQCOM = 35794,
-
-    [NativeName("GL_TEXTURE_HEIGHT_QCOM")]
-    TextureHeightQCOM = 35795,
-
-    [NativeName("GL_TEXTURE_DEPTH_QCOM")]
-    TextureDepthQCOM = 35796,
-
-    [NativeName("GL_TEXTURE_INTERNAL_FORMAT_QCOM")]
-    TextureInternalFormatQCOM = 35797,
-
-    [NativeName("GL_TEXTURE_FORMAT_QCOM")]
-    TextureFormatQCOM = 35798,
-
-    [NativeName("GL_TEXTURE_TYPE_QCOM")]
-    TextureTypeQCOM = 35799,
-
-    [NativeName("GL_TEXTURE_IMAGE_VALID_QCOM")]
-    TextureImageValidQCOM = 35800,
-
-    [NativeName("GL_TEXTURE_NUM_LEVELS_QCOM")]
-    TextureNumLevelsQCOM = 35801,
-
-    [NativeName("GL_TEXTURE_TARGET_QCOM")]
-    TextureTargetQCOM = 35802,
-
-    [NativeName("GL_TEXTURE_OBJECT_VALID_QCOM")]
-    TextureObjectValidQCOM = 35803,
-
-    [NativeName("GL_STATE_RESTORE")]
-    StateRestore = 35804,
-
-    [NativeName("GL_FOVEATION_ENABLE_BIT_QCOM")]
-    FoveationEnableBitQCOM = 1,
-
-    [NativeName("GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM")]
-    FoveationScaledBinMethodBitQCOM = 2,
-
-    [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_X_QCOM")]
-    MotionEstimationSearchBlockXQCOM = 35984,
-
-    [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_Y_QCOM")]
-    MotionEstimationSearchBlockYQCOM = 35985,
-
-    [NativeName("GL_PERFMON_GLOBAL_MODE_QCOM")]
-    PerfmonGlobalModeQCOM = 36768,
-
-    [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
-    FramebufferFetchNoncoherentQCOM = 38562,
-
-    [NativeName("GL_SHADING_RATE_QCOM")]
-    ShadingRateQCOM = 38564,
-
-    [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
-    ShadingRatePreserveAspectRatioQCOM = 38565,
-
-    [NativeName("GL_SHADING_RATE_1X1_PIXELS_QCOM")]
-    ShadingRate1x1PixelsQCOM = 38566,
-
-    [NativeName("GL_SHADING_RATE_1X2_PIXELS_QCOM")]
-    ShadingRate1x2PixelsQCOM = 38567,
-
-    [NativeName("GL_SHADING_RATE_2X1_PIXELS_QCOM")]
-    ShadingRate2x1PixelsQCOM = 38568,
-
-    [NativeName("GL_SHADING_RATE_2X2_PIXELS_QCOM")]
-    ShadingRate2x2PixelsQCOM = 38569,
-
-    [NativeName("GL_SHADING_RATE_4X2_PIXELS_QCOM")]
-    ShadingRate4x2PixelsQCOM = 38572,
-
-    [NativeName("GL_SHADING_RATE_4X4_PIXELS_QCOM")]
-    ShadingRate4x4PixelsQCOM = 38574,
-
-    [NativeName("GL_TEXTURE_FOVEATED_FEATURE_BITS_QCOM")]
-    TextureFoveatedFeatureBitsQCOM = 35835,
-
-    [NativeName("GL_TEXTURE_FOVEATED_MIN_PIXEL_DENSITY_QCOM")]
-    TextureFoveatedMinPixelDensityQCOM = 35836,
-
-    [NativeName("GL_TEXTURE_FOVEATED_FEATURE_QUERY_QCOM")]
-    TextureFoveatedFeatureQueryQCOM = 35837,
-
-    [NativeName("GL_TEXTURE_FOVEATED_NUM_FOCAL_POINTS_QUERY_QCOM")]
-    TextureFoveatedNumFocalPointsQueryQCOM = 35838,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_FOVEATION_QCOM")]
-    FramebufferIncompleteFoveationQCOM = 35839,
-
-    [NativeName("GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM")]
-    TextureFoveatedCutoffDensityQCOM = 38560,
-
-    [NativeName("GL_FOVEATION_SUBSAMPLED_LAYOUT_METHOD_BIT_QCOM")]
-    FoveationSubsampledLayoutMethodBitQCOM = 4,
-
-    [NativeName("GL_MAX_SHADER_SUBSAMPLED_IMAGE_UNITS_QCOM")]
-    MaxShaderSubsampledImageUnitsQCOM = 36769,
-
-    [NativeName("GL_TEXTURE_LOD_BIAS_QCOM")]
-    TextureLodBiasQCOM = 35990,
-
-    [NativeName("GL_COLOR_BUFFER_BIT0_QCOM")]
-    ColorBufferBit0QCOM = 1,
-
-    [NativeName("GL_COLOR_BUFFER_BIT1_QCOM")]
-    ColorBufferBit1QCOM = 2,
-
-    [NativeName("GL_COLOR_BUFFER_BIT2_QCOM")]
-    ColorBufferBit2QCOM = 4,
-
-    [NativeName("GL_COLOR_BUFFER_BIT3_QCOM")]
-    ColorBufferBit3QCOM = 8,
-
-    [NativeName("GL_COLOR_BUFFER_BIT4_QCOM")]
-    ColorBufferBit4QCOM = 16,
-
-    [NativeName("GL_COLOR_BUFFER_BIT5_QCOM")]
-    ColorBufferBit5QCOM = 32,
-
-    [NativeName("GL_COLOR_BUFFER_BIT6_QCOM")]
-    ColorBufferBit6QCOM = 64,
-
-    [NativeName("GL_COLOR_BUFFER_BIT7_QCOM")]
-    ColorBufferBit7QCOM = 128,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT0_QCOM")]
-    DepthBufferBit0QCOM = 256,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT1_QCOM")]
-    DepthBufferBit1QCOM = 512,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT2_QCOM")]
-    DepthBufferBit2QCOM = 1024,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT3_QCOM")]
-    DepthBufferBit3QCOM = 2048,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT4_QCOM")]
-    DepthBufferBit4QCOM = 4096,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT5_QCOM")]
-    DepthBufferBit5QCOM = 8192,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT6_QCOM")]
-    DepthBufferBit6QCOM = 16384,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT7_QCOM")]
-    DepthBufferBit7QCOM = 32768,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT0_QCOM")]
-    StencilBufferBit0QCOM = 65536,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT1_QCOM")]
-    StencilBufferBit1QCOM = 131072,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT2_QCOM")]
-    StencilBufferBit2QCOM = 262144,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT3_QCOM")]
-    StencilBufferBit3QCOM = 524288,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT4_QCOM")]
-    StencilBufferBit4QCOM = 1048576,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT5_QCOM")]
-    StencilBufferBit5QCOM = 2097152,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT6_QCOM")]
-    StencilBufferBit6QCOM = 4194304,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT7_QCOM")]
-    StencilBufferBit7QCOM = 8388608,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT0_QCOM")]
-    MultisampleBufferBit0QCOM = 16777216,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT1_QCOM")]
-    MultisampleBufferBit1QCOM = 33554432,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT2_QCOM")]
-    MultisampleBufferBit2QCOM = 67108864,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT3_QCOM")]
-    MultisampleBufferBit3QCOM = 134217728,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT4_QCOM")]
-    MultisampleBufferBit4QCOM = 268435456,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT5_QCOM")]
-    MultisampleBufferBit5QCOM = 536870912,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT6_QCOM")]
-    MultisampleBufferBit6QCOM = 1073741824,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT7_QCOM")]
-    MultisampleBufferBit7QCOM = 2147483648,
-
-    [NativeName("GL_WRITEONLY_RENDERING_QCOM")]
-    WriteonlyRenderingQCOM = 34851,
-
-    [NativeName("GL_SHADER_BINARY_VIV")]
-    ShaderBinaryVIV = 36804,
-
-    [NativeName("GL_VERSION_ES_CL_1_0")]
-    VersionEsCl1x0 = 1,
-
-    [NativeName("GL_VERSION_ES_CM_1_1")]
-    VersionEsCm1x1 = 1,
-
-    [NativeName("GL_VERSION_ES_CL_1_1")]
-    VersionEsCl1x1 = 1,
-
-    [NativeName("GL_BLEND_EQUATION_RGB_OES")]
-    BlendEquationRgbOES = 32777,
-
-    [NativeName("GL_BLEND_EQUATION_ALPHA_OES")]
-    BlendEquationAlphaOES = 34877,
-
-    [NativeName("GL_BLEND_DST_RGB_OES")]
-    BlendDstRgbOES = 32968,
-
-    [NativeName("GL_BLEND_SRC_RGB_OES")]
-    BlendSrcRgbOES = 32969,
-
-    [NativeName("GL_BLEND_DST_ALPHA_OES")]
-    BlendDstAlphaOES = 32970,
-
-    [NativeName("GL_BLEND_SRC_ALPHA_OES")]
-    BlendSrcAlphaOES = 32971,
-
-    [NativeName("GL_BLEND_EQUATION_OES")]
-    BlendEquationOES = 32777,
-
-    [NativeName("GL_FUNC_ADD_OES")]
-    FuncAddOES = 32774,
-
-    [NativeName("GL_FUNC_SUBTRACT_OES")]
-    FuncSubtractOES = 32778,
-
-    [NativeName("GL_FUNC_REVERSE_SUBTRACT_OES")]
-    FuncReverseSubtractOES = 32779,
-
-    [NativeName("GL_TEXTURE_CROP_RECT_OES")]
-    TextureCropRectOES = 35741,
-
-    [NativeName("GL_NONE_OES")]
-    NoneOES = 0,
-
-    [NativeName("GL_FRAMEBUFFER_OES")]
-    FramebufferOES = 36160,
-
-    [NativeName("GL_RENDERBUFFER_OES")]
-    RenderbufferOES = 36161,
-
-    [NativeName("GL_RENDERBUFFER_WIDTH_OES")]
-    RenderbufferWidthOES = 36162,
-
-    [NativeName("GL_RENDERBUFFER_HEIGHT_OES")]
-    RenderbufferHeightOES = 36163,
-
-    [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_OES")]
-    RenderbufferInternalFormatOES = 36164,
-
-    [NativeName("GL_RENDERBUFFER_RED_SIZE_OES")]
-    RenderbufferRedSizeOES = 36176,
-
-    [NativeName("GL_RENDERBUFFER_GREEN_SIZE_OES")]
-    RenderbufferGreenSizeOES = 36177,
-
-    [NativeName("GL_RENDERBUFFER_BLUE_SIZE_OES")]
-    RenderbufferBlueSizeOES = 36178,
-
-    [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_OES")]
-    RenderbufferAlphaSizeOES = 36179,
-
-    [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_OES")]
-    RenderbufferDepthSizeOES = 36180,
-
-    [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_OES")]
-    RenderbufferStencilSizeOES = 36181,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
-    FramebufferAttachmentObjectTypeOES = 36048,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
-    FramebufferAttachmentObjectNameOES = 36049,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
-    FramebufferAttachmentTextureLevelOES = 36050,
-
-    [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
-    FramebufferAttachmentTextureCubeMapFaceOES = 36051,
-
-    [NativeName("GL_COLOR_ATTACHMENT0_OES")]
-    ColorAttachment0OES = 36064,
-
-    [NativeName("GL_DEPTH_ATTACHMENT_OES")]
-    DepthAttachmentOES = 36096,
-
-    [NativeName("GL_STENCIL_ATTACHMENT_OES")]
-    StencilAttachmentOES = 36128,
-
-    [NativeName("GL_FRAMEBUFFER_COMPLETE_OES")]
-    FramebufferCompleteOES = 36053,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_OES")]
-    FramebufferIncompleteAttachmentOES = 36054,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_OES")]
-    FramebufferIncompleteMissingAttachmentOES = 36055,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_OES")]
-    FramebufferIncompleteDimensionsOES = 36057,
-
-    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_FORMATS_OES")]
-    FramebufferIncompleteFormatsOES = 36058,
-
-    [NativeName("GL_FRAMEBUFFER_UNSUPPORTED_OES")]
-    FramebufferUnsupportedOES = 36061,
-
-    [NativeName("GL_FRAMEBUFFER_BINDING_OES")]
-    FramebufferBindingOES = 36006,
-
-    [NativeName("GL_RENDERBUFFER_BINDING_OES")]
-    RenderbufferBindingOES = 36007,
-
-    [NativeName("GL_MAX_RENDERBUFFER_SIZE_OES")]
-    MaxRenderbufferSizeOES = 34024,
-
-    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
-    InvalidFramebufferOperationOES = 1286,
-
-    [NativeName("GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES")]
-    ModelviewMatrixFloatAsIntBitsOES = 35213,
-
-    [NativeName("GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES")]
-    ProjectionMatrixFloatAsIntBitsOES = 35214,
-
-    [NativeName("GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES")]
-    TextureMatrixFloatAsIntBitsOES = 35215,
-
-    [NativeName("GL_MAX_VERTEX_UNITS_OES")]
-    MaxVertexUnitsOES = 34468,
-
-    [NativeName("GL_MAX_PALETTE_MATRICES_OES")]
-    MaxPaletteMatricesOES = 34882,
-
-    [NativeName("GL_MATRIX_PALETTE_OES")]
-    MatrixPaletteOES = 34880,
-
-    [NativeName("GL_MATRIX_INDEX_ARRAY_OES")]
-    MatrixIndexArrayOES = 34884,
-
-    [NativeName("GL_WEIGHT_ARRAY_OES")]
-    WeightArrayOES = 34477,
-
-    [NativeName("GL_CURRENT_PALETTE_MATRIX_OES")]
-    CurrentPaletteMatrixOES = 34883,
-
-    [NativeName("GL_MATRIX_INDEX_ARRAY_SIZE_OES")]
-    MatrixIndexArraySizeOES = 34886,
-
-    [NativeName("GL_MATRIX_INDEX_ARRAY_TYPE_OES")]
-    MatrixIndexArrayTypeOES = 34887,
-
-    [NativeName("GL_MATRIX_INDEX_ARRAY_STRIDE_OES")]
-    MatrixIndexArrayStrideOES = 34888,
-
-    [NativeName("GL_MATRIX_INDEX_ARRAY_POINTER_OES")]
-    MatrixIndexArrayPointerOES = 34889,
-
-    [NativeName("GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES")]
-    MatrixIndexArrayBufferBindingOES = 35742,
-
-    [NativeName("GL_WEIGHT_ARRAY_SIZE_OES")]
-    WeightArraySizeOES = 34475,
-
-    [NativeName("GL_WEIGHT_ARRAY_TYPE_OES")]
-    WeightArrayTypeOES = 34473,
-
-    [NativeName("GL_WEIGHT_ARRAY_STRIDE_OES")]
-    WeightArrayStrideOES = 34474,
-
-    [NativeName("GL_WEIGHT_ARRAY_POINTER_OES")]
-    WeightArrayPointerOES = 34476,
-
-    [NativeName("GL_WEIGHT_ARRAY_BUFFER_BINDING_OES")]
-    WeightArrayBufferBindingOES = 34974,
-
-    [NativeName("GL_POINT_SIZE_ARRAY_OES")]
-    PointSizeArrayOES = 35740,
-
-    [NativeName("GL_POINT_SIZE_ARRAY_TYPE_OES")]
-    PointSizeArrayTypeOES = 35210,
-
-    [NativeName("GL_POINT_SIZE_ARRAY_STRIDE_OES")]
-    PointSizeArrayStrideOES = 35211,
-
-    [NativeName("GL_POINT_SIZE_ARRAY_POINTER_OES")]
-    PointSizeArrayPointerOES = 35212,
-
-    [NativeName("GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES")]
-    PointSizeArrayBufferBindingOES = 35743,
-
-    [NativeName("GL_POINT_SPRITE_OES")]
-    PointSpriteOES = 34913,
-
-    [NativeName("GL_COORD_REPLACE_OES")]
-    CoordReplaceOES = 34914,
-
-    [NativeName("GL_INCR_WRAP_OES")]
-    IncrWrapOES = 34055,
-
-    [NativeName("GL_DECR_WRAP_OES")]
-    DecrWrapOES = 34056,
-
-    [NativeName("GL_NORMAL_MAP_OES")]
-    NormalMapOES = 34065,
-
-    [NativeName("GL_REFLECTION_MAP_OES")]
-    ReflectionMapOES = 34066,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapOES = 34067,
-
-    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_OES")]
-    TextureBindingCubeMapOES = 34068,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES")]
-    TextureCubeMapPositiveXOES = 34069,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES")]
-    TextureCubeMapNegativeXOES = 34070,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES")]
-    TextureCubeMapPositiveYOES = 34071,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES")]
-    TextureCubeMapNegativeYOES = 34072,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES")]
-    TextureCubeMapPositiveZOES = 34073,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES")]
-    TextureCubeMapNegativeZOES = 34074,
-
-    [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES")]
-    MaxCubeMapTextureSizeOES = 34076,
-
-    [NativeName("GL_TEXTURE_GEN_MODE_OES")]
-    TextureGenModeOES = 9472,
-
-    [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStrOES = 36192,
-
-    [NativeName("GL_MIRRORED_REPEAT_OES")]
-    MirroredRepeatOES = 33648,
-
-    [NativeName("GL_MODULATE_COLOR_IMG")]
-    ModulateColorIMG = 35844,
-
-    [NativeName("GL_RECIP_ADD_SIGNED_ALPHA_IMG")]
-    RecipAddSignedAlphaIMG = 35845,
-
-    [NativeName("GL_TEXTURE_ALPHA_MODULATE_IMG")]
-    TextureAlphaModulateIMG = 35846,
-
-    [NativeName("GL_FACTOR_ALPHA_MODULATE_IMG")]
-    FactorAlphaModulateIMG = 35847,
-
-    [NativeName("GL_FRAGMENT_ALPHA_MODULATE_IMG")]
-    FragmentAlphaModulateIMG = 35848,
-
-    [NativeName("GL_ADD_BLEND_IMG")]
-    AddBlendIMG = 35849,
-
-    [NativeName("GL_DOT3_RGBA_IMG")]
-    Dot3RgbaIMG = 34479,
-
-    [NativeName("GL_CLIP_PLANE0_IMG")]
-    ClipPlane0IMG = 12288,
-
-    [NativeName("GL_CLIP_PLANE1_IMG")]
-    ClipPlane1IMG = 12289,
-
-    [NativeName("GL_CLIP_PLANE2_IMG")]
-    ClipPlane2IMG = 12290,
-
-    [NativeName("GL_CLIP_PLANE3_IMG")]
-    ClipPlane3IMG = 12291,
-
-    [NativeName("GL_CLIP_PLANE4_IMG")]
-    ClipPlane4IMG = 12292,
-
-    [NativeName("GL_CLIP_PLANE5_IMG")]
-    ClipPlane5IMG = 12293,
-
-    [NativeName("GL_MAX_CLIP_PLANES_IMG")]
-    MaxClipPlanesIMG = 3378,
 }

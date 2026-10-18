@@ -10,6 +10,21 @@ namespace Silk.NET.OpenGL;
 [NativeName("EnableCap")]
 public enum EnableCap : uint
 {
+    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
+    TextureCubeMapOES = 34067,
+
+    [NativeName("GL_TEXTURE_GEN_STR_OES")]
+    TextureGenStrOES = 36192,
+
+    [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
+    FetchPerSampleARM = 36709,
+
+    [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
+    FramebufferFetchNoncoherentQCOM = 38562,
+
+    [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
+    ShadingRatePreserveAspectRatioQCOM = 38565,
+
     [NativeName("GL_LINE_SMOOTH")]
     LineSmooth = 2848,
 
@@ -426,19 +441,4 @@ public enum EnableCap : uint
 
     [NativeName("GL_TEXTURE_COLOR_TABLE_SGI")]
     TextureColorTableSGI = 32956,
-
-    [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
-    FetchPerSampleARM = 36709,
-
-    [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
-    FramebufferFetchNoncoherentQCOM = 38562,
-
-    [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
-    ShadingRatePreserveAspectRatioQCOM = 38565,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapOES = 34067,
-
-    [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStrOES = 36192,
 }

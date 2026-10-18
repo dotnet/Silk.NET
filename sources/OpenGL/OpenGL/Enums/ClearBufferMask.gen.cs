@@ -13,6 +13,9 @@ public enum ClearBufferMask : uint
 {
     None = 0x0,
 
+    [NativeName("GL_COVERAGE_BUFFER_BIT_NV")]
+    CoverageBufferBitNV = 0x8000,
+
     [NativeName("GL_DEPTH_BUFFER_BIT")]
     DepthBufferBit = 0x100,
 
@@ -24,7 +27,4 @@ public enum ClearBufferMask : uint
 
     [NativeName("GL_ACCUM_BUFFER_BIT")]
     AccumBufferBit = 0x200,
-
-    [NativeName("GL_COVERAGE_BUFFER_BIT_NV")]
-    CoverageBufferBitNV = 0x8000,
 }

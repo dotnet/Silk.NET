@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("TextureEnvParameter")]
 public enum TextureEnvParameter : uint
 {
+    [NativeName("GL_SRC1_ALPHA_EXT")]
+    Src1AlphaEXT = 34185,
+
     [NativeName("GL_ALPHA_SCALE")]
     AlphaScale = 3356,
 
@@ -246,7 +249,4 @@ public enum TextureEnvParameter : uint
 
     [NativeName("GL_OPERAND3_ALPHA_NV")]
     Operand3AlphaNV = 34203,
-
-    [NativeName("GL_SRC1_ALPHA_EXT")]
-    Src1AlphaEXT = 34185,
 }

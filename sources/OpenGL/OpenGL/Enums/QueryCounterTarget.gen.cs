@@ -10,9 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("QueryCounterTarget")]
 public enum QueryCounterTarget : uint
 {
-    [NativeName("GL_TIMESTAMP")]
-    Timestamp = 36392,
-
     [NativeName("GL_TIMESTAMP_EXT")]
     TimestampEXT = 36392,
+
+    [NativeName("GL_TIMESTAMP")]
+    Timestamp = 36392,
 }

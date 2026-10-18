@@ -10,6 +10,24 @@ namespace Silk.NET.OpenGL;
 [NativeName("PixelStoreParameter")]
 public enum PixelStoreParameter : uint
 {
+    [NativeName("GL_UNPACK_ROW_LENGTH_EXT")]
+    UnpackRowLengthEXT = 3314,
+
+    [NativeName("GL_UNPACK_SKIP_ROWS_EXT")]
+    UnpackSkipRowsEXT = 3315,
+
+    [NativeName("GL_UNPACK_SKIP_PIXELS_EXT")]
+    UnpackSkipPixelsEXT = 3316,
+
+    [NativeName("GL_PACK_ROW_LENGTH_NV")]
+    PackRowLengthNV = 3330,
+
+    [NativeName("GL_PACK_SKIP_ROWS_NV")]
+    PackSkipRowsNV = 3331,
+
+    [NativeName("GL_PACK_SKIP_PIXELS_NV")]
+    PackSkipPixelsNV = 3332,
+
     [NativeName("GL_UNPACK_SWAP_BYTES")]
     UnpackSwapBytes = 3312,
 
@@ -117,22 +135,4 @@ public enum PixelStoreParameter : uint
 
     [NativeName("GL_UNPACK_SUBSAMPLE_RATE_SGIX")]
     UnpackSubsampleRateSGIX = 34209,
-
-    [NativeName("GL_UNPACK_ROW_LENGTH_EXT")]
-    UnpackRowLengthEXT = 3314,
-
-    [NativeName("GL_UNPACK_SKIP_ROWS_EXT")]
-    UnpackSkipRowsEXT = 3315,
-
-    [NativeName("GL_UNPACK_SKIP_PIXELS_EXT")]
-    UnpackSkipPixelsEXT = 3316,
-
-    [NativeName("GL_PACK_ROW_LENGTH_NV")]
-    PackRowLengthNV = 3330,
-
-    [NativeName("GL_PACK_SKIP_ROWS_NV")]
-    PackSkipRowsNV = 3331,
-
-    [NativeName("GL_PACK_SKIP_PIXELS_NV")]
-    PackSkipPixelsNV = 3332,
 }
