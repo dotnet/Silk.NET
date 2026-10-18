@@ -88,6 +88,7 @@ public sealed class ClangScraper(
         /// </summary>
         /// <remarks>
         /// A "generate cache only" run is a run where <see cref="SilkTouchHostConfiguration.GenerateCacheOnly"/> is set to true.
+        /// The intended use pattern is setting this to true for the last <see cref="ClangScraper"/> mod in a job.
         /// </remarks>
         public bool ExitAfterGenerateCacheOnlyRun { get; init; }
     }

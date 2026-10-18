@@ -56,6 +56,7 @@ internal static partial class Jobs
                         {
                             CacheKey = "Mac",
                             ScrapeIf = static () => OperatingSystem.IsMacOS(),
+                            ExitAfterGenerateCacheOnlyRun = true,
 
                             ClangSharpResponseFiles =
                             [
