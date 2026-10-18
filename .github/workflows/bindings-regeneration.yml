@@ -32,7 +32,9 @@ jobs:
             $IsWindows {}
             $IsLinux {
               sudo apt-get update
-              sudo apt-get install -y libx11-dev libgl-dev
+
+              # Added for OpenXR
+              sudo apt-get install -y libx11-dev libgl-dev libglx-dev libxcb1-dev libxcb-glx0-dev libegl-dev
             }
             $IsMacOS {}
           }
