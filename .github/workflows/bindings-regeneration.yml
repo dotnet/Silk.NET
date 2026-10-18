@@ -137,6 +137,17 @@ jobs:
         with:
           submodules: false
 
+      # TODO: Currently copied from above for simplicity. Probably better to move this into a JSON file (or similar?) with submodule dependencies defined per job.
+      - name: Initialize Submodules
+        shell: pwsh
+        run: |
+          $submodules = @(
+            "eng/submodules/openxr-sdk",
+            "eng/submodules/vulkan-headers"
+          )
+
+          git submodule update --init --recursive --depth 0 $submodules
+
       - name: Download cache
         uses: actions/download-artifact@v8
         with:
