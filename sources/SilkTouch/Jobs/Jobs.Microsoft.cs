@@ -18,8 +18,8 @@ internal static partial class Jobs
             },
             context =>
                 context
-                    .WithDefaultFunctionTransformers(new())
-                    .AddIncludes(new())
+                    .WithDefaultFunctionTransformers()
+                    .AddIncludes()
                     .ClangScraper(
                         new()
                         {

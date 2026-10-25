@@ -29,7 +29,7 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         /// <returns></returns>
         public SilkTouchRegistrationContext WithDefaultFunctionTransformers(
-            BoolTransformer.Configuration boolTransformerConfig
+            BoolTransformer.Configuration? boolTransformerConfig = null
         ) =>
             context
                 .WithPtrRefTransformer()
@@ -55,13 +55,16 @@ public static class SilkTouchRegistrationExtensions
         /// </summary>
         /// <returns></returns>
         public SilkTouchRegistrationContext WithBoolTransformer(
-            BoolTransformer.Configuration boolTransformerConfig
+            BoolTransformer.Configuration? boolTransformerConfig = null
         )
         {
             context
                 .Builder.RegisterType<BoolTransformer>()
                 .WithParameter(
-                    new TypedParameter(typeof(BoolTransformer.Configuration), boolTransformerConfig)
+                    new TypedParameter(
+                        typeof(BoolTransformer.Configuration),
+                        boolTransformerConfig ?? new()
+                    )
                 )
                 .AsImplementedInterfaces()
                 .SingleInstance();
@@ -90,11 +93,15 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="AddApiProfiles"/> mod.
         /// </summary>
-        public SilkTouchRegistrationContext AddApiProfiles(AddApiProfiles.Configuration config)
+        public SilkTouchRegistrationContext AddApiProfiles(
+            AddApiProfiles.Configuration? config = null
+        )
         {
             context
                 .Builder.RegisterType<AddApiProfiles>()
-                .WithParameter(new TypedParameter(typeof(AddApiProfiles.Configuration), config))
+                .WithParameter(
+                    new TypedParameter(typeof(AddApiProfiles.Configuration), config ?? new())
+                )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
 
@@ -118,11 +125,13 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="AddIncludes"/> mod.
         /// </summary>
-        public SilkTouchRegistrationContext AddIncludes(AddIncludes.Configuration config)
+        public SilkTouchRegistrationContext AddIncludes(AddIncludes.Configuration? config = null)
         {
             context
                 .Builder.RegisterType<AddIncludes>()
-                .WithParameter(new TypedParameter(typeof(AddIncludes.Configuration), config))
+                .WithParameter(
+                    new TypedParameter(typeof(AddIncludes.Configuration), config ?? new())
+                )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
 
@@ -146,11 +155,13 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="AddVTables"/> mod.
         /// </summary>
-        public SilkTouchRegistrationContext AddVTables(AddVTables.Configuration config)
+        public SilkTouchRegistrationContext AddVTables(AddVTables.Configuration? config = null)
         {
             context
                 .Builder.RegisterType<AddVTables>()
-                .WithParameter(new TypedParameter(typeof(AddVTables.Configuration), config))
+                .WithParameter(
+                    new TypedParameter(typeof(AddVTables.Configuration), config ?? new())
+                )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
 
@@ -257,7 +268,7 @@ public static class SilkTouchRegistrationExtensions
         /// Registers the <see cref="IdentifySharedPrefixes"/> mod.
         /// </summary>
         public SilkTouchRegistrationContext IdentifySharedPrefixes(
-            IdentifySharedPrefixes.Configuration config
+            IdentifySharedPrefixes.Configuration? config = null
         )
         {
             context
@@ -275,7 +286,7 @@ public static class SilkTouchRegistrationExtensions
         /// Registers the <see cref="InterceptNativeFunctions"/> mod.
         /// </summary>
         public SilkTouchRegistrationContext InterceptNativeFunctions(
-            InterceptNativeFunctions.Configuration config
+            InterceptNativeFunctions.Configuration? config = null
         )
         {
             context
@@ -305,11 +316,15 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="MixKhronosData"/> mod.
         /// </summary>
-        public SilkTouchRegistrationContext MixKhronosData(MixKhronosData.Configuration config)
+        public SilkTouchRegistrationContext MixKhronosData(
+            MixKhronosData.Configuration? config = null
+        )
         {
             context
                 .Builder.RegisterType<MixKhronosData>()
-                .WithParameter(new TypedParameter(typeof(MixKhronosData.Configuration), config))
+                .WithParameter(
+                    new TypedParameter(typeof(MixKhronosData.Configuration), config ?? new())
+                )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
 
@@ -319,11 +334,15 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="PrettifyNames"/> mod.
         /// </summary>
-        public SilkTouchRegistrationContext PrettifyNames(PrettifyNames.Configuration config)
+        public SilkTouchRegistrationContext PrettifyNames(
+            PrettifyNames.Configuration? config = null
+        )
         {
             context
                 .Builder.RegisterType<PrettifyNames>()
-                .WithParameter(new TypedParameter(typeof(PrettifyNames.Configuration), config))
+                .WithParameter(
+                    new TypedParameter(typeof(PrettifyNames.Configuration), config ?? new())
+                )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
 
@@ -333,11 +352,15 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="StripAttributes"/> mod.
         /// </summary>
-        public SilkTouchRegistrationContext StripAttributes(StripAttributes.Configuration config)
+        public SilkTouchRegistrationContext StripAttributes(
+            StripAttributes.Configuration? config = null
+        )
         {
             context
                 .Builder.RegisterType<StripAttributes>()
-                .WithParameter(new TypedParameter(typeof(StripAttributes.Configuration), config))
+                .WithParameter(
+                    new TypedParameter(typeof(StripAttributes.Configuration), config ?? new())
+                )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
 
@@ -347,11 +370,15 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="TransformEnums"/> mod.
         /// </summary>
-        public SilkTouchRegistrationContext TransformEnums(TransformEnums.Configuration config)
+        public SilkTouchRegistrationContext TransformEnums(
+            TransformEnums.Configuration? config = null
+        )
         {
             context
                 .Builder.RegisterType<TransformEnums>()
-                .WithParameter(new TypedParameter(typeof(TransformEnums.Configuration), config))
+                .WithParameter(
+                    new TypedParameter(typeof(TransformEnums.Configuration), config ?? new())
+                )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
 
@@ -374,11 +401,15 @@ public static class SilkTouchRegistrationExtensions
         /// <summary>
         /// Registers the <see cref="TransformHandles"/> mod.
         /// </summary>
-        public SilkTouchRegistrationContext TransformHandles(TransformHandles.Configuration config)
+        public SilkTouchRegistrationContext TransformHandles(
+            TransformHandles.Configuration? config = null
+        )
         {
             context
                 .Builder.RegisterType<TransformHandles>()
-                .WithParameter(new TypedParameter(typeof(TransformHandles.Configuration), config))
+                .WithParameter(
+                    new TypedParameter(typeof(TransformHandles.Configuration), config ?? new())
+                )
                 .AsHierarchyAndInterfaces()
                 .SingleInstance();
 
@@ -389,7 +420,7 @@ public static class SilkTouchRegistrationExtensions
         /// Registers the <see cref="TransformProperties"/> mod.
         /// </summary>
         public SilkTouchRegistrationContext TransformProperties(
-            TransformProperties.Configuration config
+            TransformProperties.Configuration? config = null
         )
         {
             context

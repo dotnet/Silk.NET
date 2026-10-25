@@ -25,7 +25,7 @@ internal static partial class Jobs
                             BoolTypes = new() { ["ALboolean"] = null, ["ALCboolean"] = null },
                         }
                     )
-                    .AddIncludes(new())
+                    .AddIncludes()
                     .ClangScraper(
                         new()
                         {
@@ -47,7 +47,7 @@ internal static partial class Jobs
                             },
                         }
                     )
-                    .AddApiProfiles(new())
+                    .AddApiProfiles()
                     .MixKhronosData(
                         new()
                         {

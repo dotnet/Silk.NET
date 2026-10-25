@@ -22,7 +22,7 @@ internal static partial class Jobs
                     .WithDefaultFunctionTransformers(
                         new() { BoolTypes = new() { ["VkBool32"] = null } }
                     )
-                    .AddIncludes(new())
+                    .AddIncludes()
                     .ClangScraper(
                         new()
                         {

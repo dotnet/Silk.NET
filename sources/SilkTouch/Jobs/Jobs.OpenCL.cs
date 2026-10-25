@@ -22,7 +22,7 @@ internal static partial class Jobs
                     .WithDefaultFunctionTransformers(
                         new() { BoolTypes = new() { ["cl_bool"] = null } }
                     )
-                    .AddIncludes(new())
+                    .AddIncludes()
                     .ClangScraper(
                         new()
                         {
@@ -34,7 +34,7 @@ internal static partial class Jobs
                         }
                     )
                     .MarkNativeNames()
-                    .AddApiProfiles(new())
+                    .AddApiProfiles()
                     .ExtractHandles()
                     .ExtractNestedTypes()
                     .ExtractFunctionPointers()

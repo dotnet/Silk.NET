@@ -21,7 +21,7 @@ internal static partial class Jobs
                     .WithDefaultFunctionTransformers(
                         new() { BoolTypes = new() { ["SDL_bool"] = null } }
                     )
-                    .AddIncludes(new())
+                    .AddIncludes()
                     .ClangScraper(
                         new()
                         {
@@ -47,7 +47,7 @@ internal static partial class Jobs
                     .TransformEnums(
                         new() { AddNoneMemberToFlags = true, RewriteMemberValues = true }
                     )
-                    .AddVTables(new())
+                    .AddVTables()
                     .StripAttributes(
                         new() { Remove = ["NativeTypeName", "NameAffix", "Transformed"] }
                     )
