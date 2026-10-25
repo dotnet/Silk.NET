@@ -75,40 +75,44 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             );
         }
 
-        // Fields should exactly match
-        if (
-            (existing.Syntax, node: node) is
-            (FieldDeclarationSyntax existingField, FieldDeclarationSyntax incomingField)
-        )
+        // If parent is a struct or record struct, fields should exactly match.
         {
-            // BakeSourceSets splits declarators into standalone fields
-            var existingDeclarator = existingField.Declaration.Variables.Single();
-            var incomingDeclarator = incomingField.Declaration.Variables.Single();
-
             if (
-                existingField.Declaration.Type.ToString()
-                    != incomingField.Declaration.Type.ToString()
-                || existingDeclarator.Identifier.ToString()
-                    != incomingDeclarator.Identifier.ToString()
-                || existingDeclarator.Initializer?.ToString()
-                    != incomingDeclarator.Initializer?.ToString()
-                || existingDeclarator.ArgumentList?.ToString()
-                    != incomingDeclarator.ArgumentList?.ToString()
+                (existing.Syntax, node: node) is
+                (FieldDeclarationSyntax existingField, FieldDeclarationSyntax incomingField)
             )
             {
                 if (
                     incomingParent is BaseTypeDeclarationSyntax parent
+                    && (
+                        incomingParent is StructDeclarationSyntax
+                        || (
+                            incomingParent is RecordDeclarationSyntax r
+                            && r.ClassOrStructKeyword.IsKind(SyntaxKind.StructKeyword)
+                        )
+                    )
                 )
                 {
-                    throw new InvalidOperationException(
-                        $"Field {discrim} differs between definitions of {parent.Identifier}."
-                    );
-                }
+                    // BakeSourceSets splits declarators into standalone fields
+                    var existingDeclarator = existingField.Declaration.Variables.Single();
+                    var incomingDeclarator = incomingField.Declaration.Variables.Single();
 
-                // Should be impossible
-                throw new InvalidOperationException(
-                    $"Field {discrim} differs between definitions."
-                );
+                    if (
+                        existingField.Declaration.Type.ToString()
+                            != incomingField.Declaration.Type.ToString()
+                        || existingDeclarator.Identifier.ToString()
+                            != incomingDeclarator.Identifier.ToString()
+                        || existingDeclarator.Initializer?.ToString()
+                            != incomingDeclarator.Initializer?.ToString()
+                        || existingDeclarator.ArgumentList?.ToString()
+                            != incomingDeclarator.ArgumentList?.ToString()
+                    )
+                    {
+                        throw new InvalidOperationException(
+                            $"Field {discrim} differs between definitions of {parent.Identifier}."
+                        );
+                    }
+                }
             }
         }
 
