@@ -34,9 +34,7 @@ public class TransformPropertiesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var transformProperties = new TransformProperties(
-            new DummyOptions<TransformProperties.Configuration>(
-                new TransformProperties.Configuration() { BoolTypes = { { "TestBool32", null } } }
-            )
+            new TransformProperties.Configuration() { BoolTypes = { { "TestBool32", null } } }
         );
 
         await transformProperties.ExecuteAsync(context);
@@ -86,9 +84,7 @@ public class TransformPropertiesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var transformProperties = new TransformProperties(
-            new DummyOptions<TransformProperties.Configuration>(
-                new TransformProperties.Configuration() { BoolTypes = { { "TestBool32", null } } }
-            )
+            new TransformProperties.Configuration() { BoolTypes = { { "TestBool32", null } } }
         );
 
         await transformProperties.ExecuteAsync(context);

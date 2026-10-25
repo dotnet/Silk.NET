@@ -2,8 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -11,8 +11,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Strips matching attributes from the generated bindings.
 /// </summary>
-[ModConfiguration<Configuration>]
-public class StripAttributes(IOptionsSnapshot<StripAttributes.Configuration> cfg) : IMod
+public class StripAttributes(StripAttributes.Configuration config) : IMod
 {
     /// <summary>
     /// <see cref="StripAttributes"/> mod configuration.
@@ -28,8 +27,6 @@ public class StripAttributes(IOptionsSnapshot<StripAttributes.Configuration> cfg
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var config = cfg.Get(ctx.JobKey);
-
         var proj = ctx.SourceProject;
         if (proj == null)
         {
@@ -56,7 +53,7 @@ public class StripAttributes(IOptionsSnapshot<StripAttributes.Configuration> cfg
         ctx.SourceProject = proj;
     }
 
-    private class Rewriter(Configuration config) : ModCSharpSyntaxRewriter
+    private class Rewriter(Configuration config) : CSharpSyntaxRewriter
     {
         private SyntaxList<AttributeListSyntax> StripAttributes(
             SyntaxList<AttributeListSyntax> attributeLists

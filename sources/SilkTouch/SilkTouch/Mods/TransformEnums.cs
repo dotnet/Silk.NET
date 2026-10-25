@@ -6,7 +6,6 @@ using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.Extensions.Options;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -14,8 +13,7 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Contains various transformations related to enums.
 /// </summary>
-[ModConfiguration<Configuration>]
-public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) : IMod
+public class TransformEnums(TransformEnums.Configuration config) : IMod
 {
     /// <summary>
     /// The preferred backing type for enums.
@@ -169,7 +167,6 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var config = cfg.Get(ctx.JobKey);
         var removeMemberFilters = config
             .RemoveMembers.Select(c => new EnumMemberFilter(c))
             .ToList();

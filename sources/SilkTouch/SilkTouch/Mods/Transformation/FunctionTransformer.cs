@@ -1,9 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -20,7 +17,7 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 /// <param name="transformers">The function transformers.</param>
 /// <param name="logger">The logger.</param>
 public class FunctionTransformer(
-    IEnumerable<IJobDependency<IFunctionTransformer>> transformers,
+    IEnumerable<IFunctionTransformer> transformers,
     ILogger<FunctionTransformer> logger
 )
 {
@@ -28,7 +25,6 @@ public class FunctionTransformer(
     /// Transforms all of the given functions, optionally including the original function signatures in the returned
     /// transformed functions.
     /// </summary>
-    /// <param name="key">The job key.</param>
     /// <param name="functions">The functions.</param>
     /// <param name="ctx">The wider context for this function transformation operation.</param>
     /// <param name="includeOriginal">
@@ -36,7 +32,6 @@ public class FunctionTransformer(
     /// </param>
     /// <returns>The transformed (and optionally original) functions.</returns>
     public IEnumerable<MethodDeclarationSyntax> GetTransformedFunctions(
-        string? key,
         IEnumerable<MethodDeclarationSyntax> functions,
         ITransformationContext ctx,
         bool includeOriginal = true
@@ -48,7 +43,7 @@ public class FunctionTransformer(
         var discrims = new HashSet<string>();
 
         // Aggregate all the transformers into one delegate
-        ctx.Transformers = transformers.SelectMany(x => x.Get(key)).ToArray();
+        ctx.Transformers = transformers.ToArray();
         var transform = ctx.Transformers.Aggregate<
             IFunctionTransformer,
             Action<MethodDeclarationSyntax>
@@ -209,7 +204,7 @@ public class FunctionTransformer(
             ctx.Original = null;
         }
 
-        ctx.Transformers = null;
+        ctx.Transformers = [];
         return ret;
     }
 

@@ -48,13 +48,12 @@ public class MixKhronosDataTests
                 async (x, ct) =>
                 {
                     var mod = new MixKhronosData(
+                        new DocumentFactory(),
                         new NullLogger<MixKhronosData>(),
-                        new DummyOptions<MixKhronosData.Configuration>(
-                            new MixKhronosData.Configuration { SpecPath = TestFile(x) }
-                        )
+                        new MixKhronosData.Configuration { SpecPath = TestFile(x) }
                     );
                     await mod.InitializeAsync(new DummyModContext(), ct);
-                    return (object[])[x, mod.Jobs[""]];
+                    return (object[])[x, mod.Job];
                 }
             );
     }
@@ -258,7 +257,8 @@ public class MixKhronosDataTests
                         .SupportedApiProfiles?.OrderBy(x => x.Key)
                         .Select(x =>
                             $"{x.Key}\n{new string('-', x.Key.Length)}\n{string.Join('\n', x.Value.Select(y => AttributeList(SingletonSeparatedList(y.GetSupportedApiProfileAttribute())).ToString()).Order())}\n"
-                        ) ?? []
+                        )
+                        ?? []
                 )
             )
             .UseFileName($"{nameof(MixKhronosDataTests)}.{nameof(SupportedApiProfiles)}.{file}");
@@ -315,17 +315,19 @@ public class MixKhronosDataTests
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+        var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
 
-        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var mixKhronosData = new MixKhronosData(
+            documentFactory,
+            NullLogger<MixKhronosData>.Instance,
+            null!
+        )
         {
-            Jobs =
+            Job = new MixKhronosData.JobData
             {
-                ["OpenGL"] = new MixKhronosData.JobData
-                {
-                    Configuration = new MixKhronosData.Configuration(),
-                    Vendors = ["NV"],
-                },
+                Configuration = new MixKhronosData.Configuration(),
+                Vendors = ["NV"],
             },
         };
 
@@ -352,20 +354,22 @@ public class MixKhronosDataTests
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+        var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
 
-        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var mixKhronosData = new MixKhronosData(
+            documentFactory,
+            NullLogger<MixKhronosData>.Instance,
+            null!
+        )
         {
-            Jobs =
+            Job = new MixKhronosData.JobData
             {
-                ["OpenGL"] = new MixKhronosData.JobData
+                Configuration = new MixKhronosData.Configuration()
                 {
-                    Configuration = new MixKhronosData.Configuration()
-                    {
-                        IdentifyEnumMemberImpliedVendors = true,
-                    },
-                    Vendors = ["NV"],
+                    IdentifyEnumMemberImpliedVendors = true,
                 },
+                Vendors = ["NV"],
             },
         };
 
@@ -393,20 +397,22 @@ public class MixKhronosDataTests
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+        var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
 
-        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var mixKhronosData = new MixKhronosData(
+            documentFactory,
+            NullLogger<MixKhronosData>.Instance,
+            null!
+        )
         {
-            Jobs =
+            Job = new MixKhronosData.JobData
             {
-                ["OpenGL"] = new MixKhronosData.JobData
+                Configuration = new MixKhronosData.Configuration()
                 {
-                    Configuration = new MixKhronosData.Configuration()
-                    {
-                        IdentifyEnumTypeNonExclusiveVendors = true,
-                    },
-                    Vendors = ["ARB"],
+                    IdentifyEnumTypeNonExclusiveVendors = true,
                 },
+                Vendors = ["ARB"],
             },
         };
 
@@ -431,27 +437,29 @@ public class MixKhronosDataTests
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+        var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
 
-        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var mixKhronosData = new MixKhronosData(
+            documentFactory,
+            NullLogger<MixKhronosData>.Instance,
+            null!
+        )
         {
-            Jobs =
+            Job = new MixKhronosData.JobData
             {
-                ["OpenGL"] = new MixKhronosData.JobData
+                Configuration = new MixKhronosData.Configuration(),
+                Groups =
                 {
-                    Configuration = new MixKhronosData.Configuration(),
-                    Groups =
                     {
+                        "GLenum",
+                        new MixKhronosData.EnumGroup()
                         {
-                            "GLenum",
-                            new MixKhronosData.EnumGroup()
-                            {
-                                Name = "GLEnum",
-                                NativeName = "GLenum",
-                                BaseType = "GLenum",
-                                Namespace = "GL",
-                            }
-                        },
+                            Name = "GLEnum",
+                            NativeName = "GLenum",
+                            BaseType = "GLenum",
+                            Namespace = "GL",
+                        }
                     },
                 },
             },

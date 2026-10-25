@@ -36,9 +36,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration()
-            )
+            new IdentifySharedPrefixes.Configuration()
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -69,9 +67,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration()
-            )
+            new IdentifySharedPrefixes.Configuration()
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -108,12 +104,10 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration()
-                {
-                    GlobalPrefixHints = hint is null ? [] : [hint],
-                }
-            )
+            new IdentifySharedPrefixes.Configuration()
+            {
+                GlobalPrefixHints = hint is null ? [] : [hint],
+            }
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -140,9 +134,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration()
-            )
+            new IdentifySharedPrefixes.Configuration()
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -174,9 +166,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration()
-            )
+            new IdentifySharedPrefixes.Configuration()
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -206,9 +196,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration()
-            )
+            new IdentifySharedPrefixes.Configuration()
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -234,9 +222,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["D3D12"] }
-            )
+            new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["D3D12"] }
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -269,9 +255,7 @@ public class IdentifySharedPrefixesTests
             var context = new DummyModContext() { SourceProject = project };
 
             var identifySharedPrefixes = new IdentifySharedPrefixes(
-                new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                    new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
-                )
+                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
             );
 
             await identifySharedPrefixes.ExecuteAsync(context);
@@ -298,9 +282,7 @@ public class IdentifySharedPrefixesTests
             var context = new DummyModContext() { SourceProject = project };
 
             var identifySharedPrefixes = new IdentifySharedPrefixes(
-                new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                    new IdentifySharedPrefixes.Configuration()
-                )
+                new IdentifySharedPrefixes.Configuration()
             );
 
             await identifySharedPrefixes.ExecuteAsync(context);
@@ -341,9 +323,7 @@ public class IdentifySharedPrefixesTests
             var context = new DummyModContext() { SourceProject = project };
 
             var identifySharedPrefixes = new IdentifySharedPrefixes(
-                new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                    new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
-                )
+                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
             );
 
             await identifySharedPrefixes.ExecuteAsync(context);
@@ -373,9 +353,7 @@ public class IdentifySharedPrefixesTests
             var context = new DummyModContext() { SourceProject = project };
 
             var identifySharedPrefixes = new IdentifySharedPrefixes(
-                new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                    new IdentifySharedPrefixes.Configuration()
-                )
+                new IdentifySharedPrefixes.Configuration()
             );
 
             await identifySharedPrefixes.ExecuteAsync(context);
@@ -413,9 +391,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration()
-            )
+            new IdentifySharedPrefixes.Configuration()
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -437,9 +413,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["vk"] }
-            )
+            new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["vk"] }
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -459,9 +433,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration()
-            )
+            new IdentifySharedPrefixes.Configuration()
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -484,9 +456,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
-            )
+            new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -512,9 +482,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
-            )
+            new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -547,9 +515,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
-            )
+            new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -579,9 +545,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
-            )
+            new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -610,9 +574,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
-            )
+            new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["gl"] }
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);
@@ -641,9 +603,7 @@ public class IdentifySharedPrefixesTests
         var context = new DummyModContext() { SourceProject = project };
 
         var identifySharedPrefixes = new IdentifySharedPrefixes(
-            new DummyOptions<IdentifySharedPrefixes.Configuration>(
-                new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["alc", "al"] }
-            )
+            new IdentifySharedPrefixes.Configuration() { GlobalPrefixHints = ["alc", "al"] }
         );
 
         await identifySharedPrefixes.ExecuteAsync(context);

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.SilkTouch.Mods.Transformation;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -11,45 +12,23 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// Mods the bindings to use the Silk.NET.Core pointer types.
 /// </summary>
-[ModConfiguration<Configuration>]
-public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewriter, IMod
+public class TransformFunctions(FunctionTransformer ft, DocumentFactory documentFactory)
+    : CSharpSyntaxRewriter,
+        IMod,
+        ITransformationContext
 {
-    private ThreadLocal<string> _jobKey = new();
-
-    /// <summary>
-    /// Configuration for the <see cref="TransformFunctions"/> and related code.
-    /// </summary>
-    public class Configuration
-    {
-        /// <summary>
-        /// Whether all integer return types should be treated as potentially boolean.
-        /// </summary>
-        public required bool IntReturnsMaybeBool { get; init; }
-
-        /// <summary>
-        /// Types to treat as boolean and their boolean schemes if different from the default.
-        /// </summary>
-        public Dictionary<string, string?> BoolTypes { get; init; } = [];
-    }
+    /// <inheritdoc />
+    public MethodDeclarationSyntax? Original { get; set; }
 
     /// <inheritdoc />
-    public override string? JobKey
-    {
-        get => _jobKey.Value;
-        set
-        {
-            if (value is null)
-            {
-                return;
-            }
-            _jobKey.Value = value;
-        }
-    }
+    public IFunctionTransformer[] Transformers { get; set; } = [];
+
+    /// <inheritdoc />
+    public DocumentFactory DocumentFactory { get; set; } = documentFactory;
 
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        _jobKey.Value = ctx.JobKey;
         var proj = ctx.SourceProject;
         foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
         {
@@ -72,7 +51,6 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
                     cd.Members.Where(x => x is not MethodDeclarationSyntax)
                         .Concat(
                             ft.GetTransformedFunctions(
-                                    _jobKey.Value,
                                     cd.Members.OfType<MethodDeclarationSyntax>(),
                                     this
                                 )
@@ -90,7 +68,6 @@ public class TransformFunctions(FunctionTransformer ft) : ModCSharpSyntaxRewrite
                     id.Members.Where(x => x is not MethodDeclarationSyntax)
                         .Concat(
                             ft.GetTransformedFunctions(
-                                    _jobKey.Value,
                                     id.Members.OfType<MethodDeclarationSyntax>(),
                                     this
                                 )
