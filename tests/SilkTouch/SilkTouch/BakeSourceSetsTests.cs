@@ -232,4 +232,50 @@ public class BakeSourceSetsTests
             await bakeSourceSets.ExecuteAsync(context);
         });
     }
+
+    [Test]
+    public async Task ThrowForStructMismatch3()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Api.gen.cs",
+                """
+                public struct Struct
+                {
+                    public int A;
+                }
+                """,
+                filePath: "a/Api.gen.cs"
+            )
+            .Project.AddDocument(
+                "Api.gen.cs",
+                """
+                public struct Struct
+                {
+                    public long A;
+                }
+                """,
+                filePath: "b/Api.gen.cs"
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
+
+        var bakeSourceSets = new BakeSourceSets(
+            documentFactory,
+            NullLogger<BakeSourceSets>.Instance,
+            new BakeSourceSets.Configuration()
+            {
+                SourceSets = new() { ["a"] = "merged", ["b"] = "merged" },
+            },
+            [new DefaultBakeStrategy(NullLogger<DefaultBakeStrategy>.Instance)]
+        );
+
+        Assert.ThrowsAsync<InvalidOperationException>(async () =>
+        {
+            await bakeSourceSets.ExecuteAsync(context);
+        });
+    }
 }
