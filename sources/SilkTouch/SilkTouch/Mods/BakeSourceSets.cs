@@ -504,24 +504,51 @@ public class BakeSourceSets(
     {
         // Handle children first
         var mergedInner = existing?.Inner ?? incoming.Inner;
-        if (mergedInner != null && incoming.Inner != null)
+        if (mergedInner != null)
         {
-            foreach (var (discrimChild, secondChild) in incoming.Inner.Children)
+            foreach (
+                var key in (existing?.Inner?.Children.Keys ?? Enumerable.Empty<string>())
+                    .Concat(incoming.Inner?.Children.Keys ?? Enumerable.Empty<string>())
+                    .Distinct()
+            )
             {
                 BakedMember? existingChild = null;
-                existing?.Inner?.Children.TryGetValue(discrimChild, out existingChild);
+                BakedMember? incomingChild = null;
 
-                var mergedChild = Merge(strategy, discrimChild, existingChild, secondChild);
+                existing?.Inner?.Children.TryGetValue(key, out existingChild);
+                incoming.Inner?.Children.TryGetValue(key, out incomingChild);
+
+                if (existingChild == null && incomingChild == null)
+                {
+                    continue;
+                }
+
+                // This prefers to merge incoming children into existing children,
+                // but falls back to merging existing into incoming if incoming is null
+                // This is to make it so the (null, non-null) and (non-null, null) cases can be treated similarly
+                if (incomingChild == null)
+                {
+                    (incomingChild, existingChild) = (existingChild!, incomingChild);
+                }
+
+                var mergedChild = Merge(strategy, key, existingChild, incomingChild);
                 if (mergedChild != null)
                 {
-                    mergedInner.Children[discrimChild] = mergedChild;
+                    mergedInner.Children[key] = mergedChild;
                 }
                 else
                 {
-                    mergedInner.Children.Remove(discrimChild);
+                    mergedInner.Children.Remove(key);
                 }
             }
         }
+
+        // Update
+        if (existing != null)
+        {
+            existing = existing with { Inner = mergedInner };
+        }
+        incoming = incoming with { Inner = mergedInner };
 
         // Then merge self
         var mergedSyntax = strategy.Merge(discrim, existing, incoming);
