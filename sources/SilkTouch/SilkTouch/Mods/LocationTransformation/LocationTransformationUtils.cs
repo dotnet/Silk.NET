@@ -30,10 +30,6 @@ public static class LocationTransformationUtils
     )
     {
         var sourceProject = ctx.SourceProject;
-        if (sourceProject == null)
-        {
-            return;
-        }
 
         // We need to track both the original solution and modified solution
         // The original is where we retrieve documents and semantic models
@@ -87,6 +83,8 @@ public static class LocationTransformationUtils
             modifiedSolution = modifiedDocument.WithSyntaxRoot(newRoot).Project.Solution;
         }
 
-        ctx.SourceProject = modifiedSolution.GetProject(sourceProject.Id);
+        ctx.SourceProject =
+            modifiedSolution.GetProject(sourceProject.Id)
+            ?? throw new InvalidOperationException("Failed to get source project");
     }
 }

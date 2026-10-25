@@ -26,10 +26,6 @@ public class ExtractEnumConstants(DocumentFactory documentFactory) : IMod
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var project = ctx.SourceProject;
-        if (project == null)
-        {
-            return;
-        }
 
         // First pass to gather data, such as the types to extract and generate
         var walker = new Walker();
@@ -78,7 +74,7 @@ public class ExtractEnumConstants(DocumentFactory documentFactory) : IMod
             var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
             var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
             project = project
-                ?.AddDocument(
+                .AddDocument(
                     $"{identifier}.gen.cs",
                     documentFactory.PopulateDocument(
                         CompilationUnit()

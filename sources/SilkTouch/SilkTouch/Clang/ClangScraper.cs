@@ -541,18 +541,15 @@ public sealed class ClangScraper(
         }
 
         var sourceProject = ctx.SourceProject;
-        if (sourceProject != null)
+        foreach (var (filePath, root) in sourceDocuments)
         {
-            foreach (var (filePath, root) in sourceDocuments)
-            {
-                sourceProject = sourceProject
-                    .AddDocument(
-                        Path.GetFileName(filePath),
-                        documentFactory.PopulateDocument(root),
-                        filePath: sourceProject.FullPath(filePath)
-                    )
-                    .Project;
-            }
+            sourceProject = sourceProject
+                .AddDocument(
+                    Path.GetFileName(filePath),
+                    documentFactory.PopulateDocument(root),
+                    filePath: sourceProject.FullPath(filePath)
+                )
+                .Project;
         }
         ctx.SourceProject = sourceProject;
 

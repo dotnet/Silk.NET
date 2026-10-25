@@ -12,7 +12,7 @@ public class DummyModContext : IModContext
 
     public string JobKey { get; set; } = "Test";
     public string WorkingDirectory { get; set; } = "";
-    public Project? SourceProject { get; set; }
+    public required Project SourceProject { get; set; }
     public Project? TestProject { get; set; }
     public bool ContinueGeneration { get; set; } = true;
 

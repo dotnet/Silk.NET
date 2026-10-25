@@ -52,7 +52,10 @@ public class MixKhronosDataTests
                         new NullLogger<MixKhronosData>(),
                         new MixKhronosData.Configuration { SpecPath = TestFile(x) }
                     );
-                    await mod.InitializeAsync(new DummyModContext(), ct);
+                    await mod.InitializeAsync(
+                        new DummyModContext() { SourceProject = TestUtils.CreateTestProject() },
+                        ct
+                    );
                     return (object[])[x, mod.Job];
                 }
             );

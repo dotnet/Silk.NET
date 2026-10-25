@@ -23,7 +23,7 @@ public interface IModContext : IAsyncDisposable
     /// <summary>
     /// The current compilation for the generation outputs.
     /// </summary>
-    public Project? SourceProject { get; set; }
+    public Project SourceProject { get; set; }
 
     /// <summary>
     /// The current compilation for the test outputs.

@@ -23,10 +23,6 @@ public class ExtractHandles(ILogger<ExtractHandles> logger, DocumentFactory docu
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var project = ctx.SourceProject;
-        if (project == null)
-        {
-            return;
-        }
 
         var compilation = await project.GetCompilationAsync(ct);
         if (compilation == null)

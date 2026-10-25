@@ -202,11 +202,6 @@ public class AddApiProfiles(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        if (ctx.SourceProject is null)
-        {
-            return;
-        }
-
         var rewriter = new Rewriter(versionProviders);
         foreach (var docId in ctx.SourceProject.DocumentIds)
         {

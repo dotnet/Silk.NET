@@ -77,10 +77,10 @@ public class ChangeNamespace(ChangeNamespace.Configuration config) : IMod, IResp
     {
         var rewriter = new Rewriter(_ns, _regexes);
         var proj = ctx.SourceProject;
-        foreach (var docId in proj?.DocumentIds ?? [])
+        foreach (var docId in proj.DocumentIds)
         {
             var doc =
-                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")
