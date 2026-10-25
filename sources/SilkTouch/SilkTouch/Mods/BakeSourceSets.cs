@@ -466,7 +466,7 @@ public class BakeSourceSets(
                 {
                     if (outputBakeSet.Children.TryGetValue(discrim, out var existing))
                     {
-                        var merged = Merge(strategy, discrim, existing, incoming);
+                        var merged = Merge(strategy, discrim, null, existing, null, incoming);
                         if (merged != null)
                         {
                             outputBakeSet.Children[discrim] = merged;
@@ -498,7 +498,9 @@ public class BakeSourceSets(
     private BakedMember? Merge(
         IBakeStrategy strategy,
         string discrim,
+        SyntaxNode? existingParent,
         BakedMember? existing,
+        SyntaxNode? incomingParent,
         BakedMember incoming
     )
     {
@@ -531,7 +533,7 @@ public class BakeSourceSets(
                     (incomingChild, existingChild) = (existingChild!, incomingChild);
                 }
 
-                var mergedChild = Merge(strategy, key, existingChild, incomingChild);
+                var mergedChild = Merge(strategy, key, existing?.Syntax, existingChild, incoming.Syntax, incomingChild);
                 if (mergedChild != null)
                 {
                     mergedInner.Children[key] = mergedChild;
@@ -551,7 +553,7 @@ public class BakeSourceSets(
         incoming = incoming with { Inner = mergedInner };
 
         // Then merge self
-        var mergedSyntax = strategy.Merge(discrim, existing, incoming);
+        var mergedSyntax = strategy.Merge(discrim, existingParent, existing, incomingParent, incoming);
         if (mergedSyntax == null)
         {
             return null;

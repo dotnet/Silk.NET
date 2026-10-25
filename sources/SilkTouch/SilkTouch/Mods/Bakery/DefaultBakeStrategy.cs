@@ -37,7 +37,9 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
     /// <inheritdoc />
     public virtual MemberDeclarationSyntax? Merge(
         string discrim,
+        SyntaxNode? existingParent,
         BakedMember? existing,
+        SyntaxNode? incomingParent,
         BakedMember incoming
     )
     {
