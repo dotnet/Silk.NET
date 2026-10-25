@@ -6,7 +6,7 @@ public class Vk
     public static extern VkResult vkCreateInstance(VkInstanceCreateInfo* pCreateInfo, VkAllocationCallbacks* pAllocator, VkInstance_T** pInstance);
 }
 
-// VkInstance_T.gen.cs
+// VkInstance_T.gen.cs @ Handles/VkInstance_T.gen.cs
 [NativeName("VkInstance_T")]
 public unsafe partial struct VkInstance_T
 {
