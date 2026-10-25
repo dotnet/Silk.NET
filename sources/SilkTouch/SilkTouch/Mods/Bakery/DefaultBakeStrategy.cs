@@ -43,6 +43,23 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
     {
         if (existing == null)
         {
+            // If parent is a struct or record struct, fields counts should be equal.
+            if (
+                incoming.Syntax.Parent is BaseTypeDeclarationSyntax parent
+                && (
+                    incoming.Syntax.Parent is StructDeclarationSyntax
+                    || (
+                        incoming.Syntax.Parent is RecordDeclarationSyntax r
+                        && r.ClassOrStructKeyword.IsKind(SyntaxKind.StructKeyword)
+                    )
+                )
+            )
+            {
+                throw new InvalidOperationException(
+                    $"Differing number of fields between definitions of {parent.Identifier}"
+                );
+            }
+
             return incoming.Syntax;
         }
 
@@ -54,6 +71,50 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                     + $"same name but with a different datatype (i.e. profile 1 contains a {existing.Syntax.Kind()} "
                     + $"whereas profile 2 contains a {node.Kind()})"
             );
+        }
+
+        // Fields should exactly match
+        if (
+            (existing.Syntax, node: node) is
+            (FieldDeclarationSyntax existingField, FieldDeclarationSyntax incomingField)
+        )
+        {
+            // BakeSourceSets splits declarators into standalone fields
+            var existingDeclarator = existingField.Declaration.Variables.Single();
+            var incomingDeclarator = incomingField.Declaration.Variables.Single();
+
+            if (
+                existingField.Declaration.Type.ToString()
+                    != incomingField.Declaration.Type.ToString()
+                || existingDeclarator.Identifier.ToString()
+                    != incomingDeclarator.Identifier.ToString()
+                || existingDeclarator.Initializer?.ToString()
+                    != incomingDeclarator.Initializer?.ToString()
+                || existingDeclarator.ArgumentList?.ToString()
+                    != incomingDeclarator.ArgumentList?.ToString()
+            )
+            {
+                if (
+                    incoming.Syntax.Parent is BaseTypeDeclarationSyntax parent
+                    && (
+                        incoming.Syntax.Parent is StructDeclarationSyntax
+                        || (
+                            incoming.Syntax.Parent is RecordDeclarationSyntax r
+                            && r.ClassOrStructKeyword.IsKind(SyntaxKind.StructKeyword)
+                        )
+                    )
+                )
+                {
+                    throw new InvalidOperationException(
+                        $"Field {discrim} differs between definitions of {parent.Identifier}."
+                    );
+                }
+
+                // Should be impossible
+                throw new InvalidOperationException(
+                    $"Field {discrim} differs between definitions."
+                );
+            }
         }
 
         // Merge attributes
@@ -88,59 +149,6 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                     )
                 )
                 .WithBaseList(baseTypes.Length != 0 ? BaseList(SeparatedList(baseTypes)) : null);
-
-            // If this is a struct or record struct, fields should exactly match.
-            if (
-                node is StructDeclarationSyntax
-                || (
-                    node is RecordDeclarationSyntax r
-                    && r.ClassOrStructKeyword.IsKind(SyntaxKind.StructKeyword)
-                )
-            )
-            {
-                var existingFields = ExtractFields(existing);
-                var incomingFields = ExtractFields(incoming);
-
-                (TypeSyntax Type, VariableDeclaratorSyntax Var)[] ExtractFields(BakedMember member)
-                {
-                    return (incoming.Inner?.Children.Values ?? Enumerable.Empty<BakedMember>())
-                        .OrderBy(x => x.Index)
-                        .Select(x => x.Syntax)
-                        .OfType<FieldDeclarationSyntax>()
-                        .Where(x => !x.Modifiers.Any(m => m.IsKind(SyntaxKind.StaticKeyword)))
-                        .SelectMany(x =>
-                            x.Declaration.Variables.Select(y => (x.Declaration.Type, Var: y))
-                        )
-                        .ToArray();
-                }
-
-                if (existingFields.Length != incomingFields.Length)
-                {
-                    throw new InvalidOperationException(
-                        $"Differing number of fields between definitions of {incomingType.Identifier} ({existingFields.Length} vs "
-                            + $"{incomingFields.Length})"
-                    );
-                }
-
-                for (var i = 0; i < existingFields.Length; i++)
-                {
-                    if (
-                        existingFields[i].Type.ToString() != incomingFields[i].Type.ToString()
-                        || existingFields[i].Var.Identifier.ToString()
-                            != incomingFields[i].Var.Identifier.ToString()
-                        || existingFields[i].Var.Initializer?.ToString()
-                            != incomingFields[i].Var.Initializer?.ToString()
-                        || existingFields[i].Var.ArgumentList?.ToString()
-                            != incomingFields[i].Var.ArgumentList?.ToString()
-                    )
-                    {
-                        throw new InvalidOperationException(
-                            $"Field {i} differs between definitions of {incomingType.Identifier}. "
-                                + $"Left: {existingFields[i]}, right: {incomingFields[i]}"
-                        );
-                    }
-                }
-            }
         }
 
         // Boldly assume it's the same implementation, modifiers, etc
