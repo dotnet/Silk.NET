@@ -497,7 +497,6 @@ public sealed class ClangScraper(
         var testDocuments = new List<ScrapedDocument>();
         await foreach (var file in cacheDir.GetCommittedFilesAsync().WithCancellation(ct))
         {
-            await cacheDir.GetCommittedFileAsync(file);
             var isSource = file.StartsWith("sources");
             var isTest = file.StartsWith("tests");
             if (!isSource && !isTest)
@@ -506,7 +505,7 @@ public sealed class ClangScraper(
             }
 
             var rel = file[(isSource ? "sources".Length : "tests".Length)..].TrimStart('/', '\\');
-            var content = await cacheDir.GetCommittedFileAsync(file);
+            await using var content = await cacheDir.GetCommittedFileAsync(file);
             var root = await CSharpSyntaxTree
                 .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
                 .GetRootAsync(ct);
