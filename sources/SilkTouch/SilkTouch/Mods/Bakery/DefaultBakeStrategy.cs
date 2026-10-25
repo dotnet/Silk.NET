@@ -47,11 +47,11 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         {
             // If parent is a struct or record struct, fields counts should be equal.
             if (
-                incoming.Syntax.Parent is BaseTypeDeclarationSyntax parent
+                incomingParent is BaseTypeDeclarationSyntax parent
                 && (
-                    incoming.Syntax.Parent is StructDeclarationSyntax
+                    incomingParent is StructDeclarationSyntax
                     || (
-                        incoming.Syntax.Parent is RecordDeclarationSyntax r
+                        incomingParent is RecordDeclarationSyntax r
                         && r.ClassOrStructKeyword.IsKind(SyntaxKind.StructKeyword)
                     )
                 )
@@ -97,14 +97,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             )
             {
                 if (
-                    incoming.Syntax.Parent is BaseTypeDeclarationSyntax parent
-                    && (
-                        incoming.Syntax.Parent is StructDeclarationSyntax
-                        || (
-                            incoming.Syntax.Parent is RecordDeclarationSyntax r
-                            && r.ClassOrStructKeyword.IsKind(SyntaxKind.StructKeyword)
-                        )
-                    )
+                    incomingParent is BaseTypeDeclarationSyntax parent
                 )
                 {
                     throw new InvalidOperationException(
