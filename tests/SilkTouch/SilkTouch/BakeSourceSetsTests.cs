@@ -140,4 +140,96 @@ public class BakeSourceSetsTests
         // The output should be the same as the inputs, but split into one document per type under the `merged` folder
         await TestUtils.VerifyDocumentsAsync(context.SourceProject.Documents);
     }
+
+    [Test]
+    public async Task ThrowForStructMismatch()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Api.gen.cs",
+                """
+                public struct Struct
+                {
+                    public int A, B;
+                }
+                """,
+                filePath: "a/Api.gen.cs"
+            )
+            .Project.AddDocument(
+                "Api.gen.cs",
+                """
+                public struct Struct
+                {
+                    public int A, B, C;
+                }
+                """,
+                filePath: "b/Api.gen.cs"
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
+
+        var bakeSourceSets = new BakeSourceSets(
+            documentFactory,
+            NullLogger<BakeSourceSets>.Instance,
+            new BakeSourceSets.Configuration()
+            {
+                SourceSets = new() { ["a"] = "merged", ["b"] = "merged" },
+            },
+            [new DefaultBakeStrategy(NullLogger<DefaultBakeStrategy>.Instance)]
+        );
+
+        Assert.ThrowsAsync<InvalidOperationException>(async () =>
+        {
+            await bakeSourceSets.ExecuteAsync(context);
+        });
+    }
+
+    [Test]
+    public async Task ThrowForStructMismatch2()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Api.gen.cs",
+                """
+                public struct Struct
+                {
+                    public int A, B, C;
+                }
+                """,
+                filePath: "b/Api.gen.cs"
+            )
+            .Project.AddDocument(
+                "Api.gen.cs",
+                """
+                public struct Struct
+                {
+                    public int A, B;
+                }
+                """,
+                filePath: "a/Api.gen.cs"
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+        var documentFactory = new DocumentFactory();
+
+        var bakeSourceSets = new BakeSourceSets(
+            documentFactory,
+            NullLogger<BakeSourceSets>.Instance,
+            new BakeSourceSets.Configuration()
+            {
+                SourceSets = new() { ["a"] = "merged", ["b"] = "merged" },
+            },
+            [new DefaultBakeStrategy(NullLogger<DefaultBakeStrategy>.Instance)]
+        );
+
+        Assert.ThrowsAsync<InvalidOperationException>(async () =>
+        {
+            await bakeSourceSets.ExecuteAsync(context);
+        });
+    }
 }
