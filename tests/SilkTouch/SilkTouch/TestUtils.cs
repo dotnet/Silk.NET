@@ -36,7 +36,13 @@ public static class TestUtils
             isFirst = false;
 
             builder.Append("// ");
-            builder.AppendLine(document.Name);
+            builder.Append(document.Name);
+            if (document.FilePath != null)
+            {
+                builder.Append(" @ ");
+                builder.Append(document.FilePath);
+            }
+            builder.AppendLine();
 
             var root = await document.GetSyntaxRootAsync();
             builder.AppendLine(root!.NormalizeWhitespace().ToString());
