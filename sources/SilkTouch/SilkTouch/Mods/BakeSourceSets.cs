@@ -533,7 +533,14 @@ public class BakeSourceSets(
                     (incomingChild, existingChild) = (existingChild!, incomingChild);
                 }
 
-                var mergedChild = Merge(strategy, key, existing?.Syntax, existingChild, incoming.Syntax, incomingChild);
+                var mergedChild = Merge(
+                    strategy,
+                    key,
+                    existing?.Syntax,
+                    existingChild,
+                    incoming.Syntax,
+                    incomingChild
+                );
                 if (mergedChild != null)
                 {
                     mergedInner.Children[key] = mergedChild;
@@ -553,7 +560,13 @@ public class BakeSourceSets(
         incoming = incoming with { Inner = mergedInner };
 
         // Then merge self
-        var mergedSyntax = strategy.Merge(discrim, existingParent, existing, incomingParent, incoming);
+        var mergedSyntax = strategy.Merge(
+            discrim,
+            existingParent,
+            existing,
+            incomingParent,
+            incoming
+        );
         if (mergedSyntax == null)
         {
             return null;
