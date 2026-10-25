@@ -1813,6 +1813,9 @@ public enum GLEnum : uint
     [NativeName("GL_RGBA16_SNORM_EXT")]
     Rgba16SnormEXT = 36763,
 
+    [NativeName("GLES_ACTIVE_PROGRAM_EXT")]
+    EsActiveProgramEXT = 33369,
+
     [NativeName("GL_VERTEX_SHADER_BIT_EXT")]
     VertexShaderBitEXT = 1,
 
@@ -12104,7 +12107,7 @@ public enum GLEnum : uint
     D3D12FenceValueEXT = 38293,
 
     [NativeName("GL_ACTIVE_PROGRAM_EXT")]
-    ActiveProgramEXT = 33369,
+    ActiveProgramEXT = 35725,
 
     [NativeName("GL_LIGHT_MODEL_COLOR_CONTROL_EXT")]
     LightModelColorControlEXT = 33272,
