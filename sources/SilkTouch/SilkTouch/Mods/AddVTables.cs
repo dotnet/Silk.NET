@@ -522,8 +522,6 @@ public class AddVTables(AddVTables.Configuration config, DocumentFactory sharedD
             vTables.Length
         ];
 
-        public Dictionary<string, UsingDirectiveSyntax> AggregatedUsings { get; } = new();
-
         private string _staticDefault =
             vTables.FirstOrDefault(x => x.IsDefault && x.IsStatic)?.Name
             ?? throw new InvalidOperationException("Needs at least one static default.");
