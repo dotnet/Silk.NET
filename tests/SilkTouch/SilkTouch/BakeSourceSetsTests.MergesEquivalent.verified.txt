@@ -1,5 +1,5 @@
 ﻿// Class.gen.cs @ merged/Class.gen.cs
-public class Class
+public class Class : IInterface
 {
     public int A;
     public int B;
@@ -76,7 +76,7 @@ public record struct RecordStruct
 }
 
 // Struct.gen.cs @ merged/Struct.gen.cs
-public struct Struct
+public struct Struct : IInterface
 {
     public int A;
     public int B;

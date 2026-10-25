@@ -21,7 +21,7 @@ public class BakeSourceSetsTests
     public async Task MergesEquivalent()
     {
         var source = """
-            public class Class
+            public class Class : IInterface
             {
                 public int A, B, C;
                 public int Data;
@@ -58,7 +58,7 @@ public class BakeSourceSetsTests
                 public struct Nested { }
             }
 
-            public struct Struct
+            public struct Struct : IInterface
             {
                 public int A, B, C;
                 public int Data;
@@ -200,7 +200,7 @@ public class BakeSourceSetsTests
                     public int A, B, C;
                 }
                 """,
-                filePath: "b/Api.gen.cs"
+                filePath: "a/Api.gen.cs"
             )
             .Project.AddDocument(
                 "Api.gen.cs",
@@ -210,7 +210,7 @@ public class BakeSourceSetsTests
                     public int A, B;
                 }
                 """,
-                filePath: "a/Api.gen.cs"
+                filePath: "b/Api.gen.cs"
             )
             .Project;
 
