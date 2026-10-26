@@ -6,22 +6,32 @@ Set-StrictMode -Version Latest
 $buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
 $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
 
-$matrix = @()
+$scrapeMatrix = @()
+$regenerateMatrix = @()
 
 $chosenJobs = $args
 foreach ($chosenJob in $chosenJobs) {
   $job = $buildsJson.bindings.$chosenJob
+
   foreach ($cache in $job.caches.PSObject.Properties) {
-    $matrix += @{
+    $scrapeMatrix += @{
+      job = $chosenJob
       os = $cache.Name
       caches = $cache.Value
       submodules = $job.submodules
     }
   }
+
+  $regenerateMatrix += @{
+    job = $chosenJob
+    submodules = $job.submodules
+  }
 }
 
-$matrixJson = ConvertTo-Json -InputObject $matrix -Depth 10
+Write-Output "scrapeMatrix<<EOF"
+Write-Output (ConvertTo-Json -InputObject $scrapeMatrix -Depth 10)
+Write-Output "EOF"
 
-Write-Output "matrix<<EOF"
-Write-Output $matrixJson
+Write-Output "regenerateMatrix<<EOF"
+Write-Output (ConvertTo-Json -InputObject $regenerateMatrix -Depth 10)
 Write-Output "EOF"
