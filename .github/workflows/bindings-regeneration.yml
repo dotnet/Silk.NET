@@ -11,14 +11,24 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  dispatch:
+    name: "Dispatch selected jobs"
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Generate matrix
+        working-directory: eng/workflows/native
+        run: ./workflow-matrix.ps1
+
   scrape:
     strategy:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-24.04
-          - windows-2025
-          - macos-15
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
 
     name: Scrape on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}

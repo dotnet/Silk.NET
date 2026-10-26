@@ -1,0 +1,58 @@
+{
+  "native": {
+    "SDL": {
+      "path": "sources/SDL/Native",
+      "submodules": [
+        "eng/submodules/sdl"
+      ],
+      "builds": {
+        "android": "ubuntu-latest",
+        "ios": "macos-latest",
+        "iossimulator": "macos-latest",
+        "linux-arm64": "ubuntu-latest",
+        "linux-arm": "ubuntu-latest",
+        "linux-x64": "ubuntu-latest",
+        "osx": "macos-latest",
+        "tvos": "macos-latest",
+        "tvossimulator": "macos-latest",
+        "win-arm64": "windows-latest",
+        "win-x64": "windows-latest"
+      }
+    },
+    "OpenAL-Soft": {
+      "path": "sources/OpenAL/Soft.Native",
+      "submodules": [
+        "eng/submodules/openal-soft"
+      ],
+      "builds": {
+        "android-arm64": "ubuntu-latest",
+        "android-arm": "ubuntu-latest",
+        "android-x64": "ubuntu-latest",
+        "android-x86": "ubuntu-latest",
+        "ios": "macos-latest",
+        "iossimulator": "macos-latest",
+        "linux-arm64": "ubuntu-latest",
+        "linux-arm": "ubuntu-latest",
+        "linux-x64": "ubuntu-latest",
+        "osx": "macos-latest",
+        "tvos": "macos-latest",
+        "tvossimulator": "macos-latest",
+        "win-arm64": "windows-latest",
+        "win-x64": "windows-latest"
+      }
+    }
+  },
+  "bindings": {
+    "OpenXR": {
+      "submodules": [
+        "eng/submodules/openxr-sdk",
+        "eng/submodules/vulkan-headers"
+      ],
+      "caches": {
+        "openxr-linux-clangsharp.stout": "ubuntu-latest",
+        "openxr-mac-clangsharp.stout": "macos-latest",
+        "openxr-windows-clangsharp.stout": "windows-latest"
+      }
+    }
+  }
+}

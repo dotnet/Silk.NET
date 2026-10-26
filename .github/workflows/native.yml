@@ -24,7 +24,7 @@ jobs:
       - id: parse
         name: Determine which native libraries the user has asked to build, and where to look for changes.
         run: ./workflow-stage1.sh
-        working-directory: eng/native/buildsystem
+        working-directory: eng/workflows/native
         env:
           PR_COMMENT: ${{ github.event.pull_request.body }}
       - uses: dorny/paths-filter@v3
@@ -42,7 +42,7 @@ jobs:
       - id: strat
         name: Create the matrix strategy for the native builds.
         run: ./workflow-stage2.sh
-        working-directory: eng/native/buildsystem
+        working-directory: eng/workflows/native
         env:
           NATIVE_LIBRARY_APPLICABLE_SHORTHANDS: ${{ join(fromJSON(steps.filter.outputs.changes), ' ') }}
           NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS: ${{ steps.parse.outputs.targets_referenced }}
