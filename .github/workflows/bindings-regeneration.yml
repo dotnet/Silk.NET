@@ -18,7 +18,7 @@ jobs:
     steps:
 
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: false
 
@@ -76,7 +76,7 @@ jobs:
           sdk-version: 22621
 
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: false
 
@@ -155,7 +155,7 @@ jobs:
           dotnet-version: "10.0.401"
 
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: false
 
@@ -232,7 +232,7 @@ jobs:
     steps:
 
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: false
 
