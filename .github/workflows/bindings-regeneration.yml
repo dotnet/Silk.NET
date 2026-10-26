@@ -18,20 +18,25 @@ jobs:
     steps:
 
       - name: Generate matrix
+        id: matrix
         working-directory: eng/workflows/native
-        run: ./workflow-matrix.ps1
+        # TODO Don't hardcode jobs
+        shell: pwsh
+        run: ./workflow-matrix.ps1 OpenXR >> $env:GITHUB_OUTPUT
+
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
 
   scrape:
+    name: Scrape on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    needs: [dispatch]
+
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - ubuntu-latest
-          - windows-latest
-          - macos-latest
-
-    name: Scrape on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+        flat: ${{ fromJSON(needs.dispatch.outputs.matrix) }}
 
     steps:
 
