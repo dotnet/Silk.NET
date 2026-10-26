@@ -41,7 +41,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        flat: ${{ fromJSON(needs.dispatch.outputs.matrix) }}
+        include: ${{ fromJSON(needs.dispatch.outputs.matrix) }}
 
     steps:
 
