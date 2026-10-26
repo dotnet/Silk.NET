@@ -75,23 +75,14 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             );
         }
 
-        // If parent is a struct or record struct, fields should exactly match.
+        // Fields should exactly match.
         {
             if (
                 (existing.Syntax, node: node) is
                 (FieldDeclarationSyntax existingField, FieldDeclarationSyntax incomingField)
             )
             {
-                if (
-                    incomingParent is BaseTypeDeclarationSyntax parent
-                    && (
-                        incomingParent is StructDeclarationSyntax
-                        || (
-                            incomingParent is RecordDeclarationSyntax r
-                            && r.ClassOrStructKeyword.IsKind(SyntaxKind.StructKeyword)
-                        )
-                    )
-                )
+                if (incomingParent is BaseTypeDeclarationSyntax parent)
                 {
                     // BakeSourceSets splits declarators into standalone fields
                     var existingDeclarator = existingField.Declaration.Variables.Single();
