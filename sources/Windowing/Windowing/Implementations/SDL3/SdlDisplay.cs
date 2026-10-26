@@ -10,8 +10,8 @@ namespace Silk.NET.Windowing.SDL3;
 
 internal class SdlDisplay : IDisplay
 {
-    private Rectangle<float> _bounds;
-    private Rectangle<float> _workArea;
+    private Rect2D<float> _bounds;
+    private Rect2D<float> _workArea;
 
     public SdlDisplay(SdlSurface surface, uint id)
     {
@@ -24,7 +24,7 @@ internal class SdlDisplay : IDisplay
     public uint Id { get; }
     public SdlSurface Surface { get; }
 
-    public Rectangle<float> Bounds
+    public Rect2D<float> Bounds
     {
         get
         {
@@ -34,11 +34,11 @@ internal class SdlDisplay : IDisplay
                 Sdl.ThrowError();
             }
 
-            return new Rectangle<float>(rect.X, rect.Y, rect.W, rect.H);
+            return new Rect2D<float>(rect.X, rect.Y, rect.W, rect.H);
         }
     }
 
-    public Rectangle<float> WorkArea
+    public Rect2D<float> WorkArea
     {
         get
         {
@@ -48,7 +48,7 @@ internal class SdlDisplay : IDisplay
                 Sdl.ThrowError();
             }
 
-            return new Rectangle<float>(rect.X, rect.Y, rect.W, rect.H);
+            return new Rect2D<float>(rect.X, rect.Y, rect.W, rect.H);
         }
     }
 

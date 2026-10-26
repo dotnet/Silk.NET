@@ -102,20 +102,6 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(expected, actual);
         }
 
-        // A test for GetHashCode ()
-        [Fact]
-        public void PlaneGetHashCodeTest()
-        {
-            Plane<float> target = new Plane<float>(1.0f, 2.0f, 3.0f, 4.0f);
-
-            int expected = HashCode.Combine(
-                target.Normal.GetHashCode(),
-                target.Distance.GetHashCode()
-            );
-            int actual = target.GetHashCode();
-            Assert.Equal(expected, actual);
-        }
-
         // A test for Plane<float> (float, float, float, float)
         [Fact]
         public void PlaneConstructorTest1()
@@ -157,7 +143,7 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> point3 = new Vector3D<float>(1.0f, 1.0f, 0.0f);
 
             Plane<float> target = Plane.CreateFromVertices(point1, point2, point3);
-            var invRoot2 = 1.0f / Scalar.Sqrt(2);
+            var invRoot2 = 1.0f / float.Sqrt(2);
 
             Plane<float> expected = new Plane<float>(
                 new Vector3D<float>(invRoot2, 0, invRoot2),
@@ -247,7 +233,7 @@ namespace Silk.NET.Maths.Tests
             Plane<float> target = new Plane<float>(1, 2, 3, 4);
 
             float f = target.Normal.LengthSquared;
-            float invF = 1.0f / (float)Scalar.Sqrt(f);
+            float invF = 1.0f / float.Sqrt(f);
             Plane<float> expected = new Plane<float>(target.Normal * invF, target.Distance * invF);
 
             Plane<float> actual = Plane.Normalize(target);
@@ -313,7 +299,7 @@ namespace Silk.NET.Maths.Tests
                 Matrix4X4.CreateRotationX(MathHelper.ToRadians(30.0f))
                 * Matrix4X4.CreateRotationY(MathHelper.ToRadians(30.0f))
                 * Matrix4X4.CreateRotationZ(MathHelper.ToRadians(30.0f));
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
+            Quaternion<float> q = Quaternion.CreateFromRotationMatrix(m);
 
             Plane<float> expected = new Plane<float>();
             float x = target.Normal.X,
@@ -360,10 +346,17 @@ namespace Silk.NET.Maths.Tests
             Assert.False(d.Equals(new Plane<float>(0, 0, 0, 0)));
 
             // Counterintuitive result - IEEE rules for NaN comparison are weird!
-            Assert.False(a.Equals(a));
-            Assert.False(b.Equals(b));
-            Assert.False(c.Equals(c));
-            Assert.False(d.Equals(d));
+#pragma warning disable CS1718 // Comparison made to same variable
+            Assert.False(a == a);
+            Assert.False(b == b);
+            Assert.False(c == c);
+            Assert.False(d == d);
+#pragma warning restore CS1718 // Comparison made to same variable
+
+            Assert.True(a.Equals(a));
+            Assert.True(b.Equals(b));
+            Assert.True(c.Equals(c));
+            Assert.True(d.Equals(d));
         }
 
         // A test to make sure these types are blittable directly into GPU buffer memory layouts

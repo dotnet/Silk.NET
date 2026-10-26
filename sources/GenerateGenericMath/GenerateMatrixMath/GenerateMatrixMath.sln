@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11505.172 d18.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateMatrixMath", "GenerateMatrixMath\GenerateMatrixMath.csproj", "{505330B8-C28A-4E36-AC44-3C48BF551B34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{505330B8-C28A-4E36-AC44-3C48BF551B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{505330B8-C28A-4E36-AC44-3C48BF551B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{505330B8-C28A-4E36-AC44-3C48BF551B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{505330B8-C28A-4E36-AC44-3C48BF551B34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A29E176-1DE7-4A4E-A935-7B5D223FEFE9}
+	EndGlobalSection
+EndGlobal

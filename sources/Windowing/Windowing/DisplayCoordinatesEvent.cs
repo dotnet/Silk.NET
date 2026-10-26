@@ -14,8 +14,8 @@ using Silk.NET.Maths;
 public readonly record struct DisplayCoordinatesEvent(
     Surface Surface,
     IDisplay Display,
-    Rectangle<float> OldBounds,
-    Rectangle<float> NewBounds,
-    Rectangle<float> OldWorkArea,
-    Rectangle<float> NewWorkArea
+    Rect2D<float> OldBounds,
+    Rect2D<float> NewBounds,
+    Rect2D<float> OldWorkArea,
+    Rect2D<float> NewWorkArea
 );
