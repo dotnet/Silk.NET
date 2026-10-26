@@ -293,4 +293,5 @@ jobs:
             exit 0
           }
 
+          git pull --rebase origin $env:TARGET_BRANCH
           git push origin "HEAD:refs/heads/$env:TARGET_BRANCH"
