@@ -1,9 +1,10 @@
 name: Bindings Regeneration
 
 on:
-  issue_comment:
-    types:
-      - created
+  workflow_dispatch:
+#  issue_comment:
+#    types:
+#      - created
 
 permissions:
   contents: read
@@ -17,7 +18,7 @@ jobs:
     name: "Dispatch selected jobs"
     runs-on: ubuntu-latest
 
-    if: github.event.issue.pull_request && contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR", "CONTRIBUTOR"]'), github.event.comment.author_association)
+#    if: github.event.issue.pull_request && contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR", "CONTRIBUTOR"]'), github.event.comment.author_association)
 
     steps:
 
@@ -26,19 +27,20 @@ jobs:
         with:
           submodules: false
 
-      - name: Parse comment as command
-        id: command
-        shell: pwsh
-        working-directory: eng/workflows/bindings
-        env:
-          COMMENT_BODY: ${{ github.event.comment.body }}
-        run: ./workflow-parse.ps1 $env:COMMENT_BODY >> $env:GITHUB_OUTPUT
+#      - name: Parse comment as command
+#        id: command
+#        shell: pwsh
+#        working-directory: eng/workflows/bindings
+#        env:
+#          COMMENT_BODY: ${{ github.event.comment.body }}
+#        run: ./workflow-parse.ps1 $env:COMMENT_BODY >> $env:GITHUB_OUTPUT
 
       - name: Generate matrix
         id: matrix
         shell: pwsh
         working-directory: eng/workflows/bindings
-        run: ./workflow-matrix.ps1 ${{ steps.command.outputs.jobs }} >> $env:GITHUB_OUTPUT
+        run: ./workflow-matrix.ps1 OpenXR >> $env:GITHUB_OUTPUT
+#        run: ./workflow-matrix.ps1 ${{ steps.command.outputs.jobs }} >> $env:GITHUB_OUTPUT
 
     outputs:
       scrapeMatrix: ${{ steps.matrix.outputs.scrapeMatrix }}
