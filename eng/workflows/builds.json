@@ -49,9 +49,15 @@
         "eng/submodules/vulkan-headers"
       ],
       "caches": {
-        "openxr-linux-clangsharp.stout": "ubuntu-latest",
-        "openxr-mac-clangsharp.stout": "macos-latest",
-        "openxr-windows-clangsharp.stout": "windows-latest"
+        "ubuntu-latest": [
+          "openxr-linux-clangsharp.stout"
+        ],
+        "macos-latest": [
+          "openxr-mac-clangsharp.stout"
+        ],
+        "windows-latest": [
+          "openxr-windows-clangsharp.stout"
+        ]
       }
     }
   }
