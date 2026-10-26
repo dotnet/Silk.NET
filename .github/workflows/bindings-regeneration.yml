@@ -33,14 +33,16 @@ jobs:
 #        working-directory: eng/workflows/bindings
 #        env:
 #          COMMENT_BODY: ${{ github.event.comment.body }}
-#        run: ./workflow-parse.ps1 $env:COMMENT_BODY >> $env:GITHUB_OUTPUT
+#        run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Generate matrix
         id: matrix
         shell: pwsh
         working-directory: eng/workflows/bindings
+        env:
+          CHOSEN_JOBS: ${{ steps.command.outputs.jobs }}
         run: ./workflow-matrix.ps1 OpenXR >> $env:GITHUB_OUTPUT
-#        run: ./workflow-matrix.ps1 ${{ steps.command.outputs.jobs }} >> $env:GITHUB_OUTPUT
+#        run: ./workflow-matrix.ps1  >> $env:GITHUB_OUTPUT
 
     outputs:
       scrapeMatrix: ${{ steps.matrix.outputs.scrapeMatrix }}

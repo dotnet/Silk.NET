@@ -9,7 +9,7 @@ $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
 $jobNames = @($buildsJson.bindings.PSObject.Properties.Name | Sort-Object -Unique)
 
 # Matrices
-$chosenJobs = @($args | Sort-Object -Unique)
+$chosenJobs = $env:CHOSEN_JOBS
 
 $scrapeMatrix = @()
 $regenerateMatrix = @()

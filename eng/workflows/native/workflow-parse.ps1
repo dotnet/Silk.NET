@@ -18,10 +18,10 @@ foreach ($jobName in $jobNames) {
 Write-Output "EOF"
 
 # Jobs
-$command = $args[0]
+$message = $env:COMMENT_BODY
 
 $jobs = @()
-foreach ($line in $command -split "`r?`n") {
+foreach ($line in $message -split "`r?`n") {
   $words = @(-split $line)
   if ($words.Count -gt 0 -and $words[0] -eq "/native") {
     foreach ($chosenJob in @($words | Select-Object -Skip 1)) {
