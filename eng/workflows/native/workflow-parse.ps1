@@ -3,6 +3,9 @@ $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
+# Inputs
+$message = $env:COMMENT_BODY
+
 # Config
 $buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
 $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
@@ -18,8 +21,6 @@ foreach ($jobName in $jobNames) {
 Write-Output "EOF"
 
 # Jobs
-$message = $env:COMMENT_BODY
-
 $jobs = @()
 foreach ($line in $message -split "`r?`n") {
   $words = @(-split $line)

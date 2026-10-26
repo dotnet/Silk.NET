@@ -3,14 +3,15 @@ $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
+# Inputs
+$chosenJobs = $env:CHOSEN_JOBS
+
 # Config
 $buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
 $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
 $jobNames = @($buildsJson.bindings.PSObject.Properties.Name | Sort-Object -Unique)
 
 # Matrices
-$chosenJobs = $env:CHOSEN_JOBS
-
 $scrapeMatrix = @()
 $regenerateMatrix = @()
 foreach ($chosenJob in $chosenJobs) {
