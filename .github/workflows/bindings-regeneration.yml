@@ -24,7 +24,7 @@ jobs:
 
       - name: Generate matrix
         id: matrix
-        working-directory: eng/workflows/native
+        working-directory: eng/workflows/bindings
         # TODO Don't hardcode jobs
         shell: pwsh
         run: ./workflow-matrix.ps1 OpenXR >> $env:GITHUB_OUTPUT
