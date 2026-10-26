@@ -17,6 +17,11 @@ jobs:
 
     steps:
 
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          submodules: false
+
       - name: Generate matrix
         id: matrix
         working-directory: eng/workflows/native
