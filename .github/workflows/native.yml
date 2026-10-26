@@ -26,7 +26,10 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
 
       - name: Determine which native libraries the user has asked to build, and where to look for changes.
         id: parse
@@ -83,7 +86,11 @@ jobs:
         include: ${{ fromJSON(needs.prerequisites.outputs.matrix_strategy) }}
 
     steps:
-      - uses: actions/checkout@v3
+
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
 
       - name: Build
         run: |
@@ -108,8 +115,11 @@ jobs:
     needs: [prerequisites, build]
 
     steps:
-      - uses: actions/checkout@v4
+
+      - name: Checkout Repo
+        uses: actions/checkout@v7
         with:
+          submodules: false
           ref: ${{ github.head_ref }}
 
       - name: Download All Artifacts
