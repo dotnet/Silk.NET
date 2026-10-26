@@ -80,7 +80,7 @@ jobs:
         with:
           submodules: false
 
-      - name: Initialize Submodules
+      - name: Initialize submodules
         shell: pwsh
         env:
           SUBMODULES: ${{ toJSON(matrix.submodules) }}
@@ -159,7 +159,7 @@ jobs:
         with:
           submodules: false
 
-      - name: Initialize Submodules
+      - name: Initialize submodules
         shell: pwsh
         env:
           SUBMODULES: ${{ toJSON(matrix.submodules) }}
@@ -181,40 +181,6 @@ jobs:
         shell: pwsh
         run: git status
 
-      - name: Calculate source context
-        id: source_context
-        shell: pwsh
-        env:
-          SOURCE_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-
-          $sourceContext = ($env:SOURCE_COMMIT_MESSAGE -split "`n")[0].Trim()
-          if ($sourceContext) {
-            $sourceContext = "`"$sourceContext`" (${{ github.sha }})"
-          }
-          else {
-            $sourceContext = "${{ github.sha }}"
-          }
-
-          Add-Content -Path $env:GITHUB_OUTPUT -Value "value=$sourceContext"
-
-      - name: Commit cache
-        shell: pwsh
-        env:
-          SOURCE_CONTEXT: ${{ steps.source_context.outputs.value }}
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-
-          git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
-          git config --local user.name "The Silk.NET Automaton"
-          git add .
-          git commit -m "Update .silktouch cache for $env:SOURCE_CONTEXT"
-
       - name: Regenerate bindings
         shell: pwsh
         env:
@@ -225,27 +191,106 @@ jobs:
         shell: pwsh
         run: git status
 
-      - name: Commit bindings
+      - name: Create bindings patch
+        id: patch
         shell: pwsh
         env:
-          SOURCE_CONTEXT: ${{ steps.source_context.outputs.value }}
+          JOB: ${{ matrix.job }}
         run: |
           $ErrorActionPreference = "Stop"
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
 
-          if (-not (git status --porcelain)) {
+          # Create patch, excluding cache
+          git add -A
+          git diff --cached --binary -- . ":(exclude).silktouch" > "bindings-$env:JOB.patch"
+
+          if ((Get-Item "bindings-$env:JOB.patch").Length -eq 0) {
             Write-Host "Bindings already up to date"
+            "changed=false" >> $env:GITHUB_OUTPUT
             exit 0
+          }
+
+          "changed=true" >> $env:GITHUB_OUTPUT
+
+      - name: Upload bindings patch
+        if: steps.patch.outputs.changed == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: bindings-patch-${{ matrix.job }}
+          path: bindings-${{ matrix.job }}.patch
+
+  push:
+    name: Commit and push
+    runs-on: ubuntu-latest
+
+    needs: [regenerate]
+
+    permissions:
+      contents: write
+
+    steps:
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - name: Download cache
+        uses: actions/download-artifact@v8
+        with:
+          path: .silktouch
+          pattern: silktouch-combined-cache
+
+      - name: Download bindings patches
+        uses: actions/download-artifact@v8
+        with:
+          path: patches
+          pattern: bindings-patch-*
+          merge-multiple: true
+
+      - name: Commit and push
+        shell: pwsh
+        env:
+          SOURCE_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          SOURCE_SHA: ${{ github.sha }}
+          TARGET_BRANCH: ${{ github.ref_name }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          $sourceContext = ($env:SOURCE_COMMIT_MESSAGE -split "`n")[0].Trim()
+          if ($sourceContext) {
+            $sourceContext = "`"$sourceContext`" ($env:SOURCE_SHA)"
+          }
+          else {
+            $sourceContext = $env:SOURCE_SHA
           }
 
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton"
-          git add .
-          git commit -m "Regenerate bindings for $env:SOURCE_CONTEXT"
 
-      - name: Show git status
-        shell: pwsh
-        run: git status
+          # Cache
+          git add .silktouch
+          if (git status --porcelain) {
+            git commit -m "Update .silktouch cache for $sourceContext"
+          }
 
-      # TODO Not pushing for now
+          # Bindings, one commit per job
+          if (Test-Path patches) {
+            foreach ($patch in Get-ChildItem patches -Filter "bindings-*.patch") {
+              $job = $patch.BaseName.Substring("bindings-".Length)
+              git apply --index $patch.FullName
+              git commit -m "Regenerate $job bindings for $sourceContext"
+            }
+          }
+
+          git status
+
+          if ((git rev-parse HEAD) -eq $env:SOURCE_SHA) {
+            Write-Host "Nothing to push"
+            exit 0
+          }
+
+          git push origin "HEAD:refs/heads/$env:TARGET_BRANCH"
