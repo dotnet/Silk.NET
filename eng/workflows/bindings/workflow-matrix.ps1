@@ -20,8 +20,8 @@ foreach ($chosenJob in $chosenJobs) {
   }
 }
 
-$matrixJson = $matrix | ConvertTo-Json
+$matrixJson = ConvertTo-Json -InputObject $matrix -Depth 10
 
-Write-Host "matrix<<EOF"
-Write-Host $matrixJson
-Write-Host "EOF"
+Write-Output "matrix<<EOF"
+Write-Output $matrixJson
+Write-Output "EOF"
