@@ -3,13 +3,26 @@ $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
+# Config
+$buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
+$buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
+$jobNames = @($buildsJson.bindings.PSObject.Properties.Name | Sort-Object -Unique)
+
+# Jobs
 $command = $args[0]
 
 $jobs = @()
 foreach ($line in $command -split "`r?`n") {
   $words = @(-split $line)
   if ($words.Count -gt 0 -and $words[0] -eq "/bindings") {
-    $jobs += @($words | Select-Object -Skip 1)
+    foreach ($chosenJob in @($words | Select-Object -Skip 1)) {
+      if (-not ($chosenJob -in $jobNames)) {
+        Write-Host Unknown job name: $chosenJob
+        continue
+      }
+
+      $jobs += $chosenJob
+    }
   }
 }
 
