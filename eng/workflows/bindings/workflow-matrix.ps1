@@ -9,7 +9,7 @@ $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
 $scrapeMatrix = @()
 $regenerateMatrix = @()
 
-$chosenJobs = $args
+$chosenJobs = @($args | Sort-Object -Unique)
 foreach ($chosenJob in $chosenJobs) {
   $job = $buildsJson.bindings.$chosenJob
 
