@@ -1,0 +1,35 @@
+{
+  "native": {
+    "SDL": {
+      "path": "sources/SDL/Native",
+      "submodules": [
+        "eng/submodules/sdl"
+      ]
+    },
+    "OpenAL": {
+      "path": "sources/OpenAL/Soft.Native",
+      "submodules": [
+        "eng/submodules/openal-soft"
+      ]
+    }
+  },
+  "bindings": {
+    "OpenXR": {
+      "submodules": [
+        "eng/submodules/openxr-sdk",
+        "eng/submodules/vulkan-headers"
+      ],
+      "caches": {
+        "linux": [
+          "openxr-linux-clangsharp.stout"
+        ],
+        "macos": [
+          "openxr-mac-clangsharp.stout"
+        ],
+        "windows": [
+          "openxr-windows-clangsharp.stout"
+        ]
+      }
+    }
+  }
+}
