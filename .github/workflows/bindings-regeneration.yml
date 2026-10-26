@@ -30,10 +30,11 @@ jobs:
         run: ./workflow-matrix.ps1 OpenXR >> $env:GITHUB_OUTPUT
 
     outputs:
-      matrix: ${{ steps.matrix.outputs.matrix }}
+      scrapeMatrix: ${{ steps.matrix.outputs.scrapeMatrix }}
+      regenerateMatrix: ${{ steps.matrix.outputs.regenerateMatrix }}
 
   scrape:
-    name: Scrape on ${{ matrix.os }}
+    name: Scrape ${{ matrix.job }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
     needs: [dispatch]
@@ -41,7 +42,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ fromJSON(needs.dispatch.outputs.matrix) }}
+        include: ${{ fromJSON(needs.dispatch.outputs.scrapeMatrix) }}
 
     steps:
 
@@ -81,12 +82,10 @@ jobs:
 
       - name: Initialize Submodules
         shell: pwsh
+        env:
+          SUBMODULES: ${{ toJSON(matrix.submodules) }}
         run: |
-          $submodules = @(
-            "eng/submodules/openxr-sdk",
-            "eng/submodules/vulkan-headers"
-          )
-
+          $submodules = $env:SUBMODULES | ConvertFrom-Json
           git submodule update --init --recursive --depth 0 $submodules
 
       - name: Clear .silktouch folder contents
@@ -95,11 +94,9 @@ jobs:
 
       - name: Populate caches
         shell: pwsh
-        run: |
-          dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --generate-cache-only --only OpenXR
-
-          # Ignore errors for now since we're only interested in the cache file
-          exit 0
+        env:
+          JOB: ${{ matrix.job }}
+        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --generate-cache-only --only $env:JOB
 
       - name: Show .silktouch folder contents
         shell: pwsh
@@ -108,7 +105,7 @@ jobs:
       - name: Upload cache as artifact
         uses: actions/upload-artifact@v7
         with:
-          name: silktouch-per-os-cache-${{ matrix.os }}
+          name: silktouch-cache-${{ matrix.job }}-${{ matrix.os }}
           path: .silktouch
           include-hidden-files: true
 
@@ -125,7 +122,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           path: .silktouch
-          pattern: silktouch-per-os-cache-*
+          pattern: silktouch-cache-*
           merge-multiple: true
 
       - name: Show .silktouch folder contents
@@ -140,10 +137,15 @@ jobs:
           include-hidden-files: true
 
   regenerate:
-    name: Regenerate bindings
+    name: Regenerate ${{ matrix.job }}
     runs-on: ubuntu-24.04
 
-    needs: [combine]
+    needs: [dispatch, combine]
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.dispatch.outputs.regenerateMatrix) }}
 
     steps:
 
@@ -157,15 +159,12 @@ jobs:
         with:
           submodules: false
 
-      # TODO: Currently copied from above for simplicity. Probably better to move this into a JSON file (or similar?) with submodule dependencies defined per job.
       - name: Initialize Submodules
         shell: pwsh
+        env:
+          SUBMODULES: ${{ toJSON(matrix.submodules) }}
         run: |
-          $submodules = @(
-            "eng/submodules/openxr-sdk",
-            "eng/submodules/vulkan-headers"
-          )
-
+          $submodules = $env:SUBMODULES | ConvertFrom-Json
           git submodule update --init --recursive --depth 0 $submodules
 
       - name: Download cache
@@ -218,7 +217,9 @@ jobs:
 
       - name: Regenerate bindings
         shell: pwsh
-        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --use-cache-only --only OpenXR
+        env:
+          JOB: ${{ matrix.job }}
+        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --use-cache-only --only $env:JOB
 
       - name: Show git status
         shell: pwsh
