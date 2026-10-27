@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  prerequisites:
+  dispatch:
     name: PR Check
     runs-on: ubuntu-latest
 
@@ -67,12 +67,12 @@ jobs:
     name: ${{ matrix.target }} / ${{ matrix.runtime }}
     runs-on: ${{ (startsWith(matrix.runtime, 'osx') || startsWith(matrix.runtime, 'ios') || startsWith(matrix.runtime, 'tvos')) && 'macos-latest' || startsWith(matrix.runtime, 'win') && 'windows-latest' || 'ubuntu-latest' }}
 
-    needs: [prerequisites]
+    needs: [dispatch]
 
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ fromJSON(needs.prerequisites.outputs.matrix_strategy) }}
+        include: ${{ fromJSON(needs.dispatch.outputs.matrix_strategy) }}
 
     steps:
 
@@ -100,8 +100,8 @@ jobs:
     name: Commit Binaries
     runs-on: ubuntu-latest
 
-    if: ${{ needs.prerequisites.outputs.targets_referenced }}
-    needs: [prerequisites, build]
+    if: ${{ needs.dispatch.outputs.targets_referenced }}
+    needs: [dispatch, build]
 
     steps:
 
