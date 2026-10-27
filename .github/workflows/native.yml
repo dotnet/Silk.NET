@@ -49,6 +49,7 @@ jobs:
         env:
           AFFECTED_JOBS: ${{ join(fromJSON(steps.filter.outputs.changes), ' ') }}
           CHOSEN_JOBS: ${{ steps.parse.outputs.jobs }}
+          PREVIOUS_COMMENT_ID: ${{ steps.fc.outputs.comment-id }}
         run: ./workflow-matrix.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Update comment
