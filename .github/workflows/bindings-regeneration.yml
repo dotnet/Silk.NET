@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   dispatch:
-    name: "Dispatch selected jobs"
+    name: Dispatch selected jobs
     runs-on: ubuntu-latest
 
 #    if: github.event.issue.pull_request && contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR", "CONTRIBUTOR"]'), github.event.comment.author_association)

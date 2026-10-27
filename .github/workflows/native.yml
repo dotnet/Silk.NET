@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   dispatch:
-    name: PR Check
+    name: Dispatch selected jobs
     runs-on: ubuntu-latest
 
     steps:
