@@ -4,9 +4,8 @@ $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
 # Inputs
-$affectedJobs = @(-split $env:AFFECTED_JOBS | Where-Object { $_ })
 $chosenJobs = @(-split $env:CHOSEN_JOBS | Where-Object { $_ })
-$existingNoticeId = $env:PR_EXISTING_NOTICE_ID
+$affectedJobs = @(-split $env:AFFECTED_JOBS | Where-Object { $_ })
 
 # Config
 $buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
@@ -16,10 +15,6 @@ $jobNames = @($buildsJson.native.PSObject.Properties.Name | Sort-Object -Unique)
 $repoRoot = Join-Path $PSScriptRoot "../../.."
 
 # PR Notice
-if ($existingNoticeId -eq "0") {
-  $existingNoticeId = ""
-}
-
 $notAllReferenced = $false
 foreach ($affectedJob in $affectedJobs) {
   if (-not ($affectedJob -in $chosenJobs)) {

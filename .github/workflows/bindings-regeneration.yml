@@ -18,7 +18,7 @@ jobs:
     name: Dispatch selected jobs
     runs-on: ubuntu-latest
 
-#    if: github.event.issue.pull_request && contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR", "CONTRIBUTOR"]'), github.event.comment.author_association)
+#    if: github.event.issue.pull_request && contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)
 
     steps:
 
@@ -27,13 +27,14 @@ jobs:
         with:
           submodules: false
 
-#      - name: Parse comment as command
-#        id: command
-#        shell: pwsh
-#        working-directory: eng/workflows/bindings
-#        env:
+      - name: Parse comment as command
+        id: command
+        shell: pwsh
+        working-directory: eng/workflows/bindings
+        env:
 #          COMMENT_BODY: ${{ github.event.comment.body }}
-#        run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
+          COMMENT_BODY: "/bindings OpenXR"
+        run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Generate matrix
         id: matrix
@@ -41,8 +42,7 @@ jobs:
         working-directory: eng/workflows/bindings
         env:
           CHOSEN_JOBS: ${{ steps.command.outputs.jobs }}
-        run: ./workflow-matrix.ps1 OpenXR >> $env:GITHUB_OUTPUT
-#        run: ./workflow-matrix.ps1  >> $env:GITHUB_OUTPUT
+        run: ./workflow-matrix.ps1 >> $env:GITHUB_OUTPUT
 
     outputs:
       scrapeMatrix: ${{ steps.matrix.outputs.scrapeMatrix }}
@@ -250,6 +250,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           submodules: false
+          fetch-depth: 0
 
       - name: Download cache
         uses: actions/download-artifact@v8

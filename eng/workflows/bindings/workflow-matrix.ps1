@@ -4,7 +4,7 @@ $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
 # Inputs
-$chosenJobs = $env:CHOSEN_JOBS
+$chosenJobs = @(-split $env:CHOSEN_JOBS | Where-Object { $_ })
 
 # Config
 $buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
