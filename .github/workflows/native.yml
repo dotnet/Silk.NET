@@ -40,7 +40,7 @@ jobs:
         with:
           issue-number: ${{ github.event.number }}
           comment-author: "github-actions[bot]"
-          body-includes: "**Silk native build**"
+          body-includes: "## Silk native build"
 
       - name: Generate matrix
         id: matrix
