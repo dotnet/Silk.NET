@@ -1,6 +1,7 @@
 name: Native Builds
 
 on:
+  # TODO: Change this to be triggered using a PR comment instead, plan is copy the bindings-regeneration implementation
   pull_request:
     types: [opened, edited, synchronize]
 
@@ -28,6 +29,7 @@ jobs:
           COMMENT_BODY: ${{ github.event.pull_request.body }}
         run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
 
+      # TODO: Probably needs to be changed to find the last build? Actually, need to rethink the whole notice comment since the notice comment checks the PR body
       - uses: dorny/paths-filter@v4
         id: filter
         name: Determine which natives need to be rebuilt.
