@@ -87,7 +87,7 @@ jobs:
 
       - name: Setup Windows SDK
         if: "runner.os == 'Windows'"
-        uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
+        uses: GuillaumeFalourd/setup-windows10-sdk-action@v2.5
         with:
           sdk-version: 22621
 
