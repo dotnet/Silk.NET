@@ -44,20 +44,19 @@ foreach ($chosenJob in $chosenJobs) {
     continue
   }
 
-  foreach ($job in $buildsJson.native.$chosenJob) {
-    foreach ($build in $job.builds.PSObject.Properties) {
-      # TODO: Unify script extensions
-      $script = Get-ChildItem -Path (Join-Path $repoRoot $job.path) -Filter "build-$($build.Name).*" | Select-Object -First 1
+  $job = $buildsJson.native.PSObject.Properties[$chosenJob];
+  foreach ($build in $job.Value.builds.PSObject.Properties) {
+    # TODO: Unify script extensions
+    $script = Get-ChildItem -Path (Join-Path $repoRoot $job.Value.path) -Filter "build-$($build.Name).*" | Select-Object -First 1
 
-      $matrix += @{
-        job = $chosenJob
+    $matrix += @{
+      job = $job.Name
 
-        runtime = $build.Name
-        os = $build.Value
+      runtime = $build.Name
+      os = $build.Value
 
-        dir = $job.Path
-        exec = $script.Name
-      }
+      dir = $job.Value.path
+      exec = $script.Name
     }
   }
 }

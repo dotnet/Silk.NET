@@ -22,7 +22,7 @@ foreach ($line in $message -split "`r?`n") {
         continue
       }
 
-      $jobs += $chosenJob
+      $jobs += $buildsJson.bindings.PSObject.Properties[$chosenJob].Name
     }
   }
 }

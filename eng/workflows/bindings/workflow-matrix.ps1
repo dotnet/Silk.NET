@@ -20,20 +20,20 @@ foreach ($chosenJob in $chosenJobs) {
     continue
   }
 
-  $job = $buildsJson.bindings.$chosenJob
+  $job = $buildsJson.bindings.PSObject.Properties[$chosenJob]
 
-  foreach ($cache in $job.caches.PSObject.Properties) {
+  foreach ($cache in $job.Value.caches.PSObject.Properties) {
     $scrapeMatrix += @{
-      job = $chosenJob
+      job = $job.Name
       os = $cache.Name
       caches = $cache.Value
-      submodules = $job.submodules
+      submodules = $job.Value.submodules
     }
   }
 
   $regenerateMatrix += @{
-    job = $chosenJob
-    submodules = $job.submodules
+    job = $job.Name
+    submodules = $job.Value.submodules
   }
 }
 

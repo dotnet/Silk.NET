@@ -31,7 +31,7 @@ foreach ($line in $message -split "`r?`n") {
         continue
       }
 
-      $jobs += $chosenJob
+      $jobs += $buildsJson.native.PSObject.Properties[$chosenJob].Name
     }
   }
 }
