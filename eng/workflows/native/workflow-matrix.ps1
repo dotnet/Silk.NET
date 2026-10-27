@@ -16,12 +16,15 @@ $jobNames = @($buildsJson.native.PSObject.Properties.Name | Sort-Object -Unique)
 $repoRoot = Join-Path $PSScriptRoot "../../.."
 
 # PR Comment
+$mustComment = $false
+$comment = "## Silk Native Build"
+
 if ($previousCommentId -eq "0") {
   $previousCommentId = ""
 }
 
 if ($previousCommentId) {
-  $mustComment = true
+  $mustComment = $true
 }
 
 $notAllReferenced = $false
@@ -32,8 +35,6 @@ foreach ($affectedJob in $affectedJobs) {
   }
 }
 
-$mustComment = $false
-$comment = "## Silk Native Build"
 if ($notAllReferenced) {
   $mustComment = $true
   $comment += "`n`nSome of the native library builds modified in this PR were not referenced in the PR description. Please ensure that the PR description contains ``/native $affectedJobs``. These libraries won't be rebuilt without this being specified. If you believe this is in error, then please write a comment explaining why and ignore this suggestion. This comment will be automatically updated if rectified."
