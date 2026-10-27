@@ -65,13 +65,12 @@ jobs:
 
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
-      jobs: ${{ steps.parse.outputs.jobs }}
 
   build:
     name: ${{ matrix.job }} / ${{ matrix.runtime }}
     runs-on: ${{ matrix.os }}
 
-    if: ${{ needs.dispatch.outputs.jobs }}
+    if: join(fromJSON(needs.dispatch.outputs.matrix), ',') != ''
     needs: [dispatch]
 
     strategy:
@@ -105,7 +104,7 @@ jobs:
     name: Commit Binaries
     runs-on: ubuntu-latest
 
-    if: ${{ needs.dispatch.outputs.jobs }}
+    if: join(fromJSON(needs.dispatch.outputs.matrix), ',') != ''
     needs: [dispatch, build]
 
     steps:

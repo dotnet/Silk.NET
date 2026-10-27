@@ -52,6 +52,7 @@ jobs:
     name: Scrape ${{ matrix.job }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
+    if: join(fromJSON(needs.dispatch.outputs.scrapeMatrix), ',') != ''
     needs: [dispatch]
 
     strategy:
@@ -155,6 +156,7 @@ jobs:
     name: Regenerate ${{ matrix.job }}
     runs-on: ubuntu-24.04
 
+    if: join(fromJSON(needs.dispatch.outputs.regenerateMatrix), ',') != ''
     needs: [dispatch, combine]
 
     strategy:
