@@ -27,11 +27,13 @@ foreach ($affectedJob in $affectedJobs) {
     break;
   }
 }
+
+$comment = "**Silk native build**"
 if ($notAllReferenced) {
-  $comment = "Some of the native library builds modified in this PR were not referenced in the PR description. Please ensure that the PR description contains ``/native $affectedJobs``. These libraries won't be rebuilt without this being specified. If you believe this is in error, then please write a comment explaining why and ignore this suggestion. This comment will be automatically updated if rectified."
+  $comment += "`n`nSome of the native library builds modified in this PR were not referenced in the PR description. Please ensure that the PR description contains ``/native $affectedJobs``. These libraries won't be rebuilt without this being specified. If you believe this is in error, then please write a comment explaining why and ignore this suggestion. This comment will be automatically updated if rectified."
 }
 else {
-  $comment = "All native library builds modified in this PR shall attempt to be built by CI."
+  $comment += "`n`nAll native library builds modified in this PR shall attempt to be built by CI."
 }
 
 # Matrix
@@ -42,16 +44,19 @@ foreach ($chosenJob in $chosenJobs) {
     continue
   }
 
-  foreach ($job in $buildsJson.native.PSObject.Properties) {
-    foreach ($build in $job.Value.builds.PSObject.Properties) {
+  foreach ($job in $buildsJson.native.$chosenJob) {
+    foreach ($build in $job.builds.PSObject.Properties) {
       # TODO: Unify script extensions
-      $script = Get-ChildItem -Path (Join-Path $repoRoot $job.Value.path) -Filter "build-$($build.Name).*" | Select-Object -First 1
+      $script = Get-ChildItem -Path (Join-Path $repoRoot $job.path) -Filter "build-$($build.Name).*" | Select-Object -First 1
 
       $matrix += @{
-        target = $job.Name
+        job = $chosenJob
+
         runtime = $build.Name
+        os = $build.Value
+
+        dir = $job.Path
         exec = $script.Name
-        dir = $job.Value.path
       }
     }
   }
@@ -61,4 +66,6 @@ Write-Output "matrix<<EOF"
 Write-Output (ConvertTo-Json -InputObject $matrix -Depth 10)
 Write-Output "EOF"
 
-Write-Output "comment=$comment"
+Write-Output "comment<<EOF"
+Write-Output $comment
+Write-Output "EOF"

@@ -22,10 +22,11 @@ jobs:
 
       - name: Determine which native libraries the user has asked to build, and where to look for changes.
         id: parse
-        run: ./workflow-stage1.sh
+        shell: pwsh
         working-directory: eng/workflows/native
         env:
-          PR_COMMENT: ${{ github.event.pull_request.body }}
+          COMMENT_BODY: ${{ github.event.pull_request.body }}
+        run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
 
       - uses: dorny/paths-filter@v3
         id: filter
@@ -33,46 +34,48 @@ jobs:
         with:
           filters: ${{ steps.parse.outputs.workflow_filters }}
 
-      - name: Find a warning message from a previous run, if applicable.
+      - name: Find previous comment if it exists
         uses: peter-evans/find-comment@v3
         id: fc
         with:
           issue-number: ${{ github.event.number }}
           comment-author: "github-actions[bot]"
-          body-includes: "Some of the native library builds modified in this PR were not referenced in the PR description."
+          body-includes: "**Silk native build**"
 
-      - id: strat
-        name: Create the matrix strategy for the native builds.
-        run: ./workflow-stage2.sh
+      - name: Generate matrix
+        id: matrix
+        shell: pwsh
         working-directory: eng/workflows/native
         env:
-          NATIVE_LIBRARY_APPLICABLE_SHORTHANDS: ${{ join(fromJSON(steps.filter.outputs.changes), ' ') }}
-          NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS: ${{ steps.parse.outputs.targets_referenced }}
+          AFFECTED_JOBS: ${{ join(fromJSON(steps.filter.outputs.changes), ' ') }}
+          CHOSEN_JOBS: ${{ steps.parse.outputs.jobs }}
           PR_EXISTING_NOTICE_ID: ${{ steps.fc.outputs.comment-id }}
+        run: ./workflow-matrix.ps1 >> $env:GITHUB_OUTPUT
 
-      - name: Write a comment if needed.
-        if: ${{ steps.strat.outputs.comment_to_write }}
+      - name: Update comment
+        if: ${{ steps.matrix.outputs.comment }}
         uses: peter-evans/create-or-update-comment@v4
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.number }}
-          body: ${{ steps.strat.outputs.comment_to_write }}
+          body: ${{ steps.matrix.outputs.comment }}
           edit-mode: replace
 
     outputs:
-      matrix_strategy: ${{ steps.strat.outputs.matrix_strategy }}
-      targets_referenced: ${{ steps.parse.outputs.targets_referenced }}
+      matrix: ${{ steps.matrix.outputs.matrix }}
+      jobs: ${{ steps.parse.outputs.jobs }}
 
   build:
-    name: ${{ matrix.target }} / ${{ matrix.runtime }}
-    runs-on: ${{ (startsWith(matrix.runtime, 'osx') || startsWith(matrix.runtime, 'ios') || startsWith(matrix.runtime, 'tvos')) && 'macos-latest' || startsWith(matrix.runtime, 'win') && 'windows-latest' || 'ubuntu-latest' }}
+    name: ${{ matrix.job }} / ${{ matrix.runtime }}
+    runs-on: ${{ matrix.os }}
 
+    if: ${{ needs.dispatch.outputs.jobs }}
     needs: [dispatch]
 
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ fromJSON(needs.dispatch.outputs.matrix_strategy) }}
+        include: ${{ fromJSON(needs.dispatch.outputs.matrix) }}
 
     steps:
 
@@ -83,13 +86,13 @@ jobs:
 
       - name: Build
         run: |
-          echo "https://github.com/actions/upload-artifact/issues/174" > .workaround-${{ matrix.target }}-${{ matrix.runtime }}.txt
+          echo "https://github.com/actions/upload-artifact/issues/174" > .workaround-${{ matrix.job }}-${{ matrix.runtime }}.txt
           ${{ format('.{0}{1}', startsWith(matrix.runtime, 'win') && '\' || '/', matrix.exec) }}
         working-directory: ${{ matrix.dir }}
 
       - uses: actions/upload-artifact@v4
         with:
-          name: natives-${{ matrix.target }}-${{ matrix.runtime }}
+          name: natives-${{ matrix.job }}-${{ matrix.runtime }}
           path: |
             ./.workaround-*.txt
             ./${{ matrix.dir }}/runtimes/${{ format('{0}{1}', matrix.runtime, !contains(matrix.runtime, '-') && '*' || '') }}/**/*
@@ -100,7 +103,7 @@ jobs:
     name: Commit Binaries
     runs-on: ubuntu-latest
 
-    if: ${{ needs.dispatch.outputs.targets_referenced }}
+    if: ${{ needs.dispatch.outputs.jobs }}
     needs: [dispatch, build]
 
     steps:
