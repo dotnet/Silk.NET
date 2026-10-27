@@ -28,14 +28,14 @@ jobs:
           COMMENT_BODY: ${{ github.event.pull_request.body }}
         run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
 
-      - uses: dorny/paths-filter@v3
+      - uses: dorny/paths-filter@v4
         id: filter
         name: Determine which natives need to be rebuilt.
         with:
           filters: ${{ steps.parse.outputs.workflow_filters }}
 
       - name: Find previous comment if it exists
-        uses: peter-evans/find-comment@v3
+        uses: peter-evans/find-comment@v4
         id: fc
         with:
           issue-number: ${{ github.event.number }}
@@ -53,7 +53,7 @@ jobs:
 
       - name: Update comment
         if: ${{ steps.matrix.outputs.comment }}
-        uses: peter-evans/create-or-update-comment@v4
+        uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.number }}
