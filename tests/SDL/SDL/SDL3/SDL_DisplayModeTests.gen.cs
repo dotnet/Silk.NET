@@ -8,37 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "DisplayMode"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_DisplayMode"/> struct.</summary>
 public static unsafe partial class SDL_DisplayModeTests
 {
-    /// <summary>Validates that the <see cref = "DisplayMode"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_DisplayMode"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<DisplayMode>(), Is.EqualTo(sizeof(DisplayMode)));
+        Assert.That(Marshal.SizeOf<SDL_DisplayMode>(), Is.EqualTo(sizeof(SDL_DisplayMode)));
     }
 
-    /// <summary>Validates that the <see cref = "DisplayMode"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_DisplayMode"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(DisplayMode).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_DisplayMode).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "DisplayMode"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_DisplayMode"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(DisplayMode), Is.EqualTo(40));
+            Assert.That(sizeof(SDL_DisplayMode), Is.EqualTo(40));
         }
         else
         {
-            Assert.That(sizeof(DisplayMode), Is.EqualTo(36));
+            Assert.That(sizeof(SDL_DisplayMode), Is.EqualTo(36));
         }
     }
 }

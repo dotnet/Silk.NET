@@ -8,40 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "TextEditingCandidatesEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_TextEditingCandidatesEvent"/> struct.</summary>
 public static unsafe partial class SDL_TextEditingCandidatesEventTests
 {
-    /// <summary>Validates that the <see cref = "TextEditingCandidatesEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_TextEditingCandidatesEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<TextEditingCandidatesEvent>(),
-            Is.EqualTo(sizeof(TextEditingCandidatesEvent))
+            Marshal.SizeOf<SDL_TextEditingCandidatesEvent>(),
+            Is.EqualTo(sizeof(SDL_TextEditingCandidatesEvent))
         );
     }
 
-    /// <summary>Validates that the <see cref = "TextEditingCandidatesEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_TextEditingCandidatesEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(TextEditingCandidatesEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_TextEditingCandidatesEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "TextEditingCandidatesEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_TextEditingCandidatesEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(TextEditingCandidatesEvent), Is.EqualTo(48));
+            Assert.That(sizeof(SDL_TextEditingCandidatesEvent), Is.EqualTo(48));
         }
         else
         {
-            Assert.That(sizeof(TextEditingCandidatesEvent), Is.EqualTo(40));
+            Assert.That(sizeof(SDL_TextEditingCandidatesEvent), Is.EqualTo(40));
         }
     }
 }

@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "Point"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_Point"/> struct.</summary>
 public static unsafe partial class SDL_PointTests
 {
-    /// <summary>Validates that the <see cref = "Point"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_Point"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<Point>(), Is.EqualTo(sizeof(Point)));
+        Assert.That(Marshal.SizeOf<SDL_Point>(), Is.EqualTo(sizeof(SDL_Point)));
     }
 
-    /// <summary>Validates that the <see cref = "Point"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_Point"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(Point).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_Point).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "Point"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_Point"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(Point), Is.EqualTo(8));
+        Assert.That(sizeof(SDL_Point), Is.EqualTo(8));
     }
 }

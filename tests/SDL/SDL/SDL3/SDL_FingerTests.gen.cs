@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "Finger"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_Finger"/> struct.</summary>
 public static unsafe partial class SDL_FingerTests
 {
-    /// <summary>Validates that the <see cref = "Finger"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_Finger"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<Finger>(), Is.EqualTo(sizeof(Finger)));
+        Assert.That(Marshal.SizeOf<SDL_Finger>(), Is.EqualTo(sizeof(SDL_Finger)));
     }
 
-    /// <summary>Validates that the <see cref = "Finger"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_Finger"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(Finger).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_Finger).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "Finger"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_Finger"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(Finger), Is.EqualTo(24));
+        Assert.That(sizeof(SDL_Finger), Is.EqualTo(24));
     }
 }

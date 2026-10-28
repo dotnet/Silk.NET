@@ -8,37 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "AssertData"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_AssertData"/> struct.</summary>
 public static unsafe partial class SDL_AssertDataTests
 {
-    /// <summary>Validates that the <see cref = "AssertData"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_AssertData"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<AssertData>(), Is.EqualTo(sizeof(AssertData)));
+        Assert.That(Marshal.SizeOf<SDL_AssertData>(), Is.EqualTo(sizeof(SDL_AssertData)));
     }
 
-    /// <summary>Validates that the <see cref = "AssertData"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_AssertData"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(AssertData).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_AssertData).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "AssertData"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_AssertData"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(AssertData), Is.EqualTo(48));
+            Assert.That(sizeof(SDL_AssertData), Is.EqualTo(48));
         }
         else
         {
-            Assert.That(sizeof(AssertData), Is.EqualTo(28));
+            Assert.That(sizeof(SDL_AssertData), Is.EqualTo(28));
         }
     }
 }

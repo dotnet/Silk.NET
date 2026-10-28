@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "ClipboardEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_ClipboardEvent"/> struct.</summary>
 public static unsafe partial class SDL_ClipboardEventTests
 {
-    /// <summary>Validates that the <see cref = "ClipboardEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_ClipboardEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<ClipboardEvent>(), Is.EqualTo(sizeof(ClipboardEvent)));
+        Assert.That(Marshal.SizeOf<SDL_ClipboardEvent>(), Is.EqualTo(sizeof(SDL_ClipboardEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "ClipboardEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_ClipboardEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(ClipboardEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_ClipboardEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "ClipboardEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_ClipboardEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(ClipboardEvent), Is.EqualTo(32));
+        Assert.That(sizeof(SDL_ClipboardEvent), Is.EqualTo(32));
     }
 }

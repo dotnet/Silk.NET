@@ -8,37 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuVertexInputState"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_GPUVertexInputState"/> struct.</summary>
 public static unsafe partial class SDL_GPUVertexInputStateTests
 {
-    /// <summary>Validates that the <see cref = "GpuVertexInputState"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUVertexInputState"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<GpuVertexInputState>(), Is.EqualTo(sizeof(GpuVertexInputState)));
+        Assert.That(
+            Marshal.SizeOf<SDL_GPUVertexInputState>(),
+            Is.EqualTo(sizeof(SDL_GPUVertexInputState))
+        );
     }
 
-    /// <summary>Validates that the <see cref = "GpuVertexInputState"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUVertexInputState"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuVertexInputState).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_GPUVertexInputState).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuVertexInputState"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUVertexInputState"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GpuVertexInputState), Is.EqualTo(32));
+            Assert.That(sizeof(SDL_GPUVertexInputState), Is.EqualTo(32));
         }
         else
         {
-            Assert.That(sizeof(GpuVertexInputState), Is.EqualTo(16));
+            Assert.That(sizeof(SDL_GPUVertexInputState), Is.EqualTo(16));
         }
     }
 }

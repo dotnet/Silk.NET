@@ -8,40 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuTransferBufferLocation"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_GPUTransferBufferLocation"/> struct.</summary>
 public static unsafe partial class SDL_GPUTransferBufferLocationTests
 {
-    /// <summary>Validates that the <see cref = "GpuTransferBufferLocation"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUTransferBufferLocation"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GpuTransferBufferLocation>(),
-            Is.EqualTo(sizeof(GpuTransferBufferLocation))
+            Marshal.SizeOf<SDL_GPUTransferBufferLocation>(),
+            Is.EqualTo(sizeof(SDL_GPUTransferBufferLocation))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GpuTransferBufferLocation"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUTransferBufferLocation"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuTransferBufferLocation).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_GPUTransferBufferLocation).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuTransferBufferLocation"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUTransferBufferLocation"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GpuTransferBufferLocation), Is.EqualTo(16));
+            Assert.That(sizeof(SDL_GPUTransferBufferLocation), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(GpuTransferBufferLocation), Is.EqualTo(8));
+            Assert.That(sizeof(SDL_GPUTransferBufferLocation), Is.EqualTo(8));
         }
     }
 }

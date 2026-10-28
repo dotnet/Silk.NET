@@ -8,37 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuBufferBinding"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_GPUBufferBinding"/> struct.</summary>
 public static unsafe partial class SDL_GPUBufferBindingTests
 {
-    /// <summary>Validates that the <see cref = "GpuBufferBinding"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUBufferBinding"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<GpuBufferBinding>(), Is.EqualTo(sizeof(GpuBufferBinding)));
+        Assert.That(
+            Marshal.SizeOf<SDL_GPUBufferBinding>(),
+            Is.EqualTo(sizeof(SDL_GPUBufferBinding))
+        );
     }
 
-    /// <summary>Validates that the <see cref = "GpuBufferBinding"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUBufferBinding"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuBufferBinding).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_GPUBufferBinding).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuBufferBinding"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUBufferBinding"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GpuBufferBinding), Is.EqualTo(16));
+            Assert.That(sizeof(SDL_GPUBufferBinding), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(GpuBufferBinding), Is.EqualTo(8));
+            Assert.That(sizeof(SDL_GPUBufferBinding), Is.EqualTo(8));
         }
     }
 }

@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "Color"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_Color"/> struct.</summary>
 public static unsafe partial class SDL_ColorTests
 {
-    /// <summary>Validates that the <see cref = "Color"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_Color"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<Color>(), Is.EqualTo(sizeof(Color)));
+        Assert.That(Marshal.SizeOf<SDL_Color>(), Is.EqualTo(sizeof(SDL_Color)));
     }
 
-    /// <summary>Validates that the <see cref = "Color"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_Color"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(Color).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_Color).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "Color"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_Color"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(Color), Is.EqualTo(4));
+        Assert.That(sizeof(SDL_Color), Is.EqualTo(4));
     }
 }

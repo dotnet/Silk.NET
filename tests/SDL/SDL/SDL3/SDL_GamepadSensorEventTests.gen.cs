@@ -7,30 +7,33 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GamepadSensorEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_GamepadSensorEvent"/> struct.</summary>
 public static unsafe partial class SDL_GamepadSensorEventTests
 {
-    /// <summary>Validates that the <see cref = "GamepadSensorEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GamepadSensorEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<GamepadSensorEvent>(), Is.EqualTo(sizeof(GamepadSensorEvent)));
+        Assert.That(
+            Marshal.SizeOf<SDL_GamepadSensorEvent>(),
+            Is.EqualTo(sizeof(SDL_GamepadSensorEvent))
+        );
     }
 
-    /// <summary>Validates that the <see cref = "GamepadSensorEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GamepadSensorEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GamepadSensorEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_GamepadSensorEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GamepadSensorEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GamepadSensorEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(GamepadSensorEvent), Is.EqualTo(48));
+        Assert.That(sizeof(SDL_GamepadSensorEvent), Is.EqualTo(48));
     }
 }

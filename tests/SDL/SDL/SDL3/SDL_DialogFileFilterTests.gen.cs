@@ -8,37 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "DialogFileFilter"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_DialogFileFilter"/> struct.</summary>
 public static unsafe partial class SDL_DialogFileFilterTests
 {
-    /// <summary>Validates that the <see cref = "DialogFileFilter"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_DialogFileFilter"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<DialogFileFilter>(), Is.EqualTo(sizeof(DialogFileFilter)));
+        Assert.That(
+            Marshal.SizeOf<SDL_DialogFileFilter>(),
+            Is.EqualTo(sizeof(SDL_DialogFileFilter))
+        );
     }
 
-    /// <summary>Validates that the <see cref = "DialogFileFilter"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_DialogFileFilter"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(DialogFileFilter).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_DialogFileFilter).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "DialogFileFilter"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_DialogFileFilter"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(DialogFileFilter), Is.EqualTo(16));
+            Assert.That(sizeof(SDL_DialogFileFilter), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(DialogFileFilter), Is.EqualTo(8));
+            Assert.That(sizeof(SDL_DialogFileFilter), Is.EqualTo(8));
         }
     }
 }

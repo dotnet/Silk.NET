@@ -7,30 +7,33 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "PinchFingerEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_PinchFingerEvent"/> struct.</summary>
 public static unsafe partial class SDL_PinchFingerEventTests
 {
-    /// <summary>Validates that the <see cref = "PinchFingerEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_PinchFingerEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<PinchFingerEvent>(), Is.EqualTo(sizeof(PinchFingerEvent)));
+        Assert.That(
+            Marshal.SizeOf<SDL_PinchFingerEvent>(),
+            Is.EqualTo(sizeof(SDL_PinchFingerEvent))
+        );
     }
 
-    /// <summary>Validates that the <see cref = "PinchFingerEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_PinchFingerEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(PinchFingerEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_PinchFingerEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "PinchFingerEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_PinchFingerEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(PinchFingerEvent), Is.EqualTo(24));
+        Assert.That(sizeof(SDL_PinchFingerEvent), Is.EqualTo(24));
     }
 }

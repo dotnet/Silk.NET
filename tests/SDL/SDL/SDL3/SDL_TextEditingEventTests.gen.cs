@@ -8,37 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "TextEditingEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_TextEditingEvent"/> struct.</summary>
 public static unsafe partial class SDL_TextEditingEventTests
 {
-    /// <summary>Validates that the <see cref = "TextEditingEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_TextEditingEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<TextEditingEvent>(), Is.EqualTo(sizeof(TextEditingEvent)));
+        Assert.That(
+            Marshal.SizeOf<SDL_TextEditingEvent>(),
+            Is.EqualTo(sizeof(SDL_TextEditingEvent))
+        );
     }
 
-    /// <summary>Validates that the <see cref = "TextEditingEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_TextEditingEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(TextEditingEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_TextEditingEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "TextEditingEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_TextEditingEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(TextEditingEvent), Is.EqualTo(40));
+            Assert.That(sizeof(SDL_TextEditingEvent), Is.EqualTo(40));
         }
         else
         {
-            Assert.That(sizeof(TextEditingEvent), Is.EqualTo(32));
+            Assert.That(sizeof(SDL_TextEditingEvent), Is.EqualTo(32));
         }
     }
 }

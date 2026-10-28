@@ -8,40 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuRenderStateCreateInfo"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_GPURenderStateCreateInfo"/> struct.</summary>
 public static unsafe partial class SDL_GPURenderStateCreateInfoTests
 {
-    /// <summary>Validates that the <see cref = "GpuRenderStateCreateInfo"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPURenderStateCreateInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GpuRenderStateCreateInfo>(),
-            Is.EqualTo(sizeof(GpuRenderStateCreateInfo))
+            Marshal.SizeOf<SDL_GPURenderStateCreateInfo>(),
+            Is.EqualTo(sizeof(SDL_GPURenderStateCreateInfo))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GpuRenderStateCreateInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPURenderStateCreateInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuRenderStateCreateInfo).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_GPURenderStateCreateInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuRenderStateCreateInfo"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPURenderStateCreateInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GpuRenderStateCreateInfo), Is.EqualTo(64));
+            Assert.That(sizeof(SDL_GPURenderStateCreateInfo), Is.EqualTo(64));
         }
         else
         {
-            Assert.That(sizeof(GpuRenderStateCreateInfo), Is.EqualTo(32));
+            Assert.That(sizeof(SDL_GPURenderStateCreateInfo), Is.EqualTo(32));
         }
     }
 }

@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "QuitEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_QuitEvent"/> struct.</summary>
 public static unsafe partial class SDL_QuitEventTests
 {
-    /// <summary>Validates that the <see cref = "QuitEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_QuitEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<QuitEvent>(), Is.EqualTo(sizeof(QuitEvent)));
+        Assert.That(Marshal.SizeOf<SDL_QuitEvent>(), Is.EqualTo(sizeof(SDL_QuitEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "QuitEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_QuitEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(QuitEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_QuitEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "QuitEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_QuitEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(QuitEvent), Is.EqualTo(16));
+        Assert.That(sizeof(SDL_QuitEvent), Is.EqualTo(16));
     }
 }

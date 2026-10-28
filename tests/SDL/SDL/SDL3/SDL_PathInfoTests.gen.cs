@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "PathInfo"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_PathInfo"/> struct.</summary>
 public static unsafe partial class SDL_PathInfoTests
 {
-    /// <summary>Validates that the <see cref = "PathInfo"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_PathInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<PathInfo>(), Is.EqualTo(sizeof(PathInfo)));
+        Assert.That(Marshal.SizeOf<SDL_PathInfo>(), Is.EqualTo(sizeof(SDL_PathInfo)));
     }
 
-    /// <summary>Validates that the <see cref = "PathInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_PathInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(PathInfo).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_PathInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "PathInfo"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_PathInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(PathInfo), Is.EqualTo(40));
+        Assert.That(sizeof(SDL_PathInfo), Is.EqualTo(40));
     }
 }

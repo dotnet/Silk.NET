@@ -8,40 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuTextureSamplerBinding"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_GPUTextureSamplerBinding"/> struct.</summary>
 public static unsafe partial class SDL_GPUTextureSamplerBindingTests
 {
-    /// <summary>Validates that the <see cref = "GpuTextureSamplerBinding"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUTextureSamplerBinding"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GpuTextureSamplerBinding>(),
-            Is.EqualTo(sizeof(GpuTextureSamplerBinding))
+            Marshal.SizeOf<SDL_GPUTextureSamplerBinding>(),
+            Is.EqualTo(sizeof(SDL_GPUTextureSamplerBinding))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GpuTextureSamplerBinding"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUTextureSamplerBinding"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuTextureSamplerBinding).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_GPUTextureSamplerBinding).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuTextureSamplerBinding"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUTextureSamplerBinding"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GpuTextureSamplerBinding), Is.EqualTo(16));
+            Assert.That(sizeof(SDL_GPUTextureSamplerBinding), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(GpuTextureSamplerBinding), Is.EqualTo(8));
+            Assert.That(sizeof(SDL_GPUTextureSamplerBinding), Is.EqualTo(8));
         }
     }
 }

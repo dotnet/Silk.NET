@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "InitState"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_InitState"/> struct.</summary>
 public static unsafe partial class SDL_InitStateTests
 {
-    /// <summary>Validates that the <see cref = "InitState"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_InitState"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<InitState>(), Is.EqualTo(sizeof(InitState)));
+        Assert.That(Marshal.SizeOf<SDL_InitState>(), Is.EqualTo(sizeof(SDL_InitState)));
     }
 
-    /// <summary>Validates that the <see cref = "InitState"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_InitState"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(InitState).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_InitState).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "InitState"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_InitState"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(InitState), Is.EqualTo(24));
+        Assert.That(sizeof(SDL_InitState), Is.EqualTo(24));
     }
 }

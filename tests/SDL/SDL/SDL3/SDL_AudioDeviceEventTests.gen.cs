@@ -7,30 +7,33 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "AudioDeviceEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_AudioDeviceEvent"/> struct.</summary>
 public static unsafe partial class SDL_AudioDeviceEventTests
 {
-    /// <summary>Validates that the <see cref = "AudioDeviceEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_AudioDeviceEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<AudioDeviceEvent>(), Is.EqualTo(sizeof(AudioDeviceEvent)));
+        Assert.That(
+            Marshal.SizeOf<SDL_AudioDeviceEvent>(),
+            Is.EqualTo(sizeof(SDL_AudioDeviceEvent))
+        );
     }
 
-    /// <summary>Validates that the <see cref = "AudioDeviceEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_AudioDeviceEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(AudioDeviceEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_AudioDeviceEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "AudioDeviceEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_AudioDeviceEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(AudioDeviceEvent), Is.EqualTo(24));
+        Assert.That(sizeof(SDL_AudioDeviceEvent), Is.EqualTo(24));
     }
 }

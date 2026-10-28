@@ -7,30 +7,33 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuVertexAttribute"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_GPUVertexAttribute"/> struct.</summary>
 public static unsafe partial class SDL_GPUVertexAttributeTests
 {
-    /// <summary>Validates that the <see cref = "GpuVertexAttribute"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUVertexAttribute"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<GpuVertexAttribute>(), Is.EqualTo(sizeof(GpuVertexAttribute)));
+        Assert.That(
+            Marshal.SizeOf<SDL_GPUVertexAttribute>(),
+            Is.EqualTo(sizeof(SDL_GPUVertexAttribute))
+        );
     }
 
-    /// <summary>Validates that the <see cref = "GpuVertexAttribute"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUVertexAttribute"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuVertexAttribute).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_GPUVertexAttribute).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuVertexAttribute"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_GPUVertexAttribute"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(GpuVertexAttribute), Is.EqualTo(16));
+        Assert.That(sizeof(SDL_GPUVertexAttribute), Is.EqualTo(16));
     }
 }

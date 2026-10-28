@@ -8,37 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "VirtualJoystickDesc"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_VirtualJoystickDesc"/> struct.</summary>
 public static unsafe partial class SDL_VirtualJoystickDescTests
 {
-    /// <summary>Validates that the <see cref = "VirtualJoystickDesc"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_VirtualJoystickDesc"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<VirtualJoystickDesc>(), Is.EqualTo(sizeof(VirtualJoystickDesc)));
+        Assert.That(
+            Marshal.SizeOf<SDL_VirtualJoystickDesc>(),
+            Is.EqualTo(sizeof(SDL_VirtualJoystickDesc))
+        );
     }
 
-    /// <summary>Validates that the <see cref = "VirtualJoystickDesc"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_VirtualJoystickDesc"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(VirtualJoystickDesc).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_VirtualJoystickDesc).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "VirtualJoystickDesc"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_VirtualJoystickDesc"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(VirtualJoystickDesc), Is.EqualTo(136));
+            Assert.That(sizeof(SDL_VirtualJoystickDesc), Is.EqualTo(136));
         }
         else
         {
-            Assert.That(sizeof(VirtualJoystickDesc), Is.EqualTo(84));
+            Assert.That(sizeof(SDL_VirtualJoystickDesc), Is.EqualTo(84));
         }
     }
 }

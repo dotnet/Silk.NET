@@ -8,37 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "AlignmentTest"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_alignment_test"/> struct.</summary>
 public static unsafe partial class SDL_alignment_testTests
 {
-    /// <summary>Validates that the <see cref = "AlignmentTest"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_alignment_test"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<AlignmentTest>(), Is.EqualTo(sizeof(AlignmentTest)));
+        Assert.That(Marshal.SizeOf<SDL_alignment_test>(), Is.EqualTo(sizeof(SDL_alignment_test)));
     }
 
-    /// <summary>Validates that the <see cref = "AlignmentTest"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_alignment_test"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(AlignmentTest).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_alignment_test).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "AlignmentTest"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_alignment_test"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(AlignmentTest), Is.EqualTo(16));
+            Assert.That(sizeof(SDL_alignment_test), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(AlignmentTest), Is.EqualTo(8));
+            Assert.That(sizeof(SDL_alignment_test), Is.EqualTo(8));
         }
     }
 }

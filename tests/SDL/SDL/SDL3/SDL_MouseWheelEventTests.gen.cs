@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "MouseWheelEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "SDL_MouseWheelEvent"/> struct.</summary>
 public static unsafe partial class SDL_MouseWheelEventTests
 {
-    /// <summary>Validates that the <see cref = "MouseWheelEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "SDL_MouseWheelEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<MouseWheelEvent>(), Is.EqualTo(sizeof(MouseWheelEvent)));
+        Assert.That(Marshal.SizeOf<SDL_MouseWheelEvent>(), Is.EqualTo(sizeof(SDL_MouseWheelEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "MouseWheelEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "SDL_MouseWheelEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(MouseWheelEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(SDL_MouseWheelEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "MouseWheelEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "SDL_MouseWheelEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(MouseWheelEvent), Is.EqualTo(56));
+        Assert.That(sizeof(SDL_MouseWheelEvent), Is.EqualTo(56));
     }
 }
