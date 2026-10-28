@@ -33,7 +33,7 @@ jobs:
         working-directory: eng/workflows/bindings
         env:
 #          COMMENT_BODY: ${{ github.event.comment.body }}
-          COMMENT_BODY: "/bindings OpenXR"
+          COMMENT_BODY: "/bindings OpenAL OpenCL OpenGL OpenXR SDL Vulkan"
         run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Generate matrix
@@ -62,6 +62,8 @@ jobs:
 
     steps:
 
+      # Currently deciding to install all dependencies for all bindings for simplicity
+      # Reason is that dependencies here are relatively light, unlike for native builds
       - name: Setup dependencies
         shell: pwsh
         run: |
