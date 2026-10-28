@@ -12,8 +12,8 @@ GL
 --namespace
 Silk.NET.OpenGL
 --output
-../../../../sources/OpenGL/gles2/gl
+../../../../sources/OpenGL/gles2
 --test-output
-../../../../tests/OpenGL/gles2/gl
+../../../../tests/OpenGL/gles2
 --traverse
 ../../../include/gles2/gl.h
