@@ -71,7 +71,7 @@ public static class LocationTransformationUtils
             }
         );
 
-        var modifiedSolution = sourceProject.Solution;
+        var modifiedSolution = originalSolution;
         foreach (var (documentId, newRoot) in newDocuments)
         {
             var modifiedDocument = modifiedSolution.GetDocument(documentId);
