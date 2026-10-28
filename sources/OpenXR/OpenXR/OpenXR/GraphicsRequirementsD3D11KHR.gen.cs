@@ -22,11 +22,11 @@ public unsafe partial struct GraphicsRequirementsD3D11KHR
 
     [NativeName("adapterLuid")]
     [SupportedApiProfile("openxr", ["XR_KHR_D3D11_enable"])]
-    public _LUID AdapterLuid;
+    public ulong AdapterLuid;
 
     [NativeName("minFeatureLevel")]
     [SupportedApiProfile("openxr", ["XR_KHR_D3D11_enable"])]
-    public D3D_FEATURE_LEVEL MinFeatureLevel;
+    public uint MinFeatureLevel;
 
     [SupportedApiProfile("openxr", ["XR_KHR_D3D11_enable"])]
     public GraphicsRequirementsD3D11KHR() { }
