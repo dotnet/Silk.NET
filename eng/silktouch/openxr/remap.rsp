@@ -1,1 +1,6 @@
 @../../remap-stdint.rsp
+--remap
+VkFilter=Silk.NET.Vulkan.Filter
+VkSamplerMipmapMode=Silk.NET.Vulkan.SamplerMipmapMode
+VkSamplerAddressMode=Silk.NET.Vulkan.SamplerAddressMode
+VkComponentSwizzle=Silk.NET.Vulkan.ComponentSwizzle

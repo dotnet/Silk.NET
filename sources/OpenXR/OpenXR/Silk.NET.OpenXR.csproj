@@ -7,5 +7,10 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
+    <ProjectReference
+      Include="..\..\Vulkan\Vulkan\Silk.NET.Vulkan.csproj"
+      Private="false"
+      PrivateAssets="all"
+    />
   </ItemGroup>
 </Project>
