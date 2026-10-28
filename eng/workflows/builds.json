@@ -43,6 +43,38 @@
     }
   },
   "bindings": {
+    "OpenAL": {
+      "submodules": [
+        "eng/submodules/openal-soft"
+      ],
+      "caches": {
+        "windows-latest": [
+          "openal-clangsharp.stout"
+        ]
+      }
+    },
+    "OpenCL": {
+      "submodules": [
+        "eng/submodules/opencl-docs",
+        "eng/submodules/opencl-headers"
+      ],
+      "caches": {
+        "windows-latest": [
+          "opencl-clangsharp.stout"
+        ]
+      }
+    },
+    "OpenGL": {
+      "submodules": [
+        "eng/submodules/egl-registry",
+        "eng/submodules/opengl-registry"
+      ],
+      "caches": {
+        "windows-latest": [
+          "opengl-clangsharp.stout"
+        ]
+      }
+    },
     "OpenXR": {
       "submodules": [
         "eng/submodules/openxr-sdk",
@@ -57,6 +89,27 @@
         ],
         "windows-latest": [
           "openxr-windows-clangsharp.stout"
+        ]
+      }
+    },
+    "SDL": {
+      "submodules": [
+        "eng/submodules/sdl"
+      ],
+      "caches": {
+        "windows-latest": [
+          "sdl-clangsharp.stout"
+        ]
+      }
+    },
+    "Vulkan": {
+      "submodules": [
+        "eng/submodules/vulkan-docs",
+        "eng/submodules/vulkan-headers"
+      ],
+      "caches": {
+        "windows-latest": [
+          "vulkan-clangsharp.stout"
         ]
       }
     }
