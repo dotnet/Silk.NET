@@ -5963,7 +5963,7 @@ public unsafe partial class Xr : IXr, IXr.Static
         ["XR_LOADER_VERSION_1_0", "XR_VERSION_1_0", "XR_VERSION_1_1"],
         MinVersion = "1.0"
     )]
-    public static ulong MaxEventDataSize => sizeof(EventDataBuffer);
+    public static nuint MaxEventDataSize => unchecked((nuint)((uint)(sizeof(EventDataBuffer))));
 
     [NativeName("XR_EXTENSION_ENUM_BASE")]
     [SupportedApiProfile(
@@ -8587,51 +8587,26 @@ public unsafe partial class Xr : IXr, IXr.Static
     [SupportedApiProfile("openxr", ["XR_KHR_convert_timespec_time"])]
     public const int KhrConvertTimespecTimeSpecVersion = 1;
 
-    [NativeName("XR_KHR_D3D11_enable_SPEC_VERSION")]
-    [SupportedApiProfile("openxr", ["XR_KHR_D3D11_enable"])]
-    public const int KhrD3D11EnableSpecVersion = 11;
-
     [NativeName("XR_KHR_CONVERT_TIMESPEC_TIME_EXTENSION_NAME")]
     [SupportedApiProfile("openxr", ["XR_KHR_convert_timespec_time"])]
     public static Utf8String KhrConvertTimespecTimeExtensionName =>
         "XR_KHR_convert_timespec_time"u8;
 
-    [NativeName("XR_KHR_D3D11_ENABLE_EXTENSION_NAME")]
-    [SupportedApiProfile("openxr", ["XR_KHR_D3D11_enable"])]
-    public static Utf8String KhrD3D11EnableExtensionName => "XR_KHR_D3D11_enable"u8;
-
     [NativeName("XR_KHR_vulkan_enable2_SPEC_VERSION")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public const int KhrVulkanEnable2SpecVersion = 4;
-
-    [NativeName("XR_KHR_D3D12_enable_SPEC_VERSION")]
-    [SupportedApiProfile("openxr", ["XR_KHR_D3D12_enable"])]
-    public const int KhrD3D12EnableSpecVersion = 11;
 
     [NativeName("XR_KHR_VULKAN_ENABLE2_EXTENSION_NAME")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public static Utf8String KhrVulkanEnable2ExtensionName => "XR_KHR_vulkan_enable2"u8;
 
-    [NativeName("XR_KHR_D3D12_ENABLE_EXTENSION_NAME")]
-    [SupportedApiProfile("openxr", ["XR_KHR_D3D12_enable"])]
-    public static Utf8String KhrD3D12EnableExtensionName => "XR_KHR_D3D12_enable"u8;
-
     [NativeName("XR_MNDX_egl_enable_SPEC_VERSION")]
     [SupportedApiProfile("openxr", ["XR_MNDX_egl_enable"])]
     public const int MndxEglEnableSpecVersion = 2;
 
-    [NativeName("XR_KHR_win32_convert_performance_counter_time_SPEC_VERSION")]
-    [SupportedApiProfile("openxr", ["XR_KHR_win32_convert_performance_counter_time"])]
-    public const int KhrWin32ConvertPerformanceCounterTimeSpecVersion = 1;
-
     [NativeName("XR_MNDX_EGL_ENABLE_EXTENSION_NAME")]
     [SupportedApiProfile("openxr", ["XR_MNDX_egl_enable"])]
     public static Utf8String MndxEglEnableExtensionName => "XR_MNDX_egl_enable"u8;
-
-    [NativeName("XR_KHR_WIN32_CONVERT_PERFORMANCE_COUNTER_TIME_EXTENSION_NAME")]
-    [SupportedApiProfile("openxr", ["XR_KHR_win32_convert_performance_counter_time"])]
-    public static Utf8String KhrWin32ConvertPerformanceCounterTimeExtensionName =>
-        "XR_KHR_win32_convert_performance_counter_time"u8;
 
     [NativeName("XR_FB_foveation_vulkan_SPEC_VERSION")]
     [SupportedApiProfile(
@@ -8657,14 +8632,6 @@ public unsafe partial class Xr : IXr, IXr.Static
     )]
     public const int FBSwapchainUpdateStateVulkanSpecVersion = 1;
 
-    [NativeName("XR_MSFT_perception_anchor_interop_SPEC_VERSION")]
-    [SupportedApiProfile(
-        "openxr",
-        ["XR_MSFT_perception_anchor_interop"],
-        ImpliesSets = ["XR_MSFT_spatial_anchor", "XR_VERSION_1_0"]
-    )]
-    public const int MsftPerceptionAnchorInteropSpecVersion = 1;
-
     [NativeName("XR_FB_SWAPCHAIN_UPDATE_STATE_VULKAN_EXTENSION_NAME")]
     [SupportedApiProfile(
         "openxr",
@@ -8674,44 +8641,14 @@ public unsafe partial class Xr : IXr, IXr.Static
     public static Utf8String FbSwapchainUpdateStateVulkanExtensionName =>
         "XR_FB_swapchain_update_state_vulkan"u8;
 
-    [NativeName("XR_MSFT_PERCEPTION_ANCHOR_INTEROP_EXTENSION_NAME")]
-    [SupportedApiProfile(
-        "openxr",
-        ["XR_MSFT_perception_anchor_interop"],
-        ImpliesSets = ["XR_MSFT_spatial_anchor", "XR_VERSION_1_0"]
-    )]
-    public static Utf8String MsftPerceptionAnchorInteropExtensionName =>
-        "XR_MSFT_perception_anchor_interop"u8;
-
     [NativeName("XR_META_vulkan_swapchain_create_info_SPEC_VERSION")]
     [SupportedApiProfile("openxr", ["XR_META_vulkan_swapchain_create_info"])]
     public const int MetaVulkanSwapchainCreateInfoSpecVersion = 1;
-
-    [NativeName("XR_MSFT_holographic_window_attachment_SPEC_VERSION")]
-    [SupportedApiProfile("openxr", ["XR_MSFT_holographic_window_attachment"])]
-    public const int MsftHolographicWindowAttachmentSpecVersion = 1;
 
     [NativeName("XR_META_VULKAN_SWAPCHAIN_CREATE_INFO_EXTENSION_NAME")]
     [SupportedApiProfile("openxr", ["XR_META_vulkan_swapchain_create_info"])]
     public static Utf8String MetaVulkanSwapchainCreateInfoExtensionName =>
         "XR_META_vulkan_swapchain_create_info"u8;
-
-    [NativeName("XR_MSFT_HOLOGRAPHIC_WINDOW_ATTACHMENT_EXTENSION_NAME")]
-    [SupportedApiProfile("openxr", ["XR_MSFT_holographic_window_attachment"])]
-    public static Utf8String MsftHolographicWindowAttachmentExtensionName =>
-        "XR_MSFT_holographic_window_attachment"u8;
-
-    [NativeName("XR_OCULUS_audio_device_guid_SPEC_VERSION")]
-    [SupportedApiProfile("openxr", ["XR_OCULUS_audio_device_guid"])]
-    public const int OculusAudioDeviceGuidSpecVersion = 1;
-
-    [NativeName("XR_OCULUS_AUDIO_DEVICE_GUID_EXTENSION_NAME")]
-    [SupportedApiProfile("openxr", ["XR_OCULUS_audio_device_guid"])]
-    public static Utf8String OculusAudioDeviceGuidExtensionName => "XR_OCULUS_audio_device_guid"u8;
-
-    [NativeName("XR_MAX_AUDIO_DEVICE_STR_SIZE_OCULUS")]
-    [SupportedApiProfile("openxr", ["XR_OCULUS_audio_device_guid"])]
-    public const int MaxAudioDeviceStrSizeOCULUS = 128;
 
     [NativeName("xrAcquireSwapchainImage")]
     [SupportedApiProfile(
