@@ -40,16 +40,9 @@ public static class LocationTransformationUtils
             .. ctx.TestProject?.DocumentIds ?? [],
         ];
 
-        var test = await ctx.TestProject!.GetCompilationAsync(ct);
-        foreach (var diagnostic in test!.GetDiagnostics(ct))
-        {
-            Console.WriteLine(diagnostic);
-        }
-
         var originalSolution = sourceProject.Solution;
         var newDocuments = new ConcurrentDictionary<DocumentId, SyntaxNode>();
         var symbolSet = new HashSet<ISymbol>(symbols, SymbolEqualityComparer.Default);
-        Console.WriteLine(symbolSet.Count);
         var baseRewriter = new LocationTransformationRewriter(symbolSet, transformers.ToList());
         await Parallel.ForEachAsync(
             documentIds,
@@ -78,9 +71,6 @@ public static class LocationTransformationUtils
             }
         );
 
-        Console.WriteLine(newDocuments.Count);
-
-        Console.WriteLine("ModifyAllReferencesAsync0");
         var modifiedSolution = originalSolution;
         foreach (var (documentId, newRoot) in newDocuments)
         {
@@ -90,10 +80,7 @@ public static class LocationTransformationUtils
                 return;
             }
 
-            modifiedDocument = modifiedDocument.WithSyntaxRoot(newRoot);
-            Console.WriteLine(modifiedDocument.Project.Name);
-            Console.WriteLine(newRoot.NormalizeWhitespace().ToFullString());
-            modifiedSolution = modifiedDocument.Project.Solution;
+            modifiedSolution = modifiedDocument.WithSyntaxRoot(newRoot).Project.Solution;
         }
 
         ctx.SourceProject =
