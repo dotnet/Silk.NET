@@ -3,7 +3,6 @@
 
 using System.Diagnostics;
 using Autofac;
-using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Transformation;
@@ -145,16 +144,6 @@ internal class SilkTouchJob : IDisposable
             {
                 await mod.ExecuteAsync(context, ct);
 
-                // TODO: Temporary
-                foreach (var document in context.TestProject!.Documents.Take(10))
-                {
-                    Console.WriteLine(
-                        (await document.GetSyntaxRootAsync(ct))!
-                            .NormalizeWhitespace()
-                            .ToFullString()
-                    );
-                }
-
                 if (!context.ContinueGeneration)
                 {
                     _logger.LogInformation(
@@ -175,14 +164,6 @@ internal class SilkTouchJob : IDisposable
         // Output the generated bindings
         if (context.ContinueGeneration)
         {
-            // TODO: Temporary
-            foreach (var document in context.TestProject!.Documents.Take(10))
-            {
-                Console.WriteLine(
-                    (await document.GetSyntaxRootAsync(ct))!.NormalizeWhitespace().ToFullString()
-                );
-            }
-
             await context.OutputBindingsAsync();
         }
 
