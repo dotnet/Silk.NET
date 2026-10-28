@@ -83,9 +83,29 @@ public static class LocationTransformationUtils
             modifiedSolution = modifiedDocument.WithSyntaxRoot(newRoot).Project.Solution;
         }
 
+        // TODO: Temporary
+        Console.WriteLine("ModifyAllReferencesAsync1");
+        foreach (
+            var document in modifiedSolution.GetProject(ctx.TestProject!.Id)!.Documents.Take(10)
+        )
+        {
+            Console.WriteLine(
+                (await document.GetSyntaxRootAsync(ct))!.NormalizeWhitespace().ToFullString()
+            );
+        }
+
         ctx.SourceProject =
             modifiedSolution.GetProject(sourceProject.Id)
             ?? throw new InvalidOperationException("Failed to get source project");
+
+        // TODO: Temporary
+        Console.WriteLine("ModifyAllReferencesAsync2");
+        foreach (var document in ctx.TestProject!.Documents.Take(10))
+        {
+            Console.WriteLine(
+                (await document.GetSyntaxRootAsync(ct))!.NormalizeWhitespace().ToFullString()
+            );
+        }
 
         if (ctx.TestProject != null && ctx.SourceProject.Solution != ctx.TestProject.Solution)
         {

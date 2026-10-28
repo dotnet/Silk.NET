@@ -189,6 +189,15 @@ public class PrettifyNames(ILogger<PrettifyNames> logger, PrettifyNames.Configur
         symbolVisitor.Visit(compilation.Assembly);
         await NameUtils.RenameAllAsync(ctx, symbolVisitor.ToRename, logger, ct);
 
+        // TODO: Temporary
+        Console.WriteLine("PrettifyNames1");
+        foreach (var document in ctx.TestProject!.Documents.Take(10))
+        {
+            Console.WriteLine(
+                (await document.GetSyntaxRootAsync(ct))!.NormalizeWhitespace().ToFullString()
+            );
+        }
+
         logger.LogDebug(
             "Reference renaming took {} seconds for {}.",
             sw.Elapsed.TotalSeconds,
@@ -259,6 +268,15 @@ public class PrettifyNames(ILogger<PrettifyNames> logger, PrettifyNames.Configur
         }
 
         ctx.SourceProject = proj;
+
+        // TODO: Temporary
+        Console.WriteLine("PrettifyNames2");
+        foreach (var document in ctx.TestProject!.Documents.Take(10))
+        {
+            Console.WriteLine(
+                (await document.GetSyntaxRootAsync(ct))!.NormalizeWhitespace().ToFullString()
+            );
+        }
     }
 
     /// <inheritdoc />
