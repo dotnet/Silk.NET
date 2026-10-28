@@ -34,7 +34,7 @@ public unsafe partial struct SwapchainStateSamplerVulkanFB
         ["XR_FB_swapchain_update_state_vulkan"],
         ImpliesSets = ["XR_FB_swapchain_update_state", "XR_KHR_vulkan_enable", "XR_VERSION_1_0"]
     )]
-    public Silk.NET.Vulkan.Filter MinFilter;
+    public uint MinFilter;
 
     [NativeName("magFilter")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public unsafe partial struct SwapchainStateSamplerVulkanFB
         ["XR_FB_swapchain_update_state_vulkan"],
         ImpliesSets = ["XR_FB_swapchain_update_state", "XR_KHR_vulkan_enable", "XR_VERSION_1_0"]
     )]
-    public Silk.NET.Vulkan.Filter MagFilter;
+    public uint MagFilter;
 
     [NativeName("mipmapMode")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public unsafe partial struct SwapchainStateSamplerVulkanFB
         ["XR_FB_swapchain_update_state_vulkan"],
         ImpliesSets = ["XR_FB_swapchain_update_state", "XR_KHR_vulkan_enable", "XR_VERSION_1_0"]
     )]
-    public Silk.NET.Vulkan.SamplerMipmapMode MipmapMode;
+    public uint MipmapMode;
 
     [NativeName("wrapModeS")]
     [SupportedApiProfile(
@@ -58,7 +58,7 @@ public unsafe partial struct SwapchainStateSamplerVulkanFB
         ["XR_FB_swapchain_update_state_vulkan"],
         ImpliesSets = ["XR_FB_swapchain_update_state", "XR_KHR_vulkan_enable", "XR_VERSION_1_0"]
     )]
-    public Silk.NET.Vulkan.SamplerAddressMode WrapModeS;
+    public uint WrapModeS;
 
     [NativeName("wrapModeT")]
     [SupportedApiProfile(
@@ -66,7 +66,7 @@ public unsafe partial struct SwapchainStateSamplerVulkanFB
         ["XR_FB_swapchain_update_state_vulkan"],
         ImpliesSets = ["XR_FB_swapchain_update_state", "XR_KHR_vulkan_enable", "XR_VERSION_1_0"]
     )]
-    public Silk.NET.Vulkan.SamplerAddressMode WrapModeT;
+    public uint WrapModeT;
 
     [NativeName("swizzleRed")]
     [SupportedApiProfile(
@@ -74,7 +74,7 @@ public unsafe partial struct SwapchainStateSamplerVulkanFB
         ["XR_FB_swapchain_update_state_vulkan"],
         ImpliesSets = ["XR_FB_swapchain_update_state", "XR_KHR_vulkan_enable", "XR_VERSION_1_0"]
     )]
-    public Silk.NET.Vulkan.ComponentSwizzle SwizzleRed;
+    public uint SwizzleRed;
 
     [NativeName("swizzleGreen")]
     [SupportedApiProfile(
@@ -82,7 +82,7 @@ public unsafe partial struct SwapchainStateSamplerVulkanFB
         ["XR_FB_swapchain_update_state_vulkan"],
         ImpliesSets = ["XR_FB_swapchain_update_state", "XR_KHR_vulkan_enable", "XR_VERSION_1_0"]
     )]
-    public Silk.NET.Vulkan.ComponentSwizzle SwizzleGreen;
+    public uint SwizzleGreen;
 
     [NativeName("swizzleBlue")]
     [SupportedApiProfile(
@@ -90,7 +90,7 @@ public unsafe partial struct SwapchainStateSamplerVulkanFB
         ["XR_FB_swapchain_update_state_vulkan"],
         ImpliesSets = ["XR_FB_swapchain_update_state", "XR_KHR_vulkan_enable", "XR_VERSION_1_0"]
     )]
-    public Silk.NET.Vulkan.ComponentSwizzle SwizzleBlue;
+    public uint SwizzleBlue;
 
     [NativeName("swizzleAlpha")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public unsafe partial struct SwapchainStateSamplerVulkanFB
         ["XR_FB_swapchain_update_state_vulkan"],
         ImpliesSets = ["XR_FB_swapchain_update_state", "XR_KHR_vulkan_enable", "XR_VERSION_1_0"]
     )]
-    public Silk.NET.Vulkan.ComponentSwizzle SwizzleAlpha;
+    public uint SwizzleAlpha;
 
     [NativeName("maxAnisotropy")]
     [SupportedApiProfile(
