@@ -4,6 +4,7 @@
 using System.Buffers;
 using System.Diagnostics;
 using System.IO.Hashing;
+using System.Runtime.CompilerServices;
 using System.Text;
 using CSharpier.Core;
 using CSharpier.Core.CSharp;
@@ -21,8 +22,8 @@ internal class MSBuildModContext(
     ILogger logger
 ) : IModContext
 {
-    private Project? _srcProject;
-    private Project? _testProject;
+    private Project? _srcProject,
+        _testProject;
 
     public string JobKey => jobKey;
 
@@ -30,54 +31,49 @@ internal class MSBuildModContext(
 
     public Project SourceProject
     {
-        get =>
-            _srcProject
-            ?? throw new InvalidOperationException(
-                $"{nameof(MSBuildModContext)} has not been initialized"
-            );
-        set
-        {
-            _srcProject = value ?? throw new ArgumentNullException(nameof(value));
-            if (_testProject is not null)
-            {
-                _testProject =
-                    _srcProject.Solution.GetProject(_testProject.Id)
-                    ?? throw new ArgumentException(
-                        $"New {(string?)null} solution does not contain {nameof(TestProject)}.",
-                        nameof(value)
-                    );
-            }
-        }
+        get => _srcProject!;
+        set => Assign(ref _srcProject, ref _testProject, value, nameof(TestProject));
     }
 
     public Project? TestProject
     {
         get => _testProject;
-        set
-        {
-            if (_testProject is null)
-            {
-                if (value is null)
-                {
-                    return;
-                }
+        set => Assign(ref _testProject, ref _srcProject, value, nameof(SourceProject));
+    }
 
-                throw new InvalidOperationException(
-                    $"Can't set {(string?)null} if it did not exist at time of context creation."
-                );
+    public bool ContinueGeneration { get; set; } = true;
+
+    private static void Assign(
+        ref Project? thisProject,
+        ref Project? otherProject,
+        Project? value,
+        string otherProjectMemberName,
+        [CallerMemberName] string? thisProjectMemberName = null
+    )
+    {
+        if (thisProject is null)
+        {
+            if (value is null)
+            {
+                return;
             }
 
-            _testProject = value ?? throw new ArgumentNullException(nameof(value));
-            _srcProject =
-                _testProject.Solution.GetProject(SourceProject.Id)
+            throw new InvalidOperationException(
+                $"Can't set {thisProjectMemberName} if it did not exist at time of context creation."
+            );
+        }
+
+        thisProject = value ?? throw new ArgumentNullException(nameof(value));
+        if (otherProject is not null)
+        {
+            otherProject =
+                thisProject.Solution.GetProject(otherProject.Id)
                 ?? throw new ArgumentException(
-                    $"New {(string?)null} solution does not contain {nameof(SourceProject)}.",
+                    $"New {thisProjectMemberName} solution does not contain {otherProjectMemberName}.",
                     nameof(value)
                 );
         }
     }
-
-    public bool ContinueGeneration { get; set; } = true;
 
     public async Task InitializeAsync()
     {
@@ -91,16 +87,12 @@ internal class MSBuildModContext(
 
         // First locate the source project
         var projectFile = Path.GetFullPath(jobConfig.SourceProject, WorkingDirectory);
+        _srcProject = solution
+            .Projects.Where(x => x.FilePath is not null)
+            .FirstOrDefault(x => Path.GetFullPath(x.FilePath!, WorkingDirectory) == projectFile);
+        if (_srcProject is null)
         {
-            var srcProject = solution
-                .Projects.Where(x => x.FilePath is not null)
-                .FirstOrDefault(x =>
-                    Path.GetFullPath(x.FilePath!, WorkingDirectory) == projectFile
-                );
-
-            _srcProject =
-                srcProject
-                ?? throw new InvalidOperationException("Failed to locate source project.");
+            throw new InvalidOperationException("Failed to locate source project.");
         }
 
         // Wipe the slate clean. The generator should only be able to see generated code.
@@ -145,7 +137,7 @@ internal class MSBuildModContext(
         logger.LogInformation("Writing {} to disk...", JobKey);
 
         await Parallel.ForEachAsync(
-            [.. SourceProject.Documents, .. TestProject?.Documents ?? []],
+            [.. SourceProject?.Documents ?? [], .. TestProject?.Documents ?? []],
             async (doc, ct) =>
             {
                 if (
