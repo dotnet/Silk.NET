@@ -22,10 +22,6 @@ public class MarkNativeNames : IMod
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var proj = ctx.SourceProject;
-        if (proj == null)
-        {
-            return;
-        }
 
         var compilation = await proj.GetCompilationAsync(ct);
         if (compilation == null)

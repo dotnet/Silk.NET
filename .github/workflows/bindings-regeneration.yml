@@ -1,0 +1,326 @@
+name: Bindings Regeneration
+
+on:
+  workflow_dispatch:
+#  issue_comment:
+#    types:
+#      - created
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    name: Dispatch selected jobs
+    runs-on: ubuntu-latest
+
+#    if: github.event.issue.pull_request && contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)
+
+    steps:
+
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
+
+      - name: Parse comment as command
+        id: command
+        shell: pwsh
+        working-directory: eng/workflows/bindings
+        env:
+#          COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENT_BODY: "/bindings OpenAL OpenCL OpenGL OpenXR SDL Vulkan"
+        run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
+
+      - name: Generate matrix
+        id: matrix
+        shell: pwsh
+        working-directory: eng/workflows/bindings
+        env:
+          CHOSEN_JOBS: ${{ steps.command.outputs.jobs }}
+        run: ./workflow-matrix.ps1 >> $env:GITHUB_OUTPUT
+
+    outputs:
+      scrapeMatrix: ${{ steps.matrix.outputs.scrapeMatrix }}
+      regenerateMatrix: ${{ steps.matrix.outputs.regenerateMatrix }}
+
+  scrape:
+    name: Scrape ${{ matrix.job }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    if: join(fromJSON(needs.dispatch.outputs.scrapeMatrix), ',') != ''
+    needs: [dispatch]
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.dispatch.outputs.scrapeMatrix) }}
+
+    steps:
+
+      # Currently deciding to install all dependencies for all bindings for simplicity
+      # Reason is that dependencies here are relatively light, unlike for native builds
+      - name: Setup dependencies
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          switch ($true) {
+            $IsWindows {}
+            $IsLinux {
+              sudo apt-get update
+
+              # Added for OpenXR
+              sudo apt-get install -y libx11-dev libgl-dev libglx-dev libxcb1-dev libxcb-glx0-dev libegl-dev
+            }
+            $IsMacOS {}
+          }
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.401"
+
+      - name: Setup Windows SDK
+        if: "runner.os == 'Windows'"
+        uses: GuillaumeFalourd/setup-windows10-sdk-action@v2.5
+        with:
+          sdk-version: 22621
+
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
+
+      - name: Initialize submodules
+        shell: pwsh
+        env:
+          SUBMODULES: ${{ toJSON(matrix.submodules) }}
+        run: |
+          $submodules = $env:SUBMODULES | ConvertFrom-Json
+          git submodule update --init --recursive --depth 0 $submodules
+
+      - name: Clear .silktouch folder contents
+        shell: pwsh
+        run: Remove-Item -Path .silktouch -Recurse -Force
+
+      - name: .NET workload restore
+        shell: pwsh
+        run: dotnet workload restore
+
+      - name: .NET restore
+        shell: pwsh
+        run: dotnet restore
+
+      - name: Populate caches
+        shell: pwsh
+        env:
+          JOB: ${{ matrix.job }}
+        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --generate-cache-only --only $env:JOB
+
+      - name: Show .silktouch folder contents
+        shell: pwsh
+        run: Get-ChildItem .silktouch
+
+      - name: Upload cache as artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: silktouch-cache-${{ matrix.job }}-${{ matrix.os }}
+          path: .silktouch
+          include-hidden-files: true
+
+  combine:
+    name: Combine caches
+    runs-on: ubuntu-24.04
+
+    if: always()
+    needs: [scrape]
+
+    steps:
+
+      - name: Download cache
+        uses: actions/download-artifact@v8
+        with:
+          path: .silktouch
+          pattern: silktouch-cache-*
+          merge-multiple: true
+
+      - name: Show .silktouch folder contents
+        shell: pwsh
+        run: Get-ChildItem .silktouch
+
+      - name: Upload cache
+        uses: actions/upload-artifact@v7
+        with:
+          name: silktouch-combined-cache
+          path: .silktouch
+          include-hidden-files: true
+
+  regenerate:
+    name: Regenerate ${{ matrix.job }}
+    runs-on: ubuntu-24.04
+
+    if: join(fromJSON(needs.dispatch.outputs.regenerateMatrix), ',') != ''
+    needs: [dispatch, combine]
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.dispatch.outputs.regenerateMatrix) }}
+
+    steps:
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.401"
+
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
+
+      - name: Initialize submodules
+        shell: pwsh
+        env:
+          SUBMODULES: ${{ toJSON(matrix.submodules) }}
+        run: |
+          $submodules = $env:SUBMODULES | ConvertFrom-Json
+          git submodule update --init --recursive --depth 0 $submodules
+
+      - name: Download cache
+        uses: actions/download-artifact@v8
+        with:
+          path: .silktouch
+          pattern: silktouch-combined-cache
+
+      - name: Show .silktouch folder contents
+        shell: pwsh
+        run: Get-ChildItem .silktouch
+
+      - name: Show git status
+        shell: pwsh
+        run: git status
+
+      - name: .NET workload restore
+        shell: pwsh
+        run: dotnet workload restore
+
+      - name: .NET restore
+        shell: pwsh
+        run: dotnet restore
+
+      - name: Regenerate bindings
+        shell: pwsh
+        env:
+          JOB: ${{ matrix.job }}
+        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --use-cache-only --only $env:JOB
+
+      - name: Show git status
+        shell: pwsh
+        run: git status
+
+      - name: Create bindings patch
+        id: patch
+        shell: pwsh
+        env:
+          JOB: ${{ matrix.job }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          # Create patch, excluding cache
+          git add -A
+          git diff --cached --binary -- . ":(exclude).silktouch" > "bindings-$env:JOB.patch"
+
+          if ((Get-Item "bindings-$env:JOB.patch").Length -eq 0) {
+            Write-Host "Bindings already up to date"
+            "changed=false" >> $env:GITHUB_OUTPUT
+            exit 0
+          }
+
+          "changed=true" >> $env:GITHUB_OUTPUT
+
+      - name: Upload bindings patch
+        if: steps.patch.outputs.changed == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: bindings-patch-${{ matrix.job }}
+          path: bindings-${{ matrix.job }}.patch
+
+  push:
+    name: Commit and push
+    runs-on: ubuntu-latest
+
+    needs: [regenerate]
+
+    permissions:
+      contents: write
+
+    steps:
+
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
+          fetch-depth: 0
+
+      - name: Download cache
+        uses: actions/download-artifact@v8
+        with:
+          path: .silktouch
+          pattern: silktouch-combined-cache
+
+      - name: Download bindings patches
+        uses: actions/download-artifact@v8
+        with:
+          path: patches
+          pattern: bindings-patch-*
+          merge-multiple: true
+
+      - name: Commit and push
+        shell: pwsh
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          TARGET_BRANCH: ${{ github.ref_name }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          $sourceContext = $env:SOURCE_SHA
+
+          git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+          git config --local user.name "The Silk.NET Automaton"
+
+          # Cache
+          git add .silktouch
+          if (git status --porcelain --untracked-files=no) {
+            git commit -m "Update .silktouch cache for $sourceContext"
+          }
+
+          # Bindings, one commit per job
+          if (Test-Path patches) {
+            foreach ($patch in Get-ChildItem patches -Filter "bindings-*.patch") {
+              $job = $patch.BaseName.Substring("bindings-".Length)
+              git apply --index $patch.FullName
+              git commit -m "Regenerate $job bindings for $sourceContext"
+            }
+          }
+
+          git status
+
+          if ((git rev-parse HEAD) -eq $env:SOURCE_SHA) {
+            Write-Host "Nothing to push"
+            exit 0
+          }
+
+          git pull --rebase origin $env:TARGET_BRANCH
+          git push origin "HEAD:refs/heads/$env:TARGET_BRANCH"

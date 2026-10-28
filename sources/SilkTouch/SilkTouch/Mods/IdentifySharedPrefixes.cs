@@ -55,10 +55,6 @@ public class IdentifySharedPrefixes(IdentifySharedPrefixes.Configuration config)
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var project = ctx.SourceProject;
-        if (project is null)
-        {
-            return;
-        }
 
         // Sort the hints from large to small
         // This makes it so that we prefer longer prefixes
@@ -611,7 +607,8 @@ public class IdentifySharedPrefixes(IdentifySharedPrefixes.Configuration config)
                 node.AccessorList?.Accessors.Any(a =>
                     a.IsKind(SyntaxKind.SetAccessorDeclaration)
                     || a.IsKind(SyntaxKind.InitAccessorDeclaration)
-                ) ?? false;
+                )
+                ?? false;
 
             if (hasSetter)
             {
@@ -660,9 +657,9 @@ public class IdentifySharedPrefixes(IdentifySharedPrefixes.Configuration config)
 
             var previousScope = _scope;
             _scope = node;
-            node = node.WithMembers(
-                [.. node.Members.Select(member => (MemberDeclarationSyntax)Visit(member))]
-            );
+            node = node.WithMembers([
+                .. node.Members.Select(member => (MemberDeclarationSyntax)Visit(member)),
+            ]);
             _scope = previousScope;
 
             return node;
@@ -674,9 +671,9 @@ public class IdentifySharedPrefixes(IdentifySharedPrefixes.Configuration config)
 
             var previousScope = _scope;
             _scope = node;
-            node = node.WithMembers(
-                [.. node.Members.Select(member => (MemberDeclarationSyntax)Visit(member))]
-            );
+            node = node.WithMembers([
+                .. node.Members.Select(member => (MemberDeclarationSyntax)Visit(member)),
+            ]);
             _scope = previousScope;
 
             return node;
@@ -688,9 +685,9 @@ public class IdentifySharedPrefixes(IdentifySharedPrefixes.Configuration config)
 
             var previousScope = _scope;
             _scope = node;
-            node = node.WithMembers(
-                [.. node.Members.Select(member => (EnumMemberDeclarationSyntax)Visit(member))]
-            );
+            node = node.WithMembers([
+                .. node.Members.Select(member => (EnumMemberDeclarationSyntax)Visit(member)),
+            ]);
             _scope = previousScope;
 
             return node;

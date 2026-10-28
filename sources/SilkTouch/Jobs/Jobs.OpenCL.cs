@@ -22,17 +22,19 @@ internal static partial class Jobs
                     .WithDefaultFunctionTransformers(
                         new() { BoolTypes = new() { ["cl_bool"] = null } }
                     )
-                    .AddIncludes(new())
+                    .AddIncludes()
                     .ClangScraper(
                         new()
                         {
+                            ScrapeIf = static () => OperatingSystem.IsWindows(),
+
                             ClangSharpResponseFiles = ["eng/silktouch/opencl/**/generate.rsp"],
                             InputSourceRoot = "sources/OpenCL",
                             InputTestRoot = "tests/OpenCL",
                         }
                     )
                     .MarkNativeNames()
-                    .AddApiProfiles(new())
+                    .AddApiProfiles()
                     .ExtractHandles()
                     .ExtractNestedTypes()
                     .ExtractFunctionPointers()

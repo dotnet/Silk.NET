@@ -5,7 +5,7 @@ _GUID
 AL_CPLUSPLUS
 ALC_CPLUSPLUS
 --file
-openal-soft-al.h
+alsoft.h
 --methodClassName
 AL
 --namespace
@@ -20,4 +20,4 @@ Silk.NET.OpenAL
 ../../../submodules/openal-soft/include/AL/alext.h
 ../../../submodules/openal-soft/include/AL/efx.h
 ../../../submodules/openal-soft/include/AL/efx-presets.h
-openal-soft-al.h
+alsoft.h

@@ -25,10 +25,12 @@ internal static partial class Jobs
                             BoolTypes = new() { ["ALboolean"] = null, ["ALCboolean"] = null },
                         }
                     )
-                    .AddIncludes(new())
+                    .AddIncludes()
                     .ClangScraper(
                         new()
                         {
+                            ScrapeIf = static () => OperatingSystem.IsWindows(),
+
                             ClangSharpResponseFiles = ["eng/silktouch/openal/**/generate.rsp"],
                             InputSourceRoot = "sources/OpenAL",
                             InputTestRoot = "tests/OpenAL",
@@ -45,7 +47,7 @@ internal static partial class Jobs
                             },
                         }
                     )
-                    .AddApiProfiles(new())
+                    .AddApiProfiles()
                     .MixKhronosData(
                         new()
                         {

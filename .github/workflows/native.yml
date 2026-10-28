@@ -1,100 +1,126 @@
 name: Native Builds
+
 on:
+  # TODO: Change this to be triggered using a PR comment instead, plan is copy the bindings-regeneration implementation
   pull_request:
     types: [opened, edited, synchronize]
+
 permissions:
   pull-requests: write
   contents: write
-env:
-  # A space-separated list of paths to native libraries to build.
-  NATIVE_LIBRARY_PATHS: "sources/SDL/Native sources/OpenAL/Soft.Native"
-  # A space-separated list of submodule paths for each native library path. Use _ if a submodule is not used - this must
-  # match the number of spaces in NATIVE_LIBRARY_PATHS.
-  NATIVE_LIBRARY_SUBMODULE_PATHS: "eng/submodules/sdl eng/submodules/openal-soft"
-  # A space-separated list of shorthands to the native library paths that will build the native library for each native
-  # library path. This must match the number of spaces in NATIVE_LIBRARY_PATHS. If a shorthand builds multiple native
-  # binary paths, these will be deduplicated.
-  NATIVE_LIBRARY_SHORTHANDS: "SDL OpenAL-Soft"
+
 jobs:
-  prerequisites:
-    name: PR Check
+  dispatch:
+    name: Dispatch selected jobs
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - id: parse
-        name: Determine which native libraries the user has asked to build, and where to look for changes.
-        run: ./workflow-stage1.sh
-        working-directory: eng/native/buildsystem
+
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
+
+      - name: Determine which native libraries the user has asked to build, and where to look for changes.
+        id: parse
+        shell: pwsh
+        working-directory: eng/workflows/native
         env:
-          PR_COMMENT: ${{ github.event.pull_request.body }}
-      - uses: dorny/paths-filter@v3
+          COMMENT_BODY: ${{ github.event.pull_request.body }}
+        run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
+
+      # TODO: Probably needs to be changed to find the last build? Actually, need to rethink the whole notice comment since the notice comment checks the PR body
+      - uses: dorny/paths-filter@v4
         id: filter
         name: Determine which natives need to be rebuilt.
         with:
           filters: ${{ steps.parse.outputs.workflow_filters }}
-      - name: Find a warning message from a previous run, if applicable.
-        uses: peter-evans/find-comment@v3
+
+      - name: Find previous comment if it exists
+        uses: peter-evans/find-comment@v4
         id: fc
         with:
           issue-number: ${{ github.event.number }}
           comment-author: "github-actions[bot]"
-          body-includes: "Some of the native library builds modified in this PR were not referenced in the PR description."
-      - id: strat
-        name: Create the matrix strategy for the native builds.
-        run: ./workflow-stage2.sh
-        working-directory: eng/native/buildsystem
+          body-includes: "## Silk Native Build"
+
+      - name: Generate matrix
+        id: matrix
+        shell: pwsh
+        working-directory: eng/workflows/native
         env:
-          NATIVE_LIBRARY_APPLICABLE_SHORTHANDS: ${{ join(fromJSON(steps.filter.outputs.changes), ' ') }}
-          NATIVE_LIBRARY_USER_REFERENCED_SHORTHANDS: ${{ steps.parse.outputs.targets_referenced }}
-          PR_EXISTING_NOTICE_ID: ${{ steps.fc.outputs.comment-id }}
-      - name: Write a comment if needed.
-        if: ${{ steps.strat.outputs.comment_to_write }}
-        uses: peter-evans/create-or-update-comment@v4
+          AFFECTED_JOBS: ${{ join(fromJSON(steps.filter.outputs.changes), ' ') }}
+          CHOSEN_JOBS: ${{ steps.parse.outputs.jobs }}
+          PREVIOUS_COMMENT_ID: ${{ steps.fc.outputs.comment-id }}
+        run: ./workflow-matrix.ps1 >> $env:GITHUB_OUTPUT
+
+      - name: Update comment
+        if: ${{ steps.matrix.outputs.comment }}
+        uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.number }}
-          body: ${{ steps.strat.outputs.comment_to_write }}
+          body: ${{ steps.matrix.outputs.comment }}
           edit-mode: replace
+
     outputs:
-      matrix_strategy: ${{ steps.strat.outputs.matrix_strategy }}
-      targets_referenced: ${{ steps.parse.outputs.targets_referenced }}
+      matrix: ${{ steps.matrix.outputs.matrix }}
+
   build:
-    needs: [prerequisites]
+    name: ${{ matrix.job }} / ${{ matrix.runtime }}
+    runs-on: ${{ matrix.os }}
+
+    if: join(fromJSON(needs.dispatch.outputs.matrix), ',') != ''
+    needs: [dispatch]
+
     strategy:
       fail-fast: false
       matrix:
-        flat: ${{ fromJSON(needs.prerequisites.outputs.matrix_strategy) }}
-    runs-on: ${{ (startsWith(matrix.flat.runtime, 'osx') || startsWith(matrix.flat.runtime, 'ios') || startsWith(matrix.flat.runtime, 'tvos')) && 'macos-latest' || startsWith(matrix.flat.runtime, 'win') && 'windows-latest' || 'ubuntu-latest' }}
-    name: ${{ matrix.flat.target }} / ${{ matrix.flat.runtime }}
+        include: ${{ fromJSON(needs.dispatch.outputs.matrix) }}
+
     steps:
-      - uses: actions/checkout@v3
+
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
+          submodules: false
+
       - name: Build
         run: |
-          echo "https://github.com/actions/upload-artifact/issues/174" > .workaround-${{ matrix.flat.target }}-${{ matrix.flat.runtime }}.txt
-          ${{ format('.{0}{1}', startsWith(matrix.flat.runtime, 'win') && '\' || '/', matrix.flat.exec) }}
-        working-directory: ${{ matrix.flat.dir }}
+          echo "https://github.com/actions/upload-artifact/issues/174" > .workaround-${{ matrix.job }}-${{ matrix.runtime }}.txt
+          ${{ format('.{0}{1}', startsWith(matrix.runtime, 'win') && '\' || '/', matrix.exec) }}
+        working-directory: ${{ matrix.dir }}
+
       - uses: actions/upload-artifact@v4
         with:
-          name: natives-${{ matrix.flat.target }}-${{ matrix.flat.runtime }}
+          name: natives-${{ matrix.job }}-${{ matrix.runtime }}
           path: |
             ./.workaround-*.txt
-            ./${{ matrix.flat.dir }}/runtimes/${{ format('{0}{1}', matrix.flat.runtime, !contains(matrix.flat.runtime, '-') && '*' || '') }}/**/*
-            ./${{ matrix.flat.dir }}/lib/*${{ matrix.flat.runtime }}*/**/*
-            ./${{ matrix.flat.dir }}/*${{ matrix.flat.runtime }}*/**/*
+            ./${{ matrix.dir }}/runtimes/${{ format('{0}{1}', matrix.runtime, !contains(matrix.runtime, '-') && '*' || '') }}/**/*
+            ./${{ matrix.dir }}/lib/*${{ matrix.runtime }}*/**/*
+            ./${{ matrix.dir }}/*${{ matrix.runtime }}*/**/*
+
   commit:
     name: Commit Binaries
-    needs: [prerequisites, build]
     runs-on: ubuntu-latest
-    if: ${{ needs.prerequisites.outputs.targets_referenced }}
+
+    if: join(fromJSON(needs.dispatch.outputs.matrix), ',') != ''
+    needs: [dispatch, build]
+
     steps:
-      - uses: actions/checkout@v4
+
+      - name: Checkout Repo
+        uses: actions/checkout@v7
         with:
+          submodules: false
           ref: ${{ github.head_ref }}
+
       - name: Download All Artifacts
         uses: actions/download-artifact@v4
         with:
           pattern: natives-*
           merge-multiple: true
+
       - name: Commit Artifacts
         run: |
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"

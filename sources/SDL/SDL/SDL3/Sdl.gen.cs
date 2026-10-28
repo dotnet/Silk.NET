@@ -57126,7 +57126,7 @@ public unsafe partial class Sdl : ISdl, ISdl.Static
     public const int AssertLevel = 1;
 
     [NativeName("SDL_ASSERT_FILE")]
-    public static Utf8String AssertFile => "sdl-SDL.h"u8;
+    public static Utf8String AssertFile => "sdl3.h"u8;
 
     [NativeName("SDL_PROP_NAME_STRING")]
     public static Utf8String PropNameString => "SDL.name"u8;

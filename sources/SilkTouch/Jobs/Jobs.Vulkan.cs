@@ -22,10 +22,12 @@ internal static partial class Jobs
                     .WithDefaultFunctionTransformers(
                         new() { BoolTypes = new() { ["VkBool32"] = null } }
                     )
-                    .AddIncludes(new())
+                    .AddIncludes()
                     .ClangScraper(
                         new()
                         {
+                            ScrapeIf = static () => OperatingSystem.IsWindows(),
+
                             ClangSharpResponseFiles = ["eng/silktouch/vulkan/**/generate.rsp"],
                             InputSourceRoot = "sources/Vulkan",
                             InputTestRoot = "tests/Vulkan",

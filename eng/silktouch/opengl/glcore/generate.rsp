@@ -4,7 +4,7 @@
 __gl_gl_h_
 WIN32_LEAN_AND_MEAN
 --file
-opengl-gl.h
+glcore.h
 --methodClassName
 GL
 --namespace

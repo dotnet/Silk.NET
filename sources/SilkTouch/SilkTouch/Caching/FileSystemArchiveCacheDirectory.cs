@@ -134,9 +134,12 @@ internal class FileSystemArchiveCacheDirectory(
         try
         {
             parent.Logger.LogTrace("Cache write (\"{0}\", ZIP): {1}", CacheKey, filePath);
-            await using var dst = await (await GetOrCreateNewAsync())
-                .CreateEntry(filePath, CompressionLevel.SmallestSize)
-                .OpenAsync();
+
+            var archive = await GetOrCreateNewAsync(); // Do not dispose
+            var entry = archive.CreateEntry(filePath, CompressionLevel.SmallestSize);
+            entry.LastWriteTime = DateTimeOffset.FromUnixTimeSeconds(946684800); // Ensure deterministic time (Jan 1, 2000)
+
+            await using var dst = await entry.OpenAsync();
             await stream.CopyToAsync(dst);
             _newEntries.Add(filePath);
         }

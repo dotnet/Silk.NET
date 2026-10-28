@@ -1,1 +1,8 @@
 @../../remap-stdint.rsp
+--remap
+VkFilter=uint
+VkSamplerMipmapMode=uint
+VkSamplerAddressMode=uint
+VkComponentSwizzle=uint
+_LUID=ulong
+D3D_FEATURE_LEVEL=uint

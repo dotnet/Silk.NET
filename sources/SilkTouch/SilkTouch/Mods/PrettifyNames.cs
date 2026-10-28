@@ -108,11 +108,6 @@ public class PrettifyNames(ILogger<PrettifyNames> logger, PrettifyNames.Configur
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        if (ctx.SourceProject is null)
-        {
-            return;
-        }
-
         // Scan sources to gather names
         var visitor = new NameDataVisitor();
         foreach (var doc in ctx.SourceProject.Documents)

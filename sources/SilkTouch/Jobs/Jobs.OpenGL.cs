@@ -22,10 +22,12 @@ internal static partial class Jobs
                     .WithDefaultFunctionTransformers(
                         new() { BoolTypes = new() { ["GLboolean"] = null } }
                     )
-                    .AddIncludes(new())
+                    .AddIncludes()
                     .ClangScraper(
                         new()
                         {
+                            ScrapeIf = static () => OperatingSystem.IsWindows(),
+
                             ClangSharpResponseFiles = ["eng/silktouch/opengl/**/generate.rsp"],
                             InputSourceRoot = "sources/OpenGL",
                             InputTestRoot = "tests/OpenGL",

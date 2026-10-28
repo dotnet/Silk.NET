@@ -1,10 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -25,13 +21,8 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         GetType() == typeof(DefaultBakeStrategy) ? "Default" : GetType().FullName ?? GetType().Name;
 
     /// <inheritdoc />
-    public virtual MemberDeclarationSyntax BakeMember(
-        MemberDeclarationSyntax node,
-        string? discrim,
-        BakedMember? existing
-    )
+    public virtual MemberDeclarationSyntax? Cleanup(MemberDeclarationSyntax? node)
     {
-        // Strip the declaration down to its bare necessities.
         node = node switch
         {
             // TODO do we need to strip more than this for dedupe purposes?
@@ -40,24 +31,87 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             _ => node,
         };
 
-        if (existing is null)
+        return node;
+    }
+
+    /// <inheritdoc />
+    public virtual MemberDeclarationSyntax? Merge(
+        string discrim,
+        SyntaxNode? existingParent,
+        BakedMember? existing,
+        SyntaxNode? incomingParent,
+        BakedMember incoming
+    )
+    {
+        if (existing == null)
         {
-            return node;
+            // If parent is a struct or record struct, fields counts should be equal.
+            if (
+                incomingParent is BaseTypeDeclarationSyntax parent
+                && (
+                    incomingParent is StructDeclarationSyntax
+                    || (
+                        incomingParent is RecordDeclarationSyntax r
+                        && r.ClassOrStructKeyword.IsKind(SyntaxKind.StructKeyword)
+                    )
+                )
+            )
+            {
+                throw new InvalidOperationException(
+                    $"Differing number of fields between definitions of {parent.Identifier}"
+                );
+            }
+
+            return incoming.Syntax;
         }
 
-        if (node.GetType() != existing.Value.Syntax.GetType())
+        var node = incoming.Syntax;
+        if (node.GetType() != existing.Syntax.GetType())
         {
             throw new ArgumentException(
                 "Node types differed - the profiles may contain two types with the "
-                    + $"same name but with a different datatype (i.e. profile 1 contains a {node.Kind().Humanize()} "
-                    + $"whereas profile 2 contains a {existing.Value.Syntax.Kind().Humanize()})"
+                    + $"same name but with a different datatype (i.e. profile 1 contains a {existing.Syntax.Kind()} "
+                    + $"whereas profile 2 contains a {node.Kind()})"
             );
         }
 
+        // Fields should exactly match.
+        {
+            if (
+                (existing.Syntax, node: node) is
+                (FieldDeclarationSyntax existingField, FieldDeclarationSyntax incomingField)
+            )
+            {
+                if (incomingParent is BaseTypeDeclarationSyntax parent)
+                {
+                    // BakeSourceSets splits declarators into standalone fields
+                    var existingDeclarator = existingField.Declaration.Variables.Single();
+                    var incomingDeclarator = incomingField.Declaration.Variables.Single();
+
+                    if (
+                        existingField.Declaration.Type.ToString()
+                            != incomingField.Declaration.Type.ToString()
+                        || existingDeclarator.Identifier.ToString()
+                            != incomingDeclarator.Identifier.ToString()
+                        || existingDeclarator.Initializer?.ToString()
+                            != incomingDeclarator.Initializer?.ToString()
+                        || existingDeclarator.ArgumentList?.ToString()
+                            != incomingDeclarator.ArgumentList?.ToString()
+                    )
+                    {
+                        throw new InvalidOperationException(
+                            $"Field {discrim} differs between definitions of {parent.Identifier}."
+                        );
+                    }
+                }
+            }
+        }
+
+        // Merge attributes
         node = node.WithAttributeLists(
             List(
                 existing
-                    .Value.Syntax.AttributeLists.SelectMany(x =>
+                    .Syntax.AttributeLists.SelectMany(x =>
                         x.Attributes.Select(y => x.WithAttributes(SingletonSeparatedList(y)))
                     )
                     .Concat(
@@ -69,79 +123,22 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
             )
         );
 
-        if (node is BaseTypeDeclarationSyntax ty)
+        if (node is BaseTypeDeclarationSyntax incomingType)
         {
-            node = ty.WithModifiers(
-                    TokenList(node.Modifiers.Concat(node.Modifiers).DistinctBy(x => x.ToString()))
-                )
-                .WithBaseList(
-                    ty.BaseList?.WithTypes(
-                        SeparatedList(
-                            ty.BaseList.Types.Concat(
-                                    ((BaseTypeDeclarationSyntax)existing.Value.Syntax)
-                                        .BaseList
-                                        ?.Types ?? []
-                                )
-                                .DistinctBy(x => x.ToString())
-                        )
-                    )
-                );
+            var baseTypes = (((BaseTypeDeclarationSyntax)existing.Syntax).BaseList?.Types ?? [])
+                .Concat(incomingType.BaseList?.Types ?? [])
+                .DistinctBy(x => x.ToString())
+                .ToArray();
 
-            // If this is a struct or record struct, fields should exactly match.
-            if (
-                (
-                    node is StructDeclarationSyntax s
-                        ? (SyntaxList<MemberDeclarationSyntax>?)s.Members
-                    : node is RecordDeclarationSyntax r && r.Modifiers.Any(SyntaxKind.StructKeyword)
-                        ? r.Members
-                    : null
-                ) is
-                { } members
-            )
-            {
-                var bakedFields = (
-                    existing.Value.Inner?.Children.Values ?? (IEnumerable<BakedMember>)[]
+            node = incomingType
+                .WithModifiers(
+                    TokenList(
+                        existing
+                            .Syntax.Modifiers.Concat(node.Modifiers)
+                            .DistinctBy(x => x.ToString())
+                    )
                 )
-                    .OrderBy(x => x.Index)
-                    .Select(x => x.Syntax)
-                    .OfType<FieldDeclarationSyntax>()
-                    .SelectMany(x =>
-                        x.Declaration.Variables.Select(y => (x.Declaration.Type, Var: y))
-                    )
-                    .ToArray();
-                var ourFields = members
-                    .OfType<FieldDeclarationSyntax>()
-                    .SelectMany(x =>
-                        x.Declaration.Variables.Select(y => (x.Declaration.Type, Var: y))
-                    )
-                    .ToArray();
-                if (bakedFields.Length != ourFields.Length)
-                {
-                    throw new InvalidOperationException(
-                        $"Differing number of fields between definitions of {ty.Identifier} ({bakedFields.Length} vs "
-                            + $"{ourFields.Length})"
-                    );
-                }
-
-                for (var i = 0; i < bakedFields.Length; i++)
-                {
-                    if (
-                        bakedFields[i].Type.ToString() != ourFields[i].Type.ToString()
-                        || bakedFields[i].Var.Identifier.ToString()
-                            != ourFields[i].Var.Identifier.ToString()
-                        || bakedFields[i].Var.Initializer?.ToString()
-                            != ourFields[i].Var.Initializer?.ToString()
-                        || bakedFields[i].Var.ArgumentList?.ToString()
-                            != ourFields[i].Var.ArgumentList?.ToString()
-                    )
-                    {
-                        throw new InvalidOperationException(
-                            $"Field {i} differs between definitions of {ty.Identifier}. "
-                                + $"Left: {bakedFields[i]}, right: {ourFields[i]}"
-                        );
-                    }
-                }
-            }
+                .WithBaseList(baseTypes.Length != 0 ? BaseList(SeparatedList(baseTypes)) : null);
         }
 
         // Boldly assume it's the same implementation, modifiers, etc
@@ -149,16 +146,16 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
 
         // Okay fine here's some extra handling just in case it's a partial:
         if (
-            node is BaseMethodDeclarationSyntax meth
-            && existing.Value.Syntax is BaseMethodDeclarationSyntax bakedMeth
-            && existing.Value.Syntax.Modifiers.Any(SyntaxKind.PartialKeyword)
+            node is BaseMethodDeclarationSyntax incomingMethod
+            && existing.Syntax is BaseMethodDeclarationSyntax existingMethod
+            && existing.Syntax.Modifiers.Any(SyntaxKind.PartialKeyword)
             && node.Modifiers.Any(SyntaxKind.PartialKeyword)
         )
         {
             var precedence = false;
-            if (bakedMeth.Body is null && meth.Body is not null)
+            if (existingMethod.Body is null && incomingMethod.Body is not null)
             {
-                if (bakedMeth.ExpressionBody is not null)
+                if (existingMethod.ExpressionBody is not null)
                 {
                     throw new InvalidOperationException(
                         $"The existing definition for \"{discrim}\" provides an expression body whereas this "
@@ -170,9 +167,9 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                 precedence = true;
             }
 
-            if (bakedMeth.ExpressionBody is null && meth.ExpressionBody is not null)
+            if (existingMethod.ExpressionBody is null && incomingMethod.ExpressionBody is not null)
             {
-                if (bakedMeth.Body is not null)
+                if (existingMethod.Body is not null)
                 {
                     throw new InvalidOperationException(
                         $"The existing definition for \"{discrim}\" provides an expression body whereas this "
@@ -193,7 +190,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
 
             if (!precedence)
             {
-                node = existing.Value.Syntax.AddAttributeLists(
+                node = existing.Syntax.AddAttributeLists(
                     node.AttributeLists.Select(x =>
                             x.WithAttributes(
                                 SeparatedList(
@@ -211,48 +208,49 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
 
         // Check that constants and enums have the same value
         if (
-            (existing.Value.Syntax, node) is
-
-            (EnumMemberDeclarationSyntax lEnum, EnumMemberDeclarationSyntax rEnum)
+            (existing.Syntax, node: node) is
+            (EnumMemberDeclarationSyntax existingEnum, EnumMemberDeclarationSyntax incomingEnum)
         )
         {
-            if (lEnum.EqualsValue?.Value.ToString() != rEnum.EqualsValue?.Value.ToString())
+            if (
+                existingEnum.EqualsValue?.Value.ToString()
+                != incomingEnum.EqualsValue?.Value.ToString()
+            )
             {
                 logger.LogWarning(
                     "Enum member with discriminator \"{}\" differs between definitions. Left: {}, right: {}",
                     discrim,
-                    lEnum.EqualsValue?.Value.ToString() ?? "auto-assigned",
-                    rEnum.EqualsValue?.Value.ToString() ?? "auto-assigned"
+                    existingEnum.EqualsValue?.Value.ToString() ?? "auto-assigned",
+                    incomingEnum.EqualsValue?.Value.ToString() ?? "auto-assigned"
                 );
             }
         }
         else if (
-            (existing.Value.Syntax, node) is
-
-            (FieldDeclarationSyntax lConst, FieldDeclarationSyntax rConst)
+            (existing.Syntax, node: node) is
+            (FieldDeclarationSyntax existingConst, FieldDeclarationSyntax incomingConst)
         )
         {
-            var isConst = lConst.Modifiers.Any(SyntaxKind.ConstKeyword);
-            if (isConst != rConst.Modifiers.Any(SyntaxKind.ConstKeyword))
+            var isConst = existingConst.Modifiers.Any(SyntaxKind.ConstKeyword);
+            if (isConst != incomingConst.Modifiers.Any(SyntaxKind.ConstKeyword))
             {
                 logger.LogWarning(
                     "Const with discriminator \"{}\" isn't const in its redefinition. Left: {}, right: {}",
                     discrim,
-                    lConst.ToString(),
-                    rConst.ToString()
+                    existingConst.ToString(),
+                    incomingConst.ToString()
                 );
             }
             else if (
                 isConst
-                && lConst.Declaration.Variables[0].Initializer?.Value.ToString()
-                    != rConst.Declaration.Variables[0].Initializer?.Value.ToString()
+                && existingConst.Declaration.Variables[0].Initializer?.Value.ToString()
+                    != incomingConst.Declaration.Variables[0].Initializer?.Value.ToString()
             )
             {
                 logger.LogWarning(
                     "Const value with discriminator \"{}\" differs between definitions. Left: {}, right: {}",
                     discrim,
-                    lConst.Declaration.Variables[0].Initializer?.Value.ToString(),
-                    rConst.Declaration.Variables[0].Initializer?.Value.ToString()
+                    existingConst.Declaration.Variables[0].Initializer?.Value.ToString(),
+                    incomingConst.Declaration.Variables[0].Initializer?.Value.ToString()
                 );
             }
         }

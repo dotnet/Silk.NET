@@ -188,12 +188,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
         static abstract void ActiveTexture(uint texture);
 
@@ -242,12 +242,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
         static abstract void ActiveTexture(Constant<uint, GLEnum, TextureUnit> texture);
 
@@ -1390,12 +1390,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
         static abstract void BindBuffer(uint target, uint buffer);
 
@@ -1440,12 +1440,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
         static abstract void BindBuffer(Constant<uint, GLEnum, BufferTarget> target, uint buffer);
 
@@ -2659,12 +2659,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindTexture")]
         static abstract void BindTexture(uint target, uint texture);
 
@@ -2717,12 +2717,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindTexture")]
         static abstract void BindTexture(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -2923,8 +2923,8 @@ public unsafe partial interface IGL
         static abstract void BindVertexArrayAPPLE(uint array);
 
         [NativeName("glBindVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glBindVertexArrayOES")]
         static abstract void BindVertexArrayOES(uint array);
 
@@ -3882,12 +3882,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
         static abstract void BlendFunc(uint sfactor, uint dfactor);
 
@@ -3942,12 +3942,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
         static abstract void BlendFunc(
             Constant<uint, GLEnum, BlendingFactor> sfactor,
@@ -4802,12 +4802,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferData")]
         static abstract void BufferData(uint target, nuint size, void* data, uint usage);
 
@@ -4852,12 +4852,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferData")]
         static abstract void BufferData(
             Constant<uint, GLEnum, BufferTarget> target,
@@ -5071,12 +5071,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
         static abstract void BufferSubData(uint target, nint offset, nuint size, void* data);
 
@@ -5121,12 +5121,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
         static abstract void BufferSubData(
             Constant<uint, GLEnum, BufferTarget> target,
@@ -5552,12 +5552,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glClear")]
         static abstract void Clear(uint mask);
 
@@ -5612,12 +5612,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glClear")]
         static abstract void Clear(Constant<uint, GLEnum, ClearBufferMask> mask);
 
@@ -6159,12 +6159,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glClearColor")]
         static abstract void ClearColor(float red, float green, float blue, float alpha);
 
@@ -6276,12 +6276,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "4.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glClearDepthf")]
         static abstract void ClearDepth(float d);
 
@@ -6687,12 +6687,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glClearStencil")]
         static abstract void ClearStencil(int s);
 
@@ -7027,14 +7027,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glClientWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
         static abstract uint ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
         static abstract Constant<uint, GLEnum, SyncStatus> ClientWaitSyncAPPLE(
             SyncHandle sync,
@@ -8921,12 +8921,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glColorMask")]
         static abstract void ColorMask(uint red, uint green, uint blue, uint alpha);
 
@@ -8981,12 +8981,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glColorMask")]
         static abstract void ColorMask(
             MaybeBool<uint> red,
@@ -10137,12 +10137,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
         static abstract void CompressedTexImage2D(
             uint target,
@@ -10200,12 +10200,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
         static abstract void CompressedTexImage2D(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -10605,12 +10605,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
         static abstract void CompressedTexSubImage2D(
             uint target,
@@ -10669,12 +10669,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
         static abstract void CompressedTexSubImage2D(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -12437,12 +12437,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
         static abstract void CopyTexImage2D(
             uint target,
@@ -12504,12 +12504,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
         static abstract void CopyTexImage2D(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -12741,12 +12741,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
         static abstract void CopyTexSubImage2D(
             uint target,
@@ -12808,12 +12808,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
         static abstract void CopyTexSubImage2D(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -13082,8 +13082,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glCopyTextureLevelsAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_copy_texture_levels"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
         [NativeFunction("opengl", EntryPoint = "glCopyTextureLevelsAPPLE")]
         static abstract void CopyTextureLevelAPPLE(
             uint destinationTexture,
@@ -14191,12 +14191,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCullFace")]
         static abstract void CullFace(uint mode);
 
@@ -14251,12 +14251,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCullFace")]
         static abstract void CullFace(Constant<uint, GLEnum, TriangleFace> mode);
 
@@ -14892,12 +14892,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         static abstract void DeleteBuffer(uint buffers);
 
@@ -14947,12 +14947,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         static abstract void DeleteBuffers(uint n, uint* buffers);
 
@@ -14997,12 +14997,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         static abstract void DeleteBuffers(uint n, Ref<uint> buffers);
 
@@ -15041,8 +15041,8 @@ public unsafe partial interface IGL
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         static abstract void DeleteFenceNV(uint fences);
 
@@ -15058,15 +15058,15 @@ public unsafe partial interface IGL
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         static abstract void DeleteFencesNV(uint n, uint* fences);
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         static abstract void DeleteFencesNV(uint n, Ref<uint> fences);
 
@@ -16160,8 +16160,8 @@ public unsafe partial interface IGL
         static abstract void DeleteSync(SyncHandle sync);
 
         [NativeName("glDeleteSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
         static abstract void DeleteSyncAPPLE(SyncHandle sync);
 
@@ -16214,12 +16214,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         static abstract void DeleteTexture(uint textures);
 
@@ -16277,12 +16277,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         static abstract void DeleteTextures(uint n, uint* textures);
 
@@ -16335,12 +16335,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         static abstract void DeleteTextures(uint n, Ref<uint> textures);
 
@@ -16511,8 +16511,8 @@ public unsafe partial interface IGL
         static abstract void DeleteVertexArrayAPPLE(uint arrays);
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         static abstract void DeleteVertexArrayOES(uint arrays);
 
@@ -16607,14 +16607,14 @@ public unsafe partial interface IGL
         static abstract void DeleteVertexArraysAPPLE(uint n, Ref<uint> arrays);
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         static abstract void DeleteVertexArraysOES(uint n, uint* arrays);
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         static abstract void DeleteVertexArraysOES(uint n, Ref<uint> arrays);
 
@@ -16685,12 +16685,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
         static abstract void DepthFunc(uint func);
 
@@ -16745,12 +16745,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
         static abstract void DepthFunc(Constant<uint, GLEnum, DepthFunction> func);
 
@@ -16805,12 +16805,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthMask")]
         static abstract void DepthMask(uint flag);
 
@@ -16865,12 +16865,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthMask")]
         static abstract void DepthMask(MaybeBool<uint> flag);
 
@@ -17083,12 +17083,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "4.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthRangef")]
         static abstract void DepthRange(float n, float f);
 
@@ -17272,12 +17272,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDisable")]
         static abstract void Disable(uint cap);
 
@@ -17332,12 +17332,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDisable")]
         static abstract void Disable(Constant<uint, GLEnum, EnableCap> cap);
 
@@ -17430,8 +17430,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glDisableDriverControlQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glDisableDriverControlQCOM")]
         static abstract void DisableDriverControlQCOM(uint driverControl);
 
@@ -17654,8 +17654,8 @@ public unsafe partial interface IGL
         static abstract void DisableVertexAttribArrayARB(uint index);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         static abstract void DiscardFramebufferEXT(
             uint target,
@@ -17664,8 +17664,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         static abstract void DiscardFramebufferEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -17674,8 +17674,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         static abstract void DiscardFramebufferEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -17683,8 +17683,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         static abstract void DiscardFramebufferEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -17693,8 +17693,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         static abstract void DiscardFramebufferEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -17702,8 +17702,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         static abstract void DiscardFramebufferEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -17712,8 +17712,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         static abstract void DiscardFramebufferEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -17838,12 +17838,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
         static abstract void DrawArrays(uint mode, int first, uint count);
 
@@ -17896,12 +17896,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
         static abstract void DrawArrays(
             Constant<uint, GLEnum, PrimitiveType> mode,
@@ -18890,12 +18890,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawElements")]
         static abstract void DrawElements(uint mode, uint count, uint type, void* indices);
 
@@ -18948,12 +18948,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawElements")]
         static abstract void DrawElements(
             Constant<uint, GLEnum, PrimitiveType> mode,
@@ -20715,14 +20715,14 @@ public unsafe partial interface IGL
         static abstract void EdgeFlagv(uint flag);
 
         [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
         static abstract void EglImageTargetRenderbufferStorageOES(uint target, void* image);
 
         [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
         static abstract void EglImageTargetRenderbufferStorageOES(uint target, Ref image);
 
@@ -20749,14 +20749,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glEGLImageTargetTexture2DOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
         static abstract void EglImageTargetTexture2DOES(uint target, void* image);
 
         [NativeName("glEGLImageTargetTexture2DOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
         static abstract void EglImageTargetTexture2DOES(uint target, Ref image);
 
@@ -20859,12 +20859,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glEnable")]
         static abstract void Enable(uint cap);
 
@@ -20919,12 +20919,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glEnable")]
         static abstract void Enable(Constant<uint, GLEnum, EnableCap> cap);
 
@@ -21017,8 +21017,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glEnableDriverControlQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glEnableDriverControlQCOM")]
         static abstract void EnableDriverControlQCOM(uint driverControl);
 
@@ -21551,14 +21551,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glEndTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
         static abstract void EndTilingQCOM(uint preserveMask);
 
         [NativeName("glEndTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
         static abstract void EndTilingQCOM(Constant<uint, GLEnum, BufferBitQCOM> preserveMask);
 
@@ -22275,32 +22275,32 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetBufferPointervQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
         static abstract void ExtGetBufferPointerQCOM(uint target, void** @params);
 
         [NativeName("glExtGetBufferPointervQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
         static abstract void ExtGetBufferPointerQCOM(uint target, Ref2D @params);
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         static abstract uint ExtGetBufferQCOM(Ref<int> numBuffers);
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         static abstract void ExtGetBuffersQCOM(uint* buffers, int maxBuffers, int* numBuffers);
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         static abstract void ExtGetBuffersQCOM(
             Ref<uint> buffers,
@@ -22309,14 +22309,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         static abstract uint ExtGetFramebufferQCOM(Ref<int> numFramebuffers);
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         static abstract void ExtGetFramebuffersQCOM(
             uint* framebuffers,
@@ -22325,8 +22325,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         static abstract void ExtGetFramebuffersQCOM(
             Ref<uint> framebuffers,
@@ -22335,8 +22335,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetProgramBinarySourceQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
         static abstract void ExtGetProgramBinarySourceQCOM(
             uint program,
@@ -22346,8 +22346,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetProgramBinarySourceQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
         static abstract void ExtGetProgramBinarySourceQCOM(
             uint program,
@@ -22357,14 +22357,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         static abstract void ExtGetProgramQCOM(uint* programs, int maxPrograms, int* numPrograms);
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         static abstract void ExtGetProgramQCOM(
             Ref<uint> programs,
@@ -22373,20 +22373,20 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         static abstract uint ExtGetProgramQCOM(Ref<int> numPrograms);
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         static abstract uint ExtGetRenderbufferQCOM(Ref<int> numRenderbuffers);
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         static abstract void ExtGetRenderbuffersQCOM(
             uint* renderbuffers,
@@ -22395,8 +22395,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         static abstract void ExtGetRenderbuffersQCOM(
             Ref<uint> renderbuffers,
@@ -22405,20 +22405,20 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         static abstract uint ExtGetShaderQCOM(Ref<int> numShaders);
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         static abstract void ExtGetShadersQCOM(uint* shaders, int maxShaders, int* numShaders);
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         static abstract void ExtGetShadersQCOM(
             Ref<uint> shaders,
@@ -22427,8 +22427,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetTexLevelParameterivQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
         static abstract void ExtGetTexLevelParameterQCOM(
             uint texture,
@@ -22439,8 +22439,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetTexLevelParameterivQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
         static abstract void ExtGetTexLevelParameterQCOM(
             uint texture,
@@ -22451,8 +22451,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetTexSubImageQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
         static abstract void ExtGetTexSubImageQCOM(
             uint target,
@@ -22469,8 +22469,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetTexSubImageQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
         static abstract void ExtGetTexSubImageQCOM(
             uint target,
@@ -22487,14 +22487,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtGetTexturesQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
         static abstract void ExtGetTexturesQCOM(uint* textures, int maxTextures, int* numTextures);
 
         [NativeName("glExtGetTexturesQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
         static abstract void ExtGetTexturesQCOM(
             Ref<uint> textures,
@@ -22503,14 +22503,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtIsProgramBinaryQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
         static abstract MaybeBool<uint> ExtIsProgramBinaryQCOM(uint program);
 
         [NativeName("glExtIsProgramBinaryQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
         static abstract uint ExtIsProgramBinaryRawQCOM(uint program);
 
@@ -22530,8 +22530,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glExtTexObjectStateOverrideiQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtTexObjectStateOverrideiQCOM")]
         static abstract void ExtTexObjectStateOverrideQCOM(uint target, uint pname, int param2);
 
@@ -22717,14 +22717,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glFenceSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
         static abstract SyncHandle FenceSyncAPPLE(uint condition, uint flags);
 
         [NativeName("glFenceSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
         static abstract SyncHandle FenceSyncAPPLE(
             Constant<uint, GLEnum, SyncCondition> condition,
@@ -22802,12 +22802,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFinish")]
         static abstract void Finish();
 
@@ -22828,8 +22828,8 @@ public unsafe partial interface IGL
 
         [NativeName("glFinishFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glFinishFenceNV")]
         static abstract void FinishFenceNV(uint fence);
 
@@ -22894,12 +22894,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFlush")]
         static abstract void Flush();
 
@@ -23002,14 +23002,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glFlushMappedBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
         static abstract void FlushMappedBufferRangeEXT(uint target, nint offset, nuint length);
 
         [NativeName("glFlushMappedBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
         static abstract void FlushMappedBufferRangeEXT(
             Constant<uint, GLEnum, BufferTarget> target,
@@ -24684,8 +24684,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glFramebufferTexture2DMultisampleEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
         static abstract void FramebufferTexture2DMultisampleEXT(
             uint target,
@@ -24697,8 +24697,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glFramebufferTexture2DMultisampleEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
         static abstract void FramebufferTexture2DMultisampleEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -24710,8 +24710,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glFramebufferTexture2DMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
         static abstract void FramebufferTexture2DMultisampleIMG(
             uint target,
@@ -24723,8 +24723,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glFramebufferTexture2DMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
         static abstract void FramebufferTexture2DMultisampleIMG(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -25293,12 +25293,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFrontFace")]
         static abstract void FrontFace(uint mode);
 
@@ -25353,12 +25353,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFrontFace")]
         static abstract void FrontFace(Constant<uint, GLEnum, FrontFaceDirection> mode);
 
@@ -25466,12 +25466,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         static abstract uint GenBuffer();
 
@@ -25521,12 +25521,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         static abstract void GenBuffers(uint n, uint* buffers);
 
@@ -25571,12 +25571,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         static abstract void GenBuffers(uint n, Ref<uint> buffers);
 
@@ -25751,8 +25751,8 @@ public unsafe partial interface IGL
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         static abstract uint GenFenceNV();
 
@@ -25768,15 +25768,15 @@ public unsafe partial interface IGL
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         static abstract void GenFencesNV(uint n, uint* fences);
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         static abstract void GenFencesNV(uint n, Ref<uint> fences);
 
@@ -26742,12 +26742,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         static abstract uint GenTexture();
 
@@ -26805,12 +26805,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         static abstract void GenTextures(uint n, uint* textures);
 
@@ -26863,12 +26863,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         static abstract void GenTextures(uint n, Ref<uint> textures);
 
@@ -27039,8 +27039,8 @@ public unsafe partial interface IGL
         static abstract uint GenVertexArrayAPPLE();
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         static abstract uint GenVertexArrayOES();
 
@@ -27135,14 +27135,14 @@ public unsafe partial interface IGL
         static abstract void GenVertexArraysAPPLE(uint n, Ref<uint> arrays);
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         static abstract void GenVertexArraysOES(uint n, uint* arrays);
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         static abstract void GenVertexArraysOES(uint n, Ref<uint> arrays);
 
@@ -29434,12 +29434,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
         static abstract void GetBoolean(uint pname, uint* data);
 
@@ -29494,12 +29494,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
         static abstract void GetBoolean(Constant<uint, GLEnum, GetPName> pname, Ref<uint> data);
 
@@ -29616,12 +29616,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
         static abstract void GetBufferParameter(uint target, uint pname, int* @params);
 
@@ -29666,12 +29666,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
         static abstract void GetBufferParameter(
             Constant<uint, GLEnum, BufferTarget> target,
@@ -29822,14 +29822,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glGetBufferPointervOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
         static abstract void GetBufferPointerOES(uint target, uint pname, void** @params);
 
         [NativeName("glGetBufferPointervOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
         static abstract void GetBufferPointerOES(
             Constant<uint, GLEnum, BufferTarget> target,
@@ -31203,14 +31203,14 @@ public unsafe partial interface IGL
         static abstract void GetDouble(Constant<uint, GLEnum, GetPName> pname, Ref<double> data);
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         static abstract void GetDriverControlQCOM(int* num, uint size, uint* driverControls);
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         static abstract void GetDriverControlQCOM(
             Ref<int> num,
@@ -31219,14 +31219,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         static abstract uint GetDriverControlQCOM(Ref<int> num);
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         static abstract void GetDriverControlStringQCOM(
             uint driverControl,
@@ -31236,8 +31236,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         static abstract void GetDriverControlStringQCOM(
             uint driverControl,
@@ -31247,8 +31247,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         static abstract sbyte GetDriverControlStringQCOM(uint driverControl, Ref<uint> length);
 
@@ -31303,12 +31303,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetError")]
         static abstract Constant<uint, GLEnum, ErrorCode> GetError();
 
@@ -31363,26 +31363,26 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetError")]
         static abstract uint GetErrorRaw();
 
         [NativeName("glGetFenceivNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
         static abstract void GetFenceNV(uint fence, uint pname, int* @params);
 
         [NativeName("glGetFenceivNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
         static abstract void GetFenceNV(
             uint fence,
@@ -31637,12 +31637,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
         static abstract void GetFloat(uint pname, float* data);
 
@@ -31697,12 +31697,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
         static abstract void GetFloat(Constant<uint, GLEnum, GetPName> pname, Ref<float> data);
 
@@ -32274,14 +32274,14 @@ public unsafe partial interface IGL
         static abstract uint GetGraphicsResetStatusRawARB();
 
         [NativeName("glGetGraphicsResetStatusEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
         static abstract Constant<uint, GLEnum, GraphicsResetStatus> GetGraphicsResetStatusEXT();
 
         [NativeName("glGetGraphicsResetStatusEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
         static abstract uint GetGraphicsResetStatusRawEXT();
 
@@ -32681,14 +32681,14 @@ public unsafe partial interface IGL
         static abstract void GetInteger64(Constant<uint, GLEnum, GetPName> pname, Ref<long> data);
 
         [NativeName("glGetInteger64vAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
         static abstract void GetInteger64APPLE(uint pname, long* @params);
 
         [NativeName("glGetInteger64vAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
         static abstract void GetInteger64APPLE(
             Constant<uint, GLEnum, GetPName> pname,
@@ -32909,12 +32909,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
         static abstract void GetInteger(uint pname, int* data);
 
@@ -32969,12 +32969,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
         static abstract void GetInteger(Constant<uint, GLEnum, GetPName> pname, Ref<int> data);
 
@@ -35767,8 +35767,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glGetnUniformfvEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
         static abstract void GetnUniformEXT(
             uint program,
@@ -35778,8 +35778,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glGetnUniformfvEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
         static abstract void GetnUniformEXT(
             uint program,
@@ -35881,14 +35881,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glGetnUniformivEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
         static abstract void GetnUniformEXT(uint program, int location, uint bufSize, int* @params);
 
         [NativeName("glGetnUniformivEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
         static abstract void GetnUniformEXT(
             uint program,
@@ -41002,12 +41002,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetString")]
         static abstract byte* GetString(uint name);
 
@@ -41062,12 +41062,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetString")]
         static abstract Ptr<byte> GetString(Constant<uint, GLEnum, StringName> name);
 
@@ -41412,8 +41412,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         static abstract void GetSyncAPPLE(
             SyncHandle sync,
@@ -41424,8 +41424,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         static abstract void GetSyncAPPLE(
             SyncHandle sync,
@@ -41436,8 +41436,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         static abstract int GetSyncAPPLE(
             SyncHandle sync,
@@ -42295,12 +42295,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
         static abstract void GetTexParameter(uint target, uint pname, float* @params);
 
@@ -42355,12 +42355,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
         static abstract void GetTexParameter(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -42639,12 +42639,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
         static abstract void GetTexParameter(uint target, uint pname, int* @params);
 
@@ -42699,12 +42699,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
         static abstract void GetTexParameter(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -46367,12 +46367,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glHint")]
         static abstract void Hint(uint target, uint mode);
 
@@ -46427,12 +46427,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glHint")]
         static abstract void Hint(
             Constant<uint, GLEnum, HintTarget> target,
@@ -47460,16 +47460,16 @@ public unsafe partial interface IGL
         [NativeName("glInsertEventMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
         static abstract void InsertEventMarkerEXT(uint length, sbyte* marker);
 
         [NativeName("glInsertEventMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
         static abstract void InsertEventMarkerEXT(uint length, Ref<sbyte> marker);
 
@@ -48434,12 +48434,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
         static abstract MaybeBool<uint> IsBuffer(uint buffer);
 
@@ -48494,12 +48494,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
         static abstract uint IsBufferRaw(uint buffer);
 
@@ -48578,12 +48578,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
         static abstract uint IsEnabled(uint cap);
 
@@ -48638,12 +48638,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
         static abstract MaybeBool<uint> IsEnabled(Constant<uint, GLEnum, EnableCap> cap);
 
@@ -48792,15 +48792,15 @@ public unsafe partial interface IGL
 
         [NativeName("glIsFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
         static abstract MaybeBool<uint> IsFenceNV(uint fence);
 
         [NativeName("glIsFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
         static abstract uint IsFenceRawNV(uint fence);
 
@@ -49757,14 +49757,14 @@ public unsafe partial interface IGL
         static abstract MaybeBool<uint> IsSync(SyncHandle sync);
 
         [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
         static abstract MaybeBool<uint> IsSyncAPPLE(SyncHandle sync);
 
         [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
         static abstract uint IsSyncRawAPPLE(SyncHandle sync);
 
@@ -49853,12 +49853,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsTexture")]
         static abstract MaybeBool<uint> IsTexture(uint texture);
 
@@ -49947,12 +49947,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsTexture")]
         static abstract uint IsTextureRaw(uint texture);
 
@@ -50094,14 +50094,14 @@ public unsafe partial interface IGL
         static abstract uint IsVertexArrayRawAPPLE(uint array);
 
         [NativeName("glIsVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
         static abstract MaybeBool<uint> IsVertexArrayOES(uint array);
 
         [NativeName("glIsVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
         static abstract uint IsVertexArrayRawOES(uint array);
 
@@ -50928,12 +50928,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLineWidth")]
         static abstract void LineWidth(float width);
 
@@ -52143,14 +52143,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glMapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
         static abstract void* MapBufferOES(uint target, uint access);
 
         [NativeName("glMapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
         static abstract Ptr MapBufferOES(
             Constant<uint, GLEnum, BufferTarget> target,
@@ -52243,8 +52243,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glMapBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
         static abstract void* MapBufferRangeEXT(
             uint target,
@@ -52254,8 +52254,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glMapBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
         static abstract Ptr MapBufferRangeEXT(
             Constant<uint, GLEnum, BufferTarget> target,
@@ -54174,15 +54174,15 @@ public unsafe partial interface IGL
 
         [NativeName("glMultiDrawArraysEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
         static abstract void MultiDrawArraysEXT(uint mode, int* first, uint* count, uint primcount);
 
         [NativeName("glMultiDrawArraysEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
         static abstract void MultiDrawArraysEXT(
             Constant<uint, GLEnum, PrimitiveType> mode,
@@ -54633,8 +54633,8 @@ public unsafe partial interface IGL
 
         [NativeName("glMultiDrawElementsEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
         static abstract void MultiDrawElementsEXT(
             uint mode,
@@ -54646,8 +54646,8 @@ public unsafe partial interface IGL
 
         [NativeName("glMultiDrawElementsEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
         static abstract void MultiDrawElementsEXT(
             Constant<uint, GLEnum, PrimitiveType> mode,
@@ -62288,12 +62288,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
         static abstract void PixelStore(uint pname, int param1);
 
@@ -62348,12 +62348,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
         static abstract void PixelStore(
             Constant<uint, GLEnum, PixelStoreParameter> pname,
@@ -63547,12 +63547,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glPolygonOffset")]
         static abstract void PolygonOffset(float factor, float units);
 
@@ -63742,8 +63742,8 @@ public unsafe partial interface IGL
         [NativeName("glPopGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glPopGroupMarkerEXT")]
         static abstract void PopGroupMarkerEXT();
 
@@ -70291,16 +70291,16 @@ public unsafe partial interface IGL
         [NativeName("glPushGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
         static abstract void PushGroupMarkerEXT(uint length, sbyte* marker);
 
         [NativeName("glPushGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
         static abstract void PushGroupMarkerEXT(uint length, Ref<sbyte> marker);
 
@@ -71823,8 +71823,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glReadnPixelsEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
         static abstract void ReadnPixelsEXT(
             int x,
@@ -71838,8 +71838,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glReadnPixelsEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
         static abstract void ReadnPixelsEXT(
             int x,
@@ -71931,12 +71931,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glReadPixels")]
         static abstract void ReadPixels(
             int x,
@@ -71999,12 +71999,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glReadPixels")]
         static abstract void ReadPixels(
             int x,
@@ -72699,8 +72699,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
         static abstract void RenderbufferStorageMultisampleAPPLE(
             uint target,
@@ -72711,8 +72711,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
         static abstract void RenderbufferStorageMultisampleAPPLE(
             Constant<uint, GLEnum, RenderbufferTarget> target,
@@ -72750,8 +72750,8 @@ public unsafe partial interface IGL
 
         [NativeName("glRenderbufferStorageMultisampleEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
         static abstract void RenderbufferStorageMultisampleEXT(
             uint target,
@@ -72763,8 +72763,8 @@ public unsafe partial interface IGL
 
         [NativeName("glRenderbufferStorageMultisampleEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
         static abstract void RenderbufferStorageMultisampleEXT(
             Constant<uint, GLEnum, RenderbufferTarget> target,
@@ -72775,8 +72775,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glRenderbufferStorageMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
         static abstract void RenderbufferStorageMultisampleIMG(
             uint target,
@@ -72787,8 +72787,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glRenderbufferStorageMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
         static abstract void RenderbufferStorageMultisampleIMG(
             Constant<uint, GLEnum, RenderbufferTarget> target,
@@ -73788,8 +73788,8 @@ public unsafe partial interface IGL
         static abstract void ResolveDepthValuesNV();
 
         [NativeName("glResolveMultisampleFramebufferAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [NativeFunction("opengl", EntryPoint = "glResolveMultisampleFramebufferAPPLE")]
         static abstract void ResolveMultisampleFramebufferAPPLE();
 
@@ -73945,12 +73945,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
         static abstract void SampleCoverage(float value, uint invert);
 
@@ -73999,12 +73999,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
         static abstract void SampleCoverage(float value, MaybeBool<uint> invert);
 
@@ -74822,12 +74822,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glScissor")]
         static abstract void Scissor(int x, int y, uint width, uint height);
 
@@ -76227,15 +76227,15 @@ public unsafe partial interface IGL
 
         [NativeName("glSetFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
         static abstract void SetFenceNV(uint fence, uint condition);
 
         [NativeName("glSetFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
         static abstract void SetFenceNV(
             uint fence,
@@ -76985,8 +76985,8 @@ public unsafe partial interface IGL
         static abstract void StartInstrumentsSGIX();
 
         [NativeName("glStartTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
         static abstract void StartTilingQCOM(
             uint x,
@@ -76997,8 +76997,8 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glStartTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
         static abstract void StartTilingQCOM(
             uint x,
@@ -77120,12 +77120,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
         static abstract void StencilFunc(uint func, int @ref, uint mask);
 
@@ -77180,12 +77180,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
         static abstract void StencilFunc(
             Constant<uint, GLEnum, StencilFunction> func,
@@ -77363,12 +77363,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilMask")]
         static abstract void StencilMask(uint mask);
 
@@ -77520,12 +77520,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilOp")]
         static abstract void StencilOp(uint fail, uint zfail, uint zpass);
 
@@ -77580,12 +77580,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilOp")]
         static abstract void StencilOp(
             Constant<uint, GLEnum, StencilOp> fail,
@@ -78047,15 +78047,15 @@ public unsafe partial interface IGL
 
         [NativeName("glTestFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
         static abstract MaybeBool<uint> TestFenceNV(uint fence);
 
         [NativeName("glTestFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
         static abstract uint TestFenceRawNV(uint fence);
 
@@ -81505,12 +81505,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
         static abstract void TexImage2D(
             uint target,
@@ -81575,12 +81575,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
         static abstract void TexImage2D(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -82195,12 +82195,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
         static abstract void TexParameter(uint target, uint pname, float param2);
 
@@ -82255,12 +82255,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
         static abstract void TexParameter(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -82319,12 +82319,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
         static abstract void TexParameter(uint target, uint pname, float* @params);
 
@@ -82379,12 +82379,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
         static abstract void TexParameter(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -82443,12 +82443,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
         static abstract void TexParameter(uint target, uint pname, int param2);
 
@@ -82503,12 +82503,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
         static abstract void TexParameter(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -82787,12 +82787,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
         static abstract void TexParameter(uint target, uint pname, int* @params);
 
@@ -82847,12 +82847,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
         static abstract void TexParameter(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -83002,8 +83002,8 @@ public unsafe partial interface IGL
         [NativeName("glTexStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
         static abstract void TexStorage1DEXT(
             uint target,
@@ -83015,8 +83015,8 @@ public unsafe partial interface IGL
         [NativeName("glTexStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
         static abstract void TexStorage1DEXT(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -83096,8 +83096,8 @@ public unsafe partial interface IGL
         [NativeName("glTexStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
         static abstract void TexStorage2DEXT(
             uint target,
@@ -83110,8 +83110,8 @@ public unsafe partial interface IGL
         [NativeName("glTexStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
         static abstract void TexStorage2DEXT(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -83260,8 +83260,8 @@ public unsafe partial interface IGL
         [NativeName("glTexStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
         static abstract void TexStorage3DEXT(
             uint target,
@@ -83275,8 +83275,8 @@ public unsafe partial interface IGL
         [NativeName("glTexStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
         static abstract void TexStorage3DEXT(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -83846,12 +83846,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
         static abstract void TexSubImage2D(
             uint target,
@@ -83914,12 +83914,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
         static abstract void TexSubImage2D(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -85074,8 +85074,8 @@ public unsafe partial interface IGL
         [NativeName("glTextureStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
         static abstract void TextureStorage1DEXT(
             uint texture,
@@ -85088,8 +85088,8 @@ public unsafe partial interface IGL
         [NativeName("glTextureStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
         static abstract void TextureStorage1DEXT(
             uint texture,
@@ -85142,8 +85142,8 @@ public unsafe partial interface IGL
         [NativeName("glTextureStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
         static abstract void TextureStorage2DEXT(
             uint texture,
@@ -85157,8 +85157,8 @@ public unsafe partial interface IGL
         [NativeName("glTextureStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
         static abstract void TextureStorage2DEXT(
             uint texture,
@@ -85284,8 +85284,8 @@ public unsafe partial interface IGL
         [NativeName("glTextureStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
         static abstract void TextureStorage3DEXT(
             uint texture,
@@ -85300,8 +85300,8 @@ public unsafe partial interface IGL
         [NativeName("glTextureStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
         static abstract void TextureStorage3DEXT(
             uint texture,
@@ -90826,14 +90826,14 @@ public unsafe partial interface IGL
         static abstract MaybeBool<uint> UnmapBufferARB(Constant<uint, GLEnum, BufferTarget> target);
 
         [NativeName("glUnmapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
         static abstract MaybeBool<uint> UnmapBufferOES(uint target);
 
         [NativeName("glUnmapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
         static abstract uint UnmapBufferRawOES(uint target);
 
@@ -101295,12 +101295,12 @@ public unsafe partial interface IGL
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glViewport")]
         static abstract void Viewport(int x, int y, uint width, uint height);
 
@@ -101749,14 +101749,14 @@ public unsafe partial interface IGL
         );
 
         [NativeName("glWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
         static abstract void WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
         static abstract void WaitSyncAPPLE(
             SyncHandle sync,
@@ -103057,12 +103057,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
     void ActiveTexture(uint texture);
 
@@ -103111,12 +103111,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
     void ActiveTexture(Constant<uint, GLEnum, TextureUnit> texture);
 
@@ -104217,12 +104217,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
     void BindBuffer(uint target, uint buffer);
 
@@ -104267,12 +104267,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
     void BindBuffer(Constant<uint, GLEnum, BufferTarget> target, uint buffer);
 
@@ -105403,12 +105403,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindTexture")]
     void BindTexture(uint target, uint texture);
 
@@ -105461,12 +105461,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindTexture")]
     void BindTexture(Constant<uint, GLEnum, TextureTarget> target, uint texture);
 
@@ -105655,8 +105655,8 @@ public unsafe partial interface IGL
     void BindVertexArrayAPPLE(uint array);
 
     [NativeName("glBindVertexArrayOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glBindVertexArrayOES")]
     void BindVertexArrayOES(uint array);
 
@@ -106570,12 +106570,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
     void BlendFunc(uint sfactor, uint dfactor);
 
@@ -106630,12 +106630,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
     void BlendFunc(
         Constant<uint, GLEnum, BlendingFactor> sfactor,
@@ -107451,12 +107451,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferData")]
     void BufferData(uint target, nuint size, void* data, uint usage);
 
@@ -107501,12 +107501,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferData")]
     void BufferData(
         Constant<uint, GLEnum, BufferTarget> target,
@@ -107705,12 +107705,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
     void BufferSubData(uint target, nint offset, nuint size, void* data);
 
@@ -107755,12 +107755,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
     void BufferSubData(
         Constant<uint, GLEnum, BufferTarget> target,
@@ -108182,12 +108182,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glClear")]
     void Clear(uint mask);
 
@@ -108242,12 +108242,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glClear")]
     void Clear(Constant<uint, GLEnum, ClearBufferMask> mask);
 
@@ -108771,12 +108771,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glClearColor")]
     void ClearColor(float red, float green, float blue, float alpha);
 
@@ -108888,12 +108888,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "4.1"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glClearDepthf")]
     void ClearDepth(float d);
 
@@ -109278,12 +109278,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glClearStencil")]
     void ClearStencil(int s);
 
@@ -109604,14 +109604,14 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glClientWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     uint ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
     [NativeName("glClientWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     Constant<uint, GLEnum, SyncStatus> ClientWaitSyncAPPLE(
         SyncHandle sync,
@@ -111467,12 +111467,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glColorMask")]
     void ColorMask(uint red, uint green, uint blue, uint alpha);
 
@@ -111527,12 +111527,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glColorMask")]
     void ColorMask(
         MaybeBool<uint> red,
@@ -112625,12 +112625,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
     void CompressedTexImage2D(
         uint target,
@@ -112688,12 +112688,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
     void CompressedTexImage2D(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -113093,12 +113093,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
     void CompressedTexSubImage2D(
         uint target,
@@ -113157,12 +113157,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
     void CompressedTexSubImage2D(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -114895,12 +114895,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
     void CopyTexImage2D(
         uint target,
@@ -114962,12 +114962,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
     void CopyTexImage2D(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -115185,12 +115185,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
     void CopyTexSubImage2D(
         uint target,
@@ -115252,12 +115252,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
     void CopyTexSubImage2D(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -115526,8 +115526,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glCopyTextureLevelsAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_copy_texture_levels"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
     [NativeFunction("opengl", EntryPoint = "glCopyTextureLevelsAPPLE")]
     void CopyTextureLevelAPPLE(
         uint destinationTexture,
@@ -116607,12 +116607,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCullFace")]
     void CullFace(uint mode);
 
@@ -116667,12 +116667,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCullFace")]
     void CullFace(Constant<uint, GLEnum, TriangleFace> mode);
 
@@ -117206,12 +117206,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
     void DeleteBuffer(uint buffers);
 
@@ -117261,12 +117261,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
     void DeleteBuffers(uint n, uint* buffers);
 
@@ -117311,12 +117311,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
     void DeleteBuffers(uint n, Ref<uint> buffers);
 
@@ -117355,8 +117355,8 @@ public unsafe partial interface IGL
 
     [NativeName("glDeleteFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
     void DeleteFenceNV(uint fences);
 
@@ -117372,15 +117372,15 @@ public unsafe partial interface IGL
 
     [NativeName("glDeleteFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
     void DeleteFencesNV(uint n, uint* fences);
 
     [NativeName("glDeleteFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
     void DeleteFencesNV(uint n, Ref<uint> fences);
 
@@ -118459,8 +118459,8 @@ public unsafe partial interface IGL
     void DeleteSync(SyncHandle sync);
 
     [NativeName("glDeleteSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
     void DeleteSyncAPPLE(SyncHandle sync);
 
@@ -118513,12 +118513,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
     void DeleteTexture(uint textures);
 
@@ -118576,12 +118576,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
     void DeleteTextures(uint n, uint* textures);
 
@@ -118634,12 +118634,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
     void DeleteTextures(uint n, Ref<uint> textures);
 
@@ -118810,8 +118810,8 @@ public unsafe partial interface IGL
     void DeleteVertexArrayAPPLE(uint arrays);
 
     [NativeName("glDeleteVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
     void DeleteVertexArrayOES(uint arrays);
 
@@ -118906,14 +118906,14 @@ public unsafe partial interface IGL
     void DeleteVertexArraysAPPLE(uint n, Ref<uint> arrays);
 
     [NativeName("glDeleteVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
     void DeleteVertexArraysOES(uint n, uint* arrays);
 
     [NativeName("glDeleteVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
     void DeleteVertexArraysOES(uint n, Ref<uint> arrays);
 
@@ -118984,12 +118984,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
     void DepthFunc(uint func);
 
@@ -119044,12 +119044,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
     void DepthFunc(Constant<uint, GLEnum, DepthFunction> func);
 
@@ -119104,12 +119104,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthMask")]
     void DepthMask(uint flag);
 
@@ -119164,12 +119164,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthMask")]
     void DepthMask(MaybeBool<uint> flag);
 
@@ -119382,12 +119382,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "4.1"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthRangef")]
     void DepthRange(float n, float f);
 
@@ -119567,12 +119567,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDisable")]
     void Disable(uint cap);
 
@@ -119627,12 +119627,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDisable")]
     void Disable(Constant<uint, GLEnum, EnableCap> cap);
 
@@ -119719,8 +119719,8 @@ public unsafe partial interface IGL
     void DisableClientStateIndexedEXT(Constant<uint, GLEnum, EnableCap> array, uint index);
 
     [NativeName("glDisableDriverControlQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glDisableDriverControlQCOM")]
     void DisableDriverControlQCOM(uint driverControl);
 
@@ -119937,14 +119937,14 @@ public unsafe partial interface IGL
     void DisableVertexAttribArrayARB(uint index);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     void DiscardFramebufferEXT(uint target, uint numAttachments, uint* attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     void DiscardFramebufferEXT(
         Constant<uint, GLEnum, FramebufferTarget> target,
@@ -119953,14 +119953,14 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     void DiscardFramebufferEXT(Constant<uint, GLEnum, FramebufferTarget> target, uint attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     void DiscardFramebufferEXT(
         Constant<uint, GLEnum, FramebufferTarget> target,
@@ -119969,8 +119969,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     void DiscardFramebufferEXT(
         Constant<uint, GLEnum, FramebufferTarget> target,
@@ -119978,8 +119978,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     void DiscardFramebufferEXT(
         Constant<uint, GLEnum, FramebufferTarget> target,
@@ -119988,8 +119988,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     void DiscardFramebufferEXT(
         Constant<uint, GLEnum, FramebufferTarget> target,
@@ -120110,12 +120110,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
     void DrawArrays(uint mode, int first, uint count);
 
@@ -120168,12 +120168,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
     void DrawArrays(Constant<uint, GLEnum, PrimitiveType> mode, int first, uint count);
 
@@ -121108,12 +121108,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawElements")]
     void DrawElements(uint mode, uint count, uint type, void* indices);
 
@@ -121166,12 +121166,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawElements")]
     void DrawElements(
         Constant<uint, GLEnum, PrimitiveType> mode,
@@ -122854,14 +122854,14 @@ public unsafe partial interface IGL
     void EdgeFlagv(uint flag);
 
     [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
     void EglImageTargetRenderbufferStorageOES(uint target, void* image);
 
     [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
     void EglImageTargetRenderbufferStorageOES(uint target, Ref image);
 
@@ -122880,14 +122880,14 @@ public unsafe partial interface IGL
     void EglImageTargetTexStorageEXT(uint target, Ref image, Ref<int> attrib_list);
 
     [NativeName("glEGLImageTargetTexture2DOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
     void EglImageTargetTexture2DOES(uint target, void* image);
 
     [NativeName("glEGLImageTargetTexture2DOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
     void EglImageTargetTexture2DOES(uint target, Ref image);
 
@@ -122976,12 +122976,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glEnable")]
     void Enable(uint cap);
 
@@ -123036,12 +123036,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glEnable")]
     void Enable(Constant<uint, GLEnum, EnableCap> cap);
 
@@ -123128,8 +123128,8 @@ public unsafe partial interface IGL
     void EnableClientStateIndexedEXT(Constant<uint, GLEnum, EnableCap> array, uint index);
 
     [NativeName("glEnableDriverControlQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glEnableDriverControlQCOM")]
     void EnableDriverControlQCOM(uint driverControl);
 
@@ -123656,14 +123656,14 @@ public unsafe partial interface IGL
     void EndQueryIndexed(Constant<uint, GLEnum, QueryTarget> target, uint index);
 
     [NativeName("glEndTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
     void EndTilingQCOM(uint preserveMask);
 
     [NativeName("glEndTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
     void EndTilingQCOM(Constant<uint, GLEnum, BufferBitQCOM> preserveMask);
 
@@ -124374,50 +124374,50 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glExtGetBufferPointervQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
     void ExtGetBufferPointerQCOM(uint target, void** @params);
 
     [NativeName("glExtGetBufferPointervQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
     void ExtGetBufferPointerQCOM(uint target, Ref2D @params);
 
     [NativeName("glExtGetBuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
     uint ExtGetBufferQCOM(Ref<int> numBuffers);
 
     [NativeName("glExtGetBuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
     void ExtGetBuffersQCOM(uint* buffers, int maxBuffers, int* numBuffers);
 
     [NativeName("glExtGetBuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
     void ExtGetBuffersQCOM(Ref<uint> buffers, int maxBuffers, Ref<int> numBuffers);
 
     [NativeName("glExtGetFramebuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
     uint ExtGetFramebufferQCOM(Ref<int> numFramebuffers);
 
     [NativeName("glExtGetFramebuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
     void ExtGetFramebuffersQCOM(uint* framebuffers, int maxFramebuffers, int* numFramebuffers);
 
     [NativeName("glExtGetFramebuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
     void ExtGetFramebuffersQCOM(
         Ref<uint> framebuffers,
@@ -124426,14 +124426,14 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glExtGetProgramBinarySourceQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
     void ExtGetProgramBinarySourceQCOM(uint program, uint shadertype, sbyte* source, int* length);
 
     [NativeName("glExtGetProgramBinarySourceQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
     void ExtGetProgramBinarySourceQCOM(
         uint program,
@@ -124443,38 +124443,38 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glExtGetProgramsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
     void ExtGetProgramQCOM(uint* programs, int maxPrograms, int* numPrograms);
 
     [NativeName("glExtGetProgramsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
     void ExtGetProgramQCOM(Ref<uint> programs, int maxPrograms, Ref<int> numPrograms);
 
     [NativeName("glExtGetProgramsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
     uint ExtGetProgramQCOM(Ref<int> numPrograms);
 
     [NativeName("glExtGetRenderbuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
     uint ExtGetRenderbufferQCOM(Ref<int> numRenderbuffers);
 
     [NativeName("glExtGetRenderbuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
     void ExtGetRenderbuffersQCOM(uint* renderbuffers, int maxRenderbuffers, int* numRenderbuffers);
 
     [NativeName("glExtGetRenderbuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
     void ExtGetRenderbuffersQCOM(
         Ref<uint> renderbuffers,
@@ -124483,32 +124483,32 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glExtGetShadersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
     uint ExtGetShaderQCOM(Ref<int> numShaders);
 
     [NativeName("glExtGetShadersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
     void ExtGetShadersQCOM(uint* shaders, int maxShaders, int* numShaders);
 
     [NativeName("glExtGetShadersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
     void ExtGetShadersQCOM(Ref<uint> shaders, int maxShaders, Ref<int> numShaders);
 
     [NativeName("glExtGetTexLevelParameterivQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
     void ExtGetTexLevelParameterQCOM(uint texture, uint face, int level, uint pname, int* @params);
 
     [NativeName("glExtGetTexLevelParameterivQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
     void ExtGetTexLevelParameterQCOM(
         uint texture,
@@ -124519,8 +124519,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glExtGetTexSubImageQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
     void ExtGetTexSubImageQCOM(
         uint target,
@@ -124537,8 +124537,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glExtGetTexSubImageQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
     void ExtGetTexSubImageQCOM(
         uint target,
@@ -124555,26 +124555,26 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glExtGetTexturesQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
     void ExtGetTexturesQCOM(uint* textures, int maxTextures, int* numTextures);
 
     [NativeName("glExtGetTexturesQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
     void ExtGetTexturesQCOM(Ref<uint> textures, int maxTextures, Ref<int> numTextures);
 
     [NativeName("glExtIsProgramBinaryQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
     MaybeBool<uint> ExtIsProgramBinaryQCOM(uint program);
 
     [NativeName("glExtIsProgramBinaryQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
     uint ExtIsProgramBinaryRawQCOM(uint program);
 
@@ -124589,8 +124589,8 @@ public unsafe partial interface IGL
     void ExtrapolateTex2DQCOM(uint src1, uint src2, uint output, float scaleFactor);
 
     [NativeName("glExtTexObjectStateOverrideiQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtTexObjectStateOverrideiQCOM")]
     void ExtTexObjectStateOverrideQCOM(uint target, uint pname, int param2);
 
@@ -124772,14 +124772,14 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glFenceSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
     SyncHandle FenceSyncAPPLE(uint condition, uint flags);
 
     [NativeName("glFenceSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
     SyncHandle FenceSyncAPPLE(
         Constant<uint, GLEnum, SyncCondition> condition,
@@ -124852,12 +124852,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFinish")]
     void Finish();
 
@@ -124878,8 +124878,8 @@ public unsafe partial interface IGL
 
     [NativeName("glFinishFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glFinishFenceNV")]
     void FinishFenceNV(uint fence);
 
@@ -124944,12 +124944,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFlush")]
     void Flush();
 
@@ -125052,14 +125052,14 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glFlushMappedBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
     void FlushMappedBufferRangeEXT(uint target, nint offset, nuint length);
 
     [NativeName("glFlushMappedBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
     void FlushMappedBufferRangeEXT(
         Constant<uint, GLEnum, BufferTarget> target,
@@ -126698,8 +126698,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glFramebufferTexture2DMultisampleEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
     void FramebufferTexture2DMultisampleEXT(
         uint target,
@@ -126711,8 +126711,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glFramebufferTexture2DMultisampleEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
     void FramebufferTexture2DMultisampleEXT(
         Constant<uint, GLEnum, FramebufferTarget> target,
@@ -126724,8 +126724,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glFramebufferTexture2DMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
     void FramebufferTexture2DMultisampleIMG(
         uint target,
@@ -126737,8 +126737,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glFramebufferTexture2DMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
     void FramebufferTexture2DMultisampleIMG(
         Constant<uint, GLEnum, FramebufferTarget> target,
@@ -127286,12 +127286,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFrontFace")]
     void FrontFace(uint mode);
 
@@ -127346,12 +127346,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFrontFace")]
     void FrontFace(Constant<uint, GLEnum, FrontFaceDirection> mode);
 
@@ -127452,12 +127452,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
     uint GenBuffer();
 
@@ -127507,12 +127507,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
     void GenBuffers(uint n, uint* buffers);
 
@@ -127557,12 +127557,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
     void GenBuffers(uint n, Ref<uint> buffers);
 
@@ -127734,8 +127734,8 @@ public unsafe partial interface IGL
 
     [NativeName("glGenFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
     uint GenFenceNV();
 
@@ -127751,15 +127751,15 @@ public unsafe partial interface IGL
 
     [NativeName("glGenFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
     void GenFencesNV(uint n, uint* fences);
 
     [NativeName("glGenFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
     void GenFencesNV(uint n, Ref<uint> fences);
 
@@ -128705,12 +128705,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenTextures")]
     uint GenTexture();
 
@@ -128768,12 +128768,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenTextures")]
     void GenTextures(uint n, uint* textures);
 
@@ -128826,12 +128826,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenTextures")]
     void GenTextures(uint n, Ref<uint> textures);
 
@@ -129002,8 +129002,8 @@ public unsafe partial interface IGL
     uint GenVertexArrayAPPLE();
 
     [NativeName("glGenVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
     uint GenVertexArrayOES();
 
@@ -129098,14 +129098,14 @@ public unsafe partial interface IGL
     void GenVertexArraysAPPLE(uint n, Ref<uint> arrays);
 
     [NativeName("glGenVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
     void GenVertexArraysOES(uint n, uint* arrays);
 
     [NativeName("glGenVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
     void GenVertexArraysOES(uint n, Ref<uint> arrays);
 
@@ -131355,12 +131355,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
     void GetBoolean(uint pname, uint* data);
 
@@ -131415,12 +131415,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
     void GetBoolean(Constant<uint, GLEnum, GetPName> pname, Ref<uint> data);
 
@@ -131537,12 +131537,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
     void GetBufferParameter(uint target, uint pname, int* @params);
 
@@ -131587,12 +131587,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
     void GetBufferParameter(
         Constant<uint, GLEnum, BufferTarget> target,
@@ -131743,14 +131743,14 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glGetBufferPointervOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
     void GetBufferPointerOES(uint target, uint pname, void** @params);
 
     [NativeName("glGetBufferPointervOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
     void GetBufferPointerOES(
         Constant<uint, GLEnum, BufferTarget> target,
@@ -133000,26 +133000,26 @@ public unsafe partial interface IGL
     void GetDouble(Constant<uint, GLEnum, GetPName> pname, Ref<double> data);
 
     [NativeName("glGetDriverControlsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
     void GetDriverControlQCOM(int* num, uint size, uint* driverControls);
 
     [NativeName("glGetDriverControlsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
     void GetDriverControlQCOM(Ref<int> num, uint size, Ref<uint> driverControls);
 
     [NativeName("glGetDriverControlsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
     uint GetDriverControlQCOM(Ref<int> num);
 
     [NativeName("glGetDriverControlStringQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
     void GetDriverControlStringQCOM(
         uint driverControl,
@@ -133029,8 +133029,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glGetDriverControlStringQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
     void GetDriverControlStringQCOM(
         uint driverControl,
@@ -133040,8 +133040,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glGetDriverControlStringQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
     sbyte GetDriverControlStringQCOM(uint driverControl, Ref<uint> length);
 
@@ -133096,12 +133096,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetError")]
     Constant<uint, GLEnum, ErrorCode> GetError();
 
@@ -133156,26 +133156,26 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetError")]
     uint GetErrorRaw();
 
     [NativeName("glGetFenceivNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
     void GetFenceNV(uint fence, uint pname, int* @params);
 
     [NativeName("glGetFenceivNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
     void GetFenceNV(
         uint fence,
@@ -133402,12 +133402,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
     void GetFloat(uint pname, float* data);
 
@@ -133462,12 +133462,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
     void GetFloat(Constant<uint, GLEnum, GetPName> pname, Ref<float> data);
 
@@ -134027,14 +134027,14 @@ public unsafe partial interface IGL
     uint GetGraphicsResetStatusRawARB();
 
     [NativeName("glGetGraphicsResetStatusEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
     Constant<uint, GLEnum, GraphicsResetStatus> GetGraphicsResetStatusEXT();
 
     [NativeName("glGetGraphicsResetStatusEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
     uint GetGraphicsResetStatusRawEXT();
 
@@ -134401,14 +134401,14 @@ public unsafe partial interface IGL
     void GetInteger64(Constant<uint, GLEnum, GetPName> pname, Ref<long> data);
 
     [NativeName("glGetInteger64vAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
     void GetInteger64APPLE(uint pname, long* @params);
 
     [NativeName("glGetInteger64vAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
     void GetInteger64APPLE(Constant<uint, GLEnum, GetPName> pname, Ref<long> @params);
 
@@ -134611,12 +134611,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
     void GetInteger(uint pname, int* data);
 
@@ -134671,12 +134671,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
     void GetInteger(Constant<uint, GLEnum, GetPName> pname, Ref<int> data);
 
@@ -137195,14 +137195,14 @@ public unsafe partial interface IGL
     void GetnUniformARB(uint program, int location, uint bufSize, Ref<float> @params);
 
     [NativeName("glGetnUniformfvEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
     void GetnUniformEXT(uint program, int location, uint bufSize, float* @params);
 
     [NativeName("glGetnUniformfvEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
     void GetnUniformEXT(uint program, int location, uint bufSize, Ref<float> @params);
 
@@ -137269,14 +137269,14 @@ public unsafe partial interface IGL
     void GetnUniformARB(uint program, int location, uint bufSize, Ref<int> @params);
 
     [NativeName("glGetnUniformivEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
     void GetnUniformEXT(uint program, int location, uint bufSize, int* @params);
 
     [NativeName("glGetnUniformivEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
     void GetnUniformEXT(uint program, int location, uint bufSize, Ref<int> @params);
 
@@ -141986,12 +141986,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetString")]
     byte* GetString(uint name);
 
@@ -142046,12 +142046,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetString")]
     Ptr<byte> GetString(Constant<uint, GLEnum, StringName> name);
 
@@ -142382,14 +142382,14 @@ public unsafe partial interface IGL
     int GetSync(SyncHandle sync, Constant<uint, GLEnum, SyncParameterName> pname, Ref<uint> length);
 
     [NativeName("glGetSyncivAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     void GetSyncAPPLE(SyncHandle sync, uint pname, uint count, uint* length, int* values);
 
     [NativeName("glGetSyncivAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     void GetSyncAPPLE(
         SyncHandle sync,
@@ -142400,8 +142400,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glGetSyncivAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     int GetSyncAPPLE(
         SyncHandle sync,
@@ -143243,12 +143243,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
     void GetTexParameter(uint target, uint pname, float* @params);
 
@@ -143303,12 +143303,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
     void GetTexParameter(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -143587,12 +143587,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
     void GetTexParameter(uint target, uint pname, int* @params);
 
@@ -143647,12 +143647,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
     void GetTexParameter(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -147214,12 +147214,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glHint")]
     void Hint(uint target, uint mode);
 
@@ -147274,12 +147274,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glHint")]
     void Hint(Constant<uint, GLEnum, HintTarget> target, Constant<uint, GLEnum, HintMode> mode);
 
@@ -148273,16 +148273,16 @@ public unsafe partial interface IGL
     [NativeName("glInsertEventMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
     void InsertEventMarkerEXT(uint length, sbyte* marker);
 
     [NativeName("glInsertEventMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
     void InsertEventMarkerEXT(uint length, Ref<sbyte> marker);
 
@@ -149228,12 +149228,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
     MaybeBool<uint> IsBuffer(uint buffer);
 
@@ -149288,12 +149288,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
     uint IsBufferRaw(uint buffer);
 
@@ -149372,12 +149372,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
     uint IsEnabled(uint cap);
 
@@ -149432,12 +149432,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
     MaybeBool<uint> IsEnabled(Constant<uint, GLEnum, EnableCap> cap);
 
@@ -149571,15 +149571,15 @@ public unsafe partial interface IGL
 
     [NativeName("glIsFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
     MaybeBool<uint> IsFenceNV(uint fence);
 
     [NativeName("glIsFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
     uint IsFenceRawNV(uint fence);
 
@@ -150526,14 +150526,14 @@ public unsafe partial interface IGL
     MaybeBool<uint> IsSync(SyncHandle sync);
 
     [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
     MaybeBool<uint> IsSyncAPPLE(SyncHandle sync);
 
     [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
     uint IsSyncRawAPPLE(SyncHandle sync);
 
@@ -150622,12 +150622,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsTexture")]
     MaybeBool<uint> IsTexture(uint texture);
 
@@ -150716,12 +150716,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsTexture")]
     uint IsTextureRaw(uint texture);
 
@@ -150860,14 +150860,14 @@ public unsafe partial interface IGL
     uint IsVertexArrayRawAPPLE(uint array);
 
     [NativeName("glIsVertexArrayOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
     MaybeBool<uint> IsVertexArrayOES(uint array);
 
     [NativeName("glIsVertexArrayOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
     uint IsVertexArrayRawOES(uint array);
 
@@ -151658,12 +151658,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLineWidth")]
     void LineWidth(float width);
 
@@ -152842,14 +152842,14 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glMapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
     void* MapBufferOES(uint target, uint access);
 
     [NativeName("glMapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
     Ptr MapBufferOES(
         Constant<uint, GLEnum, BufferTarget> target,
@@ -152942,14 +152942,14 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glMapBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
     void* MapBufferRangeEXT(uint target, nint offset, nuint length, uint access);
 
     [NativeName("glMapBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
     Ptr MapBufferRangeEXT(
         Constant<uint, GLEnum, BufferTarget> target,
@@ -154742,15 +154742,15 @@ public unsafe partial interface IGL
 
     [NativeName("glMultiDrawArraysEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
     void MultiDrawArraysEXT(uint mode, int* first, uint* count, uint primcount);
 
     [NativeName("glMultiDrawArraysEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
     void MultiDrawArraysEXT(
         Constant<uint, GLEnum, PrimitiveType> mode,
@@ -155175,15 +155175,15 @@ public unsafe partial interface IGL
 
     [NativeName("glMultiDrawElementsEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
     void MultiDrawElementsEXT(uint mode, uint* count, uint type, void** indices, uint primcount);
 
     [NativeName("glMultiDrawElementsEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
     void MultiDrawElementsEXT(
         Constant<uint, GLEnum, PrimitiveType> mode,
@@ -162230,12 +162230,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
     void PixelStore(uint pname, int param1);
 
@@ -162290,12 +162290,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
     void PixelStore(Constant<uint, GLEnum, PixelStoreParameter> pname, int param1);
 
@@ -163420,12 +163420,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glPolygonOffset")]
     void PolygonOffset(float factor, float units);
 
@@ -163603,8 +163603,8 @@ public unsafe partial interface IGL
     [NativeName("glPopGroupMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glPopGroupMarkerEXT")]
     void PopGroupMarkerEXT();
 
@@ -169251,16 +169251,16 @@ public unsafe partial interface IGL
     [NativeName("glPushGroupMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
     void PushGroupMarkerEXT(uint length, sbyte* marker);
 
     [NativeName("glPushGroupMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
     void PushGroupMarkerEXT(uint length, Ref<sbyte> marker);
 
@@ -170762,8 +170762,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glReadnPixelsEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
     void ReadnPixelsEXT(
         int x,
@@ -170777,8 +170777,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glReadnPixelsEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
     void ReadnPixelsEXT(
         int x,
@@ -170870,12 +170870,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glReadPixels")]
     void ReadPixels(int x, int y, uint width, uint height, uint format, uint type, void* pixels);
 
@@ -170930,12 +170930,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glReadPixels")]
     void ReadPixels(
         int x,
@@ -171620,8 +171620,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
     void RenderbufferStorageMultisampleAPPLE(
         uint target,
@@ -171632,8 +171632,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
     void RenderbufferStorageMultisampleAPPLE(
         Constant<uint, GLEnum, RenderbufferTarget> target,
@@ -171671,8 +171671,8 @@ public unsafe partial interface IGL
 
     [NativeName("glRenderbufferStorageMultisampleEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
     void RenderbufferStorageMultisampleEXT(
         uint target,
@@ -171684,8 +171684,8 @@ public unsafe partial interface IGL
 
     [NativeName("glRenderbufferStorageMultisampleEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
     void RenderbufferStorageMultisampleEXT(
         Constant<uint, GLEnum, RenderbufferTarget> target,
@@ -171696,8 +171696,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glRenderbufferStorageMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
     void RenderbufferStorageMultisampleIMG(
         uint target,
@@ -171708,8 +171708,8 @@ public unsafe partial interface IGL
     );
 
     [NativeName("glRenderbufferStorageMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
     void RenderbufferStorageMultisampleIMG(
         Constant<uint, GLEnum, RenderbufferTarget> target,
@@ -172602,8 +172602,8 @@ public unsafe partial interface IGL
     void ResolveDepthValuesNV();
 
     [NativeName("glResolveMultisampleFramebufferAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [NativeFunction("opengl", EntryPoint = "glResolveMultisampleFramebufferAPPLE")]
     void ResolveMultisampleFramebufferAPPLE();
 
@@ -172759,12 +172759,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
     void SampleCoverage(float value, uint invert);
 
@@ -172813,12 +172813,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
     void SampleCoverage(float value, MaybeBool<uint> invert);
 
@@ -173596,12 +173596,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glScissor")]
     void Scissor(int x, int y, uint width, uint height);
 
@@ -174965,15 +174965,15 @@ public unsafe partial interface IGL
 
     [NativeName("glSetFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
     void SetFenceNV(uint fence, uint condition);
 
     [NativeName("glSetFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
     void SetFenceNV(uint fence, Constant<uint, GLEnum, FenceConditionNV> condition);
 
@@ -175657,14 +175657,14 @@ public unsafe partial interface IGL
     void StartInstrumentsSGIX();
 
     [NativeName("glStartTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
     void StartTilingQCOM(uint x, uint y, uint width, uint height, uint preserveMask);
 
     [NativeName("glStartTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
     void StartTilingQCOM(
         uint x,
@@ -175782,12 +175782,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
     void StencilFunc(uint func, int @ref, uint mask);
 
@@ -175842,12 +175842,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
     void StencilFunc(Constant<uint, GLEnum, StencilFunction> func, int @ref, uint mask);
 
@@ -176016,12 +176016,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilMask")]
     void StencilMask(uint mask);
 
@@ -176170,12 +176170,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilOp")]
     void StencilOp(uint fail, uint zfail, uint zpass);
 
@@ -176230,12 +176230,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilOp")]
     void StencilOp(
         Constant<uint, GLEnum, StencilOp> fail,
@@ -176677,15 +176677,15 @@ public unsafe partial interface IGL
 
     [NativeName("glTestFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
     MaybeBool<uint> TestFenceNV(uint fence);
 
     [NativeName("glTestFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
     uint TestFenceRawNV(uint fence);
 
@@ -180040,12 +180040,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
     void TexImage2D(
         uint target,
@@ -180110,12 +180110,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
     void TexImage2D(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -180730,12 +180730,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
     void TexParameter(uint target, uint pname, float param2);
 
@@ -180790,12 +180790,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
     void TexParameter(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -180854,12 +180854,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
     void TexParameter(uint target, uint pname, float* @params);
 
@@ -180914,12 +180914,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
     void TexParameter(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -180978,12 +180978,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
     void TexParameter(uint target, uint pname, int param2);
 
@@ -181038,12 +181038,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
     void TexParameter(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -181322,12 +181322,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
     void TexParameter(uint target, uint pname, int* @params);
 
@@ -181382,12 +181382,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
     void TexParameter(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -181529,16 +181529,16 @@ public unsafe partial interface IGL
     [NativeName("glTexStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
     void TexStorage1DEXT(uint target, uint levels, uint internalformat, uint width);
 
     [NativeName("glTexStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
     void TexStorage1DEXT(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -181612,16 +181612,16 @@ public unsafe partial interface IGL
     [NativeName("glTexStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
     void TexStorage2DEXT(uint target, uint levels, uint internalformat, uint width, uint height);
 
     [NativeName("glTexStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
     void TexStorage2DEXT(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -181770,8 +181770,8 @@ public unsafe partial interface IGL
     [NativeName("glTexStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
     void TexStorage3DEXT(
         uint target,
@@ -181785,8 +181785,8 @@ public unsafe partial interface IGL
     [NativeName("glTexStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
     void TexStorage3DEXT(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -182356,12 +182356,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
     void TexSubImage2D(
         uint target,
@@ -182424,12 +182424,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
     void TexSubImage2D(
         Constant<uint, GLEnum, TextureTarget> target,
@@ -183549,8 +183549,8 @@ public unsafe partial interface IGL
     [NativeName("glTextureStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
     void TextureStorage1DEXT(
         uint texture,
@@ -183563,8 +183563,8 @@ public unsafe partial interface IGL
     [NativeName("glTextureStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
     void TextureStorage1DEXT(
         uint texture,
@@ -183611,8 +183611,8 @@ public unsafe partial interface IGL
     [NativeName("glTextureStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
     void TextureStorage2DEXT(
         uint texture,
@@ -183626,8 +183626,8 @@ public unsafe partial interface IGL
     [NativeName("glTextureStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
     void TextureStorage2DEXT(
         uint texture,
@@ -183753,8 +183753,8 @@ public unsafe partial interface IGL
     [NativeName("glTextureStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
     void TextureStorage3DEXT(
         uint texture,
@@ -183769,8 +183769,8 @@ public unsafe partial interface IGL
     [NativeName("glTextureStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
     void TextureStorage3DEXT(
         uint texture,
@@ -189003,14 +189003,14 @@ public unsafe partial interface IGL
     MaybeBool<uint> UnmapBufferARB(Constant<uint, GLEnum, BufferTarget> target);
 
     [NativeName("glUnmapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
     MaybeBool<uint> UnmapBufferOES(uint target);
 
     [NativeName("glUnmapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
     uint UnmapBufferRawOES(uint target);
 
@@ -199197,12 +199197,12 @@ public unsafe partial interface IGL
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glViewport")]
     void Viewport(int x, int y, uint width, uint height);
 
@@ -199641,14 +199641,14 @@ public unsafe partial interface IGL
     void WaitSync(SyncHandle sync, Constant<uint, GLEnum, SyncBehaviorFlags> flags, ulong timeout);
 
     [NativeName("glWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     void WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
     [NativeName("glWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     void WaitSyncAPPLE(
         SyncHandle sync,
