@@ -86,5 +86,12 @@ public static class LocationTransformationUtils
         ctx.SourceProject =
             modifiedSolution.GetProject(sourceProject.Id)
             ?? throw new InvalidOperationException("Failed to get source project");
+
+        if (ctx.TestProject != null && ctx.SourceProject.Solution != ctx.TestProject.Solution)
+        {
+            throw new InvalidOperationException(
+                "IModContext must ensure the source and test projects belong to the same solution"
+            );
+        }
     }
 }
