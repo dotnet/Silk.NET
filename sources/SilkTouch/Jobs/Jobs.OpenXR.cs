@@ -23,21 +23,20 @@ internal static partial class Jobs
                         new() { BoolTypes = new() { ["XrBool32"] = null } }
                     )
                     .AddIncludes()
-                    // TODO: Disabled until Silk 3 has Win32/DirectX bindings
-                    // .ClangScraper(
-                    //     new()
-                    //     {
-                    //         CacheKey = "Windows",
-                    //         ScrapeIf = static () => OperatingSystem.IsWindows(),
-                    //
-                    //         ClangSharpResponseFiles =
-                    //         [
-                    //             "eng/silktouch/openxr/openxr-windows/generate.rsp",
-                    //         ],
-                    //         InputSourceRoot = "sources/OpenXR",
-                    //         InputTestRoot = "tests/OpenXR",
-                    //     }
-                    // )
+                    .ClangScraper(
+                        new()
+                        {
+                            CacheKey = "Windows",
+                            ScrapeIf = static () => OperatingSystem.IsWindows(),
+
+                            ClangSharpResponseFiles =
+                            [
+                                "eng/silktouch/openxr/openxr-windows/generate.rsp",
+                            ],
+                            InputSourceRoot = "sources/OpenXR",
+                            InputTestRoot = "tests/OpenXR",
+                        }
+                    )
                     .ClangScraper(
                         new()
                         {
