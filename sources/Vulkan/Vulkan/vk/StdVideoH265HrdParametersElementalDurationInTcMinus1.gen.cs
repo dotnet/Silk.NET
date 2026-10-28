@@ -1,0 +1,17 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from the Vulkan headers and corresponding dependencies.
+// Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace Silk.NET.Vulkan;
+
+[NativeName("_elemental_duration_in_tc_minus1_e__FixedBuffer")]
+[InlineArray(7)]
+public partial struct StdVideoH265HrdParametersElementalDurationInTcMinus1
+{
+    [NativeName("e0")]
+    public ushort E0;
+}
