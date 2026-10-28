@@ -111,6 +111,10 @@ jobs:
         shell: pwsh
         run: Remove-Item -Path .silktouch -Recurse -Force
 
+      - name: Restore
+        shell: pwsh
+        run: dotnet restore
+
       - name: Populate caches
         shell: pwsh
         env:
@@ -200,6 +204,10 @@ jobs:
       - name: Show git status
         shell: pwsh
         run: git status
+
+      - name: Restore
+        shell: pwsh
+        run: dotnet restore
 
       - name: Regenerate bindings
         shell: pwsh
