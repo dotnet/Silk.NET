@@ -17,7 +17,7 @@ SDL_FILE
 SDL_LINE
 SDL_NULL_WHILE_LOOP_CONDITION
 --file
-SDL3.h
+sdl3.h
 --methodClassName
 Sdl
 --namespace
