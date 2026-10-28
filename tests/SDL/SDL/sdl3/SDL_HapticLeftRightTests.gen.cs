@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_HapticLeftRight"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "HapticLeftRight"/> struct.</summary>
 public static unsafe partial class SDL_HapticLeftRightTests
 {
-    /// <summary>Validates that the <see cref = "SDL_HapticLeftRight"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "HapticLeftRight"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_HapticLeftRight>(), Is.EqualTo(sizeof(SDL_HapticLeftRight)));
+        Assert.That(Marshal.SizeOf<HapticLeftRight>(), Is.EqualTo(sizeof(HapticLeftRight)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_HapticLeftRight"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "HapticLeftRight"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_HapticLeftRight).IsLayoutSequential, Is.True);
+        Assert.That(typeof(HapticLeftRight).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_HapticLeftRight"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "HapticLeftRight"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(SDL_HapticLeftRight), Is.EqualTo(12));
+        Assert.That(sizeof(HapticLeftRight), Is.EqualTo(12));
     }
 }

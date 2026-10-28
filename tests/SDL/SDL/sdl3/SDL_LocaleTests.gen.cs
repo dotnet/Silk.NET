@@ -8,37 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_Locale"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "Locale"/> struct.</summary>
 public static unsafe partial class SDL_LocaleTests
 {
-    /// <summary>Validates that the <see cref = "SDL_Locale"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "Locale"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_Locale>(), Is.EqualTo(sizeof(SDL_Locale)));
+        Assert.That(Marshal.SizeOf<Locale>(), Is.EqualTo(sizeof(Locale)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Locale"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "Locale"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_Locale).IsLayoutSequential, Is.True);
+        Assert.That(typeof(Locale).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Locale"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "Locale"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SDL_Locale), Is.EqualTo(16));
+            Assert.That(sizeof(Locale), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(SDL_Locale), Is.EqualTo(8));
+            Assert.That(sizeof(Locale), Is.EqualTo(8));
         }
     }
 }

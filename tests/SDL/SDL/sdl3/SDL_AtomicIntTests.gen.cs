@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_AtomicInt"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "AtomicInt"/> struct.</summary>
 public static unsafe partial class SDL_AtomicIntTests
 {
-    /// <summary>Validates that the <see cref = "SDL_AtomicInt"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "AtomicInt"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_AtomicInt>(), Is.EqualTo(sizeof(SDL_AtomicInt)));
+        Assert.That(Marshal.SizeOf<AtomicInt>(), Is.EqualTo(sizeof(AtomicInt)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_AtomicInt"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "AtomicInt"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_AtomicInt).IsLayoutSequential, Is.True);
+        Assert.That(typeof(AtomicInt).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_AtomicInt"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "AtomicInt"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(SDL_AtomicInt), Is.EqualTo(4));
+        Assert.That(sizeof(AtomicInt), Is.EqualTo(4));
     }
 }

@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_PenAxisEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "PenAxisEvent"/> struct.</summary>
 public static unsafe partial class SDL_PenAxisEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_PenAxisEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "PenAxisEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_PenAxisEvent>(), Is.EqualTo(sizeof(SDL_PenAxisEvent)));
+        Assert.That(Marshal.SizeOf<PenAxisEvent>(), Is.EqualTo(sizeof(PenAxisEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_PenAxisEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "PenAxisEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_PenAxisEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(PenAxisEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_PenAxisEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "PenAxisEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(SDL_PenAxisEvent), Is.EqualTo(48));
+        Assert.That(sizeof(PenAxisEvent), Is.EqualTo(48));
     }
 }

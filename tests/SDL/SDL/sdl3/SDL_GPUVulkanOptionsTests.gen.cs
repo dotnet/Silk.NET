@@ -8,40 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_GPUVulkanOptions"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GpuVulkanOptions"/> struct.</summary>
 public static unsafe partial class SDL_GPUVulkanOptionsTests
 {
-    /// <summary>Validates that the <see cref = "SDL_GPUVulkanOptions"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GpuVulkanOptions"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(
-            Marshal.SizeOf<SDL_GPUVulkanOptions>(),
-            Is.EqualTo(sizeof(SDL_GPUVulkanOptions))
-        );
+        Assert.That(Marshal.SizeOf<GpuVulkanOptions>(), Is.EqualTo(sizeof(GpuVulkanOptions)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_GPUVulkanOptions"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GpuVulkanOptions"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_GPUVulkanOptions).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GpuVulkanOptions).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_GPUVulkanOptions"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GpuVulkanOptions"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SDL_GPUVulkanOptions), Is.EqualTo(56));
+            Assert.That(sizeof(GpuVulkanOptions), Is.EqualTo(56));
         }
         else
         {
-            Assert.That(sizeof(SDL_GPUVulkanOptions), Is.EqualTo(28));
+            Assert.That(sizeof(GpuVulkanOptions), Is.EqualTo(28));
         }
     }
 }

@@ -7,33 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_CameraDeviceEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "CameraDeviceEvent"/> struct.</summary>
 public static unsafe partial class SDL_CameraDeviceEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_CameraDeviceEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "CameraDeviceEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(
-            Marshal.SizeOf<SDL_CameraDeviceEvent>(),
-            Is.EqualTo(sizeof(SDL_CameraDeviceEvent))
-        );
+        Assert.That(Marshal.SizeOf<CameraDeviceEvent>(), Is.EqualTo(sizeof(CameraDeviceEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_CameraDeviceEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "CameraDeviceEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_CameraDeviceEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(CameraDeviceEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_CameraDeviceEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "CameraDeviceEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(SDL_CameraDeviceEvent), Is.EqualTo(24));
+        Assert.That(sizeof(CameraDeviceEvent), Is.EqualTo(24));
     }
 }

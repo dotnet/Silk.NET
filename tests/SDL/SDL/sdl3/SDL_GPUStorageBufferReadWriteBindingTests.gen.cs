@@ -8,40 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_GPUStorageBufferReadWriteBinding"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GpuStorageBufferReadWriteBinding"/> struct.</summary>
 public static unsafe partial class SDL_GPUStorageBufferReadWriteBindingTests
 {
-    /// <summary>Validates that the <see cref = "SDL_GPUStorageBufferReadWriteBinding"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GpuStorageBufferReadWriteBinding"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<SDL_GPUStorageBufferReadWriteBinding>(),
-            Is.EqualTo(sizeof(SDL_GPUStorageBufferReadWriteBinding))
+            Marshal.SizeOf<GpuStorageBufferReadWriteBinding>(),
+            Is.EqualTo(sizeof(GpuStorageBufferReadWriteBinding))
         );
     }
 
-    /// <summary>Validates that the <see cref = "SDL_GPUStorageBufferReadWriteBinding"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GpuStorageBufferReadWriteBinding"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_GPUStorageBufferReadWriteBinding).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GpuStorageBufferReadWriteBinding).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_GPUStorageBufferReadWriteBinding"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GpuStorageBufferReadWriteBinding"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SDL_GPUStorageBufferReadWriteBinding), Is.EqualTo(16));
+            Assert.That(sizeof(GpuStorageBufferReadWriteBinding), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(SDL_GPUStorageBufferReadWriteBinding), Is.EqualTo(8));
+            Assert.That(sizeof(GpuStorageBufferReadWriteBinding), Is.EqualTo(8));
         }
     }
 }

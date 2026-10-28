@@ -8,40 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_IOStreamInterface"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "IOStreamInterface"/> struct.</summary>
 public static unsafe partial class SDL_IOStreamInterfaceTests
 {
-    /// <summary>Validates that the <see cref = "SDL_IOStreamInterface"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "IOStreamInterface"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(
-            Marshal.SizeOf<SDL_IOStreamInterface>(),
-            Is.EqualTo(sizeof(SDL_IOStreamInterface))
-        );
+        Assert.That(Marshal.SizeOf<IOStreamInterface>(), Is.EqualTo(sizeof(IOStreamInterface)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_IOStreamInterface"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "IOStreamInterface"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_IOStreamInterface).IsLayoutSequential, Is.True);
+        Assert.That(typeof(IOStreamInterface).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_IOStreamInterface"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "IOStreamInterface"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SDL_IOStreamInterface), Is.EqualTo(56));
+            Assert.That(sizeof(IOStreamInterface), Is.EqualTo(56));
         }
         else
         {
-            Assert.That(sizeof(SDL_IOStreamInterface), Is.EqualTo(28));
+            Assert.That(sizeof(IOStreamInterface), Is.EqualTo(28));
         }
     }
 }

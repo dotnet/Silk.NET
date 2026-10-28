@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_HapticRamp"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "HapticRamp"/> struct.</summary>
 public static unsafe partial class SDL_HapticRampTests
 {
-    /// <summary>Validates that the <see cref = "SDL_HapticRamp"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "HapticRamp"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_HapticRamp>(), Is.EqualTo(sizeof(SDL_HapticRamp)));
+        Assert.That(Marshal.SizeOf<HapticRamp>(), Is.EqualTo(sizeof(HapticRamp)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_HapticRamp"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "HapticRamp"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_HapticRamp).IsLayoutSequential, Is.True);
+        Assert.That(typeof(HapticRamp).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_HapticRamp"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "HapticRamp"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(SDL_HapticRamp), Is.EqualTo(44));
+        Assert.That(sizeof(HapticRamp), Is.EqualTo(44));
     }
 }

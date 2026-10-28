@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_HapticCondition"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "HapticCondition"/> struct.</summary>
 public static unsafe partial class SDL_HapticConditionTests
 {
-    /// <summary>Validates that the <see cref = "SDL_HapticCondition"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "HapticCondition"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_HapticCondition>(), Is.EqualTo(sizeof(SDL_HapticCondition)));
+        Assert.That(Marshal.SizeOf<HapticCondition>(), Is.EqualTo(sizeof(HapticCondition)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_HapticCondition"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "HapticCondition"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_HapticCondition).IsLayoutSequential, Is.True);
+        Assert.That(typeof(HapticCondition).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_HapticCondition"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "HapticCondition"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(SDL_HapticCondition), Is.EqualTo(68));
+        Assert.That(sizeof(HapticCondition), Is.EqualTo(68));
     }
 }

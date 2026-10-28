@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_JoyHatEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "JoyHatEvent"/> struct.</summary>
 public static unsafe partial class SDL_JoyHatEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_JoyHatEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "JoyHatEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_JoyHatEvent>(), Is.EqualTo(sizeof(SDL_JoyHatEvent)));
+        Assert.That(Marshal.SizeOf<JoyHatEvent>(), Is.EqualTo(sizeof(JoyHatEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_JoyHatEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "JoyHatEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_JoyHatEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(JoyHatEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_JoyHatEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "JoyHatEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(SDL_JoyHatEvent), Is.EqualTo(24));
+        Assert.That(sizeof(JoyHatEvent), Is.EqualTo(24));
     }
 }

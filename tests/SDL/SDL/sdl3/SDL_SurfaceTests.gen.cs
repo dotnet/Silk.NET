@@ -8,37 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_Surface"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "Surface"/> struct.</summary>
 public static unsafe partial class SDL_SurfaceTests
 {
-    /// <summary>Validates that the <see cref = "SDL_Surface"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "Surface"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_Surface>(), Is.EqualTo(sizeof(SDL_Surface)));
+        Assert.That(Marshal.SizeOf<Surface>(), Is.EqualTo(sizeof(Surface)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Surface"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "Surface"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_Surface).IsLayoutSequential, Is.True);
+        Assert.That(typeof(Surface).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_Surface"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "Surface"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SDL_Surface), Is.EqualTo(48));
+            Assert.That(sizeof(Surface), Is.EqualTo(48));
         }
         else
         {
-            Assert.That(sizeof(SDL_Surface), Is.EqualTo(32));
+            Assert.That(sizeof(Surface), Is.EqualTo(32));
         }
     }
 }

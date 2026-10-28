@@ -8,40 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_StorageInterface"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "StorageInterface"/> struct.</summary>
 public static unsafe partial class SDL_StorageInterfaceTests
 {
-    /// <summary>Validates that the <see cref = "SDL_StorageInterface"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "StorageInterface"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(
-            Marshal.SizeOf<SDL_StorageInterface>(),
-            Is.EqualTo(sizeof(SDL_StorageInterface))
-        );
+        Assert.That(Marshal.SizeOf<StorageInterface>(), Is.EqualTo(sizeof(StorageInterface)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_StorageInterface"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "StorageInterface"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_StorageInterface).IsLayoutSequential, Is.True);
+        Assert.That(typeof(StorageInterface).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_StorageInterface"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "StorageInterface"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SDL_StorageInterface), Is.EqualTo(96));
+            Assert.That(sizeof(StorageInterface), Is.EqualTo(96));
         }
         else
         {
-            Assert.That(sizeof(SDL_StorageInterface), Is.EqualTo(48));
+            Assert.That(sizeof(StorageInterface), Is.EqualTo(48));
         }
     }
 }

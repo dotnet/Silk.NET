@@ -8,37 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_hid_device_info"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "HidDeviceInfo"/> struct.</summary>
 public static unsafe partial class SDL_hid_device_infoTests
 {
-    /// <summary>Validates that the <see cref = "SDL_hid_device_info"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "HidDeviceInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_hid_device_info>(), Is.EqualTo(sizeof(SDL_hid_device_info)));
+        Assert.That(Marshal.SizeOf<HidDeviceInfo>(), Is.EqualTo(sizeof(HidDeviceInfo)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_hid_device_info"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "HidDeviceInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_hid_device_info).IsLayoutSequential, Is.True);
+        Assert.That(typeof(HidDeviceInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_hid_device_info"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "HidDeviceInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SDL_hid_device_info), Is.EqualTo(80));
+            Assert.That(sizeof(HidDeviceInfo), Is.EqualTo(80));
         }
         else
         {
-            Assert.That(sizeof(SDL_hid_device_info), Is.EqualTo(52));
+            Assert.That(sizeof(HidDeviceInfo), Is.EqualTo(52));
         }
     }
 }

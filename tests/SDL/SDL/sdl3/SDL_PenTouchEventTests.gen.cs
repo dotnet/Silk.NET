@@ -7,30 +7,30 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_PenTouchEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "PenTouchEvent"/> struct.</summary>
 public static unsafe partial class SDL_PenTouchEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_PenTouchEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "PenTouchEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_PenTouchEvent>(), Is.EqualTo(sizeof(SDL_PenTouchEvent)));
+        Assert.That(Marshal.SizeOf<PenTouchEvent>(), Is.EqualTo(sizeof(PenTouchEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_PenTouchEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "PenTouchEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_PenTouchEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(PenTouchEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_PenTouchEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "PenTouchEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(SDL_PenTouchEvent), Is.EqualTo(40));
+        Assert.That(sizeof(PenTouchEvent), Is.EqualTo(40));
     }
 }

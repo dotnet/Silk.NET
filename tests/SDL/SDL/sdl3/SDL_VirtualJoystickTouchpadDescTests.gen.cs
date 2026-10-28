@@ -7,33 +7,33 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_VirtualJoystickTouchpadDesc"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "VirtualJoystickTouchpadDesc"/> struct.</summary>
 public static unsafe partial class SDL_VirtualJoystickTouchpadDescTests
 {
-    /// <summary>Validates that the <see cref = "SDL_VirtualJoystickTouchpadDesc"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "VirtualJoystickTouchpadDesc"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<SDL_VirtualJoystickTouchpadDesc>(),
-            Is.EqualTo(sizeof(SDL_VirtualJoystickTouchpadDesc))
+            Marshal.SizeOf<VirtualJoystickTouchpadDesc>(),
+            Is.EqualTo(sizeof(VirtualJoystickTouchpadDesc))
         );
     }
 
-    /// <summary>Validates that the <see cref = "SDL_VirtualJoystickTouchpadDesc"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "VirtualJoystickTouchpadDesc"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_VirtualJoystickTouchpadDesc).IsLayoutSequential, Is.True);
+        Assert.That(typeof(VirtualJoystickTouchpadDesc).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_VirtualJoystickTouchpadDesc"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "VirtualJoystickTouchpadDesc"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(SDL_VirtualJoystickTouchpadDesc), Is.EqualTo(8));
+        Assert.That(sizeof(VirtualJoystickTouchpadDesc), Is.EqualTo(8));
     }
 }

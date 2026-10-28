@@ -8,37 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_UserEvent"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "UserEvent"/> struct.</summary>
 public static unsafe partial class SDL_UserEventTests
 {
-    /// <summary>Validates that the <see cref = "SDL_UserEvent"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "UserEvent"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_UserEvent>(), Is.EqualTo(sizeof(SDL_UserEvent)));
+        Assert.That(Marshal.SizeOf<UserEvent>(), Is.EqualTo(sizeof(UserEvent)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_UserEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "UserEvent"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_UserEvent).IsLayoutSequential, Is.True);
+        Assert.That(typeof(UserEvent).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_UserEvent"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "UserEvent"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SDL_UserEvent), Is.EqualTo(40));
+            Assert.That(sizeof(UserEvent), Is.EqualTo(40));
         }
         else
         {
-            Assert.That(sizeof(SDL_UserEvent), Is.EqualTo(32));
+            Assert.That(sizeof(UserEvent), Is.EqualTo(32));
         }
     }
 }

@@ -8,37 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "SDL_GPUBufferRegion"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GpuBufferRegion"/> struct.</summary>
 public static unsafe partial class SDL_GPUBufferRegionTests
 {
-    /// <summary>Validates that the <see cref = "SDL_GPUBufferRegion"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GpuBufferRegion"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<SDL_GPUBufferRegion>(), Is.EqualTo(sizeof(SDL_GPUBufferRegion)));
+        Assert.That(Marshal.SizeOf<GpuBufferRegion>(), Is.EqualTo(sizeof(GpuBufferRegion)));
     }
 
-    /// <summary>Validates that the <see cref = "SDL_GPUBufferRegion"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GpuBufferRegion"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(SDL_GPUBufferRegion).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GpuBufferRegion).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "SDL_GPUBufferRegion"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GpuBufferRegion"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(SDL_GPUBufferRegion), Is.EqualTo(16));
+            Assert.That(sizeof(GpuBufferRegion), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(SDL_GPUBufferRegion), Is.EqualTo(12));
+            Assert.That(sizeof(GpuBufferRegion), Is.EqualTo(12));
         }
     }
 }
