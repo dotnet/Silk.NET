@@ -137,7 +137,7 @@ internal class FileSystemArchiveCacheDirectory(
 
             var archive = await GetOrCreateNewAsync(); // Do not dispose
             var entry = archive.CreateEntry(filePath, CompressionLevel.SmallestSize);
-            entry.LastWriteTime = DateTimeOffset.FromUnixTimeSeconds(946684800); // Ensure deterministic time
+            entry.LastWriteTime = DateTimeOffset.FromUnixTimeSeconds(946684800); // Ensure deterministic time (Jan 1, 2000)
 
             await using var dst = await entry.OpenAsync();
             await stream.CopyToAsync(dst);
