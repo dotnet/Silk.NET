@@ -10,8 +10,8 @@ GL
 --namespace
 Silk.NET.OpenGL
 --output
-../../../../sources/OpenGL/gles1
+../../../../sources/OpenGL/gles1/gl
 --test-output
-../../../../tests/OpenGL/gles1
+../../../../tests/OpenGL/gles1/gl
 --traverse
 ../../../include/gles1/gl.h

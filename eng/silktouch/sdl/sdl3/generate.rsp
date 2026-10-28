@@ -23,9 +23,9 @@ Sdl
 --namespace
 Silk.NET.SDL
 --output
-../../../../sources/SDL/sdl3
+../../../../sources/SDL/SDL3
 --test-output
-../../../../tests/SDL/sdl3
+../../../../tests/SDL/SDL3
 --traverse
 ../../../submodules/sdl/include/SDL3/SDL_assert.h
 ../../../submodules/sdl/include/SDL3/SDL_atomic.h

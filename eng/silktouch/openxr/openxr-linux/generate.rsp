@@ -17,9 +17,9 @@ Xr
 --namespace
 Silk.NET.OpenXR
 --output
-../../../../sources/OpenXR/xr-linux
+../../../../sources/OpenXR/xr-linux/xr
 --test-output
-../../../../tests/OpenXR/xr-linux
+../../../../tests/OpenXR/xr-linux/xr
 --traverse
 ../../../submodules/openxr-sdk/include/openxr/openxr.h
 ../../../submodules/openxr-sdk/include/openxr/openxr_platform.h
