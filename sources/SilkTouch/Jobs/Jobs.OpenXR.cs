@@ -71,9 +71,9 @@ internal static partial class Jobs
                         {
                             SourceSets = new()
                             {
-                                ["xr-windows"] = "xr",
-                                ["xr-linux"] = "xr",
-                                ["xr-mac"] = "xr",
+                                ["xr-windows"] = "OpenXR",
+                                ["xr-linux"] = "OpenXR",
+                                ["xr-mac"] = "OpenXR",
                             },
                         }
                     )
@@ -95,7 +95,10 @@ internal static partial class Jobs
                     .AddApiProfiles(
                         new()
                         {
-                            Profiles = [new() { Profile = "openxr", SourceSubdirectory = "xr" }],
+                            Profiles =
+                            [
+                                new() { Profile = "openxr", SourceSubdirectory = "OpenXR" },
+                            ],
                         }
                     )
                     .InterceptNativeFunctions(new() { NativeFunctionNames = ["xrCreateInstance"] })
