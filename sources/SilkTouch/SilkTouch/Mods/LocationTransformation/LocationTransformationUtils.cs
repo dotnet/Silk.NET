@@ -30,6 +30,7 @@ public static class LocationTransformationUtils
     )
     {
         var sourceProject = ctx.SourceProject;
+        var testProject = ctx.TestProject;
 
         // We need to track both the original solution and modified solution
         // The original is where we retrieve documents and semantic models
@@ -37,7 +38,7 @@ public static class LocationTransformationUtils
         IReadOnlyList<DocumentId> documentIds =
         [
             .. sourceProject.DocumentIds,
-            .. ctx.TestProject?.DocumentIds ?? [],
+            .. testProject?.DocumentIds ?? [],
         ];
 
         var originalSolution = sourceProject.Solution;
@@ -86,5 +87,12 @@ public static class LocationTransformationUtils
         ctx.SourceProject =
             modifiedSolution.GetProject(sourceProject.Id)
             ?? throw new InvalidOperationException("Failed to get source project");
+
+        if (testProject != null)
+        {
+            ctx.TestProject =
+                modifiedSolution.GetProject(testProject.Id)
+                ?? throw new InvalidOperationException("Failed to get test project");
+        }
     }
 }
