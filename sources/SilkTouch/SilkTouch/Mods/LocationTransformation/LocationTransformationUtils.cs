@@ -71,6 +71,9 @@ public static class LocationTransformationUtils
             }
         );
 
+        Console.WriteLine(newDocuments.Count);
+
+        Console.WriteLine("ModifyAllReferencesAsync0");
         var modifiedSolution = originalSolution;
         foreach (var (documentId, newRoot) in newDocuments)
         {
@@ -80,7 +83,10 @@ public static class LocationTransformationUtils
                 return;
             }
 
-            modifiedSolution = modifiedDocument.WithSyntaxRoot(newRoot).Project.Solution;
+            modifiedDocument = modifiedDocument.WithSyntaxRoot(newRoot);
+            Console.WriteLine(modifiedDocument.Project.Name);
+            Console.WriteLine(newRoot.NormalizeWhitespace().ToFullString());
+            modifiedSolution = modifiedDocument.Project.Solution;
         }
 
         // TODO: Temporary
