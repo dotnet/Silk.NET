@@ -40,9 +40,16 @@ public static class LocationTransformationUtils
             .. ctx.TestProject?.DocumentIds ?? [],
         ];
 
+        var test = await ctx.TestProject!.GetCompilationAsync(ct);
+        foreach (var diagnostic in test!.GetDiagnostics(ct))
+        {
+            Console.WriteLine(diagnostic);
+        }
+
         var originalSolution = sourceProject.Solution;
         var newDocuments = new ConcurrentDictionary<DocumentId, SyntaxNode>();
         var symbolSet = new HashSet<ISymbol>(symbols, SymbolEqualityComparer.Default);
+        Console.WriteLine(symbolSet.Count);
         var baseRewriter = new LocationTransformationRewriter(symbolSet, transformers.ToList());
         await Parallel.ForEachAsync(
             documentIds,
@@ -89,29 +96,9 @@ public static class LocationTransformationUtils
             modifiedSolution = modifiedDocument.Project.Solution;
         }
 
-        // TODO: Temporary
-        Console.WriteLine("ModifyAllReferencesAsync1");
-        foreach (
-            var document in modifiedSolution.GetProject(ctx.TestProject!.Id)!.Documents.Take(10)
-        )
-        {
-            Console.WriteLine(
-                (await document.GetSyntaxRootAsync(ct))!.NormalizeWhitespace().ToFullString()
-            );
-        }
-
         ctx.SourceProject =
             modifiedSolution.GetProject(sourceProject.Id)
             ?? throw new InvalidOperationException("Failed to get source project");
-
-        // TODO: Temporary
-        Console.WriteLine("ModifyAllReferencesAsync2");
-        foreach (var document in ctx.TestProject!.Documents.Take(10))
-        {
-            Console.WriteLine(
-                (await document.GetSyntaxRootAsync(ct))!.NormalizeWhitespace().ToFullString()
-            );
-        }
 
         if (ctx.TestProject != null && ctx.SourceProject.Solution != ctx.TestProject.Solution)
         {
