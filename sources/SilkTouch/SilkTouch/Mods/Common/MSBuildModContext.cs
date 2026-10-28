@@ -145,7 +145,7 @@ internal class MSBuildModContext(
         logger.LogInformation("Writing {} to disk...", JobKey);
 
         await Parallel.ForEachAsync(
-            [.. SourceProject?.Documents ?? [], .. TestProject?.Documents ?? []],
+            [.. SourceProject.Documents, .. TestProject?.Documents ?? []],
             async (doc, ct) =>
             {
                 if (
