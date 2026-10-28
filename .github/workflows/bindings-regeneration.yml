@@ -111,7 +111,11 @@ jobs:
         shell: pwsh
         run: Remove-Item -Path .silktouch -Recurse -Force
 
-      - name: Restore
+      - name: .NET workload restore
+        shell: pwsh
+        run: dotnet workload restore
+
+      - name: .NET restore
         shell: pwsh
         run: dotnet restore
 
@@ -205,7 +209,11 @@ jobs:
         shell: pwsh
         run: git status
 
-      - name: Restore
+      - name: .NET workload restore
+        shell: pwsh
+        run: dotnet workload restore
+
+      - name: .NET restore
         shell: pwsh
         run: dotnet restore
 
