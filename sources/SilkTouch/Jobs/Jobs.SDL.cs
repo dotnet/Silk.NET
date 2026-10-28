@@ -44,12 +44,12 @@ internal static partial class Jobs
                     .PrettifyNames(
                         new() { Affixes = new() { ["SharedPrefix"] = new() { Remove = true } } }
                     )
-        // .TransformEnums(
-        //     new() { AddNoneMemberToFlags = true, RewriteMemberValues = true }
-        // )
-        // .AddVTables()
-        // .StripAttributes(
-        //     new() { Remove = ["NativeTypeName", "NameAffix", "Transformed"] }
-        // )
+                    .TransformEnums(
+                        new() { AddNoneMemberToFlags = true, RewriteMemberValues = true }
+                    )
+                    .AddVTables()
+                    .StripAttributes(
+                        new() { Remove = ["NativeTypeName", "NameAffix", "Transformed"] }
+                    )
         );
 }
