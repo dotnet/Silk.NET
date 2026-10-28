@@ -33,7 +33,8 @@ jobs:
         working-directory: eng/workflows/bindings
         env:
 #          COMMENT_BODY: ${{ github.event.comment.body }}
-          COMMENT_BODY: "/bindings OpenAL OpenCL OpenGL OpenXR SDL Vulkan"
+#          COMMENT_BODY: "/bindings OpenAL OpenCL OpenGL OpenXR SDL Vulkan"
+          COMMENT_BODY: "/bindings SDL"
         run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Generate matrix
