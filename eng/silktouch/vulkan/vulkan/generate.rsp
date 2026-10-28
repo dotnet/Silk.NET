@@ -3,7 +3,7 @@
 --exclude
 VK_NULL_HANDLE
 --file
-vulkan-vulkan.h
+vulkan.h
 --methodClassName
 Vk
 --namespace

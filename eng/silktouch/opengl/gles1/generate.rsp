@@ -4,7 +4,7 @@
 __gles1_gl_h_
 WIN32_LEAN_AND_MEAN
 --file
-opengl-gl.h
+gles1.h
 --methodClassName
 GL
 --namespace

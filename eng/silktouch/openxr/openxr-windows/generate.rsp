@@ -9,7 +9,7 @@ XR_USE_GRAPHICS_API_VULKAN
 --exclude
 XR_NULL_HANDLE
 --file
-openxr-openxr.h
+openxr-windows.h
 --methodClassName
 Xr
 --namespace

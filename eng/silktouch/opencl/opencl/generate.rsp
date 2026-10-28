@@ -3,7 +3,7 @@
 --additional
 -Wno-invalid-constexpr
 --file
-opencl-opencl.h
+opencl.h
 --methodClassName
 Cl
 --namespace
