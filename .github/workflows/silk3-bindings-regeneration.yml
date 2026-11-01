@@ -417,9 +417,32 @@ jobs:
 
     steps:
 
+      - name: Download bindings patches
+        uses: actions/download-artifact@v8
+        with:
+          path: bindings.bundle
+          pattern: bindings-bundle
+
+      - name: Show working directory contents
+        shell: pwsh
+        run: Get-ChildItem
+
       - name: Apply bundle and push
         shell: pwsh
+        env:
+          HEAD_REPO: ${{ needs.check.outputs.headRepo }}
+          HEAD_COMMIT: ${{ needs.check.outputs.headCommit }}
         run: |
           $ErrorActionPreference = "Stop"
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
+
+          git init --bare repo.git
+          $env:GIT_DIR = "$PWD/repo.git"
+          git config core.hooksPath /dev/null
+          git config transfer.fsckObjects true
+          
+          git fetch --no-recurse-submodules --depth=1 "https://github.com/$env:HEAD_REPO.git" $env:HEAD_COMMIT
+          git bundle verify bindings.bundle
+          git fetch --no-recurse-submodules bindings.bundle refs/heads/ci/bindings
+          git update-ref refs/heads/ci/bindings FETCH_HEAD
