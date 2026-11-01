@@ -37,6 +37,7 @@ jobs:
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
 
+          Write-Host "repos/$env:REPO/collaborators/$env:COMMENTER/permission"
           $permission = gh api "repos/$env:REPO/collaborators/$env:COMMENTER/permission" --jq .user.permissions.push
           if ($permission -ne "true") {
             throw "$env:COMMENTER does not have push permissions"
