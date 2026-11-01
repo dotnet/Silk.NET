@@ -211,7 +211,7 @@ jobs:
     runs-on: ubuntu-24.04
 
     needs: [check, scrape]
-    if: !cancelled() && needs.check.outputs.isSilk3 == 'true' && needs.check.outputs.hasPermission == 'true'
+    if: ${{ !cancelled() && needs.check.outputs.isSilk3 == 'true' && needs.check.outputs.hasPermission == 'true' }}
 
     steps:
 
