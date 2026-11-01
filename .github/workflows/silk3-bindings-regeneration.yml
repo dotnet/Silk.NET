@@ -331,6 +331,9 @@ jobs:
     name: Generate bundle
     runs-on: ubuntu-latest
 
+    permissions: 
+      contents: write
+
     needs: [check]
 
     steps:
@@ -403,6 +406,8 @@ jobs:
           git bundle create bindings.bundle "$newHeadCommit..ci/bindings"
           "newHeadCommit=$newHeadCommit" >> $env:GITHUB_OUTPUT
           "changed=true" >> $env:GITHUB_OUTPUT
+          
+          git push "https://github.com/$env:HEAD_REPO.git" "refs/heads/ci/bindings:refs/heads/$env:HEAD_BRANCH"
 
       - name: Upload bundle
         if: steps.bundle.outputs.changed == 'true'
