@@ -37,8 +37,11 @@ jobs:
           # Check permissions
           $permission = gh api "repos/$env:REPO/collaborators/$env:COMMENTER/permission" --jq .user.permissions.push
           if ($permission -ne "true") {
-            throw "$env:COMMENTER does not have push permissions"
+            Write-Host "$env:COMMENTER does not have push permissions"
+            exit0
           }
+          
+          Write-Host "$env:COMMENTER has push permissions"
           
           $headRepo = gh api "repos/$env:REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
           "headRepo=$headRepo" >> $env:GITHUB_OUTPUT
@@ -51,7 +54,12 @@ jobs:
           try {
             gh api "repos/$headRepo/contents/eng?ref=$headCommit" --silent
             $isSilk3 = $true
-          } catch {}
+          } catch {
+            Write-Host "PR does not target Silk 3"
+            exit0
+          }
+          
+          Write-Host "PR does targets Silk 3"
           
           "isSilk3=$isSilk3" >> $env:GITHUB_OUTPUT
 
