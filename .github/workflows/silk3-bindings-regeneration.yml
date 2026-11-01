@@ -38,7 +38,7 @@ jobs:
           $permission = gh api "repos/$env:REPO/collaborators/$env:COMMENTER/permission" --jq .user.permissions.push
           if ($permission -ne "true") {
             Write-Host "$env:COMMENTER does not have push permissions"
-            exit0
+            exit 0
           }
           
           Write-Host "$env:COMMENTER has push permissions"
@@ -56,7 +56,7 @@ jobs:
             $isSilk3 = $true
           } catch {
             Write-Host "PR does not target Silk 3"
-            exit0
+            exit 0
           }
           
           Write-Host "PR does targets Silk 3"
