@@ -26,6 +26,11 @@ foreach ($line in $message -split "`r?`n") {
   $words = @(-split $line)
   if ($words.Count -gt 0 -and $words[0] -eq "/native") {
     foreach ($chosenJob in @($words | Select-Object -Skip 1)) {
+      if ($chosenJob -eq "*") {
+        $jobs += $jobNames
+        break;
+      }
+    
       if (-not ($chosenJob -in $jobNames)) {
         Write-Host Unknown job name: $chosenJob
         continue
