@@ -28,7 +28,7 @@ jobs:
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
+          BASE_REPO: ${{ github.repository }}
           COMMENTER: ${{ github.event.comment.user.login }}
           PR_NUMBER: ${{ github.event.issue.number }}
         run: |
@@ -37,7 +37,7 @@ jobs:
           Set-StrictMode -Version Latest
 
           # Check permissions
-          $permission = gh api "repos/$env:REPO/collaborators/$env:COMMENTER/permission" --jq .user.permissions.push
+          $permission = gh api "repos/$env:BASE_REPO/collaborators/$env:COMMENTER/permission" --jq .user.permissions.push
           if ($permission -ne "true") {
             Write-Host "$env:COMMENTER does not have push permissions"
             exit 0
@@ -45,10 +45,10 @@ jobs:
           
           Write-Host "$env:COMMENTER has push permissions"
           
-          $headRepo = gh api "repos/$env:REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
+          $headRepo = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
           "headRepo=$headRepo" >> $env:GITHUB_OUTPUT
           
-          $headCommit = gh api "repos/$env:REPO/pulls/$env:PR_NUMBER" --jq .head.sha
+          $headCommit = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.sha
           "headCommit=$headCommit" >> $env:GITHUB_OUTPUT
           
           # Check if PR is for Silk 3
@@ -67,7 +67,6 @@ jobs:
 
     outputs:
       commentBody: ${{ github.event.comment.body }}
-      baseRepo: ${{ github.repository }}
       headRepo: ${{ steps.check.outputs.headRepo }}
       headCommit: ${{ steps.check.outputs.headCommit }} # Untrusted: Head may be from a fork
       isSilk3: ${{ steps.check.outputs.isSilk3 }}
