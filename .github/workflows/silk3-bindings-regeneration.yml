@@ -204,7 +204,7 @@ jobs:
     name: Combine caches
     runs-on: ubuntu-24.04
 
-    if: always()
+    if: ${{ !cancelled() && needs.check.outputs.isSilk3 == 'true' }}
     needs: [scrape]
 
     steps:
