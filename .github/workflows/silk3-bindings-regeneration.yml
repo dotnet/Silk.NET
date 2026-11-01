@@ -69,6 +69,8 @@ jobs:
           
           Write-Host "PR does target Silk 3"
           "isSilk3=$isSilk3" >> $env:GITHUB_OUTPUT
+          
+          exit 0
 
     outputs:
       commentBody: ${{ github.event.comment.body }}
@@ -121,6 +123,8 @@ jobs:
           }
           
           "hasPushPermission=$hasPushPermission" >> $env:GITHUB_OUTPUT
+          
+          exit 0
           
     outputs:
       hasPushPermission: ${{ steps.dryPush.outputs.hasPushPermission }}
