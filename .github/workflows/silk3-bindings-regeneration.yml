@@ -36,7 +36,7 @@ jobs:
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
 
-          # Check permissions
+          Write-Host "Checking if commenter has push permissions"
           $rawPermission = gh api "repos/$env:BASE_REPO/collaborators/$env:COMMENTER/permission" --jq .user.permissions.push
           $hasPermission = $rawPermission -eq "true"
           if (-not $hasPermission) {
@@ -59,7 +59,7 @@ jobs:
           # Check if PR is for Silk 3
           $isSilk3 = $false
           try {
-            # Naive check for eng folder, which only exists in Silk 3
+            Write-Host "Checking for eng folder as a naive way to check if the PR is for Silk 3"
             gh api "repos/$headRepo/contents/eng?ref=$headCommit" --silent
             $isSilk3 = $true
           } catch {
@@ -310,7 +310,7 @@ jobs:
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
 
-          # Create patch, excluding cache
+          Write-Host "Creating a patch containing all changes but the cache. The cache will be committed later."
           git add -A
           git diff --cached --binary -- . ":(exclude).silktouch" > "bindings-$env:JOB.patch"
 
@@ -394,6 +394,7 @@ jobs:
           git status
 
           # Pull in case there were commits pushed since the start of the workflow
+          Write-Host "Pulling any new changes"
           git pull --rebase origin $env:HEAD_BRANCH
           
           $newHeadCommit = git rev-parse FETCH_HEAD
@@ -403,6 +404,7 @@ jobs:
             exit 0
           }
           
+          Write-Host "Creating bundle"
           git bundle create bindings.bundle "$newHeadCommit..ci/bindings"
           "newHeadCommit=$newHeadCommit" >> $env:GITHUB_OUTPUT
           "changed=true" >> $env:GITHUB_OUTPUT
@@ -450,11 +452,13 @@ jobs:
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
 
+          Write-Host "Creating bare repo"
           git init --bare repo.git
           $env:GIT_DIR = "$PWD/repo.git"
           git config core.hooksPath /dev/null
           git config transfer.fsckObjects true
           
+          Write-Host "Applying bundle"
           git fetch --no-recurse-submodules --depth=1 "https://github.com/$env:HEAD_REPO.git" $env:HEAD_COMMIT
           git bundle verify bindings.bundle
           git fetch --no-recurse-submodules bindings.bundle refs/heads/ci/bindings
@@ -471,5 +475,7 @@ jobs:
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
 
+          Write-Host "Pushing"
           $env:GIT_DIR = "$PWD/repo.git"
           git -c credential.helper= -c "credential.helper=!gh auth git-credential" push "https://github.com/$env:HEAD_REPO.git" "refs/heads/ci/bindings:refs/heads/$env:HEAD_BRANCH"
+          Write-Host "Push successful"
