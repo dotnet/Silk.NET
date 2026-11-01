@@ -363,8 +363,9 @@ jobs:
         id: bundle
         shell: pwsh
         env:
-          HEAD_COMMIT: ${{ needs.check.outputs.headCommit }}
+          HEAD_REPO: ${{ needs.check.outputs.headRepo }}
           HEAD_BRANCH: ${{ needs.check.outputs.headBranch }}
+          HEAD_COMMIT: ${{ needs.check.outputs.headCommit }}
         run: |
           $ErrorActionPreference = "Stop"
           $PSNativeCommandUseErrorActionPreference = $true
