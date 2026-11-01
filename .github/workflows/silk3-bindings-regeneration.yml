@@ -99,6 +99,10 @@ jobs:
           HEAD_BRANCH: ${{ needs.check.outputs.headBranch }}
           HEAD_COMMIT: ${{ needs.check.outputs.headCommit }}
         run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+          
           git init --bare repo.git
           $env:GIT_DIR = "$PWD/repo.git"
           git config core.hooksPath /dev/null
