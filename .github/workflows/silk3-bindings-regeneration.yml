@@ -378,9 +378,8 @@ jobs:
           git switch -c ci/bindings
 
           # Cache
-          $date = Get-Date
-          "not actually a cache ($date)" >> some-test-cache.stout
-          git add some-test-cache.stout
+          "not actually a cache" >> .silktouch/some-test-cache.stout
+          git add .silktouch
           if (git status --porcelain --untracked-files=no) {
             git commit -m "Update .silktouch cache for $env:HEAD_COMMIT"
           }
