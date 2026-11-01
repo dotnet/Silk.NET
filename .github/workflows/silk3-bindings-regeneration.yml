@@ -48,6 +48,9 @@ jobs:
           $headRepo = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
           "headRepo=$headRepo" >> $env:GITHUB_OUTPUT
           
+          $headBranch = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.ref
+          "headBranch=$headBranch" >> $env:GITHUB_OUTPUT
+          
           $headCommit = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.sha
           "headCommit=$headCommit" >> $env:GITHUB_OUTPUT
           
@@ -63,12 +66,12 @@ jobs:
           }
           
           Write-Host "PR does target Silk 3"
-          
           "isSilk3=$isSilk3" >> $env:GITHUB_OUTPUT
 
     outputs:
       commentBody: ${{ github.event.comment.body }}
       headRepo: ${{ steps.check.outputs.headRepo }}
+      headBranch: ${{ steps.check.outputs.headBranch }}
       headCommit: ${{ steps.check.outputs.headCommit }} # Untrusted: Head may be from a fork
       isSilk3: ${{ steps.check.outputs.isSilk3 }}
 
@@ -336,6 +339,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           submodules: false
+          fetch-depth: 0
           repository: ${{ needs.check.outputs.headRepo }}
           ref: ${{ needs.check.outputs.headCommit }}
 
@@ -357,7 +361,7 @@ jobs:
         shell: pwsh
         env:
           HEAD_COMMIT: ${{ needs.check.outputs.headCommit }}
-          TARGET_BRANCH: ${{ github.ref_name }}
+          HEAD_BRANCH: ${{ needs.check.outputs.headBranch }}
         run: |
           $ErrorActionPreference = "Stop"
           $PSNativeCommandUseErrorActionPreference = $true
@@ -385,13 +389,18 @@ jobs:
 
           git status
 
-          if ((git rev-parse HEAD) -eq $env:HEAD_COMMIT) {
+          # Pull in case there were commits pushed since the start of the workflow
+          git pull --rebase origin $env:HEAD_BRANCH
+          
+          $newHeadCommit = git rev-parse FETCH_HEAD
+          if ((git rev-parse HEAD) -eq $newHeadCommit) {
             Write-Host "No commits to bundle"
             "changed=false" >> $env:GITHUB_OUTPUT
             exit 0
           }
           
-          git bundle create bindings.bundle "$env:HEAD_COMMIT..ci/bindings"
+          git bundle create bindings.bundle "$newHeadCommit..ci/bindings"
+          "newHeadCommit=$newHeadCommit" >> $env:GITHUB_OUTPUT
           "changed=true" >> $env:GITHUB_OUTPUT
 
       - name: Upload bundle
@@ -403,6 +412,7 @@ jobs:
 
     outputs: 
       changed: ${{ steps.bundle.outputs.changed }}
+      newHeadCommit: ${{ steps.bundle.outputs.newHeadCommit }}
 
   # Privileged - Must not execute untrusted code
   push:
@@ -417,7 +427,7 @@ jobs:
 
     steps:
 
-      - name: Download bindings patches
+      - name: Download bundle
         uses: actions/download-artifact@v8
         with:
           pattern: bindings-bundle
@@ -430,7 +440,7 @@ jobs:
         shell: pwsh
         env:
           HEAD_REPO: ${{ needs.check.outputs.headRepo }}
-          HEAD_COMMIT: ${{ needs.check.outputs.headCommit }}
+          HEAD_COMMIT: ${{ needs.bundle.outputs.newHeadCommit }}
         run: |
           $ErrorActionPreference = "Stop"
           $PSNativeCommandUseErrorActionPreference = $true
@@ -451,7 +461,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           HEAD_REPO: ${{ needs.check.outputs.headRepo }}
-          HEAD_COMMIT: ${{ needs.check.outputs.headCommit }}
+          HEAD_BRANCH: ${{ needs.check.outputs.headBranch }}
         run: |
           $ErrorActionPreference = "Stop"
           $PSNativeCommandUseErrorActionPreference = $true
