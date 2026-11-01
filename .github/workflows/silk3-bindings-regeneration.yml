@@ -93,6 +93,11 @@ jobs:
       - name: Test push permissions with --dry-run push
         id: dryPush
         shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_REPO: ${{ needs.check.outputs.headRepo }}
+          HEAD_BRANCH: ${{ needs.check.outputs.headBranch }}
+          HEAD_COMMIT: ${{ needs.check.outputs.headCommit }}
         run: |
           git init --bare repo.git
           $env:GIT_DIR = "$PWD/repo.git"
