@@ -159,7 +159,7 @@ jobs:
         uses: peter-evans/find-comment@v4
         id: previousComment
         with:
-          issue-number: ${{ github.event.number }}
+          issue-number: ${{ github.event.issue.number }}
           comment-author: "github-actions[bot]"
           body-includes: ${{ env.PUSH_WARNING_MESSAGE }}
   
