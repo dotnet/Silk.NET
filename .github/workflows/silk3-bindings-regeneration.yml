@@ -17,9 +17,6 @@ jobs:
     name: Check PR comment
     runs-on: ubuntu-latest
     
-    permissions: 
-      pull-requests: read
-
     if: github.event.issue.pull_request
 
     steps:
@@ -37,7 +34,6 @@ jobs:
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
 
-          Write-Host "repos/$env:REPO/collaborators/$env:COMMENTER/permission"
           $permission = gh api "repos/$env:REPO/collaborators/$env:COMMENTER/permission" --jq .user.permissions.push
           if ($permission -ne "true") {
             throw "$env:COMMENTER does not have push permissions"
@@ -46,7 +42,7 @@ jobs:
           $commit = gh api "repos/$env:REPO/pulls/$env:PR_NUMBER" --jq .head.sha
           "commit=$commit" >> $env:GITHUB_OUTPUT
           
-          $headRepo = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
+          $headRepo = gh api "repos/$env:REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
           "headRepo=$headRepo" >> $env:GITHUB_OUTPUT
 
     outputs:
