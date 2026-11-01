@@ -335,7 +335,8 @@ jobs:
       contents: write
 
     needs: [check]
-
+    if: ${{ needs.check.outputs.isSilk3 == 'true' }}
+  
     steps:
 
       - name: Checkout repo
@@ -420,59 +421,59 @@ jobs:
     outputs: 
       changed: ${{ steps.bundle.outputs.changed }}
       newHeadCommit: ${{ steps.bundle.outputs.newHeadCommit }}
-
-  # Privileged - Must not execute untrusted code
-  push:
-    name: Push
-    runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
-    
-    needs: [check, bundle]
-    if: needs.bundle.outputs.changed == 'true'
-
-    steps:
-
-      - name: Download bundle
-        uses: actions/download-artifact@v8
-        with:
-          pattern: bindings-bundle
-
-      - name: Show working directory contents
-        shell: pwsh
-        run: Get-ChildItem
-
-      - name: Apply bundle
-        shell: pwsh
-        env:
-          HEAD_REPO: ${{ needs.check.outputs.headRepo }}
-          HEAD_COMMIT: ${{ needs.bundle.outputs.newHeadCommit }}
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-
-          git init --bare repo.git
-          $env:GIT_DIR = "$PWD/repo.git"
-          git config core.hooksPath /dev/null
-          git config transfer.fsckObjects true
-          
-          git fetch --no-recurse-submodules --depth=1 "https://github.com/$env:HEAD_REPO.git" $env:HEAD_COMMIT
-          git bundle verify bindings.bundle
-          git fetch --no-recurse-submodules bindings.bundle refs/heads/ci/bindings
-          git update-ref refs/heads/ci/bindings FETCH_HEAD
-
-      - name: Push
-        shell: pwsh
-        env:
-          GH_TOKEN: ${{ github.token }}
-          HEAD_REPO: ${{ needs.check.outputs.headRepo }}
-          HEAD_BRANCH: ${{ needs.check.outputs.headBranch }}
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-
-          $env:GIT_DIR = "$PWD/repo.git"
-          git -c credential.helper= -c "credential.helper=!gh auth git-credential" push "https://github.com/$env:HEAD_REPO.git" "refs/heads/ci/bindings:refs/heads/$env:HEAD_BRANCH"
+#
+#  # Privileged - Must not execute untrusted code
+#  push:
+#    name: Push
+#    runs-on: ubuntu-latest
+#    
+#    permissions:
+#      contents: write
+#    
+#    needs: [check, bundle]
+#    if: needs.bundle.outputs.changed == 'true'
+#
+#    steps:
+#
+#      - name: Download bundle
+#        uses: actions/download-artifact@v8
+#        with:
+#          pattern: bindings-bundle
+#
+#      - name: Show working directory contents
+#        shell: pwsh
+#        run: Get-ChildItem
+#
+#      - name: Apply bundle
+#        shell: pwsh
+#        env:
+#          HEAD_REPO: ${{ needs.check.outputs.headRepo }}
+#          HEAD_COMMIT: ${{ needs.bundle.outputs.newHeadCommit }}
+#        run: |
+#          $ErrorActionPreference = "Stop"
+#          $PSNativeCommandUseErrorActionPreference = $true
+#          Set-StrictMode -Version Latest
+#
+#          git init --bare repo.git
+#          $env:GIT_DIR = "$PWD/repo.git"
+#          git config core.hooksPath /dev/null
+#          git config transfer.fsckObjects true
+#          
+#          git fetch --no-recurse-submodules --depth=1 "https://github.com/$env:HEAD_REPO.git" $env:HEAD_COMMIT
+#          git bundle verify bindings.bundle
+#          git fetch --no-recurse-submodules bindings.bundle refs/heads/ci/bindings
+#          git update-ref refs/heads/ci/bindings FETCH_HEAD
+#
+#      - name: Push
+#        shell: pwsh
+#        env:
+#          GH_TOKEN: ${{ github.token }}
+#          HEAD_REPO: ${{ needs.check.outputs.headRepo }}
+#          HEAD_BRANCH: ${{ needs.check.outputs.headBranch }}
+#        run: |
+#          $ErrorActionPreference = "Stop"
+#          $PSNativeCommandUseErrorActionPreference = $true
+#          Set-StrictMode -Version Latest
+#
+#          $env:GIT_DIR = "$PWD/repo.git"
+#          git -c credential.helper= -c "credential.helper=!gh auth git-credential" push "https://github.com/$env:HEAD_REPO.git" "refs/heads/ci/bindings:refs/heads/$env:HEAD_BRANCH"
