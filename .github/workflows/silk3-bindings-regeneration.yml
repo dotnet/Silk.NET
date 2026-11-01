@@ -82,7 +82,7 @@ jobs:
 
     steps:
 
-      - name: Checkout Repo
+      - name: Checkout repo
         uses: actions/checkout@v7
         with:
           repository: ${{ needs.check.outputs.headRepo }}
@@ -155,7 +155,7 @@ jobs:
         with:
           sdk-version: 22621
 
-      - name: Checkout Repo
+      - name: Checkout repo
         uses: actions/checkout@v7
         with:
           submodules: false
@@ -247,7 +247,7 @@ jobs:
         with:
           dotnet-version: "10.0.401"
 
-      - name: Checkout Repo
+      - name: Checkout repo
         uses: actions/checkout@v7
         with:
           submodules: false
@@ -323,25 +323,21 @@ jobs:
           name: bindings-patch-${{ matrix.job }}
           path: bindings-${{ matrix.job }}.patch
   
-  # Privileged - Must not execute untrusted code
-  # TODO: This steps needs a rework since this may execute untrusted code, Perksey recommended git bundles
-  push:
-    name: Commit and push
+  # Unprivileged - Executes untrusted code
+  bundle:
+    name: Generate bundle
     runs-on: ubuntu-latest
 
     needs: [check, regenerate]
 
-    permissions:
-      contents: write
-
     steps:
 
-      - name: Checkout Repo
+      - name: Checkout repo
         uses: actions/checkout@v7
         with:
           submodules: false
           fetch-depth: 0
-          repository: ${{ needs.check.outputs.headRepo }} # TODO: Don't checkout the repo like this 
+          repository: ${{ needs.check.outputs.headRepo }}
           ref: ${{ needs.check.outputs.headCommit }}
 
       - name: Download cache
@@ -394,5 +390,12 @@ jobs:
             exit 0
           }
 
-          git pull --rebase origin $env:TARGET_BRANCH
-          git push origin "HEAD:refs/heads/$env:TARGET_BRANCH"
+  # Privileged - Must not execute untrusted code
+  push:
+    name: Push
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    needs: [bundle]
