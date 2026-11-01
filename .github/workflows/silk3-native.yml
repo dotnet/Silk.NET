@@ -1,7 +1,9 @@
 name: Native Builds
 
 on:
-  workflow_dispatch: 
+  issue_comment:
+    types:
+      - created
 
 permissions:
   contents: read

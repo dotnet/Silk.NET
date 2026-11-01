@@ -2,12 +2,14 @@ name: Bindings Regeneration
 
 on:
   issue_comment:
+    types:
+      - created
 
 permissions:
   contents: read
 
 concurrency:
-  group: "${{ github.workflow }}-${{ github.ref }}"
+  group: "${{ github.workflow }}-${{ github.event.issue.number }}"
   cancel-in-progress: false
 
 jobs:
@@ -16,6 +18,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
-      - name: TODO
-        run: echo TODO
+
+      - name: Check permission and gather info
+        id: check
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          COMMENTER: ${{ github.event.comment.user.login }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          $permission = gh api "repos/$env:REPO/collaborators/$env:COMMENTER/permission" --jq .user.permissions.push
+          if ($permission -ne "true") {
+            throw "$env:COMMENTER does not have push permissions"
+          }
+
+          $commit = gh api "repos/$env:REPO/pulls/$env:PR_NUMBER" --jq .head.sha
+          "commit=$commit" >> $env:GITHUB_OUTPUT
+          
+          $headRepo = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
+          "headRepo=$headRepo" >> $env:GITHUB_OUTPUT
+
+    outputs:
+      comment: ${{ github.event.comment.body }}
+      commit: ${{ steps.check.outputs.sha }}
+      baseRepo: ${{ github.repository }}
+      headRepo: ${{ steps.check.outputs.headRepo }}
