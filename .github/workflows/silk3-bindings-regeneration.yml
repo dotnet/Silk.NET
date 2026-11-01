@@ -371,7 +371,7 @@ jobs:
           # Cache
           git add .silktouch
           if (git status --porcelain --untracked-files=no) {
-            git commit -m "Update .silktouch cache for $sourceContext"
+            git commit -m "Update .silktouch cache for $env:HEAD_COMMIT"
           }
 
           # Bindings, one commit per job
