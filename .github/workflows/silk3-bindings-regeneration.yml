@@ -59,7 +59,7 @@ jobs:
             exit 0
           }
           
-          Write-Host "PR does targets Silk 3"
+          Write-Host "PR does target Silk 3"
           
           "isSilk3=$isSilk3" >> $env:GITHUB_OUTPUT
 
