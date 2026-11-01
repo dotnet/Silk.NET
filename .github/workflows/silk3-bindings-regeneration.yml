@@ -17,6 +17,8 @@ jobs:
     name: Check PR comment
     runs-on: ubuntu-latest
 
+    if: github.event.issue.pull_request
+
     steps:
 
       - name: Check permission and gather info
