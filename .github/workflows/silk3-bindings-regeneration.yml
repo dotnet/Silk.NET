@@ -1,4 +1,4 @@
-name: Bindings Regeneration
+name: Bindings Regeneration (3.0)
 
 on:
   issue_comment:

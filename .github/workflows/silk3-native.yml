@@ -1,4 +1,4 @@
-name: Native Builds
+name: Native Builds (3.0)
 
 on:
   issue_comment:
