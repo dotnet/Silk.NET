@@ -386,7 +386,7 @@ jobs:
           git status
 
           if ((git rev-parse HEAD) -eq $env:HEAD_COMMIT) {
-            Write-Host "Nothing to push"
+            Write-Host "No commits to bundle"
             "changed=false" >> $env:GITHUB_OUTPUT
             exit 0
           }
