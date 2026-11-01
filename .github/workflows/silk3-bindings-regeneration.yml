@@ -335,7 +335,7 @@ jobs:
       contents: write
 
     needs: [check]
-#    if: ${{ needs.check.outputs.isSilk3 == 'true' }}
+    if: ${{ needs.check.outputs.isSilk3 == 'true' }}
   
     steps:
 
