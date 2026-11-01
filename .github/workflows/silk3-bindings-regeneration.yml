@@ -17,7 +17,7 @@ jobs:
     name: Check PR comment
     runs-on: ubuntu-latest
     
-    if: github.event.issue.pull_request
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/bindings')
 
     steps:
 
@@ -34,19 +34,67 @@ jobs:
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
 
+          # Check permissions
           $permission = gh api "repos/$env:REPO/collaborators/$env:COMMENTER/permission" --jq .user.permissions.push
           if ($permission -ne "true") {
             throw "$env:COMMENTER does not have push permissions"
           }
-
-          $commit = gh api "repos/$env:REPO/pulls/$env:PR_NUMBER" --jq .head.sha
-          "commit=$commit" >> $env:GITHUB_OUTPUT
           
           $headRepo = gh api "repos/$env:REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
           "headRepo=$headRepo" >> $env:GITHUB_OUTPUT
+          
+          $headCommit = gh api "repos/$env:REPO/pulls/$env:PR_NUMBER" --jq .head.sha
+          "headCommit=$headCommit" >> $env:GITHUB_OUTPUT
+          
+          # Check if PR is for Silk 3
+          $isSilk3 = $false
+          try {
+            gh api "repos/$headRepo/contents/eng?ref=$headCommit" --silent
+            $isSilk3 = $true
+          } catch {}
+          
+          "isSilk3=$isSilk3" >> $env:GITHUB_OUTPUT
 
     outputs:
-      comment: ${{ github.event.comment.body }}
-      commit: ${{ steps.check.outputs.sha }}
+      commentBody: ${{ github.event.comment.body }}
       baseRepo: ${{ github.repository }}
       headRepo: ${{ steps.check.outputs.headRepo }}
+      headCommit: ${{ steps.check.outputs.headCommit }}
+      isSilk3: ${{ steps.check.outputs.isSilk3 }}
+
+  # Be careful - Executes untrusted code
+  dispatch:
+    name: Dispatch selected jobs
+    runs-on: ubuntu-latest
+      
+    needs: [check]
+    if: ${{ needs.check.outputs.isSilk3 == 'true' }}
+    
+    steps:
+
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ needs.check.outputs.headRepo }}
+          ref: ${{ needs.check.outputs.headCommit }}
+          submodules: false
+
+      - name: Parse comment as command
+        id: command
+        shell: pwsh
+        working-directory: eng/workflows/bindings
+        env:
+          COMMENT_BODY: ${{ needs.check.outputs.commentBody }}
+        run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
+
+      - name: Generate matrix
+        id: matrix
+        shell: pwsh
+        working-directory: eng/workflows/bindings
+        env:
+          CHOSEN_JOBS: ${{ steps.command.outputs.jobs }}
+        run: ./workflow-matrix.ps1 >> $env:GITHUB_OUTPUT
+
+    outputs:
+      scrapeMatrix: ${{ steps.matrix.outputs.scrapeMatrix }}
+      regenerateMatrix: ${{ steps.matrix.outputs.regenerateMatrix }}
