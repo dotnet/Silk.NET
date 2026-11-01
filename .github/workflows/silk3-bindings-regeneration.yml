@@ -86,7 +86,7 @@ jobs:
       contents: write
     
     needs: [check]
-    if: needs.check.outputs.isSilk3 == 'true' && needs.check.outputs.hasPermission == 'true'
+    if: needs.check.outputs.isSilk3 == 'true' && needs.check.outputs.headRepo != github.repository && needs.check.outputs.hasPermission == 'true'
     
     steps:
     
@@ -111,7 +111,7 @@ jobs:
             Write-Host "This does not fail the workflow so the relevant artifacts are still generated"
           }
           
-          "hasPushPermission=$hasPushPermission" >> env:GITHUB_OUTPUT
+          "hasPushPermission=$hasPushPermission" >> $env:GITHUB_OUTPUT
           
     outputs:
       hasPushPermission: ${{ steps.dryPush.outputs.hasPushPermission }}
