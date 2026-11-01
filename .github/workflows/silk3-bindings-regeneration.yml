@@ -205,7 +205,7 @@ jobs:
     runs-on: ubuntu-24.04
 
     if: ${{ !cancelled() && needs.check.outputs.isSilk3 == 'true' }}
-    needs: [scrape]
+    needs: [check, scrape]
 
     steps:
 
@@ -399,7 +399,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: bindings-bundle
-          path: bindings-bundle
+          path: bindings.bundle
 
     outputs: 
       changed: ${{ steps.bundle.outputs.changed }}
@@ -420,14 +420,13 @@ jobs:
       - name: Download bindings patches
         uses: actions/download-artifact@v8
         with:
-          path: bindings.bundle
           pattern: bindings-bundle
 
       - name: Show working directory contents
         shell: pwsh
         run: Get-ChildItem
 
-      - name: Apply bundle and push
+      - name: Apply bundle
         shell: pwsh
         env:
           HEAD_REPO: ${{ needs.check.outputs.headRepo }}
@@ -446,3 +445,17 @@ jobs:
           git bundle verify bindings.bundle
           git fetch --no-recurse-submodules bindings.bundle refs/heads/ci/bindings
           git update-ref refs/heads/ci/bindings FETCH_HEAD
+
+      - name: Push
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_REPO: ${{ needs.check.outputs.headRepo }}
+          HEAD_COMMIT: ${{ needs.check.outputs.headCommit }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          $env:GIT_DIR = "$PWD/repo.git"
+          git -c credential.helper= -c "credential.helper=!gh auth git-credential" push "https://github.com/$env:HEAD_REPO.git" "refs/heads/ci/bindings:refs/heads/$env:HEAD_BRANCH"
