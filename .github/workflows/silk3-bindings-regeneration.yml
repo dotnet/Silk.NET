@@ -79,7 +79,8 @@ jobs:
       headCommit: ${{ steps.check.outputs.headCommit }} # Untrusted: Head may be from a fork
       isSilk3: ${{ steps.check.outputs.isSilk3 }}
       hasPermission: ${{ steps.check.outputs.hasPermission }}
-
+  
+  # Privileged - Must not execute untrusted code
   dryPush:
     name: Test push permissions
     runs-on: ubuntu-latest
@@ -128,7 +129,8 @@ jobs:
           
     outputs:
       hasPushPermission: ${{ steps.dryPush.outputs.hasPushPermission }}
-
+  
+  # Privileged - Must not execute untrusted code
   reportNoPushPermission:
     name: Report no push permission
     runs-on: ubuntu-latest
