@@ -6,43 +6,45 @@
 comment<<EOF
 ## Silk native build reminder
 
-No native builds were affected by this PR.
+No native builds are likely to have been affected by this PR.
 EOF
 ----- Bindings -----
 comment<<EOF
 ## Silk bindings regeneration reminder
 
-No bindings were affected by this PR.
+No bindings are likely to have been affected by this PR.
 EOF
 ----- Reminder comment - No affected, with existing comment -----
 ----- Native -----
 comment<<EOF
 ## Silk native build reminder
 
-No native builds were affected by this PR.
+No native builds are likely to have been affected by this PR.
 EOF
 ----- Bindings -----
 comment<<EOF
 ## Silk bindings regeneration reminder
 
-No bindings were affected by this PR.
+No bindings are likely to have been affected by this PR.
 EOF
 ----- Reminder comment - Affected, with existing comment -----
 ----- Native -----
 comment<<EOF
 ## Silk native build reminder
 
-Some of the native builds were affected by this PR. Please rebuild these by posting a comment with `/native OpenAL-Soft`.
+Some of the native builds are likely affected by this PR.\
+Please rebuild these by posting a comment with `/native OpenAL-Soft`.
 
-If you believe this is in error, then please write a comment explaining why and ignore this reminder.
+If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
 EOF
 ----- Bindings -----
 comment<<EOF
 ## Silk bindings regeneration reminder
 
-Some of the bindings were affected by this PR. Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`.
+Some of the bindings are likely affected by this PR.\
+Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`.
 
-If you believe this is in error, then please write a comment explaining why and ignore this reminder.
+If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
 EOF
 ----- Dependencies -----
 ----- Native -----
