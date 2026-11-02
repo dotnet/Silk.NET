@@ -133,7 +133,7 @@ jobs:
           "$delimiter" >> $env:GITHUB_OUTPUT
 
       - name: Find previous native reminder comment
-        if: steps.pr.outputs.number != ''
+        if: steps.pr.outputs.number != '' && steps.native.outputs.content != ''
         id: previousNative
         uses: peter-evans/find-comment@v4
         with:
@@ -142,7 +142,7 @@ jobs:
           body-includes: ${{ env.NATIVE_REMINDER_MESSAGE_PATTERN }}
 
       - name: Find previous bindings reminder comment
-        if: steps.pr.outputs.number != ''
+        if: steps.pr.outputs.number != '' && steps.bindings.outputs.content != ''
         id: previousBindings
         uses: peter-evans/find-comment@v4
         with:
@@ -151,7 +151,7 @@ jobs:
           body-includes: ${{ env.BINDINGS_REMINDER_MESSAGE_PATTERN }}
   
       - name: Update native reminder comment
-        if: steps.pr.outputs.number != ''
+        if: steps.pr.outputs.number != '' && steps.native.outputs.content != ''
         uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.previousNative.outputs.comment-id }}
@@ -160,7 +160,7 @@ jobs:
           edit-mode: replace
 
       - name: Update bindings reminder comment
-        if: steps.pr.outputs.number != ''
+        if: steps.pr.outputs.number != '' && steps.bindings.outputs.content != ''
         uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.previousBindings.outputs.comment-id }}
