@@ -234,7 +234,7 @@ jobs:
           ref: ${{ needs.check.outputs.headCommit }}
 
       # It's not a good idea to use ${{}} within run due to potential code injection,
-      # but this everything in this job already comes from an untrusted source
+      # but this is copied from the original native workflow implementation and everything in this job already comes from an untrusted source
       - name: Build
         shell: pwsh
         working-directory: ${{ matrix.dir }}
