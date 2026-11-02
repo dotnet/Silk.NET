@@ -47,7 +47,7 @@
   },
   "bindings": {
     "sharedDependencies": [
-      "sources/SilkTouch"
+      "sources/SilkTouch/**"
     ],
     "jobs": {
       "OpenAL": {
@@ -60,7 +60,7 @@
           ]
         },
         "dependencies": [
-          "eng/silktouch/openal"
+          "eng/silktouch/openal/**"
         ]
       },
       "OpenCL": {
@@ -74,7 +74,7 @@
           ]
         },
         "dependencies": [
-          "eng/silktouch/opencl"
+          "eng/silktouch/opencl/**"
         ]
       },
       "OpenGL": {
@@ -88,8 +88,8 @@
           ]
         },
         "dependencies": [
-          "eng/silktouch/opengl",
-          "eng/include"
+          "eng/silktouch/opengl/**",
+          "eng/include/**"
         ]
       },
       "OpenXR": {
@@ -109,7 +109,7 @@
           ]
         },
         "dependencies": [
-          "eng/silktouch/openxr"
+          "eng/silktouch/openxr/**"
         ]
       },
       "SDL": {
@@ -122,7 +122,7 @@
           ]
         },
         "dependencies": [
-          "eng/silktouch/sdl"
+          "eng/silktouch/sdl/**"
         ]
       },
       "Vulkan": {
@@ -136,7 +136,7 @@
           ]
         },
         "dependencies": [
-          "eng/silktouch/vulkan"
+          "eng/silktouch/vulkan/**"
         ]
       }
     }
