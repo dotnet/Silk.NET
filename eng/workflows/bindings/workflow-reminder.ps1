@@ -26,7 +26,7 @@ if ($previousCommentId) {
 
 if ($affectedJobs.Count -gt 0) {
   $mustComment = $true
-  $comment += "`n`nSome of the bindings are likely to be affected by this PR.\`nPlease regenerate these by posting a comment with ``/bindings $affectedJobs``.`n`nIf you believe this to be in error, then please write a comment explaining why and ignore this reminder."
+  $comment += "`n`nSome of the bindings are likely affected by this PR.\`nPlease regenerate these by posting a comment with ``/bindings $affectedJobs``.`n`nIf you believe this to be in error, then please write a comment explaining why and ignore this reminder."
 } else {
   $comment += "`n`nNo bindings are likely to have been affected by this PR."
 }
