@@ -34,12 +34,14 @@ jobs:
 
       - name: Download native reminder comment
         uses: actions/download-artifact@v8.0.1
+        continue-on-error: true
         with:
           name: native-reminder-comment
           run-id: ${{ github.event.workflow_run.id }}
 
       - name: Download bindings reminder comment
         uses: actions/download-artifact@v8.0.1
+        continue-on-error: true
         with:
           name: bindings-reminder-comment
           run-id: ${{ github.event.workflow_run.id }}
