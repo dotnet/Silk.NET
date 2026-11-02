@@ -74,14 +74,12 @@ jobs:
           ./bindings/workflow-reminder.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Output native reminder to file
-        if: ${{ steps.nativeReminder.outputs.comment }}
         shell: pwsh
         env:
           COMMENT: ${{ steps.nativeReminder.outputs.comment }}
         run: $env:COMMENT > native.txt
 
       - name: Output bindings reminder to file
-        if: ${{ steps.bindingsReminder.outputs.comment }}
         shell: pwsh
         env:
           COMMENT: ${{ steps.bindingsReminder.outputs.comment }}
