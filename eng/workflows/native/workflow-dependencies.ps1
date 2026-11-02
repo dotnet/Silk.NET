@@ -14,6 +14,7 @@ foreach ($jobName in $jobNames) {
   $job = $buildsJson.native.jobs.$jobName
 
   $paths = @()
+  $paths += @($buildsJson.native.sharedDependencies)
   $paths += "$($job.path)/*"
   $paths += @($job.submodules)
 

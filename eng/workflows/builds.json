@@ -1,5 +1,6 @@
 {
   "native": {
+    "sharedDependencies": [],
     "jobs": {
       "SDL": {
         "path": "sources/SDL/Native",
@@ -45,6 +46,9 @@
     }
   },
   "bindings": {
+    "sharedDependencies": [
+      "sources/SilkTouch"
+    ],
     "jobs": {
       "OpenAL": {
         "submodules": [

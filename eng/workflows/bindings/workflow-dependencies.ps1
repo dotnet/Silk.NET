@@ -14,6 +14,7 @@ foreach ($jobName in $jobNames) {
   $job = $buildsJson.bindings.jobs.$jobName
 
   $paths = @()
+  $paths += @($buildsJson.bindings.sharedDependencies)
   $paths += @($job.submodules)
 
   if ("dependencies" -in $job.PSObject.Properties.Name) {

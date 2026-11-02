@@ -39,12 +39,12 @@ SDL: ["sources/SDL/Native/*","eng/submodules/sdl"]
 EOF
 ----- Bindings -----
 workflowFilters<<EOF
-OpenAL: ["eng/submodules/openal-soft","eng/silktouch/openal"]
-OpenCL: ["eng/submodules/opencl-docs","eng/submodules/opencl-headers","eng/silktouch/opencl"]
-OpenGL: ["eng/submodules/egl-registry","eng/submodules/opengl-registry","eng/silktouch/opengl","eng/include"]
-OpenXR: ["eng/submodules/openxr-sdk","eng/submodules/vulkan-headers","eng/silktouch/openxr"]
-SDL: ["eng/submodules/sdl","eng/silktouch/sdl"]
-Vulkan: ["eng/submodules/vulkan-docs","eng/submodules/vulkan-headers","eng/silktouch/vulkan"]
+OpenAL: ["sources/SilkTouch","eng/submodules/openal-soft","eng/silktouch/openal"]
+OpenCL: ["sources/SilkTouch","eng/submodules/opencl-docs","eng/submodules/opencl-headers","eng/silktouch/opencl"]
+OpenGL: ["sources/SilkTouch","eng/submodules/egl-registry","eng/submodules/opengl-registry","eng/silktouch/opengl","eng/include"]
+OpenXR: ["sources/SilkTouch","eng/submodules/openxr-sdk","eng/submodules/vulkan-headers","eng/silktouch/openxr"]
+SDL: ["sources/SilkTouch","eng/submodules/sdl","eng/silktouch/sdl"]
+Vulkan: ["sources/SilkTouch","eng/submodules/vulkan-docs","eng/submodules/vulkan-headers","eng/silktouch/vulkan"]
 EOF
 ----- Parse - No input -----
 ----- Native -----
