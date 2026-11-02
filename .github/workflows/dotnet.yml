@@ -1,165 +1,205 @@
 name: .NET
+
 on:
-    push:
-    pull_request:
-    merge_group:
-    workflow_dispatch:
-      inputs:
-        release:
-          description: "Release to NuGet"
-          required: false
-          type: boolean
-          default: false
+  push:
+  pull_request:
+  merge_group:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: "Release to NuGet"
+        required: false
+        type: boolean
+        default: false
+
 permissions:
-    statuses: write
-    checks: write
-    contents: write
-    pull-requests: write
-    actions: write
-    packages: write
+  statuses: write
+  checks: write
+  contents: write
+  pull-requests: write
+  actions: write
+  packages: write
+
 jobs:
-    Build:
-        runs-on: macos-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: Setup .NET
-              uses: actions/setup-dotnet@v5
-              with:
-                dotnet-version: |
-                  9.0.x
-                  10.0.x
-            - name: Install Workloads
-              run: dotnet workload restore
-            - name: Pack
-              # TODO decide whether we want experimental builds to use Debug or Release - using Release for now...
-              run: >-
-                dotnet run --project eng/build/Silk.NET.NUKE.csproj -c Release --
-                Pack
-                --configuration Release
-                --msbuild-properties
-                ${{ github.event_name == 'workflow_dispatch' && inputs.release && 'ContinuousIntegrationBuild=true' || github.event_name != 'pull_request' && format('ContinuousIntegrationBuild=true VersionSuffix=build{0}.0', github.run_number) || format('ContinuousIntegrationBuild=true VersionSuffix=pr{0}.{1}', github.event.number, github.run_number) }}
-            - name: Upload Unsigned Artifacts to Actions
-              uses: actions/upload-artifact@v4
-              with:
-                name: unsigned_nupkgs
-                path: "artifacts/**/*nupkg"
-                if-no-files-found: warn
-                retention-days: 1
-            - name: Determine whether we should push to experimental feed.
-              id: check_token
-              run: |
-                if [ -z "${{ secrets.EXP_NUGET_PASSWORD }}" ]; then
-                  echo "push=false" >> $GITHUB_OUTPUT
-                else
-                  echo "push=true" >> $GITHUB_OUTPUT
-                fi
-            - name: Push to Experimental Feed
-              if: ${{ steps.check_token.outputs.push == 'true' }}
-              run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
-            - name: Push to GitHub Packages
-              if: ${{ steps.check_token.outputs.push == 'true' }}
-              run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
-    Test:
-        strategy:
-            fail-fast: false
-            matrix:
-                include:
-                    - rid: win-x64
-                      os: windows-latest
-                      name: win-x64
-                    - rid: linux-x64
-                      os: ubuntu-22.04
-                      name: linux-x64
-                    - rid: osx-arm64
-                      os: macos-latest
-                      name: osx-arm64
-        runs-on: ${{ matrix.os }}
-        steps:
-            - uses: actions/checkout@v3
-            - name: Setup .NET
-              uses: actions/setup-dotnet@v3
-              with:
-                dotnet-version: |
-                  9.0.x
-                  10.0.x
-            - name: Install Workloads
-              run: dotnet workload restore
-            - name: Restore
-              run: dotnet restore --runtime ${{ matrix.rid }}
-            - name: Test
-              run: dotnet test --results-directory coverage --coverage --coverage-output-format cobertura --report-trx -c Release
-            # TODO: https://github.com/dorny/test-reporter?tab=readme-ov-file#recommended-setup-for-public-repositories
-            #- name: Test Report
-            #  uses: dorny/test-reporter@v1
-            #  if: success() || failure()
-            #  with:
-            #    name: .NET Test Report (${{ matrix.rid }})
-            #    path: ./coverage/**/*.trx
-            #    reporter: dotnet-trx
-            - name: Upload Coverage Results
-              uses: actions/upload-artifact@v4
-              with:
-                name: coverage-${{ matrix.name }}
-                path: ./coverage/**/*.cobertura.xml
-                if-no-files-found: error
-    Report-Coverage:
-        name: "Report Coverage"
-        runs-on: ubuntu-latest
-        needs: Test
-        permissions:
-            pull-requests: write
-            checks: write
-        steps:
-            - uses: actions/download-artifact@v4
-              with:
-                path: ./coverage
-            - name: Setup .NET Core
-              uses: actions/setup-dotnet@v1
-              with:
-                dotnet-version: 6.0.300
-            - name: Generate Report
-              uses: danielpalme/ReportGenerator-GitHub-Action@5.1.9
-              with:
-                reports: './coverage/**/*.cobertura.xml'
-                targetdir: './coveragereport'
-                reporttypes: 'Cobertura'
-                verbosity: 'Info'
-                tag: '${{ github.run_number }}_${{ github.run_id }}'
-            - uses: 5monkeys/cobertura-action@master
-              continue-on-error: true
-              with:
-                path: coveragereport/Cobertura.xml
-                minimum_coverage: 0
-    Release:
-        runs-on: windows-latest
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.release }}
-        needs: [Build, Test]
-        environment: Release
-        steps:
-          - uses: actions/checkout@v3
-            with:
-              ssh-key: ${{ secrets.SILK_ACTIONS_DEPLOY_KEY }}
-          - uses: actions/download-artifact@v4
-            with:
-              name: unsigned_nupkgs
-              path: artifacts
-          - name: Push to NuGet
-            if: ${{ github.repository == 'dotnet/Silk.NET' }}
-            run: >-
-              .\build.cmd SignPackages PushToNuGet FinishRelease --skip Clean Compile Pack
-              --nuget-api-key ${{ secrets.NUGET_TOKEN }}
-              --akv-certificate ${{ secrets.AKV_CERTIFICATE }}
-              --akv-client-id ${{ secrets.AKV_CLIENT_ID }}
-              --akv-client-secret ${{ secrets.AKV_CLIENT_SECRET }}
-              --akv-tenant ${{ secrets.AKV_TENANT }}
-              --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
-              --discord-webhook ${{ secrets.DISCORD_ANNOUNCEMENT_WEBHOOK }}
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          - name: Upload Signed Artifacts to Actions
-            uses: actions/upload-artifact@v4
-            with:
-              name: signed_nupkgs
-              path: "artifacts/**/*nupkg"
-              if-no-files-found: warn
-              retention-days: 30
+  build:
+    name: Build
+    runs-on: macos-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: |
+            9.0.x
+            10.0.x
+
+      - name: Install Workloads
+        run: dotnet workload restore
+
+      # TODO decide whether we want experimental builds to use Debug or Release - using Release for now...
+      - name: Pack
+        run: >-
+          dotnet run --project eng/build/Silk.NET.NUKE.csproj -c Release --
+          Pack
+          --configuration Release
+          --msbuild-properties
+          ${{ github.event_name == 'workflow_dispatch' && inputs.release && 'ContinuousIntegrationBuild=true' || github.event_name != 'pull_request' && format('ContinuousIntegrationBuild=true VersionSuffix=build{0}.0', github.run_number) || format('ContinuousIntegrationBuild=true VersionSuffix=pr{0}.{1}', github.event.number, github.run_number) }}
+
+      - name: Upload Unsigned Artifacts to Actions
+        uses: actions/upload-artifact@v4
+        with:
+          name: unsigned_nupkgs
+          path: "artifacts/**/*nupkg"
+          if-no-files-found: warn
+          retention-days: 1
+
+      - name: Determine whether we should push to experimental feed.
+        id: check_token
+        run: |
+          if [ -z "${{ secrets.EXP_NUGET_PASSWORD }}" ]; then
+            echo "push=false" >> $GITHUB_OUTPUT
+          else
+            echo "push=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Push to Experimental Feed
+        if: ${{ steps.check_token.outputs.push == 'true' }}
+        run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://dotnet.github.io/Silk.NET/nuget/experimental/index.json --nuget-username ${{ secrets.EXP_NUGET_USERNAME }} --nuget-password ${{ secrets.EXP_NUGET_PASSWORD }} --nuget-api-key ${{ secrets.EXP_NUGET_PASSWORD }}
+
+      - name: Push to GitHub Packages
+        if: ${{ steps.check_token.outputs.push == 'true' }}
+        run: ./build.sh PushToNuGet --skip Clean Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
+
+  test:
+    name: Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - rid: win-x64
+            os: windows-latest
+            name: win-x64
+          - rid: linux-x64
+            os: ubuntu-22.04
+            name: linux-x64
+          - rid: osx-arm64
+            os: macos-latest
+            name: osx-arm64
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            9.0.x
+            10.0.x
+
+      - name: Install Workloads
+        run: dotnet workload restore
+
+      - name: Restore
+        run: dotnet restore --runtime ${{ matrix.rid }}
+
+      - name: Test
+        run: dotnet test --results-directory coverage --coverage --coverage-output-format cobertura --report-trx -c Release
+
+      # TODO: https://github.com/dorny/test-reporter?tab=readme-ov-file#recommended-setup-for-public-repositories
+      #- name: Test Report
+      #  uses: dorny/test-reporter@v1
+      #  if: success() || failure()
+      #  with:
+      #    name: .NET Test Report (${{ matrix.rid }})
+      #    path: ./coverage/**/*.trx
+      #    reporter: dotnet-trx
+
+      - name: Upload Coverage Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.name }}
+          path: ./coverage/**/*.cobertura.xml
+          if-no-files-found: error
+
+  report-coverage:
+    name: "Report Coverage"
+    runs-on: ubuntu-latest
+
+    needs: [test]
+
+    permissions:
+      pull-requests: write
+      checks: write
+
+    steps:
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: ./coverage
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.300
+
+      - name: Generate Report
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.1.9
+        with:
+          reports: './coverage/**/*.cobertura.xml'
+          targetdir: './coveragereport'
+          reporttypes: 'Cobertura'
+          verbosity: 'Info'
+          tag: '${{ github.run_number }}_${{ github.run_id }}'
+
+      - uses: 5monkeys/cobertura-action@master
+        continue-on-error: true
+        with:
+          path: coveragereport/Cobertura.xml
+          minimum_coverage: 0
+
+  release:
+    name: Release
+    runs-on: windows-latest
+
+    needs: [build, test]
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.release }}
+
+    environment: Release
+
+    steps:
+
+      - uses: actions/checkout@v3
+        with:
+          ssh-key: ${{ secrets.SILK_ACTIONS_DEPLOY_KEY }}
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: unsigned_nupkgs
+          path: artifacts
+
+      - name: Push to NuGet
+        if: ${{ github.repository == 'dotnet/Silk.NET' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          .\build.cmd SignPackages PushToNuGet FinishRelease --skip Clean Compile Pack
+          --nuget-api-key ${{ secrets.NUGET_TOKEN }}
+          --akv-certificate ${{ secrets.AKV_CERTIFICATE }}
+          --akv-client-id ${{ secrets.AKV_CLIENT_ID }}
+          --akv-client-secret ${{ secrets.AKV_CLIENT_SECRET }}
+          --akv-tenant ${{ secrets.AKV_TENANT }}
+          --akv-vault-url ${{ secrets.AKV_VAULT_URL }}
+          --discord-webhook ${{ secrets.DISCORD_ANNOUNCEMENT_WEBHOOK }}
+
+      - name: Upload Signed Artifacts to Actions
+        uses: actions/upload-artifact@v4
+        with:
+          name: signed_nupkgs
+          path: "artifacts/**/*nupkg"
+          if-no-files-found: warn
+          retention-days: 30
