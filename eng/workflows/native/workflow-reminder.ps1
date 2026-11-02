@@ -26,9 +26,9 @@ if ($previousCommentId) {
 
 if ($affectedJobs.Count -gt 0) {
   $mustComment = $true
-  $comment += "`n`nSome of the native builds were affected by this PR. Please rebuild these by posting a comment with ``/native $affectedJobs``.`n`nIf you believe this is in error, then please write a comment explaining why and ignore this reminder."
+  $comment += "`n`nSome of the native builds are likely to be affected by this PR. Please rebuild these by posting a comment with ``/native $affectedJobs``.`n`nIf you believe this is in error, then please write a comment explaining why and ignore this reminder."
 } else {
-  $comment += "`n`nNo native builds were affected by this PR."
+  $comment += "`n`nNo native builds are likely to have been affected by this PR."
 }
 
 if ($mustComment) {
