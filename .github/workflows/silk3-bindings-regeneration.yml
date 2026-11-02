@@ -15,6 +15,7 @@ concurrency:
 jobs:
   
   # Unprivileged - Should not need to execute untrusted code
+  # check is exactly the same here as in silk3-native.yml
   check:
     name: Check PR comment
     runs-on: ubuntu-latest
@@ -81,7 +82,7 @@ jobs:
       hasPermission: ${{ steps.check.outputs.hasPermission }}
   
   # Privileged - Must not execute untrusted code
-  # dryPush and reportNoPushPermission is exactly the same here as in silk3-native.yml
+  # dryPush is exactly the same here as in silk3-native.yml
   dryPush:
     name: Test push permissions
     runs-on: ubuntu-latest
@@ -132,6 +133,7 @@ jobs:
       hasPushPermission: ${{ steps.dryPush.outputs.hasPushPermission }}
   
   # Privileged - Must not execute untrusted code
+  # reportNoPushPermission is exactly the same here as in silk3-native.yml
   reportNoPushPermission:
     name: Report no push permission
     runs-on: ubuntu-latest
