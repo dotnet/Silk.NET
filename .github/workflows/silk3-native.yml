@@ -86,7 +86,7 @@ jobs:
     runs-on: ubuntu-latest
     
     permissions:
-      contents: write
+      pull-requests: write
     
     needs: [check]
     if: needs.check.outputs.isSilk3 == 'true' && needs.check.outputs.headRepo != github.repository && needs.check.outputs.hasPermission == 'true'
