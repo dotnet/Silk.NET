@@ -207,28 +207,22 @@ jobs:
         run: ./workflow-matrix.ps1 >> $env:GITHUB_OUTPUT
 
     outputs:
-      scrapeMatrix: ${{ steps.matrix.outputs.scrapeMatrix }}
-      regenerateMatrix: ${{ steps.matrix.outputs.regenerateMatrix }}
+      matrix: ${{ steps.matrix.outputs.matrix }}
 
   # Unprivileged - Executes untrusted code
-  regenerate:
-    name: Regenerate ${{ matrix.job }}
-    runs-on: ubuntu-24.04
+  build:
+    name: Build ${{ matrix.job }} for ${{ matrix.runtime }}
+    runs-on: ${{ matrix.os }}
 
-    needs: [check, dispatch, combine]
-    if: join(fromJSON(needs.dispatch.outputs.regenerateMatrix), ',') != '' && needs.check.outputs.hasPermission == 'true'
+    needs: [check, dispatch]
+    if: join(fromJSON(needs.dispatch.outputs.matrix), ',') != '' && needs.check.outputs.hasPermission == 'true'
 
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ fromJSON(needs.dispatch.outputs.regenerateMatrix) }}
+        include: ${{ fromJSON(needs.dispatch.outputs.matrix) }}
 
     steps:
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v6
-        with:
-          dotnet-version: "10.0.401"
 
       - name: Checkout repo
         uses: actions/checkout@v7
@@ -245,66 +239,22 @@ jobs:
           $submodules = $env:SUBMODULES | ConvertFrom-Json
           git submodule update --init --recursive --depth 0 $submodules
 
-      - name: Download cache
-        uses: actions/download-artifact@v8
-        with:
-          path: .silktouch
-          pattern: silktouch-combined-cache
-
-      - name: Show .silktouch folder contents
+      - name: Build
         shell: pwsh
-        run: Get-ChildItem .silktouch
-
-      - name: Show git status
-        shell: pwsh
-        run: git status
-
-      - name: .NET workload restore
-        shell: pwsh
-        run: dotnet workload restore
-
-      - name: .NET restore
-        shell: pwsh
-        run: dotnet restore
-
-      - name: Regenerate bindings
-        shell: pwsh
-        env:
-          JOB: ${{ matrix.job }}
-        run: dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --use-cache-only --only $env:JOB
-
-      - name: Show git status
-        shell: pwsh
-        run: git status
-
-      - name: Create bindings patch
-        id: patch
-        shell: pwsh
-        env:
-          JOB: ${{ matrix.job }}
         run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
+          "https://github.com/actions/upload-artifact/issues/174" > .workaround-${{ matrix.job }}-${{ matrix.runtime }}.txt
+          ${{ format('.{0}{1}', startsWith(matrix.runtime, 'win') && '\' || '/', matrix.exec) }}
+        working-directory: ${{ matrix.dir }}
 
-          Write-Host "Creating a patch containing all changes but the cache. The cache will be committed later."
-          git add -A
-          git diff --cached --binary -- . ":(exclude).silktouch" > "bindings-$env:JOB.patch"
-
-          if ((Get-Item "bindings-$env:JOB.patch").Length -eq 0) {
-            Write-Host "Bindings already up to date"
-            "changed=false" >> $env:GITHUB_OUTPUT
-            exit 0
-          }
-
-          "changed=true" >> $env:GITHUB_OUTPUT
-
-      - name: Upload bindings patch
-        if: steps.patch.outputs.changed == 'true'
-        uses: actions/upload-artifact@v7
+      # TODO: Probably change this to a git patch?
+      - uses: actions/upload-artifact@v4
         with:
-          name: bindings-patch-${{ matrix.job }}
-          path: bindings-${{ matrix.job }}.patch
+          name: natives-${{ matrix.job }}-${{ matrix.runtime }}
+          path: |
+            ./.workaround-*.txt
+            ./${{ matrix.dir }}/runtimes/${{ format('{0}{1}', matrix.runtime, !contains(matrix.runtime, '-') && '*' || '') }}/**/*
+            ./${{ matrix.dir }}/lib/*${{ matrix.runtime }}*/**/*
+            ./${{ matrix.dir }}/*${{ matrix.runtime }}*/**/*
   
   # Unprivileged - Executes untrusted code
   bundle:
@@ -323,12 +273,6 @@ jobs:
           fetch-depth: 0
           repository: ${{ needs.check.outputs.headRepo }}
           ref: ${{ needs.check.outputs.headCommit }}
-
-      - name: Download cache
-        uses: actions/download-artifact@v8
-        with:
-          path: .silktouch
-          pattern: silktouch-combined-cache
 
       - name: Download bindings patches
         uses: actions/download-artifact@v8
