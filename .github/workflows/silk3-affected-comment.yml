@@ -58,11 +58,13 @@ jobs:
           Set-StrictMode -Version Latest
           
           if (-not (Test-Path native.txt)) {
-            exit 1
+            Write-Host "No reminder comment found, assuming no reminder needed"
+            exit 0
           }
           
           $content = Get-Content native.txt -Raw
           if (-not ($content -match $env:NATIVE_REMINDER_MESSAGE_PATTERN)) {
+            Write-Host "Bad reminder message format"
             exit 1
           }
           
@@ -80,11 +82,13 @@ jobs:
           Set-StrictMode -Version Latest
           
           if (-not (Test-Path bindings.txt)) {
-            exit 1
+            Write-Host "No reminder comment found, assuming no reminder needed"
+            exit 0
           }
           
           $content = Get-Content bindings.txt -Raw
           if (-not ($content -match $env:BINDINGS_REMINDER_MESSAGE_PATTERN)) {
+            Write-Host "Bad reminder message format"
             exit 1
           }
           
