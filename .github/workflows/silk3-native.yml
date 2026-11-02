@@ -233,14 +233,6 @@ jobs:
           repository: ${{ needs.check.outputs.headRepo }}
           ref: ${{ needs.check.outputs.headCommit }}
 
-      - name: Initialize submodules
-        shell: pwsh
-        env:
-          SUBMODULES: ${{ toJSON(matrix.submodules) }}
-        run: |
-          $submodules = $env:SUBMODULES | ConvertFrom-Json
-          git submodule update --init --recursive --depth 0 $submodules
-
       - name: Build
         shell: pwsh
         run: |
