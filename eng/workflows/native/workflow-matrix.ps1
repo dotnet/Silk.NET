@@ -54,8 +54,6 @@ foreach ($chosenJob in $chosenJobs) {
 
       dir = $job.Value.path
       exec = $script.Name
-      
-      submodules = $job.Value.submodules
     }
   }
 }
