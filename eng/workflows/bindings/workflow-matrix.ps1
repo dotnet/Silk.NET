@@ -26,6 +26,7 @@ foreach ($chosenJob in $chosenJobs) {
     $scrapeMatrix += @{
       job = $job.Name
       os = $cache.Name
+      
       caches = $cache.Value
       submodules = $job.Value.submodules
     }

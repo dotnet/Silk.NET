@@ -49,12 +49,13 @@ foreach ($chosenJob in $chosenJobs) {
 
     $matrix += @{
       job = $job.Name
-
-      runtime = $build.Name
       os = $build.Value
+      runtime = $build.Name
 
       dir = $job.Value.path
       exec = $script.Name
+      
+      submodules = $job.Value.submodules
     }
   }
 }
