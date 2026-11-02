@@ -17,7 +17,7 @@ $repoRoot = Join-Path $PSScriptRoot "../../.."
 
 # PR Comment
 $mustComment = $false
-$comment = "## Silk Native Build"
+$comment = "## Silk native build reminder"
 
 if ($previousCommentId -eq "0") {
   $previousCommentId = ""
@@ -27,20 +27,11 @@ if ($previousCommentId) {
   $mustComment = $true
 }
 
-$notAllReferenced = $false
-foreach ($affectedJob in $affectedJobs) {
-  if (-not ($affectedJob -in $chosenJobs)) {
-    $notAllReferenced = $true
-    break;
-  }
-}
-
-if ($notAllReferenced) {
+if ($affectedJobs.Count -gt 0) {
   $mustComment = $true
-  $comment += "`n`nSome of the native library builds modified in this PR were not referenced in the PR description. Please ensure that the PR description contains ``/native $affectedJobs``. These libraries won't be rebuilt without this being specified. If you believe this is in error, then please write a comment explaining why and ignore this suggestion. This comment will be automatically updated if rectified."
-}
-else {
-  $comment += "`n`nAll native library builds modified in this PR shall attempt to be built by CI."
+  $comment += "`n`nSome of the native builds were affected by this PR. Please rebuild these by posting a comment with ``/native $affectedJobs``.`n`nIf you believe this is in error, then please write a comment explaining why and ignore this reminder."
+} else {
+  $comment += "`n`nNo native builds were affected by this PR."
 }
 
 # Matrix
