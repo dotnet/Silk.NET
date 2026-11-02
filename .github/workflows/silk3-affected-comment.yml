@@ -23,6 +23,7 @@ jobs:
     
     permissions:
       pull-requests: write
+      actions: read
 
     env: 
       NATIVE_REMINDER_MESSAGE_PATTERN: |
@@ -38,6 +39,7 @@ jobs:
         with:
           name: native-reminder-comment
           run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
 
       - name: Download bindings reminder comment
         uses: actions/download-artifact@v8.0.1
@@ -45,6 +47,7 @@ jobs:
         with:
           name: bindings-reminder-comment
           run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
 
       - name: Read native reminder comment
         id: native
