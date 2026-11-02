@@ -1,3 +1,4 @@
+# This workflow has a lot of duplicated code shared with silk3-native.yml
 name: Bindings Regeneration (3.0)
 
 on:
@@ -179,6 +180,7 @@ jobs:
           edit-mode: replace
 
   # Unprivileged - Executes untrusted code
+  # dispatch here is very similar to dispatch in silk3-native.yml
   dispatch:
     name: Dispatch selected jobs
     runs-on: ubuntu-latest
@@ -432,6 +434,7 @@ jobs:
           path: bindings-${{ matrix.job }}.patch
   
   # Unprivileged - Executes untrusted code
+  # bundle here is very similar to bundle in silk3-native.yml
   bundle:
     name: Generate bundle
     runs-on: ubuntu-latest
@@ -525,6 +528,7 @@ jobs:
       newHeadCommit: ${{ steps.bundle.outputs.newHeadCommit }}
 
   # Privileged - Must not execute untrusted code
+  # push is exactly the same here as in silk3-native.yml, but with native replaced with bindings
   push:
     name: Push
     runs-on: ubuntu-latest
