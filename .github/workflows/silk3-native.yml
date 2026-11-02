@@ -59,8 +59,8 @@ jobs:
           # Check if PR is for Silk 3
           $isSilk3 = $false
           try {
-            Write-Host "Checking for eng folder as a naive way to check if the PR is for Silk 3"
-            gh api "repos/$headRepo/contents/eng?ref=$headCommit" --silent
+            Write-Host "Checking for builds.json as a naive way to check if the PR is for Silk 3"
+            gh api "repos/$headRepo/contents/eng/workflow/builds.json?ref=$headCommit" --silent
             $isSilk3 = $true
           } catch {
             Write-Host "PR does not target Silk 3"
