@@ -233,7 +233,7 @@ jobs:
     steps:
 
       # Currently deciding to install all dependencies for all bindings for simplicity
-      # Reason is that dependencies here are relatively light, unlike for native builds
+      # Reason is that dependencies needed for scraping are relatively light, unlike for native builds
       - name: Setup dependencies
         shell: pwsh
         run: |
@@ -246,7 +246,7 @@ jobs:
             $IsLinux {
               sudo apt-get update
 
-              # Added for OpenXR
+              # Added for OpenXR, but evidently enough for all jobs right now
               sudo apt-get install -y libx11-dev libgl-dev libglx-dev libxcb1-dev libxcb-glx0-dev libegl-dev
             }
             $IsMacOS {}
