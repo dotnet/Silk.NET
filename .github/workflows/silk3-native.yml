@@ -235,10 +235,10 @@ jobs:
 
       - name: Build
         shell: pwsh
+        working-directory: ${{ matrix.dir }}
         run: |
           "https://github.com/actions/upload-artifact/issues/174" > .workaround-${{ matrix.job }}-${{ matrix.runtime }}.txt
           ${{ format('.{0}{1}', startsWith(matrix.runtime, 'win') && '\' || '/', matrix.exec) }}
-        working-directory: ${{ matrix.dir }}
 
       - name: Upload
         uses: actions/upload-artifact@v7
