@@ -4,8 +4,13 @@ $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
 # Inputs
-$affectedJobs = @(-split $env:AFFECTED_JOBS | Where-Object { $_ })
 $previousCommentId = $env:PREVIOUS_COMMENT_ID
+
+$affectedJobs = @()
+try {
+  $affectedJobs = @(-split (ConvertFrom-Json $env:AFFECTED_JOBS) | Where-Object { $_ })
+}
+catch {}
 
 # PR Comment
 $mustComment = $false

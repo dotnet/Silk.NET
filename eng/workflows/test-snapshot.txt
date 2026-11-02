@@ -1,6 +1,19 @@
 ----- Reminder comment - No affected, no existing comment (Should have no output) -----
 ----- Native -----
 ----- Bindings -----
+----- Reminder comment - Missing affected, with existing comment -----
+----- Native -----
+comment<<EOF
+## Silk native build reminder
+
+No native builds were affected by this PR.
+EOF
+----- Bindings -----
+comment<<EOF
+## Silk bindings regeneration reminder
+
+No bindings were affected by this PR.
+EOF
 ----- Reminder comment - No affected, with existing comment -----
 ----- Native -----
 comment<<EOF
@@ -14,7 +27,7 @@ comment<<EOF
 
 No bindings were affected by this PR.
 EOF
------ Reminder comment -----
+----- Reminder comment - Affected, with existing comment -----
 ----- Native -----
 comment<<EOF
 ## Silk native build reminder
@@ -27,7 +40,7 @@ EOF
 comment<<EOF
 ## Silk bindings regeneration reminder
 
-Some of the bindings were affected by this PR. Please regenerate these by posting a comment with `/bindings OpenAL`.
+Some of the bindings were affected by this PR. Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`.
 
 If you believe this is in error, then please write a comment explaining why and ignore this reminder.
 EOF
@@ -39,12 +52,12 @@ SDL: ["sources/SDL/Native/*","eng/submodules/sdl"]
 EOF
 ----- Bindings -----
 workflowFilters<<EOF
-OpenAL: ["sources/SilkTouch","eng/submodules/openal-soft","eng/silktouch/openal"]
-OpenCL: ["sources/SilkTouch","eng/submodules/opencl-docs","eng/submodules/opencl-headers","eng/silktouch/opencl"]
-OpenGL: ["sources/SilkTouch","eng/submodules/egl-registry","eng/submodules/opengl-registry","eng/silktouch/opengl","eng/include"]
-OpenXR: ["sources/SilkTouch","eng/submodules/openxr-sdk","eng/submodules/vulkan-headers","eng/silktouch/openxr"]
-SDL: ["sources/SilkTouch","eng/submodules/sdl","eng/silktouch/sdl"]
-Vulkan: ["sources/SilkTouch","eng/submodules/vulkan-docs","eng/submodules/vulkan-headers","eng/silktouch/vulkan"]
+OpenAL: ["sources/SilkTouch/**","eng/submodules/openal-soft","eng/silktouch/openal/**"]
+OpenCL: ["sources/SilkTouch/**","eng/submodules/opencl-docs","eng/submodules/opencl-headers","eng/silktouch/opencl/**"]
+OpenGL: ["sources/SilkTouch/**","eng/submodules/egl-registry","eng/submodules/opengl-registry","eng/silktouch/opengl/**","eng/include/**"]
+OpenXR: ["sources/SilkTouch/**","eng/submodules/openxr-sdk","eng/submodules/vulkan-headers","eng/silktouch/openxr/**"]
+SDL: ["sources/SilkTouch/**","eng/submodules/sdl","eng/silktouch/sdl/**"]
+Vulkan: ["sources/SilkTouch/**","eng/submodules/vulkan-docs","eng/submodules/vulkan-headers","eng/silktouch/vulkan/**"]
 EOF
 ----- Parse - No input -----
 ----- Native -----
