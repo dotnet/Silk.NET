@@ -1,4 +1,4 @@
-name: Bindings Regeneration (3.0)
+name: Native Builds (3.0)
 
 on:
   issue_comment:
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: ${{ contains(github.event.comment.body, '/bindings') && format('{0}-{1}', github.workflow, github.event.issue.number) || github.run_id }}
+  group: ${{ contains(github.event.comment.body, '/native') && format('{0}-{1}', github.workflow, github.event.issue.number) || github.run_id }}
   cancel-in-progress: false
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
     name: Check PR comment
     runs-on: ubuntu-latest
     
-    if: github.event.issue.pull_request && contains(github.event.comment.body, '/bindings')
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/native')
 
     steps:
 
@@ -193,7 +193,7 @@ jobs:
       - name: Parse comment as command
         id: command
         shell: pwsh
-        working-directory: eng/workflows/bindings
+        working-directory: eng/workflows/native
         env:
           COMMENT_BODY: ${{ needs.check.outputs.commentBody }}
         run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
@@ -201,7 +201,7 @@ jobs:
       - name: Generate matrix
         id: matrix
         shell: pwsh
-        working-directory: eng/workflows/bindings
+        working-directory: eng/workflows/native
         env:
           CHOSEN_JOBS: ${{ steps.command.outputs.jobs }}
         run: ./workflow-matrix.ps1 >> $env:GITHUB_OUTPUT
@@ -469,7 +469,7 @@ jobs:
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton"
 
-          git switch -c ci/bindings
+          git switch -c ci/native
 
           # Cache
           git add .silktouch
@@ -500,7 +500,7 @@ jobs:
           }
           
           Write-Host "Creating bundle"
-          git bundle create bindings.bundle "$newHeadCommit..ci/bindings"
+          git bundle create bindings.bundle "$newHeadCommit..ci/native"
           "newHeadCommit=$newHeadCommit" >> $env:GITHUB_OUTPUT
           "changed=true" >> $env:GITHUB_OUTPUT
 
@@ -556,8 +556,8 @@ jobs:
           Write-Host "Applying bundle"
           git fetch --no-recurse-submodules --depth=1 "https://github.com/$env:HEAD_REPO.git" $env:HEAD_COMMIT
           git bundle verify bindings.bundle
-          git fetch --no-recurse-submodules bindings.bundle refs/heads/ci/bindings
-          git update-ref refs/heads/ci/bindings FETCH_HEAD
+          git fetch --no-recurse-submodules bindings.bundle refs/heads/ci/native
+          git update-ref refs/heads/ci/native FETCH_HEAD
 
       - name: Push
         shell: pwsh
@@ -572,5 +572,5 @@ jobs:
 
           Write-Host "Pushing"
           $env:GIT_DIR = "$PWD/repo.git"
-          git -c credential.helper= -c "credential.helper=!gh auth git-credential" push "https://github.com/$env:HEAD_REPO.git" "refs/heads/ci/bindings:refs/heads/$env:HEAD_BRANCH"
+          git -c credential.helper= -c "credential.helper=!gh auth git-credential" push "https://github.com/$env:HEAD_REPO.git" "refs/heads/ci/native:refs/heads/$env:HEAD_BRANCH"
           Write-Host "Push successful"
