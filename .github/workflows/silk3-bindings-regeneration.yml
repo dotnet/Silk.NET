@@ -270,8 +270,10 @@ jobs:
         env:
           SUBMODULES: ${{ toJSON(matrix.submodules) }}
         run: |
-          $submodules = $env:SUBMODULES | ConvertFrom-Json
-          git submodule update --init --recursive --depth 0 $submodules
+          $submodules = @($env:SUBMODULES | ConvertFrom-Json)
+          if ($submodules.Count -gt 0) {
+            git submodule update --init --recursive --depth 1 $submodules
+          }
 
       - name: Clear .silktouch folder contents
         shell: pwsh
