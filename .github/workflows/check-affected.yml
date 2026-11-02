@@ -59,8 +59,8 @@ jobs:
           AFFECTED_JOBS: ${{ steps.nativeAffected.outputs.changes }}
         run: |
           # Duplicate is to output to logs
-          ./native/workflow-dependencies.ps1
-          ./native/workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
+          ./native/workflow-reminder.ps1
+          ./native/workflow-reminder.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Generate bindings reminder message
         id: bindingsReminder
@@ -70,8 +70,8 @@ jobs:
           AFFECTED_JOBS: ${{ steps.bindingsAffected.outputs.changes }}
         run: |
           # Duplicate is to output to logs
-          ./bindings/workflow-dependencies.ps1
-          ./bindings/workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
+          ./bindings/workflow-reminder.ps1
+          ./bindings/workflow-reminder.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Output native reminder to file
         if: ${{ steps.nativeReminder.outputs.comment }}
