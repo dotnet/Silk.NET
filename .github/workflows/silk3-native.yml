@@ -81,6 +81,7 @@ jobs:
       hasPermission: ${{ steps.check.outputs.hasPermission }}
   
   # Privileged - Must not execute untrusted code
+  # dryPush and reportNoPushPermission is exactly the same here as in silk3-bindings-regeneration.yml
   dryPush:
     name: Test push permissions
     runs-on: ubuntu-latest
