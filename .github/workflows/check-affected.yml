@@ -31,16 +31,12 @@ jobs:
         id: nativeDependencies
         shell: pwsh
         working-directory: repo/eng/workflows
-        env:
-          COMMENT_BODY: ${{ github.event.pull_request.body }}
         run: ./native/workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Identify bindings job dependencies
         id: bindingsDependencies
         shell: pwsh
         working-directory: repo/eng/workflows
-        env:
-          COMMENT_BODY: ${{ github.event.pull_request.body }}
         run: ./bindings/workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Determine which native jobs need to be reran
