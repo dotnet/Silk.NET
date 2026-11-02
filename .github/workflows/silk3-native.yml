@@ -10,6 +10,9 @@ permissions:
   contents: read
 
 concurrency:
+  # Only share a concurrency group if the comment contains /native
+  # This is to prevent ordinary comments from replacing pending /native runs
+  # GitHub only runs the last pending run
   group: ${{ contains(github.event.comment.body, '/native') && format('{0}-{1}', github.workflow, github.event.issue.number) || github.run_id }}
   cancel-in-progress: false
 
