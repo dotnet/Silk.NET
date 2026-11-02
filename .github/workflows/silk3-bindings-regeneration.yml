@@ -471,6 +471,8 @@ jobs:
 
           git switch -c ci/bindings
 
+          git status
+
           # Cache
           git add .silktouch
           if (git status --porcelain --untracked-files=no) {

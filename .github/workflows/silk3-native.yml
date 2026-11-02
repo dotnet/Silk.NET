@@ -246,7 +246,6 @@ jobs:
           ${{ format('.{0}{1}', startsWith(matrix.runtime, 'win') && '\' || '/', matrix.exec) }}
         working-directory: ${{ matrix.dir }}
 
-      # TODO: Probably change this to a git patch?
       - uses: actions/upload-artifact@v4
         with:
           name: natives-${{ matrix.job }}-${{ matrix.runtime }}
@@ -261,7 +260,7 @@ jobs:
     name: Generate bundle
     runs-on: ubuntu-latest
 
-    needs: [check, regenerate]
+    needs: [check, build]
     if: needs.check.outputs.hasPermission == 'true'
 
     steps:
@@ -274,11 +273,10 @@ jobs:
           repository: ${{ needs.check.outputs.headRepo }}
           ref: ${{ needs.check.outputs.headCommit }}
 
-      - name: Download bindings patches
+      - name: Download natives
         uses: actions/download-artifact@v8
         with:
-          path: patches
-          pattern: bindings-patch-*
+          pattern: natives-*
           merge-multiple: true
 
       - name: Create bundle
@@ -297,19 +295,12 @@ jobs:
 
           git switch -c ci/native
 
-          # Cache
-          git add .silktouch
-          if (git status --porcelain --untracked-files=no) {
-            git commit -m "Update .silktouch cache for $env:HEAD_COMMIT"
-          }
+          git status
 
-          # Bindings, one commit per job
-          if (Test-Path patches) {
-            foreach ($patch in Get-ChildItem patches -Filter "bindings-*.patch") {
-              $job = $patch.BaseName.Substring("bindings-".Length)
-              git apply --index $patch.FullName
-              git commit -m "Regenerate $job bindings for $env:HEAD_COMMIT"
-            }
+          # Cache
+          git add .
+          if (git status --porcelain --untracked-files=no) {
+            git commit -m "Update native binaries for $env:HEAD_COMMIT"
           }
 
           git status
@@ -326,7 +317,7 @@ jobs:
           }
           
           Write-Host "Creating bundle"
-          git bundle create bindings.bundle "$newHeadCommit..ci/native"
+          git bundle create native.bundle "$newHeadCommit..ci/native"
           "newHeadCommit=$newHeadCommit" >> $env:GITHUB_OUTPUT
           "changed=true" >> $env:GITHUB_OUTPUT
 
@@ -334,8 +325,8 @@ jobs:
         if: steps.bundle.outputs.changed == 'true'
         uses: actions/upload-artifact@v7
         with:
-          name: bindings-bundle
-          path: bindings.bundle
+          name: native-bundle
+          path: native.bundle
 
     outputs:
       changed: ${{ steps.bundle.outputs.changed }}
@@ -357,7 +348,7 @@ jobs:
       - name: Download bundle
         uses: actions/download-artifact@v8
         with:
-          pattern: bindings-bundle
+          pattern: native-bundle
 
       - name: Show working directory contents
         shell: pwsh
@@ -381,8 +372,8 @@ jobs:
           
           Write-Host "Applying bundle"
           git fetch --no-recurse-submodules --depth=1 "https://github.com/$env:HEAD_REPO.git" $env:HEAD_COMMIT
-          git bundle verify bindings.bundle
-          git fetch --no-recurse-submodules bindings.bundle refs/heads/ci/native
+          git bundle verify native.bundle
+          git fetch --no-recurse-submodules native.bundle refs/heads/ci/native
           git update-ref refs/heads/ci/native FETCH_HEAD
 
       - name: Push
