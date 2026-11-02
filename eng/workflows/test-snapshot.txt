@@ -1,0 +1,360 @@
+----- Affected comment - No affected, no existing comment (Should have no output) -----
+
+----- Affected comment - No affected, with existing comment -----
+comment<<EOF
+## Silk native build reminder
+
+No native builds were affected by this PR.
+EOF
+
+comment<<EOF
+## Silk bindings regeneration reminder
+
+No bindings were affected by this PR.
+EOF
+----- Affected comment -----
+comment<<EOF
+## Silk native build reminder
+
+Some of the native builds were affected by this PR. Please rebuild these by posting a comment with `/native OpenAL-Soft`.
+
+If you believe this is in error, then please write a comment explaining why and ignore this reminder.
+EOF
+
+comment<<EOF
+## Silk bindings regeneration reminder
+
+Some of the bindings were affected by this PR. Please regenerate these by posting a comment with `/bindings OpenAL`.
+
+If you believe this is in error, then please write a comment explaining why and ignore this reminder.
+EOF
+
+----- Dependencies -----
+workflow_filters<<EOF
+OpenAL-Soft: ["sources/OpenAL/Soft.Native/*","eng/submodules/openal-soft"]
+SDL: ["sources/SDL/Native/*","eng/submodules/sdl"]
+EOF
+
+workflow_filters<<EOF
+OpenAL: ["eng/submodules/openal-soft","eng/silktouch/openal"]
+OpenCL: ["eng/submodules/opencl-docs","eng/submodules/opencl-headers","eng/silktouch/opencl"]
+OpenGL: ["eng/submodules/egl-registry","eng/submodules/opengl-registry","eng/silktouch/opengl","eng/include"]
+OpenXR: ["eng/submodules/openxr-sdk","eng/submodules/vulkan-headers","eng/silktouch/openxr"]
+SDL: ["eng/submodules/sdl","eng/silktouch/sdl"]
+Vulkan: ["eng/submodules/vulkan-docs","eng/submodules/vulkan-headers","eng/silktouch/vulkan"]
+EOF
+
+----- Parse - No input -----
+jobs=
+
+jobs=
+
+----- Parse - Wildcard -----
+jobs=OpenAL-Soft SDL
+
+jobs=OpenAL OpenCL OpenGL OpenXR SDL Vulkan
+
+----- Parse - Valid -----
+jobs=OpenAL-Soft SDL
+
+jobs=OpenGL OpenXR Vulkan
+
+----- Parse - Invalid -----
+Unknown job name: 123123123
+
+
+jobs=
+Unknown job name: 123123123
+
+Unknown job name: 123123123
+
+
+jobs=
+Unknown job name: 123123123
+
+----- Matrix - Valid -----
+matrix<<EOF
+[
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "android-arm64",
+    "exec": "build-android-arm64.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "android-arm",
+    "exec": "build-android-arm.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "android-x64",
+    "exec": "build-android-x64.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "android-x86",
+    "exec": "build-android-x86.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "ios",
+    "exec": "build-ios.sh",
+    "os": "macos-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "iossimulator",
+    "exec": "build-iossimulator.sh",
+    "os": "macos-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "linux-arm64",
+    "exec": "build-linux-arm64.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "linux-arm",
+    "exec": "build-linux-arm.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "linux-x64",
+    "exec": "build-linux-x64.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "osx",
+    "exec": "build-osx.sh",
+    "os": "macos-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "tvos",
+    "exec": "build-tvos.sh",
+    "os": "macos-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "tvossimulator",
+    "exec": "build-tvossimulator.sh",
+    "os": "macos-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "win-arm64",
+    "exec": "build-win-arm64.cmd",
+    "os": "windows-latest"
+  },
+  {
+    "dir": "sources/OpenAL/Soft.Native",
+    "job": "OpenAL-Soft",
+    "runtime": "win-x64",
+    "exec": "build-win-x64.cmd",
+    "os": "windows-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "android",
+    "exec": "build-android.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "ios",
+    "exec": "build-ios.sh",
+    "os": "macos-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "iossimulator",
+    "exec": "build-iossimulator.sh",
+    "os": "macos-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "linux-arm64",
+    "exec": "build-linux-arm64.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "linux-arm",
+    "exec": "build-linux-arm.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "linux-x64",
+    "exec": "build-linux-x64.sh",
+    "os": "ubuntu-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "osx",
+    "exec": "build-osx.sh",
+    "os": "macos-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "tvos",
+    "exec": "build-tvos.sh",
+    "os": "macos-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "tvossimulator",
+    "exec": "build-tvossimulator.sh",
+    "os": "macos-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "win-arm64",
+    "exec": "build-win-arm64.cmd",
+    "os": "windows-latest"
+  },
+  {
+    "dir": "sources/SDL/Native",
+    "job": "SDL",
+    "runtime": "win-x64",
+    "exec": "build-win-x64.cmd",
+    "os": "windows-latest"
+  }
+]
+EOF
+
+scrapeMatrix<<EOF
+[
+  {
+    "caches": [
+      "vulkan-clangsharp.stout"
+    ],
+    "job": "Vulkan",
+    "os": "windows-latest",
+    "submodules": [
+      "eng/submodules/vulkan-docs",
+      "eng/submodules/vulkan-headers"
+    ]
+  },
+  {
+    "caches": [
+      "openxr-linux-clangsharp.stout"
+    ],
+    "job": "OpenXR",
+    "os": "ubuntu-latest",
+    "submodules": [
+      "eng/submodules/openxr-sdk",
+      "eng/submodules/vulkan-headers"
+    ]
+  },
+  {
+    "caches": [
+      "openxr-mac-clangsharp.stout"
+    ],
+    "job": "OpenXR",
+    "os": "macos-latest",
+    "submodules": [
+      "eng/submodules/openxr-sdk",
+      "eng/submodules/vulkan-headers"
+    ]
+  },
+  {
+    "caches": [
+      "openxr-windows-clangsharp.stout"
+    ],
+    "job": "OpenXR",
+    "os": "windows-latest",
+    "submodules": [
+      "eng/submodules/openxr-sdk",
+      "eng/submodules/vulkan-headers"
+    ]
+  },
+  {
+    "caches": [
+      "opengl-clangsharp.stout"
+    ],
+    "job": "OpenGL",
+    "os": "windows-latest",
+    "submodules": [
+      "eng/submodules/egl-registry",
+      "eng/submodules/opengl-registry"
+    ]
+  }
+]
+EOF
+regenerateMatrix<<EOF
+[
+  {
+    "submodules": [
+      "eng/submodules/vulkan-docs",
+      "eng/submodules/vulkan-headers"
+    ],
+    "job": "Vulkan"
+  },
+  {
+    "submodules": [
+      "eng/submodules/openxr-sdk",
+      "eng/submodules/vulkan-headers"
+    ],
+    "job": "OpenXR"
+  },
+  {
+    "submodules": [
+      "eng/submodules/egl-registry",
+      "eng/submodules/opengl-registry"
+    ],
+    "job": "OpenGL"
+  }
+]
+EOF
+
+----- Matrix - Invalid -----
+Unknown job name: 123123123
+
+
+matrix<<EOF
+[]
+EOF
+Unknown job name: 123123123
+
+Unknown job name: 123123123
+
+
+scrapeMatrix<<EOF
+[]
+EOF
+regenerateMatrix<<EOF
+[]
+EOF
+Unknown job name: 123123123
+
