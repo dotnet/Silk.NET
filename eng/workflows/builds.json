@@ -51,7 +51,10 @@
         "windows-latest": [
           "openal-clangsharp.stout"
         ]
-      }
+      },
+      "dependencies": [
+        "eng/silktouch/openal"
+      ]
     },
     "OpenCL": {
       "submodules": [
@@ -62,7 +65,10 @@
         "windows-latest": [
           "opencl-clangsharp.stout"
         ]
-      }
+      },
+      "dependencies": [
+        "eng/silktouch/opencl"
+      ]
     },
     "OpenGL": {
       "submodules": [
@@ -73,7 +79,11 @@
         "windows-latest": [
           "opengl-clangsharp.stout"
         ]
-      }
+      },
+      "dependencies": [
+        "eng/silktouch/opengl",
+        "eng/include"
+      ]
     },
     "OpenXR": {
       "submodules": [
@@ -90,7 +100,10 @@
         "windows-latest": [
           "openxr-windows-clangsharp.stout"
         ]
-      }
+      },
+      "dependencies": [
+        "eng/silktouch/openxr"
+      ]
     },
     "SDL": {
       "submodules": [
@@ -100,7 +113,10 @@
         "windows-latest": [
           "sdl-clangsharp.stout"
         ]
-      }
+      },
+      "dependencies": [
+        "eng/silktouch/sdl"
+      ]
     },
     "Vulkan": {
       "submodules": [
@@ -111,7 +127,10 @@
         "windows-latest": [
           "vulkan-clangsharp.stout"
         ]
-      }
+      },
+      "dependencies": [
+        "eng/silktouch/vulkan"
+      ]
     }
   }
 }
