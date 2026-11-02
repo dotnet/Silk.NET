@@ -142,6 +142,8 @@ jobs:
     if: needs.dryPush.outputs.hasPushPermission == 'false' && needs.check.outputs.hasPermission == 'true'
 
     env:
+      PUSH_WARNING_MESSAGE_PATTERN: |
+        ## CI does not have permission to push to this PR
       PUSH_WARNING_MESSAGE: |
         ## CI does not have permission to push to this PR
         
@@ -163,7 +165,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           comment-author: "github-actions[bot]"
-          body-includes: ${{ env.PUSH_WARNING_MESSAGE }}
+          body-includes: ${{ env.PUSH_WARNING_MESSAGE_PATTERN }}
   
       - name: Update comment
         uses: peter-evans/create-or-update-comment@v5
