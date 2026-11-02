@@ -4,58 +4,61 @@ $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
 Write-Output "----- Affected comment - No affected, no existing comment (Should have no output) -----"
+Write-Output "----- Native -----"
 pwsh -Command { ./native/workflow-affected-comment.ps1 }
-Write-Output ""
+Write-Output "----- Bindings -----"
 pwsh -Command { ./bindings/workflow-affected-comment.ps1 }
 
 Write-Output "----- Affected comment - No affected, with existing comment -----"
+Write-Output "----- Native -----"
 pwsh -Command { $env:PREVIOUS_COMMENT_ID="123"; ./native/workflow-affected-comment.ps1 }
-Write-Output ""
+Write-Output "----- Bindings -----"
 pwsh -Command { $env:PREVIOUS_COMMENT_ID="123"; ./bindings/workflow-affected-comment.ps1 }
 
 Write-Output "----- Affected comment -----"
+Write-Output "----- Native -----"
 pwsh -Command { $env:AFFECTED_JOBS="OpenAL-Soft"; ./native/workflow-affected-comment.ps1 }
-Write-Output ""
+Write-Output "----- Bindings -----"
 pwsh -Command { $env:AFFECTED_JOBS="OpenAL"; ./bindings/workflow-affected-comment.ps1 }
 
-Write-Output ""
 Write-Output "----- Dependencies -----"
+Write-Output "----- Native -----"
 pwsh -Command { ./native/workflow-dependencies.ps1 }
-Write-Output ""
+Write-Output "----- Bindings -----"
 pwsh -Command { ./bindings/workflow-dependencies.ps1 }
 
-Write-Output ""
 Write-Output "----- Parse - No input -----"
+Write-Output "----- Native -----"
 pwsh -Command { ./native/workflow-parse.ps1 }
-Write-Output ""
+Write-Output "----- Bindings -----"
 pwsh -Command { ./bindings/workflow-parse.ps1 }
 
-Write-Output ""
 Write-Output "----- Parse - Wildcard -----"
+Write-Output "----- Native -----"
 pwsh -Command { $env:COMMENT_BODY="/native *"; ./native/workflow-parse.ps1 }
-Write-Output ""
+Write-Output "----- Bindings -----"
 pwsh -Command { $env:COMMENT_BODY="/bindings *"; ./bindings/workflow-parse.ps1 }
 
-Write-Output ""
 Write-Output "----- Parse - Valid -----"
+Write-Output "----- Native -----"
 pwsh -Command { $env:COMMENT_BODY="/native OpenAL-Soft SDL"; ./native/workflow-parse.ps1 }
-Write-Output ""
+Write-Output "----- Bindings -----"
 pwsh -Command { $env:COMMENT_BODY="/bindings Vulkan OpenXR opengl"; ./bindings/workflow-parse.ps1 }
 
-Write-Output ""
 Write-Output "----- Parse - Invalid -----"
+Write-Output "----- Native -----"
 pwsh -Command { $env:COMMENT_BODY="/native 123123123"; ./native/workflow-parse.ps1 }
-Write-Output ""
+Write-Output "----- Bindings -----"
 pwsh -Command { $env:COMMENT_BODY="/bindings 123123123"; ./bindings/workflow-parse.ps1 }
 
-Write-Output ""
 Write-Output "----- Matrix - Valid -----"
+Write-Output "----- Native -----"
 pwsh -Command { $env:CHOSEN_JOBS="OpenAL-Soft SDL"; ./native/workflow-matrix.ps1 }
-Write-Output ""
+Write-Output "----- Bindings -----"
 pwsh -Command { $env:CHOSEN_JOBS="Vulkan OpenXR opengl"; ./bindings/workflow-matrix.ps1 }
 
-Write-Output ""
 Write-Output "----- Matrix - Invalid -----"
+Write-Output "----- Native -----"
 pwsh -Command { $env:CHOSEN_JOBS="123123123"; ./native/workflow-matrix.ps1 }
-Write-Output ""
+Write-Output "----- Bindings -----"
 pwsh -Command { $env:CHOSEN_JOBS="123123123"; ./bindings/workflow-matrix.ps1 }
