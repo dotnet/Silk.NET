@@ -35,7 +35,37 @@ jobs:
 
     steps:
 
+      # Workaround since `github.event.workflow_run.pull_requests[0].number` doesn't work
+      - name: Download PR number
+        uses: actions/download-artifact@v8.0.1
+        continue-on-error: true
+        with:
+          name: pr-number
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Read PR number
+        id: pr
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+          
+          if (-not (Test-Path pr.txt)) {
+            Write-Host "No PR number found, assuming no reminder needed"
+            exit 0
+          }
+          
+          $content = Get-Content pr.txt -Raw
+          
+          $delimiter = [Guid]::NewGuid().ToString()
+          "number<<$delimiter" >> $env:GITHUB_OUTPUT
+          $content >> $env:GITHUB_OUTPUT
+          "$delimiter" >> $env:GITHUB_OUTPUT
+
       - name: Download native reminder comment
+        if: steps.pr.outputs.number != ''
         uses: actions/download-artifact@v8.0.1
         continue-on-error: true
         with:
@@ -44,6 +74,7 @@ jobs:
           github-token: ${{ github.token }}
 
       - name: Download bindings reminder comment
+        if: steps.pr.outputs.number != ''
         uses: actions/download-artifact@v8.0.1
         continue-on-error: true
         with:
@@ -52,6 +83,7 @@ jobs:
           github-token: ${{ github.token }}
 
       - name: Read native reminder comment
+        if: steps.pr.outputs.number != ''
         id: native
         shell: pwsh
         run: |
@@ -76,6 +108,7 @@ jobs:
           "$delimiter" >> $env:GITHUB_OUTPUT
 
       - name: Read bindings reminder comment
+        if: steps.pr.outputs.number != ''
         id: bindings
         shell: pwsh
         run: |
@@ -100,33 +133,37 @@ jobs:
           "$delimiter" >> $env:GITHUB_OUTPUT
 
       - name: Find previous native reminder comment
+        if: steps.pr.outputs.number != ''
         id: previousNative
         uses: peter-evans/find-comment@v4
         with:
-          issue-number: ${{ github.event.workflow_run.pull_requests[0].number }}
+          issue-number: ${{ steps.pr.outputs.number }}
           comment-author: "github-actions[bot]"
           body-includes: ${{ env.NATIVE_REMINDER_MESSAGE_PATTERN }}
 
       - name: Find previous bindings reminder comment
+        if: steps.pr.outputs.number != ''
         id: previousBindings
         uses: peter-evans/find-comment@v4
         with:
-          issue-number: ${{ github.event.workflow_run.pull_requests[0].number }}
+          issue-number: ${{ steps.pr.outputs.number }}
           comment-author: "github-actions[bot]"
           body-includes: ${{ env.BINDINGS_REMINDER_MESSAGE_PATTERN }}
   
       - name: Update native reminder comment
+        if: steps.pr.outputs.number != ''
         uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.previousNative.outputs.comment-id }}
-          issue-number: ${{ github.event.workflow_run.pull_requests[0].number }}
+          issue-number: ${{ steps.pr.outputs.number }}
           body: ${{ steps.native.outputs.content }}
           edit-mode: replace
 
       - name: Update bindings reminder comment
+        if: steps.pr.outputs.number != ''
         uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ steps.previousBindings.outputs.comment-id }}
-          issue-number: ${{ github.event.workflow_run.pull_requests[0].number }}
+          issue-number: ${{ steps.pr.outputs.number }}
           body: ${{ steps.bindings.outputs.content }}
           edit-mode: replace
