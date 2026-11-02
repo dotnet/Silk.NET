@@ -213,7 +213,7 @@ jobs:
 
   # Unprivileged - Executes untrusted code
   build:
-    name: Build ${{ matrix.job }} for ${{ matrix.runtime }}
+    name: Build ${{ matrix.job }} for ${{ matrix.runtime }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
     needs: [check, dispatch]
