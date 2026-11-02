@@ -2,6 +2,8 @@ name: Check Affected Natives/Bindings
 
 on:
   pull_request:
+    types:
+      - synchronize
 
 permissions:
   contents: read
