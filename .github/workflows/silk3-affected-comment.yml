@@ -20,6 +20,9 @@ jobs:
   check:
     name: Post reminder comments
     runs-on: ubuntu-latest
+    
+    permissions:
+      pull-requests: write
 
     env: 
       NATIVE_REMINDER_MESSAGE_PATTERN: |
