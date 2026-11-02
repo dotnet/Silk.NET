@@ -25,7 +25,7 @@ foreach ($chosenJob in $chosenJobs) {
     # TODO: Unify script extensions
     $script = Get-ChildItem -Path (Join-Path $repoRoot $job.Value.path) -Filter "build-$($build.Name).*" | Select-Object -First 1
 
-    $matrix += @{
+    $matrix += [ordered]@{
       job = $job.Name
       os = $build.Value
       runtime = $build.Name

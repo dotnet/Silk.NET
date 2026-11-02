@@ -23,16 +23,16 @@ foreach ($chosenJob in $chosenJobs) {
   $job = $buildsJson.bindings.PSObject.Properties[$chosenJob]
 
   foreach ($cache in $job.Value.caches.PSObject.Properties) {
-    $scrapeMatrix += @{
+    $scrapeMatrix += [ordered]@{
       job = $job.Name
       os = $cache.Name
-      
+
       caches = $cache.Value
       submodules = $job.Value.submodules
     }
   }
 
-  $regenerateMatrix += @{
+  $regenerateMatrix += [ordered]@{
     job = $job.Name
     submodules = $job.Value.submodules
   }
