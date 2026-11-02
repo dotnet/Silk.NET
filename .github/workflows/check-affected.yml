@@ -23,11 +23,12 @@ jobs:
         uses: actions/checkout@v7
         with:
           submodules: false
+          path: repo
 
       - name: Identify native job dependencies
         id: nativeDependencies
         shell: pwsh
-        working-directory: eng/workflows
+        working-directory: repo/eng/workflows
         env:
           COMMENT_BODY: ${{ github.event.pull_request.body }}
         run: ./native/workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
@@ -35,7 +36,7 @@ jobs:
       - name: Identify bindings job dependencies
         id: bindingsDependencies
         shell: pwsh
-        working-directory: eng/workflows
+        working-directory: repo/eng/workflows
         env:
           COMMENT_BODY: ${{ github.event.pull_request.body }}
         run: ./bindings/workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
@@ -55,6 +56,7 @@ jobs:
       - name: Generate native reminder message
         id: nativeReminder
         shell: pwsh
+        working-directory: repo/eng/workflows
         env:
           AFFECTED_JOBS: ${{ steps.nativeAffected.outputs.changes }}
         run: ./native/workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
@@ -62,9 +64,38 @@ jobs:
       - name: Generate bindings reminder message
         id: bindingsReminder
         shell: pwsh
+        working-directory: repo/eng/workflows
         env:
           AFFECTED_JOBS: ${{ steps.bindingsAffected.outputs.changes }}
         run: ./bindings/workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
+
+      - name: Output native reminder to file
+        if: ${{ steps.nativeReminder.outputs.comment }}
+        shell: pwsh
+        env:
+          COMMENT: ${{ steps.nativeReminder.outputs.comment }}
+        run: $env:COMMENT > native.txt
+
+      - name: Output bindings reminder to file
+        if: ${{ steps.bindingsReminder.outputs.comment }}
+        shell: pwsh
+        env:
+          COMMENT: ${{ steps.bindingsReminder.outputs.comment }}
+        run: $env:COMMENT > bindings.txt
+
+      - name: Upload native reminder
+        if: ${{ steps.nativeReminder.outputs.comment }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: native-reminder-comment
+          path: native.txt
+
+      - name: Upload bindings reminder
+        if: ${{ steps.bindingsReminder.outputs.comment }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: bindings-reminder-comment
+          path: bindings.txt
 
 #      - name: Find previous comment if it exists
 #        uses: peter-evans/find-comment@v4
