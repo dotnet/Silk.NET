@@ -12,11 +12,15 @@ $jobNames = @($buildsJson.native.PSObject.Properties.Name | Sort-Object -Unique)
 Write-Output "workflow_filters<<EOF"
 foreach ($jobName in $jobNames) {
   $job = $buildsJson.native.$jobName
-  
-  $paths = @()
-  $paths += @("`"$($job.path)/*`"")
-  $paths += @($job.submodules | ForEach-Object { "`"$_`"" })
 
-  Write-Output "${jobName}: [$($paths -join ', ')]"
+  $paths = @()
+  $paths += "$($job.path)/*"
+  $paths += @($job.submodules)
+
+  if ("dependencies" -in $job.PSObject.Properties.Name) {
+    $paths += @($job.dependencies)
+  }
+
+  Write-Output "${jobName}: $(ConvertTo-Json -InputObject $paths -Compress)"
 }
 Write-Output "EOF"
