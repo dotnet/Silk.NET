@@ -9,7 +9,7 @@ $chosenJobs = @(-split $env:CHOSEN_JOBS | Where-Object { $_ })
 # Config
 $buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
 $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
-$jobNames = @($buildsJson.bindings.PSObject.Properties.Name | Sort-Object -Unique)
+$jobNames = @($buildsJson.bindings.jobs.PSObject.Properties.Name | Sort-Object -Unique)
 
 # Matrices
 $scrapeMatrix = @()
@@ -20,7 +20,7 @@ foreach ($chosenJob in $chosenJobs) {
     continue
   }
 
-  $job = $buildsJson.bindings.PSObject.Properties[$chosenJob]
+  $job = $buildsJson.bindings.jobs.PSObject.Properties[$chosenJob]
 
   foreach ($cache in $job.Value.caches.PSObject.Properties) {
     $scrapeMatrix += [ordered]@{

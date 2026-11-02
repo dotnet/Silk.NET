@@ -9,7 +9,7 @@ $message = $env:COMMENT_BODY
 # Config
 $buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
 $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
-$jobNames = @($buildsJson.native.PSObject.Properties.Name | Sort-Object -Unique)
+$jobNames = @($buildsJson.native.jobs.PSObject.Properties.Name | Sort-Object -Unique)
 
 # Jobs
 $jobs = @()
@@ -21,13 +21,13 @@ foreach ($line in $message -split "`r?`n") {
         $jobs += $jobNames
         break;
       }
-    
+
       if (-not ($chosenJob -in $jobNames)) {
         Write-Host Unknown job name: $chosenJob
         continue
       }
 
-      $jobs += $buildsJson.native.PSObject.Properties[$chosenJob].Name
+      $jobs += $buildsJson.native.jobs.PSObject.Properties[$chosenJob].Name
     }
   }
 }

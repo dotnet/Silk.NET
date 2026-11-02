@@ -9,7 +9,7 @@ $chosenJobs = @(-split $env:CHOSEN_JOBS | Where-Object { $_ })
 # Config
 $buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
 $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
-$jobNames = @($buildsJson.native.PSObject.Properties.Name | Sort-Object -Unique)
+$jobNames = @($buildsJson.native.jobs.PSObject.Properties.Name | Sort-Object -Unique)
 $repoRoot = Join-Path $PSScriptRoot "../../.."
 
 # Matrix
@@ -20,7 +20,7 @@ foreach ($chosenJob in $chosenJobs) {
     continue
   }
 
-  $job = $buildsJson.native.PSObject.Properties[$chosenJob];
+  $job = $buildsJson.native.jobs.PSObject.Properties[$chosenJob];
   foreach ($build in $job.Value.builds.PSObject.Properties) {
     # TODO: Unify script extensions
     $script = Get-ChildItem -Path (Join-Path $repoRoot $job.Value.path) -Filter "build-$($build.Name).*" | Select-Object -First 1
