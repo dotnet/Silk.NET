@@ -38,6 +38,8 @@ public interface IBakeStrategy // the temptation to call this IRecipe was sooooo
     /// The idea is to take two members and consider if they are compatible and can be merged with each other.
     /// For example, one possible check is to ensure that two fields have the same type and initializer value.
     /// Another possible operation is to combine the attributes of both members.
+    /// <para/>
+    /// Parent syntax nodes are provided since node modifications in <see cref="Cleanup"/> and elsewhere remove the parent reference.
     /// </remarks>
     /// <param name="discrim">The discriminator for this member.</param>
     /// <param name="existingParent">The parent of the existing member.</param>
