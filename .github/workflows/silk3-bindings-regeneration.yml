@@ -136,7 +136,7 @@ jobs:
     runs-on: ubuntu-latest
     
     permissions:
-      pull-requests: write
+      issues: write
       
     needs: [check, dryPush]
     if: needs.dryPush.outputs.hasPushPermission == 'false' && needs.check.outputs.hasPermission == 'true'
