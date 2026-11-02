@@ -1,4 +1,4 @@
-name: Check Affected Natives/Bindings
+name: Post Affected Natives/Bindings Comment (Silk 3)
 
 on:
   workflow_run:
