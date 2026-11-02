@@ -102,6 +102,7 @@ jobs:
             exit 1
           }
           
+          # GitHub allows any delimiter and using a random delimiter is best for security
           $delimiter = [Guid]::NewGuid().ToString()
           "content<<$delimiter" >> $env:GITHUB_OUTPUT
           $content >> $env:GITHUB_OUTPUT
