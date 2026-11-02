@@ -1,7 +1,7 @@
------ Affected comment - No affected, no existing comment (Should have no output) -----
+----- Reminder comment - No affected, no existing comment (Should have no output) -----
 ----- Native -----
 ----- Bindings -----
------ Affected comment - No affected, with existing comment -----
+----- Reminder comment - No affected, with existing comment -----
 ----- Native -----
 comment<<EOF
 ## Silk native build reminder
@@ -14,7 +14,7 @@ comment<<EOF
 
 No bindings were affected by this PR.
 EOF
------ Affected comment -----
+----- Reminder comment -----
 ----- Native -----
 comment<<EOF
 ## Silk native build reminder
@@ -33,12 +33,12 @@ If you believe this is in error, then please write a comment explaining why and 
 EOF
 ----- Dependencies -----
 ----- Native -----
-workflow_filters<<EOF
+workflowFilters<<EOF
 OpenAL-Soft: ["sources/OpenAL/Soft.Native/*","eng/submodules/openal-soft"]
 SDL: ["sources/SDL/Native/*","eng/submodules/sdl"]
 EOF
 ----- Bindings -----
-workflow_filters<<EOF
+workflowFilters<<EOF
 OpenAL: ["eng/submodules/openal-soft","eng/silktouch/openal"]
 OpenCL: ["eng/submodules/opencl-docs","eng/submodules/opencl-headers","eng/silktouch/opencl"]
 OpenGL: ["eng/submodules/egl-registry","eng/submodules/opengl-registry","eng/silktouch/opengl","eng/include"]

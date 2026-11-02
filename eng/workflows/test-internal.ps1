@@ -3,23 +3,23 @@ $ErrorActionPreference = "Stop"
 $PSNativeCommandUseErrorActionPreference = $true
 Set-StrictMode -Version Latest
 
-Write-Output "----- Affected comment - No affected, no existing comment (Should have no output) -----"
+Write-Output "----- Reminder comment - No affected, no existing comment (Should have no output) -----"
 Write-Output "----- Native -----"
-pwsh -Command { ./native/workflow-affected-comment.ps1 }
+pwsh -Command { ./native/workflow-reminder.ps1 }
 Write-Output "----- Bindings -----"
-pwsh -Command { ./bindings/workflow-affected-comment.ps1 }
+pwsh -Command { ./bindings/workflow-reminder.ps1 }
 
-Write-Output "----- Affected comment - No affected, with existing comment -----"
+Write-Output "----- Reminder comment - No affected, with existing comment -----"
 Write-Output "----- Native -----"
-pwsh -Command { $env:PREVIOUS_COMMENT_ID="123"; ./native/workflow-affected-comment.ps1 }
+pwsh -Command { $env:PREVIOUS_COMMENT_ID="123"; ./native/workflow-reminder.ps1 }
 Write-Output "----- Bindings -----"
-pwsh -Command { $env:PREVIOUS_COMMENT_ID="123"; ./bindings/workflow-affected-comment.ps1 }
+pwsh -Command { $env:PREVIOUS_COMMENT_ID="123"; ./bindings/workflow-reminder.ps1 }
 
-Write-Output "----- Affected comment -----"
+Write-Output "----- Reminder comment -----"
 Write-Output "----- Native -----"
-pwsh -Command { $env:AFFECTED_JOBS="OpenAL-Soft"; ./native/workflow-affected-comment.ps1 }
+pwsh -Command { $env:AFFECTED_JOBS="OpenAL-Soft"; ./native/workflow-reminder.ps1 }
 Write-Output "----- Bindings -----"
-pwsh -Command { $env:AFFECTED_JOBS="OpenAL"; ./bindings/workflow-affected-comment.ps1 }
+pwsh -Command { $env:AFFECTED_JOBS="OpenAL"; ./bindings/workflow-reminder.ps1 }
 
 Write-Output "----- Dependencies -----"
 Write-Output "----- Native -----"

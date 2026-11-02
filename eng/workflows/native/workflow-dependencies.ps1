@@ -9,7 +9,7 @@ $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
 $jobNames = @($buildsJson.native.PSObject.Properties.Name | Sort-Object -Unique)
 
 # Path filters
-Write-Output "workflow_filters<<EOF"
+Write-Output "workflowFilters<<EOF"
 foreach ($jobName in $jobNames) {
   $job = $buildsJson.native.$jobName
 
