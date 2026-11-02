@@ -240,7 +240,8 @@ jobs:
           ${{ format('.{0}{1}', startsWith(matrix.runtime, 'win') && '\' || '/', matrix.exec) }}
         working-directory: ${{ matrix.dir }}
 
-      - uses: actions/upload-artifact@v7
+      - name: Upload
+        uses: actions/upload-artifact@v7
         with:
           name: natives-${{ matrix.job }}-${{ matrix.runtime }}
           path: |
