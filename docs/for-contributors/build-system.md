@@ -316,25 +316,25 @@ Silk.NET release process has looked like the following:
    this in 2.X...)
 
 In 3.0 we have sought to massively improve this to minimise the amount of time it takes to release an update, continuing
-the theme of massively optimising Silk.NET 3.0 for maintainability.
+the theme of optimising Silk.NET 3.0 for maintainability.
 
 First, the release notes are expected to be updated as PRs happen (as explained in
-[CONTRIBUTING.md](../CONTRIBUTING.md)). This already takes away a massive time sink in writing nicely-formatted release
-notes, as this can be reviewed as we review the PR making the change. Secondly, the version in the changelog is
+[CONTRIBUTING.md](../CONTRIBUTING.md)). This removes a massive time sink in writing nicely-formatted release
+notes, as these can be reviewed as we review the corresponding PR. Secondly, the version in the changelog is
 automatically updated at the end of a release workflow (a guesstimate based on the version we've just released) so we
 immediately start shipping experimental packages with _a_ new version, even if that isn't the final version number we
 ultimately go with. This is done in the `CommitAfterShipping` method referenced by the `FinishRelease` NUKE target.
 This target will run after `SignPackages` if applicable and will always run `ShipApi` first.
 
-For the remainder of the release process that has not been moved to PR review time, a dedicated job as part of the
-standard CI/CD workflow is used. For the avoidance of doubt, the best source of documentation for building and releasing
+For the remainder of the release process not moved to PR review time, a dedicated job as part of the
+standard CI/CD workflow is used. For avoidance of doubt, the best source of documentation for building and releasing
 Silk.NET is likely going to be the [dotnet workflow](../../.github/workflows/dotnet.yml). The `Release` job only runs
 if:
 
 - The build was manually initiated and not initiated by a push, pull request, or anything else.
 - The `Release to NuGet` checkbox was selected when initiating that build.
 
-As such, to release a new version of Silk.NET simply just go to the GitHub Actions page for the `.NET` workflow and
+As such, to release a new version of Silk.NET, go to the GitHub Actions page for the `.NET` workflow and
 press the `Run workflow` button. Target the workflow at the branch containing the version you want to release.
 Alternatively, this GitHub CLI command can be used: `gh workflow run .NET --ref branch-name-goes-here -f release=true`.
 Note that the `Release` job runs within the `Release` environment which contains the announcement Discord webhook URL
@@ -393,7 +393,7 @@ The `Release` job represents steps 2 onwards of the old process. Namely, this jo
    updated public API files and the updated changelog to the branch the workflow was targeted at. The changelog updating
    and the committing is implemented in the `CommitAfterShipping` method referenced by the `FinishRelease` target.
 
-5. Send the Discord announcement to say that the update has been release. Note that we actually wait for up to an hour
+5. Send the Discord announcement to say that the update has been released. Note that we actually wait for up to an hour
    for NuGet to publish the release publicly, to ensure the embed in the announcement reflects the new version. This
    waiting is done in the `WaitForNuGetToUpdateAsync` method referenced by the `FinishRelease` target and basically just
    polls the `v3-flatcontainer` index for the `Silk.NET` metapackage, waiting for the new version to pop up there. After
