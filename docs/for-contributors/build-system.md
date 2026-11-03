@@ -10,14 +10,14 @@ library itself that are provided by a auxiliary build system implemented using t
 
 It is our goal to always target the latest LTS .NET release, and optionally multi-targeting to the next non-LTS version
 thereafter. We also make use of the mobile frameworks e.g. `net8.0-android`, `net8.0-ios`, but these shall always be
-guarded using properties such as `SilkAndroidDisabled`, `SilkiOSDisabled` etc which are set in `Directory.Build.props`,
+guarded using properties such as `SilkAndroidDisabled`, `SilkiOSDisabled`, etc which are set in `Directory.Build.props`,
 which in turn check whether a file named `excluded-platforms.txt` exists and contains the target platform identifier.
 This can be quickly modified by using the NUKE target `nuke disable-platforms`, which just writes to this file the
 values provided for `--platforms`.
 
 ### Package READMEs
 
-NuGet has recently added functionality to include a "README" rendered from Markdown on the front page of a package in
+NuGet recently added functionality to include a "README" rendered from Markdown on the front page of a package in
 the NuGet Gallery. To ease maintenance, this is derived from the main README.md file for the repository but with some
 deviations to account for NuGet's extremely limited Markdown renderer. To differentiate these contents, the following
 markers are added to the README file.
@@ -105,8 +105,8 @@ The primary goals in the native packaging system used for Silk.NET 3.0 are:
 - Ensuring that the native binary builds are maximally low-maintenance, in-keeping with the native library author's
   intent, and resistant to breakage when we update the native library version used.
 
-There are two parts to this: the GitHub Actions workflow and the MSBuild Usage. Obviously as this is the MSBuild Usage
-section, we'll discuss the latter here.
+There are two parts to this: the GitHub Actions workflow and the MSBuild Usage. Since this is the MSBuild Usage section,
+we'll discuss the latter here.
 
 NuGet's native packaging scheme in the simple case is fairly obvious - the native binaries are placed into the
 `runtimes/rid/native` directory of the package where `rid` is replaced with the appropriate runtime identifier. For fat
@@ -188,7 +188,7 @@ We currently have not explored doing this for static linking (i.e. iOS) builds.
 
 As mentioned previously, we build all of our native binaries in CI to ensure they come from a trusted source and also to
 ensure silly mistakes like forgetting to update the binaries when we update the bindings don't happen. We check every
-single PR for changes to the native build and, if we detect any, tell the PR author that they need to declare those
+PR for changes to the native build and, if we detect any, tell the PR author that they need to declare those
 changes in their PR description. This is done by simply adding `/build-native sdl` for example in the description. This
 is to ensure an unrelated change or merge doesn't result in a rebuild of an unnecessary amount of native binaries, as
 was an issue with 2.X's build system. Also unlike 2.X, the binaries are committed straight to the PR rather than having
@@ -306,6 +306,7 @@ using the `NUKE.GlobalTool` `dotnet tool`. If you don't specify a task, `Compile
 
 NUKE is heavily used in the CI/CD process to automate releases to the maximum extent possible. Historically, the
 Silk.NET release process has looked like the following:
+
 1. Updating the release notes and version number
 2. Create a GitHub release with the package version used as a tag prepended with the letter `v`
 3. GitHub Actions then proceeded to pack and upload the project to NuGet
@@ -329,6 +330,7 @@ For the remainder of the release process that has not been moved to PR review ti
 standard CI/CD workflow is used. For the avoidance of doubt, the best source of documentation for building and releasing
 Silk.NET is likely going to be the [dotnet workflow](../../.github/workflows/dotnet.yml). The `Release` job only runs
 if:
+
 - The build was manually initiated and not initiated by a push, pull request, or anything else.
 - The `Release to NuGet` checkbox was selected when initiating that build.
 
@@ -348,12 +350,14 @@ account which isn't good given that it expires every year and @Perksey may disap
 
 The `Release` job represents steps 2 onwards of the old process. Namely, this job calls the
 `SignPackages PushToNuGet FinishRelease` tasks which will:
+
 1. Codesign the packages previously packed as part of the standard workflow (this is great as we're reusing the
    workflow, rather than having two separate workflows we need to update in tandem whenever the build process changes!).
    The `sign` tool is used for this, which is the .NET Foundation's preferred code-signing mechanism at time of writing.
    Note that there are murmurs of this changing to use Azure Trusted Signing in the future but this is yet to come to
    fruition. This is implemented in the `SignPackages` target and the `CodesignAllPackageOutputs` method referenced by
    it.
+
 2. Push the signed packages to NuGet. This makes use of the `NUGET_TOKEN` GitHub Actions secret, and is implemented in
    the `PushToNuGet` target and more notably the `GetPackagesToPublish` method it references. Note that to prevent
    `nuget.config` shenanigans, we add a temporary feed for this job using `AddTemporaryFeed` called `Silk-PushPackages`.
@@ -363,6 +367,7 @@ The `Release` job represents steps 2 onwards of the old process. Namely, this jo
    end of the target, and in case that doesn't work (e.g. the build crashed) then every subsequent NUKE build thereafter
    removes this feed in the `Prerequisites` target, which is made a dependency of every target using the `CommonTarget`
    helper.
+
 3. Create & push a tag and release for the fresh version. This, like everything else versioning related, is determined
    by the [CHANGELOG.md](../CHANGELOG.md) file. The tag name is retrieved in the same way as the package version but
    with a `v` prepended at the start (as is tradition/standard/expected). The tag is created on the branch the workflow
@@ -372,6 +377,7 @@ The `Release` job represents steps 2 onwards of the old process. Namely, this jo
    tradition? The release body is the same as the NuGet package release notes, which is described in
    [CHANGELOG.md](../CHANGELOG.md). A GitHub Discussion in the `General` category is automatically created with the
    release. All of this is done in the `FinishRelease` target and the `CreateReleaseAsync` method referenced therein.
+
 4. Update the shipped APIs and changelog. The updating of the shipped APIs actually happens before the previous step,
    but I didn't want to give off an impression that the tagged commit includes those changes - the tag is intended to
    capture the state at the time the release workflow began. These API updates happen in the `ShipApi` target, which can
@@ -386,6 +392,7 @@ The `Release` job represents steps 2 onwards of the old process. Namely, this jo
    be updated over time as per the standard changelog processes discussed. Next, `FinishRelease` will commit both the
    updated public API files and the updated changelog to the branch the workflow was targeted at. The changelog updating
    and the committing is implemented in the `CommitAfterShipping` method referenced by the `FinishRelease` target.
+
 5. Send the Discord announcement to say that the update has been release. Note that we actually wait for up to an hour
    for NuGet to publish the release publicly, to ensure the embed in the announcement reflects the new version. This
    waiting is done in the `WaitForNuGetToUpdateAsync` method referenced by the `FinishRelease` target and basically just
