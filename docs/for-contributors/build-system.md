@@ -277,7 +277,7 @@ For more information on how each property is used, please refer to the workflow 
 Create the native package csproj as described in the MSBuild Usage section and add `build-rid.ext` scripts where `rid`
 is replaced with a runtime identifier and `ext` is replaced with `sh` or `cmd` if the build is running on Windows.
 
-Ensure that this new project is registered both to [`Silk.NET.slnx`](../../Silk.NET.slnx) and to
+Also ensure that this new project is registered both to [`Silk.NET.slnx`](../../Silk.NET.slnx) and to
 [`builds.json`](../../eng/workflows/builds.json).
 
 Note that for Linux we strive to have compatibility with glibc 2.17 and above, which in our experience from 2.X is a
@@ -298,6 +298,13 @@ Note that there are no prerequisite actions run before the native build occurs i
 integrated into the build scripts, using the `GITHUB_ACTIONS` environment variable as appropriate. Other cases where
 this is used beyond downloading Zig is installing `apt` dependencies, installing Android toolchains using `sdkmanager`,
 etc.
+
+### Creating new bindings projects
+
+Please follow the steps explained in the [Using the Generator](Generator/using-the-generator.md) docs.
+
+Also ensure that this new project is registered both to [`Silk.NET.slnx`](../../Silk.NET.slnx) and to
+[`builds.json`](../../eng/workflows/builds.json).
 
 ### PowerShell Scripts
 
