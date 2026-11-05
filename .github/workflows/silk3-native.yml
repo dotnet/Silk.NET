@@ -23,7 +23,7 @@ jobs:
     
     if: github.event.issue.pull_request && contains(github.event.comment.body, '/native')
     
-    uses: $/.github/workflows/pr-get-info.yml
+    uses: $/.github/workflows/pr-get-info.reusable.yml
     with:
       prNumber: ${{ github.event.issue.number }}
       baseRepo: ${{ github.repository }}
