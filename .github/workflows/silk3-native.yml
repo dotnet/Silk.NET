@@ -83,7 +83,7 @@ jobs:
       contents: write
       pull-requests: write
     
-    uses: $/.github/workflows/silk3-pr-check-workflow-push-permissions.reusable.yml
+    uses: $/.github/workflows/pr-check-workflow-push-permissions.reusable.yml
     with:
       prNumber: ${{ github.event.issue.number }}
       baseRepo: ${{ github.repository }}
