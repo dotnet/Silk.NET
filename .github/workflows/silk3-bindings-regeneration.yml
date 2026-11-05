@@ -23,7 +23,7 @@ jobs:
     
     if: github.event.issue.pull_request && contains(github.event.comment.body, '/bindings')
     
-    uses: $/.github/workflows/pr-check-workflow-push-permissions.reusable.yml
+    uses: $/.github/workflows/pr-get-info.reusable.yml
     with:
       prNumber: ${{ github.event.issue.number }}
       baseRepo: ${{ github.repository }}
@@ -365,7 +365,7 @@ jobs:
     permissions:
       contents: write
 
-    uses: $/.github/workflows/pr-check-workflow-push-permissions.reusable.yml
+    uses: $/.github/workflows/pr-push-bundle.reusable.yml
     with:
       headRepo: ${{ needs.check.outputs.headRepo }}
       headBranch: ${{ needs.check.outputs.headBranch }}
