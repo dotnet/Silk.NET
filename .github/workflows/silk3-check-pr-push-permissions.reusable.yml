@@ -94,7 +94,7 @@ jobs:
     permissions:
       pull-requests: write
     
-    needs: [check, dryPush]
+    needs: [dryPush]
     if: needs.dryPush.outputs.hasPushPermission == 'false'
 
     steps:
