@@ -69,7 +69,7 @@ jobs:
         shell: pwsh
         working-directory: eng/workflows/bindings
         env:
-          COMMENT_BODY: ${{ needs.check.outputs.commentBody }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
         run: ./parse.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Generate matrix
