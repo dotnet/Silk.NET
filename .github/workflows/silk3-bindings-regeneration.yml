@@ -356,8 +356,6 @@ jobs:
       changed: ${{ steps.bundle.outputs.changed }}
       newHeadCommit: ${{ steps.bundle.outputs.newHeadCommit }}
 
-  # Privileged - Must not execute untrusted code
-  # push is exactly the same here as in silk3-native.yml
   push:
     name: Push
     runs-on: ubuntu-latest
@@ -368,51 +366,10 @@ jobs:
     needs: [check, bundle]
     if: needs.bundle.outputs.changed == 'true'
 
-    steps:
-
-      - name: Download bundle
-        uses: actions/download-artifact@v8
-        with:
-          pattern: git-bundle
-
-      - name: Show working directory contents
-        shell: pwsh
-        run: Get-ChildItem
-
-      - name: Apply bundle
-        shell: pwsh
-        env:
-          HEAD_REPO: ${{ needs.check.outputs.headRepo }}
-          HEAD_COMMIT: ${{ needs.bundle.outputs.newHeadCommit }}
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-
-          Write-Host "Creating bare repo"
-          git init --bare repo.git
-          $env:GIT_DIR = "$PWD/repo.git"
-          git config core.hooksPath /dev/null
-          git config transfer.fsckObjects true
-          
-          Write-Host "Applying bundle"
-          git fetch --no-recurse-submodules --depth=1 "https://github.com/$env:HEAD_REPO.git" $env:HEAD_COMMIT
-          git bundle verify git.bundle
-          git fetch --no-recurse-submodules git.bundle refs/heads/ci/bundle
-          git update-ref refs/heads/ci/bundle FETCH_HEAD
-
-      - name: Push
-        shell: pwsh
-        env:
-          GH_TOKEN: ${{ github.token }}
-          HEAD_REPO: ${{ needs.check.outputs.headRepo }}
-          HEAD_BRANCH: ${{ needs.check.outputs.headBranch }}
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-
-          Write-Host "Pushing"
-          $env:GIT_DIR = "$PWD/repo.git"
-          git -c credential.helper= -c "credential.helper=!gh auth git-credential" push "https://github.com/$env:HEAD_REPO.git" "refs/heads/ci/bundle:refs/heads/$env:HEAD_BRANCH"
-          Write-Host "Push successful"
+    uses: $/.github/workflows/pr-check-workflow-push-permissions.reusable.yml
+    with:
+      headRepo: ${{ needs.check.outputs.headRepo }}
+      headBranch: ${{ needs.check.outputs.headBranch }}
+      headCommit: ${{ needs.bundle.outputs.newHeadCommit }}
+      bundleArtifact: git-bundle
+      bundlePath: git.bundle
