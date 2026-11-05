@@ -28,7 +28,7 @@ jobs:
 
     steps:
 
-      - name: Check permission and gather info
+      - name: Check PR comment and gather info
         id: check
         shell: pwsh
         env:
@@ -41,17 +41,6 @@ jobs:
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
 
-          Write-Host "Checking if commenter has push permissions"
-          $rawPermission = gh api "repos/$env:BASE_REPO/collaborators/$env:COMMENTER/permission" --jq .user.permissions.push
-          $hasPermission = $rawPermission -eq "true"
-          if (-not $hasPermission) {
-            Write-Host "$env:COMMENTER does not have push permissions"
-            exit 0
-          } else {
-            Write-Host "$env:COMMENTER has push permissions"
-          }
-          "hasPermission=$hasPermission" >> $env:GITHUB_OUTPUT
-          
           $headRepo = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
           "headRepo=$headRepo" >> $env:GITHUB_OUTPUT
           
@@ -83,7 +72,6 @@ jobs:
       headBranch: ${{ steps.check.outputs.headBranch }}
       headCommit: ${{ steps.check.outputs.headCommit }} # Untrusted: Head may be from a fork
       isSilk3: ${{ steps.check.outputs.isSilk3 }}
-      hasPermission: ${{ steps.check.outputs.hasPermission }}
   
   # Privileged - Must not execute untrusted code
   # dryPush is exactly the same here as in silk3-bindings-regeneration.yml
@@ -95,7 +83,7 @@ jobs:
       contents: write
     
     needs: [check]
-    if: needs.check.outputs.isSilk3 == 'true' && needs.check.outputs.headRepo != github.repository && needs.check.outputs.hasPermission == 'true'
+    if: needs.check.outputs.isSilk3 == 'true' && needs.check.outputs.headRepo != github.repository
     
     steps:
 
@@ -146,7 +134,7 @@ jobs:
       pull-requests: write
     
     needs: [check, dryPush]
-    if: needs.dryPush.outputs.hasPushPermission == 'false' && needs.check.outputs.hasPermission == 'true'
+    if: needs.dryPush.outputs.hasPushPermission == 'false'
 
     env:
       PUSH_WARNING_MESSAGE_PATTERN: |
@@ -189,7 +177,7 @@ jobs:
     runs-on: ubuntu-latest
 
     needs: [check]
-    if: needs.check.outputs.isSilk3 == 'true' && needs.check.outputs.hasPermission == 'true'
+    if: needs.check.outputs.isSilk3 == 'true'
 
     steps:
 
@@ -225,7 +213,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     needs: [check, dispatch]
-    if: join(fromJSON(needs.dispatch.outputs.matrix), ',') != '' && needs.check.outputs.hasPermission == 'true'
+    if: join(fromJSON(needs.dispatch.outputs.matrix), ',') != ''
 
     strategy:
       fail-fast: false
@@ -274,7 +262,6 @@ jobs:
     runs-on: ubuntu-latest
 
     needs: [check, build]
-    if: needs.check.outputs.hasPermission == 'true'
 
     steps:
 
