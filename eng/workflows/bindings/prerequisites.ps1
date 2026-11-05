@@ -22,14 +22,12 @@ if (-not ($chosenJob -in $jobNames)) {
   exit 1
 }
 
-$job = $buildsJson.bindings.jobs.PSObject.Properties[$chosenJob]
-
-exit 0
+$job = $buildsJson.bindings.jobs.PSObject.Properties[$chosenJob].Value
 
 # Submodules
 $submodules = $job.submodules
 if ($submodules.Count -gt 0) {
-  Write-Host "Initializing $($submodules -join ", ")"
+  Write-Host "Initializing submodules: $($submodules -join ", ")"
   if ($apply) {
     git submodule update --init --recursive --depth 1 $submodules
   }

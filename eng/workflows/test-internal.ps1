@@ -49,11 +49,11 @@ Write-Output "----- Bindings -----"
 pwsh -Command { $env:COMMENT_BODY="/bindings 123123123"; ./bindings/parse.ps1 }
 
 # Prerequisites
-# Write-Output "----- Prerequisites -----"
-# Write-Output "----- Native -----"
-# pwsh -Command { $env:JOB="SDL"; ./native/prerequisites.ps1 }
-# Write-Output "----- Bindings -----"
-# pwsh -Command { $env:JOB="SDL"; ./bindings/prerequisites.ps1 }
+Write-Output "----- Prerequisites -----"
+Write-Output "----- Native -----"
+pwsh -Command { $env:JOB="SDL"; ./native/prerequisites.ps1 }
+Write-Output "----- Bindings -----"
+pwsh -Command { $env:JOB="SDL"; ./bindings/prerequisites.ps1 }
 
 # Reminder
 Write-Output "----- Reminder comment - No affected, no existing comment (Should have no output) -----"

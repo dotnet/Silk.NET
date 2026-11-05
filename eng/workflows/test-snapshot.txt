@@ -295,6 +295,21 @@ Unknown job name: 123123123
 
 jobs=
 Unknown job name: 123123123
+----- Prerequisites -----
+----- Native -----
+----- Bindings -----
+Running as a dry run. Please use the --apply option if you want the prerequisites to be applied
+
+
+Initializing submodules: eng/submodules/sdl
+
+
+Restoring .NET and its workloads
+
+
+Running as a dry run. Please use the --apply option if you want the prerequisites to be applied
+Initializing submodules: eng/submodules/sdl
+Restoring .NET and its workloads
 ----- Reminder comment - No affected, no existing comment (Should have no output) -----
 ----- Native -----
 ----- Bindings -----
