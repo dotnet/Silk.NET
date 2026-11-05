@@ -1,53 +1,3 @@
------ Reminder comment - No affected, no existing comment (Should have no output) -----
------ Native -----
------ Bindings -----
------ Reminder comment - Missing affected, with existing comment -----
------ Native -----
-comment<<EOF
-## Silk.NET native build reminder
-
-No native builds are likely to have been affected by this PR.
-EOF
------ Bindings -----
-comment<<EOF
-## Silk.NET bindings regeneration reminder
-
-No bindings are likely to have been affected by this PR.
-EOF
------ Reminder comment - No affected, with existing comment -----
------ Native -----
-comment<<EOF
-## Silk.NET native build reminder
-
-No native builds are likely to have been affected by this PR.
-EOF
------ Bindings -----
-comment<<EOF
-## Silk.NET bindings regeneration reminder
-
-No bindings are likely to have been affected by this PR.
-EOF
------ Reminder comment - Affected, with existing comment -----
------ Native -----
-comment<<EOF
-## Silk.NET native build reminder
-
-Some of the native builds are likely affected by this PR. \
-Please rebuild these by posting a comment with `/native OpenAL-Soft`. \
-You must have push permissions to run the command.
-
-If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
-EOF
------ Bindings -----
-comment<<EOF
-## Silk.NET bindings regeneration reminder
-
-Some of the bindings are likely affected by this PR. \
-Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`. \
-You must have push permissions to run the command.
-
-If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
-EOF
 ----- Dependencies -----
 ----- Native -----
 workflowFilters<<EOF
@@ -63,34 +13,6 @@ OpenXR: ["sources/SilkTouch/**","eng/submodules/openxr-sdk","eng/submodules/vulk
 SDL: ["sources/SilkTouch/**","eng/submodules/sdl","eng/silktouch/sdl/**"]
 Vulkan: ["sources/SilkTouch/**","eng/submodules/vulkan-docs","eng/submodules/vulkan-headers","eng/silktouch/vulkan/**"]
 EOF
------ Parse - No input -----
------ Native -----
-jobs=
------ Bindings -----
-jobs=
------ Parse - Wildcard -----
------ Native -----
-jobs=OpenAL-Soft SDL
------ Bindings -----
-jobs=OpenAL OpenCL OpenGL OpenXR SDL Vulkan
------ Parse - Valid -----
------ Native -----
-jobs=OpenAL-Soft SDL
------ Bindings -----
-jobs=OpenGL OpenXR Vulkan
------ Parse - Invalid -----
------ Native -----
-Unknown job name: 123123123
-
-
-jobs=
-Unknown job name: 123123123
------ Bindings -----
-Unknown job name: 123123123
-
-
-jobs=
-Unknown job name: 123123123
 ----- Matrix - Valid -----
 ----- Native -----
 matrix<<EOF
@@ -280,10 +202,6 @@ scrapeMatrix<<EOF
     "os": "windows-latest",
     "caches": [
       "vulkan-clangsharp.stout"
-    ],
-    "submodules": [
-      "eng/submodules/vulkan-docs",
-      "eng/submodules/vulkan-headers"
     ]
   },
   {
@@ -291,10 +209,6 @@ scrapeMatrix<<EOF
     "os": "ubuntu-latest",
     "caches": [
       "openxr-linux-clangsharp.stout"
-    ],
-    "submodules": [
-      "eng/submodules/openxr-sdk",
-      "eng/submodules/vulkan-headers"
     ]
   },
   {
@@ -302,10 +216,6 @@ scrapeMatrix<<EOF
     "os": "macos-latest",
     "caches": [
       "openxr-mac-clangsharp.stout"
-    ],
-    "submodules": [
-      "eng/submodules/openxr-sdk",
-      "eng/submodules/vulkan-headers"
     ]
   },
   {
@@ -313,10 +223,6 @@ scrapeMatrix<<EOF
     "os": "windows-latest",
     "caches": [
       "openxr-windows-clangsharp.stout"
-    ],
-    "submodules": [
-      "eng/submodules/openxr-sdk",
-      "eng/submodules/vulkan-headers"
     ]
   },
   {
@@ -324,10 +230,6 @@ scrapeMatrix<<EOF
     "os": "windows-latest",
     "caches": [
       "opengl-clangsharp.stout"
-    ],
-    "submodules": [
-      "eng/submodules/egl-registry",
-      "eng/submodules/opengl-registry"
     ]
   }
 ]
@@ -335,25 +237,13 @@ EOF
 regenerateMatrix<<EOF
 [
   {
-    "job": "Vulkan",
-    "submodules": [
-      "eng/submodules/vulkan-docs",
-      "eng/submodules/vulkan-headers"
-    ]
+    "job": "Vulkan"
   },
   {
-    "job": "OpenXR",
-    "submodules": [
-      "eng/submodules/openxr-sdk",
-      "eng/submodules/vulkan-headers"
-    ]
+    "job": "OpenXR"
   },
   {
-    "job": "OpenGL",
-    "submodules": [
-      "eng/submodules/egl-registry",
-      "eng/submodules/opengl-registry"
-    ]
+    "job": "OpenGL"
   }
 ]
 EOF
@@ -377,4 +267,82 @@ regenerateMatrix<<EOF
 []
 EOF
 Unknown job name: 123123123
+----- Parse - No input -----
+----- Native -----
+jobs=
+----- Bindings -----
+jobs=
+----- Parse - Wildcard -----
+----- Native -----
+jobs=OpenAL-Soft SDL
+----- Bindings -----
+jobs=OpenAL OpenCL OpenGL OpenXR SDL Vulkan
+----- Parse - Valid -----
+----- Native -----
+jobs=OpenAL-Soft SDL
+----- Bindings -----
+jobs=OpenGL OpenXR Vulkan
+----- Parse - Invalid -----
+----- Native -----
+Unknown job name: 123123123
+
+
+jobs=
+Unknown job name: 123123123
+----- Bindings -----
+Unknown job name: 123123123
+
+
+jobs=
+Unknown job name: 123123123
+----- Reminder comment - No affected, no existing comment (Should have no output) -----
+----- Native -----
+----- Bindings -----
+----- Reminder comment - Missing affected, with existing comment -----
+----- Native -----
+comment<<EOF
+## Silk.NET native build reminder
+
+No native builds are likely to have been affected by this PR.
+EOF
+----- Bindings -----
+comment<<EOF
+## Silk.NET bindings regeneration reminder
+
+No bindings are likely to have been affected by this PR.
+EOF
+----- Reminder comment - No affected, with existing comment -----
+----- Native -----
+comment<<EOF
+## Silk.NET native build reminder
+
+No native builds are likely to have been affected by this PR.
+EOF
+----- Bindings -----
+comment<<EOF
+## Silk.NET bindings regeneration reminder
+
+No bindings are likely to have been affected by this PR.
+EOF
+----- Reminder comment - Affected, with existing comment -----
+----- Native -----
+comment<<EOF
+## Silk.NET native build reminder
+
+Some of the native builds are likely affected by this PR. \
+Please rebuild these by posting a comment with `/native OpenAL-Soft`. \
+You must have push permissions to run the command.
+
+If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
+EOF
+----- Bindings -----
+comment<<EOF
+## Silk.NET bindings regeneration reminder
+
+Some of the bindings are likely affected by this PR. \
+Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`. \
+You must have push permissions to run the command.
+
+If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
+EOF
 

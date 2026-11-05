@@ -322,6 +322,9 @@ These scripts do the bulk of the work when it comes to parsing the `builds.json`
 
 The `native` and `bindings` variants of the scripts are very similar similar and cover the following responsibilities:
 
+- `prerequisites.ps1` - Ensures that simple prerequisites are applied. This mainly involves initializing submodules
+  required by the job. Initialization not required by all jobs should be handled elsewhere.
+
 - `dependencies.ps1` - Constructs arrays of globs corresponding to the dependencies of each job. These are
   used by the `dorny/paths-filter` action in the `check-affected.yml` workflow to determine which jobs are affected
   by a PR's changes.

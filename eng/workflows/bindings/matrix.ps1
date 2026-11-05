@@ -28,13 +28,11 @@ foreach ($chosenJob in $chosenJobs) {
       os = $cache.Name
 
       caches = $cache.Value
-      submodules = $job.Value.submodules
     }
   }
 
   $regenerateMatrix += [ordered]@{
     job = $job.Name
-    submodules = $job.Value.submodules
   }
 }
 
