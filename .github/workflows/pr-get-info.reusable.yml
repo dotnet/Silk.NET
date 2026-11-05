@@ -61,7 +61,6 @@ jobs:
           exit 0
 
     outputs:
-      commentBody: ${{ github.event.comment.body }}
       headRepo: ${{ steps.check.outputs.headRepo }}
       headBranch: ${{ steps.check.outputs.headBranch }}
       headCommit: ${{ steps.check.outputs.headCommit }} # Warning: Commit may contain untrusted code from a fork
