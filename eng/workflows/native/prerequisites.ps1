@@ -36,7 +36,7 @@ try {
     $command = "git submodule update --init --recursive --depth 1 $submodules"
     Write-Host $command
     if ($apply) {
-      $command
+      Invoke-Expression $command
     }
   }
 } finally {
