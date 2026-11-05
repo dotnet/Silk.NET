@@ -285,6 +285,8 @@ Unknown job name: 123123123
 jobs=
 ----- Prerequisites -----
 ----- Native -----
+Running as a dry run. Please use the --apply option if you want the prerequisites to be applied
+Initializing submodules: eng/submodules/sdl
 ----- Bindings -----
 Running as a dry run. Please use the --apply option if you want the prerequisites to be applied
 Initializing submodules: eng/submodules/sdl
