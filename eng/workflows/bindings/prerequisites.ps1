@@ -10,6 +10,7 @@ $chosenJob = $env:JOB
 $buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
 $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
 $jobNames = @($buildsJson.bindings.jobs.PSObject.Properties.Name | Sort-Object -Unique)
+$repoRoot = Join-Path $PSScriptRoot "../../.."
 
 # Log if dry run
 if (-not $apply) {
@@ -24,32 +25,40 @@ if (-not ($chosenJob -in $jobNames)) {
 
 $job = $buildsJson.bindings.jobs.PSObject.Properties[$chosenJob].Value
 
-# Submodules
-$submodules = $job.submodules
-if ($submodules.Count -gt 0) {
-  Write-Host "Initializing submodules: $($submodules -join ", ")"
-  if ($apply) {
-    git submodule update --init --recursive --depth 1 $submodules
-  }
-}
+Push-Location $repoRoot
+try {
+  # Submodules
+  $submodules = $job.submodules
+  if ($submodules.Count -gt 0) {
+    Write-Host "Initializing submodules: $submodules"
 
-# .NET
-Write-Host "Restoring .NET and its workloads"
-if ($apply) {
-  dotnet workload restore
-  dotnet restore
-}
-
-# Dependencies
-# Bindings regeneration doesn't require that many dependencies so we install everything jobs might need here
-Write-Host "Installing dependencies needed for regeneration"
-if ($apply) {
-  switch ($true) {
-    $IsWindows {}
-    $IsLinux {
-      sudo apt-get update
-      sudo apt-get install -y libx11-dev libgl-dev libglx-dev libxcb1-dev libxcb-glx0-dev libegl-dev
+    $command = "git submodule update --init --recursive --depth 1 $submodules"
+    Write-Host $command
+    if ($apply) {
+      $command
     }
-    $IsMacOS {}
   }
+
+  # .NET
+  Write-Host "Restoring .NET and its workloads"
+  if ($apply) {
+    dotnet workload restore
+    dotnet restore
+  }
+
+  # Dependencies
+  # Bindings regeneration doesn't require that many dependencies so we install everything jobs might need here
+  Write-Host "Installing dependencies needed for regeneration"
+  if ($apply) {
+    switch ($true) {
+      $IsWindows {}
+      $IsLinux {
+        sudo apt-get update
+        sudo apt-get install -y libx11-dev libgl-dev libglx-dev libxcb1-dev libxcb-glx0-dev libegl-dev
+      }
+      $IsMacOS {}
+    }
+  }
+} finally {
+  Pop-Location
 }

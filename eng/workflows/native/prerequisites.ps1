@@ -10,6 +10,7 @@ $chosenJob = $env:JOB
 $buildsJsonPath = Join-Path $PSScriptRoot "../builds.json"
 $buildsJson = Get-Content -Path $buildsJsonPath -Raw | ConvertFrom-Json
 $jobNames = @($buildsJson.native.jobs.PSObject.Properties.Name | Sort-Object -Unique)
+$repoRoot = Join-Path $PSScriptRoot "../../.."
 
 # Log if dry run
 if (-not $apply) {
@@ -24,11 +25,20 @@ if (-not ($chosenJob -in $jobNames)) {
 
 $job = $buildsJson.native.jobs.PSObject.Properties[$chosenJob].Value
 
-# Submodules
-$submodules = $job.submodules
-if ($submodules.Count -gt 0) {
-  Write-Host "Initializing submodules: $($submodules -join ", ")"
-  if ($apply) {
-    git submodule update --init --recursive --depth 1 $submodules
+
+Push-Location $repoRoot
+try {
+  # Submodules
+  $submodules = $job.submodules
+  if ($submodules.Count -gt 0) {
+    Write-Host "Initializing submodules: $submodules"
+
+    $command = "git submodule update --init --recursive --depth 1 $submodules"
+    Write-Host $command
+    if ($apply) {
+      $command
+    }
   }
+} finally {
+  Pop-Location
 }
