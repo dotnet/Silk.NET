@@ -21,14 +21,14 @@ jobs:
   # Unprivileged - Should not need to execute untrusted code
   # check is exactly the same here as in silk3-native.yml
   check:
-    name: Check PR comment
+    name: Check PR
     runs-on: ubuntu-latest
     
     if: github.event.issue.pull_request && contains(github.event.comment.body, '/bindings')
 
     steps:
 
-      - name: Check PR comment and gather info
+      - name: Check PR and gather info
         id: check
         shell: pwsh
         env:
@@ -83,7 +83,7 @@ jobs:
       contents: write
       pull-requests: write
     
-    uses: $/.github/workflows/silk3-check-pr-push-permissions.reusable.yml
+    uses: $/.github/workflows/silk3-pr-check-workflow-push-permissions.reusable.yml
     with:
       prNumber: ${{ github.event.issue.number }}
       baseRepo: ${{ github.repository }}
