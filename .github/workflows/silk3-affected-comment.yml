@@ -18,7 +18,7 @@ jobs:
 
   # Privileged - Must not execute untrusted code
   check:
-    name: Post reminder comments
+    name: Post reminder comment
     runs-on: ubuntu-latest
     
     if: github.event.workflow_run.conclusion == 'success'
@@ -26,6 +26,13 @@ jobs:
     permissions:
       pull-requests: write
       actions: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        type:
+          - native
+          - bindings
 
     env: 
       NATIVE_REMINDER_MESSAGE_PATTERN: |
@@ -59,112 +66,75 @@ jobs:
           
           $content = Get-Content pr.txt -Raw
           
+          # GitHub allows any delimiter and using a random delimiter is best for security against untrusted content
           $delimiter = [Guid]::NewGuid().ToString()
           "number<<$delimiter" >> $env:GITHUB_OUTPUT
           $content >> $env:GITHUB_OUTPUT
           "$delimiter" >> $env:GITHUB_OUTPUT
 
-      - name: Download native reminder comment
+      - name: Download reminder comment
         if: steps.pr.outputs.number != ''
         uses: actions/download-artifact@v8.0.1
         continue-on-error: true
         with:
-          name: native-reminder-comment
+          name: ${{ matrix.type }}-reminder-comment
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ github.token }}
-
-      - name: Download bindings reminder comment
+          
+      - name: Get reminder comment pattern
         if: steps.pr.outputs.number != ''
-        uses: actions/download-artifact@v8.0.1
-        continue-on-error: true
-        with:
-          name: bindings-reminder-comment
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ github.token }}
-
-      - name: Read native reminder comment
-        if: steps.pr.outputs.number != ''
-        id: native
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
           
-          if (-not (Test-Path native.txt)) {
+          if (${{ matrix.type }} -eq "native") {
+            "pattern=$env:NATIVE_REMINDER_MESSAGE_PATTERN" >> $env:GITHUB_OUTPUT
+          } else {
+            "pattern=$env:BINDINGS_REMINDER_MESSAGE_PATTERN" >> $env:GITHUB_OUTPUT
+          }
+
+      - name: Read reminder comment
+        if: steps.pr.outputs.number != ''
+        id: comment
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+          
+          if (-not (Test-Path ${{ matrix.type }}.txt)) {
             Write-Host "No reminder comment found, assuming no reminder needed"
             exit 0
           }
           
-          $content = Get-Content native.txt -Raw
+          $content = Get-Content ${{ matrix.type }}.txt -Raw
           if (-not ($content -match $env:NATIVE_REMINDER_MESSAGE_PATTERN)) {
             Write-Host "Bad reminder message format"
             exit 1
           }
           
-          # GitHub allows any delimiter and using a random delimiter is best for security
+          # GitHub allows any delimiter and using a random delimiter is best for security against untrusted content
           $delimiter = [Guid]::NewGuid().ToString()
           "content<<$delimiter" >> $env:GITHUB_OUTPUT
           $content >> $env:GITHUB_OUTPUT
           "$delimiter" >> $env:GITHUB_OUTPUT
 
-      - name: Read bindings reminder comment
-        if: steps.pr.outputs.number != ''
-        id: bindings
-        shell: pwsh
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-          
-          if (-not (Test-Path bindings.txt)) {
-            Write-Host "No reminder comment found, assuming no reminder needed"
-            exit 0
-          }
-          
-          $content = Get-Content bindings.txt -Raw
-          if (-not ($content -match $env:BINDINGS_REMINDER_MESSAGE_PATTERN)) {
-            Write-Host "Bad reminder message format"
-            exit 1
-          }
-          
-          $delimiter = [Guid]::NewGuid().ToString()
-          "content<<$delimiter" >> $env:GITHUB_OUTPUT
-          $content >> $env:GITHUB_OUTPUT
-          "$delimiter" >> $env:GITHUB_OUTPUT
-
-      - name: Find previous native reminder comment
-        if: steps.pr.outputs.number != '' && steps.native.outputs.content != ''
-        id: previousNative
+      - name: Find previous reminder comment
+        if: steps.pr.outputs.number != '' && steps.comment.outputs.content != ''
+        id: previous
         uses: peter-evans/find-comment@v4
         with:
           issue-number: ${{ steps.pr.outputs.number }}
           comment-author: "github-actions[bot]"
           body-includes: ${{ env.NATIVE_REMINDER_MESSAGE_PATTERN }}
-
-      - name: Find previous bindings reminder comment
-        if: steps.pr.outputs.number != '' && steps.bindings.outputs.content != ''
-        id: previousBindings
-        uses: peter-evans/find-comment@v4
-        with:
-          issue-number: ${{ steps.pr.outputs.number }}
-          comment-author: "github-actions[bot]"
-          body-includes: ${{ env.BINDINGS_REMINDER_MESSAGE_PATTERN }}
   
-      - name: Update native reminder comment
-        if: steps.pr.outputs.number != '' && steps.native.outputs.content != ''
+      - name: Update reminder comment
+        if: steps.pr.outputs.number != '' && steps.comment.outputs.content != ''
         uses: peter-evans/create-or-update-comment@v5
         with:
-          comment-id: ${{ steps.previousNative.outputs.comment-id }}
+          comment-id: ${{ steps.previous.outputs.comment-id }}
           issue-number: ${{ steps.pr.outputs.number }}
-          body: ${{ steps.native.outputs.content }}
-          edit-mode: replace
-
-      - name: Update bindings reminder comment
-        if: steps.pr.outputs.number != '' && steps.bindings.outputs.content != ''
-        uses: peter-evans/create-or-update-comment@v5
-        with:
-          comment-id: ${{ steps.previousBindings.outputs.comment-id }}
-          issue-number: ${{ steps.pr.outputs.number }}
-          body: ${{ steps.bindings.outputs.content }}
+          body: ${{ steps.comment.outputs.content }}
           edit-mode: replace
