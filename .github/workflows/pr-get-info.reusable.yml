@@ -9,6 +9,15 @@ on:
       baseRepo:
         type: string
         required: true
+    outputs:
+      headRepo:
+        value: ${{ jobs.check.outputs.headRepo }}
+      headBranch:
+        value: ${{ jobs.check.outputs.headBranch }}
+      headCommit:
+        value: ${{ jobs.check.outputs.headCommit }}
+      isSilk3:
+        value: ${{ jobs.check.outputs.isSilk3 }}
 
 jobs:
   
