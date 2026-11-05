@@ -34,7 +34,7 @@ jobs:
       - name: Download bundle
         uses: actions/download-artifact@v8
         with:
-          pattern: git-bundle
+          pattern: ${{ inputs.bundleArtifact }}
           path: bundle
 
       - name: Show working directory contents
