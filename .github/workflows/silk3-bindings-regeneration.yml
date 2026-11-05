@@ -223,26 +223,6 @@ jobs:
 
     steps:
 
-      # Currently deciding to install all dependencies for all bindings for simplicity
-      # Reason is that dependencies needed for scraping are relatively light, unlike for native builds
-      - name: Setup dependencies
-        shell: pwsh
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-
-          switch ($true) {
-            $IsWindows {}
-            $IsLinux {
-              sudo apt-get update
-
-              # Added for OpenXR, but evidently enough for all jobs right now
-              sudo apt-get install -y libx11-dev libgl-dev libglx-dev libxcb1-dev libxcb-glx0-dev libegl-dev
-            }
-            $IsMacOS {}
-          }
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
@@ -266,7 +246,7 @@ jobs:
         working-directory: eng/workflows/bindings
         env:
           JOB: ${{ matrix.job }}
-        run: ./prerequisites.ps1
+        run: ./prerequisites.ps1 --apply
 
       - name: Clear .silktouch folder contents
         shell: pwsh
@@ -349,7 +329,7 @@ jobs:
         working-directory: eng/workflows/bindings
         env:
           JOB: ${{ matrix.job }}
-        run: ./prerequisites.ps1
+        run: ./prerequisites.ps1 --apply
           
       - name: Download cache
         uses: actions/download-artifact@v8

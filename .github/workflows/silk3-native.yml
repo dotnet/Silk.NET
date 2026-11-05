@@ -234,7 +234,7 @@ jobs:
         working-directory: eng/workflows/native
         env:
           JOB: ${{ matrix.job }}
-        run: ./prerequisites.ps1
+        run: ./prerequisites.ps1 --apply
 
       # It's not a good idea to use ${{}} within run with untrusted inputs due to potential code injection,
       # but this is copied from the original native workflow implementation and everything in this job already comes from an untrusted source
