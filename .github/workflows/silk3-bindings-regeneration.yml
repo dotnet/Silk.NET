@@ -358,13 +358,12 @@ jobs:
 
   push:
     name: Push
-    runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
     
     needs: [check, bundle]
     if: needs.bundle.outputs.changed == 'true'
+
+    permissions:
+      contents: write
 
     uses: $/.github/workflows/pr-check-workflow-push-permissions.reusable.yml
     with:

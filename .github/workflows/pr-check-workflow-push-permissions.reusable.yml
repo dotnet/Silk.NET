@@ -42,10 +42,10 @@ jobs:
     name: Test push permissions
     runs-on: ubuntu-latest
     
+    if: needs.check.outputs.headRepo != inputs.baseRepo
+    
     permissions:
       contents: write
-    
-    if: needs.check.outputs.headRepo != inputs.baseRepo
     
     steps:
 
@@ -90,12 +90,12 @@ jobs:
   reportNoPushPermission:
     name: Report no push permission
     runs-on: ubuntu-latest
-    
-    permissions:
-      pull-requests: write
-    
+  
     needs: [dryPush]
     if: needs.dryPush.outputs.hasPushPermission == 'false'
+
+    permissions:
+      pull-requests: write
 
     steps:
 
