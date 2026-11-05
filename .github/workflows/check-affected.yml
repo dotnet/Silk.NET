@@ -38,7 +38,7 @@ jobs:
         id: dependencies
         shell: pwsh
         working-directory: repo/eng/workflows/${{ matrix.type }}
-        run: ./workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
+        run: ./dependencies.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Determine which jobs need to be reran
         id: affected
@@ -54,8 +54,8 @@ jobs:
           AFFECTED_JOBS: ${{ steps.affected.outputs.changes }}
         run: |
           # Duplicate is to output to logs
-          ./workflow-reminder.ps1
-          ./workflow-reminder.ps1 >> $env:GITHUB_OUTPUT
+          ./reminder.ps1
+          ./reminder.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Output reminder to file
         if: ${{ steps.reminder.outputs.comment }}

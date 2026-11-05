@@ -322,17 +322,17 @@ These scripts do the bulk of the work when it comes to parsing the `builds.json`
 
 The `native` and `bindings` variants of the scripts are very similar similar and cover the following responsibilities:
 
-- `workflow-dependencies.ps1` - Constructs arrays of globs corresponding to the dependencies of each job. These are
+- `dependencies.ps1` - Constructs arrays of globs corresponding to the dependencies of each job. These are
   used by the `dorny/paths-filter` action in the `check-affected.yml` workflow to determine which jobs are affected
   by a PR's changes.
 
-- `workflow-reminder.ps1` - Given the JSON array returned by `dorny/paths-filter` and an optional existing PR comment
+- `reminder.ps1` - Given the JSON array returned by `dorny/paths-filter` and an optional existing PR comment
   ID, this script generates a reminder message to be posted as a PR comment.
 
-- `workflow-parse.ps1` - Given a PR comment, this script parses the comment and identifies which jobs need to be ran.
-  The output of this is passed into `workflow-matrix.ps1`.
+- `parse.ps1` - Given a PR comment, this script parses the comment and identifies which jobs need to be ran.
+  The output of this is passed into `matrix.ps1`.
 
-- `workflow-matrix.ps1` - Given a set of chosen jobs, this script generates a GitHub Actions matrix corresponding to
+- `matrix.ps1` - Given a set of chosen jobs, this script generates a GitHub Actions matrix corresponding to
   the GitHub Actions runners needed to execute those jobs. For bindings regeneration, the script generates two sets of
   matrices because cache generation and bindings regeneration happen in two separate jobs.
 
