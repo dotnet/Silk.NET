@@ -9,9 +9,6 @@ on:
       baseRepo:
         type: string
         required: true
-      commenter:
-        type: string
-        required: true
 
 jobs:
   

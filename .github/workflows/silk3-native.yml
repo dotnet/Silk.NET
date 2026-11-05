@@ -27,7 +27,6 @@ jobs:
     with:
       prNumber: ${{ github.event.issue.number }}
       baseRepo: ${{ github.repository }}
-      commenter: ${{ github.event.comment.user.login }}
   
   checkPushPermissions:
     name: Check PR push permissions
