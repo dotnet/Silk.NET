@@ -71,8 +71,6 @@ jobs:
           name: ${{ matrix.type }}-reminder-comment
           path: ${{ matrix.type }}.txt
 
-  # TODO: Consider removing these PR number steps entirely and getting the PR number another way
-  # TODO: This is still insecure because the workflow runs using the workflow file defined by the PR branch
   prNumber:
     name: Output PR number
     runs-on: ubuntu-latest
