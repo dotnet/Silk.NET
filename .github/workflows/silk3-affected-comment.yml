@@ -95,12 +95,14 @@ jobs:
       - name: Get reminder comment pattern
         if: steps.pr.outputs.number != ''
         shell: pwsh
+        env:
+          MATRIX_TYPE: ${{ matrix.type }}
         run: |
           $ErrorActionPreference = "Stop"
           $PSNativeCommandUseErrorActionPreference = $true
           Set-StrictMode -Version Latest
           
-          if (${{ matrix.type }} -eq "native") {
+          if ($env:MATRIX_TYPE -eq "native") {
             "pattern=$env:NATIVE_REMINDER_MESSAGE_PATTERN" >> $env:GITHUB_OUTPUT
           } else {
             "pattern=$env:BINDINGS_REMINDER_MESSAGE_PATTERN" >> $env:GITHUB_OUTPUT
