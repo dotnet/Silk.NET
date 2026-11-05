@@ -1,0 +1,71 @@
+name: Check PR push permissions
+
+on:
+  workflow_call:
+    inputs:
+      prNumber:
+        type: number
+        required: true
+      baseRepo:
+        type: string
+        required: true
+      commenter:
+        type: string
+        required: true
+
+jobs:
+  
+  # Unprivileged - Should not need to execute untrusted code
+  check:
+    name: Check PR and gather info
+    runs-on: ubuntu-latest
+    
+    steps:
+
+      - name: Check PR and gather info
+        id: check
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_REPO: ${{ github.repository }}
+          COMMENTER: ${{ github.event.comment.user.login }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+
+          $headRepo = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
+          "headRepo=$headRepo" >> $env:GITHUB_OUTPUT
+          
+          $headBranch = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.ref
+          "headBranch=$headBranch" >> $env:GITHUB_OUTPUT
+          
+          $headCommit = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.sha
+          "headCommit=$headCommit" >> $env:GITHUB_OUTPUT
+          
+          # Check if PR is for Silk 3
+          $isSilk3 = $false
+          try {
+            Write-Host "Checking for builds.json as a naive way to check if the PR is for Silk 3"
+            gh api "repos/$headRepo/contents/eng/workflows/builds.json?ref=$headCommit" --silent
+            $isSilk3 = $true
+          } catch {}
+          
+          if ($isSilk3) {
+            Write-Host "PR does target Silk 3"
+          }
+          else {
+            Write-Host "PR does not target Silk 3"
+          }
+          
+          "isSilk3=$isSilk3" >> $env:GITHUB_OUTPUT
+          
+          exit 0
+
+    outputs:
+      commentBody: ${{ github.event.comment.body }}
+      headRepo: ${{ steps.check.outputs.headRepo }}
+      headBranch: ${{ steps.check.outputs.headBranch }}
+      headCommit: ${{ steps.check.outputs.headCommit }} # Warning: Commit may contain untrusted code from a fork
+      isSilk3: ${{ steps.check.outputs.isSilk3 }} # False does not imply isSilk2

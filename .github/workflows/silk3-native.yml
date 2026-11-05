@@ -18,60 +18,16 @@ concurrency:
 
 jobs:
   
-  # Unprivileged - Should not need to execute untrusted code
-  # check is exactly the same here as in silk3-bindings-regeneration.yml
   check:
-    name: Check PR comment
-    runs-on: ubuntu-latest
+    name: Check PR and gather info
     
-    if: github.event.issue.pull_request && contains(github.event.comment.body, '/native')
-
-    steps:
-
-      - name: Check PR comment and gather info
-        id: check
-        shell: pwsh
-        env:
-          GH_TOKEN: ${{ github.token }}
-          BASE_REPO: ${{ github.repository }}
-          COMMENTER: ${{ github.event.comment.user.login }}
-          PR_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-
-          $headRepo = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.repo.full_name
-          "headRepo=$headRepo" >> $env:GITHUB_OUTPUT
-          
-          $headBranch = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.ref
-          "headBranch=$headBranch" >> $env:GITHUB_OUTPUT
-          
-          $headCommit = gh api "repos/$env:BASE_REPO/pulls/$env:PR_NUMBER" --jq .head.sha
-          "headCommit=$headCommit" >> $env:GITHUB_OUTPUT
-          
-          # Check if PR is for Silk 3
-          $isSilk3 = $false
-          try {
-            Write-Host "Checking for builds.json as a naive way to check if the PR is for Silk 3"
-            gh api "repos/$headRepo/contents/eng/workflows/builds.json?ref=$headCommit" --silent
-            $isSilk3 = $true
-          } catch {
-            Write-Host "PR does not target Silk 3"
-            exit 0
-          }
-          
-          Write-Host "PR does target Silk 3"
-          "isSilk3=$isSilk3" >> $env:GITHUB_OUTPUT
-          
-          exit 0
-
-    outputs:
-      commentBody: ${{ github.event.comment.body }}
-      headRepo: ${{ steps.check.outputs.headRepo }}
-      headBranch: ${{ steps.check.outputs.headBranch }}
-      headCommit: ${{ steps.check.outputs.headCommit }} # Untrusted: Head may be from a fork
-      isSilk3: ${{ steps.check.outputs.isSilk3 }}
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/bindings')
+    
+    uses: $/.github/workflows/pr-check-workflow-push-permissions.reusable.yml
+    with:
+      prNumber: ${{ github.event.issue.number }}
+      baseRepo: ${{ github.repository }}
+      commenter: ${{ github.event.comment.user.login }}
   
   checkPushPermissions:
     name: Check PR push permissions
