@@ -36,9 +36,9 @@ jobs:
 
     env: 
       NATIVE_REMINDER_MESSAGE_PATTERN: |
-        ## Silk native build reminder
+        ## Silk.NET native build reminder
       BINDINGS_REMINDER_MESSAGE_PATTERN: |
-        ## Silk bindings regeneration reminder
+        ## Silk.NET bindings regeneration reminder
 
     steps:
 
