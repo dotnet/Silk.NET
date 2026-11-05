@@ -217,6 +217,7 @@ jobs:
           name: silktouch-combined-cache
           path: .silktouch
           include-hidden-files: true
+          if-no-files-found: "ignore"
   
   # Unprivileged - Executes untrusted code
   regenerate:
@@ -254,6 +255,7 @@ jobs:
           
       - name: Download cache
         uses: actions/download-artifact@v8
+        continue-on-error: true
         with:
           path: .silktouch
           pattern: silktouch-combined-cache
