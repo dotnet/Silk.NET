@@ -4,45 +4,47 @@
 ----- Reminder comment - Missing affected, with existing comment -----
 ----- Native -----
 comment<<EOF
-## Silk native build reminder
+## Silk.NET native build reminder
 
 No native builds are likely to have been affected by this PR.
 EOF
 ----- Bindings -----
 comment<<EOF
-## Silk bindings regeneration reminder
+## Silk.NET bindings regeneration reminder
 
 No bindings are likely to have been affected by this PR.
 EOF
 ----- Reminder comment - No affected, with existing comment -----
 ----- Native -----
 comment<<EOF
-## Silk native build reminder
+## Silk.NET native build reminder
 
 No native builds are likely to have been affected by this PR.
 EOF
 ----- Bindings -----
 comment<<EOF
-## Silk bindings regeneration reminder
+## Silk.NET bindings regeneration reminder
 
 No bindings are likely to have been affected by this PR.
 EOF
 ----- Reminder comment - Affected, with existing comment -----
 ----- Native -----
 comment<<EOF
-## Silk native build reminder
+## Silk.NET native build reminder
 
-Some of the native builds are likely affected by this PR.\
-Please rebuild these by posting a comment with `/native OpenAL-Soft`.
+Some of the native builds are likely affected by this PR. \
+Please rebuild these by posting a comment with `/native OpenAL-Soft`. \
+You must have push permissions to run the command.
 
 If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
 EOF
 ----- Bindings -----
 comment<<EOF
-## Silk bindings regeneration reminder
+## Silk.NET bindings regeneration reminder
 
-Some of the bindings are likely affected by this PR.\
-Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`.
+Some of the bindings are likely affected by this PR. \
+Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`. \
+You must have push permissions to run the command.
 
 If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
 EOF

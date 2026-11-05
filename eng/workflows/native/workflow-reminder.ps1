@@ -14,7 +14,7 @@ catch {}
 
 # PR Comment
 $mustComment = $false
-$comment = "## Silk native build reminder"
+$comment = "## Silk.NET native build reminder"
 
 if ($previousCommentId -eq "0") {
   $previousCommentId = ""
