@@ -275,20 +275,10 @@ jobs:
 
       - name: Ensure prerequisites
         shell: pwsh
+        working-directory: eng/workflows/bindings
         env:
-          SUBMODULES: ${{ toJSON(matrix.submodules) }}
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-          
-          $submodules = @($env:SUBMODULES | ConvertFrom-Json)
-          if ($submodules.Count -gt 0) {
-            git submodule update --init --recursive --depth 1 $submodules
-          }
-          
-          dotnet workload restore
-          dotnet restore
+          JOB: ${{ matrix.job }}
+        run: ./prerequisites.ps1
 
       - name: Clear .silktouch folder contents
         shell: pwsh
@@ -368,20 +358,10 @@ jobs:
 
       - name: Ensure prerequisites
         shell: pwsh
+        working-directory: eng/workflows/bindings
         env:
-          SUBMODULES: ${{ toJSON(matrix.submodules) }}
-        run: |
-          $ErrorActionPreference = "Stop"
-          $PSNativeCommandUseErrorActionPreference = $true
-          Set-StrictMode -Version Latest
-          
-          $submodules = @($env:SUBMODULES | ConvertFrom-Json)
-          if ($submodules.Count -gt 0) {
-            git submodule update --init --recursive --depth 1 $submodules
-          }
-          
-          dotnet workload restore
-          dotnet restore
+          JOB: ${{ matrix.job }}
+        run: ./prerequisites.ps1
           
       - name: Download cache
         uses: actions/download-artifact@v8

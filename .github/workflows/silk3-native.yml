@@ -241,7 +241,14 @@ jobs:
           repository: ${{ needs.check.outputs.headRepo }}
           ref: ${{ needs.check.outputs.headCommit }}
 
-      # It's not a good idea to use ${{}} within run due to potential code injection,
+      - name: Ensure prerequisites
+        shell: pwsh
+        working-directory: eng/workflows/native
+        env:
+          JOB: ${{ matrix.job }}
+        run: ./prerequisites.ps1
+
+      # It's not a good idea to use ${{}} within run with untrusted inputs due to potential code injection,
       # but this is copied from the original native workflow implementation and everything in this job already comes from an untrusted source
       - name: Build
         shell: pwsh
