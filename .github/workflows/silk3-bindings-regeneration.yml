@@ -366,20 +366,29 @@ jobs:
           repository: ${{ needs.check.outputs.headRepo }}
           ref: ${{ needs.check.outputs.headCommit }}
 
-      - name: Initialize submodules
+      - name: Ensure prerequisites
         shell: pwsh
         env:
           SUBMODULES: ${{ toJSON(matrix.submodules) }}
         run: |
-          $submodules = $env:SUBMODULES | ConvertFrom-Json
-          git submodule update --init --recursive --depth 0 $submodules
-
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+          
+          $submodules = @($env:SUBMODULES | ConvertFrom-Json)
+          if ($submodules.Count -gt 0) {
+            git submodule update --init --recursive --depth 1 $submodules
+          }
+          
+          dotnet workload restore
+          dotnet restore
+          
       - name: Download cache
         uses: actions/download-artifact@v8
         with:
           path: .silktouch
           pattern: silktouch-combined-cache
-
+      
       - name: Show .silktouch folder contents
         shell: pwsh
         run: Get-ChildItem .silktouch
@@ -387,14 +396,6 @@ jobs:
       - name: Show git status
         shell: pwsh
         run: git status
-
-      - name: .NET workload restore
-        shell: pwsh
-        run: dotnet workload restore
-
-      - name: .NET restore
-        shell: pwsh
-        run: dotnet restore
 
       - name: Regenerate bindings
         shell: pwsh
