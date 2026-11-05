@@ -196,7 +196,7 @@ jobs:
     runs-on: ubuntu-24.04
 
     needs: [check, scrape]
-    if: ${{ !cancelled() && needs.check.outputs.isSilk3 == 'true' }}
+    if: ${{ !cancelled() && needs.check.outputs.isSilk3 == 'true' && join(fromJSON(needs.dispatch.outputs.scrapeMatrix), ',') != '' }}
 
     steps:
 
