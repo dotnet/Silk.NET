@@ -206,7 +206,7 @@ jobs:
         working-directory: eng/workflows/native
         env:
           COMMENT_BODY: ${{ needs.check.outputs.commentBody }}
-        run: ./workflow-parse.ps1 >> $env:GITHUB_OUTPUT
+        run: ./parse.ps1 >> $env:GITHUB_OUTPUT
 
       - name: Generate matrix
         id: matrix
@@ -214,7 +214,7 @@ jobs:
         working-directory: eng/workflows/native
         env:
           CHOSEN_JOBS: ${{ steps.command.outputs.jobs }}
-        run: ./workflow-matrix.ps1 >> $env:GITHUB_OUTPUT
+        run: ./matrix.ps1 >> $env:GITHUB_OUTPUT
 
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
