@@ -1,4 +1,4 @@
-name: Check PR push permissions
+name: Check PR info
 
 on:
   workflow_call:
