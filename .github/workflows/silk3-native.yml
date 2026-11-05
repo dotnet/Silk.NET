@@ -299,7 +299,7 @@ jobs:
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton"
 
-          git switch -c ci/native
+          git switch -c ci/bundle
 
           git status
 
@@ -323,7 +323,7 @@ jobs:
           }
           
           Write-Host "Creating bundle"
-          git bundle create native.bundle "$newHeadCommit..ci/native"
+          git bundle create git.bundle "$newHeadCommit..ci/bundle"
           "newHeadCommit=$newHeadCommit" >> $env:GITHUB_OUTPUT
           "changed=true" >> $env:GITHUB_OUTPUT
 
@@ -331,15 +331,15 @@ jobs:
         if: steps.bundle.outputs.changed == 'true'
         uses: actions/upload-artifact@v7
         with:
-          name: native-bundle
-          path: native.bundle
+          name: git-bundle
+          path: git.bundle
 
     outputs:
       changed: ${{ steps.bundle.outputs.changed }}
       newHeadCommit: ${{ steps.bundle.outputs.newHeadCommit }}
 
   # Privileged - Must not execute untrusted code
-  # push is exactly the same here as in silk3-bindings-regeneration.yml, but with bindings replaced with native
+  # push is exactly the same here as in silk3-bindings-regeneration.yml
   push:
     name: Push
     runs-on: ubuntu-latest
@@ -355,7 +355,7 @@ jobs:
       - name: Download bundle
         uses: actions/download-artifact@v8
         with:
-          pattern: native-bundle
+          pattern: git-bundle
 
       - name: Show working directory contents
         shell: pwsh
@@ -379,9 +379,9 @@ jobs:
           
           Write-Host "Applying bundle"
           git fetch --no-recurse-submodules --depth=1 "https://github.com/$env:HEAD_REPO.git" $env:HEAD_COMMIT
-          git bundle verify native.bundle
-          git fetch --no-recurse-submodules native.bundle refs/heads/ci/native
-          git update-ref refs/heads/ci/native FETCH_HEAD
+          git bundle verify git.bundle
+          git fetch --no-recurse-submodules git.bundle refs/heads/ci/bundle
+          git update-ref refs/heads/ci/bundle FETCH_HEAD
 
       - name: Push
         shell: pwsh
@@ -396,5 +396,5 @@ jobs:
 
           Write-Host "Pushing"
           $env:GIT_DIR = "$PWD/repo.git"
-          git -c credential.helper= -c "credential.helper=!gh auth git-credential" push "https://github.com/$env:HEAD_REPO.git" "refs/heads/ci/native:refs/heads/$env:HEAD_BRANCH"
+          git -c credential.helper= -c "credential.helper=!gh auth git-credential" push "https://github.com/$env:HEAD_REPO.git" "refs/heads/ci/bundle:refs/heads/$env:HEAD_BRANCH"
           Write-Host "Push successful"
