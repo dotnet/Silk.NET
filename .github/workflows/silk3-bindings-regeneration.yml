@@ -273,27 +273,26 @@ jobs:
           repository: ${{ needs.check.outputs.headRepo }}
           ref: ${{ needs.check.outputs.headCommit }}
 
-      - name: Initialize submodules
+      - name: Ensure prerequisites
         shell: pwsh
         env:
           SUBMODULES: ${{ toJSON(matrix.submodules) }}
         run: |
+          $ErrorActionPreference = "Stop"
+          $PSNativeCommandUseErrorActionPreference = $true
+          Set-StrictMode -Version Latest
+          
           $submodules = @($env:SUBMODULES | ConvertFrom-Json)
           if ($submodules.Count -gt 0) {
             git submodule update --init --recursive --depth 1 $submodules
           }
+          
+          dotnet workload restore
+          dotnet restore
 
       - name: Clear .silktouch folder contents
         shell: pwsh
         run: Remove-Item -Path .silktouch -Recurse -Force
-
-      - name: .NET workload restore
-        shell: pwsh
-        run: dotnet workload restore
-
-      - name: .NET restore
-        shell: pwsh
-        run: dotnet restore
 
       - name: Populate caches
         shell: pwsh
