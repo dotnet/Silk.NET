@@ -291,6 +291,7 @@ Initializing submodules: eng/submodules/sdl
 Running as a dry run. Please use the --apply option if you want the prerequisites to be applied
 Initializing submodules: eng/submodules/sdl
 Restoring .NET and its workloads
+Installing dependencies needed for regeneration
 ----- Reminder comment - No affected, no existing comment (Should have no output) -----
 ----- Native -----
 ----- Bindings -----
@@ -327,7 +328,6 @@ comment<<EOF
 
 Some of the native builds are likely affected by this PR. \
 Please rebuild these by posting a comment with `/native OpenAL-Soft`. \
-You must have push permissions to run the command.
 
 If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
 EOF
@@ -337,7 +337,6 @@ comment<<EOF
 
 Some of the bindings are likely affected by this PR. \
 Please regenerate these by posting a comment with `/bindings OpenAL OpenXR`. \
-You must have push permissions to run the command.
 
 If you believe this to be in error, then please write a comment explaining why and ignore this reminder.
 EOF

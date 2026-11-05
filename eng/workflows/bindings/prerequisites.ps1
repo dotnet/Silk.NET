@@ -39,3 +39,17 @@ if ($apply) {
   dotnet workload restore
   dotnet restore
 }
+
+# Dependencies
+# Bindings regeneration doesn't require that many dependencies so we install everything jobs might need here
+Write-Host "Installing dependencies needed for regeneration"
+if ($apply) {
+  switch ($true) {
+    $IsWindows {}
+    $IsLinux {
+      sudo apt-get update
+      sudo apt-get install -y libx11-dev libgl-dev libglx-dev libxcb1-dev libxcb-glx0-dev libegl-dev
+    }
+    $IsMacOS {}
+  }
+}
