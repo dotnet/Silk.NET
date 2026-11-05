@@ -171,7 +171,7 @@ jobs:
 
       - name: Clear .silktouch folder contents
         shell: pwsh
-        run: Remove-Item -Path .silktouch -Recurse -Force
+        run: Remove-Item -Path ".silktouch/*" -Recurse -Force
 
       - name: Populate caches
         shell: pwsh
