@@ -16,8 +16,15 @@ jobs:
 
   # Unprivileged - Executes untrusted code
   check:
-    name: Check affected natives/bindings
+    name: Check affected (${{ matrix.type }})
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        type:
+          - native
+          - bindings
 
     steps:
 
@@ -27,88 +34,53 @@ jobs:
           submodules: false
           path: repo
 
-      - name: Identify native job dependencies
-        id: nativeDependencies
+      - name: Identify job dependencies
+        id: dependencies
         shell: pwsh
-        working-directory: repo/eng/workflows
-        run: ./native/workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
+        working-directory: repo/eng/workflows/${{ matrix.type }}
+        run: ./workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
 
-      - name: Identify bindings job dependencies
-        id: bindingsDependencies
-        shell: pwsh
-        working-directory: repo/eng/workflows
-        run: ./bindings/workflow-dependencies.ps1 >> $env:GITHUB_OUTPUT
-
-      - name: Determine which native jobs need to be reran
-        id: nativeAffected
+      - name: Determine which jobs need to be reran
+        id: affected
         uses: dorny/paths-filter@v4
         with:
-          filters: ${{ steps.nativeDependencies.outputs.workflowFilters }}
+          filters: ${{ steps.dependencies.outputs.workflowFilters }}
 
-      - name: Determine which bindings jobs need to be reran
-        id: bindingsAffected
-        uses: dorny/paths-filter@v4
-        with:
-          filters: ${{ steps.bindingsDependencies.outputs.workflowFilters }}
-
-      - name: Generate native reminder message
-        id: nativeReminder
+      - name: Generate reminder message
+        id: reminder
         shell: pwsh
-        working-directory: repo/eng/workflows
+        working-directory: repo/eng/workflows/${{ matrix.type }}
         env:
-          AFFECTED_JOBS: ${{ steps.nativeAffected.outputs.changes }}
+          AFFECTED_JOBS: ${{ steps.affected.outputs.changes }}
         run: |
           # Duplicate is to output to logs
-          ./native/workflow-reminder.ps1
-          ./native/workflow-reminder.ps1 >> $env:GITHUB_OUTPUT
+          ./workflow-reminder.ps1
+          ./workflow-reminder.ps1 >> $env:GITHUB_OUTPUT
 
-      - name: Generate bindings reminder message
-        id: bindingsReminder
-        shell: pwsh
-        working-directory: repo/eng/workflows
-        env:
-          AFFECTED_JOBS: ${{ steps.bindingsAffected.outputs.changes }}
-        run: |
-          # Duplicate is to output to logs
-          ./bindings/workflow-reminder.ps1
-          ./bindings/workflow-reminder.ps1 >> $env:GITHUB_OUTPUT
-
-      - name: Output native reminder to file
-        if: ${{ steps.nativeReminder.outputs.comment }}
+      - name: Output reminder to file
+        if: ${{ steps.reminder.outputs.comment }}
         shell: pwsh
         env:
-          COMMENT: ${{ steps.nativeReminder.outputs.comment }}
-        run: $env:COMMENT > native.txt
+          COMMENT: ${{ steps.reminder.outputs.comment }}
+        run: $env:COMMENT > ${{ matrix.type }}.txt
 
-      - name: Output bindings reminder to file
-        if: ${{ steps.bindingsReminder.outputs.comment }}
-        shell: pwsh
-        env:
-          COMMENT: ${{ steps.bindingsReminder.outputs.comment }}
-        run: $env:COMMENT > bindings.txt
-
-      - name: Upload native reminder
-        if: ${{ steps.nativeReminder.outputs.comment }}
+      - name: Upload reminder
+        if: ${{ steps.reminder.outputs.comment }}
         uses: actions/upload-artifact@v7
         with:
-          name: native-reminder-comment
-          path: native.txt
+          name: ${{ matrix.type }}-reminder-comment
+          path: ${{ matrix.type }}.txt
 
-      - name: Upload bindings reminder
-        if: ${{ steps.bindingsReminder.outputs.comment }}
-        uses: actions/upload-artifact@v7
-        with:
-          name: bindings-reminder-comment
-          path: bindings.txt
+  # TODO: Consider removing these PR number steps entirely and getting the PR number another way
+  # TODO: This is still insecure because the workflow runs using the workflow file defined by the PR branch
+  prNumber:
+    name: Output PR number
+    runs-on: ubuntu-latest
 
-      - name: Output whether there is a reminder
-        id: exists
-        shell: pwsh
-        run: |
-          $reminder = (Test-Path native.txt) -or (Test-Path bindings.txt)
-          "reminder=$reminder" >> $env:GITHUB_OUTPUT
+    needs: [ check ]
 
-      # TODO: Consider removing these PR number steps entirely and getting the PR number another way. This is insecure
+    steps:
+
       - name: Output PR number
         shell: pwsh
         run: ${{ github.event.number }} > pr.txt
