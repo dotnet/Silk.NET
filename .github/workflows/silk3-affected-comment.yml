@@ -94,6 +94,7 @@ jobs:
           
       - name: Get reminder comment pattern
         if: steps.pr.outputs.number != ''
+        id: pattern
         shell: pwsh
         env:
           MATRIX_TYPE: ${{ matrix.type }}
@@ -112,6 +113,8 @@ jobs:
         if: steps.pr.outputs.number != ''
         id: comment
         shell: pwsh
+        env:
+          REMINDER_MESSAGE_PATTERN: ${{ steps.pattern.outputs.pattern }}
         run: |
           $ErrorActionPreference = "Stop"
           $PSNativeCommandUseErrorActionPreference = $true
@@ -123,7 +126,7 @@ jobs:
           }
           
           $content = Get-Content ${{ matrix.type }}.txt -Raw
-          if (-not ($content -match $env:NATIVE_REMINDER_MESSAGE_PATTERN)) {
+          if (-not ($content -match $env:REMINDER_MESSAGE_PATTERN)) {
             Write-Host "Bad reminder message format"
             exit 1
           }
@@ -141,7 +144,7 @@ jobs:
         with:
           issue-number: ${{ steps.pr.outputs.number }}
           comment-author: "github-actions[bot]"
-          body-includes: ${{ env.NATIVE_REMINDER_MESSAGE_PATTERN }}
+          body-includes: ${{ steps.pattern.outputs.pattern }}
   
       - name: Update reminder comment
         if: steps.pr.outputs.number != '' && steps.comment.outputs.content != ''
