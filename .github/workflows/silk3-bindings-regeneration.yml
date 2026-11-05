@@ -209,7 +209,7 @@ jobs:
 
       - name: Show .silktouch folder contents
         shell: pwsh
-        run: Get-ChildItem .silktouch
+        run: Get-ChildItem .silktouch -ErrorAction Ignore
 
       - name: Upload cache
         uses: actions/upload-artifact@v7
