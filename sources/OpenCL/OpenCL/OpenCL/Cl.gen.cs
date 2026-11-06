@@ -27054,7 +27054,7 @@ public unsafe partial class Cl : ICl, ICl.Static
 
     [NativeName("CL_PARTITION_BY_NAMES_LIST_END_EXT")]
     [SupportedApiProfile("opencl", ["cl_ext_device_fission"])]
-    public const ulong PartitionByNamesListEndEXT = unchecked((ulong)(0) - 1);
+    public const ulong PartitionByNamesListEndEXT = unchecked((ulong)((ulong)(0) - 1));
 
     [NativeName("CL_EXT_MIGRATE_MEMOBJECT_EXTENSION_NAME")]
     public static Utf8String ExtMigrateMemobjectExtensionName => "cl_ext_migrate_memobject"u8;
