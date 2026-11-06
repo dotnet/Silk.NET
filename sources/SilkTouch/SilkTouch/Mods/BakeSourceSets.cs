@@ -330,11 +330,6 @@ public class BakeSourceSets(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        if (ctx.SourceProject is null)
-        {
-            return;
-        }
-
         // Locate the configured bake strategy.
         var strategy = strategies.FirstOrDefault(x =>
             x.Name == config.Strategy
