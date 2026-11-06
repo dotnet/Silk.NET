@@ -34,11 +34,11 @@ public unsafe partial struct VulkanInstanceCreateInfoKHR
 
     [NativeName("vulkanCreateInfo")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
-    public VkInstanceCreateInfoHandle VulkanCreateInfo;
+    public void** VulkanCreateInfo;
 
     [NativeName("vulkanAllocator")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
-    public VkAllocationCallbacksHandle VulkanAllocator;
+    public void** VulkanAllocator;
 
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public VulkanInstanceCreateInfoKHR() { }

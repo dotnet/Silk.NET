@@ -22,7 +22,7 @@ public unsafe partial struct GraphicsBindingOpenGLXcbKHR
 
     [NativeName("connection")]
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
-    public XcbConnectionTHandle Connection;
+    public void** Connection;
 
     [NativeName("screenNumber")]
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]

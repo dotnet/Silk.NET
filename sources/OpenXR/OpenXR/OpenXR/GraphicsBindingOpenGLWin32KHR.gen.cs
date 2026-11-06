@@ -22,11 +22,11 @@ public unsafe partial struct GraphicsBindingOpenGLWin32KHR
 
     [NativeName("hDC")]
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
-    public HdcHandle Hdc;
+    public void** Hdc;
 
     [NativeName("hGLRC")]
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
-    public HglrcHandle HGlrc;
+    public void** HGlrc;
 
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public GraphicsBindingOpenGLWin32KHR() { }

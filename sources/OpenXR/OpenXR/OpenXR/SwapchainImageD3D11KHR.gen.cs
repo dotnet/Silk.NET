@@ -22,7 +22,7 @@ public unsafe partial struct SwapchainImageD3D11KHR
 
     [NativeName("texture")]
     [SupportedApiProfile("openxr", ["XR_KHR_D3D11_enable"])]
-    public Id3D11Texture2DHandle Texture;
+    public void** Texture;
 
     [SupportedApiProfile("openxr", ["XR_KHR_D3D11_enable"])]
     public SwapchainImageD3D11KHR() { }

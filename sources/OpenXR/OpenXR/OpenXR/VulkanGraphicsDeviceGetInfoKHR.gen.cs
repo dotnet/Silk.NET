@@ -26,7 +26,7 @@ public unsafe partial struct VulkanGraphicsDeviceGetInfoKHR
 
     [NativeName("vulkanInstance")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
-    public VkInstanceHandle VulkanInstance;
+    public void* VulkanInstance;
 
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
     public VulkanGraphicsDeviceGetInfoKHR() { }
