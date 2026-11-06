@@ -22,15 +22,15 @@ public unsafe partial struct GraphicsBindingVulkanKHR
 
     [NativeName("instance")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
-    public VkInstanceHandle Instance;
+    public void* Instance;
 
     [NativeName("physicalDevice")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
-    public VkPhysicalDeviceHandle PhysicalDevice;
+    public void* PhysicalDevice;
 
     [NativeName("device")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
-    public VkDeviceHandle Device;
+    public void* Device;
 
     [NativeName("queueFamilyIndex")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]

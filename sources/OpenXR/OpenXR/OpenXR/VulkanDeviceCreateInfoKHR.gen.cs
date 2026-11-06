@@ -34,7 +34,7 @@ public unsafe partial struct VulkanDeviceCreateInfoKHR
 
     [NativeName("vulkanPhysicalDevice")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
-    public VkPhysicalDeviceHandle VulkanPhysicalDevice;
+    public void* VulkanPhysicalDevice;
 
     [NativeName("vulkanCreateInfo")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable2"])]
