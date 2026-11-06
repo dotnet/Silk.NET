@@ -1,4 +1,4 @@
-﻿// SDL_BlendMode.gen.cs
+﻿// SDL_BlendMode.gen.cs @ SDL3/SDL_BlendMode.gen.cs
 [NativeName("SDL_BlendMode")]
 public enum SDL_BlendMode : uint
 {
@@ -12,7 +12,7 @@ public enum SDL_BlendMode : uint
     SDL_BLENDMODE_INVALID = 0x7FFFFFFFU
 }
 
-// Sdl.gen.cs
+// Sdl.gen.cs @ SDL3/Sdl.gen.cs
 public unsafe partial class Sdl
 {
     [DllImport("SDL3", ExactSpelling = true)]

@@ -55,7 +55,7 @@ public class ChangeNativeClass(
         // Remove all the members from the old classes.
         var proj = ctx.SourceProject;
         Debug.Assert(proj is not null);
-        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
+        foreach (var docId in ctx.SourceProject.DocumentIds)
         {
             var doc = proj.GetDocument(docId)!; // <-- should defo exist
             if (await doc.GetSyntaxTreeAsync(ct) is not { } tree)
@@ -274,7 +274,7 @@ public class ChangeNativeClass(
                 return ret;
             }
 
-            SyntaxNode? member = null;
+            SyntaxNode? member;
             if (
                 // This is a double negative so it's short-circuiting - likely worth it given how often visit is called.
                 !(

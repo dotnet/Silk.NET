@@ -1,4 +1,4 @@
-﻿// VkPerformanceCounterDescriptionARM_name.gen.cs
+﻿// VkPerformanceCounterDescriptionARM_name.gen.cs @ Vulkan/VkPerformanceCounterDescriptionARM_name.gen.cs
 namespace Silk.NET.Vulkan;
 [InlineArray(256)]
 [NameAffix("Prefix", "NestedStructParent", nameof(VkPerformanceCounterDescriptionARM))]
@@ -7,7 +7,7 @@ public struct VkPerformanceCounterDescriptionARM_name
     public sbyte e0;
 }
 
-// VkPerformanceCounterDescriptionARM.gen.cs
+// VkPerformanceCounterDescriptionARM.gen.cs @ Vulkan/VkPerformanceCounterDescriptionARM.gen.cs
 namespace Silk.NET.Vulkan;
 public struct VkPerformanceCounterDescriptionARM
 {

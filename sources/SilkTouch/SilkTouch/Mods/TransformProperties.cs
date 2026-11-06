@@ -42,10 +42,10 @@ public class TransformProperties(TransformProperties.Configuration config) : IMo
     {
         var rw = new Rewriter(config);
         var proj = ctx.SourceProject;
-        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
+        foreach (var docId in ctx.SourceProject.DocumentIds)
         {
             var doc =
-                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             if (await doc.GetSyntaxRootAsync(ct) is { } root)
             {
                 proj = doc.WithSyntaxRoot(rw.Visit(root)).Project;

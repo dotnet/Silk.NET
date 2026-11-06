@@ -5,6 +5,7 @@ TODO_DEFINE_MACROS=HERE
 ../header.txt
 --include-directory
 ../../../submodules/openxr-sdk/include
+../../../submodules/vulkan-headers/include
 --with-callconv
 *=Winapi
 --with-librarypath

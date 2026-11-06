@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("SamplerParameterF")]
 public enum SamplerParameterF : uint
 {
+    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
+    UnnormalizedCoordinatesARM = 36714,
+
     [NativeName("GL_TEXTURE_BORDER_COLOR")]
     BorderColor = 4100,
 
@@ -24,7 +27,4 @@ public enum SamplerParameterF : uint
 
     [NativeName("GL_TEXTURE_MAX_ANISOTROPY")]
     MaxAnisotropy = 34046,
-
-    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    UnnormalizedCoordinatesARM = 36714,
 }

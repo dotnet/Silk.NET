@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 
 [SupportedApiProfile("gl")]
 [SupportedApiProfile("glcore", MinVersion = "3.2")]
-[SupportedApiProfile("gles2", MinVersion = "2.0")]
 [SupportedApiProfile("gles1", MaxVersion = "2.0")]
+[SupportedApiProfile("gles2", MinVersion = "2.0")]
 public unsafe partial class GL : IGL, IGL.Static
 {
     public partial class DllImport : IGL.Static
@@ -199,12 +199,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void ActiveTexture(uint texture);
 
         [NativeName("glActiveTexture")]
@@ -252,12 +252,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
         public static void ActiveTexture(Constant<uint, GLEnum, TextureUnit> texture) =>
             ActiveTexture((uint)texture);
@@ -1569,12 +1569,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void BindBuffer(uint target, uint buffer);
 
         [NativeName("glBindBuffer")]
@@ -1618,12 +1618,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
         public static void BindBuffer(Constant<uint, GLEnum, BufferTarget> target, uint buffer) =>
             BindBuffer((uint)target, buffer);
@@ -2945,12 +2945,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void BindTexture(uint target, uint texture);
 
         [NativeName("glBindTexture")]
@@ -3002,12 +3002,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindTexture")]
         public static void BindTexture(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -3218,8 +3218,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glBindVertexArrayOES")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glBindVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         public static extern void BindVertexArrayOES(uint array);
 
         [NativeName("glBindVertexBuffer")]
@@ -4271,12 +4271,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void BlendFunc(uint sfactor, uint dfactor);
 
         [NativeName("glBlendFunc")]
@@ -4330,12 +4330,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
         public static void BlendFunc(
             Constant<uint, GLEnum, BlendingFactor> sfactor,
@@ -5304,12 +5304,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void BufferData(uint target, nuint size, void* data, uint usage);
 
         [NativeName("glBufferData")]
@@ -5353,12 +5353,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferData")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -5618,12 +5618,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void BufferSubData(uint target, nint offset, nuint size, void* data);
 
         [NativeName("glBufferSubData")]
@@ -5667,12 +5667,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -6135,12 +6135,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void Clear(uint mask);
 
         [NativeName("glClear")]
@@ -6194,12 +6194,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glClear")]
         public static void Clear(Constant<uint, GLEnum, ClearBufferMask> mask) => Clear((uint)mask);
 
@@ -6806,12 +6806,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         public static extern void ClearColor(float red, float green, float blue, float alpha);
 
         [NativeName("glClearColorIiEXT")]
@@ -6923,12 +6923,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "4.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         public static extern void ClearDepth(float d);
 
         [NativeName("glClearDepthfOES")]
@@ -7435,12 +7435,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void ClearStencil(int s);
 
         [NativeName("glClearTexImage")]
@@ -7852,13 +7852,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glClientWaitSyncAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glClientWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         public static extern uint ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
         public static Constant<uint, GLEnum, SyncStatus> ClientWaitSyncAPPLE(
             SyncHandle sync,
@@ -10075,12 +10075,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void ColorMask(uint red, uint green, uint blue, uint alpha);
 
         [NativeName("glColorMask")]
@@ -10134,12 +10134,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glColorMask")]
         public static void ColorMask(
             MaybeBool<uint> red,
@@ -11679,12 +11679,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void CompressedTexImage2D(
             uint target,
             int level,
@@ -11741,12 +11741,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -12274,12 +12274,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void CompressedTexSubImage2D(
             uint target,
             int level,
@@ -12337,12 +12337,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -14611,12 +14611,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void CopyTexImage2D(
             uint target,
             int level,
@@ -14677,12 +14677,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
         public static void CopyTexImage2D(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -14925,12 +14925,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void CopyTexSubImage2D(
             uint target,
             int level,
@@ -14991,12 +14991,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
         public static void CopyTexSubImage2D(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -15298,8 +15298,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glCopyTextureLevelsAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glCopyTextureLevelsAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_copy_texture_levels"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
         public static extern void CopyTextureLevelAPPLE(
             uint destinationTexture,
             uint sourceTexture,
@@ -16711,12 +16711,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void CullFace(uint mode);
 
         [NativeName("glCullFace")]
@@ -16770,12 +16770,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCullFace")]
         public static void CullFace(Constant<uint, GLEnum, TriangleFace> mode) =>
             CullFace((uint)mode);
@@ -17638,12 +17638,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         public static void DeleteBuffer(uint buffers) => DeleteBuffers(1, (uint*)&buffers);
 
@@ -17694,12 +17694,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void DeleteBuffers(uint n, uint* buffers);
 
         [NativeName("glDeleteBuffers")]
@@ -17743,12 +17743,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -17815,8 +17815,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         public static void DeleteFenceNV(uint fences) => DeleteFencesNV(1, (uint*)&fences);
 
@@ -17842,14 +17842,14 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glDeleteFencesNV")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         public static extern void DeleteFencesNV(uint n, uint* fences);
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -19170,8 +19170,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDeleteSyncAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glDeleteSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         public static extern void DeleteSyncAPPLE(SyncHandle sync);
 
         [NativeName("glDeleteTextures")]
@@ -19223,12 +19223,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         public static void DeleteTexture(uint textures) => DeleteTextures(1, (uint*)&textures);
 
@@ -19288,12 +19288,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void DeleteTextures(uint n, uint* textures);
 
         [NativeName("glDeleteTextures")]
@@ -19345,12 +19345,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -19560,8 +19560,8 @@ public unsafe partial class GL : IGL, IGL.Static
             DeleteVertexArraysAPPLE(1, (uint*)&arrays);
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         public static void DeleteVertexArrayOES(uint arrays) =>
             DeleteVertexArraysOES(1, (uint*)&arrays);
@@ -19676,13 +19676,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDeleteVertexArraysOES")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         public static extern void DeleteVertexArraysOES(uint n, uint* arrays);
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -19763,12 +19763,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void DepthFunc(uint func);
 
         [NativeName("glDepthFunc")]
@@ -19822,12 +19822,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
         public static void DepthFunc(Constant<uint, GLEnum, DepthFunction> func) =>
             DepthFunc((uint)func);
@@ -19884,12 +19884,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void DepthMask(uint flag);
 
         [NativeName("glDepthMask")]
@@ -19943,12 +19943,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthMask")]
         public static void DepthMask(MaybeBool<uint> flag) => DepthMask((uint)flag);
 
@@ -20199,12 +20199,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "4.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         public static extern void DepthRange(float n, float f);
 
         [NativeName("glDepthRangefOES")]
@@ -20397,12 +20397,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void Disable(uint cap);
 
         [NativeName("glDisable")]
@@ -20456,12 +20456,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDisable")]
         public static void Disable(Constant<uint, GLEnum, EnableCap> cap) => Disable((uint)cap);
 
@@ -20556,8 +20556,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDisableDriverControlQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glDisableDriverControlQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         public static extern void DisableDriverControlQCOM(uint driverControl);
 
         [NativeName("glDisablei")]
@@ -20784,8 +20784,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDiscardFramebufferEXT")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         public static extern void DiscardFramebufferEXT(
             uint target,
             uint numAttachments,
@@ -20793,8 +20793,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -20812,8 +20812,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         public static void DiscardFramebufferEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -20821,8 +20821,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => DiscardFramebufferEXT((uint)target, 1, (uint*)&attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -20840,8 +20840,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         public static void DiscardFramebufferEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -20849,8 +20849,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => DiscardFramebufferEXT((uint)target, 1, (uint*)(GLEnum*)&attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -20868,8 +20868,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         public static void DiscardFramebufferEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -21000,12 +21000,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void DrawArrays(uint mode, int first, uint count);
 
         [NativeName("glDrawArrays")]
@@ -21057,12 +21057,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
         public static void DrawArrays(
             Constant<uint, GLEnum, PrimitiveType> mode,
@@ -22246,12 +22246,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void DrawElements(uint mode, uint count, uint type, void* indices);
 
         [NativeName("glDrawElements")]
@@ -22303,12 +22303,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawElements")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -24483,13 +24483,13 @@ public unsafe partial class GL : IGL, IGL.Static
             ExactSpelling = true,
             EntryPoint = "glEGLImageTargetRenderbufferStorageOES"
         )]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         public static extern void EglImageTargetRenderbufferStorageOES(uint target, void* image);
 
         [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -24532,13 +24532,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glEGLImageTargetTexture2DOES")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glEGLImageTargetTexture2DOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         public static extern void EglImageTargetTexture2DOES(uint target, void* image);
 
         [NativeName("glEGLImageTargetTexture2DOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -24683,12 +24683,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void Enable(uint cap);
 
         [NativeName("glEnable")]
@@ -24742,12 +24742,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glEnable")]
         public static void Enable(Constant<uint, GLEnum, EnableCap> cap) => Enable((uint)cap);
 
@@ -24842,8 +24842,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glEnableDriverControlQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glEnableDriverControlQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         public static extern void EnableDriverControlQCOM(uint driverControl);
 
         [NativeName("glEnablei")]
@@ -25384,13 +25384,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glEndTilingQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glEndTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         public static extern void EndTilingQCOM(uint preserveMask);
 
         [NativeName("glEndTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
         public static void EndTilingQCOM(Constant<uint, GLEnum, BufferBitQCOM> preserveMask) =>
             EndTilingQCOM((uint)preserveMask);
@@ -26173,13 +26173,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtGetBufferPointervQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtGetBufferPointervQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         public static extern void ExtGetBufferPointerQCOM(uint target, void** @params);
 
         [NativeName("glExtGetBufferPointervQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26193,8 +26193,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26211,13 +26211,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtGetBuffersQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         public static extern void ExtGetBuffersQCOM(uint* buffers, int maxBuffers, int* numBuffers);
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26232,8 +26232,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26250,8 +26250,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtGetFramebuffersQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         public static extern void ExtGetFramebuffersQCOM(
             uint* framebuffers,
             int maxFramebuffers,
@@ -26259,8 +26259,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26280,8 +26280,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtGetProgramBinarySourceQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         public static extern void ExtGetProgramBinarySourceQCOM(
             uint program,
             uint shadertype,
@@ -26290,8 +26290,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glExtGetProgramBinarySourceQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26317,8 +26317,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtGetProgramsQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         public static extern void ExtGetProgramQCOM(
             uint* programs,
             int maxPrograms,
@@ -26326,8 +26326,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26346,8 +26346,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26363,8 +26363,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26381,8 +26381,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtGetRenderbuffersQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         public static extern void ExtGetRenderbuffersQCOM(
             uint* renderbuffers,
             int maxRenderbuffers,
@@ -26390,8 +26390,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26414,8 +26414,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26432,13 +26432,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtGetShadersQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         public static extern void ExtGetShadersQCOM(uint* shaders, int maxShaders, int* numShaders);
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26454,8 +26454,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtGetTexLevelParameterivQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtGetTexLevelParameterivQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         public static extern void ExtGetTexLevelParameterQCOM(
             uint texture,
             uint face,
@@ -26465,8 +26465,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glExtGetTexLevelParameterivQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26487,8 +26487,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtGetTexSubImageQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtGetTexSubImageQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         public static extern void ExtGetTexSubImageQCOM(
             uint target,
             int level,
@@ -26504,8 +26504,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glExtGetTexSubImageQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26544,8 +26544,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtGetTexturesQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtGetTexturesQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         public static extern void ExtGetTexturesQCOM(
             uint* textures,
             int maxTextures,
@@ -26553,8 +26553,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glExtGetTexturesQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -26573,16 +26573,16 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtIsProgramBinaryQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
         public static MaybeBool<uint> ExtIsProgramBinaryQCOM(uint program) =>
             (MaybeBool<uint>)(uint)ExtIsProgramBinaryRawQCOM(program);
 
         [NativeName("glExtIsProgramBinaryQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtIsProgramBinaryQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         public static extern uint ExtIsProgramBinaryRawQCOM(uint program);
 
         [NativeName("glExtractComponentEXT")]
@@ -26602,8 +26602,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glExtTexObjectStateOverrideiQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glExtTexObjectStateOverrideiQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         public static extern void ExtTexObjectStateOverrideQCOM(
             uint target,
             uint pname,
@@ -26817,13 +26817,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glFenceSyncAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glFenceSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         public static extern SyncHandle FenceSyncAPPLE(uint condition, uint flags);
 
         [NativeName("glFenceSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
         public static SyncHandle FenceSyncAPPLE(
             Constant<uint, GLEnum, SyncCondition> condition,
@@ -26902,12 +26902,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void Finish();
 
         [NativeName("glFinishAsyncSGIX")]
@@ -26937,8 +26937,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glFinishFenceNV")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glFinishFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         public static extern void FinishFenceNV(uint fence);
 
         [NativeName("glFinishObjectAPPLE")]
@@ -27003,12 +27003,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void Flush();
 
         [NativeName("glFlushMappedBufferRange")]
@@ -27111,13 +27111,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glFlushMappedBufferRangeEXT")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glFlushMappedBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         public static extern void FlushMappedBufferRangeEXT(uint target, nint offset, nuint length);
 
         [NativeName("glFlushMappedBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
         public static void FlushMappedBufferRangeEXT(
             Constant<uint, GLEnum, BufferTarget> target,
@@ -29141,8 +29141,8 @@ public unsafe partial class GL : IGL, IGL.Static
             ExactSpelling = true,
             EntryPoint = "glFramebufferTexture2DMultisampleEXT"
         )]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         public static extern void FramebufferTexture2DMultisampleEXT(
             uint target,
             uint attachment,
@@ -29153,8 +29153,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glFramebufferTexture2DMultisampleEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
         public static void FramebufferTexture2DMultisampleEXT(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -29179,8 +29179,8 @@ public unsafe partial class GL : IGL, IGL.Static
             ExactSpelling = true,
             EntryPoint = "glFramebufferTexture2DMultisampleIMG"
         )]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         public static extern void FramebufferTexture2DMultisampleIMG(
             uint target,
             uint attachment,
@@ -29191,8 +29191,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glFramebufferTexture2DMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
         public static void FramebufferTexture2DMultisampleIMG(
             Constant<uint, GLEnum, FramebufferTarget> target,
@@ -29835,12 +29835,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void FrontFace(uint mode);
 
         [NativeName("glFrontFace")]
@@ -29894,12 +29894,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFrontFace")]
         public static void FrontFace(Constant<uint, GLEnum, FrontFaceDirection> mode) =>
             FrontFace((uint)mode);
@@ -30008,12 +30008,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         public static uint GenBuffer()
         {
@@ -30074,12 +30074,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void GenBuffers(uint n, uint* buffers);
 
         [NativeName("glGenBuffers")]
@@ -30123,12 +30123,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -30329,8 +30329,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         public static uint GenFenceNV()
         {
@@ -30361,14 +30361,14 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glGenFencesNV")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         public static extern void GenFencesNV(uint n, uint* fences);
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -31609,12 +31609,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         public static uint GenTexture()
         {
@@ -31683,12 +31683,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void GenTextures(uint n, uint* textures);
 
         [NativeName("glGenTextures")]
@@ -31740,12 +31740,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -31972,8 +31972,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         public static uint GenVertexArrayOES()
         {
@@ -32092,13 +32092,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGenVertexArraysOES")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         public static extern void GenVertexArraysOES(uint n, uint* arrays);
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -35219,12 +35219,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void GetBoolean(uint pname, uint* data);
 
         [NativeName("glGetBooleanv")]
@@ -35278,12 +35278,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -35419,12 +35419,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void GetBufferParameter(uint target, uint pname, int* @params);
 
         [NativeName("glGetBufferParameteriv")]
@@ -35468,12 +35468,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -35675,13 +35675,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetBufferPointervOES")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGetBufferPointervOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         public static extern void GetBufferPointerOES(uint target, uint pname, void** @params);
 
         [NativeName("glGetBufferPointervOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -37768,13 +37768,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetDriverControlsQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         public static extern void GetDriverControlQCOM(int* num, uint size, uint* driverControls);
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -37789,8 +37789,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -37807,8 +37807,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetDriverControlStringQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         public static extern void GetDriverControlStringQCOM(
             uint driverControl,
             uint bufSize,
@@ -37817,8 +37817,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -37843,8 +37843,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -37915,12 +37915,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetError")]
         public static Constant<uint, GLEnum, ErrorCode> GetError() =>
             (Constant<uint, GLEnum, ErrorCode>)(uint)GetErrorRaw();
@@ -37977,25 +37977,25 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern uint GetErrorRaw();
 
         [NativeName("glGetFenceivNV")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGetFenceivNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         public static extern void GetFenceNV(uint fence, uint pname, int* @params);
 
         [NativeName("glGetFenceivNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -38358,12 +38358,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         public static extern void GetFloat(uint pname, float* data);
 
         [NativeName("glGetFloatv")]
@@ -38417,12 +38417,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -39246,16 +39246,16 @@ public unsafe partial class GL : IGL, IGL.Static
         public static extern uint GetGraphicsResetStatusRawARB();
 
         [NativeName("glGetGraphicsResetStatusEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
         public static Constant<uint, GLEnum, GraphicsResetStatus> GetGraphicsResetStatusEXT() =>
             (Constant<uint, GLEnum, GraphicsResetStatus>)(uint)GetGraphicsResetStatusRawEXT();
 
         [NativeName("glGetGraphicsResetStatusEXT")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGetGraphicsResetStatusEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         public static extern uint GetGraphicsResetStatusRawEXT();
 
         [NativeName("glGetGraphicsResetStatusKHR")]
@@ -39790,13 +39790,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetInteger64vAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGetInteger64vAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         public static extern void GetInteger64APPLE(uint pname, long* @params);
 
         [NativeName("glGetInteger64vAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -40088,12 +40088,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void GetInteger(uint pname, int* data);
 
         [NativeName("glGetIntegerv")]
@@ -40147,12 +40147,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -44205,8 +44205,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetnUniformfvEXT")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGetnUniformfvEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         public static extern void GetnUniformEXT(
             uint program,
             int location,
@@ -44215,8 +44215,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glGetnUniformfvEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -44369,8 +44369,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetnUniformivEXT")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGetnUniformivEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         public static extern void GetnUniformEXT(
             uint program,
             int location,
@@ -44379,8 +44379,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glGetnUniformivEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -51397,12 +51397,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern byte* GetString(uint name);
 
         [NativeName("glGetString")]
@@ -51456,12 +51456,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -51854,8 +51854,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetSyncivAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         public static extern void GetSyncAPPLE(
             SyncHandle sync,
             uint pname,
@@ -51865,8 +51865,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -51887,8 +51887,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -52916,12 +52916,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         public static extern void GetTexParameter(uint target, uint pname, float* @params);
 
         [NativeName("glGetTexParameterfv")]
@@ -52975,12 +52975,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -53323,12 +53323,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void GetTexParameter(uint target, uint pname, int* @params);
 
         [NativeName("glGetTexParameteriv")]
@@ -53382,12 +53382,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -58361,12 +58361,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void Hint(uint target, uint mode);
 
         [NativeName("glHint")]
@@ -58420,12 +58420,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glHint")]
         public static void Hint(
             Constant<uint, GLEnum, HintTarget> target,
@@ -59623,15 +59623,15 @@ public unsafe partial class GL : IGL, IGL.Static
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glInsertEventMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         public static extern void InsertEventMarkerEXT(uint length, sbyte* marker);
 
         [NativeName("glInsertEventMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -60854,12 +60854,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
         public static MaybeBool<uint> IsBuffer(uint buffer) =>
             (MaybeBool<uint>)(uint)IsBufferRaw(buffer);
@@ -60917,12 +60917,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern uint IsBufferRaw(uint buffer);
 
         [NativeName("glIsBufferResidentNV")]
@@ -61003,12 +61003,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern uint IsEnabled(uint cap);
 
         [NativeName("glIsEnabled")]
@@ -61062,12 +61062,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
         public static MaybeBool<uint> IsEnabled(Constant<uint, GLEnum, EnableCap> cap) =>
             (MaybeBool<uint>)(uint)IsEnabled((uint)cap);
@@ -61218,8 +61218,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glIsFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
         public static MaybeBool<uint> IsFenceNV(uint fence) =>
             (MaybeBool<uint>)(uint)IsFenceRawNV(fence);
@@ -61227,8 +61227,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glIsFenceNV")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glIsFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         public static extern uint IsFenceRawNV(uint fence);
 
         [NativeName("glIsFramebuffer")]
@@ -62221,16 +62221,16 @@ public unsafe partial class GL : IGL, IGL.Static
             (MaybeBool<uint>)(uint)IsSyncRaw(sync);
 
         [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
         public static MaybeBool<uint> IsSyncAPPLE(SyncHandle sync) =>
             (MaybeBool<uint>)(uint)IsSyncRawAPPLE(sync);
 
         [NativeName("glIsSyncAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         public static extern uint IsSyncRawAPPLE(SyncHandle sync);
 
         [NativeName("glIsSync")]
@@ -62318,12 +62318,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsTexture")]
         public static MaybeBool<uint> IsTexture(uint texture) =>
             (MaybeBool<uint>)(uint)IsTextureRaw(texture);
@@ -62417,12 +62417,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern uint IsTextureRaw(uint texture);
 
         [NativeName("glIsTransformFeedback")]
@@ -62567,16 +62567,16 @@ public unsafe partial class GL : IGL, IGL.Static
         public static extern uint IsVertexArrayRawAPPLE(uint array);
 
         [NativeName("glIsVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
         public static MaybeBool<uint> IsVertexArrayOES(uint array) =>
             (MaybeBool<uint>)(uint)IsVertexArrayRawOES(array);
 
         [NativeName("glIsVertexArrayOES")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glIsVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         public static extern uint IsVertexArrayRawOES(uint array);
 
         [NativeName("glIsVertexArray")]
@@ -63499,12 +63499,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         public static extern void LineWidth(float width);
 
         [NativeName("glLineWidthx")]
@@ -64892,13 +64892,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMapBufferOES")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glMapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         public static extern void* MapBufferOES(uint target, uint access);
 
         [NativeName("glMapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -65003,8 +65003,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMapBufferRangeEXT")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glMapBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         public static extern void* MapBufferRangeEXT(
             uint target,
             nint offset,
@@ -65013,8 +65013,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glMapBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -67461,8 +67461,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glMultiDrawArraysEXT")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glMultiDrawArraysEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         public static extern void MultiDrawArraysEXT(
             uint mode,
             int* first,
@@ -67472,8 +67472,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMultiDrawArraysEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -68091,8 +68091,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glMultiDrawElementsEXT")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glMultiDrawElementsEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         public static extern void MultiDrawElementsEXT(
             uint mode,
             uint* count,
@@ -68103,8 +68103,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMultiDrawElementsEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -77701,12 +77701,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void PixelStore(uint pname, int param1);
 
         [NativeName("glPixelStorei")]
@@ -77760,12 +77760,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
         public static void PixelStore(
             Constant<uint, GLEnum, PixelStoreParameter> pname,
@@ -79130,12 +79130,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         public static extern void PolygonOffset(float factor, float units);
 
         [NativeName("glPolygonOffsetClamp")]
@@ -79334,8 +79334,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glPopGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         public static extern void PopGroupMarkerEXT();
 
         [NativeName("glPopMatrix")]
@@ -87151,15 +87151,15 @@ public unsafe partial class GL : IGL, IGL.Static
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glPushGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         public static extern void PushGroupMarkerEXT(uint length, sbyte* marker);
 
         [NativeName("glPushGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -88885,8 +88885,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glReadnPixelsEXT")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glReadnPixelsEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         public static extern void ReadnPixelsEXT(
             int x,
             int y,
@@ -88899,8 +88899,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glReadnPixelsEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -89011,12 +89011,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void ReadPixels(
             int x,
             int y,
@@ -89078,12 +89078,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glReadPixels")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -89882,8 +89882,8 @@ public unsafe partial class GL : IGL, IGL.Static
             ExactSpelling = true,
             EntryPoint = "glRenderbufferStorageMultisampleAPPLE"
         )]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         public static extern void RenderbufferStorageMultisampleAPPLE(
             uint target,
             uint samples,
@@ -89893,8 +89893,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
         public static void RenderbufferStorageMultisampleAPPLE(
             Constant<uint, GLEnum, RenderbufferTarget> target,
@@ -89956,8 +89956,8 @@ public unsafe partial class GL : IGL, IGL.Static
             EntryPoint = "glRenderbufferStorageMultisampleEXT"
         )]
         [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         public static extern void RenderbufferStorageMultisampleEXT(
             uint target,
             uint samples,
@@ -89968,8 +89968,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glRenderbufferStorageMultisampleEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
         public static void RenderbufferStorageMultisampleEXT(
             Constant<uint, GLEnum, RenderbufferTarget> target,
@@ -89992,8 +89992,8 @@ public unsafe partial class GL : IGL, IGL.Static
             ExactSpelling = true,
             EntryPoint = "glRenderbufferStorageMultisampleIMG"
         )]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         public static extern void RenderbufferStorageMultisampleIMG(
             uint target,
             uint samples,
@@ -90003,8 +90003,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glRenderbufferStorageMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
         public static void RenderbufferStorageMultisampleIMG(
             Constant<uint, GLEnum, RenderbufferTarget> target,
@@ -91753,8 +91753,8 @@ public unsafe partial class GL : IGL, IGL.Static
             ExactSpelling = true,
             EntryPoint = "glResolveMultisampleFramebufferAPPLE"
         )]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         public static extern void ResolveMultisampleFramebufferAPPLE();
 
         [NativeName("glResumeTransformFeedback")]
@@ -91910,12 +91910,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void SampleCoverage(float value, uint invert);
 
         [NativeName("glSampleCoverage")]
@@ -91963,12 +91963,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
         public static void SampleCoverage(float value, MaybeBool<uint> invert) =>
             SampleCoverage(value, (uint)invert);
@@ -92867,12 +92867,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void Scissor(int x, int y, uint width, uint height);
 
         [NativeName("glScissorArrayv")]
@@ -94629,14 +94629,14 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glSetFenceNV")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glSetFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         public static extern void SetFenceNV(uint fence, uint condition);
 
         [NativeName("glSetFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
         public static void SetFenceNV(
             uint fence,
@@ -95663,8 +95663,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glStartTilingQCOM")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glStartTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         public static extern void StartTilingQCOM(
             uint x,
             uint y,
@@ -95674,8 +95674,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
         [NativeName("glStartTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
         public static void StartTilingQCOM(
             uint x,
@@ -95817,12 +95817,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void StencilFunc(uint func, int @ref, uint mask);
 
         [NativeName("glStencilFunc")]
@@ -95876,12 +95876,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
         public static void StencilFunc(
             Constant<uint, GLEnum, StencilFunction> func,
@@ -96060,12 +96060,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void StencilMask(uint mask);
 
         [NativeName("glStencilMaskSeparate")]
@@ -96217,12 +96217,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void StencilOp(uint fail, uint zfail, uint zpass);
 
         [NativeName("glStencilOp")]
@@ -96276,12 +96276,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilOp")]
         public static void StencilOp(
             Constant<uint, GLEnum, StencilOp> fail,
@@ -96884,8 +96884,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glTestFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
         public static MaybeBool<uint> TestFenceNV(uint fence) =>
             (MaybeBool<uint>)(uint)TestFenceRawNV(fence);
@@ -96893,8 +96893,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTestFenceNV")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glTestFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         public static extern uint TestFenceRawNV(uint fence);
 
         [NativeName("glTestObjectAPPLE")]
@@ -100906,12 +100906,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void TexImage2D(
             uint target,
             int level,
@@ -100975,12 +100975,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -101776,12 +101776,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         public static extern void TexParameter(uint target, uint pname, float param2);
 
         [NativeName("glTexParameterf")]
@@ -101835,12 +101835,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
         public static void TexParameter(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -101900,12 +101900,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         public static extern void TexParameter(uint target, uint pname, float* @params);
 
         [NativeName("glTexParameterfv")]
@@ -101959,12 +101959,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -102033,12 +102033,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void TexParameter(uint target, uint pname, int param2);
 
         [NativeName("glTexParameteri")]
@@ -102092,12 +102092,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
         public static void TexParameter(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -102431,12 +102431,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void TexParameter(uint target, uint pname, int* @params);
 
         [NativeName("glTexParameteriv")]
@@ -102490,12 +102490,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -102673,8 +102673,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glTexStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         public static extern void TexStorage1DEXT(
             uint target,
             uint levels,
@@ -102685,8 +102685,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
         public static void TexStorage1DEXT(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -102767,8 +102767,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glTexStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         public static extern void TexStorage2DEXT(
             uint target,
             uint levels,
@@ -102780,8 +102780,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
         public static void TexStorage2DEXT(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -102939,8 +102939,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glTexStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         public static extern void TexStorage3DEXT(
             uint target,
             uint levels,
@@ -102953,8 +102953,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
         public static void TexStorage3DEXT(
             Constant<uint, GLEnum, TextureTarget> target,
@@ -103725,12 +103725,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void TexSubImage2D(
             uint target,
             int level,
@@ -103792,12 +103792,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -105310,8 +105310,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glTextureStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         public static extern void TextureStorage1DEXT(
             uint texture,
             uint target,
@@ -105323,8 +105323,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
         public static void TextureStorage1DEXT(
             uint texture,
@@ -105378,8 +105378,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glTextureStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         public static extern void TextureStorage2DEXT(
             uint texture,
             uint target,
@@ -105392,8 +105392,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
         public static void TextureStorage2DEXT(
             uint texture,
@@ -105537,8 +105537,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glTextureStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         public static extern void TextureStorage3DEXT(
             uint texture,
             uint target,
@@ -105552,8 +105552,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
         public static void TextureStorage3DEXT(
             uint texture,
@@ -112143,16 +112143,16 @@ public unsafe partial class GL : IGL, IGL.Static
             (MaybeBool<uint>)(uint)UnmapBufferARB((uint)target);
 
         [NativeName("glUnmapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
         public static MaybeBool<uint> UnmapBufferOES(uint target) =>
             (MaybeBool<uint>)(uint)UnmapBufferRawOES(target);
 
         [NativeName("glUnmapBufferOES")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glUnmapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         public static extern uint UnmapBufferRawOES(uint target);
 
         [NativeName("glUnmapNamedBuffer")]
@@ -124755,12 +124755,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         public static extern void Viewport(int x, int y, uint width, uint height);
 
         [NativeName("glViewportArrayv")]
@@ -125392,13 +125392,13 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glWaitSyncAPPLE")]
         [DllImport("opengl", ExactSpelling = true, EntryPoint = "glWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         public static extern void WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout);
 
         [NativeName("glWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
         public static void WaitSyncAPPLE(
             SyncHandle sync,
@@ -127099,12 +127099,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -127156,12 +127156,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -128647,12 +128647,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -128700,12 +128700,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -130154,12 +130154,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -130215,12 +130215,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -130462,8 +130462,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public void BindVertexArrayAPPLE(uint array) => T.BindVertexArrayAPPLE(array);
 
         [NativeName("glBindVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glBindVertexArrayOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -131629,12 +131629,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -131692,12 +131692,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -132838,12 +132838,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferData")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -132892,12 +132892,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferData")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -133155,12 +133155,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -133209,12 +133209,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -133703,12 +133703,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glClear")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -133766,12 +133766,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glClear")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -134364,12 +134364,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glClearColor")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -134507,12 +134507,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "4.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glClearDepthf")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -134993,12 +134993,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glClearStencil")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -135442,8 +135442,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ClientWaitSync(sync, flags, timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -135452,8 +135452,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ClientWaitSyncAPPLE(sync, flags, timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -137690,12 +137690,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glColorMask")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -137754,12 +137754,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glColorMask")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -139349,12 +139349,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -139425,12 +139425,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -139965,12 +139965,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -140043,12 +140043,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -142620,12 +142620,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -142690,12 +142690,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -142948,12 +142948,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -143018,12 +143018,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -143350,8 +143350,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glCopyTextureLevelsAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_copy_texture_levels"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
         [NativeFunction("opengl", EntryPoint = "glCopyTextureLevelsAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -144815,12 +144815,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCullFace")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -144878,12 +144878,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCullFace")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -145716,12 +145716,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -145777,12 +145777,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -145830,12 +145830,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -145896,8 +145896,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -145922,8 +145922,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -145932,8 +145932,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -147288,8 +147288,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public void DeleteSync(SyncHandle sync) => T.DeleteSync(sync);
 
         [NativeName("glDeleteSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -147345,12 +147345,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -147414,12 +147414,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -147475,12 +147475,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -147689,8 +147689,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public void DeleteVertexArrayAPPLE(uint arrays) => T.DeleteVertexArrayAPPLE(arrays);
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -147802,8 +147802,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.DeleteVertexArraysAPPLE(n, arrays);
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -147812,8 +147812,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.DeleteVertexArraysOES(n, arrays);
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -147897,12 +147897,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -147960,12 +147960,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -148023,12 +148023,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthMask")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -148086,12 +148086,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthMask")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -148348,12 +148348,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "4.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthRangef")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -148579,12 +148579,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDisable")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -148642,12 +148642,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDisable")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -148762,8 +148762,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.DisableClientStateIndexedEXT(array, index);
 
         [NativeName("glDisableDriverControlQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glDisableDriverControlQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -149049,8 +149049,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public void DisableVertexAttribArrayARB(uint index) => T.DisableVertexAttribArrayARB(index);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -149059,8 +149059,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.DiscardFramebufferEXT(target, numAttachments, attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -149072,8 +149072,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.DiscardFramebufferEXT(target, numAttachments, attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -149084,8 +149084,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.DiscardFramebufferEXT(target, attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -149097,8 +149097,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.DiscardFramebufferEXT(target, numAttachments, attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -149109,8 +149109,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.DiscardFramebufferEXT(target, attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -149122,8 +149122,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.DiscardFramebufferEXT(target, numAttachments, attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -149265,12 +149265,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -149327,12 +149327,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -150483,12 +150483,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawElements")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -150545,12 +150545,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawElements")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -152717,8 +152717,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public void EdgeFlagv(uint flag) => T.EdgeFlagv(flag);
 
         [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -152727,8 +152727,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.EglImageTargetRenderbufferStorageOES(target, image);
 
         [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -152759,8 +152759,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.EglImageTargetTexStorageEXT(target, image, attrib_list);
 
         [NativeName("glEGLImageTargetTexture2DOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -152769,8 +152769,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.EglImageTargetTexture2DOES(target, image);
 
         [NativeName("glEGLImageTargetTexture2DOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -152894,12 +152894,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glEnable")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -152957,12 +152957,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glEnable")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -153077,8 +153077,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.EnableClientStateIndexedEXT(array, index);
 
         [NativeName("glEnableDriverControlQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glEnableDriverControlQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -153727,8 +153727,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.EndQueryIndexed(target, index);
 
         [NativeName("glEndTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -153736,8 +153736,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public void EndTilingQCOM(uint preserveMask) => T.EndTilingQCOM(preserveMask);
 
         [NativeName("glEndTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154573,8 +154573,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ExecuteProgramNV(target, id, @params);
 
         [NativeName("glExtGetBufferPointervQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154583,8 +154583,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetBufferPointerQCOM(target, @params);
 
         [NativeName("glExtGetBufferPointervQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154593,8 +154593,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetBufferPointerQCOM(target, @params);
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154602,8 +154602,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public uint ExtGetBufferQCOM(Ref<int> numBuffers) => T.ExtGetBufferQCOM(numBuffers);
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154612,8 +154612,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetBuffersQCOM(buffers, maxBuffers, numBuffers);
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154622,8 +154622,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetBuffersQCOM(buffers, maxBuffers, numBuffers);
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154632,8 +154632,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetFramebufferQCOM(numFramebuffers);
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154645,8 +154645,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ExtGetFramebuffersQCOM(framebuffers, maxFramebuffers, numFramebuffers);
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154658,8 +154658,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ExtGetFramebuffersQCOM(framebuffers, maxFramebuffers, numFramebuffers);
 
         [NativeName("glExtGetProgramBinarySourceQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154672,8 +154672,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ExtGetProgramBinarySourceQCOM(program, shadertype, source, length);
 
         [NativeName("glExtGetProgramBinarySourceQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154686,8 +154686,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ExtGetProgramBinarySourceQCOM(program, shadertype, source, length);
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154696,8 +154696,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetProgramQCOM(programs, maxPrograms, numPrograms);
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154706,8 +154706,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetProgramQCOM(programs, maxPrograms, numPrograms);
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154715,8 +154715,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public uint ExtGetProgramQCOM(Ref<int> numPrograms) => T.ExtGetProgramQCOM(numPrograms);
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154725,8 +154725,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetRenderbufferQCOM(numRenderbuffers);
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154738,8 +154738,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ExtGetRenderbuffersQCOM(renderbuffers, maxRenderbuffers, numRenderbuffers);
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154751,8 +154751,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ExtGetRenderbuffersQCOM(renderbuffers, maxRenderbuffers, numRenderbuffers);
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154760,8 +154760,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public uint ExtGetShaderQCOM(Ref<int> numShaders) => T.ExtGetShaderQCOM(numShaders);
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154770,8 +154770,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetShadersQCOM(shaders, maxShaders, numShaders);
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154780,8 +154780,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetShadersQCOM(shaders, maxShaders, numShaders);
 
         [NativeName("glExtGetTexLevelParameterivQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154795,8 +154795,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ExtGetTexLevelParameterQCOM(texture, face, level, pname, @params);
 
         [NativeName("glExtGetTexLevelParameterivQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154810,8 +154810,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ExtGetTexLevelParameterQCOM(texture, face, level, pname, @params);
 
         [NativeName("glExtGetTexSubImageQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154844,8 +154844,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glExtGetTexSubImageQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154878,8 +154878,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glExtGetTexturesQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154888,8 +154888,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetTexturesQCOM(textures, maxTextures, numTextures);
 
         [NativeName("glExtGetTexturesQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154898,8 +154898,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtGetTexturesQCOM(textures, maxTextures, numTextures);
 
         [NativeName("glExtIsProgramBinaryQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154908,8 +154908,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtIsProgramBinaryQCOM(program);
 
         [NativeName("glExtIsProgramBinaryQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -154935,8 +154935,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.ExtrapolateTex2DQCOM(src1, src2, output, scaleFactor);
 
         [NativeName("glExtTexObjectStateOverrideiQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtTexObjectStateOverrideiQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -155154,8 +155154,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.FenceSync(condition, flags);
 
         [NativeName("glFenceSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -155164,8 +155164,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.FenceSyncAPPLE(condition, flags);
 
         [NativeName("glFenceSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -155252,12 +155252,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFinish")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -155290,8 +155290,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glFinishFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glFinishFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -155365,12 +155365,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFlush")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -155490,8 +155490,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.FlushMappedBufferRangeAPPLE(target, offset, size);
 
         [NativeName("glFlushMappedBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -155500,8 +155500,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.FlushMappedBufferRangeEXT(target, offset, length);
 
         [NativeName("glFlushMappedBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -157646,8 +157646,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.FramebufferTexture2DEXT(target, attachment, textarget, texture, level);
 
         [NativeName("glFramebufferTexture2DMultisampleEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -157670,8 +157670,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glFramebufferTexture2DMultisampleEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -157694,8 +157694,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glFramebufferTexture2DMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -157718,8 +157718,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glFramebufferTexture2DMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -158438,12 +158438,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFrontFace")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -158501,12 +158501,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFrontFace")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -158639,12 +158639,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -158700,12 +158700,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -158753,12 +158753,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -158983,8 +158983,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -159009,8 +159009,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -159019,8 +159019,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -160193,12 +160193,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -160262,12 +160262,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -160323,12 +160323,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -160533,8 +160533,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public uint GenVertexArrayAPPLE() => T.GenVertexArrayAPPLE();
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -160645,8 +160645,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GenVertexArraysAPPLE(n, arrays);
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -160654,8 +160654,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public void GenVertexArraysOES(uint n, uint* arrays) => T.GenVertexArraysOES(n, arrays);
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -163186,12 +163186,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -163249,12 +163249,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -163382,12 +163382,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -163436,12 +163436,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -163627,8 +163627,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.GetBufferPointerARB(target, pname, @params);
 
         [NativeName("glGetBufferPointervOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -163637,8 +163637,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetBufferPointerOES(target, pname, @params);
 
         [NativeName("glGetBufferPointervOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165473,8 +165473,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetDouble(pname, data);
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165483,8 +165483,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetDriverControlQCOM(num, size, driverControls);
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165493,8 +165493,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetDriverControlQCOM(num, size, driverControls);
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165502,8 +165502,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public uint GetDriverControlQCOM(Ref<int> num) => T.GetDriverControlQCOM(num);
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165516,8 +165516,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.GetDriverControlStringQCOM(driverControl, bufSize, length, driverControlString);
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165530,8 +165530,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.GetDriverControlStringQCOM(driverControl, bufSize, length, driverControlString);
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165590,12 +165590,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetError")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165653,12 +165653,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetError")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165667,8 +165667,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetFenceivNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165678,8 +165678,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetFenceivNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -165999,12 +165999,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -166062,12 +166062,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -166787,8 +166787,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public uint GetGraphicsResetStatusRawARB() => T.GetGraphicsResetStatusRawARB();
 
         [NativeName("glGetGraphicsResetStatusEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -166797,8 +166797,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetGraphicsResetStatusEXT();
 
         [NativeName("glGetGraphicsResetStatusEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -167309,8 +167309,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetInteger64(pname, data);
 
         [NativeName("glGetInteger64vAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -167319,8 +167319,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetInteger64APPLE(pname, @params);
 
         [NativeName("glGetInteger64vAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -167587,12 +167587,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -167650,12 +167650,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -171160,8 +171160,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetnUniformARB(program, location, bufSize, @params);
 
         [NativeName("glGetnUniformfvEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -171170,8 +171170,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetnUniformEXT(program, location, bufSize, @params);
 
         [NativeName("glGetnUniformfvEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -171274,8 +171274,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetnUniformARB(program, location, bufSize, @params);
 
         [NativeName("glGetnUniformivEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -171284,8 +171284,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.GetnUniformEXT(program, location, bufSize, @params);
 
         [NativeName("glGetnUniformivEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -177460,12 +177460,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -177523,12 +177523,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -177897,8 +177897,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.GetSync(sync, pname, length);
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -177912,8 +177912,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.GetSyncAPPLE(sync, pname, count, length, values);
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -177927,8 +177927,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.GetSyncAPPLE(sync, pname, count, length, values);
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -178892,12 +178892,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -178956,12 +178956,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -179285,12 +179285,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -179349,12 +179349,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -183826,12 +183826,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glHint")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -183889,12 +183889,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glHint")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -185127,8 +185127,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glInsertEventMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -185139,8 +185139,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glInsertEventMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -186275,12 +186275,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -186344,12 +186344,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -186443,12 +186443,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -186506,12 +186506,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -186692,8 +186692,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glIsFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -186702,8 +186702,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glIsFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -187863,8 +187863,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public MaybeBool<uint> IsSync(SyncHandle sync) => T.IsSync(sync);
 
         [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -187872,8 +187872,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public MaybeBool<uint> IsSyncAPPLE(SyncHandle sync) => T.IsSyncAPPLE(sync);
 
         [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -187968,12 +187968,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -188087,12 +188087,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -188264,8 +188264,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public uint IsVertexArrayRawAPPLE(uint array) => T.IsVertexArrayRawAPPLE(array);
 
         [NativeName("glIsVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -188273,8 +188273,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public MaybeBool<uint> IsVertexArrayOES(uint array) => T.IsVertexArrayOES(array);
 
         [NativeName("glIsVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -189253,12 +189253,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLineWidth")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -190691,8 +190691,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.MapBufferARB(target, access);
 
         [NativeName("glMapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -190700,8 +190700,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public void* MapBufferOES(uint target, uint access) => T.MapBufferOES(target, access);
 
         [NativeName("glMapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -190804,8 +190804,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.MapBufferRange(target, offset, length, access);
 
         [NativeName("glMapBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -190814,8 +190814,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.MapBufferRangeEXT(target, offset, length, access);
 
         [NativeName("glMapBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -193377,8 +193377,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMultiDrawArraysEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -193388,8 +193388,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMultiDrawArraysEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -193939,8 +193939,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMultiDrawElementsEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -193955,8 +193955,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMultiDrawElementsEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -203649,12 +203649,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -203712,12 +203712,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -205169,12 +205169,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glPolygonOffset")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -205402,8 +205402,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glPopGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glPopGroupMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -212803,8 +212803,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glPushGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -212815,8 +212815,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glPushGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -214559,8 +214559,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ReadnPixelsARB(x, y, width, height, format, type, bufSize, data);
 
         [NativeName("glReadnPixelsEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -214577,8 +214577,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.ReadnPixelsEXT(x, y, width, height, format, type, bufSize, data);
 
         [NativeName("glReadnPixelsEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -214679,12 +214679,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glReadPixels")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -214750,12 +214750,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glReadPixels")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -215561,8 +215561,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.RenderbufferStorageMultisampleANGLE(target, samples, internalformat, width, height);
 
         [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -215576,8 +215576,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.RenderbufferStorageMultisampleAPPLE(target, samples, internalformat, width, height);
 
         [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -215640,8 +215640,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glRenderbufferStorageMultisampleEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -215656,8 +215656,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glRenderbufferStorageMultisampleEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -215671,8 +215671,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.RenderbufferStorageMultisampleEXT(target, samples, internalformat, width, height);
 
         [NativeName("glRenderbufferStorageMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -215686,8 +215686,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.RenderbufferStorageMultisampleIMG(target, samples, internalformat, width, height);
 
         [NativeName("glRenderbufferStorageMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -217029,8 +217029,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public void ResolveDepthValuesNV() => T.ResolveDepthValuesNV();
 
         [NativeName("glResolveMultisampleFramebufferAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [NativeFunction("opengl", EntryPoint = "glResolveMultisampleFramebufferAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -217207,12 +217207,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -217264,12 +217264,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -218238,12 +218238,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glScissor")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -219980,8 +219980,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glSetFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -219990,8 +219990,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glSetFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -220993,8 +220993,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public void StartInstrumentsSGIX() => T.StartInstrumentsSGIX();
 
         [NativeName("glStartTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -221003,8 +221003,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.StartTilingQCOM(x, y, width, height, preserveMask);
 
         [NativeName("glStartTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -221169,12 +221169,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -221232,12 +221232,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -221427,12 +221427,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilMask")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -221591,12 +221591,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilOp")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -221654,12 +221654,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilOp")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -222328,8 +222328,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glTestFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -222338,8 +222338,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glTestFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -226432,12 +226432,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -226516,12 +226516,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -227458,12 +227458,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -227522,12 +227522,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -227589,12 +227589,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -227653,12 +227653,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -227720,12 +227720,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -227784,12 +227784,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -228113,12 +228113,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -228177,12 +228177,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -228372,8 +228372,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -228384,8 +228384,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -228474,8 +228474,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -228491,8 +228491,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -228672,8 +228672,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -228690,8 +228690,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -229482,12 +229482,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -229553,12 +229553,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -231279,8 +231279,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -231296,8 +231296,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -231359,8 +231359,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -231377,8 +231377,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -231559,8 +231559,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -231578,8 +231578,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -238261,8 +238261,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.UnmapBufferARB(target);
 
         [NativeName("glUnmapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -238270,8 +238270,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public MaybeBool<uint> UnmapBufferOES(uint target) => T.UnmapBufferOES(target);
 
         [NativeName("glUnmapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -251019,12 +251019,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glViewport")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -251613,8 +251613,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => T.WaitSync(sync, flags, timeout);
 
         [NativeName("glWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -251623,8 +251623,8 @@ public unsafe partial class GL : IGL, IGL.Static
             T.WaitSyncAPPLE(sync, flags, timeout);
 
         [NativeName("glWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -253329,12 +253329,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -253386,12 +253386,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -254972,12 +254972,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -255026,12 +255026,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -256585,12 +256585,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -256647,12 +256647,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBindTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -256908,8 +256908,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.BindVertexArrayAPPLE(array);
 
         [NativeName("glBindVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glBindVertexArrayOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -258163,12 +258163,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -258227,12 +258227,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -259434,12 +259434,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferData")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -259488,12 +259488,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferData")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -259805,12 +259805,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -259859,12 +259859,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -260377,12 +260377,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glClear")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -260440,12 +260440,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glClear")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -261092,12 +261092,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glClearColor")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -261235,12 +261235,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "4.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glClearDepthf")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -261828,12 +261828,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glClearStencil")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -262329,8 +262329,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.ClientWaitSync(sync, flags, timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -262339,8 +262339,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.ClientWaitSyncAPPLE(sync, flags, timeout);
 
         [NativeName("glClientWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -264806,12 +264806,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glColorMask")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -264870,12 +264870,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glColorMask")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -266698,12 +266698,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -266774,12 +266774,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -267385,12 +267385,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -267463,12 +267463,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -270353,12 +270353,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -270433,12 +270433,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -270721,12 +270721,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -270801,12 +270801,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -271238,8 +271238,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glCopyTextureLevelsAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_copy_texture_levels"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
         [NativeFunction("opengl", EntryPoint = "glCopyTextureLevelsAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -272944,12 +272944,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCullFace")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -273007,12 +273007,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glCullFace")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -273977,12 +273977,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -274039,12 +274039,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -274093,12 +274093,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -274180,8 +274180,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -274213,8 +274213,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -274224,8 +274224,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glDeleteFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -275730,8 +275730,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public static void DeleteSync(SyncHandle sync) => Underlying.Value!.DeleteSync(sync);
 
         [NativeName("glDeleteSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -275788,12 +275788,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -275859,12 +275859,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -275921,12 +275921,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -276161,8 +276161,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.DeleteVertexArrayAPPLE(arrays);
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -276287,8 +276287,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -276297,8 +276297,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.DeleteVertexArraysOES(n, arrays);
 
         [NativeName("glDeleteVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -276390,12 +276390,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -276453,12 +276453,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -276517,12 +276517,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthMask")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -276580,12 +276580,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthMask")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -276864,12 +276864,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "4.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glDepthRangef")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277102,12 +277102,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDisable")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277165,12 +277165,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDisable")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277289,8 +277289,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.DisableClientStateIndexedEXT(array, index);
 
         [NativeName("glDisableDriverControlQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glDisableDriverControlQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277587,8 +277587,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.DisableVertexAttribArrayARB(index);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277600,8 +277600,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.DiscardFramebufferEXT(target, numAttachments, attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277619,8 +277619,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277631,8 +277631,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.DiscardFramebufferEXT(target, attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277650,8 +277650,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277662,8 +277662,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.DiscardFramebufferEXT(target, attachments);
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277681,8 +277681,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glDiscardFramebufferEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
         [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277828,12 +277828,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -277890,12 +277890,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -279232,12 +279232,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawElements")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -279294,12 +279294,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glDrawElements")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -281718,8 +281718,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public static void EdgeFlagv(uint flag) => Underlying.Value!.EdgeFlagv(flag);
 
         [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -281728,8 +281728,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.EglImageTargetRenderbufferStorageOES(target, image);
 
         [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -281774,8 +281774,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glEGLImageTargetTexture2DOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -281784,8 +281784,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.EglImageTargetTexture2DOES(target, image);
 
         [NativeName("glEGLImageTargetTexture2DOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+        [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
         [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -281936,12 +281936,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glEnable")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -281999,12 +281999,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glEnable")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -282123,8 +282123,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.EnableClientStateIndexedEXT(array, index);
 
         [NativeName("glEnableDriverControlQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glEnableDriverControlQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -282789,8 +282789,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.EndQueryIndexed(target, index);
 
         [NativeName("glEndTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -282799,8 +282799,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.EndTilingQCOM(preserveMask);
 
         [NativeName("glEndTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283681,8 +283681,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetBufferPointervQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283691,8 +283691,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.ExtGetBufferPointerQCOM(target, @params);
 
         [NativeName("glExtGetBufferPointervQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283706,8 +283706,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283723,8 +283723,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283733,8 +283733,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.ExtGetBuffersQCOM(buffers, maxBuffers, numBuffers);
 
         [NativeName("glExtGetBuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283749,8 +283749,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283766,8 +283766,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283784,8 +283784,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glExtGetFramebuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283804,8 +283804,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetProgramBinarySourceQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283818,8 +283818,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.ExtGetProgramBinarySourceQCOM(program, shadertype, source, length);
 
         [NativeName("glExtGetProgramBinarySourceQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283844,8 +283844,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283854,8 +283854,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.ExtGetProgramQCOM(programs, maxPrograms, numPrograms);
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283874,8 +283874,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetProgramsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283891,8 +283891,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283908,8 +283908,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283926,8 +283926,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glExtGetRenderbuffersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283950,8 +283950,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283967,8 +283967,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283977,8 +283977,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.ExtGetShadersQCOM(shaders, maxShaders, numShaders);
 
         [NativeName("glExtGetShadersQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -283993,8 +283993,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetTexLevelParameterivQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284008,8 +284008,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.ExtGetTexLevelParameterQCOM(texture, face, level, pname, @params);
 
         [NativeName("glExtGetTexLevelParameterivQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284029,8 +284029,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetTexSubImageQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284063,8 +284063,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glExtGetTexSubImageQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284102,8 +284102,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtGetTexturesQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284112,8 +284112,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.ExtGetTexturesQCOM(textures, maxTextures, numTextures);
 
         [NativeName("glExtGetTexturesQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284132,8 +284132,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glExtIsProgramBinaryQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284142,8 +284142,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.ExtIsProgramBinaryQCOM(program);
 
         [NativeName("glExtIsProgramBinaryQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
         [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284174,8 +284174,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.ExtrapolateTex2DQCOM(src1, src2, output, scaleFactor);
 
         [NativeName("glExtTexObjectStateOverrideiQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
         [NativeFunction("opengl", EntryPoint = "glExtTexObjectStateOverrideiQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284410,8 +284410,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.FenceSync(condition, flags);
 
         [NativeName("glFenceSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284420,8 +284420,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.FenceSyncAPPLE(condition, flags);
 
         [NativeName("glFenceSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284508,12 +284508,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFinish")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284554,8 +284554,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glFinishFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glFinishFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284630,12 +284630,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFlush")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284755,8 +284755,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.FlushMappedBufferRangeAPPLE(target, offset, size);
 
         [NativeName("glFlushMappedBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -284765,8 +284765,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.FlushMappedBufferRangeEXT(target, offset, length);
 
         [NativeName("glFlushMappedBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -287164,8 +287164,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glFramebufferTexture2DMultisampleEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -287188,8 +287188,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glFramebufferTexture2DMultisampleEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -287212,8 +287212,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glFramebufferTexture2DMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -287236,8 +287236,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glFramebufferTexture2DMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -288035,12 +288035,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFrontFace")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -288098,12 +288098,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glFrontFace")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -288238,12 +288238,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -288309,12 +288309,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -288363,12 +288363,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -288614,8 +288614,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -288652,8 +288652,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -288663,8 +288663,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGenFencesNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -290053,12 +290053,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -290132,12 +290132,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -290194,12 +290194,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGenTextures")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -290450,8 +290450,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -290580,8 +290580,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -290590,8 +290590,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.GenVertexArraysOES(n, arrays);
 
         [NativeName("glGenVertexArraysOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -293850,12 +293850,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -293914,12 +293914,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -294058,12 +294058,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -294112,12 +294112,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -294337,8 +294337,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetBufferPointervOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -294347,8 +294347,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.GetBufferPointerOES(target, pname, @params);
 
         [NativeName("glGetBufferPointervOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -296623,8 +296623,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -296633,8 +296633,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.GetDriverControlQCOM(num, size, driverControls);
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -296649,8 +296649,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetDriverControlsQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -296666,8 +296666,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -296686,8 +296686,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -296712,8 +296712,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetDriverControlStringQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
         [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -296784,12 +296784,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetError")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -296847,12 +296847,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetError")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -296861,8 +296861,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetFenceivNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -296872,8 +296872,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glGetFenceivNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -297265,12 +297265,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -297329,12 +297329,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -298235,8 +298235,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.GetGraphicsResetStatusRawARB();
 
         [NativeName("glGetGraphicsResetStatusEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -298245,8 +298245,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.GetGraphicsResetStatusEXT();
 
         [NativeName("glGetGraphicsResetStatusEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -298850,8 +298850,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetInteger64vAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -298860,8 +298860,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.GetInteger64APPLE(pname, @params);
 
         [NativeName("glGetInteger64vAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -299182,12 +299182,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -299246,12 +299246,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -303734,8 +303734,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetnUniformfvEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -303748,8 +303748,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.GetnUniformEXT(program, location, bufSize, @params);
 
         [NativeName("glGetnUniformfvEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -303905,8 +303905,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetnUniformivEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -303915,8 +303915,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.GetnUniformEXT(program, location, bufSize, @params);
 
         [NativeName("glGetnUniformivEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -311468,12 +311468,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -311531,12 +311531,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -311942,8 +311942,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -311957,8 +311957,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.GetSyncAPPLE(sync, pname, count, length, values);
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -311979,8 +311979,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glGetSyncivAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -313067,12 +313067,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -313131,12 +313131,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -313502,12 +313502,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -313566,12 +313566,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -319045,12 +319045,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glHint")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -319108,12 +319108,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glHint")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -320458,8 +320458,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glInsertEventMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -320470,8 +320470,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glInsertEventMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -321776,12 +321776,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -321846,12 +321846,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.5"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -321949,12 +321949,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -322012,12 +322012,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -322212,8 +322212,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glIsFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -322222,8 +322222,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glIsFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -323413,8 +323413,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public static MaybeBool<uint> IsSync(SyncHandle sync) => Underlying.Value!.IsSync(sync);
 
         [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -323423,8 +323423,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.IsSyncAPPLE(sync);
 
         [NativeName("glIsSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -323520,12 +323520,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -323642,12 +323642,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glIsTexture")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -323827,8 +323827,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.IsVertexArrayRawAPPLE(array);
 
         [NativeName("glIsVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -323837,8 +323837,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.IsVertexArrayOES(array);
 
         [NativeName("glIsVertexArrayOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+        [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
         [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -324902,12 +324902,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glLineWidth")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -326535,8 +326535,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.MapBufferARB(target, access);
 
         [NativeName("glMapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -326545,8 +326545,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.MapBufferOES(target, access);
 
         [NativeName("glMapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -326649,8 +326649,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.MapBufferRange(target, offset, length, access);
 
         [NativeName("glMapBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -326663,8 +326663,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.MapBufferRangeEXT(target, offset, length, access);
 
         [NativeName("glMapBufferRangeEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
         [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -329543,8 +329543,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMultiDrawArraysEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -329554,8 +329554,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMultiDrawArraysEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -330238,8 +330238,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMultiDrawElementsEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -330254,8 +330254,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glMultiDrawElementsEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
         [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -341371,12 +341371,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -341435,12 +341435,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -343036,12 +343036,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glPolygonOffset")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -343279,8 +343279,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glPopGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glPopGroupMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -351909,8 +351909,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glPushGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -351921,8 +351921,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glPushGroupMarkerEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
         [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -353808,8 +353808,8 @@ public unsafe partial class GL : IGL, IGL.Static
         }
 
         [NativeName("glReadnPixelsEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -353826,8 +353826,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.ReadnPixelsEXT(x, y, width, height, format, type, bufSize, data);
 
         [NativeName("glReadnPixelsEXT")]
-        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
         [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -353940,12 +353940,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glReadPixels")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -354011,12 +354011,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glReadPixels")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -354903,8 +354903,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -354925,8 +354925,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -354996,8 +354996,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glRenderbufferStorageMultisampleEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -355019,8 +355019,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glRenderbufferStorageMultisampleEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -355041,8 +355041,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glRenderbufferStorageMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -355063,8 +355063,8 @@ public unsafe partial class GL : IGL, IGL.Static
             );
 
         [NativeName("glRenderbufferStorageMultisampleIMG")]
-        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+        [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
         [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -356996,8 +356996,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public static void ResolveDepthValuesNV() => Underlying.Value!.ResolveDepthValuesNV();
 
         [NativeName("glResolveMultisampleFramebufferAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
         [NativeFunction("opengl", EntryPoint = "glResolveMultisampleFramebufferAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -357180,12 +357180,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -357238,12 +357238,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.3"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -358266,12 +358266,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glScissor")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -360289,8 +360289,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glSetFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -360300,8 +360300,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glSetFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -361505,8 +361505,8 @@ public unsafe partial class GL : IGL, IGL.Static
         public static void StartInstrumentsSGIX() => Underlying.Value!.StartInstrumentsSGIX();
 
         [NativeName("glStartTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -361520,8 +361520,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.StartTilingQCOM(x, y, width, height, preserveMask);
 
         [NativeName("glStartTilingQCOM")]
-        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+        [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
         [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -361693,12 +361693,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -361757,12 +361757,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -361956,12 +361956,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilMask")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -362123,12 +362123,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilOp")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -362187,12 +362187,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glStencilOp")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -362940,8 +362940,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glTestFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -362951,8 +362951,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
         [NativeName("glTestFenceNV")]
         [SupportedApiProfile("gl", ["GL_NV_fence"])]
-        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+        [SupportedApiProfile("gles2", ["GL_NV_fence"])]
         [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -367507,12 +367507,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -367591,12 +367591,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -368558,12 +368558,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -368622,12 +368622,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -368689,12 +368689,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -368753,12 +368753,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", MaxVersion = "2.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -368826,12 +368826,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -368890,12 +368890,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -369255,12 +369255,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -369319,12 +369319,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -369536,8 +369536,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -369552,8 +369552,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -369642,8 +369642,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -369659,8 +369659,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -369840,8 +369840,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -369859,8 +369859,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTexStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -370795,12 +370795,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -370877,12 +370877,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.1"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -372757,8 +372757,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -372774,8 +372774,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage1DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -372837,8 +372837,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -372863,8 +372863,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage2DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -373069,8 +373069,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -373097,8 +373097,8 @@ public unsafe partial class GL : IGL, IGL.Static
         [NativeName("glTextureStorage3DEXT")]
         [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
         [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+        [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
         [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -380490,8 +380490,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.UnmapBufferARB(target);
 
         [NativeName("glUnmapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -380500,8 +380500,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.UnmapBufferOES(target);
 
         [NativeName("glUnmapBufferOES")]
-        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+        [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
         [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -394982,12 +394982,12 @@ public unsafe partial class GL : IGL, IGL.Static
             ],
             MinVersion = "1.0"
         )]
+        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [SupportedApiProfile(
             "gles2",
             ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
             MinVersion = "2.0"
         )]
-        [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
         [NativeFunction("opengl", EntryPoint = "glViewport")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -395696,8 +395696,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ) => Underlying.Value!.WaitSync(sync, flags, timeout);
 
         [NativeName("glWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -395706,8 +395706,8 @@ public unsafe partial class GL : IGL, IGL.Static
             Underlying.Value!.WaitSyncAPPLE(sync, flags, timeout);
 
         [NativeName("glWaitSyncAPPLE")]
-        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+        [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
         [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
@@ -397851,12 +397851,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ActiveTexture(uint texture) =>
@@ -397913,12 +397913,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ActiveTexture(uint texture) => ThisThread.ActiveTexture(texture);
@@ -397968,12 +397968,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ActiveTexture(Constant<uint, GLEnum, TextureUnit> texture) =>
@@ -398024,12 +398024,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glActiveTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ActiveTexture(Constant<uint, GLEnum, TextureUnit> texture) =>
@@ -401098,12 +401098,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BindBuffer(uint target, uint buffer) =>
@@ -401156,12 +401156,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BindBuffer(uint target, uint buffer) =>
@@ -401208,12 +401208,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BindBuffer(Constant<uint, GLEnum, BufferTarget> target, uint buffer) =>
@@ -401260,12 +401260,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BindBuffer(Constant<uint, GLEnum, BufferTarget> target, uint buffer) =>
@@ -404107,12 +404107,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BindTexture(uint target, uint texture) =>
@@ -404173,12 +404173,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BindTexture(uint target, uint texture) =>
@@ -404233,12 +404233,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BindTexture(Constant<uint, GLEnum, TextureTarget> target, uint texture) =>
@@ -404293,12 +404293,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBindTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BindTexture(Constant<uint, GLEnum, TextureTarget> target, uint texture) =>
@@ -404783,8 +404783,8 @@ public unsafe partial class GL : IGL, IGL.Static
     public static void BindVertexArrayAPPLE(uint array) => ThisThread.BindVertexArrayAPPLE(array);
 
     [NativeName("glBindVertexArrayOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glBindVertexArrayOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BindVertexArrayOES(uint array) =>
@@ -404797,8 +404797,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(array);
 
     [NativeName("glBindVertexArrayOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glBindVertexArrayOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BindVertexArrayOES(uint array) => ThisThread.BindVertexArrayOES(array);
@@ -407141,12 +407141,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BlendFunc(uint sfactor, uint dfactor) =>
@@ -407209,12 +407209,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BlendFunc(uint sfactor, uint dfactor) =>
@@ -407271,12 +407271,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BlendFunc(
@@ -407335,12 +407335,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBlendFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BlendFunc(
@@ -409619,12 +409619,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BufferData(uint target, nuint size, void* data, uint usage) =>
@@ -409677,12 +409677,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BufferData(uint target, nuint size, void* data, uint usage) =>
@@ -409729,12 +409729,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BufferData(
@@ -409791,12 +409791,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BufferData(
@@ -410294,12 +410294,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BufferSubData(uint target, nint offset, nuint size, void* data) =>
@@ -410352,12 +410352,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BufferSubData(uint target, nint offset, nuint size, void* data) =>
@@ -410404,12 +410404,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.BufferSubData(
@@ -410466,12 +410466,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glBufferSubData")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void BufferSubData(
@@ -411416,12 +411416,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glClear")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Clear(uint mask) =>
@@ -411484,12 +411484,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glClear")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Clear(uint mask) => ThisThread.Clear(mask);
@@ -411545,12 +411545,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glClear")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Clear(Constant<uint, GLEnum, ClearBufferMask> mask) => ((IGL)this).Clear((uint)mask);
@@ -411606,12 +411606,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glClear")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Clear(Constant<uint, GLEnum, ClearBufferMask> mask) =>
@@ -412764,12 +412764,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glClearColor")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ClearColor(float red, float green, float blue, float alpha) =>
@@ -412832,12 +412832,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glClearColor")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ClearColor(float red, float green, float blue, float alpha) =>
@@ -413090,12 +413090,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "4.1"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glClearDepthf")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ClearDepth(float d) =>
@@ -413134,12 +413134,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "4.1"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glClearDepthf")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ClearDepth(float d) => ThisThread.ClearDepth(d);
@@ -414159,12 +414159,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glClearStencil")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ClearStencil(int s) =>
@@ -414227,12 +414227,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glClearStencil")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ClearStencil(int s) => ThisThread.ClearStencil(s);
@@ -415142,8 +415142,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ClientWaitSync(sync, flags, timeout);
 
     [NativeName("glClientWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
@@ -415156,16 +415156,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(sync, flags, timeout);
 
     [NativeName("glClientWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint ClientWaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
         ThisThread.ClientWaitSyncAPPLE(sync, flags, timeout);
 
     [NativeName("glClientWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Constant<uint, GLEnum, SyncStatus> IGL.ClientWaitSyncAPPLE(
@@ -415177,8 +415177,8 @@ public unsafe partial class GL : IGL, IGL.Static
             (uint)((IGL)this).ClientWaitSyncAPPLE(sync, (uint)flags, timeout);
 
     [NativeName("glClientWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glClientWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Constant<uint, GLEnum, SyncStatus> ClientWaitSyncAPPLE(
@@ -419848,12 +419848,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glColorMask")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ColorMask(uint red, uint green, uint blue, uint alpha) =>
@@ -419916,12 +419916,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glColorMask")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ColorMask(uint red, uint green, uint blue, uint alpha) =>
@@ -419978,12 +419978,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glColorMask")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ColorMask(
@@ -420044,12 +420044,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glColorMask")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ColorMask(
@@ -423316,12 +423316,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CompressedTexImage2D(
@@ -423387,12 +423387,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CompressedTexImage2D(
@@ -423461,12 +423461,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CompressedTexImage2D(
@@ -423540,12 +423540,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CompressedTexImage2D(
@@ -424574,12 +424574,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CompressedTexSubImage2D(
@@ -424649,12 +424649,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CompressedTexSubImage2D(
@@ -424725,12 +424725,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CompressedTexSubImage2D(
@@ -424806,12 +424806,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCompressedTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CompressedTexSubImage2D(
@@ -430135,12 +430135,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CopyTexImage2D(
@@ -430210,12 +430210,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CopyTexImage2D(
@@ -430278,12 +430278,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CopyTexImage2D(
@@ -430356,12 +430356,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CopyTexImage2D(
@@ -430793,12 +430793,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CopyTexSubImage2D(
@@ -430868,12 +430868,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CopyTexSubImage2D(
@@ -430936,12 +430936,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CopyTexSubImage2D(
@@ -431004,12 +431004,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCopyTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CopyTexSubImage2D(
@@ -431728,8 +431728,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glCopyTextureLevelsAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_copy_texture_levels"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
     [NativeFunction("opengl", EntryPoint = "glCopyTextureLevelsAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CopyTextureLevelAPPLE(
@@ -431747,8 +431747,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(destinationTexture, sourceTexture, sourceBaseLevel, sourceLevelCount);
 
     [NativeName("glCopyTextureLevelsAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_copy_texture_levels"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_copy_texture_levels"])]
     [NativeFunction("opengl", EntryPoint = "glCopyTextureLevelsAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CopyTextureLevelAPPLE(
@@ -434716,12 +434716,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCullFace")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CullFace(uint mode) =>
@@ -434784,12 +434784,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCullFace")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CullFace(uint mode) => ThisThread.CullFace(mode);
@@ -434845,12 +434845,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCullFace")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.CullFace(Constant<uint, GLEnum, TriangleFace> mode) =>
@@ -434907,12 +434907,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glCullFace")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CullFace(Constant<uint, GLEnum, TriangleFace> mode) =>
@@ -436547,12 +436547,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteBuffer(uint buffers) => ((IGL)this).DeleteBuffers(1, (uint*)&buffers);
@@ -436598,12 +436598,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteBuffer(uint buffers) => ThisThread.DeleteBuffer(buffers);
@@ -436661,12 +436661,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteBuffers(uint n, uint* buffers) =>
@@ -436719,12 +436719,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteBuffers(uint n, uint* buffers) => ThisThread.DeleteBuffers(n, buffers);
@@ -436770,12 +436770,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteBuffers(uint n, Ref<uint> buffers)
@@ -436827,12 +436827,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteBuffers(uint n, Ref<uint> buffers) =>
@@ -436948,16 +436948,16 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glDeleteFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteFenceNV(uint fences) => ((IGL)this).DeleteFencesNV(1, (uint*)&fences);
 
     [NativeName("glDeleteFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteFenceNV(uint fences) => ThisThread.DeleteFenceNV(fences);
@@ -437003,8 +437003,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glDeleteFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteFencesNV(uint n, uint* fences) =>
@@ -437018,16 +437018,16 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glDeleteFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteFencesNV(uint n, uint* fences) => ThisThread.DeleteFencesNV(n, fences);
 
     [NativeName("glDeleteFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteFencesNV(uint n, Ref<uint> fences)
@@ -437040,8 +437040,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glDeleteFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteFencesNV(uint n, Ref<uint> fences) =>
@@ -439768,8 +439768,8 @@ public unsafe partial class GL : IGL, IGL.Static
     public static void DeleteSync(SyncHandle sync) => ThisThread.DeleteSync(sync);
 
     [NativeName("glDeleteSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteSyncAPPLE(SyncHandle sync) =>
@@ -439782,8 +439782,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(sync);
 
     [NativeName("glDeleteSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteSyncAPPLE(SyncHandle sync) => ThisThread.DeleteSyncAPPLE(sync);
@@ -439837,12 +439837,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteTexture(uint textures) => ((IGL)this).DeleteTextures(1, (uint*)&textures);
@@ -439896,12 +439896,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteTexture(uint textures) => ThisThread.DeleteTexture(textures);
@@ -439967,12 +439967,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteTextures(uint n, uint* textures) =>
@@ -440033,12 +440033,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteTextures(uint n, uint* textures) =>
@@ -440093,12 +440093,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteTextures(uint n, Ref<uint> textures)
@@ -440158,12 +440158,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDeleteTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteTextures(uint n, Ref<uint> textures) =>
@@ -440578,16 +440578,16 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.DeleteVertexArrayAPPLE(arrays);
 
     [NativeName("glDeleteVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteVertexArrayOES(uint arrays) =>
         ((IGL)this).DeleteVertexArraysOES(1, (uint*)&arrays);
 
     [NativeName("glDeleteVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteVertexArrayOES(uint arrays) => ThisThread.DeleteVertexArrayOES(arrays);
@@ -440814,8 +440814,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.DeleteVertexArraysAPPLE(n, arrays);
 
     [NativeName("glDeleteVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteVertexArraysOES(uint n, uint* arrays) =>
@@ -440828,16 +440828,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(n, arrays);
 
     [NativeName("glDeleteVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteVertexArraysOES(uint n, uint* arrays) =>
         ThisThread.DeleteVertexArraysOES(n, arrays);
 
     [NativeName("glDeleteVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DeleteVertexArraysOES(uint n, Ref<uint> arrays)
@@ -440849,8 +440849,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glDeleteVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glDeleteVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteVertexArraysOES(uint n, Ref<uint> arrays) =>
@@ -440968,12 +440968,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DepthFunc(uint func) =>
@@ -441036,12 +441036,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DepthFunc(uint func) => ThisThread.DepthFunc(func);
@@ -441097,12 +441097,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DepthFunc(Constant<uint, GLEnum, DepthFunction> func) =>
@@ -441159,12 +441159,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DepthFunc(Constant<uint, GLEnum, DepthFunction> func) =>
@@ -441221,12 +441221,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthMask")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DepthMask(uint flag) =>
@@ -441289,12 +441289,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthMask")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DepthMask(uint flag) => ThisThread.DepthMask(flag);
@@ -441350,12 +441350,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthMask")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DepthMask(MaybeBool<uint> flag) => ((IGL)this).DepthMask((uint)flag);
@@ -441411,12 +441411,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthMask")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DepthMask(MaybeBool<uint> flag) => ThisThread.DepthMask(flag);
@@ -441911,12 +441911,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "4.1"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthRangef")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DepthRange(float n, float f) =>
@@ -441955,12 +441955,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "4.1"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glDepthRangef")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DepthRange(float n, float f) => ThisThread.DepthRange(n, f);
@@ -442379,12 +442379,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDisable")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Disable(uint cap) =>
@@ -442447,12 +442447,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDisable")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Disable(uint cap) => ThisThread.Disable(cap);
@@ -442508,12 +442508,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDisable")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Disable(Constant<uint, GLEnum, EnableCap> cap) => ((IGL)this).Disable((uint)cap);
@@ -442569,12 +442569,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDisable")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Disable(Constant<uint, GLEnum, EnableCap> cap) => ThisThread.Disable(cap);
@@ -442790,8 +442790,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.DisableClientStateIndexedEXT(array, index);
 
     [NativeName("glDisableDriverControlQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glDisableDriverControlQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DisableDriverControlQCOM(uint driverControl) =>
@@ -442807,8 +442807,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(driverControl);
 
     [NativeName("glDisableDriverControlQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glDisableDriverControlQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DisableDriverControlQCOM(uint driverControl) =>
@@ -443397,8 +443397,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.DisableVertexAttribArrayARB(index);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DiscardFramebufferEXT(uint target, uint numAttachments, uint* attachments) =>
@@ -443411,16 +443411,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, numAttachments, attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DiscardFramebufferEXT(uint target, uint numAttachments, uint* attachments) =>
         ThisThread.DiscardFramebufferEXT(target, numAttachments, attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DiscardFramebufferEXT(
@@ -443436,8 +443436,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DiscardFramebufferEXT(
@@ -443447,8 +443447,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.DiscardFramebufferEXT(target, numAttachments, attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DiscardFramebufferEXT(
@@ -443457,8 +443457,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ((IGL)this).DiscardFramebufferEXT((uint)target, 1, (uint*)&attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DiscardFramebufferEXT(
@@ -443467,8 +443467,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.DiscardFramebufferEXT(target, attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DiscardFramebufferEXT(
@@ -443488,8 +443488,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DiscardFramebufferEXT(
@@ -443499,8 +443499,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.DiscardFramebufferEXT(target, numAttachments, attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DiscardFramebufferEXT(
@@ -443509,8 +443509,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ((IGL)this).DiscardFramebufferEXT((uint)target, 1, (uint*)(GLEnum*)&attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DiscardFramebufferEXT(
@@ -443519,8 +443519,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.DiscardFramebufferEXT(target, attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DiscardFramebufferEXT(
@@ -443540,8 +443540,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DiscardFramebufferEXT(
@@ -443551,8 +443551,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.DiscardFramebufferEXT(target, numAttachments, attachments);
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DiscardFramebufferEXT(
@@ -443566,8 +443566,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glDiscardFramebufferEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [SupportedApiProfile("gles1", ["GL_EXT_discard_framebuffer"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_discard_framebuffer"])]
     [NativeFunction("opengl", EntryPoint = "glDiscardFramebufferEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DiscardFramebufferEXT(
@@ -443797,12 +443797,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DrawArrays(uint mode, int first, uint count) =>
@@ -443863,12 +443863,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DrawArrays(uint mode, int first, uint count) =>
@@ -443923,12 +443923,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DrawArrays(Constant<uint, GLEnum, PrimitiveType> mode, int first, uint count) =>
@@ -443983,12 +443983,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawArrays")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DrawArrays(
@@ -446308,12 +446308,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawElements")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DrawElements(uint mode, uint count, uint type, void* indices) =>
@@ -446374,12 +446374,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawElements")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DrawElements(uint mode, uint count, uint type, void* indices) =>
@@ -446434,12 +446434,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawElements")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.DrawElements(
@@ -446504,12 +446504,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glDrawElements")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DrawElements(
@@ -451119,8 +451119,8 @@ public unsafe partial class GL : IGL, IGL.Static
     public static void EdgeFlagv(uint flag) => ThisThread.EdgeFlagv(flag);
 
     [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.EglImageTargetRenderbufferStorageOES(uint target, void* image) =>
@@ -451136,16 +451136,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, image);
 
     [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void EglImageTargetRenderbufferStorageOES(uint target, void* image) =>
         ThisThread.EglImageTargetRenderbufferStorageOES(target, image);
 
     [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.EglImageTargetRenderbufferStorageOES(uint target, Ref image)
@@ -451157,8 +451157,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glEGLImageTargetRenderbufferStorageOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void EglImageTargetRenderbufferStorageOES(uint target, Ref image) =>
@@ -451216,8 +451216,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.EglImageTargetTexStorageEXT(target, image, attrib_list);
 
     [NativeName("glEGLImageTargetTexture2DOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.EglImageTargetTexture2DOES(uint target, void* image) =>
@@ -451233,16 +451233,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, image);
 
     [NativeName("glEGLImageTargetTexture2DOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void EglImageTargetTexture2DOES(uint target, void* image) =>
         ThisThread.EglImageTargetTexture2DOES(target, image);
 
     [NativeName("glEGLImageTargetTexture2DOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.EglImageTargetTexture2DOES(uint target, Ref image)
@@ -451254,8 +451254,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glEGLImageTargetTexture2DOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [SupportedApiProfile("gles1", ["GL_OES_EGL_image"])]
+    [SupportedApiProfile("gles2", ["GL_OES_EGL_image"])]
     [NativeFunction("opengl", EntryPoint = "glEGLImageTargetTexture2DOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void EglImageTargetTexture2DOES(uint target, Ref image) =>
@@ -451451,12 +451451,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glEnable")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Enable(uint cap) =>
@@ -451519,12 +451519,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glEnable")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Enable(uint cap) => ThisThread.Enable(cap);
@@ -451580,12 +451580,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glEnable")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Enable(Constant<uint, GLEnum, EnableCap> cap) => ((IGL)this).Enable((uint)cap);
@@ -451641,12 +451641,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glEnable")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Enable(Constant<uint, GLEnum, EnableCap> cap) => ThisThread.Enable(cap);
@@ -451862,8 +451862,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.EnableClientStateIndexedEXT(array, index);
 
     [NativeName("glEnableDriverControlQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glEnableDriverControlQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.EnableDriverControlQCOM(uint driverControl) =>
@@ -451879,8 +451879,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(driverControl);
 
     [NativeName("glEnableDriverControlQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glEnableDriverControlQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void EnableDriverControlQCOM(uint driverControl) =>
@@ -453227,8 +453227,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.EndQueryIndexed(target, index);
 
     [NativeName("glEndTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.EndTilingQCOM(uint preserveMask) =>
@@ -453241,23 +453241,23 @@ public unsafe partial class GL : IGL, IGL.Static
         )(preserveMask);
 
     [NativeName("glEndTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void EndTilingQCOM(uint preserveMask) => ThisThread.EndTilingQCOM(preserveMask);
 
     [NativeName("glEndTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.EndTilingQCOM(Constant<uint, GLEnum, BufferBitQCOM> preserveMask) =>
         ((IGL)this).EndTilingQCOM((uint)preserveMask);
 
     [NativeName("glEndTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glEndTilingQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void EndTilingQCOM(Constant<uint, GLEnum, BufferBitQCOM> preserveMask) =>
@@ -454975,8 +454975,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExecuteProgramNV(target, id, @params);
 
     [NativeName("glExtGetBufferPointervQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetBufferPointerQCOM(uint target, void** @params) =>
@@ -454992,16 +454992,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, @params);
 
     [NativeName("glExtGetBufferPointervQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetBufferPointerQCOM(uint target, void** @params) =>
         ThisThread.ExtGetBufferPointerQCOM(target, @params);
 
     [NativeName("glExtGetBufferPointervQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetBufferPointerQCOM(uint target, Ref2D @params)
@@ -455013,16 +455013,16 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetBufferPointervQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBufferPointervQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetBufferPointerQCOM(uint target, Ref2D @params) =>
         ThisThread.ExtGetBufferPointerQCOM(target, @params);
 
     [NativeName("glExtGetBuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.ExtGetBufferQCOM(Ref<int> numBuffers)
@@ -455036,16 +455036,16 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetBuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint ExtGetBufferQCOM(Ref<int> numBuffers) =>
         ThisThread.ExtGetBufferQCOM(numBuffers);
 
     [NativeName("glExtGetBuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetBuffersQCOM(uint* buffers, int maxBuffers, int* numBuffers) =>
@@ -455058,16 +455058,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(buffers, maxBuffers, numBuffers);
 
     [NativeName("glExtGetBuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetBuffersQCOM(uint* buffers, int maxBuffers, int* numBuffers) =>
         ThisThread.ExtGetBuffersQCOM(buffers, maxBuffers, numBuffers);
 
     [NativeName("glExtGetBuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetBuffersQCOM(Ref<uint> buffers, int maxBuffers, Ref<int> numBuffers)
@@ -455080,16 +455080,16 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetBuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetBuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetBuffersQCOM(Ref<uint> buffers, int maxBuffers, Ref<int> numBuffers) =>
         ThisThread.ExtGetBuffersQCOM(buffers, maxBuffers, numBuffers);
 
     [NativeName("glExtGetFramebuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.ExtGetFramebufferQCOM(Ref<int> numFramebuffers)
@@ -455103,16 +455103,16 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetFramebuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint ExtGetFramebufferQCOM(Ref<int> numFramebuffers) =>
         ThisThread.ExtGetFramebufferQCOM(numFramebuffers);
 
     [NativeName("glExtGetFramebuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetFramebuffersQCOM(
@@ -455129,8 +455129,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(framebuffers, maxFramebuffers, numFramebuffers);
 
     [NativeName("glExtGetFramebuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetFramebuffersQCOM(
@@ -455140,8 +455140,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExtGetFramebuffersQCOM(framebuffers, maxFramebuffers, numFramebuffers);
 
     [NativeName("glExtGetFramebuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetFramebuffersQCOM(
@@ -455162,8 +455162,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetFramebuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetFramebuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetFramebuffersQCOM(
@@ -455173,8 +455173,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExtGetFramebuffersQCOM(framebuffers, maxFramebuffers, numFramebuffers);
 
     [NativeName("glExtGetProgramBinarySourceQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetProgramBinarySourceQCOM(
@@ -455195,8 +455195,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(program, shadertype, source, length);
 
     [NativeName("glExtGetProgramBinarySourceQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetProgramBinarySourceQCOM(
@@ -455207,8 +455207,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExtGetProgramBinarySourceQCOM(program, shadertype, source, length);
 
     [NativeName("glExtGetProgramBinarySourceQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetProgramBinarySourceQCOM(
@@ -455231,8 +455231,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetProgramBinarySourceQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramBinarySourceQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetProgramBinarySourceQCOM(
@@ -455243,8 +455243,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExtGetProgramBinarySourceQCOM(program, shadertype, source, length);
 
     [NativeName("glExtGetProgramsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetProgramQCOM(uint* programs, int maxPrograms, int* numPrograms) =>
@@ -455257,16 +455257,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(programs, maxPrograms, numPrograms);
 
     [NativeName("glExtGetProgramsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetProgramQCOM(uint* programs, int maxPrograms, int* numPrograms) =>
         ThisThread.ExtGetProgramQCOM(programs, maxPrograms, numPrograms);
 
     [NativeName("glExtGetProgramsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetProgramQCOM(Ref<uint> programs, int maxPrograms, Ref<int> numPrograms)
@@ -455279,8 +455279,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetProgramsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetProgramQCOM(
@@ -455290,8 +455290,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExtGetProgramQCOM(programs, maxPrograms, numPrograms);
 
     [NativeName("glExtGetProgramsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.ExtGetProgramQCOM(Ref<int> numPrograms)
@@ -455305,16 +455305,16 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetProgramsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetProgramsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint ExtGetProgramQCOM(Ref<int> numPrograms) =>
         ThisThread.ExtGetProgramQCOM(numPrograms);
 
     [NativeName("glExtGetRenderbuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.ExtGetRenderbufferQCOM(Ref<int> numRenderbuffers)
@@ -455328,16 +455328,16 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetRenderbuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint ExtGetRenderbufferQCOM(Ref<int> numRenderbuffers) =>
         ThisThread.ExtGetRenderbufferQCOM(numRenderbuffers);
 
     [NativeName("glExtGetRenderbuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetRenderbuffersQCOM(
@@ -455357,8 +455357,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(renderbuffers, maxRenderbuffers, numRenderbuffers);
 
     [NativeName("glExtGetRenderbuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetRenderbuffersQCOM(
@@ -455368,8 +455368,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExtGetRenderbuffersQCOM(renderbuffers, maxRenderbuffers, numRenderbuffers);
 
     [NativeName("glExtGetRenderbuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetRenderbuffersQCOM(
@@ -455390,8 +455390,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetRenderbuffersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetRenderbuffersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetRenderbuffersQCOM(
@@ -455401,8 +455401,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExtGetRenderbuffersQCOM(renderbuffers, maxRenderbuffers, numRenderbuffers);
 
     [NativeName("glExtGetShadersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.ExtGetShaderQCOM(Ref<int> numShaders)
@@ -455416,16 +455416,16 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetShadersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint ExtGetShaderQCOM(Ref<int> numShaders) =>
         ThisThread.ExtGetShaderQCOM(numShaders);
 
     [NativeName("glExtGetShadersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetShadersQCOM(uint* shaders, int maxShaders, int* numShaders) =>
@@ -455438,16 +455438,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(shaders, maxShaders, numShaders);
 
     [NativeName("glExtGetShadersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetShadersQCOM(uint* shaders, int maxShaders, int* numShaders) =>
         ThisThread.ExtGetShadersQCOM(shaders, maxShaders, numShaders);
 
     [NativeName("glExtGetShadersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetShadersQCOM(Ref<uint> shaders, int maxShaders, Ref<int> numShaders)
@@ -455460,16 +455460,16 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetShadersQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetShadersQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetShadersQCOM(Ref<uint> shaders, int maxShaders, Ref<int> numShaders) =>
         ThisThread.ExtGetShadersQCOM(shaders, maxShaders, numShaders);
 
     [NativeName("glExtGetTexLevelParameterivQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetTexLevelParameterQCOM(
@@ -455491,8 +455491,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(texture, face, level, pname, @params);
 
     [NativeName("glExtGetTexLevelParameterivQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetTexLevelParameterQCOM(
@@ -455504,8 +455504,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExtGetTexLevelParameterQCOM(texture, face, level, pname, @params);
 
     [NativeName("glExtGetTexLevelParameterivQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetTexLevelParameterQCOM(
@@ -455523,8 +455523,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetTexLevelParameterivQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexLevelParameterivQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetTexLevelParameterQCOM(
@@ -455536,8 +455536,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExtGetTexLevelParameterQCOM(texture, face, level, pname, @params);
 
     [NativeName("glExtGetTexSubImageQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetTexSubImageQCOM(
@@ -455574,8 +455574,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, texels);
 
     [NativeName("glExtGetTexSubImageQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetTexSubImageQCOM(
@@ -455606,8 +455606,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glExtGetTexSubImageQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetTexSubImageQCOM(
@@ -455643,8 +455643,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetTexSubImageQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexSubImageQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetTexSubImageQCOM(
@@ -455675,8 +455675,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glExtGetTexturesQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetTexturesQCOM(uint* textures, int maxTextures, int* numTextures) =>
@@ -455689,16 +455689,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(textures, maxTextures, numTextures);
 
     [NativeName("glExtGetTexturesQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetTexturesQCOM(uint* textures, int maxTextures, int* numTextures) =>
         ThisThread.ExtGetTexturesQCOM(textures, maxTextures, numTextures);
 
     [NativeName("glExtGetTexturesQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtGetTexturesQCOM(Ref<uint> textures, int maxTextures, Ref<int> numTextures)
@@ -455711,8 +455711,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glExtGetTexturesQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtGetTexturesQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtGetTexturesQCOM(
@@ -455722,24 +455722,24 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ExtGetTexturesQCOM(textures, maxTextures, numTextures);
 
     [NativeName("glExtIsProgramBinaryQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<uint> IGL.ExtIsProgramBinaryQCOM(uint program) =>
         (MaybeBool<uint>)(uint)((IGL)this).ExtIsProgramBinaryRawQCOM(program);
 
     [NativeName("glExtIsProgramBinaryQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<uint> ExtIsProgramBinaryQCOM(uint program) =>
         ThisThread.ExtIsProgramBinaryQCOM(program);
 
     [NativeName("glExtIsProgramBinaryQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.ExtIsProgramBinaryRawQCOM(uint program) =>
@@ -455752,8 +455752,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(program);
 
     [NativeName("glExtIsProgramBinaryQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get2"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get2"])]
     [NativeFunction("opengl", EntryPoint = "glExtIsProgramBinaryQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint ExtIsProgramBinaryRawQCOM(uint program) =>
@@ -455800,8 +455800,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.ExtrapolateTex2DQCOM(src1, src2, output, scaleFactor);
 
     [NativeName("glExtTexObjectStateOverrideiQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtTexObjectStateOverrideiQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ExtTexObjectStateOverrideQCOM(uint target, uint pname, int param2) =>
@@ -455817,8 +455817,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, pname, param2);
 
     [NativeName("glExtTexObjectStateOverrideiQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_extended_get"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_extended_get"])]
     [NativeFunction("opengl", EntryPoint = "glExtTexObjectStateOverrideiQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ExtTexObjectStateOverrideQCOM(uint target, uint pname, int param2) =>
@@ -456244,8 +456244,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.FenceSync(condition, flags);
 
     [NativeName("glFenceSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     SyncHandle IGL.FenceSyncAPPLE(uint condition, uint flags) =>
@@ -456258,16 +456258,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(condition, flags);
 
     [NativeName("glFenceSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static SyncHandle FenceSyncAPPLE(uint condition, uint flags) =>
         ThisThread.FenceSyncAPPLE(condition, flags);
 
     [NativeName("glFenceSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     SyncHandle IGL.FenceSyncAPPLE(
@@ -456276,8 +456276,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => (SyncHandle)((IGL)this).FenceSyncAPPLE((uint)condition, (uint)flags);
 
     [NativeName("glFenceSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glFenceSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static SyncHandle FenceSyncAPPLE(
@@ -456388,12 +456388,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFinish")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Finish() =>
@@ -456456,12 +456456,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFinish")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Finish() => ThisThread.Finish();
@@ -456524,8 +456524,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glFinishFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glFinishFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.FinishFenceNV(uint fence) =>
@@ -456539,8 +456539,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glFinishFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glFinishFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FinishFenceNV(uint fence) => ThisThread.FinishFenceNV(fence);
@@ -456635,12 +456635,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFlush")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Flush() =>
@@ -456703,12 +456703,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFlush")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Flush() => ThisThread.Flush();
@@ -456937,8 +456937,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.FlushMappedBufferRangeAPPLE(target, offset, size);
 
     [NativeName("glFlushMappedBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.FlushMappedBufferRangeEXT(uint target, nint offset, nuint length) =>
@@ -456954,16 +456954,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, offset, length);
 
     [NativeName("glFlushMappedBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FlushMappedBufferRangeEXT(uint target, nint offset, nuint length) =>
         ThisThread.FlushMappedBufferRangeEXT(target, offset, length);
 
     [NativeName("glFlushMappedBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.FlushMappedBufferRangeEXT(
@@ -456973,8 +456973,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ((IGL)this).FlushMappedBufferRangeEXT((uint)target, offset, length);
 
     [NativeName("glFlushMappedBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glFlushMappedBufferRangeEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FlushMappedBufferRangeEXT(
@@ -461463,8 +461463,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.FramebufferTexture2DEXT(target, attachment, textarget, texture, level);
 
     [NativeName("glFramebufferTexture2DMultisampleEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.FramebufferTexture2DMultisampleEXT(
@@ -461487,8 +461487,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, attachment, textarget, texture, level, samples);
 
     [NativeName("glFramebufferTexture2DMultisampleEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FramebufferTexture2DMultisampleEXT(
@@ -461509,8 +461509,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glFramebufferTexture2DMultisampleEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.FramebufferTexture2DMultisampleEXT(
@@ -461531,8 +461531,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glFramebufferTexture2DMultisampleEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FramebufferTexture2DMultisampleEXT(
@@ -461553,8 +461553,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glFramebufferTexture2DMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.FramebufferTexture2DMultisampleIMG(
@@ -461577,8 +461577,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, attachment, textarget, texture, level, samples);
 
     [NativeName("glFramebufferTexture2DMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FramebufferTexture2DMultisampleIMG(
@@ -461599,8 +461599,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glFramebufferTexture2DMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.FramebufferTexture2DMultisampleIMG(
@@ -461621,8 +461621,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glFramebufferTexture2DMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FramebufferTexture2DMultisampleIMG(
@@ -463054,12 +463054,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFrontFace")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.FrontFace(uint mode) =>
@@ -463122,12 +463122,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFrontFace")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FrontFace(uint mode) => ThisThread.FrontFace(mode);
@@ -463183,12 +463183,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFrontFace")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.FrontFace(Constant<uint, GLEnum, FrontFaceDirection> mode) =>
@@ -463245,12 +463245,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glFrontFace")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void FrontFace(Constant<uint, GLEnum, FrontFaceDirection> mode) =>
@@ -463481,12 +463481,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.GenBuffer()
@@ -463537,12 +463537,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GenBuffer() => ThisThread.GenBuffer();
@@ -463605,12 +463605,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GenBuffers(uint n, uint* buffers) =>
@@ -463663,12 +463663,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GenBuffers(uint n, uint* buffers) => ThisThread.GenBuffers(n, buffers);
@@ -463714,12 +463714,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GenBuffers(uint n, Ref<uint> buffers)
@@ -463771,12 +463771,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenBuffers")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GenBuffers(uint n, Ref<uint> buffers) => ThisThread.GenBuffers(n, buffers);
@@ -464223,8 +464223,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glGenFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.GenFenceNV()
@@ -464236,8 +464236,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glGenFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GenFenceNV() => ThisThread.GenFenceNV();
@@ -464282,8 +464282,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glGenFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GenFencesNV(uint n, uint* fences) =>
@@ -464297,16 +464297,16 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glGenFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GenFencesNV(uint n, uint* fences) => ThisThread.GenFencesNV(n, fences);
 
     [NativeName("glGenFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GenFencesNV(uint n, Ref<uint> fences)
@@ -464319,8 +464319,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glGenFencesNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGenFencesNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GenFencesNV(uint n, Ref<uint> fences) => ThisThread.GenFencesNV(n, fences);
@@ -466686,12 +466686,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.GenTexture()
@@ -466750,12 +466750,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GenTexture() => ThisThread.GenTexture();
@@ -466826,12 +466826,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GenTextures(uint n, uint* textures) =>
@@ -466892,12 +466892,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GenTextures(uint n, uint* textures) => ThisThread.GenTextures(n, textures);
@@ -466951,12 +466951,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GenTextures(uint n, Ref<uint> textures)
@@ -467016,12 +467016,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGenTextures")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GenTextures(uint n, Ref<uint> textures) =>
@@ -467448,8 +467448,8 @@ public unsafe partial class GL : IGL, IGL.Static
     public static uint GenVertexArrayAPPLE() => ThisThread.GenVertexArrayAPPLE();
 
     [NativeName("glGenVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.GenVertexArrayOES()
@@ -467460,8 +467460,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGenVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GenVertexArrayOES() => ThisThread.GenVertexArrayOES();
@@ -467685,8 +467685,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.GenVertexArraysAPPLE(n, arrays);
 
     [NativeName("glGenVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GenVertexArraysOES(uint n, uint* arrays) =>
@@ -467699,16 +467699,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(n, arrays);
 
     [NativeName("glGenVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GenVertexArraysOES(uint n, uint* arrays) =>
         ThisThread.GenVertexArraysOES(n, arrays);
 
     [NativeName("glGenVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GenVertexArraysOES(uint n, Ref<uint> arrays)
@@ -467720,8 +467720,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGenVertexArraysOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glGenVertexArraysOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GenVertexArraysOES(uint n, Ref<uint> arrays) =>
@@ -473270,12 +473270,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetBoolean(uint pname, uint* data) =>
@@ -473338,12 +473338,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetBoolean(uint pname, uint* data) => ThisThread.GetBoolean(pname, data);
@@ -473399,12 +473399,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetBoolean(Constant<uint, GLEnum, GetPName> pname, Ref<uint> data)
@@ -473466,12 +473466,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBooleanv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetBoolean(Constant<uint, GLEnum, GetPName> pname, Ref<uint> data) =>
@@ -473680,12 +473680,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetBufferParameter(uint target, uint pname, int* @params) =>
@@ -473738,12 +473738,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetBufferParameter(uint target, uint pname, int* @params) =>
@@ -473790,12 +473790,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetBufferParameter(
@@ -473851,12 +473851,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetBufferParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetBufferParameter(
@@ -474236,8 +474236,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.GetBufferPointerARB(target, pname, @params);
 
     [NativeName("glGetBufferPointervOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetBufferPointerOES(uint target, uint pname, void** @params) =>
@@ -474250,16 +474250,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, pname, @params);
 
     [NativeName("glGetBufferPointervOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetBufferPointerOES(uint target, uint pname, void** @params) =>
         ThisThread.GetBufferPointerOES(target, pname, @params);
 
     [NativeName("glGetBufferPointervOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetBufferPointerOES(
@@ -474275,8 +474275,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGetBufferPointervOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glGetBufferPointervOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetBufferPointerOES(
@@ -478182,8 +478182,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.GetDouble(pname, data);
 
     [NativeName("glGetDriverControlsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetDriverControlQCOM(int* num, uint size, uint* driverControls) =>
@@ -478196,16 +478196,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(num, size, driverControls);
 
     [NativeName("glGetDriverControlsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetDriverControlQCOM(int* num, uint size, uint* driverControls) =>
         ThisThread.GetDriverControlQCOM(num, size, driverControls);
 
     [NativeName("glGetDriverControlsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetDriverControlQCOM(Ref<int> num, uint size, Ref<uint> driverControls)
@@ -478218,16 +478218,16 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGetDriverControlsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetDriverControlQCOM(Ref<int> num, uint size, Ref<uint> driverControls) =>
         ThisThread.GetDriverControlQCOM(num, size, driverControls);
 
     [NativeName("glGetDriverControlsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.GetDriverControlQCOM(Ref<int> num)
@@ -478241,15 +478241,15 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGetDriverControlsQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlsQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GetDriverControlQCOM(Ref<int> num) => ThisThread.GetDriverControlQCOM(num);
 
     [NativeName("glGetDriverControlStringQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetDriverControlStringQCOM(
@@ -478270,8 +478270,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(driverControl, bufSize, length, driverControlString);
 
     [NativeName("glGetDriverControlStringQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetDriverControlStringQCOM(
@@ -478282,8 +478282,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.GetDriverControlStringQCOM(driverControl, bufSize, length, driverControlString);
 
     [NativeName("glGetDriverControlStringQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetDriverControlStringQCOM(
@@ -478306,8 +478306,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGetDriverControlStringQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetDriverControlStringQCOM(
@@ -478318,8 +478318,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.GetDriverControlStringQCOM(driverControl, bufSize, length, driverControlString);
 
     [NativeName("glGetDriverControlStringQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     sbyte IGL.GetDriverControlStringQCOM(uint driverControl, Ref<uint> length)
@@ -478338,8 +478338,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGetDriverControlStringQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_driver_control"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_driver_control"])]
     [NativeFunction("opengl", EntryPoint = "glGetDriverControlStringQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static sbyte GetDriverControlStringQCOM(uint driverControl, Ref<uint> length) =>
@@ -478396,12 +478396,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Constant<uint, GLEnum, ErrorCode> IGL.GetError() =>
@@ -478458,12 +478458,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Constant<uint, GLEnum, ErrorCode> GetError() => ThisThread.GetError();
@@ -478519,12 +478519,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.GetErrorRaw() =>
@@ -478587,20 +478587,20 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GetErrorRaw() => ThisThread.GetErrorRaw();
 
     [NativeName("glGetFenceivNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetFenceNV(uint fence, uint pname, int* @params) =>
@@ -478614,8 +478614,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glGetFenceivNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetFenceNV(uint fence, uint pname, int* @params) =>
@@ -478623,8 +478623,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glGetFenceivNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetFenceNV(
@@ -478641,8 +478641,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glGetFenceivNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glGetFenceivNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetFenceNV(
@@ -479256,12 +479256,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetFloat(uint pname, float* data) =>
@@ -479324,12 +479324,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetFloat(uint pname, float* data) => ThisThread.GetFloat(pname, data);
@@ -479385,12 +479385,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetFloat(Constant<uint, GLEnum, GetPName> pname, Ref<float> data)
@@ -479452,12 +479452,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetFloatv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetFloat(Constant<uint, GLEnum, GetPName> pname, Ref<float> data) =>
@@ -481035,8 +481035,8 @@ public unsafe partial class GL : IGL, IGL.Static
     public static uint GetGraphicsResetStatusRawARB() => ThisThread.GetGraphicsResetStatusRawARB();
 
     [NativeName("glGetGraphicsResetStatusEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Constant<uint, GLEnum, GraphicsResetStatus> IGL.GetGraphicsResetStatusEXT() =>
@@ -481044,16 +481044,16 @@ public unsafe partial class GL : IGL, IGL.Static
             (uint)((IGL)this).GetGraphicsResetStatusRawEXT();
 
     [NativeName("glGetGraphicsResetStatusEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Constant<uint, GLEnum, GraphicsResetStatus> GetGraphicsResetStatusEXT() =>
         ThisThread.GetGraphicsResetStatusEXT();
 
     [NativeName("glGetGraphicsResetStatusEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.GetGraphicsResetStatusRawEXT() =>
@@ -481069,8 +481069,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )();
 
     [NativeName("glGetGraphicsResetStatusEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetGraphicsResetStatusEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GetGraphicsResetStatusRawEXT() => ThisThread.GetGraphicsResetStatusRawEXT();
@@ -482162,8 +482162,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.GetInteger64(pname, data);
 
     [NativeName("glGetInteger64vAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetInteger64APPLE(uint pname, long* @params) =>
@@ -482176,16 +482176,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(pname, @params);
 
     [NativeName("glGetInteger64vAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetInteger64APPLE(uint pname, long* @params) =>
         ThisThread.GetInteger64APPLE(pname, @params);
 
     [NativeName("glGetInteger64vAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetInteger64APPLE(Constant<uint, GLEnum, GetPName> pname, Ref<long> @params)
@@ -482197,8 +482197,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGetInteger64vAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetInteger64vAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetInteger64APPLE(
@@ -482694,12 +482694,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetInteger(uint pname, int* data) =>
@@ -482762,12 +482762,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetInteger(uint pname, int* data) => ThisThread.GetInteger(pname, data);
@@ -482823,12 +482823,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetInteger(Constant<uint, GLEnum, GetPName> pname, Ref<int> data)
@@ -482890,12 +482890,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetInteger(Constant<uint, GLEnum, GetPName> pname, Ref<int> data) =>
@@ -490691,8 +490691,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.GetnUniformARB(program, location, bufSize, @params);
 
     [NativeName("glGetnUniformfvEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetnUniformEXT(uint program, int location, uint bufSize, float* @params) =>
@@ -490705,16 +490705,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(program, location, bufSize, @params);
 
     [NativeName("glGetnUniformfvEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetnUniformEXT(uint program, int location, uint bufSize, float* @params) =>
         ThisThread.GetnUniformEXT(program, location, bufSize, @params);
 
     [NativeName("glGetnUniformfvEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetnUniformEXT(uint program, int location, uint bufSize, Ref<float> @params)
@@ -490726,8 +490726,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGetnUniformfvEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformfvEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetnUniformEXT(
@@ -490946,8 +490946,8 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.GetnUniformARB(program, location, bufSize, @params);
 
     [NativeName("glGetnUniformivEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetnUniformEXT(uint program, int location, uint bufSize, int* @params) =>
@@ -490960,16 +490960,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(program, location, bufSize, @params);
 
     [NativeName("glGetnUniformivEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetnUniformEXT(uint program, int location, uint bufSize, int* @params) =>
         ThisThread.GetnUniformEXT(program, location, bufSize, @params);
 
     [NativeName("glGetnUniformivEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetnUniformEXT(uint program, int location, uint bufSize, Ref<int> @params)
@@ -490981,8 +490981,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGetnUniformivEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glGetnUniformivEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetnUniformEXT(uint program, int location, uint bufSize, Ref<int> @params) =>
@@ -503989,12 +503989,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetString")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     byte* IGL.GetString(uint name) =>
@@ -504057,12 +504057,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetString")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static byte* GetString(uint name) => ThisThread.GetString(name);
@@ -504118,12 +504118,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetString")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Ptr<byte> IGL.GetString(Constant<uint, GLEnum, StringName> name) =>
@@ -504180,12 +504180,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetString")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr<byte> GetString(Constant<uint, GLEnum, StringName> name) =>
@@ -504939,8 +504939,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.GetSync(sync, pname, length);
 
     [NativeName("glGetSyncivAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetSyncAPPLE(SyncHandle sync, uint pname, uint count, uint* length, int* values) =>
@@ -504953,8 +504953,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(sync, pname, count, length, values);
 
     [NativeName("glGetSyncivAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetSyncAPPLE(
@@ -504966,8 +504966,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.GetSyncAPPLE(sync, pname, count, length, values);
 
     [NativeName("glGetSyncivAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetSyncAPPLE(
@@ -504986,8 +504986,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGetSyncivAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetSyncAPPLE(
@@ -504999,8 +504999,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.GetSyncAPPLE(sync, pname, count, length, values);
 
     [NativeName("glGetSyncivAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int IGL.GetSyncAPPLE(
@@ -505018,8 +505018,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glGetSyncivAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glGetSyncivAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetSyncAPPLE(
@@ -506966,12 +506966,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetTexParameter(uint target, uint pname, float* @params) =>
@@ -507034,12 +507034,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetTexParameter(uint target, uint pname, float* @params) =>
@@ -507096,12 +507096,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetTexParameter(
@@ -507167,12 +507167,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameterfv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetTexParameter(
@@ -507786,12 +507786,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetTexParameter(uint target, uint pname, int* @params) =>
@@ -507854,12 +507854,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetTexParameter(uint target, uint pname, int* @params) =>
@@ -507916,12 +507916,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.GetTexParameter(
@@ -507987,12 +507987,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glGetTexParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetTexParameter(
@@ -517681,12 +517681,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glHint")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Hint(uint target, uint mode) =>
@@ -517749,12 +517749,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glHint")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Hint(uint target, uint mode) => ThisThread.Hint(target, mode);
@@ -517810,12 +517810,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glHint")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Hint(
@@ -517874,12 +517874,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glHint")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Hint(
@@ -520411,8 +520411,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glInsertEventMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.InsertEventMarkerEXT(uint length, sbyte* marker) =>
@@ -520427,8 +520427,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glInsertEventMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void InsertEventMarkerEXT(uint length, sbyte* marker) =>
@@ -520437,8 +520437,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glInsertEventMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.InsertEventMarkerEXT(uint length, Ref<sbyte> marker)
@@ -520452,8 +520452,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glInsertEventMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glInsertEventMarkerEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void InsertEventMarkerEXT(uint length, Ref<sbyte> marker) =>
@@ -522835,12 +522835,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<uint> IGL.IsBuffer(uint buffer) =>
@@ -522887,12 +522887,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<uint> IsBuffer(uint buffer) => ThisThread.IsBuffer(buffer);
@@ -522970,12 +522970,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.IsBufferRaw(uint buffer) =>
@@ -523028,12 +523028,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.5"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsBuffer")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint IsBufferRaw(uint buffer) => ThisThread.IsBufferRaw(buffer);
@@ -523163,12 +523163,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.IsEnabled(uint cap) =>
@@ -523231,12 +523231,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint IsEnabled(uint cap) => ThisThread.IsEnabled(cap);
@@ -523292,12 +523292,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<uint> IGL.IsEnabled(Constant<uint, GLEnum, EnableCap> cap) =>
@@ -523354,12 +523354,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsEnabled")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<uint> IsEnabled(Constant<uint, GLEnum, EnableCap> cap) =>
@@ -523712,8 +523712,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glIsFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<uint> IGL.IsFenceNV(uint fence) =>
@@ -523721,16 +523721,16 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glIsFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<uint> IsFenceNV(uint fence) => ThisThread.IsFenceNV(fence);
 
     [NativeName("glIsFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.IsFenceRawNV(uint fence) =>
@@ -523744,8 +523744,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glIsFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glIsFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint IsFenceRawNV(uint fence) => ThisThread.IsFenceRawNV(fence);
@@ -526041,23 +526041,23 @@ public unsafe partial class GL : IGL, IGL.Static
     public static MaybeBool<uint> IsSync(SyncHandle sync) => ThisThread.IsSync(sync);
 
     [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<uint> IGL.IsSyncAPPLE(SyncHandle sync) =>
         (MaybeBool<uint>)(uint)((IGL)this).IsSyncRawAPPLE(sync);
 
     [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<uint> IsSyncAPPLE(SyncHandle sync) => ThisThread.IsSyncAPPLE(sync);
 
     [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.IsSyncRawAPPLE(SyncHandle sync) =>
@@ -526070,8 +526070,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(sync);
 
     [NativeName("glIsSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glIsSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint IsSyncRawAPPLE(SyncHandle sync) => ThisThread.IsSyncRawAPPLE(sync);
@@ -526206,12 +526206,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<uint> IGL.IsTexture(uint texture) =>
@@ -526266,12 +526266,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<uint> IsTexture(uint texture) => ThisThread.IsTexture(texture);
@@ -526443,12 +526443,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.IsTextureRaw(uint texture) =>
@@ -526509,12 +526509,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glIsTexture")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint IsTextureRaw(uint texture) => ThisThread.IsTextureRaw(texture);
@@ -526846,24 +526846,24 @@ public unsafe partial class GL : IGL, IGL.Static
     public static uint IsVertexArrayRawAPPLE(uint array) => ThisThread.IsVertexArrayRawAPPLE(array);
 
     [NativeName("glIsVertexArrayOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<uint> IGL.IsVertexArrayOES(uint array) =>
         (MaybeBool<uint>)(uint)((IGL)this).IsVertexArrayRawOES(array);
 
     [NativeName("glIsVertexArrayOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<uint> IsVertexArrayOES(uint array) =>
         ThisThread.IsVertexArrayOES(array);
 
     [NativeName("glIsVertexArrayOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.IsVertexArrayRawOES(uint array) =>
@@ -526876,8 +526876,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(array);
 
     [NativeName("glIsVertexArrayOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [SupportedApiProfile("gles1", ["GL_OES_vertex_array_object"])]
+    [SupportedApiProfile("gles2", ["GL_OES_vertex_array_object"])]
     [NativeFunction("opengl", EntryPoint = "glIsVertexArrayOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint IsVertexArrayRawOES(uint array) => ThisThread.IsVertexArrayRawOES(array);
@@ -528847,12 +528847,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLineWidth")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.LineWidth(float width) =>
@@ -528915,12 +528915,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glLineWidth")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void LineWidth(float width) => ThisThread.LineWidth(width);
@@ -532034,8 +532034,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.MapBufferARB(target, access);
 
     [NativeName("glMapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void* IGL.MapBufferOES(uint target, uint access) =>
@@ -532048,16 +532048,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, access);
 
     [NativeName("glMapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void* MapBufferOES(uint target, uint access) =>
         ThisThread.MapBufferOES(target, access);
 
     [NativeName("glMapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Ptr IGL.MapBufferOES(
@@ -532066,8 +532066,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => (void*)((IGL)this).MapBufferOES((uint)target, (uint)access);
 
     [NativeName("glMapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr MapBufferOES(
@@ -532258,8 +532258,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.MapBufferRange(target, offset, length, access);
 
     [NativeName("glMapBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void* IGL.MapBufferRangeEXT(uint target, nint offset, nuint length, uint access) =>
@@ -532272,16 +532272,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, offset, length, access);
 
     [NativeName("glMapBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void* MapBufferRangeEXT(uint target, nint offset, nuint length, uint access) =>
         ThisThread.MapBufferRangeEXT(target, offset, length, access);
 
     [NativeName("glMapBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Ptr IGL.MapBufferRangeEXT(
@@ -532292,8 +532292,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => (void*)((IGL)this).MapBufferRangeEXT((uint)target, offset, length, (uint)access);
 
     [NativeName("glMapBufferRangeEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [SupportedApiProfile("gles1", ["GL_EXT_map_buffer_range"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_map_buffer_range"])]
     [NativeFunction("opengl", EntryPoint = "glMapBufferRangeEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr MapBufferRangeEXT(
@@ -537626,8 +537626,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glMultiDrawArraysEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.MultiDrawArraysEXT(uint mode, int* first, uint* count, uint primcount) =>
@@ -537641,8 +537641,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glMultiDrawArraysEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void MultiDrawArraysEXT(uint mode, int* first, uint* count, uint primcount) =>
@@ -537650,8 +537650,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glMultiDrawArraysEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.MultiDrawArraysEXT(
@@ -537670,8 +537670,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glMultiDrawArraysEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawArraysEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void MultiDrawArraysEXT(
@@ -538853,8 +538853,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glMultiDrawElementsEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.MultiDrawElementsEXT(
@@ -538874,8 +538874,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glMultiDrawElementsEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void MultiDrawElementsEXT(
@@ -538888,8 +538888,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glMultiDrawElementsEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.MultiDrawElementsEXT(
@@ -538915,8 +538915,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glMultiDrawElementsEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_multi_draw_arrays"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multi_draw_arrays"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multi_draw_arrays"])]
     [NativeFunction("opengl", EntryPoint = "glMultiDrawElementsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void MultiDrawElementsEXT(
@@ -558973,12 +558973,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.PixelStore(uint pname, int param1) =>
@@ -559041,12 +559041,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void PixelStore(uint pname, int param1) => ThisThread.PixelStore(pname, param1);
@@ -559102,12 +559102,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.PixelStore(Constant<uint, GLEnum, PixelStoreParameter> pname, int param1) =>
@@ -559164,12 +559164,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glPixelStorei")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void PixelStore(Constant<uint, GLEnum, PixelStoreParameter> pname, int param1) =>
@@ -562096,12 +562096,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glPolygonOffset")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.PolygonOffset(float factor, float units) =>
@@ -562162,12 +562162,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glPolygonOffset")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void PolygonOffset(float factor, float units) =>
@@ -562621,8 +562621,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glPopGroupMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glPopGroupMarkerEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.PopGroupMarkerEXT() =>
@@ -562637,8 +562637,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glPopGroupMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glPopGroupMarkerEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void PopGroupMarkerEXT() => ThisThread.PopGroupMarkerEXT();
@@ -578140,8 +578140,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glPushGroupMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.PushGroupMarkerEXT(uint length, sbyte* marker) =>
@@ -578156,8 +578156,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glPushGroupMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void PushGroupMarkerEXT(uint length, sbyte* marker) =>
@@ -578166,8 +578166,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glPushGroupMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.PushGroupMarkerEXT(uint length, Ref<sbyte> marker)
@@ -578181,8 +578181,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glPushGroupMarkerEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("glcore", ["GL_EXT_debug_marker"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [SupportedApiProfile("gles1", ["GL_EXT_debug_marker"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_debug_marker"])]
     [NativeFunction("opengl", EntryPoint = "glPushGroupMarkerEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void PushGroupMarkerEXT(uint length, Ref<sbyte> marker) =>
@@ -581810,8 +581810,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ReadnPixelsARB(x, y, width, height, format, type, bufSize, data);
 
     [NativeName("glReadnPixelsEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ReadnPixelsEXT(
@@ -581833,8 +581833,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(x, y, width, height, format, type, bufSize, data);
 
     [NativeName("glReadnPixelsEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ReadnPixelsEXT(
@@ -581849,8 +581849,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.ReadnPixelsEXT(x, y, width, height, format, type, bufSize, data);
 
     [NativeName("glReadnPixelsEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ReadnPixelsEXT(
@@ -581880,8 +581880,8 @@ public unsafe partial class GL : IGL, IGL.Static
     }
 
     [NativeName("glReadnPixelsEXT")]
-    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [SupportedApiProfile("gles1", ["GL_EXT_robustness"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_robustness"])]
     [NativeFunction("opengl", EntryPoint = "glReadnPixelsEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ReadnPixelsEXT(
@@ -582028,12 +582028,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glReadPixels")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ReadPixels(
@@ -582104,12 +582104,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glReadPixels")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ReadPixels(
@@ -582173,12 +582173,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glReadPixels")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ReadPixels(
@@ -582248,12 +582248,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glReadPixels")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ReadPixels(
@@ -583924,8 +583924,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.RenderbufferStorageMultisampleAPPLE(
@@ -583947,8 +583947,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, samples, internalformat, width, height);
 
     [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void RenderbufferStorageMultisampleAPPLE(
@@ -583967,8 +583967,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.RenderbufferStorageMultisampleAPPLE(
@@ -583987,8 +583987,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glRenderbufferStorageMultisampleAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void RenderbufferStorageMultisampleAPPLE(
@@ -584098,8 +584098,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glRenderbufferStorageMultisampleEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.RenderbufferStorageMultisampleEXT(
@@ -584122,8 +584122,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glRenderbufferStorageMultisampleEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void RenderbufferStorageMultisampleEXT(
@@ -584143,8 +584143,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glRenderbufferStorageMultisampleEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.RenderbufferStorageMultisampleEXT(
@@ -584164,8 +584164,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glRenderbufferStorageMultisampleEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_framebuffer_multisample"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_EXT_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void RenderbufferStorageMultisampleEXT(
@@ -584184,8 +584184,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glRenderbufferStorageMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.RenderbufferStorageMultisampleIMG(
@@ -584207,8 +584207,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target, samples, internalformat, width, height);
 
     [NativeName("glRenderbufferStorageMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void RenderbufferStorageMultisampleIMG(
@@ -584227,8 +584227,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glRenderbufferStorageMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.RenderbufferStorageMultisampleIMG(
@@ -584247,8 +584247,8 @@ public unsafe partial class GL : IGL, IGL.Static
         );
 
     [NativeName("glRenderbufferStorageMultisampleIMG")]
-    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [SupportedApiProfile("gles1", ["GL_IMG_multisampled_render_to_texture"])]
+    [SupportedApiProfile("gles2", ["GL_IMG_multisampled_render_to_texture"])]
     [NativeFunction("opengl", EntryPoint = "glRenderbufferStorageMultisampleIMG")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void RenderbufferStorageMultisampleIMG(
@@ -587332,8 +587332,8 @@ public unsafe partial class GL : IGL, IGL.Static
     public static void ResolveDepthValuesNV() => ThisThread.ResolveDepthValuesNV();
 
     [NativeName("glResolveMultisampleFramebufferAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [NativeFunction("opengl", EntryPoint = "glResolveMultisampleFramebufferAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.ResolveMultisampleFramebufferAPPLE() =>
@@ -587349,8 +587349,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )();
 
     [NativeName("glResolveMultisampleFramebufferAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_framebuffer_multisample"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_framebuffer_multisample"])]
     [NativeFunction("opengl", EntryPoint = "glResolveMultisampleFramebufferAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void ResolveMultisampleFramebufferAPPLE() =>
@@ -587679,12 +587679,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.SampleCoverage(float value, uint invert) =>
@@ -587741,12 +587741,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SampleCoverage(float value, uint invert) =>
@@ -587797,12 +587797,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.SampleCoverage(float value, MaybeBool<uint> invert) =>
@@ -587853,12 +587853,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.3"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glSampleCoverage")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SampleCoverage(float value, MaybeBool<uint> invert) =>
@@ -589705,12 +589705,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glScissor")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Scissor(int x, int y, uint width, uint height) =>
@@ -589773,12 +589773,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glScissor")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Scissor(int x, int y, uint width, uint height) =>
@@ -593506,8 +593506,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glSetFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.SetFenceNV(uint fence, uint condition) =>
@@ -593521,8 +593521,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glSetFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SetFenceNV(uint fence, uint condition) =>
@@ -593530,8 +593530,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glSetFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.SetFenceNV(uint fence, Constant<uint, GLEnum, FenceConditionNV> condition) =>
@@ -593539,8 +593539,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glSetFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glSetFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void SetFenceNV(uint fence, Constant<uint, GLEnum, FenceConditionNV> condition) =>
@@ -595652,8 +595652,8 @@ public unsafe partial class GL : IGL, IGL.Static
     public static void StartInstrumentsSGIX() => ThisThread.StartInstrumentsSGIX();
 
     [NativeName("glStartTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.StartTilingQCOM(uint x, uint y, uint width, uint height, uint preserveMask) =>
@@ -595666,8 +595666,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(x, y, width, height, preserveMask);
 
     [NativeName("glStartTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void StartTilingQCOM(
@@ -595679,8 +595679,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.StartTilingQCOM(x, y, width, height, preserveMask);
 
     [NativeName("glStartTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.StartTilingQCOM(
@@ -595692,8 +595692,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ((IGL)this).StartTilingQCOM(x, y, width, height, (uint)preserveMask);
 
     [NativeName("glStartTilingQCOM")]
-    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [SupportedApiProfile("gles1", ["GL_QCOM_tiled_rendering"])]
+    [SupportedApiProfile("gles2", ["GL_QCOM_tiled_rendering"])]
     [NativeFunction("opengl", EntryPoint = "glStartTilingQCOM")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void StartTilingQCOM(
@@ -595959,12 +595959,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.StencilFunc(uint func, int @ref, uint mask) =>
@@ -596027,12 +596027,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void StencilFunc(uint func, int @ref, uint mask) =>
@@ -596089,12 +596089,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.StencilFunc(Constant<uint, GLEnum, StencilFunction> func, int @ref, uint mask) =>
@@ -596151,12 +596151,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilFunc")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void StencilFunc(
@@ -596471,12 +596471,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilMask")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.StencilMask(uint mask) =>
@@ -596539,12 +596539,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilMask")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void StencilMask(uint mask) => ThisThread.StencilMask(mask);
@@ -596802,12 +596802,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilOp")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.StencilOp(uint fail, uint zfail, uint zpass) =>
@@ -596870,12 +596870,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilOp")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void StencilOp(uint fail, uint zfail, uint zpass) =>
@@ -596932,12 +596932,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilOp")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.StencilOp(
@@ -596997,12 +596997,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glStencilOp")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void StencilOp(
@@ -598402,8 +598402,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glTestFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<uint> IGL.TestFenceNV(uint fence) =>
@@ -598411,16 +598411,16 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glTestFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<uint> TestFenceNV(uint fence) => ThisThread.TestFenceNV(fence);
 
     [NativeName("glTestFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.TestFenceRawNV(uint fence) =>
@@ -598434,8 +598434,8 @@ public unsafe partial class GL : IGL, IGL.Static
 
     [NativeName("glTestFenceNV")]
     [SupportedApiProfile("gl", ["GL_NV_fence"])]
-    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [SupportedApiProfile("gles1", ["GL_NV_fence"])]
+    [SupportedApiProfile("gles2", ["GL_NV_fence"])]
     [NativeFunction("opengl", EntryPoint = "glTestFenceNV")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint TestFenceRawNV(uint fence) => ThisThread.TestFenceRawNV(fence);
@@ -606975,12 +606975,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexImage2D(
@@ -607053,12 +607053,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexImage2D(
@@ -607135,12 +607135,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexImage2D(
@@ -607222,12 +607222,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexImage2D(
@@ -608984,12 +608984,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexParameter(uint target, uint pname, float param2) =>
@@ -609052,12 +609052,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexParameter(uint target, uint pname, float param2) =>
@@ -609114,12 +609114,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexParameter(
@@ -609179,12 +609179,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterf")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexParameter(
@@ -609244,12 +609244,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexParameter(uint target, uint pname, float* @params) =>
@@ -609312,12 +609312,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexParameter(uint target, uint pname, float* @params) =>
@@ -609374,12 +609374,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexParameter(
@@ -609445,12 +609445,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", MaxVersion = "2.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameterfv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexParameter(
@@ -609510,12 +609510,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexParameter(uint target, uint pname, int param2) =>
@@ -609578,12 +609578,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexParameter(uint target, uint pname, int param2) =>
@@ -609640,12 +609640,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexParameter(
@@ -609705,12 +609705,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteri")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexParameter(
@@ -610318,12 +610318,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexParameter(uint target, uint pname, int* @params) =>
@@ -610386,12 +610386,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexParameter(uint target, uint pname, int* @params) =>
@@ -610448,12 +610448,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexParameter(
@@ -610519,12 +610519,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexParameteriv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexParameter(
@@ -610886,8 +610886,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexStorage1DEXT(uint target, uint levels, uint internalformat, uint width) =>
@@ -610902,8 +610902,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexStorage1DEXT(uint target, uint levels, uint internalformat, uint width) =>
@@ -610912,8 +610912,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexStorage1DEXT(
@@ -610926,8 +610926,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage1DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexStorage1DEXT(
@@ -611081,8 +611081,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexStorage2DEXT(
@@ -611103,8 +611103,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexStorage2DEXT(
@@ -611118,8 +611118,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexStorage2DEXT(
@@ -611133,8 +611133,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage2DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexStorage2DEXT(
@@ -611469,8 +611469,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexStorage3DEXT(
@@ -611492,8 +611492,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexStorage3DEXT(
@@ -611508,8 +611508,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexStorage3DEXT(
@@ -611532,8 +611532,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTexStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTexStorage3DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexStorage3DEXT(
@@ -613152,12 +613152,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexSubImage2D(
@@ -613228,12 +613228,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexSubImage2D(
@@ -613308,12 +613308,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TexSubImage2D(
@@ -613393,12 +613393,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.1"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glTexSubImage2D")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TexSubImage2D(
@@ -616882,8 +616882,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TextureStorage1DEXT(
@@ -616904,8 +616904,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TextureStorage1DEXT(
@@ -616919,8 +616919,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TextureStorage1DEXT(
@@ -616934,8 +616934,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage1DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage1DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TextureStorage1DEXT(
@@ -617040,8 +617040,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TextureStorage2DEXT(
@@ -617063,8 +617063,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TextureStorage2DEXT(
@@ -617079,8 +617079,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TextureStorage2DEXT(
@@ -617103,8 +617103,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage2DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage2DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TextureStorage2DEXT(
@@ -617433,8 +617433,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TextureStorage3DEXT(
@@ -617457,8 +617457,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TextureStorage3DEXT(
@@ -617483,8 +617483,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.TextureStorage3DEXT(
@@ -617509,8 +617509,8 @@ public unsafe partial class GL : IGL, IGL.Static
     [NativeName("glTextureStorage3DEXT")]
     [SupportedApiProfile("gl", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
     [SupportedApiProfile("glcore", ["GL_EXT_direct_state_access", "GL_EXT_texture_storage"])]
-    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [SupportedApiProfile("gles1", ["GL_EXT_texture_storage"])]
+    [SupportedApiProfile("gles2", ["GL_EXT_texture_storage"])]
     [NativeFunction("opengl", EntryPoint = "glTextureStorage3DEXT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void TextureStorage3DEXT(
@@ -631281,23 +631281,23 @@ public unsafe partial class GL : IGL, IGL.Static
         ThisThread.UnmapBufferARB(target);
 
     [NativeName("glUnmapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<uint> IGL.UnmapBufferOES(uint target) =>
         (MaybeBool<uint>)(uint)((IGL)this).UnmapBufferRawOES(target);
 
     [NativeName("glUnmapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<uint> UnmapBufferOES(uint target) => ThisThread.UnmapBufferOES(target);
 
     [NativeName("glUnmapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     uint IGL.UnmapBufferRawOES(uint target) =>
@@ -631310,8 +631310,8 @@ public unsafe partial class GL : IGL, IGL.Static
         )(target);
 
     [NativeName("glUnmapBufferOES")]
-    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [SupportedApiProfile("gles1", ["GL_OES_mapbuffer"])]
+    [SupportedApiProfile("gles2", ["GL_OES_mapbuffer"])]
     [NativeFunction("opengl", EntryPoint = "glUnmapBufferOES")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint UnmapBufferRawOES(uint target) => ThisThread.UnmapBufferRawOES(target);
@@ -658209,12 +658209,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glViewport")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.Viewport(int x, int y, uint width, uint height) =>
@@ -658277,12 +658277,12 @@ public unsafe partial class GL : IGL, IGL.Static
         ],
         MinVersion = "1.0"
     )]
+    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [SupportedApiProfile(
         "gles2",
         ["GL_ES_VERSION_2_0", "GL_ES_VERSION_3_0", "GL_ES_VERSION_3_1", "GL_ES_VERSION_3_2"],
         MinVersion = "2.0"
     )]
-    [SupportedApiProfile("gles1", ["GL_VERSION_ES_CM_1_0"], MinVersion = "1.0")]
     [NativeFunction("opengl", EntryPoint = "glViewport")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void Viewport(int x, int y, uint width, uint height) =>
@@ -659527,8 +659527,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ThisThread.WaitSync(sync, flags, timeout);
 
     [NativeName("glWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
@@ -659541,16 +659541,16 @@ public unsafe partial class GL : IGL, IGL.Static
         )(sync, flags, timeout);
 
     [NativeName("glWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void WaitSyncAPPLE(SyncHandle sync, uint flags, ulong timeout) =>
         ThisThread.WaitSyncAPPLE(sync, flags, timeout);
 
     [NativeName("glWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IGL.WaitSyncAPPLE(
@@ -659560,8 +659560,8 @@ public unsafe partial class GL : IGL, IGL.Static
     ) => ((IGL)this).WaitSyncAPPLE(sync, (uint)flags, timeout);
 
     [NativeName("glWaitSyncAPPLE")]
-    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [SupportedApiProfile("gles1", ["GL_APPLE_sync"])]
+    [SupportedApiProfile("gles2", ["GL_APPLE_sync"])]
     [NativeFunction("opengl", EntryPoint = "glWaitSyncAPPLE")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void WaitSyncAPPLE(

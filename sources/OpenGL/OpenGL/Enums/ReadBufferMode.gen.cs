@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("ReadBufferMode")]
 public enum ReadBufferMode : uint
 {
+    [NativeName("GL_NONE_OES")]
+    NoneOES = 0,
+
     [NativeName("GL_NONE")]
     None = 0,
 
@@ -96,7 +99,4 @@ public enum ReadBufferMode : uint
 
     [NativeName("GL_COLOR_ATTACHMENT15")]
     ColorAttachment15 = 36079,
-
-    [NativeName("GL_NONE_OES")]
-    NoneOES = 0,
 }

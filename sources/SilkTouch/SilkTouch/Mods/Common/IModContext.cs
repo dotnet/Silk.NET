@@ -18,15 +18,25 @@ public interface IModContext : IAsyncDisposable
     /// <summary>
     /// The path to resolve relative paths from.
     /// </summary>
-    public string? WorkingDirectory { get; }
+    public string WorkingDirectory { get; }
 
     /// <summary>
     /// The current compilation for the generation outputs.
     /// </summary>
-    public Project? SourceProject { get; set; }
+    public Project SourceProject { get; set; }
 
     /// <summary>
     /// The current compilation for the test outputs.
     /// </summary>
     public Project? TestProject { get; set; }
+
+    /// <summary>
+    /// Whether generation should continue.
+    /// </summary>
+    public bool ContinueGeneration { get; set; }
+
+    /// <summary>
+    /// Output the bindings to the output location represented by this mod context.
+    /// </summary>
+    public Task OutputBindingsAsync();
 }

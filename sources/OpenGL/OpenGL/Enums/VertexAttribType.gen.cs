@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("VertexAttribType")]
 public enum VertexAttribType : uint
 {
+    [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
+    UnsignedInt2x10x10x10RevEXT = 33640,
+
     [NativeName("GL_BYTE")]
     Byte = 5120,
 
@@ -48,7 +51,4 @@ public enum VertexAttribType : uint
 
     [NativeName("GL_FIXED")]
     Fixed = 5132,
-
-    [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
-    UnsignedInt2x10x10x10RevEXT = 33640,
 }

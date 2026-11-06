@@ -37,10 +37,10 @@ public class InterceptNativeFunctions(InterceptNativeFunctions.Configuration con
 
         var rewriter = new Rewriter(config);
         var proj = ctx.SourceProject;
-        foreach (var docId in proj?.DocumentIds ?? [])
+        foreach (var docId in proj.DocumentIds)
         {
             var doc =
-                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter.Visit(await doc.GetSyntaxRootAsync(ct))
                     ?? throw new InvalidOperationException("Visit returned null.")
@@ -99,31 +99,27 @@ public class InterceptNativeFunctions(InterceptNativeFunctions.Configuration con
                         )
                     )
                     .AddNativeFunction(node)
-                    .WithModifiers(
-                        [
-                            .. node.Modifiers.Where(x => x.Kind() is not SyntaxKind.ExternKeyword),
-                            Token(SyntaxKind.PartialKeyword),
-                        ]
-                    )
+                    .WithModifiers([
+                        .. node.Modifiers.Where(x => x.Kind() is not SyntaxKind.ExternKeyword),
+                        Token(SyntaxKind.PartialKeyword),
+                    ])
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
             );
 
             node = node.WithRenameSafeAttributeLists()
                 .WithIdentifier(Identifier($"{node.Identifier}Internal"))
-                .WithModifiers(
-                    [
-                        Token(SyntaxKind.PrivateKeyword),
-                        .. node.Modifiers.Where(x =>
-                            x.Kind()
-                                is not (
-                                    SyntaxKind.PrivateKeyword
-                                    or SyntaxKind.PublicKeyword
-                                    or SyntaxKind.InternalKeyword
-                                    or SyntaxKind.ProtectedKeyword
-                                )
-                        ),
-                    ]
-                );
+                .WithModifiers([
+                    Token(SyntaxKind.PrivateKeyword),
+                    .. node.Modifiers.Where(x =>
+                        x.Kind()
+                            is not (
+                                SyntaxKind.PrivateKeyword
+                                or SyntaxKind.PublicKeyword
+                                or SyntaxKind.InternalKeyword
+                                or SyntaxKind.ProtectedKeyword
+                            )
+                    ),
+                ]);
 
             return node.WithAttributeLists(
                 node.AttributeLists.AddNameAffix(

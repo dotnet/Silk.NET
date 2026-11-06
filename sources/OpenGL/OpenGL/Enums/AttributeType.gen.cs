@@ -10,6 +10,30 @@ namespace Silk.NET.OpenGL;
 [NativeName("AttributeType")]
 public enum AttributeType : uint
 {
+    [NativeName("GL_SAMPLER_3D_OES")]
+    Sampler3DOES = 35679,
+
+    [NativeName("GL_SAMPLER_2D_SHADOW_EXT")]
+    Sampler2DShadowEXT = 35682,
+
+    [NativeName("GL_FLOAT_MAT2x3_NV")]
+    FloatMat2x3NV = 35685,
+
+    [NativeName("GL_FLOAT_MAT2x4_NV")]
+    FloatMat2x4NV = 35686,
+
+    [NativeName("GL_FLOAT_MAT3x2_NV")]
+    FloatMat3x2NV = 35687,
+
+    [NativeName("GL_FLOAT_MAT3x4_NV")]
+    FloatMat3x4NV = 35688,
+
+    [NativeName("GL_FLOAT_MAT4x2_NV")]
+    FloatMat4x2NV = 35689,
+
+    [NativeName("GL_FLOAT_MAT4x3_NV")]
+    FloatMat4x3NV = 35690,
+
     [NativeName("GL_INT")]
     Int = 5124,
 
@@ -429,28 +453,4 @@ public enum AttributeType : uint
 
     [NativeName("GL_UNSIGNED_INT64_NV")]
     UnsignedInt64NV = 5135,
-
-    [NativeName("GL_SAMPLER_3D_OES")]
-    Sampler3DOES = 35679,
-
-    [NativeName("GL_SAMPLER_2D_SHADOW_EXT")]
-    Sampler2DShadowEXT = 35682,
-
-    [NativeName("GL_FLOAT_MAT2x3_NV")]
-    FloatMat2x3NV = 35685,
-
-    [NativeName("GL_FLOAT_MAT2x4_NV")]
-    FloatMat2x4NV = 35686,
-
-    [NativeName("GL_FLOAT_MAT3x2_NV")]
-    FloatMat3x2NV = 35687,
-
-    [NativeName("GL_FLOAT_MAT3x4_NV")]
-    FloatMat3x4NV = 35688,
-
-    [NativeName("GL_FLOAT_MAT4x2_NV")]
-    FloatMat4x2NV = 35689,
-
-    [NativeName("GL_FLOAT_MAT4x3_NV")]
-    FloatMat4x3NV = 35690,
 }

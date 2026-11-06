@@ -1,10 +1,12 @@
 @../settings.rsp
 @../remap.rsp
+--remap
+GL_ACTIVE_PROGRAM_EXT=GLES_ACTIVE_PROGRAM_EXT
 --exclude
 __gles2_gl_h_
 WIN32_LEAN_AND_MEAN
 --file
-opengl-gl.h
+gles2.h
 --methodClassName
 GL
 --namespace

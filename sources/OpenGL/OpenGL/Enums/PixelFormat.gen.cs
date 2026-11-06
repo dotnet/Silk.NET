@@ -10,6 +10,12 @@ namespace Silk.NET.OpenGL;
 [NativeName("PixelFormat")]
 public enum PixelFormat : uint
 {
+    [NativeName("GL_BGRA_IMG")]
+    BgraIMG = 32993,
+
+    [NativeName("GL_RED_EXT")]
+    RedEXT = 6403,
+
     [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = 5123,
 
@@ -105,10 +111,4 @@ public enum PixelFormat : uint
 
     [NativeName("GL_YCRCB_444_SGIX")]
     Ycrcb444SGIX = 33212,
-
-    [NativeName("GL_RED_EXT")]
-    RedEXT = 6403,
-
-    [NativeName("GL_BGRA_IMG")]
-    BgraIMG = 32993,
 }

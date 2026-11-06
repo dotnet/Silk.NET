@@ -10,6 +10,18 @@ namespace Silk.NET.OpenGL;
 [NativeName("TextureWrapMode")]
 public enum TextureWrapMode : uint
 {
+    [NativeName("GL_MIRRORED_REPEAT_OES")]
+    MirroredRepeatOES = 33648,
+
+    [NativeName("GL_CLAMP_TO_BORDER_OES")]
+    ClampToBorderOES = 33069,
+
+    [NativeName("GL_CLAMP_TO_BORDER_EXT")]
+    ClampToBorderEXT = 33069,
+
+    [NativeName("GL_CLAMP_TO_BORDER_NV")]
+    ClampToBorderNV = 33069,
+
     [NativeName("GL_REPEAT")]
     Repeat = 10497,
 
@@ -39,16 +51,4 @@ public enum TextureWrapMode : uint
 
     [NativeName("GL_CLAMP_TO_EDGE_SGIS")]
     ClampToEdgeSGIS = 33071,
-
-    [NativeName("GL_CLAMP_TO_BORDER_OES")]
-    ClampToBorderOES = 33069,
-
-    [NativeName("GL_CLAMP_TO_BORDER_EXT")]
-    ClampToBorderEXT = 33069,
-
-    [NativeName("GL_CLAMP_TO_BORDER_NV")]
-    ClampToBorderNV = 33069,
-
-    [NativeName("GL_MIRRORED_REPEAT_OES")]
-    MirroredRepeatOES = 33648,
 }

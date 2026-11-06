@@ -425,18 +425,8 @@ public partial class MixKhronosData(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        if (Job == null)
-        {
-            return;
-        }
-
         var currentConfig = Job.Configuration;
         var proj = ctx.SourceProject;
-
-        if (proj == null)
-        {
-            return;
-        }
 
         // Rewrite phase 1
         var rewriter1 = new RewriterPhase1(Job, logger);

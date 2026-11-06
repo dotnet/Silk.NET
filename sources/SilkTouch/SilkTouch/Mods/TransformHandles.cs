@@ -48,10 +48,6 @@ public class TransformHandles(
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var project = ctx.SourceProject;
-        if (project == null)
-        {
-            return;
-        }
 
         var compilation = await project.GetCompilationAsync(ct);
         if (compilation == null)
@@ -446,12 +442,10 @@ public class TransformHandles(
                 )
                 .WithParameterList(
                     ParameterList(
-                        SeparatedList(
-                            [
-                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
-                                Parameter(Identifier("right")).WithType(IdentifierName(structName)),
-                            ]
-                        )
+                        SeparatedList([
+                            Parameter(Identifier("left")).WithType(IdentifierName(structName)),
+                            Parameter(Identifier("right")).WithType(IdentifierName(structName)),
+                        ])
                     )
                 )
                 .WithExpressionBody(
@@ -546,12 +540,10 @@ public class TransformHandles(
                 )
                 .WithParameterList(
                     ParameterList(
-                        SeparatedList(
-                            [
-                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
-                                Parameter(Identifier("right")).WithType(IdentifierName("NullPtr")),
-                            ]
-                        )
+                        SeparatedList([
+                            Parameter(Identifier("left")).WithType(IdentifierName(structName)),
+                            Parameter(Identifier("right")).WithType(IdentifierName("NullPtr")),
+                        ])
                     )
                 )
                 .WithExpressionBody(

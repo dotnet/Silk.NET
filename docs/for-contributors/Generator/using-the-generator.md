@@ -245,13 +245,13 @@ MSBuild under the hood.
 The generator can be run directly from source using the following command:
 
 ```sh
-dotnet run --project sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only SDL
+dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --only SDL
 ```
 
 You may use the `--help` option to display additional information about available options.
 
 ```
-dotnet run --project sources/SilkTouch/SilkTouch/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --help
+dotnet run --project sources/SilkTouch/Jobs/Silk.NET.SilkTouch.Jobs.csproj -c Release -- --help
 ```
 
 Some notable options include the `--only` and `--skip` options. `--only` lets you specify the exact jobs to run.

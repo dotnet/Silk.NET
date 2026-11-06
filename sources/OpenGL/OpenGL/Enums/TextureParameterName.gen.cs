@@ -10,6 +10,18 @@ namespace Silk.NET.OpenGL;
 [NativeName("TextureParameterName")]
 public enum TextureParameterName : uint
 {
+    [NativeName("GL_TEXTURE_WRAP_R_OES")]
+    TextureWrapROES = 32882,
+
+    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
+    TextureUnnormalizedCoordinatesARM = 36714,
+
+    [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
+    TextureBorderColorNV = 4100,
+
+    [NativeName("GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM")]
+    TextureFoveatedCutoffDensityQCOM = 38560,
+
     [NativeName("GL_TEXTURE_WIDTH")]
     TextureWidth = 4096,
 
@@ -225,16 +237,4 @@ public enum TextureParameterName : uint
 
     [NativeName("GL_POST_TEXTURE_FILTER_SCALE_SGIX")]
     PostTextureFilterScaleSGIX = 33146,
-
-    [NativeName("GL_TEXTURE_WRAP_R_OES")]
-    TextureWrapROES = 32882,
-
-    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    TextureUnnormalizedCoordinatesARM = 36714,
-
-    [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
-    TextureBorderColorNV = 4100,
-
-    [NativeName("GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM")]
-    TextureFoveatedCutoffDensityQCOM = 38560,
 }

@@ -10,6 +10,27 @@ namespace Silk.NET.OpenGL;
 [NativeName("PixelType")]
 public enum PixelType : uint
 {
+    [NativeName("GL_UNSIGNED_INT_24_8_OES")]
+    UnsignedInt24x8OES = 34042,
+
+    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT")]
+    UnsignedShort4x4x4x4RevEXT = 33637,
+
+    [NativeName("GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT")]
+    UnsignedShort1x5x5x5RevEXT = 33638,
+
+    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG")]
+    UnsignedShort4x4x4x4RevIMG = 33637,
+
+    [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV_APPLE")]
+    UnsignedInt10F11F11FRevAPPLE = 35899,
+
+    [NativeName("GL_UNSIGNED_INT_5_9_9_9_REV_APPLE")]
+    UnsignedInt5x9x9x9RevAPPLE = 35902,
+
+    [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
+    UnsignedInt2x10x10x10RevEXT = 33640,
+
     [NativeName("GL_BYTE")]
     Byte = 5120,
 
@@ -123,25 +144,4 @@ public enum PixelType : uint
 
     [NativeName("GL_UNSIGNED_INT_24_8_NV")]
     UnsignedInt24x8NV = 34042,
-
-    [NativeName("GL_UNSIGNED_INT_24_8_OES")]
-    UnsignedInt24x8OES = 34042,
-
-    [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV_APPLE")]
-    UnsignedInt10F11F11FRevAPPLE = 35899,
-
-    [NativeName("GL_UNSIGNED_INT_5_9_9_9_REV_APPLE")]
-    UnsignedInt5x9x9x9RevAPPLE = 35902,
-
-    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT")]
-    UnsignedShort4x4x4x4RevEXT = 33637,
-
-    [NativeName("GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT")]
-    UnsignedShort1x5x5x5RevEXT = 33638,
-
-    [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
-    UnsignedInt2x10x10x10RevEXT = 33640,
-
-    [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG")]
-    UnsignedShort4x4x4x4RevIMG = 33637,
 }

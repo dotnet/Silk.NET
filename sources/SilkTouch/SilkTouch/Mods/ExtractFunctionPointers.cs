@@ -25,10 +25,6 @@ public partial class ExtractFunctionPointers(
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var project = ctx.SourceProject;
-        if (project == null)
-        {
-            return;
-        }
 
         // Scan and extract function pointers
         var rewriter = new Rewriter(logger);
@@ -78,7 +74,7 @@ public partial class ExtractFunctionPointers(
             var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
             var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
             project = project
-                ?.AddDocument(
+                .AddDocument(
                     $"{identifier}.gen.cs",
                     documentFactory.PopulateDocument(
                         CompilationUnit()

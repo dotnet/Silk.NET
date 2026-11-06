@@ -53,15 +53,6 @@ public class AddOpaqueStructs(
     public Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var proj = ctx.SourceProject;
-        if (
-            proj?.FilePath is null
-            || Path.GetDirectoryName(proj.FilePath) is not { Length: > 0 } dir
-        )
-        {
-            logger.LogError("Couldn't determine source project file path.");
-            return Task.CompletedTask;
-        }
-
         foreach (var fullyQualifiedName in config.Names ?? Array.Empty<string>())
         {
             var lastPeriodIndex = fullyQualifiedName.LastIndexOf('.');
