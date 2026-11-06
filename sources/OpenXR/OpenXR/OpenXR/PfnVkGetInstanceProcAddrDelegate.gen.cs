@@ -11,6 +11,6 @@ namespace Silk.NET.OpenXR;
 [NativeName("PFN_vkGetInstanceProcAddr")]
 [SupportedApiProfile("openxr")]
 public unsafe delegate PfnVkGetInstanceProcAddrP2 PfnVkGetInstanceProcAddrDelegate(
-    void* arg0,
+    VkInstanceHandle arg0,
     sbyte* arg1
 );

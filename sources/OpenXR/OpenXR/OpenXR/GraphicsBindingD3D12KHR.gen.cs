@@ -22,11 +22,11 @@ public unsafe partial struct GraphicsBindingD3D12KHR
 
     [NativeName("device")]
     [SupportedApiProfile("openxr", ["XR_KHR_D3D12_enable"])]
-    public void** Device;
+    public void* Device;
 
     [NativeName("queue")]
     [SupportedApiProfile("openxr", ["XR_KHR_D3D12_enable"])]
-    public void** Queue;
+    public void* Queue;
 
     [SupportedApiProfile("openxr", ["XR_KHR_D3D12_enable"])]
     public GraphicsBindingD3D12KHR() { }

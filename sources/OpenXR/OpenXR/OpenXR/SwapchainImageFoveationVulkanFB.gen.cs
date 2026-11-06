@@ -34,7 +34,7 @@ public unsafe partial struct SwapchainImageFoveationVulkanFB
         ["XR_FB_foveation_vulkan"],
         ImpliesSets = ["XR_FB_foveation", "XR_VERSION_1_0"]
     )]
-    public void* Image;
+    public VkImageHandle Image;
 
     [NativeName("width")]
     [SupportedApiProfile(

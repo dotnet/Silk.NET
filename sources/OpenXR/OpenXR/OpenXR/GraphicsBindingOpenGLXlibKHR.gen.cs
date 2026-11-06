@@ -22,7 +22,7 @@ public unsafe partial struct GraphicsBindingOpenGLXlibKHR
 
     [NativeName("xDisplay")]
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
-    public void** XDisplay;
+    public void* XDisplay;
 
     [NativeName("visualid")]
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
@@ -30,7 +30,7 @@ public unsafe partial struct GraphicsBindingOpenGLXlibKHR
 
     [NativeName("glxFBConfig")]
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
-    public void** GlxFBConfig;
+    public void* GlxFBConfig;
 
     [NativeName("glxDrawable")]
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
@@ -38,7 +38,7 @@ public unsafe partial struct GraphicsBindingOpenGLXlibKHR
 
     [NativeName("glxContext")]
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
-    public void** GlxContext;
+    public void* GlxContext;
 
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public GraphicsBindingOpenGLXlibKHR() { }

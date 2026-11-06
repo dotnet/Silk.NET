@@ -42,7 +42,7 @@ public unsafe partial struct VulkanSwapchainFormatListCreateInfoKHR
         ["XR_KHR_vulkan_swapchain_format_list"],
         ImpliesSets = ["XR_KHR_vulkan_enable", "XR_KHR_vulkan_enable2", "XR_VERSION_1_0"]
     )]
-    public void** ViewFormats;
+    public void* ViewFormats;
 
     [SupportedApiProfile(
         "openxr",

@@ -22,11 +22,11 @@ public unsafe partial struct HolographicWindowAttachmentMSFT
 
     [NativeName("holographicSpace")]
     [SupportedApiProfile("openxr", ["XR_MSFT_holographic_window_attachment"])]
-    public void** HolographicSpace;
+    public void* HolographicSpace;
 
     [NativeName("coreWindow")]
     [SupportedApiProfile("openxr", ["XR_MSFT_holographic_window_attachment"])]
-    public void** CoreWindow;
+    public void* CoreWindow;
 
     [SupportedApiProfile("openxr", ["XR_MSFT_holographic_window_attachment"])]
     public HolographicWindowAttachmentMSFT() { }

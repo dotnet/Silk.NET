@@ -16,12 +16,12 @@ public readonly unsafe struct PfnVkGetInstanceProcAddr : IDisposable
     private readonly void* Pointer;
 
     [SupportedApiProfile("openxr")]
-    public delegate* unmanaged<void*, sbyte*, PfnVkGetInstanceProcAddrP2> Handle =>
-        (delegate* unmanaged<void*, sbyte*, PfnVkGetInstanceProcAddrP2>)Pointer;
+    public delegate* unmanaged<VkInstanceHandle, sbyte*, PfnVkGetInstanceProcAddrP2> Handle =>
+        (delegate* unmanaged<VkInstanceHandle, sbyte*, PfnVkGetInstanceProcAddrP2>)Pointer;
 
     [SupportedApiProfile("openxr")]
     public PfnVkGetInstanceProcAddr(
-        delegate* unmanaged<void*, sbyte*, PfnVkGetInstanceProcAddrP2> ptr
+        delegate* unmanaged<VkInstanceHandle, sbyte*, PfnVkGetInstanceProcAddrP2> ptr
     ) => Pointer = ptr;
 
     [SupportedApiProfile("openxr")]
@@ -33,11 +33,13 @@ public readonly unsafe struct PfnVkGetInstanceProcAddr : IDisposable
 
     [SupportedApiProfile("openxr")]
     public static implicit operator PfnVkGetInstanceProcAddr(
-        delegate* unmanaged<void*, sbyte*, PfnVkGetInstanceProcAddrP2> pfn
+        delegate* unmanaged<VkInstanceHandle, sbyte*, PfnVkGetInstanceProcAddrP2> pfn
     ) => new(pfn);
 
     [SupportedApiProfile("openxr")]
-    public static implicit operator delegate* unmanaged<void*, sbyte*, PfnVkGetInstanceProcAddrP2>(
-        PfnVkGetInstanceProcAddr pfn
-    ) => (delegate* unmanaged<void*, sbyte*, PfnVkGetInstanceProcAddrP2>)pfn.Pointer;
+    public static implicit operator delegate* unmanaged<
+        VkInstanceHandle,
+        sbyte*,
+        PfnVkGetInstanceProcAddrP2>(PfnVkGetInstanceProcAddr pfn) =>
+        (delegate* unmanaged<VkInstanceHandle, sbyte*, PfnVkGetInstanceProcAddrP2>)pfn.Pointer;
 }

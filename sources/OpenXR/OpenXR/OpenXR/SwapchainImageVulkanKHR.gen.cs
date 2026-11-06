@@ -22,7 +22,7 @@ public unsafe partial struct SwapchainImageVulkanKHR
 
     [NativeName("image")]
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
-    public void* Image;
+    public VkImageHandle Image;
 
     [SupportedApiProfile("openxr", ["XR_KHR_vulkan_enable"])]
     public SwapchainImageVulkanKHR() { }

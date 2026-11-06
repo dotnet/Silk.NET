@@ -22,7 +22,7 @@ public unsafe partial struct GraphicsBindingOpenGLWaylandKHR
 
     [NativeName("display")]
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
-    public void** Display;
+    public void* Display;
 
     [SupportedApiProfile("openxr", ["XR_KHR_opengl_enable"])]
     public GraphicsBindingOpenGLWaylandKHR() { }
